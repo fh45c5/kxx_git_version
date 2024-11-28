@@ -1094,6 +1094,7 @@ ideologies = {
 			hartmannism_subtype = { can_be_randomly_selected = no }  #哈特曼主义（制作组彩蛋）
 			paternal_koishism_subtype = { can_be_randomly_selected = no }  #恋式家长制（制作组彩蛋）
 			pau_eternal_revolution = {can_be_randomly_selected = no} #永恒革命 （nr西乌克兰重置）
+			pataut_metaxism_subtype = {can_be_randomly_selected = no} #梅塔克萨斯思想
 		}
 		dynamic_faction_names = {
 			"FACTION_NAME_PATERNAL_AUTOCRAT_1"

@@ -3049,7 +3049,7 @@ focus_tree = {
 		prerequisite = { focus = GRE_freethinker }
 		relative_position_id = GRE_freethinker
 		available = {
-			has_country_leader_ideology = pataut_metaxism_subtype
+				has_government = paternal_autocrat
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_the_meeting"
@@ -3066,8 +3066,8 @@ focus_tree = {
 		prerequisite = { focus = GRE_freethinker }
 		relative_position_id = GRE_freethinker
 		available = {
-			has_country_leader_ideology = pataut_metaxism_subtype
-		}
+			has_government = paternal_autocrat
+	}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_the_speech"
 			add_popularity = {
@@ -3086,8 +3086,8 @@ focus_tree = {
 		prerequisite = { focus = GRE_freethinker }
 		relative_position_id = GRE_freethinker
 		available = {
-			has_country_leader_ideology = pataut_metaxism_subtype
-		}
+			has_government = paternal_autocrat
+	}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_the_promise"
 			add_political_power = 50
@@ -3107,8 +3107,8 @@ focus_tree = {
 		prerequisite = { focus = GRE_the_promise }
 		relative_position_id = GRE_freethinker
 		available = {
-			has_country_leader_ideology = pataut_metaxism_subtype
-		}
+			has_government = paternal_autocrat
+	}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_the_incident"
 			add_manpower = -1
@@ -3116,6 +3116,7 @@ focus_tree = {
 				id = gre.5
 				days = 5
 			}
+			set_country_flag = GRE_ready_to_go_byz
 		}
 	}
 
@@ -3129,7 +3130,9 @@ focus_tree = {
 		y = 3
 		available = {
 			has_country_flag = GRE_incident
-			has_country_leader_ideology = pataut_metaxism_subtype
+			
+				has_government = paternal_autocrat
+		
 		}
 		prerequisite = { focus = GRE_the_incident }
 		relative_position_id = GRE_freethinker
@@ -3147,7 +3150,7 @@ focus_tree = {
 		y = 3
 		available = {
 			has_country_flag = GRE_incident
-			has_country_leader_ideology = pataut_metaxism_subtype
+			has_government = paternal_autocrat
 		}
 		prerequisite = { focus = GRE_the_incident }
 		relative_position_id = GRE_freethinker
@@ -3196,7 +3199,7 @@ focus_tree = {
 		y = 3
 		available = {
 			has_country_flag = GRE_incident
-			has_country_leader_ideology = pataut_metaxism_subtype
+			has_government = paternal_autocrat
 		}
 		prerequisite = { focus = GRE_the_incident }
 		relative_position_id = GRE_freethinker
@@ -3220,7 +3223,7 @@ focus_tree = {
 		prerequisite = { focus = GRE_social_control }
 		relative_position_id = GRE_freethinker
 		available = {
-			has_country_leader_ideology = pataut_metaxism_subtype
+			has_government = paternal_autocrat
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_anti_colonialism"
@@ -3263,7 +3266,7 @@ focus_tree = {
 		prerequisite = { focus = GRE_destroy_left_wing }
 		relative_position_id = GRE_freethinker
 		available = {
-			has_country_leader_ideology = pataut_metaxism_subtype
+			has_government = paternal_autocrat
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_personality_cult"
@@ -3281,7 +3284,7 @@ focus_tree = {
 		prerequisite = { focus = GRE_destroy_left_wing }
 		relative_position_id = GRE_freethinker
 		available = {
-			has_country_leader_ideology = pataut_metaxism_subtype
+			has_government = paternal_autocrat
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_who_needs_democracy"
@@ -3301,7 +3304,7 @@ focus_tree = {
 		prerequisite = { focus = GRE_corporatism }
 		relative_position_id = GRE_freethinker
 		available = {
-			has_country_leader_ideology = pataut_metaxism_subtype
+			has_government = paternal_autocrat
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_direct_rule"
@@ -3324,7 +3327,7 @@ focus_tree = {
 		prerequisite = { focus = GRE_personality_cult }
 		relative_position_id = GRE_freethinker
 		available = {
-			has_country_leader_ideology = pataut_metaxism_subtype
+			has_government = paternal_autocrat
 		}
 		completion_reward = {
 			add_ideas = GRE_nationalism_schools
@@ -3344,7 +3347,7 @@ focus_tree = {
 		prerequisite = { focus = GRE_who_needs_democracy }
 		relative_position_id = GRE_freethinker
 		available = {
-			has_country_leader_ideology = pataut_metaxism_subtype
+			has_government = paternal_autocrat
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_religious_state"
@@ -3365,7 +3368,7 @@ focus_tree = {
 		prerequisite = { focus = GRE_direct_rule }
 		relative_position_id = GRE_freethinker
 		available = {
-			has_country_leader_ideology = pataut_metaxism_subtype
+			has_government = paternal_autocrat
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_exclude_minorities"
@@ -3390,7 +3393,7 @@ focus_tree = {
 		prerequisite = { focus = GRE_exclude_minorities }
 		relative_position_id = GRE_freethinker
 		available = {
-			has_country_leader_ideology = pataut_metaxism_subtype
+			has_government = paternal_autocrat
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_third_greek_generations"
@@ -3594,7 +3597,7 @@ focus_tree = {
 			hidden_trigger = { always = no }
 		}
 		prerequisite = { focus = GRE_elections }
-		mutually_exclusive = { focus = GRE_hardliners focus = GRE_giotopoulos_archiomarxists	 }
+		
 		relative_position_id = GRE_elections
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_liberal_socialism"
@@ -3612,7 +3615,7 @@ focus_tree = {
 			hidden_trigger = { always = no }
 		}
 		prerequisite = { focus = GRE_elections }
-		mutually_exclusive = { focus = GRE_liberal_socialism focus = GRE_giotopoulos_archiomarxists }
+		
 		relative_position_id = GRE_elections
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_hardliners"
@@ -4148,10 +4151,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_elections
 		}
-		mutually_exclusive = {
-			focus = GRE_hardliners
-			focus = GRE_liberal_socialism
-		}
+		
 		completion_reward = {
 			remove_ideas = GRE_anathema
 		}
@@ -4946,7 +4946,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_imperium_romanum"
 			custom_effect_tooltip = GRE_tt_GRE_imperium_romanum
 			set_capital = { state = 341 }
-			set_cosmetic_tag = BYZ
+			set_country_flag = GRE_ready_to_go_byz
 			mark_focus_tree_layout_dirty = yes
 		}
 	}
@@ -5556,7 +5556,7 @@ focus_tree = {
 		x = 41
 		y = 9
 		available = {
-			hidden_trigger = { always = no }
+			has_completed_focus = GRE_third_greek_generations
 		}
 		completion_reward = {
 			add_ideas = GRE_first_hellenic_civilisation
@@ -5841,7 +5841,7 @@ focus_tree = {
 		x = 6
 		y = 0
 		available = {
-			hidden_trigger = { always = no }
+			has_completed_focus = GRE_third_greek_generations
 		}
 		relative_position_id = GRE_emphasize_first_hellenic_civilisation
 		completion_reward = {
@@ -7760,19 +7760,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = GRE_karrer
-			effect_tooltip = {
-				GRE_Lucas_Karreris = {
-					add_country_leader_role = {
-						country_leader = {
-							ideology = paternal_autocrat_subtype
-							traits = {
-								Loukas_Karrer_Emperor
-							}
-						}
-						promote_leader = yes
-					}
-				}
-			}
+			set_country_flag = GRE_ready_to_go_byz
 		}
 	}
 	focus = {
@@ -7837,8 +7825,8 @@ focus_tree = {
 			set_country_leader_name = {
 				name = "Aftokrátor Loukás IV' Palaiológos of the Hellenes"
 			}
-			add_country_leader_trait = byzantine_heir
-			add_country_leader_trait = our_emperor
+
+			add_country_leader_trait = byzantine_emperor
 			add_country_leader_trait = protector_of_the_army
 		}
 	}
@@ -8006,24 +7994,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = GRE_glucksburg
-			effect_tooltip = {
-				GRE_Georgios_II = {
-					add_country_leader_role = {
-						country_leader = {
-							ideology = authoritarian_democrat_subtype
-						}
-						promote_leader = yes
-					}
-				}
-				set_country_leader_name = {
+		set_country_leader_name = {
 					name = "Aftokrátor Geórgios II"
-					ideology = var:current_party_ideology_group
-				}
-				set_country_leader_portrait = {
-					portrait = GFX_Portrait_GRE_George_II_Emperor
-					ideology = var:current_party_ideology_group
-				}
 			}
+			set_country_flag = GRE_ready_to_go_byz
 		}
 	}
 	focus = {
@@ -8455,41 +8429,14 @@ focus_tree = {
 		x = 75
 		y = 7
 			available = {
-					OR = {
-					has_country_leader = {
-							ruling_only = yes
-							name = "Aléxandros I"
-						}
-					has_country_leader = {
-							ruling_only = yes
-							name = "Geórgios II"
-						}
-					has_country_leader = {
-							ruling_only = yes
-							name = "Pávlos I"
-						}
-					has_country_leader = {
-							ruling_only = yes
-							name = "Ioannis Metaxas"
-						}
-					has_country_leader = {
-							ruling_only = yes
-							name = "Alexandros Koryzis"
-						}
-				}
-			}
-			available = {
-					OR = {
-							has_government = social_conservative
-							has_government = authoritarian_democrat
-							has_government = paternal_autocrat
-							has_government = national_populist
-						}
-				}
-			available = {
 					NOT = {
 						has_country_flag = GRE_balkan_war_loss
 					}
+				}
+				available = {
+					
+						has_country_flag = GRE_ready_to_go_byz
+					
 				}
 			available = {
 					NOT = {

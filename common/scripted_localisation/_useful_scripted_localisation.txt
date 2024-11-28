@@ -7129,4 +7129,10 @@ text = {
 		}
 		localization_key = fredaism_subtype  
 	}	
+	text = {
+		trigger = {
+			has_country_leader_ideology = pataut_metaxism_subtype
+		}
+		localization_key = pataut_metaxism_subtype
+	}	
 }

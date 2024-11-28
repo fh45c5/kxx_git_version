@@ -163,9 +163,7 @@ add_ideas = {
 	JER_Alexander_Moncrieff_Coutanche
 }
 country_event = { id = jersor.3 days = 25 }
-ENG = {
-	country_event = { id = jersor.5 days = 12 }
-}
+
 
 set_popularities = {
 	totalist = 3

@@ -135,13 +135,13 @@ add_opinion_modifier = { target = BUL modifier = Balkans_hates_bulgaria }
 country_event = { id = gre.1 days = 1 } #Intro event
 country_event = { id = gre.3 days = 85 } #Independence Day
 country_event = { id = gre.100 days = 85 } #Independence Day
-set_cosmetic_tag = GRE_kingdom_fake
+
 
 set_politics = {
-	ruling_party = authoritarian_democrat
-	last_election = "1888.6.15"
+	ruling_party = social_liberal
+	last_election = "1934.1.26"
 	election_frequency = 48
-	elections_allowed = no
+	elections_allowed = yes
 }
 
 set_popularities = {
@@ -158,18 +158,17 @@ set_popularities = {
 }
 
 create_country_leader = {
-	name = "Aris Velouchiotis"
-	desc = "POLITICS_ARIS_VELOUCHIOTIS_DESC"
-	picture = "gfx/leaders/GRE/Portrait_GRE_Athanasios_Klaras.png"
+	name = "Dimitris Giotopoulos"
+	picture = "gfx/leaders/GRE/Portrait_GRE_Dimitris_Giotopoulos.png"
 	expire = "1.1.1"
-	ideology = authcom_subtype
+	ideology = internationalism_subtype
 }
 create_country_leader = {
 	name = "Nikos Zachariadis"
 	desc = "POLITICS_NIKOS_ZACHARIADIS_DESC"
 	picture = "gfx/leaders/GRE/Portrait_GRE_Nikos_Zachariadis_kr.png"
 	expire = "1.1.1"
-	ideology = syndicalist_subtype
+	ideology = centralized_syndicalism_subtype
 }
 create_country_leader = {
 	name = "Kostas Gavriilides"
@@ -193,11 +192,13 @@ create_country_leader = {
 	ideology = centrist_subtype
 }
 create_country_leader = {
-	name = "Themistoklis Sofoulis"
-	desc = "POLITICS_THEMISTOKLIS_SOFOULIS_DESC"
-	picture = "gfx/leaders/GRE/Portrait_GRE_Themistoklis_Sofoulis_KX.png"
+	name = "Georgios Kondylis"
+	desc = "POLITICS_KONDYLIS_DESC"
+	picture = "gfx/leaders/GRE/Portrait_GRE_Georgios_Kondylis.png"
 	expire = "1.1.1"
-	ideology = market_liberal_subtype
+	ideology = progressive_democracy_subtype
+	traits = {
+	}
 }
 create_country_leader = {
 	name = "Panagis Tsaldaris"
@@ -206,14 +207,12 @@ create_country_leader = {
 	expire = "1.1.1"
 	ideology = christian_democracy_subtype
 }
+
 create_country_leader = {
-	name = "Georgios Kondylis"
-	desc = "POLITICS_KONDYLIS_DESC"
-	picture = "gfx/leaders/GRE/Portrait_GRE_Georgios_Kondylis.png"
+	name = "Monarchist Comitee"
+	picture = "gfx/leaders/GREPortrait_GRE_Monarchist_Comitee.png"
 	expire = "1.1.1"
-	ideology = authdem_junta_subtype
-	traits = {
-	}
+	ideology = oligarchy_subtype
 }
 create_country_leader = {
 	name = "Ioannis Metaxas"
@@ -223,9 +222,8 @@ create_country_leader = {
 	ideology = pataut_christian_democracy_subtype
 }
 create_country_leader = {
-	name = "Georgios Kosmidis"
-	desc = "POLITICS_GEORGIOS_KOSMIDIS_DESC"
-	picture = "gfx/leaders/GRE/Portrait_GRE_Georgios_Kosmidis_KX.png"
+	name = "Georgios Merkouris"
+	picture = "gfx/leaders/GRE/Portrait_GRE_Georgios_Spyridon_Merkouris_fx.png"
 	expire = "1.1.1"
 	ideology = legionarism_subtype
 }

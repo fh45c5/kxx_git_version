@@ -241,4 +241,8 @@ spriteTypes = {
 		name = "GFX_ideology_natpop_zadrugism_subtype"
 		texturefile = "gfx/interface/ideologies/subideologies/zadrugism.png"
 	}
+	spriteType = {
+		name = "GFX_ideology_pataut_metaxism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/metaxism_pataut.png"
+	}
 }

@@ -1,0 +1,199 @@
+##### ATTENTION
+##### Please do not make any manual changes to this file
+##### All changes to ministers should be handled through the Minister Conversion Tool
+##### This can be found on the Aux
+##### If you don't know what that means; don't touch this file, ask for some help
+
+ideas = {
+
+  ####################################################################################################
+  ### NOR
+  ####################################################################################################
+
+	head_of_government = { ### Head of Government ###
+	
+
+	GRE_Georgios_Poulos_hog_npo = {
+			allowed = { original_tag = GRE }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea NOR_Johan_Bernhard_Hjort_hog_ade"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_silent_workhorse
+			}
+		}
+		
+		NOR_Ragnvald_Hvoslef_hog_pau = {
+			allowed = { original_tag = NOR }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea NOR_Ragnvald_Hvoslef_hog_pau"
+			}
+			traits = {
+				head_of_government
+				paternal_autocrat
+				hog_old_general
+			}
+			cancel_if_invalid = no
+		}
+		
+		NOR_Stein_Barth_Heyerdahl_hog_npo = {
+			allowed = { original_tag = NOR }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea NOR_Stein_Barth_Heyerdahl_hog_npo"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_local_tyrant
+			}
+		}
+
+	}
+
+	person_of_influence = { ### Person of Influence ###
+		## Foreign Minister ##
+		GRE_Dimitrios_Delivanis_for_val = {
+			allowed = { original_tag = GRE }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea NOR_Erling_Wikborg_for_sco"
+			}
+			traits = {
+				foreign_minister
+				national_populist
+				for_ideological_crusader
+			}
+		}
+		
+		NOR_Victor_Mogens_for_ade = {
+			allowed = { original_tag = NOR }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea NOR_Victor_Mogens_for_ade"
+			}
+			traits = {
+				foreign_minister
+				authoritarian_democrat
+				for_ideological_crusader
+			}
+		}
+
+
+		## Economy Minister ##
+		
+		GRE_Georgios_Simitis_eco_val = {
+			allowed = { original_tag = GRE }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea NOR_Nils_Lavik_hog_sco"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				eco_reformer
+			}
+		}
+
+		## Security Minister ##
+		NOR_Anders_Lange_sec_ade = {
+			allowed = { original_tag = NOR }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea NOR_Anders_Lange_sec_ade"
+			}
+			traits = {
+				security_minister
+				authoritarian_democrat
+				sec_driven_recruiter
+			}
+		}
+
+		NOR_Vidkun_Quisling_sec_pau = {
+			allowed = { original_tag = NOR }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea NOR_Vidkun_Quisling_sec_pau"
+			}
+			traits = {
+				security_minister
+				national_populist
+				sec_prince_of_terror
+			}
+			cancel_if_invalid = no
+		}
+
+		NOR_Johan_Bernhard_Hjort_sec_npo = {
+			allowed = { original_tag = NOR }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea NOR_Sverre_Riisnaes_sec_npo"
+			}
+			traits = {
+				security_minister
+				national_populist
+				sec_silent_lawyer
+			}
+		}
+
+	}
+
+}
