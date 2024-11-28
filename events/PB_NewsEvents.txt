@@ -1,0 +1,3981 @@
+##################
+# NEWS EVENTS 
+##################
+
+add_namespace = PBNews
+
+news_event = {		#London Stock Crisis
+	id = PBNews.1
+	title = PBNews.1.t
+	desc = PBNews.1.d
+	picture = GFX_PB_news_event_PBNews_Stock_Crisis
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.1.a
+
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+news_event = {		#Arab War of Succession
+	id = PBNews.2
+	title = PBNews.2.t
+	desc = PBNews.2.d
+	picture = GFX_PB_news_event_PBNews_Arab_Succession_War
+
+	is_triggered_only = yes
+
+	option = {
+		name = PBNews.2.a
+	}
+}
+
+
+news_event = {		#Dutch Crisis Success
+	id = PBNews.3
+	title = PBNews.3.t
+	desc = PBNews.3.d
+	picture = GFX_PB_news_event_PBNews_Dutch_Crisis_Success
+
+	is_triggered_only = yes
+
+	option = {
+		name = PBNews.3.a
+	}
+}
+
+news_event = {		#South African War
+	id = PBNews.4
+	title = PBNews.4.t
+	desc = PBNews.4.d
+	picture = GFX_PB_news_event_PBNews_South_African_War
+
+	is_triggered_only = yes
+
+	option = {
+		name = PBNews.4.a
+	}
+}
+
+news_event = {		#Egypt Nationalist Coup
+	id = PBNews.5
+	title = PBNews.5.t
+	desc = PBNews.5.d
+	picture = GFX_PB_news_event_PBNews_Egyptian_Coup
+
+	is_triggered_only = yes
+
+	option = {
+		name = PBNews.5.a
+	}
+}
+
+news_event = {		#Chinese Civil War - Qing Victory
+	id = PBNews.6
+	title = PBNews.6.t
+	desc = PBNews.6.d
+	picture = GFX_PB_news_event_PBNews_CCW_Qing_Victory
+
+	is_triggered_only = yes
+
+	option = {
+		name = PBNews.6.a
+	}
+}
+
+news_event = {		#Chinese Civil War - NRA Victory
+	id = PBNews.7
+	title = PBNews.7.t
+	desc = PBNews.7.d
+	picture = GFX_PB_news_event_PBNews_CCW_NRA_Victory
+
+	is_triggered_only = yes
+
+	option = {
+		name = PBNews.7.a
+	}
+}
+
+news_event = {		#Accession of Kaiserin Elisabeth I
+	id = PBNews.8
+	title = PBNews.8.t
+	desc = PBNews.8.d
+	picture = GFX_PB_news_event_PBNews_GER_Kaiser_Accession
+
+	is_triggered_only = yes
+
+	option = {
+		name = PBNews.8.a
+	}
+}
+
+news_event = {		#Accession of Kaiser Georg I
+	id = PBNews.9
+	title = PBNews.9.t
+	desc = PBNews.9.d
+	picture = GFX_PB_news_event_PBNews_GER_Kaiser_Accession
+
+	is_triggered_only = yes
+
+	option = {
+		name = PBNews.9.a
+	}
+}
+
+news_event = {		#ENG - Tories maintain power
+	id = PBNews.10
+	title = PBNews.10.t
+	desc = PBNews.10.d
+	picture = GFX_PB_news_event_PBNews_ENG_Tory_Reelection
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.10.a
+	}
+}
+
+news_event = {		#ENG - WUP Elected
+	id = PBNews.11
+	title = PBNews.11.t
+	desc = PBNews.11.d
+	picture = GFX_PB_news_event_PBNews_ENG_WUP_Election
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.11.a
+	}
+}
+
+news_event = {		#ENG - NPP Elected
+	id = PBNews.12
+	title = PBNews.12.t
+	desc = PBNews.12.d
+	picture = GFX_PB_news_event_PBNews_ENG_NPP_Election
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.12.a
+	}
+}
+
+news_event = {		#ENG - Edward Coup
+	id = PBNews.13
+	title = PBNews.13.t
+	desc = PBNews.13.d
+	picture = GFX_PB_news_event_PBNews_ENG_Edward_Coup
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.13.a
+	}
+}
+
+news_event = {		#FRA - Doriot Coup
+	id = PBNews.14
+	title = PBNews.14.t
+	desc = PBNews.14.d
+	picture = GFX_PB_news_event_PBNewsFRA_Doriot_Coup
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.14.a
+	}
+}
+
+news_event = {		#FRA - Maurras Coup
+	id = PBNews.15
+	title = PBNews.15.t
+	desc = PBNews.15.d
+	picture = GFX_PB_news_event_PBNews_FRA_Maurras_Coup
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.15.a
+	}
+}
+
+news_event = {		#FRA - Armand Coup
+	id = PBNews.16
+	title = PBNews.16.t
+	desc = PBNews.16.d
+	picture = GFX_PB_news_event_PBNews_FRA_Armand_Coup
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.16.a
+	}
+}
+
+news_event = {		#FRA - Militarist Coup
+	id = PBNews.17
+	title = PBNews.17.t
+	desc = PBNews.17.d
+	picture = GFX_PB_news_event_PBNews_FRA_Militarist_Coup
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.17.a
+	}
+}
+
+news_event = {		#FRA - SP Coup
+	id = PBNews.18
+	title = PBNews.18.t
+	desc = PBNews.18.d
+	picture = GFX_PB_news_event_PBNews_FRA_SP_Coup
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.18.a
+	}
+}
+
+news_event = {		#ENG - Nicaragua Canal Completion
+	id = PBNews.19
+	title = PBNews.19.t
+	desc = PBNews.19.d
+	picture = GFX_PB_news_event_PBNews_Nicaragua_Canal
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.19.a
+	}
+}
+
+news_event = {		#FRA - Remilitarization of Lorraine
+	id = PBNews.20
+	title = PBNews.20.t
+	desc = PBNews.20.d
+	picture = GFX_PB_news_event_PBNews_Lorraine_Remilitarized
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.20.a
+	}
+}
+
+news_event = {		#HUN - Great Balkan War - Hungarians Win
+	id = PBNews.23
+	title = PBNews.23.t
+	desc = PBNews.23.d
+	picture = GFX_PB_news_event_PBNews_HUN_GBW_Victory
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.23.a
+	}
+}
+
+news_event = {		#SER - Great Balkan War - Serbians Win
+	id = PBNews.24
+	title = PBNews.24.t
+	desc = PBNews.24.d
+	picture = GFX_PB_news_event_PBNews_SER_GBW_Victory
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.24.a
+	}
+}
+
+news_event = {		#General - League of Nations Founded
+	id = PBNews.25
+	title = PBNews.25.t
+	desc = PBNews.25.d
+	picture = GFX_PB_news_event_PBNews_LoN_Foundation
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.25.a
+	}
+}
+
+news_event = {		#CHI - Collapse and Warlord Era
+	id = PBNews.26
+	title = PBNews.26.t
+	desc = PBNews.26.d
+	picture = GFX_PB_news_event_PBNews_CHI_Anarchy
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.26.a
+	}
+}
+
+news_event = {		#Arab War - Hashemite Victory
+	id = PBNews.27
+	title = PBNews.27.t
+	desc = PBNews.27.d
+	picture = GFX_PB_news_event_PBNews_ArabWar_HEJ_Victory
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.27.a
+	}
+}
+
+news_event = {		#Arab War - Rashidi Victory
+	id = PBNews.28
+	title = PBNews.28.t
+	desc = PBNews.28.d
+	picture = GFX_PB_news_event_PBNews_PBNews_ArabWar_JBL_Victory
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.28.a
+	}
+}
+
+news_event = {		#Arab War - Ikwhan Victory
+	id = PBNews.29
+	title = PBNews.29.t
+	desc = PBNews.29.d
+	picture = GFX_PB_news_event_PBNews_PBNews_ArabWar_IKW_Victory
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.29.a
+	}
+}
+
+news_event = {		#Arab War - Revolutionary Victory
+	id = PBNews.30
+	title = PBNews.30.t
+	desc = PBNews.30.d
+	picture = GFX_PB_news_event_PBNews_PBNews_ArabWar_UAR_Victory
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.30.a
+	}
+}
+
+news_event = {		#Vietnam War - British Victory
+	id = PBNews.31
+	title = PBNews.31.t
+	desc = PBNews.31.d
+	picture = GFX_PB_news_event_PBNews_VinWar_ENG_Victory
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.31.a
+	}
+}
+
+news_event = {		#Vietnam War - Vietnamese Victory
+	id = PBNews.32
+	title = PBNews.32.t
+	desc = PBNews.32.d
+	picture = GFX_PB_news_event_PBNews_VinWar_VIN_Victory
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.32.a
+	}
+}
+
+news_event = {		#Reconquest of East Indies - Dutch Victory
+	id = PBNews.33
+	title = PBNews.33.t
+	desc = PBNews.33.d
+	picture = GFX_PB_news_event_PBNews_East_Indies_DEI_Victory
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.33.a
+	}
+}
+
+news_event = {		#Reconquest of East Indies - Dutch Defeat
+	id = PBNews.34
+	title = PBNews.34.t
+	desc = PBNews.34.d
+	picture = GFX_PB_news_event_PBNews_East_Indies_DEI_Defeat
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.34.a
+	}
+}
+
+news_event = {		#German Exile - Munich-Germany
+	id = PBNews.35
+	title = PBNews.35.t
+	desc = PBNews.35.d
+	picture = GFX_PB_news_event_PBNews_Munich_Germany_Established
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.35.a
+	}
+}
+
+news_event = {		#German Exile - Keitel Government
+	id = PBNews.36
+	title = PBNews.36.t
+	desc = PBNews.36.d
+	picture = GFX_PB_news_event_PBNews_Free_German_Government
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.36.a
+	}
+}
+
+
+news_event = {		#South African War - Sudwest Intervention
+	id = PBNews.37
+	title = PBNews.37.t
+	desc = PBNews.37.d
+	picture = GFX_PB_news_event_PBNews_SDW_German_Intervention
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.37.a
+	}
+}
+
+news_event = {		#Collapse of the Algiers Mandate
+	id = PBNews.38
+	title = PBNews.38.t
+	desc = PBNews.38.d
+	picture = GFX_PB_news_event_PBNews_Algiers_Mandate_Collapse
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.38.a
+	}
+}
+
+news_event = {		#The Commonwealth of Great Britain
+	id = PBNews.39
+	title = PBNews.39.t
+	desc = PBNews.39.d
+	picture = GFX_PB_news_event_PBNews_Great_Britain_Commonwealth
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.39.a
+	}
+}
+
+news_event = {		#Germany restores order in South Africa
+	id = PBNews.40
+	title = PBNews.40.t
+	desc = PBNews.40.d
+	picture = GFX_PB_news_event_PBNews_German_South_Africa
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.40.a
+	}
+}
+
+news_event = {		#Reactionary Unified South Africa
+	id = PBNews.41
+	title = PBNews.41.t
+	desc = PBNews.41.d
+	picture = GFX_PB_news_event_PBNews_Volkstaat_South_Africa
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.41.a
+	}
+}
+
+news_event = {		#Reformist Unified South Africa
+	id = PBNews.42
+	title = PBNews.42.t
+	desc = PBNews.42.d
+	picture = GFX_PB_news_event_PBNews_Reformist_South_Africa
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.42.a
+	}
+}
+
+news_event = {		#Native Unified South Africa
+	id = PBNews.43
+	title = PBNews.43.t
+	desc = PBNews.43.d
+	picture = GFX_PB_news_event_PBNews_Native_South_Africa
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.43.a
+	}
+}
+
+news_event = {		#2nd Chinese Civil War
+	id = PBNews.44
+	title = PBNews.44.t
+	desc = PBNews.44.d
+	picture = GFX_PB_news_event_PBNews_CHI_NPA_War
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.44.a
+	}
+}
+
+news_event = {		#2nd Chinese Civil War - Beiyang Victory
+	id = PBNews.45
+	title = PBNews.45.t
+	desc = PBNews.45.d
+	picture = GFX_PB_news_event_PBNews_CHI_NPA_Beiyang
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.45.a
+	}
+}
+
+news_event = {		#2nd Chinese Civil War - National Protection Victory
+	id = PBNews.46
+	title = PBNews.46.t
+	desc = PBNews.46.d
+	picture = GFX_PB_news_event_PBNews_CHI_NPA_NPA
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.46.a
+	}
+}
+
+news_event = {		#2nd Chinese Civil War - Anarchist Victory
+	id = PBNews.47
+	title = PBNews.47.t
+	desc = PBNews.47.d
+	picture = GFX_PB_news_event_PBNews_CHI_NPA_Anarchists
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.47.a
+	}
+}
+
+news_event = {		#Qing China - Neo-Boxer Takeover
+	id = PBNews.48
+	title = PBNews.48.t
+	desc = PBNews.48.d
+	picture = GFX_PB_news_event_PBNews_CHI_Neo_Boxers
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.48.a
+	}
+}
+
+news_event = {		#Chinese Anarchy - Manchurian Reunification
+	id = PBNews.49
+	title = PBNews.49.t
+	desc = PBNews.49.d
+	picture = GFX_PB_news_event_PBNews_CHI_ANARCHY_Manchuria
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.49.a
+	}
+}
+
+news_event = {		#Chinese Anarchy - IJA Takeover in Shanghai
+	id = PBNews.50
+	title = PBNews.50.t
+	desc = PBNews.50.d
+	picture = GFX_PB_news_event_PBNews_CHI_ANARCHY_IJA_Shanghai
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.50.a
+	}
+}
+
+news_event = {		#Chinese Anarchy - Warlord Manchu Restoration
+	id = PBNews.51
+	title = PBNews.51.t
+	desc = PBNews.51.d
+	picture = GFX_PB_news_event_PBNews_CHI_ANARCHY_Manchu_Restoration
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.51.a
+	}
+}
+
+news_event = {		#Chinese Anarchy - Yan Xishan Reunifies China
+	id = PBNews.52
+	title = PBNews.52.t
+	desc = PBNews.52.d
+	picture = GFX_PB_news_event_PBNews_CHI_ANARCHY_Yan_Xishan_Reunification
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.52.a
+	}
+}
+
+news_event = {		#Chinese Anarchy - Dai Li Reunifies China
+	id = PBNews.53
+	title = PBNews.53.t
+	desc = PBNews.53.d
+	picture = GFX_PB_news_event_PBNews_CHI_ANARCHY_Dai_Li_Reunification
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.53.a
+	}
+}
+
+news_event = {		#Chinese Anarchy - Feng Yuxiang Reunifies China
+	id = PBNews.54
+	title = PBNews.54.t
+	desc = PBNews.54.d
+	picture = GFX_PB_news_event_PBNews_CHI_ANARCHY_Feng_Yuxiang_Reunification
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.54.a
+	}
+}
+
+news_event = {		#Biological Warfare - The New Plague
+	id = PBNews.55
+	title = PBNews.55.t
+	desc = PBNews.55.d
+	picture = GFX_PB_news_event_PBNews_Bioweapons_New_Plague
+
+	is_triggered_only = yes
+
+	major = yes
+
+    option = {
+		name = PBNews.55.a
+
+		set_temp_variable = { super_id = 21 }
+		PB_Fire_Super_Event = yes
+		set_global_flag = PB_Plague_News_Fired
+	}
+}
+
+news_event = {		#Chemical Warfare Taboo Broken
+	id = PBNews.56
+	title = PBNews.56.t
+	desc = PBNews.56.d
+	picture = GFX_PB_news_event_PBNews_Chemweapons_Deployed
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	major = yes
+
+	option = {
+		name = PBNews.56.a
+
+		set_global_flag = PB_Global_First_Chemical_Weapons_Deployed
+	}
+}
+
+news_event = {		#Russia Surrenders To The IP 
+	id = PBNews.57
+	title = PBNews.57.t
+	desc = PBNews.57.d
+	picture = GFX_PB_news_event_PBNews_VinWar_ENG_Victory
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.57.a
+	}
+}
+
+news_event = {		#Russia Collapses Into Anarchy
+	id = PBNews.58
+	title = PBNews.58.t
+	desc = PBNews.58.d
+	picture = GFX_PB_news_event_PBNews_VinWar_ENG_Victory
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.58.a
+	}
+}
+
+news_event = {		#Russia Proclaims The Third Roman Empire
+	id = PBNews.59
+	title = PBNews.59.t
+	desc = PBNews.59.d
+	picture = GFX_PB_news_event_PBNews_Roman_Empire
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.59.a
+	}
+}
+
+news_event = {		#Russia Proclaims Pan-Slavia
+	id = PBNews.60
+	title = PBNews.60.t
+	desc = PBNews.60.d
+	picture = GFX_PB_news_event_PBNews_Pan_Slavia
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.60.a
+	}
+}
+
+news_event = {		#Tsar Dies
+	id = PBNews.61
+	title = PBNews.61.t
+	desc = PBNews.61.d
+	picture = GFX_PB_news_event_PBNews_RUS_Tsar_Dead
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.61.a
+	}
+}
+
+news_event = {		#Pytor Assumes Russian Leadership
+	id = PBNews.62
+	title = PBNews.62.t
+	desc = PBNews.62.d
+	picture = GFX_PB_news_event_PBNews_RUS_Wrangel
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.62.a
+	}
+}
+
+news_event = {		#Religious Fanatics Assumes Russian Leadership
+	id = PBNews.63
+	title = PBNews.63.t
+	desc = PBNews.63.d
+	picture = GFX_PB_news_event_PBNews_Generic_Proclamation
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.63.a
+	}
+}
+
+news_event = {		#Russia Joins The Pact
+	id = PBNews.64
+	title = PBNews.64.t
+	desc = PBNews.64.d
+	picture = GFX_PB_news_event_PBNews_RUS_Russia_Joins_The_Pact
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.64.a
+	}
+}
+
+news_event = {		#Moscow Riots
+	id = PBNews.65
+	title = PBNews.65.t
+	desc = PBNews.65.d
+	picture = GFX_PB_news_event_PBNews_RUS_Russia_Joins_The_Pact
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.65.a
+	}
+}
+
+news_event = {		#Moscow Jacobin Civil War - The Red Revolution
+	id = PBNews.66
+	title = PBNews.66.t
+	desc = PBNews.66.d
+	picture = GFX_PB_news_event_PBNews_RUS_Russia_Joins_The_Pact
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.66.a
+	}
+}
+
+news_event = {		#Transitional Congress - India
+	id = PBNews.67
+	title = PBNews.67.t
+	desc = PBNews.67.d
+	picture = GFX_PB_news_event_PBNews_Generic_Proclamation
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.67.a
+	}
+}
+
+news_event = {		#India Collapse - Reactionary
+	id = PBNews.68
+	title = PBNews.68.t
+	desc = PBNews.68.d
+	picture = GFX_PB_news_event_PBNews_Generic_Revolution
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.68.a
+	}
+}
+
+news_event = {		#The Dixie Rebellion
+	id = PBNews.69
+	title = PBNews.69.t
+	desc = PBNews.69.d
+	picture = GFX_PB_news_event_PBNews_FSA_Rebellion
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.69.a
+	}
+}
+
+news_event = {		#AME Win
+	id = PBNews.70
+	title = PBNews.70.t
+	desc = PBNews.70.d
+	picture = GFX_PB_news_event_PBNews_AME_Rebellion_Win
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.70.a
+	}
+}
+
+
+news_event = {		#FSA Win
+	id = PBNews.71
+	title = PBNews.71.t
+	desc = PBNews.71.d
+	picture = GFX_PB_news_event_PBNews_FSA_Rebellion_Win
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.71.a
+	}
+}
+
+news_event = {		#Greater Prussia Is Proclaimed
+	id = PBNews.74
+	title = PBNews.74.t
+	desc = PBNews.74.d
+	picture = GFX_PB_news_event_PBNews_PRS_Greater_Prussia
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.74.a
+	}
+}
+
+news_event = {		#Bouhler Commits Suicide
+	id = PBNews.75
+	title = PBNews.75.t
+	desc = PBNews.75.d
+	picture = GFX_PB_news_event_PBNews_PRS_Greater_Prussia
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.75.a
+	}
+}
+
+news_event = {		#The Dead March West
+	id = PBNews.76
+	title = PBNews.76.t
+	desc = PBNews.76.d
+	picture = GFX_PB_news_event_PBNews_SCA_Dead_March_West
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.76.a
+	}
+}
+
+news_event = {		#Schmidt's New Kingdom
+	id = PBNews.77
+	title = PBNews.77.t
+	desc = PBNews.77.d
+	picture = GFX_PB_news_event_PBNews_PRS_Schmidt_Coup
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.77.a
+	}
+}
+
+news_event = {		#Fredrick Class Battleship
+	id = PBNews.78
+	title = PBNews.78.t
+	desc = PBNews.78.d
+	picture = GFX_PB_news_event_PBNews_PRS_Fredrick_Battleship
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.78.a
+	}
+}
+
+news_event = {		#SCA WAR With CAL
+	id = PBNews.79
+	title = PBNews.79.t
+	desc = PBNews.79.d
+	picture = GFX_PB_news_event_PBNews_SCA_War_With_CAL
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.78.a
+	}
+}
+
+#news_event = {		#SCA Beats CAL  
+	#id = PBNews.80
+	#title = PBNews.80.t
+	#desc = PBNews.80.d
+	#picture = GFX_PB_news_event_PBNews_SCA_Fall_Of_CAL
+
+	#is_triggered_only = yes
+
+	#major = yes
+
+	#option = {
+		#name = PBNews.80.a
+	#}
+#}
+
+news_event = {		#SCA Beats AME
+	id = PBNews.81
+	title = PBNews.81.t
+	desc = PBNews.81.d
+	picture = GFX_PB_news_event_PBNews_SCA_Fall_Of_AME
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.81.a
+	}
+}
+
+news_event = {		#BRT annexation into FRA
+	id = PBNews.82
+	title = PBNews.82.t
+	desc = PBNews.82.d
+	picture = GFX_PB_news_event_PBNews_France_Invades_Brittany
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.82.a
+	}
+}
+
+news_event = {		#FRA war on BRT
+	id = PBNews.83
+	title = PBNews.83.t
+	desc = PBNews.83.d
+	picture = GFX_PB_news_event_PBNews_France_Invades_Brittany
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.83.a
+	}
+}
+
+news_event = {		#FRA takes BRT
+	id = PBNews.84
+	title = PBNews.84.t
+	desc = PBNews.84.d
+	picture = GFX_PB_news_event_PBNews_Brittany_Falls
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.84.a
+	}
+}
+
+news_event = {		# WLA annex into FRA
+	id = PBNews.85
+	title = PBNews.85.t
+	desc = PBNews.85.d
+	#picture = GFX_PB_news_event_PBNews_France_Marches_To_Wallonia
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.85.a
+	}
+}
+
+news_event = {		# WLA annex into FRA
+	id = PBNews.86
+	title = PBNews.86.t
+	desc = PBNews.86.d
+	picture = GFX_PB_news_event_PBNews_France_Marches_To_Wallonia
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.86.a
+	}
+}
+
+#news_event = {		# France Declares War On Germany/UK
+#	id = PBNews.87
+#	title = PBNews.87.t
+#	desc = PBNews.87.d
+#	picture = GFX_PB_news_event_PBNews_France_War_With_IP
+#
+#    is_triggered_only = yes
+#
+#	major = yes
+#
+#	option = {
+#		name = PBNews.87.a
+#	}
+#}
+
+news_event = {		# Germany joins the IP
+	id = PBNews.88
+	title = PBNews.88.t
+	desc = PBNews.88.d
+	picture = GFX_PB_news_event_PBNews_Germany_Joins_The_IP
+
+    is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.88.a
+	}
+}
+
+news_event = {		# Tasmanian Tiger Officially Extinct
+	id = PBNews.89
+	title = PBNews.89.t
+	desc = PBNews.89.d
+	picture = GFX_PB_news_event_PBNews_Tasmanian_Tiger
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.89.a
+	}
+}
+
+news_event = {		# George Leigh Mallory Reaches Mount Everest 
+	id = PBNews.90
+	title = PBNews.90.t
+	desc = PBNews.90.d
+	picture = GFX_PB_news_event_PBNews_Mount_Everest
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.90.a
+	}
+}
+
+news_event = {		# Uncontacted Tribes Discovered In Brazil
+	id = PBNews.91
+	title = PBNews.91.t
+	desc = PBNews.91.d
+	picture = GFX_PB_news_event_PBNews_Tribe
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.91.a
+	}
+}
+
+news_event = {		# Pax Americana Reaches 100 Million Sales
+	id = PBNews.92
+	title = PBNews.92.t
+	desc = PBNews.92.d
+	picture = GFX_PB_news_event_PBNews_Book
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.92.a
+	}
+}
+
+news_event = {		# GermanFootballVictory
+	id = PBNews.93
+	title = PBNews.93.t
+	desc = PBNews.93.d
+	picture = GFX_PB_news_event_PBNews_German_Football
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.93.a
+	}
+}
+
+news_event = {		# Germany defends Wallonia, france still attacks
+	id = PBNews.94
+	title = PBNews.94.t
+	desc = PBNews.94.d
+	picture = GFX_PB_news_event_PBNews_FRA_War_With_Wallonia
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.94.a
+	}
+}
+
+news_event = {		# Germany defends Wallonia, france bends
+	id = PBNews.95
+	title = PBNews.95.t
+	desc = PBNews.95.d
+	picture = GFX_PB_news_event_PBNews_FRA_Back_Down_From_Wallonia
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.95.a
+	}
+}
+
+news_event = {		# Germany defends Dietland, france strikes
+	id = PBNews.96
+	title = PBNews.96.t
+	desc = PBNews.96.d
+	picture = GFX_PB_news_event_PBNews_FRA_War_With_The_Dutch
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.96.a
+	}
+}
+
+news_event = {		# Germany defends Dietland, france bends
+	id = PBNews.97
+	title = PBNews.97.t
+	desc = PBNews.97.d
+	picture = GFX_PB_news_event_PBNews_FRA_Back_Down_From_The_Dutch
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.97.a
+	}
+}
+
+news_event = {		# Germany compromises Dietland, france agrees
+	id = PBNews.98
+	title = PBNews.98.t
+	desc = PBNews.98.d
+	picture = GFX_PB_news_event_PBNews_FRA_Back_Down_From_The_Dutch
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.98.a
+	}
+}
+
+news_event = {		# Germany compromises Dietland, france refuses
+	id = PBNews.99
+	title = PBNews.99.t
+	desc = PBNews.99.d
+	picture = GFX_PB_news_event_PBNews_FRA_Back_Down_From_The_Dutch
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.99.a
+	}
+}
+
+news_event = {		# Wallonia capitulates
+	id = PBNews.100
+	title = PBNews.100.t
+	desc = PBNews.100.d
+	picture = GFX_PB_news_event_PBNews_FRA_Fall_Of_Wallonia
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.100.a
+	}
+}
+
+news_event = {		# Dietland capitulates
+	id = PBNews.101
+	title = PBNews.101.t
+	desc = PBNews.101.d
+	picture = GFX_PB_news_event_PBNews_FRA_Fall_Of_The_Dutch
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.101.a
+	}
+}
+
+news_event = {		# Corsica capitulates
+	id = PBNews.102
+	title = PBNews.102.t
+	desc = PBNews.102.d
+	picture = GFX_PB_news_event_PBNews_Corsica_Capitulates
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.102.a
+	}
+}
+
+news_event = {		# Basque capitulates
+	id = PBNews.103
+	title = PBNews.103.t
+	desc = PBNews.103.d
+	picture = GFX_PB_news_event_PBNews_Basque_Capitulates
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.103.a
+	}
+}
+
+news_event = {		# Death of Izzet Pasha
+	id = PBNews.104
+	title = PBNews.104.t
+	desc = PBNews.104.d
+	picture = GFX_PB_news_event_PBNews_TUR_CivWar_Loyalist_Win
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.104.a
+	}
+}
+
+news_event = {		# fevzi cakmak proclaimed new governor
+	id = PBNews.105
+	title = PBNews.105.t
+	desc = PBNews.105.d
+	picture = GFX_PB_news_event_PBNews_TUR_CivWar_Loyalist_Win
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.105.a
+	}
+}
+
+news_event = {		# Vehbi Koç proclaimed new governor
+	id = PBNews.106
+	title = PBNews.106.t
+	desc = PBNews.106.d
+	picture = GFX_news_event_political_speech
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.106.a
+	}
+}
+
+news_event = {		# Kemal Atatürk proclaimed new governor
+	id = PBNews.107
+	title = PBNews.107.t
+	desc = PBNews.107.d
+	picture = GFX_PB_news_event_PBNews_TUR_CivWar_NatWin
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.107.a
+	}
+}
+
+news_event = {		# Turkey betrays Russia
+	id = PBNews.108
+	title = PBNews.108.t
+	desc = PBNews.108.d
+	picture = GFX_PB_news_event_PBNews_Postwar_Ottoman_Dismantling
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.108.a
+	}
+}
+
+news_event = {		# UK = DED
+	id = PBNews.109
+	title = PBNews.109.t
+	desc = PBNews.109.d
+	picture = GFX_PB_news_event_PBNews_Fall_of_Britain
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.109.a
+	}
+}
+
+news_event = {		# Russia seeks Armistice
+	id = PBNews.110
+	title = PBNews.110.t
+	desc = PBNews.110.d
+	picture = GFX_PB_news_event_PBNews_Fall_of_Russia
+
+    is_triggered_only = yes
+
+	option = {
+		name = PBNews.110.a
+	}
+}
+
+news_event = {		# Russian Armistice - Insurrection Begins
+	id = PBNews.111
+	title = PBNews.111.t
+	desc = PBNews.111.d
+	picture = GFX_PB_news_event_PBNews_Fall_of_Russia_Anti_Treaty_Insurrection
+
+    is_triggered_only = yes
+	
+	option = {
+		name = PBNews.111.a
+	}
+}
+
+news_event = {		# Russian Armistice - Russian Civil War
+	id = PBNews.112
+	title = PBNews.112.t
+	desc = PBNews.112.d
+	picture = GFX_PB_news_event_PBNews_Fall_of_Russia_Civil_War
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.112.a
+
+		set_temp_variable = { super_id = 17 }
+		PB_Fire_Super_Event = yes
+	}
+}
+
+news_event = {		# Russian Armistice - Siberian Emergency Government
+	id = PBNews.113
+	title = PBNews.113.t
+	desc = PBNews.113.d
+	picture = GFX_PB_news_event_PBNews_Fall_of_Russia_Siberian_Emergency
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.113.a
+	}
+}
+
+news_event = {		# Russian Armistice - Civil War in Central Asia
+	id = PBNews.114
+	title = PBNews.114.t
+	desc = PBNews.114.d
+	picture = GFX_PB_news_event_PBNews_Fall_of_Russia_Central_Asia
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.114.a
+	}
+}
+
+news_event = {		# Russian Armistice - Kolchak overthrown
+	id = PBNews.115
+	title = PBNews.115.t
+	desc = PBNews.115.d
+	picture = GFX_PB_news_event_PBNews_Fall_of_Russia_Kolchak_Anarchy
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.115.a
+	}
+}
+
+news_event = {		# Russian Armistice - League Intervention
+	id = PBNews.116
+	title = PBNews.116.t
+	desc = PBNews.116.d
+	picture = GFX_PB_news_event_PBNews_Fall_of_Russia_League_Peacekeeping
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.116.a
+	}
+}
+
+
+news_event = {		# Mexico militarizes borders
+	id = PBNews.117
+	title = PBNews.117.t
+	desc = PBNews.117.d
+	picture = GFX_PB_news_event_PBNews_Mexico_Expands
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.117.a
+	}
+}
+
+news_event = {		# Mexico at war
+	id = PBNews.118
+	title = PBNews.118.t
+	desc = PBNews.118.d
+	picture = GFX_PB_news_event_PBNews_Mexican_Coalition
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.118.a
+	}
+}
+
+news_event = {		# Mexico Beats Coalition
+	id = PBNews.119
+	title = PBNews.119.t
+	desc = PBNews.119.d
+	picture = GFX_PB_news_event_PBNews_MEX_Beats_Coalition
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.119.a
+		hidden_effect = {
+			set_global_flag = mex_co_war_over
+		}
+	}
+}
+
+news_event = {		# Coalition Beats Mexico
+	id = PBNews.120
+	title = PBNews.120.t
+	desc = PBNews.120.d
+	picture = GFX_PB_news_event_PBNews_Coalition_Beats_Mexico
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.120.a
+		hidden_effect = {
+			set_global_flag = mex_co_war_over
+		}	
+	}
+}
+
+news_event = {		# Royalists win Italian Civil War
+	id = PBNews.121
+	title = PBNews.121.t
+	desc = PBNews.121.d
+	picture = GFX_PB_news_event_PBNews_Italian_Civil_War_Royalists_Victory
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.121.a
+	}
+}
+
+news_event = {		# Nationalists win Italian Civil War
+	id = PBNews.122
+	title = PBNews.122.t
+	desc = PBNews.122.d
+	picture = GFX_PB_news_event_PBNews_Italian_Civil_War_Nationalists_Victory
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.122.a
+	}
+}
+
+news_event = {		# Italy - Post Civil War - Republican Revolution
+	id = PBNews.123
+	title = PBNews.123.t
+	desc = PBNews.123.d
+	picture = GFX_PB_news_event_PBNews_Italian_Civil_War_Republic
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.123.a
+	}
+}
+
+news_event = {		# Italy - Post Civil War - Anarchist Revolution
+	id = PBNews.124
+	title = PBNews.124.t
+	desc = PBNews.124.d
+	picture = GFX_PB_news_event_PBNews_Italian_Civil_War_Revolution
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.124.a
+	}
+}
+
+news_event = {		# Russian Officer Putsch
+	id = PBNews.125
+	title = PBNews.125.t
+	desc = PBNews.125.d
+	picture = GFX_PB_news_event_PBNews_Wrangel_Coup
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.125.a
+	}
+}
+
+news_event = {		# A New Tsarina For Russia
+	id = PBNews.126
+	title = PBNews.126.t
+	desc = PBNews.126.d
+	picture = GFX_PB_news_event_PBNews_Russian_Tsarina
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.126.a
+	}
+}
+
+news_event = {		# Polish Revolt
+	id = PBNews.127
+	title = PBNews.127.t
+	desc = PBNews.127.d
+	picture = GFX_PB_news_event_PBNews_Polish_Revolt
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.127.a
+	}
+}
+
+news_event = {		# Poland Defeated 
+	id = PBNews.128
+	title = PBNews.128.t
+	desc = PBNews.128.d
+	picture = GFX_PB_news_event_PBNews_Polish_Defeat
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.128.a
+	}
+}
+
+news_event = {		# Germany Sends Poland Support
+	id = PBNews.129
+	title = PBNews.129.t
+	desc = PBNews.129.d
+	picture = GFX_PB_news_event_PBNews_Poland_Gets_German_Support
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.129.a
+	}
+}
+
+news_event = {		# Poland Wins
+	id = PBNews.130
+	title = PBNews.130.t
+	desc = PBNews.130.d
+	picture = GFX_PB_news_event_PBNews_Polish_Victory
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.130.a
+	}
+}
+
+news_event = {		# Russia Annexes The Baltic Governate
+	id = PBNews.131
+	title = PBNews.131.t
+	desc = PBNews.131.d
+	picture = GFX_PB_news_event_PBNews_Russia_Annex_Baltic_Nation
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.131.a
+	}
+}
+
+news_event = {		# Russia Annexes Finland
+	id = PBNews.132
+	title = PBNews.132.t
+	desc = PBNews.132.d
+	picture = GFX_PB_news_event_PBNews_Russia_Annex_Finland
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.132.a
+	}
+}
+
+news_event = {		# Russia Annexes The Caucasus
+	id = PBNews.133
+	title = PBNews.133.t
+	desc = PBNews.133.d
+	picture = GFX_PB_news_event_PBNews_Russia_Annex_Caucasus
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.133.a
+	}
+}
+
+news_event = {		# Music Redefined
+	id = PBNews.134
+	title = PBNews.134.t
+	desc = PBNews.134.d
+	picture = GFX_PB_news_event_PBNews_GER_Techno_Music
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.134.a
+	}
+}
+
+news_event = {		#  Protests In Australie
+	id = PBNews.135
+	title = PBNews.135.t
+	desc = PBNews.135.d
+	picture = GFX_PB_news_event_PBNews_Australie_Protests
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.135.a
+		hidden_effect= {
+			set_global_flag = french_austra_tension
+		}	
+	}
+}
+
+news_event = {		# Riots Across America
+	id = PBNews.136
+	title = PBNews.136.t
+	desc = PBNews.136.d
+	picture = GFX_PB_news_event_PBNews_AME_Riots
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.136.a
+	}
+}
+
+news_event = {		# Operation Brusilov - Russian Troops in Japan
+	id = PBNews.137
+	title = PBNews.137.t
+	desc = PBNews.137.d
+	picture = GFX_PB_news_event_PBNews_Russia_Japan_Invasion
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.137.a
+	}
+}
+
+news_event = {		# Operation Brusilov - Japanese Mass Conscription
+	id = PBNews.138
+	title = PBNews.138.t
+	desc = PBNews.138.d
+	picture = GFX_PB_news_event_PBNews_Russia_Japan_Invasion_Conscription
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.138.a
+	}
+}
+
+news_event = {		# Operation Brusilov - Japanese Revenge Weapons
+	id = PBNews.139
+	title = PBNews.139.t
+	desc = PBNews.139.d
+	picture = GFX_PB_news_event_PBNews_Operation_Cherry_Blossoms
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.139.a
+	}
+}
+
+news_event = {		# Japan Total Defeat - Division of Japan
+	id = PBNews.140
+	title = PBNews.140.t
+	desc = PBNews.140.d
+	picture = GFX_PB_news_event_PBNews_Postwar_Japan_Divided
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.140.a
+	}
+}
+
+news_event = {		# China Total Defeat - Qinghai Insurgency
+	id = PBNews.141
+	title = PBNews.141.t
+	desc = PBNews.141.d
+	picture = GFX_PB_news_event_PBNews_Postwar_Chinese_Islamic_Insurgency
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.141.a
+	}
+}
+
+news_event = {		# China Total Defeat - Xinjiang Insurgency
+	id = PBNews.142
+	title = PBNews.142.t
+	desc = PBNews.142.d
+	picture = GFX_PB_news_event_PBNews_Postwar_Chinese_Uyghur_Insurgency
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.142.a
+	}
+}
+
+news_event = {		# China Total Defeat - Russian Collaborators
+	id = PBNews.143
+	title = PBNews.143.t
+	desc = PBNews.143.d
+	picture = GFX_PB_news_event_PBNews_Postwar_Chinese_Collaborators
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.143.a
+	}
+}
+
+news_event = {		# Generic Flavor - Marie Curie Death
+	id = PBNews.144
+	title = PBNews.144.t
+	desc = PBNews.144.d
+	picture = GFX_PB_news_event_PBNews_Marie_Curie_Death
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.144.a
+	}
+}
+
+news_event = {		# Generic Flavor - First International Telescreen Broadcast
+	id = PBNews.145
+	title = PBNews.145.t
+	desc = PBNews.145.d
+	picture = GFX_PB_news_event_PBNews_International_Telescreen
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.145.a
+	}
+}
+
+news_event = {		# Generic Flavor - Spinosaurus discovered
+	id = PBNews.146
+	title = PBNews.146.t
+	desc = PBNews.146.d
+	picture = GFX_PB_news_event_PBNews_fuggin_dinosaurs
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.146.a
+	}
+}
+
+news_event = {		# Generic Flavor - 1933 Worlds Fair
+	id = PBNews.147
+	title = PBNews.147.t
+	desc = PBNews.147.d
+	picture = GFX_PB_news_event_PBNews_Worlds_Fair_Argentina
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.147.a
+	}
+}
+
+news_event = {		# Alexei Triumphant
+	id = PBNews.148
+	title = PBNews.148.t
+	desc = PBNews.148.d
+	picture = GFX_PB_news_event_PBNews_Alexei_Rules_Russia
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.148.a
+	}
+}
+
+news_event = {		# Kirill's Accession
+	id = PBNews.149
+	title = PBNews.149.t
+	desc = PBNews.149.d
+	picture = GFX_PB_news_event_PBNews_Kirill_Cucks_Everyone
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.149.a
+	}
+}
+
+news_event = {		# Germany Revolts
+	id = PBNews.150
+	title = PBNews.150.t
+	desc = PBNews.150.d
+	picture = GFX_PB_news_event_PBNews_GLF_Uprising
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.150.a
+	}
+}
+
+news_event = {		# France Fucks Scandi
+	id = PBNews.151
+	title = PBNews.151.t
+	desc = PBNews.151.d
+	picture = GFX_PB_news_event_PBNews_FRA_Invades_Scandi
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.151.a
+	}
+}
+
+news_event = {		# Denmark any % defeat world record
+	id = PBNews.152
+	title = PBNews.152.t
+	desc = PBNews.152.d
+	picture = GFX_PB_news_event_PBNews_FRA_Denmark_Defeated
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.152.a
+	}
+}
+
+news_event = {		# Norway = dead
+	id = PBNews.153
+	title = PBNews.153.t
+	desc = PBNews.153.d
+	picture = GFX_PB_news_event_PBNews_FRA_Norway_Defeated
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.153.a
+	}
+}
+
+news_event = {		# Sweden = dead
+	id = PBNews.154
+	title = PBNews.154.t
+	desc = PBNews.154.d
+	picture = GFX_PB_news_event_PBNews_FRA_Sweden_Defeated
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.154.a
+	}
+}
+
+news_event = {		# Creation of the Hamburg League
+	id = PBNews.155
+	title = PBNews.155.t
+	desc = PBNews.155.d
+	picture = GFX_PB_news_event_PBNews_Generic_Revolution
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.155.a
+	}
+}
+
+news_event = {		# Postwar League Victory - Eastern Crisis
+	id = PBNews.156
+	title = PBNews.156.t
+	desc = PBNews.156.d
+	picture = GFX_PB_news_event_PBNews_Postwar_Refugee_Crisis
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.156.a
+	}
+}
+
+news_event = {		# Postwar League Victory - Russian Explusions
+	id = PBNews.157
+	title = PBNews.157.t
+	desc = PBNews.157.d
+	picture = GFX_PB_news_event_PBNews_Postwar_Refugee_Crisis
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.157.a
+	}
+}
+
+news_event = {		# Postwar League Victory - Ukrainian Civil War
+	id = PBNews.158
+	title = PBNews.158.t
+	desc = PBNews.158.d
+	picture = GFX_PB_news_event_PBNews_Postwar_Ukraine_Civil_War
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.158.a
+	}
+}
+
+news_event = {		# Postwar League Victory - Ukrainian Civil War LON Intervention
+	id = PBNews.159
+	title = PBNews.159.t
+	desc = PBNews.159.d
+	picture = GFX_PB_news_event_PBNews_Postwar_Ukraine_Civil_War_LON_Intervention
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.159.a
+	}
+}
+
+news_event = {		# German invasion of Hungary succeeds
+	id = PBNews.160
+	title = PBNews.160.t
+	desc = PBNews.160.d
+	picture = GFX_PB_news_event_PBNews_German_Beats_Hungary
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.160.a
+	}
+}
+
+news_event = {		# Italian Social Republic joins the Pacte Revanchiste
+	id = PBNews.161
+	title = PBNews.161.t
+	desc = PBNews.161.d
+	picture = GFX_PB_news_event_PBNews_Italy_Joins_The_Pacte
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.161.a
+	}
+}
+
+news_event = {		# Italy joins the Imperial Powers
+	id = PBNews.162
+	title = PBNews.162.t
+	desc = PBNews.162.d
+	picture = GFX_PB_news_event_PBNews_Italy_Joins_The_IP
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.162.a
+	}
+}
+
+news_event = {		# German invasion of portugal
+	id = PBNews.163
+	title = PBNews.163.t
+	desc = PBNews.163.d
+	picture = GFX_PB_news_event_PBNews_Germany_Invades_Portugal
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.163.a
+	}
+}
+
+news_event = {		# German Portugese alliance
+	id = PBNews.164
+	title = PBNews.164.t
+	desc = PBNews.164.d
+	picture = GFX_PB_news_event_PBNews_German__Portugese_Alliance
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.164.a
+	}
+}
+
+news_event = {		# Sudwestafrika Submits
+	id = PBNews.165
+	title = PBNews.165.t
+	desc = PBNews.165.d
+	picture = GFX_PB_news_event_PBNews_Germany_Demands_Sudwestafrika
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.165.a
+	}
+}
+
+news_event = {		# German Dutch Hostilities
+	id = PBNews.166
+	title = PBNews.166.t
+	desc = PBNews.166.d
+	picture = GFX_PB_news_event_PBNews_Puppets_The_Dutch_Exiles
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.166.a
+	}
+}
+
+news_event = {		# Europe Unites
+	id = PBNews.167
+	title = PBNews.167.t
+	desc = PBNews.167.d
+	picture = GFX_PB_news_event_PBNews_GER_Europa
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.167.a
+	}
+}
+
+news_event = {		# Claiming the Mantle
+	id = PBNews.168
+	title = PBNews.168.t
+	desc = PBNews.168.d
+	picture = GFX_PB_news_event_PBNews_AME_Claiming_The_Mantel
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.168.a
+	}
+}
+
+news_event = {		# Claiming the Mantle
+	id = PBNews.169
+	title = PBNews.169.t
+	desc = PBNews.169.d
+	picture = GFX_PB_news_event_PBNews_ENG_Far_From_Home
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.169.a
+	}
+}
+
+news_event = {		# French colonists get deported
+	id = PBNews.170
+	title = PBNews.170.t
+	desc = PBNews.170.d
+	picture = GFX_PB_news_event_PBNews_Postwar_French_Expulsion
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.170.a
+	}
+}
+
+news_event = {		# The Lyon Trials
+	id = PBNews.171
+	title = PBNews.171.t
+	desc = PBNews.171.d
+	picture = GFX_PB_news_event_PBNews_GER_Lyon_Trials
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.171.a
+		
+	}
+}
+
+news_event = {		# A Dark Sun Over Hannover
+	id = PBNews.172
+	title = PBNews.172.t
+	desc = PBNews.172.d
+	picture = GFX_PB_news_event_PBNews_FRA_SP_Hannover
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.172.a
+		
+	}
+}
+
+news_event = {		# Spain joins Pacte
+	id = PBNews.173
+	title = PBNews.173.t
+	desc = PBNews.173.d
+	picture = GFX_PB_news_event_PBNews_Spain_Joins_Pacte
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.173.a
+		
+	}
+}
+
+news_event = {		# Pact of Thorns
+	id = PBNews.174
+	title = PBNews.174.t
+	desc = PBNews.174.d
+	picture = GFX_PB_news_event_PBNews_Pact_Of_Thorns
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.174.a
+		
+	}
+}
+
+news_event = {		# A Bomb
+	id = PBNews.175
+	title = PBNews.175.t
+	desc = PBNews.175.d
+	picture = GFX_PB_news_event_PBNews_ENG_Test_A_Bomb
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.175.a
+		
+	}
+}
+
+news_event = {		# A Bomb
+	id = PBNews.176
+	title = PBNews.176.t
+	desc = PBNews.176.d
+	picture = GFX_PB_news_event_PBNews_ENG_Oceania
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.176.a
+		
+	}
+}
+
+news_event = {		# An Equal America
+	id = PBNews.177
+	title = PBNews.177.t
+	desc = PBNews.177.d
+	picture = GFX_PB_news_event_PBNews_ENG_Richmond_Compromise
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.177.a
+		
+	}
+}
+
+news_event = {		# Borealia Forms
+	id = PBNews.178
+	title = PBNews.178.t
+	desc = PBNews.178.d
+	picture = GFX_PB_news_event_PBNews_ENG_Form_Canada
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.178.a
+		
+	}
+}
+
+news_event = {		# British Pacific Fleet Reinforced
+	id = PBNews.179
+	title = PBNews.179.t
+	desc = PBNews.179.d
+	picture = GFX_PB_news_event_PBNews_ENG_Pacific_Fleet
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.179.a
+		
+	}
+}
+
+news_event = {		# Tensions In The East
+	id = PBNews.180
+	title = PBNews.180.t
+	desc = PBNews.180.d
+	picture = GFX_PB_news_event_PBNews_Tensions_In_The_East
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.180.a
+		
+	}
+}
+
+news_event = {		# Germany Returns From Exile
+	id = PBNews.181
+	title = PBNews.181.t
+	desc = PBNews.181.d
+	picture = GFX_PB_news_event_PBNews_Germany_Returns_From_Exile
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.181.a
+		
+	}
+}
+
+news_event = {		# Turkish Revolt
+	id = PBNews.182
+	title = PBNews.182.t
+	desc = PBNews.182.d
+	picture = GFX_PB_news_event_PBNews_Turkey_Revolts
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.182.a
+		
+	}
+}
+
+news_event = {		# ROC wins Chinese Civil War
+	id = PBNews.183
+	title = PBNews.183.t
+	desc = PBNews.183.d
+	picture = GFX_PB_news_event_PBNews_China_ROC_wins_Civil_War
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.183.a
+		
+	}
+}
+
+news_event = {		# CHI wins Chinese Civil War
+	id = PBNews.184
+	title = PBNews.184.t
+	desc = PBNews.184.d
+	picture = GFX_PB_news_event_PBNews_China_CHI_wins_Civil_War
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.184.a
+		
+	}
+}
+
+news_event = {		# Second Great War Begins
+	id = PBNews.185
+	title = PBNews.185.t
+	desc = PBNews.185.d
+	picture = GFX_PB_news_event_PBNews_Second_Great_War
+
+	trigger = {
+		OR = {
+			GER = {
+				has_war_with = FRA
+				has_war_with = RUS
+			}
+		}
+		NOT = {
+			has_global_flag = WW2_News_Event_Fired
+		}
+	}
+	
+	immediate = {
+		set_global_flag = WW2_News_Event_Fired
+	}
+
+	fire_only_once = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.185.a
+
+		set_temp_variable = { super_id = 8 }
+		PB_Fire_Super_Event = yes
+	}
+}
+
+news_event = {		# Second Great War Ends - RP Victory
+	id = PBNews.186
+	title = PBNews.186.t
+	desc = PBNews.186.d
+	picture = GFX_PB_news_event_French_Civil_War_Nationalist_Win
+
+	trigger = {
+		has_global_flag = ENG_Collaborators_Installed
+		has_global_flag = PB_GER_Defeated
+		NOT = {
+			has_global_flag = WW2_Victory_Event_Fired
+		}
+	}
+	
+	immediate = {
+		set_global_flag = WW2_Victory_Event_Fired
+	}
+
+	fire_only_once = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.186.a
+
+		set_temp_variable = { super_id = 16 }
+		PB_Fire_Super_Event = yes
+	}
+}
+
+news_event = {		# Second Great War Ends - League Victory
+	id = PBNews.187
+	title = PBNews.187.t
+	desc = PBNews.187.d
+	picture = GFX_PB_news_event_PBNews_LoN_Foundation
+
+	trigger = {
+		ENG = {
+			has_country_flag = FRA_ENG_WW2_VICTOR
+			has_country_flag = RUS_ENG_WW2_VICTOR
+		}
+		NOT = {
+			has_global_flag = WW2_Victory_Event_Fired
+		}
+	}
+	
+	immediate = {
+		set_global_flag = WW2_Victory_Event_Fired
+	}
+
+	fire_only_once = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.187.a	
+
+		set_temp_variable = { super_id = 15 }
+		PB_Fire_Super_Event = yes
+	}
+}
+
+news_event = {		# Second Great War - Asia-Russia War
+	id = PBNews.188
+	title = PBNews.188.t
+	desc = PBNews.188.d
+	picture = GFX_PB_news_event_PB_Sino_Russian_War
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.188.a	
+	}
+}
+
+news_event = {		# Second Great War - Japanese Peace with Honor
+	id = PBNews.189
+	title = PBNews.189.t
+	desc = PBNews.189.d
+	picture = GFX_PB_news_event_PB_Japan_Peace
+
+    is_triggered_only = yes
+	
+    fire_only_once = yes
+
+	major = yes
+
+	option = {
+		name = PBNews.189.a	
+	}
+}
+
+news_event = {		# Yes, We Have No Straight Bananas!
+	id = PBNews.190
+	title = PBNews.190.t
+	desc = PBNews.190.d
+	picture = GFX_PB_news_event_No_Straight_Bananas
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.190.a	
+	}
+}
+
+news_event = {		# British African Authority - Lost Algerian Wars
+	id = PBNews.191
+	title = PBNews.191.t
+	desc = PBNews.191.d
+	picture = GFX_PB_news_event_Britian_Algeria_Lost
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.191.a	
+	}
+}
+
+news_event = {		# British African Authority - Wins Algerian Wars
+	id = PBNews.192
+	title = PBNews.192.t
+	desc = PBNews.192.d
+	picture = GFX_PB_news_event_Britian_Algeria_Win
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.192.a	
+	}
+}
+
+news_event = {		# Pied Noirs Victory
+	id = PBNews.193
+	title = PBNews.193.t
+	desc = PBNews.193.d
+	picture = GFX_PB_news_event_French_Algeria_Win
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.193.a	
+	}
+}
+
+news_event = {		# Algeria Victory
+	id = PBNews.194
+	title = PBNews.194.t
+	desc = PBNews.194.d
+	picture = GFX_PB_news_event_rench_Algeria_Lost
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.194.a	
+	}
+}
+
+news_event = {		# France-Oran Unify
+	id = PBNews.195
+	title = PBNews.195.t
+	desc = PBNews.195.d
+	picture = GFX_PB_news_event_french_Algeria_Unify
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.195.a	
+	}
+}
+
+news_event = {		# France-Algerian War
+	id = PBNews.196
+	title = PBNews.196.t
+	desc = PBNews.196.d
+	picture = GFX_PB_news_event_rench_Algeria_War
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.196.a	
+	}
+}
+
+news_event = {		# Rif War
+	id = PBNews.197
+	title = PBNews.197.t
+	desc = PBNews.197.d
+	picture = GFX_PB_news_event_Rif_War
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.197.a	
+	}
+}
+
+news_event = {		# Rif War Spanish Victory
+	id = PBNews.198
+	title = PBNews.198.t
+	desc = PBNews.198.d
+	picture = GFX_PB_news_event_Rif_War_SP_Victory
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.198.a	
+	}
+}
+
+news_event = {		# Rif War Moroccon Vicotry
+	id = PBNews.199
+	title = PBNews.199.t
+	desc = PBNews.199.d
+	picture = GFX_PB_news_event_Rif_War_Mo_Victory
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.199.a	
+	}
+}
+
+news_event = {		# Rif War Stalement
+	id = PBNews.200
+	title = PBNews.200.t
+	desc = PBNews.200.d
+	picture = GFX_PB_news_event_Rif_War_Stalement
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.200.a	
+	}
+}
+
+news_event = {		# British Coal Crisis
+	id = PBNews.201
+	title = PBNews.201.t
+	desc = PBNews.201.d
+	picture = GFX_PB_news_event_PB_British_Coal_Crisis
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.201.a	
+	}
+}
+
+news_event = {		# Germany Europe Aspirations Revealed
+	id = PBNews.202
+	title = PBNews.202.t
+	desc = PBNews.202.d
+	picture = GFX_PB_news_event_PB_British_Coal_Crisis
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.202.a	
+	}
+}
+
+news_event = {		# Germany Falls - Armand
+	id = PBNews.203
+	title = PBNews.203.t
+	desc = PBNews.203.d
+	picture = GFX_PB_news_event_PB_Germany_Dead_Armand
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.203.a	
+	}
+}
+
+news_event = {		# Germany Falls - SP
+	id = PBNews.204
+	title = PBNews.204.t
+	desc = PBNews.204.d
+	picture = GFX_PB_news_event_PB_Germany_Dead_SP
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.204.a	
+	}
+}
+
+news_event = {		# Germany Falls - Jean
+	id = PBNews.205
+	title = PBNews.205.t
+	desc = PBNews.205.d
+	picture = GFX_PB_news_event_PB_Germany_Dead_Jean
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.205.a	
+	}
+}
+
+news_event = {		# Germany Falls - MIL
+	id = PBNews.206
+	title = PBNews.206.t
+	desc = PBNews.206.d
+	picture = GFX_PB_news_event_PB_Germany_Dead_MIL
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.206.a	
+	}
+}
+
+news_event = {		# Sante Fe Collapse
+	id = PBNews.207
+	title = PBNews.207.t
+	desc = PBNews.207.d
+	picture = GFX_PB_news_event_PB_Sante_Fe_Collapse
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.207.a	
+	}
+}
+
+news_event = {		# Africa Collapse
+	id = PBNews.208
+	title = PBNews.208.t
+	desc = PBNews.208.d
+	picture = GFX_PB_news_event_PBNews_Africa_Collapse
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.208.a	
+	}
+}
+
+news_event = {		# Britain first satellite success
+	id = PBNews.209
+	title = PBNews.209.t
+	desc = PBNews.209.d
+	picture = GFX_PB_news_event_PBNews_First_Satellite
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.209.a	
+	}
+}
+
+news_event = {		# Russia first satellite success
+	id = PBNews.210
+	title = PBNews.210.t
+	desc = PBNews.210.d
+	picture = GFX_PB_news_event_PBNews_First_Satellite
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.210.a	
+	}
+}
+
+news_event = {		# Britain first man in space success
+	id = PBNews.211
+	title = PBNews.211.t
+	desc = PBNews.211.d
+	picture = GFX_PB_news_event_PBNews_First_Man
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.211.a	
+	}
+}
+
+news_event = {		# Russia first man in space success
+	id = PBNews.212
+	title = PBNews.212.t
+	desc = PBNews.212.d
+	picture = GFX_PB_news_event_PBNews_First_Man
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.212.a	
+	}
+}
+
+news_event = {		# British Automation Crisis
+	id = PBNews.213
+	title = PBNews.213.t
+	desc = PBNews.213.d
+	picture = GFX_PB_news_event_PBNews_Automation_Crisis
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.213.a	
+	}
+}
+
+news_event = {		# Epsilon 1 Launch
+	id = PBNews.214
+	title = PBNews.214.t
+	desc = PBNews.214.d
+	picture = GFX_PB_news_event_PBNews_Epsilon_1_Launch
+
+    is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.214.a	
+	}
+}
+
+news_event = {		# Free Republic of Kelly forms (WWW)
+	id = PBNews.215
+	title = PBNews.215.t
+	desc = PBNews.215.d
+	picture = GFX_PB_news_event_PBNews_IRO_WWW_Formable
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.215.a	
+	}
+}
+
+news_event = {		# Russia 1933 Terror Attacks
+	id = PBNews.216
+	title = PBNews.216.t
+	desc = PBNews.216.d
+	picture = GFX_PB_news_event_PBNews_RUS_September_Bombing
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.216.a	
+	}
+}
+
+news_event = {		# Empire of Norton forms (WWW)
+	id = PBNews.217
+	title = PBNews.217.t
+	desc = PBNews.217.d
+	picture = GFX_PB_news_event_PBNews_NRT_WWW_Formable
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.217.a	
+	}
+}
+
+news_event = {		# Pacific States of America (WWW)
+	id = PBNews.218
+	title = PBNews.218.t
+	desc = PBNews.218.d
+	picture = GFX_PB_news_event_PBNews_TAC_WWW_Formable
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.218.a	
+	}
+}
+
+news_event = {		# United Provinces of the Pacific (WWW)
+	id = PBNews.219
+	title = PBNews.219.t
+	desc = PBNews.219.d
+	picture = GFX_PB_news_event_PBNews_MEI_WWW_Formable
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.219.a	
+	}
+}
+
+news_event = {		# Republic of West Aztlán (WWW)
+	id = PBNews.220
+	title = PBNews.220.t
+	desc = PBNews.220.d
+	picture = GFX_PB_news_event_PBNews_NEV_WWW_Formable
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.220.a	
+	}
+}
+
+news_event = {		# United States of New Africa (WWW)
+	id = PBNews.221
+	title = PBNews.221.t
+	desc = PBNews.221.d
+	picture = GFX_PB_news_event_PBNews_MRN_WWW_Formable
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.221.a	
+	}
+}
+
+news_event = {		# Great Plains Commonwealth (WWW)
+	id = PBNews.222
+	title = PBNews.222.t
+	desc = PBNews.222.d
+	picture = GFX_PB_news_event_PBNews_GRN_WWW_Formable
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.222.a	
+	}
+}
+
+news_event = {		# Confederation of the First Nations (WWW)
+	id = PBNews.223
+	title = PBNews.223.t
+	desc = PBNews.223.d
+	picture = GFX_PB_news_event_PBNews_LAK_WWW_Formable
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.223.a	
+	}
+}
+
+news_event = {		# Republic of the American Frontier (WWW)
+	id = PBNews.224
+	title = PBNews.224.t
+	desc = PBNews.224.d
+	picture = GFX_PB_news_event_PBNews_NWA_WWW_Formable
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.224.a	
+	}
+}
+
+news_event = {		# Libertalian Federation (WWW)
+	id = PBNews.225
+	title = PBNews.225.t
+	desc = PBNews.225.d
+	picture = GFX_PB_news_event_PBNews_FRE_WWW_Formable
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.225.a	
+	}
+}
+
+news_event = {		# Free States of America (WWW)
+	id = PBNews.226
+	title = PBNews.226.t
+	desc = PBNews.226.d
+	picture = GFX_PB_news_event_PBNews_NDX_WWW_Formable
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.226.a	
+	}
+}
+
+news_event = {		# Republic of Deseret (WWW)
+	id = PBNews.227
+	title = PBNews.227.t
+	desc = PBNews.227.d
+	picture = GFX_PB_news_event_PBNews_TAB_WWW_Formable
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.227.a	
+	}
+}
+
+news_event = {		# SCA JAP Alliance 
+	id = PBNews.228
+	title = PBNews.228.t
+	desc = PBNews.228.d
+	picture = GFX_PB_news_event_PBNews_SCA_JAP_Alliance
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.228.a	
+	}
+}
+
+news_event = {		# Long Dead
+	id = PBNews.229
+	title = PBNews.229.t
+	desc = PBNews.229.d
+	picture = GFX_PB_news_event_PBNews_Huey_Long
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.229.a	
+	}
+}
+
+news_event = {		# The Second American Revolution
+	id = PBNews.230
+	title = PBNews.230.t
+	desc = PBNews.230.d
+	picture = GFX_PB_news_event_PBNews_SCA_AME_War
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.230.a	
+
+		set_temp_variable = { super_id = 24 }
+		PB_Fire_Super_Event = yes
+	}
+}
+
+news_event = {		# Collapse Of Frontier Authority
+	id = PBNews.231
+	title = PBNews.231.t
+	desc = PBNews.231.d
+	picture = GFX_PB_news_event_PBNews_collapse_of_frontier_authority
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.231.a	
+	}
+}
+
+news_event = {		# SCA Defeated
+	id = PBNews.232
+	title = PBNews.232.t
+	desc = PBNews.232.d
+	picture = GFX_PB_news_event_PBNews_SCA_Dead
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.232.a	
+	}
+}
+
+news_event = {		# Commonwealth of Deseret (WWW)
+	id = PBNews.233
+	title = PBNews.233.t
+	desc = PBNews.233.d
+	picture = GFX_PB_news_event_PBNews_DES_WWW_Formable
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.233.a	
+	}
+}
+
+news_event = {		# American Citizens Republic (WWW)
+	id = PBNews.234
+	title = PBNews.234.t
+	desc = PBNews.234.d
+	picture = GFX_PB_news_event_PBNews_DER_WWW_Formable
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.234.a	
+	}
+}
+
+news_event = {		# Free Republic of Rockefellia (WWW)
+	id = PBNews.235
+	title = PBNews.235.t
+	desc = PBNews.235.d
+	picture = GFX_PB_news_event_PBNews_STA_WWW_Formable
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.235.a	
+	}
+}
+
+news_event = {		# Texan Revolution
+	id = PBNews.236
+	title = PBNews.236.t
+	desc = PBNews.236.d
+	picture = GFX_PB_news_event_PBNews_Texan_Revolution
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.236.a	
+	}
+}
+
+news_event = {		# Teams have been auto-balanced, Pershing switches sides
+	id = PBNews.237
+	title = PBNews.237.t
+	desc = PBNews.237.d
+	picture = GFX_PB_news_event_PBNews_Pershing_switches_sides
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.237.a	
+	}
+}
+
+news_event = {		# The Final Hour - Countdown to Imperial Civil War
+	id = PBNews.238
+	title = PBNews.238.t
+	desc = PBNews.238.d
+	picture = GFX_PB_news_event_PBNews_Imp_War_Final_Hour
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.238.a	
+	}
+}
+
+news_event = {		# The Imperial Civil War
+	id = PBNews.239
+	title = PBNews.239.t
+	desc = PBNews.239.d
+	picture = GFX_PB_news_event_PBNews_Imp_War
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.239.a	
+
+		set_temp_variable = { super_id = 18 }
+		PB_Fire_Super_Event = yes
+	}
+}
+
+news_event = {		# The Imperial Civil War - Civil War Avoided
+	id = PBNews.240
+	title = PBNews.240.t
+	desc = PBNews.240.d
+	picture = GFX_PB_news_event_PBNews_Imp_War_Avoided
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.240.a	
+	}
+}
+
+news_event = {		# The Imperial Civil War - Britain has won
+	id = PBNews.241
+	title = PBNews.241.t
+	desc = PBNews.241.d
+	picture = GFX_PB_news_event_PBNews_Imp_War_ENG_Win
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.241.a	
+	}
+}
+
+news_event = {		# The Imperial Civil War - America has won
+	id = PBNews.242
+	title = PBNews.242.t
+	desc = PBNews.242.d
+	picture = GFX_PB_news_event_PBNews_Imp_War_AME_Win
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.242.a	
+	}
+}
+
+news_event = {		# United Commonwealth - Conservatives Re-Elected
+	id = PBNews.243
+	title = PBNews.243.t
+	desc = PBNews.243.d
+	picture = GFX_PB_news_event_PBNews_AME_Cons_Win
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.243.a	
+	}
+}
+
+news_event = {		# United Commonwealth - Liberals Elected
+	id = PBNews.244
+	title = PBNews.244.t
+	desc = PBNews.244.d
+	picture = GFX_PB_news_event_PBNews_AME_Libs_Win
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.244.a	
+	}
+}
+
+news_event = {		# United Commonwealth - Socialists Elected
+	id = PBNews.245
+	title = PBNews.245.t
+	desc = PBNews.245.d
+	picture = GFX_PB_news_event_PBNews_AME_Socialists_Win
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.245.a	
+	}
+}
+
+news_event = {		# United Commonwealth - SoCreds Elected
+	id = PBNews.246
+	title = PBNews.246.t
+	desc = PBNews.246.d
+	picture = GFX_PB_news_event_PBNews_AME_Socreds_Win
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.246.a	
+	}
+}
+
+news_event = {		# United Commonwealth - Jack Lang Dictatorship
+	id = PBNews.247
+	title = PBNews.247.t
+	desc = PBNews.247.d
+	picture = GFX_PB_news_event_PBNews_AME_Lang_Dictatorship
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.247.a	
+	}
+}
+
+news_event = {		# United Commonwealth - Empire City Constructed
+	id = PBNews.248
+	title = PBNews.248.t
+	desc = PBNews.248.d
+	picture = GFX_PB_news_event_PBNews_AME_Empire_City
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.248.a	
+	}
+}
+
+news_event = {		# British Empire - Governor-Prince George Dies
+	id = PBNews.249
+	title = PBNews.249.t
+	desc = PBNews.249.d
+	picture = GFX_PB_news_event_PBNews_ENG_George_Death
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.249.a	
+	}
+}
+
+news_event = {		# British Empire - Queen Victoria is kil
+	id = PBNews.250
+	title = PBNews.250.t
+	desc = PBNews.250.d
+	picture = GFX_PB_news_event_PBNews_Victoria_is_kil
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.250.a	
+	}
+}
+
+news_event = {		# Life on Mars?
+	id = PBNews.260
+	title = PBNews.260.t
+	desc = PBNews.260.d
+	picture = GFX_PB_news_event_PBNews_mars_needs_moms
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.260.a	
+	}
+}
+
+news_event = {		# Mars Pod Lands
+	id = PBNews.261
+	title = PBNews.261.t
+	desc = PBNews.261.d
+	picture = GFX_PB_news_event_PBNews_mars_pod_lands
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.261.a	
+	}
+}
+
+news_event = {		# Mars Invasion Begins
+	id = PBNews.262
+	title = PBNews.262.t
+	desc = PBNews.262.d
+	picture = GFX_PB_news_event_PBNews_mars_invasion_begins
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.262.a	
+	}
+}
+
+news_event = {		# Mars Pod Lands - United Kingdom
+	id = PBNews.263
+	title = PBNews.263.t
+	desc = PBNews.263.d
+	picture = GFX_PB_news_event_PBNews_mars_attacks_UK
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.263.a	
+	}
+}
+
+news_event = {		# Mars Pod Lands - Russia
+	id = PBNews.264
+	title = PBNews.264.t
+	desc = PBNews.264.d
+	picture = GFX_PB_news_event_PBNews_mars_attacks_Russia
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.264.a	
+	}
+}
+
+news_event = {		# Martian Flu 
+	id = PBNews.265
+	title = PBNews.265.t
+	desc = PBNews.265.d
+	picture = GFX_PB_news_event_PBNews_mars_gets_covid_19
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.265.a	
+	}
+}
+
+news_event = {		# Martian Invasion - League of Nations forms XCOM
+	id = PBNews.266
+	title = PBNews.266.t
+	desc = PBNews.266.d
+	picture = GFX_PB_news_event_PBNews_anti_alien_alarm_no_duende
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.266.a	
+	}
+}
+
+news_event = {		# Martian Invasion - Martians Surrender
+	id = PBNews.267
+	title = PBNews.267.t
+	desc = PBNews.267.d
+	picture = GFX_PB_news_event_PBNews_Martians_surrender
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.267.a	
+	}
+}
+
+news_event = {		# Martian Invasion - Martian Collaborators Unify Earth
+	id = PBNews.268
+	title = PBNews.268.t
+	desc = PBNews.268.d
+	picture = GFX_PB_news_event_PBNews_Martian_Collaborators_Victory
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.268.a	
+	}
+}
+
+news_event = {		# Martian Invasion - Martian Exterminationists Unify Earth
+	id = PBNews.269
+	title = PBNews.269.t
+	desc = PBNews.269.d
+	picture = GFX_PB_news_event_PBNews_Martian_Extermination_Victory
+
+    is_triggered_only = yes
+	
+	major = yes
+
+	option = {
+		name = PBNews.269.a	
+	}
+}

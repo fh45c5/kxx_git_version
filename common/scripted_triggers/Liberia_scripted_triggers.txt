@@ -1,0 +1,32 @@
+LIB_has_lodge_leader = {
+	has_government = national_populist
+	custom_trigger_tooltip = {
+		tooltip = LIB_masons_in_power
+		OR = {
+			has_country_leader = {
+				name = "威廉·杜伯曼"				# William Tubman
+				ruling_only = yes
+			}
+			has_country_leader = {
+				name = "路易斯·亚瑟·格赖姆斯"				# Louis Arthur Grimes
+				ruling_only = yes
+			}
+			has_country_leader = {
+				name = "克拉伦斯·辛普森"				# Clarence Simpson
+				ruling_only = yes
+			}
+			has_country_leader = {
+				name = "弗兰克·托尔博特"				# Frank Tolbert
+				ruling_only = yes
+			}
+			has_country_leader = {
+				name = "查尔斯·D·B·金"				# Charles D. B. King
+				ruling_only = yes
+			}
+			has_country_leader = {
+				name = "利比里亚共济会"				# Grand Lodge of Liberia
+				ruling_only = yes
+			}
+		}
+	}
+}

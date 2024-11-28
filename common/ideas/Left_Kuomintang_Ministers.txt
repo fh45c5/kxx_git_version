@@ -1,0 +1,974 @@
+ideas = {
+  ################################################################################################################################################################################################
+
+	head_of_government = { ### Head of Government ###
+
+#三人帮
+		CHI_Zhang_Guotao_hog_tot = {
+			allowed = { original_tag = CHI }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Zhang_Guotao_hog_tot"
+			}
+			traits = {
+				head_of_government
+				totalist
+				hog_totalist_chairman
+			}
+		}
+
+		CHI_Dai_Chunfeng_hog_tot = {
+			allowed = { original_tag = CHI }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Dai_Chunfeng_dead }
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Dai_Chunfeng_hog_tot"
+			}
+			traits = {
+				head_of_government
+				totalist
+				hog_hooded_chairman
+			}
+		}	
+
+#工农联盟
+		CHI_Mao_zedong_hog_tot = {
+			allowed = { original_tag = CHI }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Mao_zedong_dead }
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Mao_zedong_hog_tot"
+			}
+			traits = {
+				head_of_government
+				maoist
+				CHI_great_leader_sic
+			}
+		}
+
+		CHI_Zhou_Enlai_hog_rso = {
+			allowed = { original_tag = CHI }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Zhou_Enlai_dead }
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Zhou_Enlai_hog_rso"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_pragmatic_statesman
+			}
+		}	
+
+#中华工团联盟
+		CHI_Chen_Duxiu_hog_syn = {
+			allowed = { original_tag = CHI }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = CHI_Chen_Duxiu_dead }
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Chen_Duxiu_hog_syn"
+			}
+			traits = {
+				head_of_government
+				syndicalist
+				CHI_proponent_of_the_united_front
+			}
+		}
+		
+		CHI_Li_Lisan_hog_syn = {
+			allowed = { original_tag = CHI }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Li_Lisan_dead }
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Li_Lisan_hog_syn"
+			}
+			traits = {
+				head_of_government
+				syndicalist
+				hog_ambitious_union_boss
+			}
+		}
+
+		CHI_Four_Elders_hog_sco = {
+			allowed = { original_tag = CHI }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				NOT = { 
+					has_country_flag = CHI_Four_Elders_dead
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Four_Elders_hog_sco"
+			}
+			traits = {
+				head_of_government
+				social_conservative
+				CHI_the_pursuit_of_datong
+			}
+		}
+
+#公馆派
+		CHI_Chen_Gongbo_hog_rso = {
+			allowed = { original_tag = CHI }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				NOT = { 
+					has_country_flag = CHI_Chen_Gongbo_dead
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Chen_Gongbo_hog_rso"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				CHI_mouthpiece_of_rca
+			}
+		}
+
+		CHI_Wang_Jingwei_hog_rso = {
+			allowed = { original_tag = CHI }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Wang_Jingwei_dead }
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Wang_Jingwei_hog_rso"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				CHI_heir_to_the_revolution
+			}
+		}
+
+		CHI_Gu_Mengyu_hog_sde = {
+			allowed = { original_tag = CHI }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = { 
+				NOT = { 
+					has_country_flag = Gu_Mengyu_dead 
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Gu_Mengyu_hog_sde"
+			}
+			traits = {
+				head_of_government
+				social_democrat
+				CHI_moderate_reorganisation
+			}
+		}
+#革命委员会	
+		CHI_Liao_Zhongkai_hog_rso = {
+			allowed = { original_tag = CHI }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Liao_Zhongkai_dead }
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Liao_Zhongkai_hog_rso"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				CHI_kuomintang_stalwart
+			}
+		}
+
+		CHI_Deng_Yanda_hog_sde = {
+			allowed = { original_tag = CHI }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+				NOT = {
+					has_country_flag = CHI_Deng_Yanda_dead
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Deng_Yanda_hog_sde"
+			}
+			traits = {
+				head_of_government
+				social_democrat
+				CHI_hero_of_the_chinese_revolution
+			}
+		}
+
+	}
+
+#
+
+	person_of_influence = { ### Person of Influence ###
+		
+#三人帮
+		CHI_Chen_Lifu_eco_tot = {
+			allowed = { original_tag = CHI }
+			visible = {	NOT = { has_country_flag = Chen_Lifu_dead } }
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Chen_Lifu_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_planned_economy_proponent
+			}
+		}
+
+		CHI_Kong_Xiangxi_eco_tot = {
+			allowed = { original_tag = CHI }
+			visible = {	NOT = { has_country_flag = Kong_Xiangxi_dead } }
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Chen_Lifu_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_bank_president
+			}
+		}
+
+		CHI_Chen_Guofu_sec_tot = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Chen_Guofu_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Chen_Guofu_sec_tot"
+			}
+			traits = {
+				security_minister
+				totalist
+				sec_prince_of_terror
+			}
+		}
+
+		CHI_Dai_Chunfeng_sec_tot = {
+			allowed = { 
+				original_tag = CHI 
+				NOT = { has_dlc = "La Resistance" }
+			}		
+			visible = {
+				NOT = { has_country_flag = Dai_Chunfeng_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Dai_Chunfeng_sec_tot"
+			}
+			traits = {
+				security_minister
+				totalist
+				CHI_shadowy_laoban
+			}
+		}
+
+		CHI_Dai_Chunfeng_sec_tot_lar = {
+			name = CHI_Dai_Chunfeng_sec_tot
+			allowed = { 
+				original_tag = CHI 
+				has_dlc = "La Resistance"
+			}		
+			visible = {
+				NOT = { has_country_flag = Dai_Chunfeng_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Dai_Chunfeng_sec_tot_lar"
+			}
+			traits = {
+				security_minister
+				totalist
+				CHI_shadowy_laoban_lar
+			}
+		}
+		
+		CHI_Mao_Renfeng_sec_tot = {
+			allowed = { original_tag = CHI }			
+			visible = {
+				NOT = { has_country_flag = Mao_Renfeng_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Mao_Renfeng_sec_tot"
+			}
+			traits = {
+				security_minister
+				totalist
+				sec_secret_police_chief
+			}
+		}
+
+		CHI_Xiao_Zanyu_sec_tot = {
+			allowed = { original_tag = CHI }			
+			visible = {
+				NOT = { has_country_flag = Xiao_Zanyu_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Xiao_Zanyu_sec_tot"
+			}
+			traits = {
+				security_minister
+				totalist
+				hog_ultranationalist_agitator
+			}
+		}
+
+		CHI_Liu_Butong_sec_tot = {
+			allowed = { original_tag = CHI }			
+			cancel_if_invalid = no
+			visible = {
+				NOT = { has_country_flag = Liu_Butong_dead }
+			}
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Liu_Butong_sec_tot"
+			}
+			traits = {
+				security_minister
+				totalist
+				hog_young_guard
+			}
+		}
+
+#工农联盟
+		CHI_Cai_Hesen_for_rso = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Cai_Hesen_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Cai_Hesen_for_rso"
+			}
+			traits = {
+				foreign_minister
+				radical_socialist
+				hog_pragmatic_statesman
+			}
+		}
+
+		CHI_Fang_Zhimin_for_rso = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Fang_Zhimin_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Fang_Zhimin_for_rso"
+			}
+			traits = {
+				foreign_minister
+				radical_socialist
+				hog_the_peasant_marshal
+			}
+		}
+
+		CHI_Lin_Boqu_eco_rso = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Lin_Boqu_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Shi_Cuntong_eco_rso"		
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_the_minister_for_everything
+			}
+		}
+
+		CHI_Zhou_Enlai_sec_rso = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Zhou_Enlai_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Zhou_Enlai_eco_rso"			
+			}
+			traits = {
+				security_minister
+				radical_socialist
+				sec_great_soul
+			}
+		}
+
+#中华工团联盟
+		CHI_Li_Lisan_eco_syn = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Li_Lisan_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Li_Lisan_eco_syn"
+			}
+			traits = {
+				economy_minister
+				syndicalist
+				hog_ambitious_union_boss
+			}
+		}
+
+		CHI_Qin_Bangxian_eco_syn = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Qin_Bangxian_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Qin_Bangxian_eco_syn"
+			}
+			traits = {
+				economy_minister
+				syndicalist
+				eco_mixed_economy 
+			}
+		}
+
+		CHI_Chiang_Ching_Kuo_eco_mli = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Chiang_Ching_Kuo_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Chiang_Ching_Kuo_eco_mli"
+			}
+			traits = {
+				economy_minister
+				market_liberal
+				eco_administrative_genius
+			}
+		}
+
+		CHI_Dong_Biwu_sec_syn = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Dong_Biwu_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Dong_Biwu_sec_syn"
+			}
+			traits = {
+				security_minister
+				syndicalist
+				sec_man_of_culture_and_science 
+			}
+		}
+
+		CHI_Liu_Shaoqi_sec_syn = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Liu_Shaoqi_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Liu_Shaoqi_sec_syn"
+			}
+			traits = {
+				security_minister
+				syndicalist
+				eco_patriotic_socialist 
+			}
+		}
+
+		CHI_Peng_Zexiang_sec_sde = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Peng_Zexiang_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Peng_Zexiang_sec_sde"
+			}
+			traits = {
+				security_minister
+				social_democrat
+				sec_popular_figurehead
+			}
+		}
+
+		CHI_Shi_Cuntong_eco_rso = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Shi_Cuntong_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Shi_Cuntong_eco_rso"		
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_collectivizer
+			}
+		}
+
+		CHI_Qu_Qiubai_for_syn = {
+			allowed = { original_tag = CHI }
+			cancel_if_invalid = no
+			visible = {
+				NOT = { has_country_flag = Qu_Qiubai_dead }
+			}
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Qu_Qiubai_for_syn"
+			}
+			traits = {
+				foreign_minister
+				radical_socialist
+				hog_vanguardist_worker
+			}
+		}
+
+		CHI_Su_Zhaozheng_for_syn = {
+			allowed = { original_tag = CHI }
+			cancel_if_invalid = no
+			visible = {
+				NOT = { has_country_flag = Su_Zhaozheng_dead }
+			}
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Su_Zhaozheng_for_syn"
+			}
+			traits = {
+				foreign_minister
+				radical_socialist
+				for_tireless_organiser
+			}
+		}
+#公馆派
+		CHI_Zeng_Xing_sec_rso = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Zeng_Xing_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Zeng_Xing_sec_rso"
+			}
+			traits = {
+				foreign_minister
+				radical_socialist
+				CHI_chinese_feminist
+			}
+		}
+
+		CHI_Li_Shiqun_sec_rso = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Li_Shiqun_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Zeng_Xing_sec_rso"
+			}
+			traits = {
+				security_minister
+				radical_socialist
+				sec_prince_of_terror
+			}
+		}
+
+		CHI_Chen_Bijun_sec_rso = {
+			allowed = { original_tag = CHI }
+			cancel_if_invalid = no
+			visible = {
+				NOT = { has_country_flag = Chen_Bijun_dead }
+			}
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Chen_Bijun_sec_rso"
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				CHI_madame_wang
+			}
+		}
+
+		CHI_Chu_Minyi_sec_rso = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Chu_Minyi_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Chu_Minyi_sec_rso"
+			}
+			traits = {
+				security_minister
+				radical_socialist
+				sec_health_and_safety
+			}
+		}
+
+		CHI_Zhou_Fohai_sec_rso = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Zhou_Fokai_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Zhou_Fohai_sec_rso"
+			}
+			traits = {
+				economy_minister
+				social_democrat
+				sec_back_stabber
+			}
+		}
+
+#革命委员会	
+		CHI_Chen_Youren_for_sde = {
+			allowed = { original_tag = CHI }			
+			cancel_if_invalid = no
+			visible = {
+				NOT = { has_country_flag = Chen_Youren_dead }
+			}
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Chen_Youren_for_sde"
+			}
+			traits = {
+				foreign_minister
+				social_democrat
+				for_anti_imperialist_crusader
+			}
+		}
+
+		CHI_Sun_Fo_for_sli = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Sun_Fo_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Sun_Fo_for_sli"
+			}
+			traits = {
+				foreign_minister
+				social_liberal
+				CHI_kuomintang_crown_prince_2
+			}
+		}
+
+		CHI_Song_Ziwen_eco_sde = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Song_Ziwen_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Song_Ziwen_eco_sde"
+			}
+			traits = {
+				economy_minister
+				social_democrat
+				eco_state_capitalist
+			}
+		}
+
+		CHI_Tan_Pingshan_eco_sde = {
+			allowed = { original_tag = CHI }
+			visible = {
+				has_country_flag = GXC_Tan_Pingshan_dead
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Tan_Pingshan_eco_sde"
+			}
+			traits = {
+				economy_minister
+				social_democrat
+				hog_ambitious_union_boss
+			}
+		}
+		
+		CHI_Zhang_Bojun_eco_sde = {
+			allowed = { original_tag = CHI }
+			cancel_if_invalid = no
+			visible = {
+				NOT = { has_country_flag = Zhang_Bojun_dead }
+			}
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Zhang_Bojun_eco_sde"
+			}
+			traits = {
+				economy_minister
+				social_democrat
+				eco_agricultural_economist
+			}
+		}
+
+		CHI_He_Xiangning_sec_sde = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = He_Xiangning_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_He_Xiangning_sec_sde"
+			}
+			traits = {
+				security_minister
+				social_democrat
+				CHI_chinese_feminist
+			}
+		}
+		
+		CHI_Cai_Yuanpei_sec_sco = {
+			allowed = { original_tag = CHI }	
+			visible = {
+				NOT = { has_country_flag = Cai_Yuanpei_dead }
+			}		
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Cai_Yuanpei_sec_sco"
+			}
+			traits = {
+				security_minister
+				social_conservative
+				sec_education_reformer
+			}
+		}
+
+#改组派
+		CHI_Zhang_Yunchuan_sec_sde = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Zhang_Yunchuan_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Zhang_Yunchuan_sec_sde"
+			}
+			traits = {
+				security_minister
+				social_democrat
+				sec_man_of_the_people
+			}
+		}
+
+		CHI_Gu_Mengyu_sec_sde = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Gu_Mengyu_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Gu_Mengyu_sec_sde"
+			}
+			traits = {
+				security_minister
+				social_democrat
+				sec_compassionate_gentleman
+			}
+		}
+
+		CHI_Guo_Chuntao_eco_rso = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Guo_Chuntao_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Guo_Chuntao_eco_rso"		
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_industrialiser
+			}
+		}
+
+		CHI_Gu_Zhenggang_sec_rso = {
+			allowed = { original_tag = CHI }
+			visible = {
+				NOT = { has_country_flag = Gu_Zhenggang_dead }
+			}
+			cancel_if_invalid = no
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Gu_Zhenggang_sec_rso"
+			}
+			traits = {
+				security_minister
+				radical_socialist
+				hog_political_protege
+			}
+		}
+
+		CHI_Wang_Faqin_sec_rso = {
+			allowed = { original_tag = CHI }
+			cancel_if_invalid = no
+			visible = {
+				NOT = { has_country_flag = Wang_Faqin_dead }
+			}
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Wang_Faqin_sec_rso"
+			}
+			traits = {
+				security_minister
+				radical_socialist
+				hog_influential_intellectual
+			}
+		}
+
+		CHI_Lei_Jingtian_sec_rso = {
+			allowed = { original_tag = CHI }
+			cancel_if_invalid = no
+			visible = {
+				NOT = { has_country_flag = Lei_Jingtian_dead }
+			}
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Lei_Jingtian_sec_rso"
+			}
+			traits = {
+				security_minister
+				radical_socialist
+				sec_reformed_justice
+			}
+		}
+	
+		CHI_Yang_Xingfo_sec_rso = {
+			allowed = { original_tag = CHI }
+			cancel_if_invalid = no
+			visible = {
+				NOT = { has_country_flag = Yang_Xingfo_dead }
+			}
+			cost = 100
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CHI_Yang_Xingfo_sec_rso"
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_theoretical_scientist
+			}
+		}
+#	
+	}
+}

@@ -1,0 +1,119 @@
+NFL_set_GG_walwyn = {
+  create_country_leader = {
+    name = "汉弗莱·T·沃尔温"  # Humphrey T. Walwyn
+    desc = "POLITICS_WALWYN_DESC"
+    picture = "gfx/leaders/NFL/Portrait_Newfoundland_Humphrey_T_Walwyn.png"
+    expire = "1.1.1"
+    ideology = paternal_autocrat_subtype
+  }
+  create_country_leader = {
+    name = "汉弗莱·T·沃尔温"  # Humphrey T. Walwyn
+    desc = "POLITICS_WALWYN_DESC"
+    picture = "gfx/leaders/NFL/Portrait_Newfoundland_Humphrey_T_Walwyn.png"
+    expire = "1.1.1"
+    ideology = authdem_social_credit_subtype
+  }
+  create_country_leader = {
+    name = "汉弗莱·T·沃尔温"  # Humphrey T. Walwyn
+    desc = "POLITICS_WALWYN_DESC"
+    picture = "gfx/leaders/NFL/Portrait_Newfoundland_Humphrey_T_Walwyn.png"
+    expire = "1.1.1"
+    ideology = moderate_authoritarianism_subtype
+  }
+  create_country_leader = {
+    name = "汉弗莱·T·沃尔温"  # Humphrey T. Walwyn
+    desc = "POLITICS_WALWYN_DESC"
+    picture = "gfx/leaders/NFL/Portrait_Newfoundland_Humphrey_T_Walwyn.png"
+    expire = "1.1.1"
+    ideology = liberal_conservative_subtype
+  }
+  create_country_leader = {
+    name = "汉弗莱·T·沃尔温"  # Humphrey T. Walwyn
+    desc = "POLITICS_WALWYN_DESC"
+    picture = "gfx/leaders/NFL/Portrait_Newfoundland_Humphrey_T_Walwyn.png"
+    expire = "1.1.1"
+    ideology = centrist_subtype
+  }
+  create_country_leader = {
+    name = "汉弗莱·T·沃尔温"  # Humphrey T. Walwyn
+    desc = "POLITICS_WALWYN_DESC"
+    picture = "gfx/leaders/NFL/Portrait_Newfoundland_Humphrey_T_Walwyn.png"
+    expire = "1.1.1"
+    ideology = social_democrat_subtype
+  }
+}
+NFL_set_GG_outerbridge = {
+  create_country_leader = {
+    name = "伦纳德·奥特布里奇"  # Leonard Outerbridge
+    desc = "POLITICS_OUTERBRIDGE_DESC"
+    picture = "gfx/leaders/NFL/Portrait_Newfoundland_Leonard_Outerbridge.png"
+    expire = "1.1.1"
+    ideology = paternal_autocrat_subtype
+  }
+  create_country_leader = {
+    name = "伦纳德·奥特布里奇"  # Leonard Outerbridge
+    desc = "POLITICS_OUTERBRIDGE_DESC"
+    picture = "gfx/leaders/NFL/Portrait_Newfoundland_Leonard_Outerbridge.png"
+    expire = "1.1.1"
+    ideology = authdem_social_credit_subtype
+  }
+  create_country_leader = {
+    name = "伦纳德·奥特布里奇"  # Leonard Outerbridge
+    desc = "POLITICS_OUTERBRIDGE_DESC"
+    picture = "gfx/leaders/NFL/Portrait_Newfoundland_Leonard_Outerbridge.png"
+    expire = "1.1.1"
+    ideology = moderate_authoritarianism_subtype
+  }
+  create_country_leader = {
+    name = "伦纳德·奥特布里奇"  # Leonard Outerbridge
+    desc = "POLITICS_OUTERBRIDGE_DESC"
+    picture = "gfx/leaders/NFL/Portrait_Newfoundland_Leonard_Outerbridge.png"
+    expire = "1.1.1"
+    ideology = liberal_conservative_subtype
+  }
+  create_country_leader = {
+    name = "伦纳德·奥特布里奇"  # Leonard Outerbridge
+    desc = "POLITICS_OUTERBRIDGE_DESC"
+    picture = "gfx/leaders/NFL/Portrait_Newfoundland_Leonard_Outerbridge.png"
+    expire = "1.1.1"
+    ideology = centrist_subtype
+  }
+  create_country_leader = {
+    name = "伦纳德·奥特布里奇"  # Leonard Outerbridge
+    desc = "POLITICS_OUTERBRIDGE_DESC"
+    picture = "gfx/leaders/NFL/Portrait_Newfoundland_Leonard_Outerbridge.png"
+    expire = "1.1.1"
+    ideology = social_democrat_subtype
+  }
+}
+NFL_abolish_GG = {
+  set_country_flag = NFL_abolished_GG
+  create_country_leader = {
+    name = "弗雷德里克·C·阿德代斯"  # Frederick C. Alderdice
+    desc = "POLITICS_ALDERDICE_DESC"
+    picture = "gfx/leaders/NFL/Portrait_Newfoundland_Frederick_C_Alderdice.png"
+    expire = "1.1.1"
+    ideology = moderate_authoritarianism_subtype
+  }
+  create_country_leader = {
+    name = "理查德·斯夸尔斯"  # Richard Squires
+    desc = "POLITICS_SQUIRES_DESC"
+    picture = "gfx/leaders/NFL/Portrait_Newfoundland_Richard_Squires.png"
+    expire = "1.1.1"
+    ideology = liberal_conservative_subtype
+  }
+  create_country_leader = {
+    name = "乔伊·斯莫尔伍德"  # Joey Smallwood
+    desc = "POLITICS_SMALLWOOD_DESC"
+    picture = "gfx/leaders/NFL/Portrait_Newfoundland_Joey_Smallwood.png"
+    expire = "1.1.1"
+    ideology = centrist_subtype
+  }
+  create_country_leader = {
+    name = "彼得·约翰·卡欣"  # Peter John Cashin
+    desc = "POLITICS_CASHIN_DESC"
+    picture = "gfx/leaders/NFL/Portrait_Newfoundland_Peter_John_Cashin.png"
+    expire = "1.1.1"
+    ideology = social_democrat_subtype
+  }
+}

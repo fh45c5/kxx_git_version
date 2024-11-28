@@ -1,0 +1,390 @@
+SYR_National_Reconstruction_Commission = {
+	SYR_arms_factory_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  70
+		
+		available = {
+		}
+		
+		visible = {
+		}
+		
+		fire_only_once = no
+		days_remove = 20
+
+		remove_effect = {
+		random_owned_controlled_state={
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	SYR_industrial_complex_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  70
+		
+		available = {
+		}
+		
+		visible = {
+		}
+		
+		fire_only_once = no
+		days_remove = 20
+
+		remove_effect = {
+		random_owned_controlled_state={
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	SYR_exploitation_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		}
+		
+		visible = {
+		}
+		
+		fire_only_once = no
+		days_remove = 7
+
+		remove_effect = {
+		random_owned_controlled_state={
+		add_extra_state_shared_building_slots=1
+		}
+		}
+	}
+	释放库尔德傀儡政府 = {
+
+		icon = soldierly_discipline
+
+		available = {
+			350 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			352 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				ENG = { has_capitulated = yes }
+			}
+		}
+
+		visible = {
+		original_tag = LEB
+		NOT = {
+		has_country_flag = SF_KEDGHG
+		}
+		}
+
+		complete_effect = {	
+		KUR =  {
+		set_party_name = {
+			ideology = totalist
+			long_name = LEB_totalist_party_long
+			name = LEB_totalist_party
+		}
+		}
+		set_country_flag = SF_KEDGHG
+		KUR = {
+			set_cosmetic_tag = KUR_KLZF
+			transfer_state = 350
+			transfer_state = 352
+			transfer_state = 819
+			}
+			set_autonomy = { target = KUR autonomy_state = Social_National_Party_Brotherly_republics }
+		}
+	}
+	释放北阿拉伯傀儡政府 = {
+
+		icon = soldierly_discipline
+
+		available = {
+			994 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			1035 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			915 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				ENG = { has_capitulated = yes }
+			}
+		}
+
+		visible = {
+		original_tag = LEB
+		NOT = {
+		has_country_flag = SF_JBSGHG
+		}
+		}
+
+		complete_effect = {
+		JBS =  {
+		set_party_name = {
+			ideology = totalist
+			long_name = LEB_totalist_party_long
+			name = LEB_totalist_party
+		}
+		}		
+		set_country_flag = SF_JBSGHG
+		JBS = {
+			set_cosmetic_tag = JBS_KLZF
+			transfer_state = 994
+			transfer_state = 1035
+			transfer_state = 915
+			}
+			set_autonomy = { target = JBS autonomy_state = Social_National_Party_Brotherly_republics }
+		}
+	}
+	释放南阿拉伯傀儡政府 = {
+
+		icon = soldierly_discipline
+
+		available = {
+			675 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			292 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			678 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			991 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			656 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				ENG = { has_capitulated = yes }
+			}
+		}
+
+		visible = {
+		original_tag = LEB
+		NOT = {
+		has_country_flag = SF_SAUGHG
+		}
+		}
+
+		complete_effect = {	
+		SAU =  {
+		set_party_name = {
+			ideology = totalist
+			long_name = LEB_totalist_party_long
+			name = LEB_totalist_party
+		}
+		}
+		set_country_flag = SF_SAUGHG
+		SAU = {
+			set_cosmetic_tag = SAU_KLZF
+			transfer_state = 675
+			transfer_state = 292
+			transfer_state = 678
+			transfer_state = 991
+			transfer_state = 656
+			}
+			set_autonomy = { target = SAU autonomy_state = Social_National_Party_Brotherly_republics }
+		}
+	}
+	释放汉志傀儡政府 = {
+
+		icon = soldierly_discipline
+
+		available = {
+			754 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			679 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				ENG = { has_capitulated = yes }
+			}
+		}
+
+		visible = {
+		original_tag = LEB
+		NOT = {
+		has_country_flag = SF_HEJGHG
+		}
+		}
+
+		complete_effect = {	
+		HEJ =  {
+		set_party_name = {
+			ideology = totalist
+			long_name = LEB_totalist_party_long
+			name = LEB_totalist_party
+		}
+		}
+		set_country_flag = SF_HEJGHG
+		HEJ = {
+			set_cosmetic_tag = HEJ_KLZF
+			transfer_state = 754
+			transfer_state = 679
+			}
+			set_autonomy = { target = HEJ autonomy_state = Social_National_Party_Brotherly_republics }
+		}
+	}
+	释放埃及傀儡政府 = {
+
+		icon = soldierly_discipline
+
+		available = {
+			447 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			452 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			446 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			457 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			552 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			456 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			1008 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			1007 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			551 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			862 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			1011 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			1010 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			549 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				ENG = { has_capitulated = yes }
+			}
+		}
+
+		visible = {
+		original_tag = LEB
+		NOT = {
+		has_country_flag = SF_EGYGHG
+		}
+		}
+
+		complete_effect = {	
+		EGY =  {
+		set_party_name = {
+			ideology = totalist
+			long_name = LEB_totalist_party_long
+			name = LEB_totalist_party
+		}
+		}
+		set_country_flag = SF_EGYGHG
+		EGY = {
+			set_cosmetic_tag = EGY_KLZF
+			transfer_state = 447
+			transfer_state = 452
+			transfer_state = 446
+			transfer_state = 457
+			transfer_state = 552
+			transfer_state = 456
+			transfer_state = 1008
+			transfer_state = 1007
+			transfer_state = 551
+			transfer_state = 862
+			transfer_state = 1011
+			transfer_state = 1010
+			transfer_state = 549
+			}
+			set_autonomy = { target = EGY autonomy_state = Social_National_Party_Brotherly_republics }
+		}
+	}
+	释放伊拉克傀儡政府 = {
+
+		icon = soldierly_discipline
+
+		available = {
+			676 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			349 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			291 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			812 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				ENG = { has_capitulated = yes }
+			}
+		}
+
+		visible = {
+		original_tag = LEB
+		NOT = {
+		has_country_flag = SF_IRQGHG
+		}
+		}
+
+		complete_effect = {	
+		IRQ =  {
+		set_party_name = {
+			ideology = totalist
+			long_name = LEB_totalist_party_long
+			name = LEB_totalist_party
+		}
+		}
+		set_country_flag = SF_IRQGHG
+		IRQ = {
+			set_cosmetic_tag = IRQ_KLZF
+			transfer_state = 676
+			transfer_state = 349
+			transfer_state = 291
+			transfer_state = 812
+			}
+			set_autonomy = { target = IRQ autonomy_state = Social_National_Party_Brotherly_republics }
+		}
+	}
+}

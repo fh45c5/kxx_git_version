@@ -1,0 +1,110 @@
+COR_odp_in_power = {
+  custom_trigger_tooltip = {
+    tooltip = COR_odp_in_power
+    OR = {
+      has_country_leader = {
+        ruling_only = yes
+        name = "威廉·H·默里"  # William H. Murray
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "约翰·E·兰金"  # John E. Rankin
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "斯特罗姆·瑟蒙德"  # Strom Thurmond
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "尤金·塔尔梅奇"  # Eugene Talmadge
+      }
+    }
+  }
+}
+COR_patton_in_power = {
+  custom_trigger_tooltip = {
+    tooltip = COR_patton_in_power
+    has_country_leader = {
+      ruling_only = yes
+      name = "乔治·巴顿"  # George Patton
+    }
+  }
+}
+COR_crump_in_power = {
+  custom_trigger_tooltip = {
+    tooltip = COR_social_machine_in_power
+    OR = {
+      has_country_leader = {
+        ruling_only = yes
+        name = "E·H·克伦普"  # E.H. Crump
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "乔治娅·坦恩"  # Georgia Tann
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "N·J·福特"  # N.J. Ford
+      }
+    }
+  }
+}
+COR_fordists_in_power = {
+  custom_trigger_tooltip = {
+    tooltip = COR_fordists_in_power
+    OR = {
+      has_country_leader = {
+        ruling_only = yes
+        name = "查尔斯·林德伯格"  # Charles Lindbergh
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "亨利·福特"  # Henry Ford
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "赫伯特·胡佛"  # Herbert Hoover
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "埃兹尔·福特"  # Edsel Ford
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "纳尔逊·洛克菲勒"  # Nelson Rockefeller
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "霍华德·休斯"  # Howard Hughes
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "托基尔德·里伯"  # Torklid Rieber
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "纳尔逊·洛克菲勒"  # Nelson Rockefeller
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "斯蒂芬·伯奇"  # Stephen Birch
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "威廉·伦道夫·赫斯特"  # William Randolph Hearst
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "查尔斯·爱迪生"  # Charles Edison
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "霍华德·斯科特"  # Howard Scott
+      }
+      has_country_leader = {
+        ruling_only = yes
+        name = "劳伦斯·丹尼斯"  # Lawrence Dennis
+      }
+    }
+  }
+}

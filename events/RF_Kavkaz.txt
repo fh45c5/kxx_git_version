@@ -1,0 +1,938 @@
+### events about kavkaz ###
+
+add_namespace = kav
+
+country_event = {
+	id = kav.1
+	title = kav.1.t
+	desc = kav.1.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+	    name = kav.1.a
+		ai_chance = { 
+			base = 15
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = KAV_ai_route
+					option = KAV_KHLEBNIKOV
+				}
+			}
+	    }
+		set_country_flag = KAV_khleb_wins
+		create_country_leader = {
+			name = "韦利米尔·赫列勃尼科夫"
+			desc = "KAV_Velimir_Khlebnikov_desc"
+			picture = "gfx/leaders/KAV/Portrait_Velimir_Khlebnikov.png"
+			expire = "1965.1.1"
+			ideology = social_futurism_subtype
+			traits = {
+				KAV_the_idealist
+			}
+		}
+	}
+	option = {
+		name = kav.1.b
+		ai_chance = { 
+			base = 35
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = KAV_ai_route
+					option = KAV_MAYAKOVSKY
+				}
+			}
+		}
+		set_country_flag = KAV_maya_wins
+		create_country_leader = {
+			name = "弗拉基米尔·马雅可夫斯基"
+			desc = "KAV_vladimir_mayakovsky_desc"
+			picture = "gfx/leaders/KAV/Portrait_Vladimir_Mayakovsky.png"
+			expire = "1965.1.1"
+			ideology = social_futurism_subtype
+			traits = { KAV_demigod_of_poetry }
+		}
+    }
+	option = {
+		name = kav.1.c
+		ai_chance = { 
+			base = 25
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = KAV_ai_route
+					option = KAV_MIRSKY
+				}
+			} 
+		}
+		set_country_flag = KAV_mirsky_wins
+		create_country_leader = {
+			name = "德米特里·米尔斯基"
+			desc = "KAV_dmitry_mirsky_desc"
+			picture = "gfx/leaders/KAV/Portrait_Dmitry_Mirsky.png"
+			expire = "1965.1.1"
+			ideology = left_eurasianism_subtype
+			traits = {
+				KAV_the_red_count
+			}
+		}
+	}
+	option = {
+		name = kav.1.d
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 10000
+				OR = {
+					has_game_rule = {
+						rule = KAV_ai_route
+						option = KAV_SEVERYANIN
+					}
+					has_game_rule = {
+						rule = KAV_ai_route
+						option = KAV_STALIN
+					}
+				}
+			} 
+		}
+		set_country_flag = KAV_severyanin_wins
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		create_country_leader = {
+			name = "伊戈尔·谢维里亚宁"
+			desc = "KAV_igor_severyanin_desc"
+			picture = "gfx/leaders/KAV/Portrait_Igor_Severyanin.png"
+			expire = "1965.1.1"
+			ideology = italian_left_futurism_subtype
+		}
+		hidden_effect = {
+			country_event = {
+				id = kav.30 
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #maya cultural revolution
+	id = kav.2
+	title = kav.2.t
+	desc = kav.2.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.2.a
+	}
+}
+country_event = { #maya church burning
+	id = kav.3
+	title = kav.3.t
+	desc = kav.3.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.3.a	
+	}
+}
+country_event = { #maya industry
+	id = kav.4
+	title = kav.4.t
+	desc = kav.4.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.4.a
+	}
+}
+country_event = { #maya runaway
+	id = kav.5
+	title = kav.5.t
+	desc = kav.5.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.5.a
+	}
+}
+country_event = { #maya rebuilding
+	id = kav.6
+	title = kav.6.t
+	desc = kav.6.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.6.a
+	}
+}
+country_event = { #mirsky electricity
+	id = kav.7
+	title = kav.7.t
+	desc = kav.7.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.7.a
+	}
+}
+country_event = { #mirsky church
+	id = kav.8
+	title = kav.8.t
+	desc = kav.8.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.8.a
+	}
+}
+country_event = { #mirsky gulag
+	id = kav.9
+	title = kav.9.t
+	desc = kav.9.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.9.a
+	}
+}
+country_event = { #air doctrine choice
+	id = kav.10
+	title = kav.10.t
+	desc = kav.10.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.10.a
+		ai_chance = { base = 1 }
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.25
+			uses = 3
+			category = cat_strategic_destruction
+		}
+	}
+	option = {
+		name = kav.10.b
+		ai_chance = { base = 1 }
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.25
+			uses = 3
+			category = cat_battlefield_support
+		}
+	}
+	option = {
+		name = kav.10.c
+		ai_chance = { base = 1 }
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.25
+			uses = 3
+			category = cat_operational_integrity
+		}
+	}
+}
+country_event = { #naval doctrine choice
+	id = kav.11
+	title = kav.11.t
+	desc = kav.11.desc
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.11.a
+		ai_chance = { base = 1 }
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.25
+			uses = 3
+			category = cat_base_strike
+		}
+	}
+	option = {
+		name = kav.11.b
+		ai_chance = { base = 1 }
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.25
+			uses = 3
+			category = cat_trade_interdiction
+		}
+	}
+	option = {
+		name = kav.11.c
+		ai_chance = { base = 1 }
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.25
+			uses = 3
+			category = cat_fleet_in_being
+		}
+	}
+}
+country_event = { #stalin and beria
+	id = kav.12
+	title = kav.12.t
+	desc = kav.12.desc
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.12.a
+		country_event = {
+			id = kav.14
+			days = 2
+		}
+	}
+}
+country_event = { #stalin technician
+	id = kav.13
+	title = kav.13.t
+	desc = kav.13.desc
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.13.a
+	}
+}
+country_event = { #stalin severyanin tortured
+	id = kav.14
+	title = kav.14.t
+	desc = kav.14.desc
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.14.a
+	}
+}
+country_event = { #stalin worker
+	id = kav.15
+	title = kav.15.t
+	desc = kav.15.desc
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.15.a
+	}
+}
+country_event = { #stalin rally
+	id = kav.16
+	title = kav.16.t
+	desc = kav.16.desc
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.16.a
+	}
+}
+country_event = { #stalin biology
+	id = kav.17
+	title = kav.17.t
+	desc = kav.17.desc
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = kav.17.a
+	}
+}	
+country_event = {
+	id = kav.18
+	title = kav.18.t
+	desc = kav.18.desc
+	picture = GFX_report_event_KAV_mirsky_pic
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.18.a
+	}
+}
+country_event = {
+	id = kav.19
+	title = kav.19.t
+	desc = kav.19.desc
+	picture = GFX_report_event_KAV_nepmen
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.19.a
+	}
+}
+country_event = {
+	id = kav.20
+	title = kav.20.t
+	desc = kav.20.desc
+	picture = GFX_report_event_KAV_paradise
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.20.a
+	}
+}
+country_event = {
+	id = kav.21
+	title = kav.21.t
+	desc = kav.21.desc
+	picture = GFX_report_event_KAV_solarcircle
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.21.a
+		hidden_effect = {
+			country_event = {
+				id = kav.22
+				days = 30
+		    }
+		}
+	}
+}
+country_event = {
+	id = kav.22
+	title = kav.22.t
+	desc = kav.22.desc
+	picture = GFX_report_event_KAV_monkee
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.22.a
+	}
+}
+country_event = {
+	id = kav.23
+	title = kav.23.t
+	desc = kav.23.desc
+	picture = GFX_report_event_KAV_solarcircle
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.23.a
+	}
+}
+country_event = {
+	id = kav.24
+	title = kav.24.t
+	desc = kav.24.desc
+	picture = GFX_report_event_KAV_solarcircle
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.24.a
+	}
+}
+country_event = {
+	id = kav.25
+	title = kav.25.t
+	desc = kav.25.desc
+	picture = GFX_report_event_KAV_kremlin_boom
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.25.a
+		news_event = {
+			id = news.194
+		}
+	}
+}
+country_event = {
+	id = kav.26
+	title = kav.26.t
+	desc = kav.26.desc
+	picture = GFX_report_event_KAV_solarcircle
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.26.a
+	}
+}
+country_event = {
+	id = kav.27
+	title = kav.27.t
+	desc = kav.27.desc
+	picture = GFX_report_event_KAV_solarcircle
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.27.a
+	}
+}
+country_event = {
+	id = kav.28
+	title = kav.28.t
+	desc = kav.28.desc
+	picture = GFX_report_event_KAV_mayakovskyintro
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.28.a
+	}
+}
+country_event = {
+	id = kav.29
+	title = kav.29.t
+	desc = kav.29.desc
+	picture = GFX_report_event_KAV_mayakovskyintro
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.29.a
+	}
+}
+
+country_event = { #stalin coup
+	id = kav.30
+	title = kav.30.t
+	desc = kav.30.desc
+	picture = GFX_report_event_KAV_mayakovskyintro
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.30.a
+		ai_chance={
+			base = 40
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = KAV_ai_route
+					option = KAV_SEVERYANIN
+				}
+			}
+			modifier = {
+				factor = 0
+				ASY = {
+					is_ai = no
+				}
+			}
+		}
+		
+	}
+	option = {
+		name = kav.30.b
+		ai_chance={
+			base = 60
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = KAV_ai_route
+					option = KAV_STALIN
+				}
+			} 
+		}
+		clr_country_flag = KAV_severyanin_wins
+		set_country_flag = KAV_stalin_wins
+		set_politics = {
+			ruling_party = totalist
+		}
+		create_country_leader = {
+			name = "约瑟夫·斯大林"
+			desc = "KAV_iosif_stalin_desc"
+			picture = "gfx/leaders/KAV/General_Iosif_Stalin.png"
+			expire = "1965.1.1"
+			ideology = hardliner_bolshevism_subtype
+			traits = {
+				sec_prince_of_terror
+			}
+		}
+		set_cosmetic_tag = KAV_coup
+	}
+}
+
+country_event = {
+	id = kav.31
+	title = kav.31.t
+	desc = kav.31.desc
+	picture = GFX_report_event_KAV_nepmen
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.31.a
+		add_ideas = KAV_wake_up
+	}
+}
+
+country_event = { #stalin intro
+	id = kav.32
+	title = kav.32.t
+	desc = kav.32.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.32.a
+	}
+}
+
+country_event = { #severyanin intro
+	id = kav.33
+	title = kav.33.t
+	desc = kav.33.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.33.a
+	}
+}
+
+country_event = { #maya hooligans
+	id = kav.34
+	title = kav.34.t
+	desc = kav.34.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.34.a
+	}
+}
+
+country_event = { #khleb earth society
+	id = kav.35
+	title = kav.35.t
+	desc = kav.35.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.35.a
+	}
+}
+
+country_event = { #khleb rayism
+	id = kav.36
+	title = kav.36.t
+	desc = kav.36.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.36.a
+	}
+}
+
+country_event = { #khleb maoism
+	id = kav.37
+	title = kav.37.t
+	desc = kav.37.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.37.a
+	}
+}
+
+country_event = { #khleb tiger
+	id = kav.38
+	title = kav.38.t
+	desc = kav.38.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.38.a
+	}
+}
+
+country_event = { #khleb parade
+	id = kav.39
+	title = kav.39.t
+	desc = kav.39.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.39.a
+	}
+}
+
+country_event = { #khleb proxy
+	id = kav.40
+	title = kav.40.t
+	desc = kav.40.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.40.a
+	}
+}
+
+country_event = { #khleb meets artaud
+	id = kav.41
+	title = kav.41.t
+	desc = kav.41.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.41.a
+	}
+}
+
+country_event = { #severyanin debolshevization
+	id = kav.42
+	title = kav.42.t
+	desc = kav.42.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.42.a
+	}
+}
+
+country_event = { #severyanin ball
+	id = kav.43
+	title = kav.43.t
+	desc = kav.43.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.43.a
+	}
+}
+
+country_event = { #mirsky militia
+	id = kav.44
+	title = kav.44.t
+	desc = kav.44.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.44.a
+	}
+}
+
+country_event = { #severyanin burns money
+	id = kav.45
+	title = kav.45.t
+	desc = kav.45.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.45.a
+	}
+}
+
+country_event = { #mirsky maoism rural campaigns
+	id = kav.46
+	title = kav.46.t
+	desc = kav.46.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.46.a
+	}
+}
+
+country_event = { #mirsky rocket
+	id = kav.47
+	title = kav.47.t
+	desc = kav.47.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.47.a
+	}
+}
+
+country_event = { #stalin moscow
+	id = kav.48
+	title = kav.48.t
+	desc = kav.48.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.48.a
+	}
+}
+
+country_event = { #maya guards build stuff
+	id = kav.49
+	title = kav.49.t
+	desc = kav.49.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.49.a
+	}
+}
+
+country_event = { #stalin school
+	id = kav.50
+	title = kav.50.t
+	desc = kav.50.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.50.a
+	}
+}
+
+country_event = { #khleb you will live in ze pod
+	id = kav.51
+	title = kav.51.t
+	desc = kav.51.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.51.a
+	}
+}
+
+country_event = { #severyanin auctions
+	id = kav.52
+	title = kav.52.t
+	desc = kav.52.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.52.a
+	}
+}
+
+country_event = { #severyanin fires a nerd
+	id = kav.53
+	title = kav.53.t
+	desc = kav.53.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.53.a
+		KAV = {
+				set_capital = {
+					state = 219
+				}
+			}
+	}
+}
+
+country_event = { #severyanin commerce
+	id = kav.54
+	title = kav.54.t
+	desc = kav.54.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.54.a
+	}
+}
+
+country_event = { #severyanin progressive torture chambers
+	id = kav.55
+	title = kav.55.t
+	desc = kav.55.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.55.a
+	}
+}
+
+country_event = { #severyanin temple
+	id = kav.56
+	title = kav.56.t
+	desc = kav.56.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = kav.56.a
+	}
+}
+
+country_event = { #邀请无产阶级文化派？
+	id = kav.57
+	title = kav.57.t
+	desc = kav.57.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #邀请
+		name = kav.57.a
+		hidden_effect = {
+			country_event = {
+				id = kav.58 
+				days = 15
+			}
+		}
+	}
+
+	option = { #滚蛋
+		name = kav.57.b
+	}
+}
+
+country_event = { #政变！
+	id = kav.58
+	title = kav.58.t
+	desc = kav.58.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #我们别无选择
+		name = kav.58.a
+		set_cosmetic_tag = KAV
+		set_politics = {
+			ruling_party = totalist
+		}
+		create_country_leader = {
+			name = "弗拉基米尔·马雅可夫斯基"
+			desc = "KAV_vladimir_mayakovsky_desc"
+			picture = "gfx/leaders/KAV/Portrait_Vladimir_Mayakovsky.png"
+			expire = "1965.1.1"
+			ideology = social_futurism_subtype
+			traits = { KAV_demigod_of_poetry }
+		}
+		load_focus_tree = KAV_tree
+	}
+
+	option = {
+		name = kav.58.b
+	}
+}

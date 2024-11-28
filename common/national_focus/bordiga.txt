@@ -1,0 +1,304 @@
+focus_tree = {
+	id = bordiga_tree
+
+	country = { 
+		factor = 0
+		modifier = {
+			add = 10
+			tag =SIC
+		}
+	}
+	default = no
+	focus = {
+		id = SIC_bordiga_in_power
+		icon = GFX_surrender_tiny_flag
+		cost = 1
+		x = 3
+		y = 17
+		completion_reward = {
+			add_political_power = 50 
+		}
+	}
+	focus = {
+		id = SIC_destory_reactionaries
+		icon = GFX_surrender_tiny_flag
+		prerequisite = {
+			focus = SIC_bordiga_in_power
+		}
+		cost = 3
+		x = 1
+		y = 18
+		completion_reward = { 
+			add_stability = 0.2
+			add_political_power = 100
+			add_popularity = { 
+				ideology = national_populist popularity = -0.2
+				ideology = authoritarian_democrat  popularity = -0.2
+				ideology = paternal_autocrat  popularity = -0.2
+			}	
+	}
+}	
+	focus = {
+		id = SIC_destory_democrats
+		icon = GFX_surrender_tiny_flag
+		prerequisite = {
+			focus = SIC_bordiga_in_power
+		}
+		cost = 3
+		x = 3
+		y = 18
+		completion_reward = { 
+			add_stability = 0.2
+			add_political_power = 100
+			add_popularity = { 
+				ideology = social_democrat popularity = -0.2
+				ideology = social_liberal  popularity = -0.2
+				ideology = market_liberal  popularity = -0.2
+				ideology = social_conservative  popularity = -0.2
+			}
+		}
+	}
+	focus = {
+		id = SIC_deal_with_fascists
+		icon = GFX_surrender_tiny_flag
+		prerequisite = {
+			focus = SIC_bordiga_in_power
+		}
+		cost = 3
+		x = 5
+		y = 18
+		completion_reward = { 
+			country_event = {
+				id = bor.2
+				days = 0
+				}
+		}
+	}
+	focus = {
+		id = SIC_consolidate_our_power
+		icon = GFX_surrender_tiny_flag
+		prerequisite = {
+			focus = SIC_destory_reactionaries
+			focus = SIC_destory_democrats
+			focus = SIC_deal_with_fascists
+		}
+		cost = 5
+		x = 3
+		y = 19
+		completion_reward = { 
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.3
+			}
+			add_political_power = 20
+			add_stability = 0.2
+		}
+	}
+	focus = {
+		id = SIC_the_party_is_the_brain
+		icon = GFX_surrender_tiny_flag
+		prerequisite = {
+			focus = SIC_consolidate_our_power
+		}
+		cost = 5
+		x = 1
+		y = 20
+		completion_reward = { 
+			add_ideas = SIC_bordigaism_1
+		}
+
+	}
+	focus = {
+		id = SIC_oppose_degenerate_revolution
+		icon = GFX_surrender_tiny_flag
+		prerequisite = {
+			focus = SIC_consolidate_our_power
+		}
+		cost = 5
+		x = 5
+		y = 20
+		completion_reward = { 
+			add_popularity = { 
+				ideology = radical_socialist popularity = -0.2
+				ideology = syndicalism  popularity = -0.2
+			}	
+			add_political_power = 100
+			add_war_support = 0.2
+			
+		}
+	}
+	focus = {
+		id = SIC_arm_the_proletarian
+		icon = GFX_surrender_tiny_flag
+		cost = 5
+		prerequisite = {
+			focus = SIC_the_party_is_the_brain
+		}
+		x = 1
+		y = 21
+		completion_reward = { 
+			add_ideas = SIC_red_army
+		}
+	}
+	focus = {
+		id = SIC_beliefs_in_world_revolution
+		icon = GFX_surrender_tiny_flag
+		prerequisite = {
+			focus = SIC_arm_the_proletarian
+		}
+		cost = 5
+		x = 1
+		y = 22
+		completion_reward = { 
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 2000
+			}	
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 200
+			}
+			add_war_support = 0.15
+		}
+	}
+	focus = {
+		id = SIC_beyond_lenin
+		icon = GFX_surrender_tiny_flag
+		cost = 5
+		prerequisite = {
+			focus = SIC_beliefs_in_world_revolution
+		}
+		x = 1
+		y = 23
+		completion_reward = {
+			remove_ideas = SIC_bordigaism_1
+			add_ideas = SIC_bordigaism_2
+		 }
+	}
+	focus = {
+		id = SIC_land_reform
+		icon = GFX_surrender_tiny_flag
+		cost = 5
+		prerequisite = {
+			focus = SIC_oppose_degenerate_revolution
+		}
+		x = 5
+		y = 21
+		completion_reward = { 
+			remove_ideas = SIC_identity_question_idea
+			remove_ideas = SIC_BM_3
+			remove_ideas = SIC_shipyard_profits
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = SIC_one_step_closer_to_communism
+		icon = GFX_surrender_tiny_flag
+		prerequisite = {
+			focus = SIC_land_reform
+		}
+		cost = 5
+		x = 5
+		y = 22
+		completion_reward = {
+			add_ideas = SIC_new_economy
+		 }
+	}
+	focus = {
+		id = SIC_beyond_syndicalism
+		icon = GFX_surrender_tiny_flag
+		cost = 5
+		prerequisite = {
+			focus = SIC_one_step_closer_to_communism
+		}
+		x = 5
+		y = 23
+		completion_reward = { 
+			add_ideas =SIC_true_socialism
+		}
+	
+	}
+	focus = {
+		id = SIC_ready_for_war
+		icon = GFX_surrender_tiny_flag
+		cost = 3
+		prerequisite = {
+			focus = SIC_beyond_lenin
+			focus = SIC_beyond_syndicalism
+		}
+		x = 3
+		y = 24
+		completion_reward = { 
+			army_experience = 50
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 5000
+			}	
+		}
+	}
+	focus = {
+		id = SIC_reunite_with_gramsci
+		icon = GFX_surrender_tiny_flag
+		cost = 5
+		x = 1
+		y = 25
+		prerequisite = {
+			focus = SIC_ready_for_war
+		}
+		available = {
+			SRI ={
+
+			}
+		}
+		mutually_exclusive = {
+			focus = SIC_death_to_revisionists
+		}
+		completion_reward = { 
+
+			SRI = {
+				country_event = {
+					id = bor.3
+				}
+			}
+			create_wargoal = { 
+				 
+				target = ITA type = annex_everything
+				target = SRD type = annex_everything
+		} 
+		}
+	}
+	focus = {
+		id = SIC_death_to_revisionists
+		icon = GFX_surrender_tiny_flag
+		prerequisite = {
+			focus = SIC_ready_for_war
+		}
+		cost = 5
+		x = 5
+		y = 25
+		completion_reward = {
+			create_wargoal = { 
+				target = SRI type = annex_everything 
+				target = ITA type = annex_everything
+				target = SRD type = annex_everything
+		} 
+		}
+	}
+	focus = {
+		id = SIC_our_future
+		icon = GFX_surrender_tiny_flag
+		prerequisite = {
+			focus = SIC_reunite_with_gramsci
+			focus = SIC_death_to_revisionists
+		}
+		cost = 5
+		x = 3
+		y = 26
+		completion_reward = { 
+			country_event = {
+				id = bor.4
+			}
+		}
+	}
+}
+   

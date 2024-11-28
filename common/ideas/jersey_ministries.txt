@@ -1,0 +1,87 @@
+ideas = {
+	head_of_government = {
+		JER_George_Child_Villiers = {
+			allowed = { original_tag = JER }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDatext]: [Root.GetName]: add idea JER_George_Child_Villiers"
+			}
+			traits = {
+				head_of_government
+				hog_popular_nobleman
+				eco_agricultural_economist
+			}
+		}
+		
+	}
+	
+	
+	
+	
+	person_of_influence = {
+	
+		JER_oscar_de_dirlevanger = {
+			allowed = { original_tag = JER }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDatext]: [Root.GetName]: add idea JER_oscar_de_dirlevanger"
+			}
+			traits = {
+			underworld_boss
+			sec_prince_of_terror
+			national_populist
+			}
+		}
+		
+		JER_Victor_Carey = {
+			allowed = { original_tag = JER }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDatext]: [Root.GetName]: add idea JER_Victor_Carey"
+			}
+			traits = {
+			sec_elder_aristocrat
+			hog_christian_nationalist
+			security_minister
+			}
+		}	
+		JER_Alexander_Moncrieff_Coutanche = {
+			allowed = { original_tag = JER }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDatext]: [Root.GetName]: add idea JER_Alexander_Moncrieff_Coutanche"
+			}
+			traits = {
+			sec_elder_aristocrat
+			hog_nationalist_press_baron
+			for_ideological_crusader
+			}
+		}
+		
+	
+ }
+}

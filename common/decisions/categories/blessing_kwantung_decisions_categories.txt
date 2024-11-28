@@ -1,0 +1,23 @@
+CAL_blessings_coups = {
+	icon = generic_propaganda
+	visible = {
+		tag = CAL
+		has_completed_focus = CAL_blessing_coup
+	}
+}
+
+CAL_blessings_masks = {
+	icon = generic_propaganda
+	visible = {
+		tag = CAL
+		has_completed_focus = CAL_blessing_coup
+	}
+}
+
+CAL_5_year_plandec = {
+	icon = generic_propaganda
+	visible = {
+		tag = CAL
+		has_completed_focus = CAL_kwantung_take_hold
+	}
+}

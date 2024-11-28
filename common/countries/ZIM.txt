@@ -1,0 +1,4 @@
+graphical_culture = african_gfx
+graphical_culture_2d = african_2d
+color = rgb { 10 100 10 }
+color_ui = rgb { 10 100 10 }

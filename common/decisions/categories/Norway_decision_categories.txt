@@ -1,0 +1,20 @@
+
+NOR_fix_sluggish_economy_category = {
+
+	icon = generic_economy
+	allowed = {
+		original_tag = NOR
+	}
+
+	visible = {
+		OR = {
+			has_idea = NOR_weak_economy_0
+			has_idea = NOR_weak_economy_1
+			has_idea = NOR_weak_economy_2
+			has_idea = NOR_weak_economy_3
+			has_idea = NOR_weak_economy_4
+			has_idea = NOR_weak_economy_5
+		}
+	}
+}
+

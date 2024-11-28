@@ -1,0 +1,93 @@
+CHI_NRA = {
+	icon = "GFX_idea_chi_whampoa_military_academy"
+	enable = { always = yes }
+	remove_trigger = { always = no }
+
+	conscription = CHI_NRA_conscription
+	training_time_factor = CHI_NRA_training_time_factor
+	army_org_factor = CHI_NRA_army_org_factor
+	recon_factor = CHI_NRA_recon_factor
+	resistance_growth_on_our_occupied_states = CHI_NRA_partisan_effect
+	cavalry_attack_factor = CHI_NRA_cavalry_attack_factor
+	cavalry_defence_factor = CHI_NRA_cavalry_defence_factor
+	special_forces_cap = CHI_NRA_special_forces_cap
+	experience_gain_factor = CHI_NRA_experience_gain_factor
+	experience_gain_army_factor = CHI_NRA_experience_gain_army_factor
+	experience_gain_navy_factor = CHI_NRA_experience_gain_navy_factor
+	experience_gain_air_factor = CHI_NRA_experience_gain_air_factor
+	planning_speed = CHI_NRA_planning_speed
+	max_planning = CHI_NRA_max_planning
+	command_power_gain_mult = CHI_NRA_command_power_gain_mult
+	army_leader_cost_factor = CHI_NRA_army_leader_cost_factor
+	max_command_power = CHI_NRA_max_command_power
+	production_speed_coastal_bunker_factor = CHI_NRA_production_speed_coastal_bunker_factor
+}
+
+GT_committee_system = {
+	icon = "GFX_idea_FRA_french_nationalism_idea"
+	enable = { always = yes }
+	remove_trigger = { always = no }
+
+	political_power_factor = GT_cs_political_power_factor
+	DRIFT_DEFENCE_FACTOR = GT_cs_DRIFT_DEFENCE_FACTOR
+	consumer_goods_factor = GT_cs_consumer_goods_factor
+	monthly_population = GT_cs_monthly_population
+	stability_factor = GT_cs_stability_factor
+	industrial_capacity_factory = GT_cs_industrial_capacity_factory
+	production_factory_max_efficiency_factor = GT_cs_production_factory_max_efficiency_factor
+	resistance_damage_to_garrison = GT_cs_resistance_damage_to_garrison
+	army_core_defence_factor = GT_cs_army_core_defence_factor
+	WAR_SUPPORT_FACTOR = GT_cs_WAR_SUPPORT_FACTOR
+	conscription_factor = GT_cs_conscription_factor
+	global_building_slots_factor = GT_cs_global_building_slots_factor
+	mobilization_speed = GT_cs_mobilization_speed
+	PRODUCTION_SPEED_BUILDINGS_FACTOR = GT_cs_PRODUCTION_SPEED_BUILDINGS_FACTOR
+	compliance_growth = GT_cs_compliance_growth
+}
+
+CHI_EAC = {
+	icon = "GFX_idea_CHI_economic_affairs_commission"
+
+	political_power_factor = CHI_EAC_political_power_factor
+	production_speed_buildings_factor = CHI_EAC_production_speed_buildings_factor
+	industry_repair_factor = CHI_EAC_industry_repair_factor
+}
+asia_leadership_dynamic_modifier = { 
+	enable = { always = yes } 
+	remove_trigger = {
+		OR = {
+			CHI = { is_puppet = yes }
+			NOT = {
+				country_exists = CHI
+			}
+		}
+	}
+	country_resource_aluminium = asia_development_bank_member
+	country_resource_chromium = asia_development_bank_member
+	country_resource_tungsten = asia_development_bank_member
+	country_resource_steel = asia_development_bank_member
+	country_resource_rubber = asia_development_bank_member
+	country_resource_oil = asia_development_bank_member
+}
+
+Maoism_assistance_projects = {
+	icon = "GFX_trait_CSA_red_guard_commander" 
+	
+	local_building_slots_factor = 0.15
+	production_speed_buildings_factor = 0.1
+	army_core_defence_factor = 0.1
+}
+
+CHI_the_second_reorganisation_modifier = {
+	icon = "GFX_idea_YUN_KMT_idea"
+	political_power_factor = CHI_2RG_pp_fac_var
+	command_power_gain_mult = CHI_2RG_com_pow_var
+	party_popularity_stability_factor = CHI_2RG_stab_var
+	min_export = CHI_2RG_export_var
+	consumer_goods_factor = CHI_2RG_con_good_var
+	production_factory_max_efficiency_factor = CHI_2RG_fac_max_var
+	production_factory_start_efficiency_factor = CHI_2RG_fac_star_var
+	production_lack_of_resource_penalty_factor = CHI_2RG_lac_res_var
+	production_speed_buildings_factor = CHI_2RG_construction_var
+	operative_slot = CHI_2RG_operative_var
+}

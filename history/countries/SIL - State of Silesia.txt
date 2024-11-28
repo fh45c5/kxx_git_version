@@ -1,0 +1,86 @@
+﻿capital = 1987
+
+oob = "SIL"
+
+set_research_slots = 3
+set_convoys = 50
+set_stability = 0.1
+set_war_support = 0.20
+
+set_politics = {	
+	ruling_party = authoritarian_democrat
+	last_election = "1935.9.8"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	totalist = 0
+    syndicalist = 8
+	radical_socialist = 4
+    social_democrat = 4
+    social_liberal = 0
+    market_liberal = 0
+    social_conservative = 7
+    authoritarian_democrat = 41
+    paternal_autocrat = 31
+    national_populist = 5
+}
+create_country_leader = {
+	name = "海因茨·古德里安"
+	picture = "gfx/leaders/SIC/Portrait_Germany_Heinz_Guderian_kr.png"
+	expire = "1.1.1"
+	ideology = authdem_junta_subtype
+}
+create_country_leader = {
+	name = "海因茨·古德里安"
+	picture = "gfx/leaders/SIC/Portrait_Germany_Heinz_Guderian_kr.png"
+	expire = "1.1.1"
+	ideology = junta_subtype
+}
+create_country_leader = {
+	name = "卡尔·汉克"
+	picture = "gfx/leaders/SIC/Portrait_Germany_Karl_Hanke.png"
+	expire = "1.1.1"
+	ideology = natpop_popular_patriotism_subtype
+}
+create_field_marshal = {
+	name = "海因茨·古德里安"
+	portrait_path = "gfx/leaders/SIC/Portrait_Germany_Heinz_Guderian_kr.png"
+	traits = { old_guard trickster war_hero brilliant_strategist}
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "威廉·凯特尔"
+	portrait_path = "gfx/leaders/GER/Portrait_Germany_Wilhelm_Keitel.png"
+	traits = { infantry_officer }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "君特·布鲁门特里特"
+	portrait_path = "gfx/leaders/GER/Portrait_Germany_Gunther_Blumentritt.png"
+	traits = { infantry_officer war_hero career_officer }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "约翰内斯·弗里斯纳"
+	portrait_path = "gfx/leaders/GER/Portrait_Germany_Johannes_Friessner.png"
+	traits = { infantry_officer }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+}

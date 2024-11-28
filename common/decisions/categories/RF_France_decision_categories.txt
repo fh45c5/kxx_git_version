@@ -1,0 +1,28 @@
+FRA_worldwide_futurism = {
+	allowed = {
+		original_tag = FRG
+	}
+	visible = {
+		is_subject = no
+}
+FRA_support_revolutions = {
+	picture = decision_cat_picture_FRA_worldwide_futurism
+	allowed = {
+		original_tag = FRG
+	}
+	priority = 500
+	visible = {
+		has_completed_focus = FRA_aid_revolutionaries
+		is_subject = no
+		OR = {
+			country_exists = CAN
+			NOT = {
+				CAN = {
+					is_puppet_of = FRA
+				}
+			}
+		}
+	}
+}
+FRA_against_council_cat = {
+}

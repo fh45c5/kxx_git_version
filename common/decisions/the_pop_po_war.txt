@@ -1,0 +1,90 @@
+The_Pop_Po_War = {
+	sneak_attack_on_Posen = {
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			DDR = {
+				is_subject = no
+				country_exists = DDR
+			}
+		}
+		
+		visible = {
+			NOT = {
+				has_country_flag = WR_TO_PO
+			}
+		}
+		
+		fire_only_once = no
+		days_remove = 10
+		
+		remove_effect = {
+			DDR = {
+				country_event = pop_po_war.1
+			}
+			set_country_flag = WR_TO_PO
+		}
+	}
+	Heavy_blow_to_Prussia = {
+		
+		ai_will_do = {
+			factor = 20
+		}
+		
+		available = {
+			DDR = {
+				is_subject = no
+				country_exists = DDR
+			}
+		}
+		
+		visible = {
+			has_country_flag = POP_BACK
+			NOT = {
+				has_country_flag = WR_TO_PO_1
+			}
+		}
+		
+		fire_only_once = no
+		days_remove = 10
+		
+		remove_effect = {
+			create_wargoal = { target = DDR type = annex_everything }
+			set_country_flag = WR_TO_PO_1
+		}
+	}
+	Reorganization_of_the_government_of_Poznan = {
+		
+		ai_will_do = {
+			factor = 20
+		}
+		
+		available = {
+			DDR = {
+				is_subject = no
+				country_exists = DDR
+			}
+		}
+		
+		visible = {
+			has_country_flag = Government_of_Poznan
+			NOT = {
+				has_country_flag = WR_TO_PO_2
+			}
+		}
+		
+		fire_only_once = no
+		days_remove = 10
+		
+		remove_effect = {
+			86 = { add_core_of = POL }
+			776 = { add_core_of = POL }
+			67 = { add_core_of = POL }
+			777 = { add_core_of = POL }
+			set_country_flag = WR_TO_PO_2
+		}
+	}
+}

@@ -1,0 +1,38 @@
+leader_traits = {
+	PLA_youjizhandashi = {
+		random = no
+		equipment_capture = 0.10
+		terrain_penalty_reduction = 0.10
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	PLA_yingluren = {
+		random = no
+		political_power_factor = 0.15
+	    war_support_factor = 0.05
+		radical_socialist_drift = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	PLA_zyjwzx = {
+		random = no
+		command_power_gain = 0.10
+		grant_medal_cost_factor = -0.30
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	PLA_rmzzdwydh = {
+		random = no
+		org_loss_when_moving = -0.10
+		experience_loss_factor = -0.10
+		equipment_capture = 0.15
+		ai_will_do = {
+			factor = 1
+		}
+}
+
+}
+	

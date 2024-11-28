@@ -1,0 +1,1365 @@
+ideas = {
+	country = {
+		ZHR_famine = {
+			picture = ZHR_thefamine
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				monthly_population = -1.25
+				war_support_factor = -0.10
+				stability_factor = -0.10
+			}
+		}
+		ZHR_a_new_dawn = {
+			#picture = 
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+		}
+		ZHR_german_instructors = {
+			picture = ZHR_germaninstructors
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				research_speed_factor = 0.05
+				production_speed_industrial_complex_factor = 0.1
+			}
+		}
+		ZHR_besieged_republic = {
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				army_core_defence_factor = 0.05
+			}
+		}
+		ZHR_safe_haven = {
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				monthly_population = 0.25
+				research_speed_factor = 0.05
+			}
+		}
+		ZHR_japanese_influence = {
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				consumer_goods_expected_value = -0.1
+				supply_node_range = 0.1
+			}
+			targeted_modifier = {
+				tag = JAP
+				trade_opinion_factor = -0.3
+			}
+			targeted_modifier = {
+				tag = JAP
+				supply_node_range = 0.1
+			}
+
+		}
+		ZHR_railway_crash = {
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				consumer_goods_expected_value = 0.2
+				production_speed_buildings_factor = -0.3
+				industrial_capacity_factory = -0.3
+				industrial_capacity_dockyard = -0.3
+				production_factory_efficiency_gain_factor = -0.5
+				production_factory_max_efficiency_factor = -0.2
+				stability_factor = -0.2
+				stability_weekly = -0.0005
+			}
+		}
+		ZHR_state_of_revolution = {
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				monthly_population = -0.1
+				stability_factor = -0.2
+				accelerationism_drift = 0.05
+				popular_socialism_drift = 0.05
+				political_power_gain = 0.15
+				despotism_drift = -0.03
+				reactionism_drift = -0.03
+				conservatism_drift = -0.03
+				liberalism_drift = -0.03
+			}
+		}
+
+
+		#Kerensky
+
+		ZHR_nra = {
+			picture = ZHR_nationalrepresantativeassembly
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				resistance_target = -0.1
+				compliance_gain = 0.3
+			}
+		}
+		ZHR_speeches = {
+			picture = ZHR_presidentsspeeches
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				stability_weekly = 0.05
+				political_power_factor = 0.3
+				vanguard_socialism_drift = -0.1
+				anarchism_drift = -0.1
+				progressivism_drift = 0.1
+			}
+		}
+		ZHR_ROSTA = {
+			picture = ZHR_ROSTA
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				consumer_goods_expected_value = 0.02
+				progressivism_drift = 0.1
+			}
+		}
+		ZHR_directorate = {
+			picture = ZHR_thedirectorate
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				political_power_cost = -0.10
+				progressivism_drift = 0.1
+			}
+		}
+		ZHR_IoCR = {
+			picture = ZHR_instituteofrevolutionarycommand
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				army_attack_factor = 0.10
+				army_defence_factor = 0.10
+				army_morale_factor = 0.10
+				attrition = -0.10
+				command_power_gain = 0.10
+			}
+		}
+
+		#Trotsky
+
+		ZHR_creatingrevolution  = {
+			picture = ZHR_createtherevolution
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				land_reinforce_rate = 0.1
+			}
+		}
+		ZHR_purgebureaucracy = {
+			picture = ZHR_purgeofthebureaucracy
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				political_power_gain = 0.1
+				production_speed_buildings_factor = 0.05
+				research_speed_factor = -0.02
+			}
+		}
+		ZHR_fiveyearplans = {
+			picture = ZHR_fiveyearplans
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				consumer_goods_expected_value = -0.07
+				research_speed_factor = 0.07
+			}
+		}
+		ZHR_soviet_power = {
+			picture = ZHR_sovietpower
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				political_power_gain = 0.25
+				consumer_goods_expected_value = -0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		ZHR_defendrevolution = {
+			picture = ZHR_defendtherevolution
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				drift_defence_factor = 0.05
+				vanguard_socialism_drift = 0.15
+				popular_socialism_drift = 0.05
+			}
+		}
+		ZHR_soberup = {
+			picture = ZHR_sobrietycampaigns
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				stability_weekly = 0.002
+				political_power_factor = -0.05
+				research_speed_factor = 0.05
+			}
+		}
+		ZHR_exportingtherevolution = {
+			picture = ZHR_exportingtherevolution
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				send_volunteer_divisions_required = -0.25
+				send_volunteer_size	= 6
+				intel_network_gain = 0.1
+			}
+		}
+		ZHR_labourarmies = {
+			picture = ZHR_labourarmies
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				conscription = 0.01
+			}
+		}
+		ZHR_permanent_revolution = {
+			picture = ZHR_permrev
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				justify_war_goal_time = -0.3
+				mobilization_speed = 0.05
+			}
+		}
+
+		#Chapayev
+		
+		ZHR_folks_socialism = {
+			picture = ZHR_folksoc
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				research_speed_factor = -0.05
+				consumer_goods_expected_value = -0.07
+				army_org = 0.10
+				attrition = -0.07
+				war_support_weekly = 0.01
+			}
+		}
+
+		ZHR_antiintellectualism = {
+			picture = ZHR_antiintellectualism
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				research_speed_factor = -0.05
+				war_support_weekly = 0.01
+			}
+		}
+		ZHR_antiintellectualism1 = {
+			picture = ZHR_antiintellectualism
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				research_speed_factor = -0.07
+				war_support_weekly = 0.01
+				local_resources_factor = 0.3
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		ZHR_common_man = {
+			picture = ZHR_thecommonman
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				stability_weekly = 0.001
+				production_speed_buildings_factor = -0.02
+				consumer_goods_expected_value = -0.03
+			}
+		}
+		ZHR_enforced_anarchy = {
+			picture = ZHR_enforcedanarchy
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				drift_defence_factor = 0.1
+				political_power_gain = -0.04
+				stability_factor = 0.1
+			}
+		}
+		ZHR_wisdom_of_the_mob = {
+			picture = ZHR_wisdomofthemob
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				drift_defence_factor = 0.1
+				conscription = 0.03
+			}
+		}
+
+		#Boldyrev
+
+		ZHR_dictatorship = {
+			picture = ZHR_commissarsdictatorship
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				political_power_gain = 0.3
+				stability_factor = -0.05
+			}
+		}
+
+		ZHR_deathoftherepublic = {
+			picture = ZHR_deathoftherepublic
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				vanguard_socialism_drift = -0.10
+				anarchism_drift = -0.10
+				popular_socialism_drift = -0.10
+				revisionist_socialism_drift = -0.10
+				progressivism_drift = -0.10
+				liberalism_drift = -0.10
+				accelerationism_drift = -0.10
+				monthly_population = -0.05
+			}
+		}
+
+		#OneState
+
+		ZHR_We = {
+			picture = ZHR_we
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				consumer_goods_expected_value = -0.05
+				research_speed_factor = 0.02
+				industrial_capacity_factory = 0.1
+			}
+		}
+		ZHR_homo_metallum = {
+			picture = ZHR_homometallum
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				attrition = -0.05
+				army_core_defence_factor = 0.05
+				acclimatization_cold_climate_gain_factor = 0.1
+			}
+		}
+		ZHR_ironhearts = {
+			picture = ZHR_ironhearts
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				army_attack_factor = 0.05
+				local_resources_factor = 0.2
+				no_supply_grace = 12
+			}
+		}
+		ZHR_factory_life = {
+			picture = ZHR_factorylife
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				line_change_production_efficiency_factor = 0.1
+				conscription_factor = -0.1
+				war_support_factor = -0.3
+				monthly_population = -0.05
+			}
+		}
+		ZHR_guardians = {
+			picture = ZHR_bureauofguardians
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				accelerationism_drift = 0.1
+				stability_weekly = 0.02
+			}
+		}
+		ZHR_childrenofstate = {
+			picture = ZHR_childrenofthestate
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				political_power_gain = 0.5
+				monthly_population = 0.15
+				consumer_goods_expected_value = -0.1
+			}
+		}
+		ZHR_thefiveyearplan = {
+			picture = ZHR_naturesubmitstofiveyearplan
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				industry_repair_factor = 0.1
+				production_speed_buildings_factor = 0.04
+				consumer_goods_expected_value = -0.1
+				conversion_cost_civ_to_mil_factor = -0.1
+				conversion_cost_mil_to_civ_factor = -0.1
+			}
+		}
+		###########	0.3	###############################################
+		#Homogenous Socialists
+		
+		ZHR_peoples_soviet = {
+			picture = ZHR_peoplesoviet
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				drift_defence_factor = 0.2
+				popular_socialism_drift = 0.07
+				political_power_gain = 0.25
+				
+			}
+		}
+		ZHR_labour_code = {
+			picture = ZHR_labourcode
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				drift_defence_factor = 0.15
+				vanguard_socialism_drift = 0.07
+				political_power_gain = 0.3
+			}
+		}
+		ZHR_likbez = {
+			picture = ZHR_libkez
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				research_speed_factor = 0.1
+				monthly_population = -0.01
+				local_resources_factor = 0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+		ZHR_prole_dict = {
+			picture = ZHR_proledict
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				vanguard_socialism_drift = 0.05
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		ZHR_local_autonomy = {
+			picture = ZHR_localautonomy
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				monthly_population = 0.05
+				stability_factor = 0.07
+				production_factory_max_efficiency_factor = 0.07
+				production_lack_of_resource_penalty_factor = -0.07
+			}
+		}
+		ZHR_labour_duty = {
+			picture = ZHR_labourduty
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.08
+				line_change_production_efficiency_factor = 0.05
+			}
+		}
+		ZHR_oln_farms = {
+			picture = ZHR_farms
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				monthly_population = 0.08
+				production_speed_infrastructure_factor = 0.05
+				recruitable_population_factor = 0.02
+			}
+		}
+		ZHR_federation = {
+			picture = ZHR_federation
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				political_power_gain = 0.05
+				conscription = 0.02
+			}
+		}
+		ZHR_russian_syndicalism = {
+			picture = ZHR_syndicalism
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				industrial_capacity_factory = 0.05
+				army_morale_factor = 0.05
+				conscription = 0.005
+			}
+		}
+		ZHR_russian_councils = {
+			picture = ZHR_councils
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				industrial_capacity_factory = 0.05
+				army_core_defence_factor = 0.1
+				army_morale_factor = 0.01
+			}
+		}
+		
+		#Triumvirate
+		
+		ZHR_ll_reform = {
+			picture = ZHR_reforms
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				drift_defence_factor = 0.06
+				conversion_cost_mil_to_civ_factor = -0.01
+				production_speed_industrial_complex_factor = 0.01
+			}
+		}
+		
+		ZHR_ll_reform1 = {
+			picture = ZHR_reforms 
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				drift_defence_factor = 0.12
+				conversion_cost_mil_to_civ_factor = -0.2
+				production_speed_industrial_complex_factor = 0.02
+			}
+		}
+		
+		ZHR_ll_reform2 = {
+			picture = ZHR_reforms
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				drift_defence_factor = 0.15
+				consumer_goods_expected_value = -0.05
+				production_speed_industrial_complex_factor = 0.05
+				conversion_cost_civ_to_mil_factor = -0.1
+			}
+		}
+		
+		ZHR_rev_soc_industry = {
+			picture = ZHR_revsoc
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				industrial_capacity_factory = 0.01
+				production_factory_efficiency_gain_factor = 0.01
+				production_factory_max_efficiency_factor = 0.01
+				political_power_gain = 0.1
+			}
+		}
+		
+		ZHR_rev_soc_industry1 = {
+			picture = ZHR_revsoc
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				industrial_capacity_factory = 0.2
+				production_factory_efficiency_gain_factor = 0.02
+				production_factory_max_efficiency_factor = 0.02
+				political_power_gain = 0.15
+			}
+		}
+		
+		ZHR_rev_soc_industry2 = {
+			picture = ZHR_revsoc
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				industrial_capacity_factory = 0.5
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05
+				political_power_gain = 0.15
+			}
+		}
+		
+		ZHR_peasant_research = {
+			picture = ZHR_peasants 
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				consumer_goods_expected_value = 0.1
+				stability_factor = 0.15
+				monthly_population = 0.01
+				revisionist_socialism_drift = 0.02
+			}
+		}
+		
+		ZHR_peasant_research1 = {
+			picture = ZHR_peasants 
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				consumer_goods_expected_value = 0.1
+				stability_factor = 0.15
+				monthly_population = 0.02
+				revisionist_socialism_drift = 0.02
+				research_speed_factor = 0.05
+				production_speed_buildings_factor = 0.01
+			}
+		}
+		
+		ZHR_peasant_research2 = {
+			picture = ZHR_peasants 
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				consumer_goods_expected_value = 0.12
+				stability_factor = 0.17
+				monthly_population = 0.05
+				revisionist_socialism_drift = 0.05
+				research_speed_factor = 0.07
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		
+		#Milyukov
+		
+		ZHR_liberalisation = {
+			picture = ZHR_liberalisation
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				liberalism_drift = 0.05
+				drift_defence_factor = 0.1
+				political_power_factor = 0.1
+			}
+		}
+		
+		ZHR_lib_economy_idea = {
+			picture = ZHR_libeconomy
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				consumer_goods_expected_value = -0.03
+				production_speed_industrial_complex_factor = 0.01
+				production_factory_max_efficiency_factor = 0.01
+				production_factory_efficiency_gain_factor = 0.01
+				industrial_capacity_factory = 0.01
+				stability_factor = 0.05
+			}
+		}
+		
+		ZHR_lib_economy_idea1 = {
+			picture = ZHR_libeconomy1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				consumer_goods_expected_value = -0.1
+				production_speed_industrial_complex_factor = 0.02
+				production_factory_max_efficiency_factor = 0.02
+				production_factory_efficiency_gain_factor = 0.02
+				industrial_capacity_factory = 0.02
+				industry_repair_factor = 0.02
+				stability_factor = 0.1
+			}
+		}
+		
+		ZHR_lib_research_idea = {
+			picture = ZHR_libunis
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				research_speed_factor = 0.06
+				political_power_gain = 0.25
+				despotism_drift = -0.1
+				reactionism_drift = -0.1
+			}
+		}
+		
+		ZHR_lib_compliance = {
+			picture = ZHR_revsoc 
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				resistance_target = -0.1
+				resistance_activity = -0.1
+				starting_compliance = 0.10
+			}
+		}
+		
+		ZHR_lib_compliance1 = {
+			picture = ZHR_revsoc 
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				resistance_target = -0.2
+				resistance_activity = -0.2
+				starting_compliance = 0.20
+				recruitable_population_factor = 0.01
+			}
+		}
+		
+		ZHR_lib_consoom_idea = {
+			picture = ZHR_insurance
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				consumer_goods_expected_value = 0.01
+				production_speed_buildings_factor = 0.05
+				monthly_population = 0.01
+				
+			}
+		}
+		
+		ZHR_lib_trade_idea = {
+			picture = ZHR_trade
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				license_purchase_cost = -0.15
+				trade_cost_for_target_factor = -0.1
+				trade_opinion_factor = 0.1
+			}
+		}
+		###############################################################
+		#Rosenbaum
+
+		ZHR_no_religion = {
+			picture = ZHR_stateatheism
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				industrial_capacity_factory = 0.02
+				stability_factor = 0.04
+				consumer_goods_expected_value = 0.02
+			}
+		}
+		ZHR_blind_to_race = {
+			picture = ZHR_blindtorace
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				stability_factor = 0.05
+			}
+		}
+		ZHR_firm_individualism = {
+			picture = ZHR_firmindividualism
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				stability_factor = 0.07
+				drift_defence_factor = 0.8
+				research_speed_factor = 0.05
+				consumer_goods_expected_value = 0.02
+				political_power_gain = 0.1
+			}
+		}
+		ZHR_firm_individualism1 = {
+			picture = ZHR_firmindividualism
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				stability_factor = 0.14
+				drift_defence_factor = 1
+				research_speed_factor = 0.1
+				consumer_goods_expected_value = 0.1
+				political_power_gain = 0.2
+				industry_repair_factor = 0.05
+				production_speed_industrial_complex_factor = 0.02
+			}
+		}
+		ZHR_manchurians = {
+			picture = ZHR_chinese
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				stability_factor = -0.02
+				political_power_gain = -0.01
+			}
+		}
+		ZHR_manchurians1 = {
+			picture = ZHR_chinese
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				stability_factor = 0.1
+				consumer_goods_expected_value = -0.1
+				production_factory_efficiency_gain_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		#Army
+
+		ZHR_boldness = {
+			picture = ZHR_boldnessofnewgeneration
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				conscription_factor = 0.02
+			}
+		}
+
+		ZHR_singlecommandprinciple = {
+			picture = ZHR_singlecommandprinciple
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				max_command_power = -10
+				promote_cost_factor = -0.2
+				command_power_gain_mult = 0.3
+			}
+		}
+
+		ZHR_preventnewnapoleon = {
+			picture = ZHR_newnapoleonprevented
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				max_command_power = 20
+				promote_cost_factor = 0.2
+				command_power_gain_mult = -0.3
+			}
+		}
+
+		ZHR_discipline = {
+			picture = ZHR_disciplinestrengthened
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				army_org = 1
+				army_morale_factor = 0.05
+			}
+		}
+
+		ZHR_soldierscouncils = {
+			picture = ZHR_soldierscouncils
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				max_planning = 0.05
+				invasion_preparation = -0.1
+			}
+		}
+
+		ZHR_politruksinarmy = {
+			picture = ZHR_politruks
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				army_attack_factor = 0.05
+				max_dig_in = -3
+			}
+		}
+		ZHR_IoRC = {
+			picture = ZHR_disciplinestrengthened
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				minimum_training_level = -0.05
+				training_time_army_factor = -0.05
+				army_leader_cost_factor = -0.05
+				army_leader_start_level = 2
+			}
+		}
+		#Diplo
+		ZHR_cooperation_with_britain = {
+			picture = ZHR_collaborationwithbritain
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				license_purchase_cost = -0.5
+			}
+		}
+
+		ZHR_cooperation_with_america = {
+			picture = ZHR_collaborationwithamerica
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				license_purchase_cost = -0.5
+			}
+		}
+
+		ZHR_finnish_independence_campaign = {
+			picture = ZHR_finnishindependencecampaign
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				autonomy_gain = 2
+			}
+		}
+
+		ZHR_yellow_russian_sabotage = {
+			picture = ZHR_yellowrussiansabotage
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				stability_weekly = -0.01
+				industrial_capacity_factory = -0.1
+				resistance_target = 0.1
+			}
+		}
+
+############Bogdanov###############
+
+		ZHR_proletkult_i = {
+			picture = ZHR_proletkult
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				army_morale_factor = 0.05
+				consumer_goods_expected_value = -0.025
+			}
+		}
+
+		ZHR_organisational_socialism = {
+			picture = ZHR_orgsoc
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				global_building_slots_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				monthly_population = 0.4
+			}
+		}
+
+		ZHR_proletkult_1 = {
+			picture = ZHR_proletkult
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				army_morale_factor = 0.05
+				consumer_goods_expected_value = -0.05
+				industry_repair_factor = 0.05
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
+		ZHR_biocosmism = {
+			picture = ZHR_biocosmism
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				research_speed_factor = 0.05
+			}
+		}
+
+		ZHR_homo_dominus = {
+			picture = ZHR_homodminus
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				resistance_target = -0.1
+				conscription = 0.005
+				army_core_defence_factor = 0.05
+			}
+		}
+
+		ZHR_proletkult_2 = {
+			picture = ZHR_proletkult
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				local_resources_factor = 0.1
+				production_speed_industrial_complex_factor = 0.05
+				army_morale_factor = 0.05
+				consumer_goods_expected_value = -0.05
+				industry_repair_factor = 0.05
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
+		ZHR_organisational_socialism_1 = {
+			picture = ZHR_orgsoc
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				global_building_slots_factor = 0.1
+				production_factory_max_efficiency_factor = 0.05
+				monthly_population = 0.4
+				research_speed_factor = 0.03
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
+		ZHR_tektological_plan = {
+			picture = ZHR_plan
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				research_speed_factor = 0.05
+				army_org_factor = 0.05
+				org_loss_when_moving = -0.05
+				line_change_production_efficiency_factor = 0.05
+			}
+		}
+
+		ZHR_creators_of_god = {
+			picture = ZHR_creators
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				conscription = 0.01
+				army_core_defence_factor = 0.005
+			}
+		}
+	}
+	#####################################################################
+	#						Companies
+	#####################################################################
+	#### General ####
+	industrial_concern = {
+		Tereshchenkos_Consortium_Industrial_Concern = {
+			picture = ZHR_Tereshchenkos_Consortium_Industrial_Concern
+			allowed = { 
+				OR = {
+					original_tag = RUS
+					original_tag = SRU
+					original_tag = DKB 
+					original_tag = ORE 
+					original_tag = SIB 
+					original_tag = KCK 
+					original_tag = HAR 
+					original_tag = PRI 
+					original_tag = ARC 
+					original_tag = FCR 
+					original_tag = PSL 
+					original_tag = KAV 
+					original_tag = ZHR
+					AND = {
+						tag = ALT
+						has_completed_focus = ALT_agartha_calling
+					}
+				}
+			}
+			available = {
+				has_full_control_of_state = 978
+			}
+			traits = {
+				industrial_manufacturer
+				regular
+			}
+			modifier = {
+				production_speed_arms_factory_factor = 0.03
+				production_speed_industrial_complex_factor = 0.1
+			}
+			research_bonus = {
+				industry = 0.1
+			}
+		}
+		
+		Harbin_Radioelectronics_Institute = {
+			#name = Harbin_Radioelectronics_Institute
+			picture = ZHR_Harbin_Radioelectronics_Institute
+			allowed = { 
+				OR = {
+					original_tag = RUS
+					original_tag = SRU
+					original_tag = DKB 
+					original_tag = ORE 
+					original_tag = SIB 
+					original_tag = KCK 
+					original_tag = HAR 
+					original_tag = PRI 
+					original_tag = ARC 
+					original_tag = FCR 
+					original_tag = PSL 
+					original_tag = KAV 
+					original_tag = ZHR
+					AND = {
+						tag = ALT
+						has_completed_focus = ALT_agartha_calling
+					}
+				}
+			}
+			available = {
+				has_full_control_of_state = 978
+			}
+			traits = {
+				electronics_manufacturer
+				regular
+			}
+			modifier = {
+				production_speed_radar_station_factor = 0.1
+			}
+			research_bonus = {
+				electronics = 0.1
+			}
+		}
+	}
+
+	#### Weapons Manufacturer ####
+	materiel_manufacturer = {
+		designer = yes
+
+		Harbin_Arsenal = {
+			picture = ZHR_Harbin_Arsenal
+			allowed = { 
+				OR = {
+					original_tag = RUS
+					original_tag = SRU
+					original_tag = DKB 
+					original_tag = ORE 
+					original_tag = SIB 
+					original_tag = KCK 
+					original_tag = HAR 
+					original_tag = PRI 
+					original_tag = ARC 
+					original_tag = FCR 
+					original_tag = PSL 
+					original_tag = KAV 
+					original_tag = ZHR
+					AND = {
+						tag = ALT
+						has_completed_focus = ALT_agartha_calling
+					}
+				}
+			}
+			available = {
+				has_full_control_of_state = 978
+			}
+			traits = {
+				infantry_equipment_producer_offense_0
+			}
+			research_bonus = {
+				infantry_weapons = 0.1
+			}
+		}
+
+		Grabins_Ordnance_Factories_Inc = {
+			picture = ZHR_Grabins_Ordnance_Factories_Inc
+			allowed = { 
+				OR = {
+					original_tag = RUS
+					original_tag = SRU
+					original_tag = DKB 
+					original_tag = ORE 
+					original_tag = SIB 
+					original_tag = KCK 
+					original_tag = HAR 
+					original_tag = PRI 
+					original_tag = ARC 
+					original_tag = FCR 
+					original_tag = PSL 
+					original_tag = KAV 
+					original_tag = ZHR
+					AND = {
+						tag = ALT
+						has_completed_focus = ALT_agartha_calling
+					}
+				}
+			}
+			available = {
+				has_full_control_of_state = 978
+			}
+			traits = {
+				artillery_producer_offense_0
+			}
+			research_bonus = {
+				artillery = 0.05
+			}
+		}
+
+	}
+
+	#### Heavy Equipment Manufacturer ####
+	tank_manufacturer = {
+		designer = yes
+
+		Kotin-Mikulin_Engines = {
+			#name = Kotin-Mikulin_Engines
+			picture = ZHR_Kotin-Mikulin_Engines
+			allowed = { 
+				OR = {
+					original_tag = RUS
+					original_tag = SRU
+					original_tag = DKB 
+					original_tag = ORE 
+					original_tag = SIB 
+					original_tag = KCK 
+					original_tag = HAR 
+					original_tag = PRI 
+					original_tag = ARC 
+					original_tag = FCR 
+					original_tag = PSL 
+					original_tag = KAV 
+					original_tag = ZHR
+					AND = {
+						tag = ALT
+						has_completed_focus = ALT_agartha_calling
+					}
+				}
+			}
+			available = {
+				has_full_control_of_state = 978
+			}
+			traits = {
+				small_tank_producer_offense_0
+			}
+			research_bonus = {
+				armor = 0.1
+			}
+		}
+		
+		Khabarovsk_Motorcar_Factory = {
+			#name = Khabarovsk_Motorcar_Factory
+			picture = ZHR_Khabarovsk_Motorcar_Factory
+			allowed = { 
+				OR = {
+					original_tag = RUS
+					original_tag = SRU
+					original_tag = DKB 
+					original_tag = ORE 
+					original_tag = SIB 
+					original_tag = KCK 
+					original_tag = HAR 
+					original_tag = PRI 
+					original_tag = ARC 
+					original_tag = FCR 
+					original_tag = PSL 
+					original_tag = KAV 
+					original_tag = ZHR
+					AND = {
+						tag = ALT
+						has_completed_focus = ALT_agartha_calling
+					}
+				}
+			}
+			available = {
+				has_full_control_of_state = 409
+			}
+			traits = {
+				motorised_equipment_producer_mass_0
+			}
+			research_bonus = {
+				motorized_equipment = 0.1
+			}
+		}
+	}
+
+	#### Air and Naval Manufacturer ####
+	naval_manufacturer = {
+		designer = yes
+		Union_of_Pacific_Shipyards = {
+			#name = Union_of_Pacific_Shipyards
+			picture = ZHR_Union_of_Pacific_Shipyards
+			allowed = { 
+				OR = {
+					original_tag = RUS
+					original_tag = SRU
+					original_tag = DKB 
+					original_tag = ORE 
+					original_tag = SIB 
+					original_tag = KCK 
+					original_tag = HAR 
+					original_tag = PRI 
+					original_tag = ARC 
+					original_tag = FCR 
+					original_tag = PSL 
+					original_tag = KAV 
+					original_tag = ZHR
+					AND = {
+						tag = ALT
+						has_completed_focus = ALT_agartha_calling
+					}
+				}
+			}
+			available = {
+				has_full_control_of_state = 408
+			}
+			traits = {
+				capital_ship_producer_offense_0
+			}
+			research_bonus = {
+				naval_equipment = 0.05
+			}
+		}
+	}
+	aircraft_manufacturer = {
+		Khabarovsk_Hydroaeronautics_Bureau = {
+			#name = Khabarovsk_Hydroaeronautics_Bureau
+			picture = ZHR_Khabarovsk_Hydroaeronautics_Bureau
+			allowed = { 
+				OR = {
+					original_tag = RUS
+					original_tag = SRU
+					original_tag = DKB 
+					original_tag = ORE 
+					original_tag = SIB 
+					original_tag = KCK 
+					original_tag = HAR 
+					original_tag = PRI 
+					original_tag = ARC 
+					original_tag = FCR 
+					original_tag = PSL 
+					original_tag = KAV 
+					original_tag = ZHR
+					AND = {
+						tag = ALT
+						has_completed_focus = ALT_agartha_calling
+					}
+				}
+			}
+			available = {
+				has_full_control_of_state = 409
+			}
+			traits = {
+				nav_cas_producer_offense_1
+			}
+			research_bonus = {
+				naval_bomber = 0.15
+			}
+		}
+
+		Nikolayevsk_Aeronautics_Factory = {
+			#name = Nikolayevsk_Aeronautics_Factory
+			picture = ZHR_Nikolayevsk_Aeronautics_Factory
+			allowed = { 
+				OR = {
+					original_tag = RUS
+					original_tag = SRU
+					original_tag = DKB 
+					original_tag = ORE 
+					original_tag = SIB 
+					original_tag = KCK 
+					original_tag = HAR 
+					original_tag = PRI 
+					original_tag = ARC 
+					original_tag = FCR 
+					original_tag = PSL 
+					original_tag = KAV 
+					original_tag = ZHR
+					AND = {
+						tag = ALT
+						has_completed_focus = ALT_agartha_calling
+					}
+				}
+			}
+			available = {
+				has_full_control_of_state = 560
+			}
+			traits = {
+				bomber_producer_offense_0
+			}
+			research_bonus = {
+				air_equipment = 0.05
+			}
+		}
+		
+		Aerograd_Inc = {
+			#name = Aerograd_Inc
+			picture = ZHR_Aerograd_Inc
+			allowed = { 
+				OR = {
+					original_tag = RUS
+					original_tag = SRU
+					original_tag = DKB 
+					original_tag = ORE 
+					original_tag = SIB 
+					original_tag = KCK 
+					original_tag = HAR 
+					original_tag = PRI 
+					original_tag = ARC 
+					original_tag = FCR 
+					original_tag = PSL 
+					original_tag = KAV 
+					original_tag = ZHR
+					AND = {
+						tag = ALT
+						has_completed_focus = ALT_agartha_calling
+					}
+				}
+			}
+			available = {
+				has_full_control_of_state = 978
+			}
+			traits = {
+				fighter_producer_offense_0
+			}
+			research_bonus = {
+				light_fighter = 0.1
+			}
+		}
+		Harbin_Strategic_Aircraft_Bureau = {
+			#name = Harbin_Strategic_Aircraft_Bureau
+			picture = ZHR_Harbin_Strategic_Aircraft_Bureau
+			allowed = { 
+				OR = {
+					original_tag = RUS
+					original_tag = SRU
+					original_tag = DKB 
+					original_tag = ORE 
+					original_tag = SIB 
+					original_tag = KCK 
+					original_tag = HAR 
+					original_tag = PRI 
+					original_tag = ARC 
+					original_tag = FCR 
+					original_tag = PSL 
+					original_tag = KAV 
+					original_tag = ZHR
+					AND = {
+						tag = ALT
+						has_completed_focus = ALT_agartha_calling
+					}
+				}
+			}
+			available = {
+				has_full_control_of_state = 978
+			}
+			traits = {
+				bomber_producer_offense_0
+			}
+			research_bonus = {
+				air_equipment = 0.05
+			}
+		}
+
+	}
+}

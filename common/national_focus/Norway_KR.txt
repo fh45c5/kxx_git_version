@@ -1,0 +1,7086 @@
+focus_tree = {
+	id = norway_focus
+
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 20
+			tag = NOR
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 4000 y = 0 }
+
+	#
+	##
+	###
+	####
+	#####
+	##########################
+	###  Alternative Tree  ###
+	##########################
+	#####
+	####
+	###
+	##
+	#
+
+	focus = {
+		id = NOR_Alt_saving_norway_from_socialism
+		icon = GFX_goal_NOR_coat_of_arms
+		cost = 2.00
+		x = 13
+		y = 0
+		available = {
+			has_socialist_government = no
+			has_country_flag = NOR_1936_elections_held
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_saving_norway_from_socialism"
+			add_political_power = 75
+			swap_ideas = {
+				remove_idea = NOR_Alt_right_wing_coup_idea
+				add_idea = NOR_Alt_right_wing_coup1_idea
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_judgement_day
+		icon = GFX_HOL_crackdown_syndie
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_saving_norway_from_socialism
+		}
+		x = 11
+		y = 1
+		
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_judgement_day"
+			remove_ideas = NOR_labour_conflicts
+			add_popularity = { ideology = totalist popularity = -0.04 }
+			add_popularity = { ideology = syndicalist popularity = -0.04 }
+			add_popularity = { ideology = radical_socialist popularity = -0.04 }
+			country_event = nor_new.2
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_dissolve_labour
+		icon = GFX_goal_NOR_Sosialdemokratisk_Arbeiderparti
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_judgement_day
+		}
+		x = 11
+		y = 3
+		
+		
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_dissolve_labour"
+			add_popularity = { ideology = radical_socialist popularity = -0.15 }
+			if = {
+				limit = { has_idea = NOR_Alt_right_wing_coup1_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_right_wing_coup1_idea
+					add_idea = NOR_Alt_right_wing_coup2_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_right_wing_coup2_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_right_wing_coup2_idea
+					add_idea = NOR_Alt_right_wing_coup3_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_right_wing_coup3_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_right_wing_coup3_idea
+					add_idea = NOR_Alt_right_wing_coup4_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_right_wing_coup4_idea }
+				remove_ideas = NOR_Alt_right_wing_coup4_idea
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = NOR_Alt_right_wing_coup_idea
+					add_idea = NOR_Alt_right_wing_coup1_idea
+				}
+			}
+			country_event = nor_new.3
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_tackle_socialist_militias
+		icon = GFX_goal_HOL_ban_paramilitary_left
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_saving_norway_from_socialism
+		}
+		x = 13
+		y = 1
+		
+		
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_tackle_socialist_militias"
+			add_popularity = { ideology = totalist popularity = -0.01 }
+			add_popularity = { ideology = radical_socialist popularity = -0.02 }
+			add_manpower = -530
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 870
+				producer = NOR
+			}
+			if = {
+				limit = { has_idea = NOR_Alt_right_wing_coup1_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_right_wing_coup1_idea
+					add_idea = NOR_Alt_right_wing_coup2_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_right_wing_coup2_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_right_wing_coup2_idea
+					add_idea = NOR_Alt_right_wing_coup3_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_right_wing_coup3_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_right_wing_coup3_idea
+					add_idea = NOR_Alt_right_wing_coup4_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_right_wing_coup4_idea }
+				remove_ideas = NOR_Alt_right_wing_coup4_idea
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = NOR_Alt_right_wing_coup_idea
+					add_idea = NOR_Alt_right_wing_coup1_idea
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_security_realm_act
+		icon = GFX_goal_generic_martial_law
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_judgement_day
+		}
+		prerequisite = {
+			focus = NOR_Alt_tackle_socialist_militias
+		}
+		x = 12
+		y = 2
+		
+		
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_security_realm_act"
+			add_ideas = NOR_Alt_security_realm_act_idea
+			if = {
+				limit = { has_idea = NOR_Alt_right_wing_coup1_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_right_wing_coup1_idea
+					add_idea = NOR_Alt_right_wing_coup2_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_right_wing_coup2_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_right_wing_coup2_idea
+					add_idea = NOR_Alt_right_wing_coup3_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_right_wing_coup3_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_right_wing_coup3_idea
+					add_idea = NOR_Alt_right_wing_coup4_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_right_wing_coup4_idea }
+				remove_ideas = NOR_Alt_right_wing_coup4_idea
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = NOR_Alt_right_wing_coup_idea
+					add_idea = NOR_Alt_right_wing_coup1_idea
+				}
+			}
+			country_event = nor_new.4
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_deal_foreign_syndicalists
+		icon = GFX_goal_UK_ban_unions
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_dissolve_labour
+		}
+		prerequisite = {
+			focus = NOR_Alt_security_realm_act
+		}
+		x = 12
+		y = 4
+		
+		
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_security_realm_act"
+			add_stability = 0.05
+			add_war_support = 0.07
+			if = {
+				limit = { has_idea = NOR_Alt_right_wing_coup1_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_right_wing_coup1_idea
+					add_idea = NOR_Alt_right_wing_coup2_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_right_wing_coup2_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_right_wing_coup2_idea
+					add_idea = NOR_Alt_right_wing_coup3_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_right_wing_coup3_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_right_wing_coup3_idea
+					add_idea = NOR_Alt_right_wing_coup4_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_right_wing_coup4_idea }
+				remove_ideas = NOR_Alt_right_wing_coup4_idea
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = NOR_Alt_right_wing_coup_idea
+					add_idea = NOR_Alt_right_wing_coup1_idea
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_unite_right
+		icon = GFX_goal_COS_Ferrer_Coup
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_saving_norway_from_socialism
+		}
+		x = 15
+		y = 1
+		
+	
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_unite_right"
+			add_stability = 0.05
+			add_popularity = { ideology = social_conservative popularity = 0.02 }
+			add_popularity = { ideology = authoritarian_democrat popularity = 0.02 }
+			add_popularity = { ideology = paternal_autocrat popularity = 0.02 }
+			add_popularity = { ideology = national_populist popularity = 0.02 }
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_alliance_with_farmers
+		icon = GFX_goal_CZE_agrarians
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_unite_right
+		}
+		x = 14
+		y = 2
+		
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_alliance_with_farmers"
+			add_political_power = -50
+			add_stability = 0.05
+			random_owned_controlled_state = {
+				prioritize = { 142 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			country_event = nor_new.5
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_business_ties
+		icon = GFX_goal_bag_of_money
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_unite_right
+		}
+		x = 15
+		y = 3
+		
+		
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_business_ties"
+			add_political_power = -50
+			add_stability = 0.05
+			add_offsite_building = { type = industrial_complex level = 1 }
+			country_event = nor_new.6
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_secure_christian_support
+		icon = GFX_BEL_Improve_Catholic_Relations
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_alliance_with_farmers
+		}
+		prerequisite = {
+			focus = NOR_Alt_business_ties
+		}
+		x = 14
+		y = 4
+		
+	
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_secure_christian_support"
+			add_political_power = -25
+			add_stability = 0.05
+			add_war_support = 0.03
+			country_event = nor_new.9
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_future_of_nation
+		icon = GFX_goal_generic_council
+		cost = 2.00
+		prerequisite = {
+			focus = NOR_Alt_deal_foreign_syndicalists
+		}
+		prerequisite = {
+			focus = NOR_Alt_secure_christian_support
+		}
+		x = 13
+		y = 5
+		
+		available = {
+			has_completed_focus = NOR_Alt_security_realm_act
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_future_of_nation"
+			country_event = nor_new.11
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_democracy_survives
+		icon = GFX_goal_DOM_Call_Special_Election
+		cost = 3.00
+		prerequisite = {
+			focus = NOR_Alt_future_of_nation
+		}
+		mutually_exclusive = {
+			focus = NOR_Alt_expand_security_acts
+		}
+		x = 7
+		y = 6
+		
+		available = {
+			has_country_flag = NOR_Alt_democracy_survives_flag
+			OR = {
+				has_government = social_liberal
+				has_government = social_conservative
+				has_government = authoritarian_democrat
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_democracy_survives"
+			if = {
+				limit = {
+					has_government = social_liberal
+				}
+				country_event = nor_new.18
+			}
+			else = {
+				country_event = nor_new.19
+				hidden_effect = {
+					NOR_recalculate_kings_party = yes
+				}
+			}
+			add_popularity = { ideology = paternal_autocrat popularity = -0.07 }
+			add_popularity = { ideology = national_populist popularity = -0.07 }
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_united_against_secularization
+		icon = GFX_goal_AUS_helleno_christian
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_democracy_survives
+		}
+		x = 2
+		y = 7
+		
+		available = {
+			has_country_flag = NOR_christian_democrat_victory
+			has_government = social_conservative
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_united_against_secularization"
+			add_political_power = 100
+			add_popularity = { ideology = social_conservative popularity = 0.10 }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_support_haugian_enterprices
+		icon = GFX_goal_COR_protestant_corporatism
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_united_against_secularization
+		}
+		x = 0
+		y = 8
+		
+		available = {
+			has_government = social_conservative
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_support_haugian_enterprices"
+			NOR_reduce_weak_economy = yes
+			random_owned_controlled_state = {
+				prioritize = { 142 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Alt_christian_labour
+		icon = GFX_goal_GER_Only_Christian_Unions
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_support_haugian_enterprices
+		}
+		x = 0
+		y = 9
+		
+		available = {
+			has_government = social_conservative
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_christian_labour"
+			add_ideas = NOR_Alt_christian_labour_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Alt_sowing_wheat_and_gods_word
+		icon = GFX_goal_HAI_farmin_boi
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_christian_labour
+		}
+		x = 1
+		y = 10
+		
+		available = {
+			has_government = social_conservative
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_agrarian_autarky"
+			add_stability = 0.03
+			NOR_reduce_weak_economy = yes
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 142 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 143 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 144 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 937 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Alt_encourage_low_church
+		icon = GFX_BEL_Improve_Catholic_Relations
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_united_against_secularization
+		}
+		x = 2
+		y = 8
+		
+		available = {
+			has_government = social_conservative
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_encourage_low_church"
+			add_stability = 0.02
+			add_ideas = NOR_Alt_encourage_low_church_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_strengthen_rural_regions
+		icon = GFX_goal_CZE_agrarians
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_democracy_survives
+		}
+		x = 7
+		y = 7
+		
+		available = {
+			has_country_flag = NOR_agrarian_victory
+			has_government = social_conservative
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_strengthen_rural_regions"
+			add_political_power = 100
+			add_popularity = { ideology = social_conservative popularity = 0.10 }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_nation_of_families
+		icon = GFX_BAY_FAMILY
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_united_against_secularization
+			focus = NOR_Alt_strengthen_rural_regions
+		}
+		x = 4
+		y = 8
+		
+		available = {
+			has_government = social_conservative
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_nation_of_families"
+			add_ideas = NOR_Alt_nation_of_families_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_freedom_and_democracy
+		icon = GFX_RUS_Lessons_Of_Democracy
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_encourage_low_church
+		}
+		prerequisite = {
+			focus = NOR_Alt_nation_of_families
+		}
+		x = 3
+		y = 9
+		
+		available = {
+			has_government = social_conservative
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_freedom_and_democracy"
+			add_stability = 0.05
+			add_popularity = { ideology = social_conservative popularity = 0.04 }
+			add_popularity = { ideology = market_liberal popularity = 0.02 }
+			add_popularity = { ideology = social_liberal popularity = 0.02 }
+			add_popularity = { ideology = social_democrat popularity = 0.02 }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_nation_of_christians
+		icon = GFX_goal_TEX_christian_commonwealth
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_freedom_and_democracy
+		}
+		x = 3
+		y = 10
+		
+		available = {
+			has_government = social_conservative
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_nation_of_christians"
+			swap_ideas = {
+				remove_idea = NOR_Alt_nation_of_families_idea
+				add_idea = NOR_Alt_nation_of_christians_idea
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_labour_and_farmers_unite
+		icon = GFX_goal_CZE_farmer_worker
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_strengthen_rural_regions
+		}
+		x = 6
+		y = 8
+		
+		available = {
+			has_government = social_conservative
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_labour_and_farmers_unite"
+			add_ideas = NOR_Alt_labour_and_farmers_unite_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_nation_decentralized_communities
+		icon = GFX_RUS_Decentralize_Power
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_nation_of_families
+		}
+		prerequisite = {
+			focus = NOR_Alt_labour_and_farmers_unite
+		}
+		x = 5
+		y = 9
+		
+		available = {
+			has_government = social_conservative
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_nation_decentralized_communities"
+			add_stability = 0.03
+			add_popularity = { ideology = social_conservative popularity = 0.03 }
+			swap_ideas = {
+				remove_idea = NOR_Alt_labour_and_farmers_unite_idea
+				add_idea = NOR_Alt_nation_decentralized_communities_idea
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_agrarian_autarky
+		icon = GFX_focus_AUS_agriculture
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_strengthen_rural_regions
+		}
+		x = 8
+		y = 8
+		
+		available = {
+			has_government = social_conservative
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_agrarian_autarky"
+			NOR_reduce_weak_economy = yes
+			random_owned_controlled_state = {
+				prioritize = { 143 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 144 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Alt_protectionist_tariffs
+		icon = GFX_goal_manage_industries
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_agrarian_autarky
+		}
+		prerequisite = {
+			focus = NOR_Alt_labour_and_farmers_unite
+		}
+		x = 7
+		y = 9
+		
+		available = {
+			has_government = social_conservative
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_protectionist_tariffs"
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_timed_idea = {
+				idea = NOR_Alt_protectionist_tariffs_idea
+				days = 150
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Alt_support_countryside_values
+		icon = GFX_CAL_farm_bankruptcy_act
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_nation_decentralized_communities
+		}
+		prerequisite = {
+			focus = NOR_Alt_protectionist_tariffs
+		}
+		x = 6
+		y = 10
+		
+		available = {
+			has_government = social_conservative
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_support_countryside_values"
+			swap_ideas = {
+				remove_idea = NOR_Alt_nation_of_families_idea
+				add_idea = NOR_Alt_support_countryside_values_idea
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_support_your_local_farmer
+		icon = GFX_RUS_Emergence_Of_Farmers
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_agrarian_autarky
+		}
+		x = 8
+		y = 10
+		
+		available = {
+			has_government = social_conservative
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_agrarian_autarky"
+			add_stability = 0.03
+			NOR_reduce_weak_economy = yes
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 142 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 143 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 144 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 937 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Alt_right_wing_unified
+		icon = GFX_goal_ideology_authoritarian_democrat
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_democracy_survives
+		}
+		x = 13
+		y = 7
+		
+		available = {
+			has_country_flag = NOR_fatherland_victory
+			has_government = authoritarian_democrat
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_right_wing_unified"
+			add_political_power = 100
+			add_popularity = { ideology = authoritarian_democrat popularity = 0.10 }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_conservative_labour
+		icon = GFX_NEE_union_ties
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_united_against_secularization
+			focus = NOR_Alt_strengthen_rural_regions
+			focus = NOR_Alt_right_wing_unified
+		}
+		x = 9
+		y = 9
+		
+		available = {
+			OR = {
+				has_government = social_conservative
+				has_government = authoritarian_democrat
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_conservative_labour"
+			add_ideas = NOR_conservative_agreement_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Alt_paternal_conservatism
+		icon = GFX_goal_socialist_infrastructure
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_conservative_labour
+		}
+		x = 10
+		y = 10
+		
+		available = {
+			OR = {
+				has_government = social_conservative
+				has_government = authoritarian_democrat
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_paternal_conservatism"
+			add_ideas = NOR_HC
+			NOR_reduce_weak_economy = yes
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_bring_in_conservatives
+		icon = GFX_RUS_Secure_Coalition
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_nation_of_christians
+			focus = NOR_Alt_support_countryside_values
+		}
+		prerequisite = {
+			focus = NOR_Alt_sowing_wheat_and_gods_word
+			focus = NOR_Alt_support_your_local_farmer
+		}
+		x = 4
+		y = 11
+		
+		available = {
+			has_government = social_conservative
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_one_dominant_party"
+			remove_ideas = NOR_kings_party_idea
+			country_event = nor_new.20
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_reeinforce_national_and_social_values
+		icon = GFX_goal_TEX_American_Family
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_right_wing_unified
+		}
+		x = 11
+		y = 8
+		
+		available = {
+			has_government = authoritarian_democrat
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_reeinforce_national_and_social_values"
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_ideas = NOR_Alt_reeinforce_national_and_social_values_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_loyalty_to_king
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_reeinforce_national_and_social_values
+		}
+		x = 11
+		y = 9
+		
+		available = {
+			has_government = authoritarian_democrat
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_loyalty_to_king"
+			add_stability = 0.05
+			add_political_power = -50
+			add_popularity = { ideology = social_liberal popularity = 0.03 }
+			add_popularity = { ideology = authoritarian_democrat popularity = 0.03 }
+			remove_ideas = NOR_kings_party_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_corporate_free_market
+		icon = GFX_goal_TEX_christianity_capitalism
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_right_wing_unified
+		}
+		mutually_exclusive = {
+			focus = NOR_Alt_protect_our_industries
+		}
+		x = 13
+		y = 8
+		
+		available = {
+			has_government = authoritarian_democrat
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_corporate_free_market"
+			NOR_reduce_weak_economy = yes
+			add_offsite_building = { type = industrial_complex level = 1 }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Alt_protect_our_industries
+		icon = GFX_RUS_Reaffirm_Protectionism
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_right_wing_unified
+		}
+		mutually_exclusive = {
+			focus = NOR_Alt_corporate_free_market
+		}
+		x = 15
+		y = 8
+		
+		available = {
+			has_government = authoritarian_democrat
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_protect_our_industries"
+			NOR_reduce_weak_economy = yes
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Alt_anti_syndicalist_laws
+		icon = GFX_goal_CRO_eliminate_syndies
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_corporate_free_market
+			focus = NOR_Alt_protect_our_industries
+		}
+		x = 13
+		y = 9
+		
+		available = {
+			has_government = authoritarian_democrat
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_anti_syndicalist_laws"
+			add_ideas = NOR_Alt_anti_syndicalist_laws_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_unions_under_control
+		icon = GFX_RUS_Control_Trade_Unions
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_corporate_free_market
+			focus = NOR_Alt_protect_our_industries
+		}
+		x = 15
+		y = 9
+		
+		available = {
+			has_government = authoritarian_democrat
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_unions_under_control"
+			add_political_power = -25
+			add_ideas = NOR_Alt_unions_under_control_idea
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Alt_rural_development
+		icon = GFX_goal_BUL_mechanize_farming
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_unions_under_control
+		}
+		x = 14
+		y = 10
+		
+		available = {
+			has_government = authoritarian_democrat
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_rural_development"
+			add_stability = 0.03
+			NOR_reduce_weak_economy = yes
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 142 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 143 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 144 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 937 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Alt_patriots_of_norway
+		icon = GFX_goal_SCA_economy_norway
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_loyalty_to_king
+		}
+		prerequisite = {
+			focus = NOR_Alt_anti_syndicalist_laws
+		}
+		x = 12
+		y = 10
+		
+		available = {
+			has_government = authoritarian_democrat
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_patriots_of_norway"
+			add_popularity = { ideology = authoritarian_democrat popularity = 0.03 }
+			swap_ideas = {
+				remove_idea = NOR_Alt_anti_syndicalist_laws_idea
+				add_idea = NOR_Alt_patriots_of_norway_idea
+			}
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+
+	}
+	focus = {
+		id = NOR_Alt_one_dominant_party
+		icon = GFX_goal_HOL_CNA_restored_stability
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_patriots_of_norway
+		}
+		prerequisite = {
+			focus = NOR_Alt_rural_development
+		}
+		x = 13
+		y = 11
+		
+		available = {
+			has_government = authoritarian_democrat
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_one_dominant_party"
+			add_popularity = { ideology = authoritarian_democrat popularity = 0.03 }
+			add_popularity = { ideology = national_populist popularity = -0.02 }
+			add_popularity = { ideology = paternal_autocrat popularity = -0.02 }
+			add_popularity = { ideology = social_conservative popularity = -0.02 }
+			add_popularity = { ideology = market_liberal popularity = -0.02 }
+			add_popularity = { ideology = social_liberal popularity = -0.02 }
+			add_popularity = { ideology = social_democrat popularity = -0.02 }
+			add_timed_idea = {
+				idea = NOR_Alt_one_dominant_party_idea
+				days = 150
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_expand_security_acts
+		icon = GFX_goal_NOR_new_police
+		cost = 3.00
+		prerequisite = {
+			focus = NOR_Alt_future_of_nation
+		}
+		mutually_exclusive = {
+			focus = NOR_Alt_democracy_survives
+		}
+		x = 23
+		y = 6
+		
+		available = {
+			has_country_flag = NOR_Alt_expand_security_acts_flag
+			OR = {
+				has_government = paternal_autocrat
+				has_government = national_populist
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_expand_security_acts"
+			add_popularity = { ideology = social_democrat popularity = -0.05 }
+			add_popularity = { ideology = social_liberal popularity = -0.05 }
+			add_popularity = { ideology = market_liberal popularity = -0.05 }
+			add_popularity = { ideology = social_conservative popularity = -0.05 }
+			add_popularity = { ideology = authoritarian_democrat popularity = -0.05 }
+			swap_ideas = {
+				remove_idea = NOR_Alt_security_realm_act_idea
+				add_idea = NOR_Alt_security_realm_act_expand_idea
+			}
+			hidden_effect = {
+				NOR_recalculate_kings_party = yes
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_hvoslefs_guard
+		icon = GFX_goal_FSA_centralize_army_command
+		cost = 3.00
+		prerequisite = {
+			focus = NOR_Alt_expand_security_acts
+		}
+		x = 20
+		y = 7
+		
+		available = {
+			has_government = paternal_autocrat
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_hvoslefs_guard"
+			add_political_power = 100
+			add_popularity = { ideology = paternal_autocrat popularity = 0.10 }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_faith_and_nation
+		icon = GFX_goal_BRA_catholic_education
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_hvoslefs_guard
+		}
+		x = 18
+		y = 8
+		
+		available = {
+			has_government = paternal_autocrat
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_faith_and_nation"
+			add_ideas = NOR_Alt_faith_and_nation_idea
+		}
+		search_filters = { FOCUS_FILTER_RESISTANCE }
+
+	}
+	focus = {
+		id = NOR_Alt_state_protestantism
+		icon = GFX_CAL_christian_mysticism
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_faith_and_nation
+		}
+		x = 18
+		y = 9
+		
+		available = {
+			has_government = paternal_autocrat
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_state_protestantism"
+			swap_ideas = {
+				remove_idea = NOR_Alt_faith_and_nation_idea
+				add_idea = NOR_Alt_state_protestantism_idea
+			}
+			add_research_slot = 1
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+	}
+	focus = {
+		id = NOR_Alt_make_unfaithful_work
+		icon = GFX_goal_BRG_Patriotic_Worker
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_faith_and_nation
+		}
+		x = 20
+		y = 9
+		
+		available = {
+			has_government = paternal_autocrat
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_make_unfaithful_work"
+			add_ideas = NOR_Alt_make_unfaithful_work_idea
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = arms_factory size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Alt_hvoslefs_social_state
+		icon = GFX_goal_healthcare
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_state_protestantism
+		}
+		prerequisite = {
+			focus = NOR_Alt_make_unfaithful_work
+		}
+		x = 20
+		y = 10
+		
+		available = {
+			has_government = paternal_autocrat
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_hvoslefs_social_state"
+			swap_ideas = {
+				remove_idea = NOR_Alt_state_protestantism_idea
+				add_idea = NOR_Alt_hvoslefs_social_state_idea
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_declare_regency
+		icon = GFX_goal_BRG_Crown
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_hvoslefs_guard
+		}
+		mutually_exclusive = {
+			focus = NOR_Alt_military_and_state
+		}
+		x = 20
+		y = 8
+		
+		available = {
+			has_government = paternal_autocrat
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_declare_regency"
+			add_stability = 0.05
+			add_war_support = -0.05
+			add_political_power = -25
+			add_country_leader_trait = NOR_Regenten
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_military_and_state
+		icon = GFX_goal_officers
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_hvoslefs_guard
+		}
+		mutually_exclusive = {
+			focus = NOR_Alt_declare_regency
+		}
+		x = 22
+		y = 8
+		
+		available = {
+			has_government = paternal_autocrat
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_military_and_state"
+			add_war_support = 0.05
+			add_stability = -0.05
+			add_political_power = -25
+			add_country_leader_trait = NOR_Stratokraten
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_loyal_military
+		icon = GFX_RUS_Get_Military
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_declare_regency
+			focus = NOR_Alt_military_and_state
+		}
+		x = 22
+		y = 9
+		
+		available = {
+			has_government = paternal_autocrat
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_organize_hirden"
+			custom_effect_tooltip = NOR_loyal_military_tooltip
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = NOR_loyal_army_idea
+			custom_effect_tooltip = tooltip_white_line
+			hidden_effect = {
+				every_unit_leader = {
+					if = {
+						limit = { has_unit_leader_flag = NOR_leader }
+						set_nationality = XXA
+					}
+					else = {
+						retire = yes #gets rid of AI generics
+					}
+				}
+			}
+			NOR_create_rikshirden_leaders = yes
+			hidden_effect = {
+				every_unit_leader = { set_unit_leader_flag = NOR_rikshirden }
+			}
+			if = {
+				limit = { has_idea = NOR_fleischer_army_idea_1 }
+				remove_ideas = NOR_fleischer_army_idea_1
+			}
+			else_if = {
+				limit = { has_idea = NOR_fleischer_army_idea_2 }
+				remove_ideas = NOR_fleischer_army_idea_2
+			}
+			else_if = {
+				limit = { has_idea = NOR_fleischer_army_idea_3 }
+				remove_ideas = NOR_fleischer_army_idea_3
+			}
+			if = {
+				limit = { has_idea = NOR_ruge_army_idea_1 }
+				remove_ideas = NOR_ruge_army_idea_1
+			}
+			else_if = {
+				limit = { has_idea = NOR_ruge_army_idea_2 }
+				remove_ideas = NOR_ruge_army_idea_2
+			}
+			else_if = {
+				limit = { has_idea = NOR_ruge_army_idea_3 }
+				remove_ideas = NOR_ruge_army_idea_3
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER }
+
+	}
+	focus = {
+		id = NOR_Alt_eradicate_political_parties
+		icon = GFX_goal_CAL_Target_Politicians
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_loyal_military
+		}
+		x = 22
+		y = 10
+		
+		available = {
+			has_government = paternal_autocrat
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_eradicate_political_parties"
+			add_popularity = { ideology = paternal_autocrat popularity = 0.05 }
+			add_popularity = { ideology = social_democrat popularity = -0.03 }
+			add_popularity = { ideology = social_liberal popularity = -0.03 }
+			add_popularity = { ideology = market_liberal popularity = -0.03 }
+			add_popularity = { ideology = social_conservative popularity = -0.04 }
+			add_popularity = { ideology = authoritarian_democrat popularity = -0.04 }
+			add_popularity = { ideology = national_populist popularity = -0.04 }
+			swap_ideas = {
+				remove_idea = NOR_loyal_army_idea
+				add_idea = NOR_loyal_army1_idea
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_quislings_party
+		icon = GFX_goal_NOR_NS
+		cost = 3.00
+		prerequisite = {
+			focus = NOR_Alt_expand_security_acts
+		}
+		x = 28
+		y = 7
+		
+		available = {
+			has_government = national_populist
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_quislings_party"
+			add_political_power = 100
+			add_popularity = { ideology = national_populist popularity = 0.10 }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_corporatist_model
+		icon = GFX_goal_AUS_corporatism
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_hvoslefs_guard
+			focus = NOR_Alt_quislings_party
+		}
+		x = 24
+		y = 9
+		
+		available = {
+			OR = {
+				has_government = paternal_autocrat
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_corporatist_model"
+			NOR_reduce_weak_economy = yes
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_agrarian_cooperatives
+		icon = GFX_RUS_Agriculture_Secure_Council
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_corporatist_model
+		}
+		x = 24
+		y = 10
+		
+		available = {
+			OR = {
+				has_government = paternal_autocrat
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_corporatist_model"
+			NOR_reduce_weak_economy = yes
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 142 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 143 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 144 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 937 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Alt_nation_without_division
+		icon = GFX_focus_generic_authoritarian_government
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_hvoslefs_social_state
+		}
+		prerequisite = {
+			focus = NOR_Alt_eradicate_political_parties
+		}
+		prerequisite = {
+			focus = NOR_Alt_agrarian_cooperatives
+		}
+		x = 20
+		y = 11
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_nation_for_greater_people"
+			add_popularity = { ideology = paternal_autocrat popularity = 0.05 }
+			remove_ideas = NOR_kings_party_idea
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_forerprinsippet
+		icon = GFX_focus_generic_military_mission
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_quislings_party
+		}
+		x = 26
+		y = 8
+		
+		available = {
+			has_government = national_populist
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_national_unity"
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_political_power = -100
+			add_country_leader_trait = NOR_Foreren
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_national_unity
+		icon = GFX_goal_NOR_statspolitiet
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_quislings_party
+		}
+		x = 28
+		y = 8
+		
+		available = {
+			has_government = national_populist
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_national_unity"
+			add_ideas = NOR_statspolitiet_idea
+			add_research_slot = 1
+		}
+		search_filters = { FOCUS_FILTER_RESISTANCE FOCUS_FILTER_RESEARCH }
+
+	}
+	focus = {
+		id = NOR_Alt_organize_hirden
+		icon = GFX_goal_NOR_hirden
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_forerprinsippet
+		}
+		prerequisite = {
+			focus = NOR_Alt_national_unity
+		}
+		x = 27
+		y = 9
+		
+		available = {
+			has_government = national_populist
+			NOT = {
+				has_country_flag = NOR_Ragnarok_exists
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_organize_hirden"
+			custom_effect_tooltip = NOR_rikshirden_tooltip
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = NOR_rikshird_army
+			custom_effect_tooltip = tooltip_white_line
+			hidden_effect = {
+				every_unit_leader = {
+					if = {
+						limit = { has_unit_leader_flag = NOR_leader }
+						set_nationality = XXA
+					}
+					else = {
+						retire = yes #gets rid of AI generics
+					}
+				}
+			}
+			NOR_create_rikshirden_leaders = yes
+			hidden_effect = {
+				every_unit_leader = { set_unit_leader_flag = NOR_rikshirden }
+			}
+			if = {
+				limit = { has_idea = NOR_fleischer_army_idea_1 }
+				remove_ideas = NOR_fleischer_army_idea_1
+			}
+			else_if = {
+				limit = { has_idea = NOR_fleischer_army_idea_2 }
+				remove_ideas = NOR_fleischer_army_idea_2
+			}
+			else_if = {
+				limit = { has_idea = NOR_fleischer_army_idea_3 }
+				remove_ideas = NOR_fleischer_army_idea_3
+			}
+			if = {
+				limit = { has_idea = NOR_ruge_army_idea_1 }
+				remove_ideas = NOR_ruge_army_idea_1
+			}
+			else_if = {
+				limit = { has_idea = NOR_ruge_army_idea_2 }
+				remove_ideas = NOR_ruge_army_idea_2
+			}
+			else_if = {
+				limit = { has_idea = NOR_ruge_army_idea_3 }
+				remove_ideas = NOR_ruge_army_idea_3
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER }
+
+	}
+	focus = {
+		id = NOR_Alt_replacing_old_guard
+		icon = GFX_goal_NOR_quisling_guard
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_organize_hirden
+		}
+		x = 27
+		y = 10
+		
+		available = {
+			has_government = national_populist
+			NOT = {
+				has_country_flag = NOR_Ragnarok_exists
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_replacing_old_guard"
+			custom_effect_tooltip = NOR_quisling_guard_tooltip
+			hidden_effect = {
+				division_template = {
+					name = "Førergarden"
+					regiments = {
+						mountaineers = { x = 0 y = 0 }
+						mountaineers = { x = 0 y = 1 }
+						mountaineers = { x = 0 y = 2 }
+						mountaineers = { x = 1 y = 0 }
+						mountaineers = { x = 1 y = 1 }
+						mountaineers = { x = 1 y = 2 }
+						mountaineers = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+						artillery_brigade = { x = 2 y = 2 }
+					}
+					support = {
+						recon = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+					}
+					priority = 2
+				}
+
+				random_owned_controlled_state = {
+					prioritize = { 110 }
+					create_unit = {
+						division = "name = \"Førergarden\" division_template = \"Førergarden\" start_experience_factor = 0.5"
+						owner = NOR
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { has_tech = fighter1 } }
+				set_technology = { fighter1 = 1 }
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_1
+					amount = 50
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+
+	}
+	focus = {
+		id = NOR_Alt_social_unity
+		icon = GFX_RUS_Social_Justice
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_quislings_party
+		}
+		x = 30
+		y = 8
+		
+		available = {
+			has_government = national_populist
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_social_unity"
+			add_stability = 0.05
+			add_popularity = { ideology = national_populist popularity = 0.03 }
+			add_ideas = NOR_Alt_social_unity_idea
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_new_economic_plan
+		icon = GFX_goal_NOR_arbeidstjenesten
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_national_unity
+		}
+		prerequisite = {
+			focus = NOR_Alt_social_unity
+		}
+		x = 29
+		y = 9
+		
+		available = {
+			has_government = national_populist
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_new_economic_plan"
+			add_ideas = NOR_ns_arbeidstjeneste_idea
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = arms_factory size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Alt_strengthen_nsfo
+		icon = GFX_NOR_NSFO
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_new_economic_plan
+		}
+		x = 29
+		y = 10
+		
+		available = {
+			has_government = national_populist
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_strengthen_nsfo"
+			add_political_power = -25
+			swap_ideas = {
+				remove_idea = NOR_Alt_social_unity_idea
+				add_idea = NOR_Alt_strengthen_nsfo_idea
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_nation_for_greater_people
+		icon = GFX_goal_NOR_norgesveldet
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_agrarian_cooperatives
+		}
+		prerequisite = {
+			focus = NOR_Alt_replacing_old_guard
+		}
+		prerequisite = {
+			focus = NOR_Alt_strengthen_nsfo
+		}
+		x = 28
+		y = 11
+		
+		available = {
+			has_government = national_populist
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_nation_for_greater_people"
+			add_popularity = { ideology = national_populist popularity = 0.05 }
+			remove_ideas = NOR_kings_party_idea
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_death_to_syndicalism
+		icon = GFX_HOL_red_scare
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_bring_in_conservatives
+			focus = NOR_Alt_one_dominant_party
+			focus = NOR_Alt_nation_without_division
+			focus = NOR_Alt_nation_for_greater_people
+		}
+		x = 16
+		y = 12
+		
+		available = {
+			OR = {
+				is_subject = no
+				has_war_with = FRA
+			}
+			OR = {
+				has_government = social_conservative
+				has_government = authoritarian_democrat
+				has_government = paternal_autocrat
+				has_government = national_populist
+			}
+			FRA = {
+				has_war_with = GER
+			}
+		}
+		bypass = {
+			NOT = { country_exists = FRA }
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_death_to_syndicalism"
+			add_ideas = NOR_Alt_death_to_syndicalism_idea
+			declare_war_on = {
+				target = FRA
+				type = annex_everything
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_ARMY_BONUS }
+
+	}
+	focus = {
+		id = NOR_Alt_operation_stamford_bridge
+		icon = GFX_goal_BRG_Normans
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_death_to_syndicalism
+		}
+		x = 15
+		y = 13
+		
+		available = {
+			is_subject = no
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_operation_stamford_bridge"
+			swap_ideas = {
+				remove_idea = NOR_Alt_death_to_syndicalism_idea
+				add_idea = NOR_Alt_operation_stamford_bridge_idea
+			}
+			add_state_claim = 938
+			custom_effect_tooltip = NOR_Alt_operation_stamford_bridge_tooltip
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_ARMY_BONUS }
+
+	}
+	focus = {
+		id = NOR_Alt_cooperate_with_exciles
+		icon = GFX_goal_USA_reconcile_canada
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_death_to_syndicalism
+		}
+		x = 17
+		y = 13
+		
+		available = {
+			is_subject = no
+			NOR = {
+				has_war_with = ENG
+			}
+			CAN = {
+				has_war_with = ENG
+			}
+			country_exists = ENT
+			ENT = {
+				is_faction_leader = yes
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_cooperate_with_exciles"
+			add_opinion_modifier = { target = ENT modifier = NOR_CAN_ties }
+			reverse_add_opinion_modifier = { target = ENT modifier = NOR_CAN_ties }
+			country_event = norway.160
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_new_norwegian_golden_era
+		icon = GFX_goal_NOR_coat_of_arms
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_operation_stamford_bridge
+			focus = NOR_Alt_cooperate_with_exciles
+		}
+		x = 16
+		y = 14
+		
+		available = {
+			has_war = no
+			is_subject = no
+			owns_state = 938
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_new_norwegian_golden_era"
+			custom_effect_tooltip = NOR_Alt_new_norwegian_golden_era_tooltip
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_reorganize_foreign_policy
+		icon = GFX_goal_generic_government_deals
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_future_of_nation
+		}
+		x = 36
+		y = 6
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_reorganize_foreign_policy"
+			add_political_power = 75
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Alt_reaffirm_our_neutrality
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_reorganize_foreign_policy
+		}
+		mutually_exclusive = {
+			focus = NOR_Alt_work_with_germans
+		}
+		x = 35
+		y = 7
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_reaffirm_our_neutrality"
+			add_ideas = NOR_neutrality_idea_1
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Alt_strengthen_coastal_forts
+		icon = GFX_focus_generic_coastal_fort
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_reaffirm_our_neutrality
+		}
+		x = 35
+		y = 9
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_strengthen_coastal_forts"
+			142 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = 122
+					instant_build = yes
+				}
+			}
+			142 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = 53
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				remove_idea = NOR_neutrality_idea_1
+				add_idea = NOR_neutrality_idea_2
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Alt_trade_of_neutrality
+		icon = GFX_goal_generic_shipyard
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_strengthen_coastal_forts
+		}
+		x = 35
+		y = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_trade_of_neutrality"
+			NOR_reduce_weak_economy = yes
+			swap_ideas = {
+				remove_idea = NOR_neutrality_idea_2
+				add_idea = NOR_neutrality_idea_3
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_work_with_germans
+		icon = GFX_goal_rights_for_service
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_reorganize_foreign_policy
+		}
+		mutually_exclusive = {
+			focus = NOR_Alt_reaffirm_our_neutrality
+		}
+		x = 37
+		y = 7
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_trade_of_neutrality"
+			add_political_power = 25
+			diplomatic_relation = { country = GER relation = non_aggression_pact }
+			country_event = norway.174
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_homeguard_expantion
+		icon = GFX_goal_generic_army_training
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_reaffirm_our_neutrality
+			focus = NOR_Alt_work_with_germans
+		}
+		x = 36
+		y = 8
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_homeguard_expantion"
+			add_ideas = NOR_Alt_homeguard_expantion_idea
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_join_mitteleuropa
+		icon = GFX_goal_GER_mitteleuropa
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_work_with_germans
+		}
+		x = 37
+		y = 9
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_join_mitteleuropa"
+			NOR_reduce_weak_economy = yes
+			custom_effect_tooltip = NOR_Alt_join_mitteleuropa_tooltip
+			hidden_effect = {
+				if = {
+					limit = {
+						has_dlc = "Together for Victory"
+						is_ally_with = GER
+					}
+					add_to_tech_sharing_group = german_research
+				}
+				GER_add_to_mitteleuropa = yes
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Alt_german_norvego_north_sea
+		icon = GFX_goal_Kaiserliche_Marine
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Alt_join_mitteleuropa
+		}
+		x = 37
+		y = 10
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_german_norvego_north_sea"
+			add_tech_bonus = {
+				name = NOR_Alt_german_norvego_north_sea
+				bonus = 1
+				uses = 1
+				category = ss_tech
+			}
+
+			add_tech_bonus = {
+				name = NOR_Alt_german_norvego_north_sea
+				bonus = 1
+				uses = 1
+				category = dd_tech
+			}
+			GER = {
+				add_tech_bonus = {
+					name = NOR_Alt_german_norvego_north_sea
+					bonus = 1
+					uses = 1
+					category = ss_tech
+				}
+
+				add_tech_bonus = {
+					name = NOR_Alt_german_norvego_north_sea
+					bonus = 1
+					uses = 1
+					category = dd_tech
+				}
+			}
+		}
+	}
+
+	###工团
+	focus = {
+		id = NOR_Als_labour_victory
+		icon = GFX_goal_NOR_Sosialdemokratisk_Arbeiderparti
+		cost = 2.00
+		x = 13
+		y = 14
+	
+		available = {
+			has_socialist_government = yes
+			has_idea = NOR_Alt_syndicalist_revolution_idea
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_labour_victory"
+			add_political_power = 75
+			if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution1_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution1_idea
+					add_idea = NOR_Alt_syndicalist_revolution2_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution2_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution2_idea
+					add_idea = NOR_Alt_syndicalist_revolution3_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution3_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution3_idea
+					add_idea = NOR_Alt_syndicalist_revolution4_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution4_idea }
+				remove_ideas = NOR_Alt_syndicalist_revolution4_idea
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution_idea
+					add_idea = NOR_Alt_syndicalist_revolution1_idea
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Als_declare_martial_law
+		icon = GFX_goal_National_Security_Act
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_labour_victory
+		}
+		x = 12
+		y = 15
+		
+		available = {
+			has_socialist_government = yes
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_declare_martial_law"
+			add_stability = 0.05
+			add_war_support = 0.03
+			if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution1_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution1_idea
+					add_idea = NOR_Alt_syndicalist_revolution2_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution2_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution2_idea
+					add_idea = NOR_Alt_syndicalist_revolution3_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution3_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution3_idea
+					add_idea = NOR_Alt_syndicalist_revolution4_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution4_idea }
+				remove_ideas = NOR_Alt_syndicalist_revolution4_idea
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution_idea
+					add_idea = NOR_Alt_syndicalist_revolution1_idea
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+
+	}
+	focus = {
+		id = NOR_Als_fight_bourgeois_militas
+		icon = GFX_goal_HOL_ban_paramilitary
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_declare_martial_law
+		}
+		x = 11
+		y = 16
+		
+		available = {
+			has_socialist_government = yes
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_fight_bourgeois_militas"
+			add_popularity = { ideology = authoritarian_democrat popularity = -0.02 }
+			add_popularity = { ideology = paternal_autocrat popularity = -0.02 }
+			add_manpower = -530
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 870
+				producer = NOR
+			}
+			if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution1_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution1_idea
+					add_idea = NOR_Alt_syndicalist_revolution2_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution2_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution2_idea
+					add_idea = NOR_Alt_syndicalist_revolution3_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution3_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution3_idea
+					add_idea = NOR_Alt_syndicalist_revolution4_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution4_idea }
+				remove_ideas = NOR_Alt_syndicalist_revolution4_idea
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution_idea
+					add_idea = NOR_Alt_syndicalist_revolution1_idea
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_secure_parlaments_opening
+		icon = GFX_goal_COS_Ferrer_Coup
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_labour_victory
+		}
+		x = 14
+		y = 15
+		
+		available = {
+			has_socialist_government = yes
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_secure_parlaments_opening"
+			add_popularity = { ideology = totalist popularity = 0.03 }
+			add_popularity = { ideology = syndicalist popularity = 0.03 }
+			add_popularity = { ideology = radical_socialist popularity = 0.03 }
+			add_popularity = { ideology = social_democrat popularity = 0.02 }
+			add_popularity = { ideology = social_liberal popularity = 0.02 }
+			add_popularity = { ideology = market_liberal popularity = 0.02 }
+			add_popularity = { ideology = social_conservative popularity = 0.02 }
+			add_stability = 0.03
+			country_event = nor_new.70
+		}
+
+	}
+	focus = {
+		id = NOR_Als_approach_monarch
+		icon = GFX_goal_NOR_royal_guards
+		cost = 2.00
+		prerequisite = {
+			focus = NOR_Als_declare_martial_law
+		}
+		prerequisite = {
+			focus = NOR_Als_secure_parlaments_opening
+		}
+		x = 13
+		y = 16
+		
+		available = {
+			has_socialist_government = yes
+			or = {
+				has_country_leader = { name = "Haakon VII" }
+				has_country_leader = { name = "哈康七世" }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_approach_monarch"
+			country_event = nor_new.71
+		}
+
+	}
+	focus = {
+		id = NOR_Als_republican_declaration
+		icon = GFX_goal_crush_monarchy
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_approach_monarch
+		}
+		mutually_exclusive = {
+			focus = NOR_Als_king_of_revolution
+		}
+		x = 12
+		y = 17
+		
+		available = {
+			has_socialist_government = yes
+			has_country_flag = did
+			or = {
+				NOT = {
+					has_country_leader = { name = "Haakon VII" }
+				}
+				NOT = {
+					has_country_leader = { name = "哈康七世" }
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_republican_declaration"
+			add_stability = -0.03
+			add_political_power = 25
+			if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution1_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution1_idea
+					add_idea = NOR_Alt_syndicalist_revolution2_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution2_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution2_idea
+					add_idea = NOR_Alt_syndicalist_revolution3_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution3_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution3_idea
+					add_idea = NOR_Alt_syndicalist_revolution4_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution4_idea }
+				remove_ideas = NOR_Alt_syndicalist_revolution4_idea
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution_idea
+					add_idea = NOR_Alt_syndicalist_revolution1_idea
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_king_of_revolution
+		icon = GFX_goal_anarcho_monarchism
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_approach_monarch
+		}
+		mutually_exclusive = {
+			focus = NOR_Als_republican_declaration
+		}
+		x = 14
+		y = 17
+		
+		available = {
+			has_socialist_government = yes
+			or = {
+				has_country_leader = { name = "Haakon VII" }
+				has_country_leader = { name = "哈康七世" }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_king_of_revolution"
+			add_stability = 0.03
+			add_political_power = -25
+			if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution1_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution1_idea
+					add_idea = NOR_Alt_syndicalist_revolution2_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution2_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution2_idea
+					add_idea = NOR_Alt_syndicalist_revolution3_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution3_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution3_idea
+					add_idea = NOR_Alt_syndicalist_revolution4_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution4_idea }
+				remove_ideas = NOR_Alt_syndicalist_revolution4_idea
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution_idea
+					add_idea = NOR_Alt_syndicalist_revolution1_idea
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_trial_reactionaries
+		icon = GFX_HOL_crackdown_natpop
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_republican_declaration
+			focus = NOR_Als_king_of_revolution
+		}
+		prerequisite = {
+			focus = NOR_Als_fight_bourgeois_militas
+		}
+		x = 11
+		y = 18
+		
+		available = {
+			has_socialist_government = yes
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_trial_reactionaries"
+			add_popularity = { ideology = market_liberal popularity = -0.03 }
+			add_popularity = { ideology = social_conservative popularity = -0.03 }
+			add_popularity = { ideology = authoritarian_democrat popularity = -0.03 }
+			add_popularity = { ideology = paternal_autocrat popularity = -0.03 }
+			add_popularity = { ideology = national_populist popularity = -0.03 }
+			add_political_power = -25
+			if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution1_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution1_idea
+					add_idea = NOR_Alt_syndicalist_revolution2_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution2_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution2_idea
+					add_idea = NOR_Alt_syndicalist_revolution3_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution3_idea }
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution3_idea
+					add_idea = NOR_Alt_syndicalist_revolution4_idea
+				}
+			}
+			else_if = {
+				limit = { has_idea = NOR_Alt_syndicalist_revolution4_idea }
+				remove_ideas = NOR_Alt_syndicalist_revolution4_idea
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = NOR_Alt_syndicalist_revolution_idea
+					add_idea = NOR_Alt_syndicalist_revolution1_idea
+				}
+			}
+			country_event = nor_new.73
+		}
+
+	}
+	focus = {
+		id = NOR_Als_red_coalition
+		icon = GFX_goal_FRA_popularfront
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_secure_parlaments_opening
+		}
+		x = 15
+		y = 16
+		
+		available = {
+			has_socialist_government = yes
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_red_coalition"
+			add_popularity = { ideology = totalist popularity = 0.03 }
+			add_popularity = { ideology = syndicalist popularity = 0.03 }
+			add_popularity = { ideology = radical_socialist popularity = 0.03 }
+			add_stability = 0.05
+			country_event = nor_new.74
+		}
+
+	}
+	focus = {
+		id = NOR_Als_strongarm_liberals
+		icon = GFX_RUS_Get_Along_With_Liberals
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_republican_declaration
+			focus = NOR_Als_king_of_revolution
+		}
+		prerequisite = {
+			focus = NOR_Als_red_coalition
+		}
+		x = 15
+		y = 18
+		
+		available = {
+			has_socialist_government = yes
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_strongarm_liberals"
+			add_stability = 0.03
+			add_war_support = 0.05
+			country_event = nor_new.75
+		}
+
+	}
+	focus = {
+		id = NOR_Als_amend_constitution
+		icon = GFX_goal_workers_rights
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_trial_reactionaries
+		}
+		prerequisite = {
+			focus = NOR_Als_strongarm_liberals
+		}
+		x = 13
+		y = 19
+		
+		available = {
+			has_socialist_government = yes
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_amend_constitution"
+			country_event = norway.116
+		}
+
+	}
+	focus = {
+		id = NOR_Als_national_syndicalist_victory
+		icon = GFX_goal_ideology_totalist
+		cost = 2.00
+		prerequisite = {
+			focus = NOR_Als_amend_constitution
+		}
+		x = 5
+		y = 20
+		
+		available = {
+			has_government = totalist
+			has_country_flag = NOR_syncon_done
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_national_syndicalist_victory"
+			add_political_power = 100
+			add_popularity = { ideology = totalist popularity = 0.10 }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Als_depose_foreign_prince
+		icon = GFX_VNC_revoke_noble_priviliges
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_national_syndicalist_victory
+		}
+		x = 2
+		y = 21
+		
+		available = {
+			has_government = totalist
+			or = {
+				has_country_leader = { name = "Haakon VII" }
+				has_country_leader = { name = "哈康七世" }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_depose_foreign_prince"
+			create_country_leader = {
+				name = "阿尔宾·埃内斯"
+				picture = "gfx/leaders/NOR/Portrait_Norway_Albin_Eines.png"
+				expire = "1965.1.1"
+				ideology = natsynd_subtype
+			}
+			country_event = norway.319
+		}
+
+	}
+	focus = {
+		id = NOR_Als_break_church
+		icon = GFX_goal_MEX_begin_secularization2
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_national_syndicalist_victory
+		}
+		x = 4
+		y = 21
+		
+		available = {
+			has_government = totalist
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_break_church"
+			add_political_power = -25
+			add_stability = -0.02
+			add_war_support = 0.03
+			swap_ideas = {
+				remove_idea = NOR_Als_socialist_divisions_idea
+				add_idea = NOR_Als_break_church_idea
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_national_revolution
+		icon = GFX_goal_CSA_revolutionary_guards
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_national_syndicalist_victory
+		}
+		x = 6
+		y = 21
+		
+		available = {
+			has_government = totalist
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_national_revolution"
+			add_stability = 0.03
+			add_war_support = 0.05
+			add_manpower = 20000
+			custom_effect_tooltip = NOR_red_guards_tooltip
+			hidden_effect = {
+				load_oob = NOR_red_militia
+			}
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Als_state_police
+		icon = GFX_goal_NOR_secret_police
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_break_church
+		}
+		prerequisite = {
+			focus = NOR_Als_national_revolution
+		}
+		x = 3
+		y = 22
+		
+		available = {
+			has_government = totalist
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_state_police"
+			create_intelligence_agency = {
+				name = "Politiets Sikkerhetstjeneste"
+				icon = agency_logo_KX_norway
+			}
+			add_ideas = NOR_secret_police_idea_1
+		}
+		search_filters = { FOCUS_FILTER_RESISTANCE }
+
+	}
+	focus = {
+		id = NOR_Als_ban_opposition_socialists
+		icon = GFX_goal_FRA_red_terror
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_state_police
+		}
+		x = 2
+		y = 23
+		
+		available = {
+			has_government = totalist
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_ban_opposition_socialists"
+			add_political_power = -25
+			add_popularity = { ideology = syndicalist popularity = -0.05 }
+			add_popularity = { ideology = radical_socialist popularity = -0.05 }
+			swap_ideas = {
+				remove_idea = NOR_Als_break_church_idea
+				add_idea = NOR_Als_ban_opposition_socialists_idea
+			}
+			add_timed_idea = {
+				idea = NOR_Alt_natsyn_purges_idea
+				days = 150
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_industrial_quotas
+		icon = GFX_RUS_A_Great_Leap_Forward
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_state_police
+		}
+		x = 4
+		y = 23
+		
+		available = {
+			has_government = totalist
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_industrial_quotas"
+			add_political_power = -15
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 142 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 143 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Als_farm_collectives
+		icon = GFX_RUS_Fight_Urban_Rural
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_break_church
+		}
+		prerequisite = {
+			focus = NOR_Als_national_revolution
+		}
+		x = 5
+		y = 22
+		
+		available = {
+			has_government = totalist
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_farm_collectives"
+			add_stability = -0.02
+			remove_ideas = NOR_Als_farmers_revolt_idea
+			add_ideas = NOR_Als_farm_collectives_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Als_red_patriotism
+		icon = GFX_RUS_Fate_Of_Duma_and_Senate
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_national_revolution
+		}
+		x = 6
+		y = 23
+		
+		available = {
+			has_government = totalist
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_red_patriotism"
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_ideas = NOR_Als_red_patriotism_idea
+		}
+
+	}
+	focus = {
+		id = NOR_Als_national_syndicalist_state
+		icon = GFX_goal_FRA_sorealians_alt
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_ban_opposition_socialists
+		}
+		prerequisite = {
+			focus = NOR_Als_industrial_quotas
+		}
+		prerequisite = {
+			focus = NOR_Als_red_patriotism
+		}
+		x = 4
+		y = 24
+		
+		available = {
+			has_government = totalist
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_national_syndicalist_state"
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_popularity = { ideology = totalist popularity = 0.03 }
+			swap_ideas = {
+				remove_idea = NOR_Als_ban_opposition_socialists_idea
+				add_idea = NOR_Als_national_syndicalist_state1_idea
+			}
+			add_timed_idea = {
+				idea = NOR_Alt_transformation_national_syndicalism_idea
+				days = 150
+			}
+			hidden_effect = {
+				country_event = {
+					id = nor_new.78
+					days = 150
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_preemtive_strike_swedes
+		icon = GFX_goal_generic_army_superior_firepower
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_national_syndicalist_state
+		}
+		x = 4
+		y = 25
+		
+		available = {
+			has_government = totalist
+			is_subject = no
+			NOT = {
+				has_war_with = SWE
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_preemtive_strike_swedes"
+			add_war_support = 0.05
+			add_timed_idea = {
+				idea = NOR_Als_preemtive_strike_swedes_idea
+				days = 100
+			} 
+			declare_war_on = {
+				target = SWE
+				type = annex_everything
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_ARMY_BONUS }
+
+	}
+	focus = {
+		id = NOR_Als_labour_orthodoxy
+		icon = GFX_goal_NOR_Sosialdemokratisk_Arbeiderparti
+		cost = 2.00
+		prerequisite = {
+			focus = NOR_Als_amend_constitution
+		}
+		x = 8
+		y = 20
+		
+		available = {
+			has_government = radical_socialist
+			has_country_flag = NOR_syncon_done
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_labour_orthodoxy"
+			add_political_power = 100
+			add_popularity = { ideology = radical_socialist popularity = 0.10 }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Als_nationalize_industries
+		icon = GFX_goal_CSA_industrial_unionism
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_national_syndicalist_victory
+			focus = NOR_Als_labour_orthodoxy
+		}
+		x = 7
+		y = 22
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = radical_socialist
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_nationalize_industries"
+			NOR_reduce_weak_economy = yes
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Als_social_state_building
+		icon = GFX_goal_CSA_protect_working_class
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_labour_orthodoxy
+		}
+		x = 8
+		y = 21
+		
+		available = {
+			has_government = radical_socialist
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_social_state_building"
+			add_stability = 0.03
+			add_ideas = NOR_Als_social_state_building_idea
+		}
+
+	}
+	focus = {
+		id = NOR_Als_farmers_deal
+		icon = GFX_goal_generic_land_reform
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_nationalize_industries
+		}
+		prerequisite = {
+			focus = NOR_Als_social_state_building
+		}
+		x = 8
+		y = 23
+		
+		available = {
+			has_government = radical_socialist
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Alt_agrarian_autarky"
+			add_stability = 0.03
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 142 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 143 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 144 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 937 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			remove_ideas = NOR_Als_farmers_revolt_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Als_father_for_nation
+		icon = GFX_goal_generic_enforce_labor_regulation
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_farmers_deal
+		}
+		prerequisite = {
+			focus = NOR_Als_socialist_church
+		}
+		x = 9
+		y = 24
+		
+		available = {
+			has_government = radical_socialist
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_father_for_nation"
+			add_stability = 0.03
+			add_political_power = -50
+			swap_ideas = {
+				remove_idea = NOR_Als_social_state_building_idea
+				add_idea = NOR_Als_father_for_nation_idea
+			}
+			custom_effect_tooltip = NOR_Als_father_for_nation_tooltip
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_leader = { name = "埃纳尔·基哈德森" }
+					}
+					add_country_leader_trait = NOR_Landsfaderen
+				}
+				else = {
+					add_stability = 0.02
+					add_war_support = 0.02
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_tranmaelite_accendency
+		icon = GFX_goal_syndicalism
+		cost = 2.00
+		prerequisite = {
+			focus = NOR_Als_amend_constitution
+		}
+		x = 12
+		y = 20
+		
+		available = {
+			has_government = syndicalist
+			has_country_flag = NOR_syncon_done
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_tranmaelite_accendency"
+			add_political_power = 100
+			add_popularity = { ideology = syndicalist popularity = 0.10 }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Als_uniting_party
+		icon = GFX_goal_CSA_democratic_centralism
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_tranmaelite_accendency
+			focus = NOR_Als_labour_orthodoxy
+		}
+		x = 10
+		y = 21
+		
+		available = {
+			OR = {
+				has_government = radical_socialist
+				has_government = syndicalist
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_uniting_party"
+			add_stability = 0.05
+			add_war_support = 0.03
+			swap_ideas = {
+				remove_idea = NOR_Als_socialist_divisions_idea
+				add_idea = NOR_Als_uniting_party_idea
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_strengthen_lo_ties
+		icon = GFX_goal_workers_rights
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_uniting_party
+		}
+		x = 9
+		y = 22
+		
+		available = {
+			OR = {
+				has_government = radical_socialist
+				has_government = syndicalist
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_strengthen_lo_ties"
+			swap_ideas = {
+				remove_idea = NOR_Als_uniting_party_idea
+				add_idea = NOR_Als_strengthen_lo_ties_idea
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_reform_judiciary
+		icon = GFX_goal_DOM_The_Trial
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_uniting_party
+		}
+		x = 11
+		y = 22
+		
+		available = {
+			OR = {
+				has_government = radical_socialist
+				has_government = syndicalist
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_reform_judiciary"
+			add_stability = 0.05
+			add_popularity = { ideology = radical_socialist popularity = 0.05 }
+			add_popularity = { ideology = syndicalist popularity = 0.05 }
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+
+	}
+	focus = {
+		id = NOR_Als_socialist_church
+		icon = GFX_DKB_Christian_Unions
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_strengthen_lo_ties
+		}
+		prerequisite = {
+			focus = NOR_Als_reform_judiciary
+		}
+		x = 10
+		y = 23
+		
+		available = {
+			OR = {
+				has_government = radical_socialist
+				has_government = syndicalist
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_socialist_church"
+			add_stability = 0.05
+			add_popularity = { ideology = syndicalist popularity = 0.02 }
+			add_popularity = { ideology = radical_socialist popularity = 0.02 }
+			add_popularity = { ideology = social_liberal popularity = -0.02 }
+			add_popularity = { ideology = social_conservative popularity = -0.02 }
+			swap_ideas = {
+				remove_idea = NOR_Als_strengthen_lo_ties_idea
+				add_idea = NOR_Als_socialist_church_idea
+			}
+			hidden_effect = {
+				country_event = {
+					id = nor_new.79
+					days = 40
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_decentralized_control
+		icon = GFX_goal_ideology_libsoc
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_tranmaelite_accendency
+		}
+		x = 12
+		y = 21
+		
+		available = {
+			has_government = syndicalist
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_decentralized_control"
+			add_stability = 0.03
+			add_ideas = NOR_Als_decentralized_control_idea
+		}
+
+	}
+	focus = {
+		id = NOR_Als_empower_lo
+		icon = GFX_goal_CSA_industrial_democracy
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_tranmaelite_accendency
+		}
+		x = 13
+		y = 22
+		
+		available = {
+			has_government = syndicalist
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_empower_lo"
+			add_stability = 0.03
+			NOR_reduce_weak_economy = yes
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Als_break_chains_tradition
+		icon = GFX_focus_generic_female_rights
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_decentralized_control
+		}
+		prerequisite = {
+			focus = NOR_Als_empower_lo
+		}
+		x = 12
+		y = 23
+		
+		available = {
+			has_government = syndicalist
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_break_chains_tradition"
+			add_stability = -0.03
+			add_war_support = 0.03
+			add_political_power = 25
+			swap_ideas = {
+				remove_idea = NOR_Als_decentralized_control_idea
+				add_idea = NOR_Als_break_chains_tradition_idea
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_integrate_our_agrarian_brothers
+		icon = GFX_RUS_Peasant_Councils
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_socialist_church
+		}
+		prerequisite = {
+			focus = NOR_Als_break_chains_tradition
+		}
+		x = 11
+		y = 24
+		
+		available = {
+			has_government = syndicalist
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_integrate_our_agrarian_brothers"
+			add_stability = 0.03
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 142 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 143 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 144 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				prioritize = { 937 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			remove_ideas = NOR_Als_farmers_revolt_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = NOR_Als_peoples_state
+		icon = GFX_RUS_New_Proletarian_Generation
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_father_for_nation
+			focus = NOR_Als_integrate_our_agrarian_brothers
+		}
+		x = 10
+		y = 25
+		
+		available = {
+			OR = {
+				has_government = radical_socialist
+				has_government = syndicalist
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_peoples_state"
+			add_stability = 0.08
+			add_war_support = 0.03
+			add_popularity = { ideology = syndicalist popularity = 0.04 }
+			add_popularity = { ideology = radical_socialist popularity = 0.04 }
+			swap_ideas = {
+				remove_idea = NOR_Als_socialist_church_idea
+				add_idea = NOR_Als_peoples_state_idea
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Als_our_international_ties
+		icon = GFX_goal_FRA_Internationale_Congress
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_amend_constitution
+		}
+		x = 16
+		y = 20
+		
+		available = {
+			has_socialist_government = yes
+			INT = {
+				is_faction_leader = yes
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_our_international_ties"
+			NOR_reduce_weak_economy = yes
+			add_opinion_modifier = { target = INT modifier = NOR_established_relations }
+			reverse_add_opinion_modifier = { target = INT modifier = NOR_established_relations }
+			if = {
+				limit = {
+					country_exists = FRA
+					INT = { NOT = { tag = FRA } }
+				}
+				custom_effect_tooltip = tooltip_white_line
+				add_opinion_modifier = { target = FRA modifier = NOR_established_relations }
+				reverse_add_opinion_modifier = { target = FRA modifier = NOR_established_relations }
+			}
+			if = {
+				limit = { country_exists = ENG }
+				custom_effect_tooltip = tooltip_white_line
+				add_opinion_modifier = { target = ENG modifier = NOR_established_relations }
+				reverse_add_opinion_modifier = { target = ENG modifier = NOR_established_relations }
+			}
+			if = {
+				limit = { country_exists = SRI }
+				custom_effect_tooltip = tooltip_white_line
+				add_opinion_modifier = { target = SRI modifier = NOR_established_relations }
+				reverse_add_opinion_modifier = { target = SRI modifier = NOR_established_relations }
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_harbour_finnish_revolutionaries
+		icon = GFX_goal_FIN_Socialism
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_our_international_ties
+		}
+		x = 14
+		y = 21
+		
+		available = {
+			has_socialist_government = yes
+			FIN = { has_socialist_government = no }
+		}
+		bypass_if_unavailable = yes
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_harbour_finnish_revolutionaries"
+			add_manpower = 10000
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+
+	}
+	focus = {
+		id = NOR_Als_and_sandinavian_comrades
+		icon = GFX_goal_SWE_focus_swedish_syndicalism
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_harbour_finnish_revolutionaries
+		}
+		x = 15
+		y = 22
+		
+		available = {
+			has_socialist_government = yes
+			OR = {
+				DEN = { has_socialist_government = no }
+				SWE = { has_socialist_government = no }
+			}
+			is_subject = no
+		}
+		bypass_if_unavailable = yes
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_and_sandinavian_comrades"
+			if = {
+				limit = {
+					DEN = { has_socialist_government = no }
+				}
+				DEN = { country_event = norway.321 }
+			}
+			if = {
+				limit = {
+					SWE = { has_socialist_government = no }
+				}
+				SWE = { country_event = norway.128 }
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_supply_red_militias
+		icon = GFX_focus_generic_military_equipment
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_and_sandinavian_comrades
+		}
+		x = 15
+		y = 23
+		
+		available = {
+			has_socialist_government = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_supply_red_militias"
+			INT = {
+				country_event = norway.125
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_phalanstere
+		icon = GFX_goal_FRA_phalanstere
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_our_international_ties
+		}
+		x = 16
+		y = 21
+		
+		available = {
+			has_socialist_government = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_phalanstere"
+			INT = { country_event = norway.121 }
+		}
+
+	}
+	focus = {
+		id = NOR_Als_industrial_gears_turning
+		icon = GFX_goal_NOR_Three_Year_Plan
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_our_international_ties
+		}
+		x = 18
+		y = 21
+		
+		available = {
+			has_socialist_government = yes
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_industrial_gears_turning"
+			NOR_reduce_weak_economy = yes
+			add_stability = 0.05
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 143 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_war_readiness
+		icon = GFX_goal_NOR_war_of_readiness
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_industrial_gears_turning
+		}
+		x = 17
+		y = 22
+		
+		available = {
+			has_socialist_government = yes
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_industrial_gears_turning"
+			add_war_support = 0.05
+			add_manpower = 5000
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = arms_factory size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 143 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = arms_factory size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_ready_north_sea_blockade
+		icon = GFX_goal_generic_sea_focused_navy
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_war_readiness
+		}
+		x = 17
+		y = 23
+		
+		available = {
+			has_socialist_government = yes
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_ready_north_sea_blockade"
+			navy_experience = 10
+			add_tech_bonus = {
+				name = NOR_submarines
+				bonus = 1
+				uses = 1
+				category = ss_tech
+			}
+			add_tech_bonus = {
+				name = NOR_destroyers
+				bonus = 1
+				uses = 1
+				category = dd_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS FOCUS_FILTER_RESEARCH }
+
+	}
+	focus = {
+		id = NOR_Als_provoke_swede
+		icon = GFX_goal_doctrine_tank_warfare
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_supply_red_militias
+			focus = NOR_Als_ready_north_sea_blockade
+		}
+		x = 16
+		y = 24
+		
+		available = {
+			has_socialist_government = yes
+			SWE = {
+				has_socialist_government = no
+				NOT = { has_war_with = ROOT }
+			}
+			is_subject = no
+		}
+		bypass_if_unavailable = yes
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_in_faction = yes
+				NOT = { has_global_flag = second_weltkrieg_has_started }
+			}
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_provoke_swede"
+			country_event = norway.129
+		}
+
+	}
+	focus = {
+		id = NOR_Als_kompani_linge
+		icon = GFX_goal_NOR_kompani_linge
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_provoke_swede
+		}
+		x = 16
+		y = 25
+		
+		available = {
+			has_socialist_government = yes
+			has_war_with = SWE
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_kompani_linge"
+			country_event = norway.138
+		}
+
+	}
+	focus = {
+		id = NOR_Als_norwegian_red_army
+		icon = GFX_goal_CSA_continental_army
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_industrial_gears_turning
+		}
+		x = 20
+		y = 22
+		
+		available = {
+			has_socialist_government = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_norwegian_red_army"
+			add_ideas = NOR_Als_norwegian_red_army_idea
+			add_manpower = 20000
+			custom_effect_tooltip = NOR_red_guards_tooltip
+			hidden_effect = {
+				load_oob = NOR_red_militia
+			}
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Als_war_syndicalism
+		icon = GFX_goal_Focus_Military_Mobilisation
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_norwegian_red_army
+		}
+		x = 19
+		y = 23
+		
+		available = {
+			has_socialist_government = yes
+			has_war = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_norwegian_red_army"
+			add_war_support = 0.05
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = arms_factory size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_idea = NOR_Als_norwegian_red_army_idea
+				}
+				swap_ideas = {
+					remove_idea = NOR_Als_norwegian_red_army_idea
+					add_idea = NOR_Als_war_syndicalism_idea
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = NOR_Als_army_commissars_idea
+					add_idea = NOR_Als_norwegian_red_army1_idea
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_army_commissars
+		icon = GFX_focus_generic_military_mission
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_norwegian_red_army
+		}
+		x = 21
+		y = 23
+		
+		available = {
+			has_socialist_government = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_army_commissars"
+			add_stability = 0.03
+			add_tech_bonus = {
+				name = NOR_Als_army_commissars
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
+			if = {
+				limit = {
+					has_idea = NOR_Als_norwegian_red_army_idea
+				}
+				swap_ideas = {
+					remove_idea = NOR_Als_norwegian_red_army_idea
+					add_idea = NOR_Als_army_commissars_idea
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = NOR_Als_war_syndicalism_idea
+					add_idea = NOR_Als_norwegian_red_army1_idea
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Als_establish_ssra
+		icon = GFX_goal_SCA_focus_Divided_Armies
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Als_war_syndicalism
+			focus = NOR_Als_army_commissars
+		}
+		x = 20
+		y = 24
+		
+		available = {
+			has_socialist_government = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Als_establish_ssra"
+			add_tech_bonus = {
+				name = NOR_Als_establish_ssra
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				name = NOR_Als_establish_ssra
+				bonus = 1
+				uses = 1
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+			add_manpower = 7500
+		}
+    }
+
+	###民粹
+	focus = {
+		id = NOR_Rag_end_of_old_world
+		icon = GFX_goal_authority
+		cost = 1.00
+		x = 43
+		y = 5
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+			has_country_flag = Ragnarok
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_end_of_old_world"
+			add_political_power = -25
+			add_popularity = { ideology = syndicalist popularity = -0.06 }
+			add_popularity = { ideology = radical_socialist popularity = -0.06 }
+			add_popularity = { ideology = social_democrat popularity = -0.06 }
+			add_popularity = { ideology = social_liberal popularity = -0.06 }
+			add_popularity = { ideology = market_liberal popularity = -0.06 }
+			add_popularity = { ideology = social_conservative popularity = -0.06 }
+			add_popularity = { ideology = authoritarian_democrat popularity = -0.06 }
+			add_popularity = { ideology = paternal_autocrat popularity = -0.06 }
+			remove_ideas = NOR_kings_party_idea
+			country_event = {
+				id = nor_new.48
+				days = 0
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Rag_start_of_new
+		icon = GFX_goal_national_populism
+		cost = 1.00
+		prerequisite = {
+			focus = NOR_Rag_end_of_old_world
+		}
+		x = 43
+		y = 6
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_start_of_new"
+			add_political_power = -25
+			add_popularity = { ideology = totalist popularity = 0.10 }
+			add_popularity = { ideology = national_populist popularity = 0.10 }
+			country_event = {
+				id = nor_new.49
+				days = 0
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = NOR_Rag_our_revolution_is_national
+		icon = GFX_goal_enlist_the_police
+		cost = 2.00
+		prerequisite = {
+			focus = NOR_Rag_start_of_new
+		}
+		mutually_exclusive = {
+			focus = NOR_Rag_and_socialist
+		}
+		x = 42
+		y = 7
+		
+		available = {
+			OR = {
+				has_government = national_populist
+				has_government = totalist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_our_revolution_is_national"
+			set_politics = {
+				ruling_party = national_populist
+				elections_allowed = no
+			}
+			add_popularity = { ideology = national_populist popularity = 0.06 }
+			end_coalition = yes
+			set_temp_variable = { coalition_partner_var = token:totalist }
+			add_to_coalition = yes
+			country_event = {
+				id = nor_new.50
+				days = 0
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_and_socialist
+		icon = GFX_goal_integrate_the_militia
+		cost = 2.00
+		prerequisite = {
+			focus = NOR_Rag_start_of_new
+		}
+		mutually_exclusive = {
+			focus = NOR_Rag_our_revolution_is_national
+		}
+		x = 44
+		y = 7
+		
+		available = {
+			OR = {
+				has_government = national_populist
+				has_government = totalist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_and_socialist"
+			set_politics = {
+				ruling_party = totalist
+				elections_allowed = no
+			}
+			add_popularity = { ideology = totalist popularity = 0.06 }
+			end_coalition = yes
+			set_temp_variable = { coalition_partner_var = token:national_populist }
+			add_to_coalition = yes
+			country_event = {
+				id = nor_new.51
+				days = 0
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_end_olavs_reign
+		icon = GFX_focus_rom_abdicate
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_our_revolution_is_national
+			focus = NOR_Rag_and_socialist
+		}
+		x = 40
+		y = 8
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_end_olavs_reign"
+			add_political_power = 25
+			add_stability = -0.10
+			add_popularity = { ideology = totalist popularity = 0.02 }
+			add_popularity = { ideology = national_populist popularity = 0.02 }
+			country_event = {
+				id = nor_new.52
+				days = 0
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_disband_state_church
+		icon = GFX_goal_PAP_crusade
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_end_olavs_reign
+		}
+		x = 39
+		y = 9
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_disband_state_church"
+			add_political_power = 25
+			add_stability = -0.10
+			country_event = {
+				id = nor_new.53
+				days = 0
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_anti_abrahamic_code
+		icon = GFX_goal_PAL_Closed_Immigration
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_disband_state_church
+		}
+		x = 39
+		y = 11
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_anti_abrahamic_code"
+			add_political_power = 25
+			country_event = {
+				id = nor_new.54
+				days = 0
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_viking_revivalism
+		icon = GFX_goal_national_populism
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_end_olavs_reign
+		}
+		x = 41
+		y = 9
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_viking_revivalism"
+			add_stability = 0.03
+			add_war_support = 0.10
+			add_ideas = NOR_Rag_viking_revivalism_idea
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_sons_of_odin
+		icon = GFX_goal_generic_cold_training
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_viking_revivalism
+		}
+		x = 40
+		y = 10
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_sons_of_odin"
+			add_manpower = 5000
+			swap_ideas = {
+				remove_idea = NOR_Rag_viking_revivalism_idea
+				add_idea = NOR_Rag_sons_of_odin_idea
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_end_quislings
+		icon = GFX_goal_step_on_skull
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_our_revolution_is_national
+			focus = NOR_Rag_and_socialist
+		}
+		x = 43
+		y = 8
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_end_quislings"
+			add_political_power = -25
+			add_popularity = { ideology = paternal_autocrat popularity = -0.06 }
+			add_popularity = { ideology = national_populist popularity = -0.10 }
+			swap_ideas = {
+				remove_idea = NOR_Rag_quislingist_opposition_idea
+				add_idea = NOR_Rag_end_quislings_idea
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_promise_them_something_better
+		icon = GFX_goal_volunteer_alliance
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_end_quislings
+		}
+		x = 43
+		y = 9
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_promise_them_something_better"
+			add_political_power = -25
+			add_popularity = { ideology = totalist popularity = 0.02 }
+			add_popularity = { ideology = national_populist popularity = 0.03 }
+			remove_ideas = NOR_Rag_end_quislings_idea
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_proper_hird
+		icon = GFX_goal_NOR_hirden
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_viking_revivalism
+		}
+		prerequisite = {
+			focus = NOR_Rag_promise_them_something_better
+		}
+		x = 42
+		y = 10
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_proper_hird"
+			add_stability = 0.05
+			add_war_support = 0.05
+			custom_effect_tooltip = NOR_rikshirden_tooltip
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = NOR_Rag_proper_hird_idea
+			custom_effect_tooltip = tooltip_white_line
+			hidden_effect = {
+				every_unit_leader = {
+					if = {
+						limit = { has_unit_leader_flag = NOR_leader }
+						set_nationality = XXA
+					}
+					else = {
+						retire = yes #gets rid of AI generics
+					}
+				}
+			}
+			NOR_create_rikshirden_leaders = yes
+			hidden_effect = {
+				every_unit_leader = { set_unit_leader_flag = NOR_rikshirden }
+			}
+			if = {
+				limit = { has_idea = NOR_fleischer_army_idea_1 }
+				remove_ideas = NOR_fleischer_army_idea_1
+			}
+			else_if = {
+				limit = { has_idea = NOR_fleischer_army_idea_2 }
+				remove_ideas = NOR_fleischer_army_idea_2
+			}
+			else_if = {
+				limit = { has_idea = NOR_fleischer_army_idea_3 }
+				remove_ideas = NOR_fleischer_army_idea_3
+			}
+			if = {
+				limit = { has_idea = NOR_ruge_army_idea_1 }
+				remove_ideas = NOR_ruge_army_idea_1
+			}
+			else_if = {
+				limit = { has_idea = NOR_ruge_army_idea_2 }
+				remove_ideas = NOR_ruge_army_idea_2
+			}
+			else_if = {
+				limit = { has_idea = NOR_ruge_army_idea_3 }
+				remove_ideas = NOR_ruge_army_idea_3
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_promise_of_valhalla
+		icon = GFX_goal_generic_army_mass_assault
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_sons_of_odin
+		}
+		prerequisite = {
+			focus = NOR_Rag_proper_hird
+		}
+		x = 41
+		y = 11
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_promise_of_valhalla"
+			add_war_support = 0.10
+			swap_ideas = {
+				remove_idea = NOR_Rag_sons_of_odin_idea
+				add_idea = NOR_Rag_promise_of_valhalla_idea
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_modern_skjaldmaer
+		icon = GFX_goal_integrate_the_militia
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_promise_of_valhalla
+		}
+		x = 40
+		y = 12
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_modern_skjaldmaer"
+			add_war_support = 0.05
+			swap_ideas = {
+				remove_idea = NOR_Rag_promise_of_valhalla_idea
+				add_idea = NOR_Rag_modern_skjaldmaer_idea
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_strike_down_capitalist
+		icon = GFX_goal_generic_expel_people
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_our_revolution_is_national
+			focus = NOR_Rag_and_socialist
+		}
+		x = 46
+		y = 8
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_strike_down_capitalist"
+			add_political_power = 20
+			add_stability = -0.10
+			add_popularity = { ideology = totalist popularity = 0.02 }
+			add_popularity = { ideology = national_populist popularity = 0.02 }
+			country_event = {
+				id = nor_new.55
+				days = 0
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_peoples_state
+		icon = GFX_goal_Workers_Paradise
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_strike_down_capitalist
+		}
+		x = 45
+		y = 9
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_peoples_state"
+			add_political_power = -25
+			add_stability = 0.03
+			country_event = {
+				id = nor_new.56
+				days = 0
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_proper_race_of_people
+		icon = GFX_goal_NOR_SFCoup
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_promise_them_something_better
+		}
+		prerequisite = {
+			focus = NOR_Rag_peoples_state
+		}
+		x = 44
+		y = 10
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_proper_race_of_people"
+			add_political_power = -25
+			add_manpower = -2673
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_popularity = { ideology = totalist popularity = 0.05 }
+			add_popularity = { ideology = national_populist popularity = 0.05 }
+			add_ideas = NOR_Rag_proper_race_of_people_idea
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_free_from_corruption
+		icon = GFX_goal_generic_political_purge
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_proper_hird
+		}
+		prerequisite = {
+			focus = NOR_Rag_proper_race_of_people
+		}
+		x = 43
+		y = 11
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_free_from_corruption"
+			add_political_power = -25
+			add_manpower = -2336
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_popularity = { ideology = syndicalist popularity = -0.03 }
+			add_popularity = { ideology = radical_socialist popularity = -0.03 }
+			add_popularity = { ideology = social_democrat popularity = -0.03 }
+			add_popularity = { ideology = social_liberal popularity = -0.03 }
+			add_popularity = { ideology = market_liberal popularity = -0.03 }
+			add_popularity = { ideology = social_conservative popularity = -0.03 }
+			add_popularity = { ideology = authoritarian_democrat popularity = -0.03 }
+			add_popularity = { ideology = paternal_autocrat popularity = -0.03 }
+			swap_ideas = {
+				remove_idea = NOR_Rag_proper_race_of_people_idea
+				add_idea = NOR_Rag_free_from_corruption_idea
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_free_from_treason
+		icon = GFX_goal_generic_trial
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_free_from_corruption
+		}
+		x = 43
+		y = 12
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_free_from_treason"
+			add_political_power = -50
+			add_manpower = -5185
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_popularity = { ideology = syndicalist popularity = -0.03 }
+			add_popularity = { ideology = radical_socialist popularity = -0.03 }
+			add_popularity = { ideology = social_democrat popularity = -0.03 }
+			add_popularity = { ideology = social_liberal popularity = -0.03 }
+			add_popularity = { ideology = market_liberal popularity = -0.03 }
+			add_popularity = { ideology = social_conservative popularity = -0.03 }
+			add_popularity = { ideology = authoritarian_democrat popularity = -0.03 }
+			add_popularity = { ideology = paternal_autocrat popularity = -0.03 }
+			swap_ideas = {
+				remove_idea = NOR_Rag_free_from_corruption_idea
+				add_idea = NOR_Rag_free_from_treason_idea
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_welfare_nordic_race
+		icon = GFX_goal_healthcare
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_peoples_state
+		}
+		x = 46
+		y = 10
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_welfare_nordic_race"
+			add_political_power = -25
+			add_stability = 0.05
+			add_popularity = { ideology = totalist popularity = 0.02 }
+			add_popularity = { ideology = national_populist popularity = 0.02 }
+			swap_ideas = {
+				remove_idea = NOR_Rag_peoples_state_idea
+				add_idea = NOR_Rag_welfare_nordic_race_idea
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_remember_our_brethrens
+		icon = GFX_goal_SCA_focus_Divided_Armies
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_proper_race_of_people
+		}
+		prerequisite = {
+			focus = NOR_Rag_welfare_nordic_race
+		}
+		x = 45
+		y = 11
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_welfare_nordic_race"
+			add_political_power = -25
+			add_war_support = 0.05
+			add_popularity = { ideology = totalist popularity = 0.02 }
+			add_popularity = { ideology = national_populist popularity = 0.02 }
+			swap_ideas = {
+				remove_idea = NOR_Rag_welfare_nordic_race_idea
+				add_idea = NOR_Rag_remember_our_brethrens_idea
+			}
+			country_event = {
+				id = nor_new.57
+				days = 0
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_unite_norse_people
+		icon = GFX_goal_SCA_focus_Monarchy
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_remember_our_brethrens
+		}
+		x = 46
+		y = 12
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_unite_norse_people"
+			add_political_power = -25
+			add_war_support = 0.05
+			create_wargoal = {
+				type = annex_everything
+				target = SWE
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = DEN
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_peoples_work
+		icon = GFX_goal_generic_workers_democracy
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_strike_down_capitalist
+		}
+		x = 47
+		y = 9
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_peoples_work"
+			add_political_power = -50
+			add_popularity = { ideology = totalist popularity = 0.02 }
+			add_popularity = { ideology = national_populist popularity = 0.02 }
+			NOR_reduce_weak_economy = yes
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 142 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 143 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 144 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 937 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_five_years_plan
+		icon = GFX_goal_munitions_factories
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_peoples_work
+		}
+		x = 47
+		y = 11
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_five_years_plan"
+			add_political_power = -50
+			add_popularity = { ideology = totalist popularity = 0.02 }
+			add_popularity = { ideology = national_populist popularity = 0.02 }
+			NOR_reduce_weak_economy = yes
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = nor_new.58
+					days = 2600
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_free_our_germanic_brethrens
+		icon = GFX_goal_attack_germany
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_modern_skjaldmaer
+		}
+		prerequisite = {
+			focus = NOR_Rag_free_from_treason
+		}
+		prerequisite = {
+			focus = NOR_Rag_unite_norse_people
+		}
+		x = 43
+		y = 13
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+			owns_state = 141
+			owns_state = 37
+			NOT = {
+				country_exists = SWE
+				country_exists = DEN
+			}
+			OR = {
+				is_subject = no
+				has_war_with = GER
+			}
+			GER = {
+				OR = {
+					has_war_with = FRA
+					has_war_with = RUS
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_free_our_germanic_brethrens"
+			add_war_support = 0.05
+			declare_war_on = {
+				target = GER
+				type = annex_everything
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_rebuild_seafaring_empire
+		icon = GFX_goal_generic_naval_cruiser2
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_free_our_germanic_brethrens
+		}
+		x = 43
+		y = 14
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_rebuild_seafaring_empire"
+			add_political_power = -50
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 142 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 143 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 144 }
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_timed_idea = {
+				idea = NOR_Rag_rebuild_seafaring_empire_idea
+				days = 500
+			}
+		}
+
+	}
+	focus = {
+		id = NOR_Rag_new_world_order
+		icon = GFX_goal_ideology_national_populist
+		cost = 4.00
+		prerequisite = {
+			focus = NOR_Rag_rebuild_seafaring_empire
+		}
+		x = 43
+		y = 15
+		
+		available = {
+			OR = {
+				has_government = totalist
+				has_government = national_populist
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_Rag_new_world_order"
+			custom_effect_tooltip = NOR_Alt_new_norwegian_golden_era_tooltip
+		}
+	}
+
+	###军事？
+	focus = {
+		id = NOR_fund_nth
+		icon = GFX_goal_SCA_economy_norway
+		x = 2
+		y = 0
+		cost = 4
+		ai_will_do = {	
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_fund_nth"
+			add_tech_bonus = {
+				name = NOR_fund_nth
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = NOR_railway_act
+		icon = GFX_COR_national_highway_system
+		prerequisite = { focus = NOR_fund_nth }
+		x = 1
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 12
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_railway_act"
+			110 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			142 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = NOR_south_industry_1
+		icon = GFX_RUS_Industrial_Expansion
+		prerequisite = { focus = NOR_fund_nth }
+		x = 3
+		y = 1
+		cost = 4
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_south_industry_1"
+			110 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = NOR_north_infrastructure
+		icon = GFX_thenorthernraillink
+		prerequisite = { focus = NOR_railway_act }
+		x = 0
+		y = 2
+		cost = 4
+
+		ai_will_do = {
+			factor = 12
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_north_infrastructure"
+			143 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			144 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = NOR_industrial_census
+		icon = GFX_goal_generic_financial_markets
+		prerequisite = { focus = NOR_railway_act focus = NOR_south_industry_1 }
+		x = 2
+		y = 2
+		cost = 4
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_industrial_census"
+			add_ideas = NOR_industrial_management_idea
+		}
+	}
+
+	focus = {
+		id = NOR_north_industry
+		icon = GFX_RUS_Moderate_Industrialization
+		prerequisite = { focus = NOR_north_infrastructure }
+		prerequisite = { focus = NOR_industrial_census }
+		x = 1
+		y = 3
+		cost = 4
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_north_industry"
+			144 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = NOR_norsk_jernverk
+		icon = GFX_goal_UMN_cobalt_mines
+		prerequisite = { focus = NOR_north_industry }
+		x = 1
+		y = 4
+		cost = 4
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_norsk_jernverk"
+			add_resource = {
+				type = steel
+				amount = 16
+				state = 144
+			}
+			144 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = norsk_jernverk
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = NOR_south_industry_2
+		icon = GFX_goal_AUS_tauernkraftwerk_hydro_power
+		prerequisite = { focus = NOR_south_industry_1 }
+		x = 4
+		y = 2
+		cost = 4
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_south_industry_2"
+			110 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			142 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = NOR_aluminium_industry
+		icon = GFX_goal_CSA_strenght_through_industry
+		prerequisite = { focus = NOR_south_industry_2 }
+		x = 3
+		y = 3
+		cost = 4
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_aluminium_industry"
+			add_resource = {
+				type = aluminium
+				amount = 10
+				state = 142
+			}
+			142 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = NOR_limited_rearmament
+		icon = GFX_BRY_Every_Hand_A_Rifle
+		x = 7
+		y = 0
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_limited_rearmament"
+			if = {
+				limit = {
+					has_idea = civilian_economy
+				}
+				add_ideas = low_economic_mobilisation
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = low_economic_mobilisation
+						has_idea = partial_economic_mobilisation
+						has_idea = war_economy
+						has_idea = tot_economic_mobilisation
+					}
+				}
+				add_political_power = 100
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = NOR_weapon_industry_1
+		icon = GFX_goal_OTT_arms_purchase
+		prerequisite = { focus = NOR_limited_rearmament }
+		x = 6
+		y = 1
+		cost = 4
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_weapon_industry_1"
+			110 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = NOR_weapon_industry_2
+		icon = GFX_focus_generic_military_equipment
+		prerequisite = { focus = NOR_weapon_industry_1 }
+		x = 6
+		y = 2
+		cost = 4
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_weapon_industry_2"
+			110 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = NOR_extra_tech_slot
+		icon = GFX_goal_NOR_FFI
+		prerequisite = { focus = NOR_south_industry_2 focus = NOR_weapon_industry_2 }
+		x = 5
+		y = 3
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_extra_tech_slot"
+			add_research_slot = 1
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = NOR_oslo_analyzer
+		icon = GFX_goal_KIV_modern
+		prerequisite = { focus = NOR_extra_tech_slot }
+		x = 5
+		y = 4
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_oslo_analyzer"
+			add_tech_bonus = {
+				name = NOR_oslo_analyzer
+				bonus = 1
+				uses = 1
+				category = electronics
+			}
+			country_event = { id = norway.100 }
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = NOR_army_reform
+		icon = GFX_goal_NOR_army
+		x = 32
+		y = 0
+		cost = 4
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			NOT = { has_country_flag = NOR_hird_supremacy }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_army_reform"
+			army_experience = 5
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				name = NOR_army_reform
+				bonus = 1
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = NOR_fleischer_plan
+		icon = GFX_goal_NOR_Fleischer_Army
+		prerequisite = { focus = NOR_army_reform }
+		mutually_exclusive = { focus = NOR_ruge_plan }
+		x = 31
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			NOT = { has_country_flag = NOR_hird_supremacy }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_fleischer_plan"
+			add_ideas = NOR_fleischer_army_idea_1
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
+
+	focus = {
+		id = NOR_fleischer_special
+		icon = GFX_focus_SWE_varnplikt
+		prerequisite = { focus = NOR_fleischer_plan }
+
+		x = 31
+		y = 2
+		cost = 4
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			NOT = { has_country_flag = NOR_hird_supremacy }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_fleischer_special"
+			army_experience = 5
+			add_tech_bonus = {
+				name = NOR_fleischer_special
+				bonus = 1
+				uses = 1
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+			add_tech_bonus = {
+				name = NOR_fleischer_special
+				bonus = 1
+				uses = 1
+				technology = tech_recon
+				technology = tech_recon2
+				technology = tech_recon3
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = NOR_ruge_plan
+		icon = GFX_goal_NOR_Ruge_Army
+		prerequisite = { focus = NOR_army_reform }
+		mutually_exclusive = { focus = NOR_fleischer_plan }
+
+		x = 33
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			NOT = { has_country_flag = NOR_hird_supremacy }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_ruge_plan"
+			add_ideas = NOR_ruge_army_idea_1
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+	}
+
+	focus = {
+		id = NOR_ruge_doctrines
+		icon = GFX_goal_generic_army_high_command
+		prerequisite = { focus = NOR_ruge_plan }
+
+		x = 33
+		y = 2
+		cost = 4
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			NOT = { has_country_flag = NOR_hird_supremacy }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_ruge_doctrines"
+			army_experience = 10
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = NOR_rifle_trials
+		icon = GFX_BRY_Every_Hand_A_Rifle
+		prerequisite = { focus = NOR_fleischer_special focus = NOR_ruge_doctrines }
+
+		x = 32
+		y = 3
+		cost = 4
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			NOT = { has_country_flag = NOR_hird_supremacy }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_rifle_trials"
+			add_tech_bonus = {
+				name = NOR_rifle_trials
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = NOR_fleischer_manpower
+		icon = GFX_goal_mass_concentration_of_army
+		prerequisite = { focus = NOR_fleischer_special }
+
+		x = 30
+		y = 3
+		cost = 4
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			NOT = { has_country_flag = NOR_hird_supremacy }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_fleischer_manpower"
+			swap_ideas = {
+				remove_idea = NOR_fleischer_army_idea_1
+				add_idea = NOR_fleischer_army_idea_2
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER }
+	}
+
+	focus = {
+		id = NOR_ruge_planning
+		icon = GFX_goal_MEX_maintain_the_plan
+		prerequisite = { focus = NOR_ruge_doctrines }
+
+		x = 34
+		y = 3
+		cost = 4
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			NOT = { has_country_flag = NOR_hird_supremacy }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_ruge_planning"
+			swap_ideas = {
+				remove_idea = NOR_ruge_army_idea_1
+				add_idea = NOR_ruge_army_idea_2
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER }
+	}
+
+	focus = {
+		id = NOR_fleischer_artillery
+		icon = GFX_goal_generic_mountain_artillery
+		prerequisite = { focus = NOR_fleischer_manpower }
+		prerequisite = { focus = NOR_rifle_trials }
+		x = 31
+		y = 4
+		cost = 4
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			NOT = { has_country_flag = NOR_hird_supremacy }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_fleischer_artillery"
+			add_tech_bonus = {
+				name = NOR_fleischer_artillery
+				bonus = 1
+				uses = 2
+				category = artillery
+			}
+			swap_ideas = {
+				remove_idea = NOR_fleischer_army_idea_2
+				add_idea = NOR_fleischer_army_idea_3
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = NOR_ruge_infantry
+		icon = GFX_goal_NEE_farmers_into_soldiers
+		prerequisite = { focus = NOR_ruge_planning }
+		prerequisite = { focus = NOR_rifle_trials }
+		x = 33
+		y = 4
+		cost = 4
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			NOT = { has_country_flag = NOR_hird_supremacy }
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_ruge_infantry"
+			add_tech_bonus = {
+				name = NOR_ruge_infantry
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+			swap_ideas = {
+				remove_idea = NOR_ruge_army_idea_2
+				add_idea = NOR_ruge_army_idea_3
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = NOR_cruiser_question
+		icon = GFX_goal_NOR_navy
+		x = 19
+		y = 0
+		cost = 4
+		ai_will_do = {
+			factor = 5
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_cruiser_question"
+			country_event = { id = norway.102 }
+		}
+	}
+
+	focus = {
+		id = NOR_nortraship
+		icon = GFX_goal_USA_liberty_ships
+		prerequisite = { focus = NOR_cruiser_question }
+		available = {
+			has_war = yes
+		}
+		x = -2
+		y = 1
+		cost = 4
+
+		relative_position_id = NOR_cruiser_question
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_nortraship"
+			add_equipment_to_stockpile = {
+				type = convoy_1
+				amount = 500
+				producer = NOR
+			}
+			add_political_power = 100
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = NOR_coastal_artillery
+		icon = GFX_goal_generic_coastal_navy2
+		prerequisite = { focus = NOR_cruiser_question }
+		x = 2
+		y = 1
+		cost = 4
+
+		relative_position_id = NOR_cruiser_question
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_coastal_artillery"
+			# Ostlandet
+			110 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 3
+					province = 6115
+					instant_build = yes
+				}
+			}
+			# Vestlandet
+			142 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 3
+					province = 122
+					instant_build = yes
+				}
+			}
+			# Nord-Norge
+			144 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 3
+					province = 192
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = NOR_naval_rearmament
+		icon = GFX_goal_navy_decision
+		prerequisite = { focus = NOR_cruiser_question }
+		x = 0
+		y = 1
+		cost = 4
+
+		relative_position_id = NOR_cruiser_question
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_naval_rearmament"
+			110 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 6115
+					instant_build = yes
+				}
+			}
+			142 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 122
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = NOR_large_navy
+		icon = GFX_MAF_naval_aerial_observation
+		prerequisite = { focus = NOR_naval_rearmament }
+		mutually_exclusive = { focus = NOR_small_navy }
+		x = -1
+		y = 2
+		cost = 4
+
+		relative_position_id = NOR_cruiser_question
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_large_navy"
+			navy_experience = 10
+			add_doctrine_cost_reduction = {
+				name = AUS_flexible_navy
+				cost_reduction = 0.5
+				uses = 2
+				category = fleet_in_being_tree
+			}
+			add_tech_bonus = {
+				name = NOR_large_navy
+				bonus = 1
+				uses = 1
+				category = cl_tech
+			}
+			add_tech_bonus = {
+				name = NOR_large_navy
+				bonus = 1
+				uses = 1
+				category = ca_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = NOR_light_cruisers
+		icon = GFX_goal_CRO_cruiser_models
+		prerequisite = { focus = NOR_large_navy }
+		x = -1
+		y = 3
+		cost = 4
+
+		relative_position_id = NOR_cruiser_question
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_light_cruisers"
+			navy_experience = 10
+			country_event = { id = norway.104 }
+		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
+	}
+
+	focus = {
+		id = NOR_heavy_cruisers
+		icon = GFX_goal_MAG_naval_research_department
+		prerequisite = { focus = NOR_light_cruisers }
+		x = -1
+		y = 4
+		cost = 4
+
+		relative_position_id = NOR_cruiser_question
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_heavy_cruisers"
+			navy_experience = 10
+			country_event = { id = norway.106 }
+		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS }
+	}
+
+	focus = {
+		id = NOR_small_navy
+		icon = GFX_goal_generic_navy_anti_submarine
+		prerequisite = { focus = NOR_naval_rearmament }
+		mutually_exclusive = { focus = NOR_large_navy }
+		x = 1
+		y = 2
+		cost = 4
+
+		relative_position_id = NOR_cruiser_question
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_small_navy"
+			navy_experience = 10
+			add_doctrine_cost_reduction = {
+				name = NOR_small_navy
+				cost_reduction = 1
+				uses = 2
+				category = submarine_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = NOR_submarines
+		icon = GFX_goal_AUS_unrestricted_submarine_warfare
+		prerequisite = { focus = NOR_small_navy }
+		x = 1
+		y = 3
+		cost = 4
+
+		relative_position_id = NOR_cruiser_question
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_submarines"
+			navy_experience = 10
+			add_tech_bonus = {
+				name = NOR_submarines
+				bonus = 1
+				uses = 1
+				category = ss_tech
+			}
+			country_event = { id = norway.108 }
+		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = NOR_destroyers
+		icon = GFX_goal_CRO_destroyer_enterprise
+		prerequisite = { focus = NOR_submarines }
+		x = 1
+		y = 4
+		cost = 4
+
+		relative_position_id = NOR_cruiser_question
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_destroyers"
+			navy_experience = 10
+			add_tech_bonus = {
+				name = NOR_destroyers
+				bonus = 1
+				uses = 1
+				category = dd_tech
+			}
+			country_event = { id = norway.110 }
+		}
+		search_filters = { FOCUS_FILTER_NAVY_BONUS FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = NOR_army_airforce
+		icon = GFX_goal_NOR_army_airforce
+		x = 24
+		y = 0
+		cost = 4
+		available = {
+			has_design_based_on = small_plane_airframe
+		}
+		ai_will_do = {
+			factor = 0.25
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_army_airforce"
+			air_experience = 10
+			add_equipment_to_stockpile = {
+				type = small_plane_airframe
+				amount = 40
+				producer = NOR
+			}
+		}
+		search_filters = { FOCUS_FILTER_AIRFORCE_BONUS }
+	}
+
+	focus = {
+		id = NOR_navy_airforce
+		icon = GFX_goal_NOR_navy_airforce
+		x = 2
+		y = 0
+		cost = 4
+
+		relative_position_id = NOR_army_airforce
+
+		ai_will_do = {
+			factor = 0.25
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_navy_airforce"
+			air_experience = 10
+			add_equipment_to_stockpile = {
+				type = small_plane_naval_bomber_airframe
+				amount = 30
+				producer = NOR
+			}
+		}
+		search_filters = { FOCUS_FILTER_AIRFORCE_BONUS }
+	}
+
+	focus = {
+		id = NOR_united_airforce
+		icon = GFX_goal_NOR_airforce
+		prerequisite = { focus = NOR_army_airforce }
+		prerequisite = { focus = NOR_navy_airforce }
+		x = 1
+		y = 1
+		cost = 4
+
+		relative_position_id = NOR_army_airforce
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_united_airforce"
+			remove_ideas = NOR_divided_airforce_idea
+			add_ideas = NOR_united_airforce_idea
+		}
+	}
+
+	focus = {
+		id = NOR_support_DNL
+		icon = GFX_goal_NOR_DNL
+		prerequisite = { focus = NOR_united_airforce }
+		x = -2
+		y = 2
+		cost = 4
+
+		relative_position_id = NOR_army_airforce
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_support_DNL"
+			country_event = { id = norway.112 }
+			110 = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			144 = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = det_norske_luftfartselskap
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = NOR_airbase_infrastructure
+		icon = GFX_goal_generic_airports
+		prerequisite = { focus = NOR_united_airforce }
+		x = 4
+		y = 2
+		cost = 4
+
+		relative_position_id = NOR_army_airforce
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_airbase_infrastructure"
+			air_experience = 20
+			random_owned_controlled_state = {
+				prioritize = { 110 }
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 0
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 142 }
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 0
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_AIRFORCE_BONUS }
+	}
+
+	focus = {
+		id = NOR_offensive_airforce
+		icon = GFX_MON_air_doctrines_I
+		prerequisite = { focus = NOR_united_airforce }
+		mutually_exclusive = { focus = NOR_defensive_airforce }
+		x = 0
+		y = 2
+		cost = 4
+
+		relative_position_id = NOR_army_airforce
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_offensive_airforce"
+			air_experience = 10
+			add_tech_bonus = {
+				name = NOR_offensive_airforce
+				bonus = 1
+				uses = 1
+				category = light_fighter
+			}
+			swap_ideas = {
+				remove_idea = NOR_united_airforce_idea
+				add_idea = NOR_united_airforce_idea_2
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIRFORCE_BONUS }
+	}
+
+	focus = {
+		id = NOR_close_air_support
+		icon = GFX_goal_USA_organic_air_support
+		prerequisite = { focus = NOR_offensive_airforce }
+		x = 0
+		y = 3
+		cost = 4
+
+		relative_position_id = NOR_army_airforce
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_close_air_support"
+			air_experience = 10
+			add_tech_bonus = {
+				name = NOR_close_air_support
+				bonus = 1
+				uses = 1
+				category = cas_bomber
+			}
+			swap_ideas = {
+				remove_idea = NOR_united_airforce_idea_2
+				add_idea = NOR_united_airforce_idea_3
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIRFORCE_BONUS }
+	}
+
+	focus = {
+		id = NOR_defensive_airforce
+		icon = GFX_HUN_fighters
+		prerequisite = { focus = NOR_united_airforce }
+		mutually_exclusive = { focus = NOR_offensive_airforce }
+		x = 2
+		y = 2
+		cost = 4
+
+		relative_position_id = NOR_army_airforce
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_defensive_airforce"
+			air_experience = 10
+			add_tech_bonus = {
+				name = NOR_defensive_airforce
+				bonus = 1
+				uses = 1
+				category = light_fighter
+			}
+			swap_ideas = {
+				remove_idea = NOR_united_airforce_idea
+				add_idea = NOR_united_airforce_idea_4
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIRFORCE_BONUS }
+	}
+
+	focus = {
+		id = NOR_naval_bombers
+		icon = GFX_goal_CZE_air_is_sea
+		prerequisite = { focus = NOR_defensive_airforce }
+		x = 2
+		y = 3
+		cost = 4
+
+		relative_position_id = NOR_army_airforce
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_naval_bombers"
+			air_experience = 10
+			add_tech_bonus = {
+				name = NOR_naval_bombers
+				bonus = 1
+				uses = 1
+				category = naval_bomber
+			}
+			swap_ideas = {
+				remove_idea = NOR_united_airforce_idea_4
+				add_idea = NOR_united_airforce_idea_5
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIRFORCE_BONUS }
+	}
+
+	focus = {
+		id = NOR_andoya_rocket_base
+		icon = GFX_goal_generic_rocket_weapon
+		prerequisite = { focus = NOR_close_air_support focus = NOR_naval_bombers }
+		x = 1
+		y = 4
+		cost = 4
+
+		relative_position_id = NOR_army_airforce
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus NOR_andoya_rocket_base"
+			add_tech_bonus = {
+				name = NOR_andoya_rocket_base
+				bonus = 1
+				uses = 1
+				category = rocketry
+				category = jet_technology
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+}

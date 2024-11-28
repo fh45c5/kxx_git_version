@@ -1,0 +1,1095 @@
+focus_tree = {
+	id = Hesse
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = HES
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 200 y = 2500 }
+
+	focus={
+		id=HES_1
+		icon = GFX_goal_BUL_incendiary_warfare
+		x=1
+		y=0
+		cost=3
+		ai_will_do={
+			factor=1
+		}
+		bypass = {
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = NHessen_Punishment_wars
+					has_country_flag = HES_Punishment_wars
+				}
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = Hessen_Punishment_wars
+				has_country_flag = HES_Punishment_wars
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		division_template = {
+			name = "黑森保卫军"
+			division_names_group = HES_NRARMY_01
+			regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			}
+			}
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+			}
+		}
+	}
+	focus={
+		id=HES_2
+		icon = GFX_goal_WHR_Assert_Independence_Germany
+		x=0
+		y=1
+		prerequisite={focus=HES_1}
+		cost=3
+		ai_will_do={
+			factor=1
+		}
+		bypass = {
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = NHessen_Punishment_wars
+					has_country_flag = HES_Punishment_wars
+				}
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = Hessen_Punishment_wars
+				has_country_flag = HES_Punishment_wars
+			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = Hessen_Get_assistance
+					has_country_flag = HES_Get_assistance
+				}
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			DDR = {
+			country_event = hes.1
+			}
+		}
+	}
+	focus={
+		id=HES_3
+		icon = GFX_BAY_NEW_SOUTH
+		x=2
+		y=1
+		prerequisite={focus=HES_1}
+		cost=3
+		ai_will_do={
+			factor=5
+		}
+		bypass = {
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = NHessen_Punishment_wars
+					has_country_flag = HES_Punishment_wars
+				}
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = Hessen_Punishment_wars
+				has_country_flag = HES_Punishment_wars
+			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = Hessen_Get_assistance
+					has_country_flag = HES_Get_assistance
+				}
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		BAY = {
+			country_event = hes.2
+			}
+		}
+	}
+	focus={
+		id=HES_4
+		icon = GFX_goal_MNT_armed_necessities
+		x=0
+		y=2
+		prerequisite={focus=HES_2 focus=HES_3 }
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		bypass = {
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = NHessen_Punishment_wars
+					has_country_flag = HES_Punishment_wars
+				}
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = Hessen_Punishment_wars
+				has_country_flag = HES_Punishment_wars
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 0.4 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 0.4 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 0.4 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 0.4 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+			}
+		}
+	}
+	focus={
+		id=HES_5
+		icon = GFX_goal_GER_Man_in_the_High_Castle
+		x=2
+		y=2
+		prerequisite={focus=HES_2 focus=HES_3 }
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		bypass = {
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = NHessen_Punishment_wars
+					has_country_flag = HES_Punishment_wars
+				}
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = Hessen_Punishment_wars
+				has_country_flag = HES_Punishment_wars
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = HES_The_co_op_faction_is_going_to_die
+		}
+	}
+	focus={
+		id=HES_6
+		icon = GFX_goal_backstab
+		x=1
+		y=3
+		prerequisite={focus=HES_4}
+		prerequisite={focus=HES_5}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		bypass = {
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = NHessen_Punishment_wars
+					has_country_flag = HES_Punishment_wars
+				}
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = Hessen_Punishment_wars
+				has_country_flag = HES_Punishment_wars
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			swap_ideas = {
+				remove_idea = HES_The_co_op_faction_is_going_to_die
+				add_idea = HES_The_co_op_faction_is_going_to_die_1
+			}
+			if = {
+				limit = {
+					WGR = {
+						is_ai = yes
+					}
+				}
+				hidden_effect = {
+					WGR = {
+						country_event = {
+							id = hes.5
+							days = 10
+						}
+					}
+				}
+			}
+		}
+	}
+	focus={
+		id=HES_7
+		icon = GFX_goal_BAN_free_unions
+		x=6
+		y=0
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			NOT = {
+				has_war_with = WGR
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 120
+		add_stability = 0.2
+		}
+	}
+	focus={
+		id=HES_8
+		icon = GFX_GRU_BAN_LEFT
+		x=5
+		y=1
+		prerequisite={focus=HES_7}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_popularity = { ideology = totalist popularity = -0.2 }
+		add_popularity = { ideology = syndicalist popularity = -0.2 }
+		add_popularity = { ideology = radical_socialist popularity = -0.2 }
+		add_popularity = { ideology = social_democrat popularity = -0.2 }
+		add_stability = 0.1
+		add_war_support = 0.1
+		}
+	}
+	focus={
+		id=HES_9
+		icon = GFX_GRU_CORPORATE_DICTATOR
+		x=7
+		y=1
+		prerequisite={focus=HES_7}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_country_leader_trait = Governor_of_Hesse
+		}
+	}
+	focus={
+		id=HES_10
+		icon = GFX_german_army_advisors
+		x=4
+		y=2
+		prerequisite={focus=HES_8}
+		prerequisite={focus=HES_9}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_completed_focus = HES_2
+			NOT = {
+				has_completed_focus = HES_12
+				has_completed_focus = HES_20
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			DDR = {
+				HES = {
+				get_current_government_type = yes
+				}
+				DDR = {
+				puppet = HES
+				}
+				HES = {
+				restore_previous_government_type = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=HES_11
+		icon = GFX_RUS_Special_Forces_Office
+		x=6
+		y=2
+		prerequisite={focus=HES_8}
+		prerequisite={focus=HES_9}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = HES_20
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_state={
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>1
+						include_locked=yes
+					}
+					free_building_slots={
+						building=industrial_complex
+						size>1
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=3
+				add_building_construction={
+					type=arms_factory
+					level=1
+					instant_build=yes
+				}
+				add_building_construction={
+					type=industrial_complex
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_state={
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>1
+						include_locked=yes
+					}
+					free_building_slots={
+						building=industrial_complex
+						size>1
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=3
+				add_building_construction={
+					type=arms_factory
+					level=1
+					instant_build=yes
+				}
+				add_building_construction={
+					type=industrial_complex
+					level=2
+					instant_build=yes
+				}
+			}
+		}
+	}
+	focus={
+		id=HES_12
+		icon = GFX_BAY_SOUTH_GERMAN_DREAM
+		x=8
+		y=2
+		prerequisite={focus=HES_8}
+		prerequisite={focus=HES_9}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_completed_focus = HES_3
+			NOT = {
+				has_completed_focus = HES_10
+				has_completed_focus = HES_20
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			BAY = {
+				HES = {
+				get_current_government_type = yes
+				}
+				BAY = {
+				puppet = HES
+				}
+				HES = {
+				restore_previous_government_type = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=HES_13
+		icon = GFX_BBR_building_our_arms
+		x=5
+		y=3
+		prerequisite={focus=HES_11}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = HES_20
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+			}
+			random_owned_state={
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>1
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+			random_owned_state={
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>1
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+		}
+	}
+	focus={
+		id=HES_14
+		icon = GFX_goal_mass_concentration_of_army
+		x=7
+		y=3
+		prerequisite={focus=HES_11}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = HES_20
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 120
+		add_stability =  0.15
+		add_war_support = 0.15
+		}
+	}
+	focus={
+		id=HES_15
+		icon = GFX_TRM_Martial_Law
+		x=6
+		y=4
+		prerequisite={focus=HES_13}
+		prerequisite={focus=HES_14}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = HES_20
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_manpower = 20000
+		add_stability = 0.2
+		add_war_support = 0.2
+		hidden_effect = {
+			country_event = {
+			id = hes.8
+			days = 10
+				}
+			}
+		}
+	}
+	focus={
+		id=HES_16
+		icon = GFX_GRU_CORPORATE_POLICE
+		x=4
+		y=5
+		prerequisite={focus=HES_10}
+		prerequisite={focus=HES_15}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = HES_20
+			}
+			has_completed_focus = HES_19
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			DDR = {
+				annex_country = { target = HES transfer_troops = yes }
+			}
+			DDR = {
+				add_manpower = 50000
+			}
+			every_state = {
+			limit = { is_core_of = HES }
+			add_core_of = DDR
+			}
+		}
+	}
+	focus={
+		id=HES_17
+		icon = GFX_goal_ALA_Air_defence
+		x=6
+		y=5
+		prerequisite={focus=HES_15}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = HES_20
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+			}
+		}
+	}
+	focus={
+		id=HES_18
+		icon = GFX_BAY_AUSTRIAN_ANNEXATION
+		x=8
+		y=5
+		prerequisite={focus=HES_12}
+		prerequisite={focus=HES_15}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = HES_20
+			}
+			has_completed_focus = HES_19
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			BAY = {
+				annex_country = { target = HES transfer_troops = yes }
+			}
+			BAY = {
+				add_manpower = 50000
+			}
+			every_state = {
+			limit = { is_core_of = HES }
+			add_core_of = BAY
+			}
+		}
+	}
+	focus={
+		id=HES_19
+		icon = GFX_goal_NFA_Galvanize_Officer_Corp
+		x=6
+		y=6
+		prerequisite={focus=HES_17}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			NOT = {
+				has_completed_focus = HES_20
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		declare_war_on = { target = WGR type = annex_everything }
+		every_state = {
+			limit = { is_core_of = WGR }
+			add_core_of = HES
+			}
+		set_cosmetic_tag = HES_WGR_GOV
+		}
+	}
+	focus={
+		id=HES_20
+		icon = GFX_goal_COR_Terror_in_the_night
+		x=13
+		y=0
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = Hessen_Currently_non_existent
+				has_country_flag = HES_Currently_non_existent
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 120
+		add_war_support = 0.2
+		add_stability = 0.2
+		}
+	}
+	focus={
+		id=HES_21
+		icon = GFX_goal_NFA_Republican_National_Corporatism
+		x=12
+		y=1
+		prerequisite={focus=HES_20}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = HES_Reborn_from_the_carrion
+		}
+	}
+	focus={
+		id=HES_22
+		icon = GFX_goal_COR_State_Supreme_Orderer
+		x=14
+		y=1
+		prerequisite={focus=HES_20}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = HES_Regain_your_original_faith
+		}
+	}
+	focus={
+		id=HES_23
+		icon = GFX_goal_BEL_Expose_Masonic_Treachery
+		x=13
+		y=2
+		prerequisite={focus=HES_21}
+		prerequisite={focus=HES_22}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = HES_Beyond_the_Nation
+		}
+	}
+	focus={
+		id=HES_24
+		icon = GFX_BAY_ATTACK_BENELUX
+		x=12
+		y=3
+		prerequisite={focus=HES_23}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = FLN type = annex_everything }
+		create_wargoal = { target = WLL type = annex_everything }
+		create_wargoal = { target = BEL type = annex_everything }
+		create_wargoal = { target = LUX type = annex_everything }
+		create_wargoal = { target = HOL type = annex_everything }
+		create_wargoal = { target = NGF type = annex_everything }
+		create_wargoal = { target = WGR type = annex_everything }
+		every_state = {
+			limit = { is_core_of = BEL }
+			add_core_of = HES
+			}
+		every_state = {
+			limit = { is_core_of = LUX }
+			add_core_of = HES
+			}
+		every_state = {
+			limit = { is_core_of = HOL }
+			add_core_of = HES
+			}
+		every_state = {
+			limit = { is_core_of = NGF }
+			add_core_of = HES
+			}
+		every_state = {
+			limit = { is_core_of = WGR }
+			add_core_of = HES
+			}
+		}
+	}
+	focus={
+		id=HES_25
+		icon = GFX_goal_CEA_forget_prussia
+		x=14
+		y=3
+		prerequisite={focus=HES_23}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = BAY type = annex_everything }
+		create_wargoal = { target = DDR type = annex_everything }
+		create_wargoal = { target = SIL type = annex_everything }
+		create_wargoal = { target = DDR type = annex_everything }
+		create_wargoal = { target = POM type = annex_everything }
+		create_wargoal = { target = SXO type = annex_everything }
+		create_wargoal = { target = POL type = annex_everything }
+		780 = {add_core_of = HES}
+		50 = {add_core_of = HES}
+		60 = {add_core_of = HES}
+		}
+	}
+	focus={
+		id=HES_26
+		icon = GFX_goal_BRG_Kill_Revolution
+		x=11
+		y=4
+		prerequisite={focus=HES_24}
+		prerequisite={focus=HES_25}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = HES_whole_heartedly
+		}
+	}
+	focus={
+		id=HES_27
+		icon = GFX_goal_SIC_knights_of_grail
+		x=13
+		y=4
+		prerequisite={focus=HES_24}
+		prerequisite={focus=HES_25}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			NOT = { country_exists = DDR }
+			NOT = { country_exists = BAY }
+			NOT = { country_exists = SIL }
+			NOT = { country_exists = EPR }
+			NOT = { country_exists = POM }
+			NOT = { country_exists = SXO }
+			controls_state = 52
+			controls_state = 64
+			controls_state = 65
+			controls_state = 63
+			controls_state = 68
+			controls_state = 5
+			controls_state = 66
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = HES_Iron_and_blood_forged_the_Knights
+		DDR = {
+			transfer_state = 64
+			transfer_state = 65
+			transfer_state = 62
+			transfer_state = 68
+			transfer_state = 66
+			transfer_state = 67
+			transfer_state = 86
+			transfer_state = 63
+			transfer_state = 776
+			transfer_state = 777
+			transfer_state = 5
+			transfer_state = 188
+			set_cosmetic_tag = HES_DDRN_GOV
+			}
+			set_autonomy = { target = DDR autonomy_state = autonomous_territory }
+			BAY = {
+			transfer_state = 53
+			transfer_state = 52
+			transfer_state = 54
+			set_cosmetic_tag = HES_BAYN_GOV
+			}
+			set_autonomy = { target = BAY autonomy_state = autonomous_territory }
+		}
+	}
+	focus={
+		id=HES_28
+		icon = GFX_goal_COR_Warraneetism_Not_Slavery
+		x=15
+		y=4
+		prerequisite={focus=HES_24}
+		prerequisite={focus=HES_25}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			swap_ideas = {
+				remove_idea = HES_Beyond_the_Nation
+				add_idea = HES_Beyond_the_Nation_1
+			}
+		}
+	}
+	focus={
+		id=HES_29
+		icon = GFX_goal_NFA_Dedication
+		x=13
+		y=5
+		prerequisite={focus=HES_26}
+		prerequisite={focus=HES_27}
+		prerequisite={focus=HES_28}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = HES_whole_heartedly
+				add_idea = HES_whole_heartedly_1
+			}
+		}
+	}
+	focus={
+		id=HES_30
+		icon = GFX_BEL_Reclaim_France
+		x=12
+		y=6
+		prerequisite={focus=HES_29}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = FRA type = annex_everything }
+		create_wargoal = { target = NFA type = annex_everything }
+		28 = {add_core_of = HES}
+		779 = {add_core_of = HES}
+		785 = {add_core_of = HES}
+		980 = {add_core_of = HES}
+		17 = {add_core_of = HES}
+		24 = {add_core_of = HES}
+		18 = {add_core_of = HES}
+		27 = {add_core_of = HES}
+		735 = {add_core_of = HES}
+		763 = {add_core_of = HES}
+		762 = {add_core_of = HES}
+		21 = {add_core_of = HES}
+		32 = {add_core_of = HES}
+		20 = {add_core_of = HES}
+		26 = {add_core_of = HES}
+		}
+	}
+	focus={
+		id=HES_31
+		icon = GFX_BAY_DESTROY_SWITZERLAND
+		x=14
+		y=6
+		prerequisite={focus=HES_29}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = SWI type = annex_everything }
+		every_state = {
+			limit = { is_core_of = SWI }
+			add_core_of = HES
+			}
+		}
+	}
+	focus={
+		id=HES_32
+		icon = GFX_goal_AUS_Sprouting_Blossoming_Future
+		x=13
+		y=7
+		prerequisite={focus=HES_30}
+		prerequisite={focus=HES_31}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 500
+		set_cosmetic_tag = HES_THNEO_GOV
+		add_research_slot = 5
+		}
+	}
+}

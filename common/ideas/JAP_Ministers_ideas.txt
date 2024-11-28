@@ -1,0 +1,3162 @@
+## Please do not add ministers to this file manually. All addition of ministers should be handled through the Central Minister Repository and the Minister Conversion Utility.
+## ~mw~
+
+ideas = {
+  ################################################################################################################################################################################################
+  ### KLY
+  ################################################################################################################################################################################################
+
+
+  ################################################################################################################################################################################################
+  ### JAP
+  ################################################################################################################################################################################################
+
+	head_of_government = { ### Head of Government ###
+		JAP_Asanuma_Inejiro_hog_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			picture = JAP_Asanuma_Inejiro_eco_tot
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				totalist
+				hog_totalist_chairman
+			}
+		}
+		
+		JAP_Sumihisa_Ikeda_hog_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			picture = JAP_Sumihisa_Ikeda_eco_tot
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				totalist
+				eco_planned_economy_proponent
+			}
+		}
+		
+		JAP_Tsunesaburo_Makiguchi_hog_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			picture = JAP_Tsunesaburo_Makiguchi_for_rso
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				totalist
+				hog_totalist_chairman
+			}
+		}
+		
+		
+		
+		
+		JAP_Tatsuo_Tsukui_hog_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				totalist
+				paternal_autocrat
+			}
+		}
+		JAP_Aso_Hisashi_hog_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				totalist
+				hog_totalist_chairman
+			}
+		}
+		
+		JAP_Yoshikuru_Yamana_hog_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				totalist
+				hog_totalist_chairman
+			}
+		}
+		JAP_Kawakami_Jotaro_hog_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				totalist
+				hog_ambitious_union_boss
+			}
+		}
+		JAP_Hirano_Rikizo_hog_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			picture = JAP_Hirano_Rikizo
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				totalist
+				hog_totalist_chairman
+			}
+		}
+		
+		JAP_Nakano_Seigo_hog_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			picture = JAP_Nakano_Seigo
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				totalist
+				hog_happy_amateur
+			}
+		}
+		
+		JAP_Kametaro_Mitsukawa_hog_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				totalist
+				hog_happy_amateur
+			}
+		}
+		
+		JAP_Katsumaro_Akamatsu_hog_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				totalist
+				hog_totalist_chairman
+			}
+		}
+		
+		
+		
+		JAP_Kita_Ikki_hog_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			
+			picture = JAP_Kita_Ikki
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				totalist
+				hog_political_genius
+			}
+		}
+		
+		JAP_Okawa_Shumei_hog_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			
+			picture = JAP_Okawa_Shumei_for_npo
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				totalist
+				hog_political_genius
+			}
+		}
+		
+		JAP_Kingoro_Hashimoto_hog_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			
+			
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				totalist
+				hog_political_genius
+			}
+		}
+		
+		JAP_Kyuichi_Tokuda_hog_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			
+			
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				totalist
+				hog_political_genius
+			}
+		}
+		
+		JAP_Kazuo_Fukumoto_hog_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			
+			
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				totalist
+				hog_political_genius
+			}
+		}
+		JAP_Nishio_Suehiro_hog_syn = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Nishio_Suehiro_hog_syn"
+			}
+			traits = {
+				head_of_government
+				social_democrat
+				hog_flamboyant_tough_guy
+			}
+		}
+		JAP_Nosaka_Sanzo_hog_syn = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Nosaka_Sanzo_hog_syn"
+			}
+			traits = {
+				head_of_government
+				syndicalist
+				hog_backroom_backstabber
+			}
+		}
+		
+		JAP_Yamamoto_Kenzo_hog_syn = {
+			allowed = { original_tag = JAP }
+			picture = JAP_Yamamoto_Kenzo_for_syn
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Yamamoto_Kenzo_hog_syn"
+			}
+			traits = {
+				head_of_government
+				syndicalist
+				hog_ambitious_union_boss
+			}
+		}
+		JAP_Miyamoto_Kenji_hog_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Miyamoto_Kenji_hog_rso"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_ambitious_union_boss
+			}
+		}
+		
+		JAP_Wada_Hiroo_hog_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Wada_Hiroo_hog_rso"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_silent_workhorse
+			}
+		}
+		
+		JAP_Yamakawa_Hitoshi_hog_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Yamakawa_Hitoshi_hog_rso"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_flamboyant_tough_guy
+			}
+		}
+		
+		JAP_Giro_Senoo_hog_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_reformist_socialist
+			}
+		}
+		
+		JAP_Buraku_Liberation_League_hog_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_reformist_socialist
+			}
+		}
+		
+		JAP_Jiichiro_Matumoto_hog_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_reformist_socialist
+			}
+		}
+		
+		JAP_Sanshiro_Ishikawa_hog_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_reformist_socialist
+			}
+		}
+		
+		JAP_Tsuji_Jun_hog_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_reformist_socialist
+			}
+		}
+		
+		JAP_inejiro_asanuma_hog_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			picture = JAP_Asanuma_Inejiro_eco_tot
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_silent_workhorse
+			}
+		}
+		
+
+		
+		
+		JAP_Josei_Toda_hog_sde = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				social_democrat
+				hog_happy_amateur
+			}
+		}
+		
+		
+		JAP_jotaro_kawakami_hog_sde = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			picture = JAP_Kawakami_Jotaro_hog_tot
+			traits = {
+				head_of_government
+				social_democrat
+				hog_happy_amateur
+			}
+		}
+		
+		JAP_Yamamoto_Kenzo_hog_sde = {
+			allowed = { original_tag = JAP }
+			picture = JAP_Yamamoto_Kenzo_for_syn
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				social_democrat
+				hog_ambitious_union_boss
+			}
+		}
+
+		JAP_saito_takao_hog_sli = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			picture = JAP_Saito_Takao_sec_mli
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Hamaguchi_Osachi_hog_mli"
+			}
+			traits = {
+				head_of_government
+				market_liberal
+				hog_flamboyant_tough_guy
+			}
+		}
+		
+		JAP_Ryutaro_Nagai_hog_sli = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				market_liberal
+				hog_flamboyant_tough_guy
+			}
+		}
+		
+		
+
+		
+		
+		JAP_Ozaki_Yukio_hog_sli = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			picture = JAP_Ozaki_Yukio
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				social_liberal
+				hog_silent_workhorse
+			}
+		}
+
+		
+		
+		JAP_Chikuhei_Nakajima_hog_sco = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Hatoyama_Ichiro_hog_sco"
+			}
+			traits = {
+				head_of_government
+				social_conservative
+				hog_flamboyant_tough_guy
+			}
+		}
+
+		
+
+		
+
+		
+
+		
+		
+		JAP_Kuhara_Fusanosuke_hog_sco = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			name = JAP_Kuhara_Fusanosuke_hog_npo
+			picture = JAP_Kuhara_Fusanosuke_hog_npo
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				social_conservative
+				hog_smiling_oilman
+			}
+		}
+		
+		
+		
+		JAP_Kokkai_hog_ade = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Adachi_Kenzo_hog_ade"
+			}
+			traits = {
+				
+				authoritarian_democrat
+			}
+		}
+
+		
+		JAP_Akira_Kazami_hog_ade = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Maeda_Yonezo_hog_ade"
+			}
+			traits = {
+				head_of_government
+				authoritarian_democrat
+				hog_silent_workhorse
+			}
+		}
+
+		
+		
+		JAP_Shiina_Etsusaburo_hog_ade = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			picture = JAP_Shiina_Etsusaburo
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				authoritarian_democrat
+				hog_political_protege
+			}
+		}
+
+		
+		
+		JAP_Terauchi_Hisaichi_hog_pau = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Hayashi_Senjuro_hog_pau"
+			}
+			traits = {
+				head_of_government
+				paternal_autocrat
+				hog_old_general
+			}
+		}
+
+		
+
+		
+
+		
+		
+		JAP_Zaibatsu_Council_hog_pau = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Tojo_Hideki_hog_pau"
+			}
+			traits = {
+				head_of_government
+				paternal_autocrat
+				hog_old_general
+			}
+		}
+
+		
+		
+		JAP_Okawa_Shumei_hog_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Araki_Sadao_hog_npo"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_flamboyant_tough_guy
+			}
+		}
+		
+		JAP_Kingoro_Hashimoto_hog_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Araki_Sadao_hog_npo"
+			}
+			picture = JAP_Kingoro_Hashimoto_hog_tot
+			traits = {
+				head_of_government
+				national_populist
+				hog_flamboyant_tough_guy
+			}
+		}
+
+		JAP_Konoe_Fumimaro_hog_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Konoe_Fumimaro_hog_npo"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_corporate_suit
+			}
+		}
+
+		
+		
+		JAP_Kanji_Ishiwara_hog_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Kuhara_Fusanosuke_hog_npo"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_ultranationalist_agitator
+			}
+		}
+		
+		JAP_Kozaburo_Tachibana_hog_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Kuhara_Fusanosuke_hog_npo"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_ultranationalist_agitator
+			}
+		}
+		
+		JAP_Ryohei_Uchida_hog_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				national_populist
+				hog_ultranationalist_agitator
+			}
+		}
+		JAP_Toyama_Mitsuru_hog_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				head_of_government
+				national_populist
+				hog_ultranationalist_agitator
+			}
+		}
+		
+		JAP_Onisaburo_Deguchi_hog_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Kuhara_Fusanosuke_hog_npo"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_spiritual_leader
+			}
+		}
+		
+		JAP_Bin_Akao_hog_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Kuhara_Fusanosuke_hog_npo"
+			}
+			picture = JAP_Bin_Akao_eco_npo
+			traits = {
+				head_of_government
+				national_populist
+				hog_spiritual_leader
+			}
+		}
+		
+		JAP_Nissho_Inoue_hog_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Kuhara_Fusanosuke_hog_npo"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_spiritual_leader
+			}
+		}
+		
+		JAP_Yoshio_Kodama_hog_pau = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Kuhara_Fusanosuke_hog_npo"
+			}
+			traits = {
+				head_of_government
+				paternal_autocrat
+				hog_militant_reactionary
+			}
+		}
+		
+		JAP_Yoshio_Kodama_hog_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Kuhara_Fusanosuke_hog_npo"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_militant_reactionary
+			}
+		}
+		
+		JAP_Noboru_Yamaguchi_hog_pau = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Tojo_Hideki_hog_pau"
+			}
+			traits = {
+				head_of_government
+				paternal_autocrat
+				hog_backroom_backstabber
+			}
+		}
+		
+		JAP_Iwane_Matsui_hog_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Kuhara_Fusanosuke_hog_npo"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_spiritual_leader
+			}
+		}
+		
+		JAP_Kishi_Nobusuke_hog_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			picture = JAP_Kishi_Nobusuke
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				national_populist
+				hog_flamboyant_tough_guy
+			}
+		}
+		
+		JAP_Muto_Akira_hog_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			picture = JAP_Muto_Akira
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				national_populist
+				hog_old_general
+			}
+		}
+		JAP_Nakano_Seigo_hog_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			name = JAP_Nakano_Seigo_hog_tot
+			picture = JAP_Nakano_Seigo
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				national_populist
+				hog_happy_amateur
+			}
+		}
+
+	}
+
+	person_of_influence = { ### Person of Influence ###
+		## Foreign Minister ##
+		JAP_Akamatsu_Katsumaro_for_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Akamatsu_Katsumaro_for_tot"
+			}
+			picture = JAP_Katsumaro_Akamatsu_hog_tot
+			traits = {
+				foreign_minister
+				totalist
+				for_ideological_crusader
+			}
+		}
+
+		JAP_Asanuma_Inejiro_for_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			picture = JAP_Asanuma_Inejiro_eco_tot
+			traits = {
+				foreign_minister
+				totalist
+				for_ideological_crusader
+			}
+		}
+
+		JAP_Yasukuni_Watanabe_for_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				foreign_minister
+				totalist
+				for_ideological_crusader
+			}
+		}
+		
+		
+		JAP_Shunhide_Suga_for_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				foreign_minister
+				totalist
+				for_ideological_crusader
+			}
+		}
+
+		JAP_Kanichiro_Kamei_for_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				foreign_minister
+				totalist
+				for_ideological_crusader
+			}
+		}
+
+		
+		JAP_Hajime_Kawakami_for_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Akamatsu_Katsumaro_for_tot"
+			}
+			traits = {
+				foreign_minister
+				totalist
+				for_ideological_crusader
+			}
+		}
+		
+		JAP_Yoshio_Shiga_for_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				foreign_minister
+				totalist
+				for_ideological_crusader
+			}
+		}
+
+		JAP_Shigeyoshi_Matsumae_for_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				foreign_minister
+				totalist
+				for_ideological_crusader
+			}
+		}
+		JAP_Tadashi_Kodaira_for_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			
+			traits = {
+				foreign_minister
+				totalist
+				for_ideological_crusader
+			}
+		}
+		
+		JAP_Tatsuo_Tsukui_for_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Tatsuo_Tsukui_hog_tot
+			cancel_if_invalid = no
+			
+			traits = {
+				foreign_minister
+				totalist
+				for_ideological_crusader
+			}
+		}
+		
+		JAP_Tokuda_Kyuichi_for_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Tokuda_Kyuichi_for_tot"
+			}
+			picture = JAP_Kyuichi_Tokuda_hog_tot
+			traits = {
+				foreign_minister
+				totalist
+				for_iron_fisted_brute
+			}
+		}
+		
+		JAP_Kono_Mitsu_for_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Kono_Mitsu
+			cancel_if_invalid = no
+			traits = {
+				foreign_minister
+				totalist
+				for_ideological_crusader
+			}
+		}
+		JAP_Oyama_Ikuo_for_syn = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			name = JAP_Oyama_Ikuo_hog_syn
+			picture = JAP_Oyama_Ikuo_hog_syn
+			cancel_if_invalid = no
+			traits = {
+				foreign_minister
+				syndicalist
+				for_the_cloak_n_dagger_schemer
+			}
+		}
+		
+		JAP_Kanson_Arahata_for_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				foreign_minister
+				radical_socialist
+				for_the_cloak_n_dagger_schemer
+			}
+		}
+		JAP_Nosaka_Sanzo_for_syn = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Nosaka_Sanzo_hog_syn
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Nosaka_Sanzo_for_syn"
+			}
+			traits = {
+				foreign_minister
+				syndicalist
+				for_ideological_crusader
+			}
+		}
+		JAP_Tanahashi_Kotora_for_syn = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Tanahashi_Kotora_for_syn"
+			}
+			traits = {
+				foreign_minister
+				syndicalist
+				for_great_compromiser
+			}
+		}
+		
+		
+		JAP_Yamakawa_Kikue_for_syn = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Yamamoto_Kenzo_for_syn"
+			}
+			traits = {
+				foreign_minister
+				syndicalist
+				for_the_cloak_n_dagger_schemer
+			}
+		}
+		
+		JAP_Teruko_Matsuda_for_syn = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Yamamoto_Kenzo_for_syn"
+			}
+			traits = {
+				foreign_minister
+				syndicalist
+				for_the_cloak_n_dagger_schemer
+			}
+		}
+		JAP_Katsumata_Seiichi_for_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Katsumata_Seiichi_for_rso"
+			}
+			traits = {
+				foreign_minister
+				radical_socialist
+				for_ideological_crusader
+			}
+		}
+		
+		JAP_Tsunesaburo_Makiguchi_for_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Katsumata_Seiichi_for_rso"
+			}
+			traits = {
+				foreign_minister
+				radical_socialist
+				for_ideological_crusader
+			}
+		}
+		
+		JAP_Hiratsuka_Raicho_for_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Katsumata_Seiichi_for_rso"
+			}
+			traits = {
+				foreign_minister
+				radical_socialist
+				for_ideological_crusader
+			}
+		}
+		
+		JAP_Tomoyoshi_Murayama_for_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Katsumata_Seiichi_for_rso"
+			}
+			traits = {
+				foreign_minister
+				radical_socialist
+				for_ideological_crusader
+			}
+		}
+		JAP_Minobe_Ryokichi_for_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Minobe_Ryokichi_for_rso"
+			}
+			traits = {
+				foreign_minister
+				radical_socialist
+				for_ideological_crusader
+			}
+		}
+		JAP_Sakisaka_Itsuro_for_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Sakisaka_Itsuro_for_rso"
+			}
+			traits = {
+				foreign_minister
+				radical_socialist
+				for_biased_intellectual
+			}
+		}
+		JAP_Suzuki_Mosaburo_for_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Suzuki_Mosaburo_hog_rso
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Suzuki_Mosaburo_for_rso"
+			}
+			traits = {
+				foreign_minister
+				radical_socialist
+				for_apologetic_clerk
+			}
+		}
+		JAP_Wada_Hiroo_for_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Wada_Hiroo_for_rso"
+			}
+			picture = JAP_Wada_Hiroo_hog_rso
+			traits = {
+				foreign_minister
+				radical_socialist
+				for_biased_intellectual
+			}
+		}
+		
+		
+		JAP_Kiyose_Ichiro_for_sli = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Kiyose_Ichiro
+			cancel_if_invalid = no
+			traits = {
+				foreign_minister
+				social_liberal
+				for_great_compromiser
+			}
+		}
+
+		
+
+		
+
+		
+
+		
+
+		
+
+		
+		
+		JAP_Kuniaki_Koiso_for_pau = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Tatekawa_Yoshitsugu_for_pau"
+			}
+			traits = {
+				foreign_minister
+				paternal_autocrat
+				for_general_staffer
+			}
+		}
+		
+		JAP_Yosuke_Matsuoka_for_pau = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Tatekawa_Yoshitsugu_for_pau"
+			}
+			traits = {
+				foreign_minister
+				paternal_autocrat
+				for_general_staffer
+			}
+		}
+
+		
+		
+		JAP_Shigeru_Honjo_for_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Okawa_Shumei_for_npo"
+			}
+			traits = {
+				foreign_minister
+				national_populist
+				for_ideological_crusader
+			}
+		}
+		
+		JAP_Kazuo_Taoka_for_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Okawa_Shumei_for_npo"
+			}
+			traits = {
+				foreign_minister
+				national_populist
+				for_the_cloak_n_dagger_schemer
+			}
+		}
+		
+		JAP_Hirota_Koki_for_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			name = JAP_Hirota_Koki_for_ade
+			picture = JAP_Hirota_Koki_for_ade
+			cancel_if_invalid = no
+			traits = {
+				foreign_minister
+				national_populist
+				for_great_compromiser
+			}
+		}
+		JAP_Muto_Akira_for_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			name = JAP_Muto_Akira_hog_npo
+			picture = JAP_Muto_Akira
+			cancel_if_invalid = no
+			traits = {
+				foreign_minister
+				national_populist
+				for_the_cloak_n_dagger_schemer
+			}
+		}
+		
+		JAP_Kametaro_Mitsukawa_for_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				foreign_minister
+				national_populist
+				for_the_cloak_n_dagger_schemer
+			}
+		}
+		
+		JAP_Kazuma_Shindo_for_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				foreign_minister
+				national_populist
+				for_the_cloak_n_dagger_schemer
+			}
+		}
+		
+		JAP_Soetsu_Yanagi_for_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				foreign_minister
+				national_populist
+				for_ideological_crusader
+			}
+		}
+		
+		JAP_Hayashi_Senyuki_for_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				foreign_minister
+				national_populist
+				for_ideological_crusader
+			}
+		}
+
+
+		## Economy Minister ##
+		
+		
+		JAP_Shiro_Koike_eco_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Asanuma_Inejiro_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_planned_economy_proponent
+			}
+		}
+		
+		JAP_Ritsu_Ito_eco_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Asanuma_Inejiro_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_planned_economy_proponent
+			}
+		}
+		
+		JAP_Sumihisa_Ikeda_eco_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Sumihisa_Ikeda_hog_tot
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Asanuma_Inejiro_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_planned_economy_proponent
+			}
+		}
+		
+		JAP_Dai_Oishi_eco_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Asanuma_Inejiro_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_planned_economy_proponent
+			}
+		}
+		
+		JAP_Atsutaro_Suyama_eco_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Asanuma_Inejiro_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_planned_economy_proponent
+			}
+		}
+		
+		JAP_Ikki_Kita_eco_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Asanuma_Inejiro_eco_tot"
+			}
+			picture = JAP_Kita_Ikki_hog_tot
+			traits = {
+				economy_minister
+				totalist
+				eco_planned_economy_proponent
+			}
+		}
+		
+		JAP_Satomi_Hakamada_eco_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Asanuma_Inejiro_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_planned_economy_proponent
+			}
+		}
+		JAP_Kono_Mitsu_eco_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Kono_Mitsu_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_resource_industrialist
+			}
+		}
+		JAP_Mizuno_Shigeo_eco_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Mizuno_Shigeo_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_administrative_genius
+			}
+		}
+
+		JAP_Ryuichi_Inamura_eco_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Mizuno_Shigeo_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_administrative_genius
+			}
+		}
+
+		JAP_Ryoto_Inatomi_eco_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Mizuno_Shigeo_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_administrative_genius
+			}
+		}
+
+		JAP_Minoru_Mizuno_eco_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Sugiyama_Motojiro_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_military_entrepreneur
+			}
+		}
+		
+		JAP_Shoichi_Miyake_eco_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Sugiyama_Motojiro_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_military_entrepreneur
+			}
+		}
+		JAP_Sugiyama_Motojiro_eco_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Sugiyama_Motojiro_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_military_entrepreneur
+			}
+		}
+		JAP_Kato_Kanju_eco_syn = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Kato_Kanju_eco_syn"
+			}
+			traits = {
+				economy_minister
+				syndicalist
+				eco_resource_industrialist
+			}
+		}
+		
+		JAP_Yamamoto_Kenzo_eco_syn = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Yamamoto_Kenzo_eco_syn"
+			}
+			picture = JAP_Yamamoto_Kenzo_for_syn
+			traits = {
+				economy_minister
+				syndicalist
+				eco_resource_industrialist
+			}
+		}
+		JAP_Arahata_Kanson_eco_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Arahata_Kanson_eco_rso"
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_theoretical_scientist
+			}
+		}
+		JAP_Kenji_Miyazawa_eco_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Arahata_Kanson_eco_rso"
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_theoretical_scientist
+			}
+		}
+		
+		JAP_Hatta_Shuzo_eco_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Arahata_Kanson_eco_rso"
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_theoretical_scientist
+			}
+		}
+		
+		JAP_Eisuke_Yoshiyuki_eco_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Arahata_Kanson_eco_rso"
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_theoretical_scientist
+			}
+		}
+		
+		JAP_Kazuo_Fukumoto_eco_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Kazuo_Fukumoto_hog_tot
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Arahata_Kanson_eco_rso"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_planned_economy_proponent
+			}
+		}
+		
+		JAP_Katsumata_Seiichi_eco_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Katsumata_Seiichi_eco_rso"
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_laissez_faire_capitalist
+			}
+		}
+		JAP_Ninagawa_Torazo_eco_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Ninagawa_Torazo_eco_rso"
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_mixed_economy
+			}
+		}
+		JAP_Ouchi_Hyoe_eco_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Ouchi_Hyoe_eco_rso"
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_administrative_genius
+			}
+		}
+		JAP_Sasaki_Kozo_eco_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Sasaki_Kozo_eco_rso"
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_resource_industrialist
+			}
+		}
+		JAP_Tsushima_Tadayuki_eco_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Tsushima_Tadayuki_eco_rso"
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_theoretical_scientist
+			}
+		}
+		JAP_Wada_Hiroo_eco_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Wada_Hiroo_eco_rso"
+			}
+			picture = JAP_Wada_Hiroo_hog_rso
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_planned_economy_proponent
+			}
+		}
+		JAP_Yokoyama_Toshiaki_eco_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Yokoyama_Toshiaki_eco_rso"
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_resource_industrialist
+			}
+		}
+		
+		JAP_Itsuro_Sakisaka_eco_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Yokoyama_Toshiaki_eco_rso"
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_planned_economy_proponent
+			}
+		}
+		
+		
+		JAP_Ushiro_Ito_eco_sde = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Eda_Saburo_eco_sde"
+			}
+			traits = {
+				economy_minister
+				social_democrat
+				eco_resource_industrialist
+			}
+		}
+
+
+		
+		
+		JAP_Otake_Kanichi_eco_sli = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Otake_Kanichi
+			cancel_if_invalid = no
+			traits = {
+				economy_minister
+				social_liberal
+				eco_reformer
+			}
+		}
+
+		
+
+		
+		JAP_Suzuki_Teiichi_eco_sco = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			name = JAP_Suzuki_Teiichi_eco_npo
+			picture = JAP_Suzuki_Teiichi_eco_npo
+			cancel_if_invalid = no
+			traits = {
+				economy_minister
+				social_conservative
+				eco_military_entrepreneur
+			}
+		}
+
+		
+
+		
+
+		
+
+		
+		
+		JAP_Minoru_Togo_eco_sco = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Tsushima_Juichi_eco_sco"
+			}
+			traits = {
+				economy_minister
+				social_conservative
+				eco_bank_president
+			}
+		}
+
+		
+
+		
+
+		
+
+		
+		
+		JAP_Kakuji_Inagawa_eco_pau = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Shoda_Kazue_eco_pau"
+			}
+			traits = {
+				economy_minister
+				paternal_autocrat
+				eco_corrupt_kleptocrat
+			}
+		}
+		
+		JAP_Isao_Kawada_eco_pau = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Shoda_Kazue_eco_pau"
+			}
+			traits = {
+				economy_minister
+				paternal_autocrat
+				eco_corrupt_kleptocrat
+			}
+		}
+		
+		JAP_Toyotaro_Yuki_eco_pau = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Shoda_Kazue_eco_pau"
+			}
+			traits = {
+				economy_minister
+				paternal_autocrat
+				eco_corrupt_kleptocrat
+			}
+		}
+
+		
+		
+		JAP_Matashiro_Nakamura_eco_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Suzuki_Teiichi_eco_npo"
+			}
+			traits = {
+				economy_minister
+				national_populist
+				eco_military_entrepreneur
+			}
+		}
+		
+		JAP_Kaya_Okinori_eco_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Kaya_Okinori
+			cancel_if_invalid = no
+			traits = {
+				economy_minister
+				national_populist
+				eco_infantry_proponent
+			}
+		}
+		JAP_Nishida_Mitsugi_eco_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Nishida_Mitsugi
+			cancel_if_invalid = no
+			traits = {
+				economy_minister
+				national_populist
+				eco_corrupt_kleptocrat
+			}
+		}
+		JAP_Shiina_Etsusaburo_eco_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			name = JAP_Shiina_Etsusaburo_hog_ade
+			picture = JAP_Shiina_Etsusaburo
+			cancel_if_invalid = no
+			traits = {
+				economy_minister
+				national_populist
+				eco_military_entrepreneur
+			}
+		}
+		
+		JAP_Bin_Akao_eco_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				economy_minister
+				national_populist
+				eco_military_entrepreneur
+			}
+		}
+		
+		
+		JAP_Tanaka_Chigaku_eco_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				economy_minister
+				national_populist
+				eco_military_entrepreneur
+			}
+		}
+		
+		JAP_Kishi_Nobusuke_eco_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			picture = JAP_Kishi_Nobusuke
+			cancel_if_invalid = no
+			traits = {
+				economy_minister
+				national_populist
+				hog_flamboyant_tough_guy
+			}
+		}
+		
+		JAP_Morihei_Ueshiba_eco_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			picture = JAP_Kishi_Nobusuke
+			cancel_if_invalid = no
+			traits = {
+				economy_minister
+				national_populist
+				hog_flamboyant_tough_guy
+			}
+		}
+
+
+		## Security Minister ##
+		
+		JAP_Miwa_Juso_sec_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Miwa_Juso
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				totalist
+				sec_secret_police_chief
+			}
+		}
+		
+		JAP_Yasuhide_Kurihara_sec_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				totalist
+				sec_secret_police_chief
+			}
+		}
+		
+		JAP_Miyamoto_Kenji_sec_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Miyamoto_Kenji_hog_rso
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				totalist
+				sec_secret_police_chief
+			}
+		}
+		
+		JAP_Masayoshi_Fukuda_sec_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				totalist
+				sec_secret_police_chief
+			}
+		}
+		
+		JAP_Yasaburo_Shimonaka_sec_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				totalist
+				sec_secret_police_chief
+			}
+		}
+
+		
+		JAP_Manabu_Sano_sec_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				totalist
+				sec_secret_police_chief
+			}
+		}
+		
+		JAP_Kingoro_Hashimoto_sec_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Kingoro_Hashimoto_hog_tot
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				totalist
+				sec_secret_police_chief
+			}
+		}
+		
+		JAP_Genkuro_Eto_sec_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				totalist
+				sec_secret_police_chief
+			}
+		}
+		
+		JAP_Kazuyuki_Kasuga_sec_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				totalist
+				sec_secret_police_chief
+			}
+		}
+		
+		JAP_Azuma_Takashi_sec_tot = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				totalist
+				sec_secret_police_chief
+			}
+		}
+		
+		JAP_Aso_Hisashi_sec_syn = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Aso_Hisashi
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				syndicalist
+				sec_compassionate_gentleman
+			}
+		}
+		JAP_Tanahashi_Kotora_sec_syn = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Tanahashi_Kotora
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				syndicalist
+				sec_man_of_the_people
+			}
+		}
+		
+		JAP_Hotsumi_Ozaki_sec_syn = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Tanahashi_Kotora
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				syndicalist
+				sec_prince_of_terror
+			}
+		}
+		
+		JAP_Nosaka_Sanzo_sec_syn = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Nosaka_Sanzo_hog_syn
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				syndicalist
+				sec_prince_of_terror
+			}
+		}
+		
+		
+		
+		JAP_Taisaku_Kitahara_sec_rso = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Sakisaka_Itsuro_sec_rso"
+			}
+			traits = {
+				security_minister
+				radical_socialist
+				sec_prince_of_terror
+			}
+		}
+
+		
+		
+		JAP_Seki_Naohiko_sec_sli = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Seki_Naohiko
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				social_liberal
+				sec_silent_lawyer
+			}
+		}
+
+		
+
+		
+
+		
+		
+		JAP_Tanabe_Shichiroku_sec_sco = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Suzuki_Kisaburo_sec_sco"
+			}
+			traits = {
+				security_minister
+				social_conservative
+				sec_prince_of_terror
+			}
+		}
+
+		
+		
+		JAP_Akira_Kazami_sec_ade = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Adachi_Kenzo_sec_ade"
+			}
+			traits = {
+				security_minister
+				authoritarian_democrat
+				sec_man_of_the_people
+			}
+		}
+
+		
+
+		
+
+		
+		
+		JAP_Kotaro_Nakamura_sec_pau = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Fujie_Keisuke_sec_pau"
+			}
+			traits = {
+				security_minister
+				paternal_autocrat
+				sec_prince_of_terror
+			}
+		}
+
+		
+		
+		JAP_Hirokazu_Ohno_sec_pau = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Shiono_Suehiko_sec_pau"
+			}
+			traits = {
+				security_minister
+				paternal_autocrat
+				sec_efficient_sociopath
+			}
+		}
+		
+		JAP_Imasu_Cho_sec_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Shiono_Suehiko_sec_pau"
+			}
+			traits = {
+				security_minister
+				paternal_autocrat
+				sec_efficient_sociopath
+			}
+		}
+
+		
+		
+		JAP_Ryoichi_Sasakawa_sec_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea JAP_Suetsugu_Nobumasa_sec_npo"
+			}
+			traits = {
+				security_minister
+				national_populist
+				sec_prince_of_terror
+			}
+		}
+		
+		JAP_Kido_Koichi_sec_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Kido_Koichi
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				national_populist
+				sec_prince_of_terror
+			}
+		}
+		JAP_Miwa_Juso_sec_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			name = JAP_Miwa_Juso_sec_tot
+			picture = JAP_Miwa_Juso
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				national_populist
+				sec_secret_police_chief
+			}
+		}
+		
+		JAP_Seishiro_Itagaki_sec_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			
+			
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				national_populist
+				sec_efficient_sociopath
+			}
+		}
+		
+		JAP_Yoshio_Kodama_sec_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Yoshio_Kodama_hog_npo
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				national_populist
+				sec_prince_of_terror
+			}
+		}
+		
+		JAP_Kisaburo_Ando_sec_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				national_populist
+				sec_prince_of_terror
+			}
+		}
+		
+		JAP_Tojo_Hideki_sec_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Tojo_Hideki_hog_pau
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				national_populist
+				sec_prince_of_terror
+			}
+		}
+		
+		JAP_Torao_Miura_sec_npo = {
+			allowed = { original_tag = JAP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			picture = JAP_Kido_Koichi
+			cancel_if_invalid = no
+			traits = {
+				security_minister
+				national_populist
+				sec_prince_of_terror
+			}
+		}
+
+	}
+
+	
+
+  
+}

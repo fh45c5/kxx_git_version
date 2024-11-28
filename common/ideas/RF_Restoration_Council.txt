@@ -1,0 +1,154 @@
+ideas = {
+
+#################
+# Country ideas #
+#################
+
+	country = {
+		PSL_republican_remnants_dummy = {
+			modifier = {
+				army_attack_factor = -0.075
+				army_defence_factor = -0.075
+			}
+		}
+		PSL_republican_remnants_dummy1 = {
+			modifier = {
+				army_attack_factor = -0.075
+				army_defence_factor = -0.075
+			}
+			picture = PSL_republican_remnants_dummy
+		}
+		PSL_republican_remnants_dummy2 = {
+			modifier = {
+				revisionist_socialism_drift = -0.03
+				progressivism_drift = -0.03
+				army_attack_factor = -0.045
+				army_defence_factor = -0.045
+			}
+			picture = PSL_republican_remnants_dummy
+		}
+		PSL_republican_remnants_dummy3 = {
+			modifier = {
+				revisionist_socialism_drift = -0.03
+				progressivism_drift = -0.03
+				army_attack_factor = -0.045
+				army_defence_factor = -0.045
+				stability_factor = 0.03
+			}
+			picture = PSL_republican_remnants_dummy
+		}
+		PSL_republican_remnants_dummy4 = {
+			modifier = {
+				army_attack_factor = -0.015
+				army_defence_factor = -0.015
+				stability_factor = 0.03
+			}
+			picture = PSL_republican_remnants_dummy
+		}
+		PSL_new_republican_spirit = {
+			modifier = {
+				popular_socialism_drift = 0.02 
+				stability_factor = 0.075
+			}
+			
+		}
+		PSL_newagriculture = {
+			modifier = {
+				consumer_goods_expected_value = -0.05
+				stability_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+			
+		}
+		PSL_newagriculture1 = {
+			modifier = {
+				consumer_goods_expected_value = -0.10
+				production_factory_efficiency_gain_factor = 0.08
+				monthly_population = 0.4
+			}
+			picture = PSL_newagriculture
+		}
+		PSL_struggle = {
+			modifier = {
+				recruitable_population_factor = 0.1
+				army_defence_factor = 0.05
+				progressivism_drift = 0.02
+			}
+			
+		}
+		PSL_new_army = {
+			modifier = {
+				weekly_manpower = 100
+				war_support_factor = 0.05
+			}
+			
+		}
+		PSL_new_army1 = {
+			modifier = {
+				weekly_manpower = 100
+				war_support_factor = 0.075
+				army_org_factor = 0.03
+				army_morale_factor = 0.03
+			}
+			picture = PSL_new_army
+		}
+		PSL_new_army2 = {
+			modifier = {
+				weekly_manpower = 100
+				war_support_factor = 0.1
+				army_org_factor = 0.06
+				army_morale_factor = 0.06
+				army_attack_factor = 0.05
+			}
+			
+		}
+		PSL_temporary_measures = {
+			modifier = {
+				production_speed_buildings_factor = 0.06
+				production_factory_efficiency_gain_factor = 0.06
+			}
+			
+		}
+		PSL_temporary_measures1 = {
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.10
+				max_command_power = 15
+			}
+			
+		}
+		PSL_defenser_of_state = {
+			modifier = {
+				army_defence_factor = 0.05
+				stability_factor = 0.05
+			}
+			
+		}
+		PSL_rebirth_social_democracy = {
+			modifier = {
+				consumer_goods_expected_value = 0.06
+				monthly_population = 0.3
+				stability_factor = 0.03
+			}
+			
+		}
+		PSL_rebirth_social_democracy1 = {
+			modifier = {
+				consumer_goods_expected_value = 0.05
+				monthly_population = 0.4
+				stability_factor = 0.05
+				war_support_factor = -0.05
+			}
+			picture = PSL_rebirth_social_democracy
+		}
+		PSL_levis_model = {
+			modifier = {
+				monthly_population = 0.4
+				stability_factor = 0.075
+				war_support_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+			
+		}
+}
+}

@@ -1,0 +1,3187 @@
+focus_tree = { 
+id = portafr
+	country = { 
+	factor = 0 
+		modifier = { 
+			add = 20 
+			tag = PAF 
+		} 
+	}
+
+
+focus = { 
+id = PAF_thecompanhiacollapses
+icon = GFX_goal_POR_mozambique
+x = 7
+y = 0
+cost = 1
+available = {
+	has_idea = PAF_black_monday_idea
+}
+bypass = {
+	
+}
+available_if_capitulated = no
+prerequisite = { } 
+ai_will_do = { 
+ factor = 10000
+ } 
+completion_reward = {
+	country_event = portoafrica.20
+	}
+ }
+ 
+ # Camacho path
+focus = { 
+id = PAF_revivecamachosvision
+icon = GFX_goal_generic_lightbulb
+x = 5
+y = 1
+cost = 1
+available_if_capitulated = no
+mutually_exclusive = { focus = PAF_thebeloplan }
+prerequisite = { focus = PAF_thecompanhiacollapses } 
+ai_will_do = { 
+ factor = 1
+ } 
+ available = {
+	has_country_flag = camacho_plan_flag
+ }
+ bypass = {
+	has_country_flag = camacho_plan_flag
+ }
+completion_reward = {
+	custom_effect_tooltip = unlock_focuses
+	}
+ }
+ 
+focus = { 
+id = PAF_negotiationloanswithhornung
+icon = GFX_goal_generic_privatization
+x = 4
+y = 2
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_revivecamachosvision } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	country_event = portoafrica.2
+	}
+ }
+ 
+focus = { 
+id = PAF_compulsorycropgrowing
+icon = GFX_investinungaltd
+x = 1
+y = 3
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_negotiationloanswithhornung } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	959 = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+			}
+		}
+	}
+ }
+ 
+focus = { 
+id = PAF_suppressthebnu
+icon = GFX_reformthenativetrustfund
+x = 3
+y = 3
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_negotiationloanswithhornung } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_stability = 0.05
+	}
+ }
+ 
+focus = { 
+id = PAF_enlisttheassimilados
+icon = GFX_goal_QIE_forbiddenpalace
+x = 2
+y = 4
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_suppressthebnu focus = PAF_compulsorycropgrowing }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	540 = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+			}
+		}	
+	decrease_ruling_party_popularity_by_5 = yes
+	}
+ }
+ 
+focus = { 
+id = PAF_stimulatedomesticmarkets
+icon = GFX_focus_generic_africa_factory
+x = 1
+y = 5
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_enlisttheassimilados } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_stability = 0.05
+	add_political_power = -30
+	950 = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+			}
+		}
+	}
+ }
+ 
+focus = { 
+id = PAF_umbeluziirrigationproject
+icon = GFX_focus_AUS_agriculture
+x = 3
+y = 5
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_enlisttheassimilados } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_stability = 0.03
+	950 = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+			}
+		}
+	}
+ }
+ 
+focus = { 
+id = PAF_bindthecolonytogether
+icon = GFX_focus_por_the_kingdom_reunited
+x = 4
+y = 6
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_umbeluziirrigationproject }
+prerequisite = { focus = PAF_stimulatedomesticmarkets } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+		swap_ideas = {
+			remove_idea = PAF_black_monday_idea
+			add_idea = PAF_camacho_plan
+		}
+	}
+ }
+ 
+ # Belo Plan
+focus = { 
+id = PAF_thebeloplan
+icon = GFX_goal_POR_the_moderating_power
+x = 9
+y = 1
+cost = 3
+available_if_capitulated = no
+prerequisite = { focus = PAF_thecompanhiacollapses }
+mutually_exclusive = { focus = PAF_revivecamachosvision }
+ai_will_do = { 
+ factor = 1
+ } 
+ available = {
+	has_country_flag = belo_plan_flag
+ }
+ bypass = {
+	has_country_flag = belo_plan_flag
+ }
+completion_reward = {
+	custom_effect_tooltip = unlock_focuses
+	}
+ }
+ 
+focus = { 
+id = PAF_requestlisboncommissioner
+icon = GFX_goal_manage_industries
+x = 10
+y = 2
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_thebeloplan }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_stability = 0.05
+	}
+ } 
+ 
+focus = { 
+id = PAF_peasantcashcrops
+icon = GFX_organisetheteascheme
+x = 11
+y = 3
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_requestlisboncommissioner }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	917 = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+			}
+		}
+	}
+ } 
+ 
+ focus = { 
+id = PAF_railwayratessubsidies
+icon = GFX_dschibutilinks
+x = 13
+y = 3
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_requestlisboncommissioner }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	917 = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+			type = infrastructure
+			level = 1
+			instant_build = yes
+			}
+		}
+	959 = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+			type = infrastructure
+			level = 1
+			instant_build = yes
+			}
+		}
+	}
+ } 
+ 
+focus = { 
+id = PAF_establishthejuntas
+icon = GFX_goal_state_economy
+x = 12
+y = 4
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_peasantcashcrops focus = PAF_railwayratessubsidies }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_offsite_building = { type = industrial_complex level = 1 }
+		add_tech_bonus = {
+			name = PAF_establishthejuntas
+			bonus = 1
+			uses = 1
+			category = industry
+		}
+	decrease_ruling_party_popularity_by_5 = yes
+	}
+ }
+ 
+focus = { 
+id = PAF_exploitrefugeelabour
+icon = GFX_workerreforms
+x = 11
+y = 5
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_establishthejuntas }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	916 = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+			}
+		}	
+	}
+ }
+ 
+focus = { 
+id = PAF_overhaulthesalisburyline
+icon = GFX_railwaydevelopment
+x = 13
+y = 5
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_establishthejuntas }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	950 = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+			type = infrastructure
+			level = 1
+			instant_build = yes
+			}
+		}	
+		build_railway = {
+			level = 2
+			start_province = 2120
+			target_province = 10929
+		}
+		add_tech_bonus = {
+			name = PAF_overhaulthesalisburyline
+			bonus = 0.5
+			uses = 1
+			category = industry
+		}
+	}
+ }
+ 
+focus = { 
+id = PAF_aresponsiblecolony
+icon = GFX_goal_generic_financial_markets
+x = 10
+y = 6
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_exploitrefugeelabour }
+prerequisite = { focus = PAF_overhaulthesalisburyline }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+		swap_ideas = {
+			remove_idea = PAF_black_monday_idea
+			add_idea = PAF_belo_plan
+		}
+	add_stability = 0.05
+	}
+ } 
+ 
+ # Initial Path
+focus = { 
+id = PAF_snuffoutthebeirastrike
+icon = GFX_looktoourselves
+x = 7
+y = 2
+cost = 3
+available_if_capitulated = no
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	remove_state_claim = 296
+	add_state_core = 296
+	296 = {
+		set_demilitarized_zone = no
+	}
+	add_popularity = { ideology = social_democrat popularity = -0.01 }
+	add_popularity = { ideology = radical_socialist popularity = -0.01 }
+	add_popularity = { ideology = syndicalist popularity = -0.01 }
+	}
+ } 
+ 
+focus = { 
+id = PAF_requestmetropolreinforcements
+icon = GFX_goal_POR_portugese_youth
+x = 6
+y = 3
+cost = 3
+mutually_exclusive = { focus = PAF_antibanditpropaganda }
+available_if_capitulated = no
+prerequisite = { focus = PAF_snuffoutthebeirastrike } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	country_event = portoafrica.3
+	add_political_power = -50
+	}
+ } 
+ 
+focus = { 
+id = PAF_antibanditpropaganda
+icon = GFX_HOL_red_scare
+x = 8
+y = 3
+cost = 3
+mutually_exclusive = { focus = PAF_requestmetropolreinforcements }
+available_if_capitulated = no
+prerequisite = { focus = PAF_snuffoutthebeirastrike } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_war_support = 0.05
+	increase_ruling_party_popularity_by_5 = yes
+	}
+ }
+ 
+focus = { 
+id = PAF_operationlancer
+icon = GFX_goal_POR_ban_republic
+x = 7
+y = 4
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_antibanditpropaganda  focus = PAF_requestmetropolreinforcements } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	country_event = portoafrica.4
+	}
+ }
+ 
+focus = { 
+id = PAF_developbeiraport
+icon = GFX_goal_generic_naval_industry
+x = 5
+y = 4
+cost = 3
+available_if_capitulated = no
+prerequisite = { focus = PAF_requestmetropolreinforcements } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+			950 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					province = 2120
+					instant_build = yes
+				}
+			}
+	}
+ }
+ 
+focus = { 
+id = PAF_extendthecadernetasystem
+icon = GFX_foreignpolicy
+x = 9
+y = 4
+cost = 3
+available_if_capitulated = no
+prerequisite = { focus = PAF_antibanditpropaganda } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_political_power = 30
+	}
+ }
+ 
+focus = { 
+id = PAF_newaldeamentos
+icon = GFX_enlistthemissionaries
+x = 6
+y = 5
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_operationlancer } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_stability = 0.05
+	}
+ }
+ 
+focus = { 
+id = PAF_shireborderposts
+icon = GFX_garrisontowns
+x = 8
+y = 5
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_operationlancer } 
+ai_will_do = { 
+ factor = 1
+ } 
+ bypass = {
+	NOT = {
+		owns_state = 544
+	}
+ }
+completion_reward = {
+				954 = {
+					add_building_construction = {
+						type = bunker
+						province = 12950
+						level = 1
+						instant_build = yes
+					}
+				}
+				544 = {
+					add_building_construction = {
+						type = bunker
+						province = 2180
+						level = 1
+						instant_build = yes
+					}
+				}
+	}
+ }
+ 
+focus = { 
+id = PAF_banditrysuppressed
+icon = GFX_focus_mex_caudillo_private_armies
+x = 7
+y = 6
+cost = 3
+available_if_capitulated = no
+prerequisite = { focus = PAF_developbeiraport focus = PAF_extendthecadernetasystem }
+prerequisite = { focus = PAF_newaldeamentos focus = PAF_shireborderposts } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	remove_ideas = PAF_bandits_and_strikes
+	remove_state_claim = 954
+	add_state_core = 954
+	remove_state_claim = 959
+	add_state_core = 959
+	}
+ } 
+ 
+ #Military
+ 
+focus = { 
+id = PAF_ruvumaborderskirmishes
+icon = GFX_DAH_No_German
+x = 24
+y = 0
+cost = 5
+available_if_capitulated = no
+ai_will_do = { 
+ factor = 1
+ } 
+ available = {
+ OR = {
+	MAF = {
+		has_idea = MAF_border_shit_show
+	}
+	date > 1937.01.01
+	}
+ }
+ bypass = {
+  OR = {
+	MAF = {
+		has_idea = MAF_border_shit_show
+	}
+	date > 1937.01.01
+	}
+ }
+completion_reward = {
+	custom_effect_tooltip = unlock_focuses
+	}
+ }
+
+focus = { 
+id = PAF_fortifykabinda
+icon = GFX_goal_POR_protect_angola
+x = 16
+y = 1
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_ruvumaborderskirmishes }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+				914 = {
+					add_building_construction = {
+						type = bunker
+						province = 2115
+						level = 1
+						instant_build = yes
+					}
+				}
+		increase_ruling_party_popularity_by_5 = yes
+	}
+ }
+ 
+focus = { 
+id = PAF_ourimperialobligations
+icon = GFX_goal_POR_protect_mozambique
+x = 18
+y = 1
+cost = 3
+available_if_capitulated = no
+mutually_exclusive = { focus = PAF_relyonlisbon }
+prerequisite = { focus = PAF_ruvumaborderskirmishes }
+ai_will_do = { 
+ factor = 1
+ } 
+ available = {
+
+ }
+completion_reward = {
+	add_ideas = PAF_imperial_obligations
+	}
+ }
+ 
+ focus = { 
+id = PAF_relyonlisbon
+icon = GFX_goal_POR_portugese_youth
+x = 21
+y = 1
+cost = 3
+available_if_capitulated = no
+mutually_exclusive = { focus = PAF_ourimperialobligations }
+prerequisite = { focus = PAF_ruvumaborderskirmishes }
+ai_will_do = { 
+ factor = 1
+ } 
+ available = {
+
+ }
+completion_reward = {
+	add_stability = 0.05
+	}
+ }
+ 
+ focus = { 
+id = PAF_supportartillery
+icon = GFX_goal_artillery
+x = 22
+y = 2
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_relyonlisbon }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+			add_tech_bonus = {
+				name = PAF_supportartillery
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 400
+				producer = POR
+			}
+	}
+ }
+ 
+ focus = { 
+id = PAF_junglepathfinders
+icon = GFX_junglespecialism
+x = 23
+y = 3
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_supportartillery }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+			custom_effect_tooltip = jungle_warfare_effect
+			hidden_effect = {
+				set_technology = { jungle_warfare = 1 popup = no }
+			}
+	}
+ }
+ 
+focus = { 
+id = PAF_impressnativeauxiliaries
+icon = GFX_tribalpolicydebate
+x = 16
+y = 2
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_ourimperialobligations }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_manpower = 22000
+	add_political_power = -20
+	}
+ } 
+ 
+focus = { 
+id = PAF_extendnaoindigenaprivileges
+icon = GFX_improveofficertraining
+x = 17
+y = 3
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_impressnativeauxiliaries }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	army_experience = 20
+	}
+ } 
+ 
+focus = { 
+id = PAF_colonialofficercorps
+icon = GFX_goal_ZAM_portugal
+x = 18
+y = 2
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_ourimperialobligations focus = PAF_relyonlisbon }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_ideas = PAF_colonial_officers
+	}
+ } 
+ 
+focus = { 
+id = PAF_decideadoctrine
+icon = GFX_goal_military_academy
+x = 20
+y = 2
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_ourimperialobligations focus = PAF_relyonlisbon }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+			add_tech_bonus = {
+				name = PAF_decideadoctrine
+				bonus = 1
+				uses = 2
+				category = land_doctrine
+			}	
+	}
+ }
+ 
+focus = { 
+id = PAF_developnortherninfrastructure
+icon = GFX_goal_nested_fortifications
+x = 19
+y = 3
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_ourimperialobligations focus = PAF_relyonlisbon }
+ai_will_do = { 
+ factor = 1
+ } 
+ bypass = {
+	NOT = {
+		owns_state = 544
+	}
+ }
+completion_reward = {
+			544 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					province = 2123
+					instant_build = yes
+				}
+			}
+				544 = {
+					add_building_construction = {
+						type = bunker
+						province = 10972
+						level = 1
+						instant_build = yes
+					}
+				}
+				544 = {
+					add_building_construction = {
+						type = bunker
+						province = 2202
+						level = 1
+						instant_build = yes
+					}
+				}
+	}
+ }
+ 
+focus = { 
+id = PAF_mozambiquerifleprogramme
+icon = GFX_goal_GXC_Guangdong_Arsenal
+x = 21
+y = 3
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_ourimperialobligations focus = PAF_relyonlisbon }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 1200
+				producer = LEP
+			}
+	}
+ }
+ 
+focus = { 
+id = PAF_enlistthemakuaregulos
+icon = GFX_tribalreforms
+x = 17
+y = 4
+cost = 5
+available_if_capitulated = no
+mutually_exclusive = { focus = PAF_armmakonderebels }
+prerequisite = { focus = PAF_developnortherninfrastructure }
+prerequisite = { focus = PAF_extendnaoindigenaprivileges }
+prerequisite = { focus = PAF_mozambiquerifleprogramme }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	country_event = portoafrica.5
+	}
+ }
+ 
+focus = { 
+id = PAF_armmakonderebels
+icon = GFX_antimaumaumeasures
+x = 21
+y = 4
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_mozambiquerifleprogramme }
+prerequisite = { focus = PAF_developnortherninfrastructure }
+prerequisite = { focus = PAF_junglepathfinders }
+mutually_exclusive = { focus = PAF_enlistthemakuaregulos }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	country_event = portoafrica.6
+	}
+ }
+ 
+focus = { 
+id = PAF_establishregionalmaritimecommand
+icon = GFX_goal_POR_Navy_Emblem
+x = 27
+y = 1
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_ruvumaborderskirmishes }
+mutually_exclusive = { }
+ai_will_do = { 
+ factor = 1
+ } 
+ available = {
+	NOT = {
+		has_idea = PAF_bandits_and_strikes
+	}
+ }
+completion_reward = {
+	navy_experience = 25
+	}
+ }
+
+ focus = { 
+id = PAF_supportthekasairebels
+icon = GFX_Focus_Superior_Firepower_Doctrine
+x = 29
+y = 1
+cost = 3
+available_if_capitulated = no
+prerequisite = { focus = PAF_ruvumaborderskirmishes }
+mutually_exclusive = { }
+ai_will_do = { 
+ factor = 1
+ } 
+ available = {
+	country_exists = KAS
+ }
+completion_reward = {
+	country_event = portoafrica.10
+	}
+ }
+ 
+ focus = { 
+id = PAF_requestasquadron
+icon = GFX_goal_POR_Airforce_Emblem
+x = 31
+y = 1
+cost = 5
+ available = {
+	NOT = {
+		has_idea = PAF_bandits_and_strikes
+	}
+ }
+available_if_capitulated = no
+prerequisite = { focus = PAF_ruvumaborderskirmishes }
+mutually_exclusive = { }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+		add_equipment_to_stockpile = {
+			type = fighter_equipment_0
+			amount = 60
+			producer = POR
+		}
+	}
+ }
+ 
+focus = { 
+id = PAF_requestcoastalpatrolcraft
+icon = GFX_goal_generic_air_fighter2
+x = 26
+y = 2
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_establishregionalmaritimecommand }
+mutually_exclusive = { }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+		add_equipment_to_stockpile = {
+			type = nav_bomber_equipment_1
+			amount = 24
+			producer = CAN
+		}
+		add_equipment_to_stockpile = {
+			type = nav_bomber_equipment_1
+			amount = 7
+			producer = USA
+		}
+	}
+ }
+ 
+focus = { 
+id = PAF_navalfacilities
+icon = GFX_goal_generic_construct_naval_dockyard
+x = 28
+y = 2
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_establishregionalmaritimecommand }
+mutually_exclusive = { }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+			random_owned_state = {
+				prioritize = { 950 }
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+	}
+ }
+ 
+ focus = { 
+id = PAF_interdictiontraining
+icon = GFX_goal_generic_navy_anti_submarine
+x = 26
+y = 3
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_requestcoastalpatrolcraft }
+mutually_exclusive = { }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+		add_tech_bonus = {
+			name = PAF_interdictiontraining
+			bonus = 2
+			uses = 2
+			category = ss_tech
+		}
+	}
+ }
+ 
+focus = { 
+id = PAF_sailwiththemarinha
+icon = GFX_goal_POR_autonomy
+x = 28
+y = 3
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_navalfacilities }
+mutually_exclusive = { }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+			add_tech_bonus = {
+				name = PAF_sailwiththemarinha
+				bonus = 1
+				uses = 2
+				category = naval_doctrine
+			}
+	navy_experience = 20
+	}
+ }
+ 
+focus = { 
+id = PAF_harrasscomorosshipping
+icon = GFX_goal_ENG_Q_Ships
+x = 27
+y = 4
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_sailwiththemarinha }
+prerequisite = { focus = PAF_interdictiontraining }
+mutually_exclusive = { }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	country_event = portoafrica.7
+	hidden_effect = {
+		MAF = {
+			country_event = portoafrica.23
+		}
+		ZZB = {
+			country_event = portoafrica.23
+		}
+		MAG = {
+			country_event = portoafrica.23
+		}
+		GER = {
+			country_event = portoafrica.23
+		}
+		DJI = {
+			country_event = portoafrica.23
+		}
+	}
+	add_war_support = 0.05
+	}
+ }
+ 
+focus = { 
+id = PAF_constructairbases
+icon = GFX_goal_generic_airports
+x = 30
+y = 2
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_requestasquadron }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+			954 = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			540 = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			321 = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			729 = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+	}
+ }
+ 
+focus = { 
+id = PAF_navalbombers
+icon = GFX_goal_generic_air_naval_bomber2_new
+x = 30
+y = 3
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_constructairbases }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+			add_tech_bonus = {
+				name = PAF_requestcoastalpatrolcraft
+				bonus = 1
+				uses = 2
+				category = naval_bomber
+			}
+	}
+ }
+ 
+focus = { 
+id = PAF_fightersandinterceptors
+icon = GFX_goal_generic_air_fighter
+x = 32
+y = 2
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_requestasquadron }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+			add_tech_bonus = {
+				name = PAF_fightersandinterceptors
+				bonus = 1
+				uses = 1
+				category = light_fighter
+				category = cat_heavy_fighter
+			}
+	}
+ }
+ 
+focus = { 
+id = PAF_requestradarfunding
+icon = GFX_goal_generic_radar
+x = 32
+y = 3
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_fightersandinterceptors }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+				add_tech_bonus = {
+					name = PAF_requestradarfunding
+					bonus = 1
+					uses = 1
+					category = radar_tech
+				}
+	}
+ }
+ 
+focus = { 
+id = PAF_aerialpowerhouse
+icon = GFX_goal_generic_territory_or_war
+x = 31
+y = 4
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_navalbombers }
+prerequisite = { focus = PAF_requestradarfunding }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+			add_tech_bonus = {
+				name = PAF_aerialpowerhouse
+				bonus = 1
+				uses = 2
+				category = air_doctrine
+			}
+		air_experience = 20
+	}
+ }
+
+focus = { 
+id = PAF_loansforarsenals
+icon = GFX_goal_KTG_Jungle_Diamond_Mine
+x = 23
+y = 1
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_ruvumaborderskirmishes }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_offsite_building = { type = arms_factory level = 1 }
+	}
+ }
+ 
+focus = { 
+id = PAF_fundbarotserebels
+icon = GFX_thelitungasrights
+x = 25
+y = 1
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_ruvumaborderskirmishes }
+ai_will_do = { 
+ factor = 1
+ } 
+ available = {
+	BSC = {
+		has_idea = BSC_the_lozi_dispute
+	}
+ }
+ bypass = {
+	NOT = {
+	 BSC = {
+		has_idea = BSC_the_lozi_dispute
+		}
+	}
+ }
+completion_reward = {
+	country_event = portoafrica.8
+	}
+ }
+ 
+focus = { 
+id = PAF_amilitarysector
+icon = GFX_goal_munitions_factories
+x = 24
+y = 2
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_loansforarsenals }
+prerequisite = { focus = PAF_fundbarotserebels }
+ai_will_do = { 
+ factor = 1
+ } 
+  available = {
+
+ }
+completion_reward = {
+			950 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_dlc = "No Step Back" }
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_equipment_1
+					amount = 15
+					producer = POR
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_chassis
+					amount = 15
+					producer = POR
+				}
+			}	
+	}
+ }
+ 
+focus = { 
+id = PAF_mechanisedforces
+icon = GFX_goal_generic_armored_cars
+x = 24
+y = 4
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_amilitarysector }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+			add_tech_bonus = {
+				name = PAF_mechanisedforces
+				bonus = 1
+				category = cat_mechanized_equipment
+				uses = 2
+			}		
+			add_tech_bonus = {
+				name = PAF_mechanisedforces
+				bonus = 1
+				uses = 1
+				category = electronics
+			}
+	}
+ }
+ 
+focus = { 
+id = PAF_quelimaneinstitute
+icon = GFX_kampalamilitaryacademy
+x = 24
+y = 5
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_enlistthemakuaregulos focus = PAF_armmakonderebels }
+prerequisite = { focus = PAF_harrasscomorosshipping focus = PAF_aerialpowerhouse }
+prerequisite = { focus = PAF_mechanisedforces }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_research_slot = 1
+	}
+ }
+ 
+# Foreign
+
+focus = { 
+id = PAF_interactwithourneighbours
+icon = GFX_goal_generic_alliance
+x = 14
+y = 8
+cost = 1
+available_if_capitulated = no
+prerequisite = { focus = PAF_ourcolonialfuture } 
+ai_will_do = { 
+ factor = 1
+ } 
+bypass = {
+	OR = {
+		has_country_flag = centralisingreforms
+		has_country_flag = autonomyreforms
+	}
+}
+available = {
+	OR = {
+		has_country_flag = centralisingreforms
+		has_country_flag = autonomyreforms
+	}
+}
+completion_reward = {
+	
+	}
+ }
+ 
+focus = { 
+id = PAF_establishcolonialdiplomaticservice
+icon = GFX_focus_por_luso_tropicalism
+x = 14
+y = 13
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_interactwithourneighbours } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	country_event = portoafrica.9
+	add_ideas = POR_diplomacy_idea
+	}	
+ }
+ 
+ # Independence
+focus = { 
+id = PAF_independence
+icon = GFX_seekmittelafrikanbacking
+x = 11
+y = 14
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_establishcolonialdiplomaticservice } 
+ai_will_do = { 
+ factor = 1
+ } 
+ available = {
+ MAF = {
+	exists = no
+	}
+}
+
+ bypass = {
+ MAF = {
+	exists = no
+	}
+}
+ 
+completion_reward = {
+	custom_effect_tooltip = unlock_focuses
+	}
+ }
+ 
+focus = { 
+id = PAF_theportuguesewereright
+icon = GFX_focus_por_the_pink_map
+x = 10
+y = 15
+cost = 3
+available_if_capitulated = no
+prerequisite = { focus = PAF_independence } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_ideas = PAF_a_freehand_idea
+	add_war_support = 0.05
+	}
+ }
+ 
+focus = { 
+id = PAF_demandnjassaland
+icon = GFX_goal_POR_ban_republic
+x = 9
+y = 16
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_theportuguesewereright } 
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = MLW ratio < 1 }
+			}
+			modifier = {
+				factor = 0
+				MLW = {
+					is_in_faction = yes
+					any_allied_country = {
+						strength_ratio = { tag = ROOT ratio > 0.8 }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				MLW = {
+					is_subject = yes
+					overlord = {
+						strength_ratio = { tag = ROOT ratio > 0.8 }
+					}
+				}
+			}
+		}
+will_lead_to_war_with = MLW
+		bypass = {
+			871 = { is_owned_by = ROOT }
+			}
+		available = {
+			NOT = {
+				871.owner = {
+					is_in_faction = yes
+				}
+			}
+			can_declare_war_on = 871.owner
+			}
+		completion_reward = {
+			add_state_claim = 871
+			declare_war_on = { type = annex_everything target = 871.owner }
+	}
+ }
+ 
+focus = { 
+id = PAF_demandbarotseland
+icon = GFX_Focus_Bloody_Purge
+x = 11
+y = 16
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_theportuguesewereright } 
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = BSC ratio < 1 }
+			}
+			modifier = {
+				factor = 0
+				BSC = {
+					is_in_faction = yes
+					any_allied_country = {
+						strength_ratio = { tag = ROOT ratio > 0.8 }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				BSC = {
+					is_subject = yes
+					overlord = {
+						strength_ratio = { tag = ROOT ratio > 0.8 }
+					}
+				}
+			}
+		}
+will_lead_to_war_with = BRT
+will_lead_to_war_with = BSC
+will_lead_to_war_with = ZAM
+		bypass = {
+			958 = { is_owned_by = ROOT }
+			}
+		available = {
+			NOT = {
+				958.owner = {
+					is_in_faction = yes
+				}
+			}
+			can_declare_war_on = 958.owner
+			}
+		completion_reward = {
+			add_state_claim = 958
+			declare_war_on = { type = annex_everything target = 958.owner }
+	}
+ }
+
+focus = { 
+id = PAF_zambeziexpedition
+icon = GFX_goal_POR_zambia
+x = 10
+y = 17
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_theportuguesewereright } 
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = ZAM ratio < 1 }
+			}
+			modifier = {
+				factor = 0
+				ZAM = {
+					is_in_faction = yes
+					any_allied_country = {
+						strength_ratio = { tag = ROOT ratio > 0.8 }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				ZAM = {
+					is_subject = yes
+					overlord = {
+						strength_ratio = { tag = ROOT ratio > 0.8 }
+					}
+				}
+			}
+		}
+will_lead_to_war_with = ZAM
+		bypass = {
+			813 = { is_owned_by = ROOT }
+			}
+		available = {
+			NOT = {
+				813.owner = {
+					is_in_faction = yes
+				}
+			}
+			can_declare_war_on = 813.owner
+			}
+		completion_reward = {
+			add_state_claim = 813
+			declare_war_on = { type = annex_everything target = 813.owner }
+	}
+ }
+ 
+focus = { 
+id = PAF_securetheruvuma
+icon = GFX_goal_generic_military_deal
+x = 12
+y = 15
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_independence } 
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = TZN ratio < 1 }
+			}
+			modifier = {
+				factor = 0
+				TZN = {
+					is_in_faction = yes
+					any_allied_country = {
+						strength_ratio = { tag = ROOT ratio > 0.8 }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				TZN = {
+					is_subject = yes
+					overlord = {
+						strength_ratio = { tag = ROOT ratio > 0.8 }
+					}
+				}
+			}
+		}
+will_lead_to_war_with = TZN
+		bypass = {
+			879 = { is_owned_by = ROOT }
+			}
+		available = {
+			NOT = {
+				879.owner = {
+					is_in_faction = yes
+				}
+			}
+			can_declare_war_on = 879.owner
+			}
+		completion_reward = {
+			add_state_claim = 879
+			declare_war_on = { type = annex_everything target = 879.owner }
+	}
+ }
+ 
+focus = { 
+id = PAF_ourrightfulrhodesia
+icon = GFX_goal_planning_bonus
+x = 13
+y = 16
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_securetheruvuma } 
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = ZIM ratio < 1 }
+			}
+			modifier = {
+				factor = 0
+				ZIM = {
+					is_in_faction = yes
+					any_allied_country = {
+						strength_ratio = { tag = ROOT ratio > 0.8 }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				ZIM = {
+					is_subject = yes
+					overlord = {
+						strength_ratio = { tag = ROOT ratio > 0.8 }
+					}
+				}
+			}
+		}
+will_lead_to_war_with = ZIM
+		bypass = {
+			545 = { is_owned_by = ROOT }
+			}
+		available = {
+			NOT = {
+				545.owner = {
+					is_in_faction = yes
+				}
+			}
+			can_declare_war_on = 545.owner
+			}
+		completion_reward = {
+			add_state_claim = 545
+			declare_war_on = { type = annex_everything target = 545.owner }
+	}
+ }
+ 
+ # Subject
+
+focus = { 
+id = PAF_annex_west_timor
+icon = GFX_goal_skull_treaty
+x = 13
+y = 14
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_establishcolonialdiplomaticservice } 
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = INS ratio < 1 }
+			}
+			modifier = {
+				factor = 0
+				INS = {
+					is_in_faction = yes
+					any_allied_country = {
+						strength_ratio = { tag = ROOT ratio > 0.8 }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				INS = {
+					is_subject = yes
+					overlord = {
+						strength_ratio = { tag = ROOT ratio > 0.8 }
+					}
+				}
+			}
+		}
+will_lead_to_war_with = INS
+		bypass = {
+			1017 = { is_owned_by = ROOT }
+		}
+		available = {
+			1017 = { is_owned_by = INS }
+			NOT = {
+				1017.owner = {
+					is_in_faction = yes
+				}
+			}
+			can_declare_war_on = 1017.owner
+		}
+		completion_reward = {
+			add_state_claim = 1017
+			add_state_claim = 1018
+			declare_war_on = { type = annex_everything target = 1017.owner }
+	}
+ }
+ 
+focus = { 
+id = PAF_agratefulcolony
+icon = GFX_crownlandpolicy
+x = 16
+y = 14
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_establishcolonialdiplomaticservice } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_stability = 0.05
+	}
+ }
+ 
+focus = { 
+id = PAF_linkswiththecapital
+icon = GFX_focus_generic_self_management
+x = 17
+y = 15
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_agratefulcolony } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_offsite_building = { type = industrial_complex level = 1 }
+		add_tech_bonus = {
+			name = PAF_linkswiththecapital
+			bonus = 1
+			uses = 1
+			category = industry
+		}
+	}
+ }
+ 
+focus = { 
+id = PAF_educateourbest
+icon = GFX_goal_KTG_Bookstack
+x = 15
+y = 15
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_agratefulcolony } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	increase_ruling_party_popularity_by_5 = yes
+	}
+ }
+ 
+focus = { 
+id = PAF_amodelcolony
+icon = GFX_Focus_Improve_Literacy2
+x = 16
+y = 17
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_educateourbest } 
+prerequisite = { focus = PAF_linkswiththecapital } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_ideas = PAF_modelcolonyidea
+	}
+ }
+ 
+ # Swaziland Dispute
+ 
+focus = { 
+id = PAF_theswazilanddispute
+icon = GFX_crownlandpolicy
+x = 7
+y = 9
+cost = 3
+available_if_capitulated = no
+prerequisite = { focus = PAF_interactwithourneighbours } 
+ai_will_do = { 
+ factor = 4
+ } 
+ mutually_exclusive = {
+	focus = PAF_restore_swaziland_to_south_africa
+}
+available = {
+owns_state = 738
+	SAF = {
+		AND = {
+			OR = {
+				has_government = authoritarian_democrat
+				has_government = paternal_autocrat
+				has_government = national_populist
+			}
+			NOT = {
+				has_country_flag = SAF_fusion
+			}
+			date > 1938.01.01
+			has_country_flag = saf_flag_elections_held
+		}
+	}	
+}
+bypass = {
+	SAF = {
+		AND = {
+			OR = {
+				has_government = authoritarian_democrat
+				has_government = paternal_autocrat
+				has_government = national_populist
+			}
+			NOT = {
+				has_country_flag = SAF_fusion
+			}
+			date > 1938.01.01
+			has_country_flag = saf_flag_elections_held
+		}
+	}	
+}
+completion_reward = {
+	custom_effect_tooltip = unlock_focuses
+	}
+ }
+ 
+focus = { 
+id = PAF_restore_swaziland_to_south_africa
+icon = GFX_goal_SAF_wine
+x = 12
+y = 9
+cost = 3
+available_if_capitulated = no
+prerequisite = { focus = PAF_interactwithourneighbours } 
+mutually_exclusive = {
+	focus = PAF_theswazilanddispute
+}
+ai_will_do = { 
+ factor = 1
+ } 
+ available = {
+ owns_state = 738
+	SAF = {
+			AND = {
+				OR = {
+					has_government = social_liberal
+					has_government = market_liberal
+					has_government = social_conservative
+					AND = {
+						has_country_flag = SAF_fusion
+						has_government = authoritarian_democrat
+					}
+				}
+			date > 1938.01.01
+			has_country_flag = saf_flag_elections_held
+		}
+	}	
+}
+completion_reward = {
+		SAF = {
+			transfer_state = 738	
+		}
+	remove_ideas = PAF_the_swaziland_dispute
+	add_stability = 0.05
+	}
+ }
+ 
+focus = { 
+id = PAF_boerregistration
+icon = GFX_goal_new_treaty
+x = 4
+y = 10
+cost = 5
+available_if_capitulated = no
+available = {
+	owns_state = 738
+}
+prerequisite = {  focus = PAF_theswazilanddispute } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_stability = 0.03
+	}
+ } 
+ 
+focus = { 
+id = PAF_embracethekraal
+icon = GFX_goal_skull_fortification
+x = 10
+y = 10
+cost = 5
+available_if_capitulated = no
+prerequisite = {  focus = PAF_theswazilanddispute } 
+ai_will_do = { 
+ factor = 1
+ }
+available = {
+	owns_state = 738
+}
+completion_reward = {
+	add_war_support = 0.05
+		738 = {
+			add_building_construction = {
+				type = bunker
+				province = 7900
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+ }
+ 
+focus = { 
+id = PAF_promiselandreforms
+icon = GFX_peaceandtranquility
+x = 7
+y = 10
+cost = 5
+available_if_capitulated = no
+prerequisite = {  focus = PAF_theswazilanddispute } 
+ai_will_do = { 
+ factor = 1
+ }
+available = {
+	owns_state = 738
+}
+completion_reward = {
+	increase_ruling_party_popularity_by_5 = yes
+	}
+ }
+ 
+focus = { 
+id = PAF_autonomyforthedlaminids
+icon = GFX_endthengonidispute
+x = 5
+y = 11
+cost = 5
+available_if_capitulated = no
+mutually_exclusive = { focus = PAF_apliantngwenyama }
+prerequisite = {  focus = PAF_promiselandreforms }
+prerequisite = { focus = PAF_embracethekraal focus = PAF_boerregistration }
+ai_will_do = { 
+ factor = 1
+ }
+available = {
+	owns_state = 738
+}
+completion_reward = {
+	country_event = portoafrica.17
+	}
+ }
+ 
+focus = { 
+id = PAF_crippletheeac
+icon = GFX_goal_INS_focus_abandon_ethical_policy
+x = 4
+y = 12
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_autonomyforthedlaminids }
+ai_will_do = { 
+ factor = 1
+ }
+available = {
+	owns_state = 738
+}
+completion_reward = {
+	increase_ruling_party_popularity_by_5 = yes
+	}
+ }
+ 
+focus = { 
+id = PAF_stipendsforstability
+icon = GFX_fundagriculturalofficers
+x = 6
+y = 12
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_autonomyforthedlaminids }
+ai_will_do = { 
+ factor = 1
+ } 
+available = {
+	owns_state = 738
+}
+completion_reward = {
+	add_stability = 0.03
+	}
+ }
+ 
+ 
+focus = { 
+id = PAF_apliantngwenyama 
+icon = GFX_focus_rom_handle_king
+x = 9
+y = 11
+cost = 5
+available_if_capitulated = no
+mutually_exclusive = { focus = PAF_autonomyforthedlaminids }
+prerequisite = {  focus = PAF_promiselandreforms }
+prerequisite = { focus = PAF_embracethekraal focus = PAF_boerregistration }
+ai_will_do = { 
+ factor = 1
+ }
+available = {
+	owns_state = 738
+}
+completion_reward = {
+	country_event = portoafrica.18
+	}
+ }
+ 
+focus = { 
+id = PAF_portugueseconcessions
+icon = GFX_goal_POR_autonomy
+x = 10
+y = 12
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_apliantngwenyama }
+ai_will_do = { 
+ factor = 1
+ }
+available = {
+	owns_state = 738
+}
+completion_reward = {
+		738 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+		}
+	}
+ }
+ 
+focus = { 
+id = PAF_unleashtherecruiters
+icon = GFX_refugeesaslabourreserve
+x = 8
+y = 12
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_apliantngwenyama }
+ai_will_do = { 
+ factor = 1
+ }
+available = {
+	owns_state = 738
+}
+completion_reward = {
+	add_manpower = 20134
+	add_stability = -0.01
+	}
+ }
+ 
+focus = { 
+id = PAF_approvalfromottawa
+icon = GFX_goal_USA_reconcile_canada
+x = 12
+y = 11
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_restore_swaziland_to_south_africa } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_political_power = 50
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 250
+				producer = CAN
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1000
+				producer = CAN
+			}
+	}
+ }
+ 
+focus = { 
+id = PAF_industrial_partnerships
+icon = GFX_goal_social_reforms
+x = 13
+y = 10
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_restore_swaziland_to_south_africa } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+		add_tech_bonus = {
+			name = PAF_industrial_partnerships
+			bonus = 1
+			uses = 1
+			category = industry
+		}
+	}
+ }
+ 
+ 
+focus = { 
+id = PAF_endtheprotectorate
+icon = GFX_allkingsunderone
+x = 7
+y = 13
+cost = 6
+available_if_capitulated = no
+prerequisite = { focus = PAF_crippletheeac focus = PAF_stipendsforstability }
+prerequisite = { focus = PAF_portugueseconcessions focus = PAF_unleashtherecruiters }
+ai_will_do = { 
+ factor = 1
+ }
+available = {
+	owns_state = 738
+}
+completion_reward = {
+	738 = {
+		remove_claim_by = PAF
+		add_core_of = PAF
+		}
+		738 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+		}
+			add_named_threat = { 
+				threat = 1
+				name = swazilandprotectorateended
+			}
+			add_stability = -0.02
+	}
+ }
+ 
+focus = { 
+id = PAF_make_macao_self_sufficient
+icon = GFX_negotiatewiththeconglomerates
+x = 18
+y = 6
+cost = 6
+available_if_capitulated = no
+ai_will_do = { 
+ factor = 1
+ } 
+ available = {
+	NOT = {
+		593 = { is_owned_and_controlled_by = LEP }
+	}
+ }
+completion_reward = {
+	729 = {
+		remove_claim_by = PAF
+		add_core_of = PAF
+		}
+		729 = {
+			add_extra_state_shared_building_slots = 1
+		}
+		729 = {
+			add_building_construction = {
+				type = bunker
+				province = 4189
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+ }
+
+focus = { 
+id = PAF_develop_timor
+icon = GFX_goal_JAP_target_indonesia
+x = 21
+y = 6
+cost = 6
+available_if_capitulated = no
+ai_will_do = { 
+ factor = 1
+ } 
+available = {
+	JAP = {
+		has_completed_focus = JAP_nanshin_ron
+	}
+}
+completion_reward = {
+	721 = {
+		remove_claim_by = PAF
+		add_core_of = PAF
+		}
+	972 = {
+		remove_claim_by = PAF
+		add_core_of = PAF
+		}
+		721 = {
+			add_extra_state_shared_building_slots = 1
+		}
+		972 = {
+			add_building_construction = {
+				type = bunker
+				province = 12190
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+ }
+ 
+focus = { 
+id = PAF_invest_in_the_estado_da_india
+icon = GFX_goal_JAP_target_india
+x = 15
+y = 6
+cost = 6
+available_if_capitulated = no
+ai_will_do = { 
+ factor = 1
+ } 
+ available = {
+	OR = {
+		DEH = {
+			exists = no
+		}
+		PRF = {
+			exists = no
+		}
+	}
+ }
+completion_reward = {
+		321 = {
+			remove_claim_by = PAF
+			add_core_of = PAF
+			}
+			321 = {
+				add_building_construction = {
+					type = bunker
+					province = 1273
+					level = 2
+					instant_build = yes
+				}
+			}
+		321 = {
+			add_extra_state_shared_building_slots = 1
+		}
+	}
+ }
+
+# Future of the Colony
+focus = { 
+id = PAF_ourcolonialfuture
+icon = GFX_goal_ZAM_portugal
+x = 19
+y = 7
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_bindthecolonytogether focus = PAF_aresponsiblecolony }
+prerequisite = { focus = PAF_banditrysuppressed }
+prerequisite = { focus = PAF_make_macao_self_sufficient focus = PAF_develop_timor focus = PAF_invest_in_the_estado_da_india }
+ai_will_do = { 
+ factor = 100
+ } 
+ available = {
+	controls_all_owned_states = yes
+ }
+completion_reward = {
+	country_event = portoafrica.19
+	add_stability = 0.1
+	}
+ }
+ 
+focus = { 
+id = PAF_nolongerthebanditstate
+icon = GFX_waragainstthebush
+x = 19
+y = 13
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_afivecenturybirthright focus = PAF_limitedselfgovernment }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_stability = 0.1
+	POR = {
+		annex_country = {
+			target = PAF
+			transfer_troops = yes
+			}		
+		}
+		every_state = {	
+			limit = {
+				is_core_of = PAF
+			}
+			POR = {
+				add_state_core = PREV
+			}
+			PAF = {
+				remove_state_core = PREV
+			}
+		}
+	}
+ }
+ 
+# new charter
+focus = { 
+id = PAF_anewcharter
+icon = GFX_focus_por_limited_self_rule
+x = 21
+y = 8
+cost = 5
+available_if_capitulated = no
+mutually_exclusive = { focus = PAF_atrueprovince }
+prerequisite = { focus = PAF_ourcolonialfuture }
+ai_will_do = { 
+ factor = 1
+ } 
+ available = {
+	has_country_flag = autonomyreforms
+ }
+ bypass = {
+	has_country_flag = autonomyreforms
+ }
+completion_reward = {
+	custom_effect_tooltip = unlock_focuses
+	}
+ }
+ 
+focus = { 
+id = PAF_restoreourreputation
+icon = GFX_goal_POR_knights_of_portugal
+x = 20
+y = 9
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_anewcharter }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	increase_ruling_party_popularity_by_10 = yes
+	}
+ }
+ 
+focus = { 
+id = PAF_agriculturalofficers
+icon = GFX_nativetobaccoboard
+x = 22
+y = 9
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_anewcharter }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				prioritize = {
+					540
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+	}
+ }
+ 
+focus = { 
+id = PAF_provincialcouncils
+icon = GFX_goal_generic_parliament2
+x = 21
+y = 10
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_agriculturalofficers }
+prerequisite = { focus = PAF_restoreourreputation }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_ideas = PAF_provincialcouncilsidea
+	}
+ }
+ 
+focus = { 
+id = PAF_restrictionsonchibado
+icon = GFX_rightsforlabourers
+x = 20
+y = 11
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_provincialcouncils }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	increase_ruling_party_popularity_by_10 = yes
+	add_political_power = 20
+	}
+ }
+ 
+focus = { 
+id = PAF_migrantlaboursafetyregulations
+icon = GFX_goal_forced_res
+x = 22
+y = 11
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_provincialcouncils }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_stability = 0.03
+	}	
+ }
+ 
+ 
+focus = { 
+id = PAF_limitedselfgovernment
+icon = GFX_legcoelections
+x = 21
+y = 12
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_migrantlaboursafetyregulations }
+prerequisite = { focus = PAF_restrictionsonchibado }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_political_power = 50
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.25
+		}
+	}
+ }
+ 
+ # organic granola
+focus = { 
+id = PAF_atrueprovince
+icon = GFX_focus_por_estado_novo
+x = 17
+y = 8
+cost = 5
+available_if_capitulated = no
+mutually_exclusive = { focus = PAF_anewcharter }
+prerequisite = { focus = PAF_ourcolonialfuture }
+ai_will_do = { 
+ factor = 1
+ } 
+ available = {
+	has_country_flag = centralisingreforms
+ }
+ bypass = {
+	has_country_flag = centralisingreforms
+ }
+completion_reward = {
+	custom_effect_tooltip = unlock_focuses
+	}
+ }
+ 
+focus = { 
+id = PAF_fundopatriotico
+icon = GFX_investmentopportunities
+x = 16
+y = 9
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_atrueprovince }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_war_support = 0.05
+	}
+ }
+ 
+focus = { 
+id = PAF_promotecolonatos
+icon = GFX_goal_conquistador_legacy
+x = 18
+y = 9
+cost = 30
+available_if_capitulated = no
+prerequisite = { focus = PAF_atrueprovince }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+		959 = {
+			remove_claim_by = PAF
+			add_core_of = PAF
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				prioritize = {
+					540
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			add_extra_state_shared_building_slots = 1
+		}
+	}
+ }
+ 
+focus = { 
+id = PAF_administrativereform
+icon = GFX_goal_KTG_Colonial_Trinity2
+x = 17
+y = 10
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_promotecolonatos }
+prerequisite = { focus = PAF_fundopatriotico }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_ideas = PAF_integrated_colonies_idea
+	set_cosmetic_tag = PAF_POR
+	}
+ }
+ 
+focus = { 
+id = PAF_endradicalliteratureoutput
+icon = GFX_goal_broken_red_star
+x = 16
+y = 11
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_administrativereform }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_war_support = 0.1
+	}
+ }
+ 
+focus = { 
+id = PAF_newparamountchiefs
+icon = GFX_continuecentralisationefforts
+x = 18
+y = 11
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_administrativereform }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_political_power = 70
+	add_stability = -0.02
+	}
+ }
+ 
+focus = { 
+id = PAF_afivecenturybirthright
+icon = GFX_focus_generic_royal_wedding
+x = 17
+y = 12
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_endradicalliteratureoutput }
+prerequisite = { focus = PAF_newparamountchiefs }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_offsite_building = { type = arms_factory level = 1 }
+	}
+ }
+
+# Economy
+
+focus = { 
+id = PAF_migrantlabourpolicy
+icon = GFX_federalisationpolicy
+x = 24
+y = 8
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_ourcolonialfuture }
+ai_will_do = { 
+ factor = 1
+ } 
+ available = {
+	OR = {
+		has_country_flag = centralisingreforms
+		has_country_flag = autonomyreforms
+	}
+ }
+completion_reward = {
+	add_stability = 0.05
+	increase_ruling_party_popularity_by_5 = yes
+	}
+ }
+ 
+focus = { 
+id = PAF_industrialdevelopmentplan
+icon = GFX_goal_forced_mil
+x = 24
+y = 9
+cost = 6
+available_if_capitulated = no
+prerequisite = { focus = PAF_migrantlabourpolicy }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				prioritize = {
+					540
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				prioritize = {
+					540
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}			
+	}
+ }
+ 
+focus = { 
+id = PAF_dominatefoodproduction
+icon = GFX_goal_agricultural_aid
+x = 23
+y = 10
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_industrialdevelopmentplan }
+available = {
+	owns_state = 296
+}
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+		296 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+		}	
+	}
+ }
+ 
+focus = { 
+id = PAF_finishtheroadnetwork
+icon = GFX_goal_generic_road_construction
+x = 25
+y = 10
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_industrialdevelopmentplan }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+		540 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}	
+		917 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		959 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}		
+	}
+ }
+ 
+focus = { 
+id = PAF_moatizecoalfields
+icon = GFX_focus_generic_steel
+x = 24
+y = 11
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_dominatefoodproduction focus = PAF_finishtheroadnetwork }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+			954 = {
+				add_resource = {
+					type = steel
+					amount = 27
+				}
+			}	
+			add_tech_bonus = {
+				name = PAF_moatizecoalfields
+				bonus = 1
+				uses = 1
+				category = excavation_tech
+			}	
+	}
+ }
+ 
+focus = { 
+id = PAF_collegeofmozambique
+icon = GFX_focus_research
+x = 24
+y = 12
+cost = 5
+available_if_capitulated = no
+prerequisite = { focus = PAF_moatizecoalfields }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_research_slot = 1
+	}
+ }
+}
+ 
+# Path to Independence
+#focus = { 
+#id = PAF_emergenceofthefrente 
+#icon = GFX_goal_DOM_The_Phoenix
+#x = 29
+#y = 7
+#cost = 5
+#available_if_capitulated = no
+#available = {
+# always = no
+#}
+#bypass = {
+#
+#}
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#	custom_effect_tooltip = unlock_focuses
+#}
+# }
+# 
+#focus = { 
+#id = PAF_theostasienlesson
+#icon = GFX_INC_female_soldiers
+#x = 27
+#y = 8
+#cost = 5
+#available_if_capitulated = no
+#prerequisite = { focus = PAF_emergenceofthefrente }
+#mutually_exclusive = { focus = PAF_malditoscomunas }
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#	
+#	}
+# }
+# 
+#focus = { 
+#id = PAF_fortifytheprazos
+#icon = GFX_protectoratereforms
+#x = 26
+#y = 9
+#cost = 5
+#available_if_capitulated = no
+#prerequisite = { focus = PAF_theostasienlesson }
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#
+#	}
+# }
+# 
+#focus = { 
+#id = PAF_centralfoodstores
+#icon = GFX_smallholdingfocus
+#x = 28
+#y = 9
+#cost = 5
+#available_if_capitulated = no
+#prerequisite = { focus = PAF_theostasienlesson }
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#
+#	}
+# }
+# 
+#focus = { 
+#id = PAF_establishablockade
+#icon = GFX_focus_generic_navy_battleship2
+#x = 27
+#y = 10
+#cost = 5
+#available_if_capitulated = no
+#prerequisite = { focus = PAF_centralfoodstores }
+#prerequisite = { focus = PAF_fortifytheprazos }
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#
+#	}
+# }
+# 
+#focus = { 
+#id = PAF_demandforeigncompliance
+#icon = GFX_focus_prc_infiltration
+#x = 26
+#y = 11
+#cost = 5
+#available_if_capitulated = no
+#prerequisite = { focus = PAF_establishablockade }
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#
+#	}
+# }
+# 
+#focus = { 
+#id = PAF_aseaofdespair
+#icon = GFX_antitsetsecampaign
+#x = 28
+#y = 11
+#cost = 5
+#available_if_capitulated = no
+#prerequisite = { focus = PAF_establishablockade }
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#
+#	}
+# }
+# 
+#focus = { 
+#id = PAF_thekillingblow
+#icon = GFX_goal_bull
+#x = 27
+#y = 12
+#cost = 5
+#available_if_capitulated = no
+#prerequisite = { focus = PAF_aseaofdespair }
+#prerequisite = { focus = PAF_demandforeigncompliance }
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#
+#	}
+# }
+# 
+#focus = { 
+#id = PAF_malditoscomunas
+#icon = GFX_shouldertheburden
+#x = 31
+#y = 8
+#cost = 5
+#available_if_capitulated = no
+#mutually_exclusive = { focus = PAF_theostasienlesson }
+#prerequisite = { focus = PAF_emergenceofthefrente }
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#
+#	}
+# }
+# 
+#focus = { 
+#id = PAF_hutburning
+#icon = GFX_goal_generic_expel_people
+#x = 30
+#y = 9
+#cost = 5
+#available_if_capitulated = no
+#prerequisite = { focus = PAF_malditoscomunas }
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#
+#	}
+# }
+# 
+#focus = { 
+#id = PAF_offensiveactions
+#icon = GFX_incentivisedrelocation
+#x = 32
+#y = 9
+#cost = 5
+#available_if_capitulated = no
+#prerequisite = { focus = PAF_malditoscomunas }
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#
+#	}
+# }
+# 
+#focus = { 
+#id = PAF_executesubversives
+#icon = GFX_goal_generic_imprison_people
+#x = 31
+#y = 10
+#cost = 5
+#available_if_capitulated = no
+#prerequisite = { focus = PAF_offensiveactions }
+#prerequisite = { focus = PAF_hutburning }
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#
+#	}
+# }
+# 
+#focus = { 
+#id = PAF_militariseinfrastructure
+#icon = GFX_goal_forced_inf
+#x = 30
+#y = 11
+#cost = 5
+#available_if_capitulated = no
+#prerequisite = { focus = PAF_executesubversives }
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#
+#	}
+# }
+# 
+#focus = { 
+#id = PAF_warriorpriests
+#icon = GFX_goal_PAP_crusade
+#x = 32
+#y = 11
+#cost = 5
+#available_if_capitulated = no
+#prerequisite = { focus = PAF_executesubversives }
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#
+#	}
+# }
+# 
+#focus = { 
+#id = PAF_allthebrutes
+#icon = GFX_goal_HOL_crackdown_totalist
+#x = 31
+#y = 12
+#cost = 5
+#available_if_capitulated = no
+#prerequisite = { focus = PAF_warriorpriests }
+#prerequisite = { focus = PAF_militariseinfrastructure }
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#
+#	}
+# }
+# 
+#focus = { 
+#id = PAF_theotherfront
+#icon = GFX_focus_por_portuguese_legion
+#x = 29
+#y = 10
+#cost = 5
+#available_if_capitulated = no
+#prerequisite = { focus = PAF_theostasienlesson focus = PAF_malditoscomunas }
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#
+#	}
+# }
+# 
+#focus = { 
+#id = PAF_requestmetropolintervention
+#icon = GFX_goal_portugal
+#x = 29
+#y = 13
+#cost = 5
+#available_if_capitulated = no
+#prerequisite = { focus = PAF_thekillingblow focus = PAF_allthebrutes }
+#ai_will_do = { 
+# factor = 1
+# } 
+#completion_reward = {
+#
+#	}
+# }
+# }

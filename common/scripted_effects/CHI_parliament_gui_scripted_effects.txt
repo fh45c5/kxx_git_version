@@ -1,0 +1,456 @@
+
+#权力平衡-向改组会移动
+	CHI_RCA_small_effect = {
+		if = {
+			limit = { has_any_power_balance = yes }
+			add_power_balance_value = {
+				id = CHI_power_balance
+				value = 0.02
+				tooltip_side = CHI_RCA_winning_side
+			}
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.02
+			}
+		}
+	}
+	CHI_RCA_medium_effect = {
+		if = {
+			limit = { has_any_power_balance = yes }
+			add_power_balance_value = {
+				id = CHI_power_balance
+				value = 0.06
+				tooltip_side = CHI_RCA_winning_side
+			}
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.02
+			}
+		}
+	}
+	CHI_RCA_large_effect = {
+		if = {
+			limit = { has_any_power_balance = yes }
+			add_power_balance_value = {
+				id = CHI_power_balance
+				value = 0.10
+				tooltip_side = CHI_RCA_winning_side
+			}
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.02
+			}
+		}
+	}
+
+	CHI_RCA_mega_effect = {
+		if = {
+			limit = { has_any_power_balance = yes }
+			add_power_balance_value = {
+				id = CHI_power_balance
+				value = 0.20
+				tooltip_side = CHI_RCA_winning_side
+			}
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.02
+			}
+		}
+	}
+
+#权力平衡-向革委会移动
+	CHI_NRC_small_effect = {
+		if = {
+			limit = { has_any_power_balance = yes }
+			#Sucks but atm add power balance doesn't accept variables
+			add_power_balance_value = {
+				id = CHI_power_balance
+				value = -0.02
+				tooltip_side = CHI_NRC_winning_side
+			}
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.02
+			}
+		}
+	}
+	CHI_NRC_medium_effect = {
+		if = {
+			limit = { has_any_power_balance = yes }
+			#Sucks but atm add power balance doesn't accept variables
+			add_power_balance_value = {
+				id = CHI_power_balance
+				value = -0.06
+				tooltip_side = CHI_NRC_winning_side
+			}
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.02
+			}
+		}
+	}
+	CHI_NRC_large_effect = {
+		if = {
+			limit = { has_any_power_balance = yes }
+			#Sucks but atm add power balance doesn't accept variables
+			add_power_balance_value = {
+				id = CHI_power_balance
+				value = -0.10
+				tooltip_side = CHI_NRC_winning_side
+			}
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.02
+			}
+		}
+	}
+	CHI_NRC_mega_effect = {
+		if = {
+			limit = { has_any_power_balance = yes }
+			#Sucks but atm add power balance doesn't accept variables
+			add_power_balance_value = {
+				id = CHI_power_balance
+				value = -0.20
+				tooltip_side = CHI_NRC_winning_side
+			}
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.02
+			}
+		}
+	}
+
+#党内激进度
+
+	CHI_add_rad_small_effect = {
+		add_to_variable = {
+			var = CHI_radicalism_var
+			value = 3.0
+			tooltip = CHI_add_rad_small_tt
+		}		
+		CHI_RAD_warning_event_effect = yes
+	}
+	CHI_add_rad_medium_effect = {
+		add_to_variable = {
+			var = CHI_radicalism_var
+			value = 5.0
+			tooltip = CHI_add_rad_medium_tt
+		}
+		CHI_RAD_warning_event_effect = yes
+	}
+	CHI_add_rad_large_effect = {
+		add_to_variable = {
+			var = CHI_radicalism_var
+			value = 10.0
+			tooltip = CHI_add_rad_large_tt
+		}
+		CHI_RAD_warning_event_effect = yes
+	}
+	CHI_add_rad_mega_effect = {
+		add_to_variable = {
+			var = CHI_radicalism_var
+			value = 15.0
+			tooltip = CHI_add_rad_mega_tt
+		}
+		CHI_RAD_warning_event_effect = yes
+	}
+	CHI_add_rad_giga_effect = {
+		add_to_variable = {
+			var = CHI_radicalism_var
+			value = 25.0
+			tooltip = CHI_add_rad_giga_tt
+		}
+		CHI_RAD_warning_event_effect = yes
+	}
+
+	CHI_sub_rad_small_effect = {
+		add_to_variable = {
+			var = CHI_radicalism_var
+			value = -3.0
+			tooltip = CHI_sub_rad_small_tt
+		}
+
+	}
+	CHI_sub_rad_medium_effect = {
+		add_to_variable = {
+			var = CHI_radicalism_var
+			value = -5.0
+			tooltip = CHI_sub_rad_medium_tt
+		}
+
+	}
+	CHI_sub_rad_large_effect = {
+		add_to_variable = {
+			var = CHI_radicalism_var
+			value = -10.0
+			tooltip = CHI_sub_rad_large_tt
+		}
+
+	}
+	CHI_sub_rad_mega_effect = {
+		add_to_variable = {
+			var = CHI_radicalism_var
+			value = -15.0
+			tooltip = CHI_sub_rad_mega_tt
+		}
+	}
+	CHI_sub_rad_giga_effect = {
+		add_to_variable = {
+			var = CHI_radicalism_var
+			value = -20.0
+			tooltip = CHI_sub_rad_giga_tt
+		}
+	}
+
+#警告事件
+
+	CHI_RAD_warning_event_effect = {
+		if = {
+			limit = { has_any_power_balance = yes }
+			if = {
+				limit = {
+					check_variable = { CHI_radicalism_var > 10.1 }
+					NOT = { has_country_flag = CHI_RAD_warning_one_flag }
+				}
+				hidden_effect = { country_event = { id = CHI.midgame.021 days = 3 } } #Out of the Shadows
+			}
+			else_if = {
+				limit = {
+					check_variable = { CHI_radicalism_var > 25.1 }
+					NOT = { has_country_flag = CHI_RAD_warning_two_flag }
+				}
+				hidden_effect = { country_event = { id = CHI.midgame.022 days = 3 } } #The Polarisation of the NRA
+			}
+			else_if = {
+				limit = {
+					check_variable = { CHI_radicalism_var > 50.1 }
+					NOT = { has_country_flag = CHI_RAD_warning_three_flag }
+				}
+				hidden_effect = { country_event = { id = CHI.midgame.023 days = 3 } } #A Brazen Attempt!
+			}
+			else_if = {
+				limit = {
+					check_variable = { CHI_radicalism_var > 75.1 }
+					NOT = { has_country_flag = CHI_RAD_warning_four_flag }
+				}
+				hidden_effect = { country_event = { id = CHI.midgame.025 days = 3 } } #Shadow over the Countryside
+			}
+			else_if = {
+				limit = {
+					check_variable = { CHI_radicalism_var > 80 }
+					has_country_flag = CHI_RAD_warning_four_flag
+				}
+				hidden_effect = { country_event = { id = CHI.lategame.001 days = 14 } }
+			}
+		}
+	}
+
+#农委会影响力提升
+
+	CHI_add_PMC_influence_small = {
+		add_to_variable = { 
+			CHI_PMC_influence_var = 5.0 
+			tooltip = CHI_add_PMC_influence_small
+		}
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.02
+		}
+	}
+	
+	CHI_add_PMC_influence_medium = {
+		add_to_variable = { 
+			CHI_PMC_influence_var = 10.0
+			tooltip = CHI_add_PMC_influence_medium
+		}
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.05
+		}
+	}
+	
+	CHI_add_PMC_influence_large = {
+		add_to_variable = { 
+			CHI_PMC_influence_var = 15.0 
+			tooltip = CHI_add_PMC_influence_large
+		}
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.10
+		}
+	}
+
+#复兴社影响力提升
+
+	CHI_add_CRA_influence_small = {
+		add_to_variable = { 
+			CHI_CRA_influence_var = 5.0 
+			tooltip = CHI_add_CRA_influence_small
+		}
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.02
+		}
+	}
+	
+	CHI_add_CRA_influence_medium = {
+		add_to_variable = { 
+			CHI_CRA_influence_var = 10.0
+			tooltip = CHI_add_CRA_influence_medium
+		}
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+	}
+	
+	CHI_add_CRA_influence_large = {
+		add_to_variable = { 
+			CHI_CRA_influence_var = 15.0 
+			tooltip = CHI_add_CRA_influence_large
+		}
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.10
+		}
+	}
+
+#中工盟影响力提升
+
+	CHI_add_CSL_influence_small = {
+		add_to_variable = { 
+			CHI_CSL_influence_var = 5.0 
+			tooltip = CHI_add_CSL_influence_small
+		}
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.02
+		}
+	}
+	
+	CHI_add_CSL_influence_medium = {
+		add_to_variable = { 
+			CHI_CSL_influence_var = 10.0
+			tooltip = CHI_add_CSL_influence_medium
+		}
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.05
+		}
+	}
+	
+	CHI_add_CSL_influence_large = {
+		add_to_variable = { 
+			CHI_CSL_influence_var = 15.0 
+			tooltip = CHI_add_CSL_influence_large
+		}
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.10
+		}
+	}
+	
+#农委会影响力下降
+
+	CHI_sub_PMC_influence_small = {
+		add_to_variable = { 
+			CHI_PMC_influence_var = -5.0 
+			tooltip = CHI_sub_PMC_influence_small
+		}
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = -0.02
+		}
+	}
+	
+	CHI_sub_PMC_influence_medium = {
+		add_to_variable = { 
+			CHI_PMC_influence_var = -10.0
+			tooltip = CHI_sub_PMC_influence_medium
+		}
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = -0.05
+		}
+	}
+	
+	CHI_sub_PMC_influence_large = {
+		add_to_variable = { 
+			CHI_PMC_influence_var = -15.0 
+			tooltip = CHI_sub_PMC_influence_large
+		}
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = -0.10
+		}
+	}
+
+#复兴社影响力下降
+
+	CHI_sub_CRA_influence_small = {
+		add_to_variable = { 
+			CHI_CRA_influence_var = -5.0 
+			tooltip = CHI_sub_CRA_influence_small
+		}
+		add_popularity = {
+			ideology = totalist
+			popularity = -0.02
+		}
+	}
+	
+	CHI_sub_CRA_influence_medium = {
+		add_to_variable = { 
+			CHI_CRA_influence_var = -10.0
+			tooltip = CHI_sub_CRA_influence_medium
+		}
+		add_popularity = {
+			ideology = totalist
+			popularity = -0.05
+		}
+	}
+	
+	CHI_sub_CRA_influence_large = {
+		add_to_variable = { 
+			CHI_CRA_influence_var = -15.0 
+			tooltip = CHI_sub_CRA_influence_large
+		}
+		add_popularity = {
+			ideology = totalist
+			popularity = -0.10
+		}
+	}
+
+#中工盟影响力下降
+
+	CHI_sub_CSL_influence_small = {
+		add_to_variable = { 
+			CHI_CSL_influence_var = -5.0 
+			tooltip = CHI_sub_CSL_influence_small
+		}
+		add_popularity = {
+			ideology = syndicalist
+			popularity = -0.02
+		}
+	}
+
+	CHI_sub_CSL_influence_medium = {
+		add_to_variable = { 
+			CHI_CSL_influence_var = -10.0
+			tooltip = CHI_sub_CSL_influence_medium
+		}
+		add_popularity = {
+			ideology = syndicalist
+			popularity = -0.05
+		}
+	}
+
+	CHI_sub_CSL_influence_large = {
+		add_to_variable = { 
+			CHI_CSL_influence_var = -15.0 
+			tooltip = CHI_sub_CSL_influence_large
+		}
+		add_popularity = {
+			ideology = syndicalist
+			popularity = -0.10
+		}
+	}

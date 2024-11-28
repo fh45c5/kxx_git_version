@@ -1,0 +1,870 @@
+add_namespace = hnn
+country_event = { #Restore Constitution #湖南路线指南
+	id = hnn.20000
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.2" }
+	title = guides.1000.t
+	desc = guides.1000.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+
+	option = { 
+        name = guides.1000.a
+		country_event = { 
+			id = hnn.20001
+		}
+	}
+}
+
+country_event = { #Restore Constitution
+	id = hnn.20001
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.2" }
+	title = guides.1001.t
+	desc = guides.1001.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1001.b
+	}
+
+	option = { 
+        name = guides.1001.a
+		country_event = { 
+			id = hnn.20000
+		}
+	}
+}
+
+country_event = { #Restore Constitution #台湾路线指南
+	id = TAI.20000
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.2" }
+	title = rising_dragon_guide.2.title
+	desc = rising_dragon_guide.2.desc
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { 
+        name = rising_dragon_guide.2.a
+	}
+
+	option = { 
+        name = rising_dragon_guide.2.b
+		country_event = { 
+			id = TAI.20001
+		}
+	}
+}
+
+country_event = { #Restore Constitution
+	id = TAI.20001
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.2" }
+	title = TAI.20000.t
+	desc = TAI.20000.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { 
+        name = TAI.20000.a
+	}
+	
+	option = { 
+        name = TAI.20000.b
+		country_event = { 
+			id = TAI.20000
+		}
+	}
+}
+
+country_event = {###国民党左派革命失败  
+	id = hnn.20002
+	title = hungong.16.t
+	desc = hungong.16.d
+
+	trigger = {
+		AND = {
+			tag = HNN
+			or = {
+				has_country_flag = HNN_gong_tuan_victory_flag
+				has_country_flag = HNN_mao_victory
+				has_country_flag = HNN_helong_victory
+			}
+			LEC = {
+				exists = no 
+			}
+		}
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = hungong.16.a
+		custom_effect_tooltip = HNN_shibaidegeming_tooltip
+		hidden_effect = {
+			create_corps_commander = {
+				name = "鲁迅"
+				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Lu_Xun.png"
+				traits = { LEC_socialist_officer }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "彭述之"
+				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Peng_Shu_Zhi.png"
+				traits = { LEC_socialist_officer }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "康生"
+				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Kang_Sheng.png"
+				traits = { LEC_socialist_officer }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "田汉"
+				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Tian_Han.png"
+				traits = {LEC_socialist_officer }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "张春桥"
+				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Zhang_Chunqiao.png"
+				traits = { LEC_socialist_officer }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "周扬"
+				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Zhou_Yang.png"
+				traits = { LEC_socialist_officer }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "饶漱石"
+				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Rao_Shu_Shi.png"
+				traits = { LEC_socialist_officer }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_field_marshal = {
+				name = "汪寿华"
+				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Wang_Shou_Hua.png"
+				traits = { LEC_socialist_officer }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "赵世炎"
+				portrait_path = "gfx/leaders/LEC/Portrait_LEC_Zhao_Shi_Yan.png"
+				traits = { LEC_socialist_officer }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "王亚樵"
+				portrait_path = "gfx/leaders/LEC/Portrait_Wang_Yaqiao.png"
+				traits = { LEC_socialist_officer }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+			name = "贺子珍"
+			portrait_path = "gfx/leaders/LEC/Portrait_LEC_He_Zizhen.png"
+			traits = {
+			LEC_socialist_officer
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 3
+			}
+			
+			create_corps_commander = {
+			name = "丁玲"
+			portrait_path = "gfx/leaders/LEC/Portrait_LEC_general_Ding_Ling.png"
+			traits = {
+			LEC_socialist_officer
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 1
+			}
+			create_corps_commander = {
+			name = "邓中夏"
+			portrait_path = "gfx/leaders/LEC/Portrait_LEC_Deng_Zhongxia_2.png"
+			traits = {
+			LEC_socialist_officer
+			}
+			skill = 4
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+			}
+			create_corps_commander = {
+			name = "成仿吾"
+			portrait_path = "gfx/leaders/LEC/Portrait_LEC_Cheng_Fangwu.png"
+			traits = {
+			LEC_socialist_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+			}
+			create_field_marshal = {
+		name = "左权"
+		desc = "Zuo_quan_desc"
+		portrait_path = "gfx/leaders/PLA/PLA_zuoquan.png"
+		id = 1917
+		traits = {
+			brilliant_strategist
+			infantry_officer
+		}
+		skill = 4
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 5
+		logistics_skill = 5
+		}
+		create_field_marshal = {
+			name = "毛泽东"
+			desc = ""
+			portrait_path = "gfx/leaders/HNN/Portrait_HNN_Mao_Zedong.png"
+			traits = {
+				brilliant_strategist
+				infantry_officer
+				career_officer 
+				irregulars_officer
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 6
+			planning_skill = 6
+			logistics_skill = 5
+		}
+		create_corps_commander = {
+		name = "王近山"
+		desc = "Wang_jingshan_desc"
+		portrait_path =  "gfx/leaders/PLA/Wang_Jinshan.png"
+		traits = {
+			skilled_staffer
+		}
+		skill = 3
+		attack_skill = 2
+		defense_skill = 4
+		planning_skill = 2
+		logistics_skill = 3
+		}
+		create_corps_commander = {
+		name = "胡耀邦"
+		desc = "Hu_yangbang_desc"
+		portrait_path = "gfx/leaders/PLA/Hu_Yaobang.png"
+		traits = {
+			infantry_officer
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+		}
+		create_field_marshal = {
+		name = "刘志丹"
+		desc = "Liu_zhidan_desc"
+		portrait_path = "gfx/leaders/PLA/Liu_zhidan.png"
+		traits = {
+			infantry_officer
+			brilliant_strategist
+			irregulars_officer
+		}
+		skill = 4
+		attack_skill = 3
+		defense_skill = 4
+		planning_skill = 2
+		logistics_skill = 2
+		}
+		create_corps_commander = {
+		name = "李德"
+		desc = "Li_de_desc"
+		portrait_path = "gfx/leaders/PLA/Otto_Braun.png"
+		traits = {
+			infantry_officer
+			inflexible_strategist
+			cosmopolitan_war_tourist
+		}
+		skill = 3
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 4
+		logistics_skill = 1
+		}
+		create_corps_commander = {
+		name = "习仲勋"
+		desc = "Xi_Zhongxun_desc"
+		portrait_path = "gfx/leaders/PLA/Xi_Zhongxun.png"
+		traits = {
+			infantry_officer
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 3
+		}
+		create_corps_commander = {
+		name = "肖劲光"
+		desc = "Xiao_jinguang_desc"
+		portrait_path = "gfx/leaders/PLA/Xiao_jinguang.png"
+		traits = {
+			infantry_officer
+			militias_officer
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 3
+		}
+		create_corps_commander = {
+		name = "黄克诚"
+		desc = "Huang_kecheng_desc"
+		portrait_path = "gfx/leaders/PLA/huangkechen.png"
+		traits = {
+			infantry_officer
+			militias_officer
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 3
+		}
+		create_corps_commander = {
+		name = "朱瑞"
+		desc = "Zhu_ru_desc"
+		portrait_path = "gfx/leaders/PLA/Zhu_ru.png"
+		traits = {
+			artillery_officer
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 3
+		}
+		create_corps_commander = {
+		name = "陈锡联"
+		desc = "chen_xilian_DESC"
+		portrait_path = "gfx/leaders/PLA/chenxilian.png"
+		traits = {
+			infantry_officer
+			militias_officer
+		}
+		skill = 2
+		attack_skill = 4
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 3
+		}
+		create_corps_commander = {
+		name = "许世友"
+		desc = "Xu_shiyou_DESC"
+		portrait_path = "gfx/leaders/PLA/Xu_shouyou.png"
+		traits = {
+			infantry_officer
+			militias_officer
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 3
+		}
+		create_corps_commander = {
+		name = "吕正操"
+		desc = "lvzhencao_DESC"
+		portrait_path = "gfx/leaders/PLA/Lv_zhengcao.png"
+		traits = {
+			infantry_officer
+			militias_officer
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+		}
+		create_corps_commander = {
+		name = "陈再道"
+		desc = "Chenn_zaodao_DESC"
+		portrait_path = "gfx/leaders/PLA/Chen_zaidao.png"
+		traits = {
+			infantry_officer
+			militias_officer
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+		}
+		create_corps_commander = {
+			name = "陈伯达"
+			desc = ""
+			portrait_path = "gfx/leaders/PLA/Chen_Boda.png"
+			traits = {
+				infantry_officer
+				militias_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		create_corps_commander = {
+		name = "郭汝瑰"
+		desc = ""
+		portrait_path = "gfx/leaders/HNN/portrait_PRC_guo_rugui.png"
+		traits = {
+			career_officer 
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 2
+		}
+		create_corps_commander = {
+		name = "李克农"
+		desc = ""
+		portrait_path = "gfx/leaders/HNN/portrait_PRC_li_kenong.png"
+		traits = {
+			career_officer 
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 3
+		planning_skill = 3
+		logistics_skill = 4
+		}
+		create_corps_commander = {
+		name = "熊向辉"
+		desc = ""
+		portrait_path = "gfx/leaders/HNN/portrait_PRC_xiong_xianghui.png"
+		traits = {
+			inflexible_strategist 
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 3
+		planning_skill = 3
+		logistics_skill = 2
+		}
+		create_corps_commander = {
+		name = "张克侠"
+		desc = ""
+		portrait_path = "gfx/leaders/HNN/portrait_PRC_zhang_kexia.png"
+		traits = {
+			irregulars_officer
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+		}
+		create_corps_commander = {
+		name = "蒋先云"
+		desc = ""
+		portrait_path = "gfx/leaders/HNN/PRC_jiangxianyun.png"
+		traits = {
+			irregulars_officer
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+		}
+		create_field_marshal = {
+		name = "卢德铭"
+		desc = ""
+		portrait_path = "gfx/leaders/HNN/PRC_lu_deming.png"
+		traits = {
+			career_officer 
+			brilliant_strategist
+			irregulars_officer
+		}
+		skill = 4
+		attack_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		logistics_skill = 4
+		}
+		create_field_marshal = {
+		name = "王尔琢"
+		desc = ""
+		portrait_path = "gfx/leaders/HNN/PRC_wang_erzuo.png"
+		traits = {
+			career_officer 
+			brilliant_strategist
+			irregulars_officer
+		}
+		skill = 4
+		attack_skill = 3
+		defense_skill = 4
+		planning_skill = 5
+		logistics_skill = 4
+		}
+		create_field_marshal = {
+		name = "伍中豪"
+		desc = ""
+		portrait_path = "gfx/leaders/HNN/PRC_wuzhonghao.png"
+		traits = {
+			career_officer 
+			brilliant_strategist
+			irregulars_officer
+		}
+		skill = 4
+		attack_skill = 4
+		defense_skill = 2
+		planning_skill = 5
+		logistics_skill = 4
+		}
+		create_field_marshal = {
+		name = "寻淮洲"
+		desc = ""
+		portrait_path = "gfx/leaders/HNN/PRC_xunhuaizhou.png"
+		traits = {
+			career_officer 
+			brilliant_strategist
+			irregulars_officer
+		}
+		skill = 4
+		attack_skill = 4
+		defense_skill = 5
+		planning_skill = 5
+		logistics_skill = 5
+		}
+		create_corps_commander = {
+				name = "胡宗南"
+				desc = "POLITICS_CHI_HU_ZONGNAN_GENERAL_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_CHI_Hu_Zongnan_KR.png"
+				traits = { media_personality career_officer trait_engineer }
+				skill = 2
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 2
+			}
+			create_corps_commander = {
+				name = "张治中"
+				desc = "POLITICS_CHI_ZHANG_ZHIZHONG_ARMY_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_CHI_Zhang_Zhizhong.png"
+				traits = { CHI_left_kmt_officer infantry_expert infantry_leader career_officer }
+				skill = 2
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 2
+			}
+			create_corps_commander = {
+				name = "王耀武"
+				desc = "POLITICS_CHI_WANG_YAOWU_ARMY_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_CHI_Wang_Yaowu_KR.png"
+				traits = { inflexible_strategist irregulars_officer infantry_officer }
+				skill = 2
+				attack_skill = 1
+				defense_skill = 3
+				planning_skill = 1
+				logistics_skill = 2
+			}
+			create_corps_commander = {
+				name = "薛岳"
+				desc = "POLITICS_CHI_XUE_YUE_ARMY_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_CHI_Xue_Yue_KX.png"
+				traits = { career_officer brilliant_strategist trait_reckless hill_fighter }
+				skill = 2
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "杜聿明"
+				desc = "POLITICS_CHI_DU_YUMING_ARMY_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_CHI_Du_Yuming_KX.png"
+				traits = { inflexible_strategist armor_officer career_officer }
+				skill = 2
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "戴安澜"
+				desc = "POLITICS_CHI_DAI_ANLAN_ARMY_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_CHI_Dai_Anlan.png"
+				traits = { trait_reckless armor_officer career_officer brilliant_strategist }
+				skill = 2
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 2
+			}
+			create_corps_commander = {
+				name = "陈果夫"
+				desc = "POLITICS_CHI_CHEN_GUOFU_ARMY_DESC"
+				portrait_path = "gfx/leaders/YUN/Portrait_YUN_Chen_Guofu.png"
+				traits = { CHI_left_kmt_officer politically_connected harsh_leader }
+				skill = 3
+				attack_skill = 2
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 4
+			}
+			create_corps_commander = {
+				name = "柏文蔚"
+				desc = "POLITICS_CHI_BAI_WENWAI_ARMY_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_CHI_Bai_Wenwai.png"
+				traits = { CHI_left_kmt_officer old_guard career_officer }
+				skill = 2
+				attack_skill = 1
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 2
+			}
+			create_corps_commander = {
+				name = "陈立夫"
+				desc = "POLITICS_CHI_CHEN_LIFU_ARMY_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_KMT_Chen_Lifu.png"
+				traits = { CHI_left_kmt_officer politically_connected }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "蒋纬国"
+				desc = "POLITICS_CHI_CHIANG_WEI_KUO_ARMY_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_CHI_Chiang_Wei_kuo.png"
+				traits = { CHI_left_kmt_officer career_officer armor_officer trait_mountaineer }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "孙立人"
+				desc = "POLITICS_CHI_SUN_LIREN_ARMY_DESC"
+				portrait_path = "gfx/leaders/ANQ/Portrait_ANQ_Sun_Liren.png"
+				traits = { brilliant_strategist career_officer organizer urban_assault_specialist }
+				skill = 2
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 2	
+			}
+			create_corps_commander = {
+				name = "叶挺"
+				desc = "POLITICS_CHI_YE_TING_ARMY_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_CHI_Ye_Ting.png"
+				traits = { irregulars_officer urban_assault_specialist commando }
+				skill = 3
+				attack_skill = 2
+				defense_skill = 3
+				planning_skill = 3
+				logistics_skill = 2
+			}
+			create_corps_commander = {
+				name = "张发奎"
+				desc = "POLITICS_CHI_ZHANG_FAKUI_ARMY_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_CHI_Zhang_Fakui.png"
+				traits = { media_personality harsh_leader infantry_officer war_hero }
+				skill = 3
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 3
+			}
+			create_corps_commander = {
+				name = "粟裕"
+				desc = "POLITICS_CHI_SU_YU_ARMY_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_CHI_Su_Yu.png"
+				traits = { irregulars_officer trickster guerilla_officer }
+				skill = 2
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "聂荣臻"
+				desc = "POLITICS_CHI_NIE_RONGZHEN_ARMY_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_CHI_Nie_Rongzhen.png"
+				traits = { irregulars_officer trickster }
+				skill = 2
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 2
+			}
+			create_corps_commander = {
+				name = "林彪"
+				desc = "POLITICS_CHI_LIN_BIAO_ARMY_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_CHI_Lin_Biao.png"
+				traits = { brilliant_strategist irregulars_officer trait_mountaineer }
+				skill = 2
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 2
+			}
+			create_corps_commander = {
+				name = "徐向前"
+				desc = "POLITICS_CHI_XU_XIANGQIAN_ARMY_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_CHI_Xu_Xiangqian.png"
+				traits = { irregulars_officer brilliant_strategist ranger }
+				skill = 2
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 2
+			}
+			create_corps_commander = {
+				name = "关向应"
+				desc = "POLITICS_FNG_GUAN_XIANGYING_ARMY_DESC"
+				portrait_path = "gfx/leaders/FNG/Portrait_FNG_Guan_Xiangying.png"
+				traits = { war_hero trickster guerilla_officer }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "陈赓"
+				desc = "POLITICS_CHI_CHEN_GENG_ARMY_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_CHI_Chen_Geng.png"
+				traits = { career_officer infantry_officer trickster }
+				skill = 2
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "周恩来"
+				desc = "POLITICS_CHI_ZHOU_ENLAI_ARMY_DESC"
+				portrait_path = "gfx/leaders/CHI/Portrait_CHI_Zhou_Enlai_Army.png"
+				traits = { career_officer skilled_staffer  }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			create_corps_commander = {
+				name = "邓小平"
+				desc = "POLITICS_HNN_DENG_XIAO_PING_ARMY_DESC"
+				portrait_path = "gfx/leaders/HNN/Portrait_HNN_Deng_Xiao_Ping.png"
+				traits = { skilled_staffer }
+				skill = 2
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 3
+				logistics_skill = 2
+			}
+			create_corps_commander = {
+				name = "高岗"
+				desc = "POLITICS_HNN_GAO_GANG_ARMY_DESC"
+				portrait_path = "gfx/leaders/HNN/Portrait_HNN_Gao_gang.png"
+				traits = { skilled_staffer }
+				skill = 2
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 3
+				logistics_skill = 2
+			}
+			create_corps_commander = {
+				name = "薄一波"
+				desc = "POLITICS_HNN_BO_YI_BO_ARMY_DESC"
+				portrait_path = "gfx/leaders/HNN/Portrait_HNN_Bo_Yi_Bo.png"
+				traits = { politically_connected }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+	}
+}
+
+country_event = { #挪威路线指南
+	id = hnn.20003
+	immediate = { log = "[GetDateText]: [Root.GetName]: event hnn.2" }
+	title = hnn.20003.t
+	desc = hnn.20003.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #两广路线指南
+	id = zhinan.1
+	title = hnn.20004.t
+	desc = hnn.20004.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}

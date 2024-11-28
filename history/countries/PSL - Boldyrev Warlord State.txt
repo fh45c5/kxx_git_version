@@ -1,0 +1,68 @@
+capital = 1202
+
+oob = "PSL_1936"
+set_cosmetic_tag = PSL
+
+set_research_slots = 3 
+
+set_convoys = 0
+
+set_country_flag = is_russian_warlord
+
+add_ideas = {
+	
+}
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_recon = 1
+	tech_engineers = 1
+	tech_trucks =1
+	motorised_infantry = 1
+	early_fighter = 1
+	CAS1 = 1
+}
+
+set_politics = {
+	ruling_party = totalist
+	last_election = "1933.10.25"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	totalist = 50
+	syndicalist = 0
+	radical_socialist = 50
+	social_liberal = 0
+	market_liberal = 0
+	social_democrat = 0
+	social_conservative = 0
+	authoritarian_democrat = 0
+	paternal_autocrat = 0
+	national_populist = 0
+}
+create_country_leader = {
+	name = "瓦西里·博尔德列夫"
+	desc="PSL_vasily_boldyrev_desc"
+	picture = "gfx/leaders/PSL/Portrait_Boldyrev.png"
+	expire = "1965.1.1"
+	ideology = autocratic_socialist_subtype
+}
+
+set_stability = 0.4
+
+recruit_character = PSL_vasily_boldyrev
+recruit_character = PSL_vasily_boldyrev_revsoc
+recruit_character = PSL_Lazo
+recruit_character = PSL_mikhail_muravyov
+#recruit_character = PSL_Molchanov
+recruit_character = PSL_Sablin
+recruit_character = PSL_Semyon_Maslov
+recruit_character = PSL_Nikolai_Kondratiev
+recruit_character = PSL_Vladimir_Osipovich_Zederbaum
+
+
+
+

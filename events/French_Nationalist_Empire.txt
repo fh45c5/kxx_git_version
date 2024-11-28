@@ -1,0 +1,1320 @@
+﻿
+
+add_namespace = fne
+
+country_event = { 
+	id = fne.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.1"}
+	title = fne.1.t
+	desc = fne.1.d
+	picture = GFX_FRG_napoleon_frg_Event
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = fne.1.a
+		ai_chance = {
+		    factor = 35
+			}
+                set_cosmetic_tag = FRG_empire_third
+                retire_country_leader = yes
+                retire_ideology_leader = national_populist
+                retire_ideology_leader = totalist
+                retire_ideology_leader = paternal_autocrat
+                 
+                create_country_leader = {
+	        name = "路易·拿破仑·波拿巴"
+	        desc = ""
+	        picture = "gfx/leaders/FRG/Napoleon_1.png"
+	        expire = "1965.1.1"
+	        ideology = national_bonapartism_subtype
+                }
+                 
+                create_country_leader = {
+	        name = "路易·拿破仑·波拿巴"
+	        desc = ""
+	        picture = "gfx/leaders/FRG/Napoleon_1.png"
+	        expire = "1965.1.1"
+	        ideology = totalist_subtype
+                }
+                create_country_leader = {
+	        name = "路易·拿破仑·波拿巴"
+	        desc = ""
+	        picture = "gfx/leaders/FRG/Napoleon_1.png"
+	        expire = "1965.1.1"
+	        ideology = paternal_autocrat_subtype
+                }
+	  }  
+      }
+
+country_event = { 
+	id = fne.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.2"}
+	title = fne.2.t
+	desc = fne.2.d
+	picture = GFX_FRG_napoleon_frg_Event
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = fne.2.a
+		set_country_flag = KXX_LEADER_GUI_VISIBLE
+		set_country_flag = FRG_Robert_Brasillach_VISIBLE
+		ai_chance = {
+		    factor = 35
+			}
+                retire_country_leader = yes
+                retire_ideology_leader = national_populist
+                retire_ideology_leader = totalist
+                retire_ideology_leader = paternal_autocrat
+                 
+                create_country_leader = {
+	        name = "拿破仑六世"
+	        desc = ""
+	        picture = "gfx/leaders/FRG/Napoleon_2.png"
+	        expire = "1965.1.1"
+	        ideology = national_bonapartism_subtype
+                }
+                create_country_leader = {
+	        name = "拿破仑六世"
+	        desc = ""
+	        picture = "gfx/leaders/FRG/Napoleon_2.png"
+	        expire = "1965.1.1"
+	        ideology = totalist_subtype
+                }
+                create_country_leader = {
+	        name = "拿破仑六世"
+	        desc = ""
+	        picture = "gfx/leaders/FRG/Napoleon_2.png"
+	        expire = "1965.1.1"
+	        ideology = paternal_autocrat_subtype
+                }
+	  }  
+      }
+
+country_event = { 
+	id = fne.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.3"}
+	title = fne.3.t
+	desc = fne.3.d
+	picture = GFX_FRG_soldiers_frg_Event
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = fne.3.a
+		ai_chance = {
+		    factor = 35
+			}
+                puppet = SWI
+                SWI = { set_cosmetic_tag = FRG_ISW }
+                ITA = { transfer_state = 761 }
+	  }  
+      }
+
+country_event = { 
+	id = fne.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.4"}
+	title = fne.4.t
+	desc = fne.4.d
+	picture = GFX_FRG_soldiers_frg_2_Event
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = fne.4.a
+		ai_chance = {
+		    factor = 70
+			}
+                declare_war_on = {
+                target = RUS
+                type = annex_everything
+               } 
+                if = {
+				limit = { 
+					NOT = {
+						country_exists = RUS
+					}
+					country_exists = TRM
+				}
+                                 declare_war_on = {
+                target = TRM
+                type = annex_everything
+               } 
+			}
+	  }  
+
+        option = {
+		name = fne.4.b
+		ai_chance = {
+		    factor = 70
+			}
+                 
+                create_wargoal = {
+                target = RUS
+                type = annex_everything
+               }
+                if = {
+				limit = { 
+					NOT = {
+						country_exists = RUS
+					}
+					country_exists = TRM
+				}
+                  create_wargoal = {
+                target = TRM
+                type = annex_everything
+               }
+	  }  
+      }
+ }
+
+country_event = { 
+	id = fne.99
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.99"}
+	title = fne.99.t
+	desc = fne.99.d
+	picture = GFX_report_event_soviet_soldiers_tank
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = fne.99.a
+		ai_chance = {
+		    factor = 35
+			}
+                retire_country_leader = yes
+                retire_ideology_leader = national_populist
+                retire_ideology_leader = totalist
+                retire_ideology_leader = paternal_autocrat
+                 
+                BRI = { transfer_state = 983
+                        transfer_state = 14
+                        declare_war_on = {
+                        target = FRG
+                        type = annex_everything
+                        }  
+                        declare_war_on = {
+                        target = CAT
+                        type = annex_everything
+                        }
+                        declare_war_on = {
+                        target = FRA
+                        type = annex_everything
+                        } 
+                        declare_war_on = {
+                        target = JDF
+                        type = annex_everything
+                        }                       
+                    }
+
+                CAT = { transfer_state = 817
+                        declare_war_on = {
+                        target = FRG
+                        type = annex_everything
+                        }
+                        declare_war_on = {
+                        target = FRA
+                        type = annex_everything
+                        } 
+                        declare_war_on = {
+                        target = JDF
+                        type = annex_everything
+                        }    
+                    }
+
+                FRA = { transfer_state = 16 
+                        declare_war_on = {
+                        target = FRG
+                        type = annex_everything
+                        }
+                        declare_war_on = {
+                        target = JDF
+                        type = annex_everything
+                        }   
+                      }
+                JDF = { transfer_state = 24
+                        transfer_state = 17
+                        transfer_state = 18
+                        transfer_state = 785
+                        transfer_state = 980 
+                        declare_war_on = {
+                        target = FRG
+                        type = annex_everything
+                        }  
+              }
+			  hidden_effect = {
+				country_event = {
+					id = kxx_rf_fra.1
+					days = 30
+				}
+			  }
+	  }  
+      }
+
+country_event = { 
+	id = fne.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.5"}
+	title = fne.5.t
+	desc = fne.5.d
+	picture = GFX_FRG_soldiers_frg_3_Event
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = fne.5.a
+		ai_chance = {
+		    factor = 35
+			}  
+	  }
+      }
+
+country_event = { 
+	id = fne.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.6"}
+	title = fne.6.t
+	desc = fne.6.d
+	picture = GFX_FRG_soldiers_frg_Event
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = fne.6.a
+		ai_chance = {
+		    factor = 75
+			}  
+               ISH = { transfer_state = 782
+                       transfer_state = 839
+                       transfer_state = 58 }
+              FRG = { puppet = ISH }
+	  }
+
+       option = {
+		name = fne.6.b
+                trigger = { DEN = { is_puppet_of = FRG } }
+		ai_chance = {
+		    factor = 25
+			}  
+               DEN = { transfer_state = 782
+                       transfer_state = 839
+                       transfer_state = 58 }
+	  }
+      }
+
+country_event = { 
+	id = fne.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.7 "}
+	title = fne.7.t
+	desc = fne.7.d
+	picture = GFX_FRG_soldiers_frg_Event
+	is_triggered_only = yes
+	fire_only_once = yes
+         
+        trigger = { FRG = { controls_state = 791
+                            controls_state = 192
+                            is_in_faction_with = ROM  }     
+                  }
+
+	option = {
+		name = fne.7.a
+		ai_chance = {
+		    factor = 75
+			}  
+               ROM = { transfer_state = 791
+                       transfer_state = 192 
+                       add_state_core = 192
+                       add_state_core = 791 }
+	  }
+
+       option = {
+		name = fne.7.b
+                ai_chance = {
+		    factor = 25
+			}  
+      }
+}
+
+
+
+country_event = { 
+	id = fne.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.8 "}
+	title = fne.8.t
+	desc = fne.8.d
+	picture = GFX_FRG_soldiers_frg_Event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = fne.8.a
+		ai_chance = {
+		    factor = 50
+			}  
+               FRG = { add_to_faction = ROOT }
+
+               if = {
+                     limit = {
+                          tag = SER
+                            }
+                    SER = { transfer_state = 1097
+                            add_state_core = 1097 }
+                    FRG = { add_to_faction = ROOT }
+    
+                 }  
+              if = {
+                     limit = {
+                          tag = POR
+                            }
+                    POR = { transfer_state = 171
+                            add_state_core = 171 }
+                    FRG = { add_to_faction = ROOT }
+    
+                 }  
+            }     
+
+       option = {
+		name = fne.8.b
+		ai_chance = {
+		    factor = 50
+			}  
+               if = {
+                     limit = {
+                          tag = BUL
+                            }
+                     FRG = { declare_war_on = {
+                         target = BUL
+                         type = annex_everything
+                             }
+                      }
+    
+                 }      
+
+             if = {
+                     limit = {
+                          tag = SER
+                            }
+                     FRG = { declare_war_on = {
+                         target = SER
+                         type = annex_everything
+                             }
+                      }
+    
+                 }    
+ 
+             if = {
+                     limit = {
+                          tag = ALB
+                            }
+                     FRG = { declare_war_on = {
+                         target = ALB
+                         type = annex_everything
+                             }
+                      }
+    
+                 }  
+   
+
+             if = {
+                     limit = {
+                          tag = GRE
+                            }
+                     FRG = { declare_war_on = {
+                         target = GRE
+                         type = annex_everything
+                             }
+                      }
+    
+                 }
+
+             if = {
+                     limit = {
+                          tag = FIN
+                            }
+                     FRG = { declare_war_on = {
+                         target = FIN
+                         type = annex_everything
+                             }
+                      }
+    
+                 }
+
+           if = {
+                     limit = {
+                          tag = IRE
+                            }
+                     FRG = { declare_war_on = {
+                         target = IRE
+                         type = annex_everything
+                             }
+                      }
+    
+                 }    
+
+
+           if = {
+                     limit = {
+                          tag = POR
+                            }
+                     FRG = { declare_war_on = {
+                         target = POR
+                         type = annex_everything
+                             }
+                      }
+    
+                 }
+       
+
+             if = {
+                     limit = {
+                          tag = ROM
+                            }
+                     FRG = { declare_war_on = {
+                         target = ROM
+                         type = annex_everything
+                             }
+                      }
+    
+                 }                                
+
+
+	  }
+       
+       
+}
+
+country_event = { 
+	id = fne.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.9 "}
+	title = fne.9.t
+	desc = fne.9.d
+	picture = GFX_FRG_soldiers_frg_Event
+	is_triggered_only = yes
+	fire_only_once = yes
+         
+        trigger = { FRG = { 
+                            has_war_with = AUS
+                            has_war_with = HUN  }   
+                    AUS = { num_of_controlled_states < 10 } 
+                  }
+
+	option = {
+		name = fne.9.a
+		ai_chance = {
+		    factor = 75
+			}  
+               HUN = { country_event = { id = fne.10 } }
+	  }
+
+       option = {
+		name = fne.9.b
+                ai_chance = {
+		    factor = 25
+			}  
+      }
+}
+
+country_event = { 
+	id = fne.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.10 "}
+	title = fne.10.t
+	desc = fne.10.d
+	picture = GFX_FRG_treaty_Event
+	is_triggered_only = yes
+	fire_only_once = yes
+         
+
+	option = {
+		name = fne.10.a
+		ai_chance = {
+		    factor = 90
+			}  
+               white_peace = FRG
+               release = SVK
+               ROM = { transfer_state = 82
+                       transfer_state = 1114
+                       transfer_state = 83
+                       transfer_state = 1115
+                       transfer_state = 1113
+                       transfer_state = 84
+                       transfer_state = 1116
+                       transfer_state = 875
+                       add_state_core = 875 }
+              HUN = { transfer_state = 1136
+                      transfer_state = 1122
+                      add_state_core = 1136 
+                      add_state_core = 1122 }
+
+              FRG = { add_to_faction = HUN }
+              FRG = { puppet = SVK }
+
+              news_event = { id = worldnews.1666 days = 2 } 
+              
+	  }
+
+       option = {
+		name = fne.10.b
+                ai_chance = {
+		    factor = 10
+			}  
+               add_war_support = 0.25
+      }
+}
+
+country_event = { 
+	id = fne.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.11 "}
+	title = fne.11.t
+	desc = fne.11.d
+	picture = GFX_FRG_georges_blond_Event
+	is_triggered_only = yes
+	fire_only_once = yes
+         
+
+	option = {
+		name = fne.11.a
+		ai_chance = {
+		    factor = 90
+			}   
+              add_manpower = -1
+	  }
+}
+
+country_event = { 
+	id = fne.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.12 "}
+	title = fne.12.t
+	desc = fne.12.d
+	picture = GFX_FRG_soldiers_frg_Event
+	is_triggered_only = yes
+	fire_only_once = yes
+         
+
+	option = {
+		name = fne.12.a
+		ai_chance = {
+		    factor = 90
+			}   
+              add_stability = -0.05  
+              
+	  }
+}
+
+country_event = { 
+	id = fne.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.13 "}
+	title = fne.13.t
+	desc = fne.13.d
+	picture = GFX_FRG_jcqs_Event
+	is_triggered_only = yes
+	fire_only_once = yes
+         
+
+	option = {
+		name = fne.13.a
+		ai_chance = {
+		    factor = 90
+			}   
+              add_stability = 0.05  
+              add_political_power = 10
+	  }
+}
+
+
+country_event = { 
+	id = fne.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.14 "}
+	title = fne.14.t
+	desc = fne.14.d
+	picture = GFX_FRG_soldiers_frg_Event
+	is_triggered_only = yes
+	fire_only_once = yes
+         
+
+	option = {
+		name = fne.14.a
+		ai_chance = {
+		    factor = 90
+			}   
+              add_stability = 0.05  
+              add_political_power = 10
+              add_ideas = { FRG_Robert_Brasillach_hog_npo
+                            FRG_POI_Leon_Degrelle_npo    
+                            FRG_POI_Maurice_Papon_npo
+                            FRG_POI_Rene_Binet_npo   
+                            FRG_POI_Francis_Delaisi_npo }
+	  }
+}
+
+country_event = { 
+	id = fne.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.15 "}
+	title = fne.15.t
+	desc = fne.15.d
+	picture = GFX_FRG_soldiers_frg_Event
+	is_triggered_only = yes
+        trigger = { FRG = { controls_state = 64 }
+                    FRG = { has_war_with = POL }
+                    FRG = { has_war_with = GER }  }
+	fire_only_once = yes
+         
+
+	option = {
+		name = fne.15.a
+		ai_chance = {
+		    factor = 90
+			}   
+              white_peace = POL
+              POL = { set_politics = {
+	ruling_party = national_populist
+        elections_allowed = no
+        last_election = "1935.12.17"
+        election_frequency = 48
+                         }
+                    }
+        FRG = { add_to_faction = POL }
+	  }
+}
+
+
+country_event = { 
+	id = fne.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.16 "}
+	title = fne.16.t
+	desc = fne.16.d
+	picture = GFX_FRG_gaulish_Event
+	is_triggered_only = yes
+	fire_only_once = yes
+         
+
+	option = {
+		name = fne.16.a
+		ai_chance = {
+		    factor = 90
+			}   
+              add_stability = 0.05  
+              add_political_power = 10
+	  }
+}
+
+
+country_event = {
+	id = fne.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event comfrance.968"}
+	title = fne.22.t
+	desc = fne.22.d
+	picture = GFX_FRG_rob_brasillach_Event
+
+   	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+	    name = fne.22.a
+            ai_chance = { 
+			factor = 100
+			modifier = {
+		                  factor = 100
+				  has_game_rule = {
+						rule = FRA_civil_war_rule
+						option = FRA_START_BRASILLACH
+					}
+		  }
+		}	
+            hidden_effect = {
+	       FRA = { country_event = { id = fne.17 days = 7 } }
+            }
+    }
+}
+
+
+country_event = {
+	id = fne.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event comfrance.969"}
+	title = fne.17.t
+	desc = fne.17.d
+	picture = GFX_FRG_report_event_rob_gen
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+	    name = fne.17.a
+         	ai_chance = {
+		 	 factor = 20
+			}
+			modifier = {
+		                  factor = 4000
+				  has_game_rule = {
+						rule = FRA_civil_war_rule  ai
+						option = FRA_START_BRASILLACH
+					}
+		}	
+            add_popularity = {
+            ideology = totalist
+            popularity = 0.025
+           }
+           add_popularity = {
+            ideology = national_populist
+            popularity = 0.025
+           }
+           hidden_effect = {
+	       FRA = { country_event = { id = fne.18 days = 7 } }
+            }		
+    }
+
+	option = {
+	    name = fne.17.b
+		ai_chance = {
+		 	factor = 80
+		}
+		custom_effect_tooltip = fne.17_begone
+    }
+}
+
+
+country_event = {
+	id = fne.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event comfrance.970"}
+	title = fne.18.t
+	desc = fne.18.d
+	picture = GFX_FRG_report_event_rob_gen
+
+    fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {	
+            name = fne.18.a
+			set_country_flag = bulaxilihe
+            ai_chance = { 
+			factor = 4000
+			modifier = {
+		                  factor = 100
+				  has_game_rule = {
+						rule = FRA_civil_war_rule
+						option = FRA_START_BRASILLACH
+					}
+		  }
+		}
+    } 
+}
+
+country_event = {
+	id = fne.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event comfrance.971"}
+	title = fne.21.t
+	desc = fne.21.d
+	picture = GFX_news_event_FRA_anarchist_bombings
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {	
+        name = fne.21.a
+		set_politics = {
+			ruling_party = totalist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "莫里斯·多列士"
+			desc = "POLITICS_MAURICE_THOREZ_DESC"
+			picture = "gfx/leaders/FRA/Portrait_France_Maurice_Thorez.png"
+			expire = "1965.1.1"
+			ideology = jacobinism_subtype
+		}
+        FRG = { change_tag_from = FRA }
+        hidden_effect = {
+            FRG = { transfer_state = 16 }
+            FRG = { transfer_state = 24 }
+            FRG = { transfer_state = 980 }
+            FRG = { transfer_state = 785 }
+            FRG = { transfer_state = 18 }
+            FRG = { transfer_state = 17 }
+            FRG = { transfer_state = 27 }
+            FRG = { transfer_state = 20 }
+            FRG = { transfer_state = 32 }
+            FRG = { 
+				add_state_core = 16
+                add_state_core = 24
+                add_state_core = 980
+                add_state_core = 785
+                add_state_core = 18
+                add_state_core = 17
+                add_state_core = 27
+                add_state_core = 20
+                add_state_core = 32 
+			}
+			FRA = {
+           		transfer_units_fraction= {
+	    			target = FRG
+	    			size = 0.4
+	    			stockpile_ratio = 0.7
+	    			army_ratio = 0.5
+	    			air_ratio = 0.2
+        	    }
+			}
+			FRG = {
+				add_ideas = FRG_Robert_Brasillach_hog_npo
+				add_ideas = FRG_POI_Leon_Degrelle_npo
+				add_ideas = FRG_POI_Maurice_Papon_npo
+				add_ideas = FRG_POI_Francis_Delaisi_npo
+				add_ideas = PB_FRA_Crumbling_Coalition
+				add_ideas = PB_FRA_Bitter_Revanchism
+				country_event = { id = fne.27 } 
+			}
+			dismantle_faction = yes
+		}
+       
+        declare_war_on = {
+         	target = FRG
+         	type = annex_everything
+        }
+    }
+    option = {	
+        name = fne.21.b
+		set_politics = {
+			ruling_party = totalist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "莫里斯·多列士"
+			desc = "POLITICS_MAURICE_THOREZ_DESC"
+			picture = "gfx/leaders/FRA/Portrait_France_Maurice_Thorez.png"
+			expire = "1965.1.1"
+			ideology = jacobinism_subtype
+		}
+        set_country_flag = FRA_civil_war
+        hidden_effect = {
+            FRG = { transfer_state = 16 }
+            FRG = { transfer_state = 24 }
+            FRG = { transfer_state = 980 }
+            FRG = { transfer_state = 785 }
+            FRG = { transfer_state = 18 }
+            FRG = { transfer_state = 17 }
+            FRG = { transfer_state = 27 }
+            FRG = { transfer_state = 20 }
+            FRG = { transfer_state = 32 }
+            FRG = { 
+				add_state_core = 16
+                add_state_core = 24
+    	        add_state_core = 980
+                add_state_core = 785
+                add_state_core = 18
+                add_state_core = 17
+                add_state_core = 27
+                add_state_core = 20
+                add_state_core = 32
+			}
+			FRA = {
+           		transfer_units_fraction= {
+	    			target = FRG
+	    			size = 0.4
+	    			stockpile_ratio = 0.7
+	    			army_ratio = 0.5
+	    			air_ratio = 0.2
+        	    }
+			}
+			FRG = {
+				add_ideas = FRG_Robert_Brasillach_hog_npo
+				add_ideas = FRG_POI_Leon_Degrelle_npo
+				add_ideas = FRG_POI_Maurice_Papon_npo
+				add_ideas = FRG_POI_Francis_Delaisi_npo
+				add_ideas = PB_FRA_Crumbling_Coalition
+				add_ideas = PB_FRA_Bitter_Revanchism
+				country_event = { id = fne.27 } 
+			}
+         	dismantle_faction = yes
+        }
+        declare_war_on = {
+            target = FRG
+            type = annex_everything
+        }
+    }  
+}
+
+country_event = {
+	id = fne.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event comfrance.972"}
+	title = fne.19.t
+	desc = fne.19.d
+	picture = GFX_FRG_rob_brasillach_2_Event
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {	
+        name = fne.19.a
+		clr_country_flag = fra_bulaxilihe
+        add_stability = -0.025
+		set_politics = {
+			ruling_party = radical_socialist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "雅克·杜克洛"
+			#desc = "Dukeluo_DESC"
+			picture = "gfx/leaders/FRA/Portrait_France_Jacques_Duclos.png"
+			expire = "1.1.1"
+			traits = { COF_leader_1 }
+			ideology = radsoc_red_junta_subtype
+		}
+        hidden_effect = {
+	 		FRA = { 
+				country_event = { 
+					id = fne.20 days = 10 
+				}
+			} 
+       	}
+    } 
+}
+
+country_event = {
+	id = fne.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event comfrance.972"}
+	title = fne.20.t
+	desc = fne.20.d
+	picture = GFX_FRG_rob_brasillach_2_Event
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {	
+        name = fne.20.a
+        add_stability = -0.025
+    	hidden_effect = {
+	    	FRA = { 
+				country_event = { 
+					id = fne.21 days = 10 
+				} 
+			}
+        }
+    } 
+}
+
+country_event = { 
+	id = fne.23
+	immediate = { log = "[GetDateText]: [Root.GetName]: event swiss.202" }
+	title = fne.23.t
+	desc = fne.23.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = fne.23.a
+		ai_chance = {
+			factor = 15
+		}
+		FRG = { transfer_state = 760
+                        transfer_state = 943 
+                        add_state_core = 760
+                        add_state_core = 943 }
+                hidden_effect = { FRG = { country_event = { id = fne.3 days = 50 } } }
+	}
+
+	option = {
+		name = fne.23.b
+		ai_chance = {
+			factor = 85
+                            }
+                        FRG = { declare_war_on = {
+				target = SWI
+				type = annex_everything
+				}
+                            }
+		}
+	}
+
+
+country_event = { 
+	id = fne.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event nfa.999"}
+	title = fne.24.t
+	desc = fne.24.d
+	picture = GFX_report_event_NFA_event_NFA_Early1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = fne.24.a 
+        ai_chance = {
+			factor = 75
+		}
+		FRG = {
+			annex_country = {
+                         target = NFA
+                         transfer_troops = yes
+                   }
+                country_event = { id = fne.5 }
+		}
+	}
+        option = {
+		name = fne.24.b #Political Situation
+        ai_chance = {
+			factor = 25
+		}
+		add_stability = 0.05
+                add_political_power = -10
+                FRG = { create_wargoal = {
+                 type = puppet_wargoal_focus
+                   target = NFA
+                }
+            }
+	}
+}
+
+country_event = {
+	id = fne.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.25"}
+	title = fne.25.t
+	desc = fne.25.d
+    trigger = {
+		tag = FRA
+		date > 1936.1.5
+	}
+	fire_only_once = yes
+
+	option = {
+		name = fne.25.a
+		ai_chance = { 
+			factor = 80
+		}
+		custom_effect_tooltip = fne.25_dont
+    }
+	
+	option = {
+	    name = fne.25.b
+        ai_chance = { 
+			factor = 20
+		}
+		
+        hidden_effect = {
+	       	FRA = { country_event = { id = fne.22 days = 7 } }
+        }
+    }
+}
+
+country_event = {
+	id = fne.26
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_country_flag = FRA_civil_war
+		NOT = {
+			country_exists = FRG
+		}
+	}
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event fne.26"
+		create_faction = "第三国际"
+		if = {
+			limit = {
+				ENG = {
+					has_socialist_government = yes
+				}
+			}
+			FRA = { add_to_faction = ENG }
+		}
+		if = {
+			limit = {
+				SRI = {
+					has_socialist_government = yes
+				}
+			}
+			FRA = { add_to_faction = SRI }
+		}
+		hidden_effect = {
+			FRA = { country_event = { id = fne.29 } }
+        }
+	}
+}
+
+country_event = {
+	id = fne.27
+	hidden = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event fne.27"
+		FRG = {
+			every_unit_leader = {
+				set_nationality = FRA
+			}
+		}
+		hidden_effect = {
+			FRG = { country_event = { id = fne.28 } }
+        }
+	}
+}
+
+country_event = {
+	id = fne.28
+	hidden = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event fne.28"
+		FRA = {
+			random_unit_leader = {
+				limit = {
+					has_id = 5770
+				}
+				set_nationality = FRG
+			}
+			random_unit_leader = {
+				limit = {
+					has_id = 5771
+				}
+				set_nationality = FRG
+			}
+			random_unit_leader = {
+				limit = {
+					has_id = 5773
+				}
+				set_nationality = FRG
+			}
+		}
+	}
+}
+
+country_event = {
+	id = fne.29
+	title = fne.29.t
+	desc = fne.29.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event fne.29"
+	}
+	option = {
+		name = fne.29.a
+		ai_chance = { 
+			factor = 100
+		}
+		FRG = {
+			random_unit_leader = {
+				limit = {
+					has_id = 5770
+				}
+				set_nationality = FRA
+			}
+			random_unit_leader = {
+				limit = {
+					has_id = 5771
+				}
+				set_nationality = FRA
+			}
+			random_unit_leader = {
+				limit = {
+					has_id = 5773
+				}
+				set_nationality = FRA
+			}
+		}
+    }
+	option = {
+		name = fne.29.b
+		ai_chance = { 
+			factor = 0
+		}
+    }
+}
+
+country_event = {
+	id = fne.30
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.25"}
+	title = fne.30.t
+	desc = fne.30.d
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = fne.30.a
+		add_stability = -0.025
+		ai_chance = { 
+			factor = 100
+		}
+		hidden_effect = {
+	       	FRA = { country_event = { id = fne.31 days = 7 } }
+        }
+    }
+}
+
+country_event = {
+	id = fne.31
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.25"}
+	title = fne.31.t
+	desc = fne.31.d
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = fne.31.a
+		add_stability = -0.025
+		ai_chance = { 
+			factor = 100
+		}
+		hidden_effect = {
+	       	FRA = { country_event = { id = fne.32 days = 7 } }
+        }
+    }
+}
+
+country_event = {
+	id = fne.32
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.25"}
+	title = fne.32.t
+	desc = fne.32.d
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = fne.32.a
+		add_stability = -0.025
+		ai_chance = { 
+			factor = 100
+		}
+    }
+}
+
+country_event = {
+	id = fne.33
+	immediate = {log = "[GetDateText]: [Root.GetName]: event fne.25"}
+	title = fne.33.t
+	desc = fne.33.d
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = fne.33.a
+		add_stability = -0.05
+		ai_chance = { 
+			factor = 100
+		}
+		hidden_effect = {
+			create_country_leader = {
+				name = "伊涅萨·阿尔芒"
+				picture = "gfx/leaders/FRG/Portrait_PB_FRA_Inessa_Armand.png"
+				desc = "PB_Inessa_Armand_DESC"
+				expire = "1965.1.1"
+				ideology = natsynd_subtype
+			}
+			FRG = {
+				random_unit_leader = {
+					limit = {
+						has_id = 5770
+					}
+					set_nationality = NSW
+				}
+			}
+		}
+		set_party_name = {
+			ideology = totalist
+			long_name = "法国人民-左翼联合阵线"			
+			name = "法国人民阵线"	
+		}
+    }
+}

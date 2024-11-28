@@ -1,0 +1,264 @@
+spriteTypes = {	
+
+	SpriteType = {
+	name = "JONS_all_eyes_on_you"
+	texturefile = "gfx/interface/focus/JONS_all_eyes_on_you.png"			
+	}
+	SpriteType = {
+	name = "JONS_eventful_period"
+	texturefile = "gfx/interface/focus/JONS_eventful_period.png"			
+	}
+	SpriteType = {
+	name = "JONS_a_terrible_price"
+	texturefile = "gfx/interface/focus/JONS_a_terrible_price.png"			
+	}
+	SpriteType = {
+	name = "JONS_conquista_el_pais"
+	texturefile = "gfx/interface/focus/JONS_conquista_el_pais.png"			
+	}
+	SpriteType = {
+	name = "JONS_choke_tightly"
+	texturefile = "gfx/interface/focus/JONS_choke_tightly.png"			
+	}
+	SpriteType = {
+	name = "JONS_no_step_back"
+	texturefile = "gfx/interface/focus/JONS_no_step_back.png"			
+	}
+	SpriteType = {
+	name = "JONS_ruins"
+	texturefile = "gfx/interface/focus/JONS_ruins.png"			
+	}
+	SpriteType = {
+	name = "JONS_Labor_workers"
+	texturefile = "gfx/interface/focus/JONS_Labor_workers.png"			
+	}
+	SpriteType = {
+	name = "JONS_Regularize_the_militia"
+	texturefile = "gfx/interface/focus/JONS_Regularize_the_militia.png"			
+	}
+	SpriteType = {
+	name = "JONS_Spain_nationalism"
+	texturefile = "gfx/interface/focus/JONS_Spain_nationalism.png"			
+	}
+	SpriteType = {
+	name = "JONS_The_National_Syndicalist_Revolution"
+	texturefile = "gfx/interface/focus/JONS_The_National_Syndicalist_Revolution.png"			
+	}
+	SpriteType = {
+	name = "JONS_without_mercy"
+	texturefile = "gfx/interface/focus/JONS_without_mercy.png"			
+	}
+	SpriteType = {
+	name = "JONS_regeneracionismo"
+	texturefile = "gfx/interface/focus/JONS_regeneracionismo.png"			
+	}
+	SpriteType = {
+	name = "JONS_The_rebirth_of_the_nation"
+	texturefile = "gfx/interface/focus/JONS_The_rebirth_of_the_nation.png"			
+	}
+	SpriteType = {
+	name = "JONS_Popular_art"
+	texturefile = "gfx/interface/focus/JONS_Popular_art.png"			
+	}
+	SpriteType = {
+	name = "JONS_Against_feudalism"
+	texturefile = "gfx/interface/focus/JONS_Against_feudalism.png"			
+	}
+	SpriteType = {
+	name = "JONS_Anti_totalist"
+	texturefile = "gfx/interface/focus/JONS_Anti_totalist.png"			
+	}
+	SpriteType = {
+	name = "JONS_Protecting_artists"
+	texturefile = "gfx/interface/focus/JONS_Protecting_artists.png"			
+	}
+	SpriteType = {
+	name = "JONS_Reinventing_the_Revolution"
+	texturefile = "gfx/interface/focus/JONS_Reinventing_the_Revolution.png"			
+	}
+	SpriteType = {
+	name = "JONS_Faculty_of_Arts"
+	texturefile = "gfx/interface/focus/JONS_Faculty_of_Arts.png"			
+	}
+	SpriteType = {
+	name = "JONS_Pierced_to_the_heart"
+	texturefile = "gfx/interface/focus/JONS_Pierced_to_the_heart.png"			
+	}
+	SpriteType = {
+	name = "JONS_Cult_of_reason"
+	texturefile = "gfx/interface/focus/JONS_Cult_of_reason.png"			
+	}
+	SpriteType = {
+	name = "JONS_Free_your_mind"
+	texturefile = "gfx/interface/focus/JONS_Free_your_mind.png"			
+	}
+	SpriteType = {
+	name = "JONS_manifesto"
+	texturefile = "gfx/interface/focus/JONS_manifesto.png"			
+	}
+	SpriteType = {
+	name = "JONS_Beyond_the_future"
+	texturefile = "gfx/interface/focus/JONS_Beyond_the_future.png"			
+	}
+	SpriteType = {
+	name = "JONS_Simplify_government"
+	texturefile = "gfx/interface/focus/JONS_Simplify_government.png"			
+	}
+	SpriteType = {
+	name = "JONS_Strive_to_be_a_pioneer"
+	texturefile = "gfx/interface/focus/JONS_Strive_to_be_a_pioneer.png"			
+	}
+	SpriteType = {
+	name = "JONS_Reason_and_Art"
+	texturefile = "gfx/interface/focus/JONS_Reason_and_Art.png"			
+	}
+	SpriteType = {
+	name = "NCNT_friend_of_Anarchism"
+	texturefile = "gfx/interface/focus/NCNT_friend_of_Anarchism.png"			
+	}
+	SpriteType = {
+	name = "NCNT_friend_of_JONS"
+	texturefile = "gfx/interface/focus/NCNT_friend_of_JONS.png"			
+	}
+	SpriteType = {
+	name = "FE_Cover_the_sky_with_one_hand"
+	texturefile = "gfx/interface/focus/FE_Cover_the_sky_with_one_hand.png"			
+	}
+	SpriteType = {
+	name = "FE_Deployment_of_the_Falangist_militia"
+	texturefile = "gfx/interface/focus/FE_Deployment_of_the_Falangist_militia.png"			
+	}
+	SpriteType = {
+	name = "FE_Ransom_for_the_military_industrial_complex"
+	texturefile = "gfx/interface/focus/FE_Ransom_for_the_military_industrial_complex.png"			
+	}
+	SpriteType = {
+	name = "FE_Defend_the_front_line"
+	texturefile = "gfx/interface/focus/FE_Defend_the_front_line.png"			
+	}
+	SpriteType = {
+	name = "FE_Meeting_with_the_King"
+	texturefile = "gfx/interface/focus/FE_Meeting_with_the_King.png"			
+	}
+	SpriteType = {
+	name = "FE_Victory_of_the_Falangists"
+	texturefile = "gfx/interface/focus/FE_Victory_of_the_Falangists.png"			
+	}
+	SpriteType = {
+	name = "FE_Steady_Franco"
+	texturefile = "gfx/interface/focus/FE_Steady_Franco.png"			
+	}
+	SpriteType = {
+	name = "FE_Eternal_Spain"
+	texturefile = "gfx/interface/focus/FE_Eternal_Spain.png"			
+	}
+	SpriteType = {
+	name = "FE_A_new_path_for_the_Falangists"
+	texturefile = "gfx/interface/focus/FE_A_new_path_for_the_Falangists.png"			
+	}
+	SpriteType = {
+	name = "FE_Anarchic_brothers"
+	texturefile = "gfx/interface/focus/FE_Anarchic_brothers.png"			
+	}
+	SpriteType = {
+	name = "FE_Long_live_the_leader"
+	texturefile = "gfx/interface/focus/FE_Long_live_the_leader.png"			
+	}
+	SpriteType = {
+	name = "FE_Military_government"
+	texturefile = "gfx/interface/focus/FE_Military_government.png"			
+	}
+	SpriteType = {
+	name = "FE_Operation_Spain"
+	texturefile = "gfx/interface/focus/FE_Operation_Spain.png"			
+	}
+	SpriteType = {
+	name = "FE_The_Falangists_remained_in_power"
+	texturefile = "gfx/interface/focus/FE_The_Falangists_remained_in_power.png"			
+	}
+	SpriteType = {
+	name = "FE_The_Godfather_of_Anarchy"
+	texturefile = "gfx/interface/focus/FE_The_Godfather_of_Anarchy.png"			
+	}
+	SpriteType = {
+	name = "FE_Indulge_Spain"
+	texturefile = "gfx/interface/focus/FE_Indulge_Spain.png"			
+	}
+	SpriteType = {
+	name = "FE_Military_hierarchy"
+	texturefile = "gfx/interface/focus/FE_Military_hierarchy.png"			
+	}
+	SpriteType = {
+	name = "FE_Spain_Legion"
+	texturefile = "gfx/interface/focus/FE_Spain_Legion.png"			
+	}
+	SpriteType = {
+	name = "FE_Suppression_of_Catalonia"
+	texturefile = "gfx/interface/focus/FE_Suppression_of_Catalonia.png"			
+	}
+	SpriteType = {
+	name = "FE_Abolition_of_the_Iberian_concept"
+	texturefile = "gfx/interface/focus/FE_Abolition_of_the_Iberian_concept.png"			
+	}
+	SpriteType = {
+	name = "FE_Ahnenerbe"
+	texturefile = "gfx/interface/focus/FE_Ahnenerbe.png"			
+	}
+	SpriteType = {
+	name = "FE_Celticization"
+	texturefile = "gfx/interface/focus/FE_Celticization.png"			
+	}
+	SpriteType = {
+	name = "FE_Celts"
+	texturefile = "gfx/interface/focus/FE_Celts.png"			
+	}
+	SpriteType = {
+	name = "FE_Destroy_Britain"
+	texturefile = "gfx/interface/focus/FE_Destroy_Britain.png"			
+	}
+	SpriteType = {
+	name = "FE_Heart_of_the_Empire"
+	texturefile = "gfx/interface/focus/FE_Heart_of_the_Empire.png"			
+	}
+	SpriteType = {
+	name = "FE_hierarchy"
+	texturefile = "gfx/interface/focus/FE_hierarchy.png"			
+	}
+	SpriteType = {
+	name = "FE_Legacy_of_Galicia"
+	texturefile = "gfx/interface/focus/FE_Legacy_of_Galicia.png"			
+	}
+	SpriteType = {
+	name = "FE_The_Blessing_of_Cu_Chulainn"
+	texturefile = "gfx/interface/focus/FE_The_Blessing_of_Cu_Chulainn.png"			
+	}
+	SpriteType = {
+	name = "FE_Generalissimo_of_Spain"
+	texturefile = "gfx/interface/focus/FE_Generalissimo_of_Spain.png"			
+	}
+	SpriteType = {
+	name = "FE_Uilleam_Uallas"
+	texturefile = "gfx/interface/focus/FE_Uilleam_Uallas.png"			
+	}
+	SpriteType = {
+	name = "FE_Visigothic_rebirth"
+	texturefile = "gfx/interface/focus/FE_Visigothic_rebirth.png"			
+	}
+	SpriteType = {
+	name = "FE_Abolition_of_Latin"
+	texturefile = "gfx/interface/focus/FE_Abolition_of_Latin.png"			
+	}
+	SpriteType = {
+	name = "FE_A_new_home_in_Spain"
+	texturefile = "gfx/interface/focus/FE_A_new_home_in_Spain.png"			
+	}
+	SpriteType = {
+	name = "FE_sindicatos_libres"
+	texturefile = "gfx/interface/focus/FE_sindicatos_libres.png"			
+	}
+	SpriteType = {
+	name = "FE_Yellow_roses"
+	texturefile = "gfx/interface/focus/FE_Yellow_roses.png"			
+	}
+
+}

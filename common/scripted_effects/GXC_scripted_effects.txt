@@ -1,0 +1,90 @@
+GXC_banlance = {#军党冲突
+	set_power_balance = {
+		id = GXC_power_balance
+		left_side = GXC_wen_winning_side
+		right_side = GXC_wu_winning_side
+		set_value = 0.20
+	}
+}
+
+#李宗仁在行动
+GXC_bop_low_increase_effect_10 = {
+	add_power_balance_value = {
+		id = GXC_power_balance
+		value = 0.10
+	}
+}
+GXC_bop_low_increase_effect_12 = {
+	add_power_balance_value = {
+		id = GXC_power_balance
+		value = 0.12
+	}
+}
+GXC_bop_low_increase_effect_13 = {
+	add_power_balance_value = {
+		id = GXC_power_balance
+		value = 0.13
+	}
+}
+GXC_bop_medium_increase_effect = {
+	add_power_balance_value = {
+		id = GXC_power_balance
+		value = 0.15
+	}
+}
+GXC_bop_large_increase_effect = {	
+	add_power_balance_value = {
+		id = GXC_power_balance
+		value = 0.20
+	}
+}
+GXC_bop_very_large_increase_effect = {
+	add_power_balance_value = {
+		id = GXC_power_balance
+		value = 0.25
+	}
+}
+
+#行政院在行动
+GXC_bop_low_decrease_effect_10 = {
+	add_power_balance_value = {
+		id = GXC_power_balance
+		value = -0.10
+	}
+}
+GXC_bop_low_decrease_effect_12 = {
+	add_power_balance_value = {
+		id = GXC_power_balance
+		value = -0.12
+	}
+}
+GXC_bop_low_decrease_effect_13 = {
+	add_power_balance_value = {
+		id = GXC_power_balance
+		value = -0.13
+	}
+}
+GXC_bop_medium_decrease_effect = {
+	add_power_balance_value = {
+		id = GXC_power_balance
+		value = -0.15
+	}
+}
+GXC_bop_large_decrease_effect = {	
+	add_power_balance_value = {
+		id = GXC_power_balance
+		value = -0.20
+	}
+}
+GXC_bop_very_large_decrease_effect = {
+	add_power_balance_value = {
+		id = GXC_power_balance
+		value = -0.25
+	}
+}
+GXC_bop_enormous_decrease_effect = {
+	add_power_balance_value = {
+		id = GXC_power_balance
+		value = -0.75
+	}
+}

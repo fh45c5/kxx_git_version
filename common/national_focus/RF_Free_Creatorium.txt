@@ -1,0 +1,804 @@
+focus_tree = {
+	id = FCR
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = FCR
+		}
+	}
+	
+	continuous_focus_position = { x = 2000 y = 0 }
+	
+	focus = {
+		id = FCR_message_for_mankind
+		icon = GFX_FCR_message_for_mankind
+		cost = 5
+		
+		x = 10
+		y = 0
+		
+		completion_reward = { 
+			add_political_power = 50
+			set_country_flag = organize_mongolia
+		}
+	}
+	focus = {
+		id = FCR_against_the_capital
+		icon = GFX_FCR_against_the_capital
+		cost = 5
+		relative_position_id = FCR_message_for_mankind
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = FCR_message_for_mankind
+		}
+		completion_reward = { 
+			add_political_power = -40
+		}
+	}
+	focus = {
+		id = FCR_against_grave_worship
+		icon = GFX_FCR_against_grave_worship
+		cost = 5
+		relative_position_id = FCR_message_for_mankind
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = FCR_message_for_mankind
+		}
+		completion_reward = { 
+			add_stability = -0.05
+		}
+	}
+	focus = {
+		id = FCR_for_the_stars
+		icon = GFX_FCR_for_the_stars
+		cost = 5
+		relative_position_id = FCR_message_for_mankind
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = FCR_against_grave_worship
+		}
+		prerequisite = {
+			focus = FCR_against_the_capital
+		}
+		completion_reward = { 
+			country_event = FCR.1
+		}
+	}
+	focus = {
+		id = FCR_for_freedom
+		icon = GFX_FCR_for_freedom
+		cost = 5
+		relative_position_id = FCR_message_for_mankind
+		x = -5
+		y = 3
+		mutually_exclusive = { focus = FCR_for_order }
+		available = {
+			has_country_flag = FCR_yaroslav_prevails
+		}
+		prerequisite = {
+			focus = FCR_for_the_stars
+		}
+		completion_reward = { 
+			add_stability = 0.025
+			add_political_power = 75
+		}
+	}
+	focus = {
+		id = FCR_faith_progress
+		icon = GFX_FCR_faith_progress
+		cost = 5
+		relative_position_id = FCR_for_freedom
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = FCR_for_freedom
+		}
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 0.35
+				uses = 3
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = FCR_faith_creativity
+		icon = GFX_FCR_faith_creativity
+		cost = 5
+		relative_position_id = FCR_for_freedom
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = FCR_for_freedom
+		}
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 2
+				category = electronics
+			}
+			add_stability = 0.03
+		}
+	}
+	focus = {
+		id = FCR_perfect_living_individual
+		icon = GFX_FCR_perfect_living_individual
+		cost = 5
+		relative_position_id = FCR_for_freedom
+		x = -1
+		y = 2
+		prerequisite = {
+			focus = FCR_faith_creativity
+		}
+		prerequisite = {
+			focus = FCR_faith_progress
+		}
+		completion_reward = { 
+			add_ideas = FCR_perfecting_humanity
+		}
+	}
+	focus = {
+		id = FCR_techno_anarchism
+		icon = GFX_FCR_techno_anarchism
+		cost = 5
+		relative_position_id = FCR_perfect_living_individual
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = FCR_perfect_living_individual
+		}
+		completion_reward = { 
+			add_ideas = FCR_decentralized_poles
+		}
+	}
+	focus = {
+		id = FCR_immortality_beyond_space
+		icon = GFX_FCR_immortality_beyond_space
+		cost = 5
+		relative_position_id = FCR_perfect_living_individual
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = FCR_perfect_living_individual
+		}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = FCR_perfecting_humanity
+				add_idea = FCR_perfecting_humanity1
+			}
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = FCR_future_perfection
+		icon = GFX_FCR_future_perfection
+		cost = 5
+		relative_position_id = FCR_perfect_living_individual
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = FCR_immortality_beyond_space
+		}
+		prerequisite = {
+			focus = FCR_techno_anarchism
+		}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = FCR_perfecting_humanity1
+				add_idea = FCR_perfecting_humanity2
+			}
+		}
+	}
+	focus = {
+		id = FCR_war_against_nature
+		icon = GFX_FCR_war_against_nature
+		cost = 5
+		relative_position_id = FCR_for_the_stars
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = FCR_for_order
+			focus = FCR_for_freedom
+		}
+		completion_reward = { 
+			add_war_support = 0.10
+		}
+	}
+	focus = {
+		id = FCR_bogdanov_legacy
+		icon = GFX_FCR_bogdanov_legacy
+		cost = 5
+		relative_position_id = FCR_war_against_nature
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = FCR_war_against_nature
+		}
+		completion_reward = { 
+			add_ideas = FCR_planned_economy
+		}
+	}
+	focus = {
+		id = FCR_total_production_control
+		icon = GFX_FCR_total_production_control
+		cost = 5
+		relative_position_id = FCR_war_against_nature
+		x = -2
+		y = 2
+		prerequisite = {
+			focus = FCR_bogdanov_legacy
+		}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = FCR_planned_economy
+				add_idea = FCR_planned_economy1
+			}
+		}
+	}
+	focus = {
+		id = FCR_custodianship_of_the_earth
+		icon = GFX_FCR_custodianship_of_the_earth
+		cost = 5
+		relative_position_id = FCR_war_against_nature
+		x = -2
+		y = 3
+		prerequisite = {
+			focus = FCR_total_production_control
+		}
+		completion_reward = { 
+			add_ideas = FCR_nature_treasures
+		}
+	}
+	focus = {
+		id = FCR_enlighten_bandits
+		icon = GFX_FCR_enlighten_bandits
+		cost = 5
+		relative_position_id = FCR_war_against_nature
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = FCR_war_against_nature
+		}
+		completion_reward = { 
+			create_wargoal = {
+				type = annex_everything
+				target = MNS
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = PSL
+			}
+			every_state = {
+				limit = {
+					is_core_of = ZHR
+				}
+				add_core_of = FCR
+			}
+		}
+	}
+	focus = {
+		id = FCR_friends_or_enemy
+		icon = GFX_FCR_friends_or_enemy
+		cost = 5
+		relative_position_id = FCR_war_against_nature
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = FCR_enlighten_bandits
+		}
+		will_lead_to_war_with = HAR
+		completion_reward = { 
+			HAR = {
+				country_event = {
+					id = FCR.2
+					days = 2
+				}
+			}
+		}
+	}
+	focus = {
+		id = FCR_immortality_to_far_east
+		icon = GFX_FCR_immortality_to_far_east
+		cost = 5
+		relative_position_id = FCR_war_against_nature
+		x = 0
+		y = 3
+		prerequisite = {
+			focus = FCR_friends_or_enemy
+		}
+		completion_reward = { 
+			create_wargoal = {
+				type = annex_everything
+				target = ARC
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = GUK
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = PRI
+			}
+		}
+	}
+	focus = {
+		id = FCR_crematorium_tradition
+		icon = GFX_FCR_crematorium_tradition
+		cost = 5
+		relative_position_id = FCR_war_against_nature
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = FCR_war_against_nature
+		}
+		completion_reward = { 
+			add_stability = -0.04
+			add_political_power = 40
+		}
+	}
+	focus = {
+		id = FCR_united_labour_church
+		icon = GFX_FCR_united_labour_church
+		cost = 5
+		relative_position_id = FCR_war_against_nature
+		x = 2
+		y = 2
+		prerequisite = {
+			focus = FCR_crematorium_tradition
+		}
+		completion_reward = { 
+			add_ideas = FCR_labour_church
+		}
+	}
+	focus = {
+		id = FCR_new_alchemists
+		icon = GFX_FCR_new_alchemists
+		cost = 5
+		relative_position_id = FCR_war_against_nature
+		x = 2
+		y = 3
+		prerequisite = {
+			focus = FCR_united_labour_church
+		}
+		completion_reward = { 
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = FCR_for_order
+		icon = GFX_FCR_for_order
+		cost = 5
+		relative_position_id = FCR_for_the_stars
+		x = 5
+		y = 1
+		mutually_exclusive = { focus = FCR_for_freedom }
+		available = {
+			has_country_flag = FCR_murayev_take_office
+		}
+		prerequisite = {
+			focus = FCR_for_the_stars
+		}
+		completion_reward = { 
+			add_stability = 0.075
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = FCR_time_mastery
+		icon = GFX_FCR_time_mastery
+		cost = 5
+		relative_position_id = FCR_for_order
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = FCR_for_order
+		}
+		completion_reward = { 
+			add_ideas = FCR_control_time
+		}
+	}
+	focus = {
+		id = FCR_space_mastery
+		icon = GFX_FCR_space_mastery
+		cost = 5
+		relative_position_id = FCR_for_order
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = FCR_for_order
+		}
+		completion_reward = { 
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = FCR_improvement_humanity_institute
+		icon = GFX_FCR_improvement_humanity_institute
+		cost = 5
+		relative_position_id = FCR_for_order
+		x = 1
+		y = 2
+		prerequisite = {
+			focus = FCR_time_mastery
+		}
+		prerequisite = {
+			focus = FCR_space_mastery
+		}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = FCR_control_time
+				add_idea = FCR_control_time1
+			}
+		}
+	}
+	focus = {
+		id = FCR_state_beyond_nature
+		icon = GFX_FCR_state_beyond_nature
+		cost = 5
+		relative_position_id = FCR_improvement_humanity_institute
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = FCR_improvement_humanity_institute
+		}
+		completion_reward = { 
+			swap_ideas	= {
+				remove_idea = FCR_control_time1
+				add_idea = FCR_control_time2
+			}
+		}
+	}
+	focus = {
+		id = FCR_scientific_totalitarism
+		icon = GFX_FCR_scientific_totalitarism
+		cost = 5
+		relative_position_id = FCR_improvement_humanity_institute
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = FCR_improvement_humanity_institute
+		}
+		completion_reward = { 
+			add_ideas = FCR_totalitarism
+		}
+	}
+	focus = {
+		id = FCR_modern_methamorphosis
+		icon = GFX_FCR_modern_methamorphosis
+		cost = 5
+		relative_position_id = FCR_improvement_humanity_institute
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = FCR_scientific_totalitarism
+		}
+		prerequisite = {
+			focus = FCR_state_beyond_nature
+		}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = FCR_control_time2
+				add_idea = FCR_control_time3
+			}
+		}
+	}
+	focus = {
+		id = FCR_siberian_revolution
+		icon = GFX_FCR_siberian_revolution
+		cost = 5
+		relative_position_id = FCR_immortality_to_far_east
+		x = 0
+		y = 1
+		available={
+			owns_state = 885
+		}
+		prerequisite = {
+			focus = FCR_immortality_to_far_east
+		}
+		prerequisite = {
+			focus = FCR_future_perfection
+			focus = FCR_modern_methamorphosis
+		}
+		completion_reward = { 
+			set_capital = {
+				state = 885
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = TRM
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = SIB
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = ALO
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = UZB
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = TRK
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = KYR
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = DKB
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = KlY
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = MTR
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = KUB
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = AZE
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = GEO
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = RUS
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = TTR
+			}
+			hidden_effect = {
+				every_state = {		
+					limit = {
+						OR = {
+							is_core_of = RUS
+						}
+					}					
+					add_core_of = FCR
+				}
+				add_state_core = 587
+				add_state_core = 406
+				add_state_core = 1208
+   				add_state_core = 402
+   				add_state_core = 590
+   				add_state_core = 1212
+    			add_state_core = 1203
+    			add_state_core = 589
+    			add_state_core = 810
+    			add_state_core = 404
+    			add_state_core = 654
+    			add_state_core = 811
+    			add_state_core = 329
+    			add_state_core = 555
+    			add_state_core = 537
+    			add_state_core = 884
+    			add_state_core = 714
+    			add_state_core = 885
+    			add_state_core = 717
+    			add_state_core = 883
+    			add_state_core = 1231
+    			add_state_core = 1265
+    			add_state_core = 238
+    			add_state_core = 245
+    			add_state_core = 1264
+    			add_state_core = 1263
+    			add_state_core = 218
+    			add_state_core = 1226
+    			add_state_core = 237
+    			add_state_core = 1266
+    			add_state_core = 234
+    			add_state_core = 1227
+    			add_state_core = 235
+    			add_state_core = 1187
+    			add_state_core = 1189
+    			add_state_core = 1191
+    			add_state_core = 232
+    			add_state_core = 1186
+    			add_state_core = 233
+    			add_state_core = 787
+    			add_state_core = 1190
+    			add_state_core = 1080
+    			add_state_core = 1188
+    			add_state_core = 1329
+    			add_state_core = 231
+    			add_state_core = 1267
+    			add_state_core = 1320
+    			add_state_core = 1082
+    			add_state_core = 1298
+    			add_state_core = 1299
+    			add_state_core = 998
+    			add_state_core = 1302
+    			add_state_core = 1303
+    			add_state_core = 1300
+    			add_state_core = 1301
+    			add_state_core = 1081
+    			add_state_core = 229
+    			add_state_core = 1304
+    			add_state_core = 990
+    			add_state_core = 230
+    			add_state_core = 190
+    			add_state_core = 1091
+    			add_state_core = 12
+    			add_state_core = 191
+    			add_state_core = 13
+    			add_state_core = 146
+    			add_state_core = 1324
+    			add_state_core = 1325
+    			add_state_core = 1326
+    			add_state_core = 147
+    			add_state_core = 420
+   				add_state_core = 418
+    			add_state_core = 804
+   				add_state_core = 584
+    			add_state_core = 1281
+    			add_state_core = 861
+    			add_state_core = 1275
+    			add_state_core = 1276
+    			add_state_core = 405
+    			add_state_core = 1277
+    			add_state_core = 1210
+    			add_state_core = 732
+    			add_state_core = 1278
+    			add_state_core = 585
+    			add_state_core = 1209
+    			add_state_core = 712
+    			add_state_core = 407
+    			add_state_core = 1196
+    			add_state_core = 1279
+    			add_state_core = 1042
+    			add_state_core = 1211
+    			add_state_core = 586
+    			add_state_core = 1294
+    			add_state_core = 1087
+    			add_state_core = 194
+    			add_state_core = 95
+    			add_state_core = 1295
+    			add_state_core = 207
+    			add_state_core = 206
+    			add_state_core = 204
+    			add_state_core = 1213
+    			add_state_core = 1000
+    			add_state_core = 1221
+    			add_state_core = 137
+    			add_state_core = 1220
+    			add_state_core = 189
+    			add_state_core = 11
+    			add_state_core = 655
+    			add_state_core = 94
+    			add_state_core = 96
+    			add_state_core = 97
+    			add_state_core = 1148
+    			add_state_core = 98
+    			add_state_core = 92
+    			add_state_core = 1088
+    			add_state_core = 90
+    			add_state_core = 87
+    			add_state_core = 10
+    			add_state_core = 1222
+    			add_state_core = 78
+    			add_state_core = 564
+    			add_state_core = 565
+    			add_state_core = 563
+    			add_state_core = 657
+    			add_state_core = 574
+    			add_state_core = 562
+    			add_state_core = 637
+    			add_state_core = 561
+   				add_state_core = 560
+    			add_state_core = 409
+    			add_state_core = 1246
+    			add_state_core = 408
+    			add_state_core = 1284
+    			add_state_core = 1282
+    			add_state_core = 228
+    			add_state_core = 227
+    			add_state_core = 1283
+    			add_state_core = 1239
+    			add_state_core = 1285
+    			add_state_core = 1234
+    			add_state_core = 1286
+    			add_state_core = 200
+    			add_state_core = 221
+    			add_state_core = 196
+    			add_state_core = 197
+    			add_state_core = 226
+    			add_state_core = 1238
+    			add_state_core = 259
+    			add_state_core = 1243
+    			add_state_core = 225
+    			add_state_core = 1237
+    			add_state_core = 1242
+    			add_state_core = 193
+    			add_state_core = 1230
+    			add_state_core = 241
+    			add_state_core = 192
+    			add_state_core = 1232
+    			add_state_core = 1233
+    			add_state_core = 791
+    			add_state_core = 1241
+    			add_state_core = 203
+    			add_state_core = 199
+    			add_state_core = 1245
+    			add_state_core = 198
+    			add_state_core = 1240
+    			add_state_core = 202
+    			add_state_core = 1244
+    			add_state_core = 201
+    			add_state_core = 1228
+    			add_state_core = 792
+    			add_state_core = 997
+    			add_state_core = 93
+    			add_state_core = 713
+    			add_state_core = 80
+    			add_state_core = 89
+    			add_state_core = 1140
+    			add_state_core = 91
+    			add_state_core = 1127
+    			add_state_core = 1126
+			}
+		}
+	}
+	focus = {
+		id = FCR_future_to_eurasia
+		icon = GFX_FCR_future_to_eurasia
+		cost = 1
+		relative_position_id = FCR_immortality_to_far_east
+		x = 0
+		y = 2
+		available = {
+			owns_state = 219
+		}
+		prerequisite = {
+			focus = FCR_siberian_revolution
+		}
+		completion_reward = { 
+			add_war_support = 0.3
+			add_stability = 0.3
+			add_research_slot = 1
+			set_capital = {
+				state = 219
+			}
+			clr_country_flag = is_russian_warlord
+			set_global_flag = united_russia
+			save_global_event_target_as = russian_unification
+			if = {
+				limit = {
+					has_completed_focus = FCR_for_order
+				}
+				set_cosmetic_tag = FCR_unification_muravyov
+				news_event = {
+				id = news.354
+				}
+				set_party_name = {
+                   ideology = accelerationism
+                   long_name = FCR_leagueoftime_long
+                   name = FCR_leagueoftime
+                  }
+			}
+			else= {
+				set_cosmetic_tag = FCR_unification_yarolsavski
+				news_event = {
+				id = news.355
+				}
+			}
+		}
+	}
+	
+}
+#End of foci

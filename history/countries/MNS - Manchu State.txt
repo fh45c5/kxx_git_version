@@ -1,0 +1,81 @@
+﻿capital = 761
+
+oob = "MNS"
+set_cosmetic_tag = MNS
+
+set_research_slots = 3 
+
+set_convoys = 0
+
+set_country_flag = is_russian_warlord
+
+add_ideas={
+	
+}
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_recon = 1
+	tech_engineers = 1
+	tech_trucks =1
+	motorised_infantry = 1
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+	set_technology = {
+		iw_small_airframe = 1
+		aa_lmg = 1
+		aa_cannon_1 = 1
+		early_bombs = 1
+		engines_1 = 1
+	}
+}
+if = {
+	limit = { NOT = { has_dlc = "By Blood Alone" } }
+	set_technology = {
+		early_fighter = 1
+		CAS1 = 1
+	}
+}
+
+set_politics = {
+	ruling_party = paternal_autocrat
+	last_election = "1933.10.25"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	totalist = 0
+	syndicalist = 0
+	radical_socialist = 0
+	social_liberal = 0
+	market_liberal = 0
+	social_democrat = 0
+	social_conservative = 0
+	authoritarian_democrat = 0
+	paternal_autocrat = 100
+	national_populist = 0
+}
+create_country_leader = {
+	name = "张宗援"
+	desc = "MNS_zhang_zongyuan_desc"
+	picture = "gfx/leaders/MNS/Portrait_Date_Junnusuke.png"
+	expire = "1965.1.1"
+	ideology = pataut_warlordism_subtype
+	traits = { hog_local_tyrant }
+}
+
+set_stability = 0.4
+
+recruit_character = MNS_yoshiko
+recruit_character = MNS_hakuro 
+recruit_character = MNS_jeongjuljab 
+recruit_character = MNS_setsu 
+recruit_character = MNS_masahiko 
+recruit_character = MNS_ryohei
+recruit_character = MNS_onisaburo_deguchi
+recruit_character = MNS_yang_qingchen
+

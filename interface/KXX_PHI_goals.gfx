@@ -1,0 +1,273 @@
+spriteTypes = {
+	SpriteType = {
+		name = "GFX_goal_PHI_proud_khaki"
+		texturefile = "gfx/interface/goals/KXX_PHI/PHI_proud_khaki.png"
+	}	
+	SpriteType = {
+		name = "GFX_goal_PHI_Cimmerii_and_Their_Future"
+		texturefile = "gfx/interface/goals/KXX_PHI/PHI_Cimmerii_and_Their_Future.png"
+	} 
+	SpriteType = { 
+		name = "GFX_goal_PHI_expand_eurasian_collective" 
+		texturefile = "gfx/interface/goals/KXX_PHI/PHI_expand_eurasian_collective.png" 
+	}  
+	SpriteType = {   
+		name = "GFX_goal_PHI_eurasianism_in_philippines"  
+		texturefile = "gfx/interface/goals/KXX_PHI/PHI_eurasianism_in_philippines.png"
+	} 
+	SpriteType = {    
+		name = "GFX_goal_PHI_half_caste" 
+		texturefile = "gfx/interface/goals/KXX_PHI/PHI_half_caste.png"
+	} 
+	SpriteType = {  
+		name = "GFX_goal_PHI_encourage_intermarry"
+		texturefile = "gfx/interface/goals/KXX_PHI/PHI_encourage_intermarry.png"
+	} 
+
+	spriteType = {
+        name = "GFX_idea_PHI_aeda_construction_subsidies"
+        texturefile = "gfx/interface/ideas/KXX_FX_ideas/PHI/PHI_aeda_construction_subsidies.png"
+    }
+	spriteType = {
+        name = "GFX_idea_PHI_aeda_economic_aid"
+        texturefile = "gfx/interface/ideas/KXX_FX_ideas/PHI/PHI_aeda_economic_aid.png"
+    }
+	spriteType = {
+        name = "GFX_idea_PHI_aeda_resource_exploration"
+        texturefile = "gfx/interface/ideas/KXX_FX_ideas/PHI/PHI_aeda_resource_exploration.png"
+    }
+	spriteType = {
+        name = "GFX_idea_PHI_general_staff"
+        texturefile = "gfx/interface/ideas/KXX_FX_ideas/PHI/PHI_general_staff.png"
+    }
+	spriteType = {
+        name = "GFX_idea_PHI_german_refugees"
+        texturefile = "gfx/interface/ideas/KXX_FX_ideas/PHI/PHI_german_refugees.png"
+    }
+	spriteType = {
+        name = "GFX_idea_PHI_guided_by_the_philippines"
+        texturefile = "gfx/interface/ideas/KXX_FX_ideas/PHI/PHI_guided_by_philippines.png"
+    }
+	spriteType = {
+        name = "GFX_idea_PHI_hacienda_questions"
+        texturefile = "gfx/interface/ideas/KXX_FX_ideas/PHI/PHI_hacienda_questions.png"
+    }
+	spriteType = {
+        name = "GFX_idea_PHI_lunas_legacy"
+        texturefile = "gfx/interface/ideas/KXX_FX_ideas/PHI/PHI_lunas_legacy.png"
+    }
+	spriteType = {
+        name = "GFX_idea_PHI_morale"
+        texturefile = "gfx/interface/ideas/KXX_FX_ideas/PHI/PHI_morale.png"
+    }
+	spriteType = {
+        name = "GFX_idea_PHI_nationalism"
+        texturefile = "gfx/interface/ideas/KXX_FX_ideas/PHI/PHI_nationalism.png"
+    }
+	spriteType = {
+        name = "GFX_idea_PHI_promises_of_elections"
+        texturefile = "gfx/interface/ideas/KXX_FX_ideas/PHI/PHI_promises_of_election.png"
+    }
+	spriteType = {
+        name = "GFX_idea_PHI_public_works"
+        texturefile = "gfx/interface/ideas/KXX_FX_ideas/PHI/PHI_public_works.png"
+    }
+	spriteType = {
+        name = "GFX_idea_PHI_ships"
+        texturefile = "gfx/interface/ideas/KXX_FX_ideas/PHI/PHI_ships.png"
+    }
+
+
+	spriteType = {
+    	name = "GFX_goal_PHI_proud_khaki_shine"
+    	texturefile = "gfx/interface/goals/KXX_PHI/PHI_proud_khaki.png"
+    	effectFile = "gfx/FX/buttonstate.lua"
+    	animation = {
+      		animationmaskfile = "gfx/interface/goals/KXX_PHI/PHI_proud_khaki.png"
+      		animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      		animationrotation = -90.0
+      		animationlooping = no
+      		animationtime = 0.75
+      		animationdelay = 0
+      		animationblendmode = "add"
+      		animationtype = "scrolling"
+      		animationrotationoffset = { x = 0.0 y = 0.0 }
+      		animationtexturescale = { x = 1.0 y = 1.0 }
+    	}
+
+    	animation = {
+      		animationmaskfile = "gfx/interface/goals/KXX_PHI/PHI_proud_khaki.png"
+      		animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      		animationrotation = 90.0
+      		animationlooping = no
+      		animationtime = 0.75
+      		animationdelay = 0
+      		animationblendmode = "add"
+      		animationtype = "scrolling"
+      		animationrotationoffset = { x = 0.0 y = 0.0 }
+      		animationtexturescale = { x = 1.0 y = 1.0 }
+    	}
+    	legacy_lazy_load = no
+ 	}
+
+	spriteType = {
+    	name = "GFX_goal_PHI_Cimmerii_and_Their_Future_shine"
+    	texturefile = "gfx/interface/goals/KXX_PHI/PHI_Cimmerii_and_Their_Future.png"
+    	effectFile = "gfx/FX/buttonstate.lua"
+    	animation = {
+      		animationmaskfile = "gfx/interface/goals/KXX_PHI/PHI_Cimmerii_and_Their_Future.png"
+      		animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      		animationrotation = -90.0
+      		animationlooping = no
+      		animationtime = 0.75
+      		animationdelay = 0
+      		animationblendmode = "add"
+      		animationtype = "scrolling"
+      		animationrotationoffset = { x = 0.0 y = 0.0 }
+      		animationtexturescale = { x = 1.0 y = 1.0 }
+    	}
+
+    	animation = {
+      		animationmaskfile = "gfx/interface/goals/KXX_PHI/PHI_Cimmerii_and_Their_Future.png"
+      		animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      		animationrotation = 90.0
+      		animationlooping = no
+      		animationtime = 0.75
+      		animationdelay = 0
+      		animationblendmode = "add"
+      		animationtype = "scrolling"
+      		animationrotationoffset = { x = 0.0 y = 0.0 }
+      		animationtexturescale = { x = 1.0 y = 1.0 }
+    	}
+    	legacy_lazy_load = no
+ 	}
+
+	spriteType = {
+    	name = "GFX_goal_PHI_expand_eurasian_collective_shine"
+    	texturefile = "gfx/interface/goals/KXX_PHI/PHI_expand_eurasian_collective.png"
+    	effectFile = "gfx/FX/buttonstate.lua"
+    	animation = {
+      		animationmaskfile = "gfx/interface/goals/KXX_PHI/PHI_expand_eurasian_collective.png"
+      		animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      		animationrotation = -90.0
+      		animationlooping = no
+      		animationtime = 0.75
+      		animationdelay = 0
+      		animationblendmode = "add"
+      		animationtype = "scrolling"
+      		animationrotationoffset = { x = 0.0 y = 0.0 }
+      		animationtexturescale = { x = 1.0 y = 1.0 }
+    	}
+
+    	animation = {
+      		animationmaskfile = "gfx/interface/goals/KXX_PHI/PHI_expand_eurasian_collective.png"
+      		animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      		animationrotation = 90.0
+      		animationlooping = no
+      		animationtime = 0.75
+      		animationdelay = 0
+      		animationblendmode = "add"
+      		animationtype = "scrolling"
+      		animationrotationoffset = { x = 0.0 y = 0.0 }
+      		animationtexturescale = { x = 1.0 y = 1.0 }
+    	}
+    	legacy_lazy_load = no
+ 	}
+
+	spriteType = {
+    	name = "GFX_goal_PHI_eurasianism_in_philippines_shine"
+    	texturefile = "gfx/interface/goals/KXX_PHI/PHI_eurasianism_in_philippines.png"
+    	effectFile = "gfx/FX/buttonstate.lua"
+    	animation = {
+      		animationmaskfile = "gfx/interface/goals/KXX_PHI/PHI_eurasianism_in_philippines.png"
+      		animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      		animationrotation = -90.0
+      		animationlooping = no
+      		animationtime = 0.75
+      		animationdelay = 0
+      		animationblendmode = "add"
+      		animationtype = "scrolling"
+      		animationrotationoffset = { x = 0.0 y = 0.0 }
+      		animationtexturescale = { x = 1.0 y = 1.0 }
+    	}
+
+    	animation = {
+      		animationmaskfile = "gfx/interface/goals/KXX_PHI/PHI_eurasianism_in_philippines.png"
+      		animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      		animationrotation = 90.0
+      		animationlooping = no
+      		animationtime = 0.75
+      		animationdelay = 0
+      		animationblendmode = "add"
+      		animationtype = "scrolling"
+      		animationrotationoffset = { x = 0.0 y = 0.0 }
+      		animationtexturescale = { x = 1.0 y = 1.0 }
+    	}
+    	legacy_lazy_load = no
+ 	}
+
+	spriteType = {
+    	name = "GFX_goal_PHI_half_caste_shine"
+    	texturefile = "gfx/interface/goals/KXX_PHI/PHI_half_caste.png"
+    	effectFile = "gfx/FX/buttonstate.lua"
+    	animation = {
+      		animationmaskfile = "gfx/interface/goals/KXX_PHI/PHI_half_caste.png"
+      		animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      		animationrotation = -90.0
+      		animationlooping = no
+      		animationtime = 0.75
+      		animationdelay = 0
+      		animationblendmode = "add"
+      		animationtype = "scrolling"
+      		animationrotationoffset = { x = 0.0 y = 0.0 }
+      		animationtexturescale = { x = 1.0 y = 1.0 }
+    	}
+
+    	animation = {
+      		animationmaskfile = "gfx/interface/goals/KXX_PHI/PHI_half_caste.png"
+      		animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      		animationrotation = 90.0
+      		animationlooping = no
+      		animationtime = 0.75
+      		animationdelay = 0
+      		animationblendmode = "add"
+      		animationtype = "scrolling"
+      		animationrotationoffset = { x = 0.0 y = 0.0 }
+      		animationtexturescale = { x = 1.0 y = 1.0 }
+    	}
+    	legacy_lazy_load = no
+ 	}
+
+	spriteType = {
+    	name = "GFX_goal_PHI_encourage_intermarry_shine"
+    	texturefile = "gfx/interface/goals/KXX_PHI/PHI_encourage_intermarry.png"
+    	effectFile = "gfx/FX/buttonstate.lua"
+    	animation = {
+      		animationmaskfile = "gfx/interface/goals/KXX_PHI/PHI_encourage_intermarry.png"
+      		animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      		animationrotation = -90.0
+      		animationlooping = no
+      		animationtime = 0.75
+      		animationdelay = 0
+      		animationblendmode = "add"
+      		animationtype = "scrolling"
+      		animationrotationoffset = { x = 0.0 y = 0.0 }
+      		animationtexturescale = { x = 1.0 y = 1.0 }
+    	}
+
+    	animation = {
+      		animationmaskfile = "gfx/interface/goals/KXX_PHI/PHI_encourage_intermarry.png"
+      		animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+      		animationrotation = 90.0
+      		animationlooping = no
+      		animationtime = 0.75
+      		animationdelay = 0
+      		animationblendmode = "add"
+      		animationtype = "scrolling"
+      		animationrotationoffset = { x = 0.0 y = 0.0 }
+      		animationtexturescale = { x = 1.0 y = 1.0 }
+    	}
+    	legacy_lazy_load = no
+ 	}
+}
+  

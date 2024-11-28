@@ -1,0 +1,69 @@
+﻿###################
+# Bosnia Events
+###################
+
+add_namespace = ChinKX
+
+country_event = {
+	id = ChinKX.1
+    title = ChinKX.1.t
+    desc = ChinKX.1.d
+	
+	trigger = {
+		is_ai = no
+		tag = ARG
+	}
+	
+    fire_only_once = yes
+
+	option = { 
+		name = ChinKX.1.a
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	option = { 
+		name = ChinKX.1.b
+		ai_will_do = {
+			factor = 0
+		}
+		KXX = {
+		transfer_state = 299
+		transfer_state = 1028
+		change_tag_from = ARG
+		add_state_core = 299
+		}
+		KXX = {
+			hidden_effect =  {
+				country_event = {
+					id = ChinKX.2
+					days = 5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = ChinKX.2
+    title = ChinKX.2.t
+    desc = ChinKX.2.d
+	
+    is_triggered_only = yes
+
+	option = { 
+		name = ChinKX.2.a
+		set_politics = {
+			ruling_party = totalist
+			elections_allowed = no
+		}
+		remove_ideas_with_trait = economy_minister
+		add_ideas = KXX_JYBD_eco_tot
+		remove_ideas_with_trait = foreign_minister
+		add_ideas = KXX_JYBD_for_npo
+		remove_ideas_with_trait = security_minister
+		add_ideas = KXX_JYBD_sec_npo
+		set_temp_variable = { coalition_partner_var = token:national_populist }
+		add_to_coalition = yes 
+		
+	}
+}

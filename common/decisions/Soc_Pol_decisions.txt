@@ -1,0 +1,173 @@
+SOC_POL_Integration_decisions = {
+	SOC_POL_Integrate_State = {
+		icon = eng_trade_unions_demand
+		allowed = { always = no }
+		
+		#available = {
+		#	FROM = {
+		#		has_political_power < 30 
+		#	}
+		#}
+
+		visible = {
+			FROM = {
+				is_owned_by = ROOT
+				NOT = { is_core_of = ROOT }
+			}
+		}
+
+		cost = 20
+		days_remove = 120
+		cancel_if_not_visible = yes
+
+		state_target = yes
+		##targets = { 10 }
+		#target_trigger = {
+		#	FROM = {
+		#		is_owned_by = ROOT
+		#		NOT = { is_core_of = ROOT }
+		#	}
+		#}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SOC_POL_Integrate_State target: [From.GetName]"
+			hidden_effect = { remove_state_claim = FROM }
+			add_state_core = FROM
+		}
+	}
+	SOC_POL_Karpaty_Oil = {
+		icon = oil
+
+		available = {
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		visible = {
+			1125 = { is_owned_and_controlled_by = ROOT } #Karpaty
+			has_completed_focus = KX_PL_SOC_Mining_Expansion
+		}
+
+		cost = 15
+		days_remove = 60
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 1125 } #Karpaty
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SOC_POL_Karpaty_Oil"
+			1125 = {
+				add_resource = {
+					type = oil
+					amount = 30
+				}
+			}
+		}
+	}
+	SOC_POL_Silesia_Mining = {
+		icon = steel
+
+		available = {
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		visible = {
+			67 = { is_owned_and_controlled_by = ROOT } #Upper Silesia
+			has_completed_focus = KX_PL_SOC_Mining_Expansion
+		}
+
+		cost = 15
+		days_remove = 90
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 67 } #Upper Silesia
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SOC_POL_Karpaty_Oil"
+			67 = {
+				add_resource = {
+					type = steel
+					amount = 50
+				}
+				add_resource = {
+					type = tungsten
+					amount = 30
+				}	
+				add_resource = {
+					type = chromium
+					amount = 10
+				}		
+				add_resource = {
+					type = aluminium
+					amount = 5
+				}				
+			}
+		}
+	}	
+	SOC_POL_Galicia_Mining = {
+		icon = steel
+
+		available = {
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		visible = {
+			91 = { is_owned_and_controlled_by = ROOT } #Lemberg
+			has_completed_focus = KX_PL_SOC_Mining_Expansion
+		}
+
+		cost = 15
+		days_remove = 60
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 91 } #Lemberg
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SOC_POL_Karpaty_Oil"
+			91 = {
+				add_resource = {
+					type = steel
+					amount = 30
+				}
+				add_resource = {
+					type = tungsten
+					amount = 15
+				}	
+				add_resource = {
+					type = chromium
+					amount = 5
+				}			
+			}
+		}
+	}	
+}

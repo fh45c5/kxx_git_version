@@ -1,0 +1,102 @@
+division_template = {
+    name = "Royal Guard"
+    
+
+    regiments = {
+        militia = { x = 0 y = 0 }
+        militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+        militia = { x = 1 y = 1 }
+    }
+
+    support = {
+        engineer = { x = 0 y = 0 }
+    }
+	is_locked = yes
+	force_allow_recruiting = no
+}
+
+division_template = {
+    name = "Tribal Cavalry"
+    
+
+    regiments = {
+        cavalry = { x = 0 y = 0 }
+        cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+        cavalry = { x = 1 y = 1 }
+		cavalry = { x = 2 y = 0 }
+		cavalry = { x = 2 y = 1 }
+    }
+
+    support = {
+        recon = { x = 0 y = 0 }
+		
+    }
+	is_locked = yes
+	force_allow_recruiting = no
+}
+
+units = {
+	division = {
+		name = "Transjordan Tribe"
+		location = 792
+		division_template = "Tribal Cavalry"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division = {
+		name = "Shammar Tribe"
+		location = 792
+		division_template = "Tribal Cavalry"
+		start_experience_factor = 0.35
+		start_equipment_factor = 0.6
+	}
+	division = {
+		name = "Syrian Tribe"
+		location = 792
+		division_template = "Tribal Cavalry"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.6
+	}
+	division = {
+		name = "Iraqi Tribe"
+		location = 792
+		division_template = "Tribal Cavalry"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "Palestine Tribe"
+		location = 792
+		division_template = "Tribal Cavalry"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.75
+	}
+	division = {
+		name = "Hejaz Tribe"
+		location = 792
+		division_template = "Tribal Cavalry"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.75
+	}
+	division = {
+		name = "1st Royal Guard"
+		location = 792
+		division_template = "Royal Guard"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.75
+	}
+	division = {
+		name = "2nd Royal Guard"
+		location = 792
+		division_template = "Royal Guard"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.75
+	}
+	
+	
+}
+
+
+

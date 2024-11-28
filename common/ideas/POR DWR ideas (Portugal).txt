@@ -1,0 +1,72 @@
+### Portuguese Ideas ###
+
+ideas = {
+##############
+# Country
+##############
+	country = {
+		POR_secret_police = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea POR_secret_police"}
+			modifier = {
+				conscription = 0.005
+			}
+			picture = generic_spy_intel
+		}
+
+		POR_anglos = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea POR_anglos"}
+			modifier = { compliance_gain = 0.005 political_power_gain = 0.05 }
+			picture = CAN_imperial_advisors
+		}
+
+		POR_luso = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea POR_luso"}
+			modifier = { compliance_gain = 0.020 resistance_decay = 0.05 }
+			picture = AST_oversized_fleet
+		}
+
+		POR_govern = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea POR_govern"}
+			modifier = { 				
+				cic_to_overlord_factor = 0.50
+				mic_to_overlord_factor = 0.50
+				recruitable_population_factor = -0.90
+				 }
+			picture = ast_classify_aliens
+		}
+
+
+		POR_sueznossa = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea POR_sueznossa"}
+			modifier = { 				
+				consumer_goods_factor = -0.05
+				 }
+			picture = generic_foreign_capital
+		}
+
+		POR_africanossa = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea POR_africanossa"}
+			modifier = { 				
+				army_defence_factor = 0.05
+				political_power_gain = 0.20
+				stability_factor = 0.1
+				 }
+			picture = POR_Hegemon_africa
+		}
+
+		POR_navytime = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea POR_navytime"}
+			modifier = { 	
+				industrial_capacity_dockyard = 0.1
+				production_speed_naval_base_factor = 0.1			
+				#capital_ship = {
+				#	build_cost_ic = -0.05 instant = yes
+				#}
+				#screen_ship = {
+				#	build_cost_ic = -0.05 instant = yes
+				#}
+				 }
+			picture = generic_coastal_navy
+		}
+	}
+}

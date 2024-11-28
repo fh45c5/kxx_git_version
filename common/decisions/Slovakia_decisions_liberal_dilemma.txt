@@ -1,0 +1,359 @@
+
+SVK_liberal_dilemma = {
+
+        soclib_support_1 = {
+		
+		available = {
+                has_completed_focus = SVK_srobar_lib
+                NOT = { has_country_flag = marklib_support }
+                NOT = { has_country_flag = marklib_victory }
+                NOT = { has_country_flag = soclib_victory }
+		}
+
+                days_remove = 12
+                days_re_enable = 24
+		visible = {
+                has_completed_focus = SVK_srobar_lib 
+                OR = {
+                     NOT = { has_country_flag = soclib_victory } 
+                     NOT = { has_country_flag = marklib_victory }
+                    }
+		}  
+		cost = 5
+                fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision soclib_support_1"
+                        set_country_flag = soclib_support 
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove soclib_support_1"
+                   add_popularity = {
+                   ideology = social_liberal
+                   popularity = 0.05
+                 }
+                 add_political_power = 5
+                 add_to_variable = { lib_dilemma_soclib = 1 }
+                 add_to_variable = { lib_dilemma_marklib = -1 }
+                 custom_effect_tooltip = SVK_soclib_dilemma_support
+                 custom_effect_tooltip = SVK_marklib_dilemma_support_down
+                 clr_country_flag = soclib_support 
+		}
+	}
+
+        soclib_support_2 = {
+		
+		available = {
+                has_completed_focus = SVK_srobar_lib
+                NOT = { has_country_flag = marklib_support }
+                NOT = { has_country_flag = marklib_victory }
+                NOT = { has_country_flag = soclib_victory }
+		}
+
+                days_remove = 12
+                days_re_enable = 24
+		visible = {
+                has_completed_focus = SVK_srobar_lib
+		}  
+		cost = 5
+                fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision soclib_support_1"
+                        set_country_flag = soclib_support 
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove soclib_support_1"
+                   add_popularity = {
+                   ideology = social_liberal
+                   popularity = 0.025
+                 }
+
+          random_owned_state = {
+                add_building_construction = {
+                type = infrastructure
+                level = 1
+                instant_build = yes
+                 }
+             }
+
+             random_owned_state = {
+                add_building_construction = {
+                type = infrastructure
+                level = 1
+                instant_build = yes
+                 }
+             }
+
+                 add_to_variable = { lib_dilemma_soclib = 1 }
+                 add_to_variable = { lib_dilemma_marklib = -1 }
+                 custom_effect_tooltip = SVK_soclib_dilemma_support
+                 custom_effect_tooltip = SVK_marklib_dilemma_support_down
+                 clr_country_flag = soclib_support 
+		}
+	}
+
+ soclib_support_3 = {
+		
+		available = {
+                has_completed_focus = SVK_srobar_lib
+                NOT = { has_country_flag = marklib_support }
+                NOT = { has_country_flag = marklib_victory }
+                NOT = { has_country_flag = soclib_victory }
+		}
+
+                days_remove = 7
+                days_re_enable = 14
+		visible = {
+                has_completed_focus = SVK_srobar_lib
+		}  
+		cost = 5
+                fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision soclib_support_1"
+                        set_country_flag = marklib_support 
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove soclib_support_1"
+                   add_popularity = {
+                   ideology = social_liberal
+                   popularity = 0.01
+                 } 
+             
+                 add_timed_idea = {
+                  idea = SVK_soclib_focus_idea
+                  days = 25
+                }
+
+                 add_to_variable = { lib_dilemma_soclib = 5 }
+                 add_to_variable = { lib_dilemma_marklib = -3 }
+                 custom_effect_tooltip = SVK_soclib_dilemma_support_big
+                 custom_effect_tooltip = SVK_marklib_dilemma_support_down_big
+                 clr_country_flag = soclib_support 
+		}
+	}
+
+soclib_assumes_power = {
+		
+		available = {
+                has_completed_focus = SVK_srobar_lib
+                check_variable = { var = lib_dilemma_soclib value = 15 compare = greater_than_or_equals }
+		}
+
+                days_remove = 7
+                fire_only_once = yes
+		visible = {
+                has_completed_focus = SVK_srobar_lib
+		}  
+		cost = 10
+                fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision soclib_support_1"
+                        set_country_flag = soclib_victory 
+                        set_country_flag = soclib_support
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove soclib_support_1"
+                   add_popularity = {
+                   ideology = social_liberal
+                   popularity = 0.10
+                 } 
+
+                 add_to_variable = { lib_dilemma_soclib = 5 }
+                 custom_effect_tooltip = SVK_soclib_dilemma_support_big
+                 clr_country_flag = soclib_support 
+		}
+	}
+
+
+        marklib_support_2 = {
+		
+		available = {
+                has_completed_focus = SVK_srobar_lib
+                NOT = { has_country_flag = soclib_support }
+                NOT = { has_country_flag = marklib_victory }
+                NOT = { has_country_flag = soclib_victory }
+		}
+
+                days_remove = 24
+                days_re_enable = 48
+		visible = {
+                has_completed_focus = SVK_srobar_lib
+		}  
+		cost = 5
+                fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision soclib_support_1"
+                        set_country_flag = marklib_support 
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove soclib_support_1"
+                   add_popularity = {
+                   ideology = market_liberal
+                   popularity = 0.025
+                 }
+
+          random_owned_state = {
+                add_building_construction = {
+                type = industrial_complex
+                level = 1
+                instant_build = yes
+                 }
+             }
+
+                 add_to_variable = { lib_dilemma_marklib = 1 }
+                 add_to_variable = { lib_dilemma_soclib = -1 }
+                 custom_effect_tooltip = SVK_marklib_dilemma_support
+                 custom_effect_tooltip = SVK_soclib_dilemma_support_down
+                 clr_country_flag = marklib_support 
+		}
+	}
+
+        marklib_support_3 = {
+		
+		available = {
+                has_completed_focus = SVK_srobar_lib
+                NOT = { has_country_flag = soclib_support }
+                NOT = { has_country_flag = marklib_victory }
+                NOT = { has_country_flag = soclib_victory }
+		}
+
+                days_remove = 7
+                days_re_enable = 14
+		visible = {
+                has_completed_focus = SVK_srobar_lib
+		}  
+		cost = 5
+                fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision soclib_support_1"
+                        set_country_flag = marklib_support 
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove soclib_support_1"
+                   add_popularity = {
+                   ideology = market_liberal
+                   popularity = 0.01
+                 } 
+             
+                 add_timed_idea = {
+                  idea = SVK_marklib_focus_idea
+                  days = 50
+                }
+
+                 add_to_variable = { lib_dilemma_marklib = 5 }
+                 add_to_variable = { lib_dilemma_soclib = -3 }
+                 custom_effect_tooltip = SVK_marklib_dilemma_support_big
+                 custom_effect_tooltip = SVK_soclib_dilemma_support_down_big
+                 clr_country_flag = marklib_support 
+		}
+	}
+
+        marklib_support_1 = {
+		
+		available = {
+                has_completed_focus = SVK_srobar_lib
+                NOT = { has_country_flag = soclib_support }
+                NOT = { has_country_flag = marklib_victory }
+                NOT = { has_country_flag = soclib_victory }
+		}
+
+                days_remove = 12
+                days_re_enable = 24
+		visible = {
+                has_completed_focus = SVK_srobar_lib
+		}  
+		cost = 5
+                fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision marklib_support_1"
+                        set_country_flag = marklib_support 
+		}
+               
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove marklib_support_1"
+                   add_popularity = {
+                   ideology = market_liberal
+                   popularity = 0.05
+                 }
+                 add_political_power = 5
+                 add_to_variable = { lib_dilemma_marklib = 1 }
+                 add_to_variable = { lib_dilemma_soclib = -1 }
+                 custom_effect_tooltip = SVK_marklib_dilemma_support
+                 custom_effect_tooltip = SVK_soclib_dilemma_support_down
+                 clr_country_flag = marklib_support
+		}
+	}
+
+        marklib_assumes_power = {
+		
+		available = {
+                has_completed_focus = SVK_srobar_lib
+                check_variable = { var = lib_dilemma_marklib value = 15 compare = greater_than_or_equals }
+		}
+
+                days_remove = 7
+                fire_only_once = yes
+		visible = {
+                has_completed_focus = SVK_srobar_lib
+		}  
+		cost = 10
+                fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision soclib_support_1"
+                        set_country_flag = marklib_victory 
+                        set_country_flag = marklib_support
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove soclib_support_1"
+                   add_popularity = {
+                   ideology = market_liberal
+                   popularity = 0.10
+                 } 
+
+                 add_to_variable = { lib_dilemma_marklib = 5 }
+                 custom_effect_tooltip = SVK_marklib_dilemma_support_big
+                 clr_country_flag = marklib_support 
+		}
+	}
+
+
+}

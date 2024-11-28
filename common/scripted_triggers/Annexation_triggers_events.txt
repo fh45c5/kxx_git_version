@@ -1,0 +1,458 @@
+can_annex_west_banat = {
+  OR = {
+    tag = BAN
+    tag = ROM
+    tag = TRS
+    tag = HUN
+    tag = SER
+    tag = CRO
+    AND = {
+      tag = AUS
+      AUS_is_unified = yes
+    }
+  }
+  if = {
+    limit = {
+      tag = ROM
+    }
+    owns_state = 82
+  }
+  else_if = {
+    limit = {
+      tag = CRO
+    }
+    owns_state = 45
+  }
+}
+can_annex_vojvodina = {
+  OR = {
+    tag = HUN
+    tag = CRO
+    tag = SER
+    AND = {
+      tag = AUS
+      AUS_is_unified = yes
+    }
+  }
+  if = {
+    limit = {
+      OR = {
+        tag = SER
+        tag = CRO
+      }
+    }
+    owns_state = 794
+  }
+}
+should_transfer_anatolian_state = {
+  OR = {
+    is_core_anatolia = yes
+    AND = {
+      state = 344
+      554 = {
+        is_valid_annexation_state = no
+      }
+      NOT = {
+        ROOT = {
+          tag = SYR
+        }
+        ROOT = {
+          tag = EGY
+        }
+        ROOT = {
+          tag = JBS
+        }
+        ROOT = {
+          tag = SAU
+        }
+      }
+    }
+    AND = {
+      state = 1000
+      230 = {
+        is_valid_annexation_state = no
+      }
+      NOT = {
+        ROOT = {
+          tag = ARM
+        }
+        ROOT = {
+          is_russian_tag_that_can_integrate = yes
+          owns_state = 230
+        }
+        ARM = {
+          ROOT_can_grant_land = yes
+        }
+      }
+    }
+    AND = {
+      state = 1001
+      230 = {
+        is_valid_annexation_state = no
+      }
+      231 = {
+        is_valid_annexation_state = no
+      }
+      NOT = {
+        ROOT = {
+          tag = ARM
+        }
+        ROOT = {
+          tag = GEO
+        }
+        ROOT = {
+          is_russian_tag_that_can_integrate = yes
+          OR = {
+            owns_state = 230
+            owns_state = 231
+          }
+        }
+        ARM = {
+          ROOT_can_grant_land = yes
+        }
+        GEO = {
+          ROOT_can_grant_land = yes
+        }
+      }
+    }
+    AND = {
+      OR = {
+        state = 341
+        state = 773
+        state = 1225
+      }
+      47 = {
+        is_valid_annexation_state = no
+      }
+      48 = {
+        is_valid_annexation_state = no
+      }
+      NOT = {
+        ROOT = {
+          tag = GRE
+        }
+        ROOT = {
+          tag = BUL
+        }
+        GRE = {
+          ROOT_can_grant_land = yes
+        }
+        BUL = {
+          ROOT_can_grant_land = yes
+        }
+      }
+    }
+    AND = {
+      OR = {
+        state = 339
+        state = 340
+        state = 342
+      }
+      47 = {
+        is_valid_annexation_state = no
+      }
+      NOT = {
+        ROOT = {
+          tag = GRE
+        }
+        GRE = {
+          ROOT_can_grant_land = yes
+        }
+      }
+    }
+  }
+}
+is_controlled_chinese_region = {
+  OR = {
+    is_china_proper = yes
+    AND = {
+      OR = {
+        is_core_of = TIB
+        state = 693
+        state = 858
+      }
+      ROOT = {
+        NOT = {
+          owns_state = 322
+        }
+      }
+    }
+    AND = {
+      region = 222
+      ROOT = {
+        NOT = {
+          owns_state = 330
+        }
+      }
+    }
+  }
+}
+has_valid_chinese_ally = {
+  OR = {
+    any_allied_country = {
+      has_country_flag = china_integration_unlocked
+    }
+    any_subject_country = {
+      has_country_flag = china_integration_unlocked
+    }
+    if = {
+      limit = {
+        has_socialist_government = yes
+      }
+      OR = {
+        NOT = {
+          country_exists = CHI
+        }
+        CHI = {
+          OR = {
+            has_socialist_government = yes
+            has_government = social_democrat
+          }
+          china_annexation_valid_tag = yes
+        }
+      }
+    }
+    else_if = {
+      limit = {
+        OR = {
+          tag = GER
+          tag = GEA
+          tag = GEX
+        }
+      }
+      OR = {
+        QIE = {
+          NOT = {
+            has_global_flag = QIE_manchu_restoration
+            has_country_flag = wu_intervenes_proANQ
+            has_country_flag = wu_no_intervene
+          }
+          china_annexation_valid_tag = yes
+        }
+        NOT = {
+          country_exists = LEP
+        }
+        LEP = {
+          china_annexation_valid_tag = yes
+        }
+      }
+    }
+    else_if = {
+      limit = {
+        tag = JAP
+      }
+      OR = {
+        NOT = {
+          country_exists = FNG
+        }
+        AND = {
+          FNG_JAP_hostile = no
+          FNG = {
+            china_annexation_valid_tag = yes
+          }
+        }
+      }
+    }
+    else_if = {
+      limit = {
+        tag = MON
+      }
+      OR = {
+        NOT = {
+          country_exists = QIE
+        }
+        QIE = {
+          OR = {
+            has_country_flag = wu_intervenes_proANQ
+            has_global_flag = QIE_manchu_restoration
+            has_country_flag = wu_no_intervene
+          }
+          china_annexation_valid_tag = yes
+        }
+      }
+    }
+    else_if = {
+      limit = {
+        tag = RUS
+      }
+      if = {
+        limit = {
+          OR = {
+            RUS_russian_monarch = yes
+            has_global_flag = Russia_Supports_QIE
+          }
+          NOT = {
+            has_global_flag = Russia_Supports_LKMT
+          }
+          NOT = {
+            has_global_flag = Russia_Supports_RKMT
+          }
+          NOT = {
+            has_global_flag = Russia_Supports_Federalists
+          }
+          NOT = {
+            has_global_flag = Russia_Supports_FNG
+          }
+        }
+        OR = {
+          NOT = {
+            country_exists = QIE
+          }
+          QIE = {
+            OR = {
+              has_country_flag = wu_intervenes_proANQ
+              has_global_flag = QIE_manchu_restoration
+              has_country_flag = wu_no_intervene
+            }
+            china_annexation_valid_tag = yes
+          }
+        }
+      }
+      else_if = {
+        limit = {
+          OR = {
+            has_right_democratic_government = yes
+            has_authoritarian_government = yes
+            has_global_flag = Russia_Supports_RKMT
+          }
+          NOT = {
+            has_global_flag = Russia_Supports_LKMT
+          }
+          NOT = {
+            has_global_flag = Russia_Supports_QIE
+          }
+          NOT = {
+            has_global_flag = Russia_Supports_ZHI
+          }
+          NOT = {
+            has_global_flag = Russia_Supports_Federalists
+          }
+          NOT = {
+            has_global_flag = Russia_Supports_FNG
+          }
+        }
+        OR = {
+          NOT = {
+            country_exists = GXC
+          }
+          GXC = {
+            has_government = authoritarian_democrat
+            china_annexation_valid_tag = yes
+          }
+        }
+      }
+      else_if = {
+        limit = {
+          OR = {
+            has_left_democratic_government = yes
+            has_global_flag = Russia_Supports_Federalists
+          }
+          NOT = {
+            has_global_flag = Russia_Supports_LKMT
+          }
+          NOT = {
+            has_global_flag = Russia_Supports_QIE
+          }
+          NOT = {
+            has_global_flag = Russia_Supports_ZHI
+          }
+          NOT = {
+            has_global_flag = Russia_Supports_RKMT
+          }
+          NOT = {
+            has_global_flag = Russia_Supports_FNG
+          }
+        }
+        OR = {
+          NOT = {
+            country_exists = GXC
+          }
+          GXC = {
+            is_ruled_by_federalists = yes
+            china_annexation_valid_tag = yes
+          }
+        }
+      }
+      else = {
+        OR = {
+          NOT = {
+            country_exists = CHI
+          }
+          CHI = {
+            OR = {
+              has_government = social_liberal
+              has_government = social_democrat
+            }
+            china_annexation_valid_tag = yes
+          }
+        }
+      }
+    }
+    else_if = {
+      limit = {
+        OR = {
+          has_authoritarian_government = yes
+          has_global_flag = Russia_Supports_ZHI
+        }
+      }
+      OR = {
+        NOT = {
+          country_exists = QIE
+        }
+        QIE = {
+          NOT = {
+            has_country_leader = {
+              name = "溥仪"  # Puyi
+              ruling_only = yes
+            }
+          }
+          china_annexation_valid_tag = yes
+        }
+      }
+    }
+    else = {
+      OR = {
+        NOT = {
+          country_exists = GXC
+        }
+        GXC = {
+          is_ruled_by_federalists = yes
+          china_annexation_valid_tag = yes
+        }
+      }
+    }
+  }
+}
+china_annexation_valid_tag = {
+  is_subject = no
+  NOT = {
+    has_war_with = PREV
+    has_wargoal_against = PREV
+    is_justifying_wargoal_against = PREV
+    PREV = {
+      is_justifying_wargoal_against = PREV
+    }
+    PREV = {
+      has_wargoal_against = PREV
+    }
+  }
+}
+is_possible_legation_cities_state = {
+  OR = {
+    state = 326
+    state = 592
+    state = 609
+    state = 727
+    state = 729
+    state = 743
+    state = 744
+    state = 745
+    state = 746
+    state = 747
+    state = 801
+    state = 802
+    state = 803
+    state = 996
+    state = 1075
+  }
+}

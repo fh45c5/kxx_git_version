@@ -1,0 +1,1215 @@
+###################
+# Yugoslav Events #
+###################
+
+add_namespace = yugoslavia
+
+#A Vampire Attack
+country_event = {
+	id = yugoslavia.1
+	title = yugoslavia.1.t
+	desc = yugoslavia.1.d
+	picture = GFX_report_event_vampire_attack
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.1.a
+		add_stability = 0.03
+	}
+	
+	option = {
+		name = yugoslavia.1.b
+		add_stability = 0.05
+		division_template = {
+			name = "Vampire Hunter Division"
+			#division_names_group = YUG_INF_01
+			regiments = {
+				motorized = { x = 0 y = 0 }
+				motorized = { x = 0 y = 1 }
+				motorized = { x = 0 y = 2 }
+				
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+			}
+			support = {
+				recon = { x = 0 y = 0 }
+			}
+		}
+		
+		#set_division_template_lock = { division_template = "Vampire Hunter Division" is_locked = yes }
+		
+		random_owned_controlled_state = {
+			
+			create_unit = {
+				division = "name = \"1. Vampire Hunter Division\" division_template = \"Vampire Hunter Division\" start_experience_factor = 0.3" 
+				owner = SER
+			}
+		}
+	}
+}
+
+# test event #
+country_event = {
+	id = yugoslavia.999
+	title = yugoslavia.999.t
+	desc = yugoslavia.999.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+
+	option = {
+		name = yugoslavia.999.a
+		set_country_flag = YUG_tin
+	}
+	option = {
+		name = yugoslavia.999.b
+		set_country_flag = YUG_tesla
+	}
+	option = {
+		name = yugoslavia.999.c
+		set_country_flag = YUG_zbor
+	}
+	option = {
+		name = yugoslavia.999.d
+		set_country_flag = YUG_zenit
+	}
+}
+
+# Tesla Arrives #
+country_event = {
+	id = yugoslavia.2
+	title = yugoslavia.2.t
+	desc = yugoslavia.2.desc
+	picture = GFX_report_event_YUG_teslameeting
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.2.a
+	}
+}
+
+# ZBOR event #
+country_event = {
+	id = yugoslavia.3
+	title = yugoslavia.3.t
+	desc = yugoslavia.3.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.3.a
+		set_country_flag = YUG_zbor
+
+		hidden_effect = {
+			complete_national_focus = YUG_sviuzbor
+		}
+		ai_chance = {
+			factor = 2
+		}
+	}
+	
+}
+
+# Dvor vs. the World - but Real #
+country_event = {
+	id = yugoslavia.4
+	title = yugoslavia.4.t
+	desc = yugoslavia.4.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	
+	option = {
+		name = yugoslavia.4.a
+		set_country_flag = YUG_tin
+		
+		
+		
+	}
+	option = {
+		name = yugoslavia.4.b
+		set_country_flag = YUG_TESLA
+		
+		
+		
+	}
+	option = {
+		name = yugoslavia.4.c
+		set_country_flag = YUG_zenit
+
+		
+		
+	}
+	option = {
+		name = yugoslavia.4.d
+		set_country_flag = YUG_ljubo
+
+		
+		
+	}
+	
+}
+
+# Dvor Challenged #
+country_event = {
+	id = yugoslavia.5
+	title = yugoslavia.5.t
+	desc = yugoslavia.5.desc
+	picture = GFX_report_event_YUG_dragutin
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.5.a
+		hidden_effect = {
+			country_event = {
+			  id = yugoslavia.4
+			  days = 1
+			}
+		   }
+	}
+}
+### Orjuna / ZBOR ###
+country_event = {
+	id = yugoslavia.6
+	title = yugoslavia.6.t
+	desc = yugoslavia.6.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = yugoslavia.6.a
+		set_country_flag = YUG_tin
+
+		hidden_effect = {
+			complete_national_focus = YUG_progressivepanslavism
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = YUG_ai_route
+					option = YUG_UJEVIC
+				}
+			}
+		}
+	}
+	option = {
+		name = yugoslavia.6.b
+		
+		hidden_effect = {
+			country_event = {
+				id = yugoslavia.3
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = YUG_ai_route
+					option = YUG_LJOTIC
+				}
+			}
+		}
+	}
+}
+
+# Guarantee from France #
+country_event = {
+	id = yugoslavia.10
+	title = yugoslavia.10.t
+	desc = yugoslavia.10.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.10.a
+		ai_chance = {
+			factor = 4
+		}
+		FRA = {
+			give_guarantee = YUG
+		}
+	}
+	option = {
+		name = yugoslavia.10.b
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+# Join France #
+country_event = {
+	id = yugoslavia.11
+	title = yugoslavia.11.t
+	desc = yugoslavia.11.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.11.a
+		ai_chance = {
+			factor = 5
+		}
+		if = {
+			limit = {
+				FRA = {
+					is_faction_leader = yes
+				}
+			}
+			FRA = {
+				add_to_faction = YUG
+			}
+			YUG = {
+				country_event = {
+					id = yugoslavia.111
+				}
+			}
+		}
+	}
+	option = {
+		name = yugoslavia.11.b
+		ai_chance = {
+			factor = 1
+		}
+		YUG = {
+			country_event = {
+				id = yugoslavia.112
+			}
+		}
+	}
+}
+# France says yes#
+country_event = {
+	id = yugoslavia.111
+	title = yugoslavia.111.t
+	desc = yugoslavia.111.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.111.a
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+# France says no#
+country_event = {
+	id = yugoslavia.112
+	title = yugoslavia.112.t
+	desc = yugoslavia.112.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.112.a
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+
+# Guarantee from Poland #
+country_event = {
+	id = yugoslavia.12
+	title = yugoslavia.12.t
+	desc = yugoslavia.12.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.12.a
+		ai_chance = {
+			factor = 3
+		}
+		
+	}
+	
+}
+
+# Join Poland #
+country_event = {
+	id = yugoslavia.13
+	title = yugoslavia.13.t
+	desc = yugoslavia.13.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.13.a
+		ai_chance = {
+			factor = 1
+			
+		}
+		
+	}
+}
+
+# Bulgarian Question #
+country_event = {
+	id = yugoslavia.14
+	title = yugoslavia.14.t
+	desc = yugoslavia.14.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.14.a
+		ai_chance = {
+			factor = 1
+		}
+		BUL = {
+			country_event = {
+				id = yugoslavia.15
+				days = 3
+			}
+		}
+	}
+}
+country_event = {
+	id = yugoslavia.15
+	title = yugoslavia.15.t
+	desc = yugoslavia.15.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.15.a
+		ai_chance = {
+			factor = 1
+		}
+		
+		YUG = {
+			annex_country = {
+				target = BUL
+				transfer_troops = yes
+			}
+		}
+	}
+
+}
+
+
+country_event = {
+	id = yugoslavia.17
+	title = yugoslavia.17.t
+	desc = yugoslavia.17.desc
+	#picture = GFX_report_event_YUG_dragutin
+	is_triggered_only = yes
+	fire_only_once = no
+	
+	option = {
+		name = yugoslavia.17.a
+	}
+}
+
+# Bosnian Rebelion #
+country_event = {
+	id = yugoslavia.19
+	title = yugoslavia.19.t
+	desc = yugoslavia.19.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			owns_state = 104
+			owns_state = 921
+			owns_state = 922
+		}
+	}
+
+	option = {
+		name = yugoslavia.19.a
+		every_owned_state = {
+			limit = {
+				OR = {
+					state = 104
+					state = 921
+					state = 922
+				}
+			}
+			BOS = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+		}
+		BOS = {
+			load_oob = "BOS_rebelion"
+		}
+		declare_war_on = {
+		    target = BOS
+		    type = annex_everything
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.20
+	title = yugoslavia.20.t
+	desc = yugoslavia.20.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.20.a
+		ai_chance = {
+			factor = 100
+		}
+		YUG = {
+			transfer_state = 102
+			country_event = {
+				id = yugoslavia.203
+			}
+			diplomatic_relation = {
+				country = AUS
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+	}
+	option = {
+		name = yugoslavia.20.b
+		ai_chance = {
+			factor = 0
+		}
+		YUG = {
+			country_event = {
+				id = yugoslavia.204
+			}
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.22
+	title = yugoslavia.22.t
+	desc = yugoslavia.22.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.22.a
+		create_wargoal = {
+    		type = annex_everything
+    		target = BUL
+		}
+		every_state = {
+			limit = {
+				is_core_of = BUL
+			}
+			add_claim_by = YUG
+		}
+		add_timed_idea = {
+			idea = FRA_military_mission
+			days = 180
+		}
+		add_opinion_modifier = {
+			modifier = opposes_reds
+			target = FRA
+		}
+		ai_chance = {
+			factor = 9
+		}
+	}
+	option = {
+		name = yugoslavia.22.b
+		add_political_power = -25
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.23
+	title = yugoslavia.23.t
+	desc = yugoslavia.23.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.23.a
+		ai_chance = {
+			factor = 1
+		}
+		YUG = {
+			transfer_state = 45
+			transfer_state = 1035
+			transfer_state = 764
+			country_event = {
+				id = yugoslavia.231
+			}
+		}
+	}
+	option = {
+		name = yugoslavia.23.b
+		YUG = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = medium_decrease
+			}
+			country_event = {
+				id = yugoslavia.232
+			}
+		}
+		ai_chance = {
+			factor = 2
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.24
+	title = yugoslavia.24.t
+	desc = yugoslavia.24.desc
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.24.a
+	}
+}
+
+country_event = {
+	id = yugoslavia.25
+	title = yugoslavia.25.t
+	desc = yugoslavia.25.desc
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.25.a
+		CRO = {
+			retire_character = CRO_ante_pavelić
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.26
+	title = yugoslavia.26.t
+	desc = yugoslavia.26.desc
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.26.a
+	}
+}
+
+country_event = {
+	id = yugoslavia.27
+	title = yugoslavia.27.t
+	desc = yugoslavia.27.desc
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.27.a
+	}
+}
+
+country_event = {
+	id = yugoslavia.28
+	title = yugoslavia.28.t
+	desc = yugoslavia.28.desc
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.28.a
+	}
+}
+
+country_event = {
+	id = yugoslavia.29
+	title = yugoslavia.29.t
+	desc = yugoslavia.29.desc
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.29.a
+	}
+}
+
+country_event = {
+	id = yugoslavia.121 #POLAND - Guarantees YUG
+	title = yugoslavia.121.t
+	desc = yugoslavia.121.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = yugoslavia.121.a
+	} 
+}
+
+country_event = {
+	id = yugoslavia.122 #POLAND - Doesn't guarantee YUG
+	title = yugoslavia.122.t
+	desc = yugoslavia.122.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = yugoslavia.122.a
+	} 
+}
+
+country_event = {
+	id = yugoslavia.203 #AUSTRIA - Gives up Slovenia
+	title = yugoslavia.203.t
+	desc = yugoslavia.203.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = yugoslavia.203.a
+	} 
+}
+
+country_event = {
+	id = yugoslavia.204 #AUSTRIA - Refuses to give up Slovevina
+	title = yugoslavia.204.t
+	desc = yugoslavia.204.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = yugoslavia.204.a
+		YUG = {
+			add_state_core = 102
+			declare_war_on = {
+			    target = AUS
+			    type = annex_everything
+			}
+		}
+		set_global_flag = YUG_intervene_AUS_GER_war
+	} 
+}
+
+country_event = {
+	id = yugoslavia.131 #INTERMARIUM - Application accepted
+	title = yugoslavia.131.t
+	desc = yugoslavia.131.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = yugoslavia.131.a
+	} 
+}
+
+country_event = {
+	id = yugoslavia.132 #INTERMARIUM - Application rejected
+	title = yugoslavia.132.t
+	desc = yugoslavia.132.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = yugoslavia.132.a
+	} 
+}
+country_event = {
+	id = yugoslavia.211 #SLOVENIA - Demand accepted
+	title = yugoslavia.211.t
+	desc = yugoslavia.211.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = yugoslavia.211.a
+	} 
+}
+country_event = {
+	id = yugoslavia.212 #SLOVENIA - Demand rejected
+	title = yugoslavia.212.t
+	desc = yugoslavia.212.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = yugoslavia.212.a
+	} 
+}
+country_event = {
+	id = yugoslavia.231 #VOJVODINA - Hungary accepts
+	title = yugoslavia.231.t
+	desc = yugoslavia.231.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = yugoslavia.231.a
+	} 
+}
+country_event = {
+	id = yugoslavia.232 #VOJVODINA - Hungary rejects
+	title = yugoslavia.232.t
+	desc = yugoslavia.232.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = yugoslavia.232.a
+	} 
+}
+country_event = {
+	id = yugoslavia.233
+	title = yugoslavia.233.t
+	desc = yugoslavia.233.desc
+	#picture = GFX_news_event_aid_pact
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = yugoslavia.233.a
+		ai_chance = {
+			base = 100
+		}
+		YUG = {
+			country_event = {
+				id = yugoslavia.235 #yes
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = yugoslavia.233.b
+		ai_chance = {
+			base = 0
+		}
+		YUG = {
+			country_event = {
+				id = yugoslavia.234 #no
+				days = 1
+			}
+		}
+		
+	}
+}
+
+country_event = {
+	id = yugoslavia.234
+	title = yugoslavia.234.t
+	desc = yugoslavia.234.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = yugoslavia.234.a
+	} 
+}
+
+country_event = {
+	id = yugoslavia.235
+	title = yugoslavia.235.t
+	desc = yugoslavia.235.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = yugoslavia.235.a
+		GER = { add_to_faction = YUG }
+	}	
+}
+
+country_event = {
+	id = yugoslavia.236
+	title = yugoslavia.236.t
+	desc = yugoslavia.236.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = yugoslavia.236.a
+		custom_effect_tooltip = "BUL_revolt_warning"
+		YUG = {
+			country_event = {
+				id = yugoslavia.237
+				days = 14
+			}
+		}
+	}
+}
+
+country_event = {
+	id = yugoslavia.237
+	title = yugoslavia.237.t
+	desc = yugoslavia.237.desc
+	#picture = GFX_report_event_vampire_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = yugoslavia.237.a
+		BUL = {
+			if = {
+				limit = {
+					has_idea = BUL_watchful_eye
+				}
+				remove_ideas = {
+					BUL_watchful_eye
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BUL_watchful_eye2
+				}
+				remove_ideas = {
+					BUL_watchful_eye2
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BUL_watchful_eye3
+				}
+				remove_ideas = {
+					BUL_watchful_eye3
+				}
+			}
+			clr_country_flag = BUL_yugoslav_mechanic_begins
+			clear_variable = BUL_yugoslav_influence
+			clear_variable = YUG.YUG_yugoslav_influence
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = BUL_yugo_revolt
+		}
+		YUG = {
+			end_puppet = BUL
+			declare_war_on = {
+			    target = BUL
+			    type = annex_everything
+			}
+		}
+	}	
+}
+
+#Dealing with Bulgaria
+
+country_event = {
+	id = yugoslavia.300
+	title = yugoslavia.300.t
+	desc = yugoslavia.300.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = yugoslavia.300.a
+		custom_effect_tooltip = YUG_yugoslav_integration
+		set_country_flag = YUG_yugoslav_mechanic_begins
+	}
+}
+country_event = {
+	id = yugoslavia.301
+	title = yugoslavia.301.t
+	desc = yugoslavia.301.desc
+	fire_only_once = yes
+
+	trigger = {
+		tag = YUG
+		date > 1939.01.01
+		NOT = {
+			YUG = {
+				owns_state = 48
+				has_war_with = BUL
+			}
+			BUL = {
+				owns_state = 107
+			}
+		}
+		YUG = {
+			exists = yes
+			is_ai = yes
+		}
+		BUL = {
+			exists = yes
+			is_ai = yes
+		}
+	}
+
+	option = {
+		name = yugoslavia.301.a
+		ai_chance = {
+			base = 70
+		}
+		YUG = {
+			annex_country = {
+			    target = BUL
+			    transfer_troops = yes
+			}
+			clr_country_flag = YUG_yugoslav_mechanic_begins
+			clear_variable = YUG_yugoslav_influence
+		}
+		BUL = {
+			clr_country_flag = BUL_yugoslav_mechanic_begins
+			clear_variable = BUL_yugoslav_influence
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = BUL_yugo_free
+			every_unit_leader = {
+				set_nationality = YUG
+			}
+		}
+	}
+	option = {
+		name = yugoslavia.301.b
+		ai_chance = {
+			base = 30
+		}
+		BUL = {
+			if = {
+				limit = {
+					has_idea = BUL_watchful_eye
+				}
+				remove_ideas = {
+					BUL_watchful_eye
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BUL_watchful_eye2
+				}
+				remove_ideas = {
+					BUL_watchful_eye2
+				}
+			}
+			if = {
+				limit = {
+					has_idea = BUL_watchful_eye3
+				}
+				remove_ideas = {
+					BUL_watchful_eye3
+				}
+			}
+			annex_country = {
+			    target = YUG
+			    transfer_troops = yes
+			}
+			clr_country_flag = BUL_yugoslav_mechanic_begins
+			clear_variable = BUL_yugoslav_influence
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = BUL_yugo_free
+		}
+		YUG = {
+			clr_country_flag = YUG_yugoslav_mechanic_begins
+			clear_variable = YUG_yugoslav_influence
+			every_unit_leader = {
+				set_nationality = BUL
+			}
+		}
+	}
+}
+
+country_event = { #demandin greek thrace
+	id = yugoslavia.34
+	title = yugoslavia.34.t
+	desc = yugoslavia.34.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #ell no we won't go
+		name = yugoslavia.34.a
+		ai_chance = {
+			base = 30
+			modifier = {
+				NOT = {
+					is_in_faction_with = ENG
+				}
+				factor = 5
+			}
+		}
+		YUG = {
+			create_wargoal = {
+				target = GRE
+				type = annex_everything
+			}
+		}
+	}
+	option = { #oki
+		name = yugoslavia.34.b
+		ai_chance = {
+			base = 70
+		}
+		341 = {
+			transfer_state_to = YUG
+		}
+	}
+}
+
+
+# Easteregg event #
+country_event = {
+	id = yugoslavia.69
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		AND = {
+			BOS = {
+				OR = {
+					has_full_control_of_state = 764
+					has_full_control_of_state = 107
+					has_full_control_of_state = 108
+					has_full_control_of_state = 900
+					has_full_control_of_state = 106
+
+					has_full_control_of_state = 812
+					has_full_control_of_state = 48
+					has_full_control_of_state = 212
+					has_full_control_of_state = 341
+					has_full_control_of_state = 211
+				}
+			}
+			NOT = {
+				country_exists = YUG
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		if = {
+			Limit = {
+				BOS = {
+					has_full_control_of_state = 764
+				}
+			}
+			SER = {
+				transfer_state = 764
+				add_state_core = 764
+			}
+		}
+		if = {
+			Limit = {
+				BOS = {
+					has_full_control_of_state = 107
+				}
+			}
+			SER = {
+				transfer_state = 107
+				add_state_core = 107
+			}
+		}
+		if = {
+			Limit = {
+				BOS = {
+					has_full_control_of_state = 108
+				}
+			}
+			SER = {
+				transfer_state = 108
+				add_state_core = 108
+			}
+		}
+		if = {
+			Limit = {
+				BOS = {
+					has_full_control_of_state = 900
+				}
+			}
+			SER = {
+				transfer_state = 900
+				add_state_core = 900
+			}
+		}
+		if = {
+			Limit = {
+				BOS = {
+					has_full_control_of_state = 106
+				}
+			}
+			SER = {
+				transfer_state = 106
+				add_state_core = 106
+			}
+		}
+
+		if = {
+			Limit = {
+				BOS = {
+					has_full_control_of_state = 812
+				}
+			}
+			BUL = {
+				transfer_state = 812
+				add_state_core = 812
+			}
+		}
+		if = {
+			Limit = {
+				BOS = {
+					has_full_control_of_state = 48
+				}
+			}
+			BUL = {
+				transfer_state = 48
+				add_state_core = 48
+			}
+		}
+		if = {
+			Limit = {
+				BOS = {
+					has_full_control_of_state = 212
+				}
+			}
+			BUL = {
+				transfer_state = 212
+				add_state_core = 212
+			}
+		}
+		if = {
+			Limit = {
+				BOS = {
+					has_full_control_of_state = 341
+				}
+			}
+			BUL = {
+				transfer_state = 341
+				add_state_core = 341
+			}
+		}
+		if = {
+			Limit = {
+				BOS = {
+					has_full_control_of_state = 211
+				}
+			}
+			BUL = {
+				transfer_state = 211
+				add_state_core = 211
+			}
+		}
+	}
+}

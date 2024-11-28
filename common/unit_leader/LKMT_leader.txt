@@ -1,0 +1,9 @@
+leader_traits = {
+	CHI_left_kmt_officer = {
+		type = land
+		trait_type = personality_trait
+		modifier = {
+			attrition = -0.05
+		}
+	}
+}

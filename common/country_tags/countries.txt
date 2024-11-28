@@ -1,0 +1,17 @@
+#GSE###
+IAR = "countries/Imperialate Aragon.txt"
+IIE = "countries/Imperialate Italie de lEst.txt"
+INA = "countries/Imperialate Naples.txt"
+IBW = "countries/Imperialate Baden-Wurttemberg.txt"
+IBV = "countries/Imperialate Bavaria.txt"
+ISH = "countries/Imperialate Schleswig-Holstein.txt"
+IMO = "countries/Imperialate Moravia.txt"
+IBR = "countries/Imperialate Bretagne.txt"
+FRG = "countries/French Reconstruction Government.txt"
+JDF = "countries/Jüdisch_Deutscher_Freistaat.txt"
+FLS = "countries/Far-Southern State of Falkland Islands.txt"
+### DWR ###
+NSP = "countries/DWR.txt"
+ESP = "countries/DWR.txt"
+SSP = "countries/DWR.txt"
+CSP = "countries/DWR.txt"

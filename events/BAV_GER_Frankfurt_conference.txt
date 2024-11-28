@@ -1,0 +1,661 @@
+###法兰克福大会事件链
+add_namespace = FRKFNS
+
+country_event = { 
+	id = FRKFNS.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event FRKFNS.1" }
+	title = FRKFNS.1.t
+	desc = FRKFNS.1.d
+	picture = GFX_report_event_Yun_hold_a_meeting
+
+	is_triggered_only = yes
+	
+	option = { #触发"拟订联邦条款"
+		name = FRKFNS.1.a
+		hidden_effect = {
+			country_event = { 
+			id = FRKFNS.2
+			days = 7
+		    }
+		}		
+	}
+}
+
+country_event = { 
+	id = FRKFNS.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event FRKFNS.2" }
+	title = FRKFNS.2.t
+	desc = FRKFNS.2.d
+
+	is_triggered_only = yes
+	
+	option = { #德意志邦联
+		name = FRKFNS.2.a
+		custom_effect_tooltip = FRKFNS_choose_bund
+		country_event = { 
+			id = FRKFNS.3
+			days = 1
+		}
+		hidden_effect = {
+			 set_country_flag = BAV_DE_Bund
+				}		
+	}
+
+	option = { #德意志联邦
+		name = FRKFNS.2.b
+		custom_effect_tooltip = FRKFNS_choose_br
+		country_event = { 
+			id = FRKFNS.3
+			days = 1
+		}
+		hidden_effect = {
+			 set_country_flag = BAV_DE_BR
+				}		
+	}
+
+	option = { #德意志联合帝国
+		name = FRKFNS.2.c
+		custom_effect_tooltip = FRKFNS_choose_reich
+		country_event = { 
+			id = FRKFNS.3
+			days = 1
+		}
+		hidden_effect = {
+			 set_country_flag = BAV_DE_Reich
+				}		
+	}
+
+	option = { #我们是快乐的拜仁人
+		name = FRKFNS.2.e
+		custom_effect_tooltip = FRKFNS_goodbye		
+		set_country_flag = BAY_Leave_Germany
+	}	
+
+}
+
+country_event = { 
+	id = FRKFNS.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event FRKFNS.3" }
+	title = FRKFNS.3.t
+	desc = FRKFNS.3.d
+	picture = GFX_report_event_Yun_Bavaria_German_Flag
+
+	is_triggered_only = yes
+	
+	option = { #第一次法兰克福会议海军用旗
+		name = FRKFNS.3.a
+		custom_effect_tooltip = FRKFNS_choose_flag
+		country_event = FRKFNS.4
+		hidden_effect = {
+			 set_country_flag = Flag_BAV_1848_Navy
+				}		
+	}
+
+	option = { #黑红金加黑鹰盾徽
+		name = FRKFNS.3.b
+		custom_effect_tooltip = FRKFNS_choose_flag
+		country_event = FRKFNS.4
+		hidden_effect = {
+			 set_country_flag = Flag_BAV_Coat
+				}		
+	}
+
+	option = { #纯黑红金
+		name = FRKFNS.3.c
+		custom_effect_tooltip = FRKFNS_choose_flag
+		country_event = FRKFNS.4
+		hidden_effect = {
+			set_country_flag = Flag_BAV_SchwarzRotGold
+				}		
+	}
+
+	option = { #维特尔斯巴赫
+		name = FRKFNS.3.e
+		custom_effect_tooltip = FRKFNS_choose_flag
+		country_event = FRKFNS.4
+		hidden_effect = {
+			set_country_flag = Flag_BAV_WB
+				}		
+	}	
+
+}
+
+country_event = { 
+	id = FRKFNS.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event FRKFNS.4" }
+	title = FRKFNS.4.t
+	desc = FRKFNS.4.d
+
+	is_triggered_only = yes
+	
+	option = { #黄色
+		name = FRKFNS.4.a
+		custom_effect_tooltip = FRKFNS_choose_color
+		country_event = { 
+			id = FRKFNS.5
+			days = 5
+		}
+		hidden_effect = {
+			set_country_flag = Yellow_BAV_GER
+				}		
+	}
+
+	option = { #灰色
+		name = FRKFNS.4.b
+		custom_effect_tooltip = FRKFNS_choose_color
+		country_event = { 
+			id = FRKFNS.5
+			days = 5
+		}
+		hidden_effect = {
+			set_country_flag = Gray_BAV_GER
+				}		
+	}
+
+	option = { #蓝色
+		name = FRKFNS.4.c
+		custom_effect_tooltip = FRKFNS_choose_color
+		country_event = { 
+			id = FRKFNS.5
+			days = 5
+		}
+		hidden_effect = {
+			set_country_flag = Blue_BAV_GER
+				}		
+	}
+
+	option = { #灰蓝色
+		name = FRKFNS.4.e
+		custom_effect_tooltip = FRKFNS_choose_color
+		country_event = { 
+			id = FRKFNS.5
+			days = 5
+		}
+		hidden_effect = {
+			set_country_flag = Blue_Gray_BAV_GER
+				}		
+	}	
+
+}
+
+country_event = { 
+	id = FRKFNS.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event FRKFNS.5" }
+	title = FRKFNS.5.t
+	desc = FRKFNS.5.d
+	picture = GFX_report_event_Yun_come_to_a_close
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = FRKFNS.5.a
+		news_event = { 
+			id = FRKFNS.6
+			days = 3
+		}
+		set_party_name = {
+			ideology = totalist
+			name = "德意志布尔什维党"
+			long_name = "德意志布尔什维党(DBP)"
+		}				
+		set_party_name = {
+			ideology = syndicalist
+			name = "德意志工团党"
+			long_name = "德意志工团党"
+		}		
+		set_party_name = {
+			ideology = radical_socialist
+			name = "德意志社会主义工人党"
+			long_name = "德意志社会主义工人党(DSAP)"
+		}		
+		set_party_name = {
+			ideology = social_democrat
+			name = "德意志社会民主党"
+			long_name = "德意志社会民主党(DSDP)"
+		}									
+		set_party_name = {
+			ideology = social_liberal
+			name = "德意志青年进步联盟"
+			long_name = "德意志青年进步联盟(DJPU)"
+		}				
+		set_party_name = {
+			ideology = market_liberal
+			name = "德意志民主自由党"
+			long_name = "德意志民主自由党"
+		}
+		set_party_name = {
+			ideology = social_conservative
+			name = "德意志人民党"
+			long_name = "德意志人民党(DVP)"
+		}
+		set_party_name = {
+			ideology = authoritarian_democrat
+			name = "德意志改革与复兴党"
+			long_name = "德意志改革与复兴党(DRRP)"
+		}
+		set_party_name = {
+			ideology = paternal_autocrat
+			name = "全德意志国民党"
+			long_name = "全德意志国民党(ADNDP)"
+		}
+		set_party_name = {
+			ideology = national_populist
+			name = "祖国阵线"
+			long_name = "祖国阵线"
+		}				
+		hidden_effect = {							
+			if = {
+				limit = { 
+					has_country_flag = BAV_DE_Bund
+					has_country_flag = Flag_BAV_1848_Navy
+					has_country_flag = Yellow_BAV_GER
+				 }
+				set_cosmetic_tag = BAV_DE_Bund_Y1
+				}		
+			else_if = {
+				limit = { 
+					has_country_flag = BAV_DE_Bund
+					has_country_flag = Flag_BAV_Coat
+					has_country_flag = Yellow_BAV_GER					
+				 }
+				set_cosmetic_tag = BAV_DE_Bund_Y2
+				}								
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Bund
+					has_country_flag = Flag_BAV_SchwarzRotGold
+					has_country_flag = Yellow_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_Bund_Y3
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Bund
+					has_country_flag = Flag_BAV_WB
+					has_country_flag = Yellow_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_Bund_Y4
+				}	
+			else_if = {
+				limit = { 
+					has_country_flag = BAV_DE_Bund
+					has_country_flag = Flag_BAV_1848_Navy
+					has_country_flag = Gray_BAV_GER					
+				 }
+				set_cosmetic_tag = BAV_DE_Bund_G1
+				}								
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Bund
+					has_country_flag = Flag_BAV_Coat
+					has_country_flag = Gray_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_Bund_G2
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Bund
+					has_country_flag = Flag_BAV_SchwarzRotGold
+					has_country_flag = Gray_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_Bund_G3
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Bund
+					has_country_flag = Flag_BAV_WB
+					has_country_flag = Gray_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_Bund_G4
+				}
+			else_if = {
+				limit = { 
+					has_country_flag = BAV_DE_Bund
+					has_country_flag = Flag_BAV_1848_Navy
+					has_country_flag = Blue_BAV_GER				
+				 }
+				set_cosmetic_tag = BAV_DE_Bund_B1
+				}								
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Bund
+					has_country_flag = Flag_BAV_Coat
+					has_country_flag = Blue_BAV_GER						
+				}
+				set_cosmetic_tag = BAV_DE_Bund_B2
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Bund
+					has_country_flag = Flag_BAV_SchwarzRotGold
+					has_country_flag = Blue_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_Bund_B3
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Bund
+					has_country_flag = Flag_BAV_WB
+					has_country_flag = Blue_BAV_GER						
+				}
+				set_cosmetic_tag = BAV_DE_Bund_B4
+				}	
+			else_if = {
+				limit = { 
+					has_country_flag = BAV_DE_Bund
+					has_country_flag = Flag_BAV_1848_Navy
+					has_country_flag = Blue_Gray_BAV_GER
+				 }
+				set_cosmetic_tag = BAV_DE_Bund_BG1
+				}								
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Bund
+					has_country_flag = Flag_BAV_Coat
+					has_country_flag = Blue_Gray_BAV_GER
+				}
+				set_cosmetic_tag = BAV_DE_Bund_BG2
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Bund
+					has_country_flag = Flag_BAV_SchwarzRotGold
+					has_country_flag = Blue_Gray_BAV_GER
+				}
+				set_cosmetic_tag = BAV_DE_Bund_BG3
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Bund
+					has_country_flag = Flag_BAV_WB
+					has_country_flag = Blue_Gray_BAV_GER
+				}
+				set_cosmetic_tag = BAV_DE_Bund_BG4
+				}	
+            else_if = {
+				limit = { 
+					has_country_flag = BAV_DE_BR
+					has_country_flag = Flag_BAV_1848_Navy
+					has_country_flag = Yellow_BAV_GER
+				 }
+				set_cosmetic_tag = BAV_DE_BR_Y1
+				}		
+			else_if = {
+				limit = { 
+					has_country_flag = BAV_DE_BR
+					has_country_flag = Flag_BAV_Coat
+					has_country_flag = Yellow_BAV_GER					
+				 }
+				set_cosmetic_tag = BAV_DE_BR_Y2
+				}								
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_BR
+					has_country_flag = Flag_BAV_SchwarzRotGold
+					has_country_flag = Yellow_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_BR_Y3
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_BR
+					has_country_flag = Flag_BAV_WB
+					has_country_flag = Yellow_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_BR_Y4
+				}	
+			else_if = {
+				limit = { 
+					has_country_flag = BAV_DE_BR
+					has_country_flag = Flag_BAV_1848_Navy
+					has_country_flag = Gray_BAV_GER					
+				 }
+				set_cosmetic_tag = BAV_DE_BR_G1
+				}								
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_BR
+					has_country_flag = Flag_BAV_Coat
+					has_country_flag = Gray_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_BR_G2
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_BR
+					has_country_flag = Flag_BAV_SchwarzRotGold
+					has_country_flag = Gray_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_BR_G3
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_BR
+					has_country_flag = Flag_BAV_WB
+					has_country_flag = Gray_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_BR_G4
+				}
+			else_if = {
+				limit = { 
+					has_country_flag = BAV_DE_BR
+					has_country_flag = Flag_BAV_1848_Navy
+					has_country_flag = Blue_BAV_GER				
+				 }
+				set_cosmetic_tag = BAV_DE_BR_B1
+				}								
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_BR
+					has_country_flag = Flag_BAV_Coat
+					has_country_flag = Blue_BAV_GER						
+				}
+				set_cosmetic_tag = BAV_DE_BR_B2
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_BR
+					has_country_flag = Flag_BAV_SchwarzRotGold
+					has_country_flag = Blue_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_BR_B3
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_BR
+					has_country_flag = Flag_BAV_WB
+					has_country_flag = Blue_BAV_GER						
+				}
+				set_cosmetic_tag = BAV_DE_BR_B4
+				}	
+			else_if = {
+				limit = { 
+					has_country_flag = BAV_DE_BR
+					has_country_flag = Flag_BAV_1848_Navy
+					has_country_flag = Blue_Gray_BAV_GER
+				 }
+				set_cosmetic_tag = BAV_DE_BR_BG1
+				}								
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_BR
+					has_country_flag = Flag_BAV_Coat
+					has_country_flag = Blue_Gray_BAV_GER
+				}
+				set_cosmetic_tag = BAV_DE_BR_BG2
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_BR
+					has_country_flag = Flag_BAV_SchwarzRotGold
+					has_country_flag = Blue_Gray_BAV_GER
+				}
+				set_cosmetic_tag = BAV_DE_BR_BG3
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_BR
+					has_country_flag = Flag_BAV_WB
+					has_country_flag = Blue_Gray_BAV_GER
+				}
+				set_cosmetic_tag = BAV_DE_BR_BG4
+				}		
+            else_if = {
+				limit = { 
+					has_country_flag = BAV_DE_Reich
+					has_country_flag = Flag_BAV_1848_Navy
+					has_country_flag = Yellow_BAV_GER
+				 }
+				set_cosmetic_tag = BAV_DE_Reich_Y1
+				}		
+			else_if = {
+				limit = { 
+					has_country_flag = BAV_DE_Reich
+					has_country_flag = Flag_BAV_Coat
+					has_country_flag = Yellow_BAV_GER					
+				 }
+				set_cosmetic_tag = BAV_DE_Reich_Y2
+				}								
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Reich
+					has_country_flag = Flag_BAV_SchwarzRotGold
+					has_country_flag = Yellow_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_Reich_Y3
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Reich
+					has_country_flag = Flag_BAV_WB
+					has_country_flag = Yellow_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_Reich_Y4
+				}	
+			else_if = {
+				limit = { 
+					has_country_flag = BAV_DE_Reich
+					has_country_flag = Flag_BAV_1848_Navy
+					has_country_flag = Gray_BAV_GER					
+				 }
+				set_cosmetic_tag = BAV_DE_Reich_G1
+				}								
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Reich
+					has_country_flag = Flag_BAV_Coat
+					has_country_flag = Gray_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_Reich_G2
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Reich
+					has_country_flag = Flag_BAV_SchwarzRotGold
+					has_country_flag = Gray_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_Reich_G3
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Reich
+					has_country_flag = Flag_BAV_WB
+					has_country_flag = Gray_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_Reich_G4
+				}
+			else_if = {
+				limit = { 
+					has_country_flag = BAV_DE_Reich
+					has_country_flag = Flag_BAV_1848_Navy
+					has_country_flag = Blue_BAV_GER				
+				 }
+				set_cosmetic_tag = BAV_DE_Reich_B1
+				}								
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Reich
+					has_country_flag = Flag_BAV_Coat
+					has_country_flag = Blue_BAV_GER						
+				}
+				set_cosmetic_tag = BAV_DE_Reich_B2
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Reich
+					has_country_flag = Flag_BAV_SchwarzRotGold
+					has_country_flag = Blue_BAV_GER					
+				}
+				set_cosmetic_tag = BAV_DE_Reich_B3
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Reich
+					has_country_flag = Flag_BAV_WB
+					has_country_flag = Blue_BAV_GER						
+				}
+				set_cosmetic_tag = BAV_DE_Reich_B4
+				}	
+			else_if = {
+				limit = { 
+					has_country_flag = BAV_DE_Reich
+					has_country_flag = Flag_BAV_1848_Navy
+					has_country_flag = Blue_Gray_BAV_GER
+				 }
+				set_cosmetic_tag = BAV_DE_Reich_BG1
+				}								
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Reich
+					has_country_flag = Flag_BAV_Coat
+					has_country_flag = Blue_Gray_BAV_GER
+				}
+				set_cosmetic_tag = BAV_DE_Reich_BG2
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Reich
+					has_country_flag = Flag_BAV_SchwarzRotGold
+					has_country_flag = Blue_Gray_BAV_GER
+				}
+				set_cosmetic_tag = BAV_DE_Reich_BG3
+				}	
+			else_if = {
+				limit = {
+					has_country_flag = BAV_DE_Reich
+					has_country_flag = Flag_BAV_WB
+					has_country_flag = Blue_Gray_BAV_GER
+				}
+				set_cosmetic_tag = BAV_DE_Reich_BG4
+				}																																																													 
+		}		
+	}
+
+}
+
+news_event = {
+	id = FRKFNS.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event FRKFNS.6" }
+	title = FRKFNS.6.t
+	desc = FRKFNS.6.d
+	picture = GFX_news_event_Yun_Bayern_Unification
+
+	major = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	option = {
+		name = FRKFNS.6.a
+		trigger = {
+			has_socialist_government = yes
+		}		
+	}
+
+	option = {
+		name = FRKFNS.6.b
+	}
+}

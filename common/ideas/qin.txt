@@ -1,0 +1,378 @@
+ideas = {
+	country = {
+		gong_ye_1 = {
+			picture = economic_control_icon
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = -0.1
+			}
+		}
+		gong_ye_2 = {
+			picture = economic_control_icon
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = -0.2
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		gong_ye_3 = {
+			picture = economic_control_icon
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = -0.2
+				production_speed_buildings_factor = 0.15
+				industrial_capacity_factory = 0.1
+			}
+		}
+		gong_ye_4 = {
+			picture = economic_control_icon
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = -0.3
+				production_speed_buildings_factor = 0.2
+				industrial_capacity_factory = 0.1
+				local_building_slots_factor = 0.2
+			}
+		}
+		ke_yan_1 = {
+			picture = CZE_Uranium_Research_b
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.05
+			}
+		}
+		ke_yan_2 = {
+			picture = CZE_Uranium_Research_b
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.05
+				production_lack_of_resource_penalty_factor = -0.1
+			}
+		}
+		ke_yan_3 = {
+			picture = CZE_Uranium_Research_b
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.1
+				production_lack_of_resource_penalty_factor = -0.1
+				political_power_gain = 0.2
+			}
+		}
+		quan_jiao_yu = {
+			picture = generic_research_increase
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.1
+				political_power_cost = 0.25
+			}
+		}
+		jun_dui_1 = {
+			picture = MON_conscript_conquered
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				training_time_army_factor = -0.2
+				command_power_gain = 0.25
+				conscription = 0.02
+			}
+		}
+		jun_dui_2 = {
+			picture = MON_conscript_conquered
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				training_time_army_factor = -0.2
+				command_power_gain = 0.25
+				conscription = 0.02
+				army_org_factor = 0.1
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+			}
+		}
+		qin_jd1 = {
+			picture = UK_military_loyal_idea
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				attrition = -0.1
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+			}
+		}
+		qin_jd3 = {
+			picture = UK_military_loyal_idea
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				attrition = -0.1
+				army_attack_factor = 0.2
+				army_defence_factor = 0.2
+				mobilization_speed = 0.1
+				land_reinforce_rate = 0.05
+			}
+		}
+		qin_hj1 = {
+			picture = ENG_anti_german_planning
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				experience_gain_navy_factor = 0.1
+				navy_max_range_factor = 0.1
+			}
+		}
+		qin_hj2 = {
+			picture = ENG_anti_german_planning
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				experience_gain_navy_factor = 0.1
+				navy_max_range_factor = 0.1
+				industrial_capacity_dockyard = 0.2
+				production_speed_dockyard_factor = 0.2
+			}
+		}
+		qin_hj3 = {
+			picture = generic_navy_bonus
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				destroyer = {
+					build_cost_ic = -0.2 instant = yes
+				}
+				screen_ship = {
+					build_cost_ic = -0.2 instant = yes
+				}
+				capital_ship = {
+					build_cost_ic = -0.2 instant = yes
+				}
+				carrier = {
+					build_cost_ic = -0.2 instant = yes
+				}
+			}
+			modifier = {
+				consumer_goods_factor = 0.05
+				repair_speed_factor = 0.4
+			}
+		}
+		qin_kj1 = {
+			picture = generic_air_bonus
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				experience_gain_air_unit_factor = 0.25
+				experience_gain_air_factor = 0.25
+				air_range_factor = 0.2
+			}
+		}
+		qin_kj2 = {
+			picture = generic_air_bonus
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				fighter_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+				heavy_fighter_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+				CAS_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+				nav_bomber_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+				tac_bomber_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+				strat_bomber_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+			}
+			modifier = {
+				experience_gain_air_unit_factor = 0.25
+				experience_gain_air_factor = 0.25
+				air_range_factor = 0.5
+				consumer_goods_factor = 0.05
+			}
+		}
+		yuan_zheng = {
+			picture = SYR_Lebanese_Unrest
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				generate_wargoal_tension = -0.9
+				subversive_activites_upkeep = -0.9
+				attrition = -0.2
+				army_attack_factor = 0.2
+				army_defence_factor = 0.2
+				army_speed_factor = 0.2
+				breakthrough_factor = 0.1				
+			}
+		}
+		xiu_xi = {
+			picture = RUS_land_reforms
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.2
+				stability_weekly = 0.01
+				research_speed_factor = 0.1
+				industry_repair_factor = 1				
+			}
+		}
+		mzxf = {
+			picture = HOL_syndicalist_neutrality
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 0.2	
+				opinion_gain_monthly_factor = 0.3
+				production_speed_buildings_factor = 0.1			
+			}
+		}
+		hqxf = {
+			picture = HOL_syndicalist_neutrality
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				political_power_factor = 0.2	
+				war_support_factor = 0.2
+				drift_defence_factor = 0.5		
+			}
+		}
+		ztxf = {
+			picture = HOL_syndicalist_neutrality
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.1
+				stability_weekly = 0.01
+				war_support_weekly = 0.01
+				consumer_goods_factor = -0.05	
+			}
+		}
+		ba_hours = {
+			picture = generic_radical_socialist_revolution
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = 0.05
+				stability_weekly = 0.01
+				war_support_weekly = 0.01
+				production_speed_buildings_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		se_hours = {
+			picture = generic_radical_socialist_revolution
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.2
+				production_factory_max_efficiency_factor = 0.2
+				production_factory_efficiency_gain_factor = 0.2
+			}
+		}
+		jiao_guan = {
+			picture = EGY_retired_brits
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				military_leader_cost_factor = -1
+				army_leader_start_level = 1
+				army_leader_start_attack_level = 1
+				army_leader_start_defense_level = 1
+				army_leader_start_logistics_level = 1
+				army_leader_start_planning_level = 1
+			}
+		}
+		mai_huo_qian = {
+			picture = capital_outflow
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = 0.1
+			}
+		}
+		qin_jg = {
+			picture = chi_incompetent_officers
+			allowed = { always = no }
+			modifier = {
+				command_power_gain_mult = -0.5
+				army_org_factor = -0.2
+				army_morale_factor = -0.2
+				army_speed_factor = -0.2
+			}
+		}
+		mai_chuan_idea = {
+			picture = capital_outflow
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = 0.1
+			}
+		}
+		mmai_chuan_idea = {
+			picture = LEC_high_reserves
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = -0.1
+			}
+		}
+		gj_idea = {
+			picture = jap_ichi_go
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = QIE 
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+		}
+	}
+}

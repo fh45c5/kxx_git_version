@@ -1,0 +1,1438 @@
+characters = {
+	#######################
+	### Country Leaders ###
+	#######################
+
+	#張國燾
+	QIE_zhang_guotao = {
+		name = QIE_zhang_guotao
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Asia_Generic_new_1
+			}
+		}
+		country_leader = {
+			ideology = natsynd_subtype
+		}
+	}
+
+	#李大釗
+	QIE_li_dazhao = {
+		name = QIE_li_dazhao
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Asia_Generic_new_1
+				small = GFX_portrait_QIE_li_dazhao_civilian_small
+			}
+		}
+		country_leader = {
+			ideology = syndicalist_subtype
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_li_dazhao_pol
+			
+			traits = { KR_council_communist }
+		}
+	}
+
+	#劉侃元
+	QIE_liu_kanyuan = {
+		name = QIE_liu_kanyuan
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Asia_Generic_new_1
+			}
+		}
+		country_leader = {
+			ideology = radsoc_tridemism_subtype
+		}
+	}
+
+	#李璜
+	QIE_li_huang = {
+		name = QIE_li_huang
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Asia_Generic_new_1
+				small = GFX_portrait_QIE_li_huang_civilian_small
+			}
+		}
+		country_leader = {
+			ideology = social_liberal_subtype
+		}
+		advisor = {
+			slot = second_in_command
+			idea_token = QIE_li_huang_sic
+			traits = { KR_pragmatic_statesman_sic }
+			cost = 0
+			can_be_fired = no
+		}
+	}
+
+	#黄伯樵
+	QIE_huang_boqiao = {
+		name = QIE_huang_boqiao
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Asia_Generic_new_1
+				small = GFX_portrait_QIE_huang_boqiao_civilian_small
+			}
+		}
+		country_leader = {
+			ideology = market_liberal_subtype
+		}
+	}
+
+	#愛新覺羅·溥杰
+	QIE_aisin_gioro_pujie = {
+		name = QIE_aisin_gioro_pujie
+		portraits = {
+			army = {
+				large = GFX_portrait_QIE_aisin_gioro_pujie_army_large
+				small = GFX_portrait_QIE_aisin_gioro_pujie_army_small
+			}
+		}
+		country_leader = {
+			ideology = social_conservative_subtype
+		}
+		advisor = {
+			slot = second_in_command
+			idea_token = QIE_aisin_gioro_pujie_sic
+			traits = { KR_flamboyant_brute_sic }
+			cost = 0
+			can_be_fired = no
+		}
+		corps_commander = {
+			desc = QIE_aisin_gioro_pujie_commander_desc
+			traits = { QIE_Monarchist_officer trait_reckless politically_connected cavalry_officer }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	#伍憲子
+	QIE_wu_xianzi = {
+		name = QIE_wu_xianzi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Asia_Generic_new_1
+			}
+		}
+		country_leader = {
+			ideology = social_conservative_subtype #For SHX
+		}
+	}
+
+	#晏陽初
+	QIE_james_yen = {
+		name = QIE_james_yen
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Asia_Generic_new_1
+				small = GFX_portrait_QIE_james_yen_civilian_small
+			}
+		}
+		advisor = {
+			slot = second_in_command
+			idea_token = QIE_james_yen_sic
+			traits = { KR_ambitious_union_boss_sic }
+			cost = 0
+			can_be_fired = no
+		}
+	}
+
+	#顧維鈞
+	QIE_wellington_koo = {
+		name = QIE_wellington_koo
+		portraits = {
+			civilian = {
+				large = GFX_portrait_QIE_wellington_koo_civilian_large
+				small = GFX_portrait_QIE_wellington_koo_civilian_small
+			}
+		}
+		country_leader = {
+			desc = QIE_wellington_koo_leader_desc
+			ideology = authoritarian_democrat_subtype
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_wellington_koo_pol
+			desc = QIE_wellington_koo_advisor_desc
+			visible = {
+				if = {
+					limit = { tag = QIE }
+					NOT = { has_country_leader = { character = 	QIE_aisin_gioro_puyi } }
+				}
+				else_if = {
+					limit = { tag = SHX }
+					has_completed_focus = SHX_beiyang_patronage_focus
+				}
+			}
+			available = {
+				is_country_leader = no
+			}
+			traits = { QIE_chinas_first_diplomat }
+		}
+	}
+
+	#胡適
+	QIE_hu_shih = {
+		name = QIE_hu_shih
+		portraits = {
+			civilian = {
+				large = GFX_portrait_QIE_hu_shih_civilian_large
+				small = GFX_portrait_QIE_hu_shih_civilian_small
+			}
+		}
+		country_leader = {
+			desc = QIE_hu_shih_leader_desc
+			ideology = social_liberal_subtype #For SHX
+		}
+		country_leader = {
+			desc = QIE_hu_shih_leader_desc
+			ideology = authoritarian_democrat_subtype
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_hu_shih_pol
+			desc = QIE_hu_shih_pol_desc
+			visible = {
+				if = {
+					limit = { tag = QIE }
+					NOT = { has_country_leader = { character = 	QIE_aisin_gioro_puyi } }
+				}
+				else_if = {
+					limit = { tag = SHX }
+					has_completed_focus = SHX_entreat_the_endeavor_society_focus
+				}
+			}
+			available = {
+				is_country_leader = no
+			}
+			traits = { QIE_the_lone_idealist }
+		}
+	}
+
+	#顏惠慶
+	QIE_yan_huiqing = {
+		name = QIE_yan_huiqing
+		portraits = {
+			civilian = {
+				large = GFX_portrait_QIE_yan_huiqing_civilian_large
+				small = GFX_portrait_QIE_yan_huiqing_civilian_small
+			}
+		}
+		country_leader = {
+			ideology = authoritarian_democrat_subtype
+		}
+	}
+
+	#吳佩孚
+	QIE_wu_peifu = {
+		name = QIE_wu_peifu
+		portraits = {
+			army = {
+				large = GFX_portrait_QIE_wu_peifu_army_large
+				small = GFX_portrait_QIE_wu_peifu_army_small
+			}
+		}
+		country_leader = {
+			desc = QIE_wu_peifu_leader_desc
+			ideology = authoritarian_democrat_subtype
+		}
+		country_leader = {
+			desc = QIE_wu_peifu_leader_desc
+			ideology = junta_subtype
+		}
+		advisor = {
+			slot = second_in_command
+			idea_token = QIE_wu_peifu_sic
+			traits = { QIE_jade_marshal_sic }
+			cost = 0
+			can_be_fired = no
+		}
+		field_marshal = {
+			desc = QIE_wu_peifu_commander_desc
+			traits = { QIE_Zhili_officer brilliant_strategist career_officer politically_connected war_hero organizer trickster infantry_leader aggressive_assaulter offensive_doctrine }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+
+	#愛新覺羅·溥儀
+	QIE_aisin_gioro_puyi = {
+		name = QIE_aisin_gioro_puyi
+		portraits = {
+			civilian = {
+				large = GFX_portrait_QIE_aisin_gioro_puyi_civilian_large
+			}
+		}
+		country_leader = {
+			desc = QIE_aisin_gioro_puyi_manchu_leader_desc
+			ideology = social_democrat_subtype
+			traits = { QIE_restored_emperor }
+		}
+		country_leader = {
+			desc = QIE_aisin_gioro_puyi_manchu_leader_desc
+			ideology = social_liberal_subtype
+			traits = { QIE_restored_emperor }
+		}
+		country_leader = {
+			desc = QIE_aisin_gioro_puyi_manchu_leader_desc
+			ideology = market_liberal_subtype
+			traits = { QIE_restored_emperor }
+		}
+		country_leader = {
+			desc = QIE_aisin_gioro_puyi_manchu_leader_desc
+			ideology = social_conservative_subtype
+			traits = { QIE_restored_emperor }
+		}
+		country_leader = {
+			desc = QIE_aisin_gioro_puyi_leader_desc
+			ideology = authdem_warlordism_subtype
+			traits = { QIE_puppet_emperor }
+		}
+	}
+
+	#愛新覺羅·溥侊
+	QIE_aisin_gioro_pugong = {
+		name = QIE_aisin_gioro_pugong
+		portraits = {
+			civilian = {
+				large = GFX_portrait_QIE_aisin_gioro_pugong_civilian_large
+			}
+		}
+	}
+
+	#溫宗堯
+	QIE_wen_tsungyao = { #puppet leader for TIB
+		name = QIE_wen_tsungyao
+		portraits = {
+			civilian = {
+				large = GFX_portrait_QIE_wen_tsungyao_civilian_large
+			}
+		}
+	}
+
+	#########################
+	### Second in Command ###
+	#########################
+
+	#曹錕
+	QIE_cao_kun = {
+		name = QIE_cao_kun
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_cao_kun_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_cao_kun
+			traits = { QIE_drunken_dabbler }
+			cost = 0
+			can_be_fired = no
+		}
+	}
+
+	################
+	### Advisors ###
+	################
+
+	#白堅武
+	QIE_bai_jianwu = {
+		name = QIE_bai_jianwu
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_bai_jianwu_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_bai_jianwu_pol
+			traits = { KR_silent_workhorse }
+		}
+	}
+
+	#王寵惠
+	QIE_wang_chonghui = {
+		name = QIE_wang_chonghui
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_wang_chonghui_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_wang_chonghui_pol
+			traits = { KR_chief_justice }
+		}
+	}
+
+	#張燕卿
+	QIE_zhang_yanqing = {
+		name = QIE_zhang_yanqing
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_zhang_yanqing_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_zhang_yanqing_pol
+			traits = { KR_master_diplomat }
+		}
+	}
+
+	#高凌霨
+	QIE_gao_lingwei = {
+		name = QIE_gao_lingwei
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_gao_lingwei_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_gao_lingwei_pol
+			traits = { KR_political_specialist }
+		}
+	}
+
+	#彭壽莘
+	QIE_peng_shouxin = {
+		name = QIE_peng_shouxin
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_peng_shouxin_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_peng_shouxin_pol
+			traits = { KR_old_general }
+		}
+	}
+
+	#王遇甲
+	QIE_wang_yujia = {
+		name = QIE_wang_yujia
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_wang_yujia_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_wang_yujia_pol
+			traits = { KR_secret_police_chief }
+		}
+	}
+
+	#曾琦
+	QIE_zeng_qi = {
+		name = QIE_zeng_qi
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_zeng_qi_civilian_small
+			}
+		}
+		country_leader = {
+			ideology = national_populist_subtype #For SHX
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_zeng_qi
+			traits = { KR_economic_reformer }
+			visible = {
+				if = {
+					limit = { tag = QIE }
+					NOT = { has_completed_focus = QIE_elimiate_baoding }
+				}
+				else_if = {
+					limit = { tag = SHX }
+					has_completed_focus = SHX_undertake_mass_militarisation_focus
+				}
+			}
+		}
+	}
+
+	#王克敏
+	QIE_wang_kemin = {
+		name = QIE_wang_kemin
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_wang_kemin_army_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_wang_kemin_pol
+			traits = { KR_bank_president }
+		}
+	}
+
+	#熊炳琦
+	QIE_xiong_bingqi = {
+		name = QIE_xiong_bingqi
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_xiong_bingqi_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_xiong_bingqi_pol
+			traits = { KR_industrialiser }
+		}
+	}
+
+	#雷海宗
+	QIE_lei_haizong = {
+		name = QIE_lei_haizong
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_lei_haizong_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_lei_haizong_pol
+			traits = { KR_ideological_crusader }
+		}
+	}
+
+	#梁漱溟
+	QIE_liang_shuming = {
+		name = QIE_liang_shuming
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_liang_shuming_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_liang_shuming_pol
+			visible = {
+				if = {
+					limit = { tag = SHX }
+					has_completed_focus = SHX_the_rural_revival_focus
+				}
+			}
+			traits = { QIE_rural_reconstruction_advocate }
+		}
+	}
+
+	#湯仲明
+	QIE_tang_zhongming = {
+		name = QIE_tang_zhongming
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_tang_zhongming_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_tang_zhongming_pol
+			traits = { QIE_automotive_innovator }
+		}
+	}
+
+	########################
+	### Post Manchu coup ###
+	########################
+
+	#愛新覺羅·載振
+	QIE_aisin_gioro_zaizhen = {
+		name = QIE_aisin_gioro_zaizhen
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_aisin_gioro_zaizhen_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_aisin_gioro_zaizhen
+			traits = { KR_corporate_suit }
+		}
+	}
+
+	#愛新覺羅·憲奎
+	QIE_aisin_gioro_xiankui = {
+		name = QIE_aisin_gioro_xiankui
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_aisin_gioro_xiankui_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_aisin_gioro_xiankui
+			traits = { KR_ultranationalist_agitator }
+		}
+	}
+
+	#葆康
+	QIE_baokang = {
+		name = QIE_baokang
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_baokang_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_baokang
+			traits = { KR_armaments_organiser }
+		}
+	}
+
+	#鄭孝胥
+	QIE_zheng_xiaoxu = {
+		name = QIE_zheng_xiaoxu
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_zheng_xiaoxu_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_zheng_xiaoxu
+			traits = { KR_monarchist_loyalist }
+		}
+	}
+
+	#謝介石
+	QIE_xie_jieshi = {
+		name = QIE_xie_jieshi
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_xie_jieshi_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_xie_jieshi
+			allowed = {
+				has_dlc_lar = yes
+			}
+			available = {
+				has_intelligence_agency = yes
+			}
+			traits = { KR_head_of_intelligence }
+		}
+	}
+
+	#郭則澐
+	QIE_guo_zeyun = {
+		name = QIE_guo_zeyun
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_guo_zeyun_civilian_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = QIE_guo_zeyun
+			traits = { KR_pious_intellectual }
+		}
+		#hirable after QIE_ceremonial_rites
+	}
+
+	#康同璧
+	QIE_kang_tongbi = {
+		name = QIE_kang_tongbi
+		gender = female
+		portraits = {
+			civilian = {
+				small = GFX_portrait_QIE_kang_tongbi_civilian_small
+			}
+		}
+		#role created in qieflavor.20
+	}
+
+	################
+	### Generals ###
+	################
+
+	#蔣百里
+	QIE_jiang_baili = {
+		name = QIE_jiang_baili
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_jiang_baili_army_small
+				large = GFX_portrait_QIE_jiang_baili_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_jiang_baili_commander_desc
+			traits = { QIE_Zhili_officer unyielding_defender defensive_doctrine career_officer skilled_staffer }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = QIE_jiang_baili_army_chief
+			desc = QIE_jiang_baili_mhc_desc
+			traits = { KR_army_chief_defensive_2 }
+			cost = 100
+		}
+	}
+
+	#王懷慶
+	QIE_wang_huaiqing = {
+		name = QIE_wang_huaiqing
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_wang_huaiqing_army_small
+				large = GFX_portrait_QIE_wang_huaiqing_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_wang_huaiqing_commander_desc
+			traits = { QIE_Zhili_officer trait_cautious old_guard organizer } #this guy sucks, was thinking of giving him 2 since he's been around for awhile, but nah
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	#愛新覺羅·載濤
+	QIE_aisin_gioro_zaitao = {
+		name = QIE_aisin_gioro_zaitao
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_aisin_gioro_zaitao_army_small
+				large = GFX_portrait_QIE_aisin_gioro_zaitao_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_aisin_gioro_zaitao_commander_desc
+			traits = { QIE_Monarchist_officer cavalry_officer cavalry_leader politically_connected }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = QIE_aisin_gioro_zaitao_army_chief
+			desc = QIE_aisin_gioro_zaitao_mhc_desc
+			traits = { KR_army_chief_manoeuvre_1 }
+			cost = 50
+		}
+	}
+
+	#蔡成勳
+	QIE_cai_chengxun = {
+		name = QIE_cai_chengxun
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_cai_chengxun_army_small
+				large = GFX_portrait_QIE_cai_chengxun_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_cai_chengxun_commander_desc
+			traits = { QIE_Zhili_officer career_officer politically_connected trickster guerilla_fighter }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = high_command
+			idea_token = QIE_cai_chengxun_mhc
+			desc = QIE_cai_chengxun_mhc_desc
+			ledger = army
+			traits = { KR_MHC_army_regrouping_2 }
+			cost = 100
+		}
+	}
+
+	#劉夢庚
+	QIE_liu_menggeng = {
+		instance = {
+			allowed = { has_dlc_lar = yes }
+			name = QIE_liu_menggeng
+			portraits = {
+				army = {
+					small = GFX_portrait_QIE_liu_menggeng_army_small
+					large = GFX_portrait_QIE_liu_menggeng_army_large
+				}
+			}
+			corps_commander = {
+				desc = QIE_liu_menggeng_commander_desc
+				traits = { QIE_Zhili_officer career_officer politically_connected organizer }
+				skill = 2
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 3
+			}
+			advisor = {
+				slot = political_advisor
+				idea_token = QIE_liu_menggeng_pol
+				desc = QIE_liu_menggeng_mhc_desc
+				available = {
+					not_already_hired_except_as = political_advisor
+					has_intelligence_agency = yes
+				}
+				traits = { KR_head_of_intelligence }
+			}
+			advisor = {
+				slot = high_command
+				idea_token = QIE_liu_menggeng_mhc
+				desc = QIE_liu_menggeng_mhc_desc
+				ledger = army
+				available = {
+					not_already_hired_except_as = high_command
+				}
+				traits = { KR_MHC_army_radio_intelligence_2 }
+				cost = 100
+			}
+		}
+		instance = {
+			allowed = { has_dlc_lar = no }
+			name = QIE_liu_menggeng
+			portraits = {
+				army = {
+					small = GFX_portrait_QIE_liu_menggeng_army_small
+					large = GFX_portrait_QIE_liu_menggeng_army_large
+				}
+			}
+			corps_commander = {
+				desc = QIE_liu_menggeng_commander_desc
+				traits = { QIE_Zhili_officer career_officer politically_connected organizer }
+				skill = 2
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 3
+			}
+			advisor = {
+				slot = high_command
+				idea_token = QIE_liu_menggeng_mhc
+				desc = QIE_liu_menggeng_mhc_desc
+				ledger = army
+				traits = { KR_MHC_army_radio_intelligence_2 }
+				cost = 100
+			}
+		}
+	}
+
+	#唐在禮
+	QIE_tang_zaili = {
+		name = QIE_tang_zaili
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_tang_zaili_army_small
+				large = GFX_portrait_QIE_tang_zaili_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_tang_zaili_commander_desc
+			traits = { QIE_Zhili_officer career_officer artillery_officer organizer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = QIE_tang_zaili_mhc
+			desc = QIE_tang_zaili_mhc_desc
+			traits = { KR_army_chief_reform_2 }
+			cost = 100
+		}
+	}
+
+	#王承斌
+	QIE_wang_chengbin = {
+		name = QIE_wang_chengbin
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_wang_chengbin_army_small
+				large = GFX_portrait_QIE_wang_chengbin_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_wang_chengbin_commander_desc
+			traits = { QIE_Zhili_officer career_officer politically_connected trickster expert_improviser }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = high_command
+			idea_token = QIE_wang_chengbin_mhc
+			desc = QIE_wang_chengbin_mhc_desc
+			ledger = army
+			traits = { KR_MHC_army_logistics_2 }
+			cost = 100
+		}
+	}
+
+	#郭布羅·潤麒
+	QIE_gobulo_runqi = {
+		name = QIE_gobulo_runqi
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_gobulo_runqi_army_small
+				large = GFX_portrait_QIE_gobulo_runqi_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_gobulo_runqi_commander_desc
+			traits = { QIE_Monarchist_officer trait_reckless media_personality armor_officer politically_connected }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	#張其鍠
+	QIE_zhang_qihuang = {
+		name = QIE_zhang_qihuang
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_zhang_qihuang_army_small
+				large = GFX_portrait_QIE_zhang_qihuang_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_zhang_qihuang_commander_desc
+			traits = { QIE_Zhili_officer politically_connected organizer trait_cautious infantry_leader }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = high_command
+			idea_token = QIE_zhang_qihuang_mhc
+			desc = QIE_zhang_qihuang_mhc_desc
+			ledger = army
+			traits = { KR_MHC_army_regrouping_2 }
+			cost = 100
+		}
+	}
+
+	#盧香亭
+	QIE_lu_xiangting = {
+		name = QIE_lu_xiangting
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_lu_xiangting_army_small
+				large = GFX_portrait_QIE_lu_xiangting_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_lu_xiangting_commander_desc
+			traits = { QIE_Zhili_officer career_officer politically_connected infantry_leader cavalry_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = QIE_lu_xiangting_mhc
+			desc = QIE_lu_xiangting_mhc_desc
+			ledger = army
+			traits = { KR_MHC_infantry_2 }
+			cost = 100
+		}
+	}
+
+	#蕭耀南
+	QIE_xiao_yaonan = {
+		name = QIE_xiao_yaonan
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_xiao_yaonan_army_small
+				large = GFX_portrait_QIE_xiao_yaonan_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_xiao_yaonan_commander_desc
+			traits = { QIE_Zhili_officer politically_connected war_hero trait_engineer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+
+	#李炳之
+	QIE_li_bingzhi = {
+		name = QIE_li_bingzhi
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_li_bingzhi_army_small
+				large = GFX_portrait_QIE_li_bingzhi_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_li_bingzhi_commander_desc
+			traits = { QIE_Zhili_officer career_officer artillery_officer artillery_specialist }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = high_command
+			idea_token = QIE_li_bingzhi_mhc
+			desc = QIE_li_bingzhi_mhc_desc
+			ledger = army
+			traits = { KR_MHC_concealment_2 }
+			cost = 100
+		}
+	}
+
+	#愛新覺羅·熙洽
+	QIE_aisin_gioro_xiqia = {
+		name = QIE_aisin_gioro_xiqia
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_aisin_gioro_xiqia_army_small
+				large = GFX_portrait_QIE_aisin_gioro_xiqia_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_aisin_gioro_xiqia_commander_desc
+			traits = { QIE_Monarchist_officer irregulars_officer trait_reckless harsh_leader politically_connected }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		advisor = {
+			slot = high_command
+			desc = QIE_aisin_gioro_xiqia_mhc_desc
+			idea_token = QIE_aisin_gioro_xiqia_mhc
+			ledger = army
+			traits = { KR_MHC_infantry_1 }
+			cost = 50
+		}
+	}
+
+	#于學忠
+	QIE_yu_xuezhong = {
+		name = QIE_yu_xuezhong
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_yu_xuezhong_army_small
+				large = GFX_portrait_QIE_yu_xuezhong_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_yu_xuezhong_commander_desc
+			traits = { QIE_Zhili_officer career_officer infantry_officer inflexible_strategist }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = QIE_yu_xuezhong_mhc
+			desc = QIE_yu_xuezhong_mhc_desc
+			ledger = army
+			traits = { KR_MHC_entrenchment_2 }
+			cost = 100
+		}
+	}
+
+	#劉鎮華
+	QIE_liu_zhenhua = {
+		name = QIE_liu_zhenhua
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_liu_zhenhua_army_small
+				large = GFX_portrait_QIE_liu_zhenhua_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_liu_zhenhua_commander_desc
+			traits = { QIE_Zhili_officer politically_connected trait_reckless irregulars_officer harsh_leader }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+
+	#邢士廉
+	QIE_xing_shilian = {
+		name = QIE_xing_shilian
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_xing_shilian_army_small
+				large = GFX_portrait_QIE_xing_shilian_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_xing_shilian_commander_desc
+			traits = { hidden_sympathies career_officer cavalry_officer urban_assault_specialist } #if you are wondering about last one - its cause 1925 shanghai
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 4
+			logistics_skill = 1
+		}
+	}
+
+	#愛新覺羅·吉興
+	QIE_aisin_gioro_jixing = {
+		name = QIE_aisin_gioro_jixing
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_aisin_gioro_jixing_army_small
+				large = GFX_portrait_QIE_aisin_gioro_jixing_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_aisin_gioro_jixing_commander_desc
+			traits = { QIE_Monarchist_officer politically_connected career_officer artillery_officer artillery_specialist }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+
+	#王凌雲
+	QIE_wang_lingyun = {
+		name = QIE_wang_lingyun
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_wang_lingyun_army_small
+				large = GFX_portrait_QIE_wang_lingyun_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_wang_lingyun_commander_desc
+			traits = { QIE_Zhili_officer organizer trait_engineer infantry_officer }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = QIE_wang_lingyun_mhc
+			desc = QIE_wang_lingyun_mhc_desc
+			ledger = army
+			traits = { KR_MHC_entrenchment_2 }
+			cost = 100
+		}
+	}
+
+	#杜錫鈞
+	QIE_du_xijun = {
+		name = QIE_du_xijun
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_du_xijun_army_small
+				large = GFX_portrait_QIE_du_xijun_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_du_xijun_commander_desc
+			traits = { QIE_Zhili_officer politically_connected infantry_officer infantry_expert organizer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+
+	#郭寄峤
+	QIE_guo_jijiao = {
+		name = QIE_guo_jijiao
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_guo_jijiao_army_small
+				large = GFX_portrait_QIE_guo_jijiao_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_guo_jijiao_commander_desc
+			traits = { QIE_Zhili_officer career_officer artillery_specialist artillery_officer }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	#魏益三
+	QIE_wei_yisan = {
+		name = QIE_wei_yisan
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_wei_yisan_army_small
+				large = GFX_portrait_QIE_wei_yisan_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_wei_yisan_commander_desc
+			traits = { QIE_Zhili_officer career_officer artillery_specialist artillery_expert }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = QIE_wei_yisan_mhc
+			desc = QIE_wei_yisan_mhc_desc
+			ledger = army
+			traits = { KR_MHC_artillery_2 }
+			cost = 100
+		}
+	}
+
+	#張蔭梧
+	QIE_zhang_yinwu = { #recruited after Manchu Coup
+		name = QIE_zhang_yinwu
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_zhang_yinwu_army_small
+				large = GFX_portrait_QIE_zhang_yinwu_army_large
+			}
+		}
+		corps_commander = {
+			desc = QIE_zhang_yinwu_commander_desc
+			traits = { career_officer infantry_officer trickster guerilla_fighter }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = QIE_zhang_yinwu_mhc
+			desc = QIE_zhang_yinwu_mhc_desc
+			ledger = army
+			traits = { KR_MHC_commando_1 }
+			cost = 50
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = QIE_zhang_yinwu_pol
+			desc = QIE_zhang_yinwu_advisor_desc
+			allowed = {
+				NOT = { tag = QIE }
+			}
+			visible = {
+				if = {
+					limit = { tag = SHX }
+					has_country_flag = QIE_zhang_yinwu_flag
+				}
+			}
+			traits = { KR_militia_organiser }
+		}
+	}
+
+	#愛新覺羅·載洵
+	QIE_aisin_gioro_zaixun = { #recruited in qieflavor.7
+		name = QIE_aisin_gioro_zaixun
+		portraits = {
+			army = {
+				large = GFX_portrait_QIE_aisin_gioro_zaixun_army_large
+			}
+		}
+	}
+
+	################
+	### Admirals ###
+	################
+
+	#吳紉禮
+	QIE_wu_yulin = {
+		name = QIE_wu_yulin
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_wu_yulin_army_small
+				large = GFX_portrait_QIE_wu_yulin_army_large
+			}
+		}
+		navy_leader = {
+			desc = QIE_wu_yulin_admiral_desc
+			traits = { navy_career_officer superior_tactician gunnery_expert }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 1
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = QIE_wu_yulin_navy_chief
+			desc = QIE_wu_yulin_mhc_desc
+			traits = { KR_navy_chief_reform_2 }
+			cost = 100
+		}
+	}
+
+	#薩鎮冰
+	QIE_sa_zhenbing = {
+		name = QIE_sa_zhenbing
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_sa_zhenbing_army_small
+				large = GFX_portrait_QIE_sa_zhenbing_army_large
+			}
+		}
+		navy_leader = {
+			desc = QIE_sa_zhenbing_admiral_desc
+			traits = { gentlemanly bold navy_career_officer battleship_adherent naval_lineage }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = QIE_sa_zhenbing_navy_chief
+			desc = QIE_sa_zhenbing_mhc_desc
+			traits = { KR_navy_chief_decisive_battle_2 }
+			cost = 100
+		}
+	}
+
+	#杜錫珪
+	QIE_du_xigui = {
+		name = QIE_du_xigui
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_du_xigui_army_small
+				large = GFX_portrait_QIE_du_xigui_army_large
+			}
+		}
+		navy_leader = {
+			desc = QIE_du_xigui_admiral_desc
+			traits = { old_guard_navy navy_career_officer }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+		advisor = {
+			slot = high_command
+			desc = QIE_du_xigui_mhc_desc
+			idea_token = QIE_du_xigui_mhc
+			ledger = navy
+			traits = { KR_MHC_capital_ship_1 }
+			cost = 50
+		}
+	}
+
+	################
+	### Airforce ###
+	################
+
+	#王貫一
+	QIE_wang_guanyi = {
+		name = QIE_wang_guanyi
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_wang_guanyi_army_small
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = QIE_wang_guanyi_mhc
+			traits = { KR_MHC_pilot_training_2 }
+			cost = 100
+		}
+	}
+
+	#任雲閣
+	QIE_ren_yunge = {
+		name = QIE_ren_yunge
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_ren_yunge_army_small
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = QIE_ren_yunge_mhc
+			traits = { KR_MHC_tactical_bombing_1 }
+			cost = 50
+		}
+	}
+
+	#石邦藩
+	QIE_shi_bangfan = {
+		name = QIE_shi_bangfan
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_shi_bangfan_army_small
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = QIE_shi_bangfan
+			traits = { KR_air_chief_safety_1 }
+			cost = 50
+		}
+	}
+
+	#劉牧群
+	QIE_liu_muqun = {
+		name = QIE_liu_muqun
+		portraits = {
+			army = {
+				small = GFX_portrait_QIE_liu_muqun_army_small
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = QIE_liu_muqun
+			traits = { KR_air_chief_all_weather_2 }
+			cost = 100
+		}
+	}
+}

@@ -1,0 +1,2576 @@
+focus_tree = {
+id = LEB_starting
+    country = {
+        base = 0
+        modifier = {
+            add = 10
+            tag = LEB
+        }
+    }
+	
+
+##### beirut vilayet ######
+	id = Beirut_Vilayet
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = LEB
+		}
+	}
+	default = no
+	focus = {
+		id = LEB_a_land_hard_to_govern
+		icon = GFX_goal_LEB_a_land_hard_to_govern
+		cost = 5.00
+		x = 14
+		y = 0
+			available = {
+					is_subject_of = TUR
+				}
+			completion_reward = {
+					add_political_power = 150
+					add_stability = 0.10
+					add_war_support = 0.10
+					add_offsite_building = {
+							type = industrial_complex
+							level = 2
+						}
+					add_offsite_building = {
+							type = arms_factory
+							level = 2
+						}	
+					set_country_flag = LEB_religious_decisions
+					custom_effect_tooltip = LEB_unlock_decisions_a_land_hard_to_govern_tt
+				}
+
+	}
+	focus = {
+		id = LEB_the_fluttering_cedar
+		icon = GFX_goal_LEB_the_fluttering_cedar
+		cost = 1.00
+		prerequisite = {
+			focus = LEB_a_land_hard_to_govern
+		}
+		x = 14
+		y = 1
+			available = {
+					is_subject_of = TUR
+					has_idea = LEB_black_monday
+				}
+			completion_reward = {
+					add_stability = -0.05
+					custom_effect_tooltip = ottoman_lose_much_influence_tt
+					custom_effect_tooltip = shia_add_influence_tt
+					custom_effect_tooltip = maronite_add_influence_tt
+					custom_effect_tooltip = sunni_add_influence_tt
+					custom_effect_tooltip = ssnp_add_influence_tt
+			add_to_variable = {
+				var = LEB_ottoman_power
+				value = -20
+			}
+			add_to_variable = {
+				var = LEB_shia_power
+				value = 5
+			}
+			add_to_variable = {
+				var = LEB_maronite_power
+				value = 5
+			}
+			add_to_variable = {
+				var = LEB_sunni_power
+				value = 5
+			}
+			add_to_variable = {
+				var = LEB_ssnp_power
+				value = 5
+			}
+				}
+
+	}
+	focus = {
+		id = LEB_agricultural_subsidies
+		icon = GFX_goal_LEB_agricultural_subsidies
+		cost = 3.00
+		prerequisite = {
+			focus = LEB_the_fluttering_cedar
+		}
+		x = 12
+		y = 2
+			available = {
+					is_subject_of = TUR
+					
+						  has_idea = LEB_black_monday
+				}
+			completion_reward = {
+					553 = {
+							if = {
+									limit = {
+											is_owned_and_controlled_by = LEB
+										}
+									add_extra_state_shared_building_slots = 2
+								}
+							
+						
+				}
+swap_ideas = {
+							remove_idea = LEB_black_monday
+							add_idea = LEB_black_monday_1
+								}
+	}
+	}
+	focus = {
+		id = LEB_emergency_food_assistance
+		icon = GFX_goal_LEB_emergency_food_assistance
+		cost = 3.00
+		prerequisite = {
+			focus = LEB_agricultural_subsidies
+		}
+		x = 11
+		y = 3
+			available = {
+					is_subject_of = TUR
+					
+				}
+			completion_reward = {
+					add_timed_idea = {
+							idea = LEB_food_assistance
+							days = 120
+						}
+					add_stability = 0.05
+					custom_effect_tooltip = ottoman_add_influence_tt
+					add_to_variable = {
+				var = LEB_ottoman_power
+				value = 5
+			}
+				}
+
+	}
+	focus = {
+		id = LEB_ottoman_gendarme
+		icon = GFX_goal_LEB_ottoman_gendarme
+		cost = 3.00
+		prerequisite = {
+			focus = LEB_the_fluttering_cedar
+		}
+		x = 16
+		y = 2
+			available = {
+					is_subject_of = TUR
+					has_idea = LEB_religious_riots
+				}
+			completion_reward = {
+					add_manpower = 5000
+					add_command_power = 50
+					swap_ideas = {
+							remove_idea = LEB_religious_riots
+							add_idea = LEB_religious_riots_1
+						}
+					add_tech_bonus = {
+							name = LEB_ottoman_gendarme_bonus
+							bonus = 3
+							uses = 1
+							category = military_police_tech
+						}
+					553 = {
+				if = {
+					limit = { is_owned_and_controlled_by = LEB }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}	
+					add_equipment_to_stockpile = {
+							type = infantry_equipment_0
+							amount = 500
+							producer = TUR
+						}
+				}
+
+	}
+	focus = {
+		id = LEB_let_overseas_remittance_return
+		icon = GFX_goal_LEB_let_overseas_remittance_return
+		cost = 3.00
+		prerequisite = {
+			focus = LEB_ottoman_gendarme
+			focus = LEB_agricultural_subsidies
+		}
+		x = 14
+		y = 3
+			completion_reward = {
+					set_country_flag = LEB_overseas_remittance_return
+					add_stability = 0.03
+					add_political_power = -50
+					custom_effect_tooltip = LEB_unlock_decisions_overseas_remittance_tt
+					swap_ideas = {
+							remove_idea = LEB_black_monday_1
+							add_idea = LEB_black_monday_2
+						}
+				}
+			available = {
+					is_subject_of = TUR
+					
+					      has_idea = LEB_black_monday_1
+						  
+				}
+
+	}
+	focus = {
+		id = LEB_check_the_disorder
+		icon = GFX_goal_LEB_check_the_disorder
+		cost = 3.00
+		prerequisite = {
+			focus = LEB_ottoman_gendarme
+		}
+		x = 17
+		y = 3
+			completion_reward = {
+					add_command_power = 50
+					add_war_support = -0.05
+					add_stability = 0.1
+					add_manpower = -359
+					swap_ideas = {
+							remove_idea = LEB_religious_riots_1
+							add_idea = LEB_religious_clashes_mitigated
+						}
+					custom_effect_tooltip = ottoman_add_influence_tt
+					add_to_variable = {
+				var = LEB_ottoman_power
+				value = 5
+			}
+				}
+			available = {
+					is_subject_of = TUR
+					has_idea = LEB_religious_riots_1
+				}
+
+	}
+	focus = {
+		id = LEB_a_straw_from_capital
+		icon = GFX_goal_LEB_a_straw_from_capital
+		cost = 3.00
+		prerequisite = {
+			focus = LEB_emergency_food_assistance
+		}
+		prerequisite = {
+			focus = LEB_let_overseas_remittance_return
+		}
+		prerequisite = {
+			focus = LEB_check_the_disorder
+		}
+		x = 14
+		y = 4
+			available = {
+					is_subject_of = TUR
+					has_idea = LEB_black_monday_2
+					    
+				}
+			completion_reward = {
+					remove_ideas = LEB_black_monday_2
+				}
+
+	}
+	focus = {
+		id = LEB_storm_has_dissipated
+		icon = GFX_goal_LEB_storm_has_dissipated
+		cost = 3.00
+		prerequisite = {
+			focus = LEB_a_straw_from_capital
+		}
+		x = 14
+		y = 5
+			available = {
+					is_subject_of = TUR
+				}
+			completion_reward = {
+					add_stability = 0.1
+					add_ideas = LEB_an_new_era_for_vilayet
+					custom_effect_tooltip = ottoman_add_influence_tt
+					add_to_variable = {
+				var = LEB_ottoman_power
+				value = 5
+			}
+				}
+
+	}
+	focus = {
+		id = LEB_the_path_to_prosperous
+		icon = GFX_goal_LEB_the_path_to_prosperous
+		cost = 3.00
+		prerequisite = {
+			focus = LEB_storm_has_dissipated
+		}
+		x = 6
+		y = 6
+			available = {
+					
+					is_subject_of = TUR
+				}
+			completion_reward = {
+					add_offsite_building = {
+							type = industrial_complex
+							level = 2
+						}
+			553 = {
+				if = {
+					limit = { is_owned_and_controlled_by = LEB }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}	
+				}
+
+	}
+	focus = {
+		id = LEB_reopen_the_bank
+		icon = GFX_goal_LEB_reopen_the_bank
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_the_path_to_prosperous
+		}
+		completion_reward = {
+		add_ideas = LEB_idea_reopen_the_bank
+		
+		}
+		x = 2
+		y = 7
+
+	}
+	focus = {
+		id = LEB_micro_credit
+		icon = GFX_goal_LEB_micro_credit
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_reopen_the_bank
+		}
+		completion_reward = {
+		swap_ideas = { 
+				remove_idea = LEB_idea_reopen_the_bank
+				add_idea = LEB_idea_reopen_the_bank_1
+			}
+		}
+		x = 1
+		y = 8
+
+	}
+	focus = {
+		id = LEB_let_the_oil_flow
+		icon = GFX_goal_LEB_let_the_oil_flow
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_the_path_to_prosperous
+		}
+		completion_reward = {
+		add_resource = {
+						type = oil
+						amount = 15
+						state = 553
+						}
+							}
+		x = 10
+		y = 7
+
+	}
+	focus = {
+		id = LEB_the_dark_tide
+		icon = GFX_goal_LEB_the_dark_tide
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_storm_has_dissipated
+		}
+		completion_reward = {
+		add_political_power = 100
+		add_command_power = 50
+		add_stability = 0.05	
+		add_war_support = 0.05
+		custom_effect_tooltip = ottoman_add_influence_tt
+		custom_effect_tooltip = the_dark_tide_tt
+					add_to_variable = {
+				var = LEB_ottoman_power
+				value = 5
+			}
+			}
+		x = 22
+		y = 6
+
+	}
+	focus = {
+		id = LEB_industry_plan
+		icon = GFX_goal_LEB_industry_plan
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_the_dark_tide
+			focus = LEB_the_path_to_prosperous
+		}
+		completion_reward = {
+		553 = {
+							if = {
+									limit = {
+						is_owned_and_controlled_by = LEB
+										}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+								}
+								}
+		add_resource = {
+						type = steel
+						amount = 25
+						state = 553
+						}
+		add_resource = {
+						type = aluminium
+						amount = 10
+						state = 553
+						}				
+						
+		}
+		x = 14
+		y = 7
+
+	}
+	focus = {
+		id = LEB_tyre_shipyard
+		icon = GFX_goal_LEB_tyre_shipyard
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_industry_plan
+		}
+		completion_reward = {
+		navy_experience = 25
+		553 = {
+							if = {
+									limit = {
+						is_owned_and_controlled_by = LEB
+										}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+								}
+								}
+			add_tech_bonus = {
+							name = LEB_ottoman_gendarme_bonus
+							bonus = 0.5
+							uses = 6
+							category = naval_equipment
+						}
+		}
+		x = 13
+		y = 8
+
+	}
+	focus = {
+		id = LEB_tripoli_soap_factory
+		icon = GFX_goal_LEB_tripoli_soap_factory
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_industry_plan
+		}
+		completion_reward = {
+		553 = {
+							if = {
+									limit = {
+						is_owned_and_controlled_by = LEB
+										}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+								}
+								}
+			add_tech_bonus = {
+							name = LEB_ottoman_gendarme_bonus
+							bonus = 0.5
+							uses = 6
+							category = industry
+						}
+		}
+		x = 15
+		y = 8
+
+	}
+	focus = {
+		id = LEB_beirut_ordnance
+		icon = GFX_goal_LEB_beirut_ordnance
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_tyre_shipyard
+		}
+		prerequisite = {
+			focus = LEB_tripoli_soap_factory
+		}
+		completion_reward = {
+		553 = {
+							if = {
+									limit = {
+						is_owned_and_controlled_by = LEB
+										}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+								}
+								}
+			add_tech_bonus = {
+							name = LEB_ottoman_gendarme_bonus
+							bonus = 1.0
+							uses = 3
+							category = infantry_weapons
+						}
+		}
+		x = 14
+		y = 9
+
+	}
+	focus = {
+		id = LEB_expand_beirut_university
+		icon = GFX_goal_LEB_expand_beirut_university
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_beirut_ordnance
+		}
+		completion_reward = {
+		add_research_slot = 1
+		add_tech_bonus = {
+							name = LEB_ottoman_gendarme_bonus
+							bonus = 0.5
+							uses = 6
+							category = electronics
+						}
+		}
+		x = 14
+		y = 10
+
+	}
+	focus = {
+		id = LEB_the_heir_of_antioch
+		icon = GFX_goal_LEB_the_heir_of_antioch
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_the_dark_tide
+		}
+		completion_reward = {
+		add_political_power = 25
+		add_manpower = 500
+		custom_effect_tooltip = maronite_lose_influence_tt
+			add_to_variable = {
+				var = LEB_maronite_power
+				value = -5
+			}
+			}
+		x = 18
+		y = 7
+
+	}
+	focus = {
+		id = LEB_operation_broken_spear
+		icon = GFX_goal_LEB_operation_broken_spear
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_the_heir_of_antioch
+		}
+		mutually_exclusive = {
+			focus = LEB_printing_factory_incident
+		}
+		completion_reward = {
+		custom_effect_tooltip = unlock_operation_broken_spear_tt
+		add_command_power = 25
+		add_manpower = 500
+		add_equipment_to_stockpile = {
+							type = infantry_equipment_0
+							amount = 300
+							producer = TUR
+						}
+		}
+		x = 17
+		y = 8
+
+	}
+	focus = {
+		id = LEB_the_gathering_whirlwind
+		icon = GFX_goal_LEB_the_gathering_whirlwind
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_the_dark_tide
+		}
+		completion_reward = {
+		add_political_power = 25
+		army_experience = 25
+		custom_effect_tooltip = ssnp_lose_influence_tt
+			add_to_variable = {
+				var = LEB_ssnp_power
+				value = -5
+			}
+			}
+		x = 21
+		y = 7
+
+	}
+	focus = {
+		id = LEB_printing_factory_incident
+		icon = GFX_goal_LEB_printing_factory_incident
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_the_heir_of_antioch
+		}
+		prerequisite = {
+			focus = LEB_the_gathering_whirlwind
+		}
+		mutually_exclusive = {
+			focus = LEB_operation_broken_spear
+		}
+		completion_reward = {
+		custom_effect_tooltip = unlock_printing_factory_incident_tt
+		add_war_support = 0.10
+		add_political_power = 50
+		}
+		x = 19
+		y = 8
+
+	}
+	focus = {
+		id = LEB_meet_patriarch
+		icon = GFX_goal_LEB_meet_patriarch
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_printing_factory_incident
+			focus = LEB_operation_broken_spear
+		}
+		mutually_exclusive = {
+			focus = LEB_meet_mujtahid
+		}
+		completion_reward = {
+		add_ideas = LEB_maronite_appeased
+		country_event = LEB.27
+		custom_effect_tooltip = maronite_add_influence_tt
+		custom_effect_tooltip = ssnp_lose_influence_tt
+		custom_effect_tooltip = ottoman_add_influence_tt
+		add_to_variable = {
+				var = LEB_maronite_power
+				value = 5
+	
+			}
+		add_to_variable = {
+				var = LEB_ssnp_power
+				value = -5
+			}
+		add_to_variable = {
+				var = LEB_ottoman_power
+				value = 5
+			}
+		}
+		x = 18
+		y = 9
+
+	}
+	focus = {
+		id = LEB_operation_breezeless
+		icon = GFX_goal_LEB_operation_breezeless
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_the_gathering_whirlwind
+		}
+		mutually_exclusive = {
+			focus = LEB_operation_red_dusk
+		}
+		completion_reward = {
+		custom_effect_tooltip = unlock_operation_breezeless_tt
+		add_command_power = 25
+		add_manpower = 500
+		add_equipment_to_stockpile = {
+							type = infantry_equipment_0
+							amount = 300
+							producer = TUR
+						}
+		}
+		x = 21
+		y = 8
+
+	}
+	focus = {
+		id = LEB_the_red_devil
+		icon = GFX_goal_LEB_the_red_devil
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_the_dark_tide
+		}
+		completion_reward = {
+		add_political_power = 25
+		add_war_support = 0.05
+		custom_effect_tooltip = sunni_lose_influence_tt
+			add_to_variable = {
+				var = LEB_sunni_power
+				value = -5
+			}
+			}
+		x = 23
+		y = 7
+
+	}
+	focus = {
+		id = LEB_operation_red_dusk
+		icon = GFX_goal_LEB_operation_red_dusk
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_the_red_devil
+		}
+		mutually_exclusive = {
+			focus = LEB_operation_breezeless
+		}
+		completion_reward = {
+		custom_effect_tooltip = unlock_operation_red_dusk_tt
+		add_command_power = 25
+		add_manpower = 500
+		add_equipment_to_stockpile = {
+							type = infantry_equipment_0
+							amount = 300
+							producer = TUR
+						}
+		}
+		x = 23
+		y = 8
+
+	}
+	focus = {
+		id = LEB_the_shape_of_imam
+		icon = GFX_goal_LEB_the_shape_of_imam
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_the_dark_tide
+		}
+		completion_reward = {
+		add_political_power = 25
+		add_stability = 0.05
+		custom_effect_tooltip = shia_lose_influence_tt
+			add_to_variable = {
+				var = LEB_shia_power
+				value = -5
+			}
+			}
+		x = 26
+		y = 7
+
+	}
+	focus = {
+		id = LEB_anti_communist_mullah
+		icon = GFX_goal_LEB_anti_communist_mullah
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_the_shape_of_imam
+		}
+		prerequisite = {
+			focus = LEB_the_red_devil
+		}
+		mutually_exclusive = {
+			focus = LEB_operation_resurrection
+		}
+		completion_reward = {
+		custom_effect_tooltip = unlock_anti_communist_mullah_tt
+		add_war_support = 0.1
+		add_political_power = 50
+		}
+		x = 25
+		y = 8
+
+	}
+	focus = {
+		id = LEB_operation_resurrection
+		icon = GFX_goal_LEB_operation_resurrection
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_the_shape_of_imam
+		}
+		mutually_exclusive = {
+			focus = LEB_anti_communist_mullah
+		}
+		
+		completion_reward = {
+		custom_effect_tooltip = unlock_operation_resurrection_tt
+		add_command_power = 25
+		add_equipment_to_stockpile = {
+							type = artillery_equipment_1
+							amount = 60
+							producer = TUR
+						}
+		}
+		x = 27
+		y = 8
+
+	}
+	focus = {
+		id = LEB_meet_mujtahid
+		icon = GFX_goal_LEB_meet_mujtahid
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_anti_communist_mullah
+			focus = LEB_operation_resurrection
+		}
+		
+		mutually_exclusive = {
+			focus = LEB_meet_patriarch
+		}
+		completion_reward = {
+		add_ideas = LEB_shia_appeased
+		country_event = LEB.26
+		custom_effect_tooltip = shia_add_influence_tt
+		custom_effect_tooltip = sunni_lose_influence_tt
+		custom_effect_tooltip = ottoman_add_influence_tt
+		add_to_variable = {
+				var = LEB_shia_power
+				value = 5
+	
+			}
+		add_to_variable = {
+				var = LEB_sunni_power
+				value = -5
+	
+			}
+		add_to_variable = {
+				var = LEB_ottoman_power
+				value = 5
+			}
+		}
+		x = 26
+		y = 9
+
+	}
+	focus = {
+		id = LEB_the_calm_sea
+		icon = GFX_goal_LEB_the_calm_sea
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+					has_idea = LEB_religious_clashes_mitigated
+				}
+		prerequisite = {
+			focus = LEB_meet_patriarch
+			focus = LEB_meet_mujtahid
+
+		}
+		prerequisite = {
+			focus = LEB_operation_red_dusk
+			focus = LEB_operation_breezeless
+			}
+			
+		completion_reward = {
+		add_to_variable = {
+				var = LEB_ottoman_power
+				value = 15
+			}
+		swap_ideas = {
+		remove_idea = LEB_religious_clashes_mitigated
+		add_idea = LEB_religious_clashes_calmed
+		}
+		custom_effect_tooltip = ottoman_add_much_influence_tt
+		}
+		x = 22
+		y = 10
+
+	}
+	focus = {
+		id = LEB_revitalization_of_the_tourism
+		icon = GFX_goal_LEB_revitalization_of_the_tourism
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_the_path_to_prosperous
+		}
+		x = 6
+		y = 7
+			completion_reward = {
+			set_country_flag = LEB_tourism
+			add_ideas = LEB_idea_tourism
+			custom_effect_tooltip = LEB_revitalization_of_the_tourism_tt
+}
+
+	}
+	focus = {
+		id = LEB_casino_grand_prix
+		icon = GFX_goal_LEB_casino_grand_prix
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_reopen_the_bank
+			focus = LEB_revitalization_of_the_tourism
+		}
+		completion_reward = {
+		add_political_power = -25
+		add_ideas = LEB_gambling_industry
+		}
+		x = 3
+		y = 8
+
+	}
+	focus = {
+		id = LEB_ancient_ruins
+		icon = GFX_goal_LEB_ancient_ruins
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_revitalization_of_the_tourism
+		}
+		completion_reward = {
+		553 = {
+							if = {
+									limit = {
+						is_owned_and_controlled_by = LEB
+										}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+								}
+								}
+		add_tech_bonus = {
+							name = LEB_alpine_skiing_bonus
+							bonus = 0.5
+							uses = 4
+							category = construction_tech
+						}						
+		}
+		x = 5
+		y = 8
+
+	}
+	focus = {
+		id = LEB_alpine_skiing
+		icon = GFX_goal_LEB_alpine_skiing
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_revitalization_of_the_tourism
+		}
+		completion_reward = {
+		553 = {
+							if = {
+									limit = {
+						is_owned_and_controlled_by = LEB
+										}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+								}
+								}
+		add_tech_bonus = {
+							name = LEB_alpine_skiing_bonus
+							bonus = 0.5
+							uses = 4
+							category = support_tech
+						}
+		add_equipment_to_stockpile = {
+							type = support_equipment_1
+							amount = 250
+							producer = TUR
+						}
+		}
+		x = 7
+		y = 8
+
+	}
+	focus = {
+		id = LEB_port_for_hajj
+		icon = GFX_goal_LEB_port_for_hajj
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_let_the_oil_flow
+			focus = LEB_revitalization_of_the_tourism
+		}
+		completion_reward = {
+		add_ideas = LEB_hajj_port
+		553 = {
+							if = {
+									limit = {
+											is_owned_and_controlled_by = LEB
+										}
+									add_extra_state_shared_building_slots = 1
+									add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+								}
+		}
+
+	}
+	x = 9
+	y = 8
+	}
+	focus = {
+		id = LEB_1st_mid_east_trade_expo
+		icon = GFX_goal_LEB_1st_mid_east_trade_expo
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_international_airport
+		}
+		prerequisite = {
+			focus = LEB_beirut_racecourse
+		}
+		prerequisite = {
+			focus = LEB_countryside_revitalized
+		}
+		prerequisite = {
+			focus = LEB_the_new_jerusalam
+		}
+		prerequisite = {
+			focus = LEB_refining_industry
+		}
+		completion_reward = {
+		country_event = LEB.4
+		}
+		x = 6
+		y = 10
+
+	}
+	focus = {
+		id = LEB_countryside_revitalized
+		icon = GFX_goal_LEB_countryside_revitalized
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_micro_credit
+		}
+		completion_reward = {
+		add_stability = 0.15
+		553 = {
+				if = {
+					limit = { is_owned_and_controlled_by = LEB }
+				increase_state_category_by_one_level = yes	
+				}
+			}
+		
+		}
+		x = 1
+		y = 9
+
+	}
+	focus = {
+		id = LEB_the_new_jerusalam
+		icon = GFX_goal_LEB_the_new_jerusalam
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_port_for_hajj
+		}
+		completion_reward = {
+		swap_ideas = { remove_idea = LEB_hajj_port
+		add_idea = LEB_new_jerusalem
+		}
+		}
+		x = 9
+		y = 9
+
+	}
+	focus = {
+		id = LEB_beirut_racecourse
+		icon = GFX_goal_LEB_beirut_racecourse
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_casino_grand_prix
+		}
+		completion_reward = {
+		swap_ideas = {
+		remove_idea = LEB_gambling_industry
+		add_idea = LEB_gambling_industry_1
+		}
+		}
+		x = 3
+		y = 9
+
+	}
+	focus = {
+		id = LEB_international_airport
+		icon = GFX_goal_LEB_international_airport
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_alpine_skiing
+		}
+		prerequisite = {
+			focus = LEB_ancient_ruins
+		}
+		completion_reward = {  
+		553 = {
+				if = {
+					limit = { is_owned_and_controlled_by = LEB }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = air_base
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		add_tech_bonus = {
+							name = LEB_ottoman_gendarme_bonus
+							bonus = 1
+							uses = 3
+							category = air_equipment
+						}	
+			
+		}
+		x = 6
+		y = 9
+
+	}
+	focus = {
+		id = LEB_domestic_storage_facilities
+		icon = GFX_goal_LEB_domestic_storage_facilities
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_let_the_oil_flow
+		}
+		completion_reward = {
+		add_resource = {
+						type = oil
+						amount = 10
+						state = 553
+						}
+		add_ideas = LEB_oil_oil_oil
+		}
+	
+		x = 11
+		y = 8
+
+	}
+	focus = {
+		id = LEB_refining_industry
+		icon = GFX_goal_LEB_refining_industry
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_domestic_storage_facilities
+		}
+		completion_reward = {
+		553 = {
+		if = {
+					limit = { is_owned_and_controlled_by = LEB }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = synthetic_refinery 
+						level = 1
+						instant_build = yes
+					}
+				}
+				}
+		add_resource = {
+						type = oil
+						amount = 8
+						state = 553
+						}
+		
+		}
+		x = 11
+		y = 9
+
+	}
+	focus = {
+		id = LEB_model_vilayet
+		icon = GFX_goal_LEB_model_vilayet
+		cost = 3.00
+		available = {
+					
+					is_subject_of = TUR
+				}
+		prerequisite = {
+			focus = LEB_expand_beirut_university
+		}
+		prerequisite = {
+			focus = LEB_1st_mid_east_trade_expo
+		}
+		prerequisite = {
+			focus = LEB_the_calm_sea
+		}
+		completion_reward = {
+		add_political_power = 200
+		add_stability = 0.15
+		add_war_support = 0.15
+		custom_effect_tooltip = LEB_model_vilayet_tt
+		
+		hidden_effect = {
+		country_event = 
+		{ id = LEB.100
+			days = 3
+			}
+				}
+					}
+		x = 14
+		y = 11
+
+	}
+	### nr ssnp线
+	focus={
+		id=SSNP_1
+		icon = GFX_Focus_ssnp_1
+		x=44
+		y=4
+		cost=4
+		available = {
+			has_country_leader = { name = "安东·萨阿德" ruling_only = yes }
+		}
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 70
+		}
+	}
+	focus={
+		id=SSNP_2
+		icon = GFX_Focus_ssnp_2
+		x=38
+		y=5
+		prerequisite={focus=SSNP_1}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		set_party_name = {
+			ideology = syndicalist
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被查封"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = anarcho_syndicalist_subtype
+		}
+		set_party_name = {
+			ideology = radical_socialist
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被查封"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = anarchism_subtype
+		}
+		set_party_name = {
+			ideology = social_democrat
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被查封"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = socdem_junta_subtype
+		}
+		set_party_name = {
+			ideology = social_liberal
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被查封"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = soclib_agrarianism_subtype
+		}
+		set_party_name = {
+			ideology = market_liberal
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被查封"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = ancap_subtype
+		}
+		set_party_name = {
+			ideology = social_conservative
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被查封"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = moderate_authoritarianism_subtype
+		}
+		set_party_name = {
+			ideology = authoritarian_democrat
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被查封"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = oligarchy_subtype
+		}
+		}
+	}
+	focus={
+		id=SSNP_3
+		icon = GFX_goal_NFA_Republican_National_Corporatism
+		x=37
+		y=6
+		prerequisite={focus=SSNP_2}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+		has_completed_focus = SSNP_30
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		680 = { set_demilitarized_zone = no }
+		add_ideas = LEB_Greater_Syria
+		}
+	}
+	focus={
+		id=SSNP_4
+		icon = GFX_Focus_ssnp_3
+		x=39
+		y=6
+		prerequisite={focus=SSNP_2}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+		has_completed_focus = SSNP_3
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_research_slot = 1
+		swap_ideas = {
+		remove_idea = LEB_Greater_Syria
+		add_idea = LEB_Greater_Syria_1
+		}
+		}
+	}
+	focus={
+		id=SSNP_5
+		icon = GFX_goal_COR_christian_service_brigade
+		x=36
+		y=7
+		prerequisite={focus=SSNP_3}
+		cost=2
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_popularity = { ideology = paternal_autocrat popularity = -1 }
+		set_party_name = {
+			ideology = paternal_autocrat
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被查封"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = theocracy_subtype
+		}
+		}
+	}
+	focus={
+		id=SSNP_6
+		icon = GFX_goal_COR_jewish_segregation
+		x=38
+		y=7
+		prerequisite={focus=SSNP_3}
+		prerequisite={focus=SSNP_4}
+		cost=2
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_manpower = -2213
+		add_stability = 0.15
+		hidden_effect =  {
+			country_event = {
+				id = lebo.3
+				days = 5
+			}
+		}
+		}
+	}
+	focus={
+		id=SSNP_7
+		icon = GFX_goal_MEX_begin_secularization2
+		x=40
+		y=7
+		prerequisite={focus=SSNP_4}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_popularity = { ideology = national_populist popularity = -1 }
+		set_party_name = {
+			ideology = national_populist
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被查封"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = occultism_subtype
+		}
+		}
+	}
+	focus={
+		id=SSNP_8
+		icon = GFX_RUS_Say_No_To_Capitalism
+		x=37
+		y=8
+		prerequisite={focus=SSNP_5}
+		prerequisite={focus=SSNP_6}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = LEB_Greater_Syria_1
+		add_idea = LEB_Greater_Syria_2
+		}
+	}
+	}
+	focus={
+		id=SSNP_9
+		icon = GFX_goal_NFA_All_For_the_Liberation
+		x=39
+		y=8
+		prerequisite={focus=SSNP_6}
+		prerequisite={focus=SSNP_7}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_war_support = 0.2
+		add_political_power = 200
+		}
+	}
+	focus={
+		id=SSNP_10
+		icon = GFX_RUS_Twinkling_Social_Democracy
+		x=37
+		y=9
+		prerequisite={focus=SSNP_8}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = LEB_Greater_Syria_2
+		add_idea = LEB_Greater_Syria_3
+		}
+		}
+	}
+	focus={
+		id=SSNP_11
+		icon = GFX_goal_ALB_Flowers_Socialism
+		x=39
+		y=9
+		prerequisite={focus=SSNP_9}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+		has_completed_focus = SSNP_10
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = LEB_Greater_Syria_3
+		add_idea = LEB_Greater_Syria_4
+		}
+		}
+	}
+	focus={
+		id=SSNP_12
+		icon = GFX_Focus_ssnp_4
+		x=38
+		y=10
+		prerequisite={focus=SSNP_10}
+		prerequisite={focus=SSNP_11}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = LEB_Greater_Syria_4
+		add_idea = LEB_Greater_Syria_5
+		}
+		}
+	}
+	focus={
+		id=SSNP_13
+		icon = GFX_RUS_Begin_Industrialization
+		x=44
+		y=5
+		prerequisite={focus=SSNP_1}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = LEB_Initial_industrialization
+		}
+	}
+	focus={
+		id=SSNP_14
+		icon = GFX_goal_SIC_confiscate_degenerate_wealth
+		x=43
+		y=6
+		prerequisite={focus=SSNP_13}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state={
+		prioritize = { 553 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=3
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	focus={
+		id=SSNP_15
+		icon = GFX_goal_generic_agriculture2
+		x=45
+		y=6
+		prerequisite={focus=SSNP_13}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = LEB_Imported_agricultural_machinery
+		}
+	}
+	focus={
+		id=SSNP_16
+		icon = GFX_Focus_ssnp_5
+		x=44
+		y=7
+		prerequisite={focus=SSNP_14}
+		prerequisite={focus=SSNP_15}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			NOT = { country_exists = SYR }
+			controls_state = 554
+			controls_state = 995
+			controls_state = 680
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state={
+		prioritize = { 554 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=3
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+			add_building_construction={
+				type= infrastructure
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 680 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=2
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+			add_building_construction={
+				type= infrastructure
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 995 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=infrastructure
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type= infrastructure
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	focus={
+		id=SSNP_17
+		icon = GFX_goal_GUA_Only_Modernized_Capitalist_State
+		x=43
+		y=8
+		prerequisite={focus=SSNP_16}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		set_capital = { state = 554 }
+		random_owned_controlled_state={
+				prioritize={ 554 }
+				limit={
+					is_core_of=ROOT
+					is_in_home_area=yes
+				}
+				increase_state_category_by_two_levels=yes
+			}
+		}
+	}
+	focus={
+		id=SSNP_18
+		icon = GFX_goal_COR_Cooperate_Organized_Workers_Farmers
+		x=45
+		y=8
+		prerequisite={focus=SSNP_16}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			swap_ideas = {
+				remove_idea = LEB_Imported_agricultural_machinery
+				add_idea = LEB_Imported_agricultural_machinery_1
+			}
+		}
+	}
+	focus={
+		id=SSNP_19
+		icon = GFX_goal_generic_takeover_industries
+		x=42
+		y=9
+		prerequisite={focus=SSNP_17}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = -100
+		random_owned_controlled_state={
+		prioritize = { 995 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=2
+			add_building_construction={
+				type=industrial_complex
+				level=2
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 554 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 680 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=2
+			add_building_construction={
+				type=arms_factory
+				level=2
+				instant_build=yes
+			}
+		}
+		}
+	}
+	focus={
+		id=SSNP_20
+		icon = GFX_goal_KIV_urban
+		x=44
+		y=9
+		prerequisite={focus=SSNP_17}
+		prerequisite={focus=SSNP_18}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state={
+		prioritize = { 553 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=2
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 554 }
+			add_extra_state_shared_building_slots=2
+		}
+		random_owned_controlled_state={
+		prioritize = { 680 }
+			add_extra_state_shared_building_slots=2
+		}
+		hidden_effect =  {
+			country_event = {
+				id = lebo.1
+				days = 7
+			}
+		}
+		}
+	}
+	focus={
+		id=SSNP_21
+		icon = GFX_goal_ULS_Squirell_Gun
+		x=46
+		y=9
+		prerequisite={focus=SSNP_18}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_stability = 0.05
+		random_owned_controlled_state={
+		prioritize = { 554 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	focus={
+		id=SSNP_22
+		icon = GFX_goal_CSA_strenght_through_industry
+		x=44
+		y=10
+		prerequisite={focus=SSNP_19}
+		prerequisite={focus=SSNP_20}
+		prerequisite={focus=SSNP_21}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = LEB_Initial_industrialization
+				add_idea = LEB_Initial_industrialization_1
+			}
+		}
+	}
+	focus={
+		id=SSNP_23
+		icon = GFX_goal_generic_arctic_warfare
+		x=50
+		y=5
+		prerequisite={focus=SSNP_1}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		680 = { set_demilitarized_zone = yes }
+		add_ideas = LEB_Reconquest_War
+		}
+	}
+	focus={
+		id=SSNP_24
+		icon = GFX_BBR_mass_conscription
+		x=49
+		y=6
+		prerequisite={focus=SSNP_23}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			swap_ideas = {
+				remove_idea = LEB_Reconquest_War
+				add_idea = LEB_Reconquest_War_1
+			}
+		}
+	}
+	focus={
+		id=SSNP_25
+		icon = GFX_goal_BRG_Patriotic_Worker
+		x=51
+		y=6
+		prerequisite={focus=SSNP_23}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_stability = 0.1
+		add_war_support = 0.15
+		}
+	}
+	focus={
+		id=SSNP_26
+		icon = GFX_goal_SKM_Himalayan_Arms_Race
+		x=50
+		y=7
+		prerequisite={focus=SSNP_24}
+		prerequisite={focus=SSNP_25}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 3000
+				producer = CAN
+			}
+		add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 3000
+				producer = GER
+			}
+		add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 2000
+				producer = RUS
+			}
+		add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 2000
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type =  artillery_equipment
+				amount = 400
+				producer = GER
+			}
+		add_timed_idea = {
+		 idea = LEB_Purchase_of_armaments
+		 days = 90
+		}
+		}
+	}
+	focus={
+		id=SSNP_27
+		icon = GFX_goal_FRA_arms_of_the_people
+		x=50
+		y=8
+		prerequisite={focus=SSNP_26}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		division_template = {
+			name = "黎巴嫩国防军"
+			division_names_group = SYR_LEB_ARMY_00
+			regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+			artillery_brigade  = { x = 3 y = 0 }
+			artillery_brigade  = { x = 3 y = 1 }
+			artillery_brigade  = { x = 3 y = 2 }
+			}
+			support = {
+				artillery = { x = 0 y = 0 }
+				recon = { x = 0 y = 1 }
+			}
+			}
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"国防军第一“萨阿德警卫”师\" division_template = \"黎巴嫩国防军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+				create_unit = {
+					division = "name = \"国防军第二“青年”师\" division_template = \"黎巴嫩国防军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+				create_unit = {
+					division = "name = \"国防军第三“叙利亚”师\" division_template = \"黎巴嫩国防军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+				create_unit = {
+					division = "name = \"国防军第四“拉塔基亚”师\" division_template = \"黎巴嫩国防军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+				create_unit = {
+					division = "name = \"国防军第五“霍姆斯”师\" division_template = \"黎巴嫩国防军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+				create_unit = {
+					division = "name = \"国防军第六“贝鲁特”师\" division_template = \"黎巴嫩国防军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+				create_unit = {
+					division = "name = \"国防军第七“阿勒颇”师\" division_template = \"黎巴嫩国防军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+			}
+		}
+	}
+	focus={
+		id=SSNP_28
+		icon = GFX_goal_SYR_Lebanese_State
+		x=49
+		y=9
+		prerequisite={focus=SSNP_27}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		division_template = {
+			name = "叙利亚救国军"
+			division_names_group = SYR_LEB_ARMY_01
+			regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			artillery_brigade  = { x = 3 y = 0 }
+			artillery_brigade  = { x = 3 y = 1 }
+			}
+			support = {
+				artillery = { x = 0 y = 0 }
+			}
+			}
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"救国军第一“人民”师\" division_template = \"叙利亚救国军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+				create_unit = {
+					division = "name = \"救国军第二“救国”师\" division_template = \"叙利亚救国军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+				create_unit = {
+					division = "name = \"救国军第三“抵抗”师\" division_template = \"叙利亚救国军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+				create_unit = {
+					division = "name = \"救国军第四“保卫”师\" division_template = \"叙利亚救国军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+			}
+		}
+	}
+	focus={
+		id=SSNP_29
+		icon = GFX_FAUD_RED_MILITIA_TWO
+		x=51
+		y=9
+		prerequisite={focus=SSNP_27}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_manpower = 40000
+		division_template = {
+			name = "国土保卫军"
+			division_names_group = SYR_LEB_ARMY_01
+			regiments = {
+			militia = { x = 0 y = 0 }
+			militia = { x = 0 y = 1 }
+			militia = { x = 0 y = 2 }
+			militia = { x = 1 y = 0 }
+			militia = { x = 1 y = 1 }
+			militia = { x = 1 y = 2 }
+			}
+			support = {
+				artillery = { x = 0 y = 0 }
+			}
+			}
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"保卫军第一“守望者”师\" division_template = \"国土保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+				create_unit = {
+					division = "name = \"保卫军第二“保卫者”师\" division_template = \"国土保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+				create_unit = {
+					division = "name = \"保卫军第三“爱国者”师\" division_template = \"国土保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+				create_unit = {
+					division = "name = \"保卫军第四“守卫者”师\" division_template = \"国土保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+				create_unit = {
+					division = "name = \"保卫军第五“护卫者”师\" division_template = \"国土保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+				create_unit = {
+					division = "name = \"保卫军第六“近卫者”师\" division_template = \"国土保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+				create_unit = {
+					division = "name = \"保卫军第七“执旗者”师\" division_template = \"国土保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+				create_unit = {
+					division = "name = \"保卫军第八“防卫者”师\" division_template = \"国土保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = LEB
+				}
+			}	
+		}
+	}
+	focus={
+		id=SSNP_30
+		icon = GFX_goal_NZL_war_readiness
+		x=50
+		y=10
+		prerequisite={focus=SSNP_28}
+		prerequisite={focus=SSNP_29}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = SYR type = annex_everything }
+		every_state = {
+			limit = { is_core_of = SYR }
+			add_core_of = LEB
+			}
+		set_cosmetic_tag = LEB_SYR
+		swap_ideas = {
+		remove_idea = LEB_Reconquest_War_1
+		add_idea = LEB_Reconquest_War_2
+		}
+		if = {
+			limit = {
+				has_government = national_populist
+			}
+			LEB = {
+				annex_country = { target = SYR transfer_troops = yes }
+			}
+		}
+		}
+	}
+	focus={
+		id=SSNP_31
+		icon = GFX_goal_SYR_Lion_of_Syria
+		x=44
+		y=11
+		prerequisite={focus=SSNP_22}
+		prerequisite={focus=SSNP_12}
+		prerequisite={focus=SSNP_30}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		set_cosmetic_tag = LEB_GT_SYR
+		every_state = {
+			limit = { is_core_of = PAL }
+			add_core_of = LEB
+			}
+		}
+	}
+	focus={
+		id=SSNP_32
+		icon = GFX_Focus_ssnp_6
+		x=42
+		y=12
+		prerequisite={focus=SSNP_31}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = PAL type = annex_everything }
+		}
+	}
+	focus={
+		id=SSNP_33
+		icon = GFX_goal_AFG_Khyber_Gunsmithing
+		x=44
+		y=12
+		prerequisite={focus=SSNP_31}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		unlock_decision_category_tooltip = SYR_National_Reconstruction_Commission
+		}
+	}
+	focus={
+		id=SSNP_34
+		icon = GFX_goal_OTT_Integrate_Kurdistan
+		x=46
+		y=12
+		prerequisite={focus=SSNP_31}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = KUR type = annex_everything }
+		}
+	}
+	focus={
+		id=SSNP_35
+		icon = GFX_goal_EGY_nile_proc
+		x=41
+		y=13
+		prerequisite={focus=SSNP_32}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = EGY type = annex_everything }
+		}
+	}
+	focus={
+		id=SSNP_36
+		icon = GFX_goal_HEJ_Navy
+		x=43
+		y=13
+		prerequisite={focus=SSNP_32}
+		prerequisite={focus=SSNP_33}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = HEJ type = annex_everything }
+		}
+	}
+	focus={
+		id=SSNP_37
+		icon = GFX_goal_JBS_Navy
+		x=45
+		y=13
+		prerequisite={focus=SSNP_33}
+		prerequisite={focus=SSNP_34}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = JBS type = annex_everything }
+		}
+	}
+	focus={
+		id=SSNP_38
+		icon = GFX_goal_hunt_down_saudis
+		x=47
+		y=13
+		prerequisite={focus=SSNP_34}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = SAU type = annex_everything }
+		}
+	}
+	focus={
+		id=SSNP_39
+		icon = GFX_goal_SYR_Hawk_of_Syria
+		x=44
+		y=14
+		prerequisite={focus=SSNP_35}
+		prerequisite={focus=SSNP_36}
+		prerequisite={focus=SSNP_37}
+		prerequisite={focus=SSNP_38}
+		cost=2
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		FRA = {
+		add_to_faction = LEB
+		}
+		}
+	}
+}

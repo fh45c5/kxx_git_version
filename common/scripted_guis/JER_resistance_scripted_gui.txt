@@ -1,0 +1,29 @@
+scripted_gui = {
+
+	JER_resistance_scripted_gui = {
+		context_type = decision_category
+		window_name = "JER_resistance_scripted_gui"
+
+		ai_check = {
+			always = no
+		}
+
+		triggers = {		
+		}
+		ai_enabled = {
+			tag = JER 
+		}		
+		visible = {
+			OR = {
+				tag = JER
+			}
+		}
+
+		effects = {
+		}
+		
+		properties = {		
+	}
+}
+
+}

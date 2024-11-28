@@ -1,0 +1,376 @@
+CAL_blessings_masks = {
+
+	brandon_mask = {
+
+		available = {
+                	has_completed_focus = CAL_blessing_coup
+			NOT = {has_country_flag = brandon_mask_active_flag}
+			NOT = {has_country_flag = tony_mask_active_flag}
+			NOT = {has_country_flag = aubrey_mask_active_flag}
+		}
+
+		visible = {
+			has_completed_focus = CAL_blessing_coup
+			NOT = {has_country_flag = brandon_mask_active_flag}
+			NOT = {has_country_flag = tony_mask_active_flag}
+			NOT = {has_country_flag = aubrey_mask_active_flag}
+		}  
+		cost = 50
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision brandon_mask"
+                        set_country_flag = brandon_mask_active_flag
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove brandon_mask"
+			add_ideas = CAL_brandon_mask_idea
+		}
+	}
+
+	aubrey_mask = {
+
+		available = {
+                	has_completed_focus = CAL_blessing_coup
+			NOT = {has_country_flag = brandon_mask_active_flag}
+			NOT = {has_country_flag = tony_mask_active_flag}
+			NOT = {has_country_flag = aubrey_mask_active_flag}
+		}
+
+		visible = {
+			has_completed_focus = CAL_blessing_coup
+			NOT = {has_country_flag = brandon_mask_active_flag}
+			NOT = {has_country_flag = tony_mask_active_flag}
+			NOT = {has_country_flag = aubrey_mask_active_flag}
+		}  
+		cost = 50
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision aubrey_mask"
+                        set_country_flag = aubrey_mask_active_flag
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove aubrey_mask"
+			add_ideas = CAL_aubrey_mask_idea
+		}
+	}
+
+	tony_mask = {
+
+		available = {
+                	has_completed_focus = CAL_blessing_coup
+			NOT = {has_country_flag = brandon_mask_active_flag}
+			NOT = {has_country_flag = tony_mask_active_flag}
+			NOT = {has_country_flag = aubrey_mask_active_flag}
+		}
+
+		visible = {
+			has_completed_focus = CAL_blessing_coup
+			NOT = {has_country_flag = brandon_mask_active_flag}
+			NOT = {has_country_flag = tony_mask_active_flag}
+			NOT = {has_country_flag = aubrey_mask_active_flag}
+		}  
+		cost = 50
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision tony_mask"
+                        set_country_flag = tony_mask_active_flag
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove tony_mask"
+			add_ideas = CAL_tony_mask_idea
+		}
+	}
+	
+	brandon_mask_remove = {
+
+		available = {
+                	has_completed_focus = CAL_blessing_coup
+			has_country_flag = brandon_mask_active_flag
+		}
+
+		visible = {
+			has_completed_focus = CAL_blessing_coup
+			has_country_flag = brandon_mask_active_flag
+		}  
+		cost = 50
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision removeCAL_brandon_mask_idea"
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CAL_brandon_mask_idea"
+                        clr_country_flag = brandon_mask_active_flag
+                        remove_ideas = CAL_brandon_mask_idea
+		}
+	}
+
+	tony_mask_remove = {
+
+		available = {
+                	has_completed_focus = CAL_blessing_coup
+			has_country_flag = tony_mask_active_flag
+		}
+
+		visible = {
+			has_completed_focus = CAL_blessing_coup
+			has_country_flag = tony_mask_active_flag
+		}  
+		cost = 50
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision tonymaskremove"
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CAL_tony_mask_idea"
+                        clr_country_flag = tony_mask_active_flag
+                        remove_ideas = CAL_tony_mask_idea
+		}
+	}
+
+	aubrey_mask_remove = {
+
+		available = {
+                	has_completed_focus = CAL_blessing_coup
+			has_country_flag = aubrey_mask_active_flag
+		}
+
+		visible = {
+			has_completed_focus = CAL_blessing_coup
+			has_country_flag = aubrey_mask_active_flag
+		}  
+		cost = 50
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision aubrey"
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CAL_aubrey_mask_idea"
+                        clr_country_flag = aubrey_mask_active_flag
+                        remove_ideas = CAL_aubrey_mask_idea
+		}
+	}
+}
+
+CAL_blessings_coups = {
+	choose_flag_bless = {
+
+		available = {
+                	has_completed_focus = CAL_blessing_coup
+		}
+
+		visible = {
+			has_completed_focus = CAL_blessing_coup
+		}  
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision choose_flag_kwant"
+                        set_country_flag = CAL_choose_flag_bless_flag
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove choose_flag_kwant"
+                        clr_country_flag = CAL_choose_flag_bless_flag
+                        country_event = pacificstates.6112
+		}
+	}
+	choose_port_bless= {
+
+		available = {
+                	has_completed_focus = CAL_blessing_coup
+		}
+
+		visible = {
+			has_completed_focus = CAL_blessing_coup
+		}  
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision choose_flag_kwant"
+                        set_country_flag = CAL_choose_flag_bless_flag
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove choose_flag_kwant"
+                        clr_country_flag = CAL_choose_flag_bless_flag
+                        country_event = pacificstates.6117
+		}
+	}			
+	
+	CAL_invade_ALA = {
+		cost = 0
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		available = {
+			has_completed_focus = CAL_blessing_coup
+			NOT = {
+				is_in_faction_with = ALA
+				ALA = {
+					is_subject_of = CAL
+				}
+			}
+		}
+		visible = {
+			has_completed_focus = CAL_blessing_coup
+		}
+		complete_effect = {
+			declare_war_on = {
+				target = ALA
+				type = annex_everything
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	CAL_contact_50_blessings_patriots_miami = {
+		
+		available = {
+                	has_completed_focus = CAL_blessing_coup
+			NOT = {has_country_flag = dont_contact_miami_flag}
+		}
+
+		visible = {
+			has_completed_focus = CAL_blessing_coup
+			NOT= {has_country_flag = dont_contact_miami_flag}
+		}  
+		cost = 15
+		fire_only_once = yes
+                days_remove = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CAL_contact_50_blessings_patriots_miami"
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CAL_contact_50_blessings_patriots_miami"
+			set_country_flag = CAL_contact_50_blessings_patriots_miami_flag
+			set_country_flag = dont_contact_miami_flag
+		}
+	}
+
+	assassinate_COR_miami = {
+		
+		available = {
+                	has_country_flag = CAL_contact_50_blessings_patriots_miami_flag 
+		}
+
+		visible = {
+			has_country_flag = CAL_contact_50_blessings_patriots_miami_flag 
+		}  
+		cost = 15
+		fire_only_once = yes
+                days_remove = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision assassinate_COR_miami"
+			clr_country_flag = CAL_contact_50_blessings_patriots_miami_flag 
+                    
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove assassinate_COR_miami"
+			set_country_flag = assassinate_COR_miami_flag
+		}
+	}
+
+	take_miami = {
+		available = {
+                	has_country_flag = assassinate_COR_miami_flag
+		}
+
+		visible = {
+			has_country_flag = assassinate_COR_miami_flag
+		}  
+		cost = 15
+		fire_only_once = yes
+                days_remove = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision take_miami"
+			clr_country_flag = assassinate_COR_miami_flag 
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove take_miami"
+			CAL = { transfer_state = 1171}
+			CAL = { transfer_state = 366}
+
+		}
+	}
+}
+
+CAL_5_year_plandec = {
+	choose_flag_kwant = {
+
+		available = {
+                	has_completed_focus = CAL_kwantung_take_hold
+		}
+
+		visible = {
+			has_completed_focus = CAL_kwantung_take_hold
+		}  
+		fire_only_once = no
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision choose_flag_kwant"
+                        set_country_flag = CAL_choose_flag_kwant_flag
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove choose_flag_kwant"
+                        clr_country_flag = CAL_choose_flag_kwant_flag
+                        country_event = pacificstates.6116
+		}
+	}		
+}
+ 

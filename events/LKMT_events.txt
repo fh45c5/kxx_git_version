@@ -1,0 +1,2029 @@
+
+add_namespace = CHI_laf
+add_namespace = chi_embrace_general
+add_namespace = chi_for_ws
+add_namespace = aisa_bank
+add_namespace = chi_tanv
+add_namespace = chi_brits
+add_namespace = chi_mediate_conflict
+add_namespace = chi_combined_fleet
+add_namespace = chi_cjf
+add_namespace = chi_dss_war
+add_namespace = chi_McMahon
+add_namespace = chi_condiment
+
+####  土地革命  ####
+
+	#第一阶段：没收地主土地完成
+	country_event = {
+		id = CHI_laf.1
+		title = CHI_laf.1.t
+		desc = CHI_laf.1.d
+
+		is_triggered_only = yes
+
+		option = {
+			name = CHI_laf.1.a
+			add_political_power = 125
+			add_stability = 0.1
+			hidden_effect = { 
+				set_country_flag = CHI_land_reform_left_2nd 
+			}
+		}
+	}
+	#第二阶段：分发土地完成
+	country_event = {
+		id = CHI_laf.2
+		title =CHI_laf.2.t
+		desc = CHI_laf.2.d
+
+		is_triggered_only = yes
+
+		option = {
+			name = CHI_laf.2.a
+			add_political_power = 125
+			add_war_support = 0.1
+			hidden_effect = { 
+				add_ideas = Maoism_land_reform_buff 
+				set_country_flag = CHI_land_reform_left_3rd 
+			}
+		}
+	}
+	#第三阶段：集体化农业完成
+	country_event = {
+		id = CHI_laf.3
+		title = CHI_laf.3.t
+		desc = CHI_laf.3.d
+
+		is_triggered_only = yes
+
+		option = {
+			name = CHI_laf.3.a
+			hidden_effect = { set_country_flag = CHI_land_reform_finished }
+			remove_ideas = Maoism_land_reform_buff 
+			swap_ideas = {
+				remove_idea = CHI_peasant_association_buff3
+				add_idea = Maoism_Peoples_commune
+			}
+		}
+	}
+
+
+
+
+
+	
+
+
+
+####  流亡将领  ####
+
+	country_event = {
+		id = chi_embrace_general.1
+		title = chi_embrace_general.1.t
+		picture = GFX_report_event_generic_diplomacy3
+		desc = chi_embrace_general.1.d
+		is_triggered_only = yes
+		option = {
+			name = chi_embrace_general.1.1
+			ai_chance = {
+				base = 0
+			}
+			add_political_power = -25
+			add_war_support = -0.02
+			FROM.FROM = {
+				every_unit_leader = {
+					set_nationality = CHI
+				}
+			}
+		}
+		option = {
+			name = chi_embrace_general.1.2
+			trigger = {
+				FROM.FROM = {
+					OR = {
+						tag = HNN
+						tag = GXC
+						tag = YUN
+						tag = SZC
+						tag = ANQ
+						tag = QIE
+						tag = QIE
+						tag = XSM
+						tag = FNG
+						tag = SIK
+						tag = SHX
+						tag = TIB
+					}
+				}
+			}
+			add_political_power = -15
+			add_war_support = 0.02
+			CHI_get_embrace_general = yes
+			ai_chance = {
+				base = 999
+			}
+			
+		}
+		option = {
+			name = chi_embrace_general.1.3
+			add_political_power = 15
+			ai_chance = {
+				base = 1
+			}
+		}
+	}
+
+####  亚洲国家联盟  ####
+
+	#建立亚洲阵营的新闻
+	news_event = { 
+		id = chi_for_ws.1
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_for_ws.1.0 FROM = [From.GetName]" }
+		title = chi_for_ws.1.t
+		desc = chi_for_ws.1.d
+		picture = GFX_report_event_CHI_want_sw
+
+		major = yes
+		is_triggered_only = yes
+		fire_for_sender = yes
+
+		trigger = {
+			wants_world_news = yes
+		}
+
+		show_major = {
+			OR = {
+				regional_europe_news = yes
+				regional_asia_news = yes
+				regional_middle_east_news = yes
+			}
+		}
+
+		option = {
+			name = chi_for_ws.1.a
+		}
+	}
+	#邀请加入阵营
+	country_event = { 
+		id = chi_for_ws.2
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_for_ws.2 FROM = [From.GetName]" }
+		title = chi_for_ws.2.t
+		desc = chi_for_ws.2.d
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_for_ws.2.a
+			CHI = { country_event = { id = chi_for_ws.3 days = 3 } }
+		}
+	}
+	#两套策略
+	country_event = { 
+		id = chi_for_ws.3
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_for_ws.3 FROM = [From.GetName]" }
+		title = chi_for_ws.3.t
+		desc = chi_for_ws.3.d
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_for_ws.3.a
+			FROM = { 
+				set_country_flag = Chinese_just_want_us_to_join 
+				country_event = { id = chi_for_ws.4 days = 3 }
+			}
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 0.5
+					OR = {
+						has_country_leader = { character = CHI_wang_jingwei }
+						AND = {
+							NOT = { has_country_leader = { character = CHI_hu_zongnan } }
+							has_government = totalist
+						}
+					}
+				}
+			}
+		}
+		option = {
+			name = chi_for_ws.3.b
+			FROM = { country_event = { id = chi_for_ws.5 days = 3 } }
+			add_political_power = -25
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 1.5
+					OR = {
+						has_country_leader = { character = CHI_wang_jingwei }
+						AND = {
+							NOT = { has_country_leader = { character = CHI_hu_zongnan } }
+							has_government = totalist
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					has_country_leader = { character = CHI_song_qingling }
+				}
+				modifier = {
+					factor = 0.5
+					has_country_leader = { character = CHI_Mao_runzhi }
+				}
+			}
+		}
+	}
+	#平等互惠的邀请
+	country_event = {
+		id = chi_for_ws.4
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_for_ws.4 FROM = [From.GetName]" }
+		title = chi_for_ws.4.t
+		desc = chi_for_ws.4.d
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_for_ws.4.a
+			ai_chance = {
+				base = 75
+			}
+			FROM = { country_event = { id = chi_for_ws.6 days = 3 } }
+
+		}
+		option = {
+			name = chi_for_ws.4.b
+			ai_chance = {
+				base = 25
+				modifier = {
+					factor = 0.5
+					FROM = {
+						is_stronger_than_ROOT_and_not_vulnerable = yes
+					}
+				}
+			}
+			custom_effect_tooltip = china_attack_warn
+			FROM = { country_event = { id = chi_for_ws.7 days = 3 } }
+		}
+	}
+	#处于战略政治的邀请
+	country_event = { 
+		id = chi_for_ws.5
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_for_ws.5 FROM = [From.GetName]" }
+		title = chi_for_ws.5.t
+		desc = chi_for_ws.5.d
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_for_ws.5.a
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			FROM = { country_event = { id = chi_for_ws.8 days = 3 } }
+			ai_chance = {
+				factor = 30
+			}
+		}
+		option = {
+			name = chi_for_ws.5.b
+			custom_effect_tooltip = china_attack_warn
+			set_country_flag = CHI_refuse_attached
+			FROM = { country_event = { id = chi_for_ws.9 days = 3 } }
+			ai_chance = {
+				base = 70
+				modifier = {
+					add = -50
+					strength_ratio = { tag = CHI ratio < 0.5 }
+				}
+			}
+		}
+	}
+	#同意的回复（平等互惠）
+	country_event = {
+		id = chi_for_ws.6
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_for_ws.6 FROM = [From.GetName]" }
+		title = chi_for_ws.6.t
+		desc = chi_for_ws.6.d
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_for_ws.6.a
+			add_to_faction = FROM
+		}
+	}
+	#拒绝的回复（平等互惠）
+	country_event = { 
+		id = chi_for_ws.7
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_for_ws.7 FROM = [From.GetName]" }
+		title = chi_for_ws.7.t
+		desc = chi_for_ws.7.d
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_for_ws.7.a
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+	}
+	#同意的回复（全面倒向）
+	country_event = { 
+		id = chi_for_ws.8
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_for_ws.8 FROM = [From.GetName]" }
+		title = chi_for_ws.8.t
+		desc = chi_for_ws.8.d
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_for_ws.8.a
+			FROM = {
+				get_current_government_type = yes
+			}
+			set_autonomy = {
+				target = FROM
+				autonomy_state = kmt_puppet
+				end_wars = no
+			}
+			FROM = {
+				restore_previous_government_type = yes
+			}
+		}
+	}
+	#拒绝的回复（全面倒向）
+	country_event = { 
+		id = chi_for_ws.9
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_for_ws.9 FROM = [From.GetName]" }
+		title = chi_for_ws.9.t
+		desc = chi_for_ws.9.d
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_for_ws.9.a
+			add_political_power = 80
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+	}
+
+	# country_event = { 
+	# 	id = chi_for_ws.10
+	# 	immediate = { log = "[GetDateText]: [Root.GetName]: event chi_for_ws.10 FROM = [From.GetName]" }
+	# 	title = chi_for_ws.10.t
+	# 	desc = chi_for_ws.10.d
+	# 	fire_only_once = no
+		
+	# 	trigger = {
+	# 		has_country_flag = Chinese_just_want_us_to_join
+	# 		NOT = { has_country_flag = CHI_refuse_attached }
+	# 		is_puppet_of = CHI
+	# 	}
+	# 	immediate = { clr_country_flag = Chinese_just_want_us_to_join }
+
+	# 	option = {
+	# 		name = chi_for_ws.10.a
+	# 		CHI = { end_puppet = ROOT }
+	# 		hidden_effect = {
+	# 			CHI = { country_event = chi_for_ws.11 }
+	# 		}
+	# 	}
+	# }
+
+	# country_event = { 
+	# 	id = chi_for_ws.11
+	# 	immediate = { log = "[GetDateText]: [Root.GetName]: event chi_for_ws.11 FROM = [From.GetName]" }
+	# 	title = chi_for_ws.11.t
+	# 	desc = chi_for_ws.11.d
+
+	# 	is_triggered_only = yes
+
+	# 	option = {
+	# 		name = chi_for_ws.11.a
+	# 		add_stability = 0.1
+	# 	}
+	# }
+
+####  上海合作组织  ####
+
+	#邀请加入经济体（外国视角）
+	country_event = {
+		id = aisa_bank.1
+		title = aisa_bank.1.t
+		desc = aisa_bank.1.d
+		is_triggered_only = yes
+		picture = GFX_report_event_generic_economic_policy
+		
+		option = { 
+			name = aisa_bank.1.a
+			CHI = { country_event = aisa_bank.2 }
+			add_ideas = KR_CHI_asia_development_bank_member
+			ai_chance = {
+				base = 90
+			}
+		}
+		option = { 
+			name = aisa_bank.1.b
+			CHI = { country_event = aisa_bank.3 }
+			ai_chance = {
+				base = 10
+				modifier = {
+					factor = 0
+					is_puppet_of = CHI
+				}
+			}
+		}
+	}
+	#同意加入经济体（中国视角）
+	country_event = {
+		id = aisa_bank.2
+		title = aisa_bank.2.t
+		desc = aisa_bank.2.d
+		is_triggered_only = yes
+		picture = GFX_report_event_generic_economic_policy
+		
+		option = { 
+			name = aisa_bank.2.a
+			add_political_power = 15
+		}
+	}
+	#拒绝加入经济体（中国视角）
+	country_event = {
+		id = aisa_bank.3
+		title = aisa_bank.3.t
+		desc = aisa_bank.3.d
+		is_triggered_only = yes
+		picture = GFX_report_event_generic_economic_policy
+		
+		option = { 
+			name = aisa_bank.3.a
+		}
+	}
+	#外国离开经济体（中国视角）
+	country_event = {
+		id = aisa_bank.4
+		title = aisa_bank.4.t
+		desc = aisa_bank.4.d
+		is_triggered_only = yes
+		picture = GFX_report_event_generic_economic_policy
+		
+		option = { 
+			name = aisa_bank.4.a
+		}
+	}
+	#中国开始经济合作（外国视角）
+	country_event = {
+		id = aisa_bank.5
+		immediate = { log = "[GetDateText]: [Root.GetName]: event aisa_bank.5 FROM = [From.GetName]" }
+		title = aisa_bank.5.t
+		desc = aisa_bank.5.d
+		picture = GFX_report_event_generic_economic_policy
+
+		is_triggered_only = yes
+
+		option = {
+			name = aisa_bank.5.a
+			set_temp_variable = { FRA_num_target_states = 2 }
+			set_variable = { CHI.FRA_num_target_states = 2 }
+			CHI = { country_event = { id = aisa_bank.6 days = 5 } }
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}			
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}			
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}			
+			}
+		}
+	}
+	#法国同意我们加入经济体（中国视角）
+	country_event = {
+		id = aisa_bank.6
+		immediate = { log = "[GetDateText]: [Root.GetName]: event aisa_bank.6 FROM = [From.GetName]" }
+		title = aisa_bank.6.t
+		desc = aisa_bank.6.d
+		picture = GFX_report_event_generic_economic_policy
+
+		is_triggered_only = yes
+
+		option = {
+			name = aisa_bank.6.a
+			FRA_phalanstere_effect = yes
+			clear_variable = FRA_num_target_states
+		}
+	}
+	#经济体破产（中国视角）
+	country_event = {
+		id = aisa_bank.7
+		immediate = { log = "[GetDateText]: [Root.GetName]: event aisa_bank.7 FROM = [From.GetName]" }
+		title = aisa_bank.7.t
+		desc = aisa_bank.7.d
+		picture = GFX_report_event_generic_economic_policy
+
+		is_triggered_only = yes
+
+		option = {
+			name = aisa_bank.7.a
+		}
+	}
+
+####  唐努乌梁海  ####
+
+	#国民党拿下图瓦（俄罗斯视角）
+	country_event = {
+		id = chi_tanv.1
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_tanv.1" }
+		title = chi_tanv.1.t
+		desc = chi_tanv.1.d
+		picture = GFX_report_event_CHI_infiltration
+
+		is_triggered_only = yes
+
+		#put up a token resistance and surrender
+		option = {
+			name = chi_tanv.1.a
+			ai_chance = {
+				base = 95
+			}
+			FROM = {
+				country_event = { id = chi_tanv.2 hours = 6 }
+				set_country_flag = RUS_accept_tanv
+			}
+		}
+		#we will fight!
+		option = {
+			name = chi_tanv.1.b
+			ai_chance = {
+				base = 5
+				modifier = {
+					factor = 0
+					has_war_with = GER
+				}
+			}
+			FROM = {
+				country_event = { id = chi_tanv.2 hours = 6 }
+				set_country_flag = RUS_refuse_tanv
+			}
+		}
+	}
+	#俄罗斯回复（国民党视角）
+	country_event = {
+		id = chi_tanv.2
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_tanv.2" }
+		title = chi_tanv.2.t
+		desc = {
+			text = chi_tanv.2.d1
+			trigger = {
+				has_country_flag = RUS_accept_tanv
+			}
+		}
+		desc = {
+			text = chi_tanv.2.d2
+			trigger = {
+				has_country_flag = RUS_refuse_tanv
+			}
+		}
+		picture = GFX_report_event_CHI_infiltration
+
+		is_triggered_only = yes
+
+		#put up a token resistance and surrender
+		option = {
+			name = chi_tanv.2.a
+			trigger = { has_country_flag = RUS_accept_tanv }
+			CHI = { add_opinion_modifier = { target = RUS modifier = KR_returned_land } }
+			if = {
+				limit = { MON = { is_puppet_of = CHI } }
+				MON = { transfer_state = 329 }
+			}
+			else = { CHI = { transfer_state = 329 } }
+		}
+		#we will fight!
+		option = {
+			name = chi_tanv.2.b
+			trigger = { has_country_flag = RUS_refuse_tanv }
+			CHI = { add_opinion_modifier = { target = RUS modifier = KR_hates_govt } }
+			custom_effect_tooltip = expedition_rus_maybe_necessary
+		}
+	}
+
+####  香港  #####
+
+	#国民党进攻香港（加拿大视角）
+	country_event = {
+		id = chi_brits.1
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_brits.1" }
+		title = chi_brits.1.t
+		desc = chi_brits.1.d
+		picture = GFX_report_event_CHI_infiltration
+
+		is_triggered_only = yes
+
+		#put up a token resistance and surrender
+		option = {
+			name = chi_brits.1.a
+			ai_chance = {
+				base = 90
+			}
+			FROM = {
+				transfer_state = 326
+				country_event = { id = chi_brits.2 hours = 6 }
+			}
+			add_political_power = -50
+			add_stability = -0.05
+			set_country_flag = Brits_ceded
+		}
+
+		#we will fight!
+		option = {
+			name = chi_brits.1.b
+			ai_chance = {
+				base = 10
+				modifier = {
+					factor = 0
+					OR = {
+						has_war_with = FRA
+						has_war_with = ENG
+						has_war_with = RUS
+						has_war_with = GER
+					}
+				}
+			}
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+		}
+	}
+	#国民党拿下香港（中国视角）
+	country_event = {
+		id = chi_brits.2
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_brits.2" }
+		title = chi_brits.2.t
+		desc = chi_brits.2.d
+		picture = GFX_report_event_CAN_king_army
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_brits.2.a #great!
+			custom_effect_tooltip = chi_brits_withdraw_from_china_tt
+			add_political_power = 25
+			add_war_support = 0.05
+			if = {
+				limit = {
+					FROM = {
+						NOT = { tag = CAN }
+					}
+				}
+				hidden_effect = {
+					CAN = {
+						country_event = { id = chi_brits.3 hours = 6 }
+					}
+				}
+			}
+		}
+	}
+	#国民党拿下香港（加拿大视角）
+	country_event = {
+		id = chi_brits.3
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_brits.3" }
+		title = chi_brits.3.t
+		desc = chi_brits.3.d
+		picture = GFX_report_event_CAN_king_army
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_brits.3.a #damn!
+			add_political_power = -50
+			add_stability = -0.05
+		}
+	}
+
+####  调停西北冲突  ####
+
+	#调停西北（马家军视角）
+	country_event = {
+
+		id = chi_mediate_conflict.1
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_mediate_conflict.1" }
+		title = chi_mediate_conflict.1.t
+		desc = chi_mediate_conflict.1.d
+		picture = GFX_report_event_CHI_ambassador_announcement
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_mediate_conflict.1.a
+			ai_chance = {
+				base = 50
+				modifier = {
+					factor = 2.5
+					CHI = {
+						is_stronger_than_ROOT = yes
+					}
+				}
+			}
+			FROM = {
+				country_event = { id = chi_mediate_conflict.2 hours = 6 }
+				set_country_flag = XSM_accept_help_peace
+			}
+			custom_effect_tooltip = successful_will_become_puppet
+		}
+
+		option = {
+			name = chi_mediate_conflict.1.b
+			ai_chance = {
+				base = 25
+			}
+			FROM = {
+				country_event = { id = chi_mediate_conflict.2 hours = 6 }
+				set_country_flag = XSM_refuse_help_peace
+			}
+		}
+		
+	}
+	#回应马家军（国民党视角）
+	country_event = {
+		id = chi_mediate_conflict.2
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_mediate_conflict.2" }
+		title = chi_mediate_conflict.2.t
+		desc = {
+			text = chi_mediate_conflict.2.d1
+			trigger = {
+				has_country_flag = XSM_accept_help_peace
+			}
+		}
+		desc = {
+			text = chi_mediate_conflict.2.d2
+			trigger = {
+				has_country_flag = XSM_refuse_help_peace
+			}
+		}
+		picture = GFX_report_event_CHI_ambassador_announcement
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_mediate_conflict.2.a
+			trigger = { has_country_flag = XSM_accept_help_peace }
+			TIB = { country_event = { id = chi_mediate_conflict.3 hours = 18 } }
+			MON = { country_event = { id = chi_mediate_conflict.4 hours = 18 } }
+		}
+		option = {
+			name = chi_mediate_conflict.2.b
+			trigger = { has_country_flag = XSM_refuse_help_peace }
+			activate_targeted_decision = { target = XSM decision = CHI_dec_XSM_expedition }
+		}
+	}
+	#西藏接到调停
+	country_event = {
+
+		id = chi_mediate_conflict.3
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_mediate_conflict.3" }
+		title = chi_mediate_conflict.3.t
+		desc = chi_mediate_conflict.3.d
+		picture = GFX_report_event_CHI_ambassador_announcement
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_mediate_conflict.3.a
+			ai_chance = {
+				base = 50
+				modifier = {
+					factor = 0
+					OR = {
+						has_government = paternal_autocrat
+						has_government = national_populist
+					}
+				}
+			}
+			add_political_power = 30
+			CHI = {
+				country_event = { id = chi_mediate_conflict.5 hours = 6 }
+				set_country_flag = TIB_accept_NE_peace
+			}
+			XSM = {
+				country_event = { id = chi_mediate_conflict.51 hours = 6 }
+				set_country_flag = TIB_accept_NE_peace_xsm
+			}
+		}
+
+		option = {
+			name = chi_mediate_conflict.3.b
+			ai_chance = {
+				base = 25
+			}
+			CHI = {
+				country_event = { id = chi_mediate_conflict.5 hours = 6 }
+				set_country_flag = TIB_refuse_NE_peace
+			}
+			XSM = {
+				country_event = { id = chi_mediate_conflict.51 hours = 6 }
+				set_country_flag = TIB_refuse_NE_peace_xsm
+			}
+		}
+		
+	}
+	#蒙古接到调停
+	country_event = {
+
+		id = chi_mediate_conflict.4
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_mediate_conflict.4" }
+		title = chi_mediate_conflict.4.t
+		desc = chi_mediate_conflict.4.d
+		picture = GFX_report_event_CHI_ambassador_announcement
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_mediate_conflict.4.a
+			ai_chance = {
+				base = 50
+				modifier = {
+					factor = 0
+					is_guaranteed_by = RUS
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						has_government = paternal_autocrat
+						has_government = national_populist
+					}
+				}
+			}
+			add_political_power = 30
+			CHI = {
+				country_event = { id = chi_mediate_conflict.6 hours = 10 }
+				set_country_flag = MON_accept_NE_peace
+			}
+			XSM = {
+				country_event = { id = chi_mediate_conflict.61 hours = 6 }
+				set_country_flag = MON_accept_NE_peace_xsm
+			}
+		}
+
+		option = {
+			name = chi_mediate_conflict.4.b
+			ai_chance = {
+				base = 25
+			}
+			CHI = {
+				country_event = { id = chi_mediate_conflict.6 hours = 6 }
+				set_country_flag = MON_refuse_NE_peace
+			}
+			XSM = {
+				country_event = { id = chi_mediate_conflict.61 hours = 6 }
+				set_country_flag = MON_refuse_NE_peace_xsm
+			}
+		}
+		
+	}
+	#西藏回复（国民党视角）
+	country_event = {
+		id = chi_mediate_conflict.5
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_mediate_conflict.5" }
+		title = chi_mediate_conflict.5.t
+		desc = {
+			text = chi_mediate_conflict.5.d1
+			trigger = {
+				has_country_flag = TIB_accept_NE_peace
+			}
+		}
+		desc = {
+			text = chi_mediate_conflict.5.d2
+			trigger = {
+				has_country_flag = TIB_refuse_NE_peace
+			}
+		}
+		picture = GFX_report_event_CHI_ambassador_announcement
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_mediate_conflict.5.a
+			trigger = { has_country_flag = TIB_accept_NE_peace }
+			activate_targeted_decision = { target = TIB decision = CHI_offer_autonomy_TIB }
+		}
+		option = {
+			name = chi_mediate_conflict.5.b
+			trigger = { has_country_flag = TIB_refuse_NE_peace }
+		}
+	}
+	#蒙古回复（国民党视角）
+	country_event = {
+		id = chi_mediate_conflict.6
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_mediate_conflict.6" }
+		title = chi_mediate_conflict.6.t
+		desc = {
+			text = chi_mediate_conflict.6.d1
+			trigger = {
+				has_country_flag = MON_accept_NE_peace
+			}
+		}
+		desc = {
+			text = chi_mediate_conflict.6.d2
+			trigger = {
+				has_country_flag = MON_refuse_NE_peace
+			}
+		}
+		picture = GFX_report_event_CHI_ambassador_announcement
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_mediate_conflict.6.a
+			trigger = { has_country_flag = MON_accept_NE_peace }
+			activate_targeted_decision = { target = MON decision = CHI_offer_autonomy_MON }
+		}
+		option = {
+			name = chi_mediate_conflict.6.b
+			trigger = { has_country_flag = MON_refuse_NE_peace }
+		}
+	}
+	#西藏回复（马家军视角）
+	country_event = {
+		id = chi_mediate_conflict.51
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_mediate_conflict.51" }
+		title = chi_mediate_conflict.51.t
+		desc = {
+			text = chi_mediate_conflict.51.d1
+			trigger = {
+				has_country_flag = TIB_accept_NE_peace_xsm
+			}
+		}
+		desc = {
+			text = chi_mediate_conflict.51.d2
+			trigger = {
+				has_country_flag = TIB_refuse_NE_peace_xsm
+			}
+		}
+		picture = GFX_report_event_CHI_ambassador_announcement
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_mediate_conflict.51.a
+			trigger = { has_country_flag = TIB_accept_NE_peace_xsm }
+			TIB = { white_peace_with_ROOT = yes }
+		}
+		option = {
+			name = chi_mediate_conflict.51.b
+			trigger = { has_country_flag = TIB_refuse_NE_peace_xsm }
+		}
+	}
+	#蒙古回复（马家军视角）
+	country_event = {
+		id = chi_mediate_conflict.61
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_mediate_conflict.6" }
+		title = chi_mediate_conflict.61.t
+		desc = {
+			text = chi_mediate_conflict.61.d1
+			trigger = {
+				has_country_flag = MON_accept_NE_peace_xsm
+			}
+		}
+		desc = {
+			text = chi_mediate_conflict.61.d2
+			trigger = {
+				has_country_flag = MON_refuse_NE_peace_xsm
+			}
+		}
+		picture = GFX_report_event_CHI_ambassador_announcement
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_mediate_conflict.61.a
+			trigger = { has_country_flag = MON_accept_NE_peace_xsm }
+			MON = { white_peace_with_ROOT = yes }
+		}
+		option = {
+			name = chi_mediate_conflict.61.b
+			trigger = { has_country_flag = MON_refuse_NE_peace_xsm }
+		}
+	}
+	#危机解除（马家军视角）
+	country_event = {
+		id = chi_mediate_conflict.7
+
+		title = chi_mediate_conflict.7.t
+		desc = chi_mediate_conflict.7.d
+		picture = GFX_report_event_CHI_successful_northern_expedition_flag
+
+		fire_only_once = yes
+		
+		trigger = {
+			tag = XSM
+			is_subject = no
+			has_country_flag = MON_accept_NE_peace_xsm
+			has_country_flag = TIB_accept_NE_peace_xsm
+		}
+		option = {
+			name = chi_mediate_conflict.7.a
+			
+			#CHI_puppt_kmt = yes
+			
+			get_current_government_type = yes
+			CHI = {
+				set_autonomy = {
+					target = ROOT
+					autonomy_state = kmt_puppet
+					end_wars = no
+				}
+			}
+			hidden_effect = {
+				restore_previous_government_type = yes
+			}
+			
+			CHI = {
+				country_event = { id = chi_mediate_conflict.8 hours = 21 }
+			}
+			
+		}
+	}
+	#马家军归顺国民党（国民党视角）
+	country_event = {
+
+		id = chi_mediate_conflict.8
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_mediate_conflict.1" }
+		title = chi_mediate_conflict.8.t
+		desc = chi_mediate_conflict.8.d
+		picture = GFX_report_event_CHI_ambassador_announcement
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_mediate_conflict.8.a
+		}	
+	}
+	#援助新疆
+	country_event = {
+
+		id = chi_mediate_conflict.9
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_mediate_conflict.9" }
+		title = chi_mediate_conflict.9.t
+		desc = chi_mediate_conflict.9.d
+
+		is_triggered_only = yes
+
+		option = {
+			name = chi_mediate_conflict.9.a
+			add_ideas = SIK_aid_from_kmt
+			set_country_flag = SIK_aid_from_kmt_flag
+			division_template = {
+				name = "cavalry gard"	
+				regiments = {
+					cavalry = { x = 0 y = 0 } 
+					cavalry = { x = 0 y = 1 }
+					cavalry = { x = 0 y = 2 }
+					cavalry = { x = 0 y = 3 }
+					cavalry = { x = 1 y = 0 }
+					cavalry = { x = 1 y = 1 }
+				}
+			}
+			random_controlled_state = {
+				prioritize = { 617 }
+				create_unit = {
+					division = "name = \"kmt cavalry gard 1\" division_template = \"cavalry gard\" start_experience_factor = 0.3"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"kmt cavalry gard 2\" division_template = \"cavalry gard\" start_experience_factor = 0.3"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"kmt cavalry gard 3\" division_template = \"cavalry gard\" start_experience_factor = 0.3"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"kmt cavalry gard 4\" division_template = \"cavalry gard\" start_experience_factor = 0.3"
+					owner = ROOT
+				}
+			}
+		}	
+	}
+
+
+####  联合舰队到达  ####
+	
+	country_event = {
+		id = chi_combined_fleet.1
+		title = chi_combined_fleet.1.t
+		picture = GFX_report_event_FNG_hiroshima_package
+		desc = chi_combined_fleet.1.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = {
+			name = chi_combined_fleet.1.1
+			trigger = {
+				always = yes
+			}
+			add_political_power = 25
+			hidden_effect = {
+				create_equipment_variant = {
+					name = "international submarine"
+					type = ship_hull_submarine_2
+					name_group = CHYN_THEME_MOUNTAINS
+					modules = {
+						fixed_ship_torpedo_slot = ship_torpedo_sub_2
+						fixed_ship_engine_slot = sub_ship_engine_2
+						rear_1_custom_slot = ship_torpedo_sub_2
+					}
+				}
+				create_equipment_variant = {
+					name = "international cruiser"
+					type = ship_hull_cruiser_1
+					name_group = CHYN_THEME_MOUNTAINS
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_light_medium_battery_1
+						fixed_ship_anti_air_slot = ship_anti_air_1
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+						fixed_ship_radar_slot = empty
+						fixed_ship_engine_slot = cruiser_ship_engine_1
+						fixed_ship_armor_slot = ship_armor_cruiser_1
+						mid_1_custom_slot = ship_torpedo_1
+						mid_2_custom_slot = ship_anti_air_1
+						rear_1_custom_slot = ship_light_medium_battery_1
+					}
+				}
+				create_equipment_variant = {
+					name = "international destroyer"
+					type = ship_hull_light_1
+					name_group = CHYN_THEME_MOUNTAINS
+					modules = {
+						fixed_ship_battery_slot = ship_light_medium_battery_1
+						fixed_ship_anti_air_slot = ship_anti_air_1
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+						fixed_ship_radar_slot = empty
+						fixed_ship_engine_slot = light_ship_engine_1
+						fixed_ship_torpedo_slot = ship_torpedo_1
+						mid_1_custom_slot = ship_light_battery_1
+						rear_1_custom_slot = ship_depth_charge_1
+					}
+				}
+				create_equipment_variant = {
+					name = "Beiyang battleship" 
+					type = ship_hull_heavy_1
+					name_group = CHYN_BB_HISTORICAL
+					modules = {
+						fixed_ship_battery_slot = ship_heavy_battery_1
+						fixed_ship_anti_air_slot = ship_anti_air_1
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+						fixed_ship_radar_slot = empty
+						fixed_ship_engine_slot = heavy_ship_engine_1
+						fixed_ship_secondaries_slot = ship_secondaries_1
+						fixed_ship_armor_slot = ship_armor_bb_1
+						front_1_custom_slot = empty
+						mid_1_custom_slot = ship_airplane_launcher_1
+						mid_2_custom_slot = ship_secondaries_1
+						rear_1_custom_slot = ship_heavy_battery_1
+					}
+				}
+				set_country_flag = chi_combined_fleet_get
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_1
+					creator = "CHI"
+					version_name = "international cruiser"
+				}
+				name = "combined fleet cruiser 1"
+				requested_factories = 1
+				progress = 0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_1
+					creator = "CHI"
+					version_name = "international cruiser"
+				}
+				name = "combined fleet cruiser 2"
+				requested_factories = 1
+				progress = 0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_1
+					creator = "CHI"
+					version_name = "international cruiser"
+				}
+				name = "combined fleet cruiser 3"
+				requested_factories = 1
+				progress = 0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_1
+					creator = "CHI"
+					version_name = "international cruiser"
+				}
+				name = "combined fleet cruiser 4"
+				requested_factories = 1
+				progress = 0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_1
+					creator = "CHI"
+					version_name = "international cruiser"
+				}
+				name = "combined fleet cruiser 5"
+				requested_factories = 1
+				progress = 0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_1
+					creator = "CHI"
+					version_name = "international cruiser"
+				}
+				name = "combined fleet cruiser 6"
+				requested_factories = 1
+				progress = 0.99
+				amount = 1
+			}
+
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_1
+					creator = "CHI"
+					version_name = "Beiyang battleship" 
+				}
+				name = "combined fleet battleship 1"
+				requested_factories = 1
+				progress = 0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_1
+					creator = "CHI"
+					version_name = "Beiyang battleship" 
+				}
+				name = "combined fleet battleship 2"
+				requested_factories = 1
+				progress = 0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_1
+					creator = "CHI"
+					version_name = "Beiyang battleship" 
+				}
+				name = "combined fleet battleship 3"
+				requested_factories = 1
+				progress = 0.99
+				amount = 1
+			}
+		}
+	}
+
+####  中日合作  ####
+
+	#来自KMT的合作意愿
+	country_event = {
+		id = chi_cjf.1
+		title = chi_cjf.1.t
+		desc = chi_cjf.1.d
+		picture = GFX_report_event_QIE_cardgame
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = {
+			name = chi_cjf.1.1
+			ai_chance = {
+				base = 60	
+			}
+			add_opinion_modifier = {
+				target = CHI
+				modifier = chi_jap
+			}
+			diplomatic_relation = { country = CHI relation = non_aggression_pact }
+			hidden_effect = {
+				CHI = {
+					country_event = { days = 3 id = chi_cjf.2}
+					add_opinion_modifier = {
+						target = JAP
+						modifier = chi_jap
+					}
+				}
+				reverse_add_opinion_modifier = {
+					target = CHI
+					modifier = KR_hates_govt
+				}
+			}
+		}
+		option = {
+			name = chi_cjf.1.2
+			ai_chance = {
+				base = 40	
+			}
+			CHI = {
+				country_event = { days = 3 id = chi_cjf.3}
+			}
+		}
+	}
+	#同意合作
+	country_event = {
+		id = chi_cjf.2
+		picture = GFX_report_event_CHI_successful_northern_expedition_flag
+		title = chi_cjf.2.t
+		desc = chi_cjf.2.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = {
+			name = chi_cjf.2.1
+			trigger = {
+				always = yes
+			} 
+			hidden_effect = { set_country_flag = JAP_agree_to_cooperate_with_LKMT }
+			add_political_power = 75 
+		}
+	}
+	#拒绝合作
+	country_event = {
+		id = chi_cjf.3
+		picture = GFX_report_event_JAP_meeting
+		title = chi_cjf.3.t
+		desc = chi_cjf.3.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		option = {
+			name = chi_cjf.3.1
+			trigger = {
+				always = yes
+			}
+			add_political_power = -25 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = JAP
+			}
+		}
+	}
+
+####  邀请山西一起对付大清  ####
+
+	#山西视角：kmt邀请一起对付北京
+	country_event = { 
+		id = chi_dss_war.1
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_dss_war.1 FROM = [From.GetName]" }
+
+		title = chi_dss_war.1.t
+		desc = chi_dss_war.1.d
+
+		is_triggered_only = yes
+
+		fire_only_once = yes
+
+		option = { # Tell them we accept
+			name = chi_dss_war.1.a
+			ai_chance = {
+				base = 50
+				modifier = {
+					factor = 0
+					OR = {
+						owns_state = 615
+						is_in_faction_with = QIE
+						has_non_aggression_pact_with = QIE
+					}
+				}
+			}
+
+			hidden_effect = {
+				set_country_flag = CHI_SHX_and_CHI
+
+				CHI = {
+					set_country_flag = CHI_SHX_and_CHI
+					country_event = { id = chi_dss_war.3 days = 2 }
+				}
+			}
+		}
+
+		option = { # Let's contact Fengtian for a counter offer
+			name = chi_dss_war.1.b
+			ai_chance = {
+				base = 40
+			}
+
+			hidden_effect = {
+				QIE = {
+					country_event = { id = chi_dss_war.5 days = 3 }
+				}
+				CHI = {
+					country_event = { id = chi_dss_war.3 days = 3 }
+				}
+			}
+		}
+
+		option = { # We are a neutral clique for a reason
+			name = chi_dss_war.1.c
+			ai_chance = {
+				base = 10
+			}
+
+			hidden_effect = {
+				CHI = {
+					country_event = { id = chi_dss_war.2 days = 3 }
+				}
+			}
+		}
+	}
+	#山西拒绝
+	country_event = {
+		id = chi_dss_war.2
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_dss_war.2 FROM = [From.GetName]" }
+
+		title = chi_dss_war.2.t
+		desc = chi_dss_war.2.d
+
+		is_triggered_only = yes
+
+		fire_only_once = yes
+
+		option = { 
+			name = chi_dss_war.2.a
+		}
+	}
+	#山西接受
+	country_event = { 
+		id = chi_dss_war.3
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_dss_war.3 FROM = [From.GetName]" }
+
+		title = chi_dss_war.3.t
+		desc = chi_dss_war.3.d
+
+		is_triggered_only = yes
+
+		fire_only_once = yes
+
+		option = { # They have chosen well
+			name = chi_dss_war.3.a
+			diplomatic_relation = {
+				country = FROM
+				relation = non_aggression_pact
+			}
+		}
+	}
+	#清政府视角：山西倒向北京
+	country_event = { 
+		id = chi_dss_war.5
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_dss_war.5 FROM = [From.GetName]" }
+
+		title = chi_dss_war.5.t
+		desc = chi_dss_war.5.d
+
+		is_triggered_only = yes
+
+		fire_only_once = yes
+
+		option = { # Yan has placed his faith in the right person
+			ai_chance = {
+				base = 90
+			}
+			name = chi_dss_war.5.a
+
+			set_country_flag = chi_dss_Promise_SHX_Land
+
+			SHX = {
+				country_event = { id = chi_dss_war.6 days = 3 }
+			}
+		}
+
+		option = { # We won't give away our vital land
+			name = chi_dss_war.5.b
+			ai_chance = {
+				base = 10
+				modifier = {
+					factor = 0
+					OR = {
+						is_in_faction_with = SHX
+						has_non_aggression_pact_with = SHX
+					}
+				}
+			}
+		}
+	}
+	#山西视角：北京回复
+	country_event = { 
+		id = chi_dss_war.6
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_dss_war.6 FROM = [From.GetName]" }
+
+		title = chi_dss_war.6.t
+		desc = chi_dss_war.6.d
+
+		is_triggered_only = yes
+
+		fire_only_once = yes
+
+		option = { # We are betting a lot on you Zhang
+			name = chi_dss_war.6.a
+
+			set_country_flag = CHI_SHX_and_QIE
+		}
+	}
+	#山西介入战局
+	country_event = { 
+		id = chi_dss_war.7
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_dss_war.7 FROM = [From.GetName]" }
+
+		title = chi_dss_war.7.t
+		desc = chi_dss_war.7.d
+		trigger = {
+			tag = SHX
+			CHI = { has_war_with = QIE }
+			OR = {
+				has_country_flag = CHI_SHX_and_CHI
+				has_country_flag = CHI_SHX_and_QIE
+			}
+		}
+		fire_only_once = yes
+
+		option = { # This should be quite a surprise
+			name = chi_dss_war.7.a
+
+			if = {
+				limit = { SHX = { has_country_flag = CHI_SHX_and_CHI } }
+				declare_war_on = { target = QIE type = annex_everything }
+			}
+			else = {
+				declare_war_on = { target = CHI type = annex_everything }
+				CHI = { country_event = chi_dss_war.12 }
+				SHX = { transfer_state = 615 }
+			}
+		}
+	}
+	#是否交出晋东
+	country_event = { 	
+		id = chi_dss_war.8
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_dss_war.8 FROM = [From.GetName]" }
+
+		title = chi_dss_war.8.t
+		desc = chi_dss_war.8.d
+
+		trigger = {
+			tag = CHI
+			has_country_flag = CHI_SHX_and_CHI
+			OR = {
+				QIE = { exists = no }
+				QIE = { is_subject = yes }
+			}
+			CHI = {
+				NOT = {
+					has_war_with = SHX
+				}
+			}
+			SHX = {
+				exists = yes
+				has_country_flag = CHI_SHX_and_CHI
+			}
+			CHI = {
+				owns_state = 615
+			}
+		}
+
+		fire_only_once = yes
+
+		option = { # We will honour the deal with Yan, but he will have to submit
+			name = chi_dss_war.8.a
+			ai_chance = {
+				base = 90
+			}
+
+			hidden_effect = {
+				SHX = {
+					country_event = { id = chi_dss_war.9 days = 3 }
+				}
+			}
+		}
+
+		option = { # He is a rebel and will be treated like one
+			name = chi_dss_war.8.b
+			ai_chance = {
+				base = 10
+			}
+
+			hidden_effect = {
+				SHX = {
+					country_event = { id = chi_dss_war.10 days = 3 }
+				}
+
+				clr_country_flag = CHI_SHX_and_CHI
+			}
+		}
+	}
+
+	country_event = { #SHX - CHI Land Transfer
+		id = chi_dss_war.9
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_dss_war.9 FROM = [From.GetName]" }
+
+		title = chi_dss_war.9.t
+		desc = chi_dss_war.9.d
+
+		is_triggered_only = yes
+
+		fire_only_once = yes
+
+		option = { # The Kuomintang are one step ahead of us
+			name = chi_dss_war.9.a
+			ai_chance = {
+				base = 90
+			}
+
+			hidden_effect = {
+				SHX = { transfer_state = 615 }
+
+				if = {
+					limit = {
+						is_in_faction = yes
+					}
+					leave_faction = yes
+				}
+
+				separate_peace_all_wars = yes
+
+				#CHI_puppt_kmt = yes
+
+				get_current_government_type = yes
+
+				CHI = {
+					set_autonomy = {
+						target = SHX
+						autonomy_state = kmt_puppet
+					}
+					country_event = { id = chi_dss_war.11 days = 1 }
+				}
+
+				restore_previous_government_type = yes
+			}
+		}
+
+		option = { # We will bend to no traitors
+			name = chi_dss_war.9.b
+			ai_chance = {
+				base = 10
+			}
+
+			hidden_effect = {
+				add_war_support = 0.1
+			}
+		}
+	}
+
+	country_event = { # The Kuomintang refuse to give up land
+		id = chi_dss_war.10
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_dss_war.10 FROM = [From.GetName]" }
+
+		title = chi_dss_war.10.t
+		desc = chi_dss_war.10.d
+
+		is_triggered_only = yes
+
+		fire_only_once = yes
+
+		option = { # Why did we trust them!
+			name = chi_dss_war.10.a
+
+			add_political_power = -25
+		}
+	}
+
+	country_event = { # Shanxi has joined our government
+		id = chi_dss_war.11
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_dss_war.11 FROM = [From.GetName]" }
+
+		title = chi_dss_war.11.t
+		desc = chi_dss_war.11.d
+
+		is_triggered_only = yes
+
+		fire_only_once = yes
+
+		option = { # China is nearly whole again!
+			name = chi_dss_war.11.a
+			add_political_power = 25
+		}
+	}
+
+	country_event = { # Shanxi has joined our government
+		id = chi_dss_war.12
+		immediate = { log = "[GetDateText]: [Root.GetName]: event chi_dss_war.11 FROM = [From.GetName]" }
+
+		title = chi_dss_war.12.t
+		desc = chi_dss_war.12.d
+
+		is_triggered_only = yes
+
+		fire_only_once = yes
+
+		option = { # China is nearly whole again!
+			name = chi_dss_war.12.a
+			add_political_power = -25
+		}
+	}
+
+####  藏南  ####
+
+	#印度：中国要求就藏南进行谈判
+	country_event = {
+		id = chi_McMahon.1
+		title = chi_McMahon.1.t
+		desc = chi_McMahon.1.d
+		fire_only_once = yes
+		is_triggered_only = yes
+		option = {
+			name = chi_McMahon.1.a
+			ai_chance = {
+				base = 70
+				modifier = {
+					factor = 0.5
+					TIB = {
+						is_subject_of = ROOT
+					}
+				}
+				modifier = {
+					factor = 1.5
+					FROM = {
+						is_neighbor_of = ROOT
+						any_allied_country = {
+							is_neighbor_of = ROOT
+						}
+					}
+				}
+				modifier = {
+					factor = 1.5
+					FROM = {
+						is_in_faction_with = INT
+					}
+				}
+				modifier = {
+					factor = 0.5
+					FROM = {
+						is_faction_leader = yes
+					}
+				}
+			}
+			FROM = {
+				country_event = { id = chi_McMahon.2 days = 3 }
+			}
+		}
+		option = {
+			name = chi_McMahon.1.b
+			ai_chance = {
+				base = 30
+				modifier = {
+					factor = 0
+					TIB = {
+						OR = {
+							exists = no
+							is_subject_of = FROM
+						}
+					}
+				}
+			}
+			FROM = {
+				country_event = { id = chi_McMahon.3 days = 3 }
+			}
+		}
+	}
+
+	#中国：印度同意谈判
+	country_event = {
+		id = chi_McMahon.2
+		title = chi_McMahon.2.t
+		desc = chi_McMahon.2.d
+		fire_only_once = yes
+		is_triggered_only = yes
+		option = {
+			name = chi_McMahon.2.a
+			ai_chance = {
+				base = 90
+			}
+			add_political_power = 5
+			FROM = {
+				country_event = { id = chi_McMahon.4 days = 3 }
+			}
+		}
+	}
+
+	#中国：印度拒绝谈判
+	country_event = {
+		id = chi_McMahon.3
+		title = chi_McMahon.3.t
+		desc = chi_McMahon.3.d
+		fire_only_once = yes
+		is_triggered_only = yes
+		option = {
+			name = chi_McMahon.3.a
+			add_political_power = -15
+			858 = {
+				add_claim_by = ROOT
+			}
+			activate_targeted_decision = { target = FROM decision = CHI_dec_BHC_expedition }
+		}
+	}
+
+	#印度：中国的提案
+	country_event = {
+		id = chi_McMahon.4
+		title = chi_McMahon.4.t
+		desc = chi_McMahon.4.d
+		fire_only_once = yes
+		is_triggered_only = yes
+		option = {
+			name = chi_McMahon.4.a
+			ai_chance = {
+				base = 50
+				modifier = {
+					factor = 1.5
+					FROM = {
+						is_stronger_than_ROOT = yes
+					}
+				}
+				modifier = {
+					factor = 1.5
+					FNG = {
+						OR = {
+							exists = no
+							is_subject_of = FROM
+						}
+					}
+					NOT = { country_exists = QIE }
+				}
+			}
+			FROM = {
+				country_event = { id = chi_McMahon.5 days = 3 }
+			}
+		}
+		option = {
+			name = chi_McMahon.5.b
+			ai_chance = {
+				base = 50
+				modifier = {
+					factor = 0.5
+					FROM = {
+						is_stronger_than_ROOT = yes
+					}
+				}
+				modifier = {
+					factor = 1.5
+					TIB = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			FROM = {
+				country_event = { id = chi_McMahon.3 days = 3 }
+			}
+		}
+	}
+
+	#中国：印度交出达旺
+	country_event = {
+		id = chi_McMahon.5
+		title = chi_McMahon.5.t
+		desc = chi_McMahon.5.d
+		fire_only_once = yes
+		is_triggered_only = yes
+		option = {
+			name = chi_McMahon.5.a
+			858 = {
+				transfer_state_to = ROOT
+			}
+			give_resource_rights = {
+				receiver = FROM
+				state = 858
+			}
+			858 = {
+				set_demilitarized_zone = yes
+			}
+			add_opinion_modifier = {
+				target = FROM
+				modifier = CHI_friend
+			}
+			FROM = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHI_friend
+				}
+			}
+			hidden_effect = {
+				set_country_flag = China_india_friendship
+			}
+			custom_effect_tooltip = China_india_friendship_tt
+		}
+	}
+
+	country_event = {
+		id = chi_McMahon.6
+		title = chi_McMahon.6.t
+		desc = chi_McMahon.6.d
+		fire_only_once = yes
+		is_triggered_only = yes
+		option = {
+			name = chi_McMahon.6.a
+			hidden_effect = {
+				FROM = {
+					country_event = { id = chi_McMahon.7 hours = 6 }
+					set_country_flag = CHI_get_taiwan
+				}
+			}
+		}
+		option = {
+			name = chi_McMahon.6.b
+			ai_chance = {
+				base = 0
+			}
+			hidden_effect = {
+				FROM = {
+					country_event = { id = chi_McMahon.7 hours = 6 }
+				}
+			}
+		}
+	}
+
+	country_event = {
+		id = chi_McMahon.7
+		title = chi_McMahon.7.t
+		desc = {
+			text = chi_McMahon.7.d1
+			trigger = {
+				has_country_flag = CHI_get_taiwan
+			}
+		}
+		desc = {
+			text = chi_McMahon.7.d2
+			trigger = {
+				NOT = { has_country_flag = CHI_get_taiwan }
+			}
+		}
+		fire_only_once = yes
+		is_triggered_only = yes
+		option = {
+			name = chi_McMahon.7.a
+			trigger = {
+				has_country_flag = CHI_get_taiwan
+			}
+			add_political_power = 15
+			transfer_state = 524
+		}
+		option = {
+			name = chi_McMahon.7.b
+			trigger = {
+				NOT = { has_country_flag = CHI_get_taiwan }
+			}
+			add_political_power = -5
+			create_wargoal = {
+				target = FROM
+				type = take_claimed_state
+				generator = { 524 }
+			}
+		}
+	}
+

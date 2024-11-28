@@ -1,0 +1,12 @@
+The_Pop_Po_War = {
+	icon = GFX_decision_category_ger_the_great_germania
+	icon = 1
+	allowed = {
+		original_tag = POL
+	}
+	visible = {
+		original_tag = POL
+	}
+	
+	priority = 500
+}

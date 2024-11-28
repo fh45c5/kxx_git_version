@@ -1,0 +1,236 @@
+add_namespace = montenegro
+
+country_event = {
+	id = montenegro.1
+    title = montenegro.1.t
+    desc = montenegro.1.d
+	picture = GFX_report_event_ROM_legion_salute
+	
+    is_triggered_only = yes
+
+	option = { 
+		name = montenegro.1.a
+		add_stability = -0.05
+	}
+	option = { 
+		name = montenegro.1.b
+		country_event = montenegro.2
+	}
+}
+
+country_event = {
+	id = montenegro.2
+    title = montenegro.2.t
+    desc = montenegro.2.d
+	picture = GFX_report_event_ROM_legion_salute
+	
+    is_triggered_only = yes
+
+	option = { 
+		name = montenegro.2.a
+		add_stability = -0.3
+		MNT = {
+		transfer_state = 105
+		transfer_state = 1097
+		transfer_state = 1269
+		transfer_state = 765
+		}
+		every_state = {
+		limit = { is_core_of = SER }
+		add_core_of = MNT
+		}
+		MNT =  {
+		division_template = {
+			name = "Domobranska pješačka divizija"
+			priority = 1
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 0 y = 5 }
+					infantry = { x = 0 y = 6 }
+					infantry = { x = 0 y = 7 }
+				}
+				support = { 
+					engineer = { x = 0 y = 0 }
+				} 
+			}
+		
+		random_owned_controlled_state = {
+			create_unit = {
+			division = "name = \"1-ma Lvivska bryhada\" division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1"
+			allow_spawning_on_enemy_provs = yes
+			owner = MNT
+			}
+			create_unit = {
+			division = "name = \"1-ma Lvivska bryhada\" division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1"
+			allow_spawning_on_enemy_provs = yes
+			owner = MNT
+			}
+			create_unit = {
+			division = "name = \"1-ma Lvivska bryhada\" division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1"
+			allow_spawning_on_enemy_provs = yes
+			owner = MNT
+			}
+			create_unit = {
+			division = "name = \"1-ma Lvivska bryhada\" division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1"
+			allow_spawning_on_enemy_provs = yes
+			owner = MNT
+			}
+			create_unit = {
+			division = "name = \"1-ma Lvivska bryhada\" division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1"
+			allow_spawning_on_enemy_provs = yes
+			owner = MNT
+			}
+			create_unit = {
+			division = "name = \"1-ma Lvivska bryhada\" division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1"
+			allow_spawning_on_enemy_provs = yes
+			owner = MNT
+			}
+		}	
+	}
+	MNT = {
+	set_cosmetic_tag = MNT_CT
+	}
+	}
+	option = { 
+		name = montenegro.2.b
+		add_stability = -0.3
+		MNT = {
+		transfer_state = 105
+		transfer_state = 1097
+		transfer_state = 1269
+		transfer_state = 765
+		}
+		every_state = {
+		limit = { is_core_of = SER }
+		add_core_of = MNT
+		}
+		MNT =  {
+			division_template = {
+			name = "Domobranska pješačka divizija"
+			priority = 1
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 0 y = 5 }
+					infantry = { x = 0 y = 6 }
+					infantry = { x = 0 y = 7 }
+				}
+				support = { 
+					engineer = { x = 0 y = 0 }
+				} 
+			}
+		
+		random_owned_controlled_state = {
+			create_unit = {
+			division = "name = \"Chetniks\" division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1"
+			allow_spawning_on_enemy_provs = yes
+			owner = MNT
+			}
+			create_unit = {
+			division = "name = \"Chetniks\" division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1"
+			allow_spawning_on_enemy_provs = yes
+			owner = MNT
+			}
+			create_unit = {
+			division = "name = \"Chetniks\" division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1"
+			allow_spawning_on_enemy_provs = yes
+			owner = MNT
+			}
+			create_unit = {
+			division = "name = \"Chetniks\" division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1"
+			allow_spawning_on_enemy_provs = yes
+			owner = MNT
+			}
+			create_unit = {
+			division = "name = \"Chetniks\" division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1"
+			allow_spawning_on_enemy_provs = yes
+			owner = MNT
+			}
+			create_unit = {
+			division = "name = \"Chetniks\" division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1"
+			allow_spawning_on_enemy_provs = yes
+			owner = MNT
+			}
+		}	
+	}
+	MNT = {
+	set_cosmetic_tag = MNT_CT
+	}
+	MNT = {
+	change_tag_from = SER
+	}
+	}
+}
+country_event = {
+	id = montenegro.3
+    title = montenegro.3.t
+    desc = montenegro.3.d
+	picture = GFX_report_event_ROM_legion_salute
+	
+    is_triggered_only = yes
+
+	option = { 
+		name = montenegro.3.a
+		MNT =  {
+		set_politics = {
+			ruling_party = totalist
+			elections_allowed = no
+		}
+		}
+		MNT = {
+		remove_ideas_with_trait = head_of_government
+		add_ideas = MNT_Lazar_Kolisevski_hog_tot
+		remove_ideas_with_trait = economy_minister
+		add_ideas = MNT_Ivan_Ribar_eco_tot
+		remove_ideas_with_trait = foreign_minister
+		add_ideas = MNT_Blazo_Jovanovic_for_tot
+		remove_ideas_with_trait = security_minister
+		add_ideas = MNT_Aleksandar_Rankovic_sec_tot
+		}
+		MNT ={
+		set_cosmetic_tag = MNT_CT_TOT
+		}
+		MNT = {
+			set_popularities = {
+			totalist = 50
+			national_populist = 50
+			}
+		}
+	}
+	option = { 
+		name = montenegro.3.b
+		MNT =  {
+		set_politics = {
+			ruling_party = national_populist
+			elections_allowed = no
+		}
+		}
+		set_country_flag = KXX_LEADER_GUI_VISIBLE
+		MNT = {
+		remove_ideas_with_trait = head_of_government
+		add_ideas = MNT_Dracha_Mikhailovich_hog_npo
+		remove_ideas_with_trait = economy_minister
+		add_ideas = MNT_Kosta_Milovanovic_Pecanac_eco_npo
+		remove_ideas_with_trait = foreign_minister
+		add_ideas = MNT_Jovan_Babunsk_for_npo
+		remove_ideas_with_trait = security_minister
+		add_ideas = MNT_Pavle_Durisic_sec_npo
+		}
+		MNT ={
+		set_cosmetic_tag = MNT_CT_NPO
+		}
+		MNT = {
+			set_popularities = {
+			totalist = 50
+			national_populist = 50
+			}
+		}
+	}
+}

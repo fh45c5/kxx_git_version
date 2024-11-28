@@ -1,0 +1,65 @@
+NFA_monbol_stablize_effect = {
+	if = {
+		limit = {
+			has_idea = NFA_total_chaos
+		}
+		swap_ideas = {
+			remove_idea = NFA_total_chaos
+			add_idea = NFA_total_chaos1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = NFA_total_chaos1
+		}
+		swap_ideas = {
+			remove_idea = NFA_total_chaos1
+			add_idea = NFA_total_chaos2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = NFA_total_chaos2
+		}
+		swap_ideas = {
+			remove_idea = NFA_total_chaos2
+			add_idea = NFA_total_chaos3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = NFA_total_chaos3
+		}
+		swap_ideas = {
+			remove_idea = NFA_total_chaos3
+			add_idea = NFA_total_chaos4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = NFA_total_chaos4
+		}
+		swap_ideas = {
+			remove_idea = NFA_total_chaos4
+			add_idea = NFA_total_chaos5
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = NFA_total_chaos5
+		}
+		swap_ideas = {
+			remove_idea = NFA_total_chaos5
+			add_idea = NFA_total_chaos6
+		}
+	}
+	else = {
+		
+			remove_ideas = NFA_total_chaos6
+			add_timed_idea = {
+				idea = NFA_total_chaos_aftermath
+				days = 730
+			}
+		
+	}
+}

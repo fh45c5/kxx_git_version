@@ -1,0 +1,2199 @@
+#######################
+# Galician Focus Tree
+#######################
+
+focus_tree = {
+	id = Montenegro
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = MNT
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 200 y = 2500 }
+
+	focus={
+		id=MNT_1
+		icon = GFX_goal_FIU_chetnik
+		x=14
+		y=0
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 50
+		add_war_support = 0.05
+		add_stability = 0.05
+		add_ideas = MNT_The_Chetnik_Revolution
+		}
+	}
+	focus={
+		id=MNT_2
+		icon = GFX_goal_RUS_Green_Legionaries
+		x=12
+		y=1
+		prerequisite={focus=MNT_1}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			random_owned_controlled_state = {
+				prioritize = { 105 }
+				create_unit = {
+					division = "division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1.0"
+					owner = ROOT
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 1097 }
+				create_unit = {
+					division = "division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1.0"
+					owner = ROOT
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 1097 }
+				create_unit = {
+					division = "division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1.0"
+					owner = ROOT
+				}
+			}
+		}
+	}
+	focus={
+		id=MNT_3
+		icon = GFX_goal_MNT_remove_bulgar
+		x=16
+		y=1
+		prerequisite={focus=MNT_1}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = MNT_The_Chetnik_Revolution
+		add_idea = MNT_The_Chetnik_Revolution_1
+		}
+		}
+	}
+	focus={
+		id=MNT_4
+		icon = GFX_goal_SER_mobilize_the_che
+		x=14
+		y=2
+		prerequisite={focus=MNT_2}
+		prerequisite={focus=MNT_3}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		declare_war_on = { target = SER type = annex_everything }
+		swap_ideas = {
+		remove_idea = MNT_The_Chetnik_Revolution_1
+		add_idea = MNT_The_Chetnik_Revolution_2
+		}
+		}
+	}
+	focus={
+		id=MNT_5
+		icon = GFX_goal_MNT_enemies_all_sides
+		x=14
+		y=3
+		prerequisite={focus=MNT_4}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+		controls_state = 107
+		controls_state = 108
+		controls_state = 767
+		NOT = { country_exists = SER }
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		set_capital = { state = 107 }
+		random_owned_controlled_state={
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=3
+			add_building_construction={
+				type=industrial_complex
+				level=3
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=3
+			add_building_construction={
+				type=arms_factory
+				level=3
+				instant_build=yes
+			}
+		}
+		}
+	}
+	focus={
+		id=MNT_6
+		icon = GFX_goal_ALB_Purge_Purgers
+		x=14
+		y=4
+		prerequisite={focus=MNT_5}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		SER = {
+			every_unit_leader = {	
+				set_nationality = MNT
+			}
+			set_country_flag = annex_ser	
+		}
+		country_event = montenegro.3
+		}
+	}
+	focus={
+		id=MNT_7
+		icon = GFX_goal_SER_serb_unity
+		x=6
+		y=5
+		prerequisite={focus=MNT_6}
+		cost=0
+		ai_will_do={
+			factor=1
+		}
+		available = {
+		has_government = national_populist
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		}
+	}
+	focus={
+		id=MNT_8
+		icon = GFX_goal_AUS_einsturz
+		x=23
+		y=5
+		prerequisite={focus=MNT_6}
+		cost=0
+		ai_will_do={
+			factor=1
+		}
+		available = {
+		has_government = totalist
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		}
+	}
+	focus={
+		id=MNT_10
+		icon = GFX_goal_MNT_alexander
+		x=6
+		y=6
+		prerequisite={focus=MNT_7}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_country_leader = {
+			name = "亚历山大二世"
+			picture = "gfx/leaders/SER/Portrait_SER_Alexander_II.png"
+			expire = "1.1.1"
+			ideology = natpop_yugoslavism_subtype
+		}
+		}
+	}
+	focus={
+		id=MNT_9
+		icon = GFX_goal_HOL_crackdown_totalist
+		x=2
+		y=6
+		prerequisite={focus=MNT_7}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_popularity = { ideology = totalist popularity = -1 }
+		set_party_name = {
+			ideology = totalist
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被逮捕"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = authcom_subtype
+		}
+		set_party_name = {
+			ideology = syndicalist
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被逮捕"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = anarcho_syndicalist_subtype
+		}
+		set_party_name = {
+			ideology = radical_socialist
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被逮捕"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = anarchism_subtype
+		}
+		}
+	}
+	focus={
+		id=MNT_11
+		icon = GFX_goal_NIC_Strong_Presidency
+		x=10
+		y=6
+		prerequisite={focus=MNT_7}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = MNT_yugism
+		}
+	}
+	focus={
+		id=MNT_13
+		icon = GFX_goal_SER_union_war_preparations
+		x=4
+		y=7
+		prerequisite={focus=MNT_9}
+		prerequisite={focus=MNT_10}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = MNT_The_Chetnik_Revolution_2
+		add_idea = MNT_The_Chetnik_Revolution_3
+		}
+		}
+	}
+	focus={
+		id=MNT_14
+		icon = GFX_goal_SKM_Dire_Need_Land_Reforms
+		x=8
+		y=7
+		prerequisite={focus=MNT_11}
+		prerequisite={focus=MNT_10}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state={
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		add_war_support = 0.1
+		add_stability = 0.1
+		random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
+				increase_state_category_by_one_level = yes
+			}
+		random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
+				increase_state_category_by_one_level = yes
+			}
+		random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
+				increase_state_category_by_one_level = yes
+			}
+		random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
+				increase_state_category_by_one_level = yes
+			}
+		}
+	}
+	focus={
+		id=MNT_12
+		icon = GFX_goal_SER_pacify_oposition
+		x=0
+		y=7
+		prerequisite={focus=MNT_9}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = -100
+		set_party_name = {
+			ideology = social_democrat
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被逮捕"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = socdem_junta_subtype
+		}
+		set_party_name = {
+			ideology = social_liberal
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被逮捕"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = soclib_agrarianism_subtype
+		}
+		set_party_name = {
+			ideology = market_liberal
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被逮捕"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = ancap_subtype
+		}
+		set_party_name = {
+			ideology = social_conservative
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被逮捕"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = christian_democracy_subtype
+		}
+		set_party_name = {
+			ideology = authoritarian_democrat
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被逮捕"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = oligarchy_subtype
+		}
+		set_party_name = {
+			ideology = paternal_autocrat
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被逮捕"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = junta_subtype
+		}
+		}
+	}
+	focus={
+		id=MNT_15
+		icon = GFX_goal_MNT_tamo_daleko
+		x=12
+		y=7
+		prerequisite={focus=MNT_11}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = MNT_yugism
+		add_idea = MNT_yugism_1
+		}
+		}
+	}
+	focus={
+		id=MNT_16
+		icon = GFX_goal_DSR_meeting
+		x=2
+		y=8
+		prerequisite={focus=MNT_12}
+		prerequisite={focus=MNT_13}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = MNT_The_Chetnik_Revolution_3
+		add_idea = MNT_The_Chetnik_Revolution_4
+		}
+		}
+	}
+	focus={
+		id=MNT_17
+		icon = GFX_HUN_foreign_army_advisors
+		x=6
+		y=8
+		prerequisite={focus=MNT_13}
+		prerequisite={focus=MNT_14}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state = {
+			create_unit = {
+			division = "name = \"Chetniks\" division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1"
+			allow_spawning_on_enemy_provs = yes
+			owner = MNT
+			}
+			create_unit = {
+			division = "name = \"Chetniks\" division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1"
+			allow_spawning_on_enemy_provs = yes
+			owner = MNT
+			}
+			create_unit = {
+			division = "name = \"Chetniks\" division_template = \"Domobranska pješačka divizija\" start_experience_factor = 1 start_equipment_factor = 1"
+			allow_spawning_on_enemy_provs = yes
+			owner = MNT
+			}
+		}	
+		}
+	}
+	focus={
+		id=MNT_18
+		icon = GFX_goal_BUL_Yugo_Realized
+		x=10
+		y=8
+		prerequisite={focus=MNT_14}
+		prerequisite={focus=MNT_15}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = MNT_yugism_1
+		add_idea = MNT_yugism_2
+		}
+		}
+	}
+	focus={
+		id=MNT_19
+		icon = GFX_goal_AUS_Arische_Wirtschaftsordnung
+		x=4
+		y=9
+		prerequisite={focus=MNT_16}
+		prerequisite={focus=MNT_17}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = MNT_The_Chetnik_Revolution_4
+		add_idea = MNT_The_Chetnik_Revolution_5
+		}
+		}
+	}
+	focus={
+		id=MNT_20
+		icon = GFX_goal_NYC_Kill_Mob
+		x=8
+		y=9
+		prerequisite={focus=MNT_17}
+		prerequisite={focus=MNT_18}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = MNT_yugism_2
+		add_idea = MNT_yugism_3
+		}
+		}
+	}
+	focus={
+		id=MNT_21
+		icon = GFX_goal_MEX_The_Road_To_Glory
+		x=6
+		y=10
+		prerequisite={focus=MNT_19}
+		prerequisite={focus=MNT_20}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = MNT_yugism_3
+		add_idea = MNT_yugism_4
+		}
+		CAN = {
+		add_to_faction = MNT
+		}
+		}
+	}
+	focus={
+		id=MNT_23
+		icon = GFX_goal_CSA_lead_the_revolution
+		x=23
+		y=6
+		prerequisite={focus=MNT_8}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = MNT_a_government_that_belongs_to_the_people
+		}
+	}
+	focus={
+		id=MNT_22
+		icon = GFX_goal_BRG_Kill_Revolution
+		x=19
+		y=6
+		prerequisite={focus=MNT_8}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_popularity = { ideology = national_populist popularity = -1 }
+		set_party_name = {
+			ideology = syndicalist
+			long_name = MNT_totalist_party
+			name = MNT_totalist_party
+		}
+		set_party_name = {
+			ideology = radical_socialist
+			long_name = MNT_totalist_party
+			name = MNT_totalist_party
+		}
+		set_party_name = {
+			ideology = national_populist
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被逮捕"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = baltic_christianity_subtype
+		}
+		}
+	}
+	focus={
+		id=MNT_24
+		icon = GFX_goal_FRA_warrior_ethics
+		x=27
+		y=6
+		prerequisite={focus=MNT_8}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = MNT_red_yugism
+		}
+	}
+	focus={
+		id=MNT_26
+		icon = GFX_goal_ALB_Liberation_Army
+		x=21
+		y=7
+		prerequisite={focus=MNT_22}
+		prerequisite={focus=MNT_23}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = MNT_The_Chetnik_Revolution_2
+		add_idea = MNT_The_Chetnik_Revolution_rev_1
+		}
+		}
+	}
+	focus={
+		id=MNT_25
+		icon = GFX_goal_CSA_liquidate_bourgeoisie
+		x=17
+		y=7
+		prerequisite={focus=MNT_22}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 100
+		set_party_name = {
+			ideology = social_democrat
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被逮捕"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = socdem_junta_subtype
+		}
+		set_party_name = {
+			ideology = social_liberal
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被逮捕"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = soclib_agrarianism_subtype
+		}
+		set_party_name = {
+			ideology = market_liberal
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被逮捕"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = ancap_subtype
+		}
+		set_party_name = {
+			ideology = social_conservative
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被逮捕"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = christian_democracy_subtype
+		}
+		set_party_name = {
+			ideology = authoritarian_democrat
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被逮捕"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = oligarchy_subtype
+		}
+		set_party_name = {
+			ideology = paternal_autocrat
+			long_name = WSU_NO_party_long
+			name = WSU_NO_party
+		}
+		create_country_leader = {
+			name = "已被逮捕"
+			picture = "gfx/leaders/CNT/no_leader.png"
+			expire = "1.1.1"
+			ideology = junta_subtype
+		}
+		}
+	}
+	focus={
+		id=MNT_27
+		icon = GFX_goal_ALB_No_Famine
+		x=25
+		y=7
+		prerequisite={focus=MNT_23}
+		prerequisite={focus=MNT_24}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state={
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		add_war_support = 0.1
+		add_stability = 0.1
+		random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
+				increase_state_category_by_one_level = yes
+			}
+		random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
+				increase_state_category_by_one_level = yes
+			}
+		random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
+				increase_state_category_by_one_level = yes
+			}
+		random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
+				increase_state_category_by_one_level = yes
+			}
+		}
+	}
+	focus={
+		id=MNT_28
+		icon = GFX_Focus_MNT1
+		x=29
+		y=7
+		prerequisite={focus=MNT_24}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = MNT_red_yugism
+		add_idea = MNT_red_yugism_1
+		}
+		}
+	}
+	focus={
+		id=MNT_29
+		icon = GFX_Focus_MNT2
+		x=19
+		y=8
+		prerequisite={focus=MNT_25}
+		prerequisite={focus=MNT_26}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = MNT_The_Chetnik_Revolution_rev_1
+		add_idea = MNT_The_Chetnik_Revolution_rev_2
+		}
+		}
+	}
+	focus={
+		id=MNT_30
+		icon = GFX_Focus_MNT3
+		x=23
+		y=8
+		prerequisite={focus=MNT_26}
+		prerequisite={focus=MNT_27}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = MNT_a_government_that_belongs_to_the_people
+		add_idea = MNT_a_government_that_belongs_to_the_people_1
+		}
+		}
+	}
+	focus={
+		id=MNT_31
+		icon = GFX_Focus_MNT4
+		x=27
+		y=8
+		prerequisite={focus=MNT_27}
+		prerequisite={focus=MNT_28}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = MNT_red_yugism_1
+		add_idea = MNT_red_yugism_2
+		}
+		}
+	}
+	focus={
+		id=MNT_32
+		icon = GFX_Focus_MNT5
+		x=23
+		y=9
+		prerequisite={focus=MNT_30}
+		prerequisite={focus=MNT_29}
+		prerequisite={focus=MNT_31}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+		remove_idea = MNT_a_government_that_belongs_to_the_people_1
+		add_idea = MNT_a_government_that_belongs_to_the_people_2
+		}
+		}
+	}
+	focus={
+		id=MNT_33
+		icon = GFX_goal_FRA_reign_of_working_man
+		x=23
+		y=10
+		prerequisite={focus=MNT_32}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state={
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=3
+			add_building_construction={
+				type=industrial_complex
+				level=3
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=3
+			add_building_construction={
+				type=arms_factory
+				level=3
+				instant_build=yes
+			}
+		}
+		FRA = {
+		add_to_faction = MNT
+		}
+		}
+	}
+	focus={
+		id=MNT_34
+		icon = GFX_goal_SER_macedonia_in_flames
+		x=13
+		y=11
+		prerequisite={focus=MNT_21 focus=MNT_33 }
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		declare_war_on = { target = BUL type = annex_everything }
+		}
+	}
+	focus={
+		id=MNT_35
+		icon = GFX_goal_ALB_Tragedy_Zogu
+		x=17
+		y=11
+		prerequisite={focus=MNT_21 focus=MNT_33 }
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		every_state = {
+		limit = { is_core_of = ALB }
+		add_core_of = MNT
+		}
+		declare_war_on = { target = ALB type = annex_everything }
+		}
+	}
+	focus={
+		id=MNT_36
+		icon = GFX_BUL_National_Catastrophe
+		x=15
+		y=12
+		prerequisite={focus=MNT_34}
+		prerequisite={focus=MNT_35}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+		OR ={
+		NOT = { country_exists = BUL }
+		BUL = {
+		is_puppet_of = MNT
+		}
+		}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		annex_country = { target = BUL transfer_troops = yes }
+		every_state = {
+		limit = { is_core_of = BUL }
+		add_core_of = MNT
+		}
+		}
+	}
+	focus={
+		id=MNT_37
+		icon = GFX_goal_bosnia
+		x=15
+		y=13
+		prerequisite={focus=MNT_36}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		declare_war_on = { target = CRO type = annex_everything }
+		every_state = {
+		limit = { is_core_of = CRO }
+		add_core_of = MNT
+		}
+		}
+	}
+	focus={
+		id=MNT_38
+		icon = GFX_goal_BUL_End_Illyria
+		x=13
+		y=14
+		prerequisite={focus=MNT_37}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		875 = { add_core_of = MNT }
+		45 = { add_core_of = MNT }
+		if = {
+				limit = { can_declare_war_on = 875.owner }
+				declare_war_on = {
+					target = 875.owner
+					type = take_state_focus
+					generator = { 45 875 }
+				}
+			}
+		}
+	}
+	focus={
+		id=MNT_39
+		icon = GFX_goal_CRO_light_slovene_fire
+		x=17
+		y=14
+		prerequisite={focus=MNT_37}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		every_state = {
+		limit = { is_core_of = SLO }
+		add_core_of = MNT
+		}
+		if = {
+				limit = { can_declare_war_on = 102.owner }
+				declare_war_on = {
+					target = 102.owner
+					type = take_state_focus
+					generator = { 102 1101 1104 1272 1103 736 1100 1144 }
+				}
+			}
+		}
+	}
+	focus={
+		id=MNT_40
+		icon = GFX_goal_MNT_yugoslav_supremacism
+		x=15
+		y=15
+		prerequisite={focus=MNT_38}
+		prerequisite={focus=MNT_39}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		set_cosmetic_tag = YUG_CT
+		}
+	}
+	focus={
+		id=MNT_41
+		icon = GFX_goal_generic_cow_pig
+		x=38
+		y=0
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = -50
+			if = {
+				limit = { has_idea = SER_farming_subsidies_2 }
+				swap_ideas = {
+					remove_idea = SER_farming_subsidies_2
+					add_idea = SER_farming_subsidies_3
+				}
+			}
+			else = {
+				add_ideas = SER_farming_subsidies_1
+			}
+		}
+	}
+	focus={
+		id=MNT_42
+		icon = GFX_goal_SKM_Foreign_Financed_Mechanization
+		x=40
+		y=0
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_tech_bonus = {
+				name = SER_Continue_The_Mechanisation_Efforts
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	focus={
+		id=MNT_43
+		icon = GFX_goal_AUS_field_factory
+		x=39
+		y=1
+		prerequisite={focus=MNT_41 focus=MNT_42 }
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			add_tech_bonus = {
+				name = SER_Invest_In_Zadrugar
+				bonus = 0.5
+				uses = 1
+				category = efficiency_tech
+			}
+			random_owned_controlled_state = {
+				prioritize = { 1097 }
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=MNT_44
+		icon = GFX_USA_rural_investments
+		x=39
+		y=2
+		prerequisite={focus=MNT_43}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_ideas = SER_farming_subsidies_2
+			custom_effect_tooltip = SER_Rural_Credit_Grants_tooltip
+		}
+	}
+	focus={
+		id=MNT_45
+		icon = GFX_HUN_revive_military_funding
+		x=38
+		y=3
+		prerequisite={focus=MNT_44}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=MNT_46
+		icon = GFX_NEE_crop_insurance
+		x=40
+		y=3
+		prerequisite={focus=MNT_49}
+		prerequisite={focus=MNT_44}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=MNT_47
+		icon = GFX_goal_AUS_reconstructive_mobilization
+		x=39
+		y=4
+		prerequisite={focus=MNT_45}
+		prerequisite={focus=MNT_53}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			add_research_slot = 1
+			add_ideas = SER_military_industry
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	focus={
+		id=MNT_48
+		icon = GFX_goal_FSA_emergency_funding
+		x=42
+		y=0
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=MNT_49
+		icon = GFX_goal_NEE_Meritocracy_Focused_Growing_Urban_Heart
+		x=42
+		y=1
+		prerequisite={focus=MNT_48}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_tech_bonus = {
+				name = SER_Modernise_Belgrade
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+		random_owned_controlled_state = {
+				prioritize = { 107 }
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=MNT_50
+		icon = GFX_goal_AUS_Advertise_To_Metal_Rail_Unions
+		x=41
+		y=2
+		prerequisite={focus=MNT_49}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = SER_state_railways_directorate
+		}
+	}
+	focus={
+		id=MNT_51
+		icon = GFX_goal_SKM_Bhotang_Mine
+		x=43
+		y=2
+		prerequisite={focus=MNT_49}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			767 = { is_owned_and_controlled_by = ROOT }
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_resource = {
+			type = tungsten
+			amount = 12
+			state = 767
+			}
+		}
+	}
+	focus={
+		id=MNT_52
+		icon = GFX_goal_NIC_Pacific_Rail_Expansion
+		x=41
+		y=4
+		prerequisite={focus=MNT_46 focus=MNT_50 }
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		every_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=MNT_53
+		icon = GFX_goal_NIC_Military_Industry
+		x=43
+		y=3
+		prerequisite={focus=MNT_51}
+		prerequisite={focus=MNT_50}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			108 = { is_owned_and_controlled_by = ROOT }
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			log = "[GetDateText]: [Root.GetName]: Focus SER_Found_FOMU"
+			random_owned_controlled_state = {
+				prioritize = { 108 }
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=MNT_55
+		icon = GFX_goal_FIU_chetnik
+		x=44
+		y=1
+		prerequisite={focus=MNT_54}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = SER_military_reform_council_1
+				add_idea = SER_military_reform_council_2
+			}
+			hidden_effect = {
+				if = {
+					limit = { has_war_with = 104.owner }
+					country_event = { id = serbia.42 days = 5 random_days = 3 }
+				}
+			}
+		}
+	}
+	focus={
+		id=MNT_56
+		icon = GFX_goal_ATH_engineering
+		x=46
+		y=1
+		prerequisite={focus=MNT_54}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		custom_effect_tooltip = expanded_engineer_corps_tech_effect
+			hidden_effect = {
+			set_technology = { expanded_engineer_corps_tech = 1 popup = no }
+			}
+		}
+	}
+	focus={
+		id=MNT_57
+		icon = GFX_goal_SKM_Mastery_Mountains
+		x=50
+		y=1
+		prerequisite={focus=MNT_54}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			custom_effect_tooltip = SER_Serbian_Mountain_Corps_tooltip
+			custom_effect_tooltip = mountain_training_tech_effect
+			hidden_effect = {
+				set_technology = { mountain_training_tech = 1 popup = no }
+				division_template = {
+					name = "Planinski Odred"
+					division_names_group = SER_MTN_01
+					regiments = {
+						mountaineers = { x = 0 y = 0 }
+						mountaineers = { x = 0 y = 1 }
+						mountaineers = { x = 0 y = 2 }
+						mountaineers = { x = 1 y = 0 }
+						mountaineers = { x = 1 y = 1 }
+						mountaineers = { x = 1 y = 2 }
+					}
+					priority = 2
+				}
+				random_owned_controlled_state = {
+					prioritize = { 765 }
+					create_unit = {
+						division = "division_template = \"Planinski Odred\" start_experience_factor = 0.15 start_equipment_factor = 1.0"
+						owner = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					prioritize = { 108 }
+					create_unit = {
+						division = "division_template = \"Planinski Odred\" start_experience_factor = 0.15 start_equipment_factor = 1.0"
+						owner = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					prioritize = { 107 }
+					create_unit = {
+						division = "division_template = \"Planinski Odred\" start_experience_factor = 0.15 start_equipment_factor = 1.0"
+						owner = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					prioritize = { 767 }
+					create_unit = {
+						division = "division_template = \"Planinski Odred\" start_experience_factor = 0.15 start_equipment_factor = 1.0"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	focus={
+		id=MNT_54
+		icon = GFX_goal_SER_army
+		x=48
+		y=0
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = SER_military_reform_council_1
+		}
+	}
+	focus={
+		id=MNT_58
+		icon = GFX_goal_NVN_Fortify_Fort_Defiance
+		x=52
+		y=1
+		prerequisite={focus=MNT_54}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			OR = {
+				107 = { is_owned_and_controlled_by = ROOT }
+				108 = { is_owned_and_controlled_by = ROOT }
+				765 = { is_owned_and_controlled_by = ROOT }
+				767 = { is_owned_and_controlled_by = ROOT }
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		107 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 11583
+				}
+			}
+			108 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 6998
+				}
+			}
+			765 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 9874
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 9849
+				}
+			}
+			767 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 9906
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 9890
+				}
+			}
+		}
+	}
+	focus={
+		id=MNT_59
+		icon = GFX_goal_SER_Republican_Guard
+		x=48
+		y=2
+		prerequisite={focus=MNT_54}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus={
+		id=MNT_60
+		icon = GFX_goal_SKM_Modern_Artillery
+		x=47
+		y=3
+		prerequisite={focus=MNT_59}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_tech_bonus = {
+				name = SER_Modern_Howitzers
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+	focus={
+		id=MNT_61
+		icon = GFX_goal_CZE_squad_tactics
+		x=49
+		y=3
+		prerequisite={focus=MNT_59}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus={
+		id=MNT_62
+		icon = GFX_goal_MNT_chetnik
+		x=48
+		y=4
+		prerequisite={focus=MNT_59}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		army_experience = 50
+		add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	focus={
+		id=MNT_63
+		icon = GFX_goal_IRE_generic_construction
+		x=45
+		y=2
+		prerequisite={focus=MNT_49}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			107 = { is_owned_and_controlled_by = ROOT }
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state = {
+				prioritize = { 107 }
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_resource = {
+				type = steel
+				amount = 15
+				state = 107
+			}
+		}
+	}
+	focus={
+		id=MNT_64
+		icon = GFX_goal_USA_integral_mechanization
+		x=52
+		y=3
+		prerequisite={focus=MNT_59}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			if = {
+				limit = {
+					NOT = { has_tech = motorised_infantry }
+				}
+				set_technology = { motorised_infantry = 1 }
+			}
+			else = {
+				add_tech_bonus = {
+					name = SER_Begin_Mechanisation
+					bonus = 1
+					uses = 1
+					category = cat_mechanized_equipment
+				}
+			}
+		}
+	}
+	focus={
+		id=MNT_65
+		icon = GFX_RUS_The_Might_Of_Russian_Army
+		x=51
+		y=4
+		prerequisite={focus=MNT_64}
+		mutually_exclusive={focus=MNT_66 }
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		log = "[GetDateText]: [Root.GetName]: Focus MNT_65"
+		custom_effect_tooltip = available_designer
+			show_ideas_tooltip = industrija_masina_komponenata
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				name = SER_Import_Entente_Armour_Designs
+				bonus = 1
+				uses = 1
+				category = armor
+			}
+			if = {
+				limit = {
+					NOT = { has_dlc = "No Step Back" }
+				}
+				add_equipment_to_stockpile = {
+				type = light_tank_equipment_1
+				amount = 150
+				producer = RUS
+			}
+			}
+			if = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
+				add_equipment_to_stockpile = {
+				type = light_tank_chassis
+				amount = 150
+				producer = RUS
+			}
+			}
+		}
+	}
+	focus={
+		id=MNT_66
+		icon = GFX_goal_NEE_armored_spearhead
+		x=53
+		y=4
+		prerequisite={focus=MNT_64}
+		mutually_exclusive={focus=MNT_65 }
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		log = "[GetDateText]: [Root.GetName]: Focus MNT_65"
+		custom_effect_tooltip = available_designer
+			show_ideas_tooltip = industrija_masina_komponenata
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				name = SER_Import_Entente_Armour_Designs
+				bonus = 1
+				uses = 1
+				category = armor
+			}
+			if = {
+				limit = {
+					NOT = { has_dlc = "No Step Back" }
+				}
+				add_equipment_to_stockpile = {
+				type = light_tank_equipment_1
+				amount = 150
+				producer = ENT
+			}
+			}
+			if = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
+				add_equipment_to_stockpile = {
+				type = light_tank_chassis
+				amount = 150
+				producer = ENT
+			}
+			}
+		}
+	}
+	focus={
+		id=MNT_67
+		icon = GFX_focus_generic_military_equipment
+		x=44
+		y=4
+		prerequisite={focus=MNT_53 focus=MNT_60 }
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		custom_effect_tooltip = available_designer
+			show_ideas_tooltip = zastava
+			custom_effect_tooltip = tooltip_white_line
+			random_owned_controlled_state = {
+				prioritize = { 108 }
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+}

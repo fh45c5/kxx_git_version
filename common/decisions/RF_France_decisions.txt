@@ -1,0 +1,247 @@
+
+FRA_worldwide_futurism = {
+	FRA_cucked_germany = {
+		visible = {
+			OR = {
+				64 = { NOT = { is_claim_or_core_of_owner = yes } is_owned_by_ROOT_or_ai_ally = yes }
+				844 = { NOT = { is_claim_or_core_of_owner = yes } is_owned_by_ROOT_or_ai_ally = yes }
+				52 = { NOT = { is_claim_or_core_of_owner = yes } is_owned_by_ROOT_or_ai_ally = yes }
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+		days_remove = 21
+		
+		complete_effect = {
+			if = {
+				limit = { 64 = { NOT = { is_claim_or_core_of_owner = yes } is_owned_by_ROOT_or_ai_ally = yes } NOT = { has_country_flag = fra_german_collabs } }
+				country_event = france.213
+				complete_national_focus = FRA_making_friends_new_age
+				complete_national_focus = FRA_seize_natural_borders
+			}
+		}
+		
+		remove_effect = {
+			if = { #Germany
+				limit = { 64 = { NOT = { is_claim_or_core_of_owner = yes } is_owned_by_ROOT_or_ai_ally = yes } }
+				add_to_temp_array = { core_removal_array = GER }
+				remove_all_cores_and_claims_of_tags = yes
+				every_state = {
+					limit = {
+						OR = {
+							state = 62
+							state = 64
+							state = 61
+							state = 65
+							state = 60
+							state = 64
+							state = 55
+							state = 56
+							state = 57
+							state = 59
+						}
+					}
+					add_core_of = GER
+				}
+
+				if = {
+					limit = {
+						POL = {
+							is_subject = no
+							exists = yes
+							NOT = { has_war_with = FRA }
+						}
+					}
+					every_state = {
+						limit = {
+							OR = {
+								state = 63
+								state = 68
+								state = 66
+								state = 67
+								state = 762
+							}
+						}
+						add_core_of = POL
+					}
+					every_state = {
+						limit = {
+							is_owned_by_ROOT_or_ai_ally = yes
+							is_core_of = POL
+							is_not_claim_or_core_of_ROOT = yes
+						}
+						POL = { transfer_state = PREV }
+					}
+				}
+				else = {
+					every_state = {
+						limit = {
+							OR = {
+								state = 63
+								state = 68
+								state = 66
+								state = 67
+								state = 762
+							}
+						}
+						add_core_of = GER
+					}
+				}
+				
+				every_state = {
+					limit = {
+						is_owned_by_ROOT_or_ai_ally = yes
+						is_core_of = GER
+						is_not_claim_or_core_of_ROOT = yes
+					}
+					GER = { transfer_state = PREV }
+				}
+				set_temp_variable = { tag_to_release = GER }
+				puppet_released_tag = yes
+
+				if = {
+					limit = { has_country_flag = FRA_picked_rossbach }
+					GER = {
+						add_country_leader_role = {
+							character = GER_gerhard_rossbach
+							country_leader = { 
+								ideology = national_rejuvenatism
+								expire = "1965.1.1.1"
+							}
+							promote_leader = yes
+						}
+						set_cosmetic_tag = GER_rossbach
+						set_party_name = {
+							ideology = accelerationism
+							long_name = GER_rossbach_party_long
+							name = GER_rossbach_party
+						}
+					}
+				}
+				else_if = {
+					limit = { has_country_flag = FRA_picked_richter }
+					GER = {
+						add_country_leader_role = {
+							character = GER_hans_richter
+							country_leader = { 
+								ideology = futurism
+								expire = "1965.1.1.1"
+							}
+							promote_leader = yes
+						}
+						set_cosmetic_tag = GER_richter
+						set_party_name = {
+							ideology = accelerationism
+							long_name = GER_richter_party_long
+							name = GER_richter_party
+						}
+					}
+				}
+				else_if = {
+					limit = { has_country_flag = FRA_picked_fidus }
+					GER = {
+						add_country_leader_role = {
+							character = GER_fidus
+							country_leader = { 
+								ideology = zadrugism
+								expire = "1965.1.1.1"
+							}
+							promote_leader = yes
+						}
+						set_cosmetic_tag = GER_fidusct
+						set_party_name = {
+							ideology = accelerationism
+							long_name = GER_fidus_party_long
+							name = GER_fidus_party
+						}
+					}
+				}
+			}
+			
+			if = { #Rhineland
+				limit = { 844 = { NOT = { is_claim_or_core_of_owner = yes } is_owned_by_ROOT_or_ai_ally = yes } }
+				every_state = {
+					limit = {
+						OR = {
+							is_rhineland = yes
+							state = 8
+							state = 28
+						}
+					}
+					add_claim_by = FRA
+				}
+			}
+			
+			if = { #Bavaria
+				limit = { 52 = { NOT = { is_claim_or_core_of_owner = yes } is_owned_by_ROOT_or_ai_ally = yes } }
+				every_state = {
+					limit = {
+						is_bavaria = yes
+					}
+					add_core_of = BAV
+				}
+				every_state = {
+					limit = {
+						is_owned_by_ROOT_or_ai_ally = yes
+						is_core_of = BAV
+						is_not_claim_or_core_of_ROOT = yes
+					}
+					BAV = { transfer_state = PREV }
+				}
+				set_temp_variable = { tag_to_release = BAV }
+				puppet_released_tag = yes
+				
+				BAV = {
+					set_cosmetic_tag = BAV_FRA_escadron
+					set_politics = { ruling_party = despotism }
+					set_country_flag = is_accelerationist_aligned
+					add_popularity = {
+						ideology = despotism
+						popularity = 0.30
+					}
+				}
+			}
+
+			if = { #Schleswig Holstein
+				limit = { 58 = { NOT = { is_claim_or_core_of_owner = yes } is_owned_by_ROOT_or_ai_ally = yes } }
+				if = {
+					limit = {
+						37 = { is_core_of = var:37.owner }
+					}
+					var:37.owner = {
+						add_state_core = 58
+						add_state_core = 796
+					}
+					every_state = {
+						limit = {
+							is_owned_by_ROOT_or_ai_ally = yes
+							OR = {
+								state = 58
+								state = 796
+							}
+						}
+						var:37.owner = { transfer_state = PREV }
+					}
+				}
+				else = {
+					GER = {
+						add_state_core = 58
+						add_state_core = 796
+					}
+					every_state = {
+						limit = {
+							is_owned_by_ROOT_or_ai_ally = yes
+							OR = {
+								state = 58
+								state = 796
+							}
+						}
+						GER = { transfer_state = PREV }
+					}
+				}
+			}
+			recheck_annexations = yes
+		}
+	}
+}

@@ -1,0 +1,355 @@
+﻿capital = 91
+
+set_research_slots = 3
+
+set_technology = {
+	### Tanks ###
+	### INF ###
+	infantry_weapons = 1
+	basic_train = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_recon = 1
+	tech_mountaineers = 1
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "WSU_air_bba"
+		set_technology = {
+			aa_lmg = 1
+			early_bombs = 1
+			engines_1 = 1
+			iw_small_airframe = 1
+		}
+	else = {
+		set_air_oob = "WSU_air_legacy"
+		set_technology = {
+	early_fighter = 1
+			early_bomber = 1
+		}
+	}
+}
+
+### Navy - MtG ###
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		panzerschiffe = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		cruiser_submarines = 1
+		early_ship_hull_heavy = 1
+		basic_ship_hull_heavy = 1
+		gw_artillery = 1
+		
+		basic_naval_mines = 1
+
+		## Modules##
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_depth_charges = 1
+		basic_torpedo = 1
+		improved_ship_torpedo_launcher = 1
+		basic_cruiser_armor_scheme = 1
+	}
+}
+
+### Navy - Non MtG ###
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_technology = {
+	### Infantry ###
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	armored_car1 = 1
+	marines = 1
+		
+	### Artillery ###
+	gw_artillery = 1
+	
+	### Support ###
+	tech_recon = 1
+	tech_support = 1
+	tech_engineers = 1
+		
+	### Trains ###
+	basic_train = 1
+
+	### Industry ###
+	fuel_silos = 1
+	
+}
+}
+
+set_politics = {
+	ruling_party = paternal_autocrat
+	last_election = "1940.11.9"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+    totalist = 9
+    radical_socialist = 10
+    syndicalist = 2
+    social_democrat = 4
+    social_liberal = 5
+    market_liberal = 6
+    social_conservative = 4
+    authoritarian_democrat = 1
+    paternal_autocrat = 47
+    national_populist = 12
+}
+
+set_stability = 0.23
+set_war_support = 0.6
+starting_train_buffer = 1
+add_ideas = {
+	UKR_Yevhen_Petrushevych_hog_sde 
+	UKR_Sydor_Holubovych_for_sde
+	UKR_Stepan_Baran_eco_sli
+	UKR_Vasyl_Mudryi_sec_mli
+
+	AUS_part_of_the_Empire
+	WSU_Polish_Landowners
+	WSU_Underindustrialized_Region
+	WSU_Poor_Administration
+	WSU_Multiethnic_Tensions
+	WSU_army_0
+}
+
+create_country_leader = {
+	name = "奥斯塔普·德武斯基"
+	desc = "POLITICS_GAL_OSTAP_DLUSKY_DESC"
+	picture = "gfx/leaders/GAL/Portrait_GAL_Ostap_Dlusky.png"
+	expire = "1.1.1"
+	ideology = authcom_subtype
+}
+create_country_leader = {
+	name = "乌克兰民族革命委员会"
+	desc = ""
+	picture = "gfx/leaders/WSU/WSU_National_Revolutionary_Council_of_Ukraine.png"
+	expire = "1.1.1"
+	ideology = ukrainian_social_nationalism_tot
+}
+create_country_leader = {
+	name = "列夫·巴钦斯基"
+	desc = "POLITICS_GAL_LEV_BACHYNSKY_DESC"
+	picture = "gfx/leaders/GAL/Portrait_GAL_Lev_Bachynsky.png"
+	expire = "1.1.1"
+	ideology = democratic_syndicalism_subtype
+}
+create_country_leader = {
+	name = "伊万·迈斯特连科"
+	desc = "POLITICS_IVAN_MAISTRENKO_DESC"
+	picture = "gfx/leaders/UKR/Portrait_UKR_Ivan_Maistrenko.png"
+	expire = "1.1.1"
+	ideology = market_socialist_subtype
+}
+create_country_leader = {
+	name = "叶夫根·彼得鲁舍维奇"
+	desc = "POLITICS_YEVHEN_PETRUSHEVYCH_DESC"
+	picture = "gfx/leaders/UKR/Portrait_UKR_Yevhen_Petrushevich.png"
+	expire = "1.1.1"
+	ideology = socdem_junta_subtype
+}
+create_country_leader = {
+	name = "德米特罗·列维茨基"
+	desc = "POLITICS_DMYTRO_LEVYTSKYI_DESC"
+	picture = "gfx/leaders/UKR/Portrait_UKR_Dmytro_Levytsky.png"
+	expire = "1.1.1"
+	ideology = national_liberalism_subtype
+}
+create_country_leader = {
+	name = "德米特罗·列维茨基"
+	desc = "POLITICS_DMYTRO_LEVYTSKYI_DESC"
+	picture = "gfx/leaders/UKR/Portrait_UKR_Dmytro_Levytsky.png"
+	expire = "1.1.1"
+	ideology = marlib_national_liberalism_subtype
+}
+create_country_leader = {
+	name = "基里尔·斯图坚斯基"
+	desc = "POLITICS_KYRYLO_STUDYNSKYI_DESC"
+	picture = "gfx/leaders/UKR/Portrait_UKR_Kyrylo_Studynskyi.png"
+	expire = "1.1.1"
+	ideology = christian_democracy_subtype
+}
+create_country_leader = {
+	name = "Kyrylo Studynskyi"
+	desc = "POLITICS_KYRYLO_STUDYNSKYI_DESC"
+	picture = "gfx/leaders/UKR/Portrait_UKR_Kyrylo_Studynskyi.png"
+	expire = "1.1.1"
+	ideology = autdem_christian_democracy_subtype
+}
+create_country_leader = {
+	name = "乌克兰民族革命委员会"
+	desc = "POLITICS_UKR_NR_COM_DESC"
+	picture = "gfx/leaders/WSU/WSU_National_Revolutionary_Council_of_Ukraine.png"
+	expire = "1.1.1"
+	ideology = junta_subtype
+}
+create_country_leader = {
+	name = "乌克兰民族革命委员会"
+	desc = ""
+	picture = "gfx/leaders/WSU/WSU_National_Revolutionary_Council_of_Ukraine.png"
+	expire = "1.1.1"
+	ideology = ukrainian_nationalism_subtype
+}
+
+create_field_marshal = {
+	name = "斯捷潘·班德拉"
+	portrait_path = "gfx/leaders/WSU/Portrait_Stepan_Bandera.png"
+	traits = {
+		WSU_upa_officer
+		brilliant_strategist
+		war_hero
+		trait_mountaineer
+		inspirational_leader
+	}
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "罗曼·舒赫维奇"
+	portrait_path = "gfx/leaders/WSU/Portrait_Shukevich.png"
+	traits = {
+		WSU_upa_officer
+		artillery_officer
+		bearer_of_artillery
+	}
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "列别德·米科拉"
+	portrait_path = "gfx/leaders/WSU/Portrait_Lebed.png"
+	traits = {
+		WSU_upa_officer
+		thorough_planner
+		organisational_leader
+	}
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 1
+}
+create_corps_commander = {
+	name = "德米特罗·克利亚奇科夫斯基"
+	portrait_path = "gfx/leaders/WSU/Portrait_dmytro.png"
+	traits = {
+		WSU_upa_officer
+		trait_mountaineer
+		thorough_planner
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "瓦西里·库克"
+	portrait_path = "gfx/leaders/WSU/Portrait_Vasyl_Kuk.png"
+	traits = {
+		WSU_upa_officer
+		offensive_doctrine
+		trickster
+	}
+	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "格里戈里·库佩茨基"
+	portrait_path = "gfx/leaders/WSU/Portrait_Kupetsky.png"
+	traits = {
+		WSU_upa_officer
+		trait_engineer
+		organisational_leader
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "瓦西里·伊瓦赫夫"
+	portrait_path = "gfx/leaders/WSU/Portrait_Vasyl_Ivakhiv.png"
+	traits = {
+		WSU_upa_officer
+		trait_mountaineer
+		organisational_leader
+	}
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 4
+	logistics_skill = 4
+}
+create_corps_commander = {
+	name = "帕利夫·德米特罗"
+	portrait_path = "gfx/leaders/WSU/Portrait_Paliiv_Dmytro.png"
+	traits = {
+		WSU_upa_officer
+		trait_mountaineer
+		jungle_rat
+	}
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "格里戈里·法伊达"
+	portrait_path = "gfx/leaders/WSU/Portrait_Grigory_Fajda.png"
+	traits = {
+		WSU_upa_officer
+		offensive_doctrine
+		winter_specialist
+	}
+	skill = 3
+	attack_skill = 4
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "瓦西里·西多"
+	portrait_path = "gfx/leaders/WSU/Portrait_Vasyl_Sydor.png"
+	traits = {
+		WSU_upa_officer
+		ranger
+		urban_assault_specialist
+	}
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+}

@@ -1,0 +1,2091 @@
+focus_tree = { 
+	id = spanishafrica
+	continuous_focus_position = { x = 1400 y = 1200 } 
+	country = { 
+	factor = 0 
+	modifier = { 
+	add = 20 
+	tag = SFA 
+	} 
+}
+
+focus = { 
+id = SFA_anewimpetus
+icon = GFX_focus_spa_unify_the_nationalist_front
+x = 9
+y = 0
+cost = 3
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+	add_stability = 0.05
+	country_event = { id = spanishafrica.2 days = 1 } 
+	}
+ }
+ 
+# Economy
+
+focus = { 
+id = SFA_strengthentarriffprotections
+icon = GFX_goal_generic_loans
+x = 9
+y = 1
+cost = 5.8
+available_if_capitulated = no
+available = {
+	has_global_flag = black_monday
+}
+prerequisite = { focus = SFA_anewimpetus }
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+	add_ideas = SFA_economicreforms1
+	}
+ }
+ 
+focus = { 
+id = SFA_continuewithwoermann
+icon = GFX_goal_German_Investements
+x = 7
+y = 2
+cost = 5.8
+prerequisite = { focus = SFA_strengthentarriffprotections }
+mutually_exclusive = { focus = SFA_ourownshippingline }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+swap_ideas = {
+		add_idea = SFA_economicreforms_woermann
+		remove_idea = SFA_economicreforms1
+		}
+	}
+ }
+ 
+focus = { 
+id = SFA_ourownshippingline
+icon = GFX_Focus_Cruiseliner
+x = 11
+y = 2
+cost = 5.8
+prerequisite = { focus = SFA_strengthentarriffprotections }
+mutually_exclusive = { focus = SFA_continuewithwoermann }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+increase_ruling_party_popularity_by_5 = yes
+swap_ideas = {
+		add_idea = SFA_economicreforms_ourown
+		remove_idea = SFA_economicreforms1
+		}
+	}
+ }
+
+focus = { 
+id = SFA_diversifyislandagriculture
+icon = GFX_acreageexpansion
+x = 6
+y = 3
+cost = 5.8
+prerequisite = { focus = SFA_continuewithwoermann focus = SFA_ourownshippingline }
+prerequisite = { focus = SFA_empowerthepatronato }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+		297 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		add_extra_state_shared_building_slots = 1
+		}	
+	add_political_power = -30
+	}
+ }
+ 
+focus = { 
+id = SFA_equatorialarms
+icon = GFX_focus_generic_military_equipment
+x = 5
+y = 5
+cost = 5.8
+mutually_exclusive = { focus = SFA_restorethebubiparamountcy }
+prerequisite = { focus = SFA_acolonialbank }
+prerequisite = { focus = SFA_entrenchconcessionarypower focus = SFA_backthefingueros }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+ available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+		297 = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		add_extra_state_shared_building_slots = 1	
+		}
+	add_political_power = -25
+	}
+ }
+ 
+focus = { 
+id = SFA_acolonialbank
+icon = GFX_allocatefunding
+x = 9
+y = 3
+cost = 5.8
+prerequisite = { focus = SFA_continuewithwoermann focus = SFA_ourownshippingline }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+		add_stability = 0.05
+		add_tech_bonus = {
+			bonus = 0.3
+			uses = 2
+			category = industry
+		}
+			if = {
+				limit = {
+					has_idea = SFA_economicreforms_woermann
+				}
+				swap_ideas = {
+					add_idea = SFA_economicreforms_3
+					remove_idea = SFA_economicreforms_woermann
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SFA_economicreforms_ourown
+				}
+				swap_ideas = {
+					add_idea = SFA_economicreforms_3
+					remove_idea = SFA_economicreforms_ourown
+				}
+			}
+		}
+	}
+	
+focus = { 
+id = SFA_militarisetherif
+icon = GFX_goal_forced_mil
+x = 13
+y = 5
+cost = 5.8
+prerequisite = { focus = SFA_acolonialbank }
+mutually_exclusive = { focus = SFA_partnershipwiththesultanate }
+mutually_exclusive = { focus = SFA_militarisetherif }
+prerequisite = { focus = SFA_continuesugarlumppolicy focus = SFA_aharshergrip }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+		290 = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		add_extra_state_shared_building_slots = 1	
+		}
+	add_political_power = -25
+	}
+ }
+ 
+focus = { 
+id = SFA_fishingarrangements
+icon = GFX_nileandlakecommission
+x = 12
+y = 3
+cost = 5.8
+prerequisite = { focus = SFA_continuewithwoermann focus = SFA_ourownshippingline }
+prerequisite = { focus = SFA_entrenchtheprotectorate }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	699 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_offsite_building = { type = industrial_complex level = 1 }
+	add_stability = -0.02
+	}
+ }
+ 
+focus = { 
+id = SFA_extendthebasupoline
+icon = GFX_railwaydevelopment
+x = 8
+y = 4
+cost = 5.8
+prerequisite = { focus = SFA_diversifyislandagriculture focus = SFA_fishingarrangements }
+prerequisite = { focus = SFA_acolonialbank }
+mutually_exclusive = { focus = SFA_moroccanroads }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+ available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_stability = 0.05
+		297 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+		}	
+	}
+ }
+ 
+focus = { 
+id = SFA_moroccanroads
+icon = GFX_goal_OTT_Pipeline
+x = 10
+y = 4
+cost = 5.8
+prerequisite = { focus = SFA_diversifyislandagriculture focus = SFA_fishingarrangements }
+prerequisite = { focus = SFA_acolonialbank }
+mutually_exclusive = { focus = SFA_extendthebasupoline }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+add_stability = 0.05
+		699 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+		}
+		290 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+		}			
+	}
+ }
+ 
+focus = { 
+id = SFA_labouragreements
+icon = GFX_cutoutthemiddlemen
+x = 7
+y = 5
+cost = 5.8
+prerequisite = { focus = SFA_extendthebasupoline focus = SFA_moroccanroads }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_ideas = SFA_labouragreed
+	remove_ideas = SFA_labour_shortages
+	add_stability = -0.05
+	}
+ }
+ 
+focus = { 
+id = SFA_fosterdomesticmarkets
+icon = GFX_focus_generic_africa_production
+x = 9
+y = 5
+cost = 5.8
+prerequisite = { focus = SFA_extendthebasupoline focus = SFA_moroccanroads }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+	add_tech_bonus = {
+		bonus = 0.5
+		uses = 1
+		category = industry
+	}
+		if = {
+			limit = {
+				has_idea = SFA_economicreforms_3
+			}
+			swap_ideas = {
+				add_idea = SFA_economicreforms_4
+				remove_idea = SFA_economicreforms_4
+			}
+		}	
+	}
+ }
+ 
+focus = { 
+id = SFA_ironexploitation
+icon = GFX_focus_generic_steel
+x = 11
+y = 5
+cost = 5.8
+prerequisite = { focus = SFA_extendthebasupoline focus = SFA_moroccanroads }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	290 = { add_resource = {
+			type = steel
+			amount = 18
+			}
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = excavation_tech
+		}		
+	}
+}
+
+focus = { 
+id = SFA_intensifyriomunilogging
+icon = GFX_diversifyexports
+x = 8
+y = 7
+cost = 5.8
+prerequisite = { focus = SFA_labouragreements focus = SFA_ironexploitation }
+prerequisite = { focus = SFA_fosterdomesticmarkets }
+prerequisite = { focus = SFA_amodelpossession }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+ available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_offsite_building = { type = industrial_complex level = 1 }
+		297 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}			
+		add_extra_state_shared_building_slots = 1	
+		}
+	}
+ }
+ 
+focus = { 
+id = SFA_moorishagriculture
+icon = GFX_reformthenativerentsordnance
+x = 10
+y = 7
+cost = 5.8
+prerequisite = { focus = SFA_labouragreements focus = SFA_ironexploitation }
+prerequisite = { focus = SFA_fosterdomesticmarkets }
+prerequisite = { focus = SFA_isabelswillfulfilled }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_offsite_building = { type = industrial_complex level = 1 }
+		290 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}			
+		add_extra_state_shared_building_slots = 1	
+		}
+	}
+ }
+ 
+focus = { 
+id = SFA_africanistasvindicated
+icon = GFX_focus_intervention_spain_nationalists
+x = 9
+y = 8
+cost = 5.8
+prerequisite = { focus = SFA_intensifyriomunilogging }
+prerequisite = { focus = SFA_moorishagriculture }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+	add_research_slot = 1
+	remove_ideas = SFA_divisionsintheadministration
+		set_politics = {
+			ruling_party = social_conservative
+			elections_allowed = no
+		}
+			add_popularity = {
+			ideology = social_conservative
+			popularity = 0.30
+			}
+	}
+ }
+ 
+# Sahara and Morocco
+
+focus = { 
+id = SFA_saharanadministrationreform
+icon = GFX_goal_OTT_Abolish_Mecelle
+x = 14
+y = 1
+cost = 5.8
+prerequisite = { focus = SFA_anewimpetus }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	699 = { is_owned_by = ROOT }
+}
+bypass = {
+ NOT = {
+ 699 = { is_owned_by = ROOT }
+ }
+}
+completion_reward = {
+	add_political_power = 50
+	}
+ }
+ 
+focus = { 
+id = SFA_seize_morocco
+icon = GFX_goal_OTT_Land_Reform
+x = 13
+y = 7
+cost = 5.8
+prerequisite = { focus = SFA_isabelswillfulfilled }
+available_if_capitulated = no 
+	ai_will_do = {
+			factor = 16
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = MOR ratio < 1 }
+			}
+			modifier = {
+				factor = 0
+				MOR = {
+					is_in_faction = yes
+					any_allied_country = {
+						strength_ratio = { tag = ROOT ratio > 0.8 }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				MOR = {
+					is_subject = yes
+					overlord = {
+						strength_ratio = { tag = ROOT ratio > 0.8 }
+					}
+				}
+			}
+		}
+		bypass = {
+			461 = { is_owned_by = ROOT }
+			}
+available = {
+	is_in_faction = no
+	461 = { is_owned_by = MOR }
+	can_declare_war_on = MOR
+	MOR = {
+		is_subject = no
+		is_in_faction = no
+	}
+}
+ will_lead_to_war_with = MOR
+		available = {
+			owns_state = 297
+			can_declare_war_on = 461.owner
+			}
+completion_reward = {
+		add_state_claim = 461
+		add_state_claim = 462
+		declare_war_on = { type = annex_everything target = 461.owner }
+		add_named_threat = { 
+				threat = 1
+				name = moroccanwar
+			}
+	}
+ } 
+ 
+focus = { 
+id = SFA_empowerthetetuancaliph
+icon = GFX_goal_islamic_government
+x = 13
+y = 2
+cost = 5.8
+prerequisite = { focus = SFA_saharanadministrationreform }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+ available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_stability = 0.05
+	add_political_power = -10
+	}
+ }
+ 
+focus = { 
+id = SFA_entrenchtheprotectorate
+icon = GFX_antishiftaexpeditions
+x = 15
+y = 2
+cost = 5.8
+prerequisite = { focus = SFA_saharanadministrationreform }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_ideas = SFA_protectorateentrenched
+	}
+ }
+ 
+focus = { 
+id = SFA_pushspanishorientalism
+icon = GFX_goal_conquistador_legacy
+x = 17
+y = 2
+cost = 5.8
+prerequisite = { focus = SFA_saharanadministrationreform }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	increase_ruling_party_popularity_by_5 = yes
+	}
+ } 
+ 
+focus = { 
+id = SFA_continuesugarlumppolicy
+icon = GFX_Focus_Improve_Literacy2
+x = 16
+y = 3
+cost = 5.8
+prerequisite = { focus = SFA_empowerthetetuancaliph focus = SFA_pushspanishorientalism }
+prerequisite = { focus = SFA_entrenchtheprotectorate }
+mutually_exclusive = { focus = SFA_aharshergrip }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	remove_ideas = SFA_colonial_fragmentation
+	increase_ruling_party_popularity_by_5 = yes
+		if = {
+			limit = {
+				has_idea = SFA_angrymoors
+			}
+			swap_ideas = {
+				add_idea = SFA_sugarlump
+				remove_idea = SFA_angrymoors
+			}
+		}		
+	}
+ } 
+ 
+focus = { 
+id = SFA_aharshergrip
+icon = GFX_goal_skull_treaty
+x = 18
+y = 3
+cost = 5.8
+prerequisite = { focus = SFA_empowerthetetuancaliph focus = SFA_pushspanishorientalism }
+prerequisite = { focus = SFA_entrenchtheprotectorate }
+mutually_exclusive = { focus = SFA_continuesugarlumppolicy }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+		remove_ideas = SFA_colonial_fragmentation
+		if = {
+			limit = {
+				has_idea = SFA_angrymoors
+			}
+			swap_ideas = {
+				add_idea = SFA_sugarlump
+				remove_idea = SFA_angrymoors
+			}
+		}
+	decrease_ruling_party_popularity_by_5 = yes
+	add_offsite_building = { type = industrial_complex level = 1 }
+	}
+ } 
+ 
+focus = { 
+id = SFA_moderatelegalreforms
+icon = GFX_focus_generic_arab_deal
+x = 15
+y = 4
+cost = 5.8
+prerequisite = { focus = SFA_continuesugarlumppolicy focus = SFA_aharshergrip }
+mutually_exclusive = { focus = SFA_codificationdrive }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_stability = 0.05
+	}
+ } 
+ 
+focus = { 
+id = SFA_codificationdrive
+icon = GFX_goal_constitutional_guarantees
+x = 17
+y = 4
+cost = 5.8
+prerequisite = { focus = SFA_continuesugarlumppolicy focus = SFA_aharshergrip }
+mutually_exclusive = { focus = SFA_moderatelegalreforms }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_political_power = 100
+	}
+ } 
+
+focus = { 
+id = SFA_partnershipwiththesultanate
+icon = GFX_goal_OTT_Muslim_Relations
+x = 16
+y = 5
+cost = 5.8
+prerequisite = { focus = SFA_moderatelegalreforms focus = SFA_codificationdrive }
+mutually_exclusive = { focus = SFA_crushthenationalists }
+mutually_exclusive = { focus = SFA_militarisetherif }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_stability = 0.05
+	}
+ } 
+ 
+focus = { 
+id = SFA_crushthenationalists
+icon = GFX_thecatastrophe
+x = 18
+y = 5
+cost = 5.8
+prerequisite = { focus = SFA_moderatelegalreforms focus = SFA_codificationdrive }
+mutually_exclusive = { focus = SFA_partnershipwiththesultanate }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_war_support = 0.1
+	}
+ }
+ 
+focus = { 
+id = SFA_isabelswillfulfilled
+icon = GFX_focus_rom_royal_dictatorship
+x = 15
+y = 6
+cost = 5.8
+prerequisite = { focus = SFA_partnershipwiththesultanate focus = SFA_crushthenationalists }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+			699 = {
+				set_state_category = one
+			}
+			if = {
+				limit = {
+					has_idea = SFA_sugarlump
+				}
+				swap_ideas = {
+					add_idea = SFA_integratedprotectorate_sugar
+					remove_idea = SFA_sugarlump
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SFA_harsh
+				}
+				swap_ideas = {
+					add_idea = SFA_integratedprotectorate_harsh
+					remove_idea = SFA_harsh
+				}
+			}
+		}
+ } 
+ 
+#Guinea
+
+focus = { 
+id = SFA_press_gabonese_claims
+icon = GFX_goal_authority
+x = 5
+y = 7
+cost = 5.8
+prerequisite = { focus = SFA_amodelpossession }
+available_if_capitulated = no 
+	ai_will_do = {
+			factor = 16
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = GAB ratio < 1 }
+			}
+			modifier = {
+				factor = 0
+				GAB = {
+					is_in_faction = yes
+					any_allied_country = {
+						strength_ratio = { tag = ROOT ratio > 0.8 }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				GAB = {
+					is_subject = yes
+					overlord = {
+						strength_ratio = { tag = ROOT ratio > 0.8 }
+					}
+				}
+			}
+		}
+ will_lead_to_war_with = GAB
+		bypass = {
+			539 = { is_owned_by = ROOT }
+			}
+		available = {
+			is_in_faction = no
+			owns_state = 297
+			can_declare_war_on = 539.owner
+				GAB = {
+					is_subject = no
+					is_in_faction = no
+				}
+			}
+completion_reward = {
+			add_state_claim = 539
+			declare_war_on = { type = annex_everything target = 539.owner }
+	}
+ } 
+ 
+focus = { 
+id = SFA_theunpolishedjewel
+icon = GFX_focus_por_luso_tropicalism
+x = 4
+y = 1
+cost = 5.8
+prerequisite = { focus = SFA_anewimpetus }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_political_power = 30
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_0
+			amount = 350
+			producer = SPR
+		}	
+	}
+ } 
+ 
+focus = { 
+id = SFA_empowerthepatronato
+icon = GFX_Focus_African_Liberation
+x = 3
+y = 2
+cost = 5.8
+prerequisite = { focus = SFA_theunpolishedjewel }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_ideas = SFA_patronato
+	}
+ } 
+ 
+focus = { 
+id = SFA_backcatholicefforts
+icon = GFX_unifythechurches
+x = 1
+y = 2
+cost = 5.8
+prerequisite = { focus = SFA_theunpolishedjewel }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_stability = 0.03
+	add_war_support = 0.03
+	}
+ } 
+ 
+focus = { 
+id = SFA_embracewhiteconvicts
+icon = GFX_goal_conspiracy
+x = 5
+y = 2
+cost = 5.8
+prerequisite = { focus = SFA_theunpolishedjewel }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+		297 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+		}	
+	}
+ } 
+ 
+focus = { 
+id = SFA_backthefingueros
+icon = GFX_goal_agrarian_reform
+x = 0
+y = 3
+cost = 5.8
+prerequisite = { focus = SFA_empowerthepatronato }
+prerequisite = { focus = SFA_backcatholicefforts focus = SFA_embracewhiteconvicts  }
+mutually_exclusive = { focus = SFA_entrenchconcessionarypower }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ }
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	remove_ideas = SFA_colonial_fragmentation
+	add_stability = 0.03
+	increase_ruling_party_popularity_by_5 = yes
+	}
+ } 
+ 
+focus = { 
+id = SFA_entrenchconcessionarypower
+icon = GFX_goal_capitalist_system
+x = 2
+y = 3
+cost = 5.8
+prerequisite = { focus = SFA_empowerthepatronato }
+prerequisite = { focus = SFA_backcatholicefforts focus = SFA_embracewhiteconvicts  }
+mutually_exclusive = { focus = SFA_backthefingueros }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	remove_ideas = SFA_colonial_fragmentation
+		297 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+		}
+		297 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+		}	
+	decrease_ruling_party_popularity_by_5 = yes
+	}
+ } 
+ 
+focus = { 
+id = SFA_crushthealorayong
+icon = GFX_Generic_Jungle_Insurgency
+x = 1
+y = 4
+cost = 5.8
+prerequisite = { focus = SFA_backthefingueros focus = SFA_entrenchconcessionarypower }
+mutually_exclusive = { focus = SFA_cooptthefangnationalists }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ }
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_stability = 0.05
+	add_political_power = -10
+	}
+ } 
+ 
+focus = { 
+id = SFA_cooptthefangnationalists
+icon = GFX_statusofthesquatters
+x = 3
+y = 4
+cost = 5.8
+prerequisite = { focus = SFA_backthefingueros focus = SFA_entrenchconcessionarypower }
+mutually_exclusive = { focus = SFA_crushthealorayong }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ }
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_war_support = 0.1
+	}
+ } 
+ 
+focus = { 
+id = SFA_extendfernandinorights
+icon = GFX_embracethecolonists
+x = 0
+y = 5
+cost = 5.8
+prerequisite = { focus = SFA_cooptthefangnationalists focus = SFA_crushthealorayong }
+mutually_exclusive = { focus = SFA_restorethebubiparamountcy }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_ideas = SFA_backedfernandino
+	}
+ } 
+ 
+focus = { 
+id = SFA_restorethebubiparamountcy
+icon = GFX_goal_POR_royal_edicts
+x = 2
+y = 5
+cost = 5.8
+prerequisite = { focus = SFA_cooptthefangnationalists focus = SFA_crushthealorayong }
+mutually_exclusive = { focus = SFA_extendfernandinorights }
+mutually_exclusive = { focus = SFA_equatorialarms }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_ideas = SFA_backedbubi
+	increase_ruling_party_popularity_by_5 = yes
+	}
+ }
+ 
+focus = { 
+id = SFA_amodelpossession
+icon = GFX_tradeagreements
+x = 3
+y = 6
+cost = 5.8
+prerequisite = { focus = SFA_extendfernandinorights focus = SFA_restorethebubiparamountcy }
+available_if_capitulated = no 
+available = {
+	297 = { is_owned_by = ROOT }
+}
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+		297 = {
+		set_state_category = two
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+ } 
+ 
+ 
+ 
+# Army
+
+focus = { 
+id = SFA_remembertherif
+icon = GFX_PAP_holy_war
+x = 26
+y = 0
+cost = 2
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 500
+ } 
+ available ={
+	OR = {
+		MOR = {
+			has_completed_focus = MOR_the_new_western_realm
+		}
+		has_war = yes
+	}
+ }
+completion_reward = {
+	add_war_support = 0.05
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_0
+			amount = 500
+			producer = SPR
+		}
+	}
+ } 
+ 
+focus = { 
+id = SFA_overhaulthearmyofafrica
+icon = GFX_goal_Desert_Officers_2
+x = 23
+y = 1
+cost = 5.8
+prerequisite = { focus = SFA_remembertherif }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	hidden_effect = {
+		set_technology = { desert_warfare = 1 }
+	}
+	custom_effect_tooltip = desert_warfare_effect
+		add_tech_bonus = {
+			name = SFA_overhaulthearmyofafrica
+			bonus = 0.5
+			uses = 1
+			category = land_doctrine
+		}
+	}
+ }
+ 
+focus = { 
+id = SFA_maghrebtraining
+icon = GFX_goal_OTT_Land_Reform
+x = 21
+y = 2
+cost = 5.8
+prerequisite = { focus = SFA_overhaulthearmyofafrica }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_ideas = SFA_africaarmy
+	}
+ }
+ 
+focus = { 
+id = SFA_thelegionrenewed
+icon = GFX_Generic_Scouts
+x = 22
+y = 3
+cost = 5.8
+prerequisite = { focus = SFA_overhaulthearmyofafrica }
+prerequisite = { focus = SFA_maghrebtraining }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+swap_ideas = {
+		add_idea = SFA_africaarmy2
+		remove_idea = SFA_africaarmy
+		}	
+	}
+ }
+ 
+focus = { 
+id = SFA_berberregulares
+icon = GFX_Generic_Desert_Warfare
+x = 23
+y = 2
+cost = 5.8
+prerequisite = { focus = SFA_overhaulthearmyofafrica }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_ideas = SFA_berberregulares
+	}
+ }
+ 
+focus = { 
+id = SFA_embracemobility
+icon = GFX_goal_generic_armored_cars
+x = 24
+y = 3
+cost = 5.8
+prerequisite = { focus = SFA_overhaulthearmyofafrica }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+			add_tech_bonus = {
+				name = SFA_embracemobility
+				category = motorized_equipment
+				bonus = 2
+				uses = 1
+			}
+	}
+ }
+ 
+focus = { 
+id = SFA_armamentsprogramme
+icon = GFX_goal_industry_air
+x = 25
+y = 2
+cost = 5.8
+prerequisite = { focus = SFA_overhaulthearmyofafrica }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	290 = { is_owned_by = ROOT }
+}
+completion_reward = {
+		add_tech_bonus = {
+			name = SFA_armamentsprogramme
+			bonus = 0.35
+			uses = 1
+			category = infantry_weapons
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 300
+			producer = SPR
+		}
+	}
+ }
+
+focus = { 
+id = SFA_overhaulthecolonialguard
+icon = GFX_junglespecialism
+x = 29
+y = 1
+cost = 5.8
+prerequisite = { focus = SFA_remembertherif }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+		add_tech_bonus = {
+			name = SFA_overhaulthecolonialguard
+			bonus = 0.5
+			uses = 2
+			category = land_doctrine
+		}
+	}
+ }
+ 
+focus = { 
+id = SFA_blackauxiliaries
+icon = GFX_themartialraces
+x = 29
+y = 2
+cost = 5.8
+prerequisite = { focus = SFA_overhaulthecolonialguard }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	add_ideas = SFA_auxiliaries
+	}
+ }
+ 
+focus = { 
+id = SFA_preparefordarkestafrica
+icon = GFX_GEA_counter_insurgency
+x = 28
+y = 3
+cost = 5.8
+prerequisite = { focus = SFA_overhaulthecolonialguard }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+		custom_effect_tooltip = SIA_jungle_tt #Blatantly stolen
+		set_technology = { jungle_warfare = 1 }
+	}
+ }
+ 
+focus = { 
+id = SFA_arifleineveryhand
+icon = GFX_SIA_jungletraining
+x = 27
+y = 2
+cost = 5.8
+prerequisite = { focus = SFA_overhaulthecolonialguard }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+		add_tech_bonus = {
+			name = SFA_arifleineveryhand
+			bonus = 0.5
+			uses = 2
+			category = infantry_weapons
+		}	
+	}
+ }
+ 
+focus = { 
+id = SFA_conscriptthenatives
+icon = GFX_expelpeople
+x = 30
+y = 3
+cost = 5.8
+prerequisite = { focus = SFA_overhaulthecolonialguard }
+prerequisite = { focus = SFA_logisticsoverhaul }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+	increase_conscription = yes
+	add_stability = -0.02
+	}
+ }
+ 
+focus = { 
+id = SFA_logisticsoverhaul
+icon = GFX_Generic_Barrels
+x = 31
+y = 2
+cost = 5.8
+prerequisite = { focus = SFA_overhaulthecolonialguard }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+available = {
+	297 = { is_owned_by = ROOT }
+}
+completion_reward = {
+		add_tech_bonus = {
+			name = SFA_logisticsoverhaul
+			bonus = 1
+			uses = 2
+			category = support_tech
+		}	
+	}
+ }
+ 
+focus = { 
+id = SFA_militaryproduction
+icon = GFX_goal_munitions_factories
+x = 26
+y = 3
+cost = 5.8
+prerequisite = { focus = SFA_armamentsprogramme }
+prerequisite = { focus = SFA_arifleineveryhand }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+	add_offsite_building = { type = arms_factory level = 2 }
+	}
+ }
+ 
+focus = { 
+id = SFA_institutionofmilitaryresearch
+icon = GFX_focus_research
+x = 26
+y = 4
+cost = 5.8
+prerequisite = { focus = SFA_militaryproduction }
+prerequisite = { focus = SFA_preparefordarkestafrica focus = SFA_conscriptthenatives }
+prerequisite = { focus = SFA_thelegionrenewed focus = SFA_embracemobility }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+	add_ideas = SFA_militaryresearch
+	}
+ }
+ 
+focus = { 
+id = SFA_upgradetheflotilla
+icon = GFX_goal_generic_coastal_navy
+x = 23
+y = 5
+cost = 5.8
+prerequisite = { focus = SFA_institutionofmilitaryresearch }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+		add_tech_bonus = {
+			name = SFA_upgradetheflotilla
+			bonus = 1
+			uses = 2
+			category = dd_tech
+		}
+	}
+ }
+ 
+focus = { 
+id = SFA_anewnavalbase
+icon = GFX_Expand_Trade_Fleet
+x = 22
+y = 6
+cost = 5.8
+prerequisite = { focus = SFA_upgradetheflotilla }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+	random_owned_state = { add_building_construction = { type = dockyard level = 1 instant_build = yes } }
+	random_owned_state = { add_building_construction = { type = dockyard level = 1 instant_build = yes } }	
+	}
+ }
+ 
+focus = { 
+id = SFA_shipconstruction
+icon = GFX_focus_generic_cruiser2
+x = 22
+y = 7
+cost = 10
+prerequisite = { focus = SFA_anewnavalbase }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+	random_owned_state = { add_building_construction = { type = dockyard level = 1 instant_build = yes } }
+	}
+ }
+ 
+focus = { 
+id = SFA_bestlaidplans
+icon = GFX_goal_generic_navy_doctrines_tactics
+x = 24
+y = 6
+cost = 5.8
+prerequisite = { focus = SFA_upgradetheflotilla }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+	navy_experience = 15
+		add_tech_bonus = {
+			name = SFA_bestlaidplans
+			bonus = 1
+			uses = 2
+			category = naval_doctrine
+		}	
+	}
+ }
+ 
+focus = { 
+id = SFA_navalbombers
+icon = GFX_goal_generic_air_naval_bomber2_new
+x = 24
+y = 7
+cost = 5.8
+prerequisite = { focus = SFA_bestlaidplans }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+		add_tech_bonus = {
+			name = SFA_navalbombers
+			bonus = 1
+			uses = 1
+			category = naval_air
+		}	
+	}
+ }
+ 
+focus = { 
+id = SFA_thedemandsofmodernwar
+icon = GFX_developndoloairbase
+x = 29
+y = 5
+cost = 5.8
+prerequisite = { focus = SFA_institutionofmilitaryresearch }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+	random_owned_state = { add_building_construction = { type = arms_factory level = 1 instant_build = yes } add_extra_state_shared_building_slots = 1 }	
+	}
+ }
+ 
+focus = { 
+id = SFA_airbasesprogramme
+icon = GFX_goal_generic_construction
+x = 28
+y = 6
+cost = 5.8
+prerequisite = { focus = SFA_thedemandsofmodernwar }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+	random_owned_state = { add_building_construction = { type = air_base level = 1 instant_build = yes } }
+	random_owned_state = { add_building_construction = { type = air_base level = 1 instant_build = yes } }
+	random_owned_state = { add_building_construction = { type = air_base level = 1 instant_build = yes } }
+	}
+ }
+ 
+focus = { 
+id = SFA_chooseanaircraftfocus
+icon = GFX_goal_generic_CAS
+x = 28
+y = 7
+cost = 5.8
+prerequisite = { focus = SFA_airbasesprogramme }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.75
+			uses = 1
+			category = light_air
+		}	
+	}
+ }
+ 
+focus = { 
+id = SFA_saharantraining
+icon = GFX_goal_generic_air_doctrine
+x = 30
+y = 6
+cost = 5.8
+prerequisite = { focus = SFA_thedemandsofmodernwar }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+		add_tech_bonus = {
+			name = SFA_saharantraining
+			bonus = 1
+			uses = 2
+			category = air_doctrine
+		}	
+	air_experience = 15
+	}
+ }
+ 
+focus = { 
+id = SFA_importplanes
+icon = GFX_goal_ELS_Basic_Fighter_Development
+x = 30
+y = 7
+cost = 5.8
+prerequisite = { focus = SFA_saharantraining }
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 50
+ } 
+completion_reward = {
+	add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 25 producer = SPR }	
+	}
+ }
+
+
+# SCW
+
+focus = { 
+id = SFA_warinthemetropole
+icon = GFX_focus_focus_fra_intervention_spain
+x = 2
+y = 8
+cost = 5.8
+prerequisite = {  }
+available = {
+	NOT = {	has_war_with = MOR }
+	OR = {
+		custom_trigger_tooltip = {
+			tooltip = SPR_civil_war_happened
+			has_global_flag = spanish_civil_war
+		}
+			custom_trigger_tooltip = {
+				tooltip = SPR_no_civil_war_tt
+				NOT = { has_global_flag = spanish_civil_war }
+				NOT = { has_country_flag = aftermath_of_the_civil_war }
+			}
+		}
+}
+bypass = {
+	NOT = {	has_war_with = MOR }
+	OR = {
+		custom_trigger_tooltip = {
+			tooltip = SPR_civil_war_happened
+			has_global_flag = spanish_civil_war
+		}
+			custom_trigger_tooltip = {
+				tooltip = SPR_no_civil_war_tt
+				NOT = { has_global_flag = spanish_civil_war }
+				NOT = { has_country_flag = aftermath_of_the_civil_war }
+			}
+		}
+}
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 500
+ } 
+completion_reward = {
+	custom_effect_tooltip = unlock_focuses
+}
+
+}
+
+focus = { 
+id = SFA_sidewiththecarlists
+icon = GFX_focus_spa_supremacy_of_the_communion
+x = 1
+y = 9
+cost = 2
+prerequisite = {  focus = SFA_warinthemetropole }
+mutually_exclusive = { focus = SFA_declareneutrality }
+mutually_exclusive = { focus = SFA_statusquo }
+available = {
+	NOT = {	has_war_with = MOR }
+	country_exists = CAR
+}
+bypass = {
+
+}
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 500
+ } 
+completion_reward = {
+	overlord = {
+			set_autonomy = {
+				target = ROOT
+				autonomy_state = autonomy_free
+			}
+			remove_from_faction = ROOT
+		}
+	ROOT = {
+		separate_peace_all_wars = yes
+	}	
+set_cosmetic_tag = SFA_CAR
+
+CAR = {
+	if = {
+		limit = {
+			has_dlc = "Together for Victory"
+		}
+		set_autonomy = {
+			target = SFA
+			autonomous_state = autonomy_integrated_puppet
+		}
+		else = {
+			puppet = SFA
+		}
+	}
+}
+add_offsite_building = { type = arms_factory level = 1 }
+add_stability = -0.05
+}
+
+}
+
+focus = { 
+id = SFA_endofthewar
+icon = GFX_focus_spr_torchbearers_of_tomorrow
+x = 4
+y = 10
+cost = 2
+prerequisite = {  focus = SFA_sidewiththecarlists focus = SFA_declareneutrality  focus = SFA_statusquo }
+available = {
+	OR = {
+		country_exists = SPR
+		country_exists = CAR
+		country_exists = CNT
+	}
+	OR = {
+		SPR = {
+			has_completed_focus = SPR_consolidate_spain
+		}
+		CAR = {
+			has_completed_focus = CAR_restauracion
+		}
+		CNT = {
+			has_completed_focus = SWF_consolidating_spain
+		}
+	}
+}
+bypass = {
+	OR = {
+		SPR = {
+			has_completed_focus = SPR_consolidate_spain
+		}
+		CAR = {
+			has_completed_focus = CAR_restauracion
+		}
+		CNT = {
+			has_completed_focus = SWF_consolidating_spain
+		}
+	}
+}
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 500
+ } 
+completion_reward = {
+	custom_effect_tooltip = unlock_focuses
+	}
+}
+
+focus = { 
+id = SFA_backonthewinningteam
+icon = GFX_goal_generic_military_deal
+x = 4
+y = 11
+cost = 2
+prerequisite = {  focus = SFA_endofthewar }
+available = {
+	OR = {
+		country_exists = SPR
+		country_exists = CAR
+	}
+	OR = {
+		SPR = {
+			has_completed_focus = SPR_consolidate_spain
+		}
+		CAR = {
+			has_completed_focus = CAR_restauracion
+		}
+	}
+}
+bypass = {
+	OR = {
+		AND = {
+			ROOT = {
+				has_completed_focus = SFA_sidewiththecarlists
+				}
+			CAR = {
+				has_completed_focus = CAR_restauracion
+			}
+		}
+		AND = {
+			ROOT = {
+				has_completed_focus = SFA_statusquo
+				}
+			SPR = {
+				has_completed_focus = SPR_consolidate_spain
+			}
+		}	
+	}
+}
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 500
+ } 
+completion_reward = {
+	if = {
+		limit = {
+			AND = {
+				ROOT = {
+					has_completed_focus = SFA_sidewiththecarlists
+				}
+				SPR = {
+					has_completed_focus = SPR_consolidate_spain
+				}
+			}
+		}
+		drop_cosmetic_tag = yes
+
+		SPR = {
+	if = {
+		limit = {
+			has_dlc = "Together for Victory"
+		}
+		set_autonomy = {
+			target = SFA
+			autonomous_state = autonomy_integrated_puppet
+		}
+		else = {
+			puppet = SFA
+		}
+	}
+			}
+		}
+	else_if = {
+		limit = {
+				ROOT = {
+					has_completed_focus = SFA_declareneutrality
+				}
+				SPR = {
+					has_completed_focus = SPR_consolidate_spain
+				}
+			}
+		SPR = {
+	if = {
+		limit = {
+			has_dlc = "Together for Victory"
+		}
+		set_autonomy = {
+			target = SFA
+			autonomous_state = autonomy_integrated_puppet
+		}
+		else = {
+			puppet = SFA
+		}
+	}
+		}
+	}
+	else_if = {
+		limit = {
+			AND = {
+				OR = {
+					ROOT = {
+						has_completed_focus = SFA_statusquo
+					}
+					ROOT = {
+						has_completed_focus = SFA_declareneutrality
+					}
+				}
+				CAR = {
+					has_completed_focus = CAR_restauracion
+				}
+			}
+		}
+		set_cosmetic_tag = SFA_CAR
+
+		CAR = {
+	if = {
+		limit = {
+			has_dlc = "Together for Victory"
+		}
+		set_autonomy = {
+			target = SFA
+			autonomous_state = autonomy_integrated_puppet
+		}
+		else = {
+			puppet = SFA
+		}
+	}
+			}
+		}
+add_stability = -0.05
+	}
+}
+
+focus = { 
+id = SFA_theredmenace
+icon = GFX_focus_spr_anarchism_knows_no_borders
+x = 6
+y = 11
+cost = 2
+prerequisite = {  focus = SFA_endofthewar }
+available = {
+	country_exists = CNT
+}
+bypass = {
+	is_in_faction = yes
+}
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 500
+ } 
+completion_reward = {
+	if = {
+		limit = {
+			country_exists = ENT
+				ROOT = {
+					has_completed_focus = SFA_sidewiththecarlists
+				}
+			}
+		country_event = sharedafrika.9
+		}
+	else_if = {
+		limit = {
+			country_exists = ENT
+				ROOT = {
+					has_completed_focus = SFA_declareneutrality
+				}
+			}
+		country_event = sharedafrika.9
+		}
+	else_if = {
+		limit = {
+			country_exists = GER
+				ROOT = {
+					has_completed_focus = SFA_statusquo
+				}
+			}
+		country_event = sharedafrika.1
+		}
+	add_war_support = 0.15
+	add_political_power = 50
+	add_manpower = 41000
+	add_offsite_building = { type = industrial_complex level = 1 }	
+	add_offsite_building = { type = arms_factory level = 1 }	
+	}
+}
+
+focus = { 
+id = SFA_declareneutrality
+icon = GFX_goal_generic_neutrality_focus
+x = 3
+y = 9
+cost = 2
+prerequisite = {  focus = SFA_warinthemetropole }
+mutually_exclusive = { focus = SFA_sidewiththecarlists }
+mutually_exclusive = { focus = SFA_statusquo }
+available = {
+	NOT = {	has_war_with = MOR }
+	OR = {
+		SPR = {
+			has_war_with = CNT
+		}
+		SPR = {
+			has_war_with = CAR
+		}
+	}
+}
+bypass = {
+
+}
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 500
+ } 
+completion_reward = {
+	add_stability = 0.03
+	overlord = {
+			set_autonomy = {
+				target = ROOT
+				autonomy_state = autonomy_free
+			}
+			remove_from_faction = ROOT
+		}
+	ROOT = {
+		separate_peace_all_wars = yes
+	}	
+	hidden_effect = {
+		MOR = { 
+			country_event = {
+				id = sharedafrika.48
+				days = 3
+			}
+		}
+		ADW = { 
+			country_event = {
+				id = sharedafrika.48
+				days = 3
+			}
+		}
+		GAB = { 
+			country_event = {
+				id = sharedafrika.48
+				days = 3
+			}
+		}
+		KOG = { 
+			country_event = {
+				id = sharedafrika.48
+				days = 3
+			}
+		}
+	}
+}
+
+}
+
+focus = { 
+id = SFA_statusquo
+icon = GFX_focus_spa_strengthen_the_supreme_reality_of_spain
+x = 5
+y = 9
+cost = 2
+mutually_exclusive = { focus = SFA_sidewiththecarlists }
+mutually_exclusive = { focus = SFA_declareneutrality }
+prerequisite = {  focus = SFA_warinthemetropole }
+available = {
+	NOT = {	has_war_with = MOR }
+	OR = {
+		SPR = {
+			has_war_with = CNT
+		}
+		SPR = {
+			has_war_with = CAR
+		}
+	}
+}
+bypass = {
+
+}
+available_if_capitulated = no 
+ai_will_do = { 
+factor = 500
+ } 
+completion_reward = {
+add_stability = 0.05
+add_offsite_building = { type = arms_factory level = 1 }
+}
+
+}
+
+#Fin
+ }

@@ -1,0 +1,26 @@
+state = {
+	id = 914
+	name = "STATE_914"
+
+	history = {
+		owner = PAF
+		add_core_of = PAF
+		add_core_of = ANG
+		add_core_of = KOG
+		buildings = {
+			infrastructure = 2
+			2115 = {
+				naval_base = 1
+			}
+		}
+		victory_points = {
+			2115 1
+		}
+	}
+
+	provinces = {
+		2115
+	}
+	manpower = 52598
+	state_category = zero
+}

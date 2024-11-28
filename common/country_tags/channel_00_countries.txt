@@ -1,0 +1,3 @@
+JER = "countries/channel.txt" #Channel Island
+ARE = "countries/arles.txt" #Arles
+HUL = "countries/Huile.txt" #Huile

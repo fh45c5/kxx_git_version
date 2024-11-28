@@ -1,0 +1,169 @@
+
+ideas = {
+
+#### Head of Government ####
+	head_of_government = {
+		CAL_Yoshizawa_Kenkichi_hog_npo = {
+			allowed = { original_tag = CAL }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+		
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CAL_Yoshizawa_Kenkichi_hog_npo"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_respected_war_hero
+			}
+			cancel_if_invalid = yes
+		}
+
+		CAL_Field_General_hog_npo = {
+			allowed = { original_tag = CAL }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+		
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CAL_Field_General_hog_npo"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_respected_war_hero
+			}
+			cancel_if_invalid = yes
+		}
+	}
+	
+	#### Foreign Minister ####
+	person_of_influence = {
+		CAL_Kichisaburo_Nomura_for_npo = {
+			allowed = { original_tag = CAL }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+		
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CAL_Kichisaburo_Nomura_for_npo"
+			}
+			traits = {
+				foreign_minister
+				national_populist
+				for_great_compromiser
+			}
+			cancel_if_invalid = yes
+		}
+		
+		CAL_Macauther_for_npo = {
+			allowed = { original_tag = CAL }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+		
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CAL_Macauther_for_npo"
+			}
+			traits = {
+				foreign_minister
+				national_populist
+				for_ideological_crusader
+			}
+			cancel_if_invalid = yes
+		}
+	### Economy Minister ##
+		CAL_Kishi_Nobusuke_eco_npo = {
+			allowed = { original_tag = CAL }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+		
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CAL_Kishi_Nobusuke_eco_npo"
+			}
+			traits = {
+				economy_minister
+				national_populist
+				eco_planned_economy_proponent
+			}
+			cancel_if_invalid = yes
+		}
+
+		CAL_Patten_eco_npo = {
+			allowed = { original_tag = CAL }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+		
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CAL_Patten_eco_npo"
+			}
+			traits = {
+				economy_minister
+				national_populist
+				eco_industrialiser
+			}
+			cancel_if_invalid = yes
+		}
+	### Security Minister ###
+		CAL_Koichi_Ono_sec_npo = {
+			allowed = { original_tag = CAL }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+		
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CAL_Koichi_Ono_sec_npo"
+			}
+			traits = {
+				security_minister
+				national_populist
+				sec_secret_police_chief
+			}
+			cancel_if_invalid = yes
+		}
+		
+		CAL_butler_sec_npo = {
+			allowed = { original_tag = CAL }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+		
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CAL_butler_sec_npo"
+			}
+			traits = {
+				security_minister
+				national_populist
+				sec_prince_of_terror
+			}
+			cancel_if_invalid = yes
+		}
+	}
+}

@@ -1,0 +1,76 @@
+division_template = {
+	name = "Pekhotnaya Diviziya Kreatoriya"
+	division_names_group = RUS_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+        infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+       	artillery = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Kavaleriyskaya Diviziya Kreatoriya"
+
+	division_names_group = RUS_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 0 y = 3 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+		cavalry = { x = 1 y = 3 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }      
+	}
+}
+
+division_template = {
+	name = "Motostrelkovaya Diviziya Kreatoriya"
+
+	division_names_group = RUS_ARM_01
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+        motorized = { x = 0 y = 2 }
+		light_armor = { x = 1 y = 0 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }      
+	}
+}
+
+units = {
+	division = {
+		name = "1ya Pekhotnaya Diviziya 'Smertobortsy'"
+		location = 1802
+		division_template = "Pekhotnaya Diviziya Kreatoriya"
+		start_experience_factor = 0.45
+	}
+	division = {
+		name = "2ya Pekhotnaya Diviziya 'Poborniki'"
+		location = 1802
+		division_template = "Pekhotnaya Diviziya Kreatoriya"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "1ya Motostrelkovaya Diviziya 'Kometa'"
+		location = 1802
+		division_template = "Motostrelkovaya Diviziya Kreatoriya"
+		start_experience_factor = 0.8
+	}
+}

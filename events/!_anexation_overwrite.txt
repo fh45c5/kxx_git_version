@@ -1,0 +1,204 @@
+﻿###########################
+# Overwrite to Anexations Events
+###########################
+
+add_namespace = annex
+
+
+###Stop Lithuania from removing Polish cores and droping cosmetic tag
+country_event = { #Fate of Lithuania
+	id = annex.164
+	immediate = { log = "[GetDateText]: [Root.GetName]: event annex.164" }
+	title = annexation_LIT_CONQ
+	desc = annexation_LIT_CONQ_desc
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { 11 = { is_core_of = POL } } #Kaunas == PLC formed
+				every_state = {
+					limit = {
+						is_core_of = LIT
+						is_core_of = POL
+					}
+					#remove_core_of = POL
+					if = {
+						limit = {
+							has_resistance = no
+							NOT = { is_core_of = owner }
+						}
+						start_resistance = LIT
+					}
+				}
+				#POL = { drop_cosmetic_tag = yes }
+			}
+			add_to_temp_array = { core_removal_array = LIT }
+			remove_all_cores_and_claims_of_tags = yes
+			LIT = {
+				add_state_core = 11 #Kaunas
+				add_state_core = 189 #Samogitia
+				add_state_core = 655 #Sudovia
+				LIT_remove_monarchy = yes
+				remove_ideas = {
+					LIT_german_aviation_advisors
+					LIT_long_road_to_pluralism_idea
+					LIT_german_economic_dominance_1
+					LIT_german_economic_dominance_2
+				}
+				if = {
+					limit = { ROOT = { NOT = { has_government = national_populist } }}
+					remove_ideas = {
+						LIT_aftermath_of_the_coup
+						LIT_uprising_army
+						LIT_wolfs_state_1
+						LIT_wolfs_state_2
+						LIT_wolfs_state_3
+						LIT_corporate_nation_state_1
+						LIT_corporate_nation_state_2
+						LIT_corporate_nation_state_3
+						LIT_national_purity_1
+						LIT_national_purity_2
+						LIT_national_purity_3
+						LIT_national_purity_4
+						LIT_nationalist_fanaticism
+						LIT_nationalist_equality
+						LIT_nationalist_welfare
+					}
+				}
+				if = {
+					limit = { has_country_leader = { name = "Unknown" ruling_only = no } }
+						create_country_leader = {
+						name = "Augustinas Voldemaras"
+						desc = "POLITICS_VOLDEMARAS_DESC"
+						picture = "gfx/leaders/LIT/Portrait_LIT_Augustinas_Voldemaras.png"
+						expire = "1965.1.1"
+						ideology = national_populist_subtype
+					}
+				}
+			}
+		}
+	}
+
+	option = { #Release Lithuania
+		name = annex.164.a
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 0
+				OR = {
+					has_completed_focus = RUS_Expansionism
+					RUS_russian_monarch = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_will_annex_baltic
+			}
+		}
+		if = {
+			limit = { tag = RUS }
+			set_country_flag = RUS_will_liberate_baltic
+		}
+		set_temp_variable = { tag_to_release = LIT }
+		every_owned_state = {
+			limit = {
+				is_core_of = LIT
+				is_claim_or_core_of_ROOT = no
+				NOT = { state = 96 } #Vilnius
+			}
+			transfer_state_to = var:tag_to_release
+		}
+		puppet_released_tag = yes
+		setup_puppet_lithuania = yes
+	}
+	option = { #give to BAT
+		name = annex.61.c
+		trigger = {
+			is_ally_with = BAT
+			NOT = { tag = GER }
+		}
+		ai_chance = {
+			base = 70
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_will_annex_baltic
+			}
+		}
+		set_temp_variable = { tag_to_release = BAT }
+		every_state = {
+			limit = {
+				is_core_of = LIT
+				is_claim_or_core_of_ROOT = no
+				NOT = { state = 96 } #Vilnius
+			}
+			add_core_of_target_and_transfer_if_owned = yes
+		}
+	}
+	
+	option = { #Integrate
+		name = annex.164.b
+		trigger = { is_russian_tag_that_can_integrate = yes }
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_will_liberate_baltic
+			}
+		}
+		every_state = {
+			limit = {
+				region = 37 #Baltic States
+				is_core_of = LIT
+				is_claim_or_core_of_ROOT = no
+				NOT = {
+					state = 188 #Memel
+					AND = {
+						is_claim_or_core_of_owner = yes
+						owner = {
+							NOT = { tag = ROOT }
+							is_ally_with = ROOT
+						}
+					}
+				}
+			}
+			add_claim_by = ROOT
+			hidden_effect = {
+				if = {
+					limit = { has_resistance = yes }
+					set_temp_variable = { original_compliance = THIS.compliance }
+					set_temp_variable = { original_resistance = THIS.resistance }
+					cancel_resistance = yes
+				}
+				start_resistance = LIT
+				if = {
+					limit = { has_variable = original_compliance }
+					set_compliance = original_compliance
+				}
+				if = {
+					limit = { has_variable = original_resistance }
+					set_resistance = original_resistance
+				}
+			}
+			if = {
+				limit = { is_claim_or_core_of_ROOT = no }
+				add_claim_by = ROOT
+			}
+		}
+		set_country_flag = RUS_will_annex_baltic
+		occupy_small_country = yes
+		add_to_array = { RUS_integration_array = LIT }
+		recheck_annexations = yes
+	}
+	option = { #occupy
+		name = annex.occupation
+		trigger = {
+			is_ai = no
+			is_russian_tag_that_can_integrate = no
+		}
+		set_country_flag = LIT_CONQ
+		occupy_medium_country = yes
+	}
+}
+

@@ -1,0 +1,37 @@
+
+on_actions = {
+
+	#ROOT is new controller
+	#FROM is old controller
+	#FROM.FROM is state ID
+
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					has_war_with = FROM
+					FROM.FROM = {
+						is_owned_by = FROM
+						NOT = { has_state_flag = state_has_fallen }
+					}
+				}
+				# Lima
+				if = {
+					limit = {
+						FROM.FROM = { state = 303 }
+						CHL = { controls_province = 12997 }
+					}
+					news_event = { id = chlworldnews.7 }
+				}				
+				#BUENOS AIRES
+				if = {
+					limit = {
+						FROM.FROM = { state = 278 }
+						CHL = { controls_province = 12364 }
+					}
+					news_event = { id = chlworldnews.8 }
+				}
+			}
+		}
+	}
+}

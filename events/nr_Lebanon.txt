@@ -1,0 +1,157 @@
+﻿add_namespace = leb
+add_namespace = lebo
+
+country_event = {
+	id = lebo.1
+	title = lebo.1.t
+	desc = lebo.1.d
+	picture = GFX_OTT_Arabs_Angry
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = lebo.1.a
+		add_political_power = -120
+		random_owned_controlled_state={
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=2
+			add_building_construction={
+				type=industrial_complex
+				level=2
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=2
+			add_building_construction={
+				type=industrial_complex
+				level=3
+				instant_build=yes
+			}
+		}
+		add_timed_idea = {
+		 idea = LEB_slum
+		 days = 200
+		}
+	}
+	option = {
+		name = lebo.1.b
+		add_political_power = -70
+		add_timed_idea = {
+		 idea = LEB_slum_1
+		 days = 200
+		}
+		random_owned_controlled_state={
+			add_extra_state_shared_building_slots=2
+		}
+	}
+	option = {
+		name = lebo.1.c
+		add_political_power = -20
+		add_stability = -0.2
+		hidden_effect =  {
+			country_event = {
+				id = lebo.2
+				days = 7
+			}
+		}
+	}
+}
+country_event = {
+	id = lebo.2
+	title = lebo.2.t
+	desc = lebo.2.d
+	picture = GFX_OTT_Arabs_Angry
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = lebo.2.a
+		add_political_power = -200
+		add_stability = -0.3
+		SYR = {
+		transfer_state = 995
+		transfer_state = 680
+		transfer_state = 554
+		}
+		SYR = {
+		declare_war_on = { target = LEB type = annex_everything }
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"叙利亚人民反抗军\" division_template = \"Dagci Firka\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SYR
+				}
+				create_unit = {
+					division = "name = \"叙利亚人民反抗军\" division_template = \"Dagci Firka\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SYR
+				}
+				create_unit = {
+					division = "name = \"叙利亚人民反抗军\" division_template = \"Dagci Firka\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SYR
+				}
+				create_unit = {
+					division = "name = \"叙利亚人民反抗军\" division_template = \"Dagci Firka\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SYR
+				}
+				create_unit = {
+					division = "name = \"叙利亚人民反抗军\" division_template = \"Dagci Firka\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SYR
+				}
+				create_unit = {
+					division = "name = \"叙利亚人民反抗军\" division_template = \"Dagci Firka\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SYR
+				}
+				create_unit = {
+					division = "name = \"叙利亚人民反抗军\" division_template = \"Dagci Firka\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SYR
+				}
+			}	
+		}
+	}
+}
+country_event = {
+	id = lebo.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event lebo.3" }
+	title = lebo.3.t
+	desc = lebo.3.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = leb.3.a
+		add_manpower = -7
+		add_stability = -0.03
+	}
+	option = {
+		name = leb.3.b
+		add_manpower = -7
+		add_political_power = -12
+	}
+}

@@ -1,0 +1,338 @@
+add_namespace = sichuan
+country_event = {
+
+		id = sichuan.512
+		title = "CDL政变"
+		desc = "国民党在四川取得胜利后，民主运动也有所建树，但这次国民党对言论自由的镇压，促使中国民主同盟组建民兵组织，并迅速获得支持。现在他们向首都进军。"
+		picture = "-"
+		fire_only_once = yes
+		trigger = {
+			tag = SZC
+			is_ai = no
+			or = {
+				has_country_leader = {
+					name = "熊克武"
+					ruling_only = yes
+				}
+				has_country_leader = {
+					name = "吕超"
+					ruling_only = yes
+				}
+				has_country_leader = {
+					name = "Xiong Kewu"
+					ruling_only = yes
+				}
+				has_country_leader = {
+					name = "Lü Chao"
+					ruling_only = yes
+				}
+			}
+		}
+
+		option = {
+
+		name = "追随张澜的民主激进派"
+	hidden_effect = {
+		load_focus_tree = democratic-sichuan
+		}
+		set_politics = { ruling_party = radical_socialist }
+		
+		set_country_leader_name = {
+				ideology = radical_socialist
+				name = "张澜"
+			}
+			
+		set_country_leader_portrait = {
+				ideology = radical_socialist
+				portrait = "gfx/leaders/SZC/Portrait_SZC_Zhang_Lan.png"
+			}
+			
+		complete_national_focus = SZC_the_cdl_victory	
+		complete_national_focus = SZC_a_new_start_for_chinese_democracy
+		complete_national_focus = SZC_Chengdu_Chongqing_Railway
+		set_country_leader_ideology = moderate_socialist_subtype
+		}
+		option = {
+
+		name = "邓小平的工团党"
+	hidden_effect = {
+		load_focus_tree = democratic-sichuan
+		}
+		set_politics = { ruling_party = radical_socialist }
+		create_country_leader = {
+					name = "邓小平"
+					desc = "SZC_deng_xiaoping_desc"
+					picture = "gfx/leaders/MON/Portrait_MON_Deng_Xiaoping.png"
+					expire = "1965.1.1"
+					ideology = bukharinist_subtype
+					traits = {  }
+				}
+				create_field_marshal = {
+        name = "邓小平"  # Liu Bocheng
+        desc = "SZC_deng_xiaoping_desc"
+         portrait_path = "gfx/leaders/MON/Portrait_MON_Deng_Xiaoping.png"
+       traits = {
+      trickster
+      trait_reckless
+      brilliant_strategist
+      offensive_doctrine
+       }
+      skill = 1
+       attack_skill = 2
+      defense_skill = 1
+      planning_skill = 1
+      logistics_skill = 2
+       }
+		create_field_marshal = {
+        name = "刘伯承"  # Liu Bocheng
+        desc = "POLITICS_SZC_LIU_BOCHENG_ARMY_DESC"
+         portrait_path = "gfx/leaders/SZC/Portrait_SZC_Liu_Bocheng.png"
+       traits = {
+      trickster
+      trait_reckless
+      brilliant_strategist
+      offensive_doctrine
+       }
+      skill = 3
+       attack_skill = 3
+      defense_skill = 2
+      planning_skill = 3
+      logistics_skill = 2
+       }
+			set_party_name = {
+					ideology = radical_socialist
+					long_name = CHI_csp_ort_party_long
+					name = CHI_csp_ort_party
+				}
+		set_country_leader_portrait = {
+				ideology = radical_socialist
+				portrait = "gfx/leaders/MON/Portrait_MON_Deng_Xiaoping.png"
+			}
+			
+		complete_national_focus = SZC_the_cdl_victory	
+		complete_national_focus = SZC_Premier_Bukharin
+		complete_national_focus = SZC_Chengdu_Chongqing_Railway
+		set_country_leader_ideology = bukharinist_subtype
+		add_ideas=SZC_Yang_Shukan_hog_sde
+		add_ideas=SZC_Xie_Chi_for_sde
+		add_ideas=SZC_Xiang_Chuanyi_for_sli
+		add_ideas=SZC_Chen_Li_for_sco
+		}
+		option = {
+
+		name = "胡耀邦安全掌控了CDL"
+	hidden_effect = {
+		load_focus_tree = democratic-sichuan
+		}
+		set_politics = { ruling_party = social_democrat }
+		complete_national_focus = SZC_the_cdl_victory
+		complete_national_focus = SZC_huyaobangssuccess
+		complete_national_focus = SZC_Chengdu_Chongqing_Railway
+		set_country_leader_name = {
+				ideology = social_democrat
+				name = "胡耀邦"
+			}
+			
+		set_country_leader_portrait = {
+				ideology = social_democrat
+				portrait = "gfx/leaders/SZC/Portrait_SZC_Hu_Yaobang.png"
+			}
+			
+			
+			
+		set_country_leader_ideology = socdem_democratic_socialism_subtype
+		}
+		option = {
+		name = "政变被镇压了"
+		}
+		
+		
+		}
+country_event = {
+
+		id = sichuan.513
+		title = "四川问题"
+		desc = "我们是选择四川孤立？还是成为我们在中国真正的民主梦想？"
+		picture = "-"
+
+		
+
+		is_triggered_only = yes
+
+		option = {
+
+		name = "留在四川"
+		add_ideas = {
+		SZC_sichuan_rep
+		}
+		}
+		option = {
+
+		name = "我们要统一中国！"
+		add_ideas = {
+		SZC_sichuan_rep_china
+		}
+		set_cosmetic_tag = SZC_SHP
+		hidden_effect = {
+			SZC = {
+				H_to_china = yes
+				create_wargoal = {
+					target = TRM
+					type = annex_everything
+				}
+				create_wargoal = {
+					target = TAI
+					type = annex_everything
+				}
+				create_wargoal = {
+					target = JST
+					type = annex_everything
+				}
+				create_wargoal = {
+					target = JAP
+					type = annex_everything
+				}
+				every_state = {		
+			limit = {
+			OR = {
+	is_core_of = LEP
+	is_core_of = CHI
+	is_core_of = SQI
+	is_core_of = ANQ
+	is_core_of = QIE
+	is_core_of = FNG
+	is_core_of = GXC
+	is_core_of = YUN
+	is_core_of = XSM
+	is_core_of = Mon
+	is_core_of = HNN
+	is_core_of = shx
+	is_core_of = szc
+	is_core_of = lec
+	is_core_of = sik
+	is_core_of = tib
+	is_core_of = TAI
+	is_core_of = JST
+	}
+			}					
+	add_core_of = SZC
+							}
+	add_state_core = 537
+	add_state_core = 525
+	add_state_core = 527
+	add_state_core = 858
+	add_state_core = 745
+	add_state_core = 1246
+	add_state_core = 409
+	add_state_core = 561
+	add_state_core = 560
+	add_state_core = 657
+	add_state_core = 654
+	add_state_core = 1293
+	add_state_core = 811
+	add_state_core = 329
+	add_state_core = 729
+	add_state_core = 600
+	add_state_core = 1046
+	add_state_core = 802
+	add_state_core = 1066
+	add_state_core = 595
+	add_state_core = 1044
+	add_state_core = 1045
+	add_state_core = 1069
+	add_state_core = 803
+	add_state_core = 1068
+	add_state_core = 1067
+	add_state_core = 596
+	add_state_core = 613
+	add_state_core = 1014
+	add_state_core = 606
+	add_state_core = 1050
+	add_state_core = 598
+	add_state_core = 1047
+	add_state_core = 1064
+	add_state_core = 597
+	add_state_core = 1065
+	add_state_core = 996
+	add_state_core = 744
+			}
+		}
+		}
+		
+		
+		}
+		
+		country_event = {
+
+		id = sichuan.514
+		title = "第一次全国大选"
+		desc = technocraticchina.1.d
+		picture = "-"
+
+		
+
+		is_triggered_only = yes
+
+		option = {
+
+		name = "张澜胜利"
+	
+		set_politics = { ruling_party = radical_socialist }
+		
+		set_country_leader_name = {
+				ideology = radical_socialist
+				name = "张澜"
+			}
+			
+		set_country_leader_portrait = {
+				ideology = radical_socialist
+				portrait = "gfx/leaders/SZC/Portrait_SZC_Zhang_Lan.png"
+			}
+		
+		set_country_leader_ideology = moderate_socialist_subtype
+		}
+		option = {
+
+		name = "胡耀邦胜利"
+	
+		set_politics = { ruling_party = social_democrat }
+		
+		set_country_leader_name = {
+				ideology = social_democrat
+				name = "胡耀邦"
+			}
+			
+		set_country_leader_portrait = {
+				ideology = social_democrat
+				portrait = "gfx/leaders/SZC/Portrait_SZC_Hu_Yaobang.png"
+			}
+			
+			
+			
+		set_country_leader_ideology = socdem_democratic_socialism_subtype
+		}
+		
+		option = {
+
+		name = "胡耀邦获得自由党选票"
+	
+		set_politics = { ruling_party = social_liberal }
+		
+		set_country_leader_name = {
+				ideology = social_liberal
+				name = "胡耀邦"
+			}
+			
+		set_country_leader_portrait = {
+				ideology = social_liberal
+				portrait = "gfx/leaders/SZC/Portrait_SZC_Hu_Yaobang.png"
+			}
+			
+			
+			
+		set_country_leader_ideology = social_liberal_subtype
+		}
+		
+		
+		
+		}

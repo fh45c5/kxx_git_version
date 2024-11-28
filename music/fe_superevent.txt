@@ -1,0 +1,6 @@
+music = {
+	song = "fe_superevent"
+	chance = {
+		factor = 0
+	}
+}

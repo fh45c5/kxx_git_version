@@ -1,0 +1,333 @@
+ideas = {
+
+	country = {
+		LEB_idea_a_land_hard_to_govern = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_idea_a_land_hard_to_govern"}
+			picture = LEB_idea_a_land_hard_to_govern
+
+			allowed = { always = no }
+            modifier = {
+war_support_factor = -0.15
+production_speed_buildings_factor = -0.1
+consumer_goods_factor = -0.1
+industry_air_damage_factor = -0.30
+			}
+		}
+
+		LEB_religious_clashes = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_religious_clashes"}
+			picture = LEB_religious_clashes
+
+			allowed = { always = no }
+            modifier = {
+political_power_factor = -0.05
+stability_factor = -0.2
+industrial_capacity_factory = -0.1
+			}
+		}
+
+		LEB_gate_between_two_worlds = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_gate_between_two_worlds"}
+			picture = LEB_gate_between_two_worlds
+
+			allowed = { always = no }
+            modifier = {
+research_speed_factor = 0.15
+consumer_goods_factor = -0.15
+civilian_intel_to_others = 10
+trade_opinion_factor = 0.2
+opinion_gain_monthly_factor = 0.2
+			}
+		}
+
+
+		LEB_black_monday = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_black_monday"}
+			picture = LEB_black_monday
+
+			allowed = { always = no }
+            modifier = {
+consumer_goods_factor = 0.3
+stability_factor = -0.3
+industrial_capacity_factory = -0.3
+trade_opinion_factor = -0.3
+production_speed_buildings_factor = -0.3
+			}
+		}
+
+		LEB_black_monday_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_black_monday_1"}
+			picture = LEB_black_monday
+
+			allowed = { always = no }
+            modifier = {
+consumer_goods_factor = 0.2
+stability_factor = -0.2
+industrial_capacity_factory = -0.2
+trade_opinion_factor = -0.2
+production_speed_buildings_factor = -0.2
+			}
+		}
+
+		LEB_black_monday_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_black_monday_2"}
+			picture = LEB_black_monday
+
+			allowed = { always = no }
+            modifier = {
+consumer_goods_factor = 0.1
+stability_factor = -0.1
+industrial_capacity_factory = -0.1
+trade_opinion_factor = -0.1
+production_speed_buildings_factor = -0.1
+			}
+		}
+
+		LEB_food_assistance = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_food_assistance"}
+			picture = LEB_food_assistance
+
+			allowed = { always = no }
+            modifier = {
+consumer_goods_factor = 0.05
+industrial_capacity_factory = -0.05
+
+			}
+		}
+
+		LEB_religious_riots = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_religious_riots"}
+			picture = LEB_religious_riots
+
+			allowed = { always = no }
+            modifier = {
+political_power_factor = -0.2
+stability_factor = -0.3
+industrial_capacity_factory = -0.3
+			}
+		}
+
+		LEB_religious_riots_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_religious_riots_1"}
+			picture = LEB_religious_riots
+
+			allowed = { always = no }
+            modifier = {
+political_power_factor = -0.1
+stability_factor = -0.2
+industrial_capacity_factory = -0.2
+			}
+		}
+
+		LEB_religious_clashes_mitigated = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_religious_clashes_mitigated"}
+			picture = LEB_religious_clashes_mitigated
+
+			allowed = { always = no }
+            modifier = {
+political_power_factor = +0.05
+stability_factor = +0.05
+industrial_capacity_factory = +0.1
+command_power_gain = 0.30
+			}
+		}
+		
+		LEB_religious_clashes_calmed = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_religious_clashes_calmed"}
+			picture = LEB_religious_clashes_calmed
+
+			allowed = { always = no }
+            modifier = {
+political_power_factor = +0.10
+stability_factor = +0.10
+industrial_capacity_factory = +0.15
+command_power_gain = 0.45
+civilian_intel_to_others = -10
+
+			}
+		}
+		
+
+		LEB_an_new_era_for_vilayet = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_an_new_era_for_vilayet"}
+			picture = LEB_an_new_era_for_vilayet
+
+			allowed = { always = no }
+            modifier = {
+political_power_factor = +0.15
+research_speed_factor = 0.15
+trade_opinion_factor = 0.5
+production_factory_efficiency_gain_factor = 0.15
+line_change_production_efficiency_factor = 0.15
+global_building_slots_factor = 0.1
+opinion_gain_monthly_factor = 0.2
+			}
+		}
+		
+		
+		LEB_shia_appeased = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_shia_appeased"}
+			picture = LEB_shia_appeased
+
+			allowed = { always = no }
+            modifier = {
+political_power_gain = 0.25
+stability_factor = 0.15
+production_speed_buildings_factor = 0.15
+training_time_factor = -0.15
+out_of_supply_factor = -0.40
+conscription = 0.015
+army_org_factor = 0.1
+
+			}
+		}
+		
+		
+		LEB_maronite_appeased = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_maronite_appeased"}
+			picture = LEB_maronite_appeased
+
+			allowed = { always = no }
+            modifier = {
+research_speed_factor = 0.15
+army_speed_factor = 0.1
+global_building_slots_factor = 0.25
+industrial_capacity_factory = 0.15
+supply_consumption_factor = -0.2
+local_resources_factor = 0.2
+			}
+		}
+		
+		
+		LEB_overseas_remittance = { 
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_overseas_remittance"}
+			picture = LEB_oversea_investment
+
+			allowed = { always = no }
+            modifier = {
+political_power_gain = -0.40	
+consumer_goods_factor = -0.25		
+production_speed_buildings_factor = 0.5
+industrial_capacity_factory = 0.3
+
+			}
+		}
+		
+		LEB_idea_tourism = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_idea_tourism"}
+			picture = LEB_tourism
+
+			allowed = { always = no }
+            modifier = {
+political_power_gain = 0.2
+trade_laws_cost_factor = -0.25
+stability_weekly = 0.005
+			}
+		}
+		
+		
+		LEB_gambling_industry = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_gambling_industry"}
+			picture = LEB_Gambling
+
+			allowed = { always = no }
+            modifier = {
+consumer_goods_factor = -0.15
+stability_factor = -0.05
+min_export = 0.1
+economy_cost_factor = 0.2
+			}
+		}
+		
+		LEB_gambling_industry_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_gambling_industry_1"}
+			picture = LEB_Gambling
+
+			allowed = { always = no }
+            modifier = {
+consumer_goods_factor = -0.25
+stability_factor = -0.08
+min_export = 0.15
+cavalry_attack_factor = 0.10
+cavalry_defence_factor = 0.10
+			}
+		}		
+		
+		LEB_hajj_port = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_hajj_port"}
+			picture = LEB_hajj_port
+
+			allowed = { always = no }
+            modifier = {
+		weekly_manpower = 400
+			}
+		}
+
+		LEB_new_jerusalem = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_hajj_port_1"}
+			picture = LEB_new_jerusalem
+
+			allowed = { always = no }
+            modifier = {
+		weekly_manpower = 600
+		research_speed_factor = 0.05
+		production_speed_buildings_factor = 0.05
+			}
+		}
+
+		LEB_idea_reopen_the_bank = {
+
+on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_idea_reopen_the_bank"}
+			picture = LEB_bank_reform
+
+			allowed = { always = no }
+            modifier = {
+		production_factory_max_efficiency_factor = 0.15
+		production_factory_start_efficiency_factor = 0.15
+		production_factory_efficiency_gain_factor = 0.15
+			}
+		}
+		
+		
+LEB_idea_reopen_the_bank_1 = {
+
+on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_idea_reopen_the_bank_1"}
+			picture = LEB_bank_reform
+
+			allowed = { always = no }
+            modifier = {
+		production_factory_max_efficiency_factor = 0.25
+		production_factory_start_efficiency_factor = 0.25
+		production_factory_efficiency_gain_factor = 0.25
+			}
+		}
+
+LEB_oil_oil_oil = {
+
+on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_oil_oil_oil"}
+			picture = LEB_oil_stealing
+
+			allowed = { always = no }
+            modifier = {
+		production_speed_fuel_silo_factor = 0.5
+		max_fuel_factor = 0.5
+			}
+		}		
+	
+	
+	
+	
+
+
+
+TUR_LEB_war = {
+		allowed = { always = no }
+		modifier = {
+		ai_call_ally_desire_factor = -1000
+		}
+		picture = LEB_idea_a_land_hard_to_govern
+		}
+		
+		}
+		
+}

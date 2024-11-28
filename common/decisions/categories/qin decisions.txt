@@ -1,0 +1,55 @@
+xi_bei = {
+	icon = jap_intervene_in_china
+	picture = GFX_decisions_QUAN_GUO
+	available = {
+		has_war = no
+	}
+	visible = {
+		has_global_flag = china_united
+		is_chinese_tag = yes
+	}
+	priority = 90
+}
+qin_cs = {
+	icon = generic_prepare_civil_war
+	visible = {
+		tag = SZC
+		has_completed_focus = qin_da6
+	}
+	priority = 180
+}
+zhong_ke_yuan = {
+	icon = GFX_decision_category_patriotic
+	visible = {
+		NOT = { tag = SZC }
+		is_in_faction_with = SZC
+	}
+	priority = 180
+}
+shou_du = {
+	icon = GFX_decision_category_generic_agriculture
+	picture = GFX_decision_cat_xsm_qinghai
+	visible = {
+		has_completed_focus = qin_guo_ge1
+		capital_scope = {
+			state = 799
+		}
+	}
+	priority = 180
+}
+zao_chuan = {
+	icon = generic_naval
+	available = {
+	}
+	visible = {
+		china_is_potential_government = yes
+		JAP = {
+			has_war_with = GER
+		}
+		any_state = {
+			is_controlled_by = ROOT
+			is_coastal = yes
+		}
+	}
+	priority = 50
+}

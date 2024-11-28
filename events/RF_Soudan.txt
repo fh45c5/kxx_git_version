@@ -1,0 +1,23 @@
+﻿add_namespace = SEN
+
+country_event = {
+	id = SEN.1
+	title = SEN.1.t
+	desc = SEN.1.desc
+	#picture = GFX_report_event_paul_levi
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = SEN.1.a
+		set_politics = { 
+			ruling_party = national_populist
+		}
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.23
+		}
+		set_cosmetic_tag = SEN_socialist_federation
+	}
+}
+

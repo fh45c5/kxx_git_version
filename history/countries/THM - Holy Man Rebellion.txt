@@ -1,0 +1,90 @@
+capital = 524
+OOB = "-"
+
+
+set_politics = {
+	ruling_party = national_populist
+	last_election = "1930.11.9"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_variable = {
+    var = sangha_power
+    value = 0
+}
+set_variable = {
+    var = royalist_power
+    value = 0
+}
+set_variable = {
+    var = liberationist_power
+    value = 0
+}
+
+set_popularities = {
+	totalist = 0
+	radical_socialist = 25
+	syndicalist = 0
+	social_democrat = 25
+	social_liberal = 0
+	market_liberal = 0
+	social_conservative = 0
+	authoritarian_democrat = 10
+	paternal_autocrat = 15
+	national_populist = 25
+}
+
+create_country_leader = {
+	name = "帕蒙昆贴牟尼祖师"
+	picture = "gfx/leaders/THM/Portrait_THM_Phramongkolthepmuni.png"
+	expire = "1965.1.1"
+	ideology = esoteric_leninism_subtype
+}
+
+create_country_leader = {
+	name = "帕蒙昆贴牟尼祖师"
+	picture = "gfx/leaders/THM/Portrait_THM_Phramongkolthepmuni.png"
+	expire = "1965.1.1"
+	ideology = syn_buddhist_socialism_subtype
+}
+
+
+create_country_leader = {
+	name = "帕蒙昆贴牟尼祖师"
+	picture = "gfx/leaders/THM/Portrait_THM_Phramongkolthepmuni.png"
+	expire = "1965.1.1"
+	ideology = buddhist_socialism_subtype
+}
+
+create_country_leader = {
+	name = "希拉文英"
+	picture = "gfx/leaders/THM/Portrait_THM_Chen_Maha_Sila_Wongin.png"
+	expire = "1965.1.1"
+	ideology = socdem_buddhist_socialism_subtype
+}
+
+
+
+create_country_leader = {
+	name = "马哈希拉"
+	desc = ""
+	picture = "gfx/leaders/THM/Portrait_THM_Chen_Maha_Sila.png"
+	expire = "1965.1.1"
+	ideology = tribal_chiefdom_subtype
+}
+
+create_country_leader = {
+	name = "马哈希拉"
+	desc = ""
+	picture = "gfx/leaders/THM/Portrait_THM_Chen_Maha_Sila.png"
+	expire = "1965.1.1"
+	ideology = neo_feudalism_subtype
+}
+create_country_leader = {
+	name = "希拉文英"
+	desc = ""
+	picture = "gfx/leaders/THM/Portrait_THM_Chen_Maha_Sila_Wongin.png"
+	expire = "1965.1.1"
+	ideology = fundementalism_subtype
+}
+

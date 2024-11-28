@@ -1,0 +1,44 @@
+characters={
+	JER_George_Villiers_1 ={ #Democratic Leader
+		name="George Child-Villiers"
+		portraits={
+			civilian={
+				large="gfx/leaders/JER/JER_George_Child_Villier.png"
+			}
+		}
+		country_leader={
+			ideology=soccon_neo_feudalism_subtype
+			traits={ hog_popular_nobleman eco_agricultural_economist }
+			expire="1998.1.1.1"
+			id=-1
+		}
+	}
+	JER_George_Villiers_2={ #Democratic Leader
+		name="George Child-Villiers"
+		portraits={
+			civilian={
+				large="gfx/leaders/JER/JER_George_Child_Villier.png"
+			}
+		}
+		country_leader={
+			ideology=neo_feudalism_subtype
+			traits={ hog_popular_nobleman eco_agricultural_economist }
+			expire="1998.1.1.1"
+			id=-1
+		}
+	}
+	JER_George_Villiers_3 ={ #Democratic Leader
+		name="George Child-Villiers"
+		portraits={
+			civilian={
+				large="gfx/leaders/JER/JER_George_Child_Villier.png"
+			}
+		}
+		country_leader={
+			ideology=natpop_neo_feudalism_subtype
+			traits={ hog_popular_nobleman eco_agricultural_economist }
+			expire="1998.1.1.1"
+			id=-1
+		}
+	}
+}

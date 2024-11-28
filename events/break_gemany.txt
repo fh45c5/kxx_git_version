@@ -1,0 +1,1465 @@
+﻿###################
+# BREAKGERMANY Events
+###################
+
+add_namespace = pop_po_war
+add_namespace = wgr
+add_namespace = hes
+add_namespace = sil
+add_namespace = wgr_ngf_ddr_bay
+
+
+country_event = {
+	id = sil.1
+    title = sil.1.t
+    desc = sil.1.d
+	picture = GFX_decision_Guderian_thought
+	
+    is_triggered_only = yes
+
+	option = {
+		name = sil.1.a
+	}
+}
+country_event = {
+	id = sil.2
+    title = sil.2.t
+    desc = sil.2.d
+	picture = GFX_decision_Hankes_delusions
+	
+    is_triggered_only = yes
+
+	option = {
+		name = sil.2.a
+	}
+	option = {
+		name = sil.2.b
+	}
+}
+country_event = {
+	id = sil.3
+    title = sil.3.t
+    desc = sil.3.d
+	picture = GFX_decision_Father_Uritsk
+	
+    is_triggered_only = yes
+
+	option = {
+		name = sil.3.a
+	}
+}
+country_event = {
+	id = sil.4
+    title = sil.4.t
+    desc = sil.4.d
+	picture = GFX_decision_Fighting_in_Silesia
+	
+    is_triggered_only = yes
+
+	option = {
+		name = sil.4.a
+		set_country_flag = Guderian_triumphed
+	}
+	option = {
+		name = sil.4.b
+		country_event = {
+			id = sil.5
+			days = 5
+		}
+	}
+}
+country_event = {
+	id = sil.5
+    title = sil.5.t
+    desc = sil.5.d
+	picture = GFX_decision_Fighting_in_Silesia
+	
+    is_triggered_only = yes
+
+	option = {
+		name = sil.5.a
+		country_event = {
+			id = sil.6
+			days = 5
+		}
+	}
+}
+country_event = {
+	id = sil.6
+    title = sil.6.t
+    desc = sil.6.d
+	picture = GFX_decision_Fighting_in_Silesia
+	
+    is_triggered_only = yes
+
+	option = {
+		name = sil.6.a
+		country_event = {
+			id = sil.7
+			days = 5
+		}
+	}
+	option = {
+		name = sil.6.b
+		custom_effect_tooltip = The_Father_Priest_wins
+		set_politics = {
+			ruling_party = radical_socialist
+			elections_allowed = no
+			name = SIL_father_priest_party
+			long_name = SIL_father_priest_party_long
+		}
+		add_popularity = { ideology = radical_socialist popularity = 0.35 }
+		set_country_flag = Father_Priest_wins
+		create_country_leader = {
+			name = "卡尔·乌里茨克"
+			picture = "gfx/leaders/SIC/Portrait_Germany_Karl_Uritsk.png"
+			expire = "1.1.1"
+			ideology = christian_socialism_subtype 
+		}
+	}
+}
+country_event = {
+	id = sil.7
+    title = sil.7.t
+    desc = sil.7.d
+	picture = GFX_decision_Guderian_thought
+	
+    is_triggered_only = yes
+
+	option = {
+		name = sil.7.a
+		set_politics = {
+			ruling_party = national_populist
+			elections_allowed = no
+		}
+		set_country_flag = Silesian_nationalism
+		create_country_leader = {
+			name = "卡尔·汉克"
+			picture = "gfx/leaders/SIC/Portrait_Germany_Karl_Hanke.png"
+			expire = "1.1.1"
+			ideology = natpop_popular_patriotism_subtype
+		}
+	}
+}
+country_event = {
+	id = sil.8
+    title = sil.8.t
+    desc = sil.8.d
+	picture = GFX_decision_Democratic_Assembly
+	
+    is_triggered_only = yes
+
+	option = {
+		name = sil.8.a
+		set_politics = {
+			ruling_party = social_liberal
+			elections_allowed = no
+		}
+		add_popularity = { ideology = social_liberal popularity = 0.45 }
+		create_country_leader = {
+			name = "海因茨·古德里安"
+			picture = "gfx/leaders/SIC/Portrait_Germany_Heinz_Guderian_kr.png"
+			expire = "1.1.1"
+			ideology = classical_progressivism 
+		}
+	}
+	option = {
+		name = sil.8.b
+		set_politics = {
+			ruling_party = market_liberal
+			elections_allowed = no
+		}
+		add_popularity = { ideology = market_liberal popularity = 0.45 }
+		create_country_leader = {
+			name = "海因茨·古德里安"
+			picture = "gfx/leaders/SIC/Portrait_Germany_Heinz_Guderian_kr.png"
+			expire = "1.1.1"
+			ideology = libertarian_subtype 
+		}
+	}
+	option = {
+		name = sil.8.c
+		set_politics = {
+			ruling_party = social_conservative
+			elections_allowed = no
+		}
+		add_popularity = { ideology = social_conservative popularity = 0.45 }
+		create_country_leader = {
+			name = "海因茨·古德里安"
+			picture = "gfx/leaders/SIC/Portrait_Germany_Heinz_Guderian_kr.png"
+			expire = "1.1.1"
+			ideology = christian_democracy_subtype 
+		}
+	}
+	option = {
+		name = sil.8.e
+		custom_effect_tooltip = Silesia_Stupid_democracy
+		set_politics = {
+			ruling_party = paternal_autocrat
+			elections_allowed = no
+		}
+		add_popularity = { ideology = paternal_autocrat popularity = 0.45 }
+		add_ideas = SIL_Military
+	}
+}
+country_event = {
+	id = sil.9
+    title = sil.9.t
+    desc = sil.9.d
+	picture = GFX_decision_Democratic_Assembly
+	
+    is_triggered_only = yes
+
+	option = {
+		name = sil.9.a
+		ai_chance = {
+			factor = 100
+		}
+		CAN = {
+			add_to_faction = SIL
+		}
+	}
+	option = {
+		name = sil.9.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = sil.10
+    title = sil.10.t
+    desc = sil.10.d
+	picture = GFX_decision_Hankes_delusions
+	
+    is_triggered_only = yes
+
+	option = {
+		name = sil.10.a
+	}
+}
+country_event = {
+	id = sil.11
+    title = sil.11.t
+    desc = sil.11.d
+	picture = GFX_decision_Father_Uritsk
+	
+    is_triggered_only = yes
+
+	option = {
+		name = sil.11.a
+	}
+}
+
+country_event = {
+	id = wgr_ngf_ddr_bay.1
+    title = wgr_ngf_ddr_bay.1.t
+    desc = wgr_ngf_ddr_bay.1.d
+	picture = GFX_the_rhine_civilwar
+	
+	trigger = {
+		OR = {
+			tag = BAY
+			tag = DDR
+			tag = WGR
+			tag = NGF
+		}
+		NOT = { country_exists = GER }
+		country_exists = DDR
+		country_exists = NGF
+		country_exists = WGR
+		country_exists = BAY
+	}
+	fire_only_once = yes
+	hidden = yes
+	immediate = { 
+		BAY = {
+			division_template = {
+			name = "南德意志自由军团"
+			division_names_group = BAY_NRARMY_0
+			regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+			}
+			support = {
+				artillery = { x = 0 y = 0 }
+			}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"南德意志自由军团\" division_template = \"南德意志自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = BAY
+				}
+				create_unit = {
+					division = "name = \"南德意志自由军团\" division_template = \"南德意志自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = BAY
+				}
+				create_unit = {
+					division = "name = \"南德意志自由军团\" division_template = \"南德意志自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = BAY
+				}
+				create_unit = {
+					division = "name = \"南德意志自由军团\" division_template = \"南德意志自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = BAY
+				}
+				create_unit = {
+					division = "name = \"南德意志自由军团\" division_template = \"南德意志自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = BAY
+				}
+				create_unit = {
+					division = "name = \"南德意志自由军团\" division_template = \"南德意志自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = BAY
+				}
+				create_unit = {
+					division = "name = \"南德意志自由军团\" division_template = \"南德意志自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = BAY
+				}
+				create_unit = {
+					division = "name = \"南德意志自由军团\" division_template = \"南德意志自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = BAY
+				}
+				create_unit = {
+					division = "name = \"南德意志自由军团\" division_template = \"南德意志自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = BAY
+				}
+			}
+		}
+		DDR = {
+			division_template = {
+			name = "普鲁士自由军团"
+			division_names_group = DDR_NRARMY_0
+			regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+			}
+			support = {
+				artillery = { x = 0 y = 0 }
+			}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+				create_unit = {
+					division = "name = \"普鲁士自由军团\" division_template = \"普鲁士自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = DDR
+				}
+			}
+		}
+		WGR = {
+			division_template = {
+			name = "西德意志自由军团"
+			division_names_group = WGR_NRARMY_0
+			regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+			}
+			support = {
+				artillery = { x = 0 y = 0 }
+			}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"西德意志自由军团\" division_template = \"西德意志自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WGR
+				}
+				create_unit = {
+					division = "name = \"西德意志自由军团\" division_template = \"西德意志自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WGR
+				}
+				create_unit = {
+					division = "name = \"西德意志自由军团\" division_template = \"西德意志自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WGR
+				}
+				create_unit = {
+					division = "name = \"西德意志自由军团\" division_template = \"西德意志自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WGR
+				}
+				create_unit = {
+					division = "name = \"西德意志自由军团\" division_template = \"西德意志自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WGR
+				}
+				create_unit = {
+					division = "name = \"西德意志自由军团\" division_template = \"西德意志自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WGR
+				}
+				create_unit = {
+					division = "name = \"西德意志自由军团\" division_template = \"西德意志自由军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WGR
+				}
+			}
+		}
+		NGF = {
+			division_template = {
+			name = "北德意志赤卫队"
+			division_names_group = NGF_NRARMY_0
+			regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+			}
+			support = {
+				artillery = { x = 0 y = 0 }
+			}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"北德意志赤卫队\" division_template = \"北德意志赤卫队\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = NGF
+				}
+				create_unit = {
+					division = "name = \"北德意志赤卫队\" division_template = \"北德意志赤卫队\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = NGF
+				}
+				create_unit = {
+					division = "name = \"北德意志赤卫队\" division_template = \"北德意志赤卫队\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = NGF
+				}
+				create_unit = {
+					division = "name = \"北德意志赤卫队\" division_template = \"北德意志赤卫队\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = NGF
+				}
+				create_unit = {
+					division = "name = \"北德意志赤卫队\" division_template = \"北德意志赤卫队\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = NGF
+				}
+				create_unit = {
+					division = "name = \"北德意志赤卫队\" division_template = \"北德意志赤卫队\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = NGF
+				}
+				create_unit = {
+					division = "name = \"北德意志赤卫队\" division_template = \"北德意志赤卫队\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = NGF
+				}
+				create_unit = {
+					division = "name = \"北德意志赤卫队\" division_template = \"北德意志赤卫队\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = NGF
+				}
+				create_unit = {
+					division = "name = \"北德意志赤卫队\" division_template = \"北德意志赤卫队\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = NGF
+				}
+				create_unit = {
+					division = "name = \"北德意志赤卫队\" division_template = \"北德意志赤卫队\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = NGF
+				}
+				create_unit = {
+					division = "name = \"北德意志赤卫队\" division_template = \"北德意志赤卫队\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = NGF
+				}
+			}
+		}
+	}
+
+	option = {
+		name = wgr_ngf_ddr_bay.1.a
+	}
+}
+country_event = {
+	id = hes.1
+    title = hes.1.t
+    desc = hes.1.d
+	picture = GFX_the_rhine_civilwar
+	
+    is_triggered_only = yes
+
+	option = {
+		name = hes.1.a
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = -2000
+			producer = DDR
+		}
+		add_manpower = -10000
+		add_political_power = -40
+		HES = {
+		country_event = hes.3
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = { 
+		name = hes.1.b
+		add_political_power = 20
+		HES = {
+		country_event = hes.4
+		}
+	}
+}
+country_event = {
+	id = hes.2
+    title = hes.2.t
+    desc = hes.2.d
+	picture = GFX_the_rhine_civilwar
+	
+    is_triggered_only = yes
+
+	option = {
+		name = hes.2.a
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = -2000
+			producer = BAY
+		}
+		add_manpower = -10000
+		add_political_power = -40
+		HES = {
+		country_event = hes.3
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = { 
+		name = hes.2.b
+		add_political_power = 20
+		HES = {
+		country_event = hes.4
+		}
+	}
+}
+country_event = {
+	id = hes.3
+    title = hes.3.t
+    desc = hes.3.d
+	picture = GFX_the_rhine_civilwar
+	
+    is_triggered_only = yes
+
+	option = {
+		name = hes.3.a
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 2000
+			producer = GER
+		}
+		add_manpower = 10000
+		add_political_power = 60
+		set_country_flag = HES_Get_assistance
+	}
+}
+country_event = {
+	id = hes.4
+    title = hes.4.t
+    desc = hes.4.d
+	picture = GFX_the_rhine_civilwar
+	
+    is_triggered_only = yes
+
+	option = {
+		name = hes.4.a
+		add_political_power = -60
+	}
+}
+country_event = {
+	id = hes.5
+    title = hes.5.t
+    desc = hes.5.d
+	picture = GFX_the_rhine_civilwar
+	
+    is_triggered_only = yes
+
+	option = {
+		name = hes.5.a
+		HES = {
+		country_event = hes.6
+		}
+	}
+}
+country_event = {
+	id = hes.6
+    title = hes.6.t
+    desc = hes.6.d
+	picture = GFX_the_rhine_civilwar
+	
+    is_triggered_only = yes
+
+	option = {
+		name = hes.6.a
+		white_peace = WGR
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = hes.6.b
+	}
+}
+country_event = {
+	id = hes.8
+    title = hes.8.t
+    desc = hes.8.d
+	picture = GFX_the_rhine_civilwar
+	
+    is_triggered_only = yes
+
+	option = {
+		name = hes.8.a
+		ai_chance = {
+			factor = 10
+		}
+		random_owned_controlled_state = {
+			create_unit = {
+				division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				owner = HES
+			}
+			create_unit = {
+				division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				owner = HES
+			}
+			create_unit = {
+				division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				owner = HES
+			}
+			create_unit = {
+				division = "name = \"黑森保卫军\" division_template = \"黑森保卫军\" start_experience_factor = 1 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				owner = HES
+			}
+		}
+		create_corps_commander = {
+			name = "卡尔·温里希"
+			desc = ""
+			portrait_path = "gfx/leaders/HES/Portrait_Karl_Weinrich.jpg"
+			traits = { brilliant_strategist harsh_leader trait_cautious old_guard organizer }
+			skill = 5
+			attack_skill = 6
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 5
+		}
+		set_country_flag = HES_RIHC_HELP
+	}
+	option = {
+		name = hes.8.b
+		ai_chance = {
+			factor = 90
+		}
+		add_political_power = 120
+		add_stability = 0.15
+	}
+}
+country_event = {
+	id = hes.7
+    title = hes.7.t
+    desc = hes.7.d
+	picture = GFX_the_rhine_civilwar
+	
+    is_triggered_only = no
+	trigger = {
+		NOT = {
+			OR = {
+				has_completed_focus = HES_16
+				has_completed_focus = HES_18
+			}
+		}
+		has_completed_focus = HES_13
+		has_country_flag = HES_RIHC_HELP
+	}
+	fire_only_once = yes
+
+	option = {
+		name = hes.7.a
+		set_politics = {
+			ruling_party = national_populist
+			elections_allowed = no
+			name = HES_New_national_populist_party
+			long_name = HES_New_national_populist_party_long
+		}
+		add_popularity = { ideology = national_populist popularity = 1 }
+		complete_national_focus = HES_20
+		HES = {
+		OVERLORD =  {
+		end_puppet = ROOT
+		}
+		leave_faction = yes
+		}
+	}
+}
+country_event = {
+	id = wgr.1
+    title = wgr.1.t
+    desc = wgr.1.d
+	picture = GFX_the_rhine_civilwar
+	
+    is_triggered_only = yes
+
+	option = {
+		name = wgr.1.a
+		add_political_power = -120
+		add_stability = 0.01
+		add_manpower = -37
+		set_country_flag = Bonn_people
+		hidden_effect =  {
+			country_event = {
+				id = wgr.2
+				days = 5
+			}
+		}
+	}
+	option = { 
+		name = wgr.1.b
+		add_political_power = -20
+		add_stability = -0.2
+		add_manpower = -37
+		custom_effect_tooltip = Rhine_civilwar
+		42 = { set_demilitarized_zone = yes }
+			hidden_effect =  {
+				country_event = {
+					id = wgr.3
+					days = 5
+				}
+			}
+			hidden_effect =  {
+				country_event = {
+					id = wgr.4
+					days = 12
+				}
+			}
+		}
+	}
+country_event = {
+	id = wgr.2
+    title = wgr.2.t
+    desc = wgr.2.d
+	picture = GFX_free_hessian
+	
+    is_triggered_only = yes
+
+	option = {
+		name = wgr.2.a
+		add_stability = -0.25
+		HES = {
+			transfer_state = 55
+			55 = { add_core_of = HES }
+		}
+		HES = {
+		set_country_flag = HES_Punishment_wars
+		division_template = {
+			name = "帝国莱茵军团"
+			division_names_group = HES_NRARMY_00
+			regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+			}
+			support = {
+			}
+			}
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"帝国莱茵军团\" division_template = \"帝国莱茵军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"帝国莱茵军团\" division_template = \"帝国莱茵军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"帝国莱茵军团\" division_template = \"帝国莱茵军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"帝国莱茵军团\" division_template = \"帝国莱茵军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+			}
+		}
+		declare_war_on = { target = HES type = annex_everything }
+	}
+	option = { 
+		name = wgr.2.b
+		add_stability = -0.25
+		WGR = {
+		declare_war_on = { target = HES type = annex_everything }
+		}
+		HES = {
+			transfer_state = 55
+			55 = { add_core_of = HES }
+			change_tag_from = WGR
+		}
+		HES = {
+		declare_war_on = { target = WGR type = annex_everything }
+		set_country_flag = HES_Punishment_wars
+		division_template = {
+			name = "帝国莱茵军团"
+			division_names_group = HES_NRARMY_00
+			regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+			}
+			support = {
+			}
+			}
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"帝国莱茵军团\" division_template = \"帝国莱茵军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"帝国莱茵军团\" division_template = \"帝国莱茵军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"帝国莱茵军团\" division_template = \"帝国莱茵军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"帝国莱茵军团\" division_template = \"帝国莱茵军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = wgr.3
+    title = wgr.3.t
+    desc = wgr.3.d
+	picture = GFX_free_hessian
+	
+    is_triggered_only = yes
+
+	option = {
+		name = wgr.3.a
+		add_stability = -0.25
+		55 = { set_demilitarized_zone = yes }
+		HES = {
+			transfer_state = 55
+			55 = { add_core_of = HES }
+		}
+		HES = {
+		division_template = {
+			name = "帝国莱茵军团"
+			division_names_group = HES_NRARMY_00
+			regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			}
+			support = {
+			}
+			}
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"帝国莱茵军团\" division_template = \"帝国莱茵军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"帝国莱茵军团\" division_template = \"帝国莱茵军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"帝国莱茵军团\" division_template = \"帝国莱茵军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"帝国莱茵军团\" division_template = \"帝国莱茵军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+			}
+		}
+	}
+	option = { 
+		name = wgr.3.b
+		add_stability = -0.25
+		55 = { set_demilitarized_zone = yes }
+		HES = {
+			transfer_state = 55
+			55 = { add_core_of = HES }
+			change_tag_from = WGR
+		}
+		HES = {
+		division_template = {
+			name = "帝国莱茵军团"
+			division_names_group = HES_NRARMY_00
+			regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			}
+			support = {
+			}
+			}
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"帝国莱茵军团\" division_template = \"帝国莱茵军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"帝国莱茵军团\" division_template = \"帝国莱茵军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"帝国莱茵军团\" division_template = \"帝国莱茵军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+				create_unit = {
+					division = "name = \"帝国莱茵军团\" division_template = \"帝国莱茵军团\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = HES
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = wgr.4
+    title = wgr.4.t
+    desc = wgr.4.d
+	picture = GFX_the_rhine_civilwar
+	
+    is_triggered_only = yes
+
+	option = {
+		name = wgr.4.a
+		add_manpower = -765
+		set_country_flag = Trier_people
+		add_popularity = { ideology = syndicalist popularity = 0.40 }
+		set_politics = {
+			ruling_party = syndicalist
+			elections_allowed = no
+		}
+		remove_ideas_with_trait = head_of_government
+		add_ideas = WGR_Rosi_Wolfstein_hog_syn
+		remove_ideas_with_trait = economy_minister
+		add_ideas = WGR_Walter_Kuechenmeister_eco_syn
+		remove_ideas_with_trait = foreign_minister
+		add_ideas = WGR_Adam_Kuckhoff_for_syn
+		remove_ideas_with_trait = security_minister
+		add_ideas = WGR_Elfriede_Paul_sec_syn
+		NGF = {
+		transfer_state = 57
+		}
+	}
+	option = { 
+		name = wgr.4.b
+		add_manpower = -765
+		set_country_flag = Bonn_people
+		NGF = {
+		transfer_state = 57
+		}
+		}
+	}
+country_event = {
+	id = wgr.5
+    title = wgr.5.t
+    desc = wgr.5.d
+	
+    is_triggered_only = yes
+
+	option = {
+		name = wgr.5.a
+		add_stability = 0.05
+		add_war_support = 0.08
+	}
+}
+country_event = {
+	id = wgr.6
+    title = wgr.6.t
+    desc = wgr.6.d
+	
+    is_triggered_only = yes
+
+	option = {
+		name = wgr.6.a
+		add_stability = -0.07
+		add_manpower = -1
+	}
+}
+country_event = {
+	id = pop_po_war.1
+    title = pop_po_war.1.t
+    desc = pop_po_war.1.d
+	
+    is_triggered_only = yes
+
+	option = {
+		ai_will_do={
+			factor=0
+		}
+		name = pop_po_war.1.a
+		declare_war_on = { target = POL type = annex_everything }
+		POL = {
+		transfer_state = 86
+		set_global_flag = DDR_the_pop_po_war
+		}
+	}
+	option = { 
+		ai_will_do={
+			factor=100
+		}
+		name = pop_po_war.1.b
+		776 = { set_demilitarized_zone = yes }
+		86 = { set_demilitarized_zone = yes }
+		67 = { set_demilitarized_zone = yes }
+		POL = {
+		transfer_state = 86
+		country_event = pop_po_war.2
+		}
+	}
+}
+country_event = {
+	id = pop_po_war.2
+    title = pop_po_war.2.t
+    desc = pop_po_war.2.d
+	
+    is_triggered_only = yes
+
+	option = {
+		ai_will_do={
+			factor=50
+		}	
+		name = pop_po_war.2.a
+		77 = { set_demilitarized_zone = yes }
+		set_country_flag = Government_of_Poznan
+		unlock_decision_category_tooltip = Reorganization_of_the_government_of_Poznan
+		add_political_power = 70
+		DDR = {
+		country_event =  pop_po_war.3
+		}
+	}
+	option = { 
+		ai_will_do={
+			factor=50
+		}
+		name = pop_po_war.2.b
+		add_political_power = -15
+		set_country_flag = POP_BACK
+		unlock_decision_category_tooltip = Heavy_blow_to_Prussia
+	}
+}
+country_event = {
+	id = pop_po_war.3
+    title = pop_po_war.3.t
+    desc = pop_po_war.3.d
+	
+    is_triggered_only = yes
+
+	option = { 
+		name = pop_po_war.3.a
+		declare_war_on = { target = POL type = annex_everything }
+		add_political_power = 50
+	}
+}
+country_event = {
+	id = pop_po_war.4
+    title = pop_po_war.4.t
+    desc = pop_po_war.4.d
+	
+	trigger = {
+		has_war_with = POL
+		tag = DDR
+		is_subject = no
+		country_exists = DDR
+		NOT = {
+			controls_state = 68
+		}
+	}
+	fire_only_once = yes
+
+	option = {
+		ai_will_do={
+			factor=100
+		}
+		name = pop_po_war.4.a
+		add_political_power = 50
+		custom_effect_tooltip = DDR_1_2_3_4_NOT
+		POL = {
+		country_event = pop_po_war.5
+		}
+		white_peace = POL
+	}
+	option = { 
+		ai_will_do={
+			factor=0
+		}
+		name = pop_po_war.4.b
+		add_political_power = -50
+	}
+}
+country_event = {
+	id = pop_po_war.5
+    title = pop_po_war.5.t
+    desc = pop_po_war.5.d
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { 
+		ai_will_do={
+			factor=100
+		}
+		name = pop_po_war.5.a
+		transfer_state = 86
+		transfer_state = 776
+		transfer_state = 67
+		transfer_state = 777
+		set_country_flag = Government_of_Poznan
+		unlock_decision_category_tooltip = Reorganization_of_the_government_of_Poznan
+		DDR = {
+			hidden_effect =  {
+				country_event = {
+					id = pop_po_war.6
+					days = 7
+				}
+			}
+		}
+	}
+	option = {
+		ai_will_do={
+			factor=0
+		}
+		name = pop_po_war.5.b
+		add_political_power = -50
+		declare_war_on = { target = DDR type = annex_everything }
+	}
+}
+country_event = {
+	id = pop_po_war.6
+    title = pop_po_war.6.t
+    desc = pop_po_war.6.d
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { 
+		ai_will_do={
+			factor=1000
+		}
+		name = pop_po_war.6.a
+		POM = {
+		transfer_state = 68
+		transfer_state = 63
+		transfer_state = 62
+		68 = { add_core_of = POM }
+		63 = { add_core_of = POM }
+		62 = { add_core_of = POM }
+		}
+		SIL = {
+		transfer_state = 66
+		66 = { add_core_of = SIL }
+		}
+		SXO = {
+		transfer_state = 65
+		65 = { add_core_of = SXO }
+		}
+		EPR = {
+		transfer_state = 5
+		transfer_state = 188
+		5 = { add_core_of = EPR }
+		188 = { add_core_of = EPR }
+		}
+		BAY = {
+		transfer_state = 60
+		60 = { add_core_of = EPR }
+		}
+	}
+	option = {
+		ai_will_do={
+			factor=0
+		}
+		name = pop_po_war.6.b
+		POM = {
+		transfer_state = 68
+		transfer_state = 63
+		transfer_state = 62
+		68 = { add_core_of = POM }
+		63 = { add_core_of = POM }
+		62 = { add_core_of = POM }
+		change_tag_from = DDR
+		}
+		SIL = {
+		transfer_state = 66
+		66 = { add_core_of = SIL }
+		}
+		SXO = {
+		transfer_state = 65
+		65 = { add_core_of = SXO }
+		}
+		EPR = {
+		transfer_state = 5
+		transfer_state = 188
+		5 = { add_core_of = EPR }
+		188 = { add_core_of = EPR }
+		}
+		BAY = {
+		transfer_state = 60
+		60 = { add_core_of = EPR }
+		}
+	}
+	option = {
+		ai_will_do={
+			factor=0
+		}
+		name = pop_po_war.6.c
+		POM = {
+		transfer_state = 68
+		transfer_state = 63
+		transfer_state = 62
+		68 = { add_core_of = POM }
+		63 = { add_core_of = POM }
+		62 = { add_core_of = POM }
+		}
+		SIL = {
+		transfer_state = 66
+		66 = { add_core_of = SIL }
+		change_tag_from = DDR
+		}
+		SXO = {
+		transfer_state = 65
+		65 = { add_core_of = SXO }
+		}
+		EPR = {
+		transfer_state = 5
+		transfer_state = 188
+		5 = { add_core_of = EPR }
+		188 = { add_core_of = EPR }
+		}
+		BAY = {
+		transfer_state = 60
+		60 = { add_core_of = EPR }
+		}
+	}
+	option = {
+		ai_will_do={
+			factor=0
+		}
+		name = pop_po_war.6.e
+		POM = {
+		transfer_state = 68
+		transfer_state = 63
+		transfer_state = 62
+		68 = { add_core_of = POM }
+		63 = { add_core_of = POM }
+		62 = { add_core_of = POM }
+		}
+		SIL = {
+		transfer_state = 66
+		66 = { add_core_of = SIL }
+		}
+		SXO = {
+		transfer_state = 65
+		65 = { add_core_of = SXO }
+		change_tag_from = DDR
+		}
+		EPR = {
+		transfer_state = 5
+		transfer_state = 188
+		5 = { add_core_of = EPR }
+		188 = { add_core_of = EPR }
+		}
+		BAY = {
+		transfer_state = 60
+		60 = { add_core_of = EPR }
+		}
+	}
+	option = {
+		ai_will_do={
+			factor=0
+		}
+		name = pop_po_war.6.f
+		POM = {
+		transfer_state = 68
+		transfer_state = 63
+		transfer_state = 62
+		68 = { add_core_of = POM }
+		63 = { add_core_of = POM }
+		62 = { add_core_of = POM }
+		}
+		SIL = {
+		transfer_state = 66
+		66 = { add_core_of = SIL }
+		}
+		SXO = {
+		transfer_state = 65
+		65 = { add_core_of = SXO }
+		}
+		EPR = {
+		transfer_state = 5
+		transfer_state = 188
+		5 = { add_core_of = EPR }
+		188 = { add_core_of = EPR }
+		change_tag_from = DDR
+		}
+		BAY = {
+		transfer_state = 60
+		60 = { add_core_of = EPR }
+		}
+	}
+}

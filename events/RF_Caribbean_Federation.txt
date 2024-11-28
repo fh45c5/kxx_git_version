@@ -1,0 +1,42 @@
+add_namespace = CYN
+
+
+	country_event = {
+		id = CYN.1
+		title = CYN.1.title
+		desc = CYN.1.desc
+		picture = GFX_report_event_romania_parliament
+		is_triggered_only = yes
+		fire_only_once = yes
+		
+		trigger = {
+			AND = {
+				CYN = { 
+					has_war_with = GER
+				}
+				FRG = {
+					surrender_progress > 0.50
+				}
+			}
+		} 
+
+		option = {
+			name = CYN.1.a
+			ai_chance = { factor = 1}
+			retire_country_leader = yes
+			set_politics = { 
+				ruling_party = national_populist
+			}
+			add_popularity = {
+				ideology = national_populist
+				popularity = 0.20
+			}
+			set_cosmetic_tag = CYN_union
+			GER = {
+				country_event = germany.44
+			}
+		}
+		
+	}
+
+	

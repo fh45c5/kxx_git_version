@@ -1,0 +1,262 @@
+focus_tree = {
+	id = UKR_H_focus
+    continuous_focus_position = { x = 2700 y = 1565 }
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = UKR
+		}
+	}
+	focus = {
+		id = UKR_Invite_Khrushchev
+		icon = GFX_goal_UKR_get_our_boi
+		cost = 2
+		x = -6
+		y = 1
+	}
+	focus = {
+		id = UKR_Popular_Front
+		icon = GFX_goal_UKR_popular_front
+		cost = 5
+		prerequisite = {
+			focus = UKR_Invite_Khrushchev
+		}
+		x = 0
+		y = 1
+		relative_position_id = UKR_Invite_Khrushchev
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName]: Focus UKR_Popular_Front"
+					country_event = monsocukr.13
+					add_political_power = 50
+					add_ideas = UKR_popular
+				}
+
+	}
+	focus = {
+		id = UKR_Language_Issue
+		icon = GFX_goal_UKR_language_question
+		cost = 5
+		prerequisite = {
+			focus = UKR_Popular_Front
+		}
+		x = 0
+		y = 2
+		relative_position_id = UKR_Invite_Khrushchev
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName]: Focus UKR_Language_Issue"
+					cadd_political_power = 50
+				}
+
+	}
+	focus = {
+		id = UKR_Exp_Kulaks
+		icon = GFX_goal_UKR_kulak_expropriation
+		cost = 5
+		prerequisite = {
+			focus = UKR_Popular_Front
+		}
+		mutually_exclusive = {
+			focus = UKR_Tax_Kulaks
+		}
+		x = -1
+		y = 3
+		relative_position_id = UKR_Invite_Khrushchev
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName]: Focus UKR_Exp_Kulaks"
+					UKR = {
+							country_event = {
+									id = monsocukr.14
+								}
+						}
+					add_stability = 0.06
+					add_popularity = {
+							ideology = totalist
+							popularity = 0.02
+						}
+				}
+
+	}
+	focus = {
+		id = UKR_Tax_Kulaks
+		icon = GFX_goal_UKR_kulak_tax
+		cost = 5
+		prerequisite = {
+			focus = UKR_Popular_Front
+		}
+		mutually_exclusive = {
+			focus = UKR_Exp_Kulaks
+		}
+		x = 1
+		y = 3
+		relative_position_id = UKR_Invite_Khrushchev
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName]: Focus UKR_Tax_Kulaks"
+					add_stability = 0.03
+					UKR = {
+							country_event = {
+									id = monsocukr.15
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = UKR_Coll_Prog
+		icon = GFX_goal_UKR_colectivization
+		cost = 5
+		prerequisite = {
+			focus = UKR_Exp_Kulaks
+		}
+		x = -2
+		y = 4
+		relative_position_id = UKR_Invite_Khrushchev
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName]: Focus UKR_Coll_Prog"
+					add_stability = -0.06
+				}
+
+	}
+	focus = {
+		id = UKR_Fate_Monarchy
+		icon = GFX_goal_UKR_monarchy_question
+		cost = 5
+		prerequisite = {
+			focus = UKR_Exp_Kulaks
+			focus = UKR_Tax_Kulaks
+		}
+		x = 0
+		y = 4
+		relative_position_id = UKR_Invite_Khrushchev
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName]: Focus UKR_Fate_Monarchy"
+					add_stability = -0.06
+				}
+
+	}
+	focus = {
+		id = UKR_Syn_Rev
+		icon = GFX_goal_UKR_red_hetmat
+		cost = 5
+		prerequisite = {
+			focus = UKR_Fate_Monarchy
+		}
+		x = 0
+		y = 5
+		relative_position_id = UKR_Invite_Khrushchev
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName]: Focus UKR_Syn_Rev"
+					UKR = {
+							country_event = {
+									id = monsocukr.17
+								}
+						}
+					add_war_support = 0.05
+					add_political_power = 50
+					add_popularity = {
+							ideology = totalist
+							popularity = 0.15
+						}
+				}
+
+	}
+	focus = {
+		id = UKR_Friendship_Nations
+		icon = GFX_goal_UKR_friendship_nations
+		cost = 5
+		prerequisite = {
+			focus = UKR_Syn_Rev
+		}
+		x = -2
+		y = 6
+		relative_position_id = UKR_Invite_Khrushchev
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName]: Focus UKR_Friendship_Nations"
+					add_stability = 0.05
+					add_manpower = 10000
+					add_popularity = {
+							ideology = totalist
+							popularity = 0.15
+						}
+				}
+
+	}
+	focus = {
+		id = UKR_wealth_distribute
+		text = UKR_wealth_distribute
+		icon = GFX_goal_UKR_new_wealth
+		cost = 5
+		prerequisite = {
+			focus = UKR_Tax_Kulaks
+		}
+		x = 2
+		y = 4
+		relative_position_id = UKR_Invite_Khrushchev
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName]: Focus UKR_wealth_distribute"
+					add_ideas = UKR_distribute_wealth
+				}
+
+	}
+	focus = {
+		id = UKR_peasant_army
+		text = UKR_peasant_army
+		icon = GFX_goal_UKR_peasant_army
+		cost = 5
+		prerequisite = {
+			focus = UKR_Syn_Rev
+		}
+		x = 0
+		y = 6
+		relative_position_id = UKR_Invite_Khrushchev
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName]: Focus UKR_peasant_army"
+					add_ideas = UKR_peasant_army_idea
+					add_tech_bonus = {
+							bonus = 1
+							uses = 1
+							category = infantry_weapons
+						}
+				}
+	}
+	focus = {
+		id = UKR_comrade_devotion
+		text = UKR_comrade_devotion
+		icon = GFX_goal_UKR_comrade
+		cost = 5
+		prerequisite = {
+			focus = UKR_Friendship_Nations
+		}
+		x = -2
+		y = 7
+		relative_position_id = UKR_Invite_Khrushchev
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName]: Focus UKR_comrade_devotion"
+					add_research_slot = 1
+					add_ideas = UKR_workers
+				}
+
+	}
+	focus = {
+		id = UKR_new_society
+		text = UKR_new_society
+		icon = GFX_goal_UKR_The_New_Ukrainian_Society
+		cost = 5
+		prerequisite = {
+			focus = UKR_comrade_devotion
+		}
+		x = -2
+		y = 8
+		relative_position_id = UKR_Invite_Khrushchev
+			completion_reward = {
+					set_country_flag = zb
+					log = "[GetDateText]: [Root.GetName]: Focus UKR_new_society"
+					custom_effect_tooltip = new_society_tooltip
+					swap_ideas = {
+							remove_idea = UKR_workers
+							add_idea = UKR_workers2
+						}
+			}
+
+	}
+}

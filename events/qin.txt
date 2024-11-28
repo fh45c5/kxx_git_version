@@ -1,0 +1,772 @@
+add_namespace = qin
+add_namespace = xin_wen
+
+country_event = {
+	id = qin.6
+	title = qin.6.t
+	desc = qin.6.d
+	picture = GFX_report_event_tao_yong
+
+	is_triggered_only = yes
+	
+	option = {
+		name = qin.6.a
+		add_stability = 0.01
+		add_political_power = 10
+		hidden_effect = {	
+			news_event = { id = xin_wen.6 days = 1 }
+		}
+	}
+}
+country_event = {
+	id = qin.5
+	title = qin.5.t
+	desc = qin.5.d
+	picture = GFX_report_event_SHX_guominjun_cavalry
+
+	trigger = {
+		tag = SZC
+		is_subject = no
+		has_country_flag = ying_su_qin_guo
+        592 = { is_owned_by_ROOT_or_subject = yes } #广州
+		608 = { is_owned_by_ROOT_or_subject = yes } #北京
+		613 = { is_owned_by_ROOT_or_subject = yes } #南京
+		1048 = { is_owned_by_ROOT_or_subject = yes } #武汉
+		716 = { is_owned_by_ROOT_or_subject = yes } #沈阳
+		325 = { is_owned_by_ROOT_or_subject = yes } #昆明
+		1072 = { is_owned_by_ROOT_or_subject = yes } #太原
+    }
+	fire_only_once = yes
+	
+	option = {
+		name = qin.5.a
+		add_war_support = 0.1
+		add_political_power = 100
+		set_global_flag = china_united
+		hidden_effect = {	
+			news_event = { id = xin_wen.3 days = 1 }
+		}
+	}
+}
+country_event = {
+	id = qin.1
+	title = qin.1.t
+	desc = qin.1.d
+	picture = GFX_report_event_FNG_army1
+
+	fire_only_once = yes
+	trigger = {
+		tag = SZC
+		is_ai = no
+		date > 1936.3.4
+    }
+	
+	option = {
+		name = qin.1.a
+		ai_will_do = {
+			factor = 1 
+		}
+		create_corps_commander = { #Auto-Generated
+			name = "赢苏"
+			portrait_path = "gfx/leaders/qin/QIN_ying_su.png"
+			traits = { }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 3
+		}
+		set_country_flag = qin_b
+	}
+	option = {
+		name = qin.1.b
+		ai_will_do = {
+			factor = 1
+		}
+		set_country_flag = qin_bing_bian
+	}
+}
+country_event = {
+	id = qin.2
+	title = qin.2.t
+	desc = qin.2.d
+	picture = GFX_report_event_CHI_tiger_room
+	fire_only_once = yes
+	trigger = {
+		tag = SZC
+		has_country_flag = qin_b
+		has_completed_focus = SZC_Bring_Peace_to_Sichuan
+    }
+	option = {
+		name = qin.2.a
+		set_country_flag = ying_su_qin_guo
+		load_focus_tree = qin_ying
+		complete_national_focus = qin_zheng_zhi_1
+		retire_character = SZC_yang_sen
+		set_politics = { ruling_party = paternal_autocrat }
+		create_country_leader = {
+			name = "赢苏"
+			desc = "QIN_ying_su_leader_desc"
+			picture = "gfx/leaders/qin/QIN_ying_su.png"
+			expire = "1965.1.1"
+			ideology = pataut_new_legalism_subtype
+			traits = {}
+		}
+		complete_national_focus = SZC_Chengdu_Chongqing_Railway
+		add_popularity = { ideology = paternal_autocrat popularity = 0.4 }
+		set_party_name = { ideology = paternal_autocrat long_name = ysp_long name = ysp }
+		hidden_effect = {
+			news_event = { id = xin_wen.1 days = 1 }
+		}
+	}
+}
+country_event = {
+	id = qin.3
+	title = qin.3.t
+	desc = qin.3.d
+	picture = GFX_report_event_YUN_old_dali
+
+	trigger = {
+		tag = SZC
+        has_country_flag = ying_su_qin_guo
+		NOT = { country_exists = QIE }
+		owns_state = 799
+    }
+	fire_only_once = yes
+	
+	option = {
+		name = qin.3.a
+		load_focus_tree = qin_guo
+		complete_national_focus = qin_guo_zz1
+		set_cosmetic_tag = QIN
+		hidden_effect = {
+			news_event = { id = xin_wen.2 days = 1 }
+			country_event = { days = 365 id = qin.13 }
+		}	
+		add_named_threat = { threat = 5 name = qin_guo_chong_sheng}	
+	}
+}
+country_event = {
+	id = qin.10
+	title = qin.10.t
+	desc = qin.10.d
+	picture = GFX_news_event_war_or_hp
+	trigger = {
+		tag = SZC
+		is_subject = no
+		has_country_flag = ying_su_qin_guo
+        322 = { is_core_of= SZC }  #西藏
+		617 = { is_core_of= SZC } #新疆
+		330 = { is_core_of= SZC } #蒙古
+    }
+	fire_only_once = yes
+	option = {
+		name = qin.10.a
+		add_ideas = xiu_xi
+	}
+	option = {
+		name = qin.10.b
+		add_ideas = yuan_zheng
+		complete_national_focus = qin_da6
+		hidden_effect = {
+			news_event = { id = xin_wen.4 days = 1 }
+			add_named_threat = { threat = 5 name = yuan_more_war}
+		}
+	}
+}
+country_event = {
+	id = qin.11
+	title = qin.11.t
+	desc = qin.11.d
+	picture = GFX_report_event_CHI_victory
+	trigger = {
+       has_country_flag = fczj
+	   has_completed_focus = qin_guo_ge1
+    }	
+	fire_only_once = yes
+	option = {
+		name = qin.11.a
+		add_stability = -0.2
+		add_manpower = -35442
+	}
+}
+country_event = {
+	id = qin.12
+	title = qin.12.t
+	desc = qin.12.d
+	picture = GFX_report_event_GXC_guangzhou_government_gate
+	is_triggered_only = yes
+	option = {
+		name = qin.12.a
+		add_to_tech_sharing_group = szc_lian_he_research
+	}
+}
+country_event = {
+	id = qin.13
+	title = qin.13.t
+	desc = qin.13.d
+	picture = GFX_report_event_huan_qing
+	is_triggered_only = yes
+	option = {
+		name = qin.13.a
+		add_political_power = 10
+		hidden_effect = {
+			country_event = { days = 365 id = qin.13 }
+		}
+	}
+}
+country_event = {
+	id = qin.90
+	title = qin.90.t
+	desc = qin.90.d
+	picture = GFX_report_event_SIK_kashgar
+
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = shou_du_xian
+		has_war = no
+		capital_scope = {
+			NOT = {
+				state = 799
+			}			
+		}
+    }
+	
+	option = {
+		name = qin.90.a
+		set_capital = { state = 799 }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	option = {
+		name = qin.90.b
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = qin.100
+	title = qin.100.t
+	desc = qin.100.d
+	picture = GFX_report_event_JAP_diet
+	is_triggered_only = yes
+	immediate = { 
+		hidden_effect = { 
+			country_event = { days = 10 id = qin.101 }
+		}
+	}	
+	option = {
+		name = qin.100.a
+	}
+}
+country_event = {
+	id = qin.101
+	title = qin.101.t
+	desc = qin.101.d
+	picture = GFX_report_event_JAP_diet
+	is_triggered_only = yes	
+	immediate = { 
+		hidden_effect = { 
+			country_event = { days = 10 id = qin.102 }
+		}
+	}
+	option = {
+		name = qin.101.a
+		set_country_flag = mzxf
+	}
+	option = {
+		name = qin.101.b
+		set_country_flag = hqzs
+	}
+	option = {
+		name = qin.101.c
+		set_country_flag = ztdw
+	}
+}
+country_event = {
+	id = qin.102
+	title = qin.102.t
+	desc = {
+		text = qin.102.d.ybj 
+		trigger = { owns_state = 608 }
+	}
+	desc = {
+		text = qin.102.d.wbj
+		trigger = { NOT = { owns_state = 608 } }
+	}
+	picture = GFX_report_event_JAP_diet
+	is_triggered_only = yes	
+	immediate = { 
+		hidden_effect = { 
+			country_event = { days = 10 id = qin.103 }
+		}
+	}
+	option = {
+		name = qin.102.a
+		random_owned_controlled_state = { 
+			prioritize = { 605 }
+			increase_state_category_by_one_level = yes
+		}
+		set_victory_points = { province = 4925 value = 30 }
+	}
+	option = {
+		name = qin.102.b
+		random_owned_controlled_state = { 
+			prioritize = { 799 }
+			increase_state_category_by_one_level = yes
+		}
+		set_country_flag = shou_du_xian
+		set_victory_points = { province = 1976 value = 50 }
+		set_province_name = { id = 1976 name = "咸阳" }
+		799 = { set_state_name = "咸阳" }
+		set_capital = { state = 799 }
+		if = {
+			limit = {
+				NOT = { 
+					799 = { is_core_of= ROOT }
+				}
+			}
+			add_state_core = 799
+		}
+	}
+	option = {
+		name = qin.102.c
+		random_owned_controlled_state = { 
+			prioritize = { 799 }
+			increase_state_category_by_one_level = yes
+		}
+		set_country_flag = shou_du_xian
+		set_victory_points = { province = 1976 value = 50 }
+		set_capital = { state = 799 }
+		if = {
+			limit = {
+				NOT = { 
+					799 = { is_core_of= ROOT }
+				}
+			}
+			add_state_core = 799
+		}
+	}
+	option = {
+		name = qin.102.d
+		trigger = {
+			owns_state = 608
+		}
+		set_capital = { state = 608 }
+		random_owned_controlled_state = { 
+			prioritize = { 608 }
+			increase_state_category_by_one_level = yes
+		}
+	}	
+}
+country_event = {
+	id = qin.103
+	title = qin.103.t
+	desc = qin.103.d
+	picture = GFX_report_event_JAP_diet
+	is_triggered_only = yes	
+	immediate = { 
+		hidden_effect = { 
+			country_event = { days = 10 id = qin.104 }
+		}
+	}
+	option = {
+		name = qin.103.a
+	}
+	option = {
+		name = qin.103.b
+		set_country_flag = fczj
+	}
+}
+country_event = {
+	id = qin.104
+	title = qin.104.t
+	desc = qin.104.d
+	picture = GFX_report_event_JAP_diet
+	is_triggered_only = yes
+	immediate = { 
+		hidden_effect = { 
+			country_event = { days = 10 id = qin.105 }
+		}
+	}
+	option = {
+		name = qin.104.a
+	}
+	option = {
+		name = qin.104.b
+	}
+}
+country_event = {
+	id = qin.105
+	title = qin.105.t
+	desc = qin.105.d
+	picture = GFX_report_event_JAP_diet
+	is_triggered_only = yes	
+	immediate = { 
+		hidden_effect = { 
+			country_event = { days = 10 id = qin.106 }
+		}
+	}
+	option = {
+		name = qin.105.a
+	}
+	option = {
+		name = qin.105.b
+	}
+}
+country_event = {
+	id = qin.106
+	title = qin.106.t
+	desc = qin.106.d
+	picture = GFX_report_event_JAP_diet
+	is_triggered_only = yes	
+	immediate = { 
+		hidden_effect = { 
+			country_event = { days = 10 id = qin.107 }
+		}
+	}
+	option = {
+		name = qin.106.a
+		set_country_flag = bxs
+	}
+	option = {
+		name = qin.106.b
+		set_country_flag = sexs
+	}
+}
+country_event = {
+	id = qin.107
+	title = qin.107.t
+	desc = qin.107.d
+	picture = GFX_report_event_CHI_new_government
+	is_triggered_only = yes	
+	option = {
+		name = qin.107.a
+		complete_national_focus = qin_guo_ge1
+		if = {
+			limit = {
+				has_country_flag = mzxf
+			}
+			custom_effect_tooltip = zhxj
+			add_ideas = mzxf
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.05
+			}
+			set_party_name = { 
+				ideology = social_democrat  
+				name = 工党 
+        	}
+			set_party_name = { 
+				ideology = social_liberal  
+				name = 社会党 
+			}
+			set_party_name = { 
+				ideology = market_liberal  
+				name = 社会党 
+			}
+			set_party_name = { 
+				ideology = social_conservative  
+				name = 宪政党 
+			}
+			set_party_name = { 
+				ideology = authoritarian_democrat  
+				name = 宪政党 
+			}
+			set_party_name = { 
+				ideology = paternal_autocrat  
+				name =帝国党 
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = hqzs
+			}
+			add_ideas = hqxf
+			add_popularity = { ideology = paternal_autocrat popularity = 1 }
+		}
+		else_if = {
+			limit = {
+				has_country_flag = ztdw
+			}
+			custom_effect_tooltip = zhxj
+			add_ideas = ztxf
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = social_liberal
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = social_conservative
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.05
+			}
+			set_party_name = { 
+				ideology = social_democrat  
+				name = 工党 
+        	}
+			set_party_name = { 
+				ideology = social_liberal  
+				name = 社会党 
+			}
+			set_party_name = { 
+				ideology = market_liberal  
+				name = 社会党 
+			}
+			set_party_name = { 
+				ideology = social_conservative  
+				name = 宪政党 
+			}
+			set_party_name = { 
+				ideology = authoritarian_democrat  
+				name = 宪政党 
+			}
+			set_party_name = { 
+				ideology = paternal_autocrat  
+				name =帝国党 
+			}
+		}
+	}
+}
+country_event = {
+	id = qin.108
+	title = qin.108.t
+	desc = qin.108.d
+	picture = GFX_report_event_asia_tribunal
+	is_triggered_only = yes	
+	option = {
+		name = qin.108.a
+		hidden_effect = {
+			country_event = { days = 30 id = qin.109 }
+		}
+	}
+}
+country_event = {
+	id = qin.109
+	title = qin.109.t
+	desc = qin.109.d
+	picture = GFX_report_event_SHX_shanxi_provincal_bank
+	is_triggered_only = yes	
+	option = {
+		name = qin.109.a
+		hidden_effect = {
+			country_event = { days = 30 id = qin.110 }
+		}
+	}
+}
+country_event = {
+	id = qin.110
+	title = qin.110.t
+	desc = qin.110.d
+	picture = GFX_report_event_CHI_vote
+	is_triggered_only = yes	
+	option = {
+		name = qin.110.a
+		set_politics = { 
+			ruling_party = social_democrat 
+		}
+		add_popularity = { ideology = social_democrat popularity =0.4 }
+	}
+	option = {
+		name = qin.110.b
+		set_politics = { 
+			ruling_party = social_liberal 
+		}
+		add_popularity = { ideology = social_liberal popularity =0.2 }
+		add_popularity = { ideology = market_liberal popularity =0.2 }
+		set_temp_variable = { coalition_partner_var = token:market_liberal }
+		add_to_coalition = yes
+	}
+	option = {
+		name = qin.110.c
+		set_politics = { 
+			ruling_party = social_conservative 
+		}
+		add_popularity = { ideology = social_conservative popularity =0.2 }
+		add_popularity = { ideology = authoritarian_democrat popularity =0.2 }
+		set_temp_variable = { coalition_partner_var = token:authoritarian_democrat }
+		add_to_coalition = yes
+	}
+	option = {
+		name = qin.110.e
+		set_politics = { 
+			ruling_party = paternal_autocrat 
+		}
+		add_popularity = { ideology = paternal_autocrat popularity =0.4 }
+	}
+}
+
+news_event = {
+	id = xin_wen.6
+	title = xin_wen.6.t
+	desc = xin_wen.6.d
+	picture = GFX_news_event_qin_bing_ma
+
+	is_triggered_only = yes
+	fire_for_sender = yes
+	major = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	show_major = {
+		regional_china_news = yes
+	}
+
+	option = {
+		name = xin_wen.6.a
+	}
+}
+news_event = {
+	id = xin_wen.1
+	title = xin_wen.1.t
+	desc = xin_wen.1.d
+	picture = GFX_news_event_ANQ_beijing
+
+	is_triggered_only = yes
+	fire_for_sender = yes
+	major = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	show_major = {
+		regional_china_news = yes
+	}
+
+	option = {
+		name = xin_wen.1.a
+		trigger = {
+			NOT = { tag = SZC }
+		}
+	}
+	option = {
+		name = xin_wen.1.b
+		trigger = {
+			tag = SZC
+		}
+	}
+}
+news_event = {
+	id = xin_wen.2
+	title = xin_wen.2.t
+	desc = xin_wen.2.d
+	picture = GFX_news_event_deng_ji
+
+	is_triggered_only = yes
+	fire_for_sender = yes
+	major = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	show_major = {
+		regional_china_news = yes
+	}
+
+	option = {
+		name = xin_wen.2.a
+		trigger = {
+			NOT = { tag = SZC }
+		}
+	}
+	option = {
+		name = xin_wen.2.b
+		trigger = {
+			tag = SZC
+		}
+	}
+}
+news_event = {
+	id = xin_wen.3
+	title = xin_wen.3.t
+	desc = xin_wen.3.d
+	picture = GFX_news_event_china_unified
+
+	is_triggered_only = yes
+	fire_for_sender = yes
+	major = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	show_major = {
+		regional_china_news = yes
+	}
+
+	option = {
+		name = xin_wen.3.a
+		trigger = {
+			NOT = { tag = SZC }
+		}
+	}
+	option = {
+		name = xin_wen.3.b
+		trigger = {
+			tag = SZC
+		}
+	}
+}
+news_event = {
+	id = xin_wen.4
+	title = xin_wen.4.t
+	desc = xin_wen.4.d
+	picture = GFX_news_event_more_war
+
+	is_triggered_only = yes
+	fire_for_sender = yes
+	major = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	show_major = {
+		regional_china_news = yes
+	}
+
+	option = {
+		name = xin_wen.4.a
+	}
+}

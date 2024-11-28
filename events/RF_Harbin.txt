@@ -1,0 +1,465 @@
+###########################
+##### Harbin Events #######
+###########################
+
+add_namespace = HAR
+
+##Zhelto Collapse: The Sidelines
+#Manchus
+country_event = {
+	id = HAR.11
+	title = HAR.11.t
+	desc = HAR.11.desc
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			MNS = {
+				transfer_state = 714
+				transfer_state = 884
+				transfer_state = 563
+				add_state_core = 714
+				add_state_core = 884
+				add_state_core = 563
+				set_variable = { smuta_surrender_limit = -0.30 }
+				set_variable = { smuta_min_export = -0.8 }
+				set_variable = { smuta_tef = -0.8 }
+				add_dynamic_modifier = { modifier = second_smuta }
+				hidden_effect = {
+					load_oob = MNS
+					inherit_technology = ZHR
+				}
+			}
+		}
+	}
+	#Change to MNS
+	option = {
+		name = HAR.11.A
+		MNS = {
+			change_tag_from = HAR
+		}
+		HAR = {
+			hidden_effect = {
+				country_event = {
+					id = HAR.12
+					days = 2
+				}
+			}
+		}
+	}
+	#Stay
+	option = {
+		name = HAR.11.B
+		HAR = {
+			hidden_effect = {
+				country_event = {
+					id = HAR.12
+					days = 2
+				}
+			}
+		}
+	}
+}
+
+#Priamurye
+country_event = {
+	id = HAR.12
+	title = HAR.12.t
+	desc = HAR.12.desc
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			WA3 = {
+				transfer_state = 1246
+				transfer_state = 408
+				transfer_state = 409
+				add_state_core = 1246
+				add_state_core = 408
+				add_state_core = 409
+				set_variable = { smuta_surrender_limit = -0.30 }
+				set_variable = { smuta_min_export = -0.8 }
+				set_variable = { smuta_tef = -0.8 }
+				add_dynamic_modifier = { modifier = second_smuta }
+				load_oob = WA3
+				inherit_technology = ZHR
+			}
+		}
+	}
+	#Change to Priamurye
+	option = {
+		name = HAR.12.A
+		WA3 = {
+			change_tag_from = HAR
+		}
+		HAR = {
+			hidden_effect = {
+				country_event = {
+					id = HAR.13
+					days = 2
+				}
+			}
+		}
+	}
+	#Stay
+	option = {
+		name = HAR.12.B
+		HAR = {
+			hidden_effect = {
+				country_event = {
+					id = HAR.13
+					days = 2
+				}
+			}
+		}
+	}
+}
+
+#Green Ukraine
+country_event = {
+	id = HAR.13
+	title = HAR.13.t
+	desc = HAR.13.desc
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			GUK = {
+				transfer_state = 560
+				add_state_core = 560
+				set_variable = { smuta_surrender_limit = -0.30 }
+				set_variable = { smuta_min_export = -0.8 }
+				set_variable = { smuta_tef = -0.8 }
+				add_dynamic_modifier = { modifier = second_smuta }
+				load_oob = GUK
+				inherit_technology = ZHR
+			}
+		}
+	}
+	#Change to Green Ukraine
+	option = {
+		name = HAR.13.A
+		GUK = {
+			change_tag_from = HAR
+		}
+		HAR = {
+			country_event = {
+				id = HAR.14
+				days = 2
+			}
+		}
+	}
+	#Stay
+	option = {
+		name = HAR.13.B
+		HAR = {
+			country_event = {
+				id = HAR.14
+				days = 2
+			}
+		}
+	}
+}
+
+#Free Creatorium
+country_event = {
+	id = HAR.14
+	title = HAR.14.t
+	desc = HAR.14.desc
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			FCR = {
+				transfer_state = 561
+				add_state_core = 561
+				set_variable = { smuta_surrender_limit = -0.30 }
+				set_variable = { smuta_min_export = -0.8 }
+				set_variable = { smuta_tef = -0.8 }
+				add_dynamic_modifier = { modifier = second_smuta }
+				hidden_effect = {
+					load_oob = FCR
+					inherit_technology = ZHR
+				}
+			}
+		}
+	}
+	#Change to Free Creatorium
+	option = {
+		name = HAR.14.A
+		FCR = {
+			change_tag_from = HAR
+		}
+		HAR = {
+			country_event = {
+				id = HAR.15
+				days = 2
+			}
+		}
+	}
+	#Stay
+	option = {
+		name = HAR.14.B
+		HAR = {
+			country_event = {
+				id = HAR.15
+				days = 2
+			}
+		}
+	}
+}
+
+#Boldyrev
+country_event = {
+	id = HAR.15
+	title = HAR.15.t
+	desc = HAR.15.desc
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			PSL = {
+				transfer_state = 883
+				add_state_core = 883
+				set_variable = { smuta_surrender_limit = -0.30 }
+				set_variable = { smuta_min_export = -0.8 }
+				set_variable = { smuta_tef = -0.8 }
+				add_dynamic_modifier = { modifier = second_smuta }
+				load_oob = PSL
+				inherit_technology = ZHR
+			}
+		}
+	}
+	#Switch
+	option = {
+		name = HAR.15.A
+		PSL = {
+			change_tag_from = HAR
+		}
+		HAR = {
+			country_event = {
+				id = HAR.16
+				days = 2
+			}
+		}
+	}
+	#Don't Switch
+	option = {
+		name = HAR.15.B
+		HAR = {
+			country_event = {
+				id = HAR.16
+				days = 2
+			}
+		}
+	}
+}
+
+
+#All Russian People Crusade
+country_event = {
+	id = HAR.16
+	title = HAR.16.t
+	desc = HAR.16.desc
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			ARC = {
+				transfer_state = 657
+				add_state_core = 657
+				set_variable = { smuta_surrender_limit = -0.30 }
+				set_variable = { smuta_min_export = -0.8 }
+				set_variable = { smuta_tef = -0.8 }
+				add_dynamic_modifier = { modifier = second_smuta }
+				load_oob = ARC
+				inherit_technology = ZHR
+			}
+		}
+	}
+	#Switch to All Russian People Crusade
+	option = {
+		name = HAR.16.A
+		ARC = {
+			change_tag_from = HAR
+		}
+	}
+	#Stay
+	option = {
+		name = HAR.16.B
+	}
+}
+
+
+#Harbin Directorate Elections
+#Results are in
+country_event = {
+	id = HAR.1
+	title = HAR.1.t
+	desc = HAR.1.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { 
+		name = HAR.1.a
+		ai_chance = { factor = 40 }
+		set_country_flag = HAR_milyukov_wins
+		set_politics = {ruling_party = liberalism }		
+		mark_focus_tree_layout_dirty = yes
+	}
+
+	option = {
+		name = HAR.1.b
+		ai_chance = { factor = 30 }
+		set_country_flag = HAR_myakotin_wins
+		set_politics = {ruling_party = progressivism }
+		set_country_flag = soc_dems_are_socialists
+		mark_focus_tree_layout_dirty = yes
+	}
+
+	option = {
+		name = HAR.1.c
+		ai_chance = { factor = 20 }
+		set_politics = { ruling_party = reactionism }
+		set_country_flag = HAR_zaborovsky_wins
+		mark_focus_tree_layout_dirty = yes
+	}
+
+	option = {
+		name = HAR.1.d
+		ai_chance = { factor = 10 }
+		set_country_flag = HAR_fajda_wins
+		set_politics = { ruling_party = accelerationism }
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+
+#Results are i- WHY IS HE HERE?! HE LOST! HE COLLAPSED ZHELTOROSSIYA!
+country_event = {
+	id = HAR.2
+	title = HAR.2.t
+	desc = HAR.2.desc
+	picture = GFX_report_event_robot_skull_face
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { 
+		name = HAR.2.a
+		ai_chance = { factor = 5 }
+		set_politics = {ruling_party = liberalism }	
+		set_country_flag = HAR_milyukov_wins
+		mark_focus_tree_layout_dirty = yes
+		hidden_effect = {
+			remove_country_leader_trait = HAR_second_chance
+			add_country_leader_trait = HAR_distrusted_record
+		}
+	}
+
+	option = {
+		name = HAR.2.b
+		ai_chance = { factor = 35 }
+		set_politics = {ruling_party = progressivism }
+		set_country_flag = soc_dems_are_socialists
+		set_country_flag = HAR_myakotin_wins
+		mark_focus_tree_layout_dirty = yes
+	}
+
+	option = {
+		name = HAR.2.c
+		ai_chance = { factor = 30 }
+		set_politics = { ruling_party = reactionism }
+		set_country_flag = HAR_zaborovsky_wins
+		mark_focus_tree_layout_dirty = yes
+	}
+
+	option = {
+		name = HAR.2.d
+		ai_chance = { factor = 20 }
+		set_politics = { ruling_party = accelerationism }
+		set_country_flag = HAR_fajda_wins
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+
+#Harbin - Manchu Border War
+#Win
+country_event = {
+	id = HAR.20
+	title = HAR.20.t
+	desc = HAR.20.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+		name = HAR.20.a
+		HAR = {
+			transfer_state = 912
+			if = {
+				limit = {
+					has_country_leader_with_trait = HAR_distrusted_record
+				}
+				hidden_effect = {
+					remove_country_leader_trait = HAR_distrusted_record
+					add_country_leader_trait = HAR_second_chance
+				}
+			}
+		}
+	}
+
+}
+#Lose
+country_event = {
+	id = HAR.21
+	title = HAR.21.t
+	desc = HAR.21.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+		name = HAR.21.a
+		HAR = {
+			add_war_support = -0.5
+			add_stability = -0.5
+			add_political_power = -150
+			978 = {
+				damage_building = {
+					type = infrastructure
+					damage = 2
+				}
+			}
+		}
+	}
+}
+country_event = { 
+	id = HAR.30
+	title = HAR.30.t
+	desc = HAR.30.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+		name = HAR.30.a
+		set_politics = {
+			ruling_party = syndicalist
+			elections_allowed = no
+		}
+		set_cosmetic_tag = HAR_anarchism
+		create_country_leader = {
+			name = "阿列克谢·加斯捷夫"
+			desc="POLITICS_KERENSKY_DESC"
+			picture = "gfx/leaders/HAR/Portrait_HAR_Alexei_Gastev.png"
+			expire = "1965.1.1"
+			ideology = anarcho_syndicalist_subtype
+		}
+	}
+	option = { 
+		name = HAR.30.b
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = no
+		}
+		set_cosmetic_tag = HAR_anarchism
+		create_country_leader = {
+			name = "阿莉萨·罗森鲍姆"
+			desc="POLITICS_KERENSKY_DESC"
+			picture = "gfx/leaders/HAR/Portrait_HAR_Alisa_Rosenbaum.png"
+			expire = "1965.1.1"
+			traits = { hog_political_protege }
+			ideology = authdem_anarchism_subtype
+		}
+	}
+}

@@ -1,0 +1,513 @@
+﻿capital = 279
+OOB = "CHL"
+set_naval_oob = "CHL_naval"
+
+set_technology = {
+	### Infantry ###
+	infantry_weapons = 1
+	basic_train = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_mountaineers = 1
+	gw_artillery = 1
+	tech_military_police = 1
+}
+set_stability = 0.3
+set_war_support = 0.8
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "CHL_air_bba"
+		set_technology = {
+			aa_lmg = 1
+			early_bombs = 1
+			engines_1 = 1
+			iw_small_airframe = 1
+		}
+	else = {
+		set_air_oob = "CHL_air_legacy"
+		set_technology = {
+			early_fighter = 1
+		}
+	}
+}
+
+### Navy - MtG ###
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		panzerschiffe = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		cruiser_submarines = 1
+		early_ship_hull_heavy = 1
+		coastal_defense_ships = 1
+		pre_dreadnoughts = 1
+		
+		basic_naval_mines = 1
+
+		## Modules##
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_heavy_battery = 1
+		basic_depth_charges = 1
+		basic_torpedo = 1
+		improved_ship_torpedo_launcher = 1
+		basic_cruiser_armor_scheme = 1
+
+		### Transport ###
+		mtg_transport = 1
+	}
+}
+
+### Navy - Non MtG ###
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_technology = {
+		early_destroyer = 1
+		basic_destroyer = 1
+		early_light_cruiser = 1
+		basic_light_cruiser = 1
+		early_submarine = 1
+		basic_submarine = 1
+		early_heavy_cruiser = 1
+		basic_heavy_cruiser = 1
+		early_battleship = 1
+
+		### Transport ###
+		transport = 1
+	}
+}
+
+set_politics = {
+	ruling_party = syndicalist
+	last_election = "1935.11.29"
+	election_frequency = 60
+	elections_allowed = no
+}
+
+set_popularities = {
+	totalist = 10
+	radical_socialist = 12
+	syndicalist = 47
+	social_democrat = 8
+	social_liberal = 2
+	market_liberal = 0
+	social_conservative = 2
+	authoritarian_democrat = 5
+	paternal_autocrat = 5
+	national_populist = 9
+}
+
+set_autonomy = {
+	target = FOP
+	autonomy_state = kr_autonomous_puppet
+}
+
+set_convoys = 30
+set_research_slots = 3
+
+add_ideas = {
+	limited_conscription
+	CHL_home_of_south_american_syndicalism
+    CHL_holy_shit_inflation
+	CHL_pol_infight
+	CHL_useless_industry
+	CHL_rebelion_sur
+	chl_camioneros_protesta
+	CHL_Clotario_Blest_Riffo_hog_syn
+	CHL_Luis_Arteaga_Garcia_for_syn
+	CHL_Augustin_Edwards_eco_syn
+	CHL_Carlos_Gregorio_Davila_Espinoza_sec_syn
+	chile_political_collapse
+	chile_collapsed_economy
+	CHL_illiteracy
+	payed_salaries_mil_chl
+}
+set_variable = { var = CHL_social_anger value = 50  }
+set_variable = { var = CHL_carabineros_loyalty value = 80  }
+set_variable = { var = CHL_military_loyalty value = 40  }
+set_variable = { var = CHL_navy_loyalty value = 40  }
+set_variable = { var = CHL_peasantry_loyalty value = 30   }
+set_variable = { var = CHL_camioneros_loyalty value = 36  }
+set_variable = { var = CHL_south_control value = 85  }
+set_variable = { var = CHL_chiloe_control value = 100}
+set_variable = { var = CHL_chiloe_influence value = 30 }
+set_variable = { var = CHL_chiloe_ports_controlled value = 0 }
+set_variable = { var = CHL_strenght_coceat value = 45 }
+
+
+set_variable = { var = CHL_illegal_money value = 500 }
+
+### Events ###
+country_event = { id = chl.3 hours = 2 } #Intro
+country_event = { id = chl.51 days = 833 } #Our Antartic Claims
+country_event = { id = chl.1 days = 1120 } #Earthquake!
+# Socialist pre-election events
+country_event = { id = chl.33 days = 3431 } #Ricardo Eliécer Neftalí rises among Orthodox ranks
+country_event = { id = chl.34 days = 3479 } #Labarca will try again!
+country_event = { id = chl.35 days = 3501 } #Neftalí releases politically charged book!
+country_event = { id = chl.36 days = 3527 } #Lucila aggressively responds to Neftalí's claims
+country_event = { id = chl.37 days = 3547 } #Carlos Díaz Loyola endorses Labarca and mocks Neftalí
+country_event = { id = chl.38 days = 3561 } #Neftalí responds to accusations and asks for civility
+country_event = { id = chl.39 days = 3641 } #Neftalí and Lucila reconcile over misunderstandings
+country_event = { id = chl.40 days = 3659 } #Carlos Díaz Loyola charges again at Neftalí
+country_event = { id = chl.41 days = 3707 } #Carlos Díaz Loyola takes reigns of the Totalists!
+
+# Non-socialist pre-election events
+
+create_country_leader = {
+	name = "弗朗西斯科·哈维尔·迪亚斯·巴尔德拉马"
+	picture = "gfx/leaders/CHL/Portrait_CHL_Fransico_Javier_Dias_Valderrama.png"
+	expire = "1965.1.1"
+	ideology = hispanism_subtype
+}
+
+create_country_leader = {
+	name = "巴托洛梅·吉列尔莫·布兰切·埃斯佩霍"
+	picture = "gfx/leaders/CHL/Portrait_Bartolome_Blanche.png"
+	expire = "1965.1.1"
+	ideology = junta_subtype
+}
+
+create_country_leader = {
+	name = "卡洛斯·伊瓦涅斯·德尔坎波"
+	picture = "gfx/leaders/CHL/Portrait_Chile_Carlos_Campo.png"
+	expire = "1965.1.1"
+	ideology = authoritarian_democrat_subtype
+}
+
+create_country_leader = {
+	name = "爱德华多·克鲁斯-科克"
+	picture = "gfx/leaders/CHL/Portrait_CHL_Eduardo_Coke.png"
+	expire = "1965.1.1"
+	ideology = social_conservative_subtype
+}
+
+create_country_leader = {
+	name = "阿图罗·亚历山德里·帕尔马"
+	picture = "gfx/leaders/CHL/Portrait_Chile_Arturo_Alessandri_Palma.png"
+	expire = "1965.1.1"
+	ideology = social_liberal_subtype
+}
+
+create_country_leader = {
+	name = "佩德罗·阿吉雷·塞尔达"
+	picture = "gfx/leaders/CHL/Portrait_Chile_Pedro_Cerda.png"
+	expire = "1965.1.1"
+	ideology = social_democrat_subtype
+}
+
+create_country_leader = {
+	name = "萨尔瓦多·阿连德"
+	picture = "gfx/leaders/CHL/Portrait_Chile_Salvador_Allende.png"
+	expire = "1965.1.1"
+	ideology = national_communism_subtype
+}
+
+create_country_leader = {
+	name = "阿图罗·普加"
+	picture = "gfx/leaders/CHL/Portrait_Chile_Arturo_Puga.png"
+	expire = "1965.1.1"
+	ideology = syn_kleptocracy_subtype
+}
+
+#create_country_leader = {
+#	name = "Marmaduke Grove"
+#	desc = "POLITICS_MARMADUKE_GROVE_DESC"
+#	picture = "gfx/leaders/CHL/Portrait_Chile_Marmaduke_Grove.png"
+#	expire = "1965.1.1"
+#	ideology = syndicalist_subtype
+#}
+create_country_leader = {
+			name = "奥雷利欧·塞莱登·帕尔马"
+			picture = "gfx/leaders/CHL/Portrait_Chile_Aurelio_Palma.png"
+			expire = "1965.1.1"
+			ideology = radical_socialist_subtype
+}
+
+create_country_leader = {
+	name = "卡洛斯·康特雷拉斯·拉巴尔卡"
+	picture = "gfx/leaders/CHL/Portrait_Chile_Carlos_Labarca.png"
+	expire = "1965.1.1"
+	ideology = natsynd_subtype
+}
+
+
+### Field Marshals ###
+create_field_marshal = {
+	name = "阿图罗·普加"
+	portrait_path = "gfx/leaders/CHL/Portrait_Chile_Arturo_Puga.png"
+	traits = {
+		politically_connected
+		war_hero
+		inspirational_leader
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+}
+
+### Corps Commanders ###
+create_corps_commander = {
+	name = "巴托洛梅·布兰切"
+	portrait_path = "gfx/leaders/CHL/Portrait_Bartolome_Blanche.png"
+	traits = {
+		career_officer
+		old_guard
+		hill_fighter
+	}
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "阿里奥斯托·埃雷拉"
+	portrait_path = "gfx/leaders/CHL/Portrait_CHL_Ariosto_Herrera_KX.png"
+	traits = {
+		career_officer
+		old_guard
+		harsh_leader
+		artillery_officer
+	}
+	skill = 2
+	attack_skill = 3
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
+}
+create_corps_commander = {
+	name = "拉斐尔·费尔南德斯·雷耶斯"
+	portrait_path = "gfx/leaders/CHL/Portrait_CHL_Reyes.png"
+	traits = {
+		war_hero
+		media_personality
+		artillery_officer
+		hill_fighter
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "维达尔·梅里诺"
+	portrait_path = "gfx/leaders/CHL/Portrait_CHL_Vidal_Merino.png"
+	traits = {
+		harsh_leader
+		inflexible_strategist
+		trait_mountaineer
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "胡安·巴勃罗·本内特"
+	portrait_path = "gfx/leaders/CHL/Portrait_CHL_Bennett.png"
+	traits = {
+		harsh_leader
+		inflexible_strategist
+		trait_mountaineer
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "奥斯卡·伊苏列塔·莫利纳"
+	portrait_path = "gfx/leaders/CHL/Portrait_CHL_Molina.png"
+	traits = {
+		infantry_officer
+		career_officer
+		hill_fighter
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "吉列尔莫·巴里奥斯·蒂拉多"
+	portrait_path = "gfx/leaders/CHL/Portrait_CHL_Guillermo_Barrios_Tirado_KX.png"
+	traits = {
+		trait_mountaineer
+		infantry_officer
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "阿图罗·埃斯皮诺萨"
+	portrait_path = "gfx/leaders/Generic/Portrait_South_America_Generic_land_new_1.png"
+	traits = {
+		infantry_officer
+		trait_reckless
+		naval_invader
+	}
+	skill = 2
+	attack_skill = 3
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "卡洛斯·富恩特斯·拉贝"
+	portrait_path = "gfx/leaders/Generic/Portrait_South_America_Generic_land_new_2.png"
+	traits = {
+		career_officer
+		trait_cautious
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "奥斯卡·埃斯库德罗"
+	portrait_path = "gfx/leaders/CHL/Portrait_CHL_Oscar_Escudero_Otarola.png"
+	traits = {
+		harsh_leader
+		career_officer
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "阿尔弗雷多·波塔莱斯"
+	portrait_path = "gfx/leaders/Generic/Portrait_Europe_Generic_land_new_1.png"
+	traits = {
+		career_officer
+		trait_cautious
+		ranger
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+### Admirals ###
+
+create_navy_leader = {
+	name = "Consiglio Rebora"
+	portrait_path = "gfx/leaders/Generic/Portrait_Europe_Generic_navy_new_2.png"
+	traits = { }
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	maneuvering_skill = 1
+	coordination_skill = 1
+}
+
+#ARMADA
+create_navy_leader = {
+	name = "Allard Pinto"
+	portrait_path = "gfx/leaders/CHL/Portrait_CHL_Julio_Allard_Pinto.png"
+	traits = { }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	maneuvering_skill = 2
+	coordination_skill = 2
+}
+
+create_navy_leader = {
+	name = "Carlos de la Motte du Portail"
+	portrait_path = "gfx/leaders/CHL/Portrait_CHL_Portail.png"
+	traits = {
+		old_guard
+		spotter
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	maneuvering_skill = 1
+	coordination_skill = 1
+}
+create_navy_leader = {
+	name = "Olegario Reyes Del Río"
+	portrait_path = "gfx/leaders/CHL/Portrait_CHL_Olegario_Reyes_del_Rio.png"
+	traits = {
+	cruiser_captain
+	superior_tactician
+	}
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	maneuvering_skill = 4
+	coordination_skill = 1
+}
+create_navy_leader = {
+	name = "Meriño Bielich"
+	portrait_path = "gfx/leaders/CHL/Portrait_CHL_Vicente_Merino_Bielich.png"
+	traits = { }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	maneuvering_skill = 2
+	coordination_skill = 2
+}
+create_navy_leader = {
+	name = "O'Ryan Orrego"
+	portrait_path = "gfx/leaders/Generic/Portrait_Europe_Generic_navy_new_4.png"
+	traits = {
+		old_guard
+		superior_tactician
+	}
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	maneuvering_skill = 3
+	coordination_skill = 3
+}
+create_navy_leader = {
+	name = "Luis Villarroel de la Rosa"
+	portrait_path = "gfx/leaders/CHL/Portrait_CHL_Luis_Villarroel_de_la_Rosa.png"
+	traits = {
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	maneuvering_skill = 1
+	coordination_skill = 1
+}
+
+
+CHL_start_naval_variant = yes

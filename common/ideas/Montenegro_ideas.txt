@@ -1,0 +1,368 @@
+### Montenegro Ideas ###
+
+ideas = {
+	country = {
+		MNT_The_Chetnik_Revolution = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_The_Chetnik_Revolution" }
+			name = MNT_The_Chetnik_Revolution
+			picture = MNT_The_Chetnik_Revolution
+			allowed = { always = no }
+			modifier = {
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			army_core_attack_factor = 0.05
+			army_core_defence_factor = 0.05
+			}
+		}
+		MNT_The_Chetnik_Revolution_rev_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_The_Chetnik_Revolution_rev_1" }
+			name = MNT_The_Chetnik_Revolution_rev_1
+			picture = MNT_The_Chetnik_Revolution
+			allowed = { always = no }
+			modifier = {
+			conscription = 0.15
+			army_attack_factor = 0.1
+			army_defence_factor = 0.1
+			army_core_attack_factor = 0.1
+			army_core_defence_factor = 0.1
+			army_speed_factor = 0.1
+			out_of_supply_factor = -0.2
+			attrition = -0.2
+			training_time_army_factor = 0.05
+			}
+		}
+		MNT_The_Chetnik_Revolution_rev_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_The_Chetnik_Revolution_rev_2" }
+			name = MNT_The_Chetnik_Revolution_rev_2
+			picture = MNT_The_Chetnik_Revolution
+			allowed = { always = no }
+			modifier = {
+			conscription = 0.15
+			conscription_factor = 0.2
+			army_attack_factor = 0.1
+			army_defence_factor = 0.1
+			army_core_attack_factor = 0.1
+			army_core_defence_factor = 0.1
+			army_speed_factor = 0.1
+			out_of_supply_factor = -0.2
+			attrition = -0.2
+			training_time_army_factor = 0.05
+			army_artillery_defence_factor = 0.1
+			army_artillery_attack_factor = 0.1
+			breakthrough_factor = 0.2
+			no_supply_grace = 24
+			}
+		}
+		MNT_The_Chetnik_Revolution_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_The_Chetnik_Revolution_1" }
+			name = MNT_The_Chetnik_Revolution_1
+			picture = MNT_The_Chetnik_Revolution
+			allowed = { always = no }
+			modifier = {
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			army_core_attack_factor = 0.05
+			army_core_defence_factor = 0.05
+			}
+			targeted_modifier = {
+				tag = SER
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = SER
+				defence_bonus_against = 0.05
+			}
+		}
+		MNT_The_Chetnik_Revolution_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_The_Chetnik_Revolution_2" }
+			name = MNT_The_Chetnik_Revolution_2
+			picture = MNT_The_Chetnik_Revolution
+			allowed = { always = no }
+			modifier = {
+			army_attack_factor = 0.07
+			army_defence_factor = 0.07
+			army_core_attack_factor = 0.07
+			army_core_defence_factor = 0.07
+			attrition = -0.1
+			army_speed_factor = 0.1
+			}
+			targeted_modifier = {
+				tag = SER
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = SER
+				defence_bonus_against = 0.05
+			}
+		}
+		MNT_The_Chetnik_Revolution_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_The_Chetnik_Revolution_3" }
+			name = MNT_The_Chetnik_Revolution_3
+			picture = MNT_The_Chetnik_Revolution
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = -0.3
+			conscription = 0.2
+			army_attack_factor = 0.07
+			army_defence_factor = 0.07
+			army_core_attack_factor = 0.07
+			army_core_defence_factor = 0.07
+			attrition = -0.1
+			drift_defence_factor = 1.0
+			army_speed_factor = 0.1
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.1
+			}
+		}
+		MNT_The_Chetnik_Revolution_4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_The_Chetnik_Revolution_4" }
+			name = MNT_The_Chetnik_Revolution_4
+			picture = MNT_The_Chetnik_Revolution
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = -0.15
+			conscription = 0.2
+			army_attack_factor = 0.2
+			army_defence_factor = 0.2
+			army_core_attack_factor = 0.1
+			army_core_defence_factor = 0.1
+			attrition = -0.1
+			drift_defence_factor = 1.0
+			army_speed_factor = 0.1
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.1
+			}
+		}
+		MNT_The_Chetnik_Revolution_5 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_The_Chetnik_Revolution_5" }
+			name = MNT_The_Chetnik_Revolution_5
+			picture = MNT_The_Chetnik_Revolution
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = -0.15
+			conscription = 0.2
+			army_attack_factor = 0.2
+			army_defence_factor = 0.2
+			army_core_attack_factor = 0.1
+			army_core_defence_factor = 0.1
+			attrition = -0.1
+			drift_defence_factor = 1.0
+			research_speed_factor = 0.2
+			industrial_capacity_factory = 0.15
+			production_speed_buildings_factor = 0.2
+			army_speed_factor = 0.1
+			
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.1
+			}
+		}
+		MNT_yugism = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_yugism" }
+			name = MNT_yugism
+			picture = MNT_yugism
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = 0.05
+			production_factory_max_efficiency_factor = 0.05
+			consumer_goods_factor = -0.05
+			}
+		}
+		MNT_yugism_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_yugism_1" }
+			name = MNT_yugism_1
+			picture = MNT_yugism
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = 0.05
+			production_factory_max_efficiency_factor = 0.05
+			consumer_goods_factor = -0.05
+			production_factory_efficiency_gain_factor = 0.05
+			line_change_production_efficiency_factor = 0.05
+			}
+		}
+		MNT_yugism_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_yugism_1" }
+			name = MNT_yugism_1
+			picture = MNT_yugism
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = 0.2
+			production_factory_max_efficiency_factor = 0.05
+			consumer_goods_factor = -0.05
+			production_factory_efficiency_gain_factor = 0.05
+			line_change_production_efficiency_factor = 0.05
+			production_speed_bunker_factor = 0.1
+			experience_gain_factor = 0.2
+			experience_gain_army_unit_factor = 0.2
+			}
+		}
+		MNT_yugism_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_yugism_3" }
+			name = MNT_yugism_3
+			picture = MNT_yugism
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = 0.2
+			production_factory_max_efficiency_factor = 0.05
+			consumer_goods_factor = -0.15
+			production_factory_efficiency_gain_factor = 0.05
+			line_change_production_efficiency_factor = 0.05
+			stability_weekly = 0.005
+			war_support_weekly = 0.005
+			weekly_manpower = 2000
+			mobilization_speed = 1
+			production_speed_bunker_factor = 0.1
+			experience_gain_factor = 0.2
+			experience_gain_army_unit_factor = 0.2
+			}
+		}
+		MNT_yugism_4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_yugism_4" }
+			name = MNT_yugism_4
+			picture = MNT_yugism
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = 0.3
+			production_factory_max_efficiency_factor = 0.1
+			consumer_goods_factor = -0.25
+			production_factory_efficiency_gain_factor = 0.1
+			line_change_production_efficiency_factor = 0.1
+			stability_weekly = 0.005
+			war_support_weekly = 0.005
+			weekly_manpower = 2500
+			mobilization_speed = 1
+			production_speed_bunker_factor = 0.1
+			experience_gain_factor = 0.2
+			experience_gain_army_unit_factor = 0.2
+			}
+		}
+		MNT_a_government_that_belongs_to_the_people = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_a_government_that_belongs_to_the_people" }
+			name = MNT_a_government_that_belongs_to_the_people
+			picture = MNT_a_government_that_belongs_to_the_people
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = 0.25
+			stability_weekly = 0.005
+			war_support_weekly = 0.005
+			conscription = 0.05
+			}
+		}
+		MNT_a_government_that_belongs_to_the_people_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_a_government_that_belongs_to_the_people_1" }
+			name = MNT_a_government_that_belongs_to_the_people_1
+			picture = MNT_a_government_that_belongs_to_the_people
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = 0.4
+			stability_weekly = 0.007
+			war_support_weekly = 0.007
+			conscription = 0.05
+			political_power_gain = 0.5
+			research_speed_factor = 0.2
+			}
+		}
+		MNT_a_government_that_belongs_to_the_people_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_a_government_that_belongs_to_the_people_2" }
+			name = MNT_a_government_that_belongs_to_the_people_2
+			picture = MNT_a_government_that_belongs_to_the_people
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = 0.6
+			stability_weekly = 0.007
+			war_support_weekly = 0.007
+			conscription = 0.05
+			political_power_gain = 1
+			research_speed_factor = 0.25
+			command_power_gain_mult = 0.5
+			resistance_growth_on_our_occupied_states = 1
+			required_garrison_factor = -0.2
+			}
+		}
+		MNT_red_yugism = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_red_yugism" }
+			name = MNT_red_yugism
+			picture = MNT_red_yugism
+			allowed = { always = no }
+			modifier = {
+			production_speed_buildings_factor = 0.2
+			industry_repair_factor = 0.2
+			industrial_capacity_factory = 0.05
+			production_factory_max_efficiency_factor = 0.05
+			production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		MNT_red_yugism_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_red_yugism_1" }
+			name = MNT_red_yugism_1
+			picture = MNT_red_yugism
+			allowed = { always = no }
+			modifier = {
+			production_speed_buildings_factor = 0.2
+			industry_repair_factor = 0.2
+			industrial_capacity_factory = 0.05
+			production_factory_max_efficiency_factor = 0.05
+			production_factory_efficiency_gain_factor = 0.05
+			consumer_goods_factor = 0.2
+			weekly_manpower = 2000
+			mobilization_speed = 1
+			}
+		}
+		MNT_red_yugism_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MNT_red_yugism_2" }
+			name = MNT_red_yugism_2
+			picture = MNT_red_yugism
+			allowed = { always = no }
+			modifier = {
+			production_speed_buildings_factor = 0.25
+			industry_repair_factor = 0.25
+			industrial_capacity_factory = 0.1
+			production_factory_max_efficiency_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.1
+			consumer_goods_factor = 0.3
+			weekly_manpower = 3000
+			mobilization_speed = 1
+			intelligence_agency_defense = 2
+			resistance_target = -0.1
+			operative_slot = 3
+			new_operative_slot_bonus = 7
+			own_operative_detection_chance_factor = -0.2
+			}
+		}
+	}
+}
+materiel_manufacturer = {
+	designer = yes
+	zastava_mnt = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea zastava_mnt" }
+			allowed = { tag = MNT }
+			available = { 
+			has_completed_focus = MNT_67
+			}
+			traits = { infantry_equipment_producer_defense_1 }
+			research_bonus = {
+				infantry_weapons = 0.1
+			}
+		}
+	}
+tank_manufacturer = {
+		designer = yes
+		
+		industrija_masina_komponenata_mnt = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea industrija_masina_komponenata_mnt" }
+			allowed = { tag = MNT }
+			available = { 
+			has_completed_focus = MNT_65
+			}
+			traits = { small_tank_producer_defense_0 }
+			research_bonus = {
+				armor = 0.1
+			}
+		}
+	}	

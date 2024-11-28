@@ -1,0 +1,1831 @@
+clean_up_african_states = {
+  if = {
+    limit = {
+      NOT = {
+        tag = FRA
+      }
+      OR = {
+        is_in_faction_with = FRA
+        is_subject_of = FRA
+      }
+    }
+    every_owned_state = {
+      limit = {
+        has_state_flag = GER_capitulation_transfer
+        is_on_continent = africa
+        OR = {
+          is_core_of = FRA
+          is_claimed_by = FRA
+          has_variable = ambition_area_@FRA
+        }
+        is_claim_or_core_or_ambition_of_PREV = no
+      }
+      clr_state_flag = GER_capitulation_transfer
+      FRA = {
+        transfer_state = PREV
+      }
+    }
+  }
+  if = {
+    limit = {
+      NOT = {
+        tag = NFA
+      }
+      OR = {
+        is_in_faction_with = NFA
+        is_subject_of = NFA
+      }
+    }
+    every_owned_state = {
+      limit = {
+        has_state_flag = GER_capitulation_transfer
+        is_on_continent = africa
+        OR = {
+          is_core_of = NFA
+          is_claimed_by = NFA
+          has_variable = ambition_area_@NFA
+        }
+        is_claim_or_core_or_ambition_of_PREV = no
+      }
+      clr_state_flag = GER_capitulation_transfer
+      NFA = {
+        transfer_state = PREV
+      }
+    }
+  }
+  if = {
+    limit = {
+      NOT = {
+        tag = POR
+      }
+      OR = {
+        is_in_faction_with = POR
+        is_subject_of = POR
+      }
+    }
+    every_owned_state = {
+      limit = {
+        has_state_flag = GER_capitulation_transfer
+        is_on_continent = africa
+        OR = {
+          is_core_of = POR
+          is_claimed_by = POR
+          has_variable = ambition_area_@POR
+        }
+        is_claim_or_core_or_ambition_of_PREV = no
+      }
+      clr_state_flag = GER_capitulation_transfer
+      POR = {
+        transfer_state = PREV
+      }
+    }
+  }
+  if = {
+    limit = {
+      NOT = {
+        tag = SAF
+      }
+      OR = {
+        is_in_faction_with = SAF
+        is_subject_of = SAF
+      }
+    }
+    every_owned_state = {
+      limit = {
+        has_state_flag = GER_capitulation_transfer
+        is_on_continent = africa
+        OR = {
+          is_core_of = SAF
+          is_claimed_by = SAF
+          has_variable = ambition_area_@SAF
+        }
+        is_claim_or_core_or_ambition_of_PREV = no
+      }
+      clr_state_flag = GER_capitulation_transfer
+      SAF = {
+        transfer_state = PREV
+      }
+    }
+  }
+  if = {
+    limit = {
+      NOT = {
+        tag = ENG
+      }
+      OR = {
+        is_in_faction_with = ENG
+        is_subject_of = ENG
+      }
+    }
+    every_owned_state = {
+      limit = {
+        has_state_flag = GER_capitulation_transfer
+        is_on_continent = africa
+        OR = {
+          is_core_of = ENG
+          is_claimed_by = ENG
+          has_variable = ambition_area_@ENG
+        }
+        is_claim_or_core_or_ambition_of_PREV = no
+      }
+      clr_state_flag = GER_capitulation_transfer
+      ENG = {
+        transfer_state = PREV
+      }
+    }
+  }
+  if = {
+    limit = {
+      NOT = {
+        tag = GBR
+      }
+      OR = {
+        is_in_faction_with = GBR
+        is_subject_of = GBR
+      }
+    }
+    every_owned_state = {
+      limit = {
+        has_state_flag = GER_capitulation_transfer
+        is_on_continent = africa
+        OR = {
+          is_core_of = GBR
+          is_claimed_by = GBR
+          has_variable = ambition_area_@GBR
+        }
+        is_claim_or_core_or_ambition_of_PREV = no
+      }
+      clr_state_flag = GER_capitulation_transfer
+      GBR = {
+        transfer_state = PREV
+      }
+    }
+  }
+  if = {
+    limit = {
+      NOT = {
+        tag = CAN
+      }
+      OR = {
+        is_in_faction_with = CAN
+        is_subject_of = CAN
+      }
+    }
+    every_owned_state = {
+      limit = {
+        has_state_flag = GER_capitulation_transfer
+        is_on_continent = africa
+        OR = {
+          is_core_of = CAN
+          is_claimed_by = CAN
+          has_variable = ambition_area_@CAN
+        }
+        is_claim_or_core_or_ambition_of_PREV = no
+      }
+      clr_state_flag = GER_capitulation_transfer
+      CAN = {
+        transfer_state = PREV
+      }
+    }
+  }
+  if = {
+    limit = {
+      is_in_faction = yes
+      is_faction_leader = no
+      is_actual_major = no
+    }
+    random_country = {
+      limit = {
+        is_faction_leader = yes
+        is_in_faction_with = PREV
+      }
+      save_event_target_as = leader
+    }
+    every_owned_state = {
+      limit = {
+        is_on_continent = africa
+        has_state_flag = GER_capitulation_transfer
+        is_claim_or_core_or_ambition_of_PREV = no
+      }
+      event_target:leader = {
+        transfer_state = PREV
+      }
+    }
+  }
+}
+take_occupied_states_in_africa = {
+  every_state = {
+    limit = {
+      is_on_continent = africa
+      controller = {
+        has_war_with = GER
+      }
+      OR = {
+        is_coastal = yes
+        any_neighbor_state = {
+          owner = {
+            has_war_with = GER
+          }
+        }
+      }
+      is_owned_by_GER_or_MAF = yes
+      african_state_can_be_taken = yes
+    }
+    set_state_flag = GER_capitulation_transfer
+    controller = {
+      save_event_target_as = new_controller
+      transfer_state = PREV
+    }
+    if = {
+      limit = {
+        OR = {
+          state = 892
+          state = 925
+          state = 969
+          state = 547
+          state = 970
+        }
+      }
+      every_state = {
+        limit = {
+          OR = {
+            state = 892
+            state = 925
+            state = 969
+            state = 547
+            state = 970
+          }
+          is_owned_by_GER_or_MAF = yes
+        }
+        set_state_flag = GER_capitulation_transfer
+        event_target:new_controller = {
+          transfer_state = PREV
+        }
+      }
+    }
+    if = {
+      limit = {
+        OR = {
+          state = 544
+          state = 954
+          state = 950
+          is_core_of = MZB
+        }
+      }
+      every_state = {
+        limit = {
+          OR = {
+            state = 544
+            state = 954
+            state = 950
+            is_core_of = MZB
+          }
+          is_owned_by_GER_or_MAF = yes
+        }
+        set_state_flag = GER_capitulation_transfer
+        event_target:new_controller = {
+          transfer_state = PREV
+        }
+      }
+    }
+    if = {
+      limit = {
+        OR = {
+          state = 540
+          state = 914
+          state = 916
+          state = 917
+          state = 959
+          is_core_of = ANG
+        }
+      }
+      every_state = {
+        limit = {
+          OR = {
+            state = 540
+            state = 914
+            state = 916
+            state = 917
+            state = 959
+            is_core_of = ANG
+          }
+          is_owned_by_GER_or_MAF = yes
+        }
+        set_state_flag = GER_capitulation_transfer
+        event_target:new_controller = {
+          transfer_state = PREV
+        }
+      }
+    }
+    if = {
+      limit = {
+        OR = {
+          state = 957
+          state = 958
+          state = 813
+          state = 956
+          state = 955
+        }
+      }
+      every_state = {
+        limit = {
+          OR = {
+            state = 957
+            state = 958
+            state = 813
+            state = 956
+            state = 955
+          }
+          is_owned_by_GER_or_MAF = yes
+        }
+        set_state_flag = GER_capitulation_transfer
+        event_target:new_controller = {
+          transfer_state = PREV
+        }
+      }
+    }
+    if = {
+      limit = {
+        state = 539
+      }
+      539 = {
+        if = {
+          limit = {
+            is_owned_by_GER_or_MAF = yes
+          }
+          set_state_flag = GER_capitulation_transfer
+          event_target:new_controller = {
+            transfer_state = PREV
+          }
+        }
+      }
+    }
+    if = {
+      limit = {
+        OR = {
+          state = 953
+          state = 881
+          state = 928
+        }
+      }
+      every_state = {
+        limit = {
+          OR = {
+            state = 953
+            state = 881
+            state = 928
+          }
+          is_owned_by_GER_or_MAF = yes
+        }
+        set_state_flag = GER_capitulation_transfer
+        event_target:new_controller = {
+          transfer_state = PREV
+        }
+      }
+    }
+    if = {
+      limit = {
+        OR = {
+          state = 964
+          state = 541
+        }
+      }
+      every_state = {
+        limit = {
+          OR = {
+            state = 964
+            state = 541
+          }
+          is_owned_by_GER_or_MAF = yes
+        }
+        set_state_flag = GER_capitulation_transfer
+        event_target:new_controller = {
+          transfer_state = PREV
+        }
+      }
+    }
+    if = {
+      limit = {
+        OR = {
+          state = 558
+          state = 662
+          state = 878
+          state = 913
+          state = 973
+        }
+      }
+      every_state = {
+        limit = {
+          OR = {
+            state = 558
+            state = 662
+            state = 878
+            state = 913
+            state = 973
+          }
+          is_owned_by_GER_or_MAF = yes
+        }
+        set_state_flag = GER_capitulation_transfer
+        event_target:new_controller = {
+          transfer_state = PREV
+        }
+      }
+    }
+    if = {
+      limit = {
+        OR = {
+          state = 963
+          state = 807
+        }
+      }
+      every_state = {
+        limit = {
+          OR = {
+            state = 963
+            state = 807
+          }
+          is_owned_by_GER_or_MAF = yes
+        }
+        set_state_flag = GER_capitulation_transfer
+        event_target:new_controller = {
+          transfer_state = PREV
+        }
+      }
+    }
+    if = {
+      limit = {
+        is_core_of = LIB
+      }
+      every_state = {
+        limit = {
+          is_core_of = LIB
+          is_owned_by_GER_or_MAF = yes
+        }
+        set_state_flag = GER_capitulation_transfer
+        event_target:new_controller = {
+          transfer_state = PREV
+        }
+      }
+    }
+  }
+  if = {
+    limit = {
+      any_state = {
+        is_on_continent = africa
+        controller = {
+          has_war_with = GER
+        }
+        OR = {
+          is_coastal = yes
+          any_neighbor_state = {
+            owner = {
+              has_war_with = GER
+            }
+          }
+        }
+        is_owned_by_GER_or_MAF = yes
+        african_state_can_be_taken = yes
+      }
+    }
+    take_occupied_states_in_africa = yes
+  }
+  else = {
+    every_country = {
+      limit = {
+        has_war_with = GER
+        any_owned_state = {
+          is_on_continent = africa
+          has_state_flag = GER_capitulation_transfer
+        }
+      }
+      clean_up_african_states = yes
+    }
+  }
+}
+germany_flees_to_africa = {
+  take_occupied_states_in_africa = yes
+  every_country = {
+    limit = {
+      OR = {
+        tag = TZN
+        tag = GHA
+        tag = NGR
+        tag = CEA
+        tag = GAB
+        tag = NMB
+        tag = UGA
+        tag = ANG
+        tag = MZB
+        tag = BOT
+        tag = ZIM
+        tag = ZAM
+        tag = MLW
+        tag = KBR
+        tag = MAG
+        tag = CIV
+        tag = UMN
+        tag = KEN
+        tag = COG
+      }
+      OR = {
+        is_subject_of = GER
+        is_subject_of = MAF
+      }
+    }
+    set_country_flag = GEX_to_annex
+  }
+  MAF = {
+    random_owned_state = {
+      GEX = {
+        transfer_state = PREV
+      }
+    }
+    transfer_navy = {
+      target = GEX
+    }
+    every_unit_leader = {
+      set_nationality = GEX
+    }
+    every_navy_leader = {
+      set_nationality = GEX
+    }
+  }
+  GEX = {
+    annex_country = {
+      target = MAF
+      transfer_troops = yes
+    }
+  }
+  GER = {
+    GEX = {
+      transfer_technology = yes
+    }
+  }
+  every_country = {
+    limit = {
+      has_country_flag = GEX_to_annex
+    }
+    clr_country_flag = GEX_to_annex
+    if = {
+      limit = {
+        is_ai = yes
+      }
+      GEX = {
+        annex_country = {
+          target = PREV
+          transfer_troops = yes
+        }
+      }
+    }
+    else = {
+      get_current_government_type = yes
+      GEX = {
+        puppet = PREV
+      }
+      restore_previous_government_type = yes
+    }
+  }
+  every_owned_state = {
+    limit = {
+      OR = {
+        is_on_continent = africa
+        state = 710
+      }
+      is_controlled_by = GER
+    }
+    GEX = {
+      transfer_state = PREV
+    }
+  }
+  every_unit_leader = {
+    set_temp_variable = {
+      test = random
+    }
+    multiply_temp_variable = {
+      test = 100
+    }
+    if = {
+      limit = {
+        check_variable = {
+          test > 50
+        }
+      }
+      set_nationality = GEX
+    }
+  }
+  every_navy_leader = {
+    set_temp_variable = {
+      test = random
+    }
+    multiply_temp_variable = {
+      test = 100
+    }
+    if = {
+      limit = {
+        check_variable = {
+          test > 50
+        }
+      }
+      set_nationality = GEX
+    }
+  }
+  transfer_navy = {
+    target = GEX
+  }
+  GEX = {
+    add_manpower = 50000
+    add_stability = -0.20
+    set_major = yes
+    if = {
+      limit = {
+        owns_state = 965
+      }
+      set_capital = {
+        state = 965
+      }
+    }
+    if = {
+      limit = {
+        has_global_flag = wilhelmiided
+      }
+      create_country_leader = {
+        name = "威廉三世"  # Wilhelm III
+        desc = "POLITICS_WILLY_3_DESC"
+        picture = "gfx/leaders/GER/Portrait_Germany_Wilhelm_III.png"
+        expire = "1.1.1"
+        ideology = social_conservative_subtype
+      }
+      create_country_leader = {
+        name = "威廉三世"  # Wilhelm III
+        desc = "POLITICS_WILLY_3_DESC"
+        picture = "gfx/leaders/GER/Portrait_Germany_Wilhelm_III.png"
+        expire = "1.1.1"
+        ideology = market_liberal_subtype
+      }
+      create_country_leader = {
+        name = "威廉三世"  # Wilhelm III
+        desc = "POLITICS_WILLY_3_DESC"
+        picture = "gfx/leaders/GER/Portrait_Germany_Wilhelm_III.png"
+        expire = "1.1.1"
+        ideology = social_democrat_subtype
+      }
+      create_country_leader = {
+        name = "威廉三世"  # Wilhelm III
+        desc = "POLITICS_WILLY_3_DESC"
+        picture = "gfx/leaders/GER/Portrait_Germany_Wilhelm_III.png"
+        expire = "1.1.1"
+        ideology = paternal_autocrat_subtype
+      }
+      create_country_leader = {
+        name = "威廉三世"  # Wilhelm III
+        desc = "POLITICS_WILLY_3_DESC"
+        picture = "gfx/leaders/GER/Portrait_Germany_Wilhelm_III.png"
+        expire = "1.1.1"
+        ideology = authoritarian_democrat_subtype
+      }
+    }
+  }
+  set_temp_variable = {
+    temp = num_equipment@infantry_equipment
+  }
+  multiply_temp_variable = {
+    temp = 0.5
+  }
+  send_equipment = {
+    target = GEX
+    type = infantry_equipment
+    amount = temp
+  }
+  set_temp_variable = {
+    temp = num_equipment@artillery_equipment
+  }
+  multiply_temp_variable = {
+    temp = 0.5
+  }
+  send_equipment = {
+    target = GEX
+    type = artillery_equipment
+    amount = temp
+  }
+  set_temp_variable = {
+    temp = num_equipment@support_equipment
+  }
+  multiply_temp_variable = {
+    temp = 0.5
+  }
+  send_equipment = {
+    target = GEX
+    type = support_equipment
+    amount = temp
+  }
+  set_temp_variable = {
+    temp = num_equipment@mechanized_equipment
+  }
+  multiply_temp_variable = {
+    temp = 0.3
+  }
+  send_equipment = {
+    target = GEX
+    type = mechanized_equipment
+    amount = temp
+  }
+  set_temp_variable = {
+    temp = num_equipment@motorized_equipment
+  }
+  multiply_temp_variable = {
+    temp = 0.3
+  }
+  send_equipment = {
+    target = GEX
+    type = motorized_equipment
+    amount = temp
+  }
+  if = {
+    limit = {
+      NOT = {
+        has_dlc = "No Step Back"
+      }
+    }
+    set_temp_variable = {
+      temp = num_equipment@light_tank_equipment_1
+    }
+    multiply_temp_variable = {
+      temp = 0.3
+    }
+    send_equipment = {
+      target = GEX
+      type = light_tank_equipment_1
+      amount = temp
+    }
+    set_temp_variable = {
+      temp = num_equipment@medium_tank_equipment_1
+    }
+    multiply_temp_variable = {
+      temp = 0.3
+    }
+    send_equipment = {
+      target = GEX
+      type = medium_tank_equipment_1
+      amount = temp
+    }
+    set_temp_variable = {
+      temp = num_equipment@heavy_tank_equipment_1
+    }
+    multiply_temp_variable = {
+      temp = 0.3
+    }
+    send_equipment = {
+      target = GEX
+      type = heavy_tank_equipment_1
+      amount = temp
+    }
+    set_temp_variable = {
+      temp = num_equipment@modern_tank_equipment_1
+    }
+    multiply_temp_variable = {
+      temp = 0.3
+    }
+    send_equipment = {
+      target = GEX
+      type = modern_tank_equipment_1
+      amount = temp
+    }
+  }
+  if = {
+    limit = {
+      has_dlc = "No Step Back"
+    }
+    set_temp_variable = {
+      temp = num_equipment@light_tank_chassis
+    }
+    multiply_temp_variable = {
+      temp = 0.3
+    }
+    send_equipment = {
+      target = GEX
+      type = light_tank_chassis
+      amount = temp
+    }
+    set_temp_variable = {
+      temp = num_equipment@medium_tank_chassis
+    }
+    multiply_temp_variable = {
+      temp = 0.3
+    }
+    send_equipment = {
+      target = GEX
+      type = medium_tank_chassis
+      amount = temp
+    }
+    set_temp_variable = {
+      temp = num_equipment@heavy_tank_chassis
+    }
+    multiply_temp_variable = {
+      temp = 0.3
+    }
+    send_equipment = {
+      target = GEX
+      type = heavy_tank_chassis
+      amount = temp
+    }
+    set_temp_variable = {
+      temp = num_equipment@modern_tank_chassis
+    }
+    multiply_temp_variable = {
+      temp = 0.3
+    }
+    send_equipment = {
+      target = GEX
+      type = modern_tank_chassis
+      amount = temp
+    }
+  }
+  set_temp_variable = {
+    temp = num_equipment@small_plane_naval_bomber_airframe
+  }
+  multiply_temp_variable = {
+    temp = 0.75
+  }
+  send_equipment = {
+    target = GEX
+    type = small_plane_naval_bomber_airframe
+    amount = temp
+  }
+  set_temp_variable = {
+    temp = num_equipment@small_plane_cas_airframe
+  }
+  multiply_temp_variable = {
+    temp = 0.75
+  }
+  send_equipment = {
+    target = GEX
+    type = small_plane_cas_airframe
+    amount = temp
+  }
+  set_temp_variable = {
+    temp = num_equipment@small_plane_airframe
+  }
+  multiply_temp_variable = {
+    temp = 0.75
+  }
+  send_equipment = {
+    target = GEX
+    type = small_plane_airframe
+    amount = temp
+  }
+  set_temp_variable = {
+    temp = num_equipment@medium_plane_fighter_airframe
+  }
+  multiply_temp_variable = {
+    temp = 0.75
+  }
+  send_equipment = {
+    target = GEX
+    type = medium_plane_fighter_airframe
+    amount = temp
+  }
+  set_temp_variable = {
+    temp = num_equipment@medium_plane_airframe
+  }
+  multiply_temp_variable = {
+    temp = 0.75
+  }
+  send_equipment = {
+    target = GEX
+    type = medium_plane_airframe
+    amount = temp
+  }
+  set_temp_variable = {
+    temp = num_equipment@large_plane_airframe
+  }
+  multiply_temp_variable = {
+    temp = 0.75
+  }
+  send_equipment = {
+    target = GEX
+    type = large_plane_airframe
+    amount = temp
+  }
+  set_temp_variable = {
+    temp = num_equipment@convoy
+  }
+  multiply_temp_variable = {
+    temp = 0.75
+  }
+  send_equipment = {
+    target = GEX
+    type = convoy
+    amount = temp
+  }
+  GEA = {
+    if = {
+      limit = {
+        is_subject_of = GER
+      }
+      set_country_flag = repuppet_to_GEX
+    }
+  }
+  every_state = {
+    limit = {
+      OR = {
+        is_core_of = GER
+        is_core_of = MAF
+      }
+      NOT = {
+        AND = {
+          OR = {
+            is_core_of = ANG
+            is_core_of = MZB
+          }
+          NOT = {
+            is_owned_by = GEX
+          }
+        }
+      }
+    }
+    add_core_of = GEX
+  }
+  every_state = {
+    limit = {
+      OR = {
+        is_claimed_by = GER
+        is_claimed_by = MAF
+      }
+    }
+    add_claim_by = GEX
+  }
+  if = {
+    limit = {
+      is_ai = no
+    }
+    GEX = {
+      change_tag_from = GER
+    }
+  }
+  germany_capitulates = yes
+}
+germany_capitulates = {
+  country_event = {
+    id = capt.11
+    days = 2
+  }
+  if = {
+    limit = {
+      country_exists = GEX
+    }
+    if = {
+      limit = {
+        GEA = {
+          has_war_with = JAP
+        }
+      }
+      GEX = {
+        set_country_flag = GEX_war_with_japan
+      }
+    }
+    if = {
+      limit = {
+        has_war_with = NFA
+      }
+      GEX = {
+        set_country_flag = GEX_war_with_natfrance
+      }
+    }
+    if = {
+      limit = {
+        GEA = {
+          has_war_with = SIA
+        }
+      }
+      GEX = {
+        set_country_flag = GEX_war_with_siam
+      }
+    }
+  }
+  every_country = {
+    limit = {
+      is_subject_of = GER
+      NOT = {
+        tag = GEA
+        tag = MAF
+      }
+    }
+    GER = {
+      set_autonomy = {
+        target = PREV
+        autonomy_state = autonomy_free
+      }
+    }
+  }
+  if = {
+    limit = {
+      NOT = {
+        has_global_flag = AUS_treaty_of_budapest
+      }
+      AUS = {
+        is_in_faction_with = ROOT
+        has_country_flag = AUS_intervened_in_weltkrieg
+        has_capitulated = no
+      }
+    }
+    AUS = {
+      leave_faction = yes
+      create_faction = austrian_sphere
+      clr_country_flag = AUS_intervened_in_weltkrieg
+      set_country_flag = former_reichspakt_member
+      country_event = {
+        id = aus.tree.4016
+        hours = 8
+      }
+    }
+    every_other_country = {
+      limit = {
+        is_subject = no
+        is_in_faction_with = ROOT
+        has_country_flag = AUS_former_faction_member
+      }
+      clr_country_flag = AUS_former_faction_member
+      set_country_flag = former_reichspakt_member
+      AUS = {
+        add_to_faction = PREV
+      }
+    }
+  }
+  every_other_country = {
+    limit = {
+      OR = {
+        is_in_faction_with = GER
+        is_subject_of = GER
+      }
+    }
+    set_country_flag = former_reichspakt_member
+  }
+  dismantle_faction = yes
+  every_country = {
+    limit = {
+      has_country_flag = former_reichspakt_member
+      has_capitulated = no
+    }
+    every_country = {
+      limit = {
+        has_country_flag = former_reichspakt_member
+        has_capitulated = no
+        NOT = {
+          tag = PREV
+        }
+      }
+      give_military_access = PREV
+    }
+  }
+  restore_control_of_all_non_enemy_states = yes
+  every_owned_state = {
+    limit = {
+      OR = {
+        state = 422
+        state = 281
+        state = 733
+      }
+    }
+    if = {
+      limit = {
+        country_exists = PRF
+      }
+      PRF = {
+        transfer_state = PREV
+      }
+    }
+    else_if = {
+      limit = {
+        country_exists = BHC
+      }
+      BHC = {
+        transfer_state = PREV
+      }
+    }
+    else_if = {
+      limit = {
+        country_exists = DEH
+      }
+      DEH = {
+        transfer_state = PREV
+      }
+    }
+  }
+  every_state = {
+    limit = {
+      OR = {
+        is_owned_and_controlled_by = GER
+        is_owned_and_controlled_by = GEA
+      }
+      is_claimed_by = AST
+      country_exists = AST
+      AST = {
+        is_subject = no
+        controls_state = 523
+        controls_state = 285
+      }
+      OR = {
+        state = 711
+        state = 757
+        state = 737
+        state = 634
+        state = 635
+        state = 725
+        state = 734
+      }
+    }
+    AST = {
+      transfer_state = PREV
+    }
+  }
+  every_state = {
+    limit = {
+      country_exists = AST
+      AST = {
+        is_subject = no
+        controls_state = 523
+        controls_state = 284
+        controls_state = 285
+      }
+      OR = {
+        is_owned_and_controlled_by = GER
+        is_owned_and_controlled_by = GEA
+      }
+      OR = {
+        state = 711
+        state = 757
+        state = 737
+        state = 635
+        state = 634
+      }
+    }
+    AST = {
+      transfer_state = PREV
+    }
+  }
+  if = {
+    limit = {
+      has_war_with = JAP
+    }
+    every_state = {
+      limit = {
+        OR = {
+          is_owned_and_controlled_by = GER
+          is_owned_and_controlled_by = GEA
+        }
+        OR = {
+          state = 647
+          state = 684
+          state = 646
+          state = 633
+          state = 639
+          state = 725
+          state = 643
+          state = 941
+          state = 641
+          state = 635
+          state = 734
+          state = 634
+          state = 737
+          state = 757
+        }
+      }
+      JAP = {
+        transfer_state = PREV
+      }
+    }
+  }
+  if = {
+    limit = {
+      753 = {
+        is_owned_and_controlled_by = GER
+      }
+    }
+    random_country = {
+      limit = {
+        OR = {
+          tag = TUR
+          tag = EGY
+        }
+        owns_state = 453
+      }
+      transfer_state = 753
+    }
+  }
+  if = {
+    limit = {
+      268 = {
+        is_owned_and_controlled_by = GER
+      }
+    }
+    if = {
+      limit = {
+        country_exists = SOM
+      }
+      SOM = {
+        transfer_state = 268
+      }
+    }
+    else_if = {
+      limit = {
+        country_exists = ETH
+      }
+      ETH = {
+        transfer_state = 268
+      }
+    }
+  }
+  if = {
+    limit = {
+      543 = {
+        is_owned_and_controlled_by = GER
+      }
+    }
+    MAG = {
+      transfer_state = 543
+    }
+  }
+  every_country = {
+    limit = {
+      exists = yes
+      has_war_with = GER
+    }
+    set_country_flag = was_at_war_with_germany
+  }
+  random_country = {
+    limit = {
+      is_ai = yes
+      has_war_with = GER
+    }
+    country_event = {
+      id = capt.20
+      days = 4
+    }
+  }
+  every_country = {
+    limit = {
+      has_war = yes
+      is_subject = no
+      NOT = {
+        has_country_flag = former_reichspakt_member
+      }
+      any_enemy_country = {
+        has_country_flag = former_reichspakt_member
+      }
+      OR = {
+        is_in_faction = no
+        is_faction_leader = yes
+      }
+    }
+    country_event = capt.10
+  }
+  if = {
+    limit = {
+      country_exists = GEX
+    }
+    if = {
+      limit = {
+        country_exists = GEA
+        GEA = {
+          has_country_flag = repuppet_to_GEX
+        }
+      }
+      GER = {
+        set_autonomy = {
+          target = GEA
+          autonomy_state = autonomy_free
+        }
+      }
+      GEA = {
+        country_event = {
+          id = capt.23
+          hours = 1
+        }
+      }
+    }
+    GEX = {
+      if = {
+        limit = {
+          has_country_flag = GEX_war_with_siam
+          NOT = {
+            has_country_flag = GEX_war_with_japan
+          }
+        }
+        country_event = {
+          id = capt.5
+          days = 1
+        }
+      }
+      if = {
+        limit = {
+          has_country_flag = GEX_war_with_japan
+        }
+        country_event = {
+          id = capt.7
+          days = 1
+        }
+      }
+      if = {
+        limit = {
+          has_country_flag = GEX_war_with_natfrance
+        }
+        NFA = {
+          country_event = {
+            id = capt.12
+            days = 2
+          }
+        }
+      }
+    }
+  }
+  if = {
+    limit = {
+      country_exists = RUS
+      RUS = {
+        has_war_with = GER
+      }
+    }
+    country_event = {
+      id = rusd.126
+      days = 180
+    }
+  }
+}
+CAN_give_connected_USA_states_NEE = {
+  CAN = {
+    every_owned_state = {
+      limit = {
+        is_core_of = USA
+        any_neighbor_state = {
+          is_owned_by = NEE
+          NOT = {
+            state = 393
+          }
+        }
+        NOT = {
+          is_core_of = CAN
+          is_claimed_by = CAN
+        }
+      }
+      if = {
+        limit = {
+          is_claimed_by = NEE
+        }
+        remove_claim_by = NEE
+        add_core_of = NEE
+      }
+      else_if = {
+        limit = {
+          NOT = {
+            is_core_of = NEE
+          }
+        }
+        add_core_of = NEE
+      }
+      NEE = {
+        transfer_state = PREV
+      }
+    }
+  }
+  if = {
+    limit = {
+      CAN = {
+        any_owned_state = {
+          is_core_of = USA
+          any_neighbor_state = {
+            is_owned_by = NEE
+            NOT = {
+              state = 393
+            }
+          }
+          NOT = {
+            is_core_of = CAN
+            is_claimed_by = CAN
+          }
+        }
+      }
+    }
+    CAN_give_connected_USA_states_NEE = yes
+  }
+}
+CAN_give_connected_USA_states_CAL = {
+  CAN = {
+    every_owned_state = {
+      limit = {
+        is_core_of = USA
+        any_neighbor_state = {
+          is_owned_by = CAL
+          NOT = {
+            state = 393
+          }
+        }
+        NOT = {
+          is_core_of = CAN
+          is_claimed_by = CAN
+          state = 357
+          state = 796
+          state = 931
+          state = 932
+          state = 933
+          state = 934
+          state = 935
+        }
+      }
+      if = {
+        limit = {
+          is_claimed_by = CAL
+        }
+        remove_claim_by = CAL
+        add_core_of = CAL
+      }
+      else_if = {
+        limit = {
+          NOT = {
+            is_core_of = CAL
+          }
+        }
+        add_core_of = CAL
+      }
+      CAL = {
+        transfer_state = PREV
+      }
+    }
+  }
+  if = {
+    limit = {
+      CAN = {
+        any_owned_state = {
+          is_core_of = USA
+          any_neighbor_state = {
+            is_owned_by = CAL
+            NOT = {
+              state = 393
+            }
+          }
+          NOT = {
+            is_core_of = CAN
+            is_claimed_by = CAN
+            state = 357
+            state = 796
+            state = 931
+            state = 932
+            state = 933
+            state = 934
+            state = 935
+          }
+        }
+      }
+    }
+    CAN_give_connected_USA_states_CAL = yes
+  }
+}
+white_peace_with_ROOT = {
+  hidden_effect = {
+    save_event_target_as = peace_country
+    if = {
+      limit = {
+        is_in_faction = yes
+        is_faction_leader = no
+      }
+      set_country_flag = KR_war_skip
+      random_country = {
+        limit = {
+          is_in_faction_with = event_target:peace_country
+          is_faction_leader = yes
+          has_war_with = ROOT
+        }
+        white_peace = ROOT
+      }
+    }
+    if = {
+      limit = {
+        ROOT = {
+          is_in_faction = yes
+          is_faction_leader = no
+        }
+      }
+      set_country_flag = KR_war_skip
+      random_country = {
+        limit = {
+          is_in_faction_with = ROOT
+          is_faction_leader = yes
+          has_war_with = event_target:peace_country
+        }
+        white_peace = event_target:peace_country
+      }
+    }
+    if = {
+      limit = {
+        is_subject = yes
+        overlord = {
+          has_war_with = ROOT
+        }
+      }
+      set_country_flag = KR_war_skip
+      overlord = {
+        white_peace = ROOT
+      }
+    }
+    if = {
+      limit = {
+        ROOT = {
+          is_subject = yes
+        }
+      }
+      set_country_flag = KR_war_skip
+      random_country = {
+        limit = {
+          ROOT = {
+            is_subject_of = PREV
+          }
+          has_war_with = event_target:peace_country
+        }
+        white_peace = event_target:peace_country
+      }
+    }
+  }
+  if = {
+    limit = {
+      has_country_flag = KR_war_skip
+    }
+    clr_country_flag = KR_war_skip
+    country_event = {
+      id = kr.political.205
+      hours = 2
+    }
+  }
+  else = {
+    white_peace = ROOT
+  }
+  hidden_effect = {
+    every_enemy_country = {
+      limit = {
+        OR = {
+          is_in_faction_with = event_target:peace_country
+          is_subject_of = event_target:peace_country
+        }
+      }
+      country_event = {
+        id = kr.political.205
+        hours = 2
+      }
+    }
+    event_target:peace_country = {
+      every_enemy_country = {
+        limit = {
+          OR = {
+            is_in_faction_with = ROOT
+            is_subject_of = ROOT
+          }
+        }
+        country_event = {
+          id = kr.political.206
+          hours = 2
+        }
+      }
+    }
+  }
+}
+white_peace_with_TARGET = {
+  hidden_effect = {
+    save_event_target_as = peace_country
+    if = {
+      limit = {
+        is_in_faction = yes
+        is_faction_leader = no
+      }
+      set_country_flag = KR_war_skip
+      random_country = {
+        limit = {
+          is_in_faction_with = event_target:peace_country
+          is_faction_leader = yes
+          has_war_with = event_target:white_peace_receiver
+        }
+        white_peace = event_target:white_peace_receiver
+      }
+    }
+    if = {
+      limit = {
+        event_target:white_peace_receiver = {
+          is_in_faction = yes
+          is_faction_leader = no
+        }
+      }
+      set_country_flag = KR_war_skip
+      random_country = {
+        limit = {
+          is_in_faction_with = event_target:white_peace_receiver
+          is_faction_leader = yes
+          has_war_with = event_target:peace_country
+        }
+        white_peace = event_target:peace_country
+      }
+    }
+    if = {
+      limit = {
+        is_subject = yes
+        overlord = {
+          has_war_with = event_target:white_peace_receiver
+        }
+      }
+      set_country_flag = KR_war_skip
+      overlord = {
+        white_peace = event_target:white_peace_receiver
+      }
+    }
+    if = {
+      limit = {
+        event_target:white_peace_receiver = {
+          is_subject = yes
+        }
+      }
+      set_country_flag = KR_war_skip
+      random_country = {
+        limit = {
+          event_target:white_peace_receiver = {
+            is_subject_of = PREV
+          }
+          has_war_with = event_target:peace_country
+        }
+        white_peace = event_target:peace_country
+      }
+    }
+  }
+  if = {
+    limit = {
+      has_country_flag = KR_war_skip
+    }
+    clr_country_flag = KR_war_skip
+    country_event = {
+      id = kr.political.207
+      hours = 2
+    }
+    else = {
+      white_peace = event_target:white_peace_receiver
+    }
+  }
+  hidden_effect = {
+    event_target:white_peace_receiver = {
+      every_enemy_country = {
+        limit = {
+          OR = {
+            is_in_faction_with = event_target:peace_country
+            is_subject_of = event_target:peace_country
+          }
+        }
+        country_event = {
+          id = kr.political.207
+          hours = 2
+        }
+      }
+    }
+    event_target:peace_country = {
+      every_enemy_country = {
+        limit = {
+          OR = {
+            is_in_faction_with = event_target:white_peace_receiver
+            is_subject_of = event_target:white_peace_receiver
+          }
+        }
+        country_event = {
+          id = kr.political.206
+          hours = 2
+        }
+      }
+    }
+  }
+}
+faction_collapse_member_peace_effect = {
+  leave_faction = yes
+  every_enemy_country = {
+    limit = {
+      is_faction_leader = yes
+      OR = {
+        capital_scope = {
+          is_island_region = yes
+        }
+        same_continent_as_PREV = no
+      }
+      NOT = {
+        civilwar_target = PREV
+        PREV = {
+          OR = {
+            any_home_area_neighbor_country = {
+              is_in_faction_with = PREV.PREV
+            }
+            any_owned_state = {
+              OR = {
+                is_core_of = PREV.PREV
+                is_claimed_by = PREV.PREV
+              }
+            }
+          }
+        }
+        any_allied_country = {
+          PREV.PREV = {
+            any_owned_state = {
+              OR = {
+                is_core_of = PREV.PREV
+                is_claimed_by = PREV.PREV
+              }
+            }
+          }
+        }
+      }
+    }
+    white_peace = PREV
+  }
+  every_enemy_country = {
+    limit = {
+      is_in_faction = no
+      is_subject = no
+      has_capitulated = no
+      OR = {
+        capital_scope = {
+          is_island_region = yes
+        }
+        same_continent_as_PREV = no
+      }
+      NOT = {
+        civilwar_target = PREV
+        PREV = {
+          OR = {
+            any_home_area_neighbor_country = {
+              OR = {
+                tag = PREV.PREV
+                is_subject_of = PREV.PREV
+              }
+            }
+            any_owned_state = {
+              OR = {
+                is_core_of = PREV.PREV
+                is_claimed_by = PREV.PREV
+              }
+            }
+          }
+        }
+        any_subject_country = {
+          PREV.PREV = {
+            any_owned_state = {
+              OR = {
+                is_core_of = PREV.PREV
+                is_claimed_by = PREV.PREV
+              }
+            }
+          }
+        }
+      }
+    }
+    white_peace = PREV
+  }
+}
+peace_out_non_neighbours_after_leaving_faction = {
+  if = {
+    limit = {
+      has_capitulated = no
+    }
+    every_enemy_country = {
+      limit = {
+        is_valid_peace_target = yes
+        has_capitulated = no
+        NOT = {
+          civilwar_target = PREV
+          PREV = {
+            OR = {
+              any_home_area_neighbor_country = {
+                is_ally_with = PREV.PREV
+              }
+              any_owned_state = {
+                OR = {
+                  is_core_of = PREV.PREV
+                  is_claimed_by = PREV.PREV
+                }
+              }
+            }
+          }
+          any_subject_country = {
+            PREV.PREV = {
+              any_owned_state = {
+                OR = {
+                  is_core_of = PREV.PREV
+                  is_claimed_by = PREV.PREV
+                }
+              }
+            }
+          }
+          any_allied_country = {
+            PREV.PREV = {
+              any_owned_state = {
+                OR = {
+                  is_core_of = PREV.PREV
+                  is_claimed_by = PREV.PREV
+                }
+              }
+            }
+          }
+        }
+      }
+      white_peace = PREV
+    }
+  }
+}

@@ -1,0 +1,22 @@
+
+MNT_industrija_masina_komponenata_organisation = {
+	include = generic_tank_organization
+	name = industrija_masina_komponenata_mnt
+	icon = GFX_idea_industrija_masina_komponenata
+	allowed = {
+		original_tag = MNT
+	}
+	available = {
+		FROM = {
+			has_completed_focus = MNT_65
+		}
+	}
+}
+SER_zastava_organisation = {
+	include = generic_support_equipment_organization
+	name = zastava_mnt
+	icon = GFX_idea_zastava
+	allowed = {
+		original_tag = MNT
+	}
+}

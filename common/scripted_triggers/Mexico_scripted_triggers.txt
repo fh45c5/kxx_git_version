@@ -1,0 +1,201 @@
+MEX_has_goldshirt_leader = {
+  OR = {
+    has_country_leader = {
+      name = "金衫军委员会"  # Goldshirt Council
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "尼古拉斯·罗德里格斯·卡拉斯科"  # Nicolás Rodríguez Carrasco
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "罗克·加尔萨"  # Roque Garza
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "伊兹柯亚特尔二世"  # Itzcoatl II
+      ruling_only = yes
+    }
+  }
+}
+MEX_has_monarchy_leader = {
+  OR = {
+    has_country_leader = {
+      name = "蒙特祖玛三世"  # Moctezuma III
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "波菲里奥一世"  # Porfirio I
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "玛丽亚一世"  # María I
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "玛丽亚二世"  # María II
+      ruling_only = yes
+    }
+  }
+}
+MEX_is_monarchy = {
+  OR = {
+    has_country_leader = {
+      name = "蒙特祖玛三世"  # Moctezuma III
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "波菲里奥一世"  # Porfirio I
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "玛丽亚一世"  # María I
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "玛丽亚三世"  # María III
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "伊兹柯亚特尔二世"  # Itzcoatl II
+      ruling_only = yes
+    }
+  }
+}
+MEX_has_junta_leader = {
+  OR = {
+    has_country_leader = {
+      name = "巴勃罗·冈萨雷斯·加尔萨"  # Pablo Gonzalez Garza
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "胡安·巴拉甘·罗德里格斯"  # Juan Barragán Rodríguez
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "费利克斯·迪亚斯·普列托"  # Félix Díaz Prieto
+      ruling_only = yes
+    }
+  }
+}
+MEX_has_synarchointegralist_leader = {
+  OR = {
+    has_country_leader = {
+      name = "何塞·巴斯孔塞略斯"  # José Vasconcelos
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "何塞·安东尼奥·乌尔基萨"  # Jose Antonio Urquiza
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "萨尔瓦多·阿瓦斯卡尔"  # Salvador Abascal
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "路易斯·马里亚·马丁内斯"  # Luis María Martínez
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "米格尔·达里奥"  # Miguel Dario
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "何塞·德·赫苏斯"  # José de Jesús
+      ruling_only = yes
+    }
+  }
+}
+MEX_has_archbishop_leader = {
+  OR = {
+    has_country_leader = {
+      name = "路易斯·马里亚·马丁内斯"  # Luis María Martínez
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "米格尔·达里奥"  # Miguel Dario
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "何塞·德·赫苏斯"  # José de Jesús
+      ruling_only = yes
+    }
+  }
+}
+MEX_has_calles_leader = {
+  custom_trigger_tooltip = {
+    tooltip = MEX_calles_control
+    OR = {
+      has_country_leader = {
+        name = "普鲁塔尔科·卡列斯"  # Plutarco Calles
+        ruling_only = yes
+      }
+      has_country_leader = {
+        name = "拉萨罗·卡德纳斯·德尔·里奥"  # Lázaro Cárdenas del Rio
+        ruling_only = yes
+      }
+      has_country_leader = {
+        name = "埃米利奥·波特斯·希尔"  # Emilio Portes Gil
+        ruling_only = yes
+      }
+      has_country_leader = {
+        name = "曼努埃尔·佩雷斯·特雷维尼奥"  # Manuel Perez Treviño
+        ruling_only = yes
+      }
+    }
+    has_government = totalist
+  }
+}
+MEX_has_vasconcelos = {
+  custom_trigger_tooltip = {
+    has_country_flag = MEX_Vasconelos_leadership
+    tooltip = MEX_Vasconelos_leadership_flag
+    OR = {
+      has_idea = MEX_Jose_Vasconcelos_hog_npo
+      has_country_leader = {
+        name = "何塞·巴斯孔塞略斯"  # José Vasconcelos
+        ruling_only = yes
+      }
+    }
+  }
+}
+MEX_has_abascal = {
+  custom_trigger_tooltip = {
+    has_country_flag = MEX_Abascal_leadership
+    tooltip = MEX_Abascal_leadership_flag
+    OR = {
+      has_idea = MEX_Salvador_Abascal_Infante_hog_npo
+      has_country_leader = {
+        name = "萨尔瓦多·阿瓦斯卡尔"  # Salvador Abascal
+        ruling_only = yes
+      }
+    }
+  }
+}
+MEX_has_urquiza = {
+  custom_trigger_tooltip = {
+    has_country_flag = MEX_Urquiza_leadership
+    tooltip = MEX_Urquiza_leadership_flag
+    OR = {
+      has_idea = MEX_Jose_Antonio_Urquiza_hog_npo
+      has_country_leader = {
+        name = "何塞·安东尼奥·乌尔基萨"  # Jose Antonio Urquiza
+        ruling_only = yes
+      }
+    }
+  }
+}
+MEX_has_democratic_government = {
+  OR = {
+    has_government = authoritarian_democrat
+    has_government = social_conservative
+    has_government = market_liberal
+    has_government = social_liberal
+    AND = {
+      has_government = social_democrat
+      NOT = {
+        has_country_flag = soc_dems_are_socialists
+      }
+    }
+  }
+}

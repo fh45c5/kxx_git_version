@@ -1,0 +1,326 @@
+﻿###########################
+# Chile World News Events
+###########################
+# LOLIDESTRUKTION
+###########################
+
+add_namespace = chlworldnews
+
+
+# Counter-Revolution in Chile
+news_event = {
+	id = chlworldnews.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event chlworldnews.1" }
+	title = chlworldnews.1.t
+	desc = chlworldnews.1.d
+	picture = GFX_news_event_GRE_civilwar
+
+	major = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	show_major = {
+		NOT = {
+			tag = CHL
+		}
+	}
+
+	option = {
+		name = chlworldnews.1.a
+	}
+}
+news_event = {
+	id = chlworldnews.2 # FALANGE DEAD MILITARY DEAD
+	immediate = { log = "[GetDateText]: [Root.GetName]: event chlworldnews.1" }
+	title = chlworldnews.2.t
+	desc = chlworldnews.2.d
+	picture = GFX_news_event_CHL_failed_coup_2_allende
+
+	major = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	show_major = {
+		NOT = {
+			tag = CHL
+		}
+	}
+
+	option = {
+		name = chlworldnews.2.a
+	}
+}
+news_event = {
+	id = chlworldnews.3 # NATIONALIST COUP NO ALLENDE
+	immediate = { log = "[GetDateText]: [Root.GetName]: event chlworldnews.1" }
+	title = chlworldnews.3.t
+	desc = chlworldnews.3.d
+	picture = GFX_news_event_CHL_success_military
+
+	major = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	show_major = {
+		NOT = {
+			tag = CHL
+		}
+	}
+
+	option = {
+		name = chlworldnews.3.a
+	}
+}
+news_event = {
+	id = chlworldnews.4 # NATIONALIST COUP YES ALLENDE
+	immediate = { log = "[GetDateText]: [Root.GetName]: event chlworldnews.1" }
+	title = chlworldnews.4.t
+	desc = chlworldnews.4.d
+	picture = GFX_news_event_CHL_civilwar
+
+	major = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	show_major = {
+		NOT = {
+			tag = CHL
+		}
+	}
+
+	option = {
+		name = chlworldnews.4.a
+	}
+}
+news_event = {
+	id = chlworldnews.5 #  ALLENDE ONLY
+	immediate = { log = "[GetDateText]: [Root.GetName]: event chlworldnews.1" }
+	title = chlworldnews.5.t
+	desc = chlworldnews.5.d
+	picture = GFX_news_event_CHL_success_falange
+
+	major = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	show_major = {
+		NOT = {
+			tag = CHL
+		}
+	}
+
+	option = {
+		name = chlworldnews.5.a
+	}
+}
+news_event = {
+	id = chlworldnews.6 #  FALANGE DEAD
+	immediate = { log = "[GetDateText]: [Root.GetName]: event chlworldnews.1" }
+	title = chlworldnews.6.t
+	desc = chlworldnews.6.d
+	picture = GFX_news_event_CHL_failed_coup
+
+	major = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	show_major = {
+		NOT = {
+			tag = CHL
+		}
+	}
+
+	option = {
+		name = chlworldnews.6.a
+	}
+}
+
+
+
+
+
+
+
+news_event = {
+	id = chlworldnews.7 #  FALL OF LIMA
+	immediate = { log = "[GetDateText]: [Root.GetName]: event chlworldnews.1" }
+	title = chlworldnews.7.t
+	desc = chlworldnews.7.d
+	picture = GFX_news_event_Lima_captured_by_Chile
+
+	major = yes
+
+	is_triggered_only = yes
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event worldnews.251"
+		303 = {
+			set_state_flag = state_has_fallen
+			owner = { save_event_target_as = old_controller }
+			controller = { save_event_target_as = new_controller }
+		}
+	}
+	
+	trigger = {
+		wants_world_news = yes
+	}
+	major = yes
+	show_major = {
+		OR = {
+			regional_north_america_news = yes
+			regional_south_america_news = yes
+		}
+	}
+
+	option = {
+		name = chlworldnews.7.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}	
+	option = {
+		name = chlworldnews.7.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}	
+	option = {
+		name = chlworldnews.7.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}
+	news_event = {
+	id = chlworldnews.8 #  FALL OF BUENOS AIRES
+	immediate = { log = "[GetDateText]: [Root.GetName]: event chlworldnews.1" }
+	title = chlworldnews.8.t
+	desc = chlworldnews.8.d
+	picture = GFX_news_event_Buenos_Aires_captured_by_Chile
+
+	major = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event worldnews.251"
+		278 = {
+			set_state_flag = state_has_fallen
+			owner = { save_event_target_as = old_controller }
+			controller = { save_event_target_as = new_controller }
+		}
+	}
+	major = yes
+	show_major = {
+		OR = {
+			regional_north_america_news = yes
+			regional_south_america_news = yes
+		}
+	}
+
+	option = {
+		name = chlworldnews.8.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}	
+	option = {
+		name = chlworldnews.8.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}	
+	option = {
+		name = chlworldnews.8.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+	}
+	
+	news_event = {
+	id = chlworldnews.9 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event chlworldnews.1" }
+	title = chlworldnews.9.t
+	desc = chlworldnews.9.d
+	picture = GFX_news_event_second_pacific_war
+
+	major = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		wants_world_news = yes
+		CHL = {
+		has_completed_focus = CHL_adios_bolivia
+		}
+	}
+
+	major = yes
+	show_major = {
+		OR = {
+			regional_north_america_news = yes
+			regional_south_america_news = yes
+		}
+	}
+
+	option = {
+		name = chlworldnews.9.a
+		trigger = {
+		tag = CHL
+		}
+	}	
+	option = {
+		name = chlworldnews.9.b
+		trigger = {
+		OR = {
+		tag = PRU		
+		tag = BOL
+		}
+		}
+	}	
+	option = {
+		name = chlworldnews.9.c
+		trigger = {
+		NOT = {
+		OR = {
+		tag = PRU		
+		tag = BOL
+		tag = CHL
+		}
+		}
+		}
+	}
+}

@@ -1,0 +1,16 @@
+ideas={
+     country = {
+          #起义水兵带来的麻烦#
+          The_troubles_caused_by_the_uprising_sailors = {
+            removal_cost = 0
+            picture = GFX_idea_The_troubles_caused_by_the_uprising_sailors
+            modifier = {
+	             stability_weekly = -0.01
+                  navy_org = -30
+                  navy_screen_attack_factor = -0.1
+	             navy_screen_defence_factor = -0.1
+	             navy_capital_ship_attack_factor = -0.2
+               }
+          }
+     }
+}

@@ -1,0 +1,75 @@
+scripted_gui = {
+
+	Chile_collapse_scripted_gui = {
+		context_type = decision_category
+		window_name = "Chile_collapse_scripted_gui"
+
+		ai_check = {
+			always = no
+		}
+
+		triggers = {		
+		}
+		ai_enabled = {
+		has_idea = chile_political_collapse
+		}		
+		visible = {
+				has_idea = chile_political_collapse
+		}
+
+		effects = {
+		}
+		
+		properties = {		
+	}
+}
+	Chile_Chiloe_scripted_gui = {
+		context_type = decision_category
+		window_name = "Chile_Chiloe_scripted_gui"
+
+		ai_check = {
+			always = no
+		}
+
+		triggers = {		
+		has_idea = chile_chiloe_independent
+		}
+		ai_enabled = {
+			has_idea = chile_chiloe_independent
+		}		
+		visible = {
+				has_idea = chile_chiloe_independent
+		}
+
+		effects = {
+		}
+		
+		properties = {		
+	}
+}	
+Chile_drug_cartel_scripted_gui = {
+		context_type = decision_category
+		window_name = "Chile_drug_cartel_scripted_gui"
+
+		ai_check = {
+			always = no
+		}
+
+		triggers = {		
+		has_idea = chile_chiloe_independent
+		}
+		ai_enabled = {
+			has_idea = chile_chiloe_independent
+		}		
+		visible = {
+				has_idea = chile_chiloe_independent
+		}
+
+		effects = {
+		}
+		
+		properties = {		
+	}
+}
+
+}

@@ -1,0 +1,17 @@
+
+KUB_aftermath_modifier = {
+	icon = "GFX_idea_HOL_black_monday_recovery"
+	enable = { always = yes }
+	remove_trigger = { always = no }
+
+	political_power_factor = KUB_aftermath_political_power
+	stability_factor = KUB_aftermath_stability
+	war_support_factor = KUB_aftermath_war_support
+	production_factory_max_efficiency_factor = KUB_aftermath_max_efficiency
+	production_speed_buildings_factor = KUB_aftermath_construction_speed
+	industrial_capacity_factory = KUB_aftermath_factory_output
+	army_org_factor = KUB_aftermath_army_org
+	army_morale_factor = KUB_aftermath_morale_factor
+	radical_socialist_drift = KUB_aftermath_ideology_drift
+	totalist_drift = KUB_aftermath_ideology_drift
+}

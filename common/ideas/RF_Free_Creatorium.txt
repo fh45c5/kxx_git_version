@@ -1,0 +1,141 @@
+###-Free Creatorium Ideas-###
+ideas = {
+	country = {
+		FCR_perfecting_humanity = {
+			picture = FCR_perfecting_humanity
+			allowed = {
+				original_tag = FCR
+			}
+			modifier = { 
+				stability_factor = 0.025
+				army_defence_factor = 0.05
+			}
+		}
+		FCR_perfecting_humanity1 = {
+			picture = FCR_perfecting_humanity
+			allowed = {
+				original_tag = FCR
+			}
+			modifier = { 
+				stability_factor = 0.05
+				army_defence_factor = 0.06
+				
+			}
+		}
+		FCR_perfecting_humanity2 = {
+			picture = FCR_perfecting_humanity
+			allowed = {
+				original_tag = FCR
+			}
+			modifier = { 
+				stability_factor = 0.05
+				army_defence_factor = 0.06
+				army_attack_factor = 0.06
+				army_org_regain = 0.05
+			}
+		}
+		FCR_decentralized_poles = {
+			picture = FCR_decentralized_poles
+			allowed = {
+				original_tag = FCR
+			}
+			modifier = { 
+				consumer_goods_expected_value = 0.075
+				research_speed_factor = 0.06
+			}
+		}
+		FCR_planned_economy = {
+			picture = FCR_planned_economy
+			allowed = {
+				original_tag = FCR
+			}
+			modifier = { 
+				production_factory_max_efficiency_factor = 0.075
+				production_factory_efficiency_gain_factor = 0.075
+			}
+		}
+		FCR_planned_economy1 = {
+			picture = FCR_planned_economy
+			allowed = {
+				original_tag = FCR
+			}
+			modifier = { 
+				production_factory_max_efficiency_factor = 0.12
+				production_factory_efficiency_gain_factor = 0.12
+			}
+		}
+		FCR_nature_treasures = {
+			picture = FCR_nature_treasures
+			allowed = {
+				original_tag = FCR
+			}
+			modifier = { 
+				local_resources_factor = 0.15
+			}
+		}
+		FCR_labour_church = {
+			picture = FCR_labour_church
+			allowed = {
+				original_tag = FCR
+			}
+			modifier = { 
+				stability_factor = 0.05
+				monthly_population = 0.35
+			}
+		}
+		FCR_control_time = {
+			picture = FCR_control_time1
+			allowed = {
+				original_tag = FCR
+			}
+			modifier = { 
+				army_speed_factor = 0.05
+				production_speed_buildings_factor = 0.07
+			}
+		}
+		FCR_control_time1 = {
+			picture = FCR_control_time1
+			allowed = {
+				original_tag = FCR
+			}
+			modifier = { 
+				army_speed_factor = 0.06
+				production_speed_buildings_factor = 0.12
+			}
+		}
+		FCR_control_time2 = {
+			picture = FCR_control_time1
+			allowed = {
+				original_tag = FCR
+			}
+			modifier = { 
+				army_speed_factor = 0.06
+				production_speed_buildings_factor = 0.12
+				production_factory_efficiency_gain_factor = 0.08
+			}
+		}
+		FCR_control_time3 = {
+			picture = FCR_control_time3
+			allowed = {
+				original_tag = FCR
+			}
+			modifier = { 
+				army_speed_factor = 0.06
+				production_speed_buildings_factor = 0.12
+				production_factory_efficiency_gain_factor = 0.1
+				army_morale_factor = 0.06
+			}
+		}
+		FCR_totalitarism = {
+			picture = FCR_totalitarianism
+			allowed = {
+				original_tag = FCR
+			}
+			modifier = { 
+				political_power_gain = -0.12
+				research_speed_factor = 0.06
+			}
+		}
+		
+	}
+}

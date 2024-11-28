@@ -1,0 +1,2278 @@
+
+
+PRC_reconstruction_plan = {
+#基础设施建设顺序：
+#第一条：南宁广州铁路（南宁、广州、粤海）-南宁贵阳铁路（桂林、柳州、田南、黔中、贵西）-贵阳昆明铁路（昆明、大理）-成都铁路（成都、重庆），南广铁路还可以连接海南
+#第二条：广州长沙（韶关，湘江）-长沙-南京（浔阳、豫章、安庆、芜湖、南京） 另一条线：广州福建（潮循、汀漳、厦门、闽侯、福建），这俩路线完成以后，连通东南（丽水、温州、金华、会稽、钱塘）。
+#第三条：武汉大桥（武汉，襄阳、达县）
+#第四条：京汉铁路（北京、大名、汝阳、河北、保定、开封），连接蒙古（南察哈尔、锡林郭勒、外蒙三地），连接东北
+#第五条：连接西北（需要京汉铁路，河洛、关中、阿坝、兰州、西宁、玉树）-贯通河套平原（还需要连接蒙古，乌兰布察、鄂尔多斯、宁夏、河西走廊）和连接新疆（新疆6地区）和西藏
+	PRC_guangzhou-nanning = {#南广铁路，连通南宁广州
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+		}
+		available = {
+			owns_state = 592
+			owns_state = 593
+			owns_state = 594
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		cost = 15
+		modifier = {
+			civilian_factory_use = 1
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 592 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_guangzhou-nanning"
+			592 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			593 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			594 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = PRC_built_to_nanning
+		}
+	}
+
+	PRC_connect_hainan = {#连通海南
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_nanning
+		}
+		available = {
+			owns_state = 1056 #钦廉
+			owns_state = 728 #湛江
+			owns_state = 591 #海南
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		cost = 15
+		modifier = {
+			civilian_factory_use = 2
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 591 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_guangzhou-nanning"
+			1056 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			728 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			591 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = PRC_built_to_hainan
+		}
+	}
+
+	PRC_nanning-guiyang = {#连通南宁贵阳，需要先完成南广铁路
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_nanning
+		}
+		available = {
+			owns_state = 599 #桂林
+			owns_state = 1055 #柳州
+			owns_state = 1054 #田南
+			owns_state = 603 #黔中
+			owns_state = 1051 #贵西
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		cost = 20
+		modifier = {
+			civilian_factory_use = 2
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 599 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_nanning-guiyang"
+			599 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1055 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1054 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			603 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1051 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = PRC_built_to_guiyang
+		}
+	}
+	PRC_guiyang-kunming = {#贵阳昆明铁路，先完成南宁贵阳铁路
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_guiyang
+		}
+		available = {	
+			owns_state = 325 #昆明
+			owns_state = 816 #大理
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		cost = 10
+		modifier = {
+			civilian_factory_use = 1
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 325 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_guiyang-kunming target: [From.GetName]"
+			325 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			816 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = PRC_built_to_kunming
+		}
+	}
+
+	PRC_guiyang-chengdu = {#成都铁路，先完成昆明铁路
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+			
+			has_country_flag = PRC_built_to_guiyang
+		}
+		available = {
+			owns_state = 650 #重庆
+			owns_state = 605 #成都
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		cost = 15
+		modifier = {
+			civilian_factory_use = 1
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 650 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_guiyang-chengdu"
+			650 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			605 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = PRC_built_to_chengdu
+		}
+	}
+
+	PRC_guangzhou-changsha = {#广州长沙铁路
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+		}
+		available = {
+			owns_state = 800 #韶关
+			owns_state = 602 #湘江
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		cost = 15
+		modifier = {
+			civilian_factory_use = 1
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 800 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_guangzhou-changsha"
+			800 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			602 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = PRC_built_to_changsha
+		}
+	}
+
+	PRC_changsha-nanjing = {#长沙南京，先完成广州长沙铁路
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_changsha
+		}
+		available = {
+			owns_state = 1045 #浔阳
+			owns_state = 1044 #豫章
+			owns_state = 606 #安庆
+			owns_state = 1014 #芜湖
+			owns_state = 613 #南京
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 2
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 1045 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_changsha-nanjing"
+			1045 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1044 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			606 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1014 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			613 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = PRC_built_to_nanjing
+		}
+	}
+
+	PRC_guangzhou-fujian = {#广州福建
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+		}
+		available = {
+			owns_state = 1012 #潮循
+			owns_state = 1046 #汀漳
+			owns_state = 802 #厦门
+			owns_state = 1066 #闽侯
+			owns_state = 595 #建安
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		cost = 20
+		modifier = {
+			civilian_factory_use = 2
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 1012 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_guangzhou-fujian"
+			1012 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1046 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			802 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1066 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			595 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = PRC_built_to_fujian
+		}
+	}
+
+	PRC_connect_coast = {#连通东南
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_fujian
+			has_country_flag = PRC_built_to_nanjing
+		}
+		available = {
+			owns_state = 1069 #丽水
+			owns_state = 803 #温州
+			owns_state = 1067 #金华
+			owns_state = 1068 #会稽
+			owns_state = 596 #钱塘
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 2
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 1069 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_connect_coast"
+			1069 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			803 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1067 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1068 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			596 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = PRC_connected_the_coast
+		}
+	}
+
+	PRC_wuhan_bridge = {#武汉大桥
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+		}
+		available = {
+			owns_state = 1048 #武汉
+			owns_state = 620 #襄阳
+			owns_state = 661 #达县
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		cost = 20
+		modifier = {
+			civilian_factory_use = 2
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 1048 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_wuhan_bridge target: [From.GetName]"
+			1048 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			620 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			661 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	PRC_wuhan-beijing = {#北京武汉，京汉铁路
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+		}
+		available = {
+			owns_state = 1058 #汝阳
+			owns_state = 1059 #开封
+			owns_state = 1060 #河北
+			owns_state = 1061 #大名
+			owns_state = 1062 #保定
+			owns_state = 608 #北京
+			num_of_civilian_factories_available_for_projects > 3
+		}
+		cost = 30
+		modifier = {
+			civilian_factory_use = 3
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 608 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_wuhan-beijing"
+			1058 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1059 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1060 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1061 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1062 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			608 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = PRC_built_to_beijing
+		}
+	}
+
+	PRC_connect_menggu = {#连接蒙古
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_beijing
+		}
+		available = {
+			owns_state = 611 #南察哈尔
+			owns_state = 612 #锡林郭勒
+			owns_state = 329 #唐努图瓦
+			owns_state = 330 #蒙古
+			owns_state = 1084 #西蒙古
+			num_of_civilian_factories_available_for_projects > 4
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 4
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 330 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_wuhan-beijing"
+			611 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			612 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			329 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			330 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1084 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = PRC_connect_menggu
+		}
+	}
+
+	PRC_connect_dongbei = {#连接东北
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_beijing
+		}
+		available = {
+			owns_state = 614 #唐山
+			owns_state = 610 #热河
+			owns_state = 715 #辽北
+			owns_state = 716 #辽宁
+			owns_state = 886 #吉林
+			owns_state = 714 #嫩江
+			owns_state = 885 #松江
+			num_of_civilian_factories_available_for_projects > 4
+		}
+		cost = 35
+		modifier = {
+			civilian_factory_use = 4
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 716 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_wuhan-beijing"
+			614 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			610 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			715 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			716 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			886 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			714 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			885 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = PRC_connect_dongbei
+		}
+	}
+
+	PRC_connect_northwest = { #连接西北
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_beijing
+		}
+		available = {
+			owns_state = 607 #河洛
+			owns_state = 799 #关中
+			owns_state = 283 #兰州
+			owns_state = 788 #阿坝
+			owns_state = 604 #西宁
+			owns_state = 353 #玉树
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 2
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 283 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_connect_northwest"
+			607 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			799 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			283 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			788 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			604 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			353 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = PRC_connected_northwest
+		}
+	}
+
+	PRC_connect_northwest = { #贯通河套平原
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connected_northwest
+			has_country_flag = PRC_connect_menggu
+		}
+		available = {
+			owns_state = 774
+			owns_state = 348
+			owns_state = 616
+			owns_state = 621
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		cost = 20
+		modifier = {
+			civilian_factory_use = 2
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 348 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_connect_northwest"
+			774 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			348 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			616 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			621 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = PRC_connected_hetao
+		}
+	}
+
+	PRC_connect_xinjiang = { #连接新疆
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connected_northwest
+		}
+		available = {
+			owns_state = 287 #和阗
+			owns_state = 617 #迪化
+			owns_state = 1083 #哈密
+			owns_state = 1085 #塔克拉玛干沙漠
+			owns_state = 618 #准噶尔
+			owns_state = 897 #阿克赛钦
+			owns_state = 619 #喀什噶尔
+			num_of_civilian_factories_available_for_projects > 5
+		}
+		cost = 35
+		modifier = {
+			civilian_factory_use = 5
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 617 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_connect_xinjiang"
+			287 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			617 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1083 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1085 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			618 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			897 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			619 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = PRC_connected_xinjiang
+		}
+	}
+
+	PRC_connect_xizang = { #连接西藏
+		icon = generic_construction
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connected_northwest
+		}
+		available = {
+			owns_state = 693
+			owns_state = 748
+			owns_state = 322
+			owns_state = 1086
+			num_of_civilian_factories_available_for_projects > 5
+		}
+		cost = 20
+		modifier = {
+			civilian_factory_use = 5
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 322 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_connect_xinjiang"
+			693 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			748 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			322 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1086 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = PRC_connect_xizang
+		}
+	}
+
+	PRC_anhui_treasures = {#安徽铁矿
+		icon = steel
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_nanjing
+		}
+		available = {
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 5
+			owns_state = 606
+			owns_state = 1050
+			owns_state = 1014
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 5
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 606 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yunnan_treasures_1"
+			606 = {
+				add_resource = {
+					type = steel
+					amount = 9
+				}
+			}
+			1050 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+			1014 = {
+				add_resource = {
+					type = steel
+					amount = 5
+				}
+			}
+		}
+	}
+
+	PRC_yunnan_treasures_1 = {#大理铁矿
+		icon = steel
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_kunming
+		}
+		available = {
+			has_tech = excavation1	
+			num_of_civilian_factories_available_for_projects > 5
+			owns_state = 816
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 5
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 816 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yunnan_treasures_1"
+			816 = {
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+			}
+		}
+	}
+
+	PRC_hebei_great_steel_plane = {#河北铁矿
+		icon = steel
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_beijing
+		}
+		
+		available = {
+			has_tech = excavation2	
+			num_of_civilian_factories_available_for_projects > 12
+			owns_state = 1061
+			owns_state = 1062
+			owns_state = 1063
+		}
+		cost = 50
+		modifier = {
+			civilian_factory_use = 12
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 1061 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_hebei_great_steel_plane"
+			1061 = {
+				add_resource = {
+					type = steel
+					amount = 19
+				}
+			}
+			1062 = {
+				add_resource = {
+					type = steel
+					amount = 17
+				}
+			}
+			1063 = {
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+			}
+		}
+	}
+
+	PRC_suiyuan_treasures = {#绥远铁矿
+		icon = steel
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connected_hetao
+		}
+		available = {
+			has_tech = excavation3
+			num_of_civilian_factories_available_for_projects > 8
+			owns_state = 621
+			owns_state = 616
+		}
+		cost = 35
+		modifier = {
+			civilian_factory_use = 8
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 621 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yunnan_treasures_1"
+			621 = {
+				add_resource = {
+					type = steel
+					amount = 16
+				}
+			}
+			616 = {
+				add_resource = {
+					type = steel
+					amount = 13
+				}
+			}
+		}
+	}
+
+	PRC_tangshan_steel = {#唐山铁矿
+		icon = steel
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connect_dongbei
+		}
+		available = {
+			has_tech = excavation4
+			num_of_civilian_factories_available_for_projects > 8
+			owns_state = 614
+		}
+		cost = 35
+		modifier = {
+			civilian_factory_use = 8
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 614 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_tangshan_steel"
+			614 = {
+				add_resource = {
+					type = steel
+					amount = 38
+				}
+			}
+		}
+	}
+
+	PRC_menggu_treasures = {#蒙古铁矿
+		icon = steel
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connect_menggu
+		}
+		available = {
+			has_tech = excavation5
+			num_of_civilian_factories_available_for_projects > 12
+			owns_state = 330
+		}
+		cost = 40
+		modifier = {
+			civilian_factory_use = 12
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 330 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yunnan_treasures_1"
+			330 = {
+				add_resource = {
+					type = steel
+					amount = 42
+				}
+			}
+		}
+	}
+
+
+
+	PRC_yunnan_treasures_4 = { #贵西铬矿
+		icon = chromium
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_nanning
+		}
+		available = {
+			has_tech = excavation1	
+			num_of_civilian_factories_available_for_projects > 5
+			owns_state = 1051
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 5
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 1051 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yunnan_treasures_4"
+			1051 = {
+				add_resource = {
+					type = chromium
+					amount = 12
+				}
+			}
+		}
+	}
+
+	PRC_xikang_treasures = {#西康铬矿
+		icon = chromium
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_chengdu
+		}
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 7
+			owns_state = 601
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 7
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 601 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yunnan_treasures_1"
+			601 = {
+				add_resource = {
+					type = chromium
+					amount = 16
+				}
+			}
+		}
+	}
+
+	PRC_xinjiang_treasures_chromium = { #新疆铬矿
+		icon = chromium
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connected_xinjiang
+		}
+		available = {
+			has_tech = excavation3
+			num_of_civilian_factories_available_for_projects > 18
+			owns_state = 1083
+			owns_state = 617
+			owns_state = 618
+		}
+		cost = 50
+		modifier = {
+			civilian_factory_use = 18
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 618 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yunnan_treasures_4"
+			1083 = {
+				add_resource = {
+					type = chromium
+					amount = 14
+				}
+			}
+			617 = {
+				add_resource = {
+					type = chromium
+					amount = 19
+				}
+			}
+			618 = {
+				add_resource = {
+					type = chromium
+					amount = 15
+				}
+			}
+		}
+	}
+
+	PRC_ximenggu_treasures = {#西蒙古铬矿
+		icon = chromium
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connect_menggu
+		}
+		available = {
+			has_tech = excavation4
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 1048
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 9
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 1048 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yunnan_treasures_1"
+			1048 = {
+				add_resource = {
+					type = chromium
+					amount = 21
+				}
+			}
+		}
+	}
+
+	PRC_xizang_treasures = {#西藏铬矿
+		icon = chromium
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connect_xizang
+			NOT = {
+			    has_country_flag = PRC_agreement_with_tibetan_slave_owners
+			}
+		}
+		available = {
+			has_tech = excavation5
+			num_of_civilian_factories_available_for_projects > 13
+			owns_state = 322
+		}
+		cost = 40
+		modifier = {
+			civilian_factory_use = 13
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 322 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yunnan_treasures_1"
+			322 = {
+				add_resource = {
+					type = chromium
+					amount = 26
+				}
+			}
+			322 = {
+				add_resource = {
+					type = steel
+					amount = 14
+				}
+			}
+		}
+	}
+
+	PRC_yunnan_treasures_3 = { #昆明钨矿
+		icon = tungsten
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_kunming
+		}
+		available = {	
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 5
+			owns_state = 325
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 5
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 325 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yunnan_treasures_3"
+			325 = {
+				add_resource = {
+					type = tungsten
+					amount = 14
+				}
+			}
+		}
+	}
+
+	PRC_zibo_aluminium = {#淄博铝矿（济南）
+		icon = aluminium
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_beijing
+		}
+		available = {
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 5
+			owns_state = 597
+		}
+		cost = 30
+		modifier = {
+			civilian_factory_use = 5
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 597 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision PRC_zibo_aluminium"
+			597 = {
+				add_resource = {
+					type = aluminium
+					amount = 14
+				}
+			}
+		}
+	}
+
+	PRC_yunnan_treasures_2 = { #昆明铝矿
+		icon = aluminium
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_kunming
+		}
+		available = {	
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 325
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 4
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 325 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yunnan_treasures_2"
+			325 = {
+				add_resource = {
+					type = aluminium
+					amount = 9
+				}
+			}
+		}
+	}
+
+	PRC_guanzhong_treasures = {#关中铝矿
+		icon = aluminium
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connected_northwest
+		}
+		available = {
+			has_tech = excavation2	
+			num_of_civilian_factories_available_for_projects > 5
+			owns_state = 607
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 4
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 607 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision PRC_luoyang_aluminium"
+			607 = {
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+			}
+		}
+	}
+
+	PRC_luoyang_aluminium = {#洛阳铝矿
+		icon = aluminium
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connected_northwest
+		}
+		available = {	
+			has_tech = excavation3
+			num_of_civilian_factories_available_for_projects > 8
+			owns_state = 607
+		}
+		cost = 30
+		modifier = {
+			civilian_factory_use = 8
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 607 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yunnan_treasures_2"
+			607 = {
+				add_resource = {
+					type = aluminium
+					amount = 17
+				}
+			}
+		}
+	}
+
+	PRC_shanxi_treasures = {#山西铝矿
+		icon = aluminium
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connected_hetao
+		}
+		available = {	
+			has_tech = excavation4
+			num_of_civilian_factories_available_for_projects > 14
+			owns_state = 1072
+			owns_state = 1015
+			owns_state = 615
+		}
+		cost = 50
+		modifier = {
+			civilian_factory_use = 14
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 1072 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yunnan_treasures_2"
+			1072 = {
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+			}
+			1015 = {
+				add_resource = {
+					type = aluminium
+					amount = 14
+				}
+			}
+			615 = {
+				add_resource = {
+					type = aluminium
+					amount = 15
+				}
+			}
+		}
+	}
+
+	PRC_dongbei_treasures = {#东北铝矿
+		icon = aluminium
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connect_dongbei
+		}
+		available = {	
+			has_tech = excavation5
+			num_of_civilian_factories_available_for_projects > 17
+			owns_state = 884
+			owns_state = 883
+			owns_state = 714
+		}
+		cost = 50
+		modifier = {
+			civilian_factory_use = 17
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 884 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yunnan_treasures_2"
+			884 = {
+				add_resource = {
+					type = aluminium
+					amount = 18
+				}
+			}
+			883 = {
+				add_resource = {
+					type = aluminium
+					amount = 14
+				}
+			}
+			714 = {
+				add_resource = {
+					type = aluminium
+					amount = 13
+				}
+			}
+		}
+	}
+
+	PRC_daqing_oil = {#大庆石油
+		icon = oil
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connect_dongbei
+		}
+		available = {
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 7
+			owns_state = 883
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 7
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 883 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yanchang_oil"
+			883 = {
+				add_resource = {
+					type = oil
+					amount = 14
+				}
+			}
+		}
+	}
+
+	PRC_yanchang_oil = {#榆林石油
+		icon = oil
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connected_northwest
+		}
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 622
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 4
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 622 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yanchang_oil"
+			622 = {
+				add_resource = {
+					type = oil
+					amount = 9
+				}
+			}
+		}
+	}
+
+	PRC_yumen_oil = {#玉门石油（河西走廊）
+		icon = oil
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connected_northwest
+		}
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 3
+			owns_state = 774
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 3
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 774 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove yumen_oil"
+			774 = {
+				add_resource = {
+					type = oil
+					amount = 8
+				}
+			}
+		}
+	}
+
+	PRC_zhungaer_oil = {#准噶尔石油
+		icon = oil
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connected_xinjiang
+		}
+		available = {
+			has_tech = excavation3
+			num_of_civilian_factories_available_for_projects > 5
+			owns_state = 618
+		}
+		cost = 35
+		modifier = {
+			civilian_factory_use = 5
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 618 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yanchang_oil"
+			618 = {
+				add_resource = {
+					type = oil
+					amount = 13
+				}
+			}
+		}
+	}
+
+	PRC_talimu_oil = {#塔里木石油
+		icon = oil
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connected_xinjiang
+		}
+		available = {
+			has_tech = excavation4
+			num_of_civilian_factories_available_for_projects > 8
+			owns_state = 1085
+		}
+		cost = 40
+		modifier = {
+			civilian_factory_use = 8
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 1085 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_yanchang_oil"
+			1085 = {
+				add_resource = {
+					type = oil
+					amount = 19
+				}
+			}
+		}
+	}
+
+	PRC_improve_hainan = {#完成南广铁路，开发南海天然气
+		icon = oil
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_hainan
+		}
+		available = {	
+			owns_state = 591
+			has_tech = excavation5
+			num_of_civilian_factories_available_for_projects > 6
+		}
+		cost = 50
+		modifier = {
+			civilian_factory_use = 6
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 591 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_improve_hainan"
+			591 = {
+				add_resource = {
+					type = oil
+					amount = 22
+				}
+			}
+		}
+	}
+
+	PRC_taiwan_rubber = {#台湾橡胶
+		icon = rubber
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_connected_the_coast
+		}
+		available = {
+			has_tech = excavation1	
+			num_of_civilian_factories_available_for_projects > 8
+			owns_state = 524
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 8
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 524 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_guangdong_rubber"
+			524 = {
+				add_resource = {
+					type = rubber
+					amount = 18
+				}
+			}
+		}
+	}
+
+	PRC_hainan_rubber = {#海南橡胶
+		icon = rubber
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_nanning
+		}
+		available = {
+			has_tech = excavation1	
+			num_of_civilian_factories_available_for_projects > 5
+			owns_state = 591
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 5
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 591 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_guangxi_rubber"
+			591 = {
+				add_resource = {
+					type = rubber
+					amount = 13
+				}
+			}
+		}
+	}
+
+	PRC_qinlian_rubber = {#钦廉橡胶
+		icon = rubber
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_hainan
+		}
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 1056
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 4
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 1056 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_guangdong_rubber"
+			1056 = {
+				add_resource = {
+					type = rubber
+					amount = 11
+				}
+			}
+		}
+	}
+
+	PRC_guangdong_rubber = {#广东橡胶
+		icon = rubber
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_nanning
+		}
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 5
+			owns_state = 593
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 5
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 593 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_guangdong_rubber"
+			593 = {
+				add_resource = {
+					type = rubber
+					amount = 12
+				}
+			}
+		}
+	}
+
+	PRC_guangxi_rubber = {#广西橡胶
+		icon = rubber
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_nanning
+		}
+		available = {
+			has_tech = excavation3
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 594
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 4
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 594 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_guangxi_rubber"
+			594 = {
+				add_resource = {
+					type = rubber
+					amount = 10
+				}
+			}
+		}
+	}
+
+	PRC_tingzhang_rubber = {#汀漳橡胶
+		icon = rubber
+		allowed = {
+		}
+		visible = {
+			has_country_flag = PRC_built_to_fujian
+		}
+		available = {
+			has_tech = excavation5
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 1046
+		}
+		cost = 25
+		modifier = {
+			civilian_factory_use = 4
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 1046 }
+		}
+		days_remove = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PRC_guangdong_rubber"
+			1046 = {
+				add_resource = {
+					type = rubber
+					amount = 8
+				}
+			}
+		}
+	}
+
+	PRC_dec_land_reform_add_core = { #扩建城市
+		icon = generic_decision
+		cost = 25
+		days_remove = 90
+		fire_only_once = no
+		
+		allowed = {
+		}
+		available = {
+		}
+		visible = {
+			tag = prc #保证了不会出现
+			has_completed_focus = PRC_dianqihua
+			has_completed_focus = PRC_establish_the_welfare_system
+		}
+		ai_will_do = {
+		}
+		state_target = yes
+		modifier = {
+		}
+		target_trigger = {
+			FROM = {
+				is_fully_controlled_by = root
+				is_core_of = root
+				NOT = {
+					has_state_category = twelve
+				}
+			}
+		}
+		remove_effect = {
+			target_state = {
+				if = {
+					limit = { has_state_category = wasteland }
+					set_state_category = one
+				}
+				else_if = {
+					limit = { has_state_category = zero } 
+					set_state_category = one
+				}
+				else_if = {
+					limit = { has_state_category = zero_island } 
+					set_state_category = one_island
+				}
+				else_if = {
+					limit = { has_state_category = one_island }
+					set_state_category = two
+				}
+				else_if = {
+					limit = { has_state_category = minor_port }
+					set_state_category = two
+				}
+				else_if = {
+					limit = { has_state_category = port }
+					set_state_category = three
+				}
+				else_if = {
+					limit = { has_state_category = major_port }
+					set_state_category = five
+				}
+				else = {
+					increase_state_category_by_one_level = yes
+				}
+			}
+		}
+	}
+}

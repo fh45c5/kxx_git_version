@@ -1,0 +1,192 @@
+capital = 2002
+
+recruit_character = VER_vertin
+recruit_character = VER_Sonetto
+recruit_character = VER_Regulus
+recruit_character = VER_Lilya
+recruit_character = VER_Sotheby
+recruit_character = VER_Druvis_III
+
+# Country leaders
+set_research_slots = 4
+set_convoys = 0
+
+set_war_support = 0.4
+set_stability = 0.4
+
+add_ideas = {
+
+	VER_Municipal_government_crisis
+	VER_Disappearing_foundations
+	VER_Surveillance_by_the_Germans
+	VER_One_set_on_the_surface_one_set_in_the_back
+
+	### POLITICAL ###
+	tno_political_parties_nonpartisan_system
+	tno_religious_rights_pluralism
+	tno_trade_unions_nonsocialist_allowed
+	tno_trade_unions_state_controlled
+	tno_slavery_outlawed
+	tno_public_meetings_regulated
+	tno_public_meetings_allowed
+	tno_vote_franchise_no_voting
+
+	### MILITARY ###
+	tno_conscription_disarmed_nation
+	tno_military_supervision_rules_of_engagement
+	tno_training_basic_training
+	tno_draft_exemptions_civil_service_deferment
+
+	### ECONOMIC ###
+	tno_trade_laws_export_focus
+	tno_income_taxation_low_income_weighted
+	tno_minimum_wage_trinket_minimum_wage
+	tno_max_workhours_12_hour_work_day
+	tno_pensions_low_pensions
+	tno_unemployment_moderate_subsidies
+
+	### SOCIAL ###
+	tno_health_care_low_income_protections
+	tno_education_public_education
+	tno_penal_system_harsh_penal_code
+	tno_gender_rights_women_in_the_workplace
+	tno_security_regulated_police
+	tno_regulations_token_regulations
+
+	### MISC ###
+	tno_refugees_banned
+	tno_women_combat_roles
+	tno_racial_integration_none
+	tno_child_labor_illegal
+	tno_safety_limited_regulations
+	tno_pollution_no_controls
+	tno_lgbt_rights_lgbt_allowed
+	tno_minorities_equal_rights
+
+	### SOCIETAL DEVELOPMENT ###
+	tno_academic_base_secondary_schooling
+	tno_research_facilities_modern
+	tno_agriculture_mass_mechanized
+	tno_healthcare_developed
+	tno_industrial_equipment_manufacturing_lines
+	tno_industrial_expertise_experienced
+	tno_admin_efficiency_deficient_administrative_systems
+	tno_army_professionalism_political_interference
+}
+
+set_politics = {
+	ruling_party = social_liberal
+	last_election = "1961.11.14"
+	election_frequency = 60
+	elections_allowed = no
+}
+
+set_party_name = {
+	ideology = social_liberal
+	long_name = VER_conservatism_party_long
+	name = VER_conservatism_party
+}
+set_party_name = {
+	ideology = national_populist
+	long_name = VER_national_socialism_party_long
+	name = VER_national_socialism_party
+}
+set_party_name = {
+	ideology = social_democrat
+	long_name = VER_liberal_conservatism_party_long
+	name = VER_liberal_conservatism_party
+}
+set_party_name = {
+	ideology = market_liberal
+	long_name = VER_liberal_conservatism_party_long
+	name = VER_liberal_conservatism_party
+}
+set_party_name = {
+	ideology = radical_socialist
+	long_name = VER_progressivism_party_long
+	name = VER_progressivism_party
+}
+set_party_name = {
+	ideology = totalist
+	long_name = VER_paternalism_party_long
+	name = VER_paternalism_party
+}
+set_party_name = {
+	ideology = syndicalist
+	long_name = VER_socialist_party_long
+	name = VER_socialist_party
+}
+set_party_name = {
+	ideology = paternal_autocrat
+	long_name = VER_national_socialism_party_long
+	name = VER_national_socialism_party
+}
+set_party_name = {
+	ideology = authoritarian_democrat
+	long_name = VER_fascism_party_long_bad
+	name = VER_fascism_party_bad
+}
+set_party_name = {
+	ideology = social_conservative
+	long_name = VER_despotism_party_long
+	name = VER_despotism_party
+}
+
+set_popularities = {
+	social_liberal = 25
+	market_liberal = 12
+	syndicalist = 8
+	radical_socialist = 10
+	social_democrat = 13
+	totalist = 5
+	social_conservative = 10
+	authoritarian_democrat = 10
+	paternal_autocrat = 2
+	national_populist = 5
+}
+
+
+set_variable = { TNO_economy_type = token:Econ_Type_Capitalism }
+set_variable = { TNO_economy_subtype = token:Econ_Subtype_Social_Market }
+
+### Political
+set_variable = { tno_political_parties_effectiveness = 60 }
+set_variable = { tno_religious_rights_effectiveness = 80 }
+set_variable = { tno_trade_unions_effectiveness = 70 }
+set_variable = { tno_immigration_effectiveness = 90 }
+set_variable = { tno_slavery_effectiveness = 60 }
+set_variable = { tno_public_meetings_effectiveness = 35 }
+set_variable = { tno_press_rights_effectiveness = 45 }
+set_variable = { tno_vote_franchise_effectiveness = 70 }
+
+### Military
+set_variable = { tno_conscription_effectiveness = 90 }
+set_variable = { tno_military_supervision_effectiveness = 100 }
+set_variable = { tno_training_effectiveness = 45 }
+set_variable = { tno_draft_exemptions_effectiveness = 75 }
+
+### Economic
+set_variable = { tno_trade_laws_effectiveness = 75 }
+set_variable = { tno_income_taxation_effectiveness = 60 }
+set_variable = { tno_minimum_wage_effectiveness = 55 }
+set_variable = { tno_max_workhours_effectiveness = 85 }
+set_variable = { tno_pensions_effectiveness = 75 }
+set_variable = { tno_unemployment_effectiveness = 100 }
+set_variable = { tno_regulations_effectiveness = 80 }
+
+### Social
+set_variable = { tno_health_care_effectiveness = 35 }
+set_variable = { tno_education_effectiveness = 25 }
+set_variable = { tno_penal_system_effectiveness = 65 }
+set_variable = { tno_gender_rights_effectiveness = 75 }
+set_variable = { tno_security_effectiveness = 35 }
+
+set_variable = { economic_centralization = 75}
+set_variable = { credit_rating_max = 7 }
+set_variable = { credit_rating = 2 }
+set_variable = { clamped_inflation_rate = 5 }
+set_variable = { base_inflation_rate = 3.12 }
+
+set_temp_variable = { temp_econ_GDP_boost_flat = 0.78 }
+inherit_technology = ENG
+country_lock_all_division_template = yes

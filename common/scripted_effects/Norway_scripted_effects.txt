@@ -1,0 +1,181 @@
+NOR_reduce_weak_economy = {
+	if = {
+		limit = { has_idea = NOR_weak_economy_0 }
+		swap_ideas = {
+			remove_idea = NOR_weak_economy_0
+			add_idea = NOR_weak_economy_1
+		}
+	}
+	else_if = {
+		limit = { has_idea = NOR_weak_economy_1 }
+		swap_ideas = {
+			remove_idea = NOR_weak_economy_1
+			add_idea = NOR_weak_economy_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = NOR_weak_economy_2 }
+		swap_ideas = {
+			remove_idea = NOR_weak_economy_2
+			add_idea = NOR_weak_economy_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = NOR_weak_economy_3 }
+		swap_ideas = {
+			remove_idea = NOR_weak_economy_3
+			add_idea = NOR_weak_economy_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = NOR_weak_economy_4 }
+		swap_ideas = {
+			remove_idea = NOR_weak_economy_4
+			add_idea = NOR_weak_economy_5
+		}
+	}
+	else_if = {
+		limit = { has_idea = NOR_weak_economy_5 }
+		remove_ideas = NOR_weak_economy_5
+	}
+}
+
+NOR_weakening_economy = {
+	if = {
+		limit = { has_idea = NOR_weak_economy_5 }
+		swap_ideas = {
+			remove_idea = NOR_weak_economy_5
+			add_idea = NOR_weak_economy_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = NOR_weak_economy_4 }
+		swap_ideas = {
+			remove_idea = NOR_weak_economy_4
+			add_idea = NOR_weak_economy_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = NOR_weak_economy_3 }
+		swap_ideas = {
+			remove_idea = NOR_weak_economy_3
+			add_idea = NOR_weak_economy_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = NOR_weak_economy_2 }
+		swap_ideas = {
+			remove_idea = NOR_weak_economy_2
+			add_idea = NOR_weak_economy_1
+		}
+	}
+	else_if = {
+		limit = { has_idea = NOR_weak_economy_1 }
+		swap_ideas = {
+			remove_idea = NOR_weak_economy_1
+			add_idea = NOR_weak_economy_0
+		}
+	}
+	else_if = {
+		limit = { has_idea = NOR_weak_economy_0 }
+		add_political_power = -50
+	}
+}
+
+NOR_remove_weak_economy = {
+	if = {
+		limit = { has_idea = NOR_weak_economy_1 }
+		remove_ideas = NOR_weak_economy_1
+	}
+	else_if = {
+		limit = { has_idea = NOR_weak_economy_2 }
+		remove_ideas = NOR_weak_economy_2
+	}
+	else_if = {
+		limit = { has_idea = NOR_weak_economy_3 }
+		remove_ideas = NOR_weak_economy_3
+	}
+	else_if = {
+		limit = { has_idea = NOR_weak_economy_4 }
+		remove_ideas = NOR_weak_economy_4
+	}
+	else_if = {
+		limit = { has_idea = NOR_weak_economy_5 }
+		remove_ideas = NOR_weak_economy_5
+	}
+}
+
+NOR_create_rikshirden_leaders = {
+	create_field_marshal = {
+		name = "Jonas Lie"
+		portrait_path = "gfx/leaders/NOR/Portrait_Norway_Jonas_Lie.png"
+		traits = { offensive_doctrine }
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "Karl Marthinsen"
+		portrait_path = "gfx/leaders/NOR/Portrait_Norway_Karl_Marthinsen.png"
+		traits = { trickster }
+		skill = 2
+		attack_skill = 2
+		defense_skill = 3
+		planning_skill = 3
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "Oliver Møystad"
+		portrait_path = "gfx/leaders/NOR/Portrait_Norway_Oliver_Moystad.png"
+		traits = { winter_specialist }
+		skill = 2
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "Henrik Rogstad"
+		portrait_path = "gfx/leaders/NOR/Portrait_Norway_Henrik_Rogstad.png"
+		traits = { hill_fighter }
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "Axel Stang"
+		portrait_path = "gfx/leaders/NOR/Portrait_Norway_Axel_Stang.png"
+		traits = { }
+		skill = 1
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "Konrad Sundlo"
+		portrait_path = "gfx/leaders/NOR/Portrait_Norway_Konrad_Sundlo.png"
+		traits = { old_guard }
+		skill = 1
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 3
+	}
+}
+
+NOR_activate_resources_extraction_decisions = {
+	activate_targeted_decision = { target = 144 decision = NOR_norsk_jernverk_mining_steel }
+	activate_targeted_decision = { target = 142 decision = NOR_aluminium_industry_mining }
+}
+
+NOR_recalculate_kings_party = {
+	set_variable = { var_Kings_Party_influence = NOR.party_popularity@social_liberal }
+	multiply_variable = { var_Kings_Party_influence = -1 }
+	force_update_dynamic_modifier = yes
+}
+

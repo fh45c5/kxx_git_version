@@ -1,0 +1,312 @@
+focus_tree = {
+    id = WHR_King_focus_tree
+    country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = WHR
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 1800 y = 1600 }
+
+    focus = {
+		id = WHR_monarchobol
+		icon = GFX_goal_WHR_Monbol
+		relative_position_id = WHR_revolution
+		x = -6
+		y = 1
+		cost = 2
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus WHR_syndicalism"
+			add_stability = 0.025
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+	}
+    focus = {
+		id = WHR_monbol_land_confiscation
+		icon = GFX_BBR_land_redistribution
+		relative_position_id = WHR_monarchobol
+		x = -1
+		y = 1
+		cost = 2
+
+		prerequisite = {
+			focus = WHR_monarchobol
+		}
+		
+		available = {
+			has_country_flag = WHR_Monbol
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus WHR_syndicalism"
+			add_ideas = WHR_monbol_land
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+	}
+    focus = {
+		id = WHR_monbol_central_planning
+		icon = GFX_goal_CSA_new_economic_planning
+		relative_position_id = WHR_monarchobol
+		x = 1
+		y = 1
+		cost = 2
+
+		prerequisite = {
+			focus = WHR_monarchobol
+		}
+		
+		available = {
+			has_country_flag = WHR_Monbol
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus WHR_syndicalism"
+			add_ideas = WHR_monbol_planning
+			WHR_reduce_black_monday = yes
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+	}
+    focus = {
+		id = WHR_allies
+		icon = GFX_focus_SOV_international_union_of_soviet_republics
+		relative_position_id = WHR_revolution
+		x = -4
+		y = 3
+		cost = 2
+
+		prerequisite = {
+			focus = WHR_bolshevik
+			focus = WHR_monarchobol
+		}
+		available = {
+			NOT = {
+				has_global_flag = WHR_GER_DOW
+				has_global_flag = WHR_RUS_SPHERE
+				is_subject = yes
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus WHR_allies"
+			add_war_support = 0.02
+			custom_effect_tooltip = WHR_can_seek_allies
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+    focus = {
+		id = WHR_intermarium
+		icon = GFX_goal_POL_ZPP
+		relative_position_id = WHR_allies
+		x = 0
+		y = 1
+		cost = 2
+
+		prerequisite = {
+			focus = WHR_allies
+		}
+		available = {
+			POL = {
+				has_socialist_government = yes
+			}
+			UKR = {
+				has_socialist_government = yes
+			}
+			NOT = {
+				has_global_flag = WHR_GER_DOW
+				has_global_flag = WHR_RUS_SPHERE
+				WHR_bpsr_in_power = yes
+				is_subject_of = RUS
+				has_war_with = POL
+				has_war_with = UKR
+				is_in_faction_with = FRA
+				is_in_faction_with = SOV
+				is_in_faction = yes
+				is_subject = yes
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus WHR_intermarium"
+			UKR = {
+				country_event = {
+					id = whiteruthenia.51
+					days = 1
+				}
+			}
+		}
+	}
+    focus = {
+		id = WHR_internationale
+		icon = GFX_goal_FRA_international_insurrection
+		relative_position_id = WHR_allies
+		x = 1
+		y = 2
+		cost = 2
+
+		prerequisite = {
+			focus = WHR_allies
+		}
+		available = {
+			country_exists = FRA
+			NOT = {
+				has_global_flag = WHR_GER_DOW
+				has_global_flag = WHR_RUS_SPHERE
+				is_subject_of = RUS
+				is_in_faction_with = SOV
+				is_in_faction_with = UKR
+				is_in_faction = yes
+				is_subject = yes
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		mutually_exclusive = {
+			focus = WHR_russian_alliance
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus WHR_internationale"
+			FRA = {
+				country_event = {
+					id = whiteruthenia.48
+					days = 1
+				}
+			}
+		}
+	}
+    focus = {
+		id = WHR_russian_alliance
+		icon = GFX_align_soviet
+		relative_position_id = WHR_allies
+		x = -1
+		y = 2
+		cost = 2
+
+		prerequisite = {
+			focus = WHR_allies
+		}
+		bypass = {
+
+		}
+		available = {
+			soviets_exist = yes
+			is_in_faction = no
+			is_subject = no
+			has_country_flag = WHR_Monbol
+			RUS = { is_faction_leader = yes }
+		}
+		mutually_exclusive = {
+			focus = WHR_internationale
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus WHR_russian_alliance"
+			RUS = {
+				country_event = {
+					id = whiteruthenia.48
+					days = 1
+				}
+			}
+		}
+	}
+    focus = {
+		id = WHR_monbol_recreate_police
+		icon = GFX_BBR_jacobin_police
+		relative_position_id = WHR_monarchobol
+		x = 0
+		y = 2
+		cost = 2
+
+		prerequisite = {
+			focus = WHR_monbol_central_planning
+		}
+		prerequisite = {
+			focus = WHR_monbol_land_confiscation
+		}
+		
+		available = {
+			has_country_flag = WHR_Monbol
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus WHR_syndicalism"
+			add_ideas = WHR_monbol_cops
+			hidden_effect = {
+				country_event = {
+					id = whiteruthenia.1004
+					days = 14
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+	}
+    focus = {
+		id = WHR_own_faction
+		icon = GFX_goal_anarcho_monarchism
+		relative_position_id = WHR_allies
+		x = -2
+		y = 1
+		cost = 2
+
+		prerequisite = {
+			focus = WHR_allies
+		}
+		available = {
+			has_country_flag = WHR_Monbol
+			NOT = {
+				is_in_faction = yes
+				is_subject = yes
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus WHR_internationale"
+			create_faction =  "UnionofPeople'sCrowns"
+			set_global_flag = WHR_MONBOL_ALLYS
+		}
+	}
+    focus = {
+		id = WHR_reichspact
+		icon = GFX_BAT_germanisation
+		relative_position_id = WHR_allies
+		x = -3
+		y = 2
+		cost = 2
+
+		prerequisite = {
+			focus = WHR_allies
+		}
+		available = {
+			country_exists = GER
+			has_country_flag = WHR_Monbol
+			NOT = {
+				is_in_faction = yes
+				is_subject = yes
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus WHR_internationale"
+			GER = {
+				add_to_faction = WHR
+			}
+		}
+	}
+}

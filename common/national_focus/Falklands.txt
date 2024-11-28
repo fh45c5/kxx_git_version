@@ -1,0 +1,562 @@
+focus_tree = {
+	id = FLS_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = FLS
+		}
+		
+	}
+	default = no
+	focus = {
+		id = FLS_START
+		icon = GFX_goal_FLS_legacy_of_coup
+		x = 5
+		y = 0
+		cost = 2
+		available = {
+			is_subject = no
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_START"
+                        add_stability = 0.075
+                        add_political_power = 150
+			add_equipment_to_stockpile = {
+                       type = convoy_1
+                       amount = 50
+                       producer = FLS
+                      }
+                   hidden_effect = { country_event = { id = fls.3  days = 175 } }
+		}
+	}
+
+
+        focus = {
+		id = FLS_SOLIDATE_RULE
+		icon = GFX_goal_FLS_solidate_our_rule
+		x = 5
+		y = 1
+		cost = 5
+                prerequisite = {
+			focus = FLS_START
+		}
+		available = {
+			is_subject = no
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_SOLIDATE_RULE"
+			add_stability = 0.05
+                        add_political_power = 25
+                       add_popularity = {
+                              ideology = paternal_autocrat
+                              popularity = 0.1
+                       }
+                       add_popularity = {
+                              ideology = national_populist
+                              popularity = 0.1
+                       }
+                       add_equipment_to_stockpile = {
+                       type = convoy_1
+                       amount = 100
+                       producer = FLS
+                      }
+		}
+	}
+  
+         focus = {
+		id = FLS_NAVAL_DICTATORSHIP
+		icon = GFX_goal_FLS_naval_dictatorship
+		x = 5
+		y = 2
+		cost = 5
+                prerequisite = {
+			focus = FLS_SOLIDATE_RULE
+		}
+		available = {
+			is_subject = no
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_NAVAL_DICTATORSHIP"
+			add_country_leader_trait = great_admiral
+                        add_stability = 0.05
+                        add_political_power = 25
+                        add_war_support = 0.05
+                        add_equipment_to_stockpile = {
+                       type = convoy_1
+                       amount = 100
+                       producer = FLS
+                      }
+		}
+	}
+        
+        focus = {
+		id = FLS_FIVE_PRINCIPLES_OF_RULE
+		icon = GFX_goal_FLS_Five_Principles
+		x = 4
+		y = 3
+		cost = 5
+                prerequisite = {
+			focus = FLS_NAVAL_DICTATORSHIP
+		}
+		available = {
+			is_subject = no
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_FIVE_PRINCIPLES_OF_RULE"
+			add_ideas = FLK_five_principles
+                        add_equipment_to_stockpile = {
+                       type = convoy_1
+                       amount = 50
+                       producer = FLS
+                      }
+		}
+	}
+
+        focus = {
+		id = FLS_EMBRACE_THE_OLD
+		icon = GFX_goal_FLS_Embrace_the_old
+		x = 6
+		y = 3
+		cost = 5
+                prerequisite = {
+			focus = FLS_NAVAL_DICTATORSHIP
+		}
+		available = {
+			is_subject = no
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_EMBRACE_THE_OLD"
+			add_ideas = FLK_atlantian_inhabitance
+                         add_equipment_to_stockpile = {
+                       type = convoy_1
+                       amount = 50
+                       producer = FLS
+                      }
+		}
+	}
+
+        focus = {
+		id = FLS_OF_WHERE_WE_NEED_TO
+		icon = GFX_goal_FLS_of_where_we_need_to
+		x = 5
+		y = 4
+		cost = 5
+                prerequisite = {
+			focus = FLS_EMBRACE_THE_OLD
+		}
+                prerequisite = {
+			focus = FLS_FIVE_PRINCIPLES_OF_RULE
+		}
+		available = {
+			is_subject = no
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_OF_WHERE_WE_NEED_TO"
+			add_ideas = FLK_preparing_for_the_homeland
+                        remove_ideas = FLK_coup
+                         add_equipment_to_stockpile = {
+                       type = convoy_1
+                       amount = 150
+                       producer = FLS
+                      }
+		}
+	}
+    
+        focus = {
+		id = FLS_CULT_OF_ADMIRAL
+		icon = GFX_goal_FLS_Admiral_Cult
+		x = 5
+		y = 5
+		cost = 5
+                prerequisite = {
+			focus = FLS_OF_WHERE_WE_NEED_TO
+		}
+		available = {
+			is_subject = no
+                        has_country_flag = flk_agartha_open_gates
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_CULT_OF_ADMIRAL"
+                        add_stability = 0.3
+                        add_political_power = 150  
+                         add_equipment_to_stockpile = {
+                       type = convoy_1
+                       amount = 50
+                       producer = FLS
+                      }
+                        add_popularity = {
+                              ideology = national_populist
+                              popularity = 0.35
+                       }             
+                         set_politics = {
+	                 ruling_party = national_populist
+                         elections_allowed = no
+                         last_election = "1935.12.17"
+                         election_frequency = 48
+                     }
+                     hidden_effect = { add_country_leader_trait = great_admiral }
+		}
+	}
+
+
+        focus = {
+		id = FLS_THE_FIRST_CONQUEST
+		icon = GFX_goal_FLS_Our_first_conquest
+		x = 11
+		y = 0
+		cost = 5
+		available = {
+			is_subject = no
+                        has_completed_focus = FLS_OF_WHERE_WE_NEED_TO
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_THE_FIRST_CONQUEST"
+                        set_state_owner = 1028
+			add_state_core = 1028
+                        set_state_owner = 720
+                        add_state_core = 720
+                        add_war_support = 0.05
+                        add_equipment_to_stockpile = {
+                       type = convoy_1
+                       amount = -250
+                       producer = FLS
+                      }
+		}
+	}
+
+        focus = {
+		id = FLS_ATLANTIC_VOYAGE
+		icon = GFX_goal_FLS_Atlantic_voyage
+		x = 12
+		y = 1
+		cost = 5
+		available = {
+			is_subject = no
+		}
+                prerequisite = {
+			focus = FLS_THE_FIRST_CONQUEST
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_ATLANTIC_VOYAGE"
+                        add_war_support = 0.05
+                        custom_effect_tooltip = flk_decision_open
+		}
+	}
+
+        focus = {
+		id = FLS_PACIFIC_VOYAGE
+		icon = GFX_goal_FLS_pacific_voyage
+		x = 10
+		y = 1
+		cost = 5
+		available = {
+			is_subject = no
+		}
+                prerequisite = {
+			focus = FLS_THE_FIRST_CONQUEST
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_PACIFIC_VOYAGE"
+                        add_war_support = 0.05
+			custom_effect_tooltip = flk_decision_open
+		}
+	}
+
+        focus = {
+		id = FLS_CAPE_OF_NO_ORANGE
+		icon = GFX_goal_FLS_Cape_of_no_orang
+		x = 11
+		y = 2
+		cost = 5
+		available = {
+			is_subject = no
+		}
+                prerequisite = {
+			focus = FLS_PACIFIC_VOYAGE
+		}
+                prerequisite = {
+			focus = FLS_ATLANTIC_VOYAGE
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_CAPE_OF_NO_ORANGE"
+			add_state_core = 1176
+                        add_state_core = 681
+                        add_state_core = 946
+                        add_state_core = 719
+                        create_wargoal = {
+                           type = puppet_wargoal_focus
+                           target = SAF
+                      }
+		}
+	}
+
+        focus = {
+		id = FLS_TO_INDIAN_OCEAN
+		icon = GFX_goal_FLS_A_gateway_to_indian_ocean
+		x = 11
+		y = 3
+		cost = 5
+		available = {
+			is_subject = no
+                        owns_state = 681
+                        owns_state = 946
+                        owns_state = 1176
+		}
+                prerequisite = {
+			focus = FLS_CAPE_OF_NO_ORANGE
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_TO_INDIAN_OCEAN"
+			add_war_support = 0.05
+			custom_effect_tooltip = flk_decision_open
+		}
+	}
+
+        focus = {
+		id = FLS_FINAL_CONQUEST
+		icon = GFX_goal_FLS_Final_conquest
+		x = 11
+		y = 4
+		cost = 5
+		available = {
+			is_subject = no
+		}
+                prerequisite = {
+			focus = FLS_TO_INDIAN_OCEAN
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_FINAL_CONQUEST"
+			add_state_core = 522
+                        add_state_core = 519
+                        add_state_core = 517
+                        add_state_core = 518
+                        add_state_core = 723
+                        add_state_core = 284
+                        create_wargoal = {
+                           type = puppet_wargoal_focus
+                           target = AST
+                      }
+                         if = {
+                             limit = {
+                                country_exists = NZL
+                                }   
+                                 create_wargoal = {
+                           type = puppet_wargoal_focus
+                           target = NZL
+                      }
+                           }
+		}
+	}
+
+        focus = {
+		id = FLS_GATEWAY_TO_HEAVEN
+		icon = GFX_goal_FLS_gateway_to_heaven
+		x = 11
+		y = 5
+		cost = 5
+		available = {
+			is_subject = no
+                        owns_state = 681
+                        owns_state = 946
+                        owns_state = 1176
+                        owns_state = 1028
+                        owns_state = 720
+                        owns_state = 706
+                        owns_state = 707
+                        owns_state = 710
+                        owns_state = 711
+                        owns_state = 522
+                        owns_state = 519
+                        owns_state = 517
+                        owns_state = 518
+                        owns_state = 723
+                        owns_state = 284
+                        owns_state = 636
+                        owns_state = 941
+                        owns_state = 726
+                        owns_state = 641
+                        owns_state = 270
+                        owns_state = 704
+                        owns_state = 703
+		}
+                prerequisite = {
+			focus = FLS_FINAL_CONQUEST
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_GATEWAY_TO_HEAVEN"
+			add_stability = 0.5
+                        add_war_support = 0.5
+                        add_popularity = {
+                              ideology = national_populist
+                              popularity = 1
+                       } 
+                       set_cosmetic_tag = FLS_AGRTH_FLAG_NATPOP
+		}
+	}
+
+
+        focus = {
+		id = FLS_IMPROVE_SHEEP_MARKET
+		icon = GFX_goal_FLS_Improve_sheep_market
+		x = 8
+		y = 6
+		cost = 5
+		available = {
+			is_subject = no
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_IMPROVE_SHEEP_MARKET"
+                  random_owned_state = {
+			add_building_construction = {
+                        type = industrial_complex
+                        level = 1
+                        instant_build = yes
+                   }
+                   add_building_construction = {
+                        type = infrastructure
+                        level = 1
+                        instant_build = yes
+                   }
+                   add_extra_state_shared_building_slots = 1
+                    }
+
+                random_owned_state = {
+			add_building_construction = {
+                        type = industrial_complex
+                        level = 1
+                        instant_build = yes
+                   }
+                    add_building_construction = {
+                        type = infrastructure
+                        level = 1
+                        instant_build = yes
+                   }
+                   add_extra_state_shared_building_slots = 1
+                    }
+                random_owned_state = {
+			add_building_construction = {
+                        type = industrial_complex
+                        level = 1
+                        instant_build = yes
+                   }
+                   add_building_construction = {
+                        type = infrastructure
+                        level = 1
+                        instant_build = yes
+                   }
+                   add_extra_state_shared_building_slots = 1
+                    }
+		}
+	}
+
+        focus = {
+		id = FLS_OIL_MUST_FLOW
+		icon = GFX_goal_FLS_The_oil_must_flow
+		x = 7
+		y = 7
+		cost = 5
+		available = {
+			is_subject = no
+		}
+                prerequisite = {
+			focus = FLS_IMPROVE_SHEEP_MARKET
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_OIL_MUST_FLOW"
+			random_owned_state = {
+			add_building_construction = {
+                        type = synthetic_refinery	
+                        level = 1
+                        instant_build = yes
+                   }
+                   add_extra_state_shared_building_slots = 1
+                    }
+
+                random_owned_state = {
+			add_building_construction = {
+                        type = synthetic_refinery	
+                        level = 1
+                        instant_build = yes
+                   }
+                   add_extra_state_shared_building_slots = 1
+                    }
+		}
+	}
+
+        focus = {
+		id = FLS_GREAT_DOCKYARD
+		icon = GFX_goal_FLS_great_dockyard
+		x = 9
+		y = 7
+		cost = 5
+		available = {
+			is_subject = no
+		}
+                prerequisite = {
+			focus = FLS_IMPROVE_SHEEP_MARKET
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_GREAT_DOCKYARD"
+			299 = {
+			add_building_construction = {
+                        type = dockyard
+                        level = 5
+                        instant_build = yes
+                   }
+                   add_building_construction = {
+                        type = infrastructure
+                        level = 1
+                        instant_build = yes
+                   }
+                   add_extra_state_shared_building_slots = 5
+                    }
+		}
+	}
+
+        focus = {
+		id = FLS_GROW_MILITARY_INDUSTRY
+		icon = GFX_goal_FLS_grow_the_military_industry
+		x = 8
+		y = 8
+		cost = 5
+		available = {
+			is_subject = no
+		}
+                prerequisite = {
+			focus = FLS_OIL_MUST_FLOW
+		}
+                 prerequisite = {
+			focus = FLS_GREAT_DOCKYARD
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FLS_GROW_MILITARY_INDUSTRY"
+			 random_owned_state = {
+			add_building_construction = {
+                        type = arms_factory
+                        level = 1
+                        instant_build = yes
+                   }
+                   add_extra_state_shared_building_slots = 1
+                    }
+
+                random_owned_state = {
+			add_building_construction = {
+                        type = arms_factory
+                        level = 1
+                        instant_build = yes
+                   }
+                   add_extra_state_shared_building_slots = 1
+                    }
+                random_owned_state = {
+			add_building_construction = {
+                        type = arms_factory
+                        level = 1
+                        instant_build = yes
+                   }
+                   add_extra_state_shared_building_slots = 1
+                    }
+		}
+	}
+}
+	

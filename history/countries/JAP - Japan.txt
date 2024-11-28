@@ -1,0 +1,1003 @@
+capital = 282
+OOB = "JAP"
+
+set_naval_oob = "JAP_naval"
+set_stability = 0.75
+set_war_support = 0.65
+set_fuel_ratio = 0.75
+set_research_slots = 4
+starting_train_buffer = 2.0
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		engine_tech_1 = 1
+	}
+	create_equipment_variant = {
+		name = "Type 94 Tankette"
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 1
+			tank_nsb_armor_upgrade = 1
+		}
+		obsolete = yes
+		icon = "GFX_JAP_basic_light_tank_medium"
+	}
+	create_equipment_variant = {
+		name = "Type 89 I-Go"
+		type = medium_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_close_support_gun
+			turret_type_slot = tank_medium_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_diesel_engine
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 3
+			tank_nsb_armor_upgrade = 2
+		}
+		icon = "GFX_JAP_basic_medium_tank_medium"
+	}
+	create_equipment_variant = {
+		name = "Type 95 Ha-Go"
+		type = light_tank_chassis_1
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = additional_machine_guns
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 8
+			tank_nsb_armor_upgrade = 2
+		}
+		icon = "GFX_JAP_improved_light_tank_medium"
+	}
+}
+set_technology = {
+	### General ###
+	basic_train = 1
+	electronic_mechanical_engineering = 1
+	fuel_silos = 1
+
+	### Infantry ###
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	tech_recon = 1
+	tech_engineers = 1
+	tech_military_police = 1
+	marines = 1
+	gw_artillery = 1
+
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "JAP_air_bba"
+
+		set_technology = {
+			aa_lmg = 1
+			aa_cannon_1 = 1
+			early_bombs = 1
+			engines_1 = 1
+			engines_2 = 1
+			iw_small_airframe = 1
+			basic_small_airframe = 1
+			iw_medium_airframe = 1
+			basic_medium_airframe = 1
+			iw_large_airframe = 1
+		}
+		JAP_BBA_air_variants = yes
+	else = {
+		set_air_oob = "JAP_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			naval_bomber1 = 1
+			early_bomber = 1
+			strategic_bomber1 = 1
+			tactical_bomber1 = 1
+			heavy_fighter1 = 1
+			fighter1 = 1
+			CAS1 = 1
+			cv_early_fighter = 1
+			cv_naval_bomber1 = 1
+			cv_CAS1 = 1
+		}
+	}
+}
+
+
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	set_technology = {
+		armored_car1 = 1
+	}
+}
+
+### Navy - MtG ###
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		panzerschiffe = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		cruiser_submarines = 1
+		early_ship_hull_carrier = 1
+		basic_ship_hull_carrier = 1
+		early_ship_hull_heavy = 1
+		basic_ship_hull_heavy = 1
+		ship_hull_super_heavy = 1
+		coastal_defense_ships = 1
+		
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+
+		## Modules##
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_heavy_battery = 1
+		basic_depth_charges = 1
+		basic_torpedo = 1
+		improved_ship_torpedo_launcher = 1
+		basic_cruiser_armor_scheme = 1
+		basic_heavy_armor_scheme = 1
+		mechanical_computing = 1
+		basic_fire_control_system = 1
+
+		### Transport ###
+		mtg_transport = 1
+	}
+}
+
+### Navy - Non MtG ###
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_technology = {
+		early_destroyer = 1
+		basic_destroyer = 1
+		early_light_cruiser = 1
+		basic_light_cruiser = 1
+		early_submarine = 1
+		basic_submarine = 1
+		early_heavy_cruiser = 1
+		basic_heavy_cruiser = 1
+		early_battlecruiser = 1
+		early_battleship = 1
+		basic_battleship = 1
+		heavy_battleship = 1
+		early_carrier = 1
+		basic_carrier = 1
+
+		### Transport ###
+		transport = 1
+	}
+}
+
+set_convoys = 300
+
+give_guarantee = FNG
+
+country_event = { id = japan_new_event.0 days = 1 } #Recovering from the Lost Decade
+country_event = { id = japan_new_event.6 days = 40 }
+country_event = { id = japan_new_event.48 days = 572 } #Ryohei dies
+country_event = { id = japfor.1 days = 7 } #Mantetsu Declares Record Earnings
+country_event = { id = japan_new_event.138 days = 133 } #Charlie Chaplin Arrives in Japan
+country_event = { id = japan_new_event.15 days = 135 } #The May 15 Incident
+country_event = { id = japan_new_event.130 days = 2520 } #Weirdo coup real
+#country_event = { id = japdom.56 days = 658 random = 360 } #The Emperor has been shot!#
+country_event = { id = japdom.45 days = 714 } #The Popular Front Incident
+country_event = { id = japdom.53 days = 1247 } #The Great Drought of 1939
+country_event = { id = japdom.57 days = 1754 } #A Second Meiji restoration?
+country_event = { id = literature.12 days = 2160 } #'Little Marin and the Sailor' - Newest Book on Japan's Shelves
+#country_event = { id = japdom.58 days = 2591 } #Hayashi Senjuro is dead!#
+
+
+#Variables
+set_variable = { JAP_KOR_INT = 25 }
+set_variable = { JAP_TWI_INT = 50 }
+
+set_variable = {
+    var = civilian_government
+    value = 0.40
+}
+set_variable = {
+    var = imperial_army
+    value = 0.20
+}
+
+set_variable = {
+    var = zaibatsu_corporations
+    value = 0.10
+}
+set_variable = {
+    var = peasants_faction
+    value = 0.15
+}
+set_variable = {
+    var = workers_union_faction
+    value = 0.15
+}
+
+set_variable = {
+    var = union_control
+    value = 50
+}
+set_variable = {
+    var = rural_support
+    value = 50
+}
+
+
+add_ideas = {
+	#Ministers
+	JAP_Inukai_Tsuyoshi_hog_sco
+	JAP_Yoshizawa_Kenkichi_for_sco
+	JAP_Mitsuchi_Chuzo_eco_sco
+	JAP_Suzuki_Kisaburo_sec_sco
+	#Ideas
+	JAP_rising_sun_idea_1
+	JAP_narrow_rail
+	JAP_bad_land
+	JAP_no_army_focus
+	FNG_mantetsu_profits
+	JAP_naval_army_comp
+	JAP_red_army_resistance_1
+	#Laws
+	limited_conscription
+	limited_exports
+	low_economic_mobilisation
+}
+
+
+add_dynamic_modifier = {
+	modifier = FNG_mantetsu_profits_modifier
+	scope = FNG
+}
+add_dynamic_modifier = {
+	modifier = TRM_japanese_profits_modifier
+	scope = TRM
+}
+
+
+
+set_autonomy = {
+	target = TAI
+	autonomy_state = kr_default_puppet
+}
+set_autonomy = {
+	target = JST
+	autonomy_state = kr_default_puppet
+}
+
+add_opinion_modifier = { target = QIE modifier = embargo }
+add_opinion_modifier = { target = LEC modifier = LEC_member }
+LEC = { give_military_access = JAP }
+give_guarantee = LEC
+set_country_flag = legation_council_vote
+set_country_flag = JAP_EMPEROR_HIRO
+set_country_flag = LEADER_GUI_NOT_VISIBLE
+set_country_flag = KXX_LEADER_GUI_VISIBLE
+
+set_politics = {
+	ruling_party = social_conservative
+	last_election = "1932.3.20"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	totalist = 3
+	syndicalist = 5
+	radical_socialist = 2
+	social_democrat = 10
+	social_liberal = 3
+	authoritarian_democrat = 3
+	market_liberal = 20
+	social_conservative = 40
+	paternal_autocrat = 10
+	national_populist = 4
+}
+
+create_faction = co_prosperity_sphere
+
+
+
+
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	add_to_tech_sharing_group = japan_research
+	every_country = {
+		limit = {
+			is_subject_of = JAP
+		}
+		add_to_tech_sharing_group = japan_research
+	}
+}
+
+### Heads of State ###
+
+create_country_leader = {
+	name = "裕仁"
+	picture = "gfx/leaders/JAP/Portrait_JAP_Hirohito.png"
+	expire = "1965.1.1"
+	ideology = natsynd_subtype
+}
+create_country_leader = {
+	name = "山本悬藏"
+	picture = "gfx/leaders/JAP/Portrait_JAP_Yamamoto_Kenzo.png"
+	expire = "1981.3.6"
+	ideology = democratic_syndicalism_subtype
+}
+create_country_leader = {
+	name = "荒畑寒村"
+	picture = "gfx/leaders/JAP/Portrait_JAP_Arahata_Kanson.png"
+	expire = "1981.3.6"
+	ideology = radsoc_communism_subtype
+}
+create_country_leader = {
+	name = "裕仁"
+	picture = "gfx/leaders/JAP/Portrait_JAP_Hirohito.png"
+	expire = "1965.1.1"
+	ideology = socdem_democratic_socialism_subtype
+}
+create_country_leader = {
+	name = "裕仁"
+	picture = "gfx/leaders/JAP/Portrait_JAP_Hirohito.png"
+	expire = "1965.1.1"
+	ideology = national_liberalism_subtype
+}
+create_country_leader = {
+	name = "裕仁"
+	picture = "gfx/leaders/JAP/Portrait_JAP_Hirohito.png"
+	expire = "1965.1.1"
+	ideology = liberal_conservative_subtype
+}
+create_country_leader = {
+	name = "裕仁"
+	picture = "gfx/leaders/JAP/Portrait_JAP_Hirohito.png"
+	expire = "1965.1.1"
+	ideology = national_conservative_subtype
+}
+create_country_leader = {
+	name = "裕仁"
+	picture = "gfx/leaders/JAP/Portrait_JAP_Hirohito.png"
+	expire = "1965.1.1"
+	ideology = authdem_showa_statism_subtype
+}
+create_country_leader = {
+	name = "裕仁"
+	picture = "gfx/leaders/JAP/Portrait_JAP_Hirohito.png"
+	expire = "1965.1.1"
+	ideology = pataut_showa_statism_subtype
+}
+create_country_leader = {
+	name = "裕仁"
+	picture = "gfx/leaders/JAP/Portrait_JAP_Hirohito.png"
+	expire = "1965.1.1"
+	ideology = right_syndicalism_subtype
+}
+if = {
+	limit = { has_dlc = "Waking the Tiger" }
+
+	create_field_marshal = {
+		name = "寺内寿一"
+		portrait_path = "gfx/leaders/JAP/Portrait_JAP_Hisaichi_Terauchi.png"
+		traits = {
+			offensive_doctrine
+			JAP_samurai_lineage   # hakushaku
+			politically_connected
+		}
+		skill = 4
+		attack_skill = 4
+		defense_skill = 4
+		planning_skill = 3
+		logistics_skill = 2
+	}
+
+	create_field_marshal = {
+		name = "畑俊六"
+		portrait_path = "gfx/leaders/JAP/Portrait_JAP_Shunroku_Hata.png"
+		traits = { offensive_doctrine JAP_samurai_lineage }
+		skill = 4
+		attack_skill = 3
+		defense_skill = 4
+		planning_skill = 2
+		logistics_skill = 4
+	}
+
+	create_field_marshal = {
+		name = "杉山元"
+		portrait_path = "gfx/leaders/JAP/Portrait_JAP_Sugiyama_Hajime.png"
+		traits = { JAP_samurai_lineage }
+		skill = 3
+		attack_skill = 3
+		defense_skill = 3
+		planning_skill = 1
+		logistics_skill = 3
+	}
+
+	create_corps_commander = {
+		name = "石原莞尔"
+		portrait_path = "gfx/leaders/JAP/Portrait_JAP_Kanji_Ishiwara.png"
+		traits = { JAP_samurai_lineage }
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+		id = 1503
+	}
+
+	create_corps_commander = {
+		name = "东久迩宫稔彦王"
+		portrait_path = "gfx/leaders/JAP/Portrait_JAP_Naruhiko_Higashikuni.png"
+		traits = { JAP_samurai_lineage politically_connected }
+		skill = 3
+		attack_skill = 3
+		defense_skill = 3
+		planning_skill = 2
+		logistics_skill = 2
+		id = 18000
+	}
+
+	create_corps_commander = {
+		name = "板垣征四郎"
+		portrait_path = "gfx/leaders/JAP/Portrait_JAP_Seishiro_Itagaki.png"
+		traits = { JAP_samurai_lineage inflexible_strategist trait_reckless }
+		skill = 3
+		attack_skill = 3
+		defense_skill = 3
+		planning_skill = 2
+		logistics_skill = 2
+		id = 1504
+	}
+
+	create_corps_commander = {
+		name = "安达二十三"
+		portrait_path = "gfx/leaders/JAP/Portrait_JAP_Hatazo_Adachi.png"
+		traits = { trickster JAP_samurai_lineage trait_reckless infantry_officer }
+		skill = 2
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "荒木贞夫"
+		portrait_path = "gfx/leaders/JAP/Portrait_JAP_Sadao_Araki.png"
+		traits = { JAP_samurai_lineage }
+		skill = 2
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "小矶国昭"
+		portrait_path = "gfx/leaders/JAP/Portrait_JAP_Kuniaki_Koiso.png"
+		traits = { JAP_samurai_lineage old_guard politically_connected }
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 1
+		id = 18001
+	}
+
+	create_corps_commander = {
+		name = "闲院宫春仁亲王"
+		portrait_path = "gfx/leaders/JAP/Portrait_JAP_Kanin_Haruhito.png"
+		traits = { JAP_samurai_lineage armor_officer politically_connected }
+		skill = 2
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 2
+		id = 18002
+	}
+
+	else = {
+
+		create_field_marshal = {
+			name = "寺内寿一"
+			portrait_path = "gfx/leaders/JAP/Portrait_JAP_Hisaichi_Terauchi.png"
+			traits = {
+				offensive_doctrine
+				politically_connected
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+		}
+
+		create_field_marshal = {
+			name = "畑俊六"
+			portrait_path = "gfx/leaders/JAP/Portrait_JAP_Shunroku_Hata.png"
+			traits = { offensive_doctrine }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 4
+		}
+
+		create_field_marshal = {
+			name = "杉山元"
+			portrait_path = "gfx/leaders/JAP/Portrait_JAP_Sugiyama_Hajime.png"
+			traits = { JAP_samurai_lineage }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 3
+		}
+
+		create_corps_commander = {
+			name = "石原莞尔"
+			portrait_path = "gfx/leaders/JAP/Portrait_JAP_Kanji_Ishiwara.png"
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			id = 1503
+		}
+
+		create_corps_commander = {
+			name = "东久迩宫稔彦王"
+			portrait_path = "gfx/leaders/JAP/Portrait_JAP_Naruhiko_Higashikuni.png"
+			traits = { politically_connected }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			id = 18000
+		}
+
+		create_corps_commander = {
+			name = "板垣征四郎"
+			portrait_path = "gfx/leaders/JAP/Portrait_JAP_Seishiro_Itagaki.png"
+			traits = { inflexible_strategist trait_reckless }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			id = 1504
+		}
+
+		create_corps_commander = {
+			name = "安达二十三"
+			portrait_path = "gfx/leaders/JAP/Portrait_JAP_Hatazo_Adachi.png"
+			traits = { trickster trait_reckless infantry_officer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+
+		create_corps_commander = {
+			name = "荒木贞夫"
+			portrait_path = "gfx/leaders/JAP/Portrait_JAP_Sadao_Araki.png"
+			traits = { }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+
+		create_corps_commander = {
+			name = "小矶国昭"
+			portrait_path = "gfx/leaders/JAP/Portrait_JAP_Kuniaki_Koiso.png"
+			traits = { old_guard politically_connected }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+			id = 18001
+		}
+
+		create_corps_commander = {
+			name = "闲院宫春仁亲王"
+			traits = { armor_officer politically_connected }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+			id = 18002
+		}
+	}
+}
+
+create_corps_commander = {
+	name = "上下奉文"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Tomoyuki_Yamashita.png"
+	traits = { trickster trait_engineer brilliant_strategist politically_connected }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+	id = 1508
+}
+
+create_corps_commander = {
+	name = "武藤章"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Akira_Muto.png"
+	traits = { career_officer  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "田中静一"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Shizuichi_Tanaka.png"
+	traits = { trickster career_officer infantry_officer }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 4
+}
+
+create_corps_commander = {
+	name = "岗村宁次"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Yasuji_Okamura.png"
+	traits = { trait_reckless }
+	skill = 2
+	attack_skill = 4
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1507
+}
+
+create_corps_commander = {
+	name = "西尾寿造"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Toshizo_Nishio.png"
+	traits = { brilliant_strategist infantry_officer }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "安藤利吉" #Ando
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Rikichi_Ando.png"
+	traits = { career_officer }
+	skill = 3
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "酒井隆"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Takashi_Sakai.png"
+	traits = { infantry_officer trait_reckless }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "土肥原贤二"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Kenji_Doihara.png"
+	traits = { career_officer substance_abuser }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "植田谦吉"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Kenkichi_Ueda.png"
+	traits = { old_guard cavalry_officer trait_reckless }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 4
+}
+
+create_corps_commander = {
+	name = "本庄繁"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Shigeru_Honjo.png"
+	traits = { old_guard war_hero }
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "梅津美次郎"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Yoshijiro_Umezu.png"
+	traits = { trait_cautious politically_connected }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "山田乙三"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Otozo_Yamada.png"
+	traits = { cavalry_officer career_officer }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 3
+	id = 1509
+}
+
+create_corps_commander = {
+	name = "松井石根"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Iwane_Matsui.png"
+	traits = { old_guard trait_reckless }
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "藤江惠辅"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Keisuke_Fujie.png"
+	traits = { trait_engineer fortress_buster career_officer politically_connected }
+	skill = 3
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "樋口季一郎"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Kiichiro_Higuchi.png"
+	traits = { career_officer trait_cautious }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "本间雅晴"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Masaharu_Homma.png"
+	traits = { media_personality trait_cautious }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 2
+	id = 1501
+}
+
+create_corps_commander = {
+	name = "百武晴吉"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Harukichi_Hyakutake.png"
+	traits = { infantry_officer  }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "饭村穰"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Jo_Iimura.png"
+	traits = { career_officer }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "今村均"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Hitoshi_Imamura.png"
+	traits = {  commando career_officer infantry_officer }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 3
+	id = 1502
+}
+
+### Admirals ###
+
+create_navy_leader = {
+	name = "山本五十六"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Isoroku_Yamamoto.png"
+	traits = { superior_tactician spotter }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 3
+	maneuvering_skill = 3
+	coordination_skill = 5
+}
+
+create_navy_leader = {
+	name = "古贺峰一"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Koga_Mineichi.png"
+	traits = { superior_tactician spotter }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 3
+	maneuvering_skill = 4
+	coordination_skill = 4
+}
+
+create_navy_leader = {
+	name = "长谷川清"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Hasegawa_Kiyoshi.png"
+	traits = { }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	maneuvering_skill = 2
+	coordination_skill = 2
+}
+
+create_navy_leader = {
+	name = "井上成美"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Inoue_Shigeyoshi.png"
+	traits = { air_controller }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	maneuvering_skill = 2
+	coordination_skill = 3
+}
+
+create_navy_leader = {
+	name = "近藤信竹"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Nobutake_Kondo.png"
+	traits = { fly_swatter }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 2
+	maneuvering_skill = 3
+	coordination_skill = 3
+}
+
+create_navy_leader = {
+	name = "高木武雄"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Takeo_Takagi.png"
+	traits = { }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	maneuvering_skill = 1
+	coordination_skill = 2
+}
+
+create_navy_leader = {
+	name = "丰田副武"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Soemu_Toyoda.png"
+	traits = { old_guard_navy }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	maneuvering_skill = 2
+	coordination_skill = 1
+}
+
+create_navy_leader = {
+	name = "小泽治三郎"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Jisaburo_Ozawa.png"
+	traits = { blockade_runner superior_tactician }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 3
+	maneuvering_skill = 4
+	coordination_skill = 4
+}
+
+create_navy_leader = {
+	name = "吉田善吾"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Zengo_Yoshida.png"
+	traits = { }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	maneuvering_skill = 2
+	coordination_skill = 2
+}
+
+create_navy_leader = {
+	name = "醍醐忠重"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Tadashige_Daigo.png"
+	traits = { seawolf }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	maneuvering_skill = 2
+	coordination_skill = 2
+}
+
+create_navy_leader = {
+	name = "百武源吾"
+	portrait_path = "gfx/leaders/JAP/Portrait_JAP_Gengo_Hyakutake.png"
+	traits = { }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	maneuvering_skill = 2
+	coordination_skill = 3
+}
+JAP_start_naval_variant = yes

@@ -1,0 +1,1004 @@
+focus_tree = {
+	id = ChinKX
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = KXX
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 200 y = 2500 }
+	
+	focus={
+		id=KXX_1
+		icon = GFX_goal_WCC_Bomb_Em_Back_into_the_stone_age
+		x=3
+		y=0
+		cost=0
+		ai_will_do={
+			factor=1
+		}
+		available = {
+		has_country_leader={
+				name="钾钇炳丁"
+				ruling_only=yes
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		}
+	}
+	focus={
+		id=KXX_2
+		icon = GFX_goal_backstab
+		x=0
+		y=1
+		prerequisite={focus=KXX_1}
+		cost=1
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = KXX_GoBack
+		}
+	}
+	focus={
+		id=KXX_3
+		icon = GFX_goal_refugee_management
+		x=0
+		y=2
+		prerequisite={focus=KXX_2}
+		cost=1
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = KXX_GoWork
+		}
+	}
+	focus={
+		id=KXX_4
+		icon = GFX_goal_MAG_work_harder
+		x=0
+		y=3
+		prerequisite={focus=KXX_3}
+		cost=1
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = KXX_GoSpeedWork
+		}
+	}
+	focus={
+		id=KXX_5
+		icon = GFX_BBR_the_final_call
+		x=3
+		y=1
+		prerequisite={focus=KXX_1}
+		cost=1
+		ai_will_do={
+			factor=1
+		}
+		available = {
+		has_completed_focus = KXX_8
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		set_cosmetic_tag = KXX_NEWSHANDONG
+		}
+	}
+	focus={
+		id=KXX_6
+		icon = GFX_goal_PAL_Food_Import
+		x=3
+		y=2
+		prerequisite={focus=KXX_5}
+		cost=1
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = KXX_ThreeRemove
+		}
+	}
+	focus={
+		id=KXX_7
+		icon = GFX_Goal_YUN_Promote_Tourism
+		x=3
+		y=3
+		prerequisite={focus=KXX_6}
+		cost=1
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		annex_country = { target = CZE transfer_troops = yes }
+		278 = {
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		}
+		902 = {
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		}
+		1074 = {
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		}
+		903 = {
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		}
+		511 = {
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		}
+		506 = {
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		}
+		279 = {
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		}
+		299 = {
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		add_manpower = 9999999
+		}
+		1029 = {
+		add_manpower = 9999999
+		add_manpower = 9999999
+		}
+		set_victory_points={
+			province=13219
+			value=45
+		}
+		set_victory_points={
+			province=12960
+			value=45
+		}
+		set_province_name = { id = 12364 name = "新济南" }
+		set_province_name = { id = 5918 name = "新淄博" }
+		set_province_name = { id = 7621 name = "新青岛" }
+		set_province_name = { id = 650 name = "新烟台 " }
+		set_province_name = { id = 13499 name = "新济宁" }
+		set_province_name = { id = 12994 name = "新枣庄" }
+		set_province_name = { id = 11001 name = "新临沂" }
+		set_province_name = { id = 7500 name = "新菏泽" }
+		set_province_name = { id = 8215 name = "新东营" }
+		set_province_name = { id = 12960 name = "烤蟹蟹之家" }
+		set_province_name = { id = 13219 name = "钾钇炳丁海军上将城" }
+		}
+	}
+	focus={
+		id=KXX_8
+		icon = GFX_goal_ARG_FOP_debacle
+		x=6
+		y=1
+		prerequisite={focus=KXX_1}
+		cost=1
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		division_template = {
+			name = "烤蟹蟹卫兵"
+			division_names_group = KXX_ARMY_00
+			regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 0 y = 3 }
+			infantry = { x = 0 y = 4 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 1 y = 3 }
+			infantry = { x = 1 y = 4 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+			infantry = { x = 2 y = 3 }
+			infantry = { x = 2 y = 4 }
+			artillery_brigade  = { x = 3 y = 0 }
+			artillery_brigade  = { x = 3 y = 1 }
+			artillery_brigade  = { x = 3 y = 2 }
+			artillery_brigade  = { x = 3 y = 3 }
+			artillery_brigade  = { x = 3 y = 4 }
+			artillery_brigade  = { x = 4 y = 0 }
+			artillery_brigade  = { x = 4 y = 1 }
+			artillery_brigade  = { x = 4 y = 2 }
+			artillery_brigade  = { x = 4 y = 3 }
+			artillery_brigade  = { x = 4 y = 4 }
+			}
+			support = {
+				artillery = { x = 0 y = 0 }
+				recon = { x = 0 y = 1 }
+			}
+			}
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+			}
+			declare_war_on = { target = ARG type = annex_everything }
+			declare_war_on = { target = FOP type = annex_everything }
+			declare_war_on = { target = CHL type = annex_everything }
+			every_state = {
+			limit = { is_core_of = ARG }
+			add_core_of = KXX
+			}
+			every_state = {
+			limit = { is_core_of = FOP }
+			add_core_of = KXX
+			}
+			every_state = {
+			limit = { is_core_of = CHL }
+			add_core_of = KXX
+			}
+		}
+	}
+	focus={
+		id=KXX_9
+		icon = GFX_ALA_killing_fields
+		x=6
+		y=2
+		prerequisite={focus=KXX_8}
+		cost=1
+		ai_will_do={
+			factor=1
+		}
+		available = {
+		NOT = { country_exists = ARG }
+		NOT = { country_exists = FOP }
+		NOT = { country_exists = CHL }
+		controls_state = 512
+		controls_state = 278
+		controls_state = 279
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		507 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		279 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		874 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		506 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		873 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		1029 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		512 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		278 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		449 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		720 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		299 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		579 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		511 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		902 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		510 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		1074 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		509 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		901 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		903 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		508 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		904 = {
+		add_dynamic_modifier = { modifier = famine_serious_kxx days = 30 }
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		add_manpower = -9999999
+		}
+		}
+	}
+	focus={
+		id=KXX_10
+		icon = GFX_goal_ALB_Reaction_Fire
+		x=6
+		y=3
+		prerequisite={focus=KXX_9}
+		cost=1
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		set_capital = { state = 278 }
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+				create_unit = {
+					division = "name = \"烤蟹蟹卫兵\" division_template = \"烤蟹蟹卫兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = KXX
+				}
+			}
+		}
+	}
+	focus={
+		id=KXX_11
+		icon = GFX_goal_FIN_Totalists
+		x=3
+		y=4
+		prerequisite={focus=KXX_4}
+		prerequisite={focus=KXX_7}
+		prerequisite={focus=KXX_10}
+		cost=1
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = KXX_KillWorld
+		}
+	}
+	focus={
+		id=KXX_12
+		icon = GFX_goal_generic_Gas_attack
+		x=3
+		y=5
+		prerequisite={focus=KXX_11}
+		cost=1
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		every_state = { add_core_of = ROOT }
+		every_country = {
+			KXX = {
+				create_wargoal = {
+					target = PREV
+					type = annex_everything
+				}
+			}
+		}
+		}
+	}
+}

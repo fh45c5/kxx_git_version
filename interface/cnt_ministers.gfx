@@ -1,0 +1,92 @@
+spriteTypes = {	
+
+	SpriteType = {
+	name = "GFX_idea_CNT_Ramiro_Ledesma_Ramos_hog_tot"
+	texturefile = "gfx/interface/ministers/CNT/CNT_Ramiro_Ledesma_Ramos.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CNT_Onesimo_Redondo_Ortega_eco_tot"
+	texturefile = "gfx/interface/ministers/CNT/CNT_Onesimo_Redondo_Ortega.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CNT_Ernesto_Gimenez_Caballero_for_tot"
+	texturefile = "gfx/interface/ministers/CNT/CNT_Ernesto_Gimenez_Caballero.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CNT_Santiago_Montero_Dias_sec_tot"
+	texturefile = "gfx/interface/ministers/CNT/CNT_Santiago_Montero_Dias.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CNT_Jose_Antonio_Primo_de_Rivera_hog_npo"
+	texturefile = "gfx/interface/ministers/CNT/CNT_Jose_Antonio_Primo_de_Rivera.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CNT_Pedro_Lain_Entralgo_for_npo"
+	texturefile = "gfx/interface/ministers/CNT/CNT_Pedro_Lain_Entralgo.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CNT_Jose_Maria_Peman_sec_npo"
+	texturefile = "gfx/interface/ministers/CNT/CNT_Jose_Maria_Peman.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CNT_Rafael_Sanchez_Mazas_eco_npo"
+	texturefile = "gfx/interface/ministers/CNT/CNT_Rafael_Sánchez_Mazas.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CAR_Pedro_Lain_Entralgo_for_npo"
+	texturefile = "gfx/interface/ministers/CNT/CNT_Pedro_Lain_Entralgo.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CAR_Jose_Maria_Peman_sec_npo"
+	texturefile = "gfx/interface/ministers/CNT/CNT_Jose_Maria_Peman.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CAR_Rafael_Sanchez_Mazas_eco_npo"
+	texturefile = "gfx/interface/ministers/CNT/CNT_Rafael_Sánchez_Mazas.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CAR_Julio_Martinez_Santa_Olalla_hog_npo"
+	texturefile = "gfx/interface/ministers/CAR/CAR_Julio_Martinez_Santa_Olalla.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CAR_Eugenio_Montes_hog_npo"
+	texturefile = "gfx/interface/ministers/CAR/CAR_Eugenio_Montes.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CAR_Jose_Millan_Astray_hog_pau"
+	texturefile = "gfx/interface/ministers/CAR/CAR_Jose_Millan_Astray.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CAR_Dionisio_Ridruejo_hog_tot"
+	texturefile = "gfx/interface/ministers/CAR/CAR_Dionisio_Ridruejo.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CAR_Marciano_Pedro_Durruti_hog_rso"
+	texturefile = "gfx/interface/ministers/CAR/CAR_Marciano_Pedro_Durruti.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CAR_Juan_Antonio_Ansaldo_hog_npo"
+	texturefile = "gfx/interface/ministers/CAR/CAR_Juan_Antonio_Ansaldo.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CAR_Agustin_de_Foxa_y_Torroba_hog_npo"
+	texturefile = "gfx/interface/ministers/CAR/CAR_Agustin_de_Foxa_y_Torroba.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CAR_Mohamed_ben_Mizzian_hog_pau"
+	texturefile = "gfx/interface/ministers/CAR/CAR_Mohamed_ben_Mizzian.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CAR_Javier_I_hog_npo"
+	texturefile = "gfx/interface/ministers/CAR/CAR_Javier_I.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CAR_Don_Javier_hog_tot"
+	texturefile = "gfx/interface/ministers/CAR/CAR_Javier_I.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_CAR_Juan_Laguia_Lliteras_hog_syn"
+	texturefile = "gfx/interface/ministers/CAR/CAR_Juan_Laguia_Lliteras.png"			
+	}
+
+}

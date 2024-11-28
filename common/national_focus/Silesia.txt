@@ -1,0 +1,3522 @@
+focus_tree = {
+	id = silesia_focus
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SIL
+		}
+	}
+
+	default = no
+	continuous_focus_position = { x = 200 y = 2500 }
+
+	focus={
+		id=SIL_1
+		icon = GFX_Focus_SIL3
+		x=12
+		y=0
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 100
+			hidden_effect =  {
+				country_event = {
+					id = sil.1
+					days = 15
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_2
+		icon = GFX_RUS_Kerensky_Martial_Law
+		x=11
+		y=1
+		prerequisite={focus=SIL_1}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_stability = 0.05
+		add_war_support = 0.05
+		add_popularity = { ideology = national_populist popularity = 0.05 }
+		add_popularity = { ideology = authoritarian_democrat popularity = 0.1 }
+		hidden_effect =  {
+				country_event = {
+					id = sil.2
+					days = 15
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_3
+		icon = GFX_goal_FRA_communal_work_obligations
+		x=13
+		y=1
+		prerequisite={focus=SIL_1}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_stability = 0.05
+		add_popularity = { ideology = totalist popularity = 0.02 }
+		add_popularity = { ideology = syndicalist popularity = 0.03 }
+		add_popularity = { ideology = radical_socialist popularity = 0.05 }
+		add_popularity = { ideology = social_democrat popularity = 0.1 }
+		hidden_effect =  {
+				country_event = {
+					id = sil.3
+					days = 15
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_4
+		icon = GFX_goal_MEX_Guerilla_Warfare
+		x=12
+		y=2
+		prerequisite={focus=SIL_2}
+		prerequisite={focus=SIL_3}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			country_event = {
+				id = sil.4
+				days = 5
+			}
+		}
+	}
+	focus={
+		id=SIL_CE_1
+		icon = GFX_Focus_SIL2
+		x=12
+		y=3
+		prerequisite={focus=SIL_4}
+		mutually_exclusive={focus=SIL_LF_1 focus=SIL_RH_1 }
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_country_flag = Guderian_triumphed
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		add_stability = 0.05
+		add_war_support = 0.05
+		}
+	}
+	focus={
+		id=SIL_CE_2
+		icon = GFX_goal_GER_Conservative_Revolution
+		x=11
+		y=4
+		prerequisite={focus=SIL_CE_1}
+		mutually_exclusive={focus=SIL_CE_3 }
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_popularity = { ideology = authoritarian_democrat popularity = 0.1 }
+		add_political_power = 200
+		add_stability = 0.1
+		add_research_slot = 1
+		}
+	}
+	focus={
+		id=SIL_CE_3
+		icon = GFX_RUS_Reform_The_Judicial_System
+		x=13
+		y=4
+		prerequisite={focus=SIL_CE_1}
+		mutually_exclusive={focus=SIL_CE_2 }
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_popularity = { ideology = social_conservative popularity = 0.1 }
+		add_political_power = 200
+		add_stability = 0.05
+		add_war_support = 0.05
+		}
+	}
+	focus={
+		id=SIL_CE_4
+		icon = GFX_goal_IRE_generic_construction
+		x=10
+		y=5
+		prerequisite={focus=SIL_CE_2}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=industrial_complex
+					level=2
+					instant_build=yes
+				}
+			}
+			random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=industrial_complex
+					level=2
+					instant_build=yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_CE_5
+		icon = GFX_RUS_Inevitable_Industrialisation
+		x=12
+		y=5
+		prerequisite={focus=SIL_CE_3 focus=SIL_CE_2 }
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=synthetic_refinery
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=industrial_complex
+					level=2
+					instant_build=yes
+				}
+			}
+			random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_CE_6
+		icon = GFX_BAY_UNITE_GERMANY
+		x=14
+		y=5
+		prerequisite={focus=SIL_CE_3}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = SIL_Unit
+		}
+	}
+	focus={
+		id=SIL_CE_7
+		icon = GFX_goal_align_germany
+		x=10
+		y=6
+		prerequisite={focus=SIL_CE_4}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		GER = { add_opinion_modifier = { target = SIL modifier = small_increase } }
+		SIL = { add_opinion_modifier = { target = GER modifier = small_increase } }
+		}
+	}
+	focus={
+		id=SIL_CE_8
+		icon = GFX_GRU_german_industrial_miracle-4038
+		x=12
+		y=6
+		prerequisite={focus=SIL_CE_5}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = SIL_Industrial
+		}
+	}
+	focus={
+		id=SIL_CE_9
+		icon = GFX_german_army_advisors
+		x=14
+		y=6
+		prerequisite={focus=SIL_CE_6}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		division_template = {
+			name = "西里西亚国防军"
+			division_names_group = SIL_NRARMY_0
+			regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+			}
+			support = {
+				artillery = { x = 0 y = 0 }
+			}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"西里西亚国防军\" division_template = \"西里西亚国防军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国防军\" division_template = \"西里西亚国防军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国防军\" division_template = \"西里西亚国防军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国防军\" division_template = \"西里西亚国防军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_CE_10
+		icon = GFX_goal_AUS_german_austria
+		x=11
+		y=7
+		prerequisite={focus=SIL_CE_7}
+		prerequisite={focus=SIL_CE_8}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			set_cosmetic_tag = DDR_SIL
+			DDR = {
+				SIL = {
+					get_current_government_type = yes
+				}
+				DDR = {
+					puppet = SIL
+				}
+				SIL = {
+					restore_previous_government_type = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_CE_11
+		icon = GFX_goal_ZAM_expel_germans
+		x=13
+		y=7
+		prerequisite={focus=SIL_CE_8}
+		prerequisite={focus=SIL_CE_9}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			swap_ideas = {
+				remove_idea = SIL_Unit
+				add_idea = SIL_Unit1
+			}
+		}
+	}
+	focus={
+		id=SIL_CE_12
+		icon = GFX_goal_GER_Man_in_the_High_Castle
+		x=12
+		y=8
+		prerequisite={focus=SIL_CE_11}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_war_support = 0.15
+		create_wargoal = { target = POM type = take_state }
+		create_wargoal = { target = DDR type = take_state }
+		set_cosmetic_tag = GREAT_SIL
+		every_state = {
+			limit = { is_core_of = POM }
+			add_core_of = SIL
+			}
+		every_state = {
+			limit = { is_core_of = DDR }
+			add_core_of = SIL
+			}
+		}
+	}
+	focus={
+		id=SIL_CE_14
+		icon = GFX_focus_rus_poland
+		x=12
+		y=9
+		prerequisite={focus=SIL_CE_12}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = -100
+		POL = { add_opinion_modifier = { target = SIL modifier = large_decrease } }
+		transfer_state = 67
+		67 = {add_core_of = SIL}
+		}
+	}
+	focus={
+		id=SIL_CE_13
+		icon = GFX_goal_TEX_democratic_transition
+		x=10
+		y=9
+		prerequisite={focus=SIL_CE_12}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		add_popularity = { ideology = social_conservative popularity = 0.1 }
+		add_popularity = { ideology = social_liberal popularity = 0.1 }
+		add_popularity = { ideology = market_liberal popularity = 0.1 }
+		}
+	}
+	focus={
+		id=SIL_CE_15
+		icon = GFX_goal_NFA_army_money
+		x=14
+		y=9
+		prerequisite={focus=SIL_CE_12}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 100
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_CE_16
+		icon = GFX_goal_generic_elections
+		x=9
+		y=10
+		prerequisite={focus=SIL_CE_13}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		country_event = sil.8
+		}
+	}
+	focus={
+		id=SIL_CE_17
+		icon = GFX_goal_MEX_corporate_economics
+		x=11
+		y=10
+		prerequisite={focus=SIL_CE_13}
+		prerequisite={focus=SIL_CE_14}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = -50
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=industrial_complex
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=industrial_complex
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=industrial_complex
+					level=2
+					instant_build=yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_CE_18
+		icon = GFX_goal_ARZ_Shotgun_Democracy
+		x=13
+		y=10
+		prerequisite={focus=SIL_CE_14}
+		prerequisite={focus=SIL_CE_15}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = SIL_Gun
+		}
+	}
+	focus={
+		id=SIL_CE_19
+		icon = GFX_goal_COR_Socialist_Knife
+		x=15
+		y=10
+		prerequisite={focus=SIL_CE_15}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_CE_20
+		icon = GFX_goal_NFA_empower_parliament
+		x=10
+		y=11
+		prerequisite={focus=SIL_CE_16}
+		prerequisite={focus=SIL_CE_17}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		bypass = {
+		has_government = paternal_autocrat
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_war_support = 0.15
+		add_stability = 0.5
+		add_popularity = { ideology = social_conservative popularity = 0.1 }
+		add_popularity = { ideology = social_liberal popularity = 0.1 }
+		add_popularity = { ideology = market_liberal popularity = 0.1 }
+		}
+	}
+	focus={
+		id=SIL_CE_21
+		icon = GFX_ALA_canandian_admin
+		x=12
+		y=11
+		prerequisite={focus=SIL_CE_17}
+		prerequisite={focus=SIL_CE_18}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		add_manpower = 50000
+		add_command_power = 100
+			CAN = {
+				country_event = {
+					id = sil.9
+					days = 7
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_CE_22
+		icon = GFX_goal_NFA_Talk_Parties
+		x=14
+		y=11
+		prerequisite={focus=SIL_CE_18}
+		prerequisite={focus=SIL_CE_19}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = SIL_freely
+		}
+	}
+	focus={
+		id=SIL_CE_23
+		icon = GFX_GRU_einigkeit_recht-4035
+		x=11
+		y=12
+		prerequisite={focus=SIL_CE_20}
+		prerequisite={focus=SIL_CE_21}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = SIL_Unity_and_justice
+		}
+	}
+	focus={
+		id=SIL_CE_24
+		icon = GFX_GRU_und_freiheit-4045
+		x=13
+		y=12
+		prerequisite={focus=SIL_CE_21}
+		prerequisite={focus=SIL_CE_22}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = SIL_freely
+			add_idea = SIL_freely1
+		}
+		}
+	}
+	focus={
+		id=SIL_CE_25
+		icon = GFX_goal_generic_intense_warfare
+		x=12
+		y=13
+		prerequisite={focus=SIL_CE_23}
+		prerequisite={focus=SIL_CE_24}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		remove_ideas = SIL_freely1
+		remove_ideas = SIL_Unity_and_justice
+		add_ideas = SIL_Unity_justice_and_freedom
+		}
+	}
+	focus={
+		id=SIL_LF_1
+		icon = GFX_Focus_SIL1
+		x=3
+		y=3
+		prerequisite={focus=SIL_4}
+		mutually_exclusive={focus=SIL_CE_1 focus=SIL_RH_1 }
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_country_flag = Father_Priest_wins
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 120
+		add_stability = 0.1
+		}
+	}
+	focus={
+		id=SIL_LF_2
+		icon = GFX_goal_MEX_Peoples_Mines
+		x=2
+		y=4
+		prerequisite={focus=SIL_LF_1}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		add_stability = 0.1
+		country_event = sil.10
+		}
+	}
+	focus={
+		id=SIL_LF_3
+		icon = GFX_SOV_worker_unions
+		x=4
+		y=4
+		prerequisite={focus=SIL_LF_1}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_LF_4
+		icon = GFX_goal_NYC_Working_Man
+		x=1
+		y=5
+		prerequisite={focus=SIL_LF_2}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = SIL_The_struggle_continues
+		}
+	}
+	focus={
+		id=SIL_LF_5
+		icon = GFX_goal_MAF_African_Workers_Union
+		x=3
+		y=5
+		prerequisite={focus=SIL_LF_2}
+		prerequisite={focus=SIL_LF_3}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=industrial_complex
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_LF_6
+		icon = GFX_goal_POL_Ally_Ukrainian_Workers
+		x=5
+		y=5
+		prerequisite={focus=SIL_LF_3}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = SIL_Welfare_system
+		}
+	}
+	focus={
+		id=SIL_LF_7
+		icon = GFX_CAL_profits_of_the_church
+		x=1
+		y=6
+		prerequisite={focus=SIL_LF_4}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = SIL_The_struggle_continues
+			add_idea = SIL_The_struggle_continues1
+		}
+		}
+	}
+	focus={
+		id=SIL_LF_8
+		icon = GFX_goal_GEO_Loyal_Workers_Make_Loyal_Soldiers
+		x=3
+		y=6
+		prerequisite={focus=SIL_LF_5}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+					free_building_slots={
+						building=infrastructure
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=industrial_complex
+					level=2
+					instant_build=yes
+				}
+				add_building_construction={
+					type=infrastructure
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+					free_building_slots={
+						building=infrastructure
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=industrial_complex
+					level=2
+					instant_build=yes
+				}
+				add_building_construction={
+					type=infrastructure
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+					free_building_slots={
+						building=infrastructure
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=industrial_complex
+					level=2
+					instant_build=yes
+				}
+				add_building_construction={
+					type=infrastructure
+					level=2
+					instant_build=yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_LF_9
+		icon = GFX_goal_KTG_Educate_natives
+		x=5
+		y=6
+		prerequisite={focus=SIL_LF_6}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = SIL_Welfare_system
+			add_idea = SIL_Welfare_system1
+		}
+		}
+	}
+	focus={
+		id=SIL_LF_10
+		icon = GFX_goal_generic_socialist_revolution
+		x=2
+		y=7
+		prerequisite={focus=SIL_LF_7}
+		prerequisite={focus=SIL_LF_8}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+					free_building_slots={
+						building=infrastructure
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+				add_building_construction={
+					type=infrastructure
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+					free_building_slots={
+						building=infrastructure
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+				add_building_construction={
+					type=infrastructure
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+					free_building_slots={
+						building=infrastructure
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+				add_building_construction={
+					type=infrastructure
+					level=2
+					instant_build=yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_LF_11
+		icon = GFX_goal_ALB_Albanian_Tribes
+		x=4
+		y=7
+		prerequisite={focus=SIL_LF_8}
+		prerequisite={focus=SIL_LF_9}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = SIL_Welfare_system1
+			add_idea = SIL_Welfare_system2
+		}
+		}
+	}
+	focus={
+		id=SIL_LF_12
+		icon = GFX_goal_AUS_einsturz
+		x=3
+		y=8
+		prerequisite={focus=SIL_LF_10}
+		prerequisite={focus=SIL_LF_11}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_war_support = 0.15
+		create_wargoal = { target = POM type = take_state }
+		create_wargoal = { target = DDR type = take_state }
+		set_cosmetic_tag = GREAT_SIL
+		every_state = {
+			limit = { is_core_of = POM }
+			add_core_of = SIL
+			}
+		every_state = {
+			limit = { is_core_of = DDR }
+			add_core_of = SIL
+			}
+		}
+	}
+	focus={
+		id=SIL_LF_13
+		icon = GFX_goal_ALB_Thousand_Voices
+		x=1
+		y=9
+		prerequisite={focus=SIL_LF_12}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_manpower = 50000
+		add_war_support = 0.1
+		add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 50000
+				producer = SIL
+			}
+		add_equipment_to_stockpile = {
+				type =  artillery_equipment
+				amount = 1500
+				producer = SIL
+			}
+		}
+	}
+	focus={
+		id=SIL_LF_14
+		icon = GFX_goal_ALB_Arme_Municion
+		x=3
+		y=9
+		prerequisite={focus=SIL_LF_12}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_stability = 0.1
+		add_political_power = 100
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+					free_building_slots={
+						building=infrastructure
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=industrial_complex
+					level=2
+					instant_build=yes
+				}
+				add_building_construction={
+					type=infrastructure
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+					free_building_slots={
+						building=infrastructure
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=industrial_complex
+					level=2
+					instant_build=yes
+				}
+				add_building_construction={
+					type=infrastructure
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+					free_building_slots={
+						building=infrastructure
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=industrial_complex
+					level=2
+					instant_build=yes
+				}
+				add_building_construction={
+					type=infrastructure
+					level=2
+					instant_build=yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_LF_15
+		icon = GFX_goal_ALB_People_Army_alt
+		x=5
+		y=9
+		prerequisite={focus=SIL_LF_12}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		division_template = {
+			name = "西里西亚人民军"
+			division_names_group = SIL_NRARMY_1
+			regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+			artillery_brigade = { x = 3 y = 0 }
+			artillery_brigade = { x = 3 y = 1 }
+			}
+			support = {
+				artillery = { x = 0 y = 0 }
+			}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_LF_16
+		icon = GFX_goal_ALB_Guardians
+		x=0
+		y=10
+		prerequisite={focus=SIL_LF_13}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 120
+			if = {
+				limit = {
+					SXO = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = SXO transfer_troops = yes }
+			}
+			if = {
+				limit = {
+					SXO = {
+						is_ai = no
+					}
+				}
+				create_wargoal = { target = SXO type = annex_everything }
+			}
+		}
+	}
+	focus={
+		id=SIL_LF_17
+		icon = GFX_goal_CSA_professional_red_army
+		x=2
+		y=10
+		prerequisite={focus=SIL_LF_13}
+		prerequisite={focus=SIL_LF_14}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_LF_18
+		icon = GFX_goal_NEE_New_Labor_Movement
+		x=4
+		y=10
+		prerequisite={focus=SIL_LF_14}
+		prerequisite={focus=SIL_LF_15}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_manpower = 100000
+		add_ideas = limited_exports
+		add_ideas = extensive_conscription
+		add_ideas = war_economy
+		}
+	}
+	focus={
+		id=SIL_LF_19
+		icon = GFX_goal_ALB_Cultural_Revolution
+		x=6
+		y=10
+		prerequisite={focus=SIL_LF_15}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = SIL_educate
+		add_research_slot = 2
+		}
+	}
+	focus={
+		id=SIL_LF_20
+		icon = GFX_goal_SRD_restore_parliamentary_supremacy
+		x=1
+		y=11
+		prerequisite={focus=SIL_LF_16}
+		prerequisite={focus=SIL_LF_17}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = SIL_Political_transparency
+		}
+	}
+	focus={
+		id=SIL_LF_21
+		icon = GFX_HUN_revolutionary_catharsis
+		x=3
+		y=11
+		prerequisite={focus=SIL_LF_18}
+		prerequisite={focus=SIL_LF_17}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_LF_22
+		icon = GFX_goal_ALB_Local_Syndicate_Development
+		x=5
+		y=11
+		prerequisite={focus=SIL_LF_18}
+		prerequisite={focus=SIL_LF_19}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = SIL_Working_women
+		}
+	}
+	focus={
+		id=SIL_LF_23
+		icon = GFX_goal_generic_revolutionary_government
+		x=2
+		y=12
+		prerequisite={focus=SIL_LF_20}
+		prerequisite={focus=SIL_LF_21}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		add_manpower = 500000
+		army_experience = 100
+		navy_experience = 100
+		air_experience = 100
+		}
+	}
+	focus={
+		id=SIL_LF_24
+		icon = GFX_HUN_revolutionary_tribunals
+		x=4
+		y=12
+		prerequisite={focus=SIL_LF_22}
+		prerequisite={focus=SIL_LF_21}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		add_manpower = 50000
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚人民军\" division_template = \"西里西亚人民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_LF_25
+		icon = GFX_goal_SRI_Revolutionary_Commissars
+		x=3
+		y=13
+		prerequisite={focus=SIL_LF_23}
+		prerequisite={focus=SIL_LF_24}
+		cost=3
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		add_war_support = 0.2
+		add_stability = 0.15
+		}
+	}
+	focus={
+		id=SIL_RH_1
+		icon = GFX_GER_establish_a_stronger_government-32518
+		x=21
+		y=3
+		prerequisite={focus=SIL_4}
+		mutually_exclusive={focus=SIL_CE_1 focus=SIL_LF_1 }
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_country_flag = Silesian_nationalism
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		add_stability = 0.1
+		add_war_support = 0.2
+		}
+	}
+	focus={
+		id=SIL_RH_2
+		icon = GFX_goal_BRG_Kill_Revolution
+		x=20
+		y=4
+		prerequisite={focus=SIL_RH_1}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		country_event = {
+			id = sil.11
+			days = 5
+		}
+		add_manpower = -5000
+		add_popularity = { ideology = totalist popularity = -1 }
+		add_popularity = { ideology = syndicalist popularity = -1 }
+		add_popularity = { ideology = radical_socialist popularity = -1 }
+		}
+	}
+	focus={
+		id=SIL_RH_3
+		icon = GFX_goal_AUS_raised_working_week
+		x=22
+		y=4
+		prerequisite={focus=SIL_RH_1}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		add_manpower = -5000
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+					free_building_slots={
+						building=infrastructure
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=industrial_complex
+					level=2
+					instant_build=yes
+				}
+				add_building_construction={
+					type=infrastructure
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+					free_building_slots={
+						building=infrastructure
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+				add_building_construction={
+					type=infrastructure
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+					free_building_slots={
+						building=infrastructure
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+				add_building_construction={
+					type=infrastructure
+					level=2
+					instant_build=yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_RH_4
+		icon = GFX_goal_MAG_work_harder
+		x=19
+		y=5
+		prerequisite={focus=SIL_RH_2}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_manpower = -10000
+		add_political_power = 150
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+					free_building_slots={
+						building=infrastructure
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+				add_building_construction={
+					type=infrastructure
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+					free_building_slots={
+						building=infrastructure
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+				add_building_construction={
+					type=infrastructure
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+					free_building_slots={
+						building=infrastructure
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+				add_building_construction={
+					type=infrastructure
+					level=2
+					instant_build=yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_RH_5
+		icon = GFX_goal_germany_shine
+		x=21
+		y=5
+		prerequisite={focus=SIL_RH_2}
+		prerequisite={focus=SIL_RH_3}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = SIL_Germany_supremacy
+		}
+	}
+	focus={
+		id=SIL_RH_6
+		icon = GFX_goal_AUS_corporatocratic_democracy
+		x=23
+		y=5
+		prerequisite={focus=SIL_RH_3}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		division_template = {
+			name = "西里西亚国民军"
+			division_names_group = SIL_NRARMY_2
+			regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+			artillery_brigade = { x = 3 y = 0 }
+			}
+			support = {
+				artillery = { x = 0 y = 0 }
+			}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_RH_7
+		icon = GFX_goal_AUS_corporatism
+		x=19
+		y=6
+		prerequisite={focus=SIL_RH_4}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power= 150
+		add_manpower = -10000
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=arms_factory
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=2
+				add_building_construction={
+					type=arms_factory
+					level=2
+					instant_build=yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_RH_8
+		icon = GFX_goal_COR_jewish_segregation
+		x=21
+		y=6
+		prerequisite={focus=SIL_RH_5}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_manpower= -15000
+		add_stability = 0.15
+		add_war_support 0.15
+		}
+	}
+	focus={
+		id=SIL_RH_9
+		icon = GFX_goal_SIC_platonic_church
+		x=23
+		y=6
+		prerequisite={focus=SIL_RH_6}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = SIL_National_Church
+		}
+	}
+	focus={
+		id=SIL_RH_10
+		icon = GFX_goal_ZAM_fatherland
+		x=20
+		y=7
+		prerequisite={focus=SIL_RH_7}
+		prerequisite={focus=SIL_RH_8}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = SIL_RHmilitary
+		}
+	}
+	focus={
+		id=SIL_RH_11
+		icon = GFX_goal_BAN_show_of_power
+		x=22
+		y=7
+		prerequisite={focus=SIL_RH_8}
+		prerequisite={focus=SIL_RH_9}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_research_slot = 1
+		add_political_power = 150
+		army_experience = 100
+		navy_experience = 100
+		air_experience = 100
+		}
+	}
+	focus={
+		id=SIL_RH_12
+		icon = GFX_goal_GER_Pax_Germanica
+		x=21
+		y=8
+		prerequisite={focus=SIL_RH_10}
+		prerequisite={focus=SIL_RH_11}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = POM type = take_state }
+		create_wargoal = { target = DDR type = take_state }
+		set_cosmetic_tag = GREAT_SIL
+		every_state = {
+			limit = { is_core_of = POM }
+			add_core_of = SIL
+			}
+		every_state = {
+			limit = { is_core_of = DDR }
+			add_core_of = SIL
+			}
+		}
+	}
+	focus={
+		id=SIL_RH_13
+		icon = GFX_goal_generic_free_market
+		x=19
+		y=9
+		prerequisite={focus=SIL_RH_12}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = free_trade
+		add_ideas = war_economy
+		}
+	}
+	focus={
+		id=SIL_RH_14
+		icon = GFX_GER_solidify_the_position_of_the_kamarilla-32525
+		x=21
+		y=9
+		prerequisite={focus=SIL_RH_12}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_RH_15
+		icon = GFX_goal_CRO_defense_powerhouse
+		x=23
+		y=9
+		prerequisite={focus=SIL_RH_12}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = POL type = take_state }
+		86 = {add_core_of=SIL}
+		776 = {add_core_of=SIL}
+		777 = {add_core_of=SIL}
+		}
+	}
+	focus={
+		id=SIL_RH_16
+		icon = GFX_goal_HOL_cna_rules_alone
+		x=18
+		y=10
+		prerequisite={focus=SIL_RH_13}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 150
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_RH_17
+		icon = GFX_NEE_progressive_society
+		x=20
+		y=10
+		prerequisite={focus=SIL_RH_13}
+		prerequisite={focus=SIL_RH_14}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = SIL_RHmilitary
+			add_idea = SIL_RHmilitary1
+			}
+		}
+	}
+	focus={
+		id=SIL_RH_18
+		icon = GFX_lijianzhiye
+		x=22
+		y=10
+		prerequisite={focus=SIL_RH_14}
+		prerequisite={focus=SIL_RH_15}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 300
+		add_manpower = -20000
+		add_stability = 0.15
+		}
+	}
+	focus={
+		id=SIL_RH_19
+		icon = GFX_focus_ger_heavy_tanks
+		x=24
+		y=10
+		prerequisite={focus=SIL_RH_15}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			every_owned_state={
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_RH_20
+		icon = GFX_goal_ULS_Squirell_Gun
+		x=19
+		y=11
+		prerequisite={focus=SIL_RH_16}
+		prerequisite={focus=SIL_RH_17}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_RH_21
+		icon = GFX_goal_CAN_Better_Guns_Better_Bullets
+		x=21
+		y=11
+		prerequisite={focus=SIL_RH_17}
+		prerequisite={focus=SIL_RH_18}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_manpower = 50000
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+				create_unit = {
+					division = "name = \"西里西亚国民军\" division_template = \"西里西亚国民军\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SIL
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_RH_22
+		icon = GFX_goal_generic_industry_reallocation
+		x=23
+		y=11
+		prerequisite={focus=SIL_RH_18}
+		prerequisite={focus=SIL_RH_19}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		POL = { add_political_power = -300 }
+			POL = {
+				every_owned_state={
+					add_building_construction = {
+						type = arms_factory
+						level = -2
+						instant_build = yes
+					}
+				}
+			}
+			every_owned_state={
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_RH_23
+		icon = GFX_goal_AUS_Paramilitary_Beatdowns
+		x=20
+		y=12
+		prerequisite={focus=SIL_RH_20}
+		prerequisite={focus=SIL_RH_21}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			1088 = { add_manpower = -50000 }
+			92 = { add_manpower = -50000 }
+			10 = { add_manpower = -50000 }
+			90 = { add_manpower = -50000 }
+			87 = { add_manpower = -50000 }
+			98 = { add_manpower = -50000 }
+			1148 = { add_manpower = -50000 }
+			97 = { add_manpower = -50000 }
+		}
+	}
+	focus={
+		id=SIL_RH_24
+		icon = GFX_goal_CZE_govern_new_bohemian_thorns
+		x=22
+		y=12
+		prerequisite={focus=SIL_RH_21}
+		prerequisite={focus=SIL_RH_22}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		every_state = {
+			limit = { is_core_of = CZE }
+			add_core_of = SIL
+			}
+		}
+	}
+	focus={
+		id=SIL_RH_25
+		icon = GFX_focus_generic_authoritarian_government
+		x=21
+		y=13
+		prerequisite={focus=SIL_RH_23}
+		prerequisite={focus=SIL_RH_24}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_manpower = 100000
+		add_war_support = 0.2
+		add_stability = 0.2
+		add_popularity = { ideology = national_populist popularity = 1 }
+		}
+	}
+	focus={
+		id=SIL_5
+		icon = GFX_goal_broken_red_star
+		x=11
+		y=14
+		prerequisite={focus=SIL_LF_25 focus=SIL_CE_25 focus=SIL_RH_25 }
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = NGF type = take_state }
+		every_state = {
+			limit = { is_core_of = NGF }
+			add_core_of = SIL
+			}
+		}
+	}
+	focus={
+		id=SIL_6
+		icon = GFX_goal_MAF_RFG_Army
+		x=13
+		y=14
+		prerequisite={focus=SIL_LF_25 focus=SIL_CE_25 focus=SIL_RH_25 }
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = EPR type = take_state }
+		create_wargoal = { target = SXO type = take_state }
+		create_wargoal = { target = HES type = take_state }
+		every_state = {
+			limit = { is_core_of = EPT }
+			add_core_of = SIL
+			}
+		every_state = {
+			limit = { is_core_of = SXO }
+			add_core_of = SIL
+			}
+		every_state = {
+			limit = { is_core_of = HES }
+			add_core_of = SIL
+			}
+		}
+	}
+	focus={
+		id=SIL_7
+		icon = GFX_goal_LIC_rhine_tears
+		x=10
+		y=15
+		prerequisite={focus=SIL_5}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = WGR type = take_state }
+		every_state = {
+			limit = { is_core_of = WGR }
+			add_core_of = SIL
+			}
+		}
+	}
+	focus={
+		id=SIL_8
+		icon = GFX_BAY_NEW_SOUTH
+		x=12
+		y=15
+		prerequisite={focus=SIL_5}
+		prerequisite={focus=SIL_6}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = BAY type = take_state }
+		every_state = {
+			limit = { is_core_of = BAY }
+			add_core_of = SIL
+			}
+		}
+	}
+	focus={
+		id=SIL_9
+		icon = GFX_goal_CZE_attack_poland
+		x=14
+		y=15
+		prerequisite={focus=SIL_6}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		bypass = {
+			has_government = national_populist
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = POL type = take_state }
+		86 = {add_core_of=SIL}
+		776 = {add_core_of=SIL}
+		777 = {add_core_of=SIL}
+		67 = {add_core_of=SIL}
+		}
+	}
+	focus={
+		id=SIL_10
+		icon = GFX_goal_Reichstag
+		x=11
+		y=16
+		prerequisite={focus=SIL_7}
+		prerequisite={focus=SIL_8}
+		mutually_exclusive={focus=SIL_11 }
+		cost=2
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		set_cosmetic_tag = GER_SIL
+			if = {
+				limit = {
+					has_government = radical_socialist
+				}
+				FRA = {
+					add_to_faction = SIL
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_11
+		icon = GFX_ALA_great_raids
+		x=13
+		y=16
+		prerequisite={focus=SIL_8}
+		prerequisite={focus=SIL_9}
+		mutually_exclusive={focus=SIL_10 }
+		cost=2
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_government = national_populist
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		set_cosmetic_tag = GER_SIL
+		}
+	}
+	focus={
+		id=SIL_12
+		icon = GFX_goal_CZE_national_ambition
+		x=13
+		y=17
+		prerequisite={focus=SIL_11}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = CZE type = take_state }
+		}
+	}
+	focus={
+		id=SIL_13
+		icon = GFX_goal_SCA_economy_denmark
+		x=15
+		y=17
+		prerequisite={focus=SIL_11}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = DEN type = take_state }
+		create_wargoal = { target = NOR type = take_state }
+		every_state = {
+			limit = { is_core_of = DEN }
+			add_core_of = SIL
+			}
+		every_state = {
+			limit = { is_core_of = NOR }
+			add_core_of = SIL
+			}
+		}
+	}
+	focus={
+		id=SIL_14
+		icon = GFX_goal_attack_austria
+		x=14
+		y=18
+		prerequisite={focus=SIL_12}
+		prerequisite={focus=SIL_13}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = AUS type = take_state }
+		every_state = {
+			limit = { is_core_of = AUS }
+			add_core_of = SIL
+			}
+		}
+	}
+	focus={
+		id=SIL_15
+		icon = GFX_goal_NFA_La_France_Enivree
+		x=16
+		y=18
+		prerequisite={focus=SIL_13}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = FRA type = take_state }
+		create_wargoal = { target = LUX type = take_state }
+		28 = { add_core_of = SIL }
+		every_state = {
+			limit = { is_core_of = LUX }
+			add_core_of = SIL
+			}
+		}
+	}
+	focus={
+		id=SIL_16
+		icon = GFX_goal_GER_Denounce_Radicals
+		x=15
+		y=19
+		prerequisite={focus=SIL_14}
+		prerequisite={focus=SIL_15}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		create_wargoal = { target = NFA type = take_state }
+		create_wargoal = { target = CAN type = take_state }
+		create_wargoal = { target = UKR type = take_state }
+		create_wargoal = { target = WHR type = take_state }
+		create_wargoal = { target = LIT type = take_state }
+		create_wargoal = { target = LAT type = take_state }
+		create_wargoal = { target = EST type = take_state }
+		create_wargoal = { target = BAT type = take_state }
+		create_wargoal = { target = RUS type = take_state }
+		create_wargoal = { target = ENG type = take_state }
+		}
+	}
+	focus={
+		id=SIL_17
+		icon = GFX_MAF_african_war_industries
+		x=38
+		y=3
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = SIL_Industrial2
+		}
+	}
+	focus={
+		id=SIL_18
+		icon = GFX_BBR_building_our_arms
+		x=37
+		y=4
+		prerequisite={focus=SIL_17}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			random_owned_controlled_state={
+				prioritize = { }
+					limit={
+						free_building_slots={
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state={
+				prioritize = { }
+					limit={
+						free_building_slots={
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state={
+				prioritize = { }
+					limit={
+						free_building_slots={
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_19
+		icon = GFX_BBR_build_industries
+		x=39
+		y=4
+		prerequisite={focus=SIL_17}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state={
+				prioritize = { }
+					limit={
+						free_building_slots={
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize = { }
+					limit={
+						free_building_slots={
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize = { }
+					limit={
+						free_building_slots={
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_20
+		icon = GFX_goal_CSA_strenght_through_industry
+		x=38
+		y=5
+		prerequisite={focus=SIL_18}
+		prerequisite={focus=SIL_19}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state={
+				prioritize = { }
+					limit={
+						free_building_slots={
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction={
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize = { }
+					limit={
+						free_building_slots={
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction={
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize = { }
+					limit={
+						free_building_slots={
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction={
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize = { }
+					limit={
+						free_building_slots={
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction={
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize = { }
+					limit={
+						free_building_slots={
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction={
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_21
+		icon = GFX_cityonahill
+		x=37
+		y=6
+		prerequisite={focus=SIL_20}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state={
+				limit={
+					is_core_of=ROOT
+					is_in_home_area=yes
+				}
+				increase_state_category_by_two_levels=yes
+			}
+		random_owned_controlled_state={
+				limit={
+					is_core_of=ROOT
+					is_in_home_area=yes
+				}
+				increase_state_category_by_two_levels=yes
+			}
+		random_owned_controlled_state={
+				limit={
+					is_core_of=ROOT
+					is_in_home_area=yes
+				}
+				increase_state_category_by_two_levels=yes
+			}
+		random_owned_controlled_state={
+				limit={
+					is_core_of=ROOT
+					is_in_home_area=yes
+				}
+				increase_state_category_by_two_levels=yes
+			}
+		random_owned_controlled_state={
+				limit={
+					is_core_of=ROOT
+					is_in_home_area=yes
+				}
+				increase_state_category_by_two_levels=yes
+			}
+		random_owned_controlled_state={
+				limit={
+					is_core_of=ROOT
+					is_in_home_area=yes
+				}
+				increase_state_category_by_two_levels=yes
+			}
+		random_owned_controlled_state={
+				limit={
+					is_core_of=ROOT
+					is_in_home_area=yes
+				}
+				increase_state_category_by_two_levels=yes
+			}
+		random_owned_controlled_state={
+				limit={
+					is_core_of=ROOT
+					is_in_home_area=yes
+				}
+				increase_state_category_by_two_levels=yes
+			}
+		}
+	}
+	focus={
+		id=SIL_22
+		icon = GFX_goal_generic_agriculture2
+		x=39
+		y=6
+		prerequisite={focus=SIL_20}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state={
+				prioritize = { }
+					limit={
+						free_building_slots={
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize = { }
+					limit={
+						free_building_slots={
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize = { }
+					limit={
+						free_building_slots={
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize = { }
+					limit={
+						free_building_slots={
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_23
+		icon = GFX_goal_GER_Boot_Socialists
+		x=37
+		y=7
+		prerequisite={focus=SIL_21}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			every_owned_state={
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			every_owned_state={
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_24
+		icon = GFX_goal_ALB_Pickaxe
+		x=39
+		y=7
+		prerequisite={focus=SIL_22}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = SIL_Industrial2
+			add_idea = SIL_Industrial3
+			}
+		68 = {
+			add_resource = {
+					type = steel
+					amount = 30
+				}
+			}
+		63 = {
+			add_resource = {
+					type = aluminium
+					amount = 30
+				}
+			}
+		67 = {
+			add_resource = {
+					type = steel
+					amount = 30
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_25
+		icon = GFX_CSA_red_roads
+		x=38
+		y=8
+		prerequisite={focus=SIL_23}
+		prerequisite={focus=SIL_24}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		every_owned_state={
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=SIL_26
+		icon = GFX_HUN_make_work_brueaucracy
+		x=38
+		y=9
+		prerequisite={focus=SIL_25}
+		cost=7
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = SIL_Industrial3
+			add_idea = SIL_Industrial4
+			}
+		}
+	}
+}

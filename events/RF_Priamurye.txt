@@ -1,0 +1,30 @@
+add_namespace = WA3
+
+
+country_event = {
+	id = WA3.1
+	title = WA3.1.t
+	desc = WA3.1.desc
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = WA3.1.a
+		set_country_flag = PRI_spiridon_win
+		complete_national_focus = PRI_spiridon_the_wise
+	}
+	option = {
+		name = WA3.1.b
+		set_country_flag = PRI_nikolai_win
+		complete_national_focus = PRI_nikolai_the_shrewd
+		create_country_leader = {
+			name = "尼古拉·梅尔库洛夫"
+			picture = "gfx/leaders/PRI/NikolaiMerkulov.png"
+			expire = "1965.1.1"
+			ideology = corporatocracy_subtype
+			traits = { eco_balanced_budget_economy }
+		}
+	}
+}

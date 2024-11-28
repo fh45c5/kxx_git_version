@@ -1,0 +1,330 @@
+defined_text = {
+    name = GetSlovakLibDilemmaSocLibName
+text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value < 1 compare = less_than }
+        }
+        localization_key = SVK_soclib_dilemma_nonexist
+    }
+text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 1 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_no
+    }
+text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 2 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_no
+    }
+
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 3 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_weak
+    }
+
+text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 4 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_weak
+    }
+
+text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 5 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_weak
+    }
+
+
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 6 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_weak
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 7 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_weak
+    }
+
+text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 8 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_medium
+    }
+
+text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 9 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_medium
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 10 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_medium
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 11 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_strong
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 12 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_strong
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 13 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_strong
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 14 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_strong
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 15 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_strong
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 16 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_strong
+    }
+     text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 17 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_strong
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 17 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_strong
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 18 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_over
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 19 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_over
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_soclib value = 20 compare = greater_than_or_equals }
+        }
+        localization_key = SVK_soclib_dilemma_over
+    }
+}
+
+defined_text = {
+ name = GetSlovakLibDilemmaMarkLibName
+
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value < 1 compare = less_than }
+        }
+        localization_key = SVK_soclib_dilemma_nonexist
+    }
+text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 1 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_no
+    }
+text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 2 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_no
+    }
+
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 3 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_weak
+    }
+
+text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 4 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_weak
+    }
+
+text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 5 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_weak
+    }
+
+
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 6 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_weak
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 7 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_weak
+    }
+
+text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 8 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_medium
+    }
+
+text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 9 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_medium
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 10 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_medium
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 11 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_strong
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 12 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_strong
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 13 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_strong
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 14 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_strong
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 15 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_strong
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 16 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_strong
+    }
+     text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 17 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_strong
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 17 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_strong
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 18 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_over
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 19 compare = equals }
+        }
+        localization_key = SVK_soclib_dilemma_over
+    }
+    text = {
+        trigger = {
+                original_tag = SVK
+                check_variable = { var = lib_dilemma_marklib value = 20 compare = greater_than_or_equals }
+        }
+        localization_key = SVK_soclib_dilemma_over
+    }
+}

@@ -1,0 +1,46 @@
+PB_FRA_Fund_The_Steelworks_Cat = {    #重工业规划
+	icon = GFX_decision_category_generic
+
+	picture = GFX_decision_cat_Steelworks
+
+	allowed = {
+		original_tag = FRG
+	}
+
+	visible = {
+		NOT = {
+			has_country_flag = FRA_DISABLE_ALL_MECHANICS
+		}
+		has_completed_focus = PB_FRA_Fund_The_Steelworks
+	}
+
+	priority = 220
+}
+
+PB_FRA_Interservice_Rivalry = {   #军中对立
+	icon = France_Interservice_Rivalry
+
+	picture = GFX_decision_cat_FRA_Interservice_Rivalry
+
+	allowed = {
+		original_tag = FRG
+	}
+
+	visible = {
+		has_country_flag = Armand
+		NOT = {
+			has_country_flag = FRA_DISABLE_ALL_MECHANICS
+		}
+		NOT = {
+			OR = {
+				has_country_flag = FRA_SP_IN_POWER
+				has_country_flag = FRA_MIL_IN_POWER
+				has_idea = FRA_SP_Total_Control
+				has_idea = FRA_Military_Total_Control
+			}
+		}
+	}
+
+	priority = 200
+}
+

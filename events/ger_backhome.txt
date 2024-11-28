@@ -1,0 +1,31 @@
+add_namespace = ger_backhome
+
+country_event = {
+	id = ger_backhome.1
+	title = ger_backhome.1.t
+	desc = ger_backhome.1.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = ger_backhome.1.a
+		set_cosmetic_tag = HOL_GERTHREEBACK
+		create_country_leader = {
+			name = "弗朗茨一世"
+			desc = "GER_BACK_HOME_PAPEN_DESC"
+			picture = "gfx/leaders/GER/Portrait_Germany_Franz_von_Papen.jpg"
+			expire = "1965.1.1"
+			ideology = prussian_constitutionalism_subtype
+			traits = {
+				}
+			}
+			set_party_name = {
+				ideology = authoritarian_democrat
+				long_name = GERBACK_authoritarian_democrat_two_party
+				name = GERBACK_authoritarian_democrat_two_party_long
+			}
+		}
+	}
+}

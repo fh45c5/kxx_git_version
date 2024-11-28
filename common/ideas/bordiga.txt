@@ -1,0 +1,57 @@
+ideas = {
+	country = {
+		SIC_bordigaism_1={
+			visible = {
+				always = yes
+			}
+			modifier = {
+				political_power_gain = 0.1
+				stability_factor = 0.05
+				consumer_goods_factor = -0.1
+			}
+		}
+		SIC_red_army=  {
+			visible = {
+				always = yes
+			}
+			modifier = {
+				offence = 0.15
+				defence = 0.15
+				army_org_factor = 0.1
+				army_org_regain = 0.1
+			}
+		}
+		SIC_bordigaism_2={
+			visible = {
+				always = yes
+			}
+			modifier = {
+				political_power_gain = 0.15
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				consumer_goods_factor = -0.2
+				cic_construction_boost_factor = 0.1
+			}
+		}
+		SIC_new_economy={
+			visible = {
+				always = yes
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.2
+				production_factory_max_efficiency_factor = 0.2
+				production_factory_start_efficiency_factor = 0.2
+			}
+		}
+		SIC_true_socialism={
+			visible = {
+				always = yes
+			}
+			modifier = {
+				totalist_drift =0.1
+				stability_weekly = 0.01
+				war_support_weekly = 0.01
+			}
+		}
+	}
+}

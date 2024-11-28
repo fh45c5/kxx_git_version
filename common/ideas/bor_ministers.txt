@@ -1,0 +1,151 @@
+ideas = {
+head_of_government = { ### Head of Government ###
+       SIC_Amadeo_Bordiga_hog_tot = {
+			allowed = { original_tag = SIC }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SIC_Amadeo_Bordiga_hog_tot"
+			}
+			traits = {
+				head_of_government
+				totalist
+				hog_naive_optimist
+			}
+		}
+		ITA_Giuliano_Vassalli_hog_rso = { 
+			allowed = {original_tag = ITA}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea ITA_Giuliano_Vassalli_hog_rso"
+			}
+			traits = {
+				head_of_government 
+				radical_socialist 
+				hog_silent_workhorse
+			}
+		}
+}
+person_of_influence = { ### Person of Influence ###
+		## Foreign Minister ##
+		SIC_Onorato_Damen_for_tot = {
+			allowed = { original_tag = SIC}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SIC_Onorato_Damen_for_tot"
+			}
+			traits = {
+				foreign_minister
+				totalist
+				for_biased_intellectual
+			}
+		}
+		ITA_Giuseppe_Modigliani_for_rso = { 
+			allowed = {original_tag = ITA}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea ITA_Paolo_Treves_for_sde"
+			}
+			traits = {
+				foreign_minister 
+				radical_socialist 
+				for_ideological_crusader
+			}
+		}
+		SIC_Bruno_Fortichiari_eco_tot = {
+			allowed = { original_tag = SIC }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SIC_Bruno_Fortichiari_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_resource_industrialist
+			}
+		}
+		ITA_Luigi_Gasparotto_eco_sde = {
+			allowed = { original_tag = ITA }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea ITA_Luigi_Gasparotto_eco_sde"
+			}
+			traits = {
+				economy_minister
+				social_democrat
+				eco_reformer
+			}
+		}
+		SIC_Bruno_Maffi_sec_tot = {
+			allowed = { original_tag = SIC }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SIC_Bruno_Maffi_sec_tot"
+			}
+			traits = {
+				security_minister
+				totalist
+				sec_back_stabber
+			}
+		}
+		ITA_Alceste_De_Ambris_eco_rso = { 
+			allowed = {original_tag = ITA}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea ITA_Alceste_De_Ambris_eco_rso"
+			}
+			traits = {
+				economy_minister 
+				radical_socialist 
+				eco_resource_industrialist
+			}
+		}
+	}
+}

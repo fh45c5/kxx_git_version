@@ -1,0 +1,1950 @@
+increase_CHI_popular_support = {
+	if = {
+		limit = {
+			has_idea = KR_CHI_popular_support_4
+		}
+		swap_ideas = {
+			remove_idea = KR_CHI_popular_support_4
+			add_idea = KR_CHI_popular_support_5
+		}
+	}
+	if = {
+		limit = {
+			has_idea = KR_CHI_popular_support_3
+		}
+		swap_ideas = {
+			remove_idea = KR_CHI_popular_support_3
+			add_idea = KR_CHI_popular_support_4
+		}
+	}
+	if = {
+		limit = {
+			has_idea = KR_CHI_popular_support_2
+		}
+		swap_ideas = {
+			remove_idea = KR_CHI_popular_support_2
+			add_idea = KR_CHI_popular_support_3
+		}
+	}
+	if = {
+		limit = {
+			has_idea = KR_CHI_popular_support_1
+		}
+		swap_ideas = {
+			remove_idea = KR_CHI_popular_support_1
+			add_idea = KR_CHI_popular_support_2
+		}
+	}
+}
+
+decrease_CHI_popular_support = {
+	if = {
+		limit = {
+			has_idea = KR_CHI_popular_support_2
+		}
+		swap_ideas = {
+			remove_idea = KR_CHI_popular_support_2
+			add_idea = KR_CHI_popular_support_1
+		}
+	}
+	if = {
+		limit = {
+			has_idea = KR_CHI_popular_support_3
+		}
+		swap_ideas = {
+			remove_idea = KR_CHI_popular_support_3
+			add_idea = KR_CHI_popular_support_2
+		}
+	}
+	if = {
+		limit = {
+			has_idea = KR_CHI_popular_support_4
+		}
+		swap_ideas = {
+			remove_idea = KR_CHI_popular_support_4
+			add_idea = KR_CHI_popular_support_3
+		}
+	}
+	if = {
+		limit = {
+			has_idea = KR_CHI_popular_support_5
+		}
+		swap_ideas = {
+			remove_idea = KR_CHI_popular_support_5
+			add_idea = KR_CHI_popular_support_4
+		}
+	}
+}
+
+CHI_spawn_fujian_revolt = {
+	set_global_flag = LEP_war
+	if = {
+		limit = { has_template = "Fujian Bubing Zhen" }
+		delete_unit_template_and_units = { division_template = "Fujian Bubing Zhen" }
+	}
+	custom_effect_tooltip = tooltip_white_line
+	595 = { #Jian'an
+		damage_building = { type = infrastructure damage = 0.5 }
+		effect_tooltip = { set_state_controller_to = CHI }
+	}
+	1046 = { #Tingzhang
+		damage_building = { type = infrastructure damage = 0.5 }
+		effect_tooltip = { set_state_controller_to = CHI }
+	}
+	hidden_effect = { #Spawned units are named after historical NRA divisions from the 1st, 4th, and 6th Army Corps
+		CHI = {
+			division_template = {
+				name = "Géming Minbing Lü"	# Represents: local militias for early 2nd NRA
+				division_names_group = CHI_MIL_01
+				regiments = {
+					irregular_infantry = { x = 0 y = 0 }
+					irregular_infantry = { x = 0 y = 1 }
+					irregular_infantry = { x = 1 y = 0 }
+					irregular_infantry = { x = 1 y = 1 }
+					irregular_infantry = { x = 2 y = 0 }
+					irregular_infantry = { x = 2 y = 1 }
+				}
+			}
+			division_template = { #Create a Cavalry Division
+				name = "Qibing Shi"
+				division_names_group = CHI_CAV_01
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+					cavalry = { x = 1 y = 0 }
+					cavalry = { x = 1 y = 1 }
+					cavalry = { x = 2 y = 0 }
+					cavalry = { x = 2 y = 1 }
+				}
+			}
+		}
+		1046 = { #Tingzhang
+			set_demilitarized_zone = no
+			transfer_state_to = CHI
+			create_unit = {
+				division = "name = \"Di shi er shi\" division_template = \"Géming Minbing Lü\" start_experience_factor = 0.1" #12th Division of the 4th Army, Yue Army
+				prioritize_location = 10010
+				owner = CHI
+			}
+			create_unit = {
+				division = "name = \"Di shisi shi\" division_template = \"Géming Minbing Lü\" start_experience_factor = 0.1" #14th Division of the 1st Army
+				prioritize_location = 12084
+				owner = CHI
+			}
+			create_unit = {
+				division = "name = \"Di san shi\" division_template = \"Géming Minbing Lü\" start_experience_factor = 0.1" #3rd Division of the 1st Army
+				prioritize_location = 12084
+				owner = CHI
+			}
+		}
+		595 = { #Jian'an
+			set_demilitarized_zone = no
+			set_state_controller_to = CHI
+			create_unit = {
+				division = "name = \"Di er shiwu shi\" division_template = \"Géming Minbing Lü\" start_experience_factor = 0.1" #25th Division of the 4th Army, Yue Army
+				prioritize_location = 1138
+				owner = CHI
+			}
+			create_unit = {
+				division = "name = \"Di shiqi shi\" division_template = \"Géming Minbing Lü\" start_experience_factor = 0.1" #17th Division of the 6th Army Corps - Hunan Army
+				prioritize_location = 1193
+				owner = CHI
+			}
+			create_unit = {
+				division = "name = \"Di shiba shi\" division_template = \"Géming Minbing Lü\" start_experience_factor = 0.1" #18th Division of the 6th Army Corps
+				prioritize_location = 12057
+				owner = CHI
+			}
+			create_unit = {
+				division = "name = \"Xinbian di sanshiliu shi\" division_template = \"Qibing Shi\" start_experience_factor = 0.1" #New 36th Division, historical NRA cavalry division
+				prioritize_location = 12057 #Fujian
+				owner = CHI
+			}
+		}
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 500 }
+		add_command_power = 50
+	}
+	hidden_effect = {
+		CHI = {
+			#end_exile = CHI
+			#leave_faction = yes
+
+			set_province_controller = 12030
+			set_province_controller = 10112
+			set_province_controller = 4081
+			set_capital = { state = 1046 }
+			add_ideas = league_collapse_CHI
+			activate_mission = CHI_mission_get_access_sea
+			activate_mission = CHI_mission_secure_fujian
+			activate_mission = CHI_mission_secure_gannan
+		}
+		600 = { #Gannan
+			create_unit = {
+				division = "name = \"Di er shi\" division_template = \"Géming Minbing Lü\" start_experience_factor = 0.1" #Second Division of the 1st Army
+				prioritize_location = 10112
+				owner = CHI
+			}
+			create_unit = {
+				division = "name = \"Di ershi shi \" division_template = \"Géming Minbing Lü\" start_experience_factor = 0.1" #Twentieth Division of the 1st Army
+				prioritize_location = 4081
+				owner = CHI
+			}
+			create_unit = {
+				division = "name = \"Di shijiu shi\" division_template = \"Géming Minbing Lü\" start_experience_factor = 0.1" #19th Division of the 3rd Army Corps
+				prioritize_location = 12030
+				owner = CHI
+			}
+			create_unit = {
+				division = "name = \"Xinbian di sanshiliu shi\" division_template = \"Qibing Shi\" start_experience_factor = 0.1" #New 36th Division, historical NRA cavalry division
+				prioritize_location = 12030 #Jiangxi
+				owner = CHI
+			}
+		}
+		set_province_controller = 4070
+		set_province_controller = 4113
+		set_province_controller = 10012
+		set_province_controller = 10042
+
+		country_event = { id = lepcollapse.19 hours = 19 } #General Qi Assumes Control
+		QIE = {
+			country_event = { id = qiefor.103 hours = 1 }
+		}
+	}
+}
+
+#######################
+####  五省战后恢复  ####
+#######################
+
+CHI_Invest_local_modernization = {#投资地方建设
+	if = {
+		limit = {
+			NOT = { 
+				has_idea = CHI_Invest_local_modernization1 
+				has_idea = CHI_Invest_local_modernization2
+				has_idea = CHI_Invest_local_modernization3 
+				has_idea = CHI_Invest_local_modernization4 
+				has_idea = CHI_Invest_local_modernization5 
+			}
+		}
+		add_timed_idea = {
+			idea = CHI_Invest_local_modernization1 
+			days = 180
+		}
+	}
+	else_if = {
+		limit = { has_idea = CHI_Invest_local_modernization1 }
+		remove_ideas = CHI_Invest_local_modernization1
+		add_timed_idea = {
+			idea = CHI_Invest_local_modernization2
+			days = 180
+		}
+	}
+	else_if = {
+		limit = { has_idea = CHI_Invest_local_modernization2 }
+		remove_ideas = CHI_Invest_local_modernization2
+		add_timed_idea = {
+			idea = CHI_Invest_local_modernization3
+			days = 180
+		}
+	}
+	else_if = {
+		limit = { has_idea = CHI_Invest_local_modernization3 }
+		remove_ideas = CHI_Invest_local_modernization3
+		add_timed_idea = {
+			idea = CHI_Invest_local_modernization4
+			days = 180
+		}
+	}
+	else_if = {
+		limit = { has_idea = CHI_Invest_local_modernization4 }
+		remove_ideas = CHI_Invest_local_modernization4
+		add_timed_idea = {
+			idea = CHI_Invest_local_modernization5
+			days = 180
+		}
+	}
+}
+
+CHI_Invest_local_modernization_weekly = {#投资地方建设弱化版
+	if = {
+		limit = {
+			NOT = { 
+				has_idea = CHI_Invest_local_modernization1 
+				has_idea = CHI_Invest_local_modernization2
+				has_idea = CHI_Invest_local_modernization3 
+				has_idea = CHI_Invest_local_modernization4 
+				has_idea = CHI_Invest_local_modernization5 
+			}
+		}
+		add_timed_idea = {
+			idea = CHI_Invest_local_modernization1 
+			days = 90
+		}
+	}
+	else_if = {
+		limit = { has_idea = CHI_Invest_local_modernization1 }
+		remove_ideas = CHI_Invest_local_modernization1
+		add_timed_idea = {
+			idea = CHI_Invest_local_modernization2
+			days = 90
+		}
+	}
+	else_if = {
+		limit = { has_idea = CHI_Invest_local_modernization2 }
+		remove_ideas = CHI_Invest_local_modernization2
+		add_timed_idea = {
+			idea = CHI_Invest_local_modernization3
+			days = 90
+		}
+	}
+	else_if = {
+		limit = { has_idea = CHI_Invest_local_modernization3 }
+		remove_ideas = CHI_Invest_local_modernization3
+		add_timed_idea = {
+			idea = CHI_Invest_local_modernization4
+			days = 90
+		}
+	}
+	else_if = {
+		limit = { has_idea = CHI_Invest_local_modernization4 }
+		remove_ideas = CHI_Invest_local_modernization4
+		add_timed_idea = {
+			idea = CHI_Invest_local_modernization5
+			days = 90
+		}
+	}
+}
+
+CHI_economic_deterioration = {#经济恶化
+	if = {
+		limit = {
+			NOT = { has_idea = CHI_economic_collapse }  
+			NOT = { has_idea = CHI_economic_collapse1 }
+			NOT = { has_idea = CHI_economic_collapse2 }
+			NOT = { has_idea = CHI_economic_collapse3 }
+			NOT = { has_idea = CHI_economic_collapse4 }
+		}
+		add_ideas = CHI_economic_collapse
+	}
+	else_if = {
+		limit = {
+			has_idea = CHI_economic_collapse
+		}
+		swap_ideas = {
+			remove_idea = CHI_economic_collapse
+			add_idea = CHI_economic_collapse1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = CHI_economic_collapse1
+		}
+		swap_ideas = {
+			remove_idea = CHI_economic_collapse1
+			add_idea = CHI_economic_collapse2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = CHI_economic_collapse2
+		}
+		swap_ideas = {
+			remove_idea = CHI_economic_collapse2
+			add_idea = CHI_economic_collapse3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = CHI_economic_collapse3
+		}
+		swap_ideas = {
+			remove_idea = CHI_economic_collapse3
+			add_idea = CHI_economic_collapse4
+		}
+	}
+}
+
+CHI_economic_upturn = {#经济好转
+	if = {
+		limit = {
+			has_idea = CHI_economic_collapse4
+		}
+		swap_ideas = {
+			remove_idea = CHI_economic_collapse4
+			add_idea = CHI_economic_collapse3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = CHI_economic_collapse3
+		}
+		swap_ideas = {
+			remove_idea = CHI_economic_collapse3
+			add_idea = CHI_economic_collapse2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = CHI_economic_collapse2
+		}
+		swap_ideas = {
+			remove_idea = CHI_economic_collapse2
+			add_idea = CHI_economic_collapse1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = CHI_economic_collapse1
+		}
+		swap_ideas = {
+			remove_idea = CHI_economic_collapse1
+			add_idea = CHI_economic_collapse
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = CHI_economic_collapse
+		}
+		remove_ideas = CHI_economic_collapse
+	}
+}
+
+CHI_decrease_famine = {#饥荒减轻
+	if = {
+		limit = {
+			has_idea = CHI_famine_buff2
+		}
+		swap_ideas = {
+			remove_idea = CHI_famine_buff2
+			add_idea = CHI_famine_buff1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = CHI_famine_buff1
+		}
+		remove_ideas = CHI_famine_buff1
+	}
+}
+
+#####################
+#### 提升地区类型 ####
+#####################
+
+CHI_promote_regional_development = {
+	if = {
+		limit = {
+			has_state_category = wasteland
+		}
+	    set_state_category = one
+	}
+	else_if = {
+		limit = {
+			has_state_category = one
+		}
+		set_state_category =  two
+
+	}
+	else_if = {
+		limit = {
+			has_state_category = two
+		}
+		set_state_category = three
+
+	}
+	else_if = {
+		limit = {
+			has_state_category = three
+		}
+		set_state_category = four
+	}
+	else_if = {
+		limit = {
+			has_state_category = four
+		}
+		set_state_category = five
+	}
+	else_if = {
+		limit = {
+			has_state_category = five
+		}
+		set_state_category = six
+	}
+	else_if = {
+		limit = {
+			has_state_category = six
+		}
+		set_state_category = seven
+	}
+	else_if = {
+		limit = {
+			has_state_category = seven
+		}
+		set_state_category = eight
+	}
+	else_if = {
+		limit = {
+			has_state_category = eight
+		}
+		set_state_category = nine
+	}
+	else_if = {
+		limit = {
+			has_state_category = nine
+		}
+		set_state_category = ten
+	}
+	else_if = {
+		limit = {
+			has_state_category = ten
+		}
+		set_state_category = eleven
+	}
+	else_if = {
+		limit = {
+			has_state_category = eleven
+		}
+		set_state_category = twelve
+	}
+}
+
+CHI_puppt_kmt = {
+	if = {
+		limit = { tag = SHX }
+		set_cosmetic_tag = SHX_KMT
+	}
+	else_if = {
+		limit = { tag = HNN }
+		set_cosmetic_tag = HNN_KMT
+	}
+	else_if = {
+		limit = { tag = PRC }
+		set_cosmetic_tag = GXC_KMT
+	}
+	else_if = {
+		limit = { tag = GXC }
+		set_cosmetic_tag = GXC_KMT
+	}
+	else_if = {
+		limit = { tag = SZC }
+		set_cosmetic_tag = SZC_KMT
+	}
+	else_if = {
+		limit = { tag = YUN }
+		set_cosmetic_tag = YUN_KMT
+	}
+	else_if = {
+		limit = { tag = XSM }
+		set_cosmetic_tag = XSM_KMT
+	}
+	else_if = {
+		limit = { tag = SIK }
+		set_cosmetic_tag = SIK_KMT
+	}
+	else_if = {
+		limit = {
+			tag = TIB
+		}
+		set_cosmetic_tag = TIB_KMT
+	}
+	else_if = {
+		limit = {
+			tag = MON
+		}
+		set_cosmetic_tag = MON_KMT
+		load_focus_tree = {
+			tree = Mongolia_Puppet
+			keep_completed = yes
+		}
+	}
+	else_if = {
+		limit = { tag = FNG }
+		set_cosmetic_tag = FNG_KMT
+	}
+}
+
+BHC_chinese_advisers_flees = {
+	every_unit_leader = {
+		limit = {
+			OR = {
+				has_id = 2203 # Xue Yue
+				has_id = 2204 # Zhang Fakui
+			}
+			is_field_marshal = yes
+		}
+		demote_leader = yes
+	}
+	if = {
+		limit = {
+			CHI = { exists = yes }
+		}
+		every_unit_leader = {
+			limit = {
+				OR = {
+					has_id = 2203 # Xue Yue
+					has_id = 2204 # Zhang Fakui
+				}
+			}
+			set_nationality = CHI
+		}
+		CHI = { country_event = chi_for.18 }
+	}
+	else_if = {
+		limit = {
+			NOT = { tag = GXC }
+			GXC = {
+				exists = yes
+				is_ruled_by_kmt = yes
+				NOT = { has_country_flag = refused_BHC_chinese_advisers }
+			}
+		}
+		every_unit_leader = {
+			limit = {
+				OR = {
+					has_id = 2203 # Xue Yue
+					has_id = 2204 # Zhang Fakui
+				}
+			}
+			set_nationality = GXC
+		}
+		GXC = { country_event = chi_for.18 }
+	}
+	else_if = {
+		limit = {
+			NOT = { tag = YUN }
+			YUN = {
+				exists = yes
+				is_ruled_by_kmt = yes
+				NOT = { has_country_flag = refused_BHC_chinese_advisers }
+			}
+		}
+		every_unit_leader = {
+			limit = {
+				OR = {
+					has_id = 2203 # Xue Yue
+					has_id = 2204 # Zhang Fakui
+				}
+			}
+			set_nationality = YUN
+		}
+		YUN = { country_event = chi_for.18 }
+	}
+	else_if = {
+		limit = {
+			NOT = { tag = SZC }
+			SZC = {
+				exists = yes
+				is_ruled_by_kmt = yes
+				NOT = { has_country_flag = refused_BHC_chinese_advisers }
+			}
+		}
+		every_unit_leader = {
+			limit = {
+				OR = {
+					has_id = 2203 # Xue Yue
+					has_id = 2204 # Zhang Fakui
+				}
+			}
+			set_nationality = SZC
+		}
+		SZC = { country_event = chi_for.18 }
+	}
+	else_if = {
+		limit = {
+			NOT = { tag = HNN }
+			HNN = {
+				exists = yes
+				is_ruled_by_kmt = yes
+				NOT = { has_country_flag = refused_BHC_chinese_advisers }
+			}
+		}
+		every_unit_leader = {
+			limit = {
+				OR = {
+					has_id = 2203 # Xue Yue
+					has_id = 2204 # Zhang Fakui
+				}
+			}
+			set_nationality = HNN
+		}
+		HNN = { country_event = chi_for.18 }
+	}
+	else = {
+		every_unit_leader = {
+			limit = {
+				OR = {
+					has_id = 2203 # Xue Yue
+					has_id = 2204 # Zhang Fakui
+				}
+			}
+			set_nationality = CHI
+		}
+	}
+}
+
+remove_puppet_and_leave_faction = {
+	if = {
+		limit = { is_in_faction = yes }
+		leave_faction = yes
+	}
+	if = {
+		limit = { is_subject = yes }
+		overlord = {
+			set_autonomy = {
+				target = PREV
+				autonomy_state = kmt_puppet
+			}
+		}
+	}
+}
+
+LKMT_puppet_FROM_effect = {
+	hidden_effect = {
+		FROM = {
+			every_subject_country = {
+				if = {
+					limit = { is_chinese_tag = yes }
+					get_current_government_type = yes
+					CHI = {
+						set_autonomy = {
+							target = PREV
+							autonomy_state = kmt_puppet
+							end_wars = no
+						}
+					}
+					restore_previous_government_type = yes
+					#CHI_puppt_kmt = yes
+				}
+				else = {
+					get_current_government_type = yes
+					CHI = {
+						set_autonomy = {
+							target = PREV
+							autonomy_state = kmt_puppet
+							end_wars = no
+						}
+					}
+					restore_previous_government_type = yes
+				}
+			}
+			if = {
+				limit = { is_chinese_tag = yes }
+				get_current_government_type = yes
+				CHI = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = kmt_puppet
+						end_wars = no
+					}
+				}
+				restore_previous_government_type = yes
+				#CHI_puppt_kmt = yes
+			}
+			else = {
+				get_current_government_type = yes
+				CHI = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = kmt_puppet
+						end_wars = no
+					}
+				}
+				restore_previous_government_type = yes
+			}
+		}
+	}
+}
+
+FROM_puppet_warlord_effect = {
+	hidden_effect = {
+		every_subject_country = {
+			get_current_government_type = yes
+			FROM = {
+				set_autonomy = {
+					target = PREV
+					autonomy_state = kmt_puppet
+					end_wars = no
+				}
+			}
+			restore_previous_government_type = yes
+			#CHI_puppt_kmt = yes
+		}
+		get_current_government_type = yes
+		FROM = {
+			set_autonomy = {
+				target = ROOT
+				autonomy_state = kmt_puppet
+				end_wars = no
+			}
+		}
+		restore_previous_government_type = yes
+		#CHI_puppt_kmt = yes
+	}
+}
+
+get_current_government_type = {
+	clear_variable = original_government_type
+	set_variable = { original_government_type = current_party_ideology_group }
+
+	clear_array = original_popularities
+	add_to_array = { original_popularities = party_popularity_100@totalist }
+	add_to_array = { original_popularities = party_popularity_100@syndicalist }
+	add_to_array = { original_popularities = party_popularity_100@radical_socialist }
+	add_to_array = { original_popularities = party_popularity_100@social_democrat }
+	add_to_array = { original_popularities = party_popularity_100@social_liberal }
+	add_to_array = { original_popularities = party_popularity_100@market_liberal }
+	add_to_array = { original_popularities = party_popularity_100@social_conservative }
+	add_to_array = { original_popularities = party_popularity_100@authoritarian_democrat }
+	add_to_array = { original_popularities = party_popularity_100@paternal_autocrat }
+
+	set_temp_variable = { sum = 100 }
+	for_each_loop = {
+		array = original_popularities
+		subtract_from_temp_variable = { sum = v }
+	}
+	add_to_array = { original_popularities = sum } #last value (natpop), calculated directly to avoid rounding errors
+
+	if = {
+		limit = { has_coalition = yes }
+		for_each_loop = {
+			array = coalition_partners
+			add_to_array = { original_coalitions = v }
+		}
+	}
+}
+
+get_HNN_unit_leader = {
+
+	create_corps_commander = {
+		name = "唐生智"
+		desc = "POLITICS_HNN_TANG_SHENGMING_ARMY_DESC"
+		portrait_path = "gfx/leaders/HNN/Portrait_Hunan_Tang_Shengming.png"
+		traits = {
+			politically_connected CHI_left_kmt_officer
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 2
+		id = 1407
+	}
+	
+	create_corps_commander = {
+		name = "贺耀祖"
+		desc = "POLITICS_HNN_HE_YAOZU_ARMY_DESC"
+		portrait_path = "gfx/leaders/HNN/Portrait_Hunan_He_Yaozu.png"
+		traits = {
+			infantry_officer CHI_left_kmt_officer
+		}
+		skill = 1
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "彭德怀"
+		desc = "POLITICS_HNN_PENG_DEHUAI_ARMY_DESC"
+		portrait_path = "gfx/leaders/HNN/Portrait_Hunan_Peng_Dehuai.png"
+		traits = {
+			offensive_doctrine
+			infantry_officer
+			career_officer
+			commando
+			CHI_left_kmt_officer
+		}
+		skill = 4
+		attack_skill = 4
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "宋锡濂"
+		desc = "POLITICS_HNN_SONG_XILIAN_ARMY_DESC"
+		portrait_path = "gfx/leaders/HNN/Portrait_Hunan_Song_Xilian.png"
+		traits = {
+			trait_engineer
+			trait_reckless
+			urban_assault_specialist
+			CHI_left_kmt_officer
+		}
+		skill = 3
+		attack_skill = 4
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "贺龙"
+		portrait_path = "gfx/leaders/HNN/Portrait_Hunan_He_Long.png"
+		desc = "ARMY_HE_LONG_DESC"
+		traits = { infantry_officer trickster guerilla_fighter }
+		skill = 3
+		attack_skill = 4
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+}
+
+get_GXC_unit_leader = {
+
+	create_corps_commander = { #Guangdong
+		name = "陈济棠"
+		desc = "POLITICS_GXC_CHEN_JITANG_ARMY_DESC"
+		portrait_path = "gfx/leaders/GXC/Portrait_GXC_Chen_Jitang.png"
+		traits = {
+			CHI_left_kmt_officer
+			war_hero
+			career_officer
+			brilliant_strategist
+		}
+		skill = 3
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 2
+	}
+	create_corps_commander = { #Guangdong
+		name = "蒋光鼐"
+		desc = "POLITICS_GXC_JIANG_GUANGNAI_ARMY_DESC"
+		portrait_path = "gfx/leaders/GXC/Portrait_GXC_Jiang_Guangnai.png"
+		traits = {
+			CHI_left_kmt_officer
+			war_hero
+			infantry_officer
+			career_officer
+		}
+		skill = 3
+		attack_skill = 3
+		defense_skill = 4
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_corps_commander = { #Guangdong
+		name = "陈铭枢"
+		desc = "POLITICS_GXC_CHEN_MINSHU_ARMY_DESC"
+		portrait_path = "gfx/leaders/GXC/Portrait_GXC_Chen_Mingshu.png"
+		traits = {
+			CHI_left_kmt_officer
+			politically_connected
+			war_hero
+			infantry_officer
+			career_officer
+		}
+		skill = 3
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 3
+	}
+	create_corps_commander = { #Guangdong
+		name = "蔡廷锴"
+		desc = "POLITICS_GXC_CAI_TINGKAI_ARMY_DESC"
+		portrait_path = "gfx/leaders/GXC/Portrait_GXC_Cai_Tingkai.png"
+		traits = {
+			CHI_left_kmt_officer
+			infantry_officer
+			career_officer
+		}
+		skill = 3
+		attack_skill = 3
+		defense_skill = 3
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_corps_commander = { #Guangxi
+		name = "李品仙"
+		desc = "POLITICS_GXC_LI_PINXIAN_ARMY_DESC"
+		portrait_path = "gfx/leaders/GXC/Portrait_GXC_Li_Pinxian.png"
+		traits = {
+			CHI_left_kmt_officer
+			politically_connected
+			infantry_officer
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 2
+	}
+	create_corps_commander = { #Guangxi
+		name = "张淦"
+		desc = "POLITICS_GXC_ZHANG_GAN_ARMY_DESC"
+		portrait_path = "gfx/leaders/GXC/Portrait_GXC_Zhang_Gan.png"
+		traits = {
+			CHI_left_kmt_officer
+			old_guard
+			career_officer
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_corps_commander = { #Guangxi
+		name = "刘斐"
+		desc = "POLITICS_GXC_LIU_FEI_ARMY_DESC"
+		portrait_path = "gfx/leaders/GXC/Portrait_GXC_Liu_Fei.png"
+		traits = {
+			CHI_left_kmt_officer
+			career_officer
+			thorough_planner
+		}
+		skill = 2
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 3
+		logistics_skill = 1
+	}
+	create_corps_commander = { #Guangdong
+		name = "叶剑英"
+		desc = "POLITICS_GXC_YE_JIANYING_ARMY_DESC"
+		portrait_path = "gfx/leaders/GXC/Portrait_GXC_Ye_Jianying.png"
+		traits = {
+			CHI_left_kmt_officer
+			career_officer
+			commando
+			organizer
+		}
+		skill = 3
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 4
+		logistics_skill = 4
+	}
+
+	### Admirals ###
+	create_navy_leader = {
+		name = "Li Qingwen"
+		desc = "POLITICS_GXC_LI_QINGWEN_NAVY_DESC"
+		portrait_path = "gfx/leaders/GXC/Portrait_GXC_Li_Qingwen.png"
+		traits = {
+			navy_career_officer
+			inshore_fighter
+		}
+		skill = 1
+		attack_skill = 1
+		defense_skill = 2
+		maneuvering_skill = 1
+		coordination_skill = 1
+	}
+
+	create_navy_leader = {
+		name = "Chen Ce"
+		desc = "POLITICS_GXC_CHEN_CE_NAVY_DESC"
+		portrait_path = "gfx/leaders/GXC/Portrait_GXC_Chen_Ce.png"
+		traits = {
+			navy_career_officer
+			navy_media_personality
+			inshore_fighter
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 3
+		maneuvering_skill = 2
+		coordination_skill = 2
+	}
+}
+
+get_YUN_unit_leader = {
+
+	create_corps_commander = {
+		name = "龙云"
+		desc = "POLITICS_YUNNAN_LONG_YUN_ARMY_DESC"
+		portrait_path = "gfx/leaders/YUN/Portrait_Yunnan_Long_Yun.png"
+		skill = 4
+		traits = {
+			CHI_left_kmt_officer
+			infantry_officer
+			brilliant_strategist
+			trickster
+			hidden_sympathies
+			substance_abuser
+		}
+		attack_skill = 3
+		defense_skill = 3
+		planning_skill = 4
+		logistics_skill = 3
+	}
+	create_corps_commander = {
+		name = "胡若愚"
+		desc = "POLITICS_YUNNAN_HU_RUOYU_ARMY_DESC"
+		portrait_path = "gfx/leaders/YUN/Portrait_Yunnan_Hu_Ruoyu.png"
+		traits = {
+			CHI_left_kmt_officer
+			infantry_officer
+			inflexible_strategist
+			trait_mountaineer
+			trickster
+			hidden_sympathies
+		}
+		skill = 3
+		attack_skill = 2
+		defense_skill = 3
+		planning_skill = 2
+		logistics_skill = 3
+	}
+	create_corps_commander = {
+		name = "金汉鼎"
+		desc = "POLITICS_YUNNAN_JIN_HANDING_ARMY_DESC"
+		portrait_path = "gfx/leaders/YUN/Portrait_Yunnan_Jin_Handing.png"
+		skill = 3
+		traits = {
+			CHI_left_kmt_officer
+			career_officer
+			trickster
+			infantry_leader
+		}
+		attack_skill = 3
+		defense_skill = 4
+		planning_skill = 2
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "罗炳辉"
+		desc = "POLITICS_YUNNAN_LUO_BINGHUI_ARMY_DESC"
+		portrait_path = "gfx/leaders/YUN/Portrait_Yunnan_Luo_Binghui.png"
+		traits = {
+			CHI_left_kmt_officer
+			career_officer
+			infantry_leader
+			ambusher
+			winter_specialist
+		}
+		skill = 3
+		attack_skill = 4
+		defense_skill = 3
+		planning_skill = 1
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "唐淮源"
+		desc = "POLITICS_YUNNAN_TANG_HUAIYUAN_ARMY_DESC"
+		portrait_path = "gfx/leaders/YUN/Portrait_Yunnan_Tang_Huaiyuan.png"
+		traits = {
+			CHI_left_kmt_officer
+			infantry_officer
+			politically_connected
+			trait_reckless
+			substance_abuser
+		}
+		skill = 3
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 4
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "朱培德"
+		desc = "POLITICS_YUNNAN_ZHU_PEIDE_ARMY_DESC"
+		portrait_path = "gfx/leaders/YUN/Portrait_Yunnan_Zhu_Peide.png"
+		skill = 3
+		traits = {
+			CHI_left_kmt_officer
+			infantry_officer
+			brilliant_strategist
+			war_hero
+			skilled_staffer
+			hidden_sympathies
+		}
+		attack_skill = 4
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "朱德"
+		desc = "POLITICS_YUNNAN_ZHU_DE_ARMY_DESC"
+		portrait_path = "gfx/leaders/YUN/Portrait_Yunnan_Zhu_De.png"
+		skill = 3
+		traits = {
+			CHI_left_kmt_officer
+			career_officer
+			inflexible_strategist
+			politically_connected
+			substance_abuser
+			organizer
+		}
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 3
+	}
+	create_corps_commander = {
+		name = "范石生"
+		desc = "POLITICS_YUNNAN_FAN_SHISHENG_ARMY_DESC"
+		portrait_path = "gfx/leaders/YUN/Portrait_Yunnan_Fan_Shisheng.png"
+		skill = 3
+		traits = {
+			CHI_left_kmt_officer
+			career_officer
+			trickster
+			trait_engineer
+		}
+		attack_skill = 4
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "杨杰"
+		desc = "POLITICS_YUNNAN_YANG_JIE_ARMY_DESC"
+		portrait_path = "gfx/leaders/YUN/Portrait_Yunnan_Yang_Jie.png"
+		traits = {
+			CHI_left_kmt_officer
+			career_officer
+		}
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "张灵甫"
+		desc = "POLITICS_YUNNAN_ZHANG_LINGFU_ARMY_DESC"
+		portrait_path = "gfx/leaders/YUN/Portrait_Yunnan_Zhang_Lingfu.png"
+		traits = {
+			CHI_left_kmt_officer
+			career_officer
+		}
+		skill = 2
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 3
+	}
+	create_corps_commander = {
+		name = "周保中"
+		desc = "POLITICS_YUNNAN_ZHOU_BAOZHONG_ARMY_DESC"
+		portrait_path = "gfx/leaders/YUN/Portrait_Yunnan_Zhou_Baozhong.png"
+		traits = {
+			CHI_left_kmt_officer
+			career_officer
+		}
+		skill = 2
+		attack_skill = 3
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "曾泽生"
+		desc = "POLITICS_YUNNAN_ZENG_ZESHENG_ARMY_DESC"
+		portrait_path = "gfx/leaders/YUN/Portrait_Yunnan_Zheng_Zhesheng.png"
+		traits = {
+			CHI_left_kmt_officer
+			career_officer
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 3
+	}
+	create_corps_commander = {
+		name = "卢汉"
+		desc = "POLITICS_YUNNAN_LU_HAN_ARMY_DESC"
+		portrait_path = "gfx/leaders/YUN/Portrait_Yunnan_Lu_Han.png"
+		traits = {
+			CHI_left_kmt_officer
+			career_officer
+			hidden_sympathies
+		}
+		skill = 3
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "何应钦"
+		portrait_path = "gfx/leaders/YUN/Portrait_Yunnan_He_Yingqing.png"
+		traits = {
+			CHI_left_kmt_officer
+			brilliant_strategist
+			war_hero
+			infantry_leader
+			hidden_sympathies
+		}
+		skill = 3
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 3
+	}
+	create_corps_commander = {
+		name = "陈诚"
+		portrait_path = "gfx/leaders/Portrait_CHI_Chen_cheng.png"
+		traits = {
+			CHI_left_kmt_officer
+			brilliant_strategist
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 2
+	}
+	
+}
+
+get_SZC_unit_leader = {
+
+	create_corps_commander = {
+		name = "范绍增"
+		desc = "POLITICS_SZC_FAN_SHAOZENG_ARMY_DESC"
+		portrait_path = "gfx/leaders/SZC/Portrait_SZC_Fan_Shaozeng.png"
+		traits = {
+			CHI_left_kmt_officer
+			old_guard
+			substance_abuser
+		}
+		id = 1131
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "贺国光"
+		desc = "POLITICS_SZC_HE_GUOGUANG_ARMY_DESC"
+		portrait_path = "gfx/leaders/SZC/Portrait_SZC_He_Guoguang.png"
+		traits = {
+			CHI_left_kmt_officer
+			old_guard
+		}
+		id = 1133
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "刘文辉"
+		desc = "POLITICS_SZC_LIU_WENHUI_ARMY_DESC"
+		portrait_path = "gfx/leaders/SZC/Portrait_SZC_Liu_Wenhui.png"
+		traits = {
+			CHI_left_kmt_officer
+			old_guard
+			politically_connected
+			substance_abuser
+		}
+		id = 1135
+		skill = 2
+		attack_skill = 1
+		defense_skill = 3
+		planning_skill = 1
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "田颂尧"
+		desc = "POLITICS_SZC_TIAN_SONGYAO_ARMY_DESC"
+		portrait_path = "gfx/leaders/SZC/Portrait_SZC_Tian_Songyao.png"
+		traits = {
+			CHI_left_kmt_officer
+			inflexible_strategist
+			old_guard
+		}
+		id = 1137
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "刘湘"
+		desc = "POLITICS_SZC_LIU_XIANG_ARMY_DESC"
+		portrait_path = "gfx/leaders/SZC/Portrait_SZC_Liu_Xiang.png"
+		traits = {
+			CHI_left_kmt_officer
+			inflexible_strategist
+			old_guard
+			politically_connected
+		}
+		id = 1138
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 3
+	}
+	create_corps_commander = {
+		name = "潘文华"
+		desc = "POLITICS_SZC_PAN_WENHUA_ARMY_DESC"
+		portrait_path = "gfx/leaders/SZC/Portrait_SZC_Pan_Wenhua.png"
+		traits = {
+			CHI_left_kmt_officer
+			brilliant_strategist
+			war_hero
+		}
+		id = 1139
+		skill = 2
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "吕超"
+		desc = "POLITICS_SZC_LU_CHAO_ARMY_DESC"
+		portrait_path = "gfx/leaders/SZC/Portrait_SZC_Lu_Chao.png"
+		traits = {
+			CHI_left_kmt_officer
+			inflexible_strategist
+			politically_connected
+		}
+		id = 1141
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "刘伯承"
+		desc = "POLITICS_SZC_LIU_BOCHENG_ARMY_DESC"
+		portrait_path = "gfx/leaders/SZC/Portrait_SZC_Liu_Bocheng.png"
+		traits = {
+			CHI_left_kmt_officer
+			trickster
+			trait_reckless
+			brilliant_strategist
+			offensive_doctrine
+		}
+		skill = 3
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "熊克武"
+		desc = "POLITICS_SZC_XIONG_KEWU_ARMY_DESC"
+		portrait_path = "gfx/leaders/SZC/Portrait_SZC_Xiong_Kewu.png"
+		traits = {
+			CHI_left_kmt_officer
+			old_guard
+			politically_connected
+		}
+		id = 1140
+		skill = 2
+		attack_skill = 1
+		defense_skill = 3
+		planning_skill = 1
+		logistics_skill = 2
+	}
+}
+
+get_ANQ_unit_leader = {
+
+	create_corps_commander = {
+		name = "彭雪枫"
+		desc = "POLITICS_ANQ_PENG_XUEFENG_ARMY_DESC"
+		portrait_path = "gfx/leaders/ANQ/Portrait_ANQ_Peng_Xuefeng.png"
+		traits = {
+			CHI_left_kmt_officer
+			harsh_leader
+			commando
+		}
+		skill = 2
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 3
+	}
+	create_corps_commander = {
+		name = "刘和鼎"
+		desc = "POLITICS_ANQ_LIU_HEDING_ARMY_DESC"
+		portrait_path = "gfx/leaders/ANQ/Portrait_ANQ_Liu_Heding.png"
+		traits = {
+			CHI_left_kmt_officer
+			trait_engineer
+		}
+		skill = 2
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "卫立煌"
+		portrait_path = "gfx/leaders/CHI/portrait_chi_wei_lihuang.dds"
+		traits = { CHI_left_kmt_officer career_officer organizer urban_assault_specialist }
+		skill = 2
+		attack_skill = 1
+		defense_skill = 3
+		planning_skill = 1
+		logistics_skill = 2
+	}
+}
+
+get_QIE_unit_leader = {
+	
+	create_corps_commander = {
+		name = "蒋百里"
+		portrait_path = "gfx/leaders/QIE/Portrait_QIE_Jiang_Baili.png"
+		desc = "QIE_JIANG_BAILI_ARMY_DESC"
+		traits = {
+			CHI_left_kmt_officer
+			old_guard
+			offensive_doctrine
+			politically_connected
+			inflexible_strategist
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 3
+		planning_skill = 1
+		logistics_skill = 1
+		id = 1171
+	}
+	create_navy_leader = {
+		name = "吴纫礼"
+		portrait_path = "gfx/leaders/QIE/Portrait_QIE_Wu_Renli.png"
+		desc = "QIE_WU_RENLI_NAVY_DESC"
+		traits = {
+			superior_tactician
+			navy_career_officer
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		maneuvering_skill = 3
+		coordination_skill = 2
+	}
+	create_navy_leader = {
+		name = "Sa Zhenbing"
+		portrait_path = "gfx/leaders/QIE/Portrait_QIE_Sa_Zhenbing.png"
+		desc = "QIE_SA_ZHENBING_NAVY_DESC"
+		traits = {
+			battleship_adherent
+			navy_career_officer
+			gentlemanly
+			naval_lineage
+		}
+		skill = 3
+		attack_skill = 3
+		defense_skill = 2
+		maneuvering_skill = 4
+		coordination_skill = 3
+	}
+	create_navy_leader = {
+		name = "Du Xigui"
+		portrait_path = "gfx/leaders/QIE/Portrait_QIE_Du_Xigui.png"
+		desc = "QIE_DU_XIGUI_NAVY_DESC"
+		traits = {
+			old_guard_navy
+			navy_career_officer
+		}
+		skill = 1
+		attack_skill = 2
+		defense_skill = 1
+		maneuvering_skill = 2
+		coordination_skill = 2
+	}
+
+}
+
+get_XSM_unit_leader = {
+
+	create_corps_commander = {
+		name = "马仲英"
+		desc = "POLITICS_XSM_MA_ZHONGYING_ARMY_DESC"
+		portrait_path = "gfx/leaders/XSM/Portrait_XSM_Ma_Zhongying.png"
+		traits = {
+			CHI_left_kmt_officer
+			cavalry_officer
+			trickster
+		}
+		skill = 2
+		attack_skill = 4
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+		id = 654366
+	}
+	create_corps_commander = {
+		name = "马济援"
+		desc = "POLITICS_XSM_MA_JIYUAN_ARMY_DESC"
+		portrait_path = "gfx/leaders/XSM/Portrait_XSM_Ma_Jiyuan.png"
+		traits = {
+			CHI_left_kmt_officer
+			cavalry_leader
+		}
+		skill = 1
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "马步青"
+		desc = "POLITICS_XSM_MA_BUQING_ARMY_DESC"
+		portrait_path = "gfx/leaders/XSM/Portrait_XSM_Ma_Buqing.png"
+		traits = {
+			CHI_left_kmt_officer
+			politically_connected
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "韩有文"
+		desc = "POLITICS_XSM_HAN_YOUWEN_ARMY_DESC"
+		portrait_path = "gfx/leaders/XSM/Portrait_XSM_Han_Youwen.png"
+		traits = {
+			CHI_left_kmt_officer
+			infantry_leader
+			commando
+		}
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 1
+	}
+}
+
+get_FNG_unit_leader = {
+
+	create_corps_commander = {
+		name = "张学良 "
+		desc = "POLITICS_ZHANG_XUELIANG_ARMY_DESC"
+		portrait_path = "gfx/leaders/FNG/Portrait_FNG_Zhang_Xueliang_Army.png"
+		traits = {
+			CHI_left_kmt_officer
+			trait_engineer
+			politically_connected
+			substance_abuser
+		}
+		skill = 3
+		attack_skill = 3
+		defense_skill = 3
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "杨宇霆"
+		desc = "POLITICS_YANG_YUTING_ARMY_DESC"
+		portrait_path = "gfx/leaders/FNG/Portrait_FNG_Yang_Yuting.png"
+		traits = {
+			CHI_left_kmt_officer
+			career_officer
+			politically_connected
+		}
+		skill = 3
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "王树常"
+		desc = "POLITICS_WANG_SHUCHANG_ARMY_DESC"
+		portrait_path = "gfx/leaders/FNG/Portrait_FNG_Wang_Shuchang.png"
+		traits = {
+			CHI_left_kmt_officer
+			career_officer
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 3
+		planning_skill = 1
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "马占山"
+		desc = "POLITICS_MA_ZHANSHAN_ARMY_DESC"
+		portrait_path = "gfx/leaders/FNG/Portrait_FNG_Ma_Zhanshan.png"
+		traits = {
+			CHI_left_kmt_officer
+			trickster
+			trait_reckless
+		}
+		skill = 3
+		attack_skill = 4
+		defense_skill = 3
+		planning_skill = 2
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "万福麟"
+		desc = "POLITICS_WAN_FULIN_ARMY_DESC"
+		portrait_path = "gfx/leaders/FNG/Portrait_FNG_Wan_Fulin.png"
+		traits = {
+			CHI_left_kmt_officer
+			infantry_officer
+		}
+		skill = 3
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "冯占海"
+		desc = "POLITICS_FENG_ZHANHAI_ARMY_DESC"
+		portrait_path = "gfx/leaders/FNG/Portrait_FNG_Feng_Zhanhai.png"
+		traits = {
+			CHI_left_kmt_officer
+			infantry_officer
+			career_officer
+		}
+		skill = 2
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "苏炳文"
+		desc = "POLITICS_SU_BINGWEN_ARMY_DESC"
+		portrait_path = "gfx/leaders/FNG/Portrait_FNG_Su_Bingwen.png"
+		traits = {
+			CHI_left_kmt_officer
+			infantry_officer
+			career_officer
+		}
+		skill = 2
+		attack_skill = 1
+		defense_skill = 3
+		planning_skill = 1
+		logistics_skill = 2
+	}
+	create_navy_leader = {
+		name = "沈鸿烈"
+		desc = "POLITICS_SHEN_HONGLIE_NAVY_DESC"
+		portrait_path = "gfx/leaders/FNG/Portrait_FNG_Shen_Honglie.png"
+		traits = {
+			old_guard_navy
+			navy_career_officer
+		}
+		skill = 3
+		attack_skill = 3
+		defense_skill = 2
+		maneuvering_skill = 3
+		coordination_skill = 3
+	}
+}
+
+get_SIK_unit_leader = {
+
+	create_corps_commander = {
+		name = 盛世才"
+		desc = "POLITICS_SHENG_SHICAI_DESC"
+		portrait_path = "gfx/leaders/SIK/Portrait_SIK_Sheng Shicai.png"
+		traits = {
+			CHI_left_kmt_officer
+			politically_connected
+			trickster
+		}
+		skill = 2
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 3
+		logistics_skill = 2
+	}
+}
+
+get_SHX_unit_leader = {
+	
+	create_corps_commander = {
+		name = "阎锡山"
+		portrait_path = "gfx/leaders/SHX/Portrait_Shanxi_Yan_Xishan.png"
+		traits = {
+			CHI_left_kmt_officer
+			brilliant_strategist
+			fast_planner
+		}
+		skill = 2
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "冯玉祥"
+		portrait_path = "gfx/leaders/SHX/Portrait_Shanxi_Feng_Yuxiang.png"
+		traits = {
+			CHI_left_kmt_officer
+			infantry_leader
+			aggressive_assaulter
+		}
+		skill = 3
+		attack_skill = 3
+		defense_skill = 3
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "孙连仲"
+		portrait_path = "gfx/leaders/SHX/Portrait_SHX_Sun_Lianzhong.png"
+		traits = {
+			CHI_left_kmt_officer
+			infantry_leader
+			infantry_expert
+		}
+		skill = 2
+		attack_skill = 3
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "徐永昌"
+		portrait_path = "gfx/leaders/SHX/Portrait_SHX_Xu_Yongchang.png"
+		traits = {
+			CHI_left_kmt_officer
+			cavalry_expert
+			career_officer
+		}
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "杨虎城"
+		portrait_path = "gfx/leaders/SHX/Portrait_SHX_Yang_Hucheng.png"
+		traits = {
+			CHI_left_kmt_officer
+			inflexible_strategist
+		}
+		skill = 1
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "傅作义"
+		portrait_path = "gfx/leaders/SHX/Portrait_SHX_Fu_Zuoyi.png"
+		traits = {
+			CHI_left_kmt_officer
+			infantry_officer
+			career_officer
+		}
+		skill = 3
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 3
+	}
+	create_corps_commander = {
+		name = "张自忠"
+		portrait_path = "gfx/leaders/SHX/Portrait_SHX_Zhang_Zizhong.png"
+		traits = {
+			CHI_left_kmt_officer
+			career_officer
+			infantry_officer
+		}
+		skill = 3
+		attack_skill = 3
+		defense_skill = 3
+		planning_skill = 2
+		logistics_skill = 2
+	}
+}
+
+get_TIB_unit_leader = {
+
+	create_corps_commander = {
+		name = "黄慕松"
+		desc = "TIB_HUANG_MUSONG_DESC"
+		portrait_path = "gfx/leaders/TIB/Portrait_TIB_Huang_Musong.png"
+		traits = {
+			CHI_left_kmt_officer
+			trait_cautious
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 2
+	}
+}
+
+CHI_get_embrace_general = {
+	if = {
+		limit = {
+			FROM.FROM = { tag = HNN }
+		}
+		get_HNN_unit_leader = yes
+	}
+	else_if = {
+		limit = {
+			FROM.FROM = { tag = GXC }
+		}
+		get_GXC_unit_leader = yes
+	}
+	else_if = {
+		limit = {
+			FROM.FROM = { tag = YUN }
+		}
+		get_YUN_unit_leader = yes
+	}
+	else_if = {
+		limit = {
+			FROM.FROM = { tag = SZC }
+		}
+		get_SZC_unit_leader = yes
+	}
+	else_if = {
+		limit = {
+			FROM.FROM = { tag = ANQ }
+		}
+		get_ANQ_unit_leader = yes
+	}
+	else_if = {
+		limit = {
+			FROM.FROM = { tag = QIE }
+		}
+		get_QIE_unit_leader = yes
+	}
+	else_if = {
+		limit = {
+			FROM.FROM = { tag = XSM }
+		}
+		get_XSM_unit_leader = yes
+	}
+	else_if = {
+		limit = {
+			FROM.FROM = { tag = FNG }
+		}
+		get_FNG_unit_leader = yes
+	}
+	else_if = {
+		limit = {
+			FROM.FROM = { tag = SIK }
+		}
+		get_SIK_unit_leader = yes
+	}
+	else_if = {
+		limit = {
+			FROM.FROM = { tag = SHX }
+		}
+		get_SHX_unit_leader = yes
+	}
+	else_if = {
+		limit = {
+			FROM.FROM = { tag = TIB }
+		}
+		get_TIB_unit_leader = yes
+	}
+}

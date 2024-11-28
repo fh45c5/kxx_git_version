@@ -1,0 +1,808 @@
+ideas = {
+    country = {
+
+        CHI_PSG_up = {
+            picture = GRU_UNION_DEMOCRATIC
+            available = { 
+                NOT = {
+					has_country_leader = {
+						character = CHI_zhang_guotao
+						ruling_only = yes
+					}
+				}
+            }
+            modifier = {
+				political_power_factor = -0.05
+                stability_factor = -0.05
+			}
+        }
+
+        CHI_WPP_up = {
+            picture = GRU_UNION_DEMOCRATIC
+            available = { 
+                NOT = {
+					has_country_leader = {
+						character = CHI_hu_zongnan
+						ruling_only = yes
+					}
+				}
+            }
+            modifier = {
+				political_power_factor = -0.05
+                stability_factor = -0.05
+			}
+        }
+
+        CHI_BCC_up = {
+            picture = GRU_UNION_DEMOCRATIC
+            available = { 
+                NOT = {
+					has_country_leader = {
+						character = CHI_dai_chunfeng
+						ruling_only = yes
+					}
+				}
+            }
+            modifier = {
+				political_power_factor = -0.05
+                stability_factor = -0.05
+			}
+        }
+
+        SIK_aid_from_kmt = {
+            picture = chi_chinese_support
+            available = { 
+                if = {
+                    limit = {
+                        original_tag = SIK
+                    }
+                    has_government = social_democrat
+                }
+                NOT = { has_war_with = CHI }
+                OR = {
+                    is_subject = no
+                    is_subject_of = CHI
+                }
+            }
+            modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				supply_node_range = 0.25
+				unit_limit_bonus = 6
+			}
+        }
+
+        CHI_model_for_socialism_buff = {
+            picture = HOL_totalist_military
+            modifier = {
+                war_stability_factor = 0.25
+				industrial_capacity_factory = 0.05
+			}
+        }
+
+        CHI_advisors_france = {
+			picture = advisors_france
+            on_add = {
+                FRA = {
+                    add_opinion_modifier = {
+                        target = CHI
+                        modifier = CHI_friend
+                    }
+                }
+                ENG = {
+                    add_opinion_modifier = {
+                        target = CHI
+                        modifier = CHI_friend
+                    }
+                }
+                add_opinion_modifier = {
+                    target = FRA
+                    modifier = CHI_friend
+                }
+                add_opinion_modifier = {
+                    target = ENG
+                    modifier = CHI_friend
+                }
+            }
+			available = { 
+                country_exists = FRA 
+            }
+			modifier = {
+				planning_speed = 0.1
+                experience_gain_army_factor = 0.1
+                army_org_factor = 0.05
+			}
+		}
+
+        CHI_eliminating_illiteracy = {
+            picture = EST_democratic_opposition
+            allowed_civil_war = {
+                always = yes
+            }
+			modifier = {
+                political_power_cost = 0.1
+                consumer_goods_factor = 0.10
+			}
+            on_remove = {
+                add_ideas = CHI_eliminated_illiteracy
+            }
+        }
+
+        CHI_eliminated_illiteracy = {
+            picture = jap_supremacy_of_technology
+            allowed_civil_war = {
+                always = yes
+            }
+			modifier = {
+                stability_factor = 0.10
+                research_speed_factor = 0.08
+			}
+        }
+
+        CHI_military_education = {
+            picture = GRU_DSR_oneunion
+			modifier = {
+                stability_factor = -0.05
+                research_speed_factor = 0.08
+                operative_slot = 2
+			}
+        }
+
+        CHI_patriotic_education_buff = {
+            picture = CHI_patriotic_education_buff
+            allowed_civil_war = {
+                always = yes
+            }
+			modifier = {
+                stability_factor = 0.10
+                surrender_limit = 0.1
+                research_speed_factor = 0.10
+			}
+        } 
+
+        CHI_dais_conspiracy = {
+            picture = CHI_dais_conspiracy
+            allowed_civil_war = {
+                always = yes
+            }
+			modifier = {
+                stability_factor = -0.2
+			}
+        }
+
+        CHI_style_thanked = {
+            picture = chi_chinese_support
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = 0.5
+                weekly_manpower = 1000
+                consumer_goods_factor = -0.10
+            }
+        }
+
+        chi_jap_alliance = {
+            picture = generic_the_london_naval_treaty
+            allowed_civil_war = {
+                always = yes
+            }
+            available = { 
+                NOT = { has_war_with = JAP }
+                NOT = { has_war_with = CHI }
+            }
+            modifier = {
+                research_speed_factor = 0.05
+                repair_speed_factor = 0.1
+                consumer_goods_factor = -0.10
+                industrial_capacity_dockyard = 0.1
+            }
+            targeted_modifier = {
+                tag = JAP
+                trade_cost_for_target_factor = -0.25
+            }
+        }
+
+        jap_chi_alliance = {
+            picture = generic_the_london_naval_treaty
+            allowed_civil_war = {
+                always = yes
+            }
+            available = { 
+                NOT = { has_war_with = JAP }
+                NOT = { has_war_with = CHI }
+            }
+            modifier = {
+                research_speed_factor = 0.05
+                repair_speed_factor = 0.1
+                consumer_goods_factor = -0.10
+                industrial_capacity_dockyard = 0.1
+            }
+            targeted_modifier = {
+                tag = CHI
+                trade_cost_for_target_factor = -0.25
+            }
+        }
+
+        CHI_Struggle_of_course = {
+            picture = SOV_factionalism_modifier
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+
+            }
+        }
+
+        CHI_guerrilla_warfare_buff = {
+            picture = tfv_can_conscription_crisis
+            allowed_civil_war = {
+                always = yes
+            }
+			modifier = {
+				army_speed_factor = 0.05
+                resistance_target_on_our_occupied_states = 0.25
+			}
+        }
+
+        CHI_Guerrilla_activities = {
+            picture = generic_army_problems
+            available = {
+                country_exists = CHI
+            }
+			modifier = {
+			    resistance_target = 0.15
+	            required_garrison_factor = 0.35
+                supply_consumption_factor = 0.10
+			}
+        }
+
+        CHI_bandits_pillaged = {
+            picture = anti_soviet_pact
+			modifier = {
+                army_org_factor = -0.05
+				stability_factor = -0.1
+                resistance_target = 0.15
+			}
+        }
+
+        CHI_hasty_uprising = {
+            picture = FRA_national_mobilization_focus
+			modifier = {
+                army_morale_factor = 0.1
+				breakthrough_factor = 0.1
+                planning_speed = 0.25
+			}
+        }
+
+        CHI_general_trade_union_buff = {
+            picture = generic_flexible_foreign_policy2
+			modifier = {
+                production_factory_efficiency_gain_factor = 0.1
+                industrial_capacity_factory = 0.05
+			}
+        }
+
+        CHI_Suhang_commercial_district_buff = {
+            picture = generic_flexible_foreign_policy2
+			modifier = {
+                production_factory_max_efficiency_factor = 0.1
+	            production_factory_efficiency_gain_factor = 0.1
+                industrial_capacity_factory = 0.05
+			}
+        }
+
+        CHI_new_currency_ing = {
+			picture = generic_democratic_opposition
+			modifier = {
+				political_power_cost = 0.1
+				consumer_goods_factor = 0.40
+			}
+            on_remove = {
+                add_ideas = CHI_new_currency_end
+            }
+		}
+
+        CHI_new_currency_end = {
+			picture = CHI_issue_currency
+			modifier = {
+				political_power_gain = 0.25
+                stability_factor = 0.1
+				consumer_goods_factor = -0.20
+			}
+		}
+
+        CHI_discipline_corruption = {
+			picture = prc_the_long_march2
+			modifier = {
+				org_loss_when_moving = 0.15
+                land_reinforce_rate = -0.02
+			}
+		}
+
+#####  民生主义  #####
+
+        CHI_people_livelihood_buff_generic = {
+            picture = CHI_people_livelihood_pic
+            modifier = {
+                consumer_goods_factor = 0.1
+                monthly_population = 0.15
+                stability_factor = 0.2
+                industrial_capacity_factory = 0.05
+                production_factory_max_efficiency_factor = 0.1
+            }
+        }
+        CHI_new_life_movement_buff = {
+            picture = state_economy
+			modifier = {
+                consumer_goods_factor = 0.1
+				stability_weekly = 0.05
+	            war_support_weekly = 0.05
+                resistance_decay = 0.15
+                compliance_growth = 0.15
+			}
+        }
+        CHI_women_liberation_buff = {
+            picture = UoB_women_soldiers
+			modifier = {
+                industrial_capacity_factory = 0.05
+			}
+        }
+        CHI_social_medical_system_ing = {
+            picture = HOL_welfare_state
+			modifier = {
+                consumer_goods_factor = 0.1
+                conscription_factor = -0.25
+			}
+            on_remove = {
+                add_ideas = CHI_social_medical_system_end
+            }
+        }
+        CHI_social_medical_system_end = {
+            picture = por_iberian_workers_united
+			modifier = {
+                consumer_goods_factor = 0.05
+                monthly_population = 0.15
+                stability_factor = 0.1
+			}
+        }
+        CHI_land_reform_ing_generic = {
+            picture = state_economy
+			modifier = {
+				local_resources_factor = -0.1
+                consumer_goods_factor = 0.1
+                production_speed_buildings_factor = -0.15
+			}
+            on_remove = {
+                add_ideas = CHI_land_reform_generic
+            }
+        }
+        CHI_land_reform_generic = {
+            picture = CHI_land_rent_buff
+			modifier = {
+                local_resources_factor = 0.1
+                global_building_slots_factor = 0.15
+				production_speed_buildings_factor = 0.1
+			}
+        }
+        CHI_social_relief_buff = {
+            picture = generic_political_support
+            available = {
+                NOT = { has_idea = CHI_people_livelihood_buff_generic }
+            }
+			modifier = {
+				consumer_goods_factor = 0.05
+                production_factory_max_efficiency_factor = 0.05
+                stability_factor = 0.1
+			}
+        }
+
+#####  民权主义  #####
+
+        CHI_principles_of_democracy_buff_l = {
+            picture = CHI_principles_democracy_pic
+            modifier = {
+                consumer_goods_factor = -0.10
+				resistance_damage_to_garrison = -0.2
+				army_core_defence_factor = 0.15
+                conscription_factor = -0.15
+                global_building_slots_factor = 0.15
+            }
+        }
+        CHI_principles_of_democracy_buff_r = {
+            picture = CHI_principles_democracy_pic
+            modifier = {
+                consumer_goods_factor = -0.10
+                resistance_damage_to_garrison = -0.2
+				army_core_defence_factor = 0.1
+                army_core_attack_factor = 0.1
+                production_speed_buildings_factor = 0.1
+            }
+        }
+        CHI_reform_economic_system_buff = {
+            picture = CHI_economic_affairs_commission
+			modifier = {
+                consumer_goods_factor = -0.10
+			}
+        }
+        CHI_center_of_reinforcement_buff = {
+            picture = generic_neutrality_drift_bonus
+			modifier = {
+                production_speed_buildings_factor = 0.1
+                line_change_production_efficiency_factor = -0.1
+			}
+        }
+        CHI_local_autonomy_buff = {
+            picture = generic_neutrality_drift_bonus
+			modifier = {
+                conscription_factor = -0.15
+                global_building_slots_factor = 0.1
+			}
+        }
+
+#####  民族主义  #####
+
+        CHI_local_vigilantes_buff = {
+            picture = chi_army_corruption2
+			modifier = {
+                conscription_factor = 0.15
+                mobilization_speed = 0.1
+			}
+        }
+
+        CHI_country_one_army_buff = {
+            picture = chi_army_corruption2
+			modifier = {
+                conscription_factor = -0.15
+                army_attack_factor = 0.08
+			}
+        }
+
+        CHI_concept_of_Chinese_nation_buff = {
+            picture = chi_chinese_unity
+			modifier = {
+                compliance_growth = 0.1
+                resistance_target = -0.15
+			}
+        }
+
+        CHI_principles_of_nationalism_buff = {
+            name = CHI_principles_of_nationalism_buff
+            picture = CHI_national_principle
+			modifier = {
+                conscription_factor = 0.15
+                mobilization_speed = 0.15
+                compliance_growth = 0.1
+                resistance_target = -0.15
+			}
+        }
+
+        CHI_principles_of_nationalism_buff2 = {
+            name = CHI_principles_of_nationalism_buff
+            picture = CHI_national_principle
+			modifier = {
+                conscription_factor = -0.15
+                army_attack_factor = 0.10
+                compliance_growth = 0.1
+                resistance_target = -0.15
+			}
+        }
+
+#####  五省内战  #####
+
+        CHI_pressure_LEC = {
+            picture = LEC_China_Rising
+            modifier = {
+                social_liberal_drift = 0.08
+                drift_defence_factor = -0.15
+            }
+            available = {
+                country_exists = CHI
+            }
+        }
+        CHI_against_ANQ_propaganda = {
+            picture = FRA_national_mobilization_focus
+            allowed_civil_war = {
+                always = yes
+            }
+            targeted_modifier = {
+                tag = ANQ
+                attack_bonus_against = 0.15
+                defense_bonus_against = 0.15
+            }
+        }
+        CHI_against_LEP_propaganda = {
+            picture = FRA_national_mobilization_focus
+            allowed_civil_war = {
+                always = yes
+            }
+            targeted_modifier = {
+                tag = LEP
+                attack_bonus_against = 0.15
+                defense_bonus_against = 0.15
+            }
+        }
+        CHI_against_SQI_propaganda = {
+            picture = FRA_national_mobilization_focus
+            allowed_civil_war = {
+                always = yes
+            }
+            targeted_modifier = {
+                tag = SQI
+                attack_bonus_against = 0.15
+                defense_bonus_against = 0.15
+            }
+        }
+        CHI_shanghai_reserve_fund = {
+            picture = SPR_seize_the_gold_reserves
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_factor = -0.60
+            }
+        }
+
+#####  Maoism  #####
+
+        Maoism_declutter_our_Style_buff = {
+            picture = SOV_soviet_hegemony
+            modifier = {
+                radical_socialist_drift = 0.1
+                political_power_factor = -0.05
+                stability_factor = 0.1
+            }
+        }
+
+        Maoism_new_constitution = {
+            picture = generic_constitutional_guarantees
+            modifier = {
+                stability_factor = 0.1
+                production_factory_efficiency_gain_factor = 0.05
+            }
+        }
+
+        Maoism_democratic_centralism_buff = {
+            picture = generic_constitutional_guarantees
+			modifier = {
+                stability_factor = 0.1
+                resistance_damage_to_garrison = -0.15
+                production_factory_efficiency_gain_factor = 0.10
+			}
+        }
+
+        Maoism_administrative_department_buff = {
+            picture = generic_morale_bonus
+			modifier = {
+                political_power_factor = 0.05
+                war_stability_factor = 0.25
+                resistance_damage_to_garrison = -0.15
+                production_factory_efficiency_gain_factor = 0.15
+                drift_defence_factor = 0.1
+			}
+        }
+
+        Maoism_peoples_court_buff = {
+            picture = generic_morale_bonus
+			modifier = {
+                political_power_factor = 0.1
+                war_stability_factor = 0.25
+                consumer_goods_factor = -0.15
+                resistance_target = -0.1
+                resistance_damage_to_garrison = -0.15
+                production_factory_efficiency_gain_factor = 0.15
+                drift_defence_factor = 0.15
+			}
+        }
+
+        Maoism_grassroots_organizations = {
+            picture = hol_haven_of_toleranc
+			modifier = {
+                conscription = 0.005
+                local_resources_factor = 0.10
+			}
+        }
+
+        Maoism_streamline_department = {
+            picture = mex_revolutionary_army
+			modifier = {
+                army_morale_factor = -0.10
+                army_org_factor = 0.10
+                land_reinforce_rate = 0.02
+			}
+        }
+
+        Maoism_land_reform_buff = {
+            picture = CHI_land_rent_buff
+			modifier = {
+                production_speed_buildings_factor = 0.10
+                local_resources_factor = 0.15
+                global_building_slots_factor = 0.25
+			}
+        }
+
+        Maoism_Peoples_commune = {
+            picture = CHI_peasant_movement
+			modifier = {
+                required_garrison_factor = -0.15
+                production_speed_buildings_factor = 0.15
+                compliance_growth = 0.10
+                local_resources_factor = 0.2
+                global_building_slots_factor = 0.25
+			}
+        }
+
+        Maoism_five_year_plan_buff = {
+            picture = gre_schachtplan
+			modifier = {
+                production_speed_factor = 0.15
+                research_speed_factor = 0.05
+                conscription_factor = -0.25
+			}
+        }
+
+        Maoism_democratic_management_buff = {
+            picture = generic_production_bonus
+			modifier = {
+                stability_factor = 0.10
+                production_factory_efficiency_gain_factor = 0.1
+			}
+        }
+
+        Maoism_social_security_buff = {
+            picture = generic_production_bonus
+			modifier = {
+                consumer_goods_factor = 0.15
+                production_factory_max_efficiency_factor = 0.15
+			}
+        }
+
+        Maoism_concept_of_Chinese_nation_buff = {
+            picture = FRA_scw_intervention_nationalists_focus
+			modifier = {
+                conscription = 0.010
+                local_resources_factor = 0.10
+                compliance_growth = 0.15
+                consumer_goods_factor = -0.15
+                army_org_factor = 0.10
+                land_reinforce_rate = 0.04
+			}
+        }
+
+        Maoism_mass_line_buff = {
+            picture = chi_chinese_unity
+			modifier = {
+                consumer_goods_factor = 0.10
+                monthly_population = 0.15
+                stability_factor = 0.1
+                production_factory_efficiency_gain_factor = 0.10
+                production_factory_max_efficiency_factor = 0.15
+                industrial_capacity_factory = 0.05
+			}
+        }
+
+        CHI_two_stage_revolution_idea = {
+			picture = FRA_idea_revenge
+			modifier = {
+				political_power_gain = 0.1
+				local_resources_factor = 0.15
+                production_factory_efficiency_gain_factor = 0.10
+			}
+		}
+
+        CHI_two_stage_revolution_idea2 = {
+            name = CHI_two_stage_revolution_idea
+			picture = FRA_idea_revenge
+			modifier = {
+				political_power_gain = 0.1
+                stability_factor = -0.10
+				local_resources_factor = 0.20
+                production_factory_efficiency_gain_factor = 0.15
+			}
+		}
+
+        CHI_two_stage_revolution_idea3 = {
+            name = CHI_two_stage_revolution_idea
+			picture = FRA_idea_revenge
+			modifier = {
+				political_power_gain = 0.1
+                stability_factor = -0.10
+				local_resources_factor = 0.20
+                production_factory_efficiency_gain_factor = 0.15
+                training_time_factor = -0.10
+				special_forces_training_time_factor = -0.05
+                special_forces_cap = 0.05
+				experience_loss_factor = -0.15
+			}
+        }
+
+        CHI_china_labour_federation = {
+            name = CHI_china_labour_federation
+			picture = generic_syndicalist_worker
+			modifier = {
+                consumer_goods_factor = 0.05
+				production_factory_max_efficiency_factor = 0.10
+			}
+        }
+
+        CHI_china_labour_federation2 = {
+            name = CHI_china_labour_federation
+			picture = generic_syndicalist_worker
+			modifier = {
+				production_factory_max_efficiency_factor = 0.10
+			}
+        }
+
+        CHI_workplace_democracy_idea = {
+			picture = generic_syndicalist_worker
+			modifier = {
+				industrial_capacity_factory = 0.10
+                industrial_capacity_dockyard = 0.10
+				political_power_factor = 0.05
+			}
+		}
+
+        CHI_popular_support_proletarian_future_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea 		CHI_popular_support_proletarian_future_idea" }
+			picture = chi_warlord_integration5
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.1
+				compliance_gain = 0.01
+                production_factory_max_efficiency_factor = 0.10
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				conscription_factor = 0.02
+			}
+		}
+
+        KR_CHI_asia_development_bank_member = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_CHI_asia_development_bank_member" }
+			picture = CHI_member_state
+			
+			cancel = {
+				OR = {
+					ROOT = {
+						NOT = { tag = CHI }
+						OR = {
+							AND = {
+								AND = {
+									NOT = { is_puppet_of = CHI }
+									NOT = { is_in_faction_with = CHI }
+								}
+								OR = { 
+									NOT = { tag = AFG }
+									NOT = { tag = PER }
+								}
+							}
+							has_capitulated = yes
+						}
+					}
+					NOT = { CHI = { has_dynamic_modifier = { modifier = asia_leadership_dynamic_modifier } } }
+				}
+			}
+			on_add = {
+				CHI = { add_to_variable = { asia_development_bank_member = 8 } }
+			}
+			on_remove = {
+				CHI = { subtract_from_variable = { asia_development_bank_member = 8 } }
+				if = { 
+					limit = { CHI = { has_dynamic_modifier = { modifier = asia_leadership_dynamic_modifier } } }
+					CHI = { country_event = { id = aisa_bank.4 days = 2 } }
+				}
+				if = { 
+					limit = { NOT = { CHI = { has_dynamic_modifier = { modifier = asia_leadership_dynamic_modifier } } } }
+					ROOT = { country_event = { id = aisa_bank.7 days = 2 } }
+				}
+			}
+			
+
+			modifier = {
+				production_speed_rail_way_factor = 0.15
+				production_speed_supply_node_factor = 0.15
+				production_speed_infrastructure_factor = 0.15
+				local_resources_factor = -0.15
+			}
+		}
+    }
+}

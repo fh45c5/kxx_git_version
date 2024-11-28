@@ -1,0 +1,1462 @@
+﻿
+###########################
+# Portuguese Africa Events
+###########################
+# By IratePirate
+###########################
+
+add_namespace = portoafrica
+add_namespace = portoafricaflavor
+
+country_event = { 
+	id = portoafrica.1
+	title = portoafrica.1.t
+	desc = portoafrica.1.d
+	picture = GFX_report_event_coast
+
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.1.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { #  Hornung negotiations
+	id = portoafrica.2
+	title = portoafrica.2.t
+	desc = portoafrica.2.d
+	picture = GFX_report_event_sena
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.2.a
+		ai_chance = {
+			factor = 200
+		}
+		hidden_effect = {
+			}
+			544 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+country_event = { # Seek military aid from Lisbon
+	id = portoafrica.3
+	title = portoafrica.3.t
+	desc = portoafrica.3.d
+	picture = GFX_Portugal_308
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.3.a
+		ai_chance = {
+			factor = 300
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Operation Lancer, crush insurgents
+	id = portoafrica.4
+	title = portoafrica.4.t
+	desc = portoafrica.4.d
+	picture = GFX_report_event_troops
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.4.a
+		ai_chance = {
+			factor = 400
+		}
+		add_stability = 0.02
+		add_political_power = -30
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Regulos from Mozambique
+	id = portoafrica.5
+	title = portoafrica.5.t
+	desc = portoafrica.5.d
+	picture = GFX_report_event_chiefs
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.5.a
+		ai_chance = {
+			factor = 500
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Arm Makonde rebels with big guns
+	id = portoafrica.6
+	title = portoafrica.6.t
+	desc = portoafrica.6.d
+	picture = GFX_report_event_chiefs
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.6.a
+		ai_chance = {
+			factor = 600
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Harass Comoros shipping
+	id = portoafrica.7
+	title = portoafrica.7.t
+	desc = portoafrica.7.d
+	picture = GFX_GER_report_event_suez
+
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.7.a
+		ai_chance = {
+			factor = 700
+		}
+		navy_experience = 20
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Barotse rebels
+	id = portoafrica.8
+	title = portoafrica.8.t
+	desc = portoafrica.8.d
+	picture = GFX_report_event_steamship
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.8.a 
+		ai_chance = {
+			factor = 800
+		}
+		hidden_effect = {
+			PAF = {
+				set_country_flag = has_funded_lozi_rebels
+				}
+				BSC = {
+					country_event = portoafrica.30
+				}
+				ZAM = {
+					country_event = portoafrica.30
+				}
+				MAF = {
+					country_event = portoafrica.30
+				}
+			}
+			add_war_support = 0.05
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = -250
+				producer = POR
+			}	
+		}
+	}
+	
+country_event = { #  Independent diplomatic
+	id = portoafrica.9
+	title = portoafrica.9.t
+	desc = portoafrica.9.d
+	picture = GFX_report_event_Portugal_312
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.9.a
+		ai_chance = {
+			factor = 900
+		}
+		add_political_power = 20
+		add_stability = 0.05
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Aid to the Kasai rebels
+	id = portoafrica.10
+	title = portoafrica.10.t
+	desc = portoafrica.10.d
+	picture = GFX_report_event_steamship
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.10.a
+		ai_chance = {
+			factor = 1000
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Uprising in Angola
+	id = portoafrica.11
+	title = portoafrica.11.t
+	desc = portoafrica.11.d
+	picture = GFX_report_event_KIK_maumau_3
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.11.a
+		ai_chance = {
+			factor = 1100
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Demand Zambia
+	id = portoafrica.12
+	title = portoafrica.12.t
+	desc = portoafrica.12.d
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.12.a
+		ai_chance = {
+			factor = 1200
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Demand Barotseland
+	id = portoafrica.13
+	title = portoafrica.13.t
+	desc = portoafrica.13.d
+
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.13.a
+		ai_chance = {
+			factor = 1300
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Demand Katanga
+	id = portoafrica.14
+	title = portoafrica.14.t
+	desc = portoafrica.14.d
+
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.14.a
+		ai_chance = {
+			factor = 1400
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Demand Rhodesia
+	id = portoafrica.15
+	title = portoafrica.15.t
+	desc = portoafrica.15.d
+
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.15.a
+		ai_chance = {
+			factor = 1500
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Demand West Timor
+	id = portoafrica.16
+	title = portoafrica.16.t
+	desc = portoafrica.16.d
+
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.16.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+	country_event = { # Swaziland autonomy
+	id = portoafrica.17
+	title = portoafrica.17.t
+	desc = portoafrica.17.d
+	picture = GFX_report_event_handshake
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.17.a
+		ai_chance = {
+			factor = 1700
+		}
+		hidden_effect = {
+			}
+		}
+	}
+
+country_event = { # Chuck out the King
+	id = portoafrica.18
+	title = portoafrica.18.t
+	desc = portoafrica.18.d
+	picture = GFX_report_event_announcement
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.18.a
+		ai_chance = {
+			factor = 1800
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Future of the Colonies
+	id = portoafrica.19
+	title = portoafrica.19.t
+	desc = portoafrica.19.d
+	picture = GFX_report_event_street
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+# Liberalise
+	option = {
+		name = portoafrica.19.a
+		ai_chance = {
+			factor = 50
+		}
+		increase_ruling_party_popularity_by_5 = yes
+		add_stability = 0.05
+		hidden_effect = {
+			set_country_flag = autonomyreforms
+			}
+			set_politics = {
+				ruling_party = authoritarian_democrat
+				elections_allowed = no
+			}
+		}
+
+# Integration		
+	option = {
+		name = portoafrica.19.b
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = centralisingreforms
+			country_event = {
+				id = portoafrica.21
+				days = 24
+			}
+			
+			country_event = {
+				id = portoafrica.22
+				days = 34
+			}
+		}
+	}
+}
+	
+country_event = { # A plan for Black Monday
+	id = portoafrica.20
+	title = portoafrica.20.t
+	desc = portoafrica.20.d
+	picture = GFX_report_event_KSV_NM
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.20.a # Camacho and the republican privatisation
+		ai_chance = {
+			factor = 2000
+		}
+		add_stability = 0.03
+		hidden_effect = {
+			set_country_flag = camacho_plan_flag
+			}
+		}
+		
+	option = { #  Belo and monarchist protectionism
+		name = portoafrica.20.b
+		ai_chance = {
+			factor = 2000
+		}
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = belo_plan_flag
+			}
+		}
+	}
+	
+country_event = { # Angolan rebels rise up
+	id = portoafrica.21
+	title = portoafrica.21.t
+	desc = portoafrica.21.d
+
+	is_triggered_only = yes
+	picture = GFX_report_event_rural	
+	trigger = {
+		owns_state = 540
+		owns_state = 959
+	}
+	
+	immediate = {
+	hidden_effect = {
+			ANG = {
+				transfer_state = 959
+				load_oob = ANG_AFR		
+			}
+			ANG = {
+				declare_war_on = {
+					target = PAF
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						PAF = {
+								is_ai = no
+							}
+						}
+						POR = {
+								is_ai = no
+							}
+						}
+				ANG = {
+					load_oob = ANG_AFR
+				}
+			}
+		}	
+	}
+
+	option = {
+		name = portoafrica.21.a
+		ai_chance = {
+			factor = 2100
+		}
+		hidden_effect = {
+			}
+		}
+		
+	option = {
+		name = portoafrica.21.b
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Mozambique rebels rise up
+	id = portoafrica.22
+	title = portoafrica.22.t
+	desc = portoafrica.22.d
+	picture = GFX_report_event_troops	
+	is_triggered_only = yes
+	
+	trigger = {
+		owns_state = 544
+		owns_state = 954
+	}
+	immediate = {
+	hidden_effect = {
+		MZB = {
+				transfer_state = 954
+				load_oob = MZB_AFR		
+			}
+			MZB = {
+				declare_war_on = {
+					target = PAF
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						PAF = {
+								is_ai = no
+							}
+						}
+						POR = {
+								is_ai = no
+							}
+						}
+				MZB = {
+					load_oob = MZB_AFR
+				}
+			}
+		}	
+	}
+
+	option = {
+		name = portoafrica.22.a
+		ai_chance = {
+			factor = 2200
+		}
+		hidden_effect = {
+			}
+		}
+	option = {
+		name = portoafrica.22.b
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Comoros naval exercises
+	id = portoafrica.23
+	title = portoafrica.23.t
+	desc = portoafrica.23.d
+	picture = GFX_report_event_GEA_carrier
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.23.a
+		ai_chance = {
+			factor = 2300
+		}
+		add_political_power = -10
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { #  Mozambique situation
+	id = portoafrica.24
+	title = portoafrica.24.t
+	desc = portoafrica.24.d
+	picture = GFX_report_event_rural
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.24.a
+		ai_chance = {
+			factor = 2300
+		}
+		hidden_effect = {
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = -100
+				producer = POR
+			}
+			add_war_support = 0.03
+		}
+	}
+
+	
+country_event = { #  Crisis over Mozambique
+	id = portoafrica.25
+	title = portoafrica.25.t
+	desc = portoafrica.25.d
+	picture = GFX_report_event_ger_coltroops
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.25.a
+		ai_chance = {
+			factor = 2300
+		}
+		add_stability = -0.05
+		hidden_effect = {
+			}
+		}
+	}
+
+
+	
+country_event = { #  Germany forced POR to step down
+	id = portoafrica.26
+	title = portoafrica.26.t
+	desc = portoafrica.26.d
+	picture = GFX_report_event_ger_coltroops
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.26.a
+		ai_chance = {
+			factor = 2300
+		}
+		add_stability = 0.05
+		add_political_power = -30
+		hidden_effect = {
+			}
+		}
+	}
+
+
+	
+country_event = { # MAF demanded POR step down and they did
+	id = portoafrica.27
+	title = portoafrica.27.t
+	desc = portoafrica.27.d
+	picture = GFX_report_event_ger_coltroops
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.27.a
+		ai_chance = {
+			factor = 2300
+		}
+		hidden_effect = {
+			}
+		add_stability = 0.05
+		add_political_power = -30
+		}
+	}
+
+
+	
+country_event = { # MAF backed down against POR
+	id = portoafrica.28
+	title = portoafrica.28.t
+	desc = portoafrica.28.d
+	picture = GFX_report_event_ger_coltroops
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.28.a
+		ai_chance = {
+			factor = 2300
+		}
+		add_war_support = 0.05
+		add_political_power = 30
+		hidden_effect = {
+			}
+		}
+	}
+
+
+	
+country_event = { # Mittelafrikan Troops Cross the Border
+	id = portoafrica.29
+	title = portoafrica.29.t
+	desc = portoafrica.29.d
+	picture = GFX_report_event_ger_coltroops
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.29.a
+		ai_chance = {
+			factor = 2300
+		}
+		add_stability =  -0.02
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Barotse rebels funded
+	id = portoafrica.30
+	title = portoafrica.30.t
+	desc = portoafrica.30.d
+	picture = GFX_report_event_generic_diplomacy3
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.30.a
+		ai_chance = {
+			factor = 2300
+		}
+		add_stability =  -0.01
+		add_political_power = -10
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Colonial black monday
+	id = portoafrica.31
+	title = portoafrica.31.t
+	desc = portoafrica.31.d
+	picture = GFX_report_event_factory
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafrica.31.a
+		trigger = {
+			tag = POR
+		}
+		ai_chance = {
+			factor = 2300
+		}
+		hidden_effect = {
+			}
+		}
+	option = {
+		name = portoafrica.31.b
+		trigger = {
+			tag = PAF
+		}
+		add_ideas = PAF_black_monday_idea
+		add_stability = -0.2
+		ai_chance = {
+			factor = 2300
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+# Flavour events
+
+# Victory in Angola
+country_event = { 
+	id = portoafricaflavor.1
+	title = portoafricaflavor.1.t
+	desc = portoafricaflavor.1.d
+	picture = GFX_report_event_port_military
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.1.a
+		ai_chance = {
+			factor = 100
+		}
+		add_stability = 0.01
+		hidden_effect = {
+			}
+		}
+	}
+	
+# Luanda carnival
+country_event = { 
+	id = portoafricaflavor.2
+	title = portoafricaflavor.2.t
+	desc = portoafricaflavor.2.d
+	picture = GFX_report_event_Cathedral
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.2.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 10
+		hidden_effect = {
+			}
+		}
+	}
+	
+# The Kiraly
+country_event = { 
+	id = portoafricaflavor.3
+	title = portoafricaflavor.3.t
+	desc = portoafricaflavor.3.d
+	picture = GFX_report_event_magyar
+	is_triggered_only = yes
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.3.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+# Feast of 15 August
+country_event = { 
+	id = portoafricaflavor.4
+	title = portoafricaflavor.4.t
+	desc = portoafricaflavor.4.d
+	picture = GFX_report_event_streets4
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.4.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+# Tensions in Cabinda
+country_event = { 
+	id = portoafricaflavor.5
+	title = portoafricaflavor.5.t
+	desc = portoafricaflavor.5.d
+	picture = GFX_report_event_oyo
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.5.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+# The Rum Debate
+country_event = { 
+	id = portoafricaflavor.6
+	title = portoafricaflavor.6.t
+	desc = portoafricaflavor.6.d
+	picture = GFX_report_event_shop
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.6.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = -20
+		hidden_effect = {
+			}
+		}
+	}
+	
+# Inspectorate of Morals
+country_event = { 
+	id = portoafricaflavor.7
+	title = portoafricaflavor.7.t
+	desc = portoafricaflavor.7.d
+	picture = GFX_report_event_square
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.7.a
+		ai_chance = {
+			factor = 100
+		}
+		add_stability =  -0.01
+		add_political_power = -20
+		hidden_effect = {
+			}
+		}
+	}
+	
+# Angolan Boers
+country_event = { 
+	id = portoafricaflavor.8
+	title = portoafricaflavor.8.t
+	desc = portoafricaflavor.8.d
+	picture = GFX_report_event_boer_war
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.8.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+# Railway works
+country_event = { 
+	id = portoafricaflavor.9
+	title = portoafricaflavor.9.t
+	desc = portoafricaflavor.9.d
+	picture = GFX_report_event_railway
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.9.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			}
+			build_railway = {
+				level = 1
+				start_province = 12958
+				target_province = 13650
+			}			
+		}
+	}
+
+# Zion in Angola
+country_event = { 
+	id = portoafricaflavor.10
+	title = portoafricaflavor.10.t
+	desc = portoafricaflavor.10.d
+	picture = GFX_report_event_agronomics
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.10.a
+		ai_chance = {
+			factor = 100
+		}
+		add_stability = -0.01
+		hidden_effect = {
+			}
+		}
+	}
+
+# De Beers
+country_event = { 
+	id = portoafricaflavor.11
+	title = portoafricaflavor.11.t
+	desc = portoafricaflavor.11.d
+	picture = GFX_report_event_generic_scandal
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.11.a
+		ai_chance = {
+			factor = 100
+		}
+		add_stability = -0.01
+		add_political_power = -10
+		hidden_effect = {
+			}
+		}
+	}
+	
+# Interference with Missions
+country_event = { 
+	id = portoafricaflavor.12
+	title = portoafricaflavor.12.t
+	desc = portoafricaflavor.12.d
+	picture = GFX_report_event_church_lagos
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.12.a
+		ai_chance = {
+			factor = 100
+		}
+		add_stability = -0.01
+		hidden_effect = {
+			}
+		}
+	}
+	
+# WNLA scandals
+country_event = { 
+	id = portoafricaflavor.13
+	title = portoafricaflavor.13.t
+	desc = portoafricaflavor.13.d
+	picture = GFX_report_event_fushun_mine
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.13.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = -10
+		hidden_effect = {
+			}
+		}
+	}
+	
+	# Monteiro's speech
+country_event = { 
+	id = portoafricaflavor.14
+	title = portoafricaflavor.14.t
+	desc = portoafricaflavor.14.d
+	picture = GFX_report_event_nurse
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.14.a
+		ai_chance = {
+			factor = 100
+		}
+		add_war_support = 0.01
+		hidden_effect = {
+			}
+		}
+	}
+	
+	# Dundo Fire
+country_event = { 
+	id = portoafricaflavor.15
+	title = portoafricaflavor.15.t
+	desc = portoafricaflavor.15.d
+	picture = GFX_report_event_street3
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.15.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = -10
+		hidden_effect = {
+			}
+		}
+	}
+	
+	# On the Indigenas
+country_event = { 
+	id = portoafricaflavor.16
+	title = portoafricaflavor.16.t
+	desc = portoafricaflavor.16.d
+	picture = GFX_report_event_maf_railroad
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.16.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+	# Caderneta issue
+country_event = { 
+	id = portoafricaflavor.17
+	title = portoafricaflavor.17.t
+	desc = portoafricaflavor.17.d
+	picture = GFX_report_event_lights
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.17.a
+		ai_chance = {
+			factor = 100
+		}
+		add_stability = -0.01
+		hidden_effect = {
+			}
+		}
+	}
+
+# Goa Congress
+country_event = { 
+	id = portoafricaflavor.18
+	title = portoafricaflavor.18.t
+	desc = portoafricaflavor.18.d
+	picture = GFX_report_event_RAJ_market
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.18.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = -10
+		hidden_effect = {
+			}
+		}
+	}
+	
+# Shooting in Dili
+country_event = { 
+	id = portoafricaflavor.19
+	title = portoafricaflavor.19.t
+	desc = portoafricaflavor.19.d
+	picture = GFX_report_event_church
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.19.a
+		ai_chance = {
+			factor = 100
+		}
+		add_stability = -0.01
+		hidden_effect = {
+			}
+		}
+	}
+
+# Swaziland
+country_event = { 
+	id = portoafricaflavor.20
+	title = portoafricaflavor.20.t
+	desc = portoafricaflavor.20.d
+	picture = GFX_report_event_generic_diplomacy1
+	is_triggered_only = yes
+	
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.20.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = -20
+		hidden_effect = {
+			}
+		}
+	}
+	
+# Raid on Kuamba
+country_event = { 
+	id = portoafricaflavor.21
+	title = portoafricaflavor.21.t
+	desc = portoafricaflavor.21.d
+	picture = GFX_report_event_IRQ_Artillery
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.21.a
+		ai_chance = {
+			factor = 100
+		}
+		add_stability = -0.01
+		hidden_effect = {
+			}
+		}
+	}
+	
+# Settlements
+country_event = { 
+	id = portoafricaflavor.22
+	title = portoafricaflavor.22.t
+	desc = portoafricaflavor.22.d
+	picture = GFX_report_event_housing
+	is_triggered_only = yes
+	
+
+	immediate = {
+	hidden_effect = {
+		}	
+	}
+
+	option = {
+		name = portoafricaflavor.22.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			}
+		}
+	}

@@ -1,0 +1,22 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_decision_suppress"
+		texturefile = "gfx/interface/decisions/Boot.png"
+	}
+	spriteType = {
+		name = "GFX_decision_support"
+		texturefile = "gfx/interface/decisions/Hands Shaking Smaller.png"
+	}
+	spriteType = {
+		name = "GFX_decision_control"
+		texturefile = "gfx/interface/decisions/handcuffs.png"
+	}
+	spriteType = {
+		name = "GFX_decision_increase"
+		texturefile = "gfx/interface/decisions/Clock2.png"
+	}
+	spriteType = {
+		name = "GFX_decision_scales"
+		texturefile = "gfx/interface/decisions/scales.png"
+	}
+}

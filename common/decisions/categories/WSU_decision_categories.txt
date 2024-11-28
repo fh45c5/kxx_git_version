@@ -1,0 +1,15 @@
+WSU_Route_battles = {
+	icon = GFX_decision_cat_annexation
+	picture = GFX_decision_Parliament_of_Ukraine
+	icon = 1
+	allowed = {
+		original_tag = WSU
+	}
+	visible = {
+		tag = WSU
+		has_country_flag = WSU_UKR_WIN_flag
+	}
+	visible_when_empty = yes
+	
+	priority = 1000
+}

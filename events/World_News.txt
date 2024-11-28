@@ -1,0 +1,42 @@
+﻿add_namespace = galworldnews
+
+news_event = { #加利西亚独立
+	id = galworldnews.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event worldnews.1" }
+	title = galworldnews.1.t
+	picture = GFX_GAL_news_independent
+
+	desc = { #加利西亚和平独立
+		text = galworldnews.1.d.peace1
+		trigger = {
+            NOT = {
+			has_war_with = AUS
+			}
+			is_in_faction = no
+		}
+	}
+	desc = { #加利西亚和平独立但留在阵营
+		text = galworldnews.1.d.peace2
+		trigger = {
+            NOT = {
+			has_war_with = AUS
+			}
+			is_in_faction = yes
+		}
+    }
+	desc = { #战争爆发
+		text = galworldnews.1.d.war
+		trigger = {
+			has_war_with = AUS
+		}
+	}
+
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = galworldnews.1.a
+	}
+}
+

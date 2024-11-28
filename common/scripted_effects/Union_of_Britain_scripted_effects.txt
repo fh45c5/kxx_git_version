@@ -1,0 +1,9 @@
+create_communal_government = {
+  create_country_leader = {
+    name = "中央委员会"  # Central Committee
+    desc = "POLITICS_COMMUNAL_DESC"
+    picture = "gfx/leaders/ENG/Portrait_England_Trade_Union_Congress.png"
+    expire = "1.1.1"
+    ideology = radical_socialist_subtype
+  }
+}

@@ -1,0 +1,985 @@
+ideas = {
+	country = {
+
+        ##POLITICS## 
+                 ###TOTALIST###
+        SVK_communist_hegemony = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_tatra_export" }
+			removal_cost = -1
+			picture = nazbol_hegemony_idea
+			modifier = {
+				political_power_factor = 0.15
+                                stability_weekly = 0.015
+                                stability_weekly_factor = 0.3
+                                drift_defence_factor = 0.25
+                                totalist_drift = 0.03         	
+			}
+		}
+
+        SVK_nationalization = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_tatra_export" }
+			removal_cost = -1
+			picture = nationalization
+			modifier = {
+				industrial_capacity_factory = 0.3
+                                production_speed_buildings_factor = 0.15
+                                consumer_goods_factor = 0.015 			
+			}
+		}
+
+        SVK_collectivization = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_tatra_export" }
+			removal_cost = -1
+			picture = collectivization_svk_idea
+			modifier = {
+				research_speed_factor = 0.075
+                                production_speed_buildings_factor = 0.05
+                                consumer_goods_factor = 0.015 			
+			}
+		}
+
+        SVK_industrilization = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_tatra_export" }
+			removal_cost = -1
+			picture = industrilization_svk
+			modifier = {
+				production_speed_industrial_complex_factor = 0.25 
+                                repair_speed_industrial_complex_factor = 0.25 
+                                production_speed_arms_factory_factor = 0.25 
+                                repair_speed_arms_factory_factor = 0.25 
+                                production_factory_efficiency_gain_factor = 0.075
+                                production_factory_max_efficiency_factor = 0.075
+                                production_factory_start_efficiency_factor = 0.075
+                                consumer_goods_factor = 0.025 		
+			}
+		}
+
+         SVK_stb_2 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_tatra_export" }
+			removal_cost = -1
+			picture = stb_idea
+			modifier = {
+				resistance_damage_to_garrison_on_our_occupied_states = -0.075
+                                required_garrison_factor = 0.20	
+                                resistance_decay_on_our_occupied_states = 0.075
+                                resistance_growth_on_our_occupied_states = -0.2
+                                agency_upgrade_time = -0.15
+                                decryption_factor = 0.075
+                                encryption_factor = 0.075
+                                enemy_operative_capture_chance_factor = 0.55
+                                intel_network_gain_factor = 0.075	
+                                operation_cost = -0.25	
+                                research_speed_factor = 0.05
+                                party_popularity_stability_factor = 0.05
+                                stability_weekly_factor = 0.05
+			}
+		}
+
+
+         SVK_communist_school = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_tatra_export" }
+			removal_cost = -1
+			picture = nazbol_school
+			modifier = {
+                                research_speed_factor = 0.05
+                                conscription = 0.02
+			}
+		}
+
+        SVK_health = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_tatra_export" }
+			removal_cost = -1
+			picture = nazbol_health_idea
+			modifier = {
+                                research_speed_factor = 0.05
+                                monthly_population = 0.25
+			}
+		}
+
+   SVK_red_war = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_tatra_export" }
+			removal_cost = -1
+			picture = nazbol_war
+			modifier = {
+                                army_attack_factor = 0.05
+                                army_defence_factor = 0.05
+                                army_core_attack_factor = 0.1
+                                army_morale_factor = 0.15
+                                conscription = 0.035
+                                army_org_factor = 0.05
+			}
+		}
+
+         SVK_red_war_2 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_tatra_export" }
+			removal_cost = -1
+			picture = nazbol_war
+			modifier = {
+                                army_attack_factor = 0.1
+                                army_defence_factor = 0.1
+                                army_core_attack_factor = 0.15
+                                army_morale_factor = 0.20
+                                conscription = 0.04
+                                army_org_factor = 0.10
+			}
+		}
+
+        ###SYNDICALIST###
+        SVK_union_rada_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_union_rada" }
+			removal_cost = -1
+			picture = union_rada_idea_2
+			modifier = {
+                               research_speed_factor = 0.10
+                               political_power_gain = 0.35
+                               production_factory_efficiency_gain_factor = 0.05
+                               production_factory_max_efficiency_factor = 0.05
+                               production_factory_start_efficiency_factor = 0.05
+                               party_popularity_stability_factor = 0.15
+                               stability_weekly_factor = 0.3
+			}
+		}   
+
+        SVK_communes_est = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_communes_est" }
+			removal_cost = -1
+			picture = svk_communes
+			modifier = {
+                               production_speed_industrial_complex_factor = 0.15
+                               production_speed_arms_factory_factor = 0.15 
+                               production_speed_buildings_factor = 0.1
+                               consumer_goods_factor = -0.025
+			}
+		}   
+
+        SVK_union_rada_2 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_union_rada_2" }
+			removal_cost = -1
+			picture = union_rada_idea
+			modifier = {
+                               research_speed_factor = 0.2
+                               political_power_gain = 0.35
+                               production_factory_efficiency_gain_factor = 0.1
+                               production_factory_max_efficiency_factor = 0.1
+                               production_factory_start_efficiency_factor = 0.1
+                               party_popularity_stability_factor = 0.2
+                               stability_weekly_factor = 0.35
+			}
+		}   
+
+        SVK_workers_selfmag = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_workers_selfmag" }
+			removal_cost = -1
+			picture = workers_selfmag_idea
+			modifier = {
+                               production_speed_buildings_factor = 0.05
+                               consumer_goods_factor = -0.01
+			}
+		}  
+
+        SVK_market_soc = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_market_soc" }
+			removal_cost = -1
+			picture = market_socialism_idea
+			modifier = {
+                               consumer_goods_factor = -0.05
+                               stability_weekly = 0.01
+			}
+		}    
+
+        SVK_liberal_soc = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_liberal_soc" }
+			removal_cost = -1
+			picture = liber_socialism
+			modifier = {
+                               stability_weekly_factor = 0.35
+                               research_speed_factor = 0.1
+			}
+		}  
+
+        SVK_syndicalist_war = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_syndicalist_war" }
+			removal_cost = -1
+			picture = syndicalist_war
+			modifier = {
+                                army_attack_factor = 0.1
+                                army_defence_factor = 0.1
+                                army_morale_factor = 0.1
+                                conscription = 0.02
+                                army_org_factor = 0.1
+			}
+		}
+
+        ###RADICALSOCIALIST###
+
+        SVK_free_nation = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_free_nation" }
+			removal_cost = -1
+			picture = free_nation_radsoc
+			modifier = {
+                                monthly_population = 0.5
+                                stability_weekly_factor = -0.35
+                                offensive_war_stability_factor = -0.25
+                                conscription = 0.075
+                                research_speed_factor = -0.075
+			}
+		}
+
+       SVK_no_religion = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_no_religion" }
+			removal_cost = -1
+			picture = no_religion
+			modifier = {
+                                stability_weekly = -0.015
+                                army_morale_factor = -0.25
+                                research_speed_factor = 0.1
+			}
+		}
+
+       SVK_free_nation_2 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_free_nation_2" }
+			removal_cost = -1
+			picture = free_nation_radsoc
+			modifier = {
+                                monthly_population = 0.55
+                                stability_weekly_factor = -0.4
+                                offensive_war_stability_factor = -0.3
+                                conscription = 0.08
+                                research_speed_factor = 0.025
+			}
+		}
+
+        SVK_be_anything = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_be_anything" }
+			removal_cost = -1
+			picture = be_anything_idea
+			modifier = {
+                                monthly_population = 0.03
+                                conscription = 0.035
+			}
+		}
+
+        SVK_make_anything = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_make_anything" }
+			removal_cost = -1
+			picture = make_anything
+			modifier = {
+                                production_factory_efficiency_gain_factor = 0.05 
+                                production_factory_max_efficiency_factor = 0.05 
+                                production_factory_start_efficiency_factor = 0.05 
+                                production_lack_of_resource_penalty_factor = -0.25
+                                production_speed_buildings_factor = 0.35  
+			}
+		}
+
+        SVK_free_nation_3 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_free_nation_3" }
+			removal_cost = -1
+			picture = free_nation_radsoc
+			modifier = {
+                                monthly_population = 0.6
+                                stability_weekly_factor = -0.25
+                                offensive_war_stability_factor = -0.25
+                                conscription = 0.1
+                                research_speed_factor = 0.05
+			}
+		}
+
+        SVK_breath_freedom = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_breath_freedom" }
+			removal_cost = -1
+			picture = svk_breath_freedom
+			modifier = {
+                                conscription = 0.05
+                                recruitable_population_factor = 0.25
+                                army_attack_factor = 0.15
+			}
+		}
+        ###SocialDemocrats###
+
+        SVK_land_reforms = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_land_reforms" }
+			removal_cost = -1
+			picture = land_reforms_idea_svk_idea
+			modifier = {
+                                monthly_population = 0.15
+                                production_speed_buildings_factor = 0.15
+                                consumer_goods_factor = -0.025 
+			}
+		}
+
+        SVK_worker_rights_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_worker_rights_idea" }
+			removal_cost = -1
+			picture = workers_right_idea_svk
+			modifier = {
+                                production_factory_efficiency_gain_factor = 0.075 
+                                production_factory_max_efficiency_factor = 0.05 
+                                production_factory_start_efficiency_factor = 0.05 
+                                party_popularity_stability_factor = 0.25
+                                stability_weekly_factor = 0.25  
+			}
+		}
+
+        SVK_school_reforms_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_school_reforms_idea" }
+			removal_cost = -1
+			picture = school_reforms_idea_svk
+			modifier = {
+                                research_speed_factor = 0.15
+                                political_power_factor = 0.2
+			}
+		}
+
+        SVK_higher_pension_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea  SVK_higher_pension_idea" }
+			removal_cost = -1
+			picture = higher_pension_idea_svk
+			modifier = {
+                                monthly_population = 0.05
+                                consumer_goods_factor = 0.03 
+                                production_factory_max_efficiency_factor = 0.025
+			}
+		}
+
+        SVK_improve_workplaces_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_improve_workplaces_idea" }
+			removal_cost = -1
+			picture = improve_workplaces_idea_svk
+			modifier = {
+                                production_factory_efficiency_gain_factor = 0.05 
+                                production_factory_max_efficiency_factor = 0.025 
+                                production_factory_start_efficiency_factor = 0.025 
+                                production_speed_buildings_factor = 0.075
+			}
+		}
+
+        ###Social Liberals-Market Liberals###
+    
+        SVK_neutrality_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea  SVK_neutrality_idea" }
+			removal_cost = -1
+			picture = total_neutrality_idea_svk
+			modifier = {
+                                production_factory_efficiency_gain_factor = 0.05 
+                                production_factory_max_efficiency_factor = 0.025 
+                                production_factory_start_efficiency_factor = 0.025 
+                                production_speed_buildings_factor = 0.05
+                                production_speed_bunker_factor = 0.45 
+			}
+		} 
+
+        SVK_both_sides_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_both_sides_idea" }
+			removal_cost = -1
+			picture = playing_both_sides_idea_svk
+			modifier = {
+                                trade_opinion_factor = 0.35
+			}
+		}
+
+        SVK_natural_beauty_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_natural_beauty_idea" }
+			removal_cost = -1
+			picture = natural_beauty_idea_svk
+			modifier = {
+                              production_speed_infrastructure_factor = 0.25
+                              local_resources_factor = 0.35 
+			}
+		}
+
+        SVK_carpathian_defense_system_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_carpathian_defense_system_idea" }
+			removal_cost = -1
+			picture = carpathian_defense_idea_svk
+			modifier = {
+                              army_core_defence_factor = 0.25
+                              army_defence_factor = 0.1
+                              army_core_attack_factor = 0.15  
+			}
+		}
+
+        SVK_marklib_focus_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_marklib_focus_idea" }
+			removal_cost = -1
+			picture = marklib_focus_idea
+			modifier = {
+                                production_factory_efficiency_gain_factor = 0.05
+                                production_factory_max_efficiency_factor = 0.05 
+                                production_factory_start_efficiency_factor = 0.05  
+			}
+		}
+
+         SVK_soclib_focus_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_soclib_focus_idea" }
+			removal_cost = -1
+			picture = soclib_focus_idea
+			modifier = {
+                                production_speed_buildings_factor = 0.1
+                                research_speed_factor = 0.05 
+                                political_power_gain = 0.15
+                                stability_factor = 0.05
+			}
+		}
+
+       ###SOCIAL CONSERVATIVES###
+
+       SVK_peasant_democracy_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_peasant_democracy_idea" }
+			removal_cost = -1
+			picture = peasant_democracy_idea_svk
+			modifier = {
+                                research_speed_factor = -0.025 
+                                political_power_gain = 0.15
+                                stability_factor = 0.025
+                                production_speed_buildings_factor = 0.05
+                                monthly_population = 0.025
+			}
+		} 
+
+        SVK_peasant_democracy_2_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_peasant_democracy_2_idea" }
+			removal_cost = -1
+			picture = peasant_democracy_idea_svk
+			modifier = {
+                                research_speed_factor = -0.015 
+                                political_power_gain = 0.25
+                                stability_factor = 0.075
+                                production_speed_buildings_factor = 0.075
+                                monthly_population = 0.07
+                                production_factory_efficiency_gain_factor = 0.05 
+                                production_factory_max_efficiency_factor = 0.025 
+                                production_factory_start_efficiency_factor = 0.025 
+			}
+		} 
+
+        SVK_unity_god_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_unity_god_idea" }
+			removal_cost = -1
+			picture = unity_under_god_idea_svk
+			modifier = {
+                                army_morale_factor = 0.05
+                                conscription = 0.025
+			}
+		} 
+
+         SVK_unity_god_2_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_unity_god_2_idea" }
+			removal_cost = -1
+			picture = unity_under_god_idea_svk
+			modifier = {
+                                army_morale_factor = 0.1
+                                conscription = 0.03
+                                party_popularity_stability_factor = 0.10
+                                political_power_gain = 0.3
+                                stability_weekly = 0.01
+			}
+		} 
+ 
+ 
+        SVK_EU_member_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_EU_member_idea" }
+			removal_cost = -1
+			picture = eu_member_idea_svk
+			modifier = {
+                                political_power_gain = 0.25
+                                stability_weekly = 0.025
+                                production_speed_buildings_factor = 0.025
+			}
+		} 
+
+        ###AUTHDEM###
+
+         SVK_industries_owned_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_industries_owned_idea" }
+			removal_cost = -1
+			picture = industries_owned_by_idea
+			modifier = {
+                                political_power_gain = -0.35
+                                stability_weekly_factor = -0.05
+                                production_speed_buildings_factor = 0.075
+			}
+		} 
+
+        SVK_industries_give_austria_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_industries_give_austria_idea" }
+			removal_cost = -1
+			picture = industries_give_austria_idea_svk
+			modifier = {
+                                production_speed_buildings_factor = 0.025
+                                consumer_goods_factor = -0.025
+                                production_factory_efficiency_gain_factor = 0.05 
+                                production_factory_max_efficiency_factor = 0.025 
+                                production_factory_start_efficiency_factor = 0.025
+			}
+		} 
+
+         SVK_fading_slovak_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_fading_slovak_idea" }
+			removal_cost = -1
+			picture = fading_slovak_idea
+			modifier = {
+                                monthly_population = -0.05
+                                conscription = -0.025 
+                                extra_trade_to_target_factor = 0.25
+			}
+                        targeted_modifier = {
+                                        tag = AUS 
+                                        cic_to_target_factor = 0.75
+                                        mic_to_target_factor = 0.75
+			}
+		} 
+
+         ###SAMO###
+
+
+        SVK_acient_religion_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_acient_religion_idea" }
+			removal_cost = -1
+			picture = ancient_religion_idea_svk
+			modifier = {
+                                monthly_population = 0.1
+                                conscription = 0.03
+                                research_speed_factor = 0.075
+                                consumer_goods_factor = 0.025
+			}
+		} 
+
+         SVK_slav_saviour_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_slav_saviour_idea" }
+			removal_cost = -1
+			picture = slav_saviour_idea_svk
+			modifier = {
+                                army_attack_factor = 0.1
+                                army_defence_factor = 0.1
+                                army_morale_factor = 0.1
+                                army_org_factor = 0.1
+			}
+		}
+
+       SVK_slav_saviour_2_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_slav_saviour_2_idea" }
+			removal_cost = -1
+			picture = slav_saviour_idea_svk
+			modifier = {
+                                army_attack_factor = 0.15
+                                army_defence_factor = 0.15
+                                army_morale_factor = 0.15
+                                army_org_factor = 0.15
+			}
+		}
+
+        ###PATAUT###
+        SVK_national_transhumanism_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea  SVK_national_transhumanism_idea" }
+			removal_cost = -1
+			picture = slovak_nattranshumanism_svk_idea
+			modifier = {
+                                research_speed_factor = 0.15 
+                                consumer_goods_factor = 0.015
+                                production_speed_buildings_factor = 0.025
+                                production_factory_efficiency_gain_factor = 0.1 
+                                production_factory_max_efficiency_factor = 0.05 
+                                production_factory_start_efficiency_factor = 0.05
+                                political_power_gain = 0.2
+                                stability_weekly_factor = 0.05
+                                party_popularity_stability_factor = 0.35
+			}
+		}
+
+        SVK_ethnofuturism_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea  SVK_ethnofuturism_idea" }
+			removal_cost = -1
+			picture = ethnofuturism_idea_svk
+			modifier = {
+                                research_speed_factor = 0.025 
+                                consumer_goods_factor = 0.015
+                                monthly_population = 0.05
+                                army_morale_factor = 0.075
+			}
+		}
+
+        SVK_perfect_for_humanity_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea  SVK_perfect_for_humanity_idea" }
+			removal_cost = -1
+			picture = perfect_for_humanity_idea_svk
+			modifier = {
+                                research_speed_factor = 0.015 
+                                consumer_goods_factor = 0.015
+                                production_speed_buildings_factor = 0.015
+                                production_factory_efficiency_gain_factor = 0.05 
+                                production_factory_max_efficiency_factor = 0.025 
+                                production_factory_start_efficiency_factor = 0.025
+			}
+		}
+
+        SVK_future_christianity_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea  SVK_future_christianity_idea" }
+			removal_cost = -1
+			picture = futurist_christianity
+			modifier = {
+                                research_speed_factor = 0.015 
+                                consumer_goods_factor = 0.015
+                                army_morale_factor = 0.025
+                                weekly_stability_factory = 0.25
+			}
+		}
+
+        SVK_society_of_future_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea  SVK_society_of_future_idea" }
+			removal_cost = -1
+			picture = society_of_future_svk
+			modifier = {
+                                production_speed_industrial_complex_factor = 0.05 
+                                repair_speed_industrial_complex_factor = 0.15 
+                                production_speed_arms_factory_factor = 0.05 
+                                repair_speed_arms_factory_factor = 0.15 
+                                production_factory_efficiency_gain_factor = 0.025
+                                production_factory_max_efficiency_factor = 0.025
+                                production_factory_start_efficiency_factor = 0.025
+                                consumer_goods_factor = 0.025
+			}
+		}
+
+        SVK_cult_of_personality_stef_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_cult_of_personality_stef_idea" }
+			removal_cost = -1
+			picture = cult_of_personality_stef_svk
+			modifier = {
+				political_power_factor = 0.15
+                                stability_weekly = 0.015
+                                stability_weekly_factor = 0.3
+                                drift_defence_factor = 0.15
+                                paternal_autocrat_drift = 0.1
+                                consription = 0.015         	
+			}
+		}
+
+        SVK_perfect_for_humanity_2_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea  SVK_perfect_for_humanity_2_idea" }
+			removal_cost = -1
+			picture = cult_of_personality_stef_svk
+			modifier = {
+                                research_speed_factor = 0.04 
+                                consumer_goods_factor = 0.03
+                                production_speed_buildings_factor = 0.03
+                                production_factory_efficiency_gain_factor = 0.075 
+                                production_factory_max_efficiency_factor = 0.03 
+                                production_factory_start_efficiency_factor = 0.05
+			}
+		}
+
+      SVK_nation_dominated_by_science_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea  SVK_nation_dominated_by_science_idea" }
+			removal_cost = -1
+			picture = nation_dominated_by_science
+			modifier = {
+                                research_speed_factor = 0.1 
+                                consumer_goods_factor = 0.03
+			}
+		}
+
+        SVK_stef_nat_indo_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea  VK_stef_nat_indo_idea" }
+			removal_cost = -1
+			picture = cult_of_personality_stef_svk
+			modifier = {
+                                research_speed_factor = 0.025 
+                                consumer_goods_factor = 0.015
+                                encryption_factor = 0.05
+                                dencryption_factor = 0.05
+			}
+		}
+
+        SVK_techno_panslavism_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_techno_panslavism_idea" }
+			removal_cost = -1
+			picture = techno_panslavism_idea_svk
+			modifier = {
+                                army_attack_factor = 0.1
+                                army_defence_factor = 0.1
+                                army_morale_factor = 0.05
+                                conscription = 0.05
+                                army_org_factor = 0.05
+			}
+		}
+
+          ###MACH###
+
+
+        SVK_slovak_ultranationalism_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_slovak_ultranationalism_idea" }
+			removal_cost = -1
+			picture = slovak_ultranationalism_svk
+			modifier = {
+                                army_attack_factor = 0.05
+                                army_defence_factor = 0.05
+                                army_morale_factor = 0.05
+                                conscription = 0.015
+                                research_speed_factor = -0.025
+                                weekly_war_support_factor = 0.025
+			}
+		}
+
+           SVK_get_rid_of_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_get_rid_of_idea" }
+			removal_cost = -1
+			picture = slovak_ultranationalism_svk
+			modifier = {
+                                radical_socialism_drift = -0.05
+                                syndicalism_drift = -0.05
+                                social_democrat_drift = -0.05
+                                social_liberal_drift = -0.05
+                                market_liberal_drift = -0.05
+                                social_conservative_drift = -0.03
+                                paternal_autocrat_drift = -0.03
+                                totalist_drift = -0.025
+                                national_populist_drift = 0.025
+			}
+		}
+
+        SVK_hun_revenge_idea = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_hun_revenge_idea" }
+			removal_cost = -1
+			picture = hun_revenge_idea_svk
+                        modifier = {
+                                monthly_population = -0.025
+			}
+
+			targeted_modifier = {
+                                        tag = HUN
+                                        attack_bonus_against = 0.15
+                                        defense_bonus_against = 0.15
+			}
+		}
+
+
+        SVK_tatra_export = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_tatra_export" }
+			removal_cost = -1
+			picture = tatra_exports_svk_idea
+			modifier = {
+				min_export = -0.025
+				consumer_goods_factor = -0.025  
+				production_speed_buildings_factor = 0.1              	
+			}
+		}
+
+	SVK_railway_system = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_railway_system" }
+			removal_cost = -1
+			picture = railway_system_idea_svk
+			modifier = {
+				production_speed_infrastructure_factor = 0.25 
+				consumer_goods_factor = -0.05            	
+			}
+		}
+
+	SVK_geoengineering = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_geoengineering" }
+			removal_cost = -1
+			picture = geoengineering_idea_svk
+			modifier = {
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = 0.025   
+				monthly_population = 0.015        	
+			}
+		}
+
+	SVK_gmo = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_gmo" }
+			removal_cost = -1
+			picture = SVK_tatra_export
+			modifier = {
+				consumer_goods_factor = -0.01  
+				monthly_population = 0.015  
+				stability_weekly_factor = -0.075    	
+			}
+		}
+
+	SVK_finest_army = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_finest_army" }
+			removal_cost = -1
+			picture = finest_army_idea_svk
+			modifier = {
+				recruitable_population_factor = 0.015
+				mobilization_speed = 0.05
+				army_speed_factor = 0.05
+				army_attack_factor = 0.05
+	                        army_defence_factor = 0.075
+	                        dig_in_speed_factor = 0.075  	
+			}
+		}
+	SVK_cent_com = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_cent_com" }
+			removal_cost = -1
+			picture = command_idea_svk
+			modifier = {
+				mobilization_speed = 0.075
+	                        army_defence_factor = 0.075
+	                        dig_in_speed_factor = 0.025
+	                        army_morale_factor = 0.1
+	                        army_org_factor = 0.075
+	                        attrition = 0.05	
+			}
+		}	
+
+	SVK_decent_com = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_decent_com" }
+			removal_cost = -1
+			picture = command_idea_svk
+			modifier = {
+				mobilization_speed = 0.025
+				army_speed_factor = 0.15
+	                        army_defence_factor = -0.025
+	                        dig_in_speed_factor = -0.025
+	                        army_morale_factor = 0.05
+	                        army_org_factor = 0.04	
+			}
+		}
+
+	SVK_finest_army_2 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_finest_army_2" }
+			removal_cost = -1
+			picture = finest_army_idea_svk
+			modifier = {
+				recruitable_population_factor = 0.035
+				mobilization_speed = 0.1
+				army_speed_factor = 0.1
+				army_attack_factor = 0.1
+	                        army_defence_factor = 0.1
+	                        dig_in_speed_factor = 0.1 	
+			}
+		}
+
+	SVK_future_army = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_future_army" }
+			removal_cost = -1
+			picture = future_army_idea_svk
+			modifier = {
+				army_speed_factor = 0.075
+				army_attack_factor = 0.075
+	                        army_defence_factor = 0.075
+	                        recruitable_population_factor = -0.02
+	                        consumer_goods_factor = 0.025
+			}
+		}
+
+	SVK_equipment_quan = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_equipment_quan" }
+			removal_cost = -1
+			picture = MEX_politicised_army_2
+			equipment_bonus = {
+				infantry_weapons = {
+					build_cost_ic = -0.15
+					soft_attack = -0.05
+					defense = -0.05
+				}
+			}
+		}
+	SVK_equipment_qual = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_equipment_qual" }
+			removal_cost = -1
+			picture = MEX_politicised_army_2
+			equipment_bonus = {
+				infantry_weapons = {
+					build_cost_ic = 0.15
+					soft_attack = 0.05
+					defense = 0.05
+				}
+			}
+		}
+
+	SVK_light_tanks = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_equipment_qual" }
+			removal_cost = -1
+			picture = generic_acquire_tanks
+			equipment_bonus = {
+				cat_light_armor = {
+					build_cost_ic = -0.075
+					soft_attack = 0.05
+					defense = 0.05
+					reliability_factor = 0.05
+				}
+			}
+		}
+
+	SVK_artillery = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_artillery" }
+			removal_cost = -1
+			picture = generic_artillery_regiments
+			equipment_bonus = {
+				artillery = {
+					build_cost_ic = -0.05
+					soft_attack = 0.05
+					defense = 0.05
+				}
+			}
+		}
+
+	SVK_soldiers_wings = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_soldiers_wings" }
+			removal_cost = -1
+			picture = soldier_wings_idea_svk
+			equipment_bonus = {
+				para_tech = {
+					soft_attack = 0.1
+					defense = 0.1
+				}
+			}
+		}	
+
+
+         SVK_projekt_soldat = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_projekt_soldat" }
+			removal_cost = -1
+			picture = projekt_soldat_idea_svk
+			modifier = {
+                                army_attack_factor = 0.025
+                                army_defence_factor = 0.025
+                                army_core_attack_factor = 0.05
+                                army_morale_factor = 0.075
+                                conscription = 0.015
+                                army_org_factor = 0.025
+                                 consumer_goods_factor = 0.015
+			}
+		}
+									
+
+        SVK_ancient_air = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea SVK_ancient_air" }
+			removal_cost = -1
+			picture = ancient_air_idea_svk
+			equipment_bonus = {
+				jet_technology = {
+					build_cost_ic = -0.1
+					research_speed_factor = 0.1
+				}
+			}
+			equipment_bonus = {
+				medium_air = {
+					build_cost_ic = -0.05
+					attack = 0.05
+					defense = 0.05
+				}
+			}
+			equipment_bonus = {
+				rocketry = {
+					build_cost_ic = -0.1
+					research_speed_factor = 0.1
+				}
+			}
+			equipment_bonus = {
+				electronics = {
+					build_cost_ic = -0.1
+					research_speed_factor = 0.1
+				}
+			}
+			modifier = { research_speed_factor = 0.15 }
+		}	
+        
+
+	}
+
+}       

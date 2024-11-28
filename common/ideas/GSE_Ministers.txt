@@ -1,0 +1,607 @@
+ideas = {
+	head_of_government = {
+		
+		FRG_Robert_Brasillach_hog_npo = {
+			allowed = { original_tag = FRG }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+                        has_government = national_populist
+			}
+			cancel_if_invalid = yes
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea FRG_Robert_Brasillach_hog_npo"
+			}
+			traits = {
+				head_of_government
+				
+				hog_silent_workhorse
+			}
+		}
+              ###SVK###
+                SVK_Viliam_Siroky_hog_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+                        has_government = totalist
+			}
+			cancel_if_invalid = yes
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_Viliam_Siroky_hog_npo"
+			}
+			traits = {
+				head_of_government
+				totalist
+				hog_totalist_chairman 
+			}
+		}
+
+      SVK_Gustav_Husak_hog_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+                        has_government = syndicalist
+			}
+			cancel_if_invalid = yes
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_Gustav_Husak_hog_npo"
+			}
+			traits = {
+				head_of_government
+				syndicalist
+				hog_corporate_suit
+			}
+		}
+
+		SVK_Alexander_Mach_hog_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_Alexander_Mach_hog_npo"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_spiritual_leader
+			}
+			cancel_if_invalid = no
+		}
+
+
+		SVK_Karol_Smidke_hog_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			visible = {
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_Karol_Smidke_hog_nop"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_pragmatic_statesman
+			}
+			cancel_if_invalid = no
+		}
+
+		SVK_Emanuel_Lehocky_hog_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_Emanuel_Lehocky_hog_nop"
+			}
+			traits = {
+				head_of_government
+				social_democrat
+				hog_gentleman_politician
+			}
+		}
+
+		SVK_Vavro_Srobar_hog_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_Vavro_Srobar_hog_npo"
+			}
+			traits = {
+				head_of_government
+				social_liberal
+				hog_silent_workhorse
+			}
+		}
+
+		SVK_Vavro_Srobar_marklib_hog_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_Vavro_Srobar_hog_npo"
+			}
+			traits = {
+				head_of_government
+				market_liberal
+				hog_silent_workhorse
+			}
+		}
+
+		SVK_Milan_Hodza_hog_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_Milan_Hodza_hog_npo"
+			}
+			traits = {
+				head_of_government
+				social_conservative
+				hog_flamboyant_tough_guy
+			}
+		}
+
+		SVK_Milan_Stefanik_hog_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_Milan_Stefanik_hog_npo"
+			}
+			traits = {
+				head_of_government
+				paternal_autocrat
+				hog_local_tyrant
+			}
+		}
+
+
+        SVK_Otto_Habsburg_hog_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_Otto_Habsburg_hog_npo"
+			}
+			traits = {
+				head_of_government
+				authoritarian_democrat
+				hog_naive_optimist
+			}
+		}
+
+
+        SVK_Rudolf_Viest_hog_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+                                        has_country_flag = svk_samo_minister
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_Rudolf_Viest_hog_npo"
+			}
+			traits = {
+				head_of_government
+				authoritarian_democrat
+				hog_flamboyant_tough_guy
+			}
+		}
+		
+		
+	}
+
+	person_of_influence = {
+	
+		###SVK###
+                SVK_POI_Karol_Bacilek_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+                        has_government = totalist
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_POI_Karol_Bacilek_npo"
+			}
+			traits = {
+				foreign_minister
+                                totalist
+				for_biased_intellectual
+			}
+		}
+
+         SVK_POI_Vasil_Bilak_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+                        has_government = totalist
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea  SVK_POI_Vasil_Bilak_npo"
+			}
+			traits = {
+				security_minister
+                                totalist
+				sec_efficient_sociopath
+			}
+		} 
+
+
+
+         SVK_POI_Jozef_Lenart_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+                        has_government = totalist
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_POI_Jozef_Lenart_npo"
+			}
+			traits = {
+                                intelligence_minister
+                                totalist
+				int_logistics_specialist
+			}
+		} 
+
+        SVK_POI_Ludovit_Pezlar_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+                        has_government = totalist
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_POI_Ludovit_Pezlar_npo"
+			}
+			traits = {
+                                economy_minister
+				totalist
+				eco_planned_economy_proponent
+			}
+		} 
+
+
+          ###Syndicalist###
+                SVK_POI_Viliam_Salgovic_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+                        has_government = syndicalist
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_POI_Viliam_Salgovic_npo"
+			}
+			traits = {
+				foreign_minister
+                                syndicalist
+				for_general_staffer
+			}
+		}
+
+         SVK_POI_Elena_Litvajova_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+                        has_government = totalist
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea   SVK_POI_Elena_Litvajova"
+			}
+			traits = {
+				economy_minister
+                                syndicalist
+				eco_administrative_genius
+			}
+		} 
+
+
+
+         SVK_POI_Ignac_Janak_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+                        has_government = syndicalist
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_POI_Ignac_Janak_npo"
+			}
+			traits = {
+                                security_minister
+                                syndicalist
+				sec_efficient_sociopath
+			}
+		} 
+
+        SVK_POI_Pavol_Hrivnak_npo = {
+			allowed = { original_tag = SVK }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+                        has_government = syndicalist
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea SVK_POI_Pavol_Hrivnak_npo"
+			}
+			traits = {
+                                foreign_minister
+				syndicalist
+				for_great_compromiser
+			}
+		} 
+ 
+
+
+          ###FRG###
+		FRG_POI_Leon_Degrelle_npo = {
+			allowed = { original_tag = FRG }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+                        has_government = national_populist
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea FRG_POI_Leon_Degrelle_npo"
+			}
+			traits = {
+				foreign_minister
+				for_iron_fisted_brute
+			}
+		}
+
+         FRG_POI_Maurice_Papon_npo = {
+			allowed = { original_tag = FRG }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+                        has_government = national_populist
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea FRG_POI_Maurice_Papon_npo"
+			}
+			traits = {
+				security_minister
+				sec_secret_police_chief
+			}
+		} 
+
+
+
+         FRG_POI_Rene_Binet_npo = {
+			allowed = { original_tag = FRG }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+                        has_government = national_populist
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea FRG_POI_Rene_Binet_npo"
+			}
+			traits = {
+                                intelligence_minister
+				int_logistics_specialist
+			}
+		} 
+
+        FRG_POI_Francis_Delaisi_npo = {
+			allowed = { original_tag = FRG }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+                        has_government = national_populist
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea FRG_POI_Francis_Delaisi_npo"
+			}
+			traits = {
+                                economy_minister
+				eco_balanced_budget_economy
+			}
+		} 
+
+
+	}
+
+
+chief_of_staff = { ### Chief of Staff ###
+    NFA_Henri_Amiel_cos_sli = {
+      allowed = { original_tag = FRG }
+      available = { has_government = national_populist }
+      visible = {
+        NOT = { has_country_flag = Henri_Amiel_dead }
+      }
+      on_add = {
+        log = "[GetDateText]: [Root.GetName]: add idea NFA_Henri_Amiel_cos_sli"
+      }
+      traits = {
+        chief_of_staff
+        cos_school_of_manoeuvre
+      }
+      cancel_if_invalid = yes
+    }
+ }
+    
+  chief_of_army = { ### Chief of Army ###
+    NFA_Gabriel_Puaux_carm_sli = {
+      allowed = {original_tag = FRG }
+      available = { has_government = national_populist }
+      visible = {
+        NOT = { has_country_flag = Gabriel_Puaux_dead }
+      }
+      on_add = {
+        log = "[GetDateText]: [Root.GetName]: add idea NFA_Gabriel_Puaux_carm_sli"
+      }
+      traits = {
+        chief_of_army
+        carm_armoured_spearhead_doctrine
+      }
+      cancel_if_invalid = yes
+    }
+
+    NFA_Alphonse_Juin_carm_sco = {
+      allowed = {original_tag = FRG }
+      available = { has_government = national_populist }
+      visible = {
+        NOT = { has_country_flag = Alphonse_Juin_dead }
+      }
+      on_add = {
+        log = "[GetDateText]: [Root.GetName]: add idea NFA_Alphonse_Juin_carm_sco"
+      }
+      traits = {
+        chief_of_army
+        carm_decisive_battle_doctrine
+      }
+      cancel_if_invalid = yes
+    }
+
+    NFA_Jean_Touzet_du_Vigier_carm_sco = {
+      allowed = {original_tag = FRG }
+      available = { has_government = national_populist }
+      visible = {
+        NOT = { has_country_flag = Jean_Touzet_du_Vigier_dead }
+      }
+      on_add = {
+        log = "[GetDateText]: [Root.GetName]: add idea NFA_Jean_Touzet_du_Vigier_carm_sco"
+      }
+      traits = {
+        chief_of_army
+        carm_armoured_spearhead_doctrine
+      }
+      cancel_if_invalid = yes
+    }
+
+  }
+
+  chief_of_navy = { ### Chief of Navy ###
+    NFA_Francois_Carre_de_Lusancay_cnav_sli = {
+      allowed = {original_tag = FRG }
+      available = { has_government = national_populist }
+      visible = {
+        NOT = { has_country_flag = Francois_Carre_de_Lusancay_dead }
+      }
+      on_add = {
+        log = "[GetDateText]: [Root.GetName]: add idea NFA_Francois_Carre_de_Lusancay_cnav_sli"
+      }
+      traits = {
+        chief_of_navy
+        cnav_base_control_doctrine
+      }
+      cancel_if_invalid = yes
+    }
+
+   
+  }
+
+  chief_of_air_force = { ### Chief of Air Force ###
+    NFA_Henri_Soulat_cair_sli = {
+      allowed = {original_tag = FRG }
+      available = { has_government = national_populist }
+      visible = {
+        NOT = { has_country_flag = Henri_Soulat_dead }
+      }
+      on_add = {
+        log = "[GetDateText]: [Root.GetName]: add idea NFA_Henri_Soulat_cair_sli"
+      }
+      traits = {
+        chief_of_air_force
+        cair_naval_aviation_doctrine
+      }
+      cancel_if_invalid = yes
+    }
+
+    
+  }
+
+}

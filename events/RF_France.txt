@@ -1,0 +1,1820 @@
+###########################
+# French Events
+###########################
+
+add_namespace = france
+
+# de la Rocque formalizes  control
+country_event = {
+	id = france.1
+	title = france.1.t
+	desc = france.1.d
+	picture = GFX_report_event_de_la_rocque
+
+	is_triggered_only = yes
+
+	option = { # yes
+		name = france.1.a
+		# de la Rocque becomes new leader
+		kill_country_leader = yes
+		promote_character = FRA_francois_de_la_rocque
+	}
+}
+
+#New Year's Celebration in Marseille
+country_event = {
+	id = france.5
+	title = france.5.t
+	desc = france.5.d
+	picture = GFX_report_event_royal_parade
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = france.5.a
+		add_stability = 0.03
+	}
+}
+
+#A Relaxing Dinner - Antonin Artaud "resigns"
+country_event = {
+	id = france.6
+	title = france.6.t
+	desc = france.6.d
+	picture = GFX_report_event_hol_cabinet_de_geer
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = france.6.a
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "乔治·巴塔耶"
+			picture = "gfx/leaders/FRA/Portrait_FRA_Georges_Bataille.png"
+			expire = "1965.1.1"
+			ideology = italian_right_futurism_subtype
+		}
+		add_stability = -0.3
+		delete_unit_template_and_units = { division_template = "Escadron Militia" }
+		hidden_effect = {
+			set_cosmetic_tag = FRA_batailles
+		}
+	}
+}
+
+#France At War Again
+country_event = {
+	id = france.7
+	title = france.7.t
+	desc = france.7.d
+	picture = GFX_report_event_french_resistance_02
+
+	trigger = {
+		tag = FRA
+		has_offensive_war_with = ENG
+		has_country_leader = { ruling_only = yes name = "安托南·阿尔托" }
+	}
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = france.7.a
+		add_war_support = 0.05
+	}
+}
+
+#Gathering of Fur-Warriors
+country_event = {
+	id = france.8
+	title = france.8.t
+	desc = france.8.d
+	picture = GFX_report_event_fra_werewolfs
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_government = national_populist
+	}
+
+	option = {
+		name = france.8.a
+		add_stability = -0.03
+	}
+
+	option = {
+		name = france.8.b
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.03
+		}
+	}
+}
+
+#Oppose Vatican Event
+country_event = {
+	id = france.10
+	title = france.10.t
+	desc = france.10.desc
+	picture = GFX_report_event_fra_secret_sermon
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Let them be
+		name = france.10.a
+		add_stability = -0.05
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.05
+		}
+	}
+	option = { #Take care of it
+		name = france.10.b
+		add_stability = -0.1
+		735 = {
+			add_manpower = -12000
+		}
+	}
+}
+#Minds Under His Eye
+country_event = {
+	id = france.11
+	title = france.11.t
+	desc = france.11.desc
+	picture = GFX_report_event_fra_gathered_crowd
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Let them be
+		name = france.11.a
+	}
+}
+#The Horde of One
+country_event = {
+	id = france.12
+	title = france.12.t
+	desc = france.12.desc
+	picture = GFX_report_event_fra_stair_assembly
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #I'm Patron
+		name = france.12.a
+	}
+}
+#Event of the Season
+country_event = {
+	id = france.13
+	title = france.13.t
+	desc = france.13.desc
+	picture = GFX_report_event_fra_esoteric_gathering
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Fraternity at last
+		name = france.13.a
+	}
+}
+#Arabs on the Front!
+country_event = {
+	id = france.14
+	title = france.14.t
+	desc = france.14.desc
+	picture = GFX_report_event_fra_camel_riders
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Vive La Patron!
+		name = france.14.a
+	}
+}
+#Algebra in Algeria?
+country_event = {
+	id = france.15
+	title = france.15.t
+	desc = france.15.desc
+	picture = GFX_report_event_fra_three_women
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #What's next
+		name = france.15.a
+	}
+}
+#The future is prehistory
+country_event = {
+	id = france.16
+	title = france.16.t
+	desc = france.16.desc
+	picture = GFX
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Galia rises
+		name = france.16.a
+	}
+}
+#Au revoir, a l'Academie
+country_event = {
+	id = france.25
+	title = france.25.t
+	desc = france.25.desc
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Rules kill progress
+		name = france.25.a
+	}
+}
+#Au revoir au l'Academie
+country_event = {
+	id = france.26
+	title = france.26.t
+	desc = france.26.desc
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Rules kill progress
+		name = france.26.a
+	}
+}
+#Appease the Acephale
+country_event = {
+	id = france.27
+	title = france.27.t
+	desc = france.27.desc
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Stability is our goal
+		name = france.27.a
+		add_popularity = {
+			ideology = national_populist
+			popularity = -0.1
+		}
+		add_stability = 0.05
+		hidden_effect = {
+			set_cosmetic_tag = FRA_acephale
+			set_country_flag = fra_acephale
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					rule = RF_april_fools_2021
+					option = no
+				}
+			}
+			activate_advisor = FRA_georges_bataille_eco_acc
+			activate_advisor = FRA_georges_bataille_hog_acc
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = RF_april_fools_2021
+					option = yes
+				}
+			}
+			activate_advisor = FRA_sustaille_eco
+			activate_advisor = FRA_sustaille_hog
+		}
+	}
+}
+#The beginning of a Fast Life
+country_event = {
+	id = france.28
+	title = france.28.t
+	desc = france.28.desc
+	picture = GFX_report_event_fra_flying_v
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Agios o velocitas
+		name = france.28.a
+		add_ace = {
+			name = "Antonie"
+			surname = "de la Chapelle"
+			callsign = "Youngblood"
+			type = fighter_good
+		}
+		set_country_flag = FRA_antonie_chapelle_flag
+	}
+}
+#Flight of the Cavalry
+country_event = {
+	id = france.29
+	title = france.29.t
+	desc = france.29.desc
+	picture = GFX_report_event_fighter_formation
+	trigger = {
+		tag = FRA
+		has_war_with = ENG
+		has_country_flag = FRA_antonie_chapelle_flag
+	}
+
+	fire_only_once = yes
+
+	option = { #Albion awaits...
+		name = france.29.a
+	}
+}
+#Act of Confederation
+country_event = {
+	id = france.30
+	title = france.30.t
+	desc = france.30.desc
+	#picture =
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #This is a tad more sensational than the reality at hand.
+		name = france.30.a
+		add_ideas = {
+				FRA_act_of_confederation_stability_1
+				FRA_act_of_confederation_pp_1
+				FRA_act_of_confederation_manpower_1
+			}
+	}
+}
+#Brave New World
+country_event = {
+	id = france.31
+	title = france.31.t
+	desc = france.31.desc
+	picture = GFX_report_event_grand_ceremony
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #The future is exhilarating!
+		name = france.31.a
+	}
+}
+#A Grasp on the Situation
+country_event = {
+	id = france.32
+	title = france.32.t
+	desc = france.32.desc
+	picture = GFX_report_event_futurist_monument
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #A disobedient dog requires discipline
+		name = france.32.a
+	}
+}
+#Baby Back Ribs
+country_event = {
+	id = france.33
+	title = france.33.t
+	desc = france.33.desc
+	#picture = GFX_report_event_futurist_monument
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Of course, nothing says speed like a trial
+		name = france.33.a
+		country_event = {
+			id = france.34
+			days = 3
+		}
+	}
+}
+#Macabre and Order
+country_event = {
+	id = france.34
+	title = france.34.t
+	desc = france.34.desc
+	#picture = GFX_report_event_futurist_monument
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #The trial begins
+		name = france.34.a
+		country_event = {
+			id = france.35
+			days = 1
+		}
+	}
+}
+#A Prosecution of Follies
+country_event = {
+	id = france.35
+	title = france.35.t
+	desc = france.35.desc
+	#picture = GFX_report_event_futurist_monument
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Nungesser really let himself go
+		name = france.35.a
+		country_event = {
+			id = france.36
+			days = 1
+		}
+	}
+}
+#A Reasonable Insanity
+country_event = {
+	id = france.36
+	title = france.36.t
+	desc = france.36.desc
+	#picture = GFX_report_event_futurist_monument
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Huh, guess he's got a point . . .
+		name = france.36.a
+		country_event = {
+			id = france.37
+			days = 1
+		}
+	}
+}
+#The Verdict
+country_event = {
+	id = france.37
+	title = france.37.t
+	desc = france.37.desc
+	#picture = GFX_report_event_futurist_monument
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Guilty
+		name = france.37.a
+		country_event = {
+			id = france.38
+			days = 2
+		}
+	}
+	option = { #Not Guilty
+		name = france.37.b
+		country_event = {
+			id = france.39
+			days = 1
+		}
+	}
+}
+#A Fitting End
+country_event = {
+	id = france.38
+	title = france.38.t
+	desc = france.38.desc
+	#picture = GFX_report_event_futurist_monument
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Justice
+		name = france.38.a
+		add_stability = 0.05
+	}
+}
+#Free Woman
+country_event = {
+	id = france.39
+	title = france.39.t
+	desc = france.39.desc
+	#picture = GFX_report_event_futurist_monument
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Damn her
+		name = france.39.a
+		add_stability = -0.05
+		16 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+	}
+}
+
+#Local Arts
+country_event = {
+	id = france.40
+	title = france.40.t
+	desc = france.40.desc
+	#picture = GFX_report_event_futurist_monument
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Let your imagination flow!
+		name = france.40.a
+	}
+}
+#Parisians Protest!
+country_event = {
+	id = france.41
+	title = france.41.t
+	desc = france.41.desc
+	#picture = GFX_report_event_futurist_monument
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Disperse protests
+		name = france.41.a
+		16 = {
+			add_manpower = -200
+		}
+		add_stability = -0.03
+	}
+	option = { #Do nothing
+		name = france.41.b
+		add_stability = -0.05
+	}
+}
+
+#The Most Brutal Of Enslaved Beasts
+country_event = {
+	id = france.42
+	title = france.42.t
+	desc = france.42.desc
+	#picture = GFX_report_event_futurist_monument
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Disperse protests
+		name = france.42.a
+		swap_ideas = {
+			remove_idea = FRA_hedonist_society
+			add_idea = FRA_hedonist_society_1
+		}
+	}
+}
+
+#A Sacrifice to the Gods Among Us
+country_event = {
+	id = france.43
+	title = france.43.t
+	desc = france.43.desc
+	picture = GFX_report_event_fra_bloody_ritual
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Slit her throat
+		name = france.43.a
+		add_political_power = 5
+	}
+	option = { #Disembowel her
+		name = france.43.b
+		add_political_power = 5
+	}
+}
+
+#Hyperborean Mythos
+country_event = {
+	id = france.44
+	title = france.44.t
+	desc = france.44.desc
+	picture = GFX_report_event_fra_bloody_ritual
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Strength of Giants
+		name = france.44.a
+		add_ideas = FRA_hyperborean_ideal_strength
+	}
+	option = { #Fortitude of Giants
+		name = france.44.b
+		add_ideas = FRA_hyperborean_ideal_fortitude
+	}
+	option = { #Genius of Giants
+		name = france.44.c
+		add_ideas = FRA_hyperborean_ideal_genius
+	}
+	option = { #Prosperity of Giants
+		name = france.44.d
+		add_ideas = FRA_hyperborean_ideal_prosperity
+	}
+}
+#A Friend of Old France
+country_event = {
+	id = france.45
+	title = france.45.t
+	desc = france.45.desc
+	picture = GFX_report_event_silhouette_tunnel
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Ignore letter
+		name = france.45.a
+	}
+	option = { #Write yes
+		name = france.45.b
+		hidden_effect = {
+			country_event = {
+				id = france.46
+				days = 9
+			}
+		}
+	}
+}
+#The fire in Caen
+country_event = {
+	id = france.46
+	title = france.46.t
+	desc = france.46.desc
+	picture = GFX_report_event_silhouette_tunnel
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Cannot work
+		name = france.46.a
+	}
+	option = { #Cautious
+		name = france.46.b
+		hidden_effect = {
+			country_event = {
+				id = france.47
+				days = 15
+			}
+		}
+	}
+	option = { #Cautious
+		name = france.46.c
+		hidden_effect = {
+			country_event = {
+				id = france.47
+				days = 5
+			}
+		}
+	}
+}
+#Designing the Future of France
+country_event = {
+	id = france.47
+	title = france.47.t
+	desc = france.47.desc
+	picture = GFX_report_event_silhouette_tunnel
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Socialist
+		name = france.47.a
+		hidden_effect = {
+			country_event = {
+				id = france.48
+				days = 10
+			}
+		}
+		add_popularity = {
+			ideology = vanguard_socialism
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = popular_socialism
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = revisionist_socialism
+			popularity = 0.05
+		}
+	}
+	option = { #Democratic
+		name = france.47.b
+		hidden_effect = {
+			country_event = {
+				id = france.49
+				days = 10
+			}
+		}
+		add_popularity = {
+			ideology = progressivism
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = conservatism
+			popularity = 0.05
+		}
+	}
+	option = { #Rejuvanatory
+		name = france.47.c
+		hidden_effect = {
+			country_event = {
+				id = france.50
+				days = 10
+			}
+		}
+		add_popularity = {
+			ideology = right_authoritarianism
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = reactionism
+			popularity = 0.05
+		}
+	}
+}
+#The Future is Red
+country_event = {
+	id = france.48
+	title = france.48.t
+	desc = france.48.desc
+	picture = GFX_report_event_silhouette_tunnel
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Vive la révolution
+		name = france.48.a
+		hidden_effect = {
+			country_event = {
+				id = france.51
+				days = 7
+			}
+		}
+	}
+}
+#The Future is Free
+country_event = {
+	id = france.49
+	title = france.49.t
+	desc = france.49.desc
+	picture = GFX_report_event_silhouette_tunnel
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Liberté, égalité, fraternité
+		name = france.49.a
+		hidden_effect = {
+			country_event = {
+				id = france.51
+				days = 7
+			}
+		}
+	}
+}
+#The Future is French
+country_event = {
+	id = france.50
+	title = france.50.t
+	desc = france.50.desc
+	picture = GFX_report_event_silhouette_tunnel
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Travail, famille, patrie
+		name = france.50.a
+		hidden_effect = {
+			country_event = {
+				id = france.51
+				days = 7
+			}
+		}
+	}
+}
+#The Headache
+country_event = {
+	id = france.51
+	title = france.51.t
+	desc = france.51.desc
+	picture = GFX_report_event_silhouette_tunnel
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #The headache will go away, Emmanuel. Do not worry.
+		name = france.51.a
+		hidden_effect = {
+			country_event = {
+				id = france.52
+				days = 2
+			}
+		}
+	}
+}
+#War Within
+country_event = {
+	id = france.52
+	title = france.52.t
+	desc = france.52.desc
+	picture = GFX_report_event_silhouette_tunnel
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #All the world's a stage
+		name = france.52.a
+		hidden_effect = {
+			country_event = {
+				id = france.53
+				days = 6
+			}
+		}
+	}
+}
+#Partitioned Partisans
+country_event = {
+	id = france.53
+	title = france.53.t
+	desc = france.53.desc
+	picture = GFX_report_event_silhouette_tunnel
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Another successful foray
+		name = france.53.a
+		add_stability = 0.05
+	}
+}
+#Factions Come to Blows
+country_event = {
+	id = france.54
+	title = france.54.t
+	desc = france.54.desc
+	picture = GFX_report_event_silhouette_tunnel
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Ego is of no importance in comparison with the existence of the nation
+		name = france.54.a
+		add_stability = -0.02
+	}
+}
+#Meeting with Dorgeres
+country_event = {
+	id = france.65
+	title = france.65.t
+	desc = france.65.desc
+	picture = GFX_report_event_silhouette_tunnel
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Large concessions
+		name = france.65.a
+		add_popularity = {
+			ideology = reactionism
+			popularity = 0.08
+		}
+		add_popularity = {
+			ideology = right_authoritarianism
+			popularity = 0.08
+		}
+		set_country_flag = compromised_with_dorgeres_3
+	}
+	option = { #Some concessions
+		name = france.65.b
+		add_popularity = {
+			ideology = reactionism
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = right_authoritarianism
+			popularity = 0.05
+		}
+		set_country_flag = compromised_with_dorgeres_2
+	}
+	option = { #Minor concessions
+		name = france.65.c
+		add_popularity = {
+			ideology = reactionism
+			popularity = 0.02
+		}
+		add_popularity = {
+			ideology = right_authoritarianism
+			popularity = 0.02
+		}
+		set_country_flag = compromised_with_dorgeres_1
+	}
+	option = { #No concessions
+		name = france.65.d
+		add_manpower = -2000
+		add_political_power = 20
+	}
+}
+
+
+####################
+#####Diplomacy######
+####################
+
+#France offers England NAP
+country_event = {
+	id = france.153
+	title = france.153.t
+	desc = france.153.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Refuse these madmen
+		name = france.153.a
+		FRA = {
+			country_event = {
+					id = france.154
+					days = 3
+			}
+		}
+	}
+	option = { #Accept in pragmatism
+		name = france.153.b
+		FRA = {
+			country_event = {
+				id = france.155
+				days = 3
+			}
+		}
+	}
+}
+#England refuses NAP
+country_event = {
+	id = france.154
+	title = france.154.t
+	desc = france.154.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Anglo scum
+		name = france.154.a
+		add_political_power = -50
+	}
+}
+#England accepts NAP
+country_event = {
+	id = france.155
+	title = france.155.t
+	desc = france.155.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #A temporary solution
+		name = france.155.a
+		diplomatic_relation = {
+			country = ENG
+			relation = guarantee
+			active = yes
+		}
+		ENG = {
+			diplomatic_relation = {
+				country = FRA
+				relation = guarantee
+				active = yes
+			}
+		}
+	}
+}
+#France sends Rebels weapons
+country_event = {
+	id = france.156
+	title = france.156.t
+	desc = france.156.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Deranged bastards
+		name = france.156.a
+		add_stability = -0.1
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.1
+		}
+	}
+}
+#France sends Rebels weapons - KAV
+country_event = {
+	id = france.157
+	title = france.157.t
+	desc = france.157.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #
+		name = france.157.a
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 5000
+			producer = FRA
+		}
+	}
+}
+#France offers non-aggression pact
+country_event = {
+	id = france.161
+	title = france.161.t
+	desc = france.161.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Accept
+		name = france.161.a
+		FRA = {
+			country_event = {
+				id = france.162
+				days = 2
+			}
+		}
+		add_stability = -0.05
+	}
+	option = { #Refuse
+		name = france.161.b
+		add_political_power = 15
+		FRA = {
+			country_event = {
+				id = france.163
+				days = 2
+			}
+		}
+	}
+}
+#Germany accepts NAP
+country_event = {
+	id = france.162
+	title = france.162.t
+	desc = france.162.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Germany accept NAP
+		name = france.162.a
+		diplomatic_relation = {
+			country = GER
+			relation = non_aggression_pact
+			active = yes
+		}
+	}
+}
+#Germany refuses NAP
+country_event = {
+	id = france.163
+	title = france.163.t
+	desc = france.163.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Germany refuses NAP
+		name = france.163.a
+		add_stability = -0.05
+	}
+}
+#France arms our most radical
+country_event = {
+	id = france.164
+	title = france.164.t
+	desc = france.164.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Accept
+		name = france.164.a
+		ISR = {
+		add_popularity = {
+			popularity = 0.2
+			ideology = national_populist
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 5000
+			producer = FRA
+		}
+		add_opinion_modifier = {
+			target = FRA
+			modifier = aided_cause
+		}
+		}
+	}
+	option = { #Refuse
+		name = france.164.b
+		add_political_power = 5
+	}
+}
+#Futurist strikes(ROOT)
+country_event = {
+	id = france.167
+	title = france.167.t
+	desc = france.167.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Hah, even their people cry for Futurism!
+		name = france.167.a
+		ROOT = {
+			add_ideas = FRA_futurist_strikes
+		}
+		FRA = {
+			country_event = {
+				id = france.170
+			}
+		}
+	}
+}
+#Futurist terrorism(ROOT)
+country_event = {
+	id = france.168
+	title = france.168.t
+	desc = france.168.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Hah, even their people cry for Futurism!
+		name = france.168.a
+		ROOT = {
+			add_ideas = FRA_futurist_terrorism
+		}
+		FRA = {
+			country_event = {
+				id = france.170
+			}
+		}
+	}
+}
+#Futurist Uprising(ROOT)
+country_event = {
+	id = france.169
+	title = france.169.t
+	desc = france.169.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Hah, even their people cry for Futurism!
+		name = france.169.a
+		ROOT = {
+			start_civil_war = {
+				ideology = national_populist
+				size = 0.1
+			}
+		}
+		FRA = {
+			country_event = {
+				id = france.170
+			}
+		}
+	}
+}
+#Futurists in another country revolt(France)
+country_event = {
+	id = france.170
+	title = france.170.t
+	desc = france.170.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Hah, even their people cry for Futurism!
+		name = france.170.a
+		add_war_support = 0.01
+	}
+}
+#French-supporting Futurists rebel in Wallonia
+country_event = {
+	id = france.200
+	title = france.200.t
+	desc = france.200.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Give them arms and public support
+		name = france.200.a
+		add_named_threat = {
+			threat = 5
+			name = FRA_wallonia
+		}
+		set_country_flag = FRA_wallonia_major
+		WLL = {
+			country_event = {
+				id = france.201
+				days = 2
+			}
+		}
+	}
+	option = { #Give them arms and subversive support
+		name = france.200.b
+		add_named_threat = {
+			threat = 2.5
+			name = FRA_wallonia
+		}
+		set_country_flag = FRA_wallonia_lesser
+		WLL = {
+			country_event = {
+				id = france.201
+				days = 2
+			}
+		}
+	}
+	option = { #Make quiet promises only
+		name = france.200.c
+		set_country_flag = FRA_wallonia_minor
+		WLL = {
+			country_event = {
+				id = france.201
+				days = 2
+			}
+		}
+	}
+}
+#Futurist Uprising in Wallonia
+country_event = {
+	id = france.201
+	title = france.201.t
+	desc = france.201.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Send in the police
+		name = france.201.a
+		trigger = {
+			FRA = {
+				has_country_flag = FRA_wallonia_major
+			}
+		}
+		random_list = {
+			90 = {
+				FRA = {
+					annex_country = {
+						target = WLL
+					}
+					country_event = {
+						id = france.202
+						days = 1
+					}
+				}
+				add_named_threat = {
+					threat = 5
+					name = FRA_wallonia
+				}
+				news_event = {
+					id = news.3
+					days = 2
+				}
+			}
+			10 = {
+				add_named_threat = {
+					threat = 5
+					name = FRA_wallonia
+				}
+				FRA = {
+					country_event = {
+						id = france.203
+						days = 1
+					}
+				}
+				add_popularity = {
+					ideology = national_populist
+					popularity = -0.1
+				}
+			}
+		}
+	}
+	option = { #Send in the police
+		name = france.201.b
+		trigger = {
+			FRA = {
+				has_country_flag = FRA_wallonia_lesser
+			}
+		}
+		random_list = {
+			70 = {
+				FRA = {
+					annex_country = {
+						target = WLL
+					}
+					country_event = {
+						id = france.202
+						days = 1
+					}
+				}
+				add_named_threat = {
+					threat = 5
+					name = FRA_wallonia
+				}
+				news_event = {
+					id = news.3
+					days = 2
+				}
+			}
+			30 = {
+				add_named_threat = {
+					threat = 5
+					name = FRA_wallonia
+				}
+				FRA = {
+					country_event = {
+						id = france.203
+						days = 1
+					}
+				}
+				add_popularity = {
+					ideology = national_populist
+					popularity = -0.1
+				}
+			}
+		}
+	}
+	option = { #Send in the police
+		name = france.201.c
+		trigger = {
+			FRA = {
+				has_country_flag = FRA_wallonia_minor
+			}
+		}
+		random_list = {
+			50 = {
+				FRA = {
+					annex_country = {
+						target = WLL
+					}
+					country_event = {
+						id = france.202
+						days = 1
+					}
+				}
+				add_named_threat = {
+					threat = 5
+					name = FRA_wallonia
+				}
+				news_event = {
+					id = news.3
+					days = 2
+				}
+			}
+			50 = {
+				add_named_threat = {
+					threat = 5
+					name = FRA_wallonia
+				}
+				FRA = {
+					country_event = {
+						id = france.203
+						days = 1
+					}
+				}
+				add_popularity = {
+					ideology = national_populist
+					popularity = -0.1
+				}
+			}
+		}
+	}
+}
+#The Walloons unite with France
+country_event = {
+	id = france.202
+	title = france.202.t
+	desc = france.202.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Hah, even their people cry for Futurism!
+		name = france.202.a
+		add_war_support = 0.02
+	}
+}
+#The Walloons fail to unite with France
+country_event = {
+	id = france.203
+	title = france.203.t
+	desc = france.203.desc
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Hah, even their people cry for Futurism!
+		name = france.203.a
+		create_wargoal = {
+			target = WLL
+			type = annex_everything
+		}
+	}
+}
+#France offers membership to the Anti-Communist Pact
+country_event = {
+	id = france.204
+	title = france.204.t
+	desc = france.204.d
+	picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Accept
+		name = france.204.a
+		FRA = {
+			add_to_faction = ROOT
+			country_event = {
+				id = france.205
+				days = 1
+			}
+		}
+		ai_chance = { factor = 10 }
+	}
+	option = { #Refuse
+		name = france.204.b
+		FRA = {
+			add_opinion_modifier = {
+				modifier = huge_decrease
+				target = ROOT
+			}
+			country_event = {
+				id = france.206
+				days = 1
+			}
+		}
+	}
+}
+#[ROOT.GetName] enters the Pact
+country_event = {
+	id = france.205
+	title = france.205.t
+	desc = france.205.d
+	#picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Together we will smite the Communists!
+		name = france.205.a
+		add_war_support = 0.01
+	}
+}
+#[ROOT.GetName] refuses the Pact
+country_event = {
+	id = france.206
+	title = france.206.t
+	desc = france.206.d
+	#picture = GFX_report_event_fra_lone_soldier
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #I hope the Reds kill them all!
+		name = france.206.a
+		add_war_support = -0.01
+	}
+}
+#Abolishing Time
+	country_event = {
+		id = france.207
+		title = france.207.t
+		desc = france.207.d
+		#picture = GFX_report_event_fra_lone_soldier
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = france.207.a
+		}
+	}
+#Battle of Rodez
+	country_event = {
+		id = france.210
+		title = france.210.t
+		desc = france.210.d
+		#picture = GFX_report_event_rodez
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = france.210.a
+		}
+	}
+	country_event = {
+		id = france.211
+		title = france.211.t
+		desc = france.211.d
+		#picture = GFX_report_event_pvc
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		option = {
+			name = france.211.a
+		}
+	}
+	country_event = {
+		id = france.212
+		title = france.212.t
+		desc = france.212.desc
+		picture = GFX_report_event_tour_de_allemagne
+		fire_only_once = yes
+
+		option = {
+			name = france.212.a
+			add_political_power = 50
+			add_stability = 0.03
+			add_war_support = 0.03
+		}
+	}
+	country_event = {
+		id = france.213
+		title = france.213.t
+		desc = france.213.d
+		#picture = GFX_report_event_pvc
+		is_triggered_only = yes
+		fire_only_once = yes
+
+		immediate = {
+			set_country_flag = fra_german_collabs
+		}
+
+		option = {
+			name = france.213.a #Rossbach
+			set_country_flag = FRA_picked_rossbach
+		}
+		
+		option = {
+			name = france.213.b #Fidus
+			set_country_flag = FRA_picked_fidus
+		}
+		
+		option = {
+			name = france.213.c #Richter
+			set_country_flag = FRA_picked_richter
+		}
+	}
+
+
+
+country_event = {
+	id = france.17
+	title = france.17.t
+	desc = france.17.desc
+	picture = GFX_report_event_gathering_protest
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = { #bullet misses
+		name = france.17.a
+		country_event = {
+			id = france.18
+		}
+		ai_chance = {
+			base = 1000
+		}
+	}
+	option = { #bullet hits
+		name = france.17.b
+		set_country_flag = FRA_augier_dead_flag
+		remove_ideas = FRA_marc_augier_hog_acc
+		country_event = {
+			id = france.19
+		}
+	}
+}
+#Hero stands strong
+country_event = {
+	id = france.18
+	title = france.18.t
+	desc = france.18.desc
+	picture = GFX_report_event_fra_werewolfs
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = { #Galia rises
+		name = france.18.a
+		hidden_effect = {
+			set_cosmetic_tag = FRA_druidist
+			set_country_flag = FRA_celtic_rebirth
+		}
+	}
+}
+#Two gods in a hospital room
+country_event = {
+	id = france.19
+	title = france.19.t
+	desc = france.19.desc
+	picture = GFX_report_event_generic_funeral
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = { #End the State
+		name = france.19.a
+		hidden_effect = {	
+			set_cosmetic_tag = FRA_anprim
+			set_country_flag = FRA_end_the_state
+			create_country_leader = {
+				name = "安托南·阿尔托"
+				picture = "gfx/leaders/FRA/Portriat_FRA_Antonin_Artaud_druidist.png"
+				expire = "1965.1.1"
+				ideology = natpop_zadrugism_subtype
+			}	
+		}
+	}
+}
+#O Green World
+country_event = {
+	id = france.20
+	title = france.20.t
+	desc = france.20.desc
+	picture = GFX_report_event_druid_march
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = { #A return to normalcy
+		name = france.20.a
+	}
+}
+#Paris burns
+country_event = {
+	id = france.21
+	title = france.21.t
+	desc = france.21.desc
+	picture = GFX_report_event_wolves_march
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = { #Withdrawal is hell
+		name = france.21.a
+		16 = {
+			add_manpower = -50000
+		}
+	}
+}
+#Eighteen Naked Druids
+country_event = {
+	id = france.22
+	title = france.22.t
+	desc = france.22.desc
+	picture = GFX_report_event_fra_bloody_ritual
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = { #Withdrawal is hell
+		name = france.22.a
+		swap_ideas = {
+			remove_idea = FRA_animal_drive
+			add_idea = FRA_animal_indulgence
+		}
+	}
+}
+#Siege of Escadron Bunker
+country_event = {
+	id = france.23
+	title = france.23.t
+	desc = france.23.desc
+	picture = GFX_report_event_fra_lone_wolf
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = { #Rest in Piss
+		name = france.23.a
+		add_manpower = -20000
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 50000
+			producer = FRA
+		}
+	}
+}
+#Battle of Brittany
+country_event = {
+	id = france.24
+	title = france.24.t
+	desc = france.24.desc
+	picture = GFX_report_event_fra_lone_soldier
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = { #So be it
+		name = france.24.a
+		14 = {
+			add_manpower = -62812
+		}
+		16 = {
+			add_manpower = -34231
+		}
+		731 = {
+			add_manpower = -21301
+		}
+		743 = {
+			add_manpower = -17531
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 34858
+			producer = FRA
+		}
+	}
+}

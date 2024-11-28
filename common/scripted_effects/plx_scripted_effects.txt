@@ -1,0 +1,1119 @@
+PLX_effect_soviet_cores = {
+	add_state_core = 1319
+	add_state_core = 1314
+	add_state_core = 776 
+	add_state_core = 86
+	add_state_core = 67
+	add_state_core = 777 
+	add_state_core = 655 
+	add_state_core = 94
+	add_state_core = 96
+	add_state_core = 93
+	add_state_core = 997 
+	add_state_core = 792 
+	add_state_core = 95
+	add_state_core = 1295
+	add_state_core = 207 
+	add_state_core = 1124
+	add_state_core = 88
+	add_state_core = 1125
+	add_state_core = 1126
+	add_state_core = 1127
+	add_state_core = 91
+	add_state_core = 89
+	add_state_core = 1140
+	add_state_core = 1131
+	
+	add_state_core = 11
+	add_state_core = 189
+
+	##Germany
+	every_state = {
+		limit = { region = 8 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 7 }
+		add_core_of = POL
+	}
+	add_state_core = 57
+	add_state_core = 56
+	add_state_core = 59
+	add_state_core = 839
+	add_state_core = 782
+	###Benelux
+	every_state = {
+		limit = { region = 5 }
+		add_core_of = POL
+	}	
+	
+	#Austria + Czechoslovakia
+	every_state = {
+		limit = { region = 21 } #Austria
+		add_core_of = POL
+	}	
+	every_state = {
+		limit = { region = 145 } #Slovakia
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 22 } #Bohemia
+		add_core_of = POL
+	}
+	add_state_core = 784
+	add_state_core = 1111
+	
+	add_state_core = 58
+}
+
+PLX_effect_intermarium_1_cores = {
+
+	#"Basic" cores
+	1314 = { add_core_of = POL }
+	1319 = { add_core_of = POL }
+	776 = { add_core_of = POL }
+	86 = { add_core_of = POL }
+	67 = { add_core_of = POL }
+	777 = { add_core_of = POL }
+	655 = { add_core_of = POL }
+	94 = { add_core_of = POL }
+	96 = { add_core_of = POL }
+	93 = { add_core_of = POL }
+	997 = { add_core_of = POL }
+	792 = { add_core_of = POL }
+	95 = { add_core_of = POL }
+	1295 = { add_core_of = POL }
+	207 = { add_core_of = POL }
+	1124 = { add_core_of = POL }
+	88 = { add_core_of = POL }
+	1125 = { add_core_of = POL }
+	1126 = { add_core_of = POL }
+	1127 = { add_core_of = POL }
+	91 = { add_core_of = POL }
+	89 = { add_core_of = POL }
+	1140 = { add_core_of = POL }
+	1131 = { add_core_of = POL }
+	
+	66 = { add_core_of = POL }
+	68 = { add_core_of = POL }
+	63 = { add_core_of = POL }
+	5 = { add_core_of = POL }
+	188 = { add_core_of = POL }
+	189 = { add_core_of = POL }
+	11 = { add_core_of = POL }
+	206 = { add_core_of = POL }
+	1294 = { add_core_of = POL }
+	1087 = { add_core_of = POL }
+	204 = { add_core_of = POL }
+	194 = { add_core_of = POL }
+	1228 = { add_core_of = POL }
+	199 = { add_core_of = POL }
+	1244 = { add_core_of = POL }
+	201 = { add_core_of = POL }
+	1245 = { add_core_of = POL }
+	198	= { add_core_of = POL }
+
+	#Smolensk and stuff
+	243 = { add_core_of = POL }
+	1292 = { add_core_of = POL }
+	755 = { add_core_of = POL }
+	1287 = { add_core_of = POL }
+	73 = { add_core_of = POL }
+	
+	#Baltics
+	every_state = {
+		limit = { region = 37 }
+		add_core_of = POL
+	}
+
+	#Ukraine
+	every_state = {
+		limit = { region = 130 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 165 }
+		add_core_of = POL
+	}
+	80 = { add_core_of = POL }	
+	1320 = { add_core_of = POL }
+	78 = { add_core_of = POL }
+	1222 = { add_core_of = POL }	
+	
+	#Annex - 1
+	if = {
+		limit = { UKR = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = UKR
+			}
+		}
+	}
+	if = {
+		limit = { WHR = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = WHR
+			}
+		}
+	}
+	if = {
+		limit = { LIT = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = LIT
+			}
+		}
+	}	
+	if = {
+		limit = { LAT = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = LAT
+			}
+		}
+	}	
+	if = {
+		limit = { EST = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = EST
+			}
+		}
+	}
+	if = {
+		limit = { BAT = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = BAT
+			}
+		}
+	}	
+}
+
+PLX_effect_intermarium_2_cores = {
+
+	#"Basic" cores
+	1314 = { add_core_of = POL }
+	1319 = { add_core_of = POL }
+	776 = { add_core_of = POL }
+	86 = { add_core_of = POL }
+	67 = { add_core_of = POL }
+	777 = { add_core_of = POL }
+	655 = { add_core_of = POL }
+	94 = { add_core_of = POL }
+	96 = { add_core_of = POL }
+	93 = { add_core_of = POL }
+	997 = { add_core_of = POL }
+	792 = { add_core_of = POL }
+	95 = { add_core_of = POL }
+	1295 = { add_core_of = POL }
+	207 = { add_core_of = POL }
+	1124 = { add_core_of = POL }
+	88 = { add_core_of = POL }
+	1125 = { add_core_of = POL }
+	1126 = { add_core_of = POL }
+	1127 = { add_core_of = POL }
+	91 = { add_core_of = POL }
+	89 = { add_core_of = POL }
+	1140 = { add_core_of = POL }
+	1131 = { add_core_of = POL }
+	
+	66 = { add_core_of = POL }
+	68 = { add_core_of = POL }
+	63 = { add_core_of = POL }
+	5 = { add_core_of = POL }
+	188 = { add_core_of = POL }
+	189 = { add_core_of = POL }
+	11 = { add_core_of = POL }
+	206 = { add_core_of = POL }
+	1294 = { add_core_of = POL }
+	1087 = { add_core_of = POL }
+	204 = { add_core_of = POL }
+	194 = { add_core_of = POL }
+	1228 = { add_core_of = POL }
+	199 = { add_core_of = POL }
+	1244 = { add_core_of = POL }
+	201 = { add_core_of = POL }
+	1245 = { add_core_of = POL }
+	198	= { add_core_of = POL }
+
+	#Smolensk and stuff
+	243 = { add_core_of = POL }
+	242 = { add_core_of = POL }
+	755 = { add_core_of = POL }
+	1287 = { add_core_of = POL }
+	73 = { add_core_of = POL }
+	
+	#Baltics
+	every_state = {
+		limit = { region = 37 }
+		add_core_of = POL
+	}
+
+	#Ukraine
+	every_state = {
+		limit = { region = 130 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 165 }
+		add_core_of = POL
+	}
+	80 = { add_core_of = POL }	
+	1320 = { add_core_of = POL }
+	78 = { add_core_of = POL }
+	1222 = { add_core_of = POL }	
+	
+	#Czechoslovakia
+	every_state = {
+		limit = { region = 22 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 145 }
+		add_core_of = POL
+	}
+	
+	#Annex - 1
+	if = {
+		limit = { UKR = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = UKR
+			}
+		}
+	}
+	if = {
+		limit = { WHR = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = WHR
+			}
+		}
+	}
+	if = {
+		limit = { LIT = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = LIT
+			}
+		}
+	}	
+	if = {
+		limit = { LAT = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = LAT
+			}
+		}
+	}	
+	if = {
+		limit = { EST = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = EST
+			}
+		}
+	}
+	if = {
+		limit = { BAT = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = BAT
+			}
+		}
+	}
+	#
+	if = {
+		limit = { CZE = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = CZE
+			}
+		}
+	}
+	if = {
+		limit = { SVK = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = SVK
+			}
+		}
+	}	
+	if = {
+		limit = { HUN = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = HUN
+			}
+		}
+	}
+	if = {
+		limit = { ROM = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = ROM
+			}
+		}
+	}
+	if = {
+		limit = { BUK = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = BUK
+			}
+		}
+	}	
+}
+
+PLX_effect_intermarium_3_cores = {
+
+	#"Basic" cores
+	1314 = { add_core_of = POL }
+	1319 = { add_core_of = POL }
+	776 = { add_core_of = POL }
+	86 = { add_core_of = POL }
+	67 = { add_core_of = POL }
+	777 = { add_core_of = POL }
+	655 = { add_core_of = POL }
+	94 = { add_core_of = POL }
+	96 = { add_core_of = POL }
+	93 = { add_core_of = POL }
+	997 = { add_core_of = POL }
+	792 = { add_core_of = POL }
+	95 = { add_core_of = POL }
+	1295 = { add_core_of = POL }
+	207 = { add_core_of = POL }
+	1124 = { add_core_of = POL }
+	88 = { add_core_of = POL }
+	1125 = { add_core_of = POL }
+	1126 = { add_core_of = POL }
+	1127 = { add_core_of = POL }
+	91 = { add_core_of = POL }
+	89 = { add_core_of = POL }
+	1140 = { add_core_of = POL }
+	1131 = { add_core_of = POL }
+	
+	66 = { add_core_of = POL }
+	68 = { add_core_of = POL }
+	63 = { add_core_of = POL }
+	5 = { add_core_of = POL }
+	188 = { add_core_of = POL }
+	189 = { add_core_of = POL }
+	11 = { add_core_of = POL }
+	206 = { add_core_of = POL }
+	1294 = { add_core_of = POL }
+	1087 = { add_core_of = POL }
+	204 = { add_core_of = POL }
+	194 = { add_core_of = POL }
+	1228 = { add_core_of = POL }
+	199 = { add_core_of = POL }
+	1244 = { add_core_of = POL }
+	201 = { add_core_of = POL }
+	1245 = { add_core_of = POL }
+	198	= { add_core_of = POL }
+
+	#Smolensk and stuff
+	243 = { add_core_of = POL }
+	1292 = { add_core_of = POL }
+	755 = { add_core_of = POL }
+	1287 = { add_core_of = POL }
+	73 = { add_core_of = POL }
+	
+	#Baltics
+	every_state = {
+		limit = { region = 37 }
+		add_core_of = POL
+	}
+
+	#Ukraine
+	every_state = {
+		limit = { region = 130 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 165 }
+		add_core_of = POL
+	}
+	80 = { add_core_of = POL }	
+	1320 = { add_core_of = POL }
+	78 = { add_core_of = POL }
+	1222 = { add_core_of = POL }	
+	
+	#Czechoslovakia
+	every_state = {
+		limit = { region = 22 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 145 }
+		add_core_of = POL
+	}
+	
+	#Hungary
+	every_state = {
+		limit = { region = 27 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 144 }
+		add_core_of = POL
+	}
+
+	#Romania
+	every_state = {
+		limit = { region = 15 }
+		add_core_of = POL
+	}	
+	
+	#Annex - 1
+	if = {
+		limit = { UKR = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = UKR
+			}
+		}
+	}
+	if = {
+		limit = { WHR = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = WHR
+			}
+		}
+	}
+	if = {
+		limit = { LIT = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = LIT
+			}
+		}
+	}	
+	if = {
+		limit = { LAT = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = LAT
+			}
+		}
+	}	
+	if = {
+		limit = { EST = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = EST
+			}
+		}
+	}
+	if = {
+		limit = { BAT = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = BAT
+			}
+		}
+	}
+	#
+	if = {
+		limit = { CZE = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = CZE
+			}
+		}
+	}
+	if = {
+		limit = { SVK = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = SVK
+			}
+		}
+	}
+	if = {
+		limit = { HUN = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = HUN
+			}
+		}
+	}
+	if = {
+		limit = { ROM = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = ROM
+			}
+		}
+	}
+	if = {
+		limit = { BUK = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = BUK
+			}
+		}
+	}	
+}
+
+PLX_effect_intermarium_4_cores = {
+
+	#"Basic" cores
+	1314 = { add_core_of = POL }
+	1319 = { add_core_of = POL }
+	776 = { add_core_of = POL }
+	86 = { add_core_of = POL }
+	67 = { add_core_of = POL }
+	777 = { add_core_of = POL }
+	655 = { add_core_of = POL }
+	94 = { add_core_of = POL }
+	96 = { add_core_of = POL }
+	93 = { add_core_of = POL }
+	997 = { add_core_of = POL }
+	792 = { add_core_of = POL }
+	95 = { add_core_of = POL }
+	1295 = { add_core_of = POL }
+	207 = { add_core_of = POL }
+	1124 = { add_core_of = POL }
+	88 = { add_core_of = POL }
+	1125 = { add_core_of = POL }
+	1126 = { add_core_of = POL }
+	1127 = { add_core_of = POL }
+	91 = { add_core_of = POL }
+	89 = { add_core_of = POL }
+	1140 = { add_core_of = POL }
+	1131 = { add_core_of = POL }
+	
+	66 = { add_core_of = POL }
+	68 = { add_core_of = POL }
+	63 = { add_core_of = POL }
+	5 = { add_core_of = POL }
+	188 = { add_core_of = POL }
+	189 = { add_core_of = POL }
+	11 = { add_core_of = POL }
+	206 = { add_core_of = POL }
+	1294 = { add_core_of = POL }
+	1087 = { add_core_of = POL }
+	204 = { add_core_of = POL }
+	194 = { add_core_of = POL }
+	1228 = { add_core_of = POL }
+	199 = { add_core_of = POL }
+	1244 = { add_core_of = POL }
+	201 = { add_core_of = POL }
+	1245 = { add_core_of = POL }
+	198	= { add_core_of = POL }
+
+	#Smolensk and stuff
+	243 = { add_core_of = POL }
+	1292 = { add_core_of = POL }
+	755 = { add_core_of = POL }
+	1287 = { add_core_of = POL }
+	73 = { add_core_of = POL }
+	
+	#Baltics
+	every_state = {
+		limit = { region = 37 }
+		add_core_of = POL
+	}
+
+	#Ukraine
+	every_state = {
+		limit = { region = 130 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 165 }
+		add_core_of = POL
+	}
+	80 = { add_core_of = POL }	
+	1320 = { add_core_of = POL }
+	78 = { add_core_of = POL }
+	1222 = { add_core_of = POL }	
+	
+	#Czechoslovakia
+	every_state = {
+		limit = { region = 22 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 145 }
+		add_core_of = POL
+	}
+	
+	#Hungary
+	every_state = {
+		limit = { region = 27 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 144 }
+		add_core_of = POL
+	}
+
+	#Romania
+	every_state = {
+		limit = { region = 15 }
+		add_core_of = POL
+	}
+	
+	#Balkans
+	every_state = {
+		limit = { region = 143 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 24 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 26 }
+		add_core_of = POL
+	}	
+	
+	#Annex - 1
+	if = {
+		limit = { UKR = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = UKR
+			}
+		}
+	}
+	if = {
+		limit = { WHR = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = WHR
+			}
+		}
+	}
+	if = {
+		limit = { LIT = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = LIT
+			}
+		}
+	}	
+	if = {
+		limit = { LAT = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = LAT
+			}
+		}
+	}	
+	if = {
+		limit = { EST = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = EST
+			}
+		}
+	}
+	if = {
+		limit = { BAT = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = BAT
+			}
+		}
+	}
+	#
+	if = {
+		limit = { CZE = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = CZE
+			}
+		}
+	}
+	if = {
+		limit = { SVK = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = SVK
+			}
+		}
+	}
+	if = {
+		limit = { HUN = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = HUN
+			}
+		}
+	}
+	if = {
+		limit = { ROM = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = ROM
+			}
+		}
+	}
+	if = {
+		limit = { BUK = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = BUK
+			}
+		}
+	}
+	if = {
+		limit = { CRO = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = CRO
+			}
+		}
+	}
+	if = {
+		limit = { BOS = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = BOS
+			}
+		}
+	}
+	if = {
+		limit = { SER = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = SER
+			}
+		}
+	}
+	if = {
+		limit = { ALB = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = ALB
+			}
+		}
+	}
+	if = {
+		limit = { BUL = { is_puppet_of = POL } }
+		POL = { 
+			annex_country = {
+				target = BUL
+			}
+		}
+	}	
+}
+
+PLX_effect_panslavic_cores = {
+
+	#"Basic" cores
+	1314 = { add_core_of = POL }
+	1319 = { add_core_of = POL }
+	776 = { add_core_of = POL }
+	86 = { add_core_of = POL }
+	67 = { add_core_of = POL }
+	777 = { add_core_of = POL }
+	655 = { add_core_of = POL }
+	94 = { add_core_of = POL }
+	96 = { add_core_of = POL }
+	93 = { add_core_of = POL }
+	997 = { add_core_of = POL }
+	792 = { add_core_of = POL }
+	95 = { add_core_of = POL }
+	1295 = { add_core_of = POL }
+	207 = { add_core_of = POL }
+	1124 = { add_core_of = POL }
+	88 = { add_core_of = POL }
+	1125 = { add_core_of = POL }
+	1126 = { add_core_of = POL }
+	1127 = { add_core_of = POL }
+	91 = { add_core_of = POL }
+	89 = { add_core_of = POL }
+	1140 = { add_core_of = POL }
+	1131 = { add_core_of = POL }
+	
+	66 = { add_core_of = POL }
+	68 = { add_core_of = POL }
+	63 = { add_core_of = POL }
+	5 = { add_core_of = POL }
+	188 = { add_core_of = POL }
+	189 = { add_core_of = POL }
+	11 = { add_core_of = POL }
+	206 = { add_core_of = POL }
+	1294 = { add_core_of = POL }
+	1087 = { add_core_of = POL }
+	204 = { add_core_of = POL }
+	194 = { add_core_of = POL }
+	1228 = { add_core_of = POL }
+	199 = { add_core_of = POL }
+	1244 = { add_core_of = POL }
+	201 = { add_core_of = POL }
+	1245 = { add_core_of = POL }
+	198	= { add_core_of = POL }
+
+	#Smolensk and stuff
+	243 = { add_core_of = POL }
+	1292 = { add_core_of = POL }
+	755 = { add_core_of = POL }
+	1287 = { add_core_of = POL }
+	73 = { add_core_of = POL }
+	
+	#Baltics
+	every_state = {
+		limit = { region = 37 }
+		add_core_of = POL
+	}
+
+	#Ukraine
+	every_state = {
+		limit = { region = 130 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 165 }
+		add_core_of = POL
+	}
+	80 = { add_core_of = POL }	
+	1320 = { add_core_of = POL }
+	78 = { add_core_of = POL }
+	1222 = { add_core_of = POL }	
+	
+	#Czechoslovakia
+	every_state = {
+		limit = { region = 22 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 145 }
+		add_core_of = POL
+	}
+	
+	#Karelia
+	146 = { add_core_of = POL }
+	1274 = { add_core_of = POL }
+	215 = { add_core_of = POL }
+	213 = { add_core_of = POL }
+	722 = { add_core_of = POL }
+	
+	#Russia
+	every_state = {
+		limit = { region = 132 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 133 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 234 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 135 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 137 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 134 } #Caucasus
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 40 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 138 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 14 }
+		add_core_of = POL
+	}	
+	every_state = {
+		limit = { region = 151 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 235 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 147 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 149 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 148 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 150 }
+		add_core_of = POL
+	}
+	329 = { add_core_of = POL } #Tuva
+	#Central Asia
+	every_state = {
+		limit = { region = 244 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 136 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 243 }
+		add_core_of = POL
+	}
+	every_state = {
+		limit = { region = 245 }
+		add_core_of = POL
+	}	
+}
+
+PLX_effect_ger_soc_generals = {
+	create_field_marshal = {
+		name = "Paul Lensch "
+		portrait_path = "gfx/leaders/GRU/Portrait_GRU_Paul_Lensch.png"
+		traits = { politically_connected }
+		skill = 2
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_field_marshal = {
+		name = "Ernst Thälmann "
+		portrait_path = "gfx/leaders/GER/Portrait_Germany_Ernst_Thalmann.png"
+		traits = { politically_connected }
+		skill = 3
+
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Heinrich Laufenberg"
+		portrait_path = "gfx/leaders/GRU/Portrait_Germany_Heinrich_Laufenberg.png"
+		traits = { politically_connected }
+		skill = 3
+
+		attack_skill = 2
+		defense_skill = 3
+		planning_skill = 2
+		logistics_skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Wilhelm Pieck "
+		portrait_path = "gfx/leaders/GER/Portrait_Germany_Wilhelm_Pieck_I.png"
+		traits = { politically_connected }
+		skill = 3
+
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 1
+	}
+	create_corps_commander = {
+		name = "Erich Honecker "
+		portrait_path = "gfx/leaders/GRU/Portrait_Germany_Erich_Honecker_young.png"
+		traits = { politically_connected }
+		skill = 2
+
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "Walter Ulbricht"
+		portrait_path = "gfx/leaders/GRU/Portrait_GRU_Walter_Ulbricht.png"
+		traits = { politically_connected }
+		skill = 2
+
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+	}
+	create_field_marshal = {
+		name = "Karl Liebknecht "
+		portrait_path = "gfx/leaders/DDR/Portrait_Prussia_Karl_Liebknecht.png"
+		traits = { politically_connected }
+		skill = 2
+
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 2
+	}
+		
+	create_corps_commander = {
+		name = "Otto Braun"
+		portrait_path = "gfx/leaders/GRU/Portrait_Germany_Otto_Braun.png"
+		traits = { politically_connected }
+		skill = 3
+
+		attack_skill = 3
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Max Reimann"
+		portrait_path = "gfx/leaders/GRU/Portrait_Germany_Max_Reimann.png"
+		traits = { politically_connected }
+		skill = 2
+
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Karl Artelt"
+		portrait_path = "gfx/leaders/GRU/Portrait_Germany_Karl_Artelt.png"
+		traits = { politically_connected }
+		skill = 2
+
+		attack_skill = 2
+		defense_skill = 3
+		planning_skill = 2
+		logistics_skill = 1
+	}
+	
+	create_corps_commander = {
+		name = "Willy Brandt"
+		portrait_path = "gfx/leaders/GRU/Portrait_Germany_Willy_Brandt.png"
+		traits = { politically_connected }
+		skill = 2
+
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	
+	create_corps_commander = {
+		name = "Emil Barth"
+		portrait_path = "gfx/leaders/GRU/Portrait_Germany_Emil_Barth.png"
+		traits = { politically_connected }
+		skill = 2
+
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 2
+	}
+}

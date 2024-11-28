@@ -1,0 +1,293 @@
+###################
+### Armour MIOs ###
+###################
+CHI_sinotruk_organisation = {
+	name = sinotruk
+	icon = GFX_idea_sinotruk
+	include = generic_tank_refurbishment_plant_organization
+	allowed = { original_tag = CHI }
+	available = {
+		FROM = {
+			has_completed_focus = CHI_set_up_arsenal
+			has_full_control_of_state = 596 
+		}
+	}
+	
+	add_trait = { 
+		token = CHI_mio_trait_merge_plant_A
+		name = CHI_mio_trait_merge_plant_A
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_department_icon_tank_general_quality
+		special_trait_background = yes
+
+		position = { x=9 y=2 }
+		
+		visible = {
+			FROM = { original_tag = CHI }
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = { has_full_control_of_state = 716 }
+		}
+
+		equipment_bonus = {
+			reliability = 0.10
+		}
+	}
+
+	add_trait = { 
+		token = CHI_mio_trait_merge_plant_B
+		name = CHI_mio_trait_merge_plant_B
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x=9 y=3 }
+		
+		visible = {
+			FROM = { original_tag = CHI }
+		}
+
+		available = {
+			FROM = { has_full_control_of_state = 607 }
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+
+		production_bonus = {
+			production_cost_factor = -0.10
+		}
+	}
+
+	add_trait = { 
+		token = CHI_mio_trait_merge_plant_C
+		name = CHI_mio_trait_merge_plant_C
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_department_icon_tank_general_technology
+		special_trait_background = yes
+
+		position = { x=9 y=4 }
+		
+		visible = {
+			FROM = { original_tag = CHI }
+		}
+
+		available = {
+			FROM = { has_full_control_of_state = 609 }
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.10
+		}
+	}
+}
+CHI_de_dion_bouton_organisation = {
+	include = generic_infantry_tank_organization
+	name = de_dion_bouton
+	icon = GFX_idea_de_dion_bouton
+	allowed = {
+		original_tag = CHI
+	}
+	available = {
+		FRA = {
+			exists = yes
+			NOT = { has_war_with = CHI }
+		}
+		FROM = { has_country_flag = CHI_phase_three_begins_flag }
+	}
+	#Renault traits from vanilla
+	initial_trait = {
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+	}
+
+	add_trait = {
+		token = FRA_mio_trait_automitrailleuses
+		name = FRA_mio_trait_automitrailleuses
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+		special_trait_background = yes
+
+		position = { x=6 y=0 }
+
+		limit_to_equipment_type = { medium_tank_chassis }
+
+		equipment_bonus = {
+			maximum_speed = 0.1
+			armor_value = -0.05
+		}
+
+	}
+	add_trait = {
+		token = FRA_mio_trait_b1_bis_suspension
+		name = FRA_mio_trait_b1_bis_suspension
+		icon = GFX_generic_mio_trait_icon_breakthrough
+		special_trait_background = yes
+
+		position = { x=0 y=4 }
+		relative_position_id = generic_mio_trait_heavy_tank_improvements
+
+		any_parent = { generic_mio_trait_heavy_tank_improvements }
+
+		limit_to_equipment_type = { heavy_tank_chassis }
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+			breakthrough = 0.1
+		}
+	}
+}
+
+##################
+### Naval MIOs ###
+##################
+CHI_csic_organisation = {
+	name = csic
+	icon = GFX_idea_csic
+	include = generic_escort_ship_organization
+	allowed = { original_tag = CHI }
+	available = {
+		FROM = {
+			OR = {
+				mio:CHI_john_brown_company_organisation = {
+					has_mio_size > 8
+				}
+				AND = {
+					mio:CHI_john_brown_company_organisation = {
+						is_mio_available = no
+					}
+					CHI = { has_full_control_of_state = 743 }
+				}
+			}
+		}
+	}
+}
+CHI_china_state_shipbuilding_corporation_organisation = {
+	name = china_state_shipbuilding_corporation
+	icon = GFX_idea_china_state_shipbuilding_corporation
+	include = generic_battle_line_ship_organization
+	allowed = { original_tag = CHI }
+	available = {
+		FROM = {
+			OR = {
+				mio:CHI_john_brown_company_organisation = {
+					has_mio_size > 8
+				}
+				AND = {
+					mio:CHI_john_brown_company_organisation = {
+						is_mio_available = no
+					}
+					CHI = { has_full_control_of_state = 743 }
+				}
+			}
+		}
+	}
+}
+CHI_john_brown_company_organisation = {
+	include = generic_raider_ship_organization
+	name = john_brown_company
+	icon = GFX_idea_john_brown_company
+	allowed = {
+		original_tag = CHI
+	}
+	available = {
+		ENG = {
+			exists = yes
+			NOT = { has_war_with = CHI }
+		}
+		CHI = { has_full_control_of_state = 743 }
+	}
+}
+
+#####################
+### Airplane MIOs ###
+#####################
+CHI_china_aviation_corporation_organisation = {
+	name = china_aviation_corporation_CHI
+	icon = GFX_idea_china_aviation_corporation
+	include = generic_multi_role_aircraft_organization
+	allowed = { original_tag = CHI }
+	available = {
+		FROM = {
+			mio:CHI_central_aircraft_manufacturing_company_organisation = {
+				has_mio_size > 4
+			}
+		}
+	}
+}
+CHI_central_aircraft_manufacturing_company_organisation = {
+	name = central_aircraft_manufacturing_company
+	icon = GFX_idea_central_aircraft_manufacturing_company
+	include = generic_general_aircraft_organization
+	allowed = { original_tag = CHI }
+	available = {
+		FROM = {
+			has_completed_focus = CHI_purchase_of_aircraft
+		}
+	}
+}
+CHI_central_air_transport_organisation = {
+	name = central_air_transport
+	icon = GFX_idea_central_air_transport
+	include = generic_naval_aircraft_organization
+	allowed = { original_tag = CHI }
+	available = {
+		FROM = {
+			mio:CHI_central_aircraft_manufacturing_company_organisation = {
+				has_mio_size > 8
+			}
+		}
+	}
+}
+
+#####################
+### Materiel MIOs ###
+#####################
+CHI_jinling_arsenal_organisation = {
+	name = CHI_jinling_arsenal_organisation
+	icon = GFX_idea_CHI_jinling_arsenal
+	allowed = { original_tag = CHI }
+	available = {
+		FROM = { has_full_control_of_state = 613 }
+	}
+	include = generic_support_equipment_organization
+}
+CHI_military_engineering_department_organisation = {
+	name = CHI_military_engineering_department_organisation
+	icon = GFX_idea_CHI_military_engineering_department
+	allowed = { original_tag = CHI }
+	available = {
+		FROM = { has_completed_focus = CHI_support_equipment }
+	}
+	include = generic_infantry_equipment_organization
+}
+CHI_norinco_organisation = {
+	name = norinco
+	icon = GFX_idea_norinco
+	include = generic_artillery_organization
+	allowed = { original_tag = CHI }
+	available = {
+		FROM = { has_completed_focus = CHI_set_up_arsenal }
+	}
+}
+CHI_faw_motors_organisation = {
+	name = faw_motors
+	icon = GFX_idea_faw_motors
+	include = generic_motorized_mechanized_organization
+	allowed = { original_tag = CHI }
+	available = {
+		FROM = {
+			has_completed_focus = CHI_motorized_troops
+		}
+	}
+}

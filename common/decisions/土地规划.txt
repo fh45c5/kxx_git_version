@@ -1,0 +1,1645 @@
+Mao_mild_land_reform = {
+
+	kr_land_reform_guangdong_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 592 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 591
+			    has_full_control_of_state = 592
+			    has_full_control_of_state = 593
+			    has_full_control_of_state = 800
+			    has_full_control_of_state = 1012
+			}
+			has_completed_focus = PRC_mild_land_reform
+		}
+		available = {
+			has_full_control_of_state = 591
+			has_full_control_of_state = 592
+			has_full_control_of_state = 593
+			has_full_control_of_state = 800
+			has_full_control_of_state = 1012
+		    ##has_country_flag = PRC_mild_land_reform_chosen
+		}
+		cost = 30
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_guangdong_province"
+			591 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			592 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			593 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			800 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1012 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_guangxi_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 594 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 594
+			    has_full_control_of_state = 599
+			    has_full_control_of_state = 1054
+			    has_full_control_of_state = 1055
+				has_full_control_of_state = 1056
+			}
+			has_completed_focus = PRC_mild_land_reform
+		}
+		available = {
+			has_full_control_of_state = 594
+			has_full_control_of_state = 599
+			has_full_control_of_state = 1054
+			has_full_control_of_state = 1055
+			has_full_control_of_state = 1056
+			##has_country_flag = PRC_mild_land_reform_chosen
+		}
+		cost = 30
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_guangxi_province"
+			594 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			599 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1054 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1055 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1056 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_zhili_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 608 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 608
+			    has_full_control_of_state = 611
+			    has_full_control_of_state = 614
+			    has_full_control_of_state = 1061
+			    has_full_control_of_state = 1062
+				has_full_control_of_state = 1063
+			}
+		has_completed_focus = PRC_mild_land_reform
+		}
+		available = {
+			has_full_control_of_state = 608
+			has_full_control_of_state = 611
+			has_full_control_of_state = 614
+			has_full_control_of_state = 1061
+			has_full_control_of_state = 1062
+			has_full_control_of_state = 1063
+			##has_country_flag = PRC_mild_land_reform_chosen
+		}
+		cost = 35
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_zhili_province"
+			608= { increase_state_category_by_one_level = yes
+			add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		    }
+			614 = { increase_state_category_by_one_level = yes
+			add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		    }
+			611 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1061 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1062 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1063 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_henan_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 1059 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 1059
+			    has_full_control_of_state = 1058
+			    has_full_control_of_state = 1060
+			    has_full_control_of_state = 607
+			}
+		has_completed_focus = PRC_mild_land_reform
+		}
+		available = {
+			has_full_control_of_state = 1059
+			has_full_control_of_state = 1058
+			has_full_control_of_state = 1060
+			has_full_control_of_state = 607
+		    ##has_country_flag = PRC_mild_land_reform_chosen
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_henan_province"
+			1059 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			607 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1058 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1060 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_hubei_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 1048 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 1048
+			    has_full_control_of_state = 1049
+			    has_full_control_of_state = 620
+			}
+		has_completed_focus = PRC_mild_land_reform
+		}
+		available = {
+			has_full_control_of_state = 1048
+			has_full_control_of_state = 1049
+			has_full_control_of_state = 620
+			##has_country_flag = PRC_mild_land_reform_chosen
+		}
+		cost = 20
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_hubei_province"
+			1048= { increase_state_category_by_one_level = yes
+			    add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		    }
+			620 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1049 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_jiangsu_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 613 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 1075
+			    has_full_control_of_state = 1047
+			    has_full_control_of_state = 598
+				has_full_control_of_state = 613
+			}
+		has_completed_focus = PRC_mild_land_reform
+		}
+		available = {
+			has_full_control_of_state = 1075
+			has_full_control_of_state = 1047
+			has_full_control_of_state = 598
+			has_full_control_of_state = 613
+			##has_country_flag = PRC_mild_land_reform_chosen
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_jiangsu_province"
+			613 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			598 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1047 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1075 = {
+				if = {
+				limit = { has_state_category = port } 
+				set_state_category = three
+		        }
+				else = {
+					increase_state_category_by_one_level = yes
+				}
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_jiangxi_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 1044 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 1044
+			    has_full_control_of_state = 1045
+			    has_full_control_of_state = 600
+			}
+		}
+		available = {
+			has_full_control_of_state = 1044
+			has_full_control_of_state = 1045
+			has_full_control_of_state = 600
+		}
+		cost = 20
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_jiangxi_province"
+			1044 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			600 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1045 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_shaanxi_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 622 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 622
+			    has_full_control_of_state = 799
+			}
+		}
+		available = {
+			has_full_control_of_state = 622
+			has_full_control_of_state = 799
+		}
+		cost = 15
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_shaanxi_province"
+			799 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			622 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_shanxi_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 1072 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 615
+			    has_full_control_of_state = 1015
+				has_full_control_of_state = 1072
+			}
+		}
+		available = {
+			has_full_control_of_state = 615
+			has_full_control_of_state = 1015
+			has_full_control_of_state = 1072
+		}
+		cost = 20
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_shanxi_province"
+			615 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1015 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1072 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_shandong_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 597 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 597
+			    has_full_control_of_state = 1064
+				has_full_control_of_state = 1065
+			}
+		}
+		available = {
+			has_full_control_of_state = 597
+			has_full_control_of_state = 1064
+			has_full_control_of_state = 1065
+		}
+		cost = 20
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_shandong_province"
+			597 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1064 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1065 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_anhui_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 606 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 606
+			    has_full_control_of_state = 1014
+				has_full_control_of_state = 1050
+			}
+		}
+		available = {
+			has_full_control_of_state = 606
+			has_full_control_of_state = 1014
+			has_full_control_of_state = 1050
+		}
+		cost = 20
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_anhui_province"
+			606 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1014 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1050 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_zhejiang_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 596 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 596
+			    has_full_control_of_state = 803
+				has_full_control_of_state = 1067
+				has_full_control_of_state = 1068
+				has_full_control_of_state = 1069
+			}
+		}
+		available = {
+			has_full_control_of_state = 596
+			has_full_control_of_state = 803
+			has_full_control_of_state = 1067
+			has_full_control_of_state = 1068
+			has_full_control_of_state = 1069
+		}
+		cost = 30
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_zhejiang_province"
+			596 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			803 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1067 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1068 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1069 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_fujian_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 595 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 595
+			    has_full_control_of_state = 802
+				has_full_control_of_state = 1046
+				has_full_control_of_state = 1066
+			}
+		}
+		available = {
+			has_full_control_of_state = 595
+			has_full_control_of_state = 802
+			has_full_control_of_state = 1046
+			has_full_control_of_state = 1066
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_fujian_province"
+			595 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			802 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1046 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1066 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_sichuan_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 650 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 601
+			    has_full_control_of_state = 605
+				has_full_control_of_state = 650
+				has_full_control_of_state = 661
+				has_full_control_of_state = 788
+			}
+		}
+		available = {
+			has_full_control_of_state = 601
+			has_full_control_of_state = 605
+			has_full_control_of_state = 650
+			has_full_control_of_state = 661
+			has_full_control_of_state = 788
+		}
+		cost = 30
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_sichuan_province"
+			601 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			605 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			650 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			661 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			788 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_guizhou_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 603 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 603
+			    has_full_control_of_state = 1051
+				has_full_control_of_state = 1052
+			}
+		}
+		available = {
+			has_full_control_of_state = 603
+			has_full_control_of_state = 1051
+			has_full_control_of_state = 1052
+		}
+		cost = 20
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_guizhou_province"
+			603 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1051 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1052 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_yunnan_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 325 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 325
+			    has_full_control_of_state = 816
+			}
+		}
+		available = {
+			has_full_control_of_state = 325
+			has_full_control_of_state = 816
+		}
+		cost = 15
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_yunnan_province"
+			325 = { increase_state_category_by_one_level = yes
+			    add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		    }
+			816 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_hui_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 604 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 353
+			    has_full_control_of_state = 604
+				has_full_control_of_state = 283
+				has_full_control_of_state = 774
+				has_full_control_of_state = 348
+				has_full_control_of_state = 616
+			}
+		}
+		available = {
+			has_full_control_of_state = 353
+			has_full_control_of_state = 604
+			has_full_control_of_state = 283
+			has_full_control_of_state = 774
+			has_full_control_of_state = 348
+			has_full_control_of_state = 616
+		}
+		cost = 35
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_hui_province"
+			353 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			604 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			283 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			774 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			348 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			616 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_northeast_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 716 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 716
+			    has_full_control_of_state = 715
+				has_full_control_of_state = 610
+				has_full_control_of_state = 328
+				has_full_control_of_state = 885
+				has_full_control_of_state = 886
+				has_full_control_of_state = 714
+				has_full_control_of_state = 717
+				has_full_control_of_state = 883
+				has_full_control_of_state = 884
+			}
+		}
+		available = {
+			has_full_control_of_state = 716
+			has_full_control_of_state = 715
+			has_full_control_of_state = 610
+			has_full_control_of_state = 328
+			has_full_control_of_state = 885
+			has_full_control_of_state = 886
+			has_full_control_of_state = 714
+			has_full_control_of_state = 717
+			has_full_control_of_state = 883
+			has_full_control_of_state = 884
+		}
+		cost = 60
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_northeast_province"
+			716 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			715 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			610 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			328 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			885 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			886 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			714 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			717 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			883 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			884 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_taiwan_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 524 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 524
+			    has_full_control_of_state = 526
+			}
+		}
+		available = {
+			has_full_control_of_state = 524
+			has_full_control_of_state = 526
+		}
+		cost = 15
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_taiwan_province"
+			524 = { increase_state_category_by_one_level = yes
+			    add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		    }
+			if = {
+				limit = { 526 = { has_state_category = one_island } }
+				526 = { set_state_category = two
+			    add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		        }
+			}
+			else = {
+				526 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			    }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_mongolia_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 330 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 330
+				has_full_control_of_state = 329
+				has_full_control_of_state = 1084
+			}
+		}
+		available = {
+			has_full_control_of_state = 330
+			has_full_control_of_state = 329
+			has_full_control_of_state = 1084
+		}
+		cost = 20
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_mongolia_province"
+			330 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			329 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			1084 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	kr_land_reform_inner_mongolia_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 612 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+			    has_full_control_of_state = 612
+				has_full_control_of_state = 621
+			}
+		}
+		available = {
+			has_full_control_of_state = 612
+			has_full_control_of_state = 621
+		}
+		cost = 15
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_mongolia_province"
+			612 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			621 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_xinjiang_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 617 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 287
+				has_full_control_of_state = 617
+			    has_full_control_of_state = 618
+				has_full_control_of_state = 619
+			    has_full_control_of_state = 897
+				has_full_control_of_state = 1083
+			    has_full_control_of_state = 1085
+			}
+		}
+		available = {
+			has_full_control_of_state = 287
+			has_full_control_of_state = 617
+			has_full_control_of_state = 618
+			has_full_control_of_state = 619
+			has_full_control_of_state = 897
+			has_full_control_of_state = 1083
+			has_full_control_of_state = 1085
+		}
+		cost = 40
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_xinjiang_province"
+			287 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			617 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			618 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			619 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			if = {
+				limit = { 897 = { has_state_category = wasteland } }
+				897 = { set_state_category = one
+			    add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		        }
+			}
+			else = {
+				897 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			    }
+			}
+			1083 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			if = {
+				limit = { 1085 = { has_state_category = wasteland } }
+				1085 = { set_state_category = one
+			    add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		        }
+			}
+			else = {
+				1085 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			    }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kr_land_reform_tibet_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 322 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 322
+				has_full_control_of_state = 748
+			    has_full_control_of_state = 693
+				has_full_control_of_state = 858
+				has_full_control_of_state = 1086
+			}
+		}
+		available = {
+			has_full_control_of_state = 322
+			has_full_control_of_state = 748
+			has_full_control_of_state = 693
+			has_full_control_of_state = 858
+			has_full_control_of_state = 1086
+			NOT = {
+			    has_country_flag = PRC_agreement_with_tibetan_slave_owners
+			}
+		}
+		cost = 30
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_tibet_province"
+			322 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			748 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			693 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			858 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			if = {
+				limit = { 1086 = { has_state_category = wasteland } }
+				1086 = { set_state_category = one
+			    add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		        }
+			}
+			else = {
+				1086 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			    }
+			}
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+
+	kr_land_reform_manchuria_province = {#外满洲东部
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 408 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 408
+			    has_full_control_of_state = 409
+				has_full_control_of_state = 537
+			}
+			408 = { is_core_of = PLA }
+			409 = { is_core_of = PLA }
+			537 = { is_core_of = PLA }
+		}
+		available = {
+			has_full_control_of_state = 408
+			has_full_control_of_state = 409
+			has_full_control_of_state = 537
+		}
+		cost = 20
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_manchuria_province"
+			408 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			409 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			537 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	kr_land_reform_manchuria_province0 = {#外满洲西部
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 657 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 657
+				has_full_control_of_state = 560
+			    has_full_control_of_state = 561
+			}
+			657 = { is_core_of = PLA }
+			560 = { is_core_of = PLA }
+			561 = { is_core_of = PLA }
+		}
+		available = {
+			has_full_control_of_state = 657
+			has_full_control_of_state = 560
+			has_full_control_of_state = 561
+		}
+		cost = 20
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_manchuria_province"
+			560 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			561 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			657 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	kr_land_reform_manchuria_province1 = {#外西北
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 589 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 589
+				has_full_control_of_state = 586
+			    has_full_control_of_state = 1042
+			}
+			589 = { is_core_of = PLA }
+			586 = { is_core_of = PLA }
+			1042 = { is_core_of = PLA }
+		}
+		available = {
+			has_full_control_of_state = 589
+			has_full_control_of_state = 586
+			has_full_control_of_state = 1042
+		}
+		cost = 20
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_manchuria_province"
+			589 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			586 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			if = {
+				limit = { 1042 = { has_state_category = wasteland } }
+				1042 = { set_state_category = one
+			    add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		        }
+			}
+			else = {
+				1042 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			    }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+
+	kr_land_reform_concession_province = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 743 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 743
+				has_full_control_of_state = 609
+			    has_full_control_of_state = 746
+				has_full_control_of_state = 747
+			    has_full_control_of_state = 801
+				has_full_control_of_state = 326
+			    has_full_control_of_state = 729
+				has_full_control_of_state = 745
+				has_full_control_of_state = 744
+			    has_full_control_of_state = 728
+				has_full_control_of_state = 996				
+			}
+		}
+		available = {
+			has_full_control_of_state = 743
+			has_full_control_of_state = 609
+			has_full_control_of_state = 746
+			has_full_control_of_state = 747
+			has_full_control_of_state = 801
+			has_full_control_of_state = 326
+			has_full_control_of_state = 729
+			has_full_control_of_state = 745
+			has_full_control_of_state = 744
+			has_full_control_of_state = 728
+			has_full_control_of_state = 996
+		}
+		cost = 75
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove kr_land_reform_concession_province"
+			743 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			609 = {
+				if = {
+				limit = { has_state_category = major_port } 
+				set_state_category = five
+		        }
+				else = {
+					increase_state_category_by_one_level = yes
+				}
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			746 = {
+				if = {
+				limit = { has_state_category = major_port } 
+				set_state_category = five
+		        }
+				else = {
+					increase_state_category_by_one_level = yes
+				}
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			747 = {
+				if = {
+				limit = { has_state_category = port } 
+				set_state_category = three
+		        }
+				else = {
+					increase_state_category_by_one_level = yes
+				}
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			801 = {
+				if = {
+				limit = { has_state_category = minor_port } 
+				set_state_category = two
+		        }
+				else = {
+					increase_state_category_by_one_level = yes
+				}
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			326 = {
+				if = {
+				limit = { has_state_category = major_port } 
+				set_state_category = five
+		        }
+				else = {
+					increase_state_category_by_one_level = yes
+				}
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			729 = {
+				if = {
+				limit = { has_state_category = port } 
+				set_state_category = three
+		        }
+				else = {
+					increase_state_category_by_one_level = yes
+				}
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			745 = {
+				if = {
+				limit = { has_state_category = major_port } 
+				set_state_category = five
+		        }
+				else = {
+					increase_state_category_by_one_level = yes
+				}
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			744 = {
+				if = {
+				limit = { has_state_category = major_port } 
+				set_state_category = five
+		        }
+				else = {
+					increase_state_category_by_one_level = yes
+				}
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			728 = {
+				if = {
+				limit = { has_state_category = minor_port } 
+				set_state_category = two
+		        }
+				else = {
+					increase_state_category_by_one_level = yes
+				}
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			996 = {
+				if = {
+				limit = { has_state_category = minor_port } 
+				set_state_category = two
+		        }
+				else = {
+					increase_state_category_by_one_level = yes
+				}
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	kr_land_reform_kuojiandaoyu_province = {#日占岛屿升级
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 638 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 638
+				has_full_control_of_state = 645
+			    has_full_control_of_state = 648
+				has_full_control_of_state = 555
+			}
+			has_country_flag = PRC_JAP_defeated
+		}
+		available = {
+			has_full_control_of_state = 638
+			has_full_control_of_state = 645
+			has_full_control_of_state = 648
+			has_full_control_of_state = 555
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			if = {
+				limit = { 638 = { has_state_category = one_island } }
+				638 = { set_state_category = two
+			    add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		        }
+			}
+			else = {
+				638 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			    }
+			}
+			if = {
+				limit = { 645 = { has_state_category = zero_island } }
+				645 = { set_state_category = one_island
+			    add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		        }
+			}
+			else_if = {
+				limit = { 645 = { has_state_category = one_island } }
+				645 = { set_state_category = two
+			    add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		        }
+			}
+			else = {
+				645 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			    }
+			}
+			if = {
+				limit = { 648 = { has_state_category = zero_island } }
+				648 = { set_state_category = one_island
+			    add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		        }
+			}
+			else_if = {
+				limit = { 648 = { has_state_category = one_island } }
+				648 = { set_state_category = two
+			    add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		        }
+			}
+			else = {
+				648 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			    }
+			}
+			if = {
+				limit = { 555 = { has_state_category = zero_island } }
+				555 = { set_state_category = one_island
+			    add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		        }
+			}
+			else_if = {
+				limit = { 555 = { has_state_category = one_island } }
+				555 = { set_state_category = two
+			    add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+		        }
+			}
+			else = {
+				555 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			    }
+			}			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#克钦
+	kr_land_reform_kuojiandaoyu_province1 = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 701 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			701 = { is_core_of = ROOT }
+			has_full_control_of_state = 701
+		}
+		available = {
+			has_full_control_of_state = 701
+		}
+		cost = 10
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			701 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#上掸邦
+	kr_land_reform_kuojiandaoyu_province2 = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 72 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			72 = { is_core_of = ROOT }
+			has_full_control_of_state = 72
+		}
+		available = {
+			has_full_control_of_state = 72
+		}
+		cost = 10
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			72 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#下掸邦
+	kr_land_reform_kuojiandaoyu_province3 = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 756 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			756 = { is_core_of = ROOT }
+			has_full_control_of_state = 756
+		}
+		available = {
+			has_full_control_of_state = 756
+		}
+		cost = 10
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			756 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#贝加尔湖
+	kr_land_reform_kuojiandaoyu_province4 = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 563 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 563
+				has_full_control_of_state = 564
+			}
+			563 = { is_core_of = PLA }
+			564 = { is_core_of = PLA }
+		}
+		available = {
+			has_full_control_of_state = 563
+			has_full_control_of_state = 564
+		}
+		cost = 15
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			563 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			564 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#外西北
+	kr_land_reform_kuojiandaoyu_province4 = {
+		icon = GFX_decision_generic_agriculture
+		highlight_states = {
+			highlight_state_targets = { state = 810 }
+		}
+		allowed = {
+			original_tag = PLA
+		}
+		visible = {
+			OR = {
+				has_full_control_of_state = 810
+				has_full_control_of_state = 654
+			}
+			810 = { is_core_of = PLA }
+			654 = { is_core_of = PLA }
+		}
+		available = {
+			has_full_control_of_state = 810
+			has_full_control_of_state = 654
+		}
+		cost = 15
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			810 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+			654 = { increase_state_category_by_one_level = yes
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

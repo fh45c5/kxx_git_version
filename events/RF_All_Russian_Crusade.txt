@@ -1,0 +1,18 @@
+add_namespace = ARC
+
+country_event = { 
+	id = ARC.1
+	title = ARC.1.title
+	desc = ARC.1.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+		name = ARC.1.a
+		complete_national_focus = ARC_our_friends_the_nationals
+	}
+	option = { 
+		name = ARC.1.b
+		complete_national_focus = ARC_our_partners_the_zaibatsu
+	}
+}

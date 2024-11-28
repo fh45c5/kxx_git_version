@@ -1,0 +1,816 @@
+add_namespace = monsocukr
+
+country_event = { 
+	id = monsocukr.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.1" }
+	title = monsocukr.1.t
+	desc = monsocukr.1.d
+    fire_only_once = yes
+    trigger = {
+        tag = UKR
+		is_ai = no
+		date > 1939.5.1
+		UKR = {
+			has_completed_focus = UKR_Red_Prince_UPSS
+			has_completed_focus = UKR_National_Socialist_Vision
+			has_completed_focus = UKR_Samostiyna_Ukraina
+			NOT = { has_country_flag = h }
+		}
+    }
+	option = {
+        name = monsocukr.1.a
+        load_focus_tree = UKR_King_focus_tree
+        set_politics = {
+			ruling_party = radical_socialist
+		}
+		set_party_name = {
+			ideology = radical_socialist
+			name = UKR_radical_socialist_monsoc_2_party
+			long_name = UKR_radical_socialist_monsoc_2_party_long
+	    }
+        create_country_leader = {
+			name = "里奥·斯特凡·冯·哈布斯堡"
+			desc = "POLITICS_LEV_II_DESC"
+			picture = "gfx/leaders/UKR/Portrait_UKR_Leo_Stefan_Habsburg.png"
+			expire = "1965.1.1"
+			ideology = monsoc_subtype
+			traits = { UKR_red_prince UKR_king_title }
+        }
+        leave_faction = yes
+        set_cosmetic_tag = UKR_monsoc_radical_socialist
+	}
+}
+
+country_event = { # Khruhschev Trial
+	id = monsocukr.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.2" }
+	title = monsocukr.2.t
+	desc = monsocukr.2.d
+
+	is_triggered_only = yes
+        fire_only_once = yes
+
+	option = {
+	     name = monsocukr.2.a
+             swap_ideas = {
+		   remove_idea = UKR_roy_rev_sys_1
+		   add_idea = UKR_roy_rev_sys_2
+	     }
+             add_popularity = {
+		  ideology = totalist
+	          popularity = -0.50
+             }
+             add_manpower = -5700
+	}
+}
+
+country_event = { # Shumsky Bro
+	id = monsocukr.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.3" }
+	title = monsocukr.3.t
+	desc = monsocukr.3.d
+
+	is_triggered_only = yes
+        fire_only_once = yes
+
+	option = {
+	     name = monsocukr.3.a
+            swap_ideas = {
+		   remove_idea = UKR_roy_rev_sys_2
+		   add_idea = UKR_roy_rev_sys_3
+	     }
+             add_popularity = {
+		  ideology = syndicalist
+	          popularity = 0.08
+             }
+             add_popularity = {
+		  ideology = radical_socialist
+	          popularity = 0.12
+             }
+			 add_ideas = {
+			UKR_Oleksander_Shumsky_hog_rso
+			UKR_Antin_Prikhodko_for_rso
+			UKR_Panas_P_Lyubchenko_eco_rso
+			UKR_Hryhorii_Hrynko_sec_rso
+			}
+	}
+}
+
+country_event = { # Ukrainian Culture
+	id = monsocukr.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.4" }
+	title = monsocukr.4.t
+	desc = monsocukr.4.d
+
+	is_triggered_only = yes
+        fire_only_once = yes
+
+	option = {
+	     name = monsocukr.4.a
+             add_political_power = 100
+             add_stability = 0.02
+	}
+}
+
+country_event = { # No Russian
+	id = monsocukr.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.5" }
+	title = monsocukr.5.t
+	desc = monsocukr.5.d
+
+	is_triggered_only = yes
+        fire_only_once = yes
+
+	option = {
+	     name = monsocukr.5.a
+             add_war_support = 0.03
+	}
+}
+
+country_event = { # Khmelnystky Raids
+	id = monsocukr.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.6" }
+	title = monsocukr.6.t
+	desc = monsocukr.6.d
+
+	is_triggered_only = yes
+        fire_only_once = yes
+
+	option = {
+	     name = monsocukr.6.a
+             add_research_slot = 1
+             792 = {
+		add_building_construction = {
+			   type = infrastructure
+			   level = 1
+			   instant_build = yes
+		}
+	     add_extra_state_shared_building_slots = 2
+	     }
+	}
+}
+
+country_event = { # Raid on Akerman
+	id = monsocukr.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.7" }
+	title = monsocukr.7.t
+	desc = monsocukr.7.d
+
+	is_triggered_only = yes
+        fire_only_once = yes
+
+	option = {
+	     name = monsocukr.7.a
+             ai_chance = { factor = 70 }
+
+	     hidden_effect = {
+		     UKR = {
+			 country_event = {
+				    days = 2
+				    id = monsocukr.8
+			 }
+	             }
+	     }
+	}
+
+        option = {
+	     name = monsocukr.7.b
+             ai_chance = { factor = 30 }
+   
+             UKR = {
+		transfer_state = 78
+		transfer_state = 1222
+	     }
+	}
+}
+
+country_event = { # Romanian Response 
+	id = monsocukr.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.8" }
+	title = monsocukr.8.t
+	desc = monsocukr.8.d
+
+	is_triggered_only = yes
+        fire_only_once = yes
+
+	option = {
+	     name = monsocukr.8.a
+             ai_chance = { factor = 15 }
+             add_stability = -0.07
+             declare_war_on = {
+		  target = ROM
+		  type = annex_everything
+	     }
+	}
+
+        option = {
+	     name = monsocukr.8.b
+             ai_chance = { factor = 85 }
+             add_war_support = -0.05
+             add_popularity = {
+		  ideology = radical_socialist
+	          popularity = -0.05
+             }
+	}
+}
+
+country_event = { # Ukraine Alliance
+	id = monsocukr.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.9" }
+	title = monsocukr.9.t
+	desc = monsocukr.9.d
+
+	is_triggered_only = yes
+        fire_only_once = yes
+
+	option = {
+	     name = monsocukr.9.a
+             ai_chance = { factor = 100 }
+
+	     add_to_faction = UKR
+	}
+
+        option = {
+	     name = monsocukr.9.b
+             ai_chance = { factor = 0 }
+
+	     hidden_effect = {
+		     UKR = {
+			 country_event = {
+				    days = 3
+				    id = monsocukr.10
+			 }
+	             }
+	     }
+	}
+}
+
+country_event = { # Monbol WHR Response
+	id = monsocukr.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.10" }
+	title = monsocukr.10.t
+	desc = monsocukr.10.d
+
+	is_triggered_only = yes
+        fire_only_once = yes
+
+	option = {
+	     name = monsocukr.10.a
+        }
+}
+
+country_event = { # No Russianer
+	id = monsocukr.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.11" }
+	title = monsocukr.11.t
+	desc = monsocukr.1.d
+
+	is_triggered_only = yes
+        fire_only_once = yes
+
+	option = {
+	     name = monsocukr.11.a
+             221 = {
+		 remove_building = {
+		 type = industrial_complex
+	         level = 1
+		 }
+	     }
+             228 = {
+		 remove_building = {
+		 type = infrastructure
+	         level = 1
+		 }
+	     }
+             add_stability = -0.10
+             add_manpower = -459
+	}
+}
+
+country_event = { #小夫
+	id = monsocukr.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.1" }
+	title = monsocukr.12.t
+	desc = monsocukr.12.d
+    fire_only_once = yes
+    trigger = {
+        tag = UKR
+		is_ai = no
+		UKR = {
+			has_completed_focus = UKR_Red_Prince_UPSS
+			has_completed_focus = UKR_National_Socialist_Vision
+			has_completed_focus = UKR_Samostiyna_Ukraina
+		}
+    }
+	option = {
+        name = monsocukr.12.a
+        load_focus_tree = UKR_H_focus
+		set_country_flag = h
+		add_ideas = {
+			UKR_Nikita_Kruschev_hog_tot
+		}
+	}
+	option = {
+        name = monsocukr.12.b
+	}
+}
+
+country_event = { # popular front
+	id = monsocukr.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.83" }
+	title = monsocukr.13.t
+	desc = monsocukr.13.d
+	picture = GFX_news_event_UKR_popular_front
+	is_triggered_only = yes
+
+	option = {
+		name = monsocukr.13.a
+	}
+}
+
+country_event = { # kulaks
+	id = monsocukr.14
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.78" }
+	title = monsocukr.14.t
+	desc = monsocukr.14.d
+	picture = GFX_news_event_UKR_corn_chad
+	is_triggered_only = yes
+
+	option = {
+		name = monsocukr.14.a
+		add_stability = -0.06
+	}
+}
+
+country_event = { # kulak tax
+	id = monsocukr.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.80" }
+	title = monsocukr.15.t
+	desc = monsocukr.15.d
+	picture = GFX_news_event_UKR_tax_kulaks
+	is_triggered_only = yes
+
+	option = {
+		name = monsocukr.15.a
+		
+		hidden_effect = {
+			UKR = {
+				country_event = {
+					id = monsocukr.16 days = 60
+				}
+			}
+		}		
+	}
+}
+
+country_event = { # Profits From Increased Taxation on the Kulaks
+	id = monsocukr.16
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.14" }
+	picture = GFX_news_event_UKR_corn_profits
+	title = monsocukr.16.t
+	desc = monsocukr.16.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = monsocukr.16.a
+
+		add_stability = 0.05
+
+		add_ideas = profits_from_kulaks
+	}
+}
+
+country_event = { # red hetmat
+	id = monsocukr.17
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.79" }
+	title = monsocukr.17.t
+	desc = monsocukr.17.d
+	picture = GFX_news_event_UKR_red_hetmat
+	is_triggered_only = yes
+
+	option = {
+		name = monsocukr.17.a
+		set_politics = {
+			ruling_party = totalist
+		}
+		create_country_leader = {
+			name = "尼基塔·赫鲁晓夫"
+			picture = "gfx/leaders/UKR/Portrait_UKR_Nikita_Kruschev.png"
+			expire = "1.1.1"
+			ideology = authcom_subtype
+		}
+	}
+}
+
+country_event = { # red hetmat
+	id = monsocukr.18
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukraine.79" }
+	title = monsocukr.18.t
+	desc = monsocukr.18.d
+	picture = GFX_news_event_UKR_red_hetmat
+	fire_only_once = yes
+	trigger = {
+        tag = UKR
+		is_ai = no
+		UKR = {
+			has_country_flag = zb
+		}
+    }
+	option = {
+		name = monsocukr.18.a
+		load_focus_tree = UKR_focus
+		set_politics = {
+			ruling_party = national_populist
+		}
+		create_country_leader = {
+			name = "安德烈·梅利尼克"
+			desc = "POLITICS_ANDRIY_MELNYK_DESC"
+			picture = "gfx/leaders/UKR/Portrait_UKR_Andriy_Melnyk_Extra.png"
+			expire = "1.1.1"
+			ideology = militarism_subtype
+		}
+		country_event = {
+			id = monsocukr.19 days = 2
+		}
+	}
+}
+
+country_event = { # Bolsheviks
+	id = monsocukr.19
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukrsoc.338" }
+	title = monsocukr.19.t
+	desc = monsocukr.19.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = monsocukr.19.a
+		set_party_name = {
+			ideology = totalist
+			name = UKR_totalist_party2
+			long_name  = UKR_totalist_party2_long
+		}
+		add_political_power = -50
+		country_event = {
+			id = monsocukr.20
+			days = 1
+		}
+	}	
+}
+
+country_event = { # Bolsheviks
+	id = monsocukr.20
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukrsoc.339" }
+	title = monsocukr.20.t
+	desc = monsocukr.20.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = monsocukr.20.a
+		add_stability = -0.02
+		add_political_power = -50
+		remove_all_ministers_but_hog = yes
+		add_ideas = UKR_Vlas_Chubar_for_tot
+		add_ideas = UKR_Volodymyr_Aussem_eco_tot
+		add_ideas = UKR_Yuri_Kotsiubinsky_sec_tot
+		country_event = {
+			id = monsocukr.21
+			days = 1
+		}
+	}	
+}
+
+country_event = { # Bolsheviks
+	id = monsocukr.21
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukrsoc.340" }
+	title = monsocukr.21.t
+	desc = monsocukr.21.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = monsocukr.21.a
+		ai_chance = {
+			base = 75
+		}
+		add_stability = -0.05
+		add_political_power = -50
+		remove_ideas_with_trait = head_of_government
+		add_ideas = UKR_Yevhenia_Bosh_hog_tot
+		country_event = {
+			id = monsocukr.23
+			days = 1
+		}
+	}	
+}
+
+country_event = { # Bolsheviks
+	id = monsocukr.22
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukrsoc.341" }
+	title = monsocukr.22.t
+	desc = monsocukr.22.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = monsocukr.22.a
+		set_temp_variable_to_random = {
+			var = UKR_manpower_lost
+			max = -10000
+			min = -20000
+		}
+		add_manpower = UKR_manpower_lost		
+		202 = { 
+			set_demilitarized_zone = no 
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 1
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 1
+			}
+		}
+		effect_tooltip = { retire_country_leader = yes }
+		create_country_leader = {
+			name = "叶夫根尼娅·博施"
+			desc = "POLITICS_YEVHENIYA_BOSCH_DESC"
+			picture = "gfx/leaders/UKR/Portrait_UKR_Evheniya_Bosch.png"
+			expire = "1.1.1"
+			ideology = authcom_subtype
+		}
+		set_cosmetic_tag = UKR_bolshevist
+		set_politics = {
+			ruling_party = totalist
+			elections_allowed = no
+		}
+		complete_national_focus = UKR_Establish_Dictatorship_Of_UKPB
+		mark_focus_tree_layout_dirty = yes
+		hidden_effect = {
+			scoped_sound_effect = "effect_khruschev_mr_uncanny3"
+		}
+		clear_all_relations = yes
+		if = {
+			limit = { has_global_flag = UKR_will_terminate_brotfrieden }
+			if = {
+				limit = { has_idea = UKR_brotfrieden_idea_GER }
+				remove_ideas = UKR_brotfrieden_idea_GER
+			}
+			else_if = {
+				limit = { has_idea = UKR_brotfrieden_idea }
+				swap_ideas = {
+					remove_idea = UKR_brotfrieden_idea
+					add_idea = UKR_brotfrieden_idea_AUS
+				}
+				activate_targeted_decision = { decision = UKR_terminate_the_brotfrieden target = AUS }
+			}
+			else_if = {
+				limit = { has_idea = UKR_brotfrieden_idea_AUS }
+				remove_ideas = UKR_brotfrieden_idea_AUS
+				activate_targeted_decision = { decision = UKR_terminate_the_brotfrieden target = AUS }
+			}
+		}
+		get_current_government_type = yes
+		restore_previous_government_type = yes			
+		add_ideas = UKR_unpopular_regime
+		custom_effect_tooltip = UKR_unpopular_regime_tt
+	}	
+}
+
+country_event = { # Bolsheviks
+	id = monsocukr.24
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukrsoc.341" }
+	title = monsocukr.22.t
+	desc = monsocukr.22.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = monsocukr.22.a
+		set_temp_variable_to_random = {
+			var = UKR_manpower_lost
+			max = -10000
+			min = -20000
+		}
+		add_manpower = UKR_manpower_lost		
+		202 = { 
+			set_demilitarized_zone = no 
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 1
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 1
+			}
+		}
+		effect_tooltip = { retire_country_leader = yes }
+		create_country_leader = {
+			name = "Yevhenia Bosh"
+			desc = "POLITICS_YEVHENIYA_BOSCH_DESC"
+			picture = "gfx/leaders/UKR/Portrait_UKR_Evheniya_Bosch.png"
+			expire = "1.1.1"
+			ideology = authcom_subtype
+		}
+		set_cosmetic_tag = UKR_bolshevist
+		set_politics = {
+			ruling_party = totalist
+			elections_allowed = no
+		}
+		complete_national_focus = UKR_Establish_Dictatorship_Of_UKPB
+		mark_focus_tree_layout_dirty = yes
+		hidden_effect = {
+			scoped_sound_effect = "effect_khruschev_mr_uncanny3"
+		}
+		clear_all_relations = yes
+		if = {
+			limit = { has_global_flag = UKR_will_terminate_brotfrieden }
+			if = {
+				limit = { has_idea = UKR_brotfrieden_idea_GER }
+				remove_ideas = UKR_brotfrieden_idea_GER
+			}
+			else_if = {
+				limit = { has_idea = UKR_brotfrieden_idea }
+				swap_ideas = {
+					remove_idea = UKR_brotfrieden_idea
+					add_idea = UKR_brotfrieden_idea_AUS
+				}
+				activate_targeted_decision = { decision = UKR_terminate_the_brotfrieden target = AUS }
+			}
+			else_if = {
+				limit = { has_idea = UKR_brotfrieden_idea_AUS }
+				remove_ideas = UKR_brotfrieden_idea_AUS
+				activate_targeted_decision = { decision = UKR_terminate_the_brotfrieden target = AUS }
+			}
+		}
+		get_current_government_type = yes
+		restore_previous_government_type = yes			
+		add_ideas = UKR_unpopular_regime
+		custom_effect_tooltip = UKR_unpopular_regime_tt
+	}	
+}
+
+
+country_event = { # Bolsheviks
+	id = monsocukr.23
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ukrsoc.340" }
+	title = monsocukr.23.t
+	desc = monsocukr.23.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = monsocukr.23.a
+		country_event = {
+			id = monsocukr.22
+			days = 1
+		}
+	}
+	option = {
+		name = monsocukr.23.b
+		country_event = {
+			id = monsocukr.24
+			days = 1
+		}
+	}	
+}
+
+country_event = { #小夫
+	id = brg.700
+	title = brg.9.t
+	desc = brg.9.d
+	fire_only_once = yes
+	trigger = {
+		tag = UKR
+		is_ai = no
+		UKR = {
+			has_completed_focus = RUS_Centralised_Command
+			OR = {
+				has_completed_focus = RUS_Reinstate_The_Cheka
+				has_completed_focus = RUS_Establish_SVR
+			}
+		}
+	}
+
+    option = {
+		name =  brg.9.a 
+		complete_national_focus = RUS_Frunzes_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_chairman_frunze
+		complete_national_focus = RUS_Control_Press
+	}
+
+	option = {
+		name =  brg.9.b 
+		complete_national_focus = RUS_Tukhachevskiys_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_dictatorship_tukhachevsky
+		complete_national_focus = RUS_Control_Press
+	}
+}
+
+country_event = { 
+	id = brg.701
+	title = brg.5.t
+	desc = brg.5.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = UKR
+		is_ai = no
+		UKR = {
+			has_completed_focus = UKR_Kormchyi_Nikita_Sergeyevich
+		}
+	}
+	option = {
+		name = brg.5.a
+		bolsheviks_gome_home = yes
+		hidden_effect = {
+			country_event = { id = brg.5002 }
+		} 
+	}
+}
+
+country_event = { 
+	id = brg.702
+	title = brg.527.t
+	desc = brg.527.d
+	fire_only_once = yes
+	trigger = {
+		tag = UKR
+		is_ai = no
+		UKR = {
+			has_completed_focus = UKR_SOV_invasion_of_everyone
+			has_completed_focus = UKR_SOV_tselina
+		}
+	}
+
+    option = {
+		name =  brg.527.a 
+		setup_soviet_russia = yes
+		ROOT = { save_global_event_target_as = soviet_russia }
+		every_state = {
+			limit = {
+				is_core_of = RUS
+				is_owned_and_controlled_by = ROOT
+			}
+			add_core_of = ROOT
+		}
+		create_country_leader = {
+			name = "尼基塔·赫鲁晓夫"
+			picture = "gfx/leaders/KUB/Portrait_UKR_Nikita_Kruschev_Cool.png"
+			expire = "1.1.1"
+			ideology = corn_communism_subtype
+		}
+		add_ideas = rus_unfinished_land_reform
+		set_country_flag = soviet_congress_end
+		set_country_flag = SOV_red_army_congress
+		set_country_flag = core
+		complete_national_focus = RUS_First_Five_Year_Plan
+		complete_national_focus = RUS_The_Fourth_Internationale
+	}
+}
+
+country_event = {
+	id = brg.703
+	title = brg.703.t
+	desc = brg.703.d
+	fire_only_once = yes
+	trigger = {
+		tag = UKR
+		is_ai = no
+		UKR = {
+			has_country_flag = core
+		}
+	}
+
+	option = {
+		name =  brg.514.e
+		add_ideas = {
+			RUS_Grigoriy_Y_Zinoviev_hog_tot
+		}
+		complete_national_focus = SOV_Chairman_Zinoviev
+		complete_national_focus = SOV_Congress_Of_Soviets
+		complete_national_focus = RUS_Bureaucratic_Centralism
+	}
+
+	option = {
+		name =  brg.569.a 
+		add_ideas = {
+			SOV_Vyacheslav_Molotov_hog_tot
+		}
+		complete_national_focus = SOV_Chairman_Molotov
+		complete_national_focus = SOV_Down_With_The_Village
+		complete_national_focus = SOV_Promote_Urbanisation
+	}
+}

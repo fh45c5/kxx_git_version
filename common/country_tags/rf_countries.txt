@@ -1,0 +1,12 @@
+
+GDP = "countries/Asian.txt" #Guangdong/Liangguang
+#Hongkong
+HKC = "countries/HKC.txt" #Hongkong
+ZHR = "countries/ZHR.txt" 
+HAR = "countries/HAR.txt" 
+MNS = "countries/MNS.txt" 
+WA3 = "countries/WA3.txt" 
+GUK = "countries/GUK.txt"
+FCR = "countries/FCR.txt" 
+PSL = "countries/PSL.txt" 
+ARC = "countries/ARC.txt" 

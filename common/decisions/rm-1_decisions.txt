@@ -1,0 +1,5501 @@
+GRU_new_order_decisions = {
+	GRU_England_goeb = {
+		icon = GFX_goebb_decision_eng
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 127
+				state = 126
+				state = 338
+				state = 125
+				state = 129
+				state = 128
+				state = 132
+				state = 130
+				state = 131
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			NOT = {
+				has_global_flag = goebb_eng_add
+			}
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 126
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 126
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 126
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				country_event = { id = ggb_england.1 days = 2 }
+				country_event = { id = ggb_england.2 days = 7 }
+			    country_event = { id = ggb_england.3 days = 14 }
+				country_event = { id = ggb_england.4 days = 18 }
+				country_event = { id = ggb_england.5 days = 24 }
+				country_event = { id = ggb_england.6 days = 28 }
+
+				every_owned_state = {
+			    	limit = {
+			    		OR = {
+					        state = 127
+					        state = 126
+					        state = 338
+					        state = 125
+					        state = 129
+					        state = 128
+					        state = 132
+					        state = 130
+					        state = 131
+					        state = 1317
+			    		}
+			    	}
+			    	GGB = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+				every_state = {
+			    	limit = {
+			    		OR = {
+					        state = 127
+					        state = 126
+					        state = 338
+					        state = 125
+					        state = 129
+					        state = 128
+					        state = 132
+					        state = 130
+					        state = 131
+					        state = 1317
+			    		}
+			    	}
+			    	remove_claim_by = GRU
+			    }
+				every_state = {
+			    	limit = {
+			    		OR = {
+					        state = 122
+					        state = 121
+					        state = 133
+					        state = 136
+					        state = 120
+					        state = 938
+			    		}
+			    	}
+			    	add_claim_by = GGB
+			    }
+				GGB = {
+					if = {
+						limit = {
+							GRU = { has_government = national_populist }
+						}
+						set_politics = { ruling_party = national_populist elections_allowed = no }
+						add_popularity = { ideology = national_populist popularity = 1 }
+						set_party_name = { ideology = national_populist long_name = goebb_party_GGB name = goebb_party_GGB }
+						set_party_name = { ideology = totalist long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				  	  	set_party_name = { ideology = syndicalist long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = radical_socialist long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				   	 	set_party_name = { ideology = social_democrat long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				   	 	set_party_name = { ideology = social_liberal long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				   	 	set_party_name = { ideology = market_liberal long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = social_conservative long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				   	 	set_party_name = { ideology = authoritarian_democrat long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				   		set_party_name = { ideology = paternal_autocrat long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+						create_country_leader = {
+							name = "阿尔蒙·利斯"
+							picture = "gfx/leaders/ENG/Portrait_England_Arnold_Leese.png"
+							expire = "1965.1.1"
+							ideology = nordicism_subtype
+						}
+					}
+					if = {
+						limit = {
+							GRU = { has_government = totalist }
+						}
+						set_politics = { ruling_party = totalist elections_allowed = no }
+						add_popularity = { ideology = totalist popularity = 1 }
+						set_party_name = { ideology = totalist long_name = "英国人民党" name = "英国人民党" }
+						create_country_leader = {
+							name = "奥斯瓦尔德·莫斯利"
+							picture = "gfx/leaders/ENG/Portrait_England_Oswald_Mosley_Stare.png"
+							expire = "1965.1.1"
+							ideology = british_maximism_subtype
+						}
+					}
+					transfer_state = 126
+
+					inherit_technology = GRU
+
+					set_capital = { state = 126 }
+					set_research_slots = 5
+					add_equipment_to_stockpile = { type = convoy amount = 200 }
+
+					add_manpower = 100000
+				    add_equipment_to_stockpile = { type = train_equipment_1 amount = 25 }
+				    add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 12000 }
+				    add_equipment_to_stockpile = { type = support_equipment amount = 150 }
+				    add_equipment_to_stockpile = { type = artillery_equipment amount = 55 }
+				    add_equipment_to_stockpile = { type = anti_tank_equipment amount = 500 }
+				    add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 200 }
+
+					add_ideas = limited_conscription
+					add_ideas = limited_exports
+					add_ideas = war_economy
+
+					add_ideas = {
+						GGB_german_dictate
+						GGB_economic_collapse
+						GGB_Illegitimate_king
+						GGB_waning_military
+						GGB_old_lion
+					}
+
+
+					set_country_flag = GRU_ENG_VISIBLE
+
+					country_event = rotermorgen.2000
+
+					set_cosmetic_tag = goebb_england
+					set_global_flag = goebb_eng_add
+				}
+				GRU = { add_to_faction = GGB }
+			}
+		}
+	}
+	GRU_Cornwall_goeb = {
+		icon = GFX_goebb_decision_corn
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 123
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			NOT = {
+				has_global_flag = goebb_cwl_add
+			}
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 123
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 123
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 123
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_state = {
+			    	limit = {
+			    		OR = {
+					        state = 123
+					        state = 1315
+			    		}
+			    	}
+			    	remove_claim_by = GRU
+			    }
+				CRN = {
+					if = {
+						limit = {
+							GRU = { has_government = national_populist }
+						}
+						set_politics = { ruling_party = national_populist elections_allowed = no }
+						set_party_name = { ideology = totalist long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				  	 	set_party_name = { ideology = syndicalist long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = radical_socialist long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = social_democrat long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = social_liberal long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = market_liberal long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = social_conservative long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = authoritarian_democrat long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = paternal_autocrat long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+
+						set_politics = { ruling_party = national_populist elections_allowed = no }
+                    	set_party_name = { ideology = national_populist long_name = goebb_party_CRN name = goebb_party_CRN }
+                    	add_popularity = { ideology = national_populist popularity = 1 }
+						create_country_leader = {
+							name = "弗朗茨·哈尔德"
+							picture = "gfx/leaders/GRU/Portrait_Cornwall_Franz_Halder.png"
+							expire = "1965.1.1"
+							ideology = volkism_subtype
+						}
+					}
+					if = {
+						limit = {
+							GRU = { has_government = totalist }
+						}
+						set_politics = { ruling_party = totalist elections_allowed = no }
+						add_popularity = { ideology = totalist popularity = 1 }
+						set_party_name = { ideology = totalist long_name = "goebb_party_CRN" name = "goebb_party_CRN" }
+						create_country_leader = {
+							name = "弗朗茨·哈尔德"
+							picture = "gfx/leaders/GRU/Portrait_Cornwall_Franz_Halder.png"
+							expire = "1965.1.1"
+							ideology = national_marxist_subtype
+						}
+					}
+					
+					inherit_technology = GRU
+
+					transfer_state = 123
+
+					set_capital = { state = 123 }
+					set_research_slots = 5
+					add_equipment_to_stockpile = { type = convoy amount = 300 }
+
+					add_manpower = 60000
+				    add_equipment_to_stockpile = { type = train_equipment_1 amount = 25 }
+				    add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 12000 }
+				    add_equipment_to_stockpile = { type = support_equipment amount = 150 }
+				    add_equipment_to_stockpile = { type = artillery_equipment amount = 55 }
+				    add_equipment_to_stockpile = { type = anti_tank_equipment amount = 500 }
+				    add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 200 }
+
+					add_ideas = limited_conscription
+					add_ideas = limited_exports
+					add_ideas = war_economy
+
+					add_popularity = { ideology = totalist popularity = -1 }
+					add_popularity = { ideology = syndicalist popularity = -1 }
+					add_popularity = { ideology = radical_socialist popularity = -1 }
+					add_popularity = { ideology = social_democrat popularity = -1 }
+					add_popularity = { ideology = social_liberal popularity = -1 }
+					add_popularity = { ideology = market_liberal popularity = -1 }
+					add_popularity = { ideology = social_conservative popularity = -1 }
+					add_popularity = { ideology = authoritarian_democrat popularity = -1 }
+					add_popularity = { ideology = paternal_autocrat popularity = -1 }
+
+					country_event = rotermorgen.2001
+
+					set_cosmetic_tag = goebb_cwl
+					set_global_flag = goebb_cwl_add
+				}
+				set_autonomy = { target = CRN autonomy_state = RM_Reichsgeneralgovernorate }
+			}
+		}
+	}
+	GRU_RR_Ordenstaat_Burgundy_goeb = {
+		icon = GFX_goebb_decision_burg
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 29
+				state = 980
+				state = 17
+				state = 24
+				state = 785
+				state = 18
+				state = 779
+				state = 27
+				state = 760
+				state = 943
+		    }
+		}
+		
+		fire_only_once = yes
+		days_remove = 14
+
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			NOT = {
+				has_global_flag = goebb_cwl_rrb
+			}
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 779
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 779
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 779
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				clr_country_flag = GRU_GOEBB_HIMMLER_VISIBLE
+
+				set_country_flag = GRU_GOEBB_GORING_VISIBLE
+				set_country_flag = GRU_GOEBB_SPEER_VISIBLE
+
+				country_event = { id = rmhimmler.2 days = 2 }
+				country_event = { id = rmhimmler.3 days = 60 }
+			    country_event = { id = rmhimmler.4 days = 120 }
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GRU_RR_Ordenstaat_Burgundy_goeb"
+			hidden_effect = {
+				every_owned_state = {
+			    	limit = {
+			    		OR = {
+					        state = 29
+					        state = 980
+					        state = 17
+					        state = 24
+					        state = 785
+					        state = 18
+					        state = 779
+					        state = 27
+					        state = 760
+					        state = 943
+			    		}
+			    	}
+			    	RRB = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+				every_state = {
+			    	limit = {
+			    		OR = {
+					        state = 29
+					        state = 980
+					        state = 17
+					        state = 24
+					        state = 785
+					        state = 18
+					        state = 779
+					        state = 27
+					        state = 760
+					        state = 943
+			    		}
+			    	}
+			    	remove_claim_by = GRU
+			    }
+				RRB = {
+					if = {
+						limit = {
+							GRU = { has_government = national_populist }
+						}
+						set_politics = { ruling_party = national_populist elections_allowed = no }
+                    	set_party_name = { ideology = national_populist long_name = goebb_party_RRB name = goebb_party_RRB }
+                    	add_popularity = { ideology = national_populist popularity = 1 }
+
+						set_party_name = { ideology = totalist long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = syndicalist long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = radical_socialist long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = social_democrat long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = social_liberal long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = market_liberal long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = social_conservative long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = authoritarian_democrat long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+				    	set_party_name = { ideology = paternal_autocrat long_name = goebb_party_pup_ban name = goebb_party_pup_ban }
+						create_country_leader = {
+							name = "海因里希·希姆莱"
+							picture = "gfx/leaders/GRU/Portrait_VKB_Heinrich_Himmler.png"
+							expire = "1965.1.1"
+							ideology = ariosophy_subtype
+						}
+					}
+					if = {
+						limit = {
+							GRU = { has_government = totalist }
+						}
+						set_politics = { ruling_party = totalist elections_allowed = no }
+                    	set_party_name = { ideology = totalist long_name = goebb_party_RRB name = goebb_party_RRB }
+                    	add_popularity = { ideology = totalist popularity = 1 }
+						create_country_leader = {
+							name = "海因里希·希姆莱"
+							picture = "gfx/leaders/GRU/Portrait_VKB_Heinrich_Himmler.png"
+							expire = "1965.1.1"
+							ideology = national_marxist_subtype
+						}
+					}
+					transfer_state = 779
+
+					inherit_technology = GRU
+
+					set_capital = { state = 779 }
+					set_research_slots = 6
+					add_equipment_to_stockpile = { type = convoy amount = 600 }
+
+					add_manpower = 400000
+				    add_equipment_to_stockpile = { type = train_equipment_1 amount = 25 }
+				    add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 30000 }
+				    add_equipment_to_stockpile = { type = support_equipment amount = 3000 }
+				    add_equipment_to_stockpile = { type = artillery_equipment amount = 1000 }
+				    add_equipment_to_stockpile = { type = anti_tank_equipment amount = 600 }
+				    add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 5000 }
+
+					add_ideas = limited_conscription
+					add_ideas = limited_exports
+					add_ideas = war_economy
+
+					add_ideas = {
+						GRU_pol_off
+						GRU_guard
+                    	GRU_lager
+                    }
+
+					country_event = rotermorgen.2002
+
+					set_cosmetic_tag = goebb_rrb
+					set_global_flag = goebb_cwl_rrb
+				}
+				set_autonomy = { target = RRB autonomy_state = RM_Ordensstaat }
+			}
+		}
+	}
+	GRU_pakt_Britanny_goeb = {
+		icon = GFX_goebb_decision_bri
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 983
+				state = 14
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			NOT = {
+				has_global_flag = goebb_cwl_bri
+			}
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 983
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 983
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 983
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 14
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 14
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 14
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_state = {
+			    	limit = {
+			    		OR = {
+					        state = 983
+					        state = 14
+			    		}
+			    	}
+			    	remove_claim_by = GRU
+			    }
+				BRI = {
+					if = {
+						limit = {
+							GRU = { has_government = national_populist }
+						}
+						set_politics = { ruling_party = national_populist elections_allowed = no }
+                    	add_popularity = { ideology = national_populist popularity = 1 }
+						set_party_name = { ideology = national_populist long_name = "布列塔尼民族党" name = "布列塔尼民族党" }
+						create_country_leader = {
+							name = "塞莱斯坦·莱内"
+							picture = "gfx/leaders/BRI/Portrait_Britanny_Celestin_Laine.png"
+							expire = "1965.1.1"
+							ideology = militarism_subtype
+						}
+					}
+					if = {
+						limit = {
+							GRU = { has_government = totalist }
+						}
+						set_politics = { ruling_party = totalist elections_allowed = no }
+                    	set_party_name = { ideology = totalist long_name = "布列塔尼民族党" name = "布列塔尼民族党" }
+                    	add_popularity = { ideology = totalist popularity = 1 }
+						create_country_leader = {
+							name = "奥列尔·莫德雷尔"
+							picture = "gfx/leaders/BRI/Portrait_Britanny_Olier_Mordrel.png"
+							expire = "1965.1.1"
+							ideology = comrades_coast_subtype
+						}
+					}
+					inherit_technology = GRU
+
+					transfer_state = 983
+					transfer_state = 14
+
+					set_capital = { state = 983 }
+					set_research_slots = 5
+					add_equipment_to_stockpile = { type = convoy amount = 250 }
+
+					add_manpower = 60000
+				    add_equipment_to_stockpile = { type = train_equipment_1 amount = 25 }
+				    add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 12000 }
+				    add_equipment_to_stockpile = { type = support_equipment amount = 150 }
+				    add_equipment_to_stockpile = { type = artillery_equipment amount = 55 }
+				    add_equipment_to_stockpile = { type = anti_tank_equipment amount = 500 }
+				    add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 200 }
+
+					add_ideas = limited_conscription
+					add_ideas = limited_exports
+					add_ideas = war_economy
+
+					country_event = rotermorgen.2003
+					set_cosmetic_tag = goebb_BRI
+					set_global_flag = goebb_cwl_bri
+				}
+				set_autonomy = { target = BRI autonomy_state = RM_Reichssatellitestate }
+			}
+		}
+	}
+	GRU_pakt_France_goeb = {
+		icon = GFX_goebb_decision_fra
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 15
+				state = 30
+				state = 33
+				state = 16
+				state = 23
+				state = 25
+				state = 26
+				state = 19
+				state = 984
+				state = 817
+				state = 22
+				state = 31
+				state = 21
+				state = 763
+				state = 32
+				state = 20
+				state = 735
+				state = 762
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			NOT = {
+				has_global_flag = goebb_rfa_add
+			}
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 16
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 16
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 16
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_owned_state = {
+			    	limit = {
+			    		OR = {
+					        state = 15
+					        state = 30
+					        state = 33
+					        state = 16
+					        state = 23
+					        state = 25
+					        state = 26
+					        state = 19
+					        state = 984
+					        state = 817
+					        state = 22
+					        state = 31
+					        state = 21
+					        state = 763
+					        state = 32
+					        state = 20
+							state = 735
+							state = 762
+			    		}
+			    	}
+			    	RFA = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+				every_state = {
+			    	limit = {
+			    		OR = {
+					        state = 15
+					        state = 30
+					        state = 33
+					        state = 16
+					        state = 23
+					        state = 25
+					        state = 26
+					        state = 19
+					        state = 984
+					        state = 817
+					        state = 22
+					        state = 31
+					        state = 21
+					        state = 763
+					        state = 32
+					        state = 20
+							state = 735
+							state = 762
+			    		}
+			    	}
+			    	remove_claim_by = GRU
+			    }
+				RFA = {
+					if = {
+						limit = {
+							GRU = { has_government = national_populist }
+						}
+						set_politics = { ruling_party = national_populist elections_allowed = no }
+                    	add_popularity = { ideology = national_populist popularity = 1 }
+						set_party_name = { ideology = national_populist long_name = "goebb_party_RFA" name = "goebb_party_RFA" }
+						create_country_leader = {
+							name = "让-路易·蒂克西埃-维尼扬古"
+							picture = "gfx/leaders/GRU/Portrait_France_Jean-Louis_Tixier-Vignancour.png"
+							expire = "1965.1.1"
+							ideology = natpop_volkisch_communitarianism_subtype
+						}
+					}
+					if = {
+						limit = {
+							GRU = { has_government = totalist }
+						}
+						set_politics = { ruling_party = totalist elections_allowed = no }
+                    	set_party_name = { ideology = totalist long_name = "goebb_party_RFA" name = "goebb_party_RFA" }
+                    	add_popularity = { ideology = totalist popularity = 1 }
+						create_country_leader = {
+							name = "雅克·多里奥"
+							picture = "gfx/leaders/FRA/Portrait_France_Jacques_Doriot.png"
+							expire = "1965.1.1"
+							ideology = national_jacobinism_subtype
+						}
+					}
+					transfer_state = 16
+
+					inherit_technology = GRU
+
+					set_capital = { state = 16 }
+					set_research_slots = 5
+					add_equipment_to_stockpile = { type = convoy amount = 100 }
+
+					add_manpower = 60000
+				    add_equipment_to_stockpile = { type = train_equipment_1 amount = 25 }
+				    add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 12000 }
+				    add_equipment_to_stockpile = { type = support_equipment amount = 150 }
+				    add_equipment_to_stockpile = { type = artillery_equipment amount = 55 }
+				    add_equipment_to_stockpile = { type = anti_tank_equipment amount = 500 }
+				    add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 200 }
+
+					add_ideas = limited_conscription
+					add_ideas = limited_exports
+					add_ideas = war_economy
+					country_event = rotermorgen.2004
+
+					set_cosmetic_tag = goebb_fra
+					set_global_flag = goebb_rfa_add
+				}
+				set_autonomy = { target = RFA autonomy_state = RM_Reichssatellitestate }
+			}
+		}
+	}
+	GRU_pakt_Spain_goeb = {
+		icon = GFX_goebb_decision_spa
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 984
+				state = 817
+				state = 172
+				state = 940
+				state = 165
+				state = 1313
+				state = 176
+				state = 166
+				state = 41
+				state = 175
+				state = 167
+				state = 168
+				state = 795
+				state = 173
+				state = 169
+				state = 170
+				state = 1316
+				state = 179
+				state = 112
+				state = 181
+				state = 951
+				state = 180
+				state = 174
+				state = 171
+				state = 793
+				state = 177
+				state = 118
+				state = 290
+				state = 461
+				state = 805
+				state = 459
+				state = 462
+				state = 513
+				state = 699
+				state = 178
+				state = 697
+				state = 698
+				state = 702
+				state = 699
+				state = 968
+				state = 967
+				state = 860
+				state = 514
+				state = 910
+				state = 911
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			NOT = {
+				has_global_flag = goebb_ibr_add
+			}
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 41
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 41
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 41
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_owned_state = {
+			    	limit = {
+			    		OR = {
+			    	        state = 984
+			                state = 817
+			                state = 172
+			                state = 940
+			                state = 165
+			                state = 1313
+			                state = 176
+			                state = 166
+			                state = 41
+			                state = 175
+			                state = 167
+			                state = 168
+			                state = 795
+			                state = 173
+			                state = 169
+			                state = 170
+			                state = 1316
+			                state = 179
+			                state = 112
+			                state = 181
+			                state = 951
+			                state = 180
+			                state = 174
+			                state = 171
+			                state = 793
+			                state = 177
+			                state = 118
+			                state = 290
+			                state = 461
+			                state = 805
+			                state = 459
+			                state = 462
+			                state = 513
+			                state = 699
+			                state = 178
+			                state = 697
+			                state = 698
+			                state = 702
+			                state = 699
+			                state = 968
+			                state = 967
+			                state = 860
+			                state = 514
+			                state = 910
+			                state = 911
+			    		}
+			    	}
+			    	IBR = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+			    every_state = {
+			    	limit = {
+			    		OR = {
+			    	        state = 984
+			    	        state = 817
+			    	        state = 172
+			    	        state = 940
+			    	        state = 165
+			    	        state = 1313
+			    	        state = 176
+			    	        state = 166
+			    	        state = 41
+			    	        state = 175
+			    	        state = 167
+			    	        state = 168
+			    	        state = 795
+			    	        state = 173
+			    	        state = 169
+			    	        state = 170
+			    	        state = 1316
+			    	        state = 179
+			    	        state = 112
+			    	        state = 181
+			    	        state = 951
+			    	        state = 180
+			    	        state = 174
+			    	        state = 171
+			    	        state = 793
+			    	        state = 177
+			    	        state = 118
+			    	        state = 290
+			    	        state = 461
+			    	        state = 805
+			    	        state = 459
+			    	        state = 462
+			    	        state = 513
+			    	        state = 699
+			    	        state = 178
+			    	        state = 697
+			    	        state = 698
+			    	        state = 702
+			    	        state = 699
+			    	        state = 968
+			    	        state = 967
+			    	        state = 860
+			    	        state = 514
+			    	        state = 910
+			    	        state = 911
+			    		}
+			    	}
+			    	remove_claim_by = GRU
+			    }
+				IBR = {
+					if = {
+						limit = {
+							GRU = { has_government = national_populist }
+						}
+						set_politics = { ruling_party = national_populist elections_allowed = no }
+                    	add_popularity = { ideology = national_populist popularity = 1 }
+						set_party_name = { ideology = national_populist long_name = "goebb_party_IBR" name = "goebb_party_IBR" }
+						create_country_leader = {
+							name = "何塞·安东尼奥·德里维拉"
+							picture = "gfx/leaders/CNT/Portrait_SPA_Jose_Antonio_RF.png"
+							expire = "1965.1.1"
+							ideology = falangism
+						}
+					}
+					if = {
+						limit = {
+							GRU = { has_government = totalist }
+						}
+						set_politics = { ruling_party = totalist elections_allowed = no }
+                    	set_party_name = { ideology = totalist long_name = "goebb_party_IBR" name = "goebb_party_IBR" }
+                    	add_popularity = { ideology = totalist popularity = 1 }
+						create_country_leader = {
+							name = "拉米罗·莱德斯马·拉莫斯"
+							picture = "gfx/leaders/CNT/SPA_Portrait_Ledesma_RF.png"
+							expire = "1965.1.1"
+							ideology = spanish_syndicalism
+						}
+					}
+					transfer_state = 41
+					
+					inherit_technology = GRU
+
+					set_capital = { state = 41 }
+					set_research_slots = 5
+					add_equipment_to_stockpile = { type = convoy amount = 300 }
+
+					add_manpower = 200000
+				    add_equipment_to_stockpile = { type = train_equipment_1 amount = 25 }
+				    add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 12000 }
+				    add_equipment_to_stockpile = { type = support_equipment amount = 150 }
+				    add_equipment_to_stockpile = { type = artillery_equipment amount = 55 }
+				    add_equipment_to_stockpile = { type = anti_tank_equipment amount = 500 }
+				    add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 200 }
+
+					add_ideas = limited_conscription
+					add_ideas = limited_exports
+					add_ideas = war_economy
+
+					set_country_flag = GRU_IBR_VISIBLE
+
+					country_event = rotermorgen.2005
+
+					set_cosmetic_tag = goebb_ibr
+					set_global_flag = goebb_ibr_add
+				}
+				GRU = { add_to_faction = IBR }
+			}
+		}
+	}
+	GRU_pakt_Spain_goeb_two = {
+		icon = GFX_goebb_decision_spa
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 984
+			    state = 817
+			    state = 172
+			    state = 940
+			    state = 165
+			    state = 1313
+			    state = 176
+			    state = 166
+			    state = 41
+			    state = 175
+			    state = 167
+			    state = 168
+			    state = 795
+			    state = 173
+			    state = 169
+			    state = 170
+			    state = 1316
+			    state = 179
+			    state = 112
+			    state = 181
+			    state = 951
+			    state = 180
+			    state = 174
+			    state = 171
+			    state = 793
+			    state = 177
+			    state = 118
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			has_global_flag = goebb_ibr_add
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 984
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 984
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 984
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 817
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 817
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 817
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 172
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 172
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 172
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 940
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 940
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 940
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 165
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 165
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 165
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1313
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1313
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1313
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 176
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 176
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 176
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 166
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 166
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 166
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 41
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 41
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 41
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 175
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 175
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 175
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 167
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 167
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 167
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 168
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 168
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 168
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 795
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 795
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 795
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 173
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 173
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 173
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 169
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 169
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 169
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 170
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 170
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 170
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1316
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1316
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1316
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 179
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 179
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 179
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 112
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 112
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 112
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 181
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 181
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 181
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 951
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 951
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 951
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 180
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 180
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 180
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 174
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 174
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 174
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 171
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 171
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 171
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 793
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 793
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 793
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 177
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 177
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 177
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 118
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 118
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 118
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_state = {
+			    	limit = {
+			    		OR = {
+				            state = 984
+			                state = 817
+			                state = 172
+			                state = 940
+			                state = 165
+			                state = 1313
+			                state = 176
+			                state = 166
+			                state = 41
+			                state = 175
+			                state = 167
+			                state = 168
+			                state = 795
+			                state = 173
+			                state = 169
+			                state = 170
+			                state = 1316
+			                state = 179
+			                state = 112
+			                state = 181
+			                state = 951
+			                state = 180
+			                state = 174
+			                state = 171
+			                state = 793
+			                state = 177
+			                state = 118
+			    		}
+			    	}
+			    	IBR = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+			}
+		}
+	}
+	GRU_pakt_Spain_goeb_three = {
+		icon = GFX_goebb_decision_spa
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 290
+			    state = 461
+			    state = 805
+			    state = 459
+			    state = 462
+			    state = 513
+			    state = 699
+			    state = 178
+			    state = 697
+			    state = 698
+			    state = 702
+			    state = 699
+			    state = 968
+			    state = 967
+			    state = 860
+			    state = 514
+			    state = 910
+			    state = 911
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			has_global_flag = goebb_ibr_add
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 290
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 290
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 290
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 461
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 461
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 461
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 805
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 805
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 805
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 459
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 459
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 459
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 462
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 462
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 462
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 513
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 513
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 513
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 699
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 699
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 699
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 178
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 178
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 178
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 697
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 697
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 697
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 698
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 698
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 698
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 702
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 702
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 702
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 699
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 699
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 699
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 968
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 968
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 968
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 967
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 967
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 967
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 860
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 860
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 860
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 514
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 514
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 514
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 910
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 910
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 910
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 911
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 911
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 911
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_state = {
+			    	limit = {
+			    		OR = {
+				            state = 290
+			                state = 461
+			                state = 805
+			                state = 459
+			                state = 462
+			                state = 513
+			                state = 699
+			                state = 178
+			                state = 697
+			                state = 698
+			                state = 702
+			                state = 699
+			                state = 968
+			                state = 967
+			                state = 860
+			                state = 514
+			                state = 910
+			                state = 911
+			    		}
+			    	}
+			    	IBR = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+			}
+		}
+	}
+	GRU_pakt_Italy_goeb = {
+		icon = GFX_goebb_decision_ita
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 2
+				state = 1149
+				state = 764
+				state = 1005
+				state = 162
+				state = 157	
+				state = 161
+				state = 1004
+				state = 838
+				state = 158
+				state = 1003
+				state = 735
+				state = 762
+				state = 159
+				state = 160
+				state = 759
+				state = 761
+				state = 1236
+				state = 1144
+				state = 742
+				state = 117
+				state = 837
+				state = 1006
+				state = 156
+				state = 115
+				state = 116
+				state = 114
+				state = 1002
+				state = 1
+				state = 766
+				state = 44
+				state = 1268
+				state = 105
+				state = 103
+				state = 163
+				state = 1098
+				state = 1145
+				state = 105
+				state = 1270
+				state = 1097
+				state = 765
+				state = 1271
+				state = 758
+				state = 185
+				state = 1076
+				state = 768
+				state = 47
+				state = 939
+				state = 186
+				state = 182
+				###
+				state = 460
+				state = 458
+				state = 665
+				state = 448
+				state = 663
+				state = 451
+				state = 450
+				state = 273
+				state = 1009
+				### EGY
+				state = 452
+				state = 552
+				state = 862
+				state = 447
+				state = 446
+				state = 453
+				state = 1008
+				state = 457
+				state = 456
+				state = 551
+				state = 1007
+				state = 1011
+				state = 549
+				state = 1010
+				### EAST AFR
+				state = 550
+				state = 961
+				state = 268
+				state = 923
+				state = 921
+				state = 920
+				state = 924
+				state = 271
+				state = 922
+				state = 919
+				state = 944
+				state = 906
+				state = 269
+				state = 892
+				state = 559
+				### PAL
+				state = 454
+				state = 455
+				state = 992
+				### SAU
+				state = 754
+				state = 679
+				state = 675
+				state = 915
+				state = 994
+				state = 1035
+				state = 991
+				state = 678
+				state = 292
+				### IRQ
+				state = 291
+				state = 812
+				### YEM
+				state = 982
+				state = 981
+				state = 293
+				state = 659
+				state = 752
+				### OMA
+				state = 1024
+				state = 294
+				state = 859
+				### TRU
+				state = 347
+				state = 658
+				state = 656
+				state = 993
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			NOT = {
+				has_global_flag = goebb_itt_add
+			}
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 2
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 2
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 2
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_owned_state = {
+			    	limit = {
+			    		OR = {
+			    	        state = 2
+				            state = 1149
+				            state = 764
+				            state = 1005
+				            state = 162
+				            state = 157	
+				            state = 161
+				            state = 1004
+				            state = 838
+				            state = 158
+				            state = 1003
+				            state = 735
+				            state = 762
+				            state = 159
+				            state = 160
+				            state = 759
+				            state = 761
+				            state = 1236
+				            state = 1144
+				            state = 742
+				            state = 117
+				            state = 837
+				            state = 1006
+				            state = 156
+				            state = 115
+				            state = 116
+				            state = 114
+				            state = 1002
+				            state = 1
+							###
+				            state = 766
+				            state = 44
+				            state = 1268
+				            state = 105
+				            state = 103
+				            state = 163
+				            state = 1098
+				            state = 1145
+				            state = 105
+				            state = 1270
+				            state = 1097
+				            state = 765
+				            state = 1271
+				            state = 758
+				            state = 185
+				            state = 1076
+				            state = 768
+				            state = 47
+				            state = 939
+				            state = 186
+				            state = 182
+							###
+				            state = 460
+				            state = 458
+				            state = 665
+				            state = 448
+				            state = 663
+				            state = 451
+				            state = 450
+				            state = 273
+				            state = 1009
+				            state = 452
+				            state = 552
+				            state = 862
+				            state = 447
+				            state = 446
+				            state = 453
+				            state = 1008
+				            state = 457
+				            state = 456
+				            state = 551
+				            state = 1007
+				            state = 1011
+				            state = 549
+				            state = 1010
+				            state = 550
+				            state = 961
+				            state = 268
+				            state = 923
+				            state = 921
+				            state = 920
+				            state = 924
+				            state = 271
+				            state = 922
+				            state = 919
+				            state = 944
+				            state = 906
+				            state = 269
+				            state = 892
+				            state = 559
+				            state = 454
+				            state = 455
+				            state = 992
+				            state = 754
+				            state = 679
+				            state = 675
+				            state = 915
+				            state = 994
+				            state = 1035
+				            state = 991
+				            state = 678
+				            state = 292
+				            state = 291
+				            state = 812
+				            state = 982
+				            state = 981
+				            state = 293
+				            state = 659
+				            state = 752
+				            state = 1024
+				            state = 294
+				            state = 859
+				            state = 347
+				            state = 658
+				            state = 656
+				            state = 993
+			    		}
+			    	}
+			    	ITT = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+			    every_state = {
+			    	limit = {
+			    		OR = {
+			    	        state = 2
+				            state = 1149
+				            state = 764
+				            state = 1005
+				            state = 162
+				            state = 157	
+				            state = 161
+				            state = 1004
+				            state = 838
+				            state = 158
+				            state = 1003
+				            state = 735
+				            state = 762
+				            state = 159
+				            state = 160
+				            state = 759
+				            state = 761
+				            state = 1236
+				            state = 1144
+				            state = 742
+				            state = 117
+				            state = 837
+				            state = 1006
+				            state = 156
+				            state = 115
+				            state = 116
+				            state = 114
+				            state = 1002
+				            state = 1
+				            state = 766
+				            state = 44
+				            state = 1268
+				            state = 105
+				            state = 103
+				            state = 163
+				            state = 1098
+				            state = 1145
+				            state = 105
+				            state = 1270
+				            state = 1097
+				            state = 765
+				            state = 1271
+				            state = 758
+				            state = 185
+				            state = 1076
+				            state = 768
+				            state = 47
+				            state = 939
+				            state = 186
+				            state = 182
+				            state = 460
+				            state = 458
+				            state = 665
+				            state = 448
+				            state = 663
+				            state = 451
+				            state = 450
+				            state = 273
+				            state = 1009
+				            state = 452
+				            state = 552
+				            state = 862
+				            state = 447
+				            state = 446
+				            state = 453
+				            state = 1008
+				            state = 457
+				            state = 456
+				            state = 551
+				            state = 1007
+				            state = 1011
+				            state = 549
+				            state = 1010
+				            state = 550
+				            state = 961
+				            state = 268
+				            state = 923
+				            state = 921
+				            state = 920
+				            state = 924
+				            state = 271
+				            state = 922
+				            state = 919
+				            state = 944
+				            state = 906
+				            state = 269
+				            state = 892
+				            state = 559
+				            state = 454
+				            state = 455
+				            state = 992
+				            state = 754
+				            state = 679
+				            state = 675
+				            state = 915
+				            state = 994
+				            state = 1035
+				            state = 991
+				            state = 678
+				            state = 292
+				            state = 291
+				            state = 812
+				            state = 982
+				            state = 981
+				            state = 293
+				            state = 659
+				            state = 752
+				            state = 294
+				            state = 859
+				            state = 347
+				            state = 658
+				            state = 656
+				            state = 993
+							state = 1024
+			    		}
+			    	}
+			    	remove_claim_by = GRU
+			    }
+				ITT = {
+					if = {
+						limit = {
+							GRU = { has_government = national_populist }
+						}
+						set_politics = { ruling_party = national_populist elections_allowed = no }
+                    	add_popularity = { ideology = national_populist popularity = 1 }
+						set_party_name = { ideology = national_populist long_name = "goebb_party_ITT" name = "goebb_party_ITT" }
+						create_country_leader = {
+							name = "加莱阿佐·齐亚诺"
+							picture = "gfx/leaders/ITA/Portrait_ITA_Galeazzo_Ciano.png"
+							expire = "1965.1.1"
+							ideology = italian_legionarism_subtype
+						}
+					}
+					if = {
+						limit = {
+							GRU = { has_government = totalist }
+						}
+						set_politics = { ruling_party = totalist elections_allowed = no }
+                    	set_party_name = { ideology = totalist long_name = "goebb_party_ITT" name = "goebb_party_ITT" }
+                    	add_popularity = { ideology = totalist popularity = 1 }
+						create_country_leader = {
+							name = "贝尼托·墨索里尼"
+							picture = "gfx/leaders/SRI/Portrait_SRI_Benito_Mussolini.png"
+							expire = "1965.1.1"
+							ideology = natsynd_subtype
+						}
+					}
+					transfer_state = 2
+
+					inherit_technology = GRU
+
+					set_capital = { state = 2 }
+					set_research_slots = 5
+					add_equipment_to_stockpile = { type = convoy amount = 400 }
+
+					add_manpower = 100000
+				    add_equipment_to_stockpile = { type = train_equipment_1 amount = 25 }
+				    add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 12000 }
+				    add_equipment_to_stockpile = { type = support_equipment amount = 150 }
+				    add_equipment_to_stockpile = { type = artillery_equipment amount = 55 }
+				    add_equipment_to_stockpile = { type = anti_tank_equipment amount = 500 }
+				    add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 200 }
+
+					add_ideas = limited_conscription
+					add_ideas = limited_exports
+					add_ideas = war_economy
+
+					set_country_flag = GRU_ITT_VISIBLE
+
+					country_event = rotermorgen.2006
+
+					set_cosmetic_tag = goebb_itt
+					set_global_flag = goebb_itt_add
+				}
+				GRU = { add_to_faction = ITT }
+			}
+		}
+	}
+	GRU_pakt_Italy_goeb_two = {
+		icon = GFX_goebb_decision_ita
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 2
+				state = 1149
+				state = 764
+				state = 1005
+				state = 162
+				state = 157	
+				state = 161
+				state = 1004
+				state = 838
+				state = 158
+				state = 1003
+				state = 735
+				state = 762
+				state = 159
+				state = 160
+				state = 759
+				state = 761
+				state = 1236
+				state = 1144
+				state = 742
+				state = 117
+				state = 837
+				state = 1006
+				state = 156
+				state = 115
+				state = 116
+				state = 114
+				state = 1002
+				state = 1
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			has_global_flag = goebb_itt_add
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 2
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 2
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 2
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1149
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1149
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1149
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 764
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 764
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 764
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1005
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1005
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1005
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 162
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 162
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 162
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 159
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 159
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 159
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 160
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 160
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 160
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 759
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 759
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 759
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 761
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 761
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 761
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1236
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1236
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1236
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1144
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1144
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1144
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 742
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 742
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 742
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 117
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 117
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 117
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 837
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 837
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 837
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1006
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1006
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1006
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 156
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 156
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 156
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 115
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 115
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 115
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 116
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 116
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 116
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 114
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 114
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 114
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1002
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1002
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1002
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_state = {
+			    	limit = {
+			    		OR = {
+				            state = 2
+				            state = 1149
+				            state = 764
+				            state = 1005
+				            state = 162
+				            state = 157	
+				            state = 161
+				            state = 1004
+				            state = 838
+				            state = 158
+				            state = 1003
+				            state = 735
+				            state = 762
+				            state = 159
+				            state = 160
+				            state = 759
+				            state = 761
+				            state = 1236
+				            state = 1144
+				            state = 742
+				            state = 117
+				            state = 837
+				            state = 1006
+				            state = 156
+				            state = 115
+				            state = 116
+				            state = 114
+				            state = 1002
+				            state = 1
+			    		}
+			    	}
+			    	ITT = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+			}
+		}
+	}
+	GRU_pakt_Italy_goeb_three = {
+		icon = GFX_goebb_decision_ita
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 766
+				state = 44
+				state = 1268
+				state = 105
+				state = 103
+				state = 163
+				state = 1098
+				state = 1145
+				state = 105
+				state = 1270
+				state = 1097
+				state = 765
+				state = 1271
+				state = 758
+				state = 185
+				state = 1076
+				state = 768
+				state = 47
+				state = 939
+				state = 186
+				state = 182
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			has_global_flag = goebb_itt_add
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 766
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 766
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 766
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 44
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 44
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 44
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1268
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1268
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1268
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 105
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 105
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 105
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 103
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 103
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 103
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 163
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 163
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 163
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1098
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1098
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1098
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1145
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1145
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1145
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 105
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 105
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 105
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1270
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1270
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1270
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1097
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1097
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1097
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 765
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 765
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 765
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1271
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1271
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1271
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 758
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 758
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 758
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 185
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 185
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 185
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1076
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1076
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1076
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 768
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 768
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 768
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 47
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 47
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 47
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 939
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 939
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 939
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 186
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 186
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 186
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 182
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 182
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 182
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_state = {
+			    	limit = {
+			    		OR = {
+				            state = 766
+				            state = 44
+				            state = 1268
+				            state = 105
+				            state = 103
+				            state = 163
+				            state = 1098
+				            state = 1145
+				            state = 105
+				            state = 1270
+				            state = 1097
+				            state = 765
+				            state = 1271
+				            state = 758
+				            state = 185
+				            state = 1076
+				            state = 768
+				            state = 47
+				            state = 939
+				            state = 186
+				            state = 182
+			    		}
+			    	}
+			    	ITT = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+			}
+		}
+	}
+	GRU_pakt_Italy_goeb_four = {
+		icon = GFX_goebb_decision_ita
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 460
+				state = 458
+				state = 665
+				state = 448
+				state = 663
+				state = 451
+				state = 450
+				state = 273
+				state = 1009
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			has_global_flag = goebb_itt_add
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 460
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 460
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 460
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 458
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 458
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 458
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 665
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 665
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 665
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 448
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 448
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 448
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 663
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 663
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 663
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 451
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 451
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 451
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 450
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 450
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 450
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 273
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 273
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 273
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1009
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1009
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1009
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_state = {
+			    	limit = {
+			    		OR = {
+				            state = 460
+				            state = 458
+				            state = 665
+				            state = 448
+				            state = 663
+				            state = 451
+				            state = 450
+				            state = 273
+				            state = 1009
+			    		}
+			    	}
+			    	ITT = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+			}
+		}
+	}
+	GRU_pakt_Italy_goeb_five = {
+		icon = GFX_goebb_decision_ita
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 452
+				state = 552
+				state = 862
+				state = 447
+				state = 446
+				state = 453
+				state = 1008
+				state = 457
+				state = 456
+				state = 551
+				state = 1007
+				state = 1011
+				state = 549
+				state = 1010
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			has_global_flag = goebb_itt_add
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 452
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 452
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 452
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 552
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 552
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 552
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 862
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 862
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 862
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 447
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 447
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 447
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 446
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 446
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 446
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 453
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 453
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 453
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1008
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1008
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1008
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 457
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 457
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 457
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 456
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 456
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 456
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 551
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 551
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 551
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1007
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1007
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1007
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1011
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1011
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1011
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 549
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 549
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 549
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1010
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1010
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1010
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_state = {
+			    	limit = {
+			    		OR = {
+				            state = 452
+				            state = 552
+				            state = 862
+				            state = 447
+				            state = 446
+				            state = 453
+				            state = 1008
+				            state = 457
+				            state = 456
+				            state = 551
+				            state = 1007
+				            state = 1011
+				            state = 549
+				            state = 1010
+			    		}
+			    	}
+			    	ITT = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+			}
+		}
+	}
+	GRU_pakt_Italy_goeb_six = {
+		icon = GFX_goebb_decision_ita
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 550
+				state = 961
+				state = 268
+				state = 923
+				state = 921
+				state = 920
+				state = 924
+				state = 271
+				state = 922
+				state = 919
+				state = 944
+				state = 906
+				state = 269
+				state = 892
+				state = 559
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			has_global_flag = goebb_itt_add
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 550
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 550
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 550
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 961
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 961
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 961
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 268
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 268
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 268
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 923
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 923
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 923
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 921
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 921
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 921
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 920
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 920
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 920
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 924
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 924
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 924
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 271
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 271
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 271
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 922
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 922
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 922
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 919
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 919
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 919
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 944
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 944
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 944
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 906
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 906
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 906
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 269
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 269
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 269
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 892
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 892
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 892
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 559
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 559
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 559
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_state = {
+			    	limit = {
+			    		OR = {
+				            state = 550
+				            state = 961
+				            state = 268
+				            state = 923
+				            state = 921
+				            state = 920
+				            state = 924
+				            state = 271
+				            state = 922
+				            state = 919
+				            state = 944
+				            state = 906
+				            state = 269
+				            state = 892
+				            state = 559
+			    		}
+			    	}
+			    	ITT = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+			}
+		}
+	}
+	GRU_pakt_Italy_goeb_seven = {
+		icon = GFX_goebb_decision_ita
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 454
+				state = 455
+				state = 992
+				state = 754
+				state = 679
+				state = 675
+				state = 915
+				state = 994
+				state = 1035
+				state = 991
+				state = 678
+				state = 292
+				state = 291
+				state = 812
+				state = 982
+				state = 981
+				state = 293
+				state = 659
+				state = 752
+				state = 1024
+				state = 294
+				state = 859
+				state = 347
+				state = 658
+				state = 656
+				state = 993
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			has_global_flag = goebb_itt_add
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 454
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 454
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 454
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 455
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 455
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 455
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 992
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 992
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 992
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 754
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 754
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 754
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 679
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 679
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 679
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 675
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 675
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 675
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 915
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 915
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 915
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 994
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 994
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 994
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1035
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1035
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1035
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 991
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 991
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 991
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 678
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 678
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 678
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 292
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 292
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 292
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 291
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 291
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 291
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 812
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 812
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 812
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 982
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 982
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 982
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 981
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 981
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 981
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 293
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 293
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 293
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 659
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 659
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 659
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 752
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 752
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 752
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1024
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1024
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1024
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 294
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 294
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 294
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 859
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 859
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 859
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 347
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 347
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 347
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 658
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 658
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 658
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 656
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 656
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 656
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 993
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 993
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 993
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_state = {
+			    	limit = {
+			    		OR = {
+				            state = 454
+				            state = 455
+				            state = 992
+				            state = 754
+				            state = 679
+				            state = 675
+				            state = 915
+				            state = 994
+				            state = 1035
+				            state = 991
+				            state = 678
+				            state = 292
+				            state = 291
+				            state = 812
+				            state = 982
+				            state = 981
+				            state = 293
+				            state = 659
+				            state = 752
+				            state = 1024
+				            state = 294
+				            state = 859
+				            state = 347
+				            state = 658
+				            state = 656
+				            state = 993
+			    		}
+			    	}
+			    	ITT = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+			}
+		}
+	}
+	GRU_pakt_Hung_goeb = {
+		icon = GFX_goebb_decision_hun
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 43
+				state = 155
+				state = 1136
+				state = 1122
+				state = 1109
+				state = 154
+				state = 1110
+				state = 1118
+				state = 1117
+				state = 76
+				state = 789
+				state = 1112
+				state = 1115
+				state = 83
+				state = 1114
+				state = 875
+				state = 45
+				state = 109
+				state = 1102
+				state = 1128
+				state = 794
+				state = 1141
+				state = 1142
+				state = 1099
+				state = 1105
+				state = 1206
+				state = 1106
+				state = 1107
+				state = 1108
+				state = 1111
+				state = 1143
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			NOT = {
+				has_global_flag = goebb_hun_add
+			}
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 43
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 43
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 43
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_owned_state = {
+			    	limit = {
+			    		OR = {
+					        state = 43
+				            state = 155
+				            state = 1136
+				            state = 1122
+				            state = 1109
+				            state = 154
+				            state = 1110
+				            state = 1118
+				            state = 1117
+				            state = 76
+				            state = 789
+				            state = 1112
+				            state = 1115
+				            state = 83
+				            state = 1114
+				            state = 875
+				            state = 45
+				            state = 109
+				            state = 1102
+				            state = 1128
+				            state = 794
+				            state = 1141
+				            state = 1142
+				            state = 1099
+				            state = 1105
+				            state = 1206
+				            state = 1106
+				            state = 1107
+				            state = 1108
+				            state = 1111
+							state = 1143
+			    		}
+			    	}
+			    	HNG = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+				every_state = {
+			    	limit = {
+			    		OR = {
+					        state = 43
+				            state = 155
+				            state = 1136
+				            state = 1122
+				            state = 1109
+				            state = 154
+				            state = 1110
+				            state = 1118
+				            state = 1117
+				            state = 76
+				            state = 789
+				            state = 1112
+				            state = 1115
+				            state = 83
+				            state = 1114
+				            state = 875
+				            state = 45
+				            state = 109
+				            state = 1102
+				            state = 1128
+				            state = 794
+				            state = 1141
+				            state = 1142
+				            state = 1099
+				            state = 1105
+				            state = 1206
+				            state = 1106
+				            state = 1107
+				            state = 1108
+				            state = 1111
+							state = 1143
+			    		}
+			    	}
+			    	remove_claim_by = GRU
+			    }
+				HNG = {
+					if = {
+						limit = {
+							GRU = { has_government = national_populist }
+						}
+						set_politics = { ruling_party = national_populist elections_allowed = no }
+                    	add_popularity = { ideology = national_populist popularity = 1 }
+						set_party_name = { ideology = national_populist long_name = "goebb_party_HUN" name = "goebb_party_HUN" }
+						create_country_leader = {
+							name = "霍尔蒂·米克洛什"
+							picture = "gfx/leaders/FIU/Portrait_HUN_Miklos_Horthy.png"
+							expire = "1965.1.1"
+							ideology = merc_subtype
+						}
+					}
+					if = {
+						limit = {
+							GRU = { has_government = totalist }
+						}
+						set_politics = { ruling_party = totalist elections_allowed = no }
+                    	set_party_name = { ideology = totalist long_name = "goebb_party_HUN" name = "goebb_party_HUN" }
+                    	add_popularity = { ideology = totalist popularity = 1 }
+						create_country_leader = {
+							name = "库恩·贝拉"
+							picture = "gfx/leaders/HUN/Portrait_HUN_Bela_Kun.png"
+							expire = "1965.1.1"
+							ideology = hardliner_bolshevism_subtype
+						}
+					}
+					transfer_state = 43
+
+					inherit_technology = GRU
+
+					set_capital = { state = 43 }
+					set_research_slots = 5
+					add_equipment_to_stockpile = { type = convoy amount = 150 }
+
+					add_manpower = 60000
+				    add_equipment_to_stockpile = { type = train_equipment_1 amount = 25 }
+				    add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 12000 }
+				    add_equipment_to_stockpile = { type = support_equipment amount = 150 }
+				    add_equipment_to_stockpile = { type = artillery_equipment amount = 55 }
+				    add_equipment_to_stockpile = { type = anti_tank_equipment amount = 500 }
+				    add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 200 }
+
+					add_ideas = limited_conscription
+					add_ideas = limited_exports
+					add_ideas = war_economy
+
+					add_ideas = {
+                    	HNG_Miklos_Horthy_hog_pau
+                    	HNG_vasarhelyi_miklos_for_pau
+                    	HNG_miklos_horthy_eco_pau
+                    	HNG_riccardo_zanella_sec_pau
+
+						HNG_united_militias_idea
+						HNG_counterrevolution_idea
+						HNG_arpadi_scouts_idea
+                    }
+					set_cosmetic_tag = goebb_hun
+					set_global_flag = goebb_hun_add
+
+					country_event = rotermorgen.2007
+				}
+				GRU = { add_to_faction = HNG }
+			}
+		}
+	}
+	GRU_pakt_Hung_goeb_two = {
+		icon = GFX_goebb_decision_hun
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 1107
+				state = 1106
+				state = 155
+				state = 1136
+				state = 1122
+				state = 1109
+				state = 154
+				state = 1110
+				state = 1108
+				state = 1111
+				state = 45
+				state = 875
+				state = 1114
+				state = 83
+				state = 1118
+				state = 1117
+				state = 1112
+				state = 1115
+				state = 76
+				state = 789
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			has_global_flag = goebb_hun_add
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 1107
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1107
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1107
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1106
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1106
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1106
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 155
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 155
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 155
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1136
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1136
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1136
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1122
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1122
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1122
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1109
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1109
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1109
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 154
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 154
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 154
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1110
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1110
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1110
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1108
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1108
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1108
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1111
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1111
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1111
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 45
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 45
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 45
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 875
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 875
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 875
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1114
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1114
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1114
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 83
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 83
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 83
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1118
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1118
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1118
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1117
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1117
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1117
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1112
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1112
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1112
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1115
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1115
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1115
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 76
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 76
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 76
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 789
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 789
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 789
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_state = {
+			    	limit = {
+			    		OR = {
+				            state = 1107
+				            state = 1106
+				            state = 155
+				            state = 1136
+				            state = 1122
+				            state = 1109
+				            state = 154
+				            state = 1110
+				            state = 1108
+				            state = 1111
+				            state = 45
+				            state = 875
+				            state = 1114
+				            state = 83
+				            state = 1118
+				            state = 1117
+				            state = 1112
+				            state = 1115
+				            state = 76
+				            state = 789
+			    		}
+			    	}
+			    	HNG = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+			}
+		}
+	}
+	GRU_pakt_Hung_goeb_three = {
+		icon = GFX_goebb_decision_hun
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 1128
+				state = 794
+				state = 1102
+				state = 109
+				state = 1099
+				state = 1142
+				state = 1141
+				state = 1143
+				state = 1105
+				state = 1206
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			has_global_flag = goebb_hun_add
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 1128
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1128
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1128
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 794
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 794
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 794
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1102
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1102
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1102
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 109
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 109
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 109
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1099
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1099
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1099
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1142
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1142
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1142
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1141
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1141
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1141
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1143
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1143
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1143
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1105
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1105
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1105
+					}
+				}
+				OR = {
+					GRU = {
+						controls_state = 1206
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 1206
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 1206
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_state = {
+			    	limit = {
+			    		OR = {
+				            state = 1128
+				            state = 794
+				            state = 1102
+				            state = 109
+				            state = 1099
+				            state = 1142
+				            state = 1141
+				            state = 1143
+				            state = 1105
+				            state = 1206
+			    		}
+			    	}
+			    	HNG = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+			}
+		}
+	}
+	GRU_pakt_Romania_goeb = {
+		icon = GFX_goebb_decision_wall
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 772
+				state = 46
+				state = 81
+				state = 82
+				state = 1113
+				state = 84
+				state = 1116
+				state = 79
+				state = 713
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			NOT = {
+				has_global_flag = goebb_rom_add
+			}
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 46
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 46
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 46
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_owned_state = {
+			    	limit = {
+			    		OR = {
+					        state = 772
+				            state = 46
+				            state = 81
+				            state = 82
+				            state = 1113
+				            state = 84
+				            state = 1116
+				            state = 79
+				            state = 713
+			    		}
+			    	}
+			    	ROM = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+				every_state = {
+			    	limit = {
+			    		OR = {
+					        state = 772
+				            state = 46
+				            state = 81
+				            state = 82
+				            state = 1113
+				            state = 84
+				            state = 1116
+				            state = 79
+				            state = 713
+			    		}
+			    	}
+			    	remove_claim_by = GRU
+			    }
+				every_state = {
+			    	limit = {
+			    		OR = {
+					        state = 1222
+					        state = 78
+					        state = 1320
+					        state = 80
+			    		}
+			    	}
+			    	remove_core_of = ROM
+			    }
+				every_state = {
+			    	limit = {
+			    		OR = {
+					        state = 1222
+					        state = 78
+					        state = 1320
+					        state = 80
+			    		}
+			    	}
+					remove_claim_by = ROM
+			    }
+				ROM = {
+					if = {
+						limit = {
+							GRU = { has_government = national_populist }
+						}
+						set_politics = { ruling_party = national_populist elections_allowed = no }
+                    	add_popularity = { ideology = national_populist popularity = 1 }
+						create_country_leader = {
+							name = "科尔内留·泽莱亚·科德里亚努"
+							desc = "POLITICS_CORNELIU_ZELEA_CODREANU_DESC"
+							picture = "gfx/leaders/ROM/Portrait_ROM_Corneliu_Zelea_Codreanu.png"
+							expire = "1.1.1"
+							ideology = legionarism_subtype
+						}
+					}
+					if = {
+						limit = {
+							GRU = { has_government = totalist }
+						}
+						set_politics = { ruling_party = totalist elections_allowed = no }
+                    	add_popularity = { ideology = totalist popularity = 1 }
+						create_country_leader = {
+							name = "米哈伊·斯特雷斯库"
+							picture = "gfx/leaders/ROM/Mihai_Strescu.jpg"
+							expire = "1.1.1"
+							ideology = popular_legionism
+						}
+					}
+					remove_all_ministers = yes
+					
+					transfer_state = 46
+
+					inherit_technology = GRU
+
+					set_capital = { state = 46 }
+					set_research_slots = 5
+					add_equipment_to_stockpile = { type = convoy amount = 100 }
+
+					add_manpower = 60000
+				    add_equipment_to_stockpile = { type = train_equipment_1 amount = 25 }
+				    add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 12000 }
+				    add_equipment_to_stockpile = { type = support_equipment amount = 150 }
+				    add_equipment_to_stockpile = { type = artillery_equipment amount = 55 }
+				    add_equipment_to_stockpile = { type = anti_tank_equipment amount = 500 }
+				    add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 200 }
+
+					add_ideas = limited_conscription
+					add_ideas = limited_exports
+					add_ideas = war_economy
+
+
+					set_cosmetic_tag = goebb_wal
+					set_global_flag = goebb_rom_add
+			        set_country_flag = ROM_carol_exile
+				}
+				GRU = { add_to_faction = ROM }
+			}
+		}
+	}
+	GRU_pakt_Serb_goeb = {
+		icon = GFX_goebb_decision_serb
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 107
+				state = 104
+				state = 1269
+				state = 108
+				state = 767
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			NOT = {
+				has_global_flag = goebb_ser_add
+			}
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 107
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 107
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 107
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_owned_state = {
+			    	limit = {
+			    		OR = {
+					        state = 107
+				            state = 104
+				            state = 1269
+				            state = 108
+				            state = 767
+			    		}
+			    	}
+			    	SER = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+				every_state = {
+			    	limit = {
+			    		OR = {
+					        state = 107
+				            state = 104
+				            state = 1269
+				            state = 108
+				            state = 767
+			    		}
+			    	}
+			    	remove_claim_by = GRU
+			    }
+				SER = {
+					if = {
+						limit = {
+							GRU = { has_government = national_populist }
+						}
+						set_politics = { ruling_party = national_populist elections_allowed = no }
+						set_party_name = { ideology = national_populist long_name = goebb_party_SER name = goebb_party_SER }
+                    	add_popularity = { ideology = national_populist popularity = 1 }
+						create_country_leader = {
+							name = "德拉查·米哈伊洛维奇"
+							desc = "MNT_POPOVIC_DESC"
+							picture = "gfx/leaders/MNT/Portrait_SER_Draza_Mihailovic.png"
+							expire = "1.1.1"
+							ideology = natpop_yugoslavism_subtype
+						}
+					}
+					if = {
+						limit = {
+							GRU = { has_government = totalist }
+						}
+						set_politics = { ruling_party = totalist elections_allowed = no }
+						set_party_name = { ideology = totalist long_name = goebb_party_SER name = goebb_party_SER }
+                    	add_popularity = { ideology = totalist popularity = 1 }
+						create_country_leader = {
+							name = "拉扎尔·科利舍夫斯基"
+							picture = "gfx/leaders/MNT/Lazar_Kolisevski.png"
+							expire = "1.1.1"
+							ideology = revolutionary_chetnikism
+						}
+					}
+					remove_all_ministers = yes
+					
+					transfer_state = 107
+
+					inherit_technology = GRU
+
+					set_capital = { state = 107 }
+					set_research_slots = 4
+					add_equipment_to_stockpile = { type = convoy amount = 100 }
+
+					add_manpower = 60000
+				    add_equipment_to_stockpile = { type = train_equipment_1 amount = 25 }
+				    add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 12000 }
+				    add_equipment_to_stockpile = { type = support_equipment amount = 150 }
+				    add_equipment_to_stockpile = { type = artillery_equipment amount = 55 }
+				    add_equipment_to_stockpile = { type = anti_tank_equipment amount = 500 }
+				    add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 200 }
+
+					add_ideas = limited_conscription
+					add_ideas = limited_exports
+					add_ideas = war_economy
+
+
+					country_event = rotermorgen.2009
+
+					set_country_flag = GRU_SER_VISIBLE
+
+					set_cosmetic_tag = goebb_ser
+					set_global_flag = goebb_ser_add
+				}
+				set_autonomy = { target = SER autonomy_state = RM_Reichsgeneralgovernorate }
+			}
+		}
+	}
+	GRU_pakt_Bulg_goeb = {
+		icon = GFX_goebb_decision_bul
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 989
+				state = 731
+				state = 106
+				state = 48
+				state = 841
+				state = 1090
+				state = 770
+				state = 771
+				state = 77
+				state = 211
+				state = 1089
+				state = 184
+				state = 769
+				state = 212
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			NOT = {
+				has_global_flag = goebb_bul_add
+			}
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 48
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 48
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 48
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_owned_state = {
+			    	limit = {
+			    		OR = {
+					        state = 989
+				            state = 731
+				            state = 106
+				            state = 48
+				            state = 841
+				            state = 1090
+				            state = 770
+				            state = 771
+				            state = 77
+				            state = 211
+				            state = 1089
+				            state = 184
+				            state = 769
+				            state = 212
+			    		}
+			    	}
+			    	BUL = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+				every_state = {
+			    	limit = {
+			    		OR = {
+					        state = 989
+				            state = 731
+				            state = 106
+				            state = 48
+				            state = 841
+				            state = 1090
+				            state = 770
+				            state = 771
+				            state = 77
+				            state = 211
+				            state = 1089
+				            state = 184
+				            state = 769
+				            state = 212
+			    		}
+			    	}
+			    	remove_claim_by = GRU
+			    }
+				BUL = {
+					if = {
+						limit = {
+							GRU = { has_government = national_populist }
+						}
+						set_politics = { ruling_party = national_populist elections_allowed = no }
+                    	add_popularity = { ideology = national_populist popularity = 1 }
+						create_country_leader = {
+      						name = "伊万·多切夫"  # Ivan Dochev
+     						desc = "POLITICS_DOCHEV_DESC"
+      						picture = "gfx/leaders/BUL/Portrait_BUL_Ivan_Dochev.png"
+      						expire = "1.1.1"
+      						ideology = legionarism_subtype
+     					}
+					}
+					if = {
+						limit = {
+							GRU = { has_government = totalist }
+						}
+						set_politics = { ruling_party = totalist elections_allowed = no }
+                    	add_popularity = { ideology = totalist popularity = 1 }
+						create_country_leader = {
+     						name = "基蒙·格奥尔基耶夫·斯托扬诺夫"  # Kimon Georgiev Stoyanov
+    						desc = "POLITICS_GEORGIEV_DESC"
+    						picture = "gfx/leaders/BUL/Portrait_BUL_Kimon_Griogiev.png"
+    						expire = "1.1.1"
+     						ideology = natsynd_subtype
+    					}
+					}
+					remove_all_ministers = yes
+					
+					transfer_state = 48
+
+					inherit_technology = GRU
+
+					set_capital = { state = 48 }
+					set_research_slots = 4
+					add_equipment_to_stockpile = { type = convoy amount = 100 }
+
+					add_manpower = 60000
+				    add_equipment_to_stockpile = { type = train_equipment_1 amount = 25 }
+				    add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 12000 }
+				    add_equipment_to_stockpile = { type = support_equipment amount = 150 }
+				    add_equipment_to_stockpile = { type = artillery_equipment amount = 55 }
+				    add_equipment_to_stockpile = { type = anti_tank_equipment amount = 500 }
+				    add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 200 }
+
+					add_ideas = limited_conscription
+					add_ideas = limited_exports
+					add_ideas = war_economy
+
+					country_event = rotermorgen.2010
+
+					set_cosmetic_tag = goebb_bul
+					set_global_flag = goebb_bul_add
+				}
+				GRU = { add_to_faction = BUL }
+			}
+		}
+	}
+	GRU_pakt_Turk_goeb = {
+		icon = GFX_goebb_decision_tur
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 341
+				state = 1225
+				state = 773
+				state = 340
+				state = 339
+				state = 187
+				state = 164
+				state = 342
+				state = 346
+				state = 343
+				state = 49
+				state = 356
+				state = 345
+				state = 344
+				state = 355
+				state = 354
+				state = 352
+				state = 819
+				state = 349
+				state = 676
+				state = 677
+				state = 350
+				state = 680
+				state = 554
+				state = 553
+				state = 183
+				state = 995
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			NOT = {
+				has_global_flag = goebb_tur_add
+			}
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 49
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 49
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 49
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_owned_state = {
+			    	limit = {
+			    		OR = {
+					        state = 341
+				            state = 1225
+				            state = 773
+				            state = 340
+				            state = 339
+				            state = 187
+				            state = 164
+				            state = 342
+				            state = 346
+				            state = 343
+				            state = 49
+				            state = 356
+				            state = 345
+				            state = 344
+				            state = 355
+				            state = 354
+				            state = 352
+				            state = 819
+				            state = 349
+				            state = 676
+				            state = 677
+				            state = 350
+				            state = 680
+				            state = 554
+				            state = 553
+				            state = 183
+				            state = 995
+			    		}
+			    	}
+			    	TUR = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+				every_state = {
+			    	limit = {
+			    		OR = {
+					        state = 341
+				            state = 1225
+				            state = 773
+				            state = 340
+				            state = 339
+				            state = 187
+				            state = 164
+				            state = 342
+				            state = 346
+				            state = 343
+				            state = 49
+				            state = 356
+				            state = 345
+				            state = 344
+				            state = 355
+				            state = 354
+				            state = 352
+				            state = 819
+				            state = 349
+				            state = 676
+				            state = 677
+				            state = 350
+				            state = 680
+				            state = 554
+				            state = 553
+				            state = 183
+				            state = 995
+			    		}
+			    	}
+			    	remove_claim_by = GRU
+			    }
+				TUR = {
+					if = {
+						limit = {
+							GRU = { has_government = national_populist }
+						}
+						set_politics = { ruling_party = national_populist elections_allowed = no }
+                    	add_popularity = { ideology = national_populist popularity = 1 }
+						create_country_leader = {
+    						name = "雅库普·卡德里·卡拉奥斯曼奥卢"  # Yakup Kadri Karaosmanoğlu
+      						picture = "gfx/leaders/OTT/Portrait_OTT_Yakup_Kadri_Karaosmanoglu.png"
+      						expire = "1.1.1"
+      						ideology = kadroism_subtype
+    					}
+					}
+					if = {
+						limit = {
+							GRU = { has_government = totalist }
+						}
+						set_politics = { ruling_party = totalist elections_allowed = no }
+                    	add_popularity = { ideology = totalist popularity = 1 }
+						create_country_leader = {
+      						name = "谢夫凯特·叙雷亚·艾德迈尔"  # Şevket Süreyya Aydemir
+      						picture = "gfx/leaders/OTT/Portrait_OTT_Sevket_Sureyya_Aydemir.png"
+      						expire = "1.1.1"
+      						ideology = tot_kadroism_subtype
+    					}
+					}
+					remove_all_ministers = yes
+					
+					transfer_state = 49
+
+					inherit_technology = GRU
+
+					set_capital = { state = 49 }
+					set_research_slots = 4
+					add_equipment_to_stockpile = { type = convoy amount = 100 }
+
+					add_manpower = 60000
+				    add_equipment_to_stockpile = { type = train_equipment_1 amount = 25 }
+				    add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 12000 }
+				    add_equipment_to_stockpile = { type = support_equipment amount = 150 }
+				    add_equipment_to_stockpile = { type = artillery_equipment amount = 55 }
+				    add_equipment_to_stockpile = { type = anti_tank_equipment amount = 500 }
+				    add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 200 }
+
+					add_ideas = limited_conscription
+					add_ideas = limited_exports
+					add_ideas = war_economy
+
+					country_event = rotermorgen.2011
+
+					set_cosmetic_tag = goebb_tur
+					set_global_flag = goebb_tur_add
+				}
+				GRU = { add_to_faction = TUR }
+			}
+		}
+	}
+	GRU_pakt_FLN_goeb = {
+		icon = GFX_goebb_decision_bul
+		ai_will_do = { factor = 2000 }
+		highlight_states = {
+		    highlight_state_targets = {
+				state = 29
+				state = 6
+				state = 34
+				state = 741
+				state = 8
+				state = 979
+				state = 978
+				state = 35
+				state = 7
+				state = 866
+				state = 36
+		    }
+		}
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = GRU_NMDVP_LEBENSRAUM2
+			NOT = {
+				has_global_flag = goebb_FLN_add
+			}
+		}
+		available = {
+			tag = GRU 
+			AND = {
+				OR = {
+					GRU = {
+						controls_state = 7
+					}
+					any_other_country = {
+						is_subject_of = GRU
+						controls_state = 7
+					}
+					any_other_country = {
+						is_in_faction_with = GRU
+						controls_state = 7
+					}
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				every_owned_state = {
+			    	limit = {
+			    		OR = {
+					        state = 29
+							state = 6
+							state = 34
+							state = 741
+							state = 8
+							state = 979
+							state = 978
+							state = 35
+							state = 7
+							state = 866
+							state = 36
+			    		}
+			    	}
+			    	FLN = {
+			    		add_state_core = PREV
+			    		transfer_state = PREV
+			    	}
+			    }
+				every_state = {
+			    	limit = {
+			    		OR = {
+					        state = 29
+							state = 6
+							state = 34
+							state = 741
+							state = 8
+							state = 979
+							state = 978
+							state = 35
+							state = 7
+							state = 866
+							state = 36
+			    		}
+			    	}
+			    	remove_claim_by = GRU
+			    }
+				FLN = {
+					if = {
+						limit = {
+							GRU = { has_government = national_populist }
+						}
+						set_politics = { ruling_party = national_populist elections_allowed = no }
+                    	add_popularity = { ideology = national_populist popularity = 1 }
+						create_country_leader = {
+      						name = "莱昂·德格勒尔"  # Ivan Dochev
+     						desc = "POLITICS_DOCHEV_DESC"
+      						picture = "gfx/leaders/BEL/Portrait_Belgium_Leon_Degrelle.png"
+      						expire = "1.1.1"
+      						ideology = belgicism_subtype
+     					}
+					}
+					if = {
+						limit = {
+							GRU = { has_government = totalist }
+						}
+						set_politics = { ruling_party = totalist elections_allowed = no }
+                    	add_popularity = { ideology = totalist popularity = 1 }
+						create_country_leader = {
+							name = "让·弗朗索瓦·蒂里亚特"
+							picture = "gfx/leaders/FLN/Portrait_Belgium_Jean-Francois_Thiriart.png"
+							expire = "1965.1.1"
+							ideology = tot_paneuropeanism_subtype
+						}
+					}
+					remove_all_ministers = yes
+					
+					transfer_state = 7
+
+					inherit_technology = GRU
+
+					set_capital = { state = 7 }
+					set_research_slots = 4
+					add_equipment_to_stockpile = { type = convoy amount = 100 }
+
+					add_manpower = 60000
+				    add_equipment_to_stockpile = { type = train_equipment_1 amount = 25 }
+				    add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 12000 }
+				    add_equipment_to_stockpile = { type = support_equipment amount = 150 }
+				    add_equipment_to_stockpile = { type = artillery_equipment amount = 55 }
+				    add_equipment_to_stockpile = { type = anti_tank_equipment amount = 500 }
+				    add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 200 }
+
+					add_ideas = limited_conscription
+					add_ideas = limited_exports
+					add_ideas = war_economy
+
+					country_event = rotermorgen.2010
+
+					set_cosmetic_tag = FLN_Thiriart
+					set_global_flag = goebb_FLN_add
+				}
+				set_autonomy = { target = FLN autonomy_state = RM_Reichssatellitestate }
+			}
+		}
+	}
+}

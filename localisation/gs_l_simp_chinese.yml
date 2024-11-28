@@ -1,0 +1,267 @@
+﻿l_simp_chinese:
+ ################
+#BLESSINGS CODE#
+################
+###DECISION####
+choose_flag_bless:0 "选择旗帜"
+choose_port_bless:0 "选择肖像"
+CAL_invade_ALA:0 "阿拉斯加问题"
+CAL_contact_50_blessings_patriots_miami:0 "联络迈阿密的爱国者"
+assassinate_COR_miami:0 "暗杀立宪暴徒和政客"
+take_miami:0 "占领迈阿密"
+
+CAL_blessings_masks:0 "国家的面具"
+CAL_blessings_masks_desc:0 "我们都是动物。每个动物面具都会改变军队。"
+brandon_mask:0 "穿上布兰登的面具"
+aubrey_mask:0 "穿上奥布里的面具"
+tony_mask:0 "穿上托尼的面具"
+brandon_mask_remove:0 "脱下布兰登的面具"
+aubrey_mask_remove:0 "脱下奥布里的面具"
+tony_mask_remove:0 "脱下托尼的面具"
+
+CAL_brandon_mask_idea:0 "布兰登……"
+CAL_brandon_mask_idea_desc:0 "布兰登是将军选择的面具，通过它向人们灌输速度的教义。"
+
+CAL_tony_mask_idea:0 "托尼……"
+CAL_tony_mask_idea_desc:0 "老虎是暴力的面具，头骨粉碎者和征服者。老虎是一种威严的动物，也是一种野蛮的动物，这一哲学将指导我们的国家。"
+
+
+CAL_aubrey_mask_idea:0 "奥布里"
+CAL_aubrey_mask_idea_desc:0 "猪是足智多谋的，它吃恶心的泔水没有异议，因为它只相信自己的生存。这种对生存的强调是国家在军队要求下的信条"
+###NAMES
+CAL_BLESSINGS_national_populist:0 "美国"
+CAL_BLESSINGS_national_populist_ADJ:0 "美国"
+CAL_BLESSINGS_national_populist_DEF:0 "美国"
+
+CAL_BLESSINGS_1_national_populist:0 "美国"
+CAL_BLESSINGS_1_national_populist_ADJ:0 "美国"
+CAL_BLESSINGS_1_national_populist_DEF:0 "美国"
+
+CAL_BLESSINGS_2_national_populist:0 "受祝福的美国"
+CAL_BLESSINGS_2_national_populist_ADJ:0 "美国"
+CAL_BLESSINGS_2_national_populist_DEF:0 "受祝福的美国"
+
+CAL_BLESSINGS_3_national_populist:0 "美国"
+CAL_BLESSINGS_3_national_populist_ADJ:0 "美国"
+CAL_BLESSINGS_3_national_populist_DEF:0 "美国"
+
+CAL_BLESSINGS_4_national_populist:0 "美国"
+CAL_BLESSINGS_4_national_populist_ADJ:0 "美国"
+CAL_BLESSINGS_4_national_populist_DEF:0 "美国"
+CAL_blessings_coups:0 "五十星祝福政变之后"
+###focus tree LOC###
+CAL_blessing_coup:0 "五十星祝福政变"
+CAL_blessing_coup_desc:0 "五十星祝福已经占领了这个国家，现在将把美国拖进它对未来的愿景。"
+
+CAL_for_blessings:0 "将军之手"
+CAL_for_blessings_desc:0 "在每个工作场所，都能感受到将军的存在，在每个家庭，在每个妓院都能感受到他的存在。在美国，没有一个地方能逃过将军的眼睛，没有一个人能逃脱他的控制"
+
+CAL_destroy_japan:0 "抗日文化"
+CAL_destroy_japan_desc:0 "日本通过他们的傀儡来征服、窃取和奴役这片土地。这种罪行永远不会被原谅，现在每个美国人都将被提醒为什么我们必须惩罚占领者"
+
+CAL_blessings_calling:0 "五十星祝福的呼唤!"
+CAL_blessings_calling_desc:0 "美国分裂了，兄弟反对兄弟，为了什么?日本占领了太平洋，而每个国家都看到他们的梦想在战争中破灭。在这些州，他们都是爱国者，虽然他们可能仍然为他们的美国愿景服务，但每个人都将为将军工作，即使必须使用勒索。" 
+
+CAL_Army_manifest:0 "新的昭昭天命"
+CAL_Army_manifest_desc:0 "日本人之前的加拿大是最初的占领者。首先，他们占领了13个殖民地，现在他们血腥地控制了新英格兰。是他们的人渣把白宫烧了。没有任何和平回归的提议，加拿大和它的温莎主子们将被赶到地上，因为他们的傲慢而受到惩罚，这就是美国的命运。"
+
+CAL_slay_beast:0 "杀死野兽!"
+CAL_slay_beast_desc:0 "是时候摧毁日本了，帝国野兽的触角伸展到世界各地，如果我们不尽快结束它们，共同繁荣的感染将成为地球的终结" 
+
+CAL_for_general:0 "为了将军!"
+CAL_for_general_desc:0 "建立美国经济基础的新的重大努力将被付诸实施，而对逝去的生命却漠不关心。其结果将使美国回到其应有的位置，以确保美国的天然优势。那些死去的人将成为驱动机器活塞的烈士。"
+
+CAL_eagle:0 "终结软弱"
+CAL_eagle_desc:0 "软弱和和平主义是不能容忍的，暴力是游戏的名称，试图不玩游戏是对真理和自然的侮辱。这是不能容忍的，试图否认这一点会发现他们的头骨裂成两半。"
+
+CAL_nuke:0 "抓住原子"
+CAL_nuke_desc:0 "当美国沦陷时，美国最伟大的科学家们加入了五十星祝福组织，他们愿意做任何能解放国家的事情。将军明智地把他们全部集中在一个项目上，那就是获得核武器。今天，这个项目结束了，美国终于获得了结束所有炸弹的炸弹。"
+
+CAL_attack_dogs:0 "结束占领"
+CAL_attack_dogs_desc:0 "我们也许摆脱了日本的占领，但这并不意味着我们不再被占领!在大洋彼岸，无数帝国企图推翻我们的共和国。为了确保我们做好准备，我们的特工会分散到世界各地'
+
+CAL_end:0 "我出生在美国"
+CAL_end_desc:0 "我他妈的喜欢战争\n \n 我他妈喜欢破坏文化，掠夺其他国家的财富来建立我自己的民族国家。"
+
+CAL_bunkers:0 "准备炸弹"
+CAL_bunkers_desc:0 "随着原子被用于战争，我们的敌人将不可避免地从我们手中夺走火焰。我们必须在全国各地建立掩体，以确保即使世界在这场战争中毁灭，美国也能生存下去"
+
+CAL_sung_together:0 "一起唱的曲调"
+CAL_sung_together_desc:0 "一个军事内阁将由我们国家最强大的爱国者组成。通过军队，我们的国防将得到保障，一个真正爱国的国家将被建立。不允许存在任何反对美国力量的势力。因为美国是一支不会沉默的曲子"
+
+CAL_decision:0 "我们的未来"
+CAL_decision_desc:0 "我们的政府中形成了两个派系，一个看到了一个由美国领导的真正统一的太平洋的未来，另一个忠于我们的动物起源，拥抱一个完全极端暴力的国家。与这场战争相比，第二次世界大战根本不算什么。"
+
+CAL_pan-pacificism:0 "泛太平洋愿景"
+CAL_pan-pacificism_desc:0 "日本人滥用了他们对太平洋的统治，美国的手将是公正而坚定的，将军的正义统治将跨越大洋，解放世界。\n\n没有将军就没有新太平洋"
+### IDEAS LOC ###
+
+CAL_50_blessings_in_control_idea:0 "五十星祝福之握"
+CAL_50_blessings_in_control_idea_desc:0 "五十星祝福已经控制了这个国家，现在将把美国拖进它对未来的愿景。"
+
+CAL_the_generals_hand_idea:0 "将军的手"
+CAL_the_generals_hand_idea_desc:0 "在每个工作场所都能感受到将军的存在，在每个家庭都能感受到他，在每个妓院都能感受到他。在美国，没有一个地方能逃过将军的眼睛，没有一个人能逃过将军的手"
+
+### Event LOC ###
+pacificstates.6105.t:0 "五十星祝福开始建立"
+pacificstates.6105.d:0 "在动荡的几周里，一个由前PSA将军领导的小型爱国者组织成立了。本组织已公开表示对当前领导层的失望，并呼吁人民进行彻底的爱国复兴。很难找到进一步的目标和意识形态，但据信它只不过是一个和平的亲美宣传组织。"
+pacificstates.6105.a:0 "盯紧他们"
+
+pacificstates.6106.t:0 "恐怖袭击遍布全国!"
+pacificstates.6106.d:0 "在美国各地，蒙面人一直在屠杀黑帮成员、宪兵特工和日本政客。这些恐怖分子受过明确的军事训练，都是ACW的老兵，但没有来自特定的一方，立宪主义者和工团主义者都是肇事者。此外，虽然极其危险，但他们也一直抵制酷刑，要么是因为他们一无所知，要么是因为他们对事业深信不疑。由于没有强有力的线索来阻止它，我们已经采取了预防性措施来加强我们的安全，并呼吁日本大使帮助我们。"
+pacificstates.6106.a:0 "直觉告诉我这还不够"
+pacificstates.6106.b:0 "请关东军来保证我们的安全"
+
+pacificstates.6107.t:0 "对总统的攻击"
+pacificstates.6107.d:0 "我们要中断节目进行紧急广播。总统也遭到了袭击。一场讨论美国失去稳定和加入共荣圈的会议被一个武装分子联盟打断了。在一场看似政变的事件中，总统遭到枪击，目前情况危急。日本大使也在随后的混乱中被枪杀。起义的头目似乎是一名PSA将军。目前，官方还没有发表声明。专家们认为，这将被视为对日本的战争行为，并担心如果袭击者的政变成功，后果可能会很严重。敬请关注更多信息…"
+pacificstates.6107.a:0 "政变成功了!"
+pacificstates.6107.b:0 "政变失败，总统活了下来!"
+
+pacificstates.6108.t:0 "对总统的攻击"
+pacificstates.6108.d:0 "随着关东军的加强，恐怖组织“五十星祝福”的袭击失败了。总统与日本的会晤进行得很顺利，美国将牢牢掌握在日本手中"
+pacificstates.6108.a:0 "一切按计划进行……"
+
+pacificstates.6109.t:0 "可恶的野兽!"
+pacificstates.6109.d:0 "由于第二次内战，许多美国人逃离了世界各地的战争。这些懦夫现在也许可以通过与我们合作破坏他们的新家来弥补他们对国家的背叛。这些美国人是通过绑架和威胁的传统方式被迫服役的，以确保这些被征召的特工忠于他们已经放弃的事业。"
+pacificstates.6109.a:0 "处死占领者!"
+
+pacificstates.6111.t:0 "五十星祝福的呼唤!"
+pacificstates.6111.d:0 "巴特勒先生、巴顿和麦克阿瑟都鄙视对方，但现在他们都在一起工作，是怎么做到的?我稍后再写。"
+pacificstates.6111.a:0 "美国爱国者终于团结起来了!"
+
+pacificstates.6110.t:0 "我们的道路"
+pacificstates.6110.d:0 "我们的政府中形成了两个派系，一个看到了一个由美国领导的真正统一的太平洋的未来，另一个忠于我们的动物起源，拥抱一个完全极端暴力的国家。与这场战争相比，第二次世界大战根本不算什么。"
+pacificstates.6110.a:0 "泛太平洋之梦"
+pacificstates.6110.b:0 "极端暴力的世界"
+
+pacificstates.6112.t:0 "旗帜"
+pacificstates.6112.d:0 "选择一面新国旗"
+pacificstates.6112.a:0 "就是我开始的那个"
+pacificstates.6112.b:0 "第一面"
+pacificstates.6112.c:0 "第二面"
+pacificstates.6112.f:0 "第三面"
+pacificstates.6112.e:0 "第亖面"
+###
+the_general:0 "The General"
+
+###############
+#KWANTUNG CODE#
+###############
+###DECISION####
+choose_flag_kwant:0 "选择新旗帜"
+lower_worker_rations_and_saftey:0 "更低的工人安全和更低的工人口粮"
+raise_worker_hours:0 "延长工作时间"
+increase_yakuza_presence:0 "增加黑帮的存在"
+relax_population_control:0 "放松对员工的控制"
+CAL_5_year_plandec:0 "关东军决策"
+
+### IDEAS LOC ###
+CAL_bunker_idea:0 "防御工作"
+CAL_bunker_idea_desc:0 "为了确保我们的国家完全防御任何占领者，我们将尽快建造地堡和战壕。"
+
+CAL_Yoshizawa_Kenkichi_hog_npo:0 "芳沢謙吉"
+CAL_Kichisaburo_Nomura_for_npo:0 "野村吉三郎"
+CAL_Kishi_Nobusuke_eco_npo:0 "岸信介"
+CAL_Koichi_Ono_sec_npo:0 "小野浩一"
+CAL_five_year_plan_idea:0 "五年计划"
+CAL_five_year_plan_idea_desc:0 "虽然类似于极权主义风格的五年计划，但岸信介的五年计划允许在计划范围内进行大量的企业控制"
+
+CAL_managerial_state_idea:0 "管理国家"
+CAL_managerial_state_idea_desc:0 "管理型国家是官僚主义者的构想，他们认为修复国家的最佳方式是政府在该行业发挥积极作用。"
+
+CAL_The_Kwantung_Army:0 "关东军"
+CAL_The_Kwantung_Army_desc:0 "军队对美国的占领使美国人民付出了极大的代价。"
+
+CAL_partially_planneed_economy_idea:0 "部分计划经济"
+CAL_partially_planneed_economy_idea_desc:0 "这种新的部分控制经济现在寻求解决美国经济的失败和大量的低效率。"
+
+CAL_new_zabitsu_idea:0 "新财阀"
+CAL_new_zabitsu_idea_desc:0 "在几乎没有健康、安全法律和奴役的情况下，这些财阀的财富无处不在。"
+
+commanding_officer:0 "关东军指挥官"
+
+technocratic_populist:0 "技术官僚"
+
+###focus tree LOC###
+CAL_5_year_plan:0 "开始5年计划"
+CAL_5_year_plan_desc:0 "为了使美国为全面战争做好准备，使美国在内战后恢复活力，各州必须作出新的巨大努力。不能有任何保留，不能有任何怜悯，这个五年计划必须以无情的效率完成，把这个野蛮的国家拉回现代化。"
+
+CAL_a_total_war_nation:0 "全面战争状态"
+CAL_a_total_war_nation_desc:0 "在现代战争时代，要想取得胜利，就必须做好全面动员的准备。不能固步自封，所有的障碍和威胁都必须被摧毁，仁慈是该死的!"
+
+CAL_demonise_european:0 "妖魔化欧洲"
+CAL_demonise_european_desc:0 "欧洲人多年来一直信奉例外论，认为自己是世界的中心。这种荒谬必须纠正，欧洲人是一条不文明的狗，如果把他们的孩子撕成碎片，他们就不知道真正的文明。现在关东军的工作是解决这个问题，第一步是妖魔化他们的野蛮文化。"
+
+CAL_invite_bueracrats:0 "邀请技术官僚"
+CAL_invite_bueracrats_desc:0 "关东军不能单独统治美国，为了实现宏大的愿景，技术官僚将被邀请。"
+
+CAL_kwantung_take_hold:0 "关东军占领"
+CAL_kwantung_take_hold_desc:0 "通过美国的混乱，关东军已经能够软政变自由党的艾索"
+
+CAL_kwantung_vic:0 "关东军赢得权力斗争"
+CAL_kwantung_vic_desc:0 "官僚主义的狗狗们无法与军队的正义力量相抗衡，我们的愿景将独自统治!"
+
+CAL_managerial_state:0 "创建管理状态"
+CAL_managerial_state_desc:0 "管理型国家是官僚主义者的想法，他们认为，让国家摆脱当前状态的最佳方式是政府在该行业发挥积极作用。我们将不再是守夜人，而是真正的经济强国!"
+
+CAL_national_defence_state:0 "国防国家"
+CAL_national_defence_state_desc:0 "美利坚合众国是一个致力于为日本服务的国家，它是一个奴性的国家，完全为日本服务。现在，通过这些改革，政府将把重点放在全面建设日本的军事力量上，并确保天皇的持续权力，不管下面的人付出什么代价。"
+
+CAL_new_order_total_war:0 "新秩序"
+CAL_new_order_total_war_desc:0 "改革官僚的代表作是新秩序立法，它将把经济置于官僚的适当指导之下，确保这个国家为共同繁荣圈的扩张做好适当的准备。全国各地的官僚机构将被纳入资本与经营分离的组织"
+
+CAL_new_zabitsu:0 "邀请新财阀"
+CAL_new_zabitsu_desc:0 "新财阀的领导人，他们的财富是建立在民族斗争的基础上的，他们将在重建国民经济方面非常有用，而不会让日本的垄断效率低下影响我们的新实验。为了确保他们与我们对他们的公开管理合作，我们将确保劳动力成本尽可能低，而不管美国人民的成本如何。"
+
+CAL_partially_planned_economy:0 "部分计划经济"
+CAL_partially_planned_economy_desc:0 "一些人可能会声称，新的经济干预是一种新的极权主义措施，但事实并非如此。这种新的部分控制经济现在寻求解决美国经济的失败和许多可以发现的低效率。任何其他说法都只是小资本家关注他们的短期利益，过于关注他们的收入，而不是把国家放在第一位。"
+
+CAL_propaganda:0 "宣传"
+CAL_propaganda_desc:0 "占领的声音将通过每台电视、每台收音机和电影院，在每一个家庭和每一条街道上传播。我们的声音将是清晰而坚定的。现实将由我们创造"
+
+CAL_reformers_vic:0 "官僚主义者赢得权力斗争"
+CAL_reformers_vic_desc:0 "官僚机构赶走了关东的理想主义白痴，确保了他们对美国的愿景成功"
+
+CAL_technology_effort:0 "新技术的努力"
+CAL_technology_effort_desc:0 "为了提高效率和确保日本的军备优势，将努力建立技术基础。"
+
+CAL_yakuza:0 "山口组的关系"
+CAL_yakuza_desc:0 "山口组在控制美国人方面很有用，他们很乐意帮助破坏劳工罢工，提供毒品以支撑我们的预算，并暗杀偶尔制造麻烦的人。我们所要做的就是对他们的活动睁一只眼闭一只眼，并支付乘船的费用，即使这样，他们的活动也会给我们的活动带来很大的好处。"
+
+#events
+ 
+pacificstates.6116.t:0 "旗帜"
+pacificstates.6116.d:0 "选择一副旗帜"
+pacificstates.6116.a:0 "就是我开始的那个"
+pacificstates.6116.b:0 "第一面"
+pacificstates.6116.c:0 "军队的旗帜"
+pacificstates.6116.e:0 "康考迪亚协会的旗帜"
+
+pacificstates.6114.t:0 "国防状况"
+pacificstates.6114.d:0 "在一个国防国家，战争与和平、公共与私人之间的界限变得模糊。在全面战争时代，我们看到自己处于不断动员和计划全面战争的状态，反对德国人或辛迪军。因此，两次战争之间的时期也成为了一种战争形式。此外，国防和战争一样，是“国家形成和发展的基本生命力的作用”。国防的基本含义是战争动员在日本国家和社会的战争状态中起着不可或缺的作用。如果是这样的话，为什么有一半人这么做呢?一个国家应该成为一个专门为全面战争做准备的国家。"
+pacificstates.6114.a:0 "就是我开始的那个"
+
+pacificstates.6113.t:0 "日本黑帮的力量来了"
+pacificstates.6113.d:0 "最初是随着日本移民的增加而来的，日本黑帮已经大量到来，已经变成了太平洋国家的准军事组织。由于当局不仅对他们的非法交易睁一只眼闭一只眼，而且还积极从中获利，黑社会现在完全控制了黑社会。毒品交易已经变得很普遍，利润被用于年度预算，贩卖人口和奴役变得司空见惯。所有的工业行动都在黑帮的铁蹄下被镇压了。"
+pacificstates.6113.a:0 "一个可以与卡彭匹敌的犯罪帝国"
+
+pacificstates.6115.t:0 "政治派系事件"
+pacificstates.6115.d:0 "在管理太平洋国家的问题上，分歧达到了顶点，出现了三个派系。关东军希望利用美国作为进一步征服的发射台，而维新官僚则希望建立工业力量，为日本的战争机器提供补给。在这两派中间形成的保皇派，希望建立一个献给皇帝的神圣国家，而不受其他两派的过分干涉。随着三个派系的视野迅速分化，随着艾索替身的消失，三个派系同时发动了各自的阴谋，只剩下一个赢家。"
+pacificstates.6115.a:0 "改革官僚掌权"
+pacificstates.6115.b:0 "君主派使船保持稳定"
+pacificstates.6115.c:0 "关东军摧毁了他们的反对派"
+
+pacificstates.6117.t:0 "General Portrait Picker"
+pacificstates.6117.d:0 "Choose the portrait"
+pacificstates.6117.a:0 "Look like a skitzo"
+pacificstates.6117.b:0 "Put a mask on"
+
+CAL_political_chaos:0 "政治混乱"
+CAL_political_chaos_desc:0 "这个国家的三个派系现在站在十字路口，只有一个美国愿景将被允许站立"
+
+CAL_monarchist_vic:0 "君主主义者赢得权力斗争"
+CAL_monarchist_vic_desc:0 "官僚政体和军队内部的温和君主主义者发现，他们的主题本身被限制在委任的两个极端派系之间，无法支持他们转而聚集在裕仁直接统治下的两个极端团体。关东的极左主义和官僚的右倾主义将会被忽略，取而代之的是一条幸福的中间道路。"
+
+CAL_the_holy_state:0 "神圣的国度"
+CAL_the_holy_state_desc:0 "在皇帝的远见指引下，美国将成为一个真正神圣的国家"
+

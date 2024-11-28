@@ -1,0 +1,1562 @@
+MNT_National_Reconstruction_Commission = {
+	105_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 105
+		}
+		
+		visible = {
+		has_full_control_of_state = 105
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 105 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 105 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	1097_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 1097
+		}
+		
+		visible = {
+		has_full_control_of_state = 1097
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 1097 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 1097 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	1269_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 1269
+		}
+		
+		visible = {
+		has_full_control_of_state = 1269
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 1269 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 1269 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	765_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 765
+		}
+		
+		visible = {
+		has_full_control_of_state = 765
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 765 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 765 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	767_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 767
+		}
+		
+		visible = {
+		has_full_control_of_state = 767
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 767 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 767 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	108_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 108
+		}
+		
+		visible = {
+		has_full_control_of_state = 108
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 108 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 108 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	107_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 107
+		}
+		
+		visible = {
+		has_full_control_of_state = 107
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 107 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 107 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	1268_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 1268
+		}
+		
+		visible = {
+		has_full_control_of_state = 1268
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 1268 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 1268 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	44_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 44
+		}
+		
+		visible = {
+		has_full_control_of_state = 44
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 44 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 44 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	766_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 766
+		}
+		
+		visible = {
+		has_full_control_of_state = 766
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 766 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 766 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	1270_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 1270
+		}
+		
+		visible = {
+		has_full_control_of_state = 1270
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 1270 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 1270 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	1098_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 1098
+		}
+		
+		visible = {
+		has_full_control_of_state = 1098
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 1098 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 1098 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	1145_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 1145
+		}
+		
+		visible = {
+		has_full_control_of_state = 1145
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 1145 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 1145 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	1143_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 1143
+		}
+		
+		visible = {
+		has_full_control_of_state = 1143
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 1143 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 1143 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	104_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 104
+		}
+		
+		visible = {
+		has_full_control_of_state = 104
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 104 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 104 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	1141_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 1141
+		}
+		
+		visible = {
+		has_full_control_of_state = 1141
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 1141 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 1141 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	1128_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 1128
+		}
+		
+		visible = {
+		has_full_control_of_state = 1128
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 1128 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 1128 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	794_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 794
+		}
+		
+		visible = {
+		has_full_control_of_state = 794
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 794 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 794 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	1102_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 1102
+		}
+		
+		visible = {
+		has_full_control_of_state = 1102
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 1102 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 1102 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	109_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 109
+		}
+		
+		visible = {
+		has_full_control_of_state = 109
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 109 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 109 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	1142_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 1142
+		}
+		
+		visible = {
+		has_full_control_of_state = 1142
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 1142 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 1142 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	1099_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 1099
+		}
+		
+		visible = {
+		has_full_control_of_state = 1099
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 1099 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 1099 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	1105_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 1105
+		}
+		
+		visible = {
+		has_full_control_of_state = 1105
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 1105 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 1105 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	103_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 103
+		}
+		
+		visible = {
+		has_full_control_of_state = 103
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 103 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 103 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	163_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 163
+		}
+		
+		visible = {
+		has_full_control_of_state = 163
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 163 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 163 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+	1206_reconstruction_plan = {
+
+		icon = factories
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost =  50
+		
+		available = {
+		has_full_control_of_state = 1206
+		}
+		
+		visible = {
+		has_full_control_of_state = 1206
+		}
+		
+		fire_only_once = no
+		days_remove = 30
+
+		remove_effect = {
+		random_owned_controlled_state={
+		prioritize = { 1206 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=industrial_complex
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=industrial_complex
+				level=1
+				instant_build=yes
+			}
+		}
+		random_owned_controlled_state={
+		prioritize = { 1206 }
+			prioritize={
+			}
+			limit={
+				free_building_slots={
+					building=arms_factory
+					size>0
+					include_locked=yes
+				}
+			}
+			add_extra_state_shared_building_slots=1
+			add_building_construction={
+				type=arms_factory
+				level=1
+				instant_build=yes
+			}
+		}
+		}
+	}
+}

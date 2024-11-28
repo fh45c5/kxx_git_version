@@ -1,0 +1,112 @@
+
+SVK_south_slovakia_attck = {
+
+        attack_west_south = {
+		
+		available = {
+                has_country_flag = svk_south_attack_event_flag
+                NOT = { has_country_flag = south_attack_svk }
+		}
+
+                days_remove = 7
+                days_re_enable = 24
+		visible = {
+                has_country_flag = svk_south_attack_event_flag
+		}  
+		cost = 50
+                fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision attack_west_south"
+                        set_country_flag = south_attack_svk
+                        start_border_war = {
+                    change_state_after_war = no
+                        attacker = {
+                        state = 1135
+                        num_provinces = 3
+                  }
+				
+                      defender = {
+                      state = 1136
+                        num_provinces = 3
+                        }
+                    }
+		}
+		
+		remove_effect = {
+		 log = "[GetDateText]: [Root.GetName]: Decision remove attack_west_south"
+                 finalize_border_war = {
+                    attacker = 1135
+                    defender = 1136
+                    attacker_win = yes
+                  }
+                  random_list = {
+                     50 = {
+                      SVK = { transfer_state = 1136 }
+                     }
+                    50 = {
+                     add_war_support = -0.05
+                  }
+               }
+                 clr_country_flag = south_attack_svk
+		}
+	}
+
+        attack_east_south = {
+		
+		available = {
+                has_country_flag = svk_south_attack_event_flag
+                NOT = { has_country_flag = south_attack_svk }
+		}
+
+                days_remove = 7
+                days_re_enable = 24
+		visible = {
+                has_country_flag = svk_south_attack_event_flag
+		}  
+		cost = 50
+                fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision attack_west_south"
+                        set_country_flag = south_attack_svk
+                         start_border_war = {
+                    change_state_after_war = no
+                        attacker = {
+                        state = 1121
+                        num_provinces = 2
+                  }
+				
+                      defender = {
+                      state = 1122
+                        num_provinces = 2
+                        }
+                    }
+		}
+		
+		remove_effect = {
+		 log = "[GetDateText]: [Root.GetName]: Decision remove attack_west_south"
+                 finalize_border_war = {
+                    attacker = 1121
+                    defender = 1122
+                    attacker_win = yes
+                  }
+                  random_list = {
+                     50 = {
+                      SVK = { transfer_state = 1122 }
+                     }
+                    50 = {
+                     add_war_support = -0.05
+                  }
+               }
+                 clr_country_flag = south_attack_svk
+		}
+	}
+
+}

@@ -1,0 +1,21 @@
+﻿defined_text = {
+  name = GetZhiliManchu
+  text = {
+    trigger = {
+      QIE = {
+        has_country_flag = QIE_manchu_restoration
+      }
+    }
+    localization_key = "满清"  # Manchu
+  }
+  text = {
+    trigger = {
+      NOT = {
+        QIE = {
+          has_country_flag = QIE_manchu_restoration
+        }
+      }
+    }
+    localization_key = "直系"  # Zhili
+  }
+}

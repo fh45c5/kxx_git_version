@@ -1,0 +1,75 @@
+characters = {
+	CYN_provisional_cayenne_authority = {
+		name = "Provisional Cayenne Authority"
+		portraits = {
+			civilian = {
+				large="gfx/leaders/CYN/Portrait_Caribbean_Council.png"
+			}
+		}
+		country_leader = {
+			ideology = national_populist
+			expire = "1965.1.1.1"
+		}
+	}
+	CYN_andré_alike = {
+		name = "André Alike"
+		portraits = {
+			civilian = {
+				large="gfx/leaders/CYN/Portrait_Caribbean_Andre_Alike.png"
+			}
+		}
+		country_leader = {
+			ideology = national_populist
+			expire = "1965.1.1.1"
+		}
+	}
+	
+	CYN_paulette_nardal = {
+		name = "Paulette Nardal"
+		portraits = {
+			civilian = {
+				large="gfx/leaders/CYN/Portrait_Caribbean_Paulette_Nardal.png"
+			}
+		}
+		country_leader = {
+			ideology = national_populist
+			expire = "1965.1.1.1"
+		}
+	}
+	CYN_hégésippe_jean_légitimus = {
+		name = "Hégésippe Jean Légitimus"
+		portraits = {
+			civilian = {
+				large="gfx/leaders/CYN/Portrait_Caribbean_Hegesippe_Jean_Legitimus.png"
+			}
+		}
+		country_leader = {
+			ideology = national_populist
+			expire = "1965.1.1.1"
+		}
+	}
+	CYN_andre_tardieu = {
+		name = "André Tardieu"
+		portraits = {
+			civilian = {
+				large="gfx/leaders/CYN/Portrait_Caribbean_Andre_Tardieu.png"
+			}
+		}
+		country_leader = {
+			ideology = national_populist
+			expire = "1965.1.1.1"
+		}
+	}
+	CYN_gratien_candace = {
+		name = "Gratien Candace"
+		portraits = {
+			civilian = {
+				large="gfx/leaders/CYN/Portrait_Caribbean_Gratien_Candace.png"
+			}
+		}
+		country_leader = {
+			ideology = national_populist
+			expire = "1965.1.1.1"
+		}
+	}
+}

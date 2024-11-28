@@ -1,0 +1,344 @@
+﻿capital = 1046
+
+starting_train_buffer = 1.0
+
+OOB = "CHI" 
+
+set_technology = {
+
+	basic_train = 1
+
+	### Infantry ###
+	infantry_weapons = 1
+	mountain_warfare = 1
+	irregular_infantry_tech = 1
+
+
+	### Support ###
+	tech_support = 1
+	tech_engineers = 1
+	gw_artillery = 1
+	tech_recon = 1
+
+	### Artillery ###
+	gw_artillery = 1
+
+}
+
+### Planes - non BBA ###
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+	set_technology = {
+		aa_lmg = 1
+		early_bombs = 1
+		engines_1 = 1
+		aircraft_construction = 1
+		iw_small_airframe = 1
+		iw_medium_airframe = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	set_technology = {
+		early_fighter = 1
+		early_bomber = 1
+	}
+}
+
+### Tanks - NSB ###
+if = {
+	limit = { has_dlc = "No Step Back" }
+	set_technology = { gwtank_chassis = 1 }
+}
+### Tanks - non NSB ###
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = { gwtank = 1 }
+}
+
+### Navy - MtG ###
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		
+		basic_naval_mines = 1
+
+		## Modules##
+		basic_battery = 1
+		basic_light_battery = 1
+		smoke_generator = 1
+	}
+}
+### Navy - Non MtG ###
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_destroyer = 1
+		basic_destroyer = 1
+		early_light_cruiser = 1
+		basic_light_cruiser = 1
+	}
+}
+
+add_opinion_modifier = { target = SQI modifier = embargo }
+add_opinion_modifier = { target = QIE modifier = embargo }
+add_opinion_modifier = { target = LEP modifier = embargo }
+add_opinion_modifier = { target = ANQ modifier = embargo }
+add_opinion_modifier = { target = GER modifier = embargo }
+add_opinion_modifier = { target = GEX modifier = embargo }
+add_opinion_modifier = { target = GEA modifier = embargo }
+add_opinion_modifier = { target = MAF modifier = embargo }
+add_opinion_modifier = { target = JAP modifier = embargo }
+
+set_research_slots = 3
+set_convoys = 100 # gotta get that merchant marine together
+set_cosmetic_tag = CHI_rebel
+
+set_variable = { kr_china_provinceintegration_cost_small = 50 }
+set_variable = { kr_china_provinceintegration_cost_medium = 80 }
+set_variable = { kr_china_provinceintegration_cost_large = 110 }
+set_variable = { kr_china_concessionintegration_cost = 15 }
+set_variable = { kr_china_provinceintegration_speed = 90 }
+set_variable = { kr_china_concessionintegration_speed = 60 }
+
+set_variable = { CHI_size_small_var = 0.01 }
+set_variable = { CHI_size_medium_var = 0.03 }
+set_variable = { CHI_size_large_var = 0.05 }
+set_variable = { CHI_size_mega_var = 0.10 }
+set_variable = { CHI_size_giga_var = 0.25 }
+
+set_variable = { CHI_radicalism_var = 10 }
+set_variable = { CHI_PMC_influence_var = 55 }
+set_variable = { CHI_CRA_influence_var = 30 }
+set_variable = { CHI_CSL_influence_var = 30 }
+
+
+set_country_flag = can_assume_national_leadership
+set_country_flag = china_integration_unlocked
+set_country_flag = china_lkmt_leader
+
+set_country_flag = CHI_has_power_struggle
+
+add_ideas = {
+	unequal_treaties
+	extensive_conscription
+	partial_economic_mobilisation
+
+	KR_CHI_popular_support_1
+	KR_CHI_start_army
+	CHI_MMIC_theorist_idea
+
+	CHI_Mao_zedong_hog_tot
+	CHI_Cai_Hesen_for_rso
+	CHI_Lin_Boqu_eco_rso
+	CHI_Dai_Chunfeng_sec_tot_lar
+}
+
+add_timed_idea = {
+	idea = CHI_hasty_uprising
+	days = 180
+}
+
+set_politics = {
+	ruling_party = radical_socialist
+	last_election = "1925.10.10"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	totalist = 5
+	radical_socialist = 40
+	syndicalist = 0
+	social_democrat = 32
+	social_liberal = 8
+	market_liberal = 0
+	social_conservative = 0
+	authoritarian_democrat = 0
+	paternal_autocrat = 0
+	national_populist = 15
+}
+
+#工团联盟还没加入
+#set_country_flag = CHI_Chen_Duxiu_dead #陈独秀首先加入
+set_country_flag = Li_Lisan_dead
+set_country_flag = Dong_Biwu_dead
+set_country_flag = Qin_Bangxian_dead
+set_country_flag = Chiang_Ching_Kuo_dead
+set_country_flag = Shi_Cuntong_dead
+set_country_flag = Qu_Qiubai_dead
+set_country_flag = Su_Zhaozheng_dead
+set_country_flag = Liu_Shaoqi_dead
+
+#中央委员会还没回来
+set_country_flag = Li_Shiqun_dead
+set_country_flag = Gu_Zhenggang_dead
+set_country_flag = Guo_Chuntao_dead
+set_country_flag = Zhou_Fokai_dead
+set_country_flag = Zeng_Xing_dead
+set_country_flag = Chu_Minyi_dead
+set_country_flag = Chen_Bijun_dead
+
+#三人帮还没发展
+set_country_flag = Chen_Guofu_dead
+set_country_flag = Chen_Lifu_dead
+set_country_flag = Liu_Butong_dead
+set_country_flag = Kong_Xiangxi_dead
+set_country_flag = Mao_Renfeng_dead
+set_country_flag = Xiao_Zanyu_dead
+
+#改组派部分流亡
+set_country_flag = Peng_Zexiang_dead
+set_country_flag = He_Xiangning_dead
+set_country_flag = Zhang_Yunchuan_dead
+
+#太子在海外
+set_country_flag = Sun_Fo_dead
+set_country_flag = CHI_Song_Ziwen_dead
+
+
+set_power_balance = {
+	id = CHI_power_balance
+	left_side = CHI_NRC_winning_side
+	right_side = CHI_RCA_winning_side
+	set_value = -0.25
+}
+
+### Flavor Events
+## chi_flavor.1 starts with Chen Gongbo's event
+country_event = { id = chi_flavor.2 days = 700 } # Song at Midnight
+country_event = { id = chi_flavor.3 days = 397 } #League of Left Wing Writers
+country_event = { id = chi_flavor.4 days = 1411 } #Needs to fire November 12, 1939 - CCBS event
+country_event = { id = chi_flavor.5 days = 745 } #Crossroads event
+country_event = { id = chi_flavor.6 days = 1281 } #Chen Bo'er
+country_event = { id = chi_flavor.7 days = 1312 } #Death of Lu Xun
+# chi_flavor.9 is Deng Yanda's unique event
+
+### CHI Generals ###
+
+### LKMT MOD CHARARCTOR ###
+recruit_character = CHI_committee
+recruit_character = CHI_Mao_runzhi
+recruit_character = CHI_chen_yi
+recruit_character = CHI_Cai_Hesen
+recruit_character = CHI_su_yu
+recruit_character = CHI_chen_jiongming
+recruit_character = CHI_luo_ronghuan
+recruit_character = CHI_nie_rongzhen
+recruit_character = CHI_zuo_quan
+recruit_character = CHI_fang_zhimin
+recruit_character = CHI_chen_geng
+recruit_character = CHI_zhang_guotao
+recruit_character = CHI_chiang_Kai_shek
+recruit_character = CHI_Otto_Braun
+recruit_character = CHI_bai_wenwai
+recruit_character = CHI_Mao_Anying
+recruit_character = CHI_liao_yaoxiang
+recruit_character = CHI_WULANFU
+recruit_character = CHI_xiao_jinguang
+recruit_character = CHI_Guo_Rugui
+recruit_character = CHI_Gui_Yongqing
+recruit_character = CHI_Guan_Linzheng
+recruit_character = CHI_zhou_enlai
+recruit_character = CHI_chiang_wei_kuo
+### Country Leaders ###
+recruit_character = CHI_dai_chunfeng
+recruit_character = CHI_chen_duxiu
+recruit_character = CHI_wang_jingwei
+recruit_character = CHI_song_qingling
+recruit_character = CHI_sun_fo
+recruit_character = CHI_xu_fulin
+recruit_character = CHI_lin_sen
+recruit_character = CHI_chen_guofu
+
+### Field Marshals ###
+recruit_character = CHI_li_jishen
+
+### Corps Commanders ###
+recruit_character = CHI_xue_yue
+recruit_character = CHI_zhang_fakui
+recruit_character = CHI_deng_yanda
+recruit_character = CHI_ye_ting
+recruit_character = CHI_lin_biao
+recruit_character = CHI_wang_yaowu
+recruit_character = CHI_xu_xiangqian
+recruit_character = CHI_zhang_yunyi
+recruit_character = CHI_chiang_wei_kuo
+recruit_character = CHI_hu_zongnan
+recruit_character = CHI_du_yuming
+recruit_character = CHI_dai_anlan
+recruit_character = CHI_he_zhonghan
+recruit_character = CHI_zhang_zhizhong
+recruit_character = CHI_huang_qixiang
+recruit_character = CHI_sun_liren
+# recruit_character = CHI_he_long
+
+### Admirals ###
+recruit_character = CHI_li_zhilong
+recruit_character = CHI_chen_shaokuan
+
+
+### Military Command #####
+recruit_character = CHI_deng_wenyi
+recruit_character = CHI_zhou_zhirou
+recruit_character = CHI_mao_bangchu
+recruit_character = CHI_chen_jiliang
+
+recruit_character = CHI_MMIC_theorist_idea
+
+### Character Setup ###
+CHI_chiang_wei_kuo = { set_character_flag = CHI_original_unit_leader }
+CHI_hu_zongnan = { set_character_flag = CHI_original_unit_leader }
+
+# Starting OOB and division templates for the Left KMT
+# NOTE: the Left Kuomintang start with only a few division templates. Their military tree unlocks new and interesting templates that aren't just tiny brigades later.
+
+### Variants ###
+create_equipment_variant = {
+	name = "Chu Tung/Kiang Yuan Class"
+	type = ship_hull_light_1
+	name_group = CHYN_DD_HISTORICAL
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = light_ship_engine_1
+		fixed_ship_torpedo_slot = empty
+		mid_1_custom_slot = empty
+		rear_1_custom_slot = empty
+	}
+}
+
+create_equipment_variant = {
+	name = "Type I Class"
+	type = ship_hull_submarine_1
+	name_group = CHYN_SS_HISTORICAL
+	modules = {
+		fixed_ship_torpedo_slot = ship_torpedo_sub_1
+		fixed_ship_engine_slot = sub_ship_engine_1
+		rear_1_custom_slot = ship_torpedo_sub_1
+	}
+}
+
+set_party_name = {
+	ideology = radical_socialist
+	long_name = CHI_radical_socialist_party_long
+	name = CHI_radical_socialist_party
+}
+
+set_party_name = {
+	ideology = social_democrat
+	long_name = CHI_social_democrat_party_long
+	name = CHI_social_democrat_party
+}

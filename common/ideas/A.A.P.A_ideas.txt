@@ -1,0 +1,549 @@
+##############
+# Australasia
+##############
+ideas = {
+
+	##############
+	# Country ideas
+	##############
+	country = {
+		### SUBMOD ADDED!!!
+		AST_uob_advisors_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_uob_advisors_idea"}
+			
+			picture = advisors_england
+			research_bonus = {
+				air_equipment = 0.1
+				naval_equipment = 0.10
+				naval_doctrine = 0.1
+			}
+			modifier = {
+				command_power_gain = 0.25
+				max_command_power = 300
+				command_power_gain_mult = 0.25
+				max_command_power_mult = 0.25
+
+			}
+		}
+		AST_employment_scheme = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_social_reforms_1"}
+			picture = generic_morale_bonus
+			modifier = {
+				consumer_goods_factor = -0.1
+				research_speed_factor = 0.5
+				production_speed_buildings_factor = 0.5
+			}
+		}
+		AST_corpratism = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_social_reforms_1"}
+			picture = generic_morale_bonus
+			modifier = {
+				political_power_gain = 0.10
+				consumer_goods_factor = -0.03
+				production_factory_max_efficiency_factor = 0.10
+				industrial_capacity_factory = 0.10
+			}
+		}
+		AST_british_socialism = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_social_reforms_1"}
+			picture = generic_morale_bonus
+			modifier = {
+				war_support_factor = 0.2
+				stability_factor = -0.1
+				army_morale_factor = 0.1
+				consumer_goods_factor = -0.03
+				production_factory_max_efficiency_factor = 0.10
+				industrial_capacity_factory = 0.10
+			}
+		}
+		AST_british_socialism_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_social_reforms_1"}
+			picture = generic_morale_bonus
+			modifier = {
+				war_support_factor = 0.2
+				stability_factor = -0.1
+				army_morale_factor = 0.1
+				production_speed_buildings_factor = 0.15
+				consumer_goods_factor = -0.03
+				industrial_capacity_factory = 0.10
+			}
+		}
+		AST_propaganda = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_social_reforms_1"}
+			picture = generic_morale_bonus
+			modifier = {
+				encryption = 0.03
+				stability_weekly_factor = 0.015
+				political_power_gain = 0.02
+				monthly_population = 0.01
+				party_popularity_stability_factor = 0.1
+			}
+		}
+		AST_worker_strength = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = worker_strength
+			modifier = {
+				consumer_goods_factor = -0.03
+				production_factory_efficiency_gain_factor  = 0.03
+				production_factory_start_efficiency_factor = 0.03
+				political_power_factor = 0.05
+			}
+		}
+		AST_worker_strength_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = worker_strength
+			modifier = {
+				consumer_goods_factor = -0.04
+				production_factory_efficiency_gain_factor  = 0.06
+				production_factory_start_efficiency_factor = 0.06
+				political_power_factor = 0.07
+			}
+		}
+		AST_white_australia = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = can_wartime_prices_and_trade_board
+			modifier = {
+				consumer_goods_factor = -0.03
+			}
+		}
+		AST_worker_strength_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = can_wartime_prices_and_trade_board
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_factory_efficiency_gain_factor  = 0.07
+				production_factory_start_efficiency_factor = 0.07
+				political_power_factor = 0.10
+			}
+		}
+		AST_resource_extranction = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = resource_extranction
+			modifier = {
+				consumer_goods_factor = -0.02
+				local_resources_factor = 0.3
+			}
+		}
+		AST_federal_unionisation = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = federal_unionisation
+			modifier = {
+				local_resources_factor = 0.10
+				consumer_goods_factor = -0.03
+				political_power_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.03
+				fuel_gain_factor = 0.1
+			}
+		}
+		AST_federal_unionisation_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = federal_unionisation
+			modifier = {
+				local_resources_factor = 0.15
+				consumer_goods_factor = -0.03
+				political_power_factor = 0.06
+				production_factory_efficiency_gain_factor = 0.06
+				fuel_gain_factor = 0.2
+			}
+		}
+		AST_federal_unionisation_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = federal_unionisation
+			modifier = {
+				local_resources_factor = 0.20
+				consumer_goods_factor = -0.03
+				political_power_factor = 0.08
+				production_factory_efficiency_gain_factor = 0.12
+				fuel_gain_factor = 0.3
+			}
+		}
+		AST_expand_unionisation = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = expand_unionisation
+			modifier = {
+				consumer_goods_factor = -0.03
+				min_export = 0.03
+			}
+		}
+		AST_expand_unionisation_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = expand_unionisation
+			modifier = {
+				consumer_goods_factor = -0.3
+				min_export = 0.03
+			}
+		}
+		AST_expand_unionisation_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = expand_unionisation
+			modifier = {
+				consumer_goods_factor = -0.3
+				min_export = 0.03
+				local_building_slots_factor = 0.2
+				production_speed_buildings_factor = 0.2
+				production_speed_arms_factory_factor = 0.2
+				production_speed_industrial_complex_factor = 0.2
+
+			}
+		}
+		AST_ecolgical_effort = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = ecolgical_effort
+			modifier = {
+				consumer_goods_factor = 0.01
+				local_resources_factor = -0.1
+				research_speed_factor = 0.5
+			}
+		}
+		AST_women_rights= {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = women_rights
+			modifier = {
+				local_resources_factor = 0.05
+				research_speed_factor = 0.03
+				stability_weekly_factor = 0.05
+			}
+		}
+		AST_women_rights_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = women_rights
+			modifier = {
+				local_resources_factor = 0.08
+				research_speed_factor = 0.05
+				stability_weekly_factor = 0.08
+			}
+		}
+		AST_southercross = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = southercross
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_start_efficiency_factor = 0.05
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.05
+				dig_in_speed = 2
+			}
+		}
+		AST_communist_stregth = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = communist_stregth
+			modifier = {	
+				army_attack_factor = 0.3
+				army_attack_speed_factor = 0.4
+				army_speed_factor = 0.2
+				army_defence_factor = 0.1
+			}
+		}
+		AST_communist_stregth_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = communist_stregth
+			modifier = {
+				army_attack_factor = 0.5
+				army_attack_speed_factor = 0.5
+				army_speed_factor = 0.4
+				army_defence_factor = 0.2
+			}
+		}
+		AST_communist_stregth_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = communist_stregth
+			modifier = {
+				army_attack_factor = 0.7
+				army_attack_speed_factor = 0.6
+				army_speed_factor = 0.5	
+				army_defence_factor = 0.4
+			}
+		}
+		AST_aborigonal_recognition = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = aborigonal_recognition
+			modifier = {
+				army_morale_factor = 0.02
+				army_core_attack_factor = 0.02
+				army_core_defence_factor = 0.02
+				conscription = 0.01
+				stability_weekly_factor = 0.02
+			}
+		}
+		AST_aborigonal_recognition_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = aborigonal_recognition
+			modifier = {
+				army_morale_factor = 0.02
+				army_core_attack_factor = 0.02
+				army_core_defence_factor = 0.02
+				conscription = 0.01
+				stability_weekly_factor = 0.05
+			}
+		}
+		AST_aborigonal_recognition_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = aborigonal_recognition
+			modifier = {
+				army_morale_factor = 0.05
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				conscription = 0.02
+				stability_weekly_factor = 0.10
+			}
+		}
+		AST_aborigonal_recognition_4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = aborigonal_recognition
+			modifier = {
+				army_morale_factor = 0.05
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				conscription = 0.02
+				stability_weekly_factor = 0.20
+			}
+		}
+		AST_aborigonal_population= {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = aborigonal_population
+			modifier = {
+				monthly_population = 0.5
+			}
+		}
+		AST_social_security_expansion = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = social_security_expansion
+			modifier = {
+				consumer_goods_factor = 0.02
+				political_power_gain = 0.02
+				production_speed_buildings_factor = 0.02
+			}
+		}
+		AST_social_capitalist_economy = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = can_wartime_prices_and_trade_board
+			modifier = {
+				consumer_goods_factor = -0.03
+				min_export = 0.03
+			}
+		}
+		AST_isolationist = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_liberal_economy"}
+			picture = can_wartime_prices_and_trade_board
+			modifier = {
+				min_export = -0.03
+			}
+		}
+		AST_communalised_effort = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_privatization_effort"}
+			picture = generic_central_management
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				industrial_capacity_factory = 0.1
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		AST_socialism_united = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_social_reforms_1"}
+			picture = generic_morale_bonus
+			modifier = {
+				command_power_gain = 0.5
+				resistance_damage_to_garrison_on_our_occupied_states = 0.5
+				army_org_factor = 0.3
+				army_attack_factor = 0.5
+				conscription_factor = 0.10
+			}
+		}
+		AST_one_big_union = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_social_reforms_1"}
+			picture = one_big_union
+			modifier = {
+				consumer_goods_factor = -0.03
+				production_factory_max_efficiency_factor  = 0.03
+				line_change_production_efficiency_factor = 0.03
+				political_power_factor = 0.05
+				political_power_gain = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		AST_14_points_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_social_reforms_1"}
+			picture = generic_morale_bonus
+			modifier = {
+				monthly_population = 0.5
+				opinion_gain_monthly = 5
+				production_factory_efficiency_gain_factor = 0.3
+			}
+		}
+		AST_one_big_union_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_social_reforms_1"}
+			picture = one_big_union
+			modifier = {
+				consumer_goods_factor = -0.03
+				production_factory_max_efficiency_factor  = 0.04
+				line_change_production_efficiency_factor = 0.04
+				political_power_factor = 0.05
+				political_power_gain = 0.05
+				industrial_capacity_factory = 0.07
+			}
+		}
+		AST_australian_guerrilla = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea AST_social_reforms_1"}
+			picture = generic_morale_bonus
+			modifier = {
+				resistance_damage_to_garrison_on_our_occupied_states = 0.65
+				resistance_growth_on_our_occupied_states = 0.6
+				conscription_factor = 0.10
+				army_defence_factor = 0.5
+				army_morale_factor = 0.3
+				max_dig_in_factor = 0.5
+			}
+		}
+
+
+
+		### Blessings Ideas ###
+		CAL_50_blessings_in_control_idea = {#50 Blessings in Control
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea CAL_50_blessings_in_control_idea"}
+			removal_cost = -1
+			picture = blessings_spirit
+			modifier = {
+				political_power_gain = 0.02
+				stability_weekly = -0.02
+				party_popularity_stability_factor = 0.02
+				monthly_population = -0.3
+				stability_factor = -0.1
+				consumer_goods_factor = -0.05
+				war_support_weekly = 0.02
+				recruitable_population_factor = 0.03				
+				production_factory_max_efficiency_factor = 0.02
+				production_speed_buildings_factor = 0.02
+                                production_speed_infrastructure_factor = 0.02
+                                production_factory_efficiency_gain_factor = 0.02
+                                research_speed_factor = -0.025
+			}
+		}
+		CAL_the_generals_hand_idea = {#The Generals Hand
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea CAL_the_generals_hand_idea"}
+			removal_cost = -1
+			picture = general_spirit
+			modifier = {
+				army_core_defence_factor = 0.08
+				army_attack_factor = 0.05
+                                army_morale_factor = 0.05
+                                army_org_factor = 0.075
+                                training_time_factor = 0.25
+				experience_gain_army = 0.1
+				command_power_gain = 0.05
+				navy_max_range_factor = 0.1
+				navy_org = 0.03
+				decryption_factor = 0.03
+				encryption_factor = 0.02
+				justify_war_goal_time = 0.55
+			}
+		}
+		CAL_bunker_idea = {#The bunker
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea CAL_bunker_idea"}
+			removal_cost = -1
+			picture = bunker_spirit
+			modifier = {
+				production_speed_bunker_factor=2
+				dig_in_speed_factor = 0.09
+			}
+		}
+		CAL_aubrey_mask_idea = {#aubrey_mask
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea CAL_aubrey_mask_idea"}
+			removal_cost = -1
+			picture = aubrey_mask_spirit
+			modifier = {
+			equipment_bonus = {
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			}
+		}
+		CAL_brandon_mask_idea = {#brandon_mask
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea CAL_brandon_mask"}
+			removal_cost = -1
+			picture = brandon_mask_spirit
+			modifier = {
+				army_speed_factor = 0.7
+			}
+		}
+		CAL_tony_mask_idea = {#tony mask
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea CAL_tony_mask_idea"}
+			removal_cost = -1
+			picture = tony_mask_spirit
+			modifier = {
+				army_attack_factor = 0.7
+			}
+		}
+		###Kwantung army
+		CAL_The_Kwantung_Army = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CAL_The_Kwantung_Army"}
+			picture = warrior_traditions_idea
+			modifier = {
+				army_morale_factor = -0.05
+				army_org_factor = -0.05
+				max_planning = 0.05
+				planning_speed = 0.05
+			}
+		}	
+		CAL_five_year_plan_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CAL_five_year_plan_idea"}
+			picture = five_year_plan_spirit
+			modifier = {
+				stability_weekly = -0.02
+				stability_factor = -0.2
+				political_power_gain = -0.05
+				consumer_goods_factor = -0.10
+				production_factory_max_efficiency_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.20
+				monthly_population = -0.3
+			}
+		}
+		CAL_managerial_state_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CAL_managerial_state_idea"}
+			picture = managerial_state_spirit
+			modifier = {
+				political_power_gain = 0.01
+				production_speed_buildings_factor = 0.05
+				production_factory_start_efficiency_factor = 0.03
+				industrial_capacity_factory = 0.03
+				local_supplies = 0.06
+				recruitable_population_factor = 0.01
+				production_speed_buildings_factor = 0.05
+				production_lack_of_resource_penalty_factor = -0.03
+				industry_free_repair_factor = 0.02
+				monthly_population = -0.05
+			}
+		}	
+		CAL_partially_planneed_economy_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CAL_partially_planneed_economy_idea"}
+			picture = partially_planneed_economy_spirit
+			modifier = {
+				recruitable_population_factor = 0.01
+				stability_weekly = -0.03
+				stability_factor = -0.1
+				political_power_gain = 0.05
+				consumer_goods_factor = -0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.08
+				monthly_population = -0.4
+			}
+		}
+		CAL_new_zabitsu_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CAL_new_zabitsu_idea"}
+			picture = new_zabitsu_spirit
+			modifier = {
+				consumer_goods_factor = -0.02
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				production_lack_of_resource_penalty_factor = -0.05
+				decryption_factor = 0.05
+				encryption_factor = -0.03
+			}
+		}		
+	}
+}

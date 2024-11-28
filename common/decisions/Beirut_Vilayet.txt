@@ -1,0 +1,1654 @@
+LEB_decision_a_land_hard_to_govern = {
+
+	establish_control = {
+		icon = GFX_decision_generic_arrest
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+			}
+		
+		cost = 50
+			
+		fire_only_once = no	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_religious_decisions
+		}
+		
+		complete_effect = {
+			add_stability = 0.05
+			
+		}
+
+		days_remove = 15
+		days_re_enable = 15
+		remove_effect = {
+		add_manpower = -250
+			custom_effect_tooltip = ottoman_add_influence_tt
+			add_to_variable = {
+				var = LEB_ottoman_power
+				value = 5
+			}	
+		}
+
+	}
+
+
+
+
+
+	suppress_shia_group = {
+		icon = GFX_decision_generic_military
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_suppress_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_suppression
+					}
+			}
+			
+			}
+		custom_cost_text = CP_15
+		custom_cost_trigger = {
+			command_power > 14.99
+			}
+			
+		fire_only_once = no	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_religious_decisions
+		}
+		
+		complete_effect = {
+			add_stability = 0.02
+			hidden_effect = { add_command_power = -15}
+			set_country_flag = LEB_already_doing_suppression
+		}
+
+		days_remove = 15
+		days_re_enable = 15
+		remove_effect = {
+		custom_effect_tooltip = shia_lose_influence_tt
+			add_to_variable = {
+				var = LEB_shia_power
+				value = -5
+			}
+			clr_country_flag = LEB_already_doing_suppression
+		}
+
+	}
+
+suppress_maronite_group = {
+		icon = GFX_decision_generic_military
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_suppress_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_suppression
+					}
+			}
+			
+			}
+		custom_cost_text = CP_15
+		custom_cost_trigger = {
+			command_power > 14.99
+			}
+			
+		fire_only_once = no	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_religious_decisions
+		}
+		
+		complete_effect = {
+			add_stability = 0.02
+			hidden_effect = { add_command_power = -15}
+			set_country_flag = LEB_already_doing_suppression
+		}
+
+		days_remove = 15
+		days_re_enable = 15
+		remove_effect = {
+		custom_effect_tooltip = maronite_lose_influence_tt
+			add_to_variable = {
+				var = LEB_maronite_power
+				value = -5
+			}
+			clr_country_flag = LEB_already_doing_suppression
+		}
+
+	}
+
+
+suppress_sunni_group = {
+		icon = GFX_decision_generic_military
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_suppress_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_suppression
+					}
+			}
+			
+			}
+		custom_cost_text = CP_15
+		custom_cost_trigger = {
+			command_power > 14.99
+			}
+			
+		fire_only_once = no	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_religious_decisions
+		}
+		
+		complete_effect = {
+			add_stability = 0.02
+			hidden_effect = { add_command_power = -15}
+			
+			
+			set_country_flag = LEB_already_doing_suppression
+		}
+
+		days_remove = 15
+		days_re_enable = 15
+		remove_effect = {
+		custom_effect_tooltip = sunni_lose_influence_tt
+			add_to_variable = {
+				var = LEB_sunni_power
+				value = -5
+			}
+			clr_country_flag = LEB_already_doing_suppression
+		}
+
+	}
+
+
+suppress_ssnp_group = {
+		icon = GFX_decision_generic_military
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_suppress_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_suppression
+					}
+			}
+			
+			}
+		custom_cost_text = CP_15
+		custom_cost_trigger = {
+			command_power > 14.99
+			}
+			
+		fire_only_once = no	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_religious_decisions
+		}
+		
+		complete_effect = {
+			add_stability = 0.02
+			hidden_effect = { add_command_power = -15}
+			set_country_flag = LEB_already_doing_suppression
+		}
+
+		days_remove = 15
+		days_re_enable = 15
+		remove_effect = {
+		add_to_variable = {
+				var = LEB_ssnp_power
+				value = -5
+			}
+			custom_effect_tooltip = ssnp_lose_influence_tt
+			set_country_flag = LEB_already_doing_suppression
+			clr_country_flag = LEB_already_doing_suppression
+		}
+
+	}
+
+support_shia_mosque = {
+		icon = GFX_decision_generic_civil_support
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_support_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_support
+					}
+			}
+			
+			}
+		
+		cost = 50
+			
+		fire_only_once = no	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_religious_decisions
+		}
+		
+		complete_effect = {
+			add_stability = -0.02
+			set_country_flag = LEB_already_doing_support
+		}
+
+		days_remove = 15
+		days_re_enable = 15
+		remove_effect = {
+		custom_effect_tooltip = shia_add_influence_tt
+			add_manpower = 400
+			add_to_variable = {
+				var = LEB_shia_power
+				value = 5
+			}
+			clr_country_flag = LEB_already_doing_support
+		}
+
+	}
+
+support_maronite_church = {
+		icon = GFX_decision_generic_civil_support
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_support_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_support
+					}
+			}
+			
+			}
+		
+		cost = 50
+			
+		fire_only_once = no	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_religious_decisions
+		}
+		
+		complete_effect = {
+			add_stability = -0.02
+			set_country_flag = LEB_already_doing_support
+		}
+
+		days_remove = 15
+		days_re_enable = 15
+		remove_effect = {
+		custom_effect_tooltip = maronite_add_influence_tt
+					add_manpower = 400
+			add_to_variable = {
+				var = LEB_maronite_power
+				value = 5
+			}
+			clr_country_flag = LEB_already_doing_support
+		}
+
+	}
+
+support_sunni_mosque = {
+		icon = GFX_decision_generic_civil_support
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_support_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_support
+					}
+			}
+			
+			}
+		
+		cost = 50
+			
+		fire_only_once = no	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_religious_decisions
+		}
+		
+		complete_effect = {
+			add_stability = -0.02
+			set_country_flag = LEB_already_doing_support
+		}
+
+		days_remove = 15
+		days_re_enable = 15
+		remove_effect = {
+		
+			custom_effect_tooltip = sunni_add_influence_tt
+			add_manpower = 400
+			add_to_variable = {
+				var = LEB_sunni_power
+				value = 5
+			}
+			clr_country_flag = LEB_already_doing_support
+		}
+
+	}
+
+support_orthodox_church = {
+		icon = GFX_decision_generic_civil_support
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_support_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_support
+					}
+			}
+			
+			}
+		
+		cost = 50
+			
+		fire_only_once = no	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_religious_decisions
+		}
+		
+		complete_effect = {
+			add_stability = -0.02
+			set_country_flag = LEB_already_doing_support
+		}
+
+		days_remove = 15
+		days_re_enable = 15
+		remove_effect = {
+			custom_effect_tooltip = ssnp_add_influence_tt
+			add_manpower = 400
+			add_to_variable = {
+				var = LEB_ssnp_power
+				value = 5
+			}
+			clr_country_flag = LEB_already_doing_support
+		}
+
+	}
+	
+
+decision_operation_resurrection = {
+		icon = GFX_decision_generic_ignite_civil_war
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+		}
+		
+		custom_cost_text = CP_40
+		custom_cost_trigger = {
+			command_power > 39.99
+			}
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_religious_decisions
+			has_completed_focus = LEB_operation_resurrection
+		}
+		
+		complete_effect = {
+			add_stability = 0.05
+			add_war_support = -0.05
+			add_manpower = -400
+			}
+			
+			remove_effect = {
+			country_event = LEB.20
+			army_experience = 25
+			hidden_effect = { add_command_power = -40}
+			
+			custom_effect_tooltip = shia_lose_much_influence_tt
+			custom_effect_tooltip = ottoman_add_influence_tt
+			add_to_variable = {
+				var = LEB_shia_power
+				value = -20
+			}
+			add_to_variable = {
+				var = LEB_ottoman_power
+				value = 5
+			}
+		}
+
+		days_remove = 30
+		
+
+	}
+
+decision_operation_red_dusk = {
+		icon = GFX_decision_generic_prepare_civil_war
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+		}
+		
+		custom_cost_text = CP_40
+		custom_cost_trigger = {
+			command_power > 39.99
+			}
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_religious_decisions
+			has_completed_focus = LEB_operation_red_dusk
+		}
+		
+		complete_effect = {
+			add_stability = 0.05
+			add_war_support = -0.05
+			add_manpower = -400
+			}
+			
+		remove_effect = {
+		country_event = LEB.23
+			army_experience = 25
+			hidden_effect = { add_command_power = -40}
+			
+			custom_effect_tooltip = sunni_lose_much_influence_tt
+			custom_effect_tooltip = ottoman_add_influence_tt
+			add_to_variable = {
+				var = LEB_sunni_power
+				value = -20
+			}
+			add_to_variable = {
+				var = LEB_ottoman_power
+				value = 5
+			}
+		}
+
+		days_remove = 30
+		
+
+	}
+
+decision_operation_broken_spear = {
+		icon = GFX_decision_generic_prepare_civil_war
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+		}
+		
+		custom_cost_text = CP_40
+		custom_cost_trigger = {
+			command_power > 39.99
+			}
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_religious_decisions
+			has_completed_focus = LEB_operation_broken_spear
+		}
+		
+		complete_effect = {
+			add_stability = 0.05
+			add_war_support = -0.05
+			add_manpower = -400
+			army_experience = 25
+			hidden_effect = { add_command_power = -40}
+			
+			}
+			
+		remove_effect = {
+		country_event = LEB.21
+			custom_effect_tooltip = maronite_lose_much_influence_tt
+			custom_effect_tooltip = ottoman_add_influence_tt
+			add_to_variable = {
+				var = LEB_maronite_power
+				value = -20
+			}
+			add_to_variable = {
+				var = LEB_ottoman_power
+				value = 5
+			}
+		}
+
+		days_remove = 30
+		
+
+	}
+	
+decision_operation_breezeless = {
+		icon = GFX_decision_generic_prepare_civil_war
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+		}
+		
+		custom_cost_text = CP_40
+		custom_cost_trigger = {
+			command_power > 39.99
+			}
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_religious_decisions
+			has_completed_focus = LEB_operation_breezeless
+		}
+		
+		complete_effect = {
+			add_stability = 0.05
+			add_war_support = -0.05
+			add_manpower = -400
+			army_experience = 25
+			hidden_effect = { add_command_power = -40}
+			
+			}
+		remove_effect = {
+		country_event = LEB.22
+			custom_effect_tooltip = ssnp_lose_much_influence_tt
+			custom_effect_tooltip = ottoman_add_influence_tt
+			add_to_variable = {
+				var = LEB_ssnp_power
+				value = -20
+			}
+			add_to_variable = {
+				var = LEB_ottoman_power
+				value = 5
+			}
+		}
+
+		days_remove = 30
+		
+
+	}
+	
+decision_printing_factory_incident = {
+		icon = GFX_decision_generic_ignite_civil_war
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+		}
+		
+		cost = 100
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_religious_decisions
+			has_completed_focus = LEB_printing_factory_incident
+		}
+		
+		complete_effect = {
+			add_stability = -0.05
+			add_war_support = -0.05
+			add_manpower = -400
+			}
+			
+		remove_effect = {
+		country_event = LEB.25
+			custom_effect_tooltip = ssnp_lose_influence_tt
+			custom_effect_tooltip = maronite_lose_influence_tt
+			custom_effect_tooltip = ottoman_add_influence_tt
+			add_to_variable = {
+				var = LEB_ssnp_power
+				value = -5
+			}
+			add_to_variable = {
+				var = LEB_maronite_power
+				value = -5
+			}
+			add_to_variable = {
+				var = LEB_ottoman_power
+				value = 5
+			}
+		}
+		days_remove = 30
+		
+		
+
+	}
+
+decision_anti_communist_mullah = {
+		icon = GFX_decision_eng_propaganda_campaigns
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+		}
+		
+		cost = 100
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_religious_decisions
+			has_completed_focus = LEB_anti_communist_mullah
+		}
+		
+		complete_effect = {
+			add_stability = 0.05
+			add_war_support = -0.05
+			add_manpower = 100
+		}
+		
+		remove_effect = {
+		country_event = LEB.24
+		custom_effect_tooltip = shia_lose_influence_tt
+			custom_effect_tooltip = sunni_lose_influence_tt
+			custom_effect_tooltip = ottoman_add_influence_tt
+			add_to_variable = {
+				var = LEB_shia_power
+				value = -5
+			}
+			add_to_variable = {
+				var = LEB_sunni_power
+				value = -5
+			}
+			add_to_variable = {
+				var = LEB_ottoman_power
+				value = 5
+			}
+		}
+
+		days_remove = 30
+		}
+		
+shia_power_increase = {
+		icon = GFX_decision_increase
+		
+		allowed = {
+		TAG = LEB	
+		}
+		available = {
+		has_war_with = EGY
+		is_subject = no
+		}
+		activation = {
+		has_country_flag = LEB_religious_decisions
+		}
+		visible = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+			NOT = { has_war_with = EGY }
+			
+		}
+		days_mission_timeout = 70
+		days_re_enable = 5
+		is_good = no
+		fixed_random_seed = no
+		fire_only_once = no
+		cancel_if_not_visible = yes
+		timeout_effect = {
+		activate_mission = shia_power_increase
+		add_to_variable = {
+				var = LEB_shia_power
+				value = 5
+			}
+		custom_effect_tooltip = shia_add_influence_tt
+		}
+		complete_effect = { }
+		}
+		
+maronite_power_increase = {
+		icon = GFX_decision_increase
+		
+		allowed = {
+		TAG = LEB	
+		}
+		available = {
+		has_war_with = EGY
+		is_subject = no	
+		}
+		activation = {
+		 has_country_flag = LEB_religious_decisions
+		}
+		visible = {
+			
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+			NOT = { has_war_with = EGY }
+			
+		}
+		days_mission_timeout = 70
+		days_re_enable = 5
+		is_good = no
+		fixed_random_seed = no
+		fire_only_once = no
+		cancel_if_not_visible = yes
+		timeout_effect = {
+		activate_mission = maronite_power_increase
+		add_to_variable = {
+				var = LEB_maronite_power
+				value = 5
+			}
+		custom_effect_tooltip = maronite_add_influence_tt
+		}
+		complete_effect = { }
+		}
+		
+sunni_power_increase = {
+		icon = GFX_decision_increase
+		
+		allowed = {
+		TAG = LEB
+		}
+		available = {
+		has_war_with = EGY
+		is_subject = no	
+		}
+		activation = {
+		has_country_flag = LEB_religious_decisions
+		}
+		visible = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+			NOT = { has_war_with = EGY }
+		}
+		days_mission_timeout = 70
+		days_re_enable = 5
+		is_good = no
+		fixed_random_seed = no
+		fire_only_once = no
+		cancel_if_not_visible = yes
+		timeout_effect = {
+		activate_mission = sunni_power_increase
+		add_to_variable = {
+				var = LEB_sunni_power
+				value = 5
+			}
+		custom_effect_tooltip = sunni_add_influence_tt
+		}
+		complete_effect = { }
+		
+		}
+		
+ssnp_power_increase= {
+		icon = GFX_decision_increase
+		
+		allowed = {
+		TAG = LEB	
+		}
+		available = {
+		has_war_with = EGY
+		is_subject = no	 
+		}
+		activation = {
+		has_country_flag = LEB_religious_decisions
+		}
+		visible = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553
+			NOT = { has_war_with = EGY }
+		}
+		days_mission_timeout = 70
+		days_re_enable = 5
+		is_good = no
+		fixed_random_seed = no
+		fire_only_once = no
+		cancel_if_not_visible = yes
+		timeout_effect = {
+		activate_mission = ssnp_power_increase
+		add_to_variable = {
+				var = LEB_ssnp_power
+				value = 5
+			}
+		custom_effect_tooltip = ssnp_add_influence_tt
+		}
+		complete_effect = { }
+		}
+	}
+
+
+
+LEB_decision_overseas_remittance = {
+
+	brazil_lebanese = {
+		icon = GFX_decision_category_gre_investment_decisions
+		target_trigger = {
+		FROM = {
+				Tag = BRA
+				Tag = BRA
+				}
+							}
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			country_exists = BRA
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_remittance_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_remittance
+					}
+			}
+			
+			}
+		
+		cost = 150
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_overseas_remittance_return
+		}
+		
+		complete_effect = {
+			add_ideas = LEB_overseas_remittance
+			set_country_flag = LEB_already_doing_remittance
+			add_to_variable = {
+				var = LEB_overseas_remittance
+				value = -1
+			}
+			custom_effect_tooltip = LEB_decrease_overseas_remittance_tt
+		}
+
+		days_remove = 30
+		remove_effect = {
+		remove_ideas = LEB_overseas_remittance
+			clr_country_flag = LEB_already_doing_remittance
+		}
+
+	}
+	
+	argentine_lebanese = {
+		icon = GFX_decision_category_gre_investment_decisions
+		target_trigger = {
+		FROM = {
+				Tag = ARG
+				Tag = ARG
+				}
+							}
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			country_exists = ARG
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_remittance_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_remittance
+					}
+			}
+			
+			}
+		
+		cost = 150
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_overseas_remittance_return
+		}
+		
+		complete_effect = {
+			add_ideas = LEB_overseas_remittance
+			set_country_flag = LEB_already_doing_remittance
+			add_to_variable = {
+				var = LEB_overseas_remittance
+				value = -1
+			}
+			custom_effect_tooltip = LEB_decrease_overseas_remittance_tt
+		}
+
+		days_remove = 30
+		remove_effect = {
+		remove_ideas = LEB_overseas_remittance
+			clr_country_flag = LEB_already_doing_remittance
+		}
+
+	}
+	
+	
+	chile_lebanese = {
+		icon = GFX_decision_category_gre_investment_decisions
+		target_trigger = {
+		FROM = {
+				Tag = CHL
+				Tag = CHL
+				}
+							}
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			country_exists = CHL
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_remittance_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_remittance
+					}
+			}
+			
+			}
+		
+		cost = 150
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_overseas_remittance_return
+		}
+		
+		complete_effect = {
+			add_ideas = LEB_overseas_remittance
+			set_country_flag = LEB_already_doing_remittance
+			add_to_variable = {
+				var = LEB_overseas_remittance
+				value = -1
+			}
+			custom_effect_tooltip = LEB_decrease_overseas_remittance_tt
+		}
+
+		days_remove = 30
+		remove_effect = {
+		remove_ideas = LEB_overseas_remittance
+			clr_country_flag = LEB_already_doing_remittance
+		}
+
+	}
+	
+	
+	america_lebanese = {
+		icon = GFX_decision_category_gre_investment_decisions
+		target_trigger = {
+		FROM = {
+				Tag = USA
+				Tag = USA
+				}
+							}
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			country_exists = USA
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_remittance_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_remittance
+					}
+			}
+			
+			}
+		
+		cost = 150
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_overseas_remittance_return
+		}
+		
+		complete_effect = {
+			add_ideas = LEB_overseas_remittance
+			set_country_flag = LEB_already_doing_remittance
+			add_to_variable = {
+				var = LEB_overseas_remittance
+				value = -1
+			}
+			custom_effect_tooltip = LEB_decrease_overseas_remittance_tt
+		}
+
+		days_remove = 30
+		remove_effect = {
+		remove_ideas = LEB_overseas_remittance
+			clr_country_flag = LEB_already_doing_remittance
+		}
+
+	}
+	
+	colombia_lebanese = {
+		icon = GFX_decision_category_gre_investment_decisions
+		target_trigger = {
+		FROM = {
+				Tag = COL
+				Tag = COL
+				}
+							}
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			country_exists = COL
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_remittance_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_remittance
+					}
+			}
+			
+			}
+		
+		cost = 150
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_overseas_remittance_return
+		}
+		
+		complete_effect = {
+			add_ideas = LEB_overseas_remittance
+			set_country_flag = LEB_already_doing_remittance
+			add_to_variable = {
+				var = LEB_overseas_remittance
+				value = -1
+			}
+			custom_effect_tooltip = LEB_decrease_overseas_remittance_tt
+		}
+
+		days_remove = 30
+		remove_effect = {
+		remove_ideas = LEB_overseas_remittance
+			clr_country_flag = LEB_already_doing_remittance
+		}
+
+	}
+
+
+	venezuela_lebanese = {
+		icon = GFX_decision_category_gre_investment_decisions
+		target_trigger = {
+		FROM = {
+				Tag = VEN
+				Tag = VEN
+				}
+							}
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			country_exists = VEN
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_remittance_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_remittance
+					}
+			}
+			
+			}
+		
+		cost = 150
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_overseas_remittance_return
+		}
+		
+		complete_effect = {
+			add_ideas = LEB_overseas_remittance
+			set_country_flag = LEB_already_doing_remittance
+			add_to_variable = {
+				var = LEB_overseas_remittance
+				value = -1
+			}
+			custom_effect_tooltip = LEB_decrease_overseas_remittance_tt
+		}
+
+		days_remove = 30
+		remove_effect = {
+		remove_ideas = LEB_overseas_remittance
+			clr_country_flag = LEB_already_doing_remittance
+		}
+
+	}
+	
+	uruguay_lebanese = {
+		icon = GFX_decision_category_gre_investment_decisions
+		target_trigger = {
+		FROM = {
+				Tag = URG
+				Tag = URG
+				}
+							}
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			country_exists = URG
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_remittance_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_remittance
+					}
+			}
+			
+			}
+		
+		cost = 150
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_overseas_remittance_return
+		}
+		
+		complete_effect = {
+			add_ideas = LEB_overseas_remittance
+			set_country_flag = LEB_already_doing_remittance
+			add_to_variable = {
+				var = LEB_overseas_remittance
+				value = -1
+			}
+			custom_effect_tooltip = LEB_decrease_overseas_remittance_tt
+		}
+
+		days_remove = 30
+		remove_effect = {
+		remove_ideas = LEB_overseas_remittance
+			clr_country_flag = LEB_already_doing_remittance
+		}
+
+	}
+
+	maghrib_lebanese = {
+		icon = GFX_decision_category_gre_investment_decisions
+		target_trigger = {
+		FROM = {
+				Tag = NFA
+				Tag = NFA
+				}
+							}
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			country_exists = NFA
+			original_tag = LEB
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_remittance_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_remittance
+					}
+			}
+			
+			}
+		
+		cost = 150
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_overseas_remittance_return
+		}
+		
+		complete_effect = {
+			add_ideas = LEB_overseas_remittance
+			set_country_flag = LEB_already_doing_remittance
+			add_to_variable = {
+				var = LEB_overseas_remittance
+				value = -1
+			}
+			custom_effect_tooltip = LEB_decrease_overseas_remittance_tt
+		}
+
+		days_remove = 30
+		remove_effect = {
+		remove_ideas = LEB_overseas_remittance
+			clr_country_flag = LEB_already_doing_remittance
+		}
+
+	}
+
+}
+
+LEB_decision_tourism = {
+
+invite_taha_hussein = {
+		icon = GFX_decision_generic_air
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			NOT = { has_war_with = EGY}
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_tourism_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_tourism
+					}
+			}
+			
+			}
+		
+		cost = 15
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_tourism
+		}
+		
+		complete_effect = {
+		set_country_flag = LEB_already_doing_tourism	
+		}
+
+		days_remove = 7
+		remove_effect = {
+		country_event = LEB.5
+			clr_country_flag = LEB_already_doing_tourism
+		}
+
+	}
+
+invite_sayyid_qutb = {
+		icon = GFX_decision_generic_air
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			NOT = { has_war_with = EGY}
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_tourism_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_tourism
+					}
+			}
+		
+			}
+		
+		cost = 15
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_tourism
+		}
+		
+		complete_effect = {
+			set_country_flag = LEB_already_doing_tourism
+		}
+
+		days_remove = 7
+		remove_effect = {
+		country_event = LEB.6
+			clr_country_flag = LEB_already_doing_tourism
+		}
+
+	}
+
+invite_hassan_banna = {
+		icon = GFX_decision_generic_air
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			NOT = { has_war_with = EGY}
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_tourism_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_tourism
+					}
+			}
+			
+			}
+		
+		cost = 15
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_tourism
+		}
+		
+		complete_effect = {
+			set_country_flag = LEB_already_doing_tourism
+		}
+
+		days_remove = 7
+		remove_effect = {
+		country_event = LEB.7
+			clr_country_flag = LEB_already_doing_tourism
+		}
+
+	}
+
+invite_sadr_al_din = {
+		icon = GFX_decision_generic_air
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			controls_state = 553        
+			NOT = { has_war_with = PER}
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_tourism_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_tourism
+					}
+			}
+			
+			
+			}
+		
+		cost = 15
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_tourism
+		}
+		
+		complete_effect = { 
+			set_country_flag = LEB_already_doing_tourism
+		}
+
+		days_remove = 7
+		remove_effect = { 
+		country_event = LEB.12
+			clr_country_flag = LEB_already_doing_tourism
+		}
+
+	}
+	
+invite_king_saud = {
+		icon = GFX_decision_generic_air
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			country_exists = SAU
+			NOT = { has_war_with = SAU } 
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_tourism_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_tourism
+					}
+			}
+			}
+		
+		cost = 15
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_tourism
+		}
+		
+		complete_effect = {
+			set_country_flag = LEB_already_doing_tourism
+		}
+
+		days_remove = 7
+		remove_effect = {
+		
+		country_event = LEB.8
+			clr_country_flag = LEB_already_doing_tourism
+		}
+
+	}
+	
+invite_mohamed_naguib = {
+		icon = GFX_decision_generic_air
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			NOT = { has_war_with = EGY }
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_tourism_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_tourism
+					}
+			}
+			}
+		
+		cost = 15
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_tourism
+		}
+		
+		complete_effect = {
+			set_country_flag = LEB_already_doing_tourism
+		}
+
+		days_remove = 7
+		remove_effect = {
+		country_event = LEB.9
+			clr_country_flag = LEB_already_doing_tourism
+		}
+
+	}
+	
+invite_henri_ponsot = {
+		icon = GFX_decision_generic_air
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			NOT = { has_war_with = NFA }
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_tourism_tt
+							NOT = {
+					has_country_flag = LEB_already_doing_tourism
+					}
+			}
+
+			}
+		
+		cost = 15
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_tourism
+		}
+		
+		complete_effect = {
+			set_country_flag = LEB_already_doing_tourism
+		}
+
+		days_remove = 7
+		remove_effect = {
+		country_event = LEB.10
+			clr_country_flag = LEB_already_doing_tourism
+		}
+
+	}
+	
+invite_sail_mohamed = {
+		icon = GFX_decision_generic_air
+		
+		allowed = {
+			original_tag = LEB
+		}
+		available = {
+			is_subject_of = TUR
+			original_tag = LEB
+			NOT = { has_war_with = NFA }
+			controls_state = 553
+			custom_trigger_tooltip = {
+				tooltip = LEB_only_one_action_tourism_tt
+				NOT = {
+					has_country_flag = LEB_already_doing_tourism
+					}
+			}
+			}
+		
+		cost = 15
+			
+		fire_only_once = yes	
+		
+		visible = {
+			original_tag = LEB
+			has_country_flag = LEB_tourism
+		}
+		
+		complete_effect = {
+			set_country_flag = LEB_already_doing_tourism
+		}
+
+		days_remove = 7
+		remove_effect = {
+		country_event = LEB.11
+			clr_country_flag = LEB_already_doing_tourism
+		}
+
+	}
+	
+	}

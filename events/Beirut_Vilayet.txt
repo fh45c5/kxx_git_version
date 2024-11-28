@@ -1,0 +1,1580 @@
+add_namespace = LEB
+country_event = {
+	id = LEB.1
+	title = LEB.1.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.1.d
+	option = {
+	name = LEB.1.a
+
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.1"
+	}
+trigger = {
+		tag = LEB
+		date > 1936.1.1
+	}
+mean_time_to_happen = {
+		days = 1
+	}
+
+	}
+country_event = {
+	id = LEB.2
+	title = LEB.2.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.2.d
+	option = {
+	name = LEB.2.a
+		swap_ideas = {
+				add_idea = LEB_black_monday
+				remove_idea = LEB_gate_between_two_worlds
+			}
+
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.2"
+	}
+trigger = {
+		tag = LEB
+		date > 1936.2.5
+	}
+mean_time_to_happen = {
+		days = 1
+	}
+
+	}
+	
+	country_event = {
+	id = LEB.3
+	title = LEB.3.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.3.d
+	option = {
+	name = LEB.3.a
+swap_ideas = {
+				add_idea = LEB_religious_riots
+				remove_idea = LEB_religious_clashes
+			}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.3"
+	}
+
+	}
+
+country_event = {
+	id = LEB.4
+	title = LEB.4.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.4.d
+	option = {
+	name = LEB.4.a
+	add_political_power = 50
+	add_stability = 0.05
+	add_war_support = 0.05
+	add_offsite_building = {
+						type = industrial_complex
+						level = 3
+						}	
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.4"
+	}
+
+	}
+	
+country_event = {
+	id = LEB.5
+	title = LEB.5.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.5.d
+	option = {
+	name = LEB.5.a
+	add_stability = 0.03
+	custom_effect_tooltip = maronite_add_influence_tt
+	add_to_variable = {
+				var = LEB_maronite_power
+				value = 5
+			}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.5"
+	}
+
+	}
+	
+country_event = {
+	id = LEB.6
+	title = LEB.6.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.6.d
+	option = {
+	name = LEB.6.a
+	add_war_support = 0.03
+	custom_effect_tooltip = ottoman_lose_influence_tt
+	add_to_variable = {
+				var = LEB_ottoman_power
+				value = -5
+			}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.6"
+	}
+
+	}
+	
+country_event = {
+	id = LEB.7
+	title = LEB.7.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.7.d
+	option = {
+	name = LEB.7.a
+	add_manpower = 250
+	
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.7"
+	}
+
+	}
+	
+country_event = {
+	id = LEB.8
+	title = LEB.8.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.8.d
+	option = {
+	name = LEB.8.a
+	add_resource = {
+						type = oil
+						amount = 6
+						state = 553
+						}
+	
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.8"
+	}
+
+	}
+	
+country_event = {
+	id = LEB.9
+	title = LEB.9.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.9.d
+	option = {
+	name = LEB.9.a
+	army_experience = 15
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.9"
+	}
+
+	}
+	
+country_event = {
+	id = LEB.10
+	title = LEB.10.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.10.d
+	option = {
+	name = LEB.10.a
+	add_tech_bonus = {
+							name = LEB_ottoman_gendarme_bonus
+							bonus = 0.40
+							uses = 1
+							category = infantry_weapons
+						}
+						
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.10"
+	}
+
+	}
+	
+	
+country_event = {
+	id = LEB.11
+	title = LEB.11.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.11.d
+	option = {
+	name = LEB.11.a
+	add_tech_bonus = {
+							name = LEB_ottoman_gendarme_bonus
+							bonus = 0.40
+							uses = 1
+							category = armor
+						}
+	custom_effect_tooltip = sunni_add_influence_tt
+	add_to_variable = {
+				var = LEB_sunni_power
+				value = 5
+			}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.11"
+	}
+
+	}
+	
+	
+country_event = {
+	id = LEB.12
+	title = LEB.12.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.12.d
+	option = {
+	name = LEB.12.a
+	add_stability = 0.05
+	custom_effect_tooltip = shia_add_influence_tt
+	add_to_variable = {
+				var = LEB_shia_power
+				value = 5
+			}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.12"
+	}
+
+	}
+
+### Flavor ###	
+
+### restaurant ###
+country_event = {
+	id = LEB.13
+	title = LEB.13.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.13.d
+	option = {
+	name = LEB.13.a
+	add_political_power = 5
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.13"
+	}
+
+	}
+	
+#### restaurant clashes ###
+country_event = {
+	id = LEB.14
+	title = LEB.14.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.14.d
+	option = {
+	name = LEB.14.a
+	custom_effect_tooltip = maronite_add_influence_tt
+	add_to_variable = {var = LEB_maronite_power
+	value = 5
+	}
+	}
+	option = {
+	name = LEB.14.b
+	custom_effect_tooltip = shia_add_influence_tt
+	add_to_variable = {var = LEB_shia_power
+	value = 5
+	}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.14"
+	}
+
+	}
+
+
+### ssnp ###
+country_event = {
+	id = LEB.15
+	title = LEB.15.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.15.d
+	option = {
+	name = LEB.15.a
+	custom_effect_tooltip = ssnp_add_influence_tt
+	add_to_variable = {var = LEB_ssnp_power
+	value = 5
+	}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.15"
+	}
+
+	}
+
+
+## commie strikes ###	
+country_event = {
+	id = LEB.16
+	title = LEB.16.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.16.d
+	option = {
+	name = LEB.16.a
+	custom_effect_tooltip = sunni_add_influence_tt
+	add_to_variable = {var = LEB_sunni_power
+	value = 5
+	}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.16"
+	}
+
+	}
+	
+### monument ###
+country_event = {
+	id = LEB.17
+	title = LEB.17.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.17.d
+	option = {
+	name = LEB.17.a
+	add_political_power = 5
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.17"
+	}
+
+	}
+
+### sus tribe soldier###
+country_event = {
+	id = LEB.18
+	title = LEB.18.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.18.d
+	option = {
+	name = LEB.18.a
+	
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.18"
+	}
+
+	}
+
+
+### pan-turkists booom###
+country_event = {
+	id = LEB.19
+	title = LEB.19.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.19.d
+	option = {
+	name = LEB.19.a
+	
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.19"
+	}
+
+	}
+
+
+### operation resurrection ###
+country_event = {
+	id = LEB.20
+	title = LEB.20.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.20.d
+	option = {
+	name = LEB.20.a
+	
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.20"
+	}
+
+	}
+	
+### operation broken spear ###
+country_event = {
+	id = LEB.21
+	title = LEB.21.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.21.d
+	option = {
+	name = LEB.21.a
+	
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.21"
+	}
+
+	}	
+
+### operation breezeless ###
+
+country_event = {
+	id = LEB.22
+	title = LEB.22.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.22.d
+	option = {
+	name = LEB.22.a
+	
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.22"
+	}
+
+	}
+
+### operation red dusk ###
+
+country_event = {
+	id = LEB.23
+	title = LEB.23.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.23.d
+	option = {
+	name = LEB.23.a
+	
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.23"
+	}
+
+	}
+
+### cooperate with mullah ###
+
+country_event = {
+	id = LEB.24
+	title = LEB.24.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.24.d
+	option = {
+	name = LEB.24.a
+	
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.24"
+	}
+
+	}
+
+### printing factory incident ###
+
+country_event = {
+	id = LEB.25
+	title = LEB.25.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.25.d
+	option = {
+	name = LEB.25.a
+	
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.25"
+	}
+
+	}
+
+### meet with mujtahid ###
+
+country_event = {
+	id = LEB.26
+	title = LEB.26.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.26.d
+	option = {
+	name = LEB.26.a
+	
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.26"
+	}
+
+	}
+
+### meet with partiarch ###
+
+country_event = {
+	id = LEB.27
+	title = LEB.27.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.27.d
+	option = {
+	name = LEB.27.a
+	
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.27"
+	}
+
+	}
+
+
+
+### Storm In Silence ###
+country_event = {
+	id = LEB.100
+	title = LEB.100.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.100.d
+	option = {
+	name = LEB.100.a
+	add_political_power = 5
+	hidden_effect = {
+	country_event = { id = LEB.101
+					days = 2	
+	}
+	}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.100"
+	}
+
+	}
+	
+	
+	
+### Vali Has Been Assassinated ###
+country_event = {
+	id = LEB.101
+	title = LEB.101.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.101.d
+	option = {
+	name = LEB.101.a
+	add_political_power = -100
+	add_stability = -0.25
+	add_manpower = 300
+	custom_effect_tooltip = LEB_vali_die_tt
+	
+	hidden_effect = {
+	remove_ideas = LEB_an_new_era_for_vilayet
+	remove_ideas = LEB_idea_a_land_hard_to_govern
+	delete_unit_template_and_units = {
+	division_template = "Lubnan Vilayeti Milisleri"
+	disband = no
+	}
+	553 = {
+	set_demilitarized_zone = yes
+	}
+	kill_country_leader = yes
+	create_country_leader = {
+	name = "维拉耶紧急情况委员会"
+	picture = "gfx/leaders/LEB/Portrait_Emergency_Committee.png"
+	expire = "1965.1.1"
+	ideology = oligarchy_subtype
+	
+	}
+	country_event = { id = LEB.102
+					days = 2	
+	}
+	}
+	
+	}
+
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.101"
+	}
+
+	}
+
+### Amal Is Attacking ###	
+country_event = {
+	id = LEB.102
+	title = LEB.102.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.102.d
+	option = {
+	name = LEB.102.a
+	custom_effect_tooltip = LEB_quran_1_tt
+	add_political_power = -25
+	
+	custom_effect_tooltip = shia_lose_influence_tt
+	add_to_variable = { var = LEB_shia_power
+						value = -5
+	}
+	
+	hidden_effect = {
+	
+	
+	country_event = { id = LEB.103
+					days = 2	
+	}
+	}
+	}
+	option = {
+	name = LEB.102.b
+	custom_effect_tooltip = LEB_quran_1_tt
+	add_political_power = 25
+	custom_effect_tooltip = shia_add_influence_tt
+	add_to_variable = { var = LEB_shia_power
+						value = 5
+	}
+	hidden_effect = {
+	country_event = { id = LEB.103
+					days = 2	
+	}
+	}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.102"
+	}
+
+	}
+	
+	
+### Kataeb Moves ###
+country_event = {
+	id = LEB.103
+	title = LEB.103.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.103.d
+	option = {
+	name = LEB.103.a
+	custom_effect_tooltip = LEB_quran_2_tt
+	add_political_power = -25
+	custom_effect_tooltip = maronite_lose_influence_tt
+	add_to_variable = { var = LEB_maronite_power
+						value = -5
+	}
+	hidden_effect = {
+	country_event = { id = LEB.104
+					days = 2	
+	}
+	}
+	}
+	option = {
+	name = LEB.103.b
+	custom_effect_tooltip = LEB_quran_2_tt
+	add_political_power = 25
+	custom_effect_tooltip = maronite_add_influence_tt
+	add_to_variable = { var = LEB_maronite_power
+						value = 5
+	}
+	hidden_effect = {
+	country_event = { id = LEB.104
+					days = 2	
+	}
+	}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.103"
+	}
+
+	}
+	
+### LCP Uprising ###
+country_event = {
+	id = LEB.104
+	title = LEB.104.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.104.d
+	option = {
+	name = LEB.104.a
+	custom_effect_tooltip = LEB_quran_3_tt
+	add_political_power = -25
+	custom_effect_tooltip = sunni_lose_influence_tt
+	add_to_variable = { var = LEB_sunni_power
+						value = -5
+	}
+	hidden_effect = {
+	country_event = { id = LEB.105
+					days = 2	
+	}
+	}
+	}
+	option = {
+	name = LEB.104.b
+	custom_effect_tooltip = LEB_quran_3_tt
+	add_political_power = 25
+	custom_effect_tooltip = sunni_add_influence_tt
+	add_to_variable = { var = LEB_sunni_power
+						value = 5
+	}
+	set_country_flag = ssnp1
+	hidden_effect = {
+	country_event = { id = LEB.105
+					days = 2	
+	}
+	}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.104"
+	}
+
+	}
+	
+	
+### SSNP Revolt ###
+country_event = {
+	id = LEB.105
+	title = LEB.105.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.105.d
+	option = {
+	name = LEB.105.a
+	custom_effect_tooltip = LEB_quran_4_tt
+	add_political_power = -25
+	custom_effect_tooltip = ssnp_lose_influence_tt
+	add_to_variable = { var = LEB_ssnp_power
+						value = -5
+	}
+	hidden_effect = {
+	country_event = { id = LEB.106
+					days = 2	
+	}
+	}
+	}
+	option = {
+	name = LEB.105.b
+	custom_effect_tooltip = LEB_quran_4_tt
+	add_political_power = 25
+	custom_effect_tooltip = ssnp_add_influence_tt
+	add_to_variable = { var = LEB_ssnp_power
+						value = 5
+	}
+	hidden_effect = {
+	country_event = { id = LEB.106
+					days = 2	
+	}
+	}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.105"
+	}
+
+	}
+	
+	
+### Vilayet's Fate ###
+country_event = {
+	id = LEB.106
+	title = LEB.106.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.106.d
+	option = {
+	name = LEB.106.a
+	custom_effect_tooltip = LEB_quran_5_tt
+	if = {
+			limit = {
+				check_variable = { LEB_shia_power > LEB_ottoman_power }
+				check_variable = { LEB_shia_power > LEB_maronite_power }
+				check_variable = { LEB_shia_power > LEB_sunni_power }
+				check_variable = { LEB_shia_power > LEB_ssnp_power }
+			}
+			hidden_effect = {
+	country_event = { id = LEB.107
+					days = 1	
+	}
+	}}
+		
+	if = {
+			limit = {
+				check_variable = { LEB_ottoman_power > LEB_shia_power }
+				check_variable = { LEB_ottoman_power > LEB_maronite_power }
+				check_variable = { LEB_ottoman_power > LEB_sunni_power }
+				check_variable = { LEB_ottoman_power > LEB_ssnp_power }
+			}
+			hidden_effect = {
+	country_event = { id = LEB.108
+					days = 1	
+	}
+	}
+		}
+	if = {
+			limit = {
+				check_variable = { LEB_maronite_power > LEB_shia_power }
+				check_variable = { LEB_maronite_power > LEB_ottoman_power }
+				check_variable = { LEB_maronite_power > LEB_sunni_power }
+				check_variable = { LEB_maronite_power > LEB_ssnp_power }
+			}
+			hidden_effect = {
+	country_event = { id = LEB.109
+					days = 1	
+	}
+	}
+		}
+	if = {
+			limit = {
+				check_variable = { LEB_sunni_power > LEB_shia_power }
+				check_variable = { LEB_sunni_power > LEB_ottoman_power }
+				check_variable = { LEB_sunni_power > LEB_maronite_power }
+				check_variable = { LEB_sunni_power > LEB_ssnp_power }
+			}
+			hidden_effect = {
+	country_event = { id = LEB.110
+					days = 1	
+	}
+	}
+		}
+	if = {
+			limit = {
+				check_variable = { LEB_ssnp_power > LEB_shia_power }
+				check_variable = { LEB_ssnp_power > LEB_ottoman_power }
+				check_variable = { LEB_ssnp_power > LEB_maronite_power }
+				check_variable = { LEB_ssnp_power > LEB_sunni_power }
+			}
+			hidden_effect = {
+	country_event = { id = LEB.111
+					days = 1	
+	}
+	}
+		}
+	if = {
+	
+	limit = {
+	NOT = 	{
+			OR = {	
+				AND = {
+				check_variable = { LEB_shia_power > LEB_ottoman_power }
+				check_variable = { LEB_shia_power > LEB_maronite_power }
+				check_variable = { LEB_shia_power > LEB_sunni_power }
+				check_variable = { LEB_shia_power > LEB_ssnp_power }
+						
+						}
+				AND = {
+				check_variable = { LEB_ottoman_power > LEB_shia_power }
+				check_variable = { LEB_ottoman_power > LEB_maronite_power }
+				check_variable = { LEB_ottoman_power > LEB_sunni_power }
+				check_variable = { LEB_ottoman_power > LEB_ssnp_power }
+						
+						}
+				AND = {
+				check_variable = { LEB_maronite_power > LEB_shia_power }
+				check_variable = { LEB_maronite_power > LEB_ottoman_power }
+				check_variable = { LEB_maronite_power > LEB_sunni_power }
+				check_variable = { LEB_maronite_power > LEB_ssnp_power }
+						
+						}
+				AND = {
+				check_variable = { LEB_sunni_power > LEB_shia_power }
+				check_variable = { LEB_sunni_power > LEB_ottoman_power }
+				check_variable = { LEB_sunni_power > LEB_maronite_power }
+				check_variable = { LEB_sunni_power > LEB_ssnp_power }
+						
+						}
+				AND = {
+				check_variable = { LEB_ssnp_power > LEB_shia_power }
+				check_variable = { LEB_ssnp_power > LEB_ottoman_power }
+				check_variable = { LEB_ssnp_power > LEB_maronite_power }
+				check_variable = { LEB_ssnp_power > LEB_sunni_power }
+						
+						}
+				}
+				
+			}
+			}
+		hidden_effect = {
+	country_event = { id = LEB.112
+					days = 1	
+	}
+	}
+	
+	}
+
+}
+		
+	}
+
+
+
+### amal movement seizes power ###
+country_event = {
+	id = LEB.107
+	title = LEB.107.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.107.d
+	option = {
+	name = LEB.107.a
+	clr_country_flag = LEB_vilayet
+	set_cosmetic_tag = LEB_shia
+	TUR = { end_puppet = LEB }
+	load_oob = "LEB_shia"
+	set_politics = {
+			ruling_party = social_conservative
+			elections_allowed = no
+		}
+	add_popularity = {
+			ideology = social_conservative
+			popularity = 0.25
+		}
+	create_country_leader = {
+			name = "伊斯兰什叶派最高委员会"
+			picture = "gfx/leaders/LEB/Portrait_Supreme_Council_1.png"
+			expire = "1965.1.1"
+			ideology = soccon_islamism_subtype
+		}
+		add_stability = 0.15
+		hidden_effect = {
+		553 = {
+	set_demilitarized_zone = no
+	}
+	country_event = { id = LEB.200 #inpendence war
+	days = 2
+	}
+	}
+	
+}
+	}
+
+
+
+### ottoman vilayet "controls" ###				
+country_event = {
+	id = LEB.108
+	title = LEB.108.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.108.d
+	option = {
+	name = LEB.108.a
+	
+	add_stability = 0.15
+	hidden_effect = {
+553 = {
+	set_demilitarized_zone = no
+	}	
+	country_event = { 
+	id = LEB.113 #pan-turkists and tribes
+	days = 2
+	}
+	}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.1"
+	}
+				}
+
+### kataeb seizes power ###				
+country_event = {
+	id = LEB.109
+	title = LEB.109.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.109.d
+	option = {
+	name = LEB.109.a
+	clr_country_flag = LEB_vilayet
+	set_cosmetic_tag = LEB_maronite
+	TUR = { end_puppet = LEB }
+	load_oob = "LEB_maronite"
+	set_politics = {
+			ruling_party = national_populist
+			elections_allowed = no
+		}
+	add_popularity = {
+			ideology = national_populist
+			popularity = 0.25
+		}
+		add_stability = 0.15
+		hidden_effect = {
+		553 = {
+	set_demilitarized_zone = no
+	}
+	country_event = { id = LEB.200 #inpendence war
+	days = 2
+	}
+	}
+	}
+
+				}
+		
+
+### lcp seizes power ###		
+country_event = {
+	id = LEB.110
+	title = LEB.110.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.110.d
+	option = {
+	name = LEB.110.a
+	clr_country_flag = LEB_vilayet
+	set_cosmetic_tag = LEB_sunni
+	TUR = { end_puppet = LEB }
+	load_oob = "LEB_sunni"
+	set_politics = {
+			ruling_party = radical_socialist
+			elections_allowed = no
+		}
+	add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.25
+		}
+	hidden_effect = {
+	553 = {
+	set_demilitarized_zone = no
+	}
+	country_event = { id = LEB.200 #inpendence war
+	days = 2
+	}
+	}
+		add_stability = 0.15
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.1"
+	}
+				}
+
+
+
+### ssnp seizes power ###				
+country_event = {
+	id = LEB.111
+	title = LEB.111.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.111.d
+	option = {
+	clr_country_flag = LEB_vilayet
+	name = LEB.111.a
+	if = {
+		limit = {
+			has_country_flag = ssnp1
+		}
+		set_cosmetic_tag = LEB_ssnp
+		TUR = { end_puppet = LEB }
+		load_oob = "LEB_ssnp"
+		set_politics = {
+			ruling_party = totalist
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.25
+		}
+		create_country_leader = {
+			name = "安东·萨阿德"
+			picture = "gfx/leaders/LEB/Antoun_Saadeh3.png"
+			expire = "1.1.1"
+			desc = "POLITICS_NR_SADEH_DESC"
+			ideology = syrian_social_nationalism
+		}
+		hidden_effect = {
+		553 = {
+		set_demilitarized_zone = no
+		}
+		country_event = { id = LEB.200 #inpendence war
+			days = 2
+		}
+	}
+	set_cosmetic_tag = LEB_ssnp
+	TUR = { end_puppet = LEB }
+	load_oob = "LEB_ssnp"
+	set_politics = {
+			ruling_party = paternal_autocrat
+			elections_allowed = no
+		}
+	add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.25
+		}
+		hidden_effect = {
+		553 = {
+	set_demilitarized_zone = no
+	}
+	country_event = { id = LEB.200 #inpendence war
+	days = 2
+	}
+	}
+	add_stability = 0.15
+	}
+				}
+			}
+
+### custom choose ###				
+country_event = {
+	id = LEB.112
+	title = LEB.112.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.112.d
+	option = {
+	hidden_effect = {
+	country_event = { id = LEB.107
+					days = 1	
+	}
+	}
+	}
+	option = {
+	name = LEB.112.b #ottoman
+			
+	hidden_effect = {
+	country_event = { id = LEB.108
+	days = 2
+	}
+	}
+	}
+	option = {
+	name = LEB.112.c #kataeb
+	TUR = { end_puppet = LEB }
+	hidden_effect = {
+	country_event = { id = LEB.109
+					days = 1	
+	}
+	}
+	}
+	
+	option = {
+	name = LEB.112.e #lcp
+	hidden_effect = {
+	country_event = { id = LEB.110
+					days = 1	
+	}
+	}
+	}
+	
+	option = {
+	name = LEB.112.f #ssnp
+	hidden_effect = {
+	country_event = { id = LEB.111
+					days = 1	
+	}
+	}
+	}
+
+				}
+				
+country_event = {
+	id = LEB.113
+	title = LEB.113.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.113.d
+	option = {
+	name = LEB.113.a
+	hidden_effect = {
+	country_event = {
+	id = LEB.114 
+	days = 2
+	}
+	}
+	}
+	option = {
+	name = LEB.113.b
+	hidden_effect = {
+	
+	country_event = {
+	id = LEB.115 #pan-turkists seizes power
+	days = 2
+	}
+	}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.1"
+	}
+}
+	
+	
+	### hashemittes ###
+country_event = {
+	id = LEB.114
+	title = LEB.114.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.114.d
+	option = {
+	name = LEB.114.a
+	load_oob = "LEB_hashemite"
+	TUR = { end_puppet = LEB }
+	clr_country_flag = LEB_vilayet
+	set_cosmetic_tag = LEB_hashemite
+	set_politics = {
+			ruling_party = paternal_autocrat
+			elections_allowed = no
+		}
+	add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.25
+		}
+	set_party_name = {
+			ideology = paternal_autocrat
+			name = LEB_hashemite_party
+			long_name = LEB_hashemite_party_long
+		}
+	create_country_leader = {
+			name = "费萨尔一世"
+			picture = "gfx/leaders/LEB/Faisal_I.png"
+			expire = "1965.1.1"
+			ideology = absolute_monarchy_subtype
+		}
+		add_stability = 0.15
+	hidden_effect = {
+	553 = {
+	set_demilitarized_zone = no
+	}
+	
+	country_event = { id = LEB.200 
+	days = 2#inpendence war
+	
+	}
+	}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.114"
+	}
+
+
+	}
+	### pan-turkists ###
+country_event = {
+	id = LEB.115
+	title = LEB.115.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.115.d
+	option = {
+	
+	name = LEB.115.a
+	TUR = { end_puppet = LEB }
+	load_oob = "LEB_panturk"
+	clr_country_flag = LEB_vilayet
+	set_cosmetic_tag = LEB_panturk
+	set_politics = {
+			ruling_party = national_populist
+			elections_allowed = no
+		}
+	set_party_name = {
+			ideology = national_populist
+			name = LEB_grey_wolfs_party
+			long_name = LEB_grey_wolfs_party_long
+		}
+	add_popularity = {
+			ideology = national_populist
+			popularity = 0.25
+		}
+	create_country_leader = {
+			name = "内吉普·法兹尔·克萨屈雷克"
+			picture = "gfx/leaders/LEB/LEB_Necip_Fazil_Kisakurek.png"
+			expire = "1965.1.1"
+			ideology = pan_turkism_subtype
+		}
+		add_stability = 0.15
+	
+	hidden_effect = {
+	553 = {
+	set_demilitarized_zone = no
+	}
+	country_event = { id = LEB.200 #inpendence war
+	days = 2
+	}
+	}
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.115"
+	}
+
+
+	}
+	
+	############### independence war ##########
+country_event = {
+	id = LEB.200
+	title = LEB.200.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.200.d
+	option = {
+	name = LEB.200.a
+	
+	
+	TUR = {
+	declare_war_on = {
+    target = LEB
+    type = annex_everything
+}
+}
+	
+	add_manpower = 4000
+	add_stability = -0.1
+	custom_effect_tooltip = ninty_days_tt
+	TUR = {
+	add_ideas = TUR_LEB_war
+	}
+	hidden_effect = {
+	country_event = { id = LEB.201 #overseas industry
+	days = 2
+	}
+	country_event = { id = LEB.202 #white peace
+	days = 90
+	}
+	}
+	
+	
+	}
+	
+	}
+	
+  ###### overseas industry ######
+add_namespace = LEB
+country_event = {
+	id = LEB.201
+	title = LEB.201.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.201.d
+	option = {
+	name = LEB.201.a
+	custom_effect_tooltip = overseas_tt
+	if = {
+	limit = {
+	check_variable = { LEB_overseas_remittance = 8 }
+	
+	}
+	add_offsite_building = {
+	type = arms_factory
+	level = 10
+	}
+	add_manpower = 10000
+	}
+	
+	if = {
+	limit = {
+	check_variable = { LEB_overseas_remittance = 7 }
+	
+	}
+	add_offsite_building = {
+	type = arms_factory
+	level = 7
+	}
+	add_manpower = 7000
+	}
+	
+	if = {
+	limit = {
+	check_variable = { LEB_overseas_remittance = 6 }
+	
+	}
+	add_offsite_building = {
+	type = arms_factory
+	level = 6
+	}
+	add_manpower = 6000
+	}
+	
+	if = {
+	limit = {
+	check_variable = { LEB_overseas_remittance = 5 }
+	
+	}
+	add_offsite_building = {
+	type = arms_factory
+	level = 5
+	}
+	add_manpower = 5000
+	}
+	if = {
+	limit = {
+	check_variable = { LEB_overseas_remittance = 4 }
+	
+	}
+	add_offsite_building = {
+	type = arms_factory
+	level = 4
+	}
+	add_manpower = 4000
+	}
+	if = {
+	limit = {
+	check_variable = { LEB_overseas_remittance = 3 }
+
+	}
+	add_offsite_building = {
+	type = arms_factory
+	level = 3
+	}
+	add_manpower = 3000
+	}
+	if = {
+	limit = {
+	check_variable = { LEB_overseas_remittance = 2 }
+	
+	}
+	add_offsite_building = {
+	type = arms_factory
+	level = 2
+	}
+	add_manpower = 2000
+	}
+	if = {
+	limit = {
+	check_variable = { LEB_overseas_remittance = 1 }
+	
+	}
+	add_offsite_building = {
+	type = arms_factory
+	level = 1
+	}
+	add_manpower = 1000
+	}
+	if = {
+	limit = {
+	check_variable = { LEB_overseas_remittance = 0 }
+	}
+	add_manpower = 100
+	custom_effect_tooltip = fuck_you_tt
+	}
+	
+	}
+	
+	
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.1"
+	}
+
+
+	}	
+	
+	
+country_event = {
+	id = LEB.202
+	title = LEB.202.t
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	desc = LEB.202.d
+	option = {
+	name = LEB.202.a
+	TUR = {
+	remove_ideas = TUR_LEB_war
+	}
+	
+	white_peace = TUR
+	}
+immediate = {
+		log = "[GetDateText]:[Root.GetName]:eventLEB.1"
+	}
+
+
+
+
+	}

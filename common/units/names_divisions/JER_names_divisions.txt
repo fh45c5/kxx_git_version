@@ -1,0 +1,641 @@
+﻿# Devision template historical names system. Is a new method of naming the Devisions based on the names-group assigned to it's template.
+# If we run out of all historical names, the names will be assigned in the old way.
+#
+# Each group has a made up tag. Use it if you want to append more, or replace existing names with the extra txt files (modding).
+#
+# for_countries - lists all countries that can use it. If empty, or entire tag is missing, all countries in the world can use it.
+#
+# can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
+#
+# Division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
+#			however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#			for example the current one is no longer available due to the can_use trigger saying so).
+#			In automated choice, the Devision template must have at least 1 of the following types for it to be chosen.
+#
+# fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old Devision naming
+#			mechanics to be used for fallbacks, then just skip this option.
+#
+# unordered - It's a list of historical Devision names that did not have a number. Regardless if such names happened in history or not
+#			this option is available here mainly for a mods.
+#
+# ordered - Is a list of all historical names.
+#			Numbers must start from 1 and up.
+#			Numbers can't repeat in one scope.
+#			If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#			All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#			1st argument = The name. It must contain either:
+#						%d (for decimal number placement)
+#						%s (for string number placement - ROMAN numbers like XIV).
+#			2nd argument is optional = A localizable text describing this historical Devision. The text will be visible in the tooltip
+#									where you choose the historical Devision name.
+#			3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#									the current game version.
+JER_INF_01 = {
+	name = "Infantry Division"
+
+	for_countries = { JER }
+
+	can_use = { always = yes }
+
+	Division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { JER_INF_01 }
+
+	fallback_name = "%dème Devision d'Infanterie Ducale"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%dère Devision d'Infanterie Ducale" }
+		2 = { "%dème Devision d'Infanterie Ducale" }
+		3 = { "%dème Devision d'Infanterie Ducale" }
+		4 = { "%dème Devision d'Infanterie Ducale" }
+		5 = { "%dème Devision d'Infanterie Ducale" }
+		6 = { "%dème Devision d'Infanterie Ducale" }
+		7 = { "%dème Devision d'Infanterie Ducale" }
+		8 = { "%dème Devision d'Infanterie Ducale" }
+		9 = { "%dème Devision d'Infanterie Ducale" }
+		10 = { "%dème Devision d'Infanterie Ducale" }
+		11 = { "%dème Devision d'Infanterie Ducale" }
+		12 = { "%dème Devision d'Infanterie Ducale" }
+		13 = { "%dème Devision d'Infanterie Ducale" }
+		14 = { "%dème Devision d'Infanterie Ducale" }
+		15 = { "%dème Devision d'Infanterie Ducale" }
+		16 = { "%dème Devision d'Infanterie Ducale" }
+		17 = { "%dème Devision d'Infanterie Ducale" }
+		18 = { "%dème Devision d'Infanterie Ducale" }
+		19 = { "%dème Devision d'Infanterie Ducale" }
+		20 = { "%dème Devision d'Infanterie Ducale" }
+		21 = { "%dème Devision d'Infanterie Ducale" }
+		22 = { "%dème Devision d'Infanterie Ducale" }
+		23 = { "%dème Devision d'Infanterie Ducale" }
+		24 = { "%dème Devision d'Infanterie Ducale" }
+		25 = { "%dème Devision d'Infanterie Ducale" }
+		26 = { "%dème Devision d'Infanterie Ducale" }
+		27 = { "%dème Devision d'Infanterie Ducale" }
+		28 = { "%dème Devision d'Infanterie Ducale" }
+		29 = { "%dème Devision d'Infanterie Ducale" }
+		30 = { "%dème Devision d'Infanterie Ducale" }
+		31 = { "%dème Devision d'Infanterie Ducale" }
+		32 = { "%dème Devision d'Infanterie Ducale" }
+		33 = { "%dème Devision d'Infanterie Ducale" }
+		34 = { "%dème Devision d'Infanterie Ducale" }
+		35 = { "%dème Devision d'Infanterie Ducale" }
+		36 = { "%dème Devision d'Infanterie Ducale" }
+		37 = { "%dème Devision d'Infanterie Ducale" }
+		38 = { "%dème Devision d'Infanterie Ducale" }
+		39 = { "%dème Devision d'Infanterie Ducale" }
+		40 = { "%dème Devision d'Infanterie Ducale" }
+	}
+}
+
+JER_INF_02 = {
+	name = "Infantry Division"
+
+	for_countries = { JER }
+
+	can_use = { always = yes }
+
+	Division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { JER_INF_02 }
+
+	fallback_name = "%dème Milice Ducale"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%dère Milice Ducale" }
+		2 = { "%dème Milice Ducale" }
+		3 = { "%dème Milice Ducale" }
+		4 = { "%dème Milice Ducale" }
+		5 = { "%dème Milice Ducale" }
+		6 = { "%dème Milice Ducale" }
+		7 = { "%dème Milice Ducale" }
+		8 = { "%dème Milice Ducale" }
+		9 = { "%dème Milice Ducale" }
+	}
+}
+JER_INF_03 = {
+	name = "Infantry Division"
+
+	for_countries = { JER }
+
+	can_use = { always = yes }
+
+	Division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { JER_INF_03 }
+
+	fallback_name = "%dère Devision d'Defance Ducale"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%dère Devision d'Defance Ducale" }
+		2 = { "%dème Devision d'Defance Ducale" }
+		3 = { "%dème Devision d'Defance Ducale" }
+		4 = { "%dème Devision d'Defance Ducale" }
+		5 = { "%dème Devision d'Defance Ducale" }
+		6 = { "%dème Devision d'Defance Ducale" }
+		7 = { "%dème Devision d'Defance Ducale" }
+		8 = { "%dème Devision d'Defance Ducale" }
+		9 = { "%dème Devision d'Defance Ducale" }
+	}
+}
+
+JER_CAV_01 = {
+	name = "Cavalry Division"
+
+	for_countries = { JER }
+
+	can_use = { always = yes }
+
+	Division_types = { "cavalry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { JER_INF_01 }
+
+	fallback_name = "%dème Devision de Chevalere Légère"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%dère Devision de Chevalere Légère" }
+		2 = { "%dème Devision de Chevalere Légère" }
+		3 = { "%dème Devision de Chevalere Légère" }
+		4 = { "%dème Devision de Chevalere Légère" }
+		5 = { "%dème Devision de Chevalere Légère" }
+		6 = { "%dème Devision de Chevalere Légère" }
+		7 = { "%dème Devision de Chevalere Légère" }
+		8 = { "%dème Devision de Chevalere Légère" }
+		9 = { "%dème Devision de Chevalere Légère" }
+		10 = { "%dème Devision de Chevalere Légère" }
+		11 = { "%dème Devision de Chevalere Légère" }
+		12 = { "%dème Devision de Chevalere Légère" }
+		13 = { "%dème Devision de Chevalere Légère" }
+		14 = { "%dème Devision de Chevalere Légère" }
+		15 = { "%dème Devision de Chevalere Légère" }
+		16 = { "%dème Devision de Chevalere Légère" }
+		17 = { "%dème Devision de Chevalere Légère" }
+		18 = { "%dème Devision de Chevalere Légère" }
+		19 = { "%dème Devision de Chevalere Légère" }
+		20 = { "%dème Devision de Chevalere Légère" }
+	}
+}
+
+JER_MOT_01 = {
+	name = "Motorized Division"
+
+	for_countries = { JER }
+
+	can_use = { always = yes }
+
+	Division_types = { "motorized" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { JER_INF_01 }
+
+	fallback_name = "%dème Div. d'Infanterie Motorisée"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%dère Div. d'Infanterie Motorisée" }
+		2 = { "%dème Div. d'Infanterie Motorisée" }
+		3 = { "%dème Div. d'Infanterie Motorisée" }
+		4 = { "%dème Div. d'Infanterie Motorisée" }
+		5 = { "%dème Div. d'Infanterie Motorisée" }
+		6 = { "%dème Div. d'Infanterie Motorisée" }
+		7 = { "%dème Div. d'Infanterie Motorisée" }
+		8 = { "%dème Div. d'Infanterie Motorisée" }
+		9 = { "%dème Div. d'Infanterie Motorisée" }
+		10 = { "%dème Div. d'Infanterie Motorisée" }
+		11 = { "%dème Div. d'Infanterie Motorisée" }
+		12 = { "%dème Div. d'Infanterie Motorisée" }
+		13 = { "%dème Div. d'Infanterie Motorisée" }
+		14 = { "%dème Div. d'Infanterie Motorisée" }
+		15 = { "%dème Div. d'Infanterie Motorisée" }
+		16 = { "%dème Div. d'Infanterie Motorisée" }
+		17 = { "%dème Div. d'Infanterie Motorisée" }
+		18 = { "%dème Div. d'Infanterie Motorisée" }
+		19 = { "%dème Div. d'Infanterie Motorisée" }
+		20 = { "%dème Div. d'Infanterie Motorisée" }
+		21 = { "%dème Div. d'Infanterie Motorisée" }
+		22 = { "%dème Div. d'Infanterie Motorisée" }
+		23 = { "%dème Div. d'Infanterie Motorisée" }
+		24 = { "%dème Div. d'Infanterie Motorisée" }
+		25 = { "%dème Div. d'Infanterie Motorisée" }
+		26 = { "%dème Div. d'Infanterie Motorisée" }
+		27 = { "%dème Div. d'Infanterie Motorisée" }
+		28 = { "%dème Div. d'Infanterie Motorisée" }
+		29 = { "%dème Div. d'Infanterie Motorisée" }
+		30 = { "%dème Div. d'Infanterie Motorisée" }
+	}
+}
+
+JER_MEC_01 = {
+	name = "Light Mechanized Division"
+
+	for_countries = { JER}
+
+	can_use = { always = yes }
+
+	Division_types = { "light_armor" "mechanized" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { JER_INF_01 }
+
+	fallback_name = "%dème Devision Légère Mécanisée"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%dère Devision Légère Mécanisée" }
+		2 = { "%dème Devision Légère Mécanisée" }
+		3 = { "%dème Devision Légère Mécanisée" }
+		4 = { "%dème Devision Légère Mécanisée" }
+		5 = { "%dème Devision Légère Mécanisée" }
+		6 = { "%dème Devision Légère Mécanisée" }
+		7 = { "%dème Devision Légère Mécanisée" }
+		8 = { "%dème Devision Légère Mécanisée" }
+		9 = { "%dème Devision Légère Mécanisée" }
+		10 = { "%dème Devision Légère Mécanisée" }
+		11 = { "%dème Devision Légère Mécanisée" }
+		12 = { "%dème Devision Légère Mécanisée" }
+		13 = { "%dème Devision Légère Mécanisée" }
+		14 = { "%dème Devision Légère Mécanisée" }
+		15 = { "%dème Devision Légère Mécanisée" }
+		16 = { "%dème Devision Légère Mécanisée" }
+		17 = { "%dème Devision Légère Mécanisée" }
+		18 = { "%dème Devision Légère Mécanisée" }
+		19 = { "%dème Devision Légère Mécanisée" }
+		20 = { "%dème Devision Légère Mécanisée" }
+		21 = { "%dème Devision Légère Mécanisée" }
+		22 = { "%dème Devision Légère Mécanisée" }
+		23 = { "%dème Devision Légère Mécanisée" }
+		24 = { "%dème Devision Légère Mécanisée" }
+		25 = { "%dème Devision Légère Mécanisée" }
+		26 = { "%dème Devision Légère Mécanisée" }
+		27 = { "%dème Devision Légère Mécanisée" }
+		28 = { "%dème Devision Légère Mécanisée" }
+		29 = { "%dème Devision Légère Mécanisée" }
+		30 = { "%dème Devision Légère Mécanisée" }
+	}
+}
+
+JER_ARM_01 = {
+	name = "Armored Division"
+
+	for_countries = { JER }
+
+	can_use = { always = yes }
+
+	Division_types = { "medium_armor" "heavy_armor" "modern_armor" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { JER_INF_01 }
+
+	fallback_name = "%dème Brigade de Chars de Combat"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%dère Brigade de Chars de Combat" }
+		2 = { "%dème Brigade de Chars de Combat" }
+		3 = { "%dème Brigade de Chars de Combat" }
+		4 = { "%dème Brigade de Chars de Combat" }
+		5 = { "%dème Brigade de Chars de Combat" }
+		6 = { "%dème Brigade de Chars de Combat" }
+		7 = { "%dème Brigade de Chars de Combat" }
+		8 = { "%dème Brigade de Chars de Combat" }
+		9 = { "%dème Brigade de Chars de Combat" }
+		10 = { "%dème Brigade de Chars de Combat" }
+		11 = { "%dème Brigade de Chars de Combat" }
+		12 = { "%dème Brigade de Chars de Combat" }
+		13 = { "%dème Brigade de Chars de Combat" }
+		14 = { "%dème Brigade de Chars de Combat" }
+		15 = { "%dème Brigade de Chars de Combat" }
+		16 = { "%dème Brigade de Chars de Combat" }
+		17 = { "%dème Brigade de Chars de Combat" }
+		18 = { "%dème Brigade de Chars de Combat" }
+		19 = { "%dème Brigade de Chars de Combat" }
+		20 = { "%dème Brigade de Chars de Combat" }
+		21 = { "%dème Brigade de Chars de Combat" }
+		22 = { "%dème Brigade de Chars de Combat" }
+		23 = { "%dème Brigade de Chars de Combat" }
+		24 = { "%dème Brigade de Chars de Combat" }
+		25 = { "%dème Brigade de Chars de Combat" }
+		26 = { "%dème Brigade de Chars de Combat" }
+		27 = { "%dème Brigade de Chars de Combat" }
+		28 = { "%dème Brigade de Chars de Combat" }
+		29 = { "%dème Brigade de Chars de Combat" }
+		30 = { "%dème Brigade de Chars de Combat" }
+	}
+}
+
+JER_PAR_01 = {
+	name = "Paratrooper Division"
+
+	for_countries = { JER }
+
+	can_use = { always = yes }
+
+	Division_types = { "paratrooper" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { JER_INF_01 }
+
+	fallback_name = "%dème Devision de Parachutistes"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%dère Devision de Parachutistes" }
+		2 = { "%dème Devision de Parachutistes" }
+		3 = { "%dème Devision de Parachutistes" }
+		4 = { "%dème Devision de Parachutistes" }
+		5 = { "%dème Devision de Parachutistes" }
+		6 = { "%dème Devision de Parachutistes" }
+		7 = { "%dème Devision de Parachutistes" }
+		8 = { "%dème Devision de Parachutistes" }
+		9 = { "%dème Devision de Parachutistes" }
+		10 = { "%dème Devision de Parachutistes" }
+	}
+}
+
+JER_MAR_01 = {
+	name = "Marine Division"
+
+	for_countries = { JER }
+
+	can_use = { always = yes }
+
+	Division_types = { "marine" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { JER_INF_01 }
+
+	fallback_name = "%dème Div. d'Infanterie de Marine"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%dère Div. d'Infanterie de Marine" }
+		2 = { "%dème Div. d'Infanterie de Marine" }
+		3 = { "%dème Div. d'Infanterie de Marine" }
+		4 = { "%dème Div. d'Infanterie de Marine" }
+		5 = { "%dème Div. d'Infanterie de Marine" }
+		6 = { "%dème Div. d'Infanterie de Marine" }
+		7 = { "%dème Div. d'Infanterie de Marine" }
+		8 = { "%dème Div. d'Infanterie de Marine" }
+		9 = { "%dème Div. d'Infanterie de Marine" }
+		10 = { "%dème Div. d'Infanterie de Marine" }
+		11 = { "%dème Div. d'Infanterie de Marine" }
+		12 = { "%dème Div. d'Infanterie de Marine" }
+		13 = { "%dème Div. d'Infanterie de Marine" }
+		14 = { "%dème Div. d'Infanterie de Marine" }
+		15 = { "%dème Div. d'Infanterie de Marine" }
+		16 = { "%dème Div. d'Infanterie de Marine" }
+		17 = { "%dème Div. d'Infanterie de Marine" }
+		18 = { "%dème Div. d'Infanterie de Marine" }
+		19 = { "%dème Div. d'Infanterie de Marine" }
+		20 = { "%dème Div. d'Infanterie de Marine" }
+	}
+}
+
+
+
+JER_GAR_01 = {
+	name = "Garrison Division"
+
+	for_countries = { JER }
+
+	can_use = { always = yes }
+
+	Division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { JER_INF_01 }
+
+	fallback_name = "%dème Devision de Forteresce"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%dère Devision de Forteresce" }
+		2 = { "%dème Devision de Forteresce" }
+		3 = { "%dème Devision de Forteresce" }
+		4 = { "%dème Devision de Forteresce" }
+		5 = { "%dème Devision de Forteresce" }
+		6 = { "%dème Devision de Forteresce" }
+		7 = { "%dème Devision de Forteresce" }
+		8 = { "%dème Devision de Forteresce" }
+		9 = { "%dème Devision de Forteresce" }
+		10 = { "%dème Devision de Forteresce" }
+		11 = { "%dème Devision de Forteresce" }
+		12 = { "%dème Devision de Forteresce" }
+		13 = { "%dème Devision de Forteresce" }
+		14 = { "%dème Devision de Forteresce" }
+		15 = { "%dème Devision de Forteresce" }
+	}
+}
+
+JER_MIL_01 = {
+	name = "Militia Division"
+
+	for_countries = { JER }
+
+	can_use = { always = yes }
+
+	Division_types = { "militia" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { JER_INF_01 }
+
+	fallback_name = "%dème Milice Populaire"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%dère Milice Populaire" }
+		2 = { "%dème Milice Populaire" }
+		3 = { "%dème Milice Populaire" }
+		4 = { "%dème Milice Populaire" }
+		5 = { "%dème Milice Populaire" }
+		6 = { "%dème Milice Populaire" }
+		7 = { "%dème Milice Populaire" }
+		8 = { "%dème Milice Populaire" }
+		9 = { "%dème Milice Populaire" }
+		10 = { "%dème Milice Populaire" }
+		11 = { "%dème Milice Populaire" }
+		12 = { "%dème Milice Populaire" }
+		13 = { "%dème Milice Populaire" }
+		14 = { "%dème Milice Populaire" }
+		15 = { "%dème Milice Populaire" }
+		16 = { "%dère Milice Populaire" }
+		17 = { "%dème Milice Populaire" }
+		18 = { "%dème Milice Populaire" }
+		19 = { "%dème Milice Populaire" }
+		20 = { "%dème Milice Populaire" }
+		21 = { "%dème Milice Populaire" }
+		22 = { "%dème Milice Populaire" }
+		23 = { "%dème Milice Populaire" }
+		24 = { "%dème Milice Populaire" }
+		25 = { "%dème Milice Populaire" }
+		26 = { "%dème Milice Populaire" }
+		27 = { "%dème Milice Populaire" }
+		28 = { "%dème Milice Populaire" }
+		29 = { "%dème Milice Populaire" }
+		30 = { "%dème Milice Populaire" }
+	}
+JER_FREI = {
+	name = "Franc Cors"
+
+	for_countries = { JER }
+
+	can_use = { always = yes }
+
+	Division_types = { "militia" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { JER_INF_01 }
+
+	fallback_name = "%dème Milice Populaire"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%dère Franc Cors Devision" }
+		2 = { "%dème Franc Cors Devision" }
+		3 = { "%dème Franc Cors Devision" }
+		4 = { "%dème Franc Cors Devision" }
+		5 = { "%dème Franc Cors Devision" }
+		6 = { "%dème Franc Cors Devision" }
+		7 = { "%dème Franc Cors Devision" }
+		8 = { "%dème Franc Cors Devision" }
+		9 = { "%dème Franc Cors Devision" }
+		10 = { "%dème Franc Cors Devision" }
+		11 = { "%dème Franc Cors Devision" }
+		12 = { "%dème Franc Cors Devision" }
+		13 = { "%dème Franc Cors Devision" }
+		14 = { "%dème Franc Cors Devision" }
+		15 = { "%dème Franc Cors Devision" }
+		16 = { "%dère Franc Cors Devision" }
+		17 = { "%dème Franc Cors Devision" }
+		18 = { "%dème Franc Cors Devision" }
+		19 = { "%dème Franc Cors Devision" }
+		20 = { "%dème Franc Cors Devision" }
+		21 = { "%dème Franc Cors Devision" }
+		22 = { "%dème Franc Cors Devision" }
+		23 = { "%dème Franc Cors Devision" }
+		24 = { "%dème Franc Cors Devision" }
+		25 = { "%dème Franc Cors Devision" }
+		26 = { "%dème Franc Cors Devision" }
+		27 = { "%dème Franc Cors Devision" }
+		28 = { "%dème Franc Cors Devision" }
+		29 = { "%dème Franc Cors Devision" }
+		30 = { "%dème Franc Cors Devision" }
+	}
+}
+JER_INF_04 = {
+	name = "Armée Coloignel"
+
+	for_countries = { JER }
+
+	can_use = { always = yes }
+
+	Division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { JER_INF_01 }
+
+	fallback_name = "%dème Armée Coloignel"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%dère Armée Coloignel" }
+		2 = { "%dème Armée Coloignel" }
+		3 = { "%dème Armée Coloignel" }
+		4 = { "%dème Armée Coloignel" }
+		5 = { "%dème Armée Coloignel" }
+		6 = { "%dème Armée Coloignel" }
+		7 = { "%dème Armée Coloignel" }
+		8 = { "%dème Armée Coloignel" }
+		9 = { "%dème Armée Coloignel" }
+		10 = { "%dème Armée Coloignel" }
+		11 = { "%dème Armée Coloignel" }
+		12 = { "%dème Armée Coloignel" }
+		13 = { "%dème Armée Coloignel" }
+		14 = { "%dème Armée Coloignel" }
+		15 = { "%dème Armée Coloignel" }
+		16 = { "%dère Armée Coloignel" }
+		17 = { "%dème Armée Coloignel" }
+		18 = { "%dème Armée Coloignel" }
+		19 = { "%dème Armée Coloignel" }
+		20 = { "%dème Armée Coloignel" }
+		21 = { "%dème Armée Coloignel" }
+		22 = { "%dème Armée Coloignel" }
+		23 = { "%dème Armée Coloignel" }
+		24 = { "%dème Armée Coloignel" }
+		25 = { "%dème Armée Coloignel" }
+		26 = { "%dème Armée Coloignel" }
+		27 = { "%dème Armée Coloignel" }
+		28 = { "%dème Armée Coloignel" }
+		29 = { "%dème Armée Coloignel" }
+		30 = { "%dème Armée Coloignel" }
+	}
+}
+JER_INF_05 = {
+	name = "Étrangère Cors"
+
+	for_countries = { JER }
+
+	can_use = { always = yes }
+
+	Division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { JER_INF_01 }
+
+	fallback_name = "%dème Étrangère Cors"
+
+	# Names with numbers (only one number per entry).
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%dère Étrangère Cors" }
+		2 = { "%dème Étrangère Cors" }
+		3 = { "%dème Étrangère Cors" }
+		4 = { "%dème Étrangère Cors" }
+		5 = { "%dème Étrangère Cors" }
+		6 = { "%dème Étrangère Cors" }
+		7 = { "%dème Étrangère Cors" }
+		8 = { "%dème Étrangère Cors" }
+		9 = { "%dème Étrangère Cors" }
+		10 = { "%dème Étrangère Cors" }
+		11 = { "%dème Étrangère Cors" }
+		12 = { "%dème Étrangère Cors" }
+		13 = { "%dème Étrangère Cors" }
+		14 = { "%dème Étrangère Cors" }
+		15 = { "%dème Étrangère Cors" }
+		16 = { "%dère Étrangère Cors" }
+		17 = { "%dème Étrangère Cors" }
+		18 = { "%dème Étrangère Cors" }
+		19 = { "%dème Étrangère Cors" }
+		20 = { "%dème Étrangère Cors" }
+		21 = { "%dème Étrangère Cors" }
+		22 = { "%dème Étrangère Cors" }
+		23 = { "%dème Étrangère Cors" }
+		24 = { "%dème Étrangère Cors" }
+		25 = { "%dème Étrangère Cors" }
+		26 = { "%dème Étrangère Cors" }
+		27 = { "%dème Étrangère Cors" }
+		28 = { "%dème Étrangère Cors" }
+		29 = { "%dème Étrangère Cors" }
+		30 = { "%dème Étrangère Cors" }
+	}
+}

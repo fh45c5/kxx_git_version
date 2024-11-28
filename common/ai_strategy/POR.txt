@@ -1,0 +1,101 @@
+##Puppet AI##
+
+
+portugal_garrison_africa = {
+	allowed = {
+		tag = POR
+	}
+	enable = {
+		is_in_faction = no
+		country_exists = MAF
+		OR = {
+			540 = {
+					is_owned_by_ROOT_or_ally = yes
+				}
+			917 = {
+					is_owned_by_ROOT_or_ally = yes
+				}
+			950 = {
+					is_owned_by_ROOT_or_ally = yes
+				}
+		}
+		NOT = {
+			has_war_with = SPR
+			has_war_with = CNT
+			has_war_with = CAR
+			has_war_with = FRA
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+
+		ratio = 0.3
+
+		states = {
+			540 #Central Angola
+			917 #Southern Angola
+			950 #Mozambique
+		}
+	}
+}
+
+portugal_invade_maf = {
+	allowed = {
+	OR = {
+		tag = POR
+		tag = PAF
+		}
+	}
+	enable = {
+		has_war_with = MAF
+		has_global_flag = MAF_POR_border_war
+		NOT = {
+			any_enemy_country = {
+				NOT = { tag = MAF }
+				NOT = { is_in_faction_with = MAF }
+			}
+		}
+	}
+	abort = {
+		OR = {
+			NOT = { has_war_with = MAF }
+			NOT = { has_global_flag = MAF_POR_border_war }
+			any_enemy_country = {
+				NOT = { tag = MAF }
+				NOT = { is_in_faction_with = MAF }
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "MAF"
+		value = 200
+	}
+	ai_strategy = {
+		type = area_priority
+		id = south_africa
+		value = 200
+	}
+}
+
+KR_PAF_prewar_strategy = {
+	allowed = {
+		tag = PAF
+	}
+	enable = {
+		is_subject_of = POR
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = area_priority
+		id = europe
+		value = -200
+	}
+}
+

@@ -1,0 +1,641 @@
+add_namespace = gdp.qin
+country_event = { #醒狮之怒
+	id = gdp.qin.1
+	picture = GFX_gd_dead
+
+	title = gdp.qin.1.t
+	desc = gdp.qin.1.desc
+	# fire_only_once = yes
+	is_triggered_only = yes
+	option = { #火与灰烬中的重生
+		name = gdp.qin.1.a
+		add_stability = -0.01
+		add_political_power = 5
+	}
+}
+country_event = { #新法
+	id = gdp.qin.2
+	immediate = {
+		
+	}
+	picture = GFX_gx_NRA
+	title = gdp.qin.2.t
+	desc = gdp.qin.2.desc
+	is_triggered_only = yes
+	option = { #雄狮亮出了他的獠牙
+		name = gdp.qin.2.a
+		add_stability = -0.02
+		add_political_power = 10
+	}
+}
+country_event = { #子弹法案
+	id = gdp.qin.3
+	immediate = {
+		
+	}
+	picture = GFX_gx_goven
+	title = gdp.qin.3.t
+	desc = gdp.qin.3.desc
+	is_triggered_only = yes
+	option = { #所谓政治自由就到此为止
+		name = gdp.qin.3.a
+		add_stability = -0.01
+		add_political_power = 5
+		country_event = {
+			id = gdp.qin.11
+			days = 7
+		}
+	}	
+}
+
+country_event = { #审查法案
+	id = gdp.qin.4
+	immediate = {
+		
+	}
+	title = gdp.qin.4.t
+	desc = gdp.qin.4.desc
+	is_triggered_only = yes
+	option = { #哎哟，文章不见了哟
+		name = gdp.qin.4.a
+		add_stability = 0.01
+		add_political_power = -25
+	}	
+}
+country_event = { #天网法案
+	id = gdp.qin.5
+	immediate = {
+		
+	}
+	picture = GFX_gx_river
+	title = gdp.qin.5.t
+	desc = gdp.qin.5.desc
+	is_triggered_only = yes
+	option = { #墙有耳，伏寇在侧
+		name = gdp.qin.5.a
+		add_stability = -0.03
+		add_political_power = 20
+	}	
+}
+country_event = { #新盐铁论
+	id = gdp.qin.6
+	immediate = {
+		
+	}
+	title = gdp.qin.6.t
+	desc = gdp.qin.6.desc
+	is_triggered_only = yes
+	option = { #偷安者后危，虑近者忧迩。
+		name = gdp.qin.6.a
+		add_stability = -0.01
+	}	
+}
+country_event = { #土改法案其一
+	id = gdp.qin.7
+	immediate = {
+		
+	}
+	picture = GFX_handgun
+	title = gdp.qin.7.t
+	desc = gdp.qin.7.desc
+	is_triggered_only = yes
+	option = { #尘埃落定
+		name = gdp.qin.7.a
+		add_stability = 0.01
+		add_political_power = 15
+		country_event = {
+			id = gdp.qin.8
+			days = 7
+		}
+	}	
+}
+country_event = { #土改法案其二
+	id = gdp.qin.8
+	immediate = {
+		
+	}
+	
+	title = gdp.qin.8.t
+	desc = gdp.qin.8.desc
+	is_triggered_only = yes
+	option = { #好日子还在后面呢！
+		name = gdp.qin.8.a
+		add_stability = 0.01
+	}	
+}
+country_event = { #禁酒法案
+	id = gdp.qin.9
+	immediate = {
+		
+	}
+	picture = GFX_gd_teahouse4
+	title = gdp.qin.9.t
+	desc = gdp.qin.9.desc
+	is_triggered_only = yes
+	option = { #我们的伟大社会就此开始
+		name = gdp.qin.9.a
+		add_political_power = 5
+		add_stability = -0.01
+	}	
+}
+country_event = { #抑商法案
+	id = gdp.qin.10
+	immediate = {
+		
+	}
+	picture = GFX_gd_afterviolent
+	title = gdp.qin.10.t
+	desc = gdp.qin.10.desc
+	is_triggered_only = yes
+	option = { #蠹虫已除
+		name = gdp.qin.10.a
+		add_stability = -0.01
+		add_political_power = 5
+	}	
+}
+
+
+country_event = { #剃刀法案
+	id = gdp.qin.11
+	immediate = {
+		
+	}
+	picture = GFX_gd_funeral
+	title = gdp.qin.11.t
+	desc = gdp.qin.11.desc
+	is_triggered_only = yes
+	option = { #严刑峻法，以破奸鬼之胆
+		name = gdp.qin.11.a
+		add_stability = 0.01
+	}	
+}
+country_event = { #画策变法
+	id = gdp.qin.12
+	immediate = {
+		
+	}
+	picture = GFX_cqt_3
+	title = gdp.qin.12.t
+	desc = gdp.qin.12.desc
+	is_triggered_only = yes
+	option = { #法理有度，恩威并施
+		name = gdp.qin.12.a
+		add_stability = 0.01
+	}	
+}
+country_event = { #户籍法案
+	id = gdp.qin.13
+	immediate = {
+		
+	}
+	title = gdp.qin.13.t
+	desc = gdp.qin.13.desc
+	is_triggered_only = yes
+	option = { #关键一着
+		name = gdp.qin.13.a
+		add_political_power = 10
+	}	
+}
+country_event = { #治吏法案
+	id = gdp.qin.14
+	immediate = {
+		
+	}
+	title = gdp.qin.14.t
+	desc = gdp.qin.14.desc
+	is_triggered_only = yes
+	option = { #新法家平等着温暖着每一个人
+		name = gdp.qin.14.a
+		add_political_power = 5
+	}	
+}
+country_event = { #教育法案
+	id = gdp.qin.15
+	immediate = {
+		
+	}
+	picture = GFX_qin_read
+	title = gdp.qin.15.t
+	desc = gdp.qin.15.desc
+	is_triggered_only = yes
+	option = { #经国之大业，不朽之盛事
+		name = gdp.qin.15.a
+		add_stability = 0.01
+	}	
+}
+country_event = { #刑慑法案
+	id = gdp.qin.16
+	immediate = {
+		
+	}
+	picture = GFX_gx_prison
+	title = gdp.qin.16.t
+	desc = gdp.qin.16.desc
+	is_triggered_only = yes
+	option = { #罚以禁邪，刑过不避大臣
+		name = gdp.qin.16.a
+		add_stability = -0.02
+		add_political_power = 15
+	}	
+}
+country_event = { #跃进法案
+	id = gdp.qin.17
+	immediate = {
+		
+	}
+	picture = GFX_gd_bigboat
+	title = gdp.qin.17.t
+	desc = gdp.qin.17.desc
+	is_triggered_only = yes
+	option = { #我可不想知道他们之后如何
+		name = gdp.qin.17.a
+		add_stability = -0.01
+		add_political_power = 20
+	}	
+}
+country_event = { #新工业法案
+	id = gdp.qin.18
+	immediate = {
+		
+	}
+	picture = GFX_gd_factory
+	title = gdp.qin.18.t
+	desc = gdp.qin.18.desc
+	is_triggered_only = yes
+	option = { #赞美国家！赞美执政官！
+		name = gdp.qin.18.a
+		add_stability = 0.01
+	}	
+}
+country_event = { #勋爵法案
+	id = gdp.qin.19
+	immediate = {
+		
+	}
+	picture = GFX_gx_training
+	title = gdp.qin.19.t
+	desc = gdp.qin.19.desc
+	is_triggered_only = yes
+	option = { #他眼里有光
+		name = gdp.qin.19.a
+		add_stability = 0.02
+	}	
+}
+country_event = { #宫闱法案
+	id = gdp.qin.20
+	immediate = {
+		
+	}
+	picture = GFX_qin_2
+	title = gdp.qin.20.t
+	desc = gdp.qin.20.desc
+	is_triggered_only = yes
+	option = { #太冒险了，还是徐而图之
+		name = gdp.qin.20.a
+		add_stability = 0.01
+		add_political_power = -25
+		set_country_flag = GDP_compromise
+	}	
+	option = { #不破不立，置死地而后生
+		name = gdp.qin.20.b
+		add_stability = -0.02
+		add_political_power = 10
+		set_country_flag = GDP_gamble
+	}	
+}
+country_event = { #议会法案
+	id = gdp.qin.21
+	immediate = {
+		
+	}
+	picture = GFX_gx_parliament
+	title = gdp.qin.21.t
+	desc = gdp.qin.21.desc
+	is_triggered_only = yes
+	option = { #苟且之计
+		name = gdp.qin.21.a
+		add_stability = 0.01
+		add_political_power = -25
+	}	
+}
+country_event = { #“民主”法案
+	id = gdp.qin.22
+	immediate = {
+		
+	}
+	picture = GFX_cqt_2
+	title = gdp.qin.22.t
+	desc = gdp.qin.22.desc
+	is_triggered_only = yes
+	option = { #成大事者，不谋于众
+		name = gdp.qin.22.a
+		add_stability = 0.01
+		add_political_power = -25
+	}	
+}
+country_event = { #破贼法案
+	id = gdp.qin.23
+	immediate = {
+		
+	}
+	picture = GFX_gx_house
+	title = gdp.qin.23.t
+	desc = gdp.qin.23.desc
+	is_triggered_only = yes
+	option = { #破心中贼难，破山中贼易
+		name = gdp.qin.23.a
+		add_stability = -0.02
+		add_political_power = 25
+	}	
+}
+country_event = { #清算法案
+	id = gdp.qin.24
+	immediate = {
+		
+	}
+	picture = GFX_gd_dead
+	title = gdp.qin.24.t
+	desc = gdp.qin.24.desc
+	is_triggered_only = yes
+	option = { #罪恶必除
+		name = gdp.qin.24.a
+		add_stability = -0.03
+		add_political_power = 50
+	}	
+}
+country_event = { #廉政法案
+	id = gdp.qin.25
+	immediate = {
+		
+	}
+	picture = GFX_gx_bus
+	title = gdp.qin.25.t
+	desc = gdp.qin.25.desc
+	is_triggered_only = yes
+	option = { #无宿治，则邪官不及为私利于民
+		name = gdp.qin.25.a
+		add_stability = 0.01
+		add_political_power = 5
+	}	
+}
+country_event = { #农战法案
+	id = gdp.qin.26
+	immediate = {
+		
+	}
+	picture = GFX_cqt_1
+	title = gdp.qin.26.t
+	desc = gdp.qin.26.desc
+	is_triggered_only = yes
+	option = { #秦王扫六合，虎视何雄哉
+		name = gdp.qin.26.a
+		add_war_support = 0.03
+		create_wargoal = {
+			type = annex_everything
+			target = FJN
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = YUN
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = SZC
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = KMT
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = XIA
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = XSM
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = SIK
+		}
+		if = {
+			limit = {
+				NOT = { 
+					country_exists = JSD
+					country_exists = JJD
+					country_exists = NCN
+				}
+				country_exists = BYJ
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = BYJ
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = MAN
+			}
+		}
+		if = {
+			limit = {
+				country_exists = JSD
+				country_exists = JJD
+				country_exists = NCN
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = JSD
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = JJD
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = NCN
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = BYJ
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = MAN
+			}
+		}
+		if = {
+			limit = {
+				NOT = { 
+					country_exists = JSD
+					country_exists = JJD
+					country_exists = NCN
+					country_exists = BYJ
+				}
+			}
+			setup_crash_huabei = yes
+		}
+	}
+}
+country_event = { #征兵法案
+	id = gdp.qin.27
+	immediate = {
+		
+	}
+	picture = GFX_gx_NRA
+	title = gdp.qin.27.t
+	desc = gdp.qin.27.desc
+	is_triggered_only = yes
+	option = { #醒狮一怒，伏尸百万
+		name = gdp.qin.27.a
+		add_war_support = 0.01
+	}	
+}
+country_event = { #标兵法案
+	id = gdp.qin.28
+	immediate = {
+		
+	}
+	picture = GFX_gx_training
+	title = gdp.qin.28.t
+	desc = gdp.qin.28.desc
+	is_triggered_only = yes
+	option = { #士兵向死，国家向生
+		name = gdp.qin.28.a
+		add_war_support = 0.02
+	}	
+}
+country_event = { #赏刑法案
+	id = gdp.qin.29
+	immediate = {
+		
+	}
+	picture = GFX_king_of_qin
+	title = gdp.qin.29.t
+	desc = gdp.qin.29.desc
+	is_triggered_only = yes
+	option = { #赏罚分明，上下一心
+		name = gdp.qin.29.a
+		add_war_support = 0.01
+	}	
+}
+country_event = { #战时法案
+	id = gdp.qin.30
+	immediate = {
+		
+	}
+	picture = GFX_gx_official
+	title = gdp.qin.30.t
+	desc = gdp.qin.30.desc
+	is_triggered_only = yes
+	option = { #勒紧裤腰带，暂时吃吃苦
+		name = gdp.qin.30.a
+		add_war_support = 0.01
+	}	
+}
+country_event = { #法团法案
+	id = gdp.qin.31
+	immediate = {
+		
+	}
+	title = gdp.qin.31.t
+	desc = gdp.qin.31.desc
+	is_triggered_only = yes
+	option = { #“两广执政府第一次全体法团代表大会，现在开始”
+		name = gdp.qin.31.a
+		add_stability = 0.01
+	}	
+}
+country_event = { #焚葬法案
+	id = gdp.qin.32
+	immediate = {
+		
+	}
+	picture = GFX_cqt_1
+	title = gdp.qin.32.t
+	desc = gdp.qin.32.desc
+	is_triggered_only = yes
+	option = { #子弹杀不死思想，是吗？
+		name = gdp.qin.32.a
+		add_stability = -0.02
+	}	
+}
+country_event = { #醒狮法案
+	id = gdp.qin.33
+	immediate = {
+		
+	}
+	picture = GFX_cqt_1
+	title = gdp.qin.33.t
+	desc = gdp.qin.33.desc
+	is_triggered_only = yes
+	option = { #他向前方的光芒伸出了手，却将闪电抓在手中
+		name = gdp.qin.33.a
+		add_stability = 0.01
+		add_war_support = 0.01
+	}	
+}
+
+country_event = { #迁都
+	id = gdp.qin.34
+	immediate = {
+		
+	}
+	picture = GFX_epang_palace
+	title = gdp.qin.34.t
+	desc = gdp.qin.34.desc
+	is_triggered_only = yes
+	option = { #名垂青史！
+		name = gdp.qin.34.a
+		add_stability = 0.05
+		set_capital = { state = 744 }
+		set_victory_points = {
+			province = 1976
+			value = 60
+		}
+		add_building_construction = {
+			type = infrastructure
+			level = 3
+			instant_build = yes
+			province = 1976
+		}
+		set_province_name = {
+			id = 1976
+			name = "Xian_yang"
+		}
+		add_manpower = -100000
+	}	
+}
+
+#country_event = { #迁都
+	id = gdp.qin.35
+	immediate = {
+		
+	}
+	picture = GFX_qin_bury_alive
+	title = gdp.qin.35.t
+	desc = gdp.qin.35.desc
+	is_triggered_only = yes
+	option = { #名垂青史！
+		name = gdp.qin.35.a
+		add_stability = 0.2
+		add_manpower = -1000000
+		add_manpower = -488686
+		add_manpower = -100000
+		add_manpower = -100000
+		add_manpower = -100000
+		add_manpower = -100000
+		add_manpower = -100000
+		add_manpower = -78765
+		add_manpower = -48863
+		add_manpower = -30000
+		add_manpower = -30000
+		add_manpower = -30000
+		add_manpower = -30000
+		add_manpower = -30000
+		add_manpower = -30000
+		add_manpower = -30000
+		add_manpower = -30000
+		add_manpower = -30000
+		add_manpower = -22
+	}	
+#}

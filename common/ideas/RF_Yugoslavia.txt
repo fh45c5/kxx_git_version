@@ -1,0 +1,629 @@
+ideas = {
+	country = {
+		YUG_hell_italians = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_hell_italians
+			targeted_modifier = {
+				tag = ITA
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = SRI
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = PAP
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = SIC
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = SRD
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = LOM
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = VNC
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = FIU
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = MLT
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			modifier = {
+				political_power_gain = 0.1
+				army_org_factor = 0.1
+			}
+		}
+		YUG_velocities = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_velocities
+			modifier = {
+				research_speed_factor = 0.05
+				
+			}
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.1
+					breakthrough = 0.1
+					reliability = 0.1
+					soft_attack = 0.1
+					instant = yes
+				}
+			}
+			equipment_bonus = {
+				mechanized_equipment = {
+					build_cost_ic = -0.1
+					breakthrough = 0.1
+					reliability = 0.1
+					soft_attack = 0.1
+					instant = yes
+				}
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					breakthrough = 0.1
+					reliability = 0.1
+					soft_attack = 0.1
+					instant = yes
+				}
+			}
+		
+		}
+		YUG_cult_of_saints = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_cult_of_saints
+			modifier = {
+				army_morale_factor = 0.15
+				army_defence_factor = 0.1
+			}
+		}
+		YUG_state_ascetism = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_state_ascetism
+			modifier = {
+				stability_factor = -0.1
+				consumer_goods_expected_value = -0.05
+				research_speed_factor = -0.1
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		YUG_christian_capitalism = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_christian_capitalism
+			modifier = {
+				industrial_capacity_factory = 0.1
+				consumer_goods_expected_value = 0.02
+				trade_opinion_factor = -0.1
+				min_export = -0.2
+			}
+		}
+		YUG_all_for_god = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_all_for_god
+			modifier = {
+				conscription_factor = 0.05
+				attrition = -0.1
+			}
+		}
+		YUG_nothing_outside_of_god = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_nothing_outside_of_god
+			modifier = {
+				political_power_factor = 0.05
+			}
+		}
+		YUG_and_nothing_against_him = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_and_nothing_against_him
+			modifier = {
+				conscription_factor = 0.03
+				political_power_factor = 0.05
+				root_out_resistance_effectiveness_factor = 0.1
+				reactionism_drift = 0.05
+			}
+		}
+		YUG_unity_through_faith = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_unity_through_faith
+			modifier = {
+				attrition = -0.1
+				political_power_factor = 0.1
+				root_out_resistance_effectiveness_factor = 0.2
+				conscription_factor = 0.15
+				army_attack_factor = 0.1
+				reactionism_drift = 0.1
+			}
+		}
+
+		YUG_rapid_progress = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_rapid_progress
+			modifier = {
+				research_speed_factor = 0.1
+				production_speed_buildings_factor = 0.2
+				consumer_goods_expected_value = -0.1
+			}
+		}
+		YUG_ruthless_progress = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_ruthless_progress
+			modifier = {
+				production_speed_buildings_factor = 0.2
+				stability_factor = 0.2
+				research_speed_factor = 0.2
+				monthly_population = 0.5
+				consumer_goods_expected_value = -0.2
+			}
+		}
+		YUG_god_of_electricity = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_god_of_electricity
+			modifier = {
+				production_speed_radar_station_factor = 0.5
+				local_building_slots_factor = 0.15
+
+			}
+			research_bonus = {
+				electronics = 0.5
+			}
+		}
+		YUG_experimental_industry = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_experimental_industry
+			modifier = {
+				conversion_cost_civ_to_mil_factor = -0.35
+				conversion_cost_mil_to_civ_factor = -0.35
+				production_factory_efficiency_gain_factor  = 0.2
+				line_change_production_efficiency_factor = 0.2
+				research_speed_factor = 0.1
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					reliability = 0.1
+					build_cost_ic = -0.1
+					soft_attack = 0.1
+					instant = yes
+				}
+			}
+		}
+		YUG_scientific_authority = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_scientific_authority
+			modifier = {
+				war_support_factor = 0.15
+				stability_weekly = 0.01
+				resistance_target = -0.15
+				compliance_growth = 0.05
+				root_out_resistance_effectiveness_factor = 0.1
+				totalist_drift = 0.1
+			}
+		}
+		YUG_techno_slavia = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_techno_slavia
+			modifier = {
+				research_speed_factor = 0.05
+				production_speed_buildings_factor = 0.1
+				political_power_factor = 0.1
+				accelerationism_drift = 0.1
+			}
+		}
+
+		YUG_national_avantgarde = {
+			cancel = { has_country_flag = remove_idea }
+			picture = POL_zermatic_spiritualism
+			modifier = {
+				research_speed_factor = 0.1
+				drift_defence_factor = 0.25
+			}
+		}
+		YUG_vedic_faith = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_vedic_faith
+			modifier = {
+				consumer_goods_expected_value = -0.15
+				encryption_factor = 0.1
+
+				attrition = -0.15
+			}
+		}
+		YUG_vedic_faith1 = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_vedic_faith
+			modifier = {
+				consumer_goods_expected_value = -0.07
+				encryption_factor = 0.2
+				attrition = -0.2
+			}
+		}
+		YUG_yugoslav_syndicalism = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_yugoslav_syndicalism
+			modifier = {
+				industrial_capacity_factory = 0.2
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		YUG_illyrian_identity = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_illyrian_identity
+			modifier = {
+				conscription_factor = 0.2
+				supply_consumption_factor = -0.15
+
+			}
+		}
+		YUG_barbarian_mythos = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_barbarian_mythos
+			modifier = {
+				army_attack_factor = 0.2
+				acclimatization_cold_climate_gain_factor = 0.1
+				acclimatization_hot_climate_gain_factor = 0.1
+			}
+		}
+		YUG_hyperborea = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_hyperborea
+			modifier = {
+				monthly_population = 0.5
+				war_support_weekly = 0.05
+				required_garrison_factor = -0.1
+				paternal_autocrat_drift = 0.05
+			}
+		}
+
+		YUG_militant_youth = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_militant_youth
+			modifier = {
+				conscription = 0.025
+			 	breakthrough_factor = 0.1
+				experience_gain_army_factor = 0.02
+				mobilization_speed = -0.1
+			}
+		}
+		YUG_underground_production_idea = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_underground_production_idea
+			modifier = {
+				industrial_capacity_factory = 0.1
+				line_change_production_efficiency_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				local_building_slots_factor = 0.1
+				license_purchase_cost = -0.5
+				license_tech_difference_speed = 0.25
+			}
+		}
+
+		YUG_corporate_economy = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_corporate_economy
+			modifier = {
+				consumer_goods_expected_value = -0.1
+			}
+		}
+		YUG_corporate_economy1 = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_corporate_economy1
+			modifier = {
+				local_resources_factor = 0.15
+				industrial_capacity_dockyard = 0.15
+				industrial_capacity_factory = 0.15
+				consumer_goods_expected_value = -0.2
+			}
+		}
+		YUG_corporate_economy2 = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_corporate_economy2
+			modifier = {
+				local_resources_factor = 0.2
+				industrial_capacity_dockyard = 0.2
+				industrial_capacity_factory = 0.2
+				production_speed_arms_factory_factor = 0.2
+				production_speed_bunker_factor = 0.25
+				consumer_goods_expected_value = -0.2
+			}
+		}
+
+		YUG_socialist_economy = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_socialist_economy
+			modifier = {
+				consumer_goods_expected_value = -0.1
+			}
+		}
+		YUG_socialist_economy1 = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_socialist_economy1
+			modifier = {
+				min_export = -0.1
+				line_change_production_efficiency_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				consumer_goods_expected_value = -0.2
+			}
+		}
+		YUG_socialist_economy2 = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_socialist_economy2
+			modifier = {
+				min_export = -0.2
+				line_change_production_efficiency_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_infrastructure_factor = 0.3
+				consumer_goods_expected_value = -0.2
+			}
+		}
+		YUG_dvor_n_tesla = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_dvor_n_tesla
+			modifier = {
+				research_speed_factor = 0.03
+				stability_factor = 0.05
+				political_power_gain = 0.1
+			}
+		}
+		YUG_barbarian_might = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_barbarian_might
+			modifier = {
+				army_org_factor = 0.1
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				
+				land_reinforce_rate = 0.1
+			}
+		}
+		YUG_barbarian_might2 = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_barbarian_might
+			modifier = {
+				army_org_factor = 0.1
+				army_attack_factor = 0.08
+				army_defence_factor = 0.08
+				non_core_manpower = 0.5
+				land_reinforce_rate = 0.1
+			}
+		}
+		YUG_barbarian_might3 = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_barbarian_might
+			modifier = {
+				army_org_factor = 0.2
+				army_attack_factor = 0.15
+				army_defence_factor = 0.15
+				non_core_manpower = 0.8
+				land_reinforce_rate = 0.15
+			}
+		}
+		YUG_mystical_sciences = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_mystical_sciences
+			modifier = {
+				research_speed_factor = 0.1
+				totalist_drift = 0.03
+				political_power_factor = 0.1
+			}
+		}
+		YUG_legacy_bogomils = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_legacy_bogomils
+			modifier = {
+				totalist_drift = 0.03
+				stability_weekly = 0.01
+				political_power_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.15
+			}
+		}
+		YUG_germans_attaches = {
+			cancel = { has_country_flag = remove_idea }
+			picture = YUG_german_assistance
+			modifier = {
+				research_speed_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.12
+				base_fuel_gain_factor = 0.08
+			}
+		}
+		YUG_cult_of_saints = {
+			allowed = {
+				original_tag = YUG
+			}
+			picture = FRA_new_sects
+			modifier = {
+				army_morale_factor = 0.15
+				army_defence_factor = 0.1
+			}
+		}
+		YUG_state_ascetism = {
+			allowed = {
+				original_tag = YUG
+			}
+			picture = ASY_caucasian_volunteer
+			modifier = {
+				stability_factor = -0.1
+				consumer_goods_factor = -0.05
+				research_speed_factor = -0.1
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		YUG_christian_capitalism = {
+			allowed = {
+				original_tag = YUG
+			}
+			picture = PRS_junkerstaat
+			modifier = {
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor = 0.02
+				trade_opinion_factor = -0.1
+				min_export = -0.2
+			}
+		}
+		YUG_all_for_god = {
+			allowed = {
+				original_tag = YUG
+			}
+			picture = SIB_patriotism
+			modifier = {
+				conscription_factor = 0.05
+				attrition = -0.1
+			}
+		}
+		YUG_nothing_outside_of_god = {
+			allowed = {
+				original_tag = YUG
+			}
+			picture = ASY_assyrian_church
+			modifier = {
+				political_power_factor = 0.05
+			}
+		}
+		YUG_and_nothing_against_him = {
+			allowed = {
+				original_tag = YUG
+			}
+			picture = PRS_disloyal_proletariat
+			modifier = {
+				conscription_factor = 0.03
+				political_power_factor = 0.05
+				root_out_resistance_effectiveness_factor = 0.1
+				reactionism_drift = 0.05
+			}
+		}
+		YUG_unity_through_faith = {
+			allowed = {
+				original_tag = YUG
+			}
+			picture = FRA_warrior_priests
+			modifier = {
+				attrition = -0.1
+				political_power_factor = 0.1
+				root_out_resistance_effectiveness_factor = 0.2
+				conscription_factor = 0.15
+				army_attack_factor = 0.1
+				reactionism_drift = 0.1
+			}
+		}
+
+		
+		YUG_national_avantgardeold = {
+			allowed = {
+				original_tag = YUG
+			}
+			picture = POL_zermatic_spiritualism
+			modifier = {
+				political_power_gain = 0.15
+				research_speed_factor = 0.15
+				drift_defence_factor = 0.25
+				decryption_factor = 0.15
+				encryption_factor = 0.15
+			}
+		}
+		YUG_vedic_faithold = {
+			allowed = {
+				original_tag = YUG
+			}
+			picture = FRA_religious_futurism
+			modifier = {
+				consumer_goods_factor = -0.15
+				experience_loss_factor = -0.15
+				attrition = -0.1
+			}
+		}
+		YUG_vedic_faith1old = {
+			allowed = {
+				original_tag = YUG
+			}
+			picture = FRA_religious_futurism
+			modifier = {
+				consumer_goods_factor = -0.30
+				experience_loss_factor = -0.25
+				attrition = -0.2
+			}
+		}
+		YUG_yugoslav_syndicalismold = {
+			allowed = {
+				original_tag = YUG
+			}
+			picture = POL_dreamofzadruga
+			modifier = {
+				line_change_production_efficiency_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		YUG_illyrian_identityold = {
+			allowed = {
+				original_tag = YUG
+			}
+			picture = AUS_natmil
+			modifier = {
+				army_morale_factor = 0.1
+				army_org_factor = 0.1
+				training_time_factor = -0.1
+			}
+		}
+		YUG_barbarian_mythosold = {
+			allowed = {
+				original_tag = YUG
+			}
+			picture = GER_rotfront
+			modifier = {
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				army_speed_factor = 0.1
+			}
+		}
+		YUG_hyperboreaold = {
+			allowed = {
+				original_tag = YUG
+			}
+			picture = FRA_hyperborean_ideal
+			modifier = {
+				army_core_attack_factor = 0.15
+				army_core_defence_factor = 0.15
+				national_populist_drift = 0.05
+				stability_factor = 0.1
+				war_support_factor = 0.1
+			}
+		}
+
+		
+
+		
+		#Bulgarian mechanic
+
+		YUG_pork_barrel = {
+			picture = generic_idea_RF_idea_empty_safe
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				political_power_gain = -0.5 
+				consumer_goods_expected_value = 0.25
+			}
+		}
+	}
+}

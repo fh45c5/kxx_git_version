@@ -1,0 +1,682 @@
+﻿capital = 10
+oob = "POL"
+set_convoys = 40
+set_war_support = 0.25
+set_research_slots = 3
+
+### Starting Technologies ###
+set_technology = {
+	infantry_weapons = 1
+	basic_train = 1
+	infantry_weapons1 = 1
+	tech_mountaineers = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	trench_warfare = 1
+	
+	tech_trucks = 1
+	tech_military_police = 1
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "POL_air_bba"
+
+		set_technology = {
+			aa_lmg = 1
+			early_bombs = 1
+			engines_1 = 1
+			iw_small_airframe = 1
+			iw_medium_airframe = 1
+			iw_large_airframe = 1
+		}
+		POL_BBA_air_variants = yes
+	else = {
+		set_air_oob = "POL_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			early_bomber = 1
+			CAS1 = 1
+		}
+	}
+}
+
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+	}
+}
+set_country_flag = KX_no_naval_tech_decision_enable
+
+set_cosmetic_tag = POL_kingdom
+
+set_politics = {
+	ruling_party = social_conservative
+	last_election = "1933.1.18"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	totalist = 5
+	radical_socialist = 10
+	syndicalist = 5
+	social_democrat = 10
+	social_liberal = 15
+	market_liberal = 5
+	social_conservative = 20
+	authoritarian_democrat = 15
+	paternal_autocrat = 10
+	national_populist = 5
+}
+
+add_ideas = {
+	limited_conscription
+	#POL_eternal_regency
+	#POL_german_industry
+	#POL_austro_german_squabbles
+	POL_warsaw_garrison
+	PLX_PL_army_within_state
+	POL_professional_army_1
+	
+	POL_Jan_Stanislaw_Jankowski_hog_sco
+	POL_Konstanty_Skirmunt_for_sco
+	POL_Henryk_Leon_Strasburger_eco_ade
+	POL_Karol_Popiel_sec_sco
+	
+	PLX_PL_rapid_growth
+}
+
+### Events
+country_event = { id = plx.1 hours = 2 } #PLX Introduction
+country_event = { id = plx.2 days = 42 } #PLX Economic Collapse
+country_event = { id = plx.46 days = 1080 } #Communist Discovered
+
+country_event = { id = plxv2.010 days = 190 } #anniversary of Kingdom
+country_event = { id = plxv2.011 days = 365 } #Fogg Tour
+country_event = { id = plxv2.012 days = 780 } #fortification line
+country_event = { id = plxv2.016 days = 1100 } #harcerstwo
+
+#country_event = { id = poland.165 hours = 2 } #State of Poland
+#country_event = { id = poland.124 days = 4 random_days = 2 } #The Great Debate Begins
+#country_event = { id = poland.215 days = 309 } #20th Anniversary of Poland
+#country_event = { id = poland.222 days = 335 random_days = 25 } #Expansion of Polskie Radio S.A. - Raszyn
+#country_event = { id = poland.193 days = 366 random = 2880 } #Death of Josef Pilsudski
+#country_event = { id = poland.220 days = 425 random_days = 25 } #Renovating Modlin Fortress
+#country_event = { id = poland.52 days = 475 } #The Central Committe elects it's Chairman
+#country_event = { id = poland.42 days = 645 random_days = 2 } #Cabinet Crisis
+#country_event = { id = poland.73 days = 949 } #Rozwadowski Dies
+#country_event = { id = poland.75 days = 1093 } #Kakowski Dies
+#country_event = { id = poland.63 days = 1097 } #Dwomski Passes Away
+#country_event = { id = poland.205 days = 1461 random_days = 150 } #Monarchist Coup
+#country_event = { id = poland.300 days = 36 } #LOP intro
+
+### PLC-only events
+#country_event = { id = plcommon.40 days = 182 } #Anniversary of the Lublin Union
+
+### Disable LIT ministers
+set_country_flag = Aleksandras_Guzevicius_dead
+set_country_flag = Jonas_Cernius_dead
+set_country_flag = Stasys_Rastikis_dead
+set_country_flag = Marian_Januszajtis_Zegota_dead
+set_country_flag = Kazys_Musteikis_dead
+set_country_flag = Jurgis_Terleckas_dead
+
+### Cores
+add_to_array = { integration_core_array = GER }
+add_to_array = { integration_core_array = UKR }
+add_to_array = { integration_core_array = GAL }
+
+add_to_array = { potential_cores = 67 } #Upper Silesia
+add_to_array = { potential_cores = 86 } #Posen
+add_to_array = { potential_cores = 88 } #Krakow
+add_to_array = { potential_cores = 89 } #Stanislawow
+add_to_array = { potential_cores = 91 } #Lwow
+add_to_array = { potential_cores = 93 } #Brest
+add_to_array = { potential_cores = 96 } #Vilnius
+add_to_array = { potential_cores = 776 } #West Prussia
+add_to_array = { potential_cores = 777 } #Masuria
+set_country_flag = KXX_LEADER_GUI_VISIBLE
+set_country_flag = POL_Jozef_Chacinski_VISIBLE
+
+create_country_leader = {
+	name = "瓦莱雷·斯瓦韦克"
+	picture = "gfx/leaders/POL/Portrait_POL_Walery_Slawek_kx.png"
+	expire = "1965.1.1"
+	ideology = autocratic_socialist_subtype
+}
+
+create_country_leader = {
+	name = "扬·亨佩尔"
+	picture = "gfx/leaders/POL/Portrait_PLX_Jan_Hempel.png"
+	expire = "1965.1.1"
+	ideology = syn_natsynd_subtype
+}
+
+create_country_leader = {
+	name = "斯坦尼斯瓦夫·杜波依斯"
+	picture = "gfx/leaders/POL/Portrait_PLX_Stanislaw_Dubois.png"
+	expire = "1965.1.1"
+	ideology = moderate_socialist_subtype
+}
+
+create_country_leader = {
+	name = "卡罗尔·奥布拉希特二世"
+	picture = "gfx/leaders/POL/Portrait_POL_Karol_Olbracht.png"
+	expire = "1965.1.1"
+	desc = "POLITICS_KAROL_OLBRACHT_HABSBURG_DESC"
+	traits = { charitable_emperor }
+	ideology = socdem_democratic_socialism_subtype
+}
+
+create_country_leader = {
+	name = "卡罗尔·奥布拉希特二世"
+	picture = "gfx/leaders/POL/Portrait_POL_Karol_Olbracht.png"
+	expire = "1965.1.1"
+	desc = "POLITICS_KAROL_OLBRACHT_HABSBURG_DESC"
+	traits = { charitable_emperor }
+	ideology = soclib_agrarianism_subtype
+}
+
+create_country_leader = {
+	name = "卡罗尔·奥布拉希特二世"
+	picture = "gfx/leaders/POL/Portrait_POL_Karol_Olbracht.png"
+	expire = "1965.1.1"
+	desc = "POLITICS_KAROL_OLBRACHT_HABSBURG_DESC"
+	traits = { charitable_emperor }
+	ideology = marlib_national_liberalism_subtype
+}
+
+create_country_leader = {
+	name = "卡罗尔·奥布拉希特二世"
+	picture = "gfx/leaders/POL/Portrait_POL_Karol_Olbracht.png"
+	expire = "1965.1.1"
+	ideology = christian_democracy_subtype
+   	desc = "POLITICS_KAROL_OLBRACHT_HABSBURG_DESC"
+	traits = { charitable_emperor }
+}
+
+create_country_leader = {
+	name = "卡罗尔·奥布拉希特二世"
+	picture = "gfx/leaders/POL/Portrait_POL_Karol_Olbracht.png"
+	expire = "1965.1.1"
+	desc = "POLITICS_KAROL_OLBRACHT_HABSBURG_DESC"
+	traits = { charitable_emperor }
+	ideology = national_democracy_subtype
+}
+
+create_country_leader = {
+	name = "瓦莱雷·斯瓦韦克"
+	#desc = "POLITICS_POL_RADA_REGENCYJNA_DESC"
+	picture = "gfx/leaders/POL/Portrait_POL_Walery_Slawek_kx.png"
+	expire = "1965.1.1"
+	ideology = red_tinted_autocracy_subtype
+    #    traits = {
+	#	useless_committee
+    #            humiliating_symbol
+	#}
+}
+
+create_country_leader = {
+	name = "塔德乌斯·别莱茨基"
+	picture = "gfx/leaders/POL/Portrait_POL_Tadeusz_Bielecki_kx.png"
+	expire = "1965.1.1"
+	ideology = national_radicalism_subtype
+}
+
+### Field Marshals ###
+
+#create_field_marshal = {
+#	name = "约瑟夫·毕苏斯基"
+#	portrait_path = "gfx/leaders/POL/Portrait_POL_Jozef_Pilsudski.png"
+#	id = 19859
+#	traits = {
+#		war_hero
+#		media_personality
+#		offensive_doctrine
+#		inspirational_leader
+#	}
+#	skill = 3
+#	attack_skill = 4
+#	defense_skill = 2
+#	planning_skill = 2
+#	logistics_skill = 2
+#}
+
+create_field_marshal = {
+	name = "塔德乌什·罗兹瓦多夫斯基"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Tadeusz_Rozwadowski_kr.png"
+	id = 19860
+	traits = {
+		infantry_officer
+	}
+	skill = 3
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
+}
+
+create_field_marshal = {
+	name = "爱德华·雷兹-希米格维"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Edward_Rydz_Smigly_kr.png"
+	id = 19861
+	traits = {
+		trait_cautious
+		skilled_staffer
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
+}
+
+create_field_marshal = {
+	name = "瓦莱雷·斯瓦韦克"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Walery_Slawek_kx.png"
+	id = 2137
+	traits = {
+		old_guard
+		politically_connected
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+}
+
+### Corps Commanders ###
+
+create_corps_commander = {
+	name = "亚当·科茨"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Adam_Koc.png"
+	traits = {
+		politically_connected
+		infantry_leader
+		organizer
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "莱昂·贝尔贝茨基"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Leon_Berbecki.png"
+	traits = {
+		war_hero
+		infantry_officer
+	}
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "文岑蒂·科瓦尔斯基"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Wincenty_Kowalski_kx.png"
+	traits = {
+	      trickster
+	      expert_improviser
+	}
+	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "米科瓦伊·博乌图奇"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Mikolaj_Boltuc.png"
+	traits = {
+		infantry_officer
+		inflexible_strategist
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "兹比格涅夫·安东诺维奇"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Zbigniew_Antonowicz.png"
+	traits = {
+		urban_assault_specialist
+	}
+	skill = 3
+	attack_skill = 4
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "约瑟夫·多夫博尔-穆希尼茨基"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Jozef_Dowbor_Musnicki.png"
+	traits = {
+		infantry_officer
+		brilliant_strategist
+	}
+	skill = 3
+	attack_skill = 3
+	defense_skill = 4
+	planning_skill = 1
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "马里安·亚努沙伊蒂斯-泽戈塔"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Marian_Januszajtis_Zegota.png"
+	id = 19862
+	traits = {
+		infantry_officer
+		offensive_doctrine
+                politically_connected
+	}
+	skill = 3
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "斯坦尼斯瓦夫·索萨博夫斯基"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Stanislaw_Sosabowski_kr.png"
+	traits = {
+		commando
+		camouflage_expert
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "维托尔德·皮莱茨基"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Witold_Pilecki_kr.png"
+	traits = {
+		trait_reckless
+		trickster
+		guerilla_fighter
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "瓦迪斯瓦夫·安德斯"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Wladyslaw_Anders_kx.png"
+	traits = {
+		armor_officer
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "罗曼·亚伯拉罕"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Roman_Abraham_kx.png"
+	traits = {  }
+	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "斯坦尼斯瓦夫·马格努谢夫斯基"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Stanislaw_Magnuszewski.png"
+	traits = { }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "阿图尔·古尔斯基"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Artur_Gorski.png"
+	traits = {
+		artillery_officer
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "亨里克·多布然斯基"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Henryk_Dobrzanski.png"
+	traits = {
+		inflexible_strategist
+		ranger
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "卡齐米日·索森科夫斯基"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Kazimierz_Sosnkowski_kr.png"
+	traits = {
+		old_guard
+	}
+	skill = 2
+	attack_skill = 3
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "瓦迪斯瓦夫·博尔特诺夫斯基"
+	portrait_path = "gfx/leaders/POL/Portrait_Pol_Wladyslaw_Bortnowski_kx.png"
+	traits = {  
+              thorough_planner
+        }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "尤利乌什·鲁梅尔"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Juliusz_Rommel.png"
+	traits = {
+		armor_officer
+		panzer_leader
+	}
+	skill = 3
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "瓦茨瓦夫·斯塔希耶维奇"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Waclaw_Stachiewicz.png"
+	traits = { }
+	skill = 2
+	attack_skill = 3
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "安东尼·希林格"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Antoni_Szylling.png"
+	traits = {
+		old_guard
+		politically_connected
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "博莱斯瓦夫·维尼亚瓦-德武戈绍夫斯基"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Boleslaw_Wieniawa_Dlugoszewski_kr.png"
+	traits = { }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "齐格蒙特·伯林"
+	portrait_path = "gfx/leaders/POL/Portrait_PLX_Zygmunt_Berling.png"
+	traits = {
+		infantry_officer
+		trickster
+	}
+	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 2
+}
+
+#create_corps_commander = {
+#	name = "Zygmunt Duszyński"
+#	portrait_path = "gfx/leaders/POL/Portrait_PLX_Zygmunt_Duszynski.png"
+#	traits = {
+#		infantry_officer
+#		guerilla_fighter
+#	}
+#	skill = 1
+#	attack_skill = 1
+#	defense_skill = 1
+#	planning_skill = 1
+#	logistics_skill = 1
+#}
+
+# - German Mission Generals
+
+create_corps_commander = {
+	name = "埃里希·冯·曼施坦因-莱温斯基"
+	portrait_path = "gfx/leaders/GER/Portrait_Germany_Erich_von_Manstein_kr.png"
+	traits = { trickster armor_officer brilliant_strategist trait_engineer POL_german_commander }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 4
+	id = 2983
+}
+
+create_corps_commander = {
+	name = "埃里希·冯·德姆·巴赫-热莱夫斯基"
+	portrait_path = "gfx/leaders/GER/Portrait_Germany_Erich_von_dem_Bach_Zelewski.png"
+	traits = { war_hero harsh_leader POL_german_commander }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 1
+	id = 2984
+}
+
+### Admirals ###
+create_navy_leader = {
+	name = "Józef Unrug"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Jozef_Unrug_kr.png"
+	traits = {
+		blockade_runner
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	maneuvering_skill = 1
+	coordination_skill = 1
+}
+
+create_navy_leader = {
+	name = "Kazimierz Porębski"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Kazimierz_Porebski.png"
+	traits = {
+		superior_tactician
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	maneuvering_skill = 1
+	coordination_skill = 1
+}
+
+create_navy_leader = {
+	name = "Jerzy Świrski"
+	portrait_path = "gfx/leaders/POL/Portrait_POL_Jerzy_Swirski.png"
+	traits = { }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	maneuvering_skill = 2
+	coordination_skill = 1
+}
+
+### Operatives ###
+if = {
+	limit = { has_dlc = "La Resistance" }
+	create_operative_leader = {
+		name = "Krystyna Skarbek"
+		GFX = GFX_portrait_kr_krystyna_skarbek
+		traits = {
+			operative_escape_artist
+			operative_infiltrator
+		}
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		female = yes
+		nationalities = { POL }
+	}
+}
+

@@ -1,0 +1,26 @@
+state = {
+	id = 916
+	name = "STATE_916"
+	manpower = 371188
+	state_category = one
+	resources = {
+		oil = 21
+	}
+	history = {
+		owner = PAF
+		add_core_of = PAF
+		add_core_of = ANG
+		add_core_of = KOG
+		
+		buildings = {
+			infrastructure = 1
+		}
+		victory_points = {
+			8219 1
+		}
+	}
+
+	provinces = {
+		8219
+	}
+}

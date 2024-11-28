@@ -1,0 +1,848 @@
+﻿add_namespace = holythai
+
+country_event = { # Introduction
+	id = holythai.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.1" }
+	title = holythai.1.t
+	desc = holythai.1.d
+	picture = "GFX_report_event_holy_one"
+
+	fire_only_once = yes
+	trigger = {
+		tag = SIA
+		is_ai = no
+		SIA = {
+			date > 1936.2.13
+		}
+	}
+
+	option = {
+		name = holythai.1.a
+		country_event = {
+		id = holythai.2
+		}
+		
+		add_war_support = -0.1
+	}
+	
+	option = {
+		name = holythai.1.b
+		country_event = {
+		id = holythai.3
+		}
+		add_war_support = -0.1
+	}
+}
+
+country_event = { # Introduction
+	id = holythai.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.2" }
+	title = holythai.2.t
+	desc = holythai.2.d
+	picture = "GFX_report_event_holy_two"
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = holythai.2.a
+		country_event = {
+		id = holythai.4
+		}
+		
+		add_manpower = 10382
+	}
+	
+	option = {
+		name = holythai.2.b
+		country_event = {
+		id = holythai.5
+		}
+		
+		add_manpower = 10382
+		add_stability = -0.05
+	}
+}
+
+country_event = { # Introduction
+	id = holythai.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.3.t
+	desc = holythai.3.d
+	picture = "GFX_report_event_holy_three"
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = holythai.3.a
+		country_event = {
+		id = holythai.5
+		}
+		
+		add_manpower = 10382
+	}
+	
+	option = {
+		name = holythai.3.b
+		country_event = {
+		id = holythai.6
+		}
+		add_manpower = 10382
+	}
+}
+
+country_event = { # Introduction
+	id = holythai.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.4.t
+	desc = holythai.4.d
+	picture = "GFX_report_event_holy_four"
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = holythai.4.a
+		country_event = {
+		id = holythai.7
+		}
+		add_manpower = 100
+		add_stability = 0.1
+	}
+	
+	
+}
+
+country_event = { # Introduction
+	id = holythai.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.5.t
+	desc = holythai.5.d
+	picture = "GFX_report_event_holy_five"
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = holythai.5.a
+		country_event = {
+		id = holythai.8
+		}
+		add_manpower = 100
+		add_stability = 0.1
+	}
+	
+	
+}
+
+country_event = { # Introduction
+	id = holythai.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.6.t
+	desc = holythai.6.d
+	picture = "GFX_report_event_holy_six"
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = holythai.6.a
+		country_event = {
+		id = holythai.7
+		}
+		add_manpower = 100
+		add_stability = 0.1
+		add_war_support = 0.05
+	}
+	option = {
+		name = holythai.6.b
+		country_event = {
+		id = holythai.8
+		}
+		add_manpower = 100
+		add_stability = 0.1
+		add_war_support = 0.05
+	}
+	
+	
+}
+
+country_event = { # Introduction
+	id = holythai.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.7.t
+	desc = holythai.7.d
+	picture = "GFX_report_event_holy_three"
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = holythai.7.a
+		country_event = {
+		id = holythai.9
+		}
+		add_stability = -0.5
+	}
+	
+	
+}
+
+country_event = { # Introduction
+	id = holythai.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.8.t
+	desc = holythai.8.d
+	picture = "GFX_report_event_holy_one"
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = holythai.8.a
+		country_event = {
+		id = holythai.9
+		}
+		add_stability = -1
+	}
+	
+	
+}
+
+country_event = { # Introduction
+	id = holythai.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.9.t
+	desc = holythai.9.d
+	picture = "GFX_report_event_holy_two"
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = holythai.9.a
+		THM = {
+		add_state_core = 756
+		
+		add_state_core = 882
+		add_state_core = 822
+		add_state_core = 831
+		add_state_core = 289
+		add_state_core = 830
+		add_state_core = 824
+		add_state_core = 823
+		add_state_core = 749
+		add_state_core = 724
+		add_state_core = 999
+		add_state_core = 751
+		add_state_core = 825
+		add_state_core = 750
+		add_state_core = 823
+		
+		annex_country = {
+				target = SIA
+				transfer_troops = yes
+			}
+			
+		}
+		
+		
+		
+		
+		THM = { change_tag_from = SIA }
+		
+	}
+	
+	option = {
+		name = holythai.9.b
+		THM = {
+		set_state_controller = 822
+		set_state_controller = 823
+		load_oob = "SIA_revolt"
+		}
+		release = CAM
+	}
+	
+	
+}
+
+country_event = { # Introduction
+	id = holythai.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.10.t
+	desc = holythai.10.d
+	picture = "GFX_report_event_holy_four"
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = holythai.10.a
+		load_focus_tree = holy-tree
+		
+		custom_effect_tooltip = THM_sangha_tt
+		custom_effect_tooltip = THM_royalist_tt
+		custom_effect_tooltip = THM_liberationist_tt
+	}
+	
+	
+}
+
+country_event = { # Introduction
+	id = holythai.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.11.t
+	desc = holythai.11.d
+	picture = "GFX_report_event_holy_four"
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = holythai.11.a
+		
+		SIA = {
+		set_state_owner = 822
+		set_state_owner = 823
+		load_oob = "SIA_revolt"
+		declare_war_on = {
+			target = THM
+			type = annex_everything
+		}
+		}
+		release = CAM
+	}
+	
+	
+}
+
+
+
+country_event = { #Choice of Strategy
+	id = holythai.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.12.t
+	desc = holythai.12.d
+	picture = "GFX_report_event_holy_four"
+	is_triggered_only = yes
+
+	
+
+	option = {#Sangha Favor
+		name = holythai.12.a
+		add_to_variable = {
+			var = sangha_power
+			value = 5
+			tooltip = add_to_sangha_power_tt
+			
+		}
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.05
+		}
+	}
+	option = {#Royalist Favor
+		name = holythai.12.b
+		add_to_variable = {
+			var = royalist_power
+			value = 5
+			tooltip = add_to_royalist_power_tt
+		}
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.05
+		}
+	}
+	option = {#Liberationist Favor
+		name = holythai.12.c
+		add_to_variable = {
+			var = liberationist_power
+			value = 5
+			tooltip = add_to_liberationist_power_tt
+		}
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.05
+		}
+	}
+	
+	
+}
+
+country_event = { #Question of Land Rights
+	id = holythai.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.13.title
+	desc = holythai.13.desc
+	picture = "GFX_report_event_holy_four"
+	is_triggered_only = yes
+
+	
+
+	option = {#Execute the Landlords
+		name = holythai.13.a
+		set_country_flag = THM_radical_land_reforms
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+		
+	}
+	
+	option = {#Moderate Reforms
+		name = holythai.13.b
+		set_country_flag = THM_moderate_land_reforms
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.05
+		}
+		
+	}
+	
+}
+
+country_event = { #The Scriptures Cry out
+	id = holythai.14
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.14.title
+	desc = holythai.14.desc
+	picture = "GFX_report_event_holy_four"
+	is_triggered_only = yes
+
+	
+
+	option = {#We Shall Liberate Asia With our Allies
+		name = holythai.14.a
+		create_faction = "Buddhist Peace Fellowship"
+		set_country_flag = THM_alliance
+		
+	}
+	
+	option = {#We Shall Claim All of Asia
+		name = holythai.14.b
+		every_state = {
+					limit = {
+						is_on_continent = asia
+					}
+					THM = { 
+						add_state_core = PREV 
+						create_wargoal = {
+								type = puppet_wargoal_focus
+								target = PREV
+							}
+				}
+			}
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = PREV
+		}
+		every_state = {
+					limit = {
+						is_on_continent = india
+					}
+					THM = { 
+						add_state_core = PREV 
+						create_wargoal = {
+								type = puppet_wargoal_focus
+								target = PREV
+							}
+				}
+			}
+		
+		
+		
+	}
+	
+}
+
+
+
+country_event = { #The People Cry Out
+	id = holythai.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.15.title
+	desc = holythai.14.desc
+	picture = "GFX_report_event_holy_four"
+	is_triggered_only = yes
+
+	
+
+	option = {#We Shall Liberate Asia 
+		name = holythai.15.a
+		create_faction = "Asian Liberation Alliance"
+		set_country_flag = THM_alliance
+		
+	}
+	
+	
+	
+}
+
+country_event = { #Joining the Holy Man Rebellion
+	id = holythai.16
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.16.title
+	desc = holythai.14.desc
+	picture = "GFX_report_event_holy_four"
+	is_triggered_only = yes
+
+	
+
+	option = {#No
+		name = holythai.16.a
+		THM = {
+		create_wargoal = {
+				type = puppet_wargoal_focus
+				target = FROM
+			}
+		}
+		
+	}
+	option = {#yes
+		name = holythai.16.b
+		THM = { add_to_faction = FROM }
+	}
+	
+	
+}
+
+
+country_event = { #Claiming Pan-Theravada
+	id = holythai.17
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.17.title
+	desc = holythai.14.desc
+	picture = "GFX_report_event_holy_four"
+	is_triggered_only = yes
+
+	
+
+	option = {#We Shall Liberate Asia With our Allies
+		name = holythai.17.a
+		create_faction = "Buddhist Peace Fellowship"
+		set_country_flag = THM_alliance
+		
+	}
+	
+	option = {#We Shall Claim All of Asia
+		name = holythai.17.b
+		set_cosmetic_tag = THM_PANTHERA
+		every_state = {
+					
+					THM = { 
+						add_state_core = PREV 
+						create_wargoal = {
+								type = puppet_wargoal_focus
+								target = PREV
+							}
+				}
+			}
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = PREV
+		}
+		every_state = {
+					
+					THM = { 
+						add_state_core = PREV 
+						create_wargoal = {
+								type = puppet_wargoal_focus
+								target = PREV
+							}
+				}
+			}
+		
+		
+		
+	}
+	
+}
+
+country_event = { #Choice of Strategy
+	id = holythai.18
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.12.t
+	desc = holythai.12.d
+	picture = "GFX_report_event_holy_four"
+	is_triggered_only = yes
+
+	
+
+	option = {#A Fairere Society
+		name = holythai.12.a
+		set_politics = { ruling_party = social_democrat }
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.5
+		}
+		
+	}
+	option = {#Continue Our Nationalist View
+		name = holythai.12.b
+		set_politics = { ruling_party = national_populist }
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.5
+		}
+	}
+	
+	
+	
+}
+
+
+
+country_event = { # Introduction
+	id = holythai.131
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = holythai.9.t
+	desc = holythai.9.d
+	picture = "GFX_report_event_holy_two"
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = holythai.9.a
+		set_cosmetic_tag = HNN_PRC01
+		load_focus_tree = Peoples_Republic_of_China_Focus_Tree
+	}
+}
+
+country_event = { # Introduction
+	id = holythai.90
+	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.3" }
+	title = SCA1title
+	desc = SCA1desc
+	picture = "GFX_report_event_holy_two"
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAN
+		is_ai = no
+		country_exists = CAL
+		CAL = {
+			is_subject_of = CAN
+		}
+		country_exists = DSR
+		DSR = {
+			is_subject_of = CAN
+		}
+		country_exists = AML
+		AML = {
+			is_subject_of = CAN
+		}
+		country_exists = TXS
+		TXS = {
+			is_subject_of = CAN
+		}
+		country_exists = FSA
+		FSA = {
+			is_subject_of = CAN
+		}
+		country_exists = CGL
+		CGL = {
+			is_subject_of = CAN
+		}
+		country_exists = USA
+		USA = {
+			is_subject_of = CAN
+		}
+		country_exists = NEE
+		NEE = {
+			is_subject_of = CAN
+		}
+	}
+
+	option = {
+		name = SCA1opta
+		SCA = {
+		transfer_state = 385
+		}
+		SCA = {
+		add_state_core = 385
+		}
+		SCA = {
+			set_cosmetic_tag = SCA_1
+		}
+		SCA = { change_tag_from = CAN }	
+		news_event = { 
+			days = 1 
+			id = PBNews.76 
+		}
+		hidden_effect = {	
+			SCA = {
+				add_ideas = { 
+					PB_Idea_Untamed_Frontier 
+				}
+				set_country_flag = SCA_Final_Few_1
+				set_country_flag = SCA_In_Exile
+				set_research_slots = 1
+				load_focus_tree = PB_SCA_Exile
+				kill_country_leader = yes
+				set_politics = { ruling_party = totalist }
+				set_popularities = {
+					social_liberal = 0
+					market_liberal = 0
+					syndicalist = 0
+					radical_socialist = 0
+					social_democrat = 0
+					totalist = 100
+					social_conservative = 0
+					authoritarian_democrat = 0
+					paternal_autocrat = 0
+					national_populist = 0
+				}
+				set_party_name = {
+					ideology = totalist
+					long_name = SCA_a_party_long
+					name = SCA_a_party
+				}
+				set_party_name = {
+					ideology = social_liberal
+					long_name = SCA_b_party_long
+					name = SCA_b_party
+				}
+				set_party_name = {
+					ideology = market_liberal
+					long_name = SCA_b_party_long
+					name = SCA_b_party
+				}
+				set_party_name = {
+					ideology = syndicalist
+					long_name = SCA_b_party_long
+					name = SCA_b_party
+				}
+				set_party_name = {
+					ideology = radical_socialist
+					long_name = SCA_b_party_long
+					name = SCA_b_party
+				}
+				set_party_name = {
+					ideology = social_democrat
+					long_name = SCA_b_party_long
+					name = SCA_b_party
+				}
+				set_party_name = {
+					ideology = social_conservative
+					long_name = SCA_b_party_long
+					name = SCA_b_party
+				}
+				set_party_name = {
+					ideology = authoritarian_democrat
+					long_name = SCA_b_party_long
+					name = SCA_b_party
+				}
+				set_party_name = {
+					ideology = paternal_autocrat
+					long_name = SCA_b_party_long
+					name = SCA_b_party
+				}
+				set_party_name = {
+					ideology = national_populist
+					long_name = SCA_b_party_long
+					name = SCA_b_party
+				}
+				create_country_leader = {
+					name = "斯梅德利·巴特勒"
+					desc = "POLITICS_Smedley_Butler_Exile_DESC"
+					picture = "gfx/leaders/SCA/Portrait_SCA_Butler_exile.dds"
+					expire = "1965.1.1"
+					ideology = jacobinism_subtype
+					traits = { PB_Struggling_Dogs }
+				} 
+				create_field_marshal = {
+					name = "斯梅德利·巴特勒"
+					portrait_path = "gfx/leaders/SCA/Portrait_SCA_Butler_exile.dds"
+					traits = {
+						infantry_officer
+						brilliant_strategist  
+						trickster
+						expert_improviser
+						naval_invader
+						trait_SCA_Traumatized_By_The_Trek
+					}
+					skill = 4
+					attack_skill = 4
+					defense_skill = 4
+					planning_skill = 3
+					logistics_skill = 2
+				}
+				add_ideas = {
+					PB_SCA_The_American_Revolution
+					PB_SCA_The_Young_Old_And_Bold
+
+					SCA_PB_Vacancy_em
+					SCA_PB_Vacancy_fm
+					SCA_PB_Vacancy_im
+					SCA_Smedley_Butler_HOG
+
+					SCA_Empty_Military_Position
+					SCA_Empty_Military_Position_1
+					SCA_Empty_Military_Position_2
+					SCA_Empty_Military_Position_3
+					SCA_Empty_Military_Position_4
+					SCA_Empty_Military_Position_5
+					SCA_Smedley_Butler_Chief
+				}
+				remove_ideas = SCA_conflicting_governmental_services_idea
+				remove_ideas = SCA_Federal_Navy_idea
+				remove_ideas = {
+					SCA_Magnus_Nilssen_hog_sde
+					SCA_Gustaf_Andersson_i_Rasjoen_for_sli
+					SCA_Valdemar_Thomsen_eco_sco
+					SCA_Ole_Bjoern_Kraft_sec_mli
+				}
+				add_ideas = {
+					CSA_Gus_Hall_hog_tot
+					CSA_Upton_Sinclair_eco_rso
+					NEE_FDR_Jr_sec_tot
+					CSA_Ernest_Hemingway_for_tot
+				}
+				CSA = {
+					every_unit_leader = {
+						set_nationality = SCA
+					}
+				}
+			}
+			SCA = {
+				set_country_flag = PB_Disable_Military_Decisions  
+			} 
+		}
+		ai_chance = {
+			factor = -4000
+		}
+	}
+	option = {
+		name = SCA1optb
+	}
+}

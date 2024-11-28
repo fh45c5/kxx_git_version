@@ -1,0 +1,341 @@
+﻿add_namespace = zhude_yunnan
+add_namespace = juche_china
+
+country_event = {
+
+		id = zhude_yunnan.1
+		title = "确保权力"
+		desc = 随着朱德巩固了自己的权力，他终于有机会在云南实现自己的抱负了。
+		picture = "-"
+		trigger = {
+		tag = YUN
+			is_ai = no
+			YUN = {
+				has_country_flag = Zhu_De_READY
+			}
+		}
+		fire_only_once = yes
+		option = {
+
+		name = "朱德护佑云南"
+		load_focus_tree = zhudetree
+		set_country_leader_ideology = red_junta_subtype
+		country_event = {
+		id = juche_china.1
+		days = 10
+		}
+
+
+		}
+		
+		
+		
+		
+
+
+	}
+
+
+country_event = {
+
+		id = zhude_yunnan.2
+		title = "云南选举"
+		desc = 选举结果出炉，领导人是.....
+		picture = "-"
+
+		fire_only_once = yes
+
+		is_triggered_only = yes
+
+
+		
+		option = {
+
+		name = "朱德胜利"
+		
+		complete_national_focus = ZHU_zhudewinsthenation
+		set_country_leader_ideology = moderate_socialist_subtype
+
+
+		}
+		
+		option = {
+
+		name = "任白戈胜利"
+		complete_national_focus = ZHU_baigesproletarianvictory
+		set_politics = { ruling_party = radical_socialist }
+		
+		set_country_leader_ideology = lu_xun_thought_subtype
+		set_country_leader_name = {
+				ideology = radical_socialist
+				name = "任白戈"
+			}
+		set_country_leader_portrait = {
+			ideology = radical_socialist
+			portrait = "gfx/leaders/YUN/Portrait_YUN_Ren_baige.png"
+		}
+
+
+		}
+		
+		
+		option = {
+
+		name = "康克清胜利"
+		complete_national_focus = ZHU_syndicalist_victory
+		set_politics = { ruling_party = syndicalist }
+		
+		set_country_leader_ideology = agrarian_socialism_subtype
+		set_country_leader_name = {
+				ideology = syndicalist
+				name = "康克清"
+			}
+		set_country_leader_portrait = {
+			ideology = syndicalist
+			portrait = "gfx/leaders/YUN/Portrait_YUN_Kang_Keqing.png"
+		}
+
+
+		}
+		
+		
+		
+		
+		
+
+
+	}
+	
+	country_event = {
+
+		id = juche_china.1
+		title = "反朱德政变"
+		desc = "在成功占领云南后，朱德计划清除军队中的潜在威胁。其中一个目标是周保中，他一直在传播一些激进的思想。在将清单发送出去等待完成后，似乎是在流程的某个环节泄露给了周。幸运的是，两人之间已经安排了一次会议，这将是讨论这个问题的最佳时机。就在会议进行到一半的时候，有人敲门。"
+		picture = "-"
+
+		fire_only_once = yes
+
+		is_triggered_only = yes
+
+
+		
+		option = {
+
+		name = "朱德被反动势力杀害了!周保中成功地掌控云南!"
+		set_country_flag = not_china_republic
+		every_unit_leader = {
+				limit = { has_id = 5007 } #Zhu De
+				demote_leader = yes
+				set_nationality = NSW
+			}
+		set_politics = { ruling_party = totalist }
+		set_country_leader_ideology = juche_subtype
+		set_country_leader_name = {
+				ideology = totalist
+				name = "周保中"
+			}
+		set_country_leader_portrait = {
+			ideology = totalist
+			portrait = "gfx/leaders/YUN/Portrait_Zhou_Baozhong.png"
+		}
+		load_focus_tree = jucheyunnan
+		set_cosmetic_tag = YUN_JUCHE_INITIAL
+		set_party_name = {
+			ideology = totalist
+			long_name = "Worker's Party of China"
+			name = "WPC"
+		}
+		create_country_leader = {
+			name = "章伯均"
+			picture = "gfx/leaders/YUN/Portrait_Yunnan_Zhang_Bojun.png"
+			expire = "1965.1.1"
+			ideology = socdem_tridemism_subtype
+		}
+		create_country_leader = {
+			name = "章伯均"
+			picture = "gfx/leaders/YUN/Portrait_Yunnan_Zhang_Bojun.png"
+			expire = "1965.1.1"
+			ideology = radsoc_tridemism_subtype
+		}
+		hidden_effect = {
+			YUN = {
+				H_to_china = yes
+				every_state = {		
+			limit = {
+			OR = {
+	is_core_of = LEP
+	is_core_of = CHI
+	is_core_of = SQI
+	is_core_of = ANQ
+	is_core_of = QIE
+	is_core_of = FNG
+	is_core_of = GXC
+	is_core_of = YUN
+	is_core_of = XSM
+	is_core_of = Mon
+	is_core_of = HNN
+	is_core_of = shx
+	is_core_of = szc
+	is_core_of = lec
+	is_core_of = sik
+	is_core_of = tib
+	is_core_of = TAI
+	is_core_of = JST
+	}
+			}					
+	add_core_of = YUN
+							}
+	add_state_core = 537
+	add_state_core = 525
+	add_state_core = 527
+	add_state_core = 858
+	add_state_core = 745
+	add_state_core = 1246
+	add_state_core = 409
+	add_state_core = 561
+	add_state_core = 560
+	add_state_core = 657
+	add_state_core = 654
+	add_state_core = 1293
+	add_state_core = 811
+	add_state_core = 329
+	add_state_core = 729
+	add_state_core = 600
+	add_state_core = 1046
+	add_state_core = 802
+	add_state_core = 1066
+	add_state_core = 595
+	add_state_core = 1044
+	add_state_core = 1045
+	add_state_core = 1069
+	add_state_core = 803
+	add_state_core = 1068
+	add_state_core = 1067
+	add_state_core = 596
+	add_state_core = 613
+	add_state_core = 1014
+	add_state_core = 606
+	add_state_core = 1050
+	add_state_core = 598
+	add_state_core = 1047
+	add_state_core = 1064
+	add_state_core = 597
+	add_state_core = 1065
+	add_state_core = 996
+	add_state_core = 744
+		}
+		}
+		}
+		 option = {
+		 name = "朱德大获全胜，活捉了周保中"
+		 
+		 }
+		
+		
+		
+		
+
+
+	}
+	
+	country_event = {
+
+		id = juche_china.2
+		title = "越过社会主义的山丘!"
+		desc = juche_china.2.desc
+		picture = "-"
+
+		fire_only_once = yes
+
+		is_triggered_only = yes
+
+
+		
+		option = {
+
+		name = juche_yunnan.2.a
+		add_ideas = {
+		YUN_culture_revolution_beyond_hill
+		}
+
+		}
+		 
+		
+		
+		
+		
+	}
+
+country_event = {
+
+		id = juche_china.3
+		title = "世界人民大团结万岁!"
+		desc = "中国也有忠于主体思想的势力取得了政权，他们希望同我们一起解放亚洲。"
+		picture = "-"
+
+		fire_only_once = yes
+
+		is_triggered_only = yes
+
+
+		
+		option = {
+
+		name = "我们将一同前进"
+		ai_chance = { base = 100}
+		YUN = {
+		annex_country = {
+			target = KOR
+			transfer_troops = yes
+		}
+		}
+		every_unit_leader = { set_nationality = YUN }
+		every_navy_leader = { set_nationality = YUN }
+		}
+		option = {
+
+		name = "不可能"
+		ai_chance = { base = 0}
+
+		
+
+		}
+		 
+	}
+
+country_event = {
+	id = juche_china.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event juche_china.4" }
+	title = "领导层换人?"
+	desc = "随着中国和韩国的解放，现在可以解决一些小的政治问题。随着两国在共同反对帝国主义的斗争中紧密地联系在一起，一些朝鲜民族主义者一直担心中国可能主导这个新国家，导致朝鲜文化的终结。虽然我们永远不会让这种情况发生，并且已经实施了几项政策来防止这种情况的发生，但党内一些人建议让朝鲜族的金日成取代周保中成为国家元首，以缓解这些担忧。作为一生的朋友，两人对更广泛的政党决定的任何选择都没有异议。无论我们选择哪一个，显而易见的是，周和金仍然是对我们革命的成功最有帮助的两个人。"
+	picture = "-"
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "金日成将成为我们新的名义领袖。"
+		create_country_leader = {
+   		 	name = "金日成"
+				desc = ""
+				picture = "gfx/leaders/YUN/Portrait_KOR_Kim_Il_Sung.png"
+				expire = "1965.1.1"
+				ideology = juche_subtype
+				traits = {}
+		}
+		set_party_name = {
+			ideology = totalist
+			long_name = "Worker's Party of China/Worker's Party of Korea"
+			name = "WPC/WPK"
+		}
+	}
+	option = {  
+		name = "周保中将继续担任国家元首"
+		set_party_name = {
+			ideology = totalist
+			long_name = "Worker's Party of China/Worker's Party of Korea"
+			name = "WPC/WPK"
+		}
+		}
+	}
+}

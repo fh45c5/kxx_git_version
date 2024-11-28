@@ -1,0 +1,83 @@
+### Bosnia Ideas ###
+
+ideas = {
+	country = {
+		HOL_German_government_in_exile_in_the_Netherlands = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HOL_German_government_in_exile_in_the_Netherlands" }
+			name = HOL_German_government_in_exile_in_the_Netherlands
+			picture = GER_shield
+			allowed = { always = no }
+			modifier = {
+			war_support_factor = -0.07
+			stability_factor = 0.1
+			authoritarian_democrat_drift = 0.02
+			conscription_factor = -0.2
+			}
+		}
+		HOL_The_New_Home_Movement = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HOL_The_New_Home_Movement" }
+			name = HOL_The_New_Home_Movement
+			picture = GER_shield
+			allowed = { always = no }
+			modifier = {
+			war_support_factor = 0.12
+			stability_factor = 0.1
+			authoritarian_democrat_drift = 0.02
+			conscription_factor = 0.3
+			army_core_defence_factor = 0.1
+			}
+		}
+		HOL_Acceptance_of_funds  = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HOL_Acceptance_of_funds" }
+			name = HOL_Acceptance_of_funds
+			picture = social_capitalism_1
+			allowed = { always = no }
+			modifier = {
+			production_speed_industrial_complex_factor = 0.25
+			consumer_goods_factor = -0.15
+			political_power_gain = 0.15
+			}
+		}
+		HOL_Reinstatement  = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HOL_Reinstatement" }
+			name = HOL_Reinstatement
+			picture = CSA_reinforced_weapons
+			allowed = { always = no }
+			modifier = {
+			army_attack_factor = 0.15
+			army_defence_factor = 0.15
+			army_core_attack_factor = 0.2
+			army_core_defence_factor = 0.2
+			compliance_growth = 0.005
+			industrial_capacity_factory = 0.2
+			production_factory_efficiency_gain_factor = 0.3
+			production_factory_max_efficiency_factor = 0.25
+			production_speed_arms_factory_factor = 0.3
+			}
+		}
+		HOL_German_government_in_exile_in_the_Netherlands_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HOL_German_government_in_exile_in_the_Netherlands_1" }
+			name = HOL_German_government_in_exile_in_the_Netherlands_1
+			picture = GER_shield
+			allowed = { always = no }
+			modifier = {
+			monthly_population = -0.4
+			stability_factor = -0.1
+			}
+		}
+		HOL_Waves_of_immigration = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea HOL_Waves_of_immigration" }
+			name = HOL_Waves_of_immigration
+			picture = immigration_influx
+			cancel = {
+			has_full_control_of_state = 64
+			}
+			allowed = { always = no }
+			modifier = {
+			local_manpower = 1.2
+			weekly_manpower = 5500
+			stability_factor = -0.07
+			}
+		}
+	}
+}

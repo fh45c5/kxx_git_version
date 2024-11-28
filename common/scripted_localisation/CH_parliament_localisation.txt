@@ -1,0 +1,141 @@
+####  中央委员会  ####
+	
+#激进度
+
+	defined_text = {
+		name = CHI_party_radicalism
+		
+		text = {
+			trigger = {
+				check_variable = { CHI_radicalism_var < 25.1 }
+			}
+			localization_key = CHI_radicalism_is_sensible
+		}
+
+		text = {
+			trigger = {
+				check_variable = { CHI_radicalism_var > 25.1 }
+				check_variable = { CHI_radicalism_var < 50.1 }
+			}
+			localization_key = CHI_radicalism_is_anxiety
+		}
+
+		text = {
+			trigger = {
+				check_variable = { CHI_radicalism_var > 50.1 }
+				check_variable = { CHI_radicalism_var < 75.1 }
+			}
+			localization_key = CHI_radicalism_is_impassioned
+		}
+
+		text = {
+			trigger = {
+				check_variable = { CHI_radicalism_var > 75.1 }
+			}
+			localization_key = CHI_radicalism_is_extreme
+		}
+	}
+
+#影响力
+
+	defined_text = {
+		name = CHI_PMC_influence
+		
+		text = {
+			trigger = {
+				check_variable = { CHI_PMC_influence_var < 25.1 }
+			}
+			localization_key = CHI_party_influence_small
+		}
+
+		text = {
+			trigger = {
+				check_variable = { CHI_PMC_influence_var > 25.1 }
+				check_variable = { CHI_PMC_influence_var < 50.1 }
+			}
+			localization_key = CHI_party_influence_middle
+		}
+
+		text = {
+			trigger = {
+				check_variable = { CHI_PMC_influence_var > 50.1 }
+				check_variable = { CHI_PMC_influence_var < 75.1 }
+			}
+			localization_key = CHI_party_influence_large
+		}
+
+		text = {
+			trigger = {
+				check_variable = { CHI_PMC_influence_var > 75.1 }
+			}
+			localization_key = CHI_party_influence_extreme
+		}
+	}
+
+	defined_text = {
+		name = CHI_CRA_influence
+		
+		text = {
+			trigger = {
+				check_variable = { CHI_CRA_influence_var < 25.1 }
+			}
+			localization_key = CHI_party_influence_small
+		}
+
+		text = {
+			trigger = {
+				check_variable = { CHI_CRA_influence_var > 25.1 }
+				check_variable = { CHI_CRA_influence_var < 50.1 }
+			}
+			localization_key = CHI_party_influence_middle
+		}
+
+		text = {
+			trigger = {
+				check_variable = { CHI_CRA_influence_var > 50.1 }
+				check_variable = { CHI_CRA_influence_var < 75.1 }
+			}
+			localization_key = CHI_party_influence_large
+		}
+
+		text = {
+			trigger = {
+				check_variable = { CHI_CRA_influence_var > 75.1 }
+			}
+			localization_key = CHI_party_influence_extreme
+		}
+	}
+
+	defined_text = {
+		name = CHI_CSL_influence
+		
+		text = {
+			trigger = {
+				check_variable = { CHI_CSL_influence_var < 25.1 }
+			}
+			localization_key = CHI_party_influence_small
+		}
+
+		text = {
+			trigger = {
+				check_variable = { CHI_CSL_influence_var > 25.1 }
+				check_variable = { CHI_CSL_influence_var < 50.1 }
+			}
+			localization_key = CHI_party_influence_middle
+		}
+
+		text = {
+			trigger = {
+				check_variable = { CHI_CSL_influence_var > 50.1 }
+				check_variable = { CHI_CSL_influence_var < 75.1 }
+			}
+			localization_key = CHI_party_influence_large
+		}
+
+		text = {
+			trigger = {
+				check_variable = { CHI_CSL_influence_var > 75.1 }
+			}
+			localization_key = CHI_party_influence_extreme
+		}
+	}

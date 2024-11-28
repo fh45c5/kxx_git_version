@@ -1,0 +1,15 @@
+LEB_Raymond_Edde_hog_mli = {
+			allowed = { original_tag = LEB }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			traits = {
+				head_of_government
+				market_liberal
+				hog_political_protege
+			}
+		}

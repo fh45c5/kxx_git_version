@@ -1,0 +1,549 @@
+foreign_politics = {
+	PLX_formin_intermarium = {
+		icon = generic_agreement
+		allowed = { tag = POL }
+		
+		available = {
+			FROM = {
+				#has_country_flag = plx_expansionist_poland
+				#controls_state = 10
+				#controls_state = 96
+				#controls_state = 206
+				#controls_state = 202
+				
+				1314 = { is_core_of = POL }
+				1319 = { is_core_of = POL }
+				776 = { is_core_of = POL }
+				86 = { is_core_of = POL }
+				67 = { is_core_of = POL }
+				777 = { is_core_of = POL }
+				655 = { is_core_of = POL }
+				94 = { is_core_of = POL }
+				96 = { is_core_of = POL }
+				93 = { is_core_of = POL }
+				997 = { is_core_of = POL }
+				792 = { is_core_of = POL }
+				95 = { is_core_of = POL }
+				1295 = { is_core_of = POL }
+				207 = { is_core_of = POL }
+				1124 = { is_core_of = POL }
+				88 = { is_core_of = POL }
+				1125 = { is_core_of = POL }
+				1126 = { is_core_of = POL }
+				1127 = { is_core_of = POL }
+				91 = { is_core_of = POL }
+				89 = { is_core_of = POL }
+				1140 = { is_core_of = POL }
+				1131 = { is_core_of = POL }
+				
+				66 = { is_core_of = POL }
+				68 = { is_core_of = POL }
+				63 = { is_core_of = POL }
+				5 = { is_core_of = POL }
+				188 = { is_core_of = POL }
+				189 = { is_core_of = POL }
+				11 = { is_core_of = POL }
+				206 = { is_core_of = POL }
+				1294 = { is_core_of = POL }
+				1087 = { is_core_of = POL }
+				204 = { is_core_of = POL }
+				194 = { is_core_of = POL }
+				1228 = { is_core_of = POL }
+				199 = { is_core_of = POL }
+				1244 = { is_core_of = POL }
+				201 = { is_core_of = POL }
+				1245 = { is_core_of = POL }
+				198	= { is_core_of = POL }				
+			}
+		}
+	
+		visible = {
+			FROM = {
+				is_subject = no
+				has_country_flag = plx_expansionist_poland
+				NOT = { has_country_flag = plx_slavic_communists }
+				#NOT = { has_government = authoritarian_democrat }
+			}
+		}
+		
+		highlight_states = {
+			state = 1314
+			state = 1319
+			state = 776
+			state = 86
+			state = 67
+			state = 777
+			state = 655
+			state = 94
+			state = 96
+			state = 93
+			state = 997
+			state = 792
+			state = 95
+			state = 1295
+			state = 207
+			state = 1124
+			state = 88
+			state = 1125
+			state = 1126
+			state = 1127
+			state = 91
+			state = 89
+			state = 1140
+			state = 1131
+
+			state = 66
+			state = 68
+			state = 63
+			state = 5
+			state = 188
+			state = 189
+			state = 11
+			state = 206
+			state = 1294
+			state = 1087
+			state = 204
+			state = 194
+			state = 1228
+			state = 199
+			state = 1244
+			state = 201
+			state = 1245
+			state = 198
+		}
+	
+		cost = 500
+		#days_remove = 120
+		#cancel_if_not_visible = yes
+	
+		ai_will_do = {
+			factor = 0
+		}
+	
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove PLX_formin_intermarium target: [From.GetName]"
+			country_event = plx.39
+		}
+	}	
+	PLX_break_with_revisionists = {
+		icon = generic_independence
+		available = {
+			has_completed_focus = KX_PLX_THE_FINAL_STRUGGLE
+		}
+		visible = {
+			is_ai = no
+			has_completed_focus = KX_PLX_THE_FINAL_STRUGGLE
+		}
+		cost = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+			country_event = plxf.19
+		}
+	}	
+}
+
+economy_decisions = {
+	PLX_gdansk_shipyards = {
+		icon = GFX_decision_generic_naval
+
+		available = {
+			776 = { is_owned_and_controlled_by = ROOT }
+		}
+
+		visible = {
+			has_completed_focus = KX_PLX_EXPAND_DOCKS
+			776 = { is_core_of = POL }
+		}
+
+		cost = 20
+		days_remove = 90
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 776 }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SOC_POL_Karpaty_Oil"
+			776 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}			
+			}
+		}
+	}
+	PLX_split_shipyards = {
+		icon = GFX_decision_generic_naval
+
+		available = {
+			163 = { is_owned_and_controlled_by = ROOT }
+		}
+
+		visible = {
+			has_completed_focus = KX_PLX_EXPAND_DOCKS
+			163 = { is_core_of = POL }			
+		}
+
+		cost = 20
+		days_remove = 90
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 163 }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SOC_POL_Karpaty_Oil"
+			163 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}		
+			}
+		}
+	}
+	PLX_odessa_shipyards = {
+		icon = GFX_decision_generic_naval
+
+		available = {
+			1222 = { is_owned_and_controlled_by = ROOT }
+		}
+
+		visible = {
+			has_completed_focus = KX_PLX_EXPAND_DOCKS
+			776 = { is_core_of = POL }			
+		}
+
+		cost = 20
+		days_remove = 90
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 1222 }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove SOC_POL_Karpaty_Oil"
+			1222 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}			
+			}
+		}
+	}	
+}
+
+political_actions = {
+	PLX_warsaw_capital = {
+		icon = generic_independence
+		available = {
+			10 = { is_owned_and_controlled_by = ROOT }
+		}
+		visible = {
+			is_ai = no
+			OR = {
+				has_completed_focus = KX_PLX_MORE_THAN_POLISH
+				has_completed_focus = KX_PLX_SLAVIC_SUPERSTATE
+			}
+			NOT = { has_country_flag = plx_capital_changed }
+		}
+		cost = 10
+		fire_only_once = yes
+		
+		complete_effect = {
+			add_stability = 0.05
+			10 = {		
+				increase_state_category_by_one_level = yes
+			}
+			set_country_flag = plx_capital_changed
+		}
+	}
+	PLX_brelin_capital = {
+		icon = generic_independence
+		available = {
+			64 = { is_owned_and_controlled_by = ROOT }
+		}
+		visible = {
+			has_completed_focus = KX_PLX_MORE_THAN_POLISH
+			NOT = { has_country_flag = plx_capital_changed }
+		}
+		cost = 10
+		fire_only_once = yes
+		
+		complete_effect = {
+			add_stability = 0.05
+			set_capital = { state = 64 remember_old_capital = no }
+			64 = {		
+				increase_state_category_by_one_level = yes
+			}
+			set_country_flag = plx_capital_changed
+		}
+	}
+	PLX_prague_capital = {
+		icon = generic_independence
+		available = {
+			1129 = { is_owned_and_controlled_by = ROOT }
+		}
+		visible = {
+			has_completed_focus = KX_PLX_MORE_THAN_POLISH
+			NOT = { has_country_flag = plx_capital_changed }
+		}
+		cost = 10
+		fire_only_once = yes
+		
+		complete_effect = {
+			add_stability = 0.05
+			set_capital = { state = 1129 remember_old_capital = no }
+			1129 = {		
+				increase_state_category_by_one_level = yes
+			}
+			set_country_flag = plx_capital_changed
+		}
+	}
+	PLX_vienna_capital = {
+		icon = generic_independence
+		available = {
+			1137 = { is_owned_and_controlled_by = ROOT }
+		}
+		visible = {
+			has_completed_focus = KX_PLX_MORE_THAN_POLISH
+			NOT = { has_country_flag = plx_capital_changed }
+		}
+		cost = 10
+		fire_only_once = yes
+		
+		complete_effect = {
+			add_stability = 0.05
+			set_capital = { state = 1137 remember_old_capital = no }
+			1137 = {		
+				increase_state_category_by_one_level = yes
+			}
+			set_country_flag = plx_capital_changed
+		}
+	}
+	PLX_brussels_capital = {
+		icon = generic_independence
+		available = {
+			6 = { is_owned_and_controlled_by = ROOT }
+		}
+		visible = {
+			has_completed_focus = KX_PLX_MORE_THAN_POLISH
+			NOT = { has_country_flag = plx_capital_changed }
+		}
+		cost = 10
+		fire_only_once = yes
+		
+		complete_effect = {
+			add_stability = 0.05
+			set_capital = { state = 6 remember_old_capital = no }
+			6 = {		
+				increase_state_category_by_one_level = yes
+			}
+			set_country_flag = plx_capital_changed
+		}
+	}
+	PLX_paris_capital = {
+		icon = generic_independence
+		available = {
+			16 = { is_owned_and_controlled_by = ROOT }
+		}
+		visible = {
+			has_completed_focus = KX_PLX_MORE_THAN_POLISH
+			NOT = { has_country_flag = plx_capital_changed }
+			16 = { is_core_of = POL } #available only after declaring european/world abmitions
+		}
+		cost = 10
+		fire_only_once = yes
+		
+		complete_effect = {
+			add_stability = 0.05
+			set_capital = { state = 16 remember_old_capital = no }
+			16 = {		
+				increase_state_category_by_one_level = yes
+			}
+			set_country_flag = plx_capital_changed
+		}
+	}	
+	PLX_lwow_capital = {
+		icon = generic_independence
+		available = {
+			91 = { is_owned_and_controlled_by = ROOT }
+		}
+		visible = {
+			has_completed_focus = KX_PLX_SLAVIC_SUPERSTATE
+			NOT = { has_country_flag = plx_capital_changed }
+		}
+		cost = 10
+		fire_only_once = yes
+		
+		complete_effect = {
+			add_stability = 0.05
+			set_capital = { state = 91 remember_old_capital = no }
+			91 = {
+				increase_state_category_by_one_level = yes
+			}
+			set_country_flag = plx_capital_changed
+		}
+	}
+	PLX_kijow_capital = {
+		icon = generic_independence
+		available = {
+			202 = { is_owned_and_controlled_by = ROOT }
+		}
+		visible = {
+			has_completed_focus = KX_PLX_SLAVIC_SUPERSTATE
+			NOT = { has_country_flag = plx_capital_changed }
+		}
+		cost = 10
+		fire_only_once = yes
+		
+		complete_effect = {
+			add_stability = 0.05
+			set_capital = { state = 202 remember_old_capital = no }
+			202 = {
+				increase_state_category_by_one_level = yes
+			}
+			set_country_flag = plx_capital_changed
+		}
+	}
+	PLX_minsk_capital = {
+		icon = generic_independence
+		available = {
+			206 = { is_owned_and_controlled_by = ROOT }
+		}
+		visible = {
+			has_completed_focus = KX_PLX_SLAVIC_SUPERSTATE
+			NOT = { has_country_flag = plx_capital_changed }
+		}
+		cost = 10
+		fire_only_once = yes
+		
+		complete_effect = {
+			add_stability = 0.05
+			set_capital = { state = 206 remember_old_capital = no }
+			206 = {
+				increase_state_category_by_one_level = yes
+			}
+			set_country_flag = plx_capital_changed
+		}
+	}
+	PLX_moskwa_capital = {
+		icon = generic_independence
+		available = {
+			219 = { is_owned_and_controlled_by = ROOT }
+		}
+		visible = {
+			has_completed_focus = KX_PLX_SLAVIC_SUPERSTATE
+			NOT = { has_country_flag = plx_capital_changed }
+		}
+		cost = 10
+		fire_only_once = yes
+		
+		complete_effect = {
+			add_stability = 0.05
+			set_capital = { state = 219 remember_old_capital = no }
+			219 = {
+				increase_state_category_by_one_level = yes
+			}
+			set_country_flag = plx_capital_changed
+		}
+	}		
+}
+
+operations = { 
+	PLX_surviving_german_invasion_pol = {
+		icon = generic_army_support
+
+		allowed = { always = no } #manually activated
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		selectable_mission = no
+		days_mission_timeout = 90
+		is_good = yes
+		fire_only_once = yes
+
+		cancel_trigger = {
+			hidden_trigger = { always = no }
+			#NOT = { has_war_with = GER }
+		}
+
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout PLX_surviving_german_invasion_pol"
+			#add_war_support = 0.10
+			custom_effect_tooltip = PLX_pol_victory_in_independance_war
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision PLX_surviving_german_invasion_pol"
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}	
+	
+	PLX_surviving_german_invasion_ger = {
+		icon = generic_army_support
+
+		allowed = { always = no } #manually activated
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		selectable_mission = no
+		days_mission_timeout = 90
+		is_good = no
+		fire_only_once = yes
+
+		cancel_trigger = {
+			NOT = { has_war_with = POL }
+		}
+
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout PLX_surviving_german_invasion_ger"
+			#add_war_support = -0.10
+			#add_stability = -0.10
+			country_event = plxf.13
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision PLX_surviving_german_invasion_ger"
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}	
+
+}

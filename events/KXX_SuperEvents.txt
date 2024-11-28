@@ -1,0 +1,43 @@
+##################
+# SUPER EVENTS 
+##################
+
+add_namespace = KXX_super
+
+country_event = {		#EUROPE UNIFICATION THIRART
+	id = KXX_super.1
+	title = super.37.t
+	desc = super.37.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = yes
+
+	trigger = { 
+		FLN = {
+			has_completed_focus = FLN_liberation_of_europe
+		}
+	 }
+
+	fire_only_once = yes
+	
+	hidden = yes
+
+	option = {
+		name = super.37.a
+
+		set_global_flag = KXX_Super_Event_Visible
+		set_global_flag = FLN_EUROPE_UNIFICATION_thirart
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_global_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "super_eurouni_thirart"
+		}
+	}
+}
+
+
+

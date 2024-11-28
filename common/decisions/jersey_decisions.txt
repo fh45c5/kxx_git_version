@@ -1,0 +1,692 @@
+ 
+ JER_buy_guns_right={
+ JER_buy_GER_rif = {
+	icon = generic_industry
+available = {
+   GER = {
+    exists = yes
+   }
+   AND = {
+   tag = JER
+   }
+}
+	visible = {
+		has_idea = JER_armed_neutrality
+		has_completed_focus = JER_prussianist_first
+	}
+
+	remove_effect = {
+add_equipment_to_stockpile = {
+    type = infantry_equipment
+    amount = 2000
+    producer = GER
+}
+	}
+	cost = 50
+	days_remove = 40
+	days_re_enable = 30
+ } 
+ JER_buy_GER_support_equipment = {
+	icon = generic_industry
+available = {
+   GER = {
+    exists = yes
+   }
+   AND = {
+   tag = JER
+   }
+}
+	visible = {
+		has_idea = JER_armed_neutrality
+		has_completed_focus = JER_prussianist_first
+	}
+
+	remove_effect = {
+add_equipment_to_stockpile = {
+    type = support_equipment
+    amount = 500 
+    producer = GER
+}
+	}
+	cost = 50
+	days_remove = 40
+	days_re_enable = 60
+ } 
+ JER_buy_GER_aa = {
+	icon = generic_industry
+available = {
+   GER = {
+    exists = yes
+   }
+   AND = {
+   tag = JER
+   }
+}
+	visible = {
+		has_idea = JER_armed_neutrality
+		has_completed_focus = JER_prussianist_first
+		has_completed_focus = JER_industry_for_you
+	}
+
+	remove_effect = {
+add_equipment_to_stockpile = {
+    type = anti_air_equipment
+    amount = 2000
+    producer = GER
+}
+	}
+	cost = 50
+	days_remove = 40
+	days_re_enable = 60
+ }
+ JER_buy_GER_arty = {
+	icon = generic_industry
+available = {
+   GER = {
+    exists = yes
+   }
+   AND = {
+   tag = JER
+   }
+}
+	visible = {
+		has_idea = JER_armed_neutrality
+		has_completed_focus = JER_prussianist_first
+		has_completed_focus = JER_industry_for_you
+	}
+
+	remove_effect = {
+add_equipment_to_stockpile = {
+    type = artillery_equipment
+    amount = 1000
+    producer = GER
+}
+	}
+	cost = 50
+	days_remove = 40
+	days_re_enable = 60
+ }
+JER_buy_GER_motorized_equipment = {
+	icon = generic_industry
+available = {
+   GER = {
+    exists = yes
+   }
+   AND = {
+   tag = JER
+   }
+}
+	visible = {
+		has_idea = JER_armed_neutrality
+		has_completed_focus = JER_prussianist_first
+		has_completed_focus = JER_industry_for_you
+	}
+
+	remove_effect = {
+add_equipment_to_stockpile = {
+    type = motorized_equipment
+    amount = 1000
+    producer = GER
+}
+	}
+	cost = 50
+	days_remove = 40
+	days_re_enable = 60
+ }
+ 
+ 
+ 
+ JER_buy_CAN_rif = { 
+	icon = generic_industry
+available = {
+   CAN = {
+    exists = yes
+   }
+   tag = JER
+}
+visible = {
+		has_idea = JER_armed_neutrality
+		has_completed_focus = JER_britists_victoire
+}
+	remove_effect = {
+add_equipment_to_stockpile = {
+    type = infantry_equipment
+    amount = 2000
+    producer = CAN
+}
+	}
+	cost = 50
+	days_remove = 40
+	days_re_enable = 60
+ }
+ JER_buy_CAN_support_equipment = {
+	icon = generic_industry
+available = {
+   CAN = {
+    exists = yes
+   }
+   AND = {
+   tag = JER
+   }
+}
+	visible = {
+		has_idea = JER_armed_neutrality
+		has_completed_focus = JER_britists_victoire
+	}
+
+	remove_effect = {
+add_equipment_to_stockpile = {
+    type = support_equipment
+    amount = 500
+    producer = CAN
+}
+	}
+	cost = 50
+	days_remove = 40
+	days_re_enable = 60
+ } 
+ JER_buy_CANR_aa = {
+	icon = generic_industry
+available = {
+   CAN = {
+    exists = yes
+   }
+   AND = {
+   tag = JER
+   }
+}
+	visible = {
+		has_idea = JER_armed_neutrality
+		has_completed_focus = JER_britists_victoire
+		has_completed_focus = JER_industry_for_you
+	} 
+
+	remove_effect = {
+add_equipment_to_stockpile = {
+    type = anti_air_equipment
+    amount = 2000
+    producer = CAN
+}
+	}
+	cost = 50
+	days_remove = 40
+	days_re_enable = 60
+ }
+ JER_buy_CAN_arty = {
+	icon = generic_industry
+available = {
+   CAN = {
+    exists = yes
+   }
+   AND = {
+   tag = JER
+   }
+}
+	visible = {
+		has_idea = JER_armed_neutrality
+		has_completed_focus = JER_britists_victoire
+		has_completed_focus = JER_industry_for_you
+	}
+
+	remove_effect = {
+add_equipment_to_stockpile = {
+    type = artillery_equipment
+    amount = 1000
+    producer = CAN
+}
+	}
+	cost = 50
+	days_remove = 40
+	days_re_enable = 60
+ }
+JER_buy_CAN_motorized_equipment = {
+	icon = generic_industry
+available = {
+   CAN = {
+    exists = yes
+   }
+   AND = {
+   tag = JER
+   }
+}
+	visible = {
+		has_idea = JER_armed_neutrality
+		has_completed_focus = JER_britists_victoire
+		has_completed_focus = JER_industry_for_you
+	}
+
+	remove_effect = {
+add_equipment_to_stockpile = {
+    type = motorized_equipment
+    amount = 1000
+    producer = CAN
+}
+	}
+	cost = 50
+	days_remove = 40
+	days_re_enable = 60
+ }
+ 
+ JER_buy_puppet_rifle = { 
+	icon = generic_industry
+available = {
+   JER = {
+    exists = yes
+   }
+}
+visible = {
+OR = {
+tag = HUL
+tag = ARE
+}
+AND = {
+is_subject_of = JER
+}
+}
+	remove_effect = {
+add_equipment_to_stockpile = {
+    type = infantry_equipment
+    amount = 2000
+    producer = JER
+}
+	}
+	cost = 50
+	days_remove = 80
+	days_re_enable = 130
+ }
+JER_military_training = { 
+	icon = generic_industry
+available = {
+has_completed_focus = JER_coastal_trench_warfare 
+OR = {
+   FRA = {
+    exists = yes
+   }   
+   ENG = {
+    exists = yes
+   }
+   }
+   tag = JER
+}
+targeted_modifier = {
+dig_in_speed_factor = 0.2
+max_training = 0.1
+army_defence_against_major_factor = 0.2
+
+}
+visible = {
+has_completed_focus = JER_coastal_trench_warfare 
+		has_idea = JER_armed_neutrality
+}
+	remove_effect = {
+	army_experience = 30
+	add_war_support = 0.1
+}
+	cost = 50
+	days_remove = 60
+	days_re_enable = 70
+ }
+ 
+ 
+ 
+ 
+ 
+JER_military_anti_air = { 
+icon = generic_industry
+available = {
+has_completed_focus = JER_chatau_always_alert_to_air
+OR = {
+   FRA = {
+    exists = yes
+   }   
+   ENG = {
+    exists = yes
+   }
+   }
+   tag = JER
+}
+cost = 50
+visible = {
+has_completed_focus = JER_chatau_always_alert_to_air
+		has_idea = JER_armed_neutrality
+}
+	days_remove = 60
+	days_re_enable = 70
+	
+targeted_modifier = {
+    tag = ENG
+    attack_bonus_against = 0.1
+    defense_bonus_against = 0.15
+	days_remove = 30
+	days_re_enable = 70
+ }
+targeted_modifier = {
+    tag = FRA
+    attack_bonus_against = 0.1
+    defense_bonus_against = 0.15
+	days_remove = 30
+	days_re_enable = 70
+ }
+
+}
+
+}
+ 
+ 
+ JER_baterie_artillery  = {
+
+jer_bomb_cornwall = {
+		icon = bakuretsu
+		state_target = yes
+		on_map_mode = map_only
+		target_trigger = {
+		FROM = {
+				AND = {
+					controller = {	
+						has_war_with = ROOT													#Testing
+					}
+					NOT = {
+						is_controlled_by = ROOT
+					}
+				}
+					is_coastal = yes
+state = 123					
+			}
+		}
+		available = {
+		NOT = {
+		has_idea = jer_idea_artillery_ongoing
+		}
+	check_variable = {
+    jer_ammo > 500
+}tooltip = jer_need_ammo 
+
+		}
+		visible = {
+		has_completed_focus = JER_Batterie_Mirus
+		}
+		fire_only_once = no
+		days_remove = 21
+		days_re_enable = 1
+		custom_cost_trigger = {
+			ammo_jer > 500
+		}
+		custom_cost_text = cost_cp_5
+		complete_effect = {
+		add_ideas = jer_idea_artillery_ongoing
+			add_to_variable = {
+    var = jer_ammo
+    value = -500
+    tooltip = jer_lose_ammo
+}
+				FROM  = { 
+					damage_building = {
+						type = infrastructure
+						damage = 2
+					}					
+					damage_building = {
+						type = naval_base
+						damage = 2
+					}					
+					damage_building = {
+						type = dockyard
+						damage = 2
+					}
+					add_manpower = -40
+				}
+		}
+		remove_effect = {
+					remove_ideas = jer_idea_artillery_ongoing
+		}
+	}
+jer_bomb_susland = {
+		icon = bakuretsu
+		state_target = yes
+		on_map_mode = map_only
+		target_trigger = {
+		FROM = {
+				AND = {
+					controller = {	
+						has_war_with = ROOT													#Testing
+					}
+					NOT = {
+						is_controlled_by = ROOT
+					}
+				}
+					is_coastal = yes
+state = 127					
+			}
+		}
+		available = {
+		NOT = {
+		has_idea = jer_idea_artillery_ongoing
+		}    
+	check_variable = {
+    jer_ammo > 500
+}tooltip = jer_need_ammo 
+
+		}
+		visible = {
+		has_completed_focus = JER_Batterie_Mirus
+		}
+		fire_only_once = no
+		days_remove = 21
+		days_re_enable = 1
+		custom_cost_trigger = {
+			ammo_jer > 500
+		}
+		custom_cost_text = jer_lose_ammo
+		complete_effect = {
+		add_ideas = jer_idea_artillery_ongoing
+			add_to_variable = {
+    var = jer_ammo
+    value = -500
+}
+				FROM  = { 
+					damage_building = {
+						type = infrastructure
+						damage = 2
+					}					
+					damage_building = {
+						type = naval_base
+						damage = 2
+					}					
+					damage_building = {
+						type = dockyard
+						damage = 2
+					}
+					add_manpower = -140
+				}
+		}
+		remove_effect = {
+					remove_ideas = jer_idea_artillery_ongoing
+		}
+	}
+	
+	
+	
+	jer_buy_ammo = {
+		icon = military_ammo_jer 
+		available = {
+		always = yes
+		}
+		visible = {
+		always = yes
+		}
+		fire_only_once = no
+		days_remove = 40
+		days_re_enable = 20
+		cost = 50
+	remove_effect = {
+			add_to_variable = {
+    var = jer_ammo
+    value = 500
+}
+	}
+	}
+	
+
+}
+
+
+JER_freikiorps_voran_die_frent = {
+ contract_jer_freikorps = {
+		icon =  freikorps
+		available = {
+		}
+		visible = {
+		has_completed_focus = JER_Freikorps_sielnd
+		}
+		fire_only_once = no
+		days_remove = 30
+		days_re_enable = 20
+		cost = 60
+	remove_effect = {
+	1315 = {
+	create_unit = {
+    division = "name = \"Franc Cors\" division_template = \"Franc Cors\" start_experience_factor = 0.4 start_equipment_factor = 0.6"
+    owner = ROOT
+}
+}
+	}
+
+} 
+contract_letrangere_legione = {
+		icon =  freikorps
+		available = {
+		}
+		visible = {
+		has_completed_focus = JER_le_internationale_front_devisione
+		}
+		fire_only_once = no
+		days_remove = 30
+		days_re_enable = 20
+		cost = 60
+	remove_effect = {
+	1315 = {
+	create_unit = {
+    division = "name = \"Étrangère Cors\" division_template = \"Étrangère Cors\" start_experience_factor = 0.4 start_equipment_factor = 0.6"
+    owner = ROOT
+}
+}
+	}
+
+}
+}
+
+#VENEZUELA WAR
+JER_CREATE_puppet_huile = {
+ JER_create_huile = {
+ 		#icon = bakuretsu
+		available = {
+		JER = {
+		controls_state = 850
+		}
+		}
+		visible = {
+		JER = {
+		controls_state = 850
+		}
+		}
+		fire_only_once =yes
+		complete_effect = {
+HUL = {
+set_state_owner = 850
+}
+850= {
+add_claim_by  = HUL
+}
+		JER = {
+release_puppet = HUL
+}
+1036 = {
+add_claim_by = HUL
+}
+912 = {
+add_claim_by  = HUL
+}
+307 = {
+add_claim_by  = HUL
+}
+488 = {
+add_claim_by  = HUL
+}
+if = {
+1036 = {
+ is_owned_by = JER
+}
+HUL = {
+set_state_owner = 1036
+}
+}
+if= {
+912 = {
+ is_owned_by = JER
+ }
+ HUL = {
+set_state_owner = 912
+}
+}
+if = {
+307 = {
+ is_owned_by = JER
+}
+ HUL = {
+set_state_owner = 307
+}
+}
+if = {
+488 = {
+ is_owned_by = JER
+}
+ HUL = {
+set_state_owner = 488
+}
+}
+}
+HUL = {
+	random_owned_controlled_state = {
+	create_unit = {
+    division = "name = \"Armée Coloignel\" division_template = \"Armée Coloignel\" start_experience_factor = 0.4 start_equipment_factor = 0.6"
+    owner = HUL
+}	
+create_unit = {
+    division = "name = \"Armée Coloignel\" division_template = \"Armée Coloignel\" start_experience_factor = 0.4 start_equipment_factor = 0.6"
+    owner = HUL
+}
+}
+}
+		}
+ 
+ }
+ 
+ DEVISIONE_HULIER = {
+  JER_create_huile_DEVI = {
+ 		#icon = bakuretsu
+		available = {
+		tag = HUL
+		}
+		visible = {
+		tag = HUL
+		}
+		cost = 50
+	days_remove = 40
+	days_re_enable = 60
+		fire_only_once =yes
+		complete_effect = {
+		}
+ 	remove_effect = {
+	random_owned_controlled_state = {
+	create_unit = {
+    division = "name = \"Armée Coloignel\" division_template = \"Armée Coloignel\" start_experience_factor = 0.4 start_equipment_factor = 0.6"
+    owner = HUL
+}	
+create_unit = {
+    division = "name = \"Armée Coloignel\" division_template = \"Armée Coloignel\" start_experience_factor = 0.4 start_equipment_factor = 0.6"
+    owner = HUL
+}
+}
+	}
+ 
+ }
+}

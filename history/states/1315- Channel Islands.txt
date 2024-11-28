@@ -1,0 +1,27 @@
+state = {
+	id = 1315
+	name = "STATE_1315"
+	manpower = 127425
+	state_category = two
+	history = {
+		owner = JER
+		add_claim_by = ENG
+		#add_claim_by = CAN
+		add_core_of = JER
+		victory_points = { 14791 2 }
+		buildings = {
+			infrastructure = 3
+			anti_air_building = 1
+			air_base = 2
+			14791 = {
+				coastal_bunker = 1
+				naval_base = 1
+			}
+
+		}
+	}
+	
+	provinces = {
+		14791
+	}
+}

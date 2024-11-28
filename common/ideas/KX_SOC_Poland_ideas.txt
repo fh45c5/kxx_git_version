@@ -1,0 +1,353 @@
+### Soc_Eco Poland Ideas
+ideas = {
+##############
+# Country ideas
+##############
+	country = {
+		SOC_POL_pzbs_supremacy = {
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.2
+				totalist_drift = 0.05
+				radical_socialist_drift = 0.05
+				drift_defence_factor = 1.0
+				production_speed_buildings_factor = 0.05
+			}
+			picture = BBR_vanguard_party
+		}
+		SOC_POL_tax_land_owners = {
+			modifier = {
+				consumer_goods_factor = -0.1
+				local_resources_factor = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+			picture = SCT_farms
+		}
+		SOC_POL_tax_land_redistribution = {
+			modifier = {
+				consumer_goods_factor = -0.08
+				global_building_slots_factor = 0.15
+				local_resources_factor = 0.15
+				supply_consumption_factor = -0.15
+				production_speed_buildings_factor = 0.15
+				MONTHLY_POPULATION = 0.3
+			}
+			picture = SCT_farms
+		}
+		SOC_POL_tax_middle_class = {
+			modifier = {
+				consumer_goods_factor = -0.07
+				industrial_capacity_factory = 0.12
+			}
+			picture = fair_share_taxation
+		}	
+		SOC_POL_kalecki_invests_1 = {
+			modifier = {
+				consumer_goods_factor = -0.07
+				#industrial_capacity_factory = 0.10
+				production_speed_buildings_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.15
+			}
+			picture = state_economy
+		}	
+		SOC_POL_kalecki_invests_2 = {
+			modifier = {
+				political_power_gain = 0.1
+				consumer_goods_factor = -0.12
+				#industrial_capacity_factory = 0.12
+				production_speed_buildings_factor = 0.12
+				production_factory_efficiency_gain_factor = 0.18
+				industrial_capacity_factory = 0.12
+			}
+			picture = state_economy
+		}	
+		SOC_POL_kalecki_science = {
+			modifier = {
+				production_factory_max_efficiency_factor = 0.12
+				research_speed_factor = 0.07
+			}
+			picture = new_sciences
+		}
+		SOC_POL_kalecki_wages = {
+			modifier = {
+				consumer_goods_factor = 0.01
+				industrial_capacity_factory = 0.10
+				production_factory_efficiency_gain_factor = 0.10
+				production_speed_industrial_complex_factor = 0.05
+			}
+			picture = fair_share_economy
+		}	
+		SOC_POL_equilibrum = {
+			modifier = {
+				stability_weekly_factor = 0.005
+				consumer_goods_factor = -0.15
+				#industrial_capacity_factory = 0.2
+				local_resources_factor = 0.2
+				production_factory_max_efficiency_factor = 0.2
+				line_change_production_efficiency_factor = 0.2
+				global_building_slots_factor = 0.2
+			}
+			picture = BBR_equal_distribution
+		}	
+		SOC_POL_nationalization_1 = {
+			modifier = {
+				consumer_goods_factor = -0.04
+				industrial_capacity_factory = 0.10
+				global_building_slots_factor = 0.10
+				production_speed_buildings_factor = 0.10
+			}
+			picture = national_ownership_2
+		}
+		SOC_POL_nationalization_2 = {
+			modifier = {
+				consumer_goods_factor = -0.12
+				global_building_slots_factor = 0.25
+				local_resources_factor = 0.15
+				production_speed_buildings_factor = 0.15
+				industrial_capacity_factory = 0.15
+			}
+			picture = national_ownership_2
+		}	
+		SOC_POL_lange_model_1 = {
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.10
+				production_factory_max_efficiency_factor = 0.10
+				line_change_production_efficiency_factor = 0.10
+			}
+			picture = NOR_syndicalist_industry_idea
+		}
+		SOC_POL_lange_model_2 = {
+			modifier = {
+				consumer_goods_factor = -0.1
+				global_building_slots_factor = 0.15
+				production_speed_buildings_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.20
+				production_factory_max_efficiency_factor = 0.20
+				line_change_production_efficiency_factor = 0.15
+			}
+			picture = NOR_syndicalist_industry_idea
+		}	
+		SOC_POL_lange_model_3 = {
+			modifier = {
+				political_power_gain = 0.15
+				consumer_goods_factor = -0.15
+				global_building_slots_factor = 0.25
+				production_speed_buildings_factor = 0.25
+				production_factory_efficiency_gain_factor = 0.20
+				production_factory_max_efficiency_factor = 0.30
+				line_change_production_efficiency_factor = 0.25
+			}
+			picture = NOR_syndicalist_industry_idea
+		}	
+		SOC_POL_lange_science = {
+			modifier = {
+				research_speed_factor = 0.07
+			}
+			picture = new_sciences
+		}
+		SOC_POL_lange_social_dividends = {
+			modifier = {
+				consumer_goods_factor = 0.02
+				production_speed_buildings_factor = 0.05
+				production_factory_max_efficiency_factor = 0.10
+			}
+			picture = fair_share_economy
+		}	
+		SOC_POL_banks_nationalization = {
+			modifier = {
+				consumer_goods_factor = -0.07
+				production_speed_buildings_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+			}
+			picture = BBR_workers_coupon
+		}
+		SOC_POL_housing_issue_1 = {
+			modifier = {
+				consumer_goods_factor = 0.12
+				production_factory_efficiency_gain_factor = -0.25
+				MONTHLY_POPULATION = -0.30
+			}
+			picture = GRU_COMMUNAL_HOUSE
+		}
+		SOC_POL_housing_issue_2 = {
+			modifier = {
+				consumer_goods_factor = 0.08
+				production_factory_efficiency_gain_factor = -0.15
+				MONTHLY_POPULATION = -0.20
+			}
+			picture = GRU_COMMUNAL_HOUSE
+		}	
+		SOC_POL_housing_issue_3 = {
+			modifier = {
+				consumer_goods_factor = 0.04
+				production_factory_efficiency_gain_factor = -0.05
+				MONTHLY_POPULATION = -0.15
+			}
+			picture = GRU_COMMUNAL_HOUSE
+		}			
+		SOC_POL_rapid_urbanisation_1 = {
+			modifier = {
+				consumer_goods_factor = -0.08
+				production_speed_industrial_complex_factor = 0.12
+			}
+			picture = BBR_paternalistic_economy_idea
+		}	
+		SOC_POL_rapid_urbanisation_2a = {
+			modifier = {
+				consumer_goods_factor = -0.02
+				production_speed_industrial_complex_factor = 0.10
+				global_building_slots_factor = 0.20
+				production_factory_max_efficiency_factor = 0.05
+				line_change_production_efficiency_factor = 0.05
+			}
+			picture = BBR_paternalistic_economy_idea
+		}	
+		SOC_POL_rapid_urbanisation_2b = {
+			modifier = {
+				consumer_goods_factor = -0.03
+				production_speed_industrial_complex_factor = 0.20
+				production_factory_efficiency_gain_factor = 0.10
+			}
+			picture = BBR_paternalistic_economy_idea
+		}
+		SOC_POL_milk_bars_everywhere = {
+			modifier = {
+				consumer_goods_factor = -0.08
+				industrial_capacity_factory = 0.07
+			}
+			picture = HUN_food_shortages_idea
+		}	
+		SOC_POL_economic_patriotism = {
+			modifier = {
+				political_power_gain = 0.15
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.15
+				industrial_capacity_factory = 0.15			
+			}
+			picture = GRU_RED_PATRIOT
+		}	
+		SOC_POL_vistula_economic_mirracle = {
+			modifier = {
+				political_power_gain = 0.5
+				production_factory_max_efficiency_factor = 0.40
+				consumer_goods_factor = -0.21
+				MONTHLY_POPULATION = 0.6
+			}
+			picture = HOL_booming_economy
+		}	
+		SOC_POL_engineering_education = {
+			modifier = {
+				research_speed_factor = 0.03
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+			picture = BBR_workers_market
+		}	
+		SOC_POL_female_workforce = {
+			modifier = {
+				conscription_factor = 0.10
+				industrial_capacity_factory = 0.05
+				MONTHLY_POPULATION = 0.2
+			}
+			picture = GRU_WOMAN_WORKER
+		}	
+		SOC_POL_childcare_1 = {
+			modifier = {
+				consumer_goods_factor = 0.01
+				#industrial_capacity_factory = 0.15
+				MONTHLY_POPULATION = 0.01
+			}
+			picture = FAUD_FAMILY
+		}
+		SOC_POL_childcare_2 = {
+			modifier = {
+				consumer_goods_factor = 0.01
+				#industrial_capacity_factory = 0.05
+				global_building_slots_factor = 0.10
+				MONTHLY_POPULATION = 0.50
+			}
+			picture = FAUD_FAMILY
+		}	
+		SOC_POL_german_industry = {
+			modifier = {
+				consumer_goods_factor = -0.08
+				production_factory_efficiency_gain_factor = 0.15
+			}
+			picture = IRE_medium_industry
+		}
+		SOC_POL_eastern_land = {
+			modifier = {
+				consumer_goods_factor = -0.10
+				global_building_slots_factor = 0.15
+				local_resources_factor = 0.15
+				supply_consumption_factor = -0.1
+			}
+			picture = national_produce
+		}	
+		SOC_POL_literacy_campaign = {
+			modifier = {
+				research_speed_factor = 0.12
+				local_resources_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.15
+				#production_speed_buildings_factor = 0.05
+			}
+			picture = educational_spending
+		}
+		SOC_POL_extensive_mining = {
+			modifier = {
+				local_resources_factor = 0.15
+				production_lack_of_resource_penalty_factor = -0.10
+			}
+			picture = generic_exploit_mines
+		}
+		POL_eternal_polish_revolution = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea POL_eternal_polish_revolution" }
+			picture = MEX_revolutionary_army
+			modifier = {
+				war_support_factor = 0.08
+				conscription_factor = 0.05
+			}
+		}
+		POL_revolutionary_republic_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea POL_revolutionary_republic_idea" }
+			picture = SPR_masters_of_our_own_fate
+			modifier = {
+				consumer_goods_factor = -0.15
+				stability_factor = -0.25
+			}
+		}
+		POL_revolutionary_republic_idea_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea POL_revolutionary_republic_idea_2" }
+			picture = SPR_masters_of_our_own_fate
+			name = POL_revolutionary_republic_idea
+			modifier = {
+				consumer_goods_factor = -0.15
+				stability_factor = -0.05
+			}
+		}
+		POL_cooperative_socialism_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea POL_cooperative_socialism_1" }
+			picture = NOR_syndicalist_industry_idea
+			name = POL_cooperative_socialism
+			modifier = {
+				consumer_goods_factor = -0.15
+				stability_factor = 0.05
+				monthly_population = 0.2
+				conscription_factor = 0.05
+			}
+		}
+		POL_cooperative_socialism_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea POL_cooperative_socialism_2" }
+			picture = NOR_syndicalist_industry_idea
+			name = POL_cooperative_socialism
+			modifier = {
+				consumer_goods_factor = -0.15
+				stability_factor = 0.15
+				monthly_population = 0.4
+				conscription_factor = 0.05
+			}
+		}	
+	}
+}
+

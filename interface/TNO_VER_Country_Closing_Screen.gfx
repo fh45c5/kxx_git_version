@@ -1,0 +1,8 @@
+spriteTypes = {
+
+	
+	spriteType = {
+		name = "GFX_CountryClosing_picture_VER_bad_ending_1"
+		texturefile = "gfx/interface/country_closing_screen/picture/VER_bad_ending_1.png"
+	}
+}

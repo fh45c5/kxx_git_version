@@ -1,0 +1,44 @@
+DEN_create_republic = {
+  create_country_leader = {
+    name = "索瓦尔德·斯陶宁"  # Thorvald Stauning
+    picture = "gfx/leaders/DEN/Portrait_Denmark_Thorvald_Stauning_kr.png"
+    expire = "1.1.1"
+    ideology = social_democrat_subtype
+  }
+  create_country_leader = {
+    name = "彼得·蒙克"  # Peter Munch
+    picture = "gfx/leaders/DEN/Portrait_Denmark_Peter_Munch.png"
+    expire = "1.1.1"
+    ideology = social_liberal_subtype
+  }
+  create_country_leader = {
+    name = "托马斯·马德森-米格达尔"  # Thomas Madsen-Mygdal
+    picture = "gfx/leaders/DEN/Portrait_Denmark_Thomas_Madsen_Mygdal.png"
+    expire = "1.1.1"
+    ideology = market_liberal_subtype
+  }
+  create_country_leader = {
+    name = "约翰·克里斯特马斯·默勒"  # John Christmas Møller
+    picture = "gfx/leaders/DEN/Portrait_Denmark_Christmas_Moller.png"
+    expire = "1.1.1"
+    ideology = social_conservative_subtype
+  }
+  create_country_leader = {
+    name = "维克托·皮尔舍尔"  # Victor Pürschel
+    picture = "gfx/leaders/DEN/Portrait_Denmark_Victor_Purschel.png"
+    expire = "1.1.1"
+    ideology = authoritarian_democrat_subtype
+  }
+  create_country_leader = {
+    name = "凯·伦贝克"  # Cay Lembcke
+    picture = "gfx/leaders/DEN/Portrait_Denmark_Cay_Lembcke.png"
+    expire = "1.1.1"
+    ideology = pataut_legionarism_subtype
+  }
+  create_country_leader = {
+    name = "弗里茨·克劳森"  # Frits Clausen
+    picture = "gfx/leaders/DEN/Portrait_Denmark_Frits_Clausen.png"
+    expire = "1.1.1"
+    ideology = volkism_subtype
+  }
+}

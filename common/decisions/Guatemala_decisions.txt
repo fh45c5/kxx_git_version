@@ -1,0 +1,245 @@
+###########################
+# Guatemala Decisions
+###########################
+# By Todd Howard
+###########################
+
+GUA_ubico_puppets = {
+
+###Napoleon LARP
+	
+	GUA_puppet_cuba = {
+		icon = generic_form_nation
+		highlight_states = { highlight_state_targets = { state = 315 } }
+		
+		available = {
+			has_completed_focus = GUA_britain
+			owns_state = 315
+		}
+
+		visible = {
+			tag = GUA
+			has_completed_focus = GUA_britain
+		}
+		
+		allowed = {
+			tag = GUA
+		}
+		fire_only_once = yes
+		
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+		
+		cancel_if_not_visible = yes
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled GUA_puppet_cuba target: [From.GetName]"
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GUA_puppet_cuba target: [From.GetName]"
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove GUA_puppet_cuba target: [From.GetName]"
+		every_state = {
+			limit = {
+				OR = {
+					is_core_of = CUB
+					is_core_of = HAI
+					is_core_of = DOM
+				}
+			}
+			add_core_of = GUA
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = HAI
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = DOM
+			}
+		}
+	}
+	
+	GUA_puppet_mexico = {
+		icon = generic_form_nation
+		highlight_states = { highlight_state_targets = { state = 277 } }
+		
+		available = {
+			has_completed_focus = GUA_russia
+			owns_state = 277
+		}
+
+		visible = {
+			tag = GUA
+			has_completed_focus = GUA_russia
+		}
+		
+		allowed = {
+			tag = GUA
+		}
+		fire_only_once = yes
+		
+		cost = 50
+		days_remove = 30
+		remove_only_once = yes
+		
+		cancel_if_not_visible = yes
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled GUA_puppet_mexico target: [From.GetName]"
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GUA_puppet_mexico target: [From.GetName]"
+		}
+		
+		remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove GUA_puppet_mexico target: [From.GetName]"
+		every_state = {
+			limit = {
+				OR = {
+					is_core_of = MEX
+				}
+			}
+			add_core_of = GUA
+			}
+	}
+	}
+	
+	GUA_puppet_spain = {
+		icon = generic_form_nation
+		highlight_states = { highlight_state_targets = { state = 41 } }
+		
+		available = {
+			has_completed_focus = GUA_spain
+			SPR = {
+				is_subject_of = GUA
+			}
+		}
+
+		visible = {
+			tag = GUA
+			has_completed_focus = GUA_spain
+		}
+		
+		allowed = {
+			tag = GUA
+		}
+		fire_only_once = yes
+		
+		cost = 50
+		days_remove = 0
+		fire_only_once = yes
+		
+		cancel_if_not_visible = yes
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled GUA_puppet_spain target: [From.GetName]"
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GUA_puppet_spain target: [From.GetName]"
+		}
+		
+		remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove GUA_puppet_spain target: [From.GetName]"
+		SPR = {
+		set_cosmetic_tag = SPR_UBICO
+			}
+		}
+	}
+	GUA_attack_els = {
+		icon = generic_form_nation
+		highlight_states = { highlight_state_targets = { state = 277 } }
+		
+		available = {
+			has_completed_focus = GUA_one_man_state
+		}
+
+		visible = {
+			tag = GUA
+			has_completed_focus = GUA_one_man_state
+		}
+		
+		allowed = {
+			tag = GUA
+		}
+		fire_only_once = yes
+		
+		cost = 10
+		days_remove = 14
+		remove_only_once = yes
+		
+		cancel_if_not_visible = yes	
+		remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove GUA_attack_els target: [From.GetName]"
+		create_wargoal = {
+				type = annex_everything
+				target = ELS
+			}
+	}
+	}
+	GUA_attack_HON = {
+		icon = generic_form_nation
+		highlight_states = { highlight_state_targets = { state = 277 } }
+		
+		available = {
+			has_completed_focus = GUA_one_man_state
+		}
+
+		visible = {
+			tag = GUA
+			has_completed_focus = GUA_one_man_state
+		}
+		
+		allowed = {
+			tag = GUA
+		}
+		fire_only_once = yes
+		
+		cost = 10
+		days_remove = 14
+		remove_only_once = yes
+		
+		cancel_if_not_visible = yes	
+		remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove GUA_attack_HON target: [From.GetName]"
+		create_wargoal = {
+				type = annex_everything
+				target = HON
+			}
+	}
+	}
+	GUA_attack_NIC = {
+		icon = generic_form_nation
+		highlight_states = { highlight_state_targets = { state = 277 } }
+		
+		available = {
+			has_completed_focus = GUA_one_man_state
+		}
+
+		visible = {
+			tag = GUA
+			has_completed_focus = GUA_one_man_state
+		}
+		
+		allowed = {
+			tag = GUA
+		}
+		fire_only_once = yes
+		
+		cost = 10
+		days_remove = 14
+		remove_only_once = yes
+		
+		cancel_if_not_visible = yes	
+		remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove GUA_attack_NIC target: [From.GetName]"
+		create_wargoal = {
+				type = annex_everything
+				target = NIC
+			}
+	}
+	}
+}

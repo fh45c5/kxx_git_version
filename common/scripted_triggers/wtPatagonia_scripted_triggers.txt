@@ -1,0 +1,25 @@
+FOP_palacios_leads_FORA = {
+  OR = {
+    has_country_leader = {
+      name = "Alfredo Palacios" 
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "阿尔弗雷多·帕拉西奥斯" 
+      ruling_only = yes
+    }
+  }
+  
+}
+FOP_di_giovanni_leads_USA = {
+  OR = {
+    has_country_leader = {
+      name = "Severino di Giovanni" 
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "塞韦里诺·迪·乔瓦尼" 
+      ruling_only = yes
+    }
+  }
+}

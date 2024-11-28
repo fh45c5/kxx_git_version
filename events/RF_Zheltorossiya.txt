@@ -1,0 +1,1494 @@
+###########################
+#  Zheltorossiya Events   #
+###########################
+
+add_namespace = ZHR
+
+# Ultimatum to Kerensky #
+country_event = {   #克伦斯基辞职
+	id = ZHR.1
+	title = ZHR.1.t
+	desc = ZHR.1.desc
+	picture = GFX_report_event_ZHR_the_ultimatum
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Kerensky resigns
+		name = ZHR.1.a
+		ai_chance = {
+			base = 9
+			modifier = {
+				factor = 10000
+				NOT = {
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = KERENSKY
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = ZHR_kerensky_weak
+		set_politics = {
+			ruling_party = market_liberal
+		}
+		create_country_leader = {
+			name = "帕维尔·米留科夫"
+			desc="POLITICS_MILYUKOV"
+			picture = "gfx/leaders/ZHR/Portrait_ZHR_Pavel_Milyukov.png"
+			expire = "1965.1.1"
+			ideology = marlib_classical_liberalism_subtype
+		}
+		set_country_flag = ZHR_kerensky_resigns
+	}
+	option = { #Kerensky prevails
+		name = ZHR.1.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = ZHR_ai_route
+					option = KERENSKY
+				}
+			}
+		}
+		custom_effect_tooltip = ZHR_kerensky_strong
+		set_country_flag = ZHR_kerensky_prevails
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+
+country_event = {  #米留科夫与恐怖分子
+	id = ZHR.2
+	title = ZHR.2.t
+	desc = ZHR.2.desc
+	picture = GFX_report_event_ZHR_the_resignation
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Soldiers Step in
+		name = ZHR.2.a
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 10000
+				OR = {
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = TROTSKY
+					}
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = CHAPAYEV
+					}
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = ZHR_COLLAPSE
+					}
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = KADETS
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = ZHR_milyukov_says_no
+		country_event = {
+			id = ZHR.997
+			days = 3
+		}
+
+
+	}
+	option = { #BOG
+		name = ZHR.2.b
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 10000
+				OR = {
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = GASTEV
+					}
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = SPIRIDONOVA
+					}
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = KAMENEV
+					}
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = TRIUMVIRATE
+					}
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = BOGDANOV
+					}
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = ROSENBAUM
+					}
+
+				}
+			}
+		}
+		custom_effect_tooltip = ZHR_milyukov_buckbroken
+		country_event = {
+			id = ZHR.5
+			days = 3
+		}
+
+	}
+	
+}
+
+country_event = {   #军方的选择
+	id = ZHR.997
+	title = ZHR.997.t
+	desc = ZHR.997.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.997.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 10000
+				OR = {
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = TROTSKY
+					}
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = CHAPAYEV
+					}
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = ZHR_COLLAPSE
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = ZHR_bogdanov_does_stupid
+		set_country_flag = zhr_soldiers
+		set_country_flag = junfangjieru
+		country_event = {
+			id = ZHR.9971
+			days = 1
+		}
+	}
+	option = {
+		name = ZHR.997.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = ZHR_ai_route
+					option = KADETS
+				}
+			}
+		}
+		custom_effect_tooltip = ZHR_bogdanov_isnt_stupid
+		set_country_flag = zhr_libs
+		set_country_flag = ZHR_no_rosenbaum
+	}
+}
+
+country_event = {  #我们来此是为了做善事
+	id = ZHR.9971
+	title = ZHR.9971.t
+	desc = ZHR.9971.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.9971.a
+	}
+}
+
+#Soldiers Step in
+country_event = {  #电台之夜（牢托，夏伯阳，分裂）
+	id = ZHR.4
+	title = ZHR.4.t
+	desc = ZHR.4.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_report_event_ZHR_army_steps_in
+
+	option = { #Trotsky
+		name = ZHR.4.a
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = ZHR_ai_route
+					option = TROTSKY
+				}
+			}
+		}
+		custom_effect_tooltip = ZHR_trotsky_radio
+		set_politics = {
+			ruling_party = totalist
+		}
+		add_popularity = {
+			ideology = totalist
+			popularity = 1
+		}
+		create_country_leader = {
+			name = "列夫·托洛茨基"
+			desc="POLITICS_TROTSKY_DESC"
+			picture = "gfx/leaders/ZHR/Trotsky.png"
+			traits={ ZHR_comrade_trotsky }
+			expire = "1965.1.1"
+			ideology = internationalism_subtype
+		}
+		set_country_flag = zhr_trotsky
+		set_cosmetic_tag  = ZHR_popular_socialism
+	}
+	option = { #Chapayev
+		name = ZHR.4.b
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = ZHR_ai_route
+					option = CHAPAYEV
+				}
+			}
+		}
+		custom_effect_tooltip = ZHR_chapayev_radio
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.10
+		}
+		create_country_leader = {
+			name = "夏伯阳"
+			desc="POLITICS_CHAPAYEV_DESC"
+			picture = "gfx/leaders/ZHR/Chapayev.png"
+			expire = "1965.1.1"
+			traits = { ZHR_chapayev_trait }
+			ideology = anarchism_subtype
+		}
+		set_country_flag = zhr_chapayev
+		set_cosmetic_tag  = ZHR_anarchism
+	}
+	option = { #分裂 随后做
+		name = ZHR.4.c
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = ZHR_ai_route
+					option = ZHR_COLLAPSE
+				}
+			}
+		}
+		custom_effect_tooltip = ZHR_banderite_radio
+		country_event = {
+			id = ZHR.1931
+			days = 7
+		}
+	}
+}
+
+#Popular state
+country_event = {  #米留科夫与恐怖分子合作，安·兰德政变
+	id = ZHR.5
+	title = ZHR.5.t
+	desc = ZHR.5.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_report_event_ZHR_the_new_premier
+
+	option = {
+		name = ZHR.5.a
+		ai_chance = { base = 10000 }
+		country_event = {
+			id = ZHR.6
+			days = 1
+		}
+		custom_effect_tooltip = ZHR_rand_executor
+		set_politics = {
+			ruling_party = market_liberal
+		}
+		create_country_leader = {
+			name = "阿莉萨·罗森鲍姆"
+			picture = "gfx/leaders/ZHR/Portrait_Alisa.png"
+			expire = "1965.1.1"
+			traits = { ZHR_ayn_rand }
+			ideology = objectivism_subtype
+		}
+	}
+}
+#Popular state - pts 2
+country_event = {   #加斯捷夫与三架马车
+	id = ZHR.501
+	title = ZHR.501.t
+	desc = ZHR.501.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_report_event_ZHR_the_new_premier
+
+	option = {
+		name = ZHR.501.a
+		custom_effect_tooltip = ZHR_gastev_does_it
+		set_country_flag = zhr_vpered
+		set_country_flag = ZHR_gastev
+		set_politics = {
+			ruling_party = totalist
+		}
+		create_country_leader = {
+			name = "阿列克谢·加斯捷夫"
+			desc="POLITICS_GASTEV_DESC"
+			picture = "gfx/leaders/ZHR/Portrait_Gastev.png"
+			expire = "1965.1.1"
+			traits={ ZHR_gastev }
+			ideology = technocratic_socialism_subtype
+		}
+		country_event = {
+			id = ZHR.505
+		}
+		ai_chance = { 
+			base = 20
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = ZHR_ai_route
+					option = GASTEV
+				}
+			}
+		}
+	}
+	option = {
+		name = ZHR.501.b
+		custom_effect_tooltip = ZHR_crassus_caesar_pompey
+		set_politics = {
+			ruling_party = social_democrat
+		}
+		add_popularity = {
+			ideology = revisionist_socialism
+			popularity = 0.15
+		}
+		create_country_leader = {
+			name = "费奥多·丹"
+			desc="POLITICS_DAN_DESC"
+			picture = "gfx/leaders/ZHR/Fyodor_Dan.png"
+			expire = "1965.1.1"
+			ideology = socdem_democratic_socialism_subtype
+		}
+		set_country_flag = zhr_tri
+		set_cosmetic_tag  = ZHR_progressivism
+		country_event = {
+			id = ZHR.504
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = ZHR_ai_route
+					option = TRIUMVIRATE
+				}
+			}
+		}
+	}	
+}
+
+country_event = { #牵线
+	id = ZHR.52
+	title = ZHR.52.t
+	desc = ZHR.52.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.52.a
+		custom_effect_tooltip = ZHR_vperedist_blinded
+		country_event = {
+			id = ZHR.53
+		}
+		ai_chance = {
+			base = 25
+			modifier = {
+				factor = 10000
+				OR = {
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = SPIRIDONOVA
+					}
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = KAMENEV
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = ZHR.52.b
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = ZHR_ai_route
+					option = BOGDANOV
+				}
+			}
+		}
+		country_event = {
+			id = ZHR.503
+		}
+		custom_effect_tooltip = ZHR_vperedist_sees
+	}
+}
+
+country_event = {
+	id = ZHR.53
+	title = ZHR.53.t
+	desc = ZHR.53.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { 
+		name = ZHR.53.a
+		ai_chance = { base = 3400 }
+		hidden_effect = {
+			country_event = {
+				id = ZHR.54
+				days = 0
+			}
+		custom_effect_tooltip = ZHR_leninist_fear
+		}
+	}
+}
+
+country_event = {
+	id = ZHR.54
+	title = ZHR.54.t
+	desc = ZHR.54.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { 
+		name = ZHR.54.a
+		ai_chance = { base = 3400 }
+		hidden_effect = {
+			country_event = {
+				id = ZHR.502
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = {  #女武神与加米涅夫
+	id = ZHR.502
+	title = ZHR.502.t
+	desc = ZHR.502.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_report_event_ZHR_the_new_premier
+
+	option = {
+		name = ZHR.502.a
+		custom_effect_tooltip = ZHR_spiridonova_merkulov
+		set_politics = {
+			ruling_party = syndicalist
+		}
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 1
+		}
+		create_country_leader = {
+			name = "玛丽亚·斯皮里多诺娃"
+			desc="POLITICS_SPIRIDONOVA_DESC"
+			picture = "gfx/leaders/ZHR/Spiridonova.png"
+			expire = "1965.1.1"
+			ideology = anarcho_syndicalist_subtype
+		}
+		set_country_flag = zhr_oln
+		set_cosmetic_tag  = ZHR_popular_socialism
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = ZHR_ai_route
+					option = SPIRIDONOVA
+				}
+			}
+		}
+	}
+	option = {
+		name = ZHR.502.b
+		custom_effect_tooltip = ZHR_tatar_pride_worldwide
+		set_country_flag = ZHR_kamenev_path_unlock
+		mark_focus_tree_layout_dirty = yes
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 1
+		}
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		create_country_leader = {
+			name = "列夫·加米涅夫"
+			desc="POLITICS_KAMENEV_DESC"
+			picture = "gfx/leaders/ZHR/Portrait_ZHR_Lev_Kamenev.png"
+			expire = "1965.1.1"
+			ideology = radsoc_communism_subtype
+		}
+		set_cosmetic_tag  = ZHR_popular_socialism
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = ZHR_ai_route
+					option = KAMENEV
+				}
+			}
+		}
+	}
+}
+
+country_event = {  #强硬手段
+	id = ZHR.503
+	title = ZHR.503.t
+	desc = ZHR.503.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_report_event_ZHR_the_new_premier
+
+	option = {
+		name = ZHR.503.a
+		add_popularity = {
+			ideology = accelerationism
+			popularity = 0.15
+		}
+		set_country_flag = zhr_vpered
+		set_country_flag = ZHR_bog
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+
+country_event = {  #不要称其为复出
+	id = ZHR.504
+	title = ZHR.504.t
+	desc = ZHR.504.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_report_event_ZHR_the_new_premier
+
+	option = {
+		name = ZHR.504.a
+		ai_chance = { base = 10000 }
+	}
+}
+
+country_event = { #加斯捷夫演说
+	id = ZHR.505
+	title = ZHR.505.t
+	desc = ZHR.505.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_report_event_ZHR_the_new_premier
+
+	option = {
+		name = ZHR.505.a
+		ai_chance = { base = 10000 }
+	}
+}
+
+#Freedom bloc
+country_event = {    #固有一死（安·兰德的生存）
+	id = ZHR.6
+	title = ZHR.6.t
+	desc = ZHR.6.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_report_event_ZHR_long_live_the_dollar
+
+	option = {
+		name = ZHR.6.a
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 50
+				has_game_rule = {
+					rule = ZHR_ai_route
+					option = ROSENBAUM
+				}
+			}
+		}
+		custom_effect_tooltip = ZHR_certified_rand_w
+		set_country_flag = ZHR_libs
+		set_country_flag = ZHR_rosenbaum
+		mark_focus_tree_layout_dirty = yes
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.10
+		}
+		country_event = {
+			id = ZHR.601
+		}
+	}
+	option = {
+		name = ZHR.6.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 10000
+				OR = {
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = BOGDANOV
+					}
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = SPIRIDONOVA
+					}
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = KAMENEV
+					}
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = TRIUMVIRATE
+					}
+					has_game_rule = {
+						rule = ZHR_ai_route
+						option = GASTEV
+					}
+				}
+				
+			}
+		}
+		custom_effect_tooltip = ZHR_girlbossed_too_hard
+		set_politics = {
+			ruling_party = totalist
+		}
+		create_country_leader = {
+			name = "亚历山大·博格丹诺夫"
+			desc="POLITICS_BOGDANOV_DESC"
+			picture = "gfx/leaders/ZHR/Portrait_ZHR_Alexander_Bogdanov.png"
+			expire = "1965.1.1"
+			ideology = technocratic_socialism_subtype
+		}
+		country_event = {
+			id = ZHR.602
+		}
+		set_country_flag = zhr_popular
+		set_cosmetic_tag  = ZHR_accelerationism
+	}
+}
+country_event = {   #炽热的锻造炉
+	id = ZHR.500
+	title = ZHR.500.t
+	desc = ZHR.500.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = ZHR.500.a
+		custom_effect_tooltip = ZHR_gastev_triumvi
+		country_event = {
+			id = ZHR.501
+			days = 1
+		}
+	}
+	option = {
+		name = ZHR.500.b
+		custom_effect_tooltip = ZHR_nice_popular_front_bro
+		country_event = {
+			id = ZHR.52
+			days = 1
+		}
+	}
+}
+#Freedom bloc - pt 2
+country_event = {
+	id = ZHR.601
+	title = ZHR.601.t
+	desc = ZHR.601.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	#picture = GFX_report_event_ZHR_long_live_the_dollar
+
+	option = {
+		name = ZHR.601.a
+	}
+}
+
+country_event = {
+	id = ZHR.602
+	title = ZHR.602.t
+	desc = ZHR.602.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	#picture = GFX_report_event_ZHR_long_live_the_dollar
+
+	option = {
+		name = ZHR.602.a
+	}
+}
+#qerensky wins
+country_event = {   #克伦斯基赢了
+	id = ZHR.7
+	title = ZHR.7.t
+	desc = ZHR.7.desc
+	is_triggered_only = yes
+		fire_only_once = yes
+	picture = GFX_report_event_ZHR_the_man_in_tower
+
+	option = {
+		name = ZHR.7.a
+		ai_chance = { base = 10000 }
+		custom_effect_tooltip = ZHR_kerensky_walter_white
+	}
+}
+
+#UK or USA guarantee
+country_event = {
+	id = ZHR.13
+	title = ZHR.13.t
+	desc = ZHR.13.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Accept
+		name = ZHR.13.a
+		give_guarantee = ZHR
+		ai_chance = {
+			base = 99
+		}
+	}
+	option = { #Refuse
+		name = ZHR.13.b
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+#Picking the chief of army
+country_event = {    #军队统帅部
+	id = ZHR.14
+	title = ZHR.14.t
+	desc = ZHR.14.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.14.a
+		activate_advisor = ZHR_Boris_Shaposhnikov_army
+	}
+	option = {
+		name = ZHR.14.b
+		activate_advisor = ZHR_Mikhail_Tukhachevsky_army
+	}
+	option = {
+		name = ZHR.14.c
+		activate_advisor = ZHR_Sergey_Wojciechowski_army
+	}
+}
+
+#Picking the chief of army (Gastev - replace names with numbers)
+country_event = {
+	id = ZHR.15
+	title = ZHR.15.t
+	desc = ZHR.15.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.15.a
+		ai_chance = { base = 10000 }
+		activate_advisor = ZHR_Boris_Shaposhnikov_army_number
+	}
+	option = {
+		name = ZHR.15.b
+		ai_chance = { base = 10000 }
+		activate_advisor =  ZHR_Mikhail_Tukhachevsky_army_number
+	}
+	option = {
+		name = ZHR.15.c
+		ai_chance = { base = 10000 }
+		activate_advisor =  ZHR_Sergey_Wojciechowski_army_number
+	}
+}
+
+#cult of kerensky
+country_event = {
+	id = ZHR.24
+	title = ZHR.24.t
+	desc = ZHR.24.desc
+	#picture = GFX_report_event_GFX_baikallakeritual
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = ZHR.24.a
+		ai_chance = { base = 10000 }
+		add_political_power = 50
+	}
+}
+#speech by kerensky
+country_event = {
+	id = ZHR.25
+	title = ZHR.25.t
+	desc = ZHR.25.desc
+	picture = GFX_report_event_GFX_baikallakeritual
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = ZHR.25.a
+		ai_chance = { base = 10000 }
+		add_political_power = 50
+	}
+}
+#vision by kerensky
+country_event = {
+	id = ZHR.26
+	title = ZHR.26.t
+	desc = ZHR.26.desc
+	picture = GFX_report_event_GFX_baikallakeritual
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = ZHR.26.a
+		ai_chance = { base = 10000 }
+		add_political_power = 50
+	}
+}
+#new repi soldier
+country_event = {
+	id = ZHR.27
+	title = ZHR.27.t
+	desc = ZHR.27.desc
+	picture = GFX_report_event_GFX_baikallakeritual
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = ZHR.27.a
+		ai_chance = { base = 10000 }
+		army_experience = 50
+	}
+}
+#Manchu state event 1
+country_event = {
+	id = ZHR.28
+	title = ZHR.28.t
+	desc = ZHR.28.desc
+	#picture = #
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = ZHR.28.a
+		ai_chance = { base = 50 }
+		set_country_flag = MNS_yoshiko
+		custom_effect_tooltip = MNS_yoshiko
+		kill_country_leader = yes
+		add_country_leader_role = {
+			character = MNS_yoshiko
+			country_leader = {
+				ideology = absolute_monarchy
+				traits = { }
+				expire = "1965.1.1.1"
+			}
+		}
+	}
+	option = {
+		name = ZHR.28.b
+		ai_chance = { base = 50 }
+		set_country_flag = MNS_puwei
+		custom_effect_tooltip = MNS_puwei
+	}
+}
+
+country_event = {
+	id = ZHR.29
+	title = ZHR.29.t
+	desc = ZHR.29.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { 
+		name = ZHR.29.a
+		ai_chance = { base = 2900 }
+	}
+}
+
+country_event = {
+	id = ZHR.30
+	title = ZHR.30.t
+	desc = ZHR.30.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { 
+		name = ZHR.30.a
+		ai_chance = { base = 3000 }
+	}
+}
+
+country_event = {
+	id = ZHR.31
+	title = ZHR.31.t
+	desc = ZHR.31.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { 
+		name = ZHR.31.a
+		ai_chance = { base = 3100 }
+		hidden_effect = {
+			country_event = {
+				id = ZHR.32
+				days = 42
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ZHR.32
+	title = ZHR.32.t
+	desc = ZHR.32.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { 
+		name = ZHR.32.a
+		ai_chance = { base = 3200 }
+	}
+}
+
+country_event = {
+	id = ZHR.33
+	title = ZHR.33.t
+	desc = ZHR.33.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { 
+		name = ZHR.33.a
+		ai_chance = { base = 3300 }
+	}
+	option = { 
+		name = ZHR.33.b
+		ai_chance = { base = 3300 }
+	}
+}
+
+country_event = {
+	id = ZHR.34
+	title = ZHR.34.t
+	desc = ZHR.34.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { 
+		name = ZHR.34.a
+		ai_chance = { base = 3400 }
+		hidden_effect = {
+			country_event = {
+				id = ZHR.35
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ZHR.35
+	title = ZHR.35.t
+	desc = ZHR.35.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { 
+		name = ZHR.35.a
+		ai_chance = { base = 3500 }
+	}
+}
+
+#PLEASE REMOVE THIS
+country_event = {
+	id = ZHR.102
+	title = ZHR.102.t
+	desc = ZHR.102.desc
+	is_triggered_only = yes
+
+	option = { #The consequences of famine - survive
+		name = ZHR.102.a
+		trigger = {
+			is_ai = no
+		}
+		
+	}
+	option = { #The consequences of famine - AI chance game - survive
+		name = ZHR.102.d
+		trigger = {
+			is_ai = yes
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				has_completed_focus = ZHR_atlasshruggednomore
+				factor = 65
+			}
+			modifier = {
+				OR = {
+					has_completed_focus = ZHR_we
+					has_completed_focus = ZHR_theherowedeserve
+				}
+				factor = 75
+			}
+			modifier = {
+				OR = {
+					has_completed_focus = ZHR_comradetrotsky
+					has_completed_focus = ZHR_kerenskyprevails
+					has_completed_focus = ZHR_dawn_of_peoples_freedom
+				}
+				factor = 95
+			}
+			modifier = {
+				OR = {
+					has_completed_focus = ZHR_triumvirate_unites_the_centre
+					has_completed_focus = ZHR_homogeneous_socialist_government
+				}
+				factor = 95
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = ZHR_ai_route
+					option = ZHR_COLLAPSE
+				}
+			}
+		}
+	}
+}
+
+#Zhelto Collapse
+#Force switch to Harbin
+country_event = {
+	id = ZHR.1931
+	title = ZHR.1931.t
+	desc = ZHR.1931.desc
+	is_triggered_only = yes
+
+	option = {
+		name = ZHR.1931.a
+		HAR = {
+			hidden_effect = {
+				transfer_state = 885
+				transfer_state = 717
+				add_state_core = 885
+				add_state_core = 717
+				HAR= {
+					set_variable = { smuta_surrender_limit = -0.30 }
+					set_variable = { smuta_min_export = -0.8 }
+					set_variable = { smuta_tef = -0.8 }
+					add_dynamic_modifier = { modifier = second_smuta }
+				}
+				inherit_technology = ZHR
+				load_oob = "HAR"
+				country_event = {
+					id = HAR.11
+					days = 4
+				}
+				set_cosmetic_tag = HAR
+			}
+			change_tag_from = ZHR
+		}
+		ZHR ={
+			hidden_effect = {
+				set_capital = { state = 408 }
+				delete_unit_template_and_units = {
+					division_template = "Infantry Division"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Motorized Division"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Light Armor Division"
+				}
+				promote_character = ZHR_anarchy
+				set_politics = {
+					ruling_party = radical_socialist
+				}
+				create_country_leader = {
+					name = "无政府状态"
+					picture = "gfx/leaders/ZHR/Portrait_anarchy.png"
+					expire = "1965.1.1"
+					ideology = anarchism_subtype
+				}
+				add_popularity = {
+					ideology = radical_socialist
+					popularity = 1
+				}
+				set_cosmetic_tag = ZHR_wasteland
+				set_party_name = {
+				ideology = radical_socialist
+				name = ZHR_wasteland_party
+				long_name = ZHR_wasteland_party_long
+				}
+			}
+		}
+	}
+}
+
+country_event = { #test event
+	id = ZHR.66
+	title = ZHR.66.t
+	desc = ZHR.66.desc
+	is_triggered_only = yes
+
+	option = {
+		name = ZHR.66.a
+		complete_national_focus = ZHR_liberationofthemotherland
+	}
+}
+country_event = {   #博格丹诺夫的演讲
+	id = ZHR.2137
+	title = ZHR.2137.t
+	desc = ZHR.2137.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2137.a
+	}
+
+}
+country_event = {
+	id = ZHR.2001
+	title = ZHR.2001.t
+	desc = ZHR.2001.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2001.a
+	}
+}
+country_event = {
+	id = ZHR.2002
+	title = ZHR.2002.t
+	desc = ZHR.2002.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2002.a
+	}
+}
+country_event = {
+	id = ZHR.2022
+	title = ZHR.2022.t
+	desc = ZHR.2022.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2022.a
+	}
+}
+country_event = {
+	id = ZHR.2023
+	title = ZHR.2023.t
+	desc = ZHR.2023.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2023.a
+	}
+}
+country_event = {
+	id = ZHR.2024
+	title = ZHR.2024.t
+	desc = ZHR.2024.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2024.a
+	}
+}
+country_event = { #trotsky intro
+	id = ZHR.2025
+	title = ZHR.2025.t
+	desc = ZHR.2025.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2025.a
+	}
+}
+country_event = { #trotsky paperwork
+	id = ZHR.2026
+	title = ZHR.2026.t
+	desc = ZHR.2026.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2026.a
+	}
+}
+country_event = { #trotsky soviet
+	id = ZHR.2027
+	title = ZHR.2027.t
+	desc = ZHR.2027.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2027.a
+	}
+}
+country_event = { #trotsky prohibition
+	id = ZHR.2028
+	title = ZHR.2028.t
+	desc = ZHR.2028.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2028.a
+	}
+}
+country_event = { #trotsky angry workers
+	id = ZHR.2029
+	title = ZHR.2029.t
+	desc = ZHR.2029.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2029.a
+		country_event = {
+			id = ZHR.2030
+			days = 1
+		}
+		hidden_effect = {
+			country_event = {
+			id = ZHR.2031
+			days = 14
+			}
+		}
+	}
+}
+country_event = { #trotsky demands
+	id = ZHR.2030
+	title = ZHR.2030.t
+	desc = ZHR.2030.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2030.a
+	}
+}
+country_event = { #trotsky crackdown
+	id = ZHR.2031
+	title = ZHR.2031.t
+	desc = ZHR.2031.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2031.a
+		hidden_effect = {
+			country_event = {
+			id = ZHR.2032
+			days = 28
+			}
+		}
+	}
+}
+country_event = { #trotsky aftermath
+	id = ZHR.2032
+	title = ZHR.2032.t
+	desc = ZHR.2032.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2032.a
+	}
+}
+
+country_event = { #chaos under heaven
+	id = ZHR.2033
+	title = ZHR.2033.t
+	desc = ZHR.2033.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2033.a
+	}
+}
+
+country_event = { #through struggle
+	id = ZHR.2034
+	title = ZHR.2034.t
+	desc = ZHR.2034.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2034.a
+	}
+}
+
+country_event = { #dead man walking
+	id = ZHR.2035
+	title = ZHR.2035.t
+	desc = ZHR.2035.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2035.a
+	}
+}
+
+country_event = { #congress of soviets
+	id = ZHR.2036
+	title = ZHR.2036.t
+	desc = ZHR.2036.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ZHR.2036.a
+	}
+}
+
+
+
+#The Liquidator
+country_event = {
+	id = ZHR.2500
+	title = ZHR.2500.t
+	desc = ZHR.2500.desc
+	picture = GFX_report_event_robot_skull_face
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { #A bright look into the Future
+		name = ZHR.2500.a
+		ai_chance = { base = 10000 }
+	}
+}
+
+country_event = {
+	id = ZHR.25000
+	title = ZHR.25000.t
+	desc = ZHR.25000.desc
+	picture = GFX_report_event_robot_skull_face
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { #A bright look into the Future
+		name = ZHR.25000.a
+		load_focus_tree = KX_israel
+	}
+}
+
+country_event = {
+	id = ZHR.25001
+	title = ZHR.25001.t
+	desc = ZHR.25001.desc
+	picture = GFX_report_event_robot_skull_face
+	fire_only_once = yes
+	trigger = {
+		tag = TRM
+		TRM = {
+			OR = {
+				has_country_leader = { name = "Georgiy Stark" ruling_only = yes }
+				has_country_leader = { name = "格奥尔基·斯塔尔克" ruling_only = yes }
+			}
+		}
+	}
+
+	option = { #A bright look into the Future
+		name = ZHR.25001.a
+		country_event = {
+			id = ZHR.25002
+			days = 7
+			}
+	}
+
+	option = { #A bright look into the Future
+		name = ZHR.25001.b
+	}
+}
+
+country_event = {
+	id = ZHR.25002
+	title = ZHR.25002.t
+	desc = ZHR.25002.desc
+	picture = GFX_report_event_robot_skull_face
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { #A bright look into the Future
+		name = ZHR.25002.a
+		ZHR = {
+			transfer_state = 884
+			transfer_state = 885
+			transfer_state = 883
+			transfer_state = 714
+			transfer_state = 717
+			transfer_state = 561
+			transfer_state = 408
+			transfer_state = 1246
+			transfer_state = 560
+			transfer_state = 409
+			transfer_state = 657
+			transfer_state = 563
+			884 = { add_core_of = ZHR }
+			885 = { add_core_of = ZHR }
+			883 = { add_core_of = ZHR }
+			714 = { add_core_of = ZHR }
+			717 = { add_core_of = ZHR }
+			561 = { add_core_of = ZHR }
+			408 = { add_core_of = ZHR }
+			1246 = { add_core_of = ZHR }
+			560 = { add_core_of = ZHR }
+			409 = { add_core_of = ZHR }
+			657 = { add_core_of = ZHR }
+			563 = { add_core_of = ZHR }
+			load_oob = "ZHR"
+		}
+		ZHR = { change_tag_from = TRM }
+	}
+}

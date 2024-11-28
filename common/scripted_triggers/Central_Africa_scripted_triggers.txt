@@ -1,0 +1,37 @@
+CEA_has_bokassa = {
+  custom_trigger_tooltip = {
+    tooltip = CEA_has_bokassa
+    OR = {
+      has_country_leader = {
+        name = "让-贝德尔·博卡萨"  # Jean-Bédel Bokassa
+        ruling_only = yes
+      }
+      has_country_leader = {
+        name = "博卡萨一世"  # Bokassa I
+        ruling_only = yes
+      }
+      has_country_leader = {
+        name = "拿破仑二世"  # Napoleon II
+        ruling_only = yes
+      }
+      has_country_leader = {
+        name = "让-贝德尔·博卡萨"  # John Bedel Bokassa
+        ruling_only = yes
+      }
+      has_country_leader = {
+        name = "腓特烈四世"  # Fredrick IV
+        ruling_only = yes
+      }
+      has_country_leader = {
+        name = "查理曼二世"  # Charlemagne II
+        ruling_only = yes
+      }
+    }
+  }
+}
+CEA_has_dar_al_kuti = {
+  has_country_leader = {
+    name = "卡蒙·穆罕默德·塞努西"  # Kamoun Mohamed al-Senoussi
+    ruling_only = yes
+  }
+}

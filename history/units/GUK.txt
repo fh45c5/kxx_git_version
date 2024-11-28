@@ -1,0 +1,48 @@
+division_template = {
+	name = "Korpus Lytsariv Zelenoho Klynu"
+	division_names_group = UKR_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+        infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+        motorized = { x = 2 y = 0 }
+        motorized = { x = 2 y = 1 }
+        motorized = { x = 2 y = 2 }
+	}
+	support = {
+       	engineer = { x = 0 y = 0 }
+       	artillery = { x = 0 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "Pershyi Lytsarskyi Korpus imeni Yuriya Hlushka-Movy"
+		location = 10577
+		division_template = "Korpus Lytsariv Zelenoho Klynu"
+		start_experience_factor = 0.7
+	}
+	division = {
+		name = "Druhyi Lytsarskyi Korpus imeni Dmytra Horvata"
+		location = 10577
+		division_template = "Korpus Lytsariv Zelenoho Klynu"
+		start_experience_factor = 0.6
+	}
+	division = {
+		name = "Tretiy Lytsarskyi Korpus imeni Chornoho Kvadratu"
+		location = 10577
+		division_template = "Korpus Lytsariv Zelenoho Klynu"
+		start_experience_factor = 0.6
+	}
+	division = {
+		name = "Osoblyvyi Lytsarskyi Korpus Ussuriyskoho Kozatstva"
+		location = 10577
+		division_template = "Korpus Lytsariv Zelenoho Klynu"
+		start_experience_factor = 0.4
+	}
+}

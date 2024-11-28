@@ -1,0 +1,644 @@
+add_namespace = austral
+
+country_event = { #  anglosphere
+    id = austral.2000
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2000.t
+    desc = austral.2000.d
+
+    picture = GFX_report_event_AST_aborigine
+    fire_only_once = yes
+   is_triggered_only = yes
+
+    option = { #nein
+        name = austral.2000.a
+        ai_chance = {
+            factor = 100
+        }
+        
+    }
+
+    option = { #yes
+        name = austral.2000.b
+        ai_chance = {
+            factor = 0
+        }
+        every_state = {
+            limit = {
+                is_core_of = CAN
+            }
+            AST = { 
+                add_state_core = PREV 
+            }
+        }
+        create_wargoal = {
+            type = annex_everything
+            target = CAN
+        }
+        every_state = {
+            limit = {
+                is_core_of = ENG
+            }
+            AST = { 
+                add_state_core = PREV 
+            }
+        }
+        create_wargoal = {
+            type = annex_everything
+            target = ENG
+        }
+        every_state = {
+            limit = {
+                is_core_of = USA
+            }
+            AST = { 
+                add_state_core = PREV 
+            }
+        }
+        create_wargoal = {
+            type = annex_everything
+            target = USA
+        }
+        every_state = {
+            limit = {
+                is_core_of = CSA
+            }
+            AST = { 
+                add_state_core = PREV 
+            }
+        }
+        create_wargoal = {
+            type = annex_everything
+            target = CSA
+        }
+        every_state = {
+            limit = {
+                is_core_of = TEX
+            }
+            AST = { 
+                add_state_core = PREV 
+            }
+        }
+        create_wargoal = {
+            type = annex_everything
+            target = TEX
+        }
+        every_state = {
+            limit = {
+                is_core_of = COR
+            }
+            AST = { 
+                add_state_core = PREV 
+            }
+        }
+        create_wargoal = {
+            type = annex_everything
+            target = COR
+        }
+        every_state = {
+            limit = {
+                is_core_of = WCC
+            }
+            AST = { 
+                add_state_core = PREV 
+            }
+        }
+        create_wargoal = {
+            type = annex_everything
+            target = WCC
+        }
+        every_state = {
+            limit = {
+                is_core_of = CAL
+            }
+            AST = { 
+                add_state_core = PREV 
+            }
+        }
+        create_wargoal = {
+            type = annex_everything
+            target = CAL
+        }
+        every_state = {
+            limit = {
+                is_core_of = NYC
+            }
+            AST = { 
+                add_state_core = PREV 
+            }
+        }
+        create_wargoal = {
+            type = annex_everything
+            target = NYC
+        }
+        every_state = {
+            limit = {
+                is_core_of = NEE
+            }
+            AST = { 
+                add_state_core = PREV 
+            }
+        }
+        create_wargoal = {
+            type = annex_everything
+            target = NEE
+        }
+        every_state = {
+            limit = {
+                is_core_of = TXS
+            }
+            AST = { 
+                add_state_core = PREV 
+            }
+        }
+        create_wargoal = {
+            type = annex_everything
+            target = TXS
+        }
+        every_state = {
+            limit = {
+                is_core_of = ALA
+            }
+            AST = { 
+                add_state_core = PREV 
+            }
+        }
+        create_wargoal = {
+            type = annex_everything
+            target = ALA
+        }
+        every_state = {
+            limit = {
+                is_core_of = BBR
+            }
+            AST = { 
+                add_state_core = PREV 
+            }
+        }
+        create_wargoal = {
+            type = annex_everything
+            target = BBR
+        }
+        every_state = {
+            limit = {
+                is_core_of = IRE
+            }
+            AST = { 
+                add_state_core = PREV 
+            }
+        }
+        create_wargoal = {
+            type = annex_everything
+            target = IRE
+        }
+        every_state = {
+            limit = {
+                is_core_of = CAF
+            }
+            AST = { 
+                add_state_core = PREV 
+            }
+        }
+        create_wargoal = {
+            type = annex_everything
+            target = CAF
+        }
+        set_cosmetic_tag = AST_AGL
+    }
+}
+
+country_event = { #Investigation AAPA
+    id = austral.2001
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2001.t
+    desc = austral.2001.d
+
+picture = GFX_report_event_AST_aborigine
+    is_triggered_only = yes
+
+    option = { 
+        name = austral.2001.a
+        ai_chance = {
+            factor = 20
+        }
+     
+       add_political_power = 25
+        add_stability = 0.1
+	add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.1
+		}
+    }
+}
+country_event = { #introduction event AAPA
+    id = austral.2002
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2002.t
+    desc = austral.2002.d
+
+picture = GFX_report_event_AST_aborigine
+    fire_only_once = yes
+	trigger = {
+		tag = AST
+		is_ai = no
+		date > 1936.1.1
+	}
+
+    option = { 
+        name = austral.2002.a
+        ai_chance = {
+            factor = 20
+        }
+	add_popularity = {
+		ideology = authoritarian_democrat
+		popularity = 0.01
+	}
+    }
+}
+country_event = {#Flag Picker
+	id = austral.2003
+	title = austral.2003.t
+	desc = austral.2003.d
+	
+	picture = GFX_AST_report_flag_aapa_Event
+
+	fire_only_once = no
+
+	is_triggered_only = yes
+
+	option = { #I am happy with this
+		name = austral.2003.a
+		set_cosmetic_tag = AST_aapa
+	}
+	option = { #I want the other flag
+		name = austral.2003.b
+		set_cosmetic_tag = AST_aapa_2
+	}
+}
+
+### Introductory events
+
+country_event = { #introduction event SLP
+    id = austral.2004
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2004.t
+    desc = austral.2004.d
+
+picture = GFX_report_event_ARM_propaganda_socialist
+    fire_only_once = yes
+	trigger = {
+		tag = AST
+		is_ai = no
+		date > 1936.1.1
+	}
+
+    option = { 
+        name = austral.2004.a
+        ai_chance = {
+            factor = 20
+        }
+	add_popularity = {
+		ideology = radical_socialist 
+		popularity = 0.01
+	}
+    }
+}
+
+country_event = { #introduction event CPA
+    id = austral.2005
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2005.t
+    desc = austral.2005.d
+    fire_only_once = yes
+	trigger = {
+		tag = AST
+		date > 1936.1.1
+	}
+
+picture = GFX_event_NFA_communard_spies
+    is_triggered_only = yes
+
+    option = { 
+        name = austral.2005.a
+        ai_chance = {
+            factor = 20
+        }
+	add_popularity = {
+		ideology = totalist
+		popularity = 0.01
+	}
+    }
+}
+
+country_event = { #introduction event IWW
+    id = austral.2006
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2006.t
+    desc = austral.2006.d
+
+picture = GFX_report_event_generic_workers
+    fire_only_once = yes
+	trigger = {
+		tag = AST
+		date > 1936.1.1
+	}
+
+    option = { 
+        name = austral.2006.a
+        ai_chance = {
+            factor = 20
+        }
+	add_popularity = {
+		ideology = syndicalist 
+		popularity = 0.01
+	}
+    }
+}
+
+country_event = { #introduction event ACTU
+    id = austral.2007
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2007.t
+    desc = austral.2007.d
+    fire_only_once = yes
+	trigger = {
+		tag = AST
+        date > 1936.1.1
+	}
+
+	picture = GFX_report_event_IRE_workers_happy
+    is_triggered_only = yes
+
+    option = {
+        name = austral.2007.a
+        ai_chance = {
+            factor = 20
+        }
+	add_popularity = {
+		ideology = social_democrat
+		popularity = 0.01
+	}
+    }
+}
+
+country_event = { #Factional Collapse
+    id = austral.2008
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2008.t
+    desc = austral.2008.d
+
+picture = GFX_report_event_generic_riot2
+    is_triggered_only = yes
+
+    option = { 
+        name = austral.2008.a
+        ai_chance = {
+            factor = 20
+        }
+	country_event = { id = austral.2009 days = 7 }
+    }
+    option = { 
+        name = austral.2008.b
+        ai_chance = {
+            factor = 20
+        }
+	country_event = { id = austral.2010 days = 7 }
+    }
+    option = { 
+        name = austral.2008.c
+        ai_chance = {
+            factor = 20
+        }
+	country_event = { id = austral.2011 days = 7 }
+    }
+    option = { 
+        name = austral.2008.f
+        ai_chance = {
+            factor = 20
+        }
+	country_event = { id = austral.2012 days = 7 }
+    }
+	option = { 
+        name = austral.2008.e
+        ai_chance = {
+            factor = 20
+        }
+	complete_national_focus = AST_AAPA
+    }
+
+}
+
+country_event = { #slp keep control
+    id = austral.2009
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2009.t
+    desc = austral.2009.d
+
+picture = GFX_report_event_AST_riot1
+    is_triggered_only = yes
+
+    option = { 
+        name = austral.2009.a
+        ai_chance = {
+            factor = 20
+        }
+	complete_national_focus = AST_SLP_victory
+    }
+}
+
+country_event = { #actukeep control
+    id = austral.2010
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2010.t
+    desc = austral.2010.d
+
+picture = GFX_report_event_AST_crowd3
+    is_triggered_only = yes
+
+    option = { 
+        name = austral.2010.a
+        ai_chance = {
+            factor = 20
+        }
+	complete_national_focus = AST_ACTU
+    }
+}
+
+country_event = { #IWW keep control
+    id = austral.2011
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2011.t
+    desc = austral.2011.d
+
+picture = GFX_report_event_AST_laborsplit
+    is_triggered_only = yes
+
+    option = { 
+        name = austral.2011.a
+        ai_chance = {
+            factor = 20
+        }
+	complete_national_focus = AST_australasian_iww
+    }
+}
+
+country_event = { #cpa take control
+    id = austral.2012
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2012.t
+    desc = austral.2012.d
+
+picture = GFX_report_event_AST_totalists
+    is_triggered_only = yes
+
+    option = { 
+        name = austral.2012.a
+        ai_chance = {
+            factor = 20
+        }
+	complete_national_focus = AST_CPA_victory
+    }
+}
+
+country_event = { #golden miles
+    id = austral.2013
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2013.t
+    desc = austral.2013.d
+
+picture = GFX_report_event_AST_paterson
+    is_triggered_only = yes
+
+    option = { 
+        name = austral.2013.a
+        ai_chance = {
+            factor = 20
+        }
+    }
+option = { 
+        name = austral.2013.b
+        ai_chance = {
+            factor = 20
+        }
+	create_country_leader = {# Fred Paterson
+				name = "Fred Paterson"
+				desc = "POLITICS_Fred_Paterson_DESC"
+				picture = "gfx/leaders/AST/Portrait_AST_Fred_Paterson.png"
+				expire = "1965.1.1"
+				ideology = popcom_subtype 
+			}
+    }
+}
+
+country_event = { # Rum corps develop in the army
+    id = austral.2014
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2014.t
+    desc = austral.2014.d
+    fire_only_once = yes
+	trigger = {
+		tag = AST
+		is_ai = no
+        has_country_flag = AST_nzl_new_guard_coup
+	}
+
+	picture = GFX_report_event_AST_emu
+    is_triggered_only = yes
+    option = { 
+        name = austral.2014.a
+        ai_chance = {
+            factor = 20
+        }
+	country_event = { id = austral.2015 days = 7 }
+    }
+}
+
+country_event = { # Rum corps agitate
+    id = austral.2015
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2015.t
+    desc = austral.2015.d
+
+picture = GFX_report_event_AST_blamey
+    is_triggered_only = yes
+
+    option = { 
+        name = austral.2015.a
+        ai_chance = {
+            factor = 20
+        }
+	country_event = { id = austral.2016 days = 7 }
+    }
+    option = { 
+        name = austral.2015.b
+        ai_chance = {
+            factor = 20
+        }
+    }
+}
+
+country_event = { # Rum corps coup
+    id = austral.2016
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2016.t
+    desc = austral.2016.d
+
+picture = GFX_report_event_AST_army1
+    is_triggered_only = yes
+
+    option = { 
+        name = austral.2016.a
+        ai_chance = {
+            factor = 20
+        }
+	complete_national_focus = AST_second_rum_rebellion
+    }
+}
+
+country_event = { # SLP flag choice
+    id = austral.2018
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2017.t
+    desc = austral.2017.d
+
+	picture = GFX_AST_report_flag_cpa_Event
+
+	fire_only_once = no
+
+	is_triggered_only = yes
+
+	option = { #I am happy with this
+		name = austral.2017.a
+		set_cosmetic_tag = AST_cpa
+	}
+	option = { #I want the other flag
+		name = austral.2017.b
+		set_cosmetic_tag = AST_cpa_2
+	}
+}
+
+country_event = { # cpa flag choice
+    id = austral.2017
+	immediate = { log = "[GetDateText]: [Root.GetName]: event astemp.1" }
+    title = austral.2017.t
+    desc = austral.2017.d
+
+	picture = GFX_AST_report_flag_slp_Event
+
+	fire_only_once = no
+
+	is_triggered_only = yes
+
+	option = { #I am happy with this
+		name = austral.2017.a
+		set_cosmetic_tag = AST_slp
+	}
+	option = { #I want the other flag
+		name = austral.2017.b
+		set_cosmetic_tag = AST_slp_2
+	}
+	option = { #I want the other flag
+		name = austral.2017.c
+		set_cosmetic_tag = ast_slp_3
+	}
+}

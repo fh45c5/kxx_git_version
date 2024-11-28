@@ -1,0 +1,198 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_KXX_Pax_Super_Event_Window"
+		texturefile = "gfx/Pax_Super_Event_Window.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_GRU_Super_Event_Quote_Background"
+		texturefile = "gfx/Super_Event_Quote_Background.png"
+		legacy_lazy_load = no
+	}
+	
+	###kxx
+	spriteType = {
+		name = "GFX_SPEVNT_civl_gru"
+		texturefile = "gfx/super_events/SPEVNT_civl_gru.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_SPEVNT_greater_germanic_state_goebbels"
+		texturefile = "gfx/super_events/SPEVNT_greater_germanic_state_goebbels.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_SPEVNT_endsieg_goebbels"
+		texturefile = "gfx/super_events/SPEVNT_endsieg_goebbels.png"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_SPEVNT_EUROPE_UNIFICATION_thirart"
+		texturefile = "gfx/super_events/GFX_SPEVNT_EUROPE_UNIFICATION_thirart.png"
+		legacy_lazy_load = no
+	}
+
+	###KX
+	spriteType = {
+		name = "GFX_SPEVNT_Valoi_Dead"
+		texturefile = "gfx/super_events/SPEVNT_Valoi_Dead.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_SPEVNT_Anarchist_Frances"
+		texturefile = "gfx/super_events/SPEVNT_Anarchist_France.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_SPEVNT_Caucasus_Chao"
+		texturefile = "gfx/super_events/SPEVNT_Caucasus_Chaos.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_SPEVNT_Romania_Restoration"
+		texturefile = "gfx/super_events/SPEVNT_Romanian_Restoration.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_SPEVNT_Collapse_Britains"
+		texturefile = "gfx/super_events/SPEVNT_Collapse_Britain.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_SPEVNT_Gastev_Technocracys"
+		texturefile = "gfx/super_events/SPEVNT_Gastev_Technocracy.png"
+		legacy_lazy_load = no
+	}
+
+	###民族与革命
+	spriteType = {
+		name = "GFX_SPEVNT_WSU_ukraine_civilwar"
+		texturefile = "gfx/super_events/Super_Event_Image_ukraine_civilwar.png"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_SPEVNT_west_ukraine_win"
+		texturefile = "gfx/super_events/Super_Event_Image_west_ukraine_win.png"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_SPEVNT_west_ukraine_lost"
+		texturefile = "gfx/super_events/Super_Event_Image_west_ukraine_lost.png"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_SPEVNT_CNT_cnt_fai_vitory"
+		texturefile = "gfx/super_events/Super_Event_Image_cnt_fai_vitory.png"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_SPEVNT_WGR_sco_unit_germany"
+		texturefile = "gfx/super_events/Super_Event_Image_sco_unit_germany.png"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_SPEVNT_WGR_syn_unit_germany"
+		texturefile = "gfx/super_events/Super_Event_Image_syn_unit_germany.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DDR_the_pop_po_war"
+		texturefile = "gfx/super_events/SPEVNT_Second_Weltkrieg.png"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_DDR_Prussia_Collapsed"
+		texturefile = "gfx/super_events/SPEVNT_Second_Weltkrieg.png"
+		legacy_lazy_load = no
+	}
+
+	###红龙
+	spriteType = {
+		name = "GFX_SPEVNT_JAPAN_CW"
+		texturefile = "gfx/super_events/Super_Event_Image_SPEVNT_JAPAN_CW.png"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_SPEVNT_JAPAN_CW_Socialist_win"
+		texturefile = "gfx/super_events/GFX_SPEVNT_JAPAN_CW_Commie.png"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_SPEVNT_JAPAN_CW_Military_win"
+		texturefile = "gfx/super_events/GFX_SPEVNT_JAPAN_CW_army.png"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_SPEVNT_TIBET_UNITE_CHINA_ZHANG_GUOHUA_win"
+		texturefile = "gfx/super_events/GFX_SPEVNT_CHINA_UNITE_ZHANG_GUOHUA.png"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_SPEVNT_TIBET_UNITE_CHINA_YUEXE"
+		texturefile = "gfx/super_events/GFX_SPEVNT_UNITE_CHINA_SANGGYAI_YEXE.png"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_SPEVNT_TIBET_UNITE_CHINA_JIGME"
+		texturefile = "gfx/super_events/GFX_SPEVNT_CHINA_UNITE_JIGME.png"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_SPEVNT_TAIWAN_XIONGZHENG_UNITE_CHINA"
+		texturefile = "gfx/super_events/GFX_SPEVNT_TAIWAN_XIONGZHENG_UNITE_CHINA.png"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_SPEVNT_TAIWAN_TPP_UNITE_CHINA"
+		texturefile = "gfx/super_events/GFX_SPEVNT_TAIWAN_TPP_UNITE_CHINA.png"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_SPEVNT_TAIWAN_COMMIE_UNITE_CHINA"
+		texturefile = "gfx/super_events/GFX_SPEVNT_TAIWAN_COMMIE_UNITE_CHINA.png"
+		legacy_lazy_load = no
+	}
+
+
+
+
+
+	
+	spriteType = {
+		name = "GFX_REMARK"
+		texturefile = "gfx/Super_Event_Remark_Button.png"
+		legacy_lazy_load = no
+	}
+
+	corneredTileSpriteType = {
+		name = "GFX_tiled_window_thin_border"
+		size= { x=192 y=192 }
+		textureFile = "gfx//interface//tiles//tiled_window_thin_border.png"
+		borderSize = { x=64 y=64 }
+		tilingCenter = yes
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+}

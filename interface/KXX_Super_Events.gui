@@ -1,0 +1,235 @@
+guiTypes = {
+	containerWindowType = {
+		name = "KXX_Super_Event_Window"
+		size = { width = 581 height = 427 }
+		position = { x=0 y=0 }
+		Orientation = center
+		Origo = center
+		clipping = no	
+		moveable = no
+	
+		###kxx
+		
+		iconType = {
+			name ="GRU_Super_Event_Image_ger_civl_visible"
+			spriteType = "GFX_SPEVNT_civl_gru"
+			position = { x = -150 y = -45 }
+		}
+
+		iconType = {
+			name ="GRU_Super_Event_Image_greater_germanic_state_goebbels"
+			spriteType = "GFX_SPEVNT_greater_germanic_state_goebbels"
+			position = { x = -150 y = -45 }
+		}
+
+		iconType = {
+			name ="GRU_Super_Event_Image_endsieg_goebbels"
+			spriteType = "GFX_SPEVNT_endsieg_goebbels"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name ="Super_Event_Image_EUROPE_UNIFICATION_thirart"
+			spriteType = "GFX_SPEVNT_EUROPE_UNIFICATION_thirart"
+			position = { x = -150 y = -45 }
+		}
+		
+		###KX
+		iconType = {
+			name ="Super_Event_Image_Valoi_Dead"
+			spriteType = "GFX_SPEVNT_Valoi_Dead"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name ="Super_Event_Image_Anarchist_Frances"
+			spriteType = "GFX_SPEVNT_Anarchist_Frances"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name ="Super_Event_Image_Caucasus_Chao"
+			spriteType = "GFX_SPEVNT_Caucasus_Chao"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name ="Super_Event_Image_Romania_Restoration"
+			spriteType = "GFX_SPEVNT_Romania_Restoration"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name ="Super_Event_Image_Collapse_Britains"
+			spriteType = "GFX_SPEVNT_Collapse_Britains"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name = "Super_Event_Image_Gastev_Technocracys"
+			spriteType = "GFX_SPEVNT_Gastev_Technocracys"
+			position = { x = -150 y = -45 }
+		}
+		
+		###民族与革命
+		iconType = {
+			name ="Super_Event_Image_ukraine_civilwar"
+			spriteType = "GFX_SPEVNT_WSU_ukraine_civilwar"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name ="Super_Event_Image_west_ukraine_lost"
+			spriteType = "GFX_SPEVNT_west_ukraine_lost"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name ="Super_Event_Image_west_ukraine_win"
+			spriteType = "GFX_SPEVNT_west_ukraine_win"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name ="Super_Event_Image_cnt_fai_vitory"
+			spriteType = "GFX_SPEVNT_CNT_cnt_fai_vitory"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name ="Super_Event_Image_sco_unit_germany"
+			spriteType = "GFX_SPEVNT_WGR_sco_unit_germany"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name ="Super_Event_Image_syn_unit_germany"
+			spriteType = "GFX_SPEVNT_WGR_syn_unit_germany"
+			position = { x = -150 y = -45 }
+		}
+		iconType = {
+			name ="Super_Event_Image_Pop_Po_War"
+			spriteType = "GFX_DDR_the_pop_po_war"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name ="Super_Event_Image_Prussia_Collapsed"
+			spriteType = "GFX_DDR_Prussia_Collapsed"
+			position = { x = -150 y = -45 }
+		}
+		
+		
+		###红龙
+		iconType = {
+			name = "Super_Event_Image_SPEVNT_JAPAN_CW"
+			spriteType = "GFX_SPEVNT_JAPAN_CW"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name = "Super_Event_Image_SPEVNT_JAPAN_CW_Socialist_win"
+			spriteType = "GFX_SPEVNT_JAPAN_CW_Socialist_win"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name = "Super_Event_Image_SPEVNT_TIBET_UNITE_CHINA_ZHANG_GUOHUA"
+			spriteType = "GFX_SPEVNT_TIBET_UNITE_CHINA_ZHANG_GUOHUA_win"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name = "Super_Event_Image_SPEVNT_TIBET_UNITE_CHINA_YUEXE"
+			spriteType = "GFX_SPEVNT_TIBET_UNITE_CHINA_YUEXE"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name = "Super_Event_Image_SPEVNT_TIBET_UNITE_CHINA_JIGME"
+			spriteType = "GFX_SPEVNT_TIBET_UNITE_CHINA_JIGME"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name = "Super_Event_Image_SPEVNT_JAPAN_CW_Military_win"
+			spriteType = "GFX_SPEVNT_JAPAN_CW_Military_win"
+			position = { x = -150 y = -45 }
+		}	
+		
+		iconType = {
+			name = "Super_Event_Image_SPEVNT_TAIWAN_TPP_UNITE_CHINA"
+			spriteType = "GFX_SPEVNT_TAIWAN_TPP_UNITE_CHINA"
+			position = { x = -150 y = -45 }
+		}
+		
+		iconType = {
+			name = "Super_Event_Image_SPEVNT_TAIWAN_COMMIE_UNITE_CHINA"
+			spriteType = "GFX_SPEVNT_TAIWAN_COMMIE_UNITE_CHINA"
+			position = { x = -150 y = -45 }
+		}
+		iconType = {
+			name = "Super_Event_Image_TAIWAN_XIONGZHENG_UNITE_CHINA"
+			spriteType = "GFX_SPEVNT_TAIWAN_XIONGZHENG_UNITE_CHINA"
+			position = { x = -150 y = -45 }
+		}
+
+
+		instantTextBoxType = {
+			name = "KXX_Pax_Super_Event_Title_textbox"
+			position = { x = -50 y = -20 }
+			font = "hoi_36header"
+			borderSize = {x = 0 y = 0}
+			text = "[KXX_get_super_event_title]"
+			maxWidth = 700
+			maxHeight = 50
+			fixedsize = yes	
+			format = center
+		}
+		
+		instantTextBoxType = {
+			name = "KXX_Pax_Super_Event_Desc_textbox"
+			position = { x = -100 y = 60 }
+			font = "hoi4_typewriter22"
+			borderSize = {x = 0 y = 0}
+			text = "[KXX_get_superevent_desc]"
+			maxWidth = 320
+			maxHeight = 370
+			fixedsize = yes	
+			format = center
+		}
+		
+		instantTextBoxType = {
+			name = "KXX_Pax_Super_Event_Quote_Day_textbox"
+			position = { x = 235 y = 403 }
+			font = "hoi_36header"
+			borderSize = {x = 0 y = 0 }
+			text = KXX_SPEVNT_QUOTE_DAY
+			maxWidth = 500
+			maxHeight = 79
+			fixedsize = yes
+			format = center
+		}
+
+		instantTextBoxType = {
+			name = "KXX_Pax_Super_Event_Quote_textbox"
+			position = { x = 290 y = 440 }
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "[KXX_get_superevent_quote]"
+			maxWidth = 400
+			maxHeight = 80
+			fixedsize = yes	
+			format = center
+		}
+
+		buttonType = {
+            name = "KXX_Super_Event_Close"
+            position = { x = -110 y = 440 }
+            quadTextureSprite = "GFX_event_option_entry"
+			buttonText = "[KXX_get_superevent_remark]"
+			buttonFont = "hoi_24header"
+            clicksound = click_close
+        }
+	}
+}

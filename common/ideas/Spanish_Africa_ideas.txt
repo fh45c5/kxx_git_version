@@ -1,0 +1,320 @@
+### Kenia Ideas
+ideas = {
+
+	country = {
+	
+		SFA_divisionsintheadministration = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = -0.05
+				encryption_factor = -0.1
+			}
+			removal_cost = -1
+			picture = PER_untrained_officer
+		}
+		
+		SFA_colonial_fragmentation = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				mobilization_speed = -0.05
+				line_change_production_efficiency_factor = -0.1
+			}
+			removal_cost = -1
+			picture = SZC_internal_divisions
+		}
+		
+		SFA_labour_shortages = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_buildings_factor = -0.10
+				local_resources_factor = -0.05
+				mobilization_speed = -0.05
+			}
+			removal_cost = -1
+			picture = ZAM_punisment_camps_idea
+		}
+		
+		SFA_economicreforms1 = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.05
+				production_speed_buildings_factor = 0.05
+				stability_factor  = -0.05
+			}
+			removal_cost = -1
+			picture = KIV_equal_market_idea
+		}
+		
+		SFA_economicreforms_woermann = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				mobilization_speed = 0.1 
+				production_speed_buildings_factor = 0.05
+			}
+			removal_cost = -1
+			picture = KIV_equal_market_idea
+		}		
+		
+		SFA_economicreforms_ourown = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.05
+				production_speed_buildings_factor = 0.05
+				consumer_goods_factor = 0.02
+				line_change_production_efficiency_factor = 0.15			
+			}
+			removal_cost = -1
+			picture = KIV_equal_market_idea
+		}	
+		
+		SFA_economicreforms_3 = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+			 	local_building_slots_factor = 0.2
+				political_power_gain = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+			removal_cost = -1
+			picture = KIV_equal_market_idea
+		}
+		
+		SFA_labouragreed = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.05
+				local_resources_factor = 0.1
+			}
+			removal_cost = -1
+			picture = PAL_Shortage_of_Goods
+		}			
+		SFA_economicreforms_4 = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.1
+				industrial_capacity_factory = 0.05
+			 	local_building_slots_factor = 0.2
+				political_power_gain = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+			removal_cost = -1
+			picture = KIV_equal_market_idea
+		}	
+
+		SFA_angrymoors = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = -0.2
+			}
+			removal_cost = -1
+			picture = PER_religous_discontent
+		}
+		
+		SFA_sugarlump = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.15
+			}
+			removal_cost = -1
+			picture = raj_marginalized_muslim_community_happy
+		}
+		
+		SFA_harsh = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				local_building_slots_factor = 0.2
+				stability_factor = -0.15
+				war_support_factor = -0.05
+			}
+			removal_cost = -1
+			picture = FRA_scw_intervention_nationalists_focus
+		}
+		
+		SFA_integratedprotectorate_sugar = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_core_defence_factor = 0.05
+				stability_factor = 0.05
+			}
+			removal_cost = -1
+			picture = raj_marginalized_muslim_community_happy
+		}
+		
+		SFA_integratedprotectorate_harsh = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				
+				local_building_slots_factor = 0.2
+				war_support_factor = -0.05
+			}
+			removal_cost = -1
+			picture = FRA_scw_intervention_nationalists_focus
+		}
+		
+		SFA_protectorateentrenched = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.08
+			}
+			removal_cost = -1
+			picture = generic_constitutional_guarantees
+		}
+
+		SFA_patronato = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.05
+				recruitable_population = 0.01
+			}
+			removal_cost = -1
+			picture = generic_army_war_college
+		}
+
+		SFA_backedfernandino = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_factory = 0.05
+				research_speed_factor = 0.03
+			}
+			removal_cost = -1
+			picture = RUS_planning_school
+		}	
+
+		SFA_backedbubi = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = 0.1
+				mobilization_speed = 0.1
+			}
+			removal_cost = -1
+			picture = generic_crown
+		}
+
+		SFA_militaryresearch = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				research_speed_factor = 0.2
+			}
+			removal_cost = -1
+			picture = generic_research_increase
+		}	
+		
+		SFA_africaarmy = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				heat_attrition_factor = -0.15
+				supply_consumption_factor = -0.01
+				training_time_army_factor = 0.1
+			}
+			removal_cost = -1
+			picture = SIA_rearmement
+		}	
+
+		SFA_africaarmy2 = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_morale_factor = 0.1
+				heat_attrition_factor = -0.15
+				supply_consumption_factor = -0.01
+			}
+			removal_cost = -1
+			picture = SIA_rearmement
+		}		
+
+		SFA_guineaarmy = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				heat_attrition_factor = -0.15
+				supply_consumption_factor = -0.01
+				training_time_army_factor = 0.1
+			}
+			removal_cost = -1
+			picture = SAF_native_service
+		}	
+
+		SFA_guineaarmy2 = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				heat_attrition_factor = -0.15
+				supply_consumption_factor = -0.01
+				training_time_army_factor = 0.1
+			}
+			removal_cost = -1
+			picture = SAF_native_service
+		}	
+
+		SFA_berberregulares = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_speed_factor = 0.05
+				cavalry_attack_factor = 0.05
+				cavalry_defence_factor = 0.05
+			}
+			removal_cost = -1
+			picture = MON_scourge_of_the_steppes
+		}	
+
+		SFA_auxiliaries = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				dig_in_speed_factor = 0.1
+				land_night_attack = 0.1
+			}
+			removal_cost = -1
+			picture = LIB_whiter_pale
+		}	
+		
+	}
+}

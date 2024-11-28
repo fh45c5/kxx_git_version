@@ -1,0 +1,40 @@
+ideas = {
+	country = {
+        #沉默军团
+        MVD_Silent_Legion = {
+            allowed = {
+                original_tag = MVD
+            }
+            removal_cost = -1
+            picture = GFX_idea_MVD_Silent_Legion
+            modifier = {
+                army_attack_factor = 0.5
+                army_defence_factor = 0.5
+                army_speed_factor = 0.15
+                experience_loss_factor = 0.15
+                conscription = 0.04
+                attrition = -0.2
+                planning_speed = -0.1
+                max_planning = 0.25
+                compliance_growth = 0.5
+                resistance_decay = -0.5
+                supply_consumption_factor = -1
+                ai_focus_aggressive_factor = 0.5
+            }
+        }
+        #大时钟机关
+        MVD_Big_clock_mechanism = {
+            allowed = {
+                original_tag = MVD
+            }
+            removal_cost = -1
+            picture = GFX_idea_MVD_Big_clock_mechanism
+            modifier = {
+                political_power_gain = 0.25
+                gdp_growth_modifier = 0.1
+                consumer_goods_factor = -0.5
+                misc_income_percent_of_GDP_modifier = 0.5
+            }
+        }
+    }
+}

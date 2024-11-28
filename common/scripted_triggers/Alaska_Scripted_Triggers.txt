@@ -1,0 +1,12 @@
+has_AIF_government = {
+  OR = {
+    has_country_leader = {
+      name = "托马斯·迪克逊"  # Thomas Dixon
+      ruling_only = yes
+    }
+    has_country_leader = {
+      name = "埃尔伍德·唐纳"  # Elwood Towner
+      ruling_only = yes
+    }
+  }
+}

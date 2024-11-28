@@ -1,0 +1,53 @@
+﻿l_simp_chinese:
+#主要事件
+ aisa_bank.1.t:0"上合组织的邀请"
+ aisa_bank.1.d:0"中国邀请我们加入上合组织计划，如果我们加入，我们会获得基础设施和铁路项目的建设援助"
+ aisa_bank.1.a:0"我们同意"
+ aisa_bank.1.b:0"我们拒绝"
+ aisa_bank.2.t:0"[From.GetNameDef]同意加入"
+ aisa_bank.2.d:0"[From.GetNameDef]商务部表示，同意加入我方提出的上合组织计划，我们获得了当地的矿产收益。"
+ aisa_bank.2.a:0"好极了"
+ aisa_bank.3.t:0"[From.GetNameDef]拒绝加入"
+ aisa_bank.3.d:0"[From.GetNameDef]商务部表示，拒绝加入我方提出的上合组织计划。"
+ aisa_bank.3.a:0"太遗憾了"
+ aisa_bank.4.t:0"在[From.GetNameDef]的投资终止"
+ aisa_bank.4.d:0"因为当地的一些政治变动，[From.GetNameDef]商务部终止了我们在当地的上合组织项目合作，我方的支援已撤离。"
+ aisa_bank.4.a:0"小挫折"
+ aisa_bank.5.t:0"亚洲革命领袖发起经济合作"
+ aisa_bank.5.d:0"中华民国国民革命军获得了二次北伐的胜利，他们现在申请加入我们的法伦施泰尔国际，一同建立社会主义的新经济纽带。"
+ aisa_bank.5.a:0"来吧，朋友"
+ aisa_bank.6.t:0"法国同意我们加入法伦施泰尔国际"
+ aisa_bank.6.d:0"法国同意了我们商业部的请求，现在我们被允许参与法兰西公社组建的法伦施泰尔国际经济组织"
+ aisa_bank.6.a:0"世界革命万岁"
+ aisa_bank.7.t:0"上合组织破产"
+ aisa_bank.7.d:0"随着中华民国的战败，他们发起的新丝绸之路计划也随之破产，上合组织对我们的投资终止了。"
+ aisa_bank.7.a:0"旧时代又回来了"
+ 
+ CHI_form_build_aisa_development_bank:0"成立经济势力圈§Y上海合作组织§!，并解锁决议邀请盟国参与。"
+ 
+ asia_leadership_dynamic_modifier:0"上合组织的收益"
+ 
+ CHI_asia_development_bank:0"上海合作组织"
+ 
+ KR_asia_development_bank_tooltip:0"[KR_asia_development_bank_Effectdesc]"
+ 
+ KR_CHI_asia_development_bank_member:0"上合组织的项目合作"
+ KR_CHI_asia_development_bank_member_desc:0"上合组织全名：上海合作组织（Shanghai Cooperation Organization），是一个旨在加强工业国与资源国互通基建与矿产资源贸易的组织，发起国派出工程建设援助技术和人才，成员国付出人员和矿产，目前该国家正在与发起国进行工程项目的合作。"
+ 
+ KR_asia_development_bank_tooltip_leader:0"上海合作组织领导国\n§g----------------§!\n§g每个成员国都会为领导国分别提供8个单位的§!§L石油§!§g、§!§L橡胶§!§g、§!§L钢铁§!§g、§!§L铝矿石§!§g、§!§L铬矿石§!§g、§!§L锰矿石§g。§!"
+ KR_asia_development_bank_tooltip_member:0"上海合作组织成员国"
+
+#主要决议
+ CHI_kuomintang_unite_asia_category:0 "亚洲友好互助联盟"
+ CHI_kuomintang_unite_asia:0 "促使[FROM.GetNameWithFlag]加盟"
+ CHI_kuomintang_unite_asia_INS:0 "促使[FROM.GetNameWithFlag]加盟"
+ CHI_kuomintang_unite_asia_PHI:0 "促使[FROM.GetNameWithFlag]加盟"
+ CHI_kuomintang_unite_asia_BHC:0 "促使[BHC.GetNameWithFlag]加盟"
+
+ CHI_kuomintang_invite_asia_bank_member_category:0 "上海合作组织事务"
+ CHI_kuomintang_invite_asia_bank_member:0 "投资§H[From.GetNameWithFlag]§!的建设"
+ CHI_member_quit_asia_bank:0"终止上合组织合同"
+
+ CHI_liberate_asia_category:0 "解放全亚洲"
+ CHI_liberate_asia:0 "[From.GetFlag]解放[From.GetNameDef]的人民"
+ CHI_liberate_asia_PHI:0 "[PHI.GetFlag]解放[PHI.GetNameDef]的人民"

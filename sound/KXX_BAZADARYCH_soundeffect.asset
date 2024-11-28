@@ -1,0 +1,580 @@
+category = {
+	name = "Superevent Audios"
+	soundeffects = {
+	
+		###KXX
+		super_eurouni_thirart
+		ger_civl_sound
+	    superev_greater_germanic_state_goebbels
+	    superev_endsieg_goebbels
+		
+		###KX
+		superev_anarchist
+		superev_romania
+		
+		###民族与革命
+		super_spring_no_longer_greets_us
+		super_hey_hoo_hey_ha
+		super_hej_stepamy
+		superev_kalina_malina
+		super_Unsere_Panzerdivision
+		super_Heckerlied
+		super_A_las_Barricadas
+		
+		###红龙
+		superev_japan_syndie_win_cw
+		superev_japan_army_win_cw
+		superev_unifed_liu_shaoqi_hunan_china
+		superev_unifed_rkmt_hunan_china
+		superev_unifed_tang_shengzhi_hunan_china
+		superev_unifed_tang_xiangming_hunan_china
+		superev_unifed_ycp_hunan_china
+		superev_unifed_commie_taiwan_china
+		superev_unifed_jigme_china
+		superev_unifed_yexe_china
+		superev_unifed_guohua_china
+		superev_japan_cw
+		superev_unifed_xiongzheng_taiwan_china
+		superev_unifed_zhao_hengti_hunan_china
+		superev_unifed_lin_biao_fujian_china
+		superev_unifed_mao_zedong_hunan_china
+		superev_unifed_lkmt_hunan_china
+		superev_unifed_tpp_taiwan_china
+		superev_unifed_dem_maoist_shanghai_china
+		superev_unifed_llw_shanghai_china
+		superev_unifed_qu_qiubai_shanghai_china
+		superev_unifed_creation_shanghai_china
+	}
+}
+
+########### AUDIO ASSETS
+
+###KXX
+sound = {
+	name = "super_eurouni_thirart"
+	file = "menu/super_eurouni_thirart.wav"
+	volume = 1
+	always_load = yes
+}
+
+sound = {
+	name = "ger_civl_sound"
+	file = "menu/ger_civl.wav"
+	volume = 1
+	always_load = yes
+}
+sound = {
+	name = "superev_greater_germanic_state_goebbels"
+	file = "menu/superev_greater_germanic_state_goebbels.wav"
+	volume = 1
+	always_load = yes
+}
+sound = {
+	name = "superev_endsieg_goebbels"
+	file = "menu/superev_endsieg_goebbels.wav"
+	volume = 1
+	always_load = yes
+}
+
+###KX
+sound = {
+	name = "super_anarchist"
+	file = "menu/anarchist.wav"
+	volume = 1
+	always_load = yes
+}
+sound = {
+	name = "super_romania"
+	file = "menu/romania.wav"
+	volume = 1
+	always_load = yes
+}
+
+###民族与革命
+sound = {
+	name = "super_spring_no_longer_greets_us"
+	file = "menu/super_spring_no_longer_greets_us.wav"
+	volume = 1
+	always_load = yes
+}
+
+sound = {
+	name = "super_hey_hoo_hey_ha"
+	file = "menu/super_hey_hoo_hey_ha.wav"
+	volume = 1
+	always_load = yes
+}
+
+sound = {
+	name = "super_hej_stepamy"
+	file = "menu/super_hej_stepamy.wav"
+	volume = 1
+	always_load = yes
+}
+
+sound = {
+	name = "super_Heckerlied"
+	file = "menu/super_Heckerlied.wav"
+	volume = 1
+	always_load = yes
+}
+
+sound = {
+	name = "super_A_las_Barricadas"
+	file = "menu/super_A_las_Barricadas.wav"
+	volume = 1
+	always_load = yes
+}
+
+sound = {
+	name = "super_Unsere_Panzerdivision"
+	file = "menu/super_Unsere_Panzerdivision.wav"
+	volume = 1
+	always_load = yes
+}
+
+sound = {
+	name = "super_kalina_malina"
+	file = "menu/super_kalina_malina.wav"
+	volume = 1
+	always_load = yes
+}
+
+
+###红龙
+sound = {
+	name = "superev_japan_cw"
+	file = "menu/lets_do_our_best.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_japan_syndie_win_cw"
+	file = "menu/japan_may_day_march.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_japan_army_win_cw"
+	file = "menu/japan_imperial_march.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_unifed_guohua_china"
+	file = "menu/serfs_arisen_sing_in_praise.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_unifed_yexe_china"
+	file = "menu/ode_to_mount_erland.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_unifed_jigme_china"
+	file = "menu/our_life_is_better_off.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_unifed_xiongzheng_taiwan_china"
+	file = "menu/song_of_the_seven_sons_taiwan.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_unifed_tpp_taiwan_china"
+	file = "menu/our_work_off_song.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_unifed_commie_taiwan_china"
+	file = "menu/labour_war_hymn.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_unifed_ycp_hunan_china"
+	file = "menu/ycp_anthem.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_unifed_zhao_hengti_hunan_china"
+	file = "menu/zhao_hengti_super_event.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_unifed_tang_xiangming_hunan_china"
+	file = "menu/xiangming_superevent.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_unifed_tang_shengzhi_hunan_china"
+	file = "menu/shengzhi_unite_china.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_unifed_mao_zedong_hunan_china"
+	file = "menu/east_is_red.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_unifed_rkmt_hunan_china"
+	file = "menu/rkmt_unify_china.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_unifed_lkmt_hunan_china"
+	file = "menu/lkmt_unite_china.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_unifed_liu_shaoqi_hunan_china"
+	file = "menu/liu_shaoqi_unite_china.wav"
+	volume = 0.8
+	always_load = yes
+}
+sound = {
+	name = "superev_unifed_lin_biao_fujian_china"
+	file = "menu/lin_biao_order_song.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+sound = {
+	name = "superev_unifed_dem_maoist_shanghai_china"
+	file = "menu/red_guard_song_unite.wav"
+	volume = 0.8
+	always_load = yes
+}
+sound = {
+	name = "superev_unifed_llw_shanghai_china"
+	file = "menu/may_fourth_llw.wav"
+	volume = 0.8
+	always_load = yes
+}
+sound = {
+	name = "superev_unifed_qu_qiubai_shanghai_china"
+	file = "menu/internationale_chinese.wav"
+	volume = 0.8
+	always_load = yes
+}
+sound = {
+	name = "superev_unifed_creation_shanghai_china"
+	file = "menu/wandering_songstress.wav"
+	volume = 0.8
+	always_load = yes
+}
+
+
+########## SOUND EFFECTS
+
+###KXX
+soundeffect = {
+	name = "super_eurouni_thirart"
+	sounds = {
+		sound = "super_eurouni_thirart"
+	}
+	volume = 0.65
+}
+soundeffect = {
+	name = ger_civl_sound
+	volume = 0.8
+	sounds = {
+		sound = ger_civl_sound
+	} 
+}
+soundeffect = {
+	name = superev_greater_germanic_state_goebbels
+	volume = 0.8
+	sounds = {
+		sound = superev_greater_germanic_state_goebbels
+	} 
+}
+soundeffect = {
+	name = superev_endsieg_goebbels
+	volume = 0.8
+	sounds = {
+		sound = superev_endsieg_goebbels
+	} 
+}
+
+###KX
+soundeffect = {
+	name = "superev_anarchist"
+	sounds = {
+		sound = "super_anarchist"
+	}
+	volume = 0.65
+}
+soundeffect = {
+	name = "superev_romania"
+	sounds = {
+		sound = "super_romania"
+	}
+	volume = 0.65
+}
+
+###民族与革命
+soundeffect =
+{
+	name = "super_spring_no_longer_greets_us"
+	sounds = {
+		sound = "super_spring_no_longer_greets_us"
+	}
+	volume = 0.65
+}
+
+soundeffect =
+{
+	name = "super_hey_hoo_hey_ha"
+	sounds = {
+		sound = "super_hey_hoo_hey_ha"
+	}
+	volume = 0.65
+}
+
+soundeffect =
+{
+	name = "super_hej_stepamy"
+	sounds = {
+		sound = "super_hej_stepamy"
+	}
+	volume = 0.65
+}
+
+soundeffect =
+{
+	name = "super_Heckerlied"
+	sounds = {
+		sound = "super_Heckerlied"
+	}
+	volume = 0.65
+}
+
+soundeffect =
+{
+	name = "super_A_las_Barricadas"
+	sounds = {
+		sound = "super_A_las_Barricadas"
+	}
+	volume = 0.65
+}
+
+soundeffect =
+{
+	name = "super_Unsere_Panzerdivision"
+	sounds = {
+		sound = "super_Unsere_Panzerdivision"
+	}
+	volume = 0.65
+}
+
+soundeffect =
+{
+	name = "superev_kalina_malina"
+	sounds = {
+		sound = "super_kalina_malina"
+	}
+	volume = 0.65
+}
+
+
+
+###红龙
+soundeffect = {
+	name = "superev_japan_cw"
+	sounds = {
+		sound = "superev_japan_cw"
+	}
+	volume = 0.8
+}
+soundeffect = {
+	name = "superev_japan_syndie_win_cw"
+	sounds = {
+		sound = "superev_japan_syndie_win_cw"
+	}
+	volume = 0.8
+}
+
+soundeffect = {
+	name = "superev_japan_army_win_cw"
+	sounds = {
+		sound = "superev_japan_army_win_cw"
+	}
+	volume = 0.8
+}
+
+soundeffect = {
+	name = "superev_unifed_guohua_china"
+	sounds = {
+		sound = "superev_unifed_guohua_china"
+	}
+	volume = 0.8
+}
+
+soundeffect = {
+	name = "superev_unifed_yexe_china"
+	sounds = {
+		sound = "superev_unifed_yexe_china"
+	}
+	volume = 0.8
+}
+
+
+soundeffect = {
+	name = "superev_unifed_jigme_china"
+	sounds = {
+		sound = "superev_unifed_jigme_china"
+	}
+	volume = 0.8
+}
+
+soundeffect = {
+	name = "superev_unifed_xiongzheng_taiwan_china"
+	sounds = {
+		sound = "superev_unifed_xiongzheng_taiwan_china"
+	}
+	volume = 0.8
+}
+
+soundeffect = {
+	name = "superev_unifed_tpp_taiwan_china"
+	sounds = {
+		sound = "superev_unifed_tpp_taiwan_china"
+	}
+	volume = 0.8
+}
+
+soundeffect = {
+	name = "superev_unifed_commie_taiwan_china"
+	sounds = {
+		sound = "superev_unifed_commie_taiwan_china"
+	}
+	volume = 0.8
+}
+soundeffect = {
+	name = "superev_unifed_ycp_hunan_china"
+	sounds = {
+		sound = "superev_unifed_ycp_hunan_china"
+	}
+	volume = 0.8
+}
+
+soundeffect = {
+	name = "superev_unifed_zhao_hengti_hunan_china"
+	sounds = {
+		sound = "superev_unifed_zhao_hengti_hunan_china"
+	}
+	volume = 0.8
+}
+
+soundeffect = {
+	name = "superev_unifed_tang_xiangming_hunan_china"
+	sounds = {
+		sound = "superev_unifed_tang_xiangming_hunan_china"
+	}
+	volume = 0.8
+}
+
+
+soundeffect = {
+	name = "superev_unifed_tang_shengzhi_hunan_china"
+	sounds = {
+		sound = "superev_unifed_tang_shengzhi_hunan_china"
+	}
+	volume = 0.8
+}
+
+soundeffect = {
+	name = "superev_unifed_mao_zedong_hunan_china"
+	sounds = {
+		sound = "superev_unifed_mao_zedong_hunan_china"
+	}
+	volume = 0.8
+}
+
+soundeffect = {
+	name = "superev_unifed_rkmt_hunan_china"
+	sounds = {
+		sound = "superev_unifed_rkmt_hunan_china"
+	}
+	volume = 0.8
+}
+
+soundeffect = {
+	name = "superev_unifed_lkmt_hunan_china"
+	sounds = {
+		sound = "superev_unifed_lkmt_hunan_china"
+	}
+	volume = 0.8
+}
+
+soundeffect = {
+	name = "superev_unifed_liu_shaoqi_hunan_china"
+	sounds = {
+		sound = "superev_unifed_liu_shaoqi_hunan_china"
+	}
+	volume = 0.8
+}
+soundeffect = {
+	name = "superev_unifed_lin_biao_fujian_china"
+	sounds = {
+		sound = "superev_unifed_lin_biao_fujian_china"
+	}
+	volume = 0.8
+}
+soundeffect = {
+	name = "superev_unifed_dem_maoist_shanghai_china"
+	sounds = {
+		sound = "superev_unifed_dem_maoist_shanghai_china"
+	}
+	volume = 0.8
+}
+soundeffect = {
+	name = "superev_unifed_llw_shanghai_china"
+	sounds = {
+		sound = "superev_unifed_llw_shanghai_china"
+	}
+	volume = 0.8
+}
+soundeffect = {
+	name = "superev_unifed_qu_qiubai_shanghai_china"
+	sounds = {
+		sound = "superev_unifed_qu_qiubai_shanghai_china"
+	}
+	volume = 0.8
+}
+soundeffect = {
+	name = "superev_unifed_creation_shanghai_china"
+	sounds = {
+		sound = "superev_unifed_creation_shanghai_china"
+	}
+	volume = 0.8
+}

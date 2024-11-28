@@ -1,0 +1,644 @@
+ideas = {
+
+	###############################
+	## STARTING NATIONAL SPIRITS ##
+	###############################
+
+	country = {
+		CHI_MMIC_2_idea = {
+			name = CHI_MMIC_theorist
+			modifier = {
+				experience_gain_army = 0.05
+				experience_gain_air = 0.05
+				experience_gain_navy = 0.05
+				land_doctrine_cost_factor = -0.05
+				air_doctrine_cost_factor = -0.05
+				naval_doctrine_cost_factor = -0.05
+
+			}
+		}
+
+		CHI_economic_blockade_event = {
+			available = {
+				country_exists = LEC
+			}
+			modifier = {
+				economy_cost_factor = 0.25
+				consumer_goods_factor = 0.60
+				min_export = -0.75
+			}
+		}
+
+		KR_CHI_popular_support_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_CHI_popular_support_1" }
+			picture = chi_warlord_integration
+			allowed = { always = no }
+
+			modifier = {
+				stability_factor = -0.25
+				war_support_factor = -0.25
+				conscription_factor = -0.15
+				resistance_damage_to_garrison = 0.10
+			}
+		}
+
+		KR_CHI_popular_support_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_CHI_popular_support_2" }
+			picture = chi_warlord_integration2
+			allowed = { always = no }
+
+			modifier = {
+				stability_factor = -0.20
+				war_support_factor = -0.20
+				conscription_factor = -0.10
+				resistance_damage_to_garrison = 0.05
+			}
+		}
+
+		KR_CHI_popular_support_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_CHI_popular_support_3" }
+			picture = chi_warlord_integration3
+			allowed = { always = no }
+
+			modifier = {
+				stability_factor = -0.10
+				war_support_factor = -0.10
+				conscription_factor = -0.05
+			}
+		}
+
+		KR_CHI_popular_support_4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_CHI_popular_support_4" }
+			picture = chi_warlord_integration4
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				resistance_damage_to_garrison = -0.05
+			}
+		}
+
+		KR_CHI_popular_support_5 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_CHI_popular_support_5" }
+			picture = chi_warlord_integration5
+			allowed = { always = no }
+
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				resistance_damage_to_garrison = 0.10
+			}
+		}
+
+		###### STARTING MILITARY IDEA
+
+		KR_CHI_start_army = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_CHI_start_army" }
+			on_remove = { log = "[GetDateText]: [Root.GetName]: remove idea KR_CHI_start_army" }
+			picture = chi_forced_conscription
+			allowed = { always = no }
+
+			modifier = {
+				army_org_factor = 0.05
+				breakthrough_factor = 0.10
+				army_attack_factor = 0.15
+				supply_consumption_factor = -0.15
+				no_supply_grace = 48
+				unit_limit_bonus = 24
+				ai_focus_aggressive_factor = 0.5
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					maximum_speed = 0.1
+					reliability = 0.1
+					instant = yes
+				}
+			}
+		}
+
+
+		CHI_centralised_command = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_centralised_command " }
+			name = CHI_centralised_command
+			picture = generic_officer
+			allowed = { always = no }
+			modifier = {
+				army_org_factor = 0.1
+				land_reinforce_rate = 0.05
+			}
+		}
+		CHI_revolutionary_spirit_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_revolutionary_spirit_idea " }
+			name = CHI_revolutionary_spirit_idea
+			picture = generic_syndicalist_manpower
+			allowed = { always = no }
+			modifier = {
+				army_morale_factor = 0.05
+				command_abilities_cost_factor = -0.15
+			}
+		}
+		CHI_southern_war_plan_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_southern_war_plan_idea" }
+			name = CHI_southern_war_plan_idea
+			picture = RUS_planning_school
+			allowed = { always = no }
+			targeted_modifier = {
+				tag = GXC
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = HNN
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = YUN
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = SZC
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+		}
+		CHI_northern_war_plan_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_northern_war_plan_idea " }
+			name = CHI_northern_war_plan_idea
+			picture = RUS_planning_school
+			allowed = { always = no }
+			targeted_modifier = {
+				tag = QIE
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = SHX
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = SQI
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+
+		}
+
+		CHI_air_support = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_air_support" }
+			name = CHI_air_support
+			picture = generic_aircraft_support
+			allowed = { always = no }
+			modifier = {
+				air_close_air_support_attack_factor = 0.05
+				air_close_air_support_defence_factor = 0.05
+			}
+		}
+		KR_focus_CHI_modern_art_of_war1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_CHI_modern_art_of_war1" }
+			name = KR_focus_CHI_modern_art_of_war
+			picture = ast_volunteer_defence_corps
+			allowed = { always = no }
+			modifier = {
+				land_doctrine_cost_factor = -0.05
+			}
+		}
+
+		KR_focus_CHI_modern_art_of_war2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_CHI_modern_art_of_war2" }
+			name = KR_focus_CHI_modern_art_of_war
+			picture = ast_volunteer_defence_corps
+			allowed = { always = no }
+			modifier = {
+				land_doctrine_cost_factor = -0.1
+			}
+		}
+
+		KR_focus_CHI_modern_art_of_war3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_CHI_modern_art_of_war3" }
+			name = KR_focus_CHI_modern_art_of_war
+			picture = ast_volunteer_defence_corps
+			allowed = { always = no }
+			modifier = {
+				land_doctrine_cost_factor = -0.15
+				mechanized_attack_factor = 0.1
+				mechanized_defence_factor = 0.1
+				army_armor_attack_factor = 0.1
+				army_armor_defence_factor = 0.1
+				breakthrough_factor = 0.05
+				army_artillery_attack_factor = 0.1
+			}
+		}
+
+		KR_focus_CHI_mass_production1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_CHI_mass_production1" }
+
+			name = KR_focus_CHI_mass_production
+			picture = UK_economy_syn_idea
+			allowed = { always = no }
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+
+		KR_focus_CHI_mass_production2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_CHI_mass_production2" }
+
+			name = KR_focus_CHI_mass_production
+			picture = UK_economy_syn_idea
+			allowed = { always = no }
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+
+		KR_focus_CHI_mass_production3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_CHI_mass_production3" }
+
+			name = KR_focus_CHI_mass_production
+			picture = UK_economy_syn_idea
+			allowed = { always = no }
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+		CHI_marine_corps_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_marine_corps_idea" }
+
+			name = CHI_marine_corps_idea
+			picture = eng_preparing_the_second_front
+			allowed = { always = no }
+
+			modifier = {
+				amphibious_invasion = 0.1
+				naval_invasion_prep_speed = 0.1
+			}
+		}
+
+		KR_focus_CHI_land_rent1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_CHI_land_rent1" }
+
+			name = KR_focus_CHI_land_rent1
+			picture = state_economy
+			allowed = { always = no }
+
+			modifier = {
+				stability_factor = -0.15
+				consumer_goods_factor = -0.30
+			}
+		}
+
+		KR_focus_CHI_land_rent2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_CHI_land_rent2" }
+
+			name = KR_focus_CHI_land_rent2
+			picture = state_economy
+			allowed = { always = no }
+
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.1
+			}
+		}
+
+		KR_focus_CHI_land_tax = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_CHI_land_tax" }
+
+			name = KR_focus_CHI_land_tax
+			picture = chi_hyper_inflation
+			allowed = { always = no }
+
+			modifier = {
+				consumer_goods_factor = -0.10
+			}
+		}
+
+		KR_focus_CHI_opium1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_CHI_opium1" }
+
+			name = KR_focus_CHI_opium1
+			picture = SZC_opium_spread
+			allowed = { always = no }
+
+			modifier = {
+				consumer_goods_factor = 0.10
+				political_power_gain = 0.1
+			}
+		}
+
+		KR_focus_CHI_opium2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_CHI_opium2" }
+
+			name = KR_focus_CHI_opium2
+			picture = prc_permit_opium_trade
+			allowed = { always = no }
+
+			modifier = {
+				consumer_goods_factor = -0.05
+				political_power_gain = -0.1
+				production_speed_buildings_factor = -0.05
+			}
+		}
+
+		KR_focus_new_culture1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_new_culture1" }
+
+			name = KR_focus_new_culture1
+			picture = CHI_high_popular_support
+			allowed = { always = no }
+
+			modifier = {
+				radical_socialist_drift = 0.01
+			}
+		}
+
+		KR_focus_new_culture3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_new_culture3" }
+
+			name = KR_focus_new_culture3
+			picture = CHI_high_popular_support
+			allowed = { always = no }
+
+			modifier = {
+				totalist_drift = 0.01
+			}
+		}
+
+		KR_focus_local_democracy1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_local_democracy1" }
+
+			name = KR_focus_local_democracy1
+			picture = FRA_communard_spirit
+			allowed = { always = no }
+
+			modifier = {
+				army_core_defence_factor = 0.1
+			}
+		}
+
+		KR_focus_local_democracy2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_local_democracy2" }
+
+			name = KR_focus_local_democracy2
+			picture = FRA_communard_spirit
+			allowed = { always = no }
+
+			modifier = {
+				war_support_factor = 0.05
+				army_core_attack_factor = 0.15
+				army_core_defence_factor = 0.1
+			}
+		}
+
+		KR_focus_tutelage1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_tutelage1" }
+
+			name = KR_focus_tutelage1
+			picture = YUN_KMT_idea
+			allowed = { always = no }
+
+			modifier = {
+				political_power_gain = 0.1
+				command_power_gain = 0.10
+			}
+		}
+
+		KR_focus_tutelage2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_tutelage2" }
+
+			name = KR_focus_tutelage2
+			picture = YUN_KMT_idea
+			allowed = { always = no }
+
+			modifier = {
+				political_power_gain = 0.1
+				command_power_gain = 0.10
+				army_core_defence_factor = 0.1
+				production_factory_start_efficiency_factor = 0.1
+				production_speed_buildings_factor = -0.1
+			}
+		}
+
+		KR_focus_tutelage3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_focus_tutelage3" }
+
+			name = KR_focus_tutelage3
+			picture = YUN_KMT_idea
+			allowed = { always = no }
+
+			modifier = {
+				political_power_gain = 0.2
+				command_power_gain = 0.1
+				army_core_defence_factor = 0.1
+				conscription_factor = 0.02
+				production_factory_start_efficiency_factor = 0.15
+				production_speed_buildings_factor = -0.05
+			}
+		}
+
+		CHI_purged_rivals = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_purged_rivals " }
+
+			name = CHI_purged_rivals
+			picture = generic_oppression
+			allowed = { always = no }
+
+			modifier = {
+				army_org_factor = -0.2
+			}
+		}
+
+		CHI_new_society = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_new_society " }
+
+			name = CHI_new_society
+			picture = generic_syndicalist_manpower
+			allowed = { always = no }
+
+			modifier = {
+				recruitable_population_factor = 0.02
+				army_morale_factor = 0.05
+			}
+		}
+		CHI_new_society2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_new_society " }
+
+			name = CHI_new_society2
+			picture = generic_syndicalist_manpower
+			allowed = { always = no }
+
+			modifier = {
+				conscription_factor = 0.02
+				army_morale_factor = 0.10
+				new_operative_slot_bonus = 1
+			}
+		}
+
+		CHI_revanchism = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_revanchism " }
+
+			name = CHI_revanchism
+			picture = generic_syndicalist_militia
+			allowed = { always = no }
+
+			modifier = {
+				army_morale_factor = 0.15
+				new_operative_slot_bonus = 1
+				recruitable_population_factor = 0.02
+				justify_war_goal_time = -0.25
+
+			}
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = GEA
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+		}
+		CHI_totalist_economy = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add ideaCHI_totalist_economy " }
+
+			name = CHI_totalist_economy
+			picture = generic_syndicalist_worker
+			allowed = { always = no }
+
+			modifier = {
+				production_factory_start_efficiency_factor = -0.1
+				industrial_capacity_factory = 0.15
+				consumer_goods_factor = -0.05
+			}
+
+		}
+		CHI_fortress_china = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_fortress_china " }
+
+			name = CHI_fortress_china
+			picture = generic_syndicalist_fort
+			allowed = { always = no }
+
+			modifier = {
+				research_speed_factor = -0.05
+				production_speed_buildings_factor = 0.15
+				production_speed_bunker_factor = 0.1
+				production_speed_coastal_bunker_factor = 0.1
+				dig_in_speed_factor = 0.1
+				trade_laws_cost_factor = 10
+			}
+
+		}
+
+		CHI_military_reorganisation = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_military_reorganisation " }
+			picture = generic_syndicalist_militia
+			allowed = { always = no }
+			modifier = {
+				army_org_factor = -0.1
+				army_attack_factor = -0.1
+				army_defence_factor = -0.1
+			}
+		}
+
+		CHI_chinese_expeditionary_force = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_chinese_expeditionary_force" }
+			picture = CHI_volunteer_army_pic
+			allowed = { always = no }
+			modifier = {
+				send_volunteer_size = 12
+			}
+		}
+		CHI_march_of_the_volunteers = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_march_of_the_volunteers " }
+			picture = big_entente_idea
+			allowed = { always = no }
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+		}
+
+
+		KR_CHI_event_other_KMT_support = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea KR_CHI_event_other_KMT_support" }
+			picture = chi_chinese_support
+			allowed = { always = no }
+
+			modifier = {
+				army_morale_factor = 0.10
+				army_org_factor = 0.05
+			}
+		}
+
+
+		CHI_weakened_war = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_weakened_war"}
+
+			picture = Recruitment_Crisis
+			removal_cost = -1
+
+			modifier = {
+				army_defence_factor = -0.1
+				army_org_factor = -0.1
+			}
+		}
+
+		CHI_weakened_war1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_weakened_war1"}
+
+			picture = Recruitment_Crisis
+			removal_cost = -1
+
+			modifier = {
+				army_defence_factor = -0.2
+				army_org_factor = -0.2
+			}
+		}
+
+		CHI_weakened_war2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_weakened_war2"}
+
+			picture = Recruitment_Crisis
+			removal_cost = -1
+
+			modifier = {
+				army_defence_factor = -0.5
+				army_org_factor = -0.5
+			}
+		}
+	}
+}

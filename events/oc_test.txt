@@ -1,0 +1,29 @@
+add_namespace = oc_test
+
+####################
+####  测试事件  ####
+###################
+
+country_event = {
+	id = oc_test.1
+    title = oc_test.1.t
+    desc = oc_test.1.d
+
+    is_triggered_only = yes
+    
+    option = {
+        name = oc_test.1.a
+        
+    }
+    option = {
+        name = oc_test.1.b
+        add_to_variable = {
+            CHI_radicalism_var = 75
+            CHI_CSL_influence_var = 50
+        }
+    }
+    option = {
+        name = oc_test.1.c
+        
+    }
+}

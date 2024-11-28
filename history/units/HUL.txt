@@ -1,0 +1,36 @@
+﻿### Templates
+### Territorial Army Infantry Division
+
+division_template = {
+	name = "Milice Ducale"
+	division_names_group = HUL_INF_02
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 1 y = 2 }
+		militia = { x = 2 y = 0 }
+		militia = { x = 2 y = 1 }
+		militia = { x = 2 y = 2 }
+	}
+	support = {
+		anti_air =  { x = 0 y = 0 }
+	}
+}
+division_template = {
+    name = "Armée Coloignel"
+    division_names_group = HUL_INF_04
+    regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+    }
+}

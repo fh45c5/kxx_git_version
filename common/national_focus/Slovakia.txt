@@ -1,0 +1,6456 @@
+focus_tree = {
+	id = slovakia_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = SVK
+		}
+		modifier = {
+			add = 0
+			tag = SVK
+			is_subject=yes
+		}
+	}
+	
+	default = no
+	
+	
+#####START######
+
+focus = {
+		id = SVK_pressburg_succ
+		icon = GFX_goal_SVK_Pressburg_uprising
+		cost = 1.00
+		x = 24
+		y = 1
+		available = {
+                  has_country_flag = SVK_pressburg_success
+		}
+		ai_will_do = {
+				factor = 100
+		}
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 100
+                        hidden_effect = {
+                        country_event = {
+				id = slovak.17
+				days = 125
+			  }
+                        country_event = {
+				id = slovak.37
+				days = 92
+			  }
+                        }
+		}
+	}
+
+#####ELECTIONS######
+
+focus = {
+		id = SVK_elections
+		icon = GFX_goal_SVK_Elections
+                relative_position_id = SVK_pressburg_succ
+		cost = 12
+		x = 0
+		y = 1
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_pressburg_succ
+		}
+                 
+                select_effect = {
+                        country_event = {
+				id = slovak.1
+				days = 7
+			  }
+                }
+      
+		completion_reward = {
+			add_political_power = 10
+                        custom_effect_tooltip = SVK_electoral_figureheads
+                        hidden_effect = {
+                        country_event = {
+				id = slovak.1
+				days = 7
+			  }
+                        }
+		}
+	}
+
+#####LEFT VICTORY######
+
+focus = {
+		id = SVK_left_victory
+		icon = GFX_goal_SVK_Left_victory
+                relative_position_id = SVK_pressburg_succ
+		cost = 1
+		x = -6
+		y = 2
+		available = {
+                  OR = {
+                   has_country_flag = SVK_Siroky_Victory
+                   has_country_flag = SVK_Husak_Victory
+                   has_country_flag = SVK_Smidke_Victory
+                 }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_elections
+		}
+
+		completion_reward = {
+			 add_stability = 0.1
+                         add_political_power = 20
+		}
+	}
+
+#####CENTRE VICTORY######
+
+focus = {
+		id = SVK_centre_victory
+		icon = GFX_goal_SVK_centre_victory
+                relative_position_id = SVK_pressburg_succ
+		cost = 1
+		x = 7
+		y = 2
+		available = {
+                OR = {
+                   has_country_flag = SVK_Emanuel_Victory
+                   has_country_flag = SVK_Srobar_Victory
+                   has_country_flag = SVK_Hodza_Victory
+                   has_country_flag = SVK_Otto_Victory
+                 }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_elections
+		}
+
+		completion_reward = {
+			add_stability = 0.1
+                        add_political_power = 20
+		}
+	}
+
+#####RIGHT VICTORY######
+
+focus = {
+		id = SVK_right_victory
+		icon = GFX_goal_SVK_right_victory
+                relative_position_id = SVK_pressburg_succ
+		cost = 1
+		x = 21
+		y = 2
+		available = {
+                OR = {
+                   has_country_flag = SVK_Stefanik_Victory_2
+                   has_country_flag = SVK_Mach_Victory
+                 }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_elections
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+                        add_political_power = 15
+                        add_war_support = 0.1
+		}
+	}
+
+#####TOTALISTS######
+
+focus = {
+		id = SVK_sirokys_kss
+		icon = GFX_goal_SVK_Sirokys_KSS
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = -13
+		y = 3
+		available = {
+                   has_country_flag = SVK_Siroky_Victory
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_left_victory
+		}
+
+		completion_reward = {
+			set_politics = {
+	                ruling_party = totalist
+                        elections_allowed = no
+                        last_election = "1935.12.17"
+                        election_frequency = 48
+                    }
+                add_popularity = {
+                   ideology = totalist
+                   popularity = 0.15
+                 }
+                add_stability = 0.15
+                add_political_power = 20
+                add_ideas = {
+                SVK_Viliam_Siroky_hog_npo
+                SVK_POI_Karol_Bacilek_npo
+                SVK_POI_Vasil_Bilak_npo
+                SVK_POI_Jozef_Lenart_npo
+                 SVK_POI_Ludovit_Pezlar_npo
+                }
+                hidden_effect = {
+                        country_event = {
+				id = slovak.20
+				days = 40
+			  }
+                          country_event = {
+				id = slovak.21
+				days = 128
+			  }
+                          country_event = {
+				id = slovak.22
+				days = 256
+			  }
+                        }
+			create_country_leader = {
+				name = "维利亚姆·希罗基"
+				picture = "gfx/leaders/SVK/SVK_Viliam_Siroky.png"
+				expire = "1965.1.1"
+				ideology = nazbol_subtype
+			}
+		}
+	}
+
+focus = {
+		id = SVK_destroy_socdem
+		icon = GFX_goal_SVK_destroy_soc_dems
+                relative_position_id = SVK_pressburg_succ
+		cost = 4.00
+		x = -14
+		y = 4
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_sirokys_kss
+		}
+
+		completion_reward = {
+		   add_popularity = {
+                   ideology = social_democrat
+                   popularity = -0.15
+                 }
+                 add_stability = -0.05
+                 add_political_power = -30
+		}
+	}
+
+focus = {
+		id = SVK_destroy_fakesoc
+		icon = GFX_goal_SVK_destroy_the_fake_socialist
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = -12
+		y = 4
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_sirokys_kss
+		}
+
+		completion_reward = {
+		add_popularity = {
+                   ideology = radical_socialist
+                   popularity = -0.15
+                 }
+                 add_popularity = {
+                   ideology = syndicalist
+                   popularity = -0.15
+                 }
+                 add_stability = -0.10
+                 add_political_power = -15
+		}
+	}
+
+focus = {
+		id = SVK_destroy_bourg
+		icon = GFX_goal_SVK_destroy_other_bourgeoise
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = -13
+		y = 5
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_sirokys_kss
+		}
+
+		completion_reward = {
+		add_popularity = {
+                   ideology = social_democrat
+                   popularity = -0.15
+                 }
+                 add_popularity = {
+                   ideology = social_liberal
+                   popularity = -0.15
+                 }
+                 add_popularity = {
+                   ideology = market_liberal
+                   popularity = -0.15
+                 }
+                 add_popularity = {
+                   ideology = social_conservative
+                   popularity = -0.15
+                 }
+                 add_popularity = {
+                   ideology = authoritarian_democrat
+                   popularity = -0.15
+                 }
+                 add_popularity = {
+                   ideology = paternal_autocrat
+                   popularity = -0.15
+                 }
+                 add_popularity = {
+                   ideology = national_populist
+                   popularity = -0.05
+                 }
+                 add_stability = -0.10
+                 add_political_power = -15
+		}
+	}
+
+
+focus = {
+		id = SVK_totalist_power
+		icon = GFX_goal_SVK_totalism_assumes_power
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = -13
+		y = 6
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_destroy_socdem
+		}
+                prerequisite = {
+                        focus = SVK_destroy_fakesoc
+		}
+                prerequisite = {
+                        focus = SVK_destroy_bourg
+		}
+
+		completion_reward = {
+			add_popularity = {
+                   ideology = totalist
+                   popularity = 0.25
+                 }
+                 add_stability = 0.25
+                 add_political_power = 50
+                 add_ideas = SVK_communist_hegemony
+		}
+	}
+
+focus = {
+		id = SVK_industrilization_tot
+		icon = GFX_goal_SVK_massive_industrilization
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = -15
+		y = 7
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_totalist_power
+		}
+
+		completion_reward = {
+			random_owned_state = {
+                        add_building_construction = {
+                        type = industrial_complex
+                        level = 1
+                        instant_build = yes
+                        }
+                        add_extra_state_shared_building_slots = 1
+                     }
+                     random_owned_state = {
+                        add_building_construction = {
+                        type = industrial_complex
+                        level = 1
+                        instant_build = yes
+                        }
+                        add_extra_state_shared_building_slots = 1
+                     }
+                     random_owned_state = {
+                        add_building_construction = {
+                        type = industrial_complex
+                        level = 1
+                        instant_build = yes
+                        }
+                        add_extra_state_shared_building_slots = 1
+                     }
+                     add_ideas = SVK_industrilization
+		}
+	}
+
+focus = {
+		id = SVK_nationalization_tot
+		icon = GFX_goal_SVK_nationalization
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = -13
+		y = 7
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_totalist_power
+		}
+
+		completion_reward = {
+                        add_stability = 0.05
+                        add_political_power = 25
+			random_owned_state = {
+                        add_building_construction = {
+                        type = industrial_complex
+                        level = 1
+                        instant_build = yes
+                        }
+                        add_extra_state_shared_building_slots = 1
+                     }
+                     random_owned_state = {
+                        add_building_construction = {
+                        type = industrial_complex
+                        level = 1
+                        instant_build = yes
+                        }
+                        add_extra_state_shared_building_slots = 1
+                     }
+                     add_ideas = SVK_nationalization
+		}
+	}
+
+
+focus = {
+		id = SVK_collectivization_tot
+		icon = GFX_goal_SVK_collectivization
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = -11
+		y = 7
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_totalist_power
+		}
+
+		completion_reward = {
+                random_owned_state = {
+                        add_building_construction = {
+                        type = industrial_complex
+                        level = 1
+                        instant_build = yes
+                        }
+                        add_extra_state_shared_building_slots = 1
+                     }
+                     random_owned_state = {
+                        add_building_construction = {
+                        type = industrial_complex
+                        level = 1
+                        instant_build = yes
+                        }
+                        add_extra_state_shared_building_slots = 1
+                     }
+			add_ideas = SVK_collectivization
+		}
+	}
+
+focus = {
+		id = SVK_stb
+		icon = GFX_goal_SVK_establish_stb
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = -13
+		y = 8
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_industrilization_tot
+		}
+                prerequisite = {
+			focus = SVK_nationalization_tot
+		}
+                prerequisite = {
+			focus = SVK_collectivization_tot
+		}
+
+		completion_reward = {
+			add_stability = -0.05
+                        add_political_power = 15
+                        add_ideas = SVK_stb_2
+                  random_owned_controlled_state = { 
+                        create_unit = {
+                        division = "division_template = \"Domobrana\" 
+                        start_experience_factor = 0.5 
+                        start_equipment_factor = 0.5"
+                        owner = SVK
+                      }
+                    }
+		}
+	}
+
+focus = {
+		id = SVK_school_reform
+		icon = GFX_goal_SVK_school_reform
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = -14
+		y = 9
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_stb
+		}
+
+		completion_reward = {
+			add_stability = 0.025
+                        add_political_power = 25
+                        add_ideas = SVK_communist_school
+		}
+	}
+
+focus = {
+		id = SVK_health
+		icon = GFX_goal_SVK_helt
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = -12
+		y = 9
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_stb
+		}
+
+		completion_reward = {
+                        add_manpower = 5000
+			add_ideas = SVK_health
+		}
+	}
+
+focus = {
+		id = SVK_we_are_villiam
+		icon = GFX_goal_SVK_we_are_viliam
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = -13
+		y = 11
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_school_reform
+		}
+
+                prerequisite = {
+			focus = SVK_health
+		}
+
+		completion_reward = {
+			add_stability = 0.35
+                        add_political_power = 100
+                        add_war_support = 0.35
+                        add_country_leader_trait = he_is_the_state
+		}
+	}
+
+focus = {
+		id = SVK_totalist_conquest
+		icon = GFX_goal_SVK_On_the_warpath
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = -6
+		y = 13
+		available = {
+        has_government = totalist
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+		completion_reward = {
+			add_war_support = 0.15
+                        army_experience = 25
+                        add_manpower = 5000
+                        add_ideas = SVK_red_war
+		}
+	}
+
+focus = {
+		id = SVK_slavic_totalism
+		icon = GFX_goal_SVK_Slavic_totalism
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = -6
+		y = 14
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_totalist_conquest
+		}
+
+		completion_reward = {
+			swap_ideas = {
+                        remove_idea = SVK_red_war
+                        add_idea = SVK_red_war_2
+                    }
+		}
+	}
+
+focus = {
+		id = SVK_totalist_panslavism
+		icon = GFX_goal_SVK_communist_panslavism
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = -7
+		y = 15
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_slavic_totalism
+		}
+                mutually_exclusive = {
+		focus = SVK_totalist_centreu
+	 }
+
+		completion_reward = {
+			add_war_support = 0.10
+                        army_experience = 15
+		}
+	}
+
+focus = {
+		id = SVK_take_bohemia
+		icon = GFX_goal_SVK_take_on_bohemia
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = -9
+		y = 16
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_totalist_panslavism
+		}
+
+
+		completion_reward = {
+                        custom_effect_tooltip = SVK_austria_risk
+                        1132 = { add_core_of = SVK }
+                        786 = { add_core_of = SVK }
+                        9 = { add_core_of = SVK }
+                        1129 = { add_core_of = SVK }
+                        1134 = { add_core_of = SVK }
+                        1138 = { add_core_of = SVK }
+                        69 = { add_core_of = SVK }
+                        1130 = { add_core_of = SVK }
+                        1133 = { add_core_of = SVK }
+                        1139 = { add_core_of = SVK }
+                      declare_war_on = {
+                      target = CZE
+                     type = annex_everything
+                  }
+		}
+	}
+
+
+focus = {
+		id = SVK_take_moravia
+		icon = GFX_goal_SVK_take_on_moravia
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = -7
+		y = 16
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_totalist_panslavism
+		}
+
+
+		completion_reward = {
+			75 = { add_core_of = SVK }
+                        71 = { add_core_of = SVK }
+                        74 = { add_core_of = SVK }
+                        1131 = { add_core_of = SVK }
+		}
+	}
+
+focus = {
+		id = SVK_take_poland
+		icon = GFX_goal_SVK_take_on_poland
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = -8
+		y = 17
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_take_bohemia
+		}
+                prerequisite = {
+			focus = SVK_take_moravia
+		}
+
+
+		completion_reward = {
+			90 = { add_core_of = SVK }
+                        87 = { add_core_of = SVK }
+                        10 = { add_core_of = SVK }
+                        98 = { add_core_of = SVK }
+                        1148 = { add_core_of = SVK }
+                        97 = { add_core_of = SVK }
+                        92 = { add_core_of = SVK }
+                        1088 = { add_core_of = SVK }
+                        86 = { add_core_of = SVK }
+                        776 = { add_core_of = SVK }
+                        777 = { add_core_of = SVK }
+                        5 = { add_core_of = SVK }
+                        188 = { add_core_of = SVK }
+                        66 = { add_core_of = SVK }
+                        67 = { add_core_of = SVK }
+                      declare_war_on = {
+                      target = POL
+                     type = annex_everything
+                  }
+		}
+	}
+
+focus = {
+		id = SVK_take_galicia
+		icon = GFX_goal_SVK_take_the_land_we_own
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = -9
+		y = 18
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_take_poland
+		}
+
+
+		completion_reward = {
+			1124 = { add_core_of = SVK }
+                        88 = { add_core_of = SVK }
+                        1125 = { add_core_of = SVK }
+                        1127 = { add_core_of = SVK }
+                        1126 = { add_core_of = SVK }
+                        91 = { add_core_of = SVK }
+                        89 = { add_core_of = SVK }
+                        1140 = { add_core_of = SVK }
+                        80 = { add_core_of = SVK }
+                        713 = { add_core_of = SVK }
+                        1314 = { add_core_of = SVK }
+                        1319 = { add_core_of = SVK }
+
+
+                        create_wargoal = {
+                        type = annex_everything
+                         target = GAL
+                      }
+		}
+	}
+
+focus = {
+		id = SVK_take_ruthenia
+		icon = GFX_goal_SVK_take_ruthenia
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = -7
+		y = 18
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_take_poland
+		}
+
+
+		completion_reward = {
+			1119 = { add_core_of = SVK }
+                        73 = { add_core_of = SVK }
+                        create_wargoal = {
+                        type = annex_everything
+                         target = HUN
+                      }
+		}
+	}
+
+
+focus = {
+		id = SVK_totalist_centreu
+		icon = GFX_goal_SVK_Central_european_totalitariat
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = -5
+		y = 15
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_slavic_totalism
+		}
+                mutually_exclusive = {
+		focus = SVK_totalist_panslavism
+	 }
+
+		completion_reward = {
+			add_war_support = 0.10
+                        army_experience = 15
+		}
+	}
+
+#####SYNDICALISTS######
+focus = {
+		id = SVK_husaks_pk_s
+		icon = GFX_goal_SVK_Husaks_PK_S
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = -8
+		y = 3
+		available = {
+                has_country_flag = SVK_Husak_Victory
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_left_victory
+		}
+
+		completion_reward = {
+			set_politics = {
+	                ruling_party = syndicalist
+                        elections_allowed = no
+                        last_election = "1935.12.17"
+                        election_frequency = 48
+                    }
+                add_popularity = {
+                   ideology = syndicalist
+                   popularity = 0.15
+                 }
+                add_stability = 0.15
+                add_political_power = 20
+                add_ideas = {
+                SVK_Gustav_Husak_hog_npo
+                SVK_POI_Viliam_Salgovic_npo
+                SVK_POI_Elena_Litvajova_npo
+                SVK_POI_Ignac_Janak_npo
+                SVK_POI_Pavol_Hrivnak_npo
+                }
+                hidden_effect = {
+                        country_event = {
+				id = slovak.23
+				days = 40
+			  }
+                          country_event = {
+				id = slovak.24
+				days = 128
+			  }
+                          country_event = {
+				id = slovak.25
+				days = 256
+			  }
+                        }
+		create_country_leader = {
+				name = "古斯塔夫·胡萨克"
+				picture = "gfx/leaders/SVK/SVK_Gustav_Husak.png"
+				expire = "1965.1.1"
+				ideology = syndicalist_subtype
+		}
+	}
+}
+
+focus = {
+		id = SVK_union_rada
+		icon = GFX_goal_SVK_slovak_union_rada
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = -8
+		y = 4
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_husaks_pk_s
+		}
+
+		completion_reward = {
+			add_political_power = 15
+                        add_stability = 0.1
+                        add_popularity = {
+                   ideology = syndicalist
+                   popularity = 0.1
+                 }
+                 add_ideas = SVK_union_rada_idea
+		}
+	}
+
+focus = {
+		id = SVK_factory_unions
+		icon = GFX_goal_SVK_factory_unions
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = -9
+		y = 5
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_union_rada
+		}
+
+		completion_reward = {
+			random_owned_state = {
+                        add_building_construction = {
+                        type = industrial_complex
+                        level = 2
+                        instant_build = yes
+                    }
+                    add_extra_state_shared_building_slots = 2
+                   }
+                   random_owned_state = {
+                        add_building_construction = {
+                        type = industrial_complex
+                        level = 2
+                        instant_build = yes
+                    }
+                    add_extra_state_shared_building_slots = 2
+                   }
+                   random_owned_state = {
+                        add_building_construction = {
+                        type = arms_factory
+                        level = 2
+                        instant_build = yes
+                    }
+                    add_extra_state_shared_building_slots = 2
+                   }
+		}
+	}
+
+focus = {
+		id = SVK_create_the_communes
+		icon = GFX_goal_SVK_create_the_communes
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = -7
+		y = 5
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_union_rada
+		}
+
+		completion_reward = {
+			add_ideas = SVK_communes_est
+		}
+	}
+
+focus = {
+		id = SVK_nation_run_by_workers
+		icon = GFX_goal_SVK_nation_run_by_workers
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = -8
+		y = 6
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_create_the_communes
+		}
+                prerequisite = {
+			focus = SVK_factory_unions
+		}
+
+		completion_reward = {
+			swap_ideas = {
+                        remove_idea = SVK_union_rada_idea
+                        add_idea = SVK_union_rada_2
+                    }
+		}
+	}
+
+focus = {
+		id = SVK_workers_self_management
+		icon = GFX_goal_SVK_workers_self_management
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = -8
+		y = 7
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_nation_run_by_workers
+		}
+
+		completion_reward = {
+			add_ideas = SVK_workers_selfmag
+                        random_owned_state = {
+                        add_building_construction = {
+                        type = industrial_complex
+                        level = 1
+                        instant_build = yes
+                    }
+                    add_extra_state_shared_building_slots = 1
+                   }
+                   random_owned_state = {
+                        add_building_construction = {
+                        type = industrial_complex
+                        level = 1
+                        instant_build = yes
+                    }
+                    add_extra_state_shared_building_slots = 1
+                   }
+		}
+	}
+
+focus = {
+		id = SVK_market_socialism
+		icon = GFX_goal_SVK_market_socialism
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = -9
+		y = 8
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_workers_self_management
+		}
+
+		completion_reward = {
+			add_stability = 0.1
+                        add_ideas = SVK_market_soc
+		}
+	}
+
+focus = {
+		id = SVK_liberal_socialism
+		icon = GFX_goal_SVK_Liberal_socialism
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = -7
+		y = 8
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_workers_self_management
+		}
+
+		completion_reward = {
+			add_stability = 0.15
+                        add_political_power = 100
+                        add_ideas = SVK_liberal_soc
+		}
+	}
+
+focus = {
+		id = SVK_husaks_utopian_socialism
+		icon = GFX_goal_SVK_husaks_utopian_socialism
+                relative_position_id = SVK_pressburg_succ
+		cost = 3
+		x = -8
+		y = 9
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_liberal_socialism
+		}
+                prerequisite = {
+			focus = SVK_market_socialism
+		}
+
+		completion_reward = {
+			add_stability = 0.25
+                        add_political_power = 100
+                        add_research_slot = 1
+                        add_popularity = {
+                   ideology = syndicalist
+                   popularity = 0.35
+                 }
+		}
+	}
+
+focus = {
+		id = SVK_syndicalist_conquest
+		icon = GFX_goal_SVK_syndicalist_conquest
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = -13
+		y = 13
+		available = {
+        has_government = syndicalist
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+		completion_reward = {
+			add_war_support = 0.15
+                        add_ideas = SVK_syndicalist_war
+		}
+	}
+
+focus = {
+		id = SVK_czech_conquest_syn
+		icon = GFX_goal_SVK_czech_conquest_syn
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = -14
+		y = 14
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+                prerequisite = {
+			focus = SVK_syndicalist_conquest
+		}
+
+		completion_reward = {
+                        create_wargoal = {
+                        type = annex_everything
+                        target = CZE
+                       }
+			1132 = { add_core_of = SVK }
+                        786 = { add_core_of = SVK }
+                        9 = { add_core_of = SVK }
+                        1129 = { add_core_of = SVK }
+                        1134 = { add_core_of = SVK }
+                        1138 = { add_core_of = SVK }
+                        69 = { add_core_of = SVK }
+                        1130 = { add_core_of = SVK }
+                        1133 = { add_core_of = SVK }
+                        1139 = { add_core_of = SVK }
+                        75 = { add_core_of = SVK }
+                        71 = { add_core_of = SVK }
+                        74 = { add_core_of = SVK }
+                        1131 = { add_core_of = SVK }
+                    
+		}
+	}
+
+focus = {
+		id = SVK_austria_conquest_syn
+		icon = GFX_goal_SVK_austria_conquest_syn
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = -12
+		y = 14
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+                prerequisite = {
+			focus = SVK_syndicalist_conquest
+		}
+
+		completion_reward = {
+			create_wargoal = {
+                        type = annex_everything
+                        target = AUS
+                       }
+                        1137 = { add_core_of = SVK }
+                        4 = { add_core_of = SVK }
+                        775 = { add_core_of = SVK }
+                        835 = { add_core_of = SVK }
+                        836 = { add_core_of = SVK }
+                        152 = { add_core_of = SVK }
+                        153 = { add_core_of = SVK }
+                        942 = { add_core_of = SVK }
+                        39 = { add_core_of = SVK }
+                        783 = { add_core_of = SVK }
+                        759 = { add_core_of = SVK }
+                        160 = { add_core_of = SVK }
+                        736 = { add_core_of = SVK }
+                        102 = { add_core_of = SVK }
+                        1100 = { add_core_of = SVK }
+                        1144 = { add_core_of = SVK }
+                        1103 = { add_core_of = SVK }
+                        1101 = { add_core_of = SVK }
+                        1104 = { add_core_of = SVK }
+                        1235 = { add_core_of = SVK }
+                        1272 = { add_core_of = SVK }
+						
+
+                 
+		}
+	}
+
+focus = {
+		id = SVK_hungary_conquest_syn
+		icon = GFX_goal_SVK_hungary_conquest
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = -13
+		y = 15
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+                prerequisite = {
+			focus = SVK_syndicalist_conquest
+		}
+
+		completion_reward = {
+			create_wargoal = {
+                        type = annex_everything
+                        target = HUN
+                       }
+                       1119 = { add_core_of = SVK }
+                        73 = { add_core_of = SVK }
+                        784 = { add_core_of = SVK }
+                        1111 = { add_core_of = SVK }
+                        155 = { add_core_of = SVK }
+                        1106 = { add_core_of = SVK }
+                        43 = { add_core_of = SVK }
+                        1107 = { add_core_of = SVK }
+                        1109 = { add_core_of = SVK }
+                        1110 = { add_core_of = SVK }
+                        154 = { add_core_of = SVK }
+                        1108 = { add_core_of = SVK }
+                        1107 = { add_core_of = SVK }
+                        45 = { add_core_of = SVK }
+                        875 = { add_core_of = SVK }
+                        82 = { add_core_of = SVK }
+                        1114 = { add_core_of = SVK }
+                        83 = { add_core_of = SVK }
+                        1118 = { add_core_of = SVK }
+                        1117 = { add_core_of = SVK }
+                        1112 = { add_core_of = SVK }
+                        1115 = { add_core_of = SVK }
+                        1113 = { add_core_of = SVK }
+                        76 = { add_core_of = SVK }
+                        789 = { add_core_of = SVK }
+                        84 = { add_core_of = SVK }
+                        1116 = { add_core_of = SVK }
+		}
+	}
+
+focus = {
+		id = SVK_illyria_conquest_syn
+		icon = GFX_goal_SVK_illyria_conquest
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = -13
+		y = 16
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+                prerequisite = {
+			focus = SVK_czech_conquest_syn
+		}
+                prerequisite = {
+			focus = SVK_austria_conquest_syn
+		}
+                prerequisite = {
+			focus = SVK_hungary_conquest_syn
+		}
+
+		completion_reward = {
+			create_wargoal = {
+                        type = annex_everything
+                        target = CRO
+                       }
+                 103 = { add_core_of = SVK }
+                        1105 = { add_core_of = SVK }
+                        1099 = { add_core_of = SVK }
+                        163 = { add_core_of = SVK }
+                        1098 = { add_core_of = SVK }
+                        109 = { add_core_of = SVK }
+                        1102 = { add_core_of = SVK }
+                        794 = { add_core_of = SVK }
+                        1128 = { add_core_of = SVK }
+                        1142 = { add_core_of = SVK }
+                        1141 = { add_core_of = SVK }
+                        1143 = { add_core_of = SVK }
+                        104 = { add_core_of = SVK }
+                        1145 = { add_core_of = SVK }
+                        105 = { add_core_of = SVK }
+                        1097 = { add_core_of = SVK }
+                        1270 = { add_core_of = SVK }
+
+		}
+	}
+
+focus = {
+		id = SVK_galicia_conquest_syn
+		icon = GFX_goal_SVK_galicia_conquest
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = -13
+		y = 17
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+                prerequisite = {
+			focus = SVK_illyria_conquest_syn
+		}
+
+		completion_reward = {
+			create_wargoal = {
+                        type = annex_everything
+                        target = GAL
+                       }
+                        1124 = { add_core_of = SVK }
+                        88 = { add_core_of = SVK }
+                        1125 = { add_core_of = SVK }
+                        1127 = { add_core_of = SVK }
+                        1126 = { add_core_of = SVK }
+                        91 = { add_core_of = SVK }
+                        89 = { add_core_of = SVK }
+                        1140 = { add_core_of = SVK }
+                        80 = { add_core_of = SVK }
+                        713 = { add_core_of = SVK }
+                        1314 = { add_core_of = SVK }
+                        1319 = { add_core_of = SVK }
+
+
+		}
+	}
+
+focus = {
+		id = SVK_utopia_on_danube_syn
+		icon = GFX_goal_SVK_utopia_on_danube_syn
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = -13
+		y = 18
+		available = {
+                 has_war = no
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+                prerequisite = {
+			focus = SVK_galicia_conquest_syn
+		}
+
+		completion_reward = {
+			add_stability = 0.5
+                        add_political_power = 150
+                        set_cosmetic_tag = SVK_DANUB_SYN
+		}
+	}
+
+#####RADSOC######
+
+focus = {
+		id = SVK_smidke_pk_z
+		icon = GFX_goal_SVK_smidke_victory
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = -3
+		y = 3
+		available = {
+                   has_country_flag = SVK_Smidke_Victory
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_left_victory
+		}
+
+		completion_reward = {
+			set_politics = {
+	                ruling_party = radical_socialist
+                        elections_allowed = no
+                        last_election = "1935.12.17"
+                        election_frequency = 48
+                    }
+                add_popularity = {
+                   ideology = radical_socialist
+                   popularity = 0.15
+                 }
+                add_stability = 0.15
+                add_political_power = 20
+                add_ideas = {
+                SVK_Karol_Smidke_hog_npo
+                SVK_Alexander_Dubcek_for_rso
+                SVK_Frano_Kral_sec_rso
+                }
+			create_country_leader = {
+				name = "卡罗尔·斯密德克"
+				picture = "gfx/leaders/SVK/SVK_Smidke.png"
+				expire = "1965.1.1"
+				ideology = anarchism_subtype
+			}
+		}
+	}
+
+focus = {
+		id = SVK_a_nation_of_free
+		icon = GFX_goal_SVK_a_nation_of_free
+                relative_position_id = SVK_pressburg_succ
+		cost = 2.00
+		x = -3
+		y = 4
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_smidke_pk_z
+		}
+
+		completion_reward = {
+			add_stability = -0.1
+                        add_political_power = -25
+                        add_ideas = SVK_free_nation 
+		}
+	}
+
+focus = {
+		id = SVK_no_overlords
+		icon = GFX_goal_SVK_no_overlords
+                relative_position_id = SVK_pressburg_succ
+		cost = 5.00
+		x = -4
+		y = 5
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_a_nation_of_free
+		}
+
+		completion_reward = {
+                   add_popularity = {
+                   ideology = radical_socialist
+                   popularity = 1
+                 }
+		    add_popularity = {
+                   ideology = social_democrat
+                   popularity = -0.30
+                 }
+                 add_popularity = {
+                   ideology = social_liberal
+                   popularity = -0.30
+                 }
+                 add_popularity = {
+                   ideology = market_liberal
+                   popularity = -0.30
+                 }
+                 add_popularity = {
+                   ideology = social_conservative
+                   popularity = -0.30
+                 }
+                 add_popularity = {
+                   ideology = authoritarian_democrat
+                   popularity = -0.30
+                 }
+                 add_popularity = {
+                   ideology = paternal_autocrat
+                   popularity = -0.30
+                 }
+                 add_popularity = {
+                   ideology = national_populist
+                   popularity = -0.30
+                 }
+                add_popularity = {
+                   ideology = totalist
+                   popularity = -0.30
+                 }
+                 add_popularity = {
+                   ideology = syndicalist
+                   popularity = -0.30
+                 }
+                 add_stability = -0.10
+                 add_political_power = -30
+		}
+	}
+
+focus = {
+		id = SVK_destroy_traditions_and_religions
+		icon = GFX_goal_SVK_destroy_traditions_and_religion
+                relative_position_id = SVK_pressburg_succ
+		cost = 5.00
+		x = -2
+		y = 5
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_a_nation_of_free
+		}
+
+		completion_reward = {
+                        add_stability = -0.055
+			add_ideas = SVK_no_religion
+		}
+	}
+
+focus = {
+		id = SVK_do_whatever_you_want
+		icon = GFX_goal_SVK_do_whatever_you_want
+                relative_position_id = SVK_pressburg_succ
+		cost = 5.00
+		x = -3
+		y = 6
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_no_overlords
+		}
+                prerequisite = {
+			focus = SVK_destroy_traditions_and_religions
+		}
+
+		completion_reward = {
+			swap_ideas = {
+                        remove_idea = SVK_free_nation
+                        add_idea = SVK_free_nation_2
+                    }
+		}
+	}
+
+focus = {
+		id = SVK_be_whatever_you_want
+		icon = GFX_goal_SVK_be_whatever_you_want
+                relative_position_id = SVK_pressburg_succ
+		cost = 5.00
+		x = -4
+		y = 7
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_do_whatever_you_want
+		}
+
+		completion_reward = {
+			add_stability = 0.1
+                        add_political_power = 25
+                        add_ideas = SVK_be_anything
+		}
+	}
+
+focus = {
+		id = SVK_make_whatever_you_want
+		icon = GFX_goal_SVK_make_anything_you_want
+                relative_position_id = SVK_pressburg_succ
+		cost = 5.00
+		x = -2
+		y = 7
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_do_whatever_you_want
+		}
+
+		completion_reward = {
+			random_owned_state = {
+                        add_building_construction = {
+                         type = arms_factory
+                         level = 1
+                         instant_build = yes
+                       }
+                      add_extra_state_shared_building_slots = 1
+                    }
+                      random_owned_state = {
+                        add_building_construction = {
+                         type = arms_factory
+                         level = 1
+                         instant_build = yes
+                       }
+                      add_extra_state_shared_building_slots = 1
+                    }
+                    random_owned_state = {
+                        add_building_construction = {
+                         type = arms_factory
+                         level = 1
+                         instant_build = yes
+                       }
+                      add_extra_state_shared_building_slots = 1
+                    }
+                 add_ideas = SVK_make_anything
+		}
+	}
+
+focus = {
+		id = SVK_but_for_the_people
+		icon = GFX_goal_SVK_but_for_the_people
+                relative_position_id = SVK_pressburg_succ
+		cost = 5.00
+		x = -3
+		y = 8
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_be_whatever_you_want
+		}
+                prerequisite = {
+			focus = SVK_make_whatever_you_want
+		}
+
+		completion_reward = {
+			add_stability = 0.15
+                        add_political_power = 25
+                        add_research_slot = 1
+		}
+	}
+
+focus = {
+		id = SVK_anarchy_knows_no_borders
+		icon = GFX_goal_SVK_anarchy_knows_no_borders
+                relative_position_id = SVK_pressburg_succ
+		cost = 4.00
+		x = -3
+		y = 9
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_but_for_the_people
+		}
+
+		completion_reward = {
+			 add_stability = 0.1
+                         set_cosmetic_tag = SVK_FREE_RADSOC
+                         swap_ideas = {
+                        remove_idea = SVK_free_nation_2
+                        add_idea = SVK_free_nation_3
+                    }
+		}
+	}
+
+focus = {
+		id = SVK_radsoc_conquest
+		icon = GFX_goal_SVK_the_path_for_freedom
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = -1
+		y = 13
+		available = {
+                has_government = radical_socialist
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+		completion_reward = {
+                        add_war_support = 0.5
+			add_ideas = SVK_breath_freedom
+			every_state = {
+				limit = {
+					is_on_continent = europe
+				}
+				SVK = { 
+					add_state_core = PREV 
+				}
+			}
+	
+		}
+	}
+
+focus = {
+		id = SVK_central_europe_radsoc
+		icon = GFX_goal_SVK_central_europe_radsoc
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = -1
+		y = 14
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+                prerequisite = {
+			focus = SVK_radsoc_conquest
+		}
+
+		completion_reward = {
+                        add_war_support = 0.05
+                        army_experience = 10
+			custom_effect_tooltip = SVK_anarch_conquest
+		}
+	}
+
+focus = {
+		id = SVK_north_europe_radsoc
+		icon = GFX_goal_SVK_north_europe_radsoc
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = -2
+		y = 15
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+                prerequisite = {
+			focus = SVK_central_europe_radsoc
+		}
+
+		completion_reward = {
+			add_war_support = 0.05
+                        army_experience = 10
+			custom_effect_tooltip = SVK_anarch_conquest
+		}
+	}
+
+focus = {
+		id = SVK_south_europe_radsoc
+		icon = GFX_goal_SVK_south_europe_radsoc
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = 0
+		y = 15
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+                prerequisite = {
+			focus = SVK_central_europe_radsoc
+		}
+
+		completion_reward = {
+			add_war_support = 0.05
+                        army_experience = 10
+			custom_effect_tooltip = SVK_anarch_conquest
+		}
+	}
+
+focus = {
+		id = SVK_west_europe_radsoc
+		icon = GFX_goal_SVK_west_europe_radsoc
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = -1
+		y = 16
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+                prerequisite = {
+			focus = SVK_south_europe_radsoc
+		}
+                prerequisite = {
+			focus = SVK_north_europe_radsoc
+		}
+
+		completion_reward = {
+			add_war_support = 0.05
+                        army_experience = 10
+			custom_effect_tooltip = SVK_anarch_conquest
+		}
+	}
+
+focus = {
+		id = SVK_east_europe_radsoc
+		icon = GFX_goal_SVK_east_europe_radsoc
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = -1
+		y = 17
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+                prerequisite = {
+			focus = SVK_west_europe_radsoc
+		}
+
+		completion_reward = {
+			add_war_support = 0.05
+                        army_experience = 10
+			custom_effect_tooltip = SVK_anarch_conquest
+		}
+	}
+
+focus = {
+		id = SVK_free_europe_radsoc
+		icon = GFX_goal_SVK_free_europe_radsoc
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = -1
+		y = 18
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+                prerequisite = {
+			focus = SVK_east_europe_radsoc
+		}
+
+		completion_reward = {
+                        add_stability = 0.25
+                        army_experience = 30
+			set_cosmetic_tag = SVK_EU_FREE_RADSOC
+		}
+	}
+
+#####SOCDEM######
+
+focus = {
+		id = SVK_lehocky_ssdp
+		icon = GFX_goal_SVK_Lehocky_victory
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = 1
+		y = 3
+                available = {
+                   has_country_flag = SVK_Emanuel_Victory
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_centre_victory
+		}
+
+		completion_reward = {
+			set_politics = {
+	                ruling_party = social_democrat
+                        elections_allowed = no
+                        last_election = "1935.12.17"
+                        election_frequency = 48
+                    }
+                add_popularity = {
+                   ideology = social_democrat
+                   popularity = 0.15
+                 }
+                add_stability = 0.15
+                add_political_power = 20
+                add_ideas = {
+                SVK_Emanuel_Lehocky_hog_npo
+                SVK_Ivan_Markovic_for_sde
+                } 
+                hidden_effect = {
+                        country_event = {
+				id = slovak.26
+				days = 40
+			  }
+                          country_event = {
+				id = slovak.27
+				days = 128
+			  }
+          }
+		create_country_leader = {
+				name = "伊曼纽尔·莱霍基"
+				picture = "gfx/leaders/SVK/Portrait_SVK_Emanuel_Lehocky.png"
+				expire = "1965.1.1"
+				ideology = social_democrat_subtype
+		}
+	}
+}
+
+	focus = {
+		id = SVK_land_reform
+		icon = GFX_goal_SVK_land_reform_socdem
+        relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 0
+		y = 4
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_lehocky_ssdp
+		}
+
+		completion_reward = {
+                   random_owned_state = {
+			add_building_construction = {
+                        type = industrial_complex 
+                        level = 1
+                        instant_build = yes
+                     }
+                  add_extra_state_shared_building_slots = 1
+                  }
+                  random_owned_state = {
+			add_building_construction = {
+                        type = industrial_complex 
+                        level = 1
+                        instant_build = yes
+                     }
+                  add_extra_state_shared_building_slots = 1
+                  }
+                  random_owned_state = {
+			add_building_construction = {
+                        type = infrastructure 
+                        level = 1
+                        instant_build = yes
+                     }
+                  }
+                  random_owned_state = {
+			add_building_construction = {
+                        type = infrastructure 
+                        level = 1
+                        instant_build = yes
+                     }
+                  }
+                add_ideas = SVK_land_reforms
+		}
+	}
+
+	focus = {
+		id = SVK_workers_rights
+		icon = GFX_goal_SVK_workers_rights_png
+        relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 2
+		y = 4
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_lehocky_ssdp
+		}
+
+		completion_reward = {
+			add_stability = 0.1
+                        add_political_power = 25
+                        add_ideas = SVK_worker_rights_idea
+		}
+	}
+
+	focus = {
+		id = SVK_school_reforms
+		icon = GFX_goal_SVK_school_reforms_socdem
+        relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 1
+		y = 5
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_land_reform
+		}
+		prerequisite = {
+			focus = SVK_workers_rights
+		}
+
+		completion_reward = {
+			add_ideas = SVK_school_reforms_idea
+                        add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = SVK_more_universities
+		icon = GFX_goal_SVK_build_universities
+        relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 1
+		y = 6
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_school_reforms
+		}
+
+		completion_reward = {
+		 random_owned_state = {
+			add_building_construction = {
+                        type = industrial_complex 
+                        level = 1
+                        instant_build = yes
+                     }
+                  add_extra_state_shared_building_slots = 1
+                  }
+                  random_owned_state = {
+			add_building_construction = {
+                        type = industrial_complex 
+                        level = 1
+                        instant_build = yes
+                     }
+                  add_extra_state_shared_building_slots = 1
+                  }
+                add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = SVK_higher_pension_for_the_eldery
+		icon = GFX_goal_SVK_higher_pension
+        relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = 1
+		y = 7
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_more_universities
+		}
+
+		completion_reward = {
+			add_stability = 0.1
+                        add_ideas = SVK_higher_pension_idea
+		}
+	}
+
+	focus = {
+		id = SVK_improve_workplaces
+		icon = GFX_goal_SVK_better_workplaces
+        relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 1
+		y = 8
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_higher_pension_for_the_eldery
+		}
+
+		completion_reward = {
+			add_ideas = SVK_improve_workplaces_idea
+		}
+	}
+
+	focus = {
+		id = SVK_welfare_state
+		icon = GFX_goal_SVK_welfare_state
+        relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 1
+		y = 9
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_improve_workplaces
+		}
+
+		completion_reward = {
+			add_stability = 0.2
+                        add_political_power = 150
+                        add_research_slot = 1
+		}
+	}
+
+#####MARKLIB-SOCLIB######
+
+focus = {
+		id = SVK_srobar_lib
+		icon = GFX_goal_SVK_vavro_victory
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = 5
+		y = 3
+                available = {
+                   has_country_flag = SVK_Srobar_Victory
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_centre_victory
+		}
+
+		completion_reward = {
+			set_politics = {
+	                ruling_party = social_liberal
+                        elections_allowed = no
+                        last_election = "1935.12.17"
+                        election_frequency = 48
+                    }
+                add_popularity = {
+                   ideology = social_liberal
+                   popularity = 0.15
+                 }
+                 add_popularity = {
+                   ideology = market_liberal
+                   popularity = 0.15
+                 }
+                add_stability = 0.15
+                add_political_power = 20
+                add_ideas = {
+                SVK_Vavro_Srobar_hog_npo
+                SVK_Milan_Rastislav_Stefanik_for_sli
+                SVK_Jan_Ursiny_for_mli
+                SVK_Emil_Boleslav_Lukac_sec_sli
+                }         
+
+                set_variable = { lib_dilemma_soclib = 1 }
+                set_variable = { lib_dilemma_marklib = 1 }
+			create_country_leader = {
+				name = "瓦夫罗·斯罗巴尔"
+				picture = "gfx/leaders/SVK/Portrait_SVK_Vavro_Srobar.png"
+				expire = "1965.1.1"
+				ideology = soclib_agrarianism_subtype
+			}
+		}
+	}
+
+focus = {
+		id = SVK_people_soclib
+		icon = GFX_goal_SVK_people_soclib
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 4
+		y = 4
+		available = {
+                 NOT = { has_completed_focus = SVK_economy_marklib }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_srobar_lib
+		}
+
+		completion_reward = {
+			add_popularity = {
+                   ideology = social_liberal
+                   popularity = 0.10
+                 }
+                add_to_variable = { lib_dilemma_soclib = 5 }
+                custom_effect_tooltip = SVK_soclib_dilemma_support_big
+		}
+	}
+
+
+focus = {
+		id = SVK_economy_marklib
+		icon = GFX_goal_SVK_economy_marklib
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 6
+		y = 4
+		available = {
+                NOT = { has_completed_focus = SVK_people_soclib }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_srobar_lib
+		}
+
+		completion_reward = {
+			add_popularity = {
+                   ideology = market_liberal
+                   popularity = 0.10
+                 }
+                add_to_variable = { lib_dilemma_marklib = 5 }
+                custom_effect_tooltip = SVK_marklib_dilemma_support_big
+		}
+	}
+
+focus = {
+		id = SVK_switzerland_of_centraeu
+		icon = GFX_goal_SVK_slovak_peace
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 5
+		y = 5
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_people_soclib
+                        focus = SVK_economy_marklib
+		}
+
+		completion_reward = {
+                 1123 = {
+                 add_building_construction = {
+                 type = bunker
+                 level = 3
+                 instant_build = yes
+                 province = {
+                          all_provinces = yes
+                          limit_to_border = yes
+                        }
+                     }
+ 
+                 }
+
+                 1135 = {
+                 add_building_construction = {
+                 type = bunker
+                 level = 3
+                 instant_build = yes
+                 province = {
+                          all_provinces = yes
+                          limit_to_border = yes
+                        }
+                     }
+ 
+                 }
+
+		add_ideas = disarmed_nation 
+                add_ideas = SVK_neutrality_idea
+                add_to_variable = { lib_dilemma_marklib = 1 }
+                custom_effect_tooltip = SVK_marklib_dilemma_support
+                add_to_variable = { lib_dilemma_soclib = 1 }
+                 custom_effect_tooltip = SVK_soclib_dilemma_support
+		}
+	}
+
+focus = {
+		id = SVK_play_both_sides_economy
+		icon = GFX_goal_SVK_both_sides
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 4
+		y = 6
+		available = {
+                NOT = { has_completed_focus = SVK_nation_of_freedom_economy } 
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_switzerland_of_centraeu
+		}
+
+		completion_reward = {
+                        add_ideas = SVK_both_sides_idea
+                        add_to_variable = { lib_dilemma_marklib = 5 }
+                        custom_effect_tooltip = SVK_marklib_dilemma_support_big
+			add_opinion_modifier = { target = GER modifier = small_increase }
+                        GER = { add_opinion_modifier = { target = SVK modifier = small_increase } }
+                        GER = { diplomatic_relation = {
+                        country = SVK
+                        relation = non_aggression_pact
+                        active = yes
+                            }
+                         }
+                        add_opinion_modifier = { target = RUS modifier = small_increase }
+                        RUS = { add_opinion_modifier = { target = SVK modifier = small_increase } }
+                        RUS = { diplomatic_relation = {
+                        country = SVK
+                        relation = non_aggression_pact
+                        active = yes
+                            }
+                         }
+
+                        add_opinion_modifier = { target = FRA modifier = small_increase }
+                        FRA = { add_opinion_modifier = { target = SVK modifier = small_increase } }
+                        FRA = { diplomatic_relation = {
+                        country = SVK
+                        relation = non_aggression_pact
+                        active = yes
+                            }
+                         }
+
+                        add_opinion_modifier = { target = ENG modifier = small_increase }
+                        ENG = { add_opinion_modifier = { target = SVK modifier = small_increase } }
+                        ENG = { diplomatic_relation = {
+                        country = SVK
+                        relation = non_aggression_pact
+                        active = yes
+                            }
+                         }
+
+                        add_opinion_modifier = { target = CAN modifier = small_increase }
+                        CAN = { add_opinion_modifier = { target = SVK modifier = small_increase } }
+                        CAN = { diplomatic_relation = {
+                        country = SVK
+                        relation = non_aggression_pact
+                        active = yes
+                            }
+                         }
+ 
+                        add_opinion_modifier = { target = NFA modifier = small_increase }
+                        NFA = { add_opinion_modifier = { target = SVK modifier = small_increase } }
+                        NFA = { diplomatic_relation = {
+                        country = SVK
+                        relation = non_aggression_pact
+                        active = yes
+                            }
+                         }
+
+		}
+	}
+
+focus = {
+		id = SVK_nation_of_freedom_economy
+		icon = GFX_goal_SVK_good_side
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 6
+		y = 6
+		available = {
+                NOT = { has_completed_focus = SVK_play_both_sides_economy } 
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_switzerland_of_centraeu
+		}
+
+		completion_reward = {
+			add_stability = 0.15
+                        add_research_slot = 1
+                        add_political_power = 25
+                        add_to_variable = { lib_dilemma_soclib = 5 }
+                        custom_effect_tooltip = SVK_soclib_dilemma_support_big
+		}
+	}
+
+focus = {
+		id = SVK_expand_our_natural_beauty
+		icon = GFX_goal_SVK_expand_natural_beauty
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 5
+		y = 7
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_nation_of_freedom_economy
+                        focus = SVK_play_both_sides_economy
+		}
+
+		completion_reward = {
+                        70 = { add_building_construction = {
+                            type = infrastructure
+                            level = 3
+                            instant_build = yes
+                         }
+                        }
+
+                        1120 = { add_building_construction = {
+                            type = infrastructure
+                            level = 3
+                            instant_build = yes
+                         }
+                        }
+
+			add_ideas = SVK_natural_beauty_idea
+                        add_to_variable = { lib_dilemma_marklib = 1 }
+                        custom_effect_tooltip = SVK_marklib_dilemma_support
+                        add_to_variable = { lib_dilemma_soclib = 1 }
+                        custom_effect_tooltip = SVK_soclib_dilemma_support
+		}
+	}
+
+focus = {
+		id = SVK_fortify_like_swiz
+		icon = GFX_goal_SVK_fortification_lib
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 5
+		y = 8
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_expand_our_natural_beauty
+		}
+
+		completion_reward = {
+			70 = { add_building_construction = {
+                            type = bunker
+                            level = 2
+                            instant_build = yes
+                         }
+                        }
+
+                        1120 = { add_building_construction = {
+                            type = bunker
+                            level = 2
+                            instant_build = yes
+                         }
+                        }
+                     add_war_support = 0.2
+                     add_ideas = SVK_carpathian_defense_system_idea
+		}
+	}
+
+focus = {
+		id = SVK_nation_of_neutrality_and_liberty
+		icon = GFX_goal_SVK_nation_liberty_lib
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 5
+		y = 9
+		available = {
+                     OR = {
+                     has_country_flag = marklib_victory
+                     has_country_flag = soclib_victory
+                      }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_fortify_like_swiz
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+                        add_stability = 0.15
+                        add_to_variable = { lib_dilemma_marklib = 1 }
+                        custom_effect_tooltip = SVK_marklib_dilemma_support
+                        add_to_variable = { lib_dilemma_soclib = 5 }
+                        custom_effect_tooltip = SVK_soclib_dilemma_support_big
+
+                        custom_effect_tooltip = SVK_victory_lib
+
+                       if = {
+                           limit = {
+                               has_country_flag = marklib_victory
+                               NOT = { has_country_flag = soclib_victory }
+                           }
+                       set_politics = {
+	                ruling_party = market_liberal
+                        elections_allowed = no
+                        last_election = "1935.12.17"
+                        election_frequency = 48
+                    }
+               }
+
+               if = {
+                           limit = {
+                               has_country_flag = soclib_victory
+                               NOT = { has_country_flag = marklib_victory }
+                           }
+                   add_popularity = {
+                   ideology = social_liberal
+                   popularity = 0.30
+                 }
+               }
+	}
+}
+
+#####SOCCON######
+
+focus = {
+		id = SVK_hodza_con
+		icon = GFX_goal_SVK_hodza_victory
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = 9
+		y = 3
+		available = {
+                has_country_flag = SVK_Hodza_Victory
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_centre_victory
+		}
+
+		completion_reward = {
+			set_politics = {
+	                ruling_party = social_conservative
+                        elections_allowed = no
+                        last_election = "1935.12.17"
+                        election_frequency = 48
+                    }
+                add_popularity = {
+                   ideology = social_conservative
+                   popularity = 0.15
+                 }
+                add_stability = 0.15
+                add_political_power = 20
+                add_ideas = {
+                SVK_Milan_Hodza_hog_npo
+                SVK_Ferdis_Juriga_for_sco
+                SVK_Jozef_Gregor_Tajovsky_sec_sco
+                } 
+			create_country_leader = {
+				name = "米兰·霍扎"
+				picture = "gfx/leaders/SVK/Portrait_SVK_Milan_Hodza.png"
+				expire = "1965.1.1"
+				ideology = soccon_agrarianism_subtype
+			}
+		}
+	}
+
+focus = {
+		id = SVK_peasant_democracy
+		icon = GFX_goal_SVK_peasant_democracy
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 9
+		y = 4
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_hodza_con
+		}
+
+		completion_reward = {
+			add_popularity = {
+                   ideology = social_conservative
+                   popularity = 0.05
+                 }
+                 add_stability = 0.05
+                 add_ideas = SVK_peasant_democracy_idea
+		}
+	}
+
+focus = {
+		id = SVK_farmable_land_con
+		icon = GFX_goal_SVK_farmable_land
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 8
+		y = 5
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_peasant_democracy
+		}
+
+		completion_reward = {
+                      add_political_power = 100
+                      add_stability = 0.1
+			random_owned_state = {
+			add_building_construction = {
+                        type = industrial_complex 
+                        level = 1
+                        instant_build = yes
+                     }
+                  add_extra_state_shared_building_slots = 3
+                  }
+                  random_owned_state = {
+			add_building_construction = {
+                        type = industrial_complex 
+                        level = 1
+                        instant_build = yes
+                     }
+                  add_extra_state_shared_building_slots = 3
+                  }
+                  random_owned_state = {
+			add_building_construction = {
+                        type = industrial_complex 
+                        level = 2
+                        instant_build = yes
+                     }
+                  add_extra_state_shared_building_slots = 3
+                  }
+                add_research_slot = 1
+		}
+	}
+
+focus = {
+		id = SVK_rights_of_the_peasant_con
+		icon = GFX_goal_SVK_rights_of_peasant
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 10
+		y = 5
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_peasant_democracy
+		}
+
+		completion_reward = {
+			add_stability = 0.075
+                        swap_ideas = {
+                    remove_idea = SVK_peasant_democracy_idea
+                    add_idea = SVK_peasant_democracy_2_idea
+                   }
+		}
+	}
+
+focus = {
+		id = SVK_unity_under_god_con
+		icon = GFX_goal_SVK_unity_under_god
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 9
+		y = 6
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_rights_of_the_peasant_con
+		}
+                prerequisite = {
+			focus = SVK_farmable_land_con
+		}
+
+		completion_reward = {
+                        add_stability = 0.05
+                        add_political_power = 30
+			add_ideas =  SVK_unity_god_idea
+		}
+	}
+
+focus = {
+		id = SVK_reject_new_ideas_con
+		icon = GFX_goal_SVK_keep_the_old
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 9
+		y = 7
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_unity_under_god_con
+		}
+
+		completion_reward = {
+			swap_ideas = {
+                    remove_idea = SVK_unity_god_idea
+                    add_idea = SVK_unity_god_2_idea
+                   }
+		}
+	}
+
+focus = {
+		id = SVK_european_union_con
+		icon = GFX_goal_SVK_european_union_svk
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 9
+		y = 8
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_reject_new_ideas_con
+		}
+
+		completion_reward = {
+			create_faction = svk_eu_union
+                        add_stability = 0.1
+		}
+	}
+
+focus = {
+		id = SVK_slovakia_bastion_con
+		icon = GFX_goal_SVK_slovakia_bastion_eu
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 9
+		y = 9
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_european_union_con
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+                        add_political_power = 100
+
+                        664 = {
+			add_building_construction = {
+                        type = industrial_complex 
+                        level = 2
+                        instant_build = yes
+                     }
+                     add_building_construction = {
+                        type = infrastructure
+                        level = 2
+                        instant_build = yes
+                     }
+                  add_extra_state_shared_building_slots = 3
+                  }
+		}
+	}
+
+focus = {
+		id = SVK_soccon_invite
+		icon = GFX_goal_SVK_begin_invitation
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = 5
+		y = 13
+		available = {
+        has_government = social_conservative
+        is_in_faction = yes
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+		completion_reward = {
+			add_ideas = SVK_EU_member_idea
+		}
+	}
+
+focus = {
+		id = SVK_invite_austria
+		icon = GFX_goal_SVK_invite_austria
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = 5
+		y = 14
+		available = {
+                     AUS = { 
+                                NOT = { has_government = national_populist
+                                        has_government = paternal_autocrat
+                                        has_government = totalist
+                                        has_government = radical_socialist
+                                        has_government = syndicalist } }
+                     AUS = { has_war = no }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_soccon_invite
+		}
+
+		completion_reward = {
+                        add_political_power = 5
+			AUS =  { country_event = { id = slovak.14 } }
+		}
+	}
+
+focus = {
+		id = SVK_invite_romania
+		icon = GFX_goal_SVK_invite_romania
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = 4
+		y = 15
+		available = {
+                        ROM = { 
+                                NOT = { has_government = national_populist
+                                        has_government = paternal_autocrat
+                                        has_government = totalist
+                                        has_government = radical_socialist
+                                        has_government = syndicalist } }
+                        ROM = { has_war = no }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_invite_austria
+		}
+                mutually_exclusive = {
+		focus = SVK_invade_romania
+	        }
+
+		completion_reward = {
+			add_political_power = 5
+			ROM =  { country_event = { id = slovak.14 } }
+		}
+	}
+
+focus = {
+		id = SVK_invade_romania
+		icon = GFX_goal_SVK_invade_romania
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = 6
+		y = 15
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                mutually_exclusive = {
+		focus = SVK_invite_romania
+	        }
+                prerequisite = {
+			focus = SVK_invite_austria
+		}
+
+		completion_reward = {
+			create_wargoal = {
+                          type = puppet_wargoal_focus
+                          target = ROM
+                     }
+		}
+	}
+
+focus = {
+		id = SVK_invite_bulgaria
+		icon = GFX_goal_SVK_invite_bulgaria
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = 3
+		y = 16
+		available = {
+                     BUL = { 
+                                NOT = { has_government = national_populist
+                                        has_government = paternal_autocrat
+                                        has_government = totalist
+                                        has_government = radical_socialist
+                                        has_government = syndicalist } }
+                      BUL = { has_war = no }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_invite_romania
+                        focus = SVK_invade_romania
+		}
+
+		completion_reward = {
+			add_political_power = 5
+			BUL =  { country_event = { id = slovak.14 } }
+		}
+	}
+
+focus = {
+		id = SVK_invite_albania
+		icon = GFX_goal_SVK_invite_albania
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = 7
+		y = 16
+		available = {
+                  ALB = { 
+                                NOT = { has_government = national_populist
+                                        has_government = paternal_autocrat
+                                        has_government = totalist
+                                        has_government = radical_socialist
+                                        has_government = syndicalist } }
+                        ALB = { has_war = no }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_invite_romania
+                        focus = SVK_invade_romania
+		}
+
+		completion_reward = {
+			add_political_power = 5
+			ALB =  { country_event = { id = slovak.14 } }
+		}
+	}
+
+focus = {
+		id = SVK_invite_germany
+		icon = GFX_goal_SVK_invite_germany
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = 5
+		y = 17
+		available = {
+                      GER = { 
+                                NOT = { has_government = national_populist
+                                        has_government = paternal_autocrat
+                                        has_government = totalist
+                                        has_government = radical_socialist
+                                        has_government = syndicalist } }
+                      GER = { has_war = no }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_invite_albania
+		}
+                 prerequisite = {
+			focus = SVK_invite_bulgaria
+		}
+
+		completion_reward = {
+			add_political_power = 5
+			GER =  { country_event = { id = slovak.14 } }
+		}
+	}
+
+focus = {
+		id = SVK_invite_nordics
+		icon = GFX_goal_SVK_invite_nordics
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = 3
+		y = 18
+		available = {
+                    SWE = { 
+                                NOT = { has_government = national_populist
+                                        has_government = paternal_autocrat
+                                        has_government = totalist
+                                        has_government = radical_socialist
+                                        has_government = syndicalist } }
+                      SWE = { has_war = no }
+
+                      DEN = { 
+                                NOT = { has_government = national_populist
+                                        has_government = paternal_autocrat
+                                        has_government = totalist
+                                        has_government = radical_socialist
+                                        has_government = syndicalist } }
+                      DEN = { has_war = no }
+ 
+                      FIN = { 
+                                NOT = { has_government = national_populist
+                                        has_government = paternal_autocrat
+                                        has_government = totalist
+                                        has_government = radical_socialist
+                                        has_government = syndicalist } }
+                      FIN = { has_war = no }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_invite_germany
+		}
+
+		completion_reward = {
+			add_political_power = 15
+			SWE =  { country_event = { id = slovak.14 } }
+                        DEN =  { country_event = { id = slovak.14 } }
+                        FIN =  { country_event = { id = slovak.14 } }
+		}
+	}
+
+focus = {
+		id = SVK_invite_dutch
+		icon = GFX_goal_SVK_invite_dutch
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = 5
+		y = 18
+		available = {
+                     HOL = { 
+                                NOT = { has_government = national_populist
+                                        has_government = paternal_autocrat
+                                        has_government = totalist
+                                        has_government = radical_socialist
+                                        has_government = syndicalist } }
+                      HOL = { has_war = no }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_invite_germany
+		}
+
+		completion_reward = {
+			add_political_power = 5
+			HOL =  { country_event = { id = slovak.14 } }
+		}
+	}
+
+focus = {
+		id = SVK_invite_italy
+		icon = GFX_goal_SVK_invite_italy
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = 7
+		y = 18
+		available = {
+                   ITA = { 
+                                NOT = { has_government = national_populist
+                                        has_government = paternal_autocrat
+                                        has_government = totalist
+                                        has_government = radical_socialist
+                                        has_government = syndicalist } }
+                      ITA = { has_war = no }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_invite_germany
+		}
+
+		completion_reward = {
+                        add_political_power = 5
+			ITA =  { country_event = { id = slovak.14 } }
+		}
+	}
+
+focus = {
+		id = SVK_invite_iberians
+		icon = GFX_goal_SVK_invite_iberians
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = 4
+		y = 19
+		available = {
+                POR = { 
+                                NOT = { has_government = national_populist
+                                        has_government = paternal_autocrat
+                                        has_government = totalist
+                                        has_government = radical_socialist
+                                        has_government = syndicalist } }
+                      POR = { has_war = no }
+
+                SPR = { 
+                                NOT = { has_government = national_populist
+                                        has_government = paternal_autocrat
+                                        has_government = totalist
+                                        has_government = radical_socialist
+                                        has_government = syndicalist } }
+                      SPR = { has_war = no }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_invite_germany
+		}
+
+		completion_reward = {
+			add_political_power = 5
+			SPR =  { country_event = { id = slovak.14 } }
+                        POR =  { country_event = { id = slovak.14 } }
+		}
+	}
+
+focus = {
+		id = SVK_invite_irish
+		icon = GFX_goal_SVK_invite_irish
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = 6
+		y = 19
+		available = {
+                 IRE = { 
+                                NOT = { has_government = national_populist
+                                        has_government = paternal_autocrat
+                                        has_government = totalist
+                                        has_government = radical_socialist
+                                        has_government = syndicalist } }
+                      IRE = { has_war = no }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_invite_germany
+		}
+
+		completion_reward = {
+			add_political_power = 5
+			IRE =  { country_event = { id = slovak.14 } }
+		}
+	}
+
+focus = {
+		id = SVK_take_down_the_internationale
+		icon = GFX_goal_SVK_take_down_internationale
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = 5
+		y = 20
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_invite_dutch
+		}
+
+		completion_reward = {
+                        add_war_support = 0.1
+			declare_war_on = {
+                         target = FRA
+                        type = puppet_wargoal_focus
+                   }
+		}
+	}
+
+focus = {
+		id = SVK_russia_question
+		icon = GFX_goal_SVK_russian_question
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = 5
+		y = 21
+		available = {
+                 RUS = { 
+                                NOT = { has_government = national_populist
+                                        has_government = paternal_autocrat
+                                        has_government = totalist
+                                        has_government = radical_socialist
+                                        has_government = syndicalist } }
+                      RUS = { has_war = no }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_take_down_the_internationale
+		}
+
+		completion_reward = {
+			add_political_power = 10
+			RUS =  { country_event = { id = slovak.14 } }
+		}
+	}
+
+focus = {
+		id = SVK_one_europe
+		icon = GFX_goal_SVK_europe_together
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = 5
+		y = 22
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_russia_question
+		}
+
+		completion_reward = {
+			add_stability = 0.25
+                        add_political_power = 150
+		}
+	}
+
+#####AUTHDEM######
+
+focus = {
+		id = SVK_imperial_authdem
+		icon = GFX_goal_SVK_otto_victory
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = 13
+		y = 3
+		available = {
+                has_country_flag = SVK_Otto_Victory
+                NOT  = { has_country_flag = svk_samo_returns }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_centre_victory
+		}
+
+		completion_reward = {
+			set_politics = {
+	                ruling_party = authoritarian_democrat
+                        elections_allowed = no
+                        last_election = "1935.12.17"
+                        election_frequency = 48
+                    }
+                add_popularity = {
+                   ideology = authoritarian_democrat
+                   popularity = 0.15
+                 }
+                add_stability = 0.15
+                add_political_power = 20
+                add_ideas = {
+                SVK_Otto_Habsburg_hog_npo
+                SVK_Matus_Cernak_sec_nop
+                SVK_Ivan_Derer_sec_mil
+                } 
+
+                hidden_effect = {
+                        country_event = {
+				id = slovak.28
+				days = 35
+			  }
+                          country_event = {
+				id = slovak.29
+				days = 50
+			  }
+                        }
+			create_country_leader = {
+				name = "奥托·冯·哈布斯堡"
+				picture = "gfx/leaders/SVK/SVK_Otto_Habsburg.png"
+				expire = "1965.1.1"
+				ideology = oligarchy_subtype
+			}
+		}
+	}
+
+focus = {
+		id = SVK_model_kingdom
+		icon = GFX_goal_SVK_model_kingdom
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 13
+		y = 4
+		available = {
+                   NOT  = { has_country_flag = svk_samo_returns }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_imperial_authdem
+		}
+
+		completion_reward = {
+			AUS = { add_opinion_modifier = { target = SVK modifier = large_increase } }
+                        AUS = { diplomatic_relation = {
+                        country = SVK
+                        relation = non_aggression_pact
+                        active = yes
+                            }
+                         }
+                         add_stability = 0.1
+                         add_political_power = 30
+		}
+	}
+
+focus = {
+		id = SVK_join_austrian_influence
+		icon = GFX_goal_SVK_join_austria_influence
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 13
+		y = 5
+		available = {
+                      NOT  = { has_country_flag = svk_samo_returns }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_model_kingdom
+		}
+
+		completion_reward = {
+			AUS = { puppet = SVK }
+            add_war_support = 0.15
+            set_cosmetic_tag = SVK_AUS_influence
+			hidden_effect = {
+				set_politics = {
+	                ruling_party = authoritarian_democrat
+                    elections_allowed = no
+                	last_election = "1935.12.17"
+                    election_frequency = 48
+                }
+				create_country_leader = {
+				name = "奥托·冯·哈布斯堡"
+				picture = "gfx/leaders/SVK/SVK_Otto_Habsburg.png"
+				expire = "1965.1.1"
+				ideology = oligarchy_subtype
+			}
+			}
+		}
+	}
+
+focus = {
+		id = SVK_invite_austrian
+		icon = GFX_goal_SVK_invite_austrian_loyals
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 14
+		y = 6
+		available = {
+                      NOT  = { has_country_flag = svk_samo_returns }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_join_austrian_influence
+		}
+
+		completion_reward = {
+			add_ideas = SVK_industries_give_austria_idea
+		}
+	}
+
+focus = {
+		id = SVK_give_industries
+		icon = GFX_goal_SVK_give_industries_to
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 12
+		y = 6
+		available = {
+                   NOT  = { has_country_flag = svk_samo_returns }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_join_austrian_influence
+		}
+
+		completion_reward = {
+			add_ideas = SVK_industries_owned_idea
+		}
+	}
+
+focus = {
+		id = SVK_is_he_the_king
+		icon = GFX_goal_SVK_is_he_the_king
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 13
+		y = 7
+		available = {
+                       NOT  = { has_country_flag = svk_samo_returns }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_give_industries
+		}
+                prerequisite = {
+			focus = SVK_invite_austrian
+		}
+
+		completion_reward = {
+                        add_stability = -0.075
+                        create_country_leader = {
+	name = "奥托·冯·哈布斯堡"
+	picture = "gfx/leaders/SVK/SVK_Otto_Habsburg.png"
+	expire = "1965.1.1"
+	ideology = social_democrat_subtype
+}
+create_country_leader = {
+	name = "奥托·冯·哈布斯堡"
+	picture = "gfx/leaders/SVK/SVK_Otto_Habsburg.png"
+	expire = "1965.1.1"
+	ideology = social_conservative_subtype
+}
+
+create_country_leader = {
+	name = "奥托·冯·哈布斯堡"
+	picture = "gfx/leaders/SVK/SVK_Otto_Habsburg.png"
+	expire = "1965.1.1"
+	ideology = national_populist_subtype
+}
+create_country_leader = {
+	name = "奥托·冯·哈布斯堡"
+	picture = "gfx/leaders/SVK/SVK_Otto_Habsburg.png"
+	expire = "1965.1.1"
+	ideology = paternal_autocrat_subtype
+}
+			add_country_leader_trait = unpopular_king
+		}
+	}
+
+focus = {
+		id = SVK_are_we_colony
+		icon = GFX_goal_SVK_arent_we_a_colony
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 13
+		y = 8
+		available = {
+                  NOT  = { has_country_flag = svk_samo_returns }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_is_he_the_king
+		}
+
+		completion_reward = {
+			add_ideas = SVK_fading_slovak_idea
+		}
+	}
+
+focus = {
+		id = SVK_our_fate
+		icon = GFX_goal_SVK_our_fate
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 13
+		y = 9
+		available = {
+                  NOT  = { has_country_flag = svk_samo_returns }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_are_we_colony
+		}
+
+		completion_reward = {
+			add_research_slot = -1
+                        add_stability = -0.15
+		}
+	}
+
+###SAMO###
+
+focus = {
+		id = SVK_the_kingdom_rises
+		icon = GFX_goal_SVK_the_kingdom_rises
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = 13
+		y = 13
+		available = {
+                   has_country_flag = svk_samo_returns
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+		completion_reward = {
+                        
+			add_stability = 0.30
+                        add_political_power = 150
+                        add_war_support = 0.30
+                        set_cosmetic_tag = SVK_Samo_Empire
+                        leave_faction = yes
+                        remove_ideas = {
+                SVK_Otto_Habsburg_hog_npo
+                } 
+                        set_province_name = {
+                           id = 9692
+                           name = "Wogastisburg"
+                   }
+                   custom_effect_tooltip = SVK_Samo_Regent
+                   hidden_effect = {
+                   AUS = { end_puppet = SVK }
+                   set_country_flag = svk_samo_minister
+                    add_ideas = {
+                 SVK_Rudolf_Viest_hog_npo
+                } 
+                   create_corps_commander = {
+	name = "鲁道夫·维斯特"
+	portrait_path = "gfx/leaders/SVK/SVK_Viest.png"
+	traits = {
+		ranger
+	}
+	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+}  
+                   create_country_leader = {
+	                 name = "鲁道夫·维斯特"
+	                 picture = "gfx/leaders/SVK/SVK_Viest.png"
+	                 expire = "1965.1.1"
+	                ideology = authoritarian_democrat_subtype
+                          }
+                          create_country_leader = {
+	                  name = "鲁道夫·维斯特"
+	                  picture = "gfx/leaders/SVK/SVK_Viest.png"
+	                  expire = "1965.1.1"
+	                   ideology = syndicalist_subtype
+                           }
+		         }
+		 }
+	}
+
+focus = {
+		id = SVK_samo_back
+		icon = GFX_goal_SVK_he_is_back
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = 13
+		y = 14
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_the_kingdom_rises
+		}
+
+
+		completion_reward = {
+
+                country_event = {
+				id = slovak.38
+				days = 1
+			  }
+
+
+        set_politics = {
+	                ruling_party = authoritarian_democrat
+                        elections_allowed = no
+                        last_election = "1935.12.17"
+                        election_frequency = 48
+                    }
+                add_popularity = {
+                   ideology = authoritarian_democrat
+                   popularity = 0.25
+                 }
+                 add_popularity = {
+                   ideology = syndicalist
+                   popularity = 0.25
+                 }
+
+        set_party_name = { 
+               ideology = authoritarian_democrat
+               long_name = SVK_samo_authdem_party_long 
+               name = SVK_samo_authdem_party
+         }
+         set_party_name = { 
+               ideology = syndicalist
+               long_name = SVK_samo_syndicalist_party_long 
+               name = SVK_samo_syndicalist_party
+         }
+
+
+	create_country_leader = {
+	name = "萨莫二世"
+	picture = "gfx/leaders/SVK/SVK_Samo_II.png"
+	expire = "1965.1.1"
+	ideology = authoritarian_democrat_subtype
+                   }
+        create_country_leader = {
+	name = "萨莫二世"
+	picture = "gfx/leaders/SVK/SVK_Samo_II.png"
+	expire = "1965.1.1"
+	ideology = syndicalist_subtype
+                   }
+		}
+ 
+	}
+
+focus = {
+		id = SVK_back_to_pagan_believes
+		icon = GFX_goal_SVK_back_to_pagan_believes
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = 13
+		y = 15
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_samo_back
+		}
+
+
+		completion_reward = {
+                        add_stability = -0.1
+                        add_research_slot = 1
+			add_ideas = SVK_acient_religion_idea
+		}
+	}
+
+focus = {
+		id = SVK_a_saviour_of_slavs
+		icon = GFX_goal_SVK_saviour_of_slavs
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = 13
+		y = 16
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_back_to_pagan_believes
+		}
+
+
+		completion_reward = {
+			add_war_support = 0.15
+                        army_experience = 50
+                        add_ideas = SVK_slav_saviour_idea
+		}
+	}
+
+focus = {
+		id = SVK_free_the_moravians
+		icon = GFX_goal_SVK_free_moravians
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = 12
+		y = 17
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_a_saviour_of_slavs
+		}
+
+
+		completion_reward = {
+                        army_experience = 10
+			75 = { add_core_of = SVK }
+                        71 = { add_core_of = SVK }
+                        74 = { add_core_of = SVK }
+                        1131 = { add_core_of = SVK }
+
+		}
+	}
+
+focus = {
+		id = SVK_free_the_bohemians
+		icon = GFX_goal_SVK_free_bohemians
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = 14
+		y = 17
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_a_saviour_of_slavs
+		}
+
+
+		completion_reward = {
+                        army_experience = 10
+			1132 = { add_core_of = SVK }
+                        786 = { add_core_of = SVK }
+                        9 = { add_core_of = SVK }
+                        1129 = { add_core_of = SVK }
+                        1134 = { add_core_of = SVK }
+                        1138 = { add_core_of = SVK }
+                        69 = { add_core_of = SVK }
+                        1130 = { add_core_of = SVK }
+                        1133 = { add_core_of = SVK }
+                        1139 = { add_core_of = SVK }
+                      declare_war_on = {
+                      target = CZE
+                     type = annex_everything
+                  }
+		}
+	}
+
+focus = {
+		id = SVK_our_rightful_carinthia
+		icon = GFX_goal_SVK_our_carinthia
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = 13
+		y = 18
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_free_the_bohemians
+		}
+                prerequisite = {
+			focus = SVK_free_the_moravians
+		}
+
+
+		completion_reward = {
+                        army_experience = 10
+			create_wargoal = {
+                        type = annex_everything
+                        target = AUS
+                       }
+                        1137 = { add_core_of = SVK }
+                        4 = { add_core_of = SVK }
+                        775 = { add_core_of = SVK }
+                        835 = { add_core_of = SVK }
+                        836 = { add_core_of = SVK }
+                        152 = { add_core_of = SVK }
+                        153 = { add_core_of = SVK }
+                        942 = { add_core_of = SVK }
+                        39 = { add_core_of = SVK }
+                        783 = { add_core_of = SVK }
+                        759 = { add_core_of = SVK }
+                        160 = { add_core_of = SVK }
+                        736 = { add_core_of = SVK }
+                        102 = { add_core_of = SVK }
+                        1100 = { add_core_of = SVK }
+                        1144 = { add_core_of = SVK }
+                        1103 = { add_core_of = SVK }
+                        1101 = { add_core_of = SVK }
+                        1104 = { add_core_of = SVK }
+						1272 = { add_core_of = SVK }
+						1235 = { add_core_of = SVK }
+
+
+		}
+	}
+
+focus = {
+		id = SVK_avars_behind_danube
+		icon = GFX_goal_SVK_Avars_behind_danube
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = 14
+		y = 19
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_our_rightful_carinthia
+		}
+
+
+		completion_reward = {
+			create_wargoal = {
+                        type = annex_everything
+                        target = HUN
+                       }
+                        1109 = { add_core_of = SVK }
+                        1119 = { add_core_of = SVK }
+                        73 = { add_core_of = SVK }
+						784 = { add_core_of = SVK }
+						155 = { add_core_of = SVK }
+                        1111 = { add_core_of = SVK }
+                        1106 = { add_core_of = SVK }
+                        1107 = { add_core_of = SVK }
+                        43 = { add_core_of = SVK }
+                        1110 = { add_core_of = SVK }
+                        154 = { add_core_of = SVK }
+                        1108 = { add_core_of = SVK }
+                        45 = { add_core_of = SVK }
+                        875 = { add_core_of = SVK }
+                        82 = { add_core_of = SVK }
+                        1114 = { add_core_of = SVK }
+                        83 = { add_core_of = SVK }
+                        1131 = { add_core_of = SVK }
+                        1113 = { add_core_of = SVK }
+                        84 = { add_core_of = SVK }
+                        1116 = { add_core_of = SVK }
+                        789 = { add_core_of = SVK }
+                        76 = { add_core_of = SVK }
+	                    1117 = { add_core_of = SVK }
+                        1118 = { add_core_of = SVK }
+                        1115 = { add_core_of = SVK }
+                        1112 = { add_core_of = SVK }
+						
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
+
+
+
+
+		}
+	}
+
+focus = {
+		id = SVK_free_sorbians
+		icon = GFX_goal_SVK_free_sorbians
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = 12
+		y = 19
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_our_rightful_carinthia
+		}
+                
+
+
+		completion_reward = {
+			army_experience = 15
+			create_wargoal = {
+                        type = annex_everything
+                        target = GER
+                       }
+                        65 = { add_core_of = SVK }
+                        66 = { add_core_of = SVK }
+                        67 = { add_core_of = SVK }
+		}
+	}
+
+focus = {
+		id = SVK_grand_protector_of_slavs
+		icon = GFX_goal_SVK_grand_protector
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = 13
+		y = 20
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_avars_behind_danube
+		}
+                prerequisite = {
+			focus = SVK_free_sorbians
+		}
+
+
+		completion_reward = {
+                        add_stability = 0.15
+                        add_political_power = 150
+                        add_research_slot = 1
+                        add_war_support = 0.15
+                        create_faction = svk_pact_perun
+			swap_ideas = {
+                         remove_idea = SVK_slav_saviour_idea
+                         add_idea = SVK_slav_saviour_2_idea
+                    }
+                        SVK = { add_opinion_modifier = { target = POL modifier = small_increase } }
+                        SVK = { diplomatic_relation = {
+                        country = POL
+                        relation = non_aggression_pact
+                        active = yes
+                            }
+                         }
+                        SVK = { add_opinion_modifier = { target = CRO modifier = small_increase } }
+                        SVK = { diplomatic_relation = {
+                        country = CRO
+                        relation = non_aggression_pact
+                        active = yes
+                            }
+                         }
+                        SVK = { add_opinion_modifier = { target = SER modifier = small_increase } }
+                        SVK = { diplomatic_relation = {
+                        country = SER
+                        relation = non_aggression_pact
+                        active = yes
+                            }
+                         }
+                        SVK = { add_opinion_modifier = { target = BUL modifier = small_increase } }
+                        SVK = { diplomatic_relation = {
+                        country = BUL
+                        relation = non_aggression_pact
+                        active = yes
+                            }
+                         }
+                        SVK = { add_opinion_modifier = { target = UKR modifier = small_increase } }
+                        SVK = { diplomatic_relation = {
+                        country = UKR
+                        relation = non_aggression_pact
+                        active = yes
+                            }
+                         }
+                        SVK = { add_opinion_modifier = { target = WHR modifier = small_increase } }
+                        SVK = { diplomatic_relation = {
+                        country = WHR
+                        relation = non_aggression_pact
+                        active = yes
+                            }
+                         }
+                        SVK = { add_opinion_modifier = { target = RUS modifier = small_increase } }
+                        SVK = { diplomatic_relation = {
+                        country = RUS
+                        relation = non_aggression_pact
+                        active = yes
+                            }
+                         }
+		}
+	}
+
+#####PATAUT######
+
+focus = {
+		id = SVK_stefanik_victory
+		icon = GFX_goal_SVK_stefanik_victory
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = 21
+		y = 3
+		available = {
+                has_country_flag = SVK_Stefanik_Victory_2
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_right_victory
+		}
+
+		completion_reward = {
+			set_politics = {
+	                ruling_party = paternal_autocrat
+                        elections_allowed = no
+                        last_election = "1935.12.17"
+                        election_frequency = 48
+                    }
+                add_popularity = {
+                   ideology = paternal_autocrat
+                   popularity = 0.15
+                 }
+                add_stability = 0.15
+                add_political_power = 20
+			create_country_leader = {
+				name = "米兰·拉斯蒂斯拉夫·斯特凡尼克"
+				picture = "gfx/leaders/SVK/SVK_Stefanik.png"
+				expire = "1965.1.1"
+				ideology = paternal_autocrat_subtype
+			}
+		}
+	}
+
+focus = {
+		id = SVK_slovak_natranshum
+		icon = GFX_goal_SVK_slovak_nattranshuman
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 21
+		y = 4
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_stefanik_victory
+		}
+
+		completion_reward = {
+			add_popularity = {
+                   ideology = paternal_autocrat
+                   popularity = 0.1
+                 }
+                add_stability = 0.1
+                add_political_power = 35
+                add_ideas = SVK_national_transhumanism_idea
+		}
+	}
+
+focus = {
+		id = SVK_the_perfect_human
+		icon = GFX_goal_SVK_perfect_human
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 22
+		y = 5
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_slovak_natranshum
+		}
+
+		completion_reward = {
+                         random_owned_state = {
+			add_building_construction = {
+                        type = industrial_complex 
+                        level = 1
+                        instant_build = yes
+                     }
+                  add_extra_state_shared_building_slots = 1
+                  }
+                  random_owned_state = {
+			add_building_construction = {
+                        type = industrial_complex 
+                        level = 1
+                        instant_build = yes
+                     }
+                  add_extra_state_shared_building_slots = 1
+                  }
+                  random_owned_state = {
+			add_building_construction = {
+                        type = industrial_complex 
+                        level = 1
+                        instant_build = yes
+                     }
+                  add_extra_state_shared_building_slots = 1
+                  }
+                 add_ideas = SVK_perfect_for_humanity_idea
+		}
+	}
+
+focus = {
+		id = SVK_embrace_ethnofuturism
+		icon = GFX_goal_SVK_embrace_ethnofuturism
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 20
+		y = 5
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_slovak_natranshum
+		}
+
+		completion_reward = {
+			add_manpower = 12000
+                        add_ideas = SVK_ethnofuturism_idea
+		}
+	}
+
+focus = {
+		id = SVK_futurist_christianity
+		icon = GFX_goal_SVK_futurist_christianity
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 21
+		y = 6
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_embrace_ethnofuturism
+		}
+                prerequisite = {
+			focus = SVK_the_perfect_human
+		}
+
+		completion_reward = {
+                    add_stability = -0.075
+                    add_ideas = SVK_future_christianity_idea
+		}
+	}
+
+focus = {
+		id = SVK_the_perfect_futur_society
+		icon = GFX_goal_SVK_perfect_future_society
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 21
+		y = 7
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_futurist_christianity
+		}
+
+		completion_reward = {
+                        add_stability = -0.05
+			random_owned_state = {
+			add_building_construction = {
+                        type = industrial_complex 
+                        level = 1
+                        instant_build = yes
+                     }
+                  add_extra_state_shared_building_slots = 1
+                  }
+                  random_owned_state = {
+			add_building_construction = {
+                        type = industrial_complex 
+                        level = 1
+                        instant_build = yes
+                     }
+                  add_extra_state_shared_building_slots = 1
+                  }
+                add_ideas = SVK_society_of_future_idea
+		}
+	}
+
+focus = {
+		id = SVK_we_will_dominate
+		icon = GFX_goal_SVK_we_will_dominate
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 21
+		y = 8
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_the_perfect_futur_society
+		}
+
+		completion_reward = {
+			add_stability = 0.025
+                        add_political_power = 35
+                        add_research_slot = 1
+		}
+	}
+
+focus = {
+		id = SVK_operation_mercury
+		icon = GFX_goal_SVK_operation_mercury
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = 19
+		y = 9
+		available = {
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_we_will_dominate
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+                        add_political_power = 15
+		}
+	}
+
+focus = {
+		id = SVK_cult_of_personality
+		icon = GFX_goal_SVK_cult_of_personality
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 18
+		y = 10
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_operation_mercury
+		}
+
+		completion_reward = {
+                        army_experience = 25
+			add_ideas = SVK_cult_of_personality_stef_idea
+		}
+	}
+
+focus = {
+		id = SVK_we_will_be_perfect
+		icon = GFX_goal_SVK_we_will_be_perfect
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 20
+		y = 10
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_operation_mercury
+		}
+
+		completion_reward = {
+			swap_ideas = {
+                         remove_idea = SVK_perfect_for_humanity_idea
+                         add_idea = SVK_perfect_for_humanity_2_idea
+                    }
+		}
+	}
+focus = {
+		id = SVK_we_are_stefanik
+		icon = GFX_goal_SVK_we_are_stefanik
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 19
+		y = 11
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_we_will_be_perfect
+		}
+                prerequisite = {
+			focus = SVK_cult_of_personality
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+                        add_stability = 0.05
+		}
+	}
+
+focus = {
+		id = SVK_operation_venus
+		icon = GFX_goal_SVK_operation_venus
+                relative_position_id = SVK_pressburg_succ
+		cost = 2
+		x = 23
+		y = 9
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_we_will_dominate
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+                        add_political_power = 15
+		}
+	}
+
+focus = {
+		id = SVK_only_transhumanists
+		icon = GFX_goal_SVK_only_transhumanists
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 23
+		y = 10
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_operation_venus
+		}
+
+		completion_reward = {
+			add_popularity = {
+                   ideology = paternal_autocrat
+                   popularity = 0.35
+                 }
+                add_stability = -0.075
+                add_political_power = 25
+		}
+	}
+
+focus = {
+		id = SVK_nation_dominated_by_science
+		icon = GFX_goal_SVK_nation_dominated_by_science
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 22
+		y = 11
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_only_transhumanists
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+                        bonus = 0.5
+                        uses = 1
+                       category = nuclear
+                    }
+                 add_ideas = SVK_nation_dominated_by_science_idea
+		}
+	}
+
+focus = {
+		id = SVK_national_indoctrination
+		icon = GFX_goal_SVK_national_indoctrination
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 24
+		y = 11
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_only_transhumanists
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+                        add_ideas = SVK_stef_nat_indo_idea
+		}
+	}
+
+focus = {
+		id = SVK_great_purge
+		icon = GFX_goal_SVK_great_purge
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 21
+		y = 12
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_national_indoctrination
+		}
+                 prerequisite = {
+			focus = SVK_nation_dominated_by_science
+		}
+                prerequisite = {
+			focus = SVK_we_are_stefanik
+		}
+
+		completion_reward = {
+                        add_popularity = {
+                   ideology = paternal_autocrat
+                   popularity = 1
+                 }
+                 add_stability = -0.1
+
+			set_party_name = { 
+                         ideology = market_liberal 
+                         long_name = FRG_syndicalist_party_long_2
+                         name = FRG_syndicalist_party_2
+                     }
+                         set_party_name = { 
+                         ideology = social_liberal
+                         long_name = FRG_syndicalist_party_long_2
+                         name = FRG_syndicalist_party_2
+                     }
+                     set_party_name = { 
+                         ideology = social_democrat
+                         long_name = FRG_syndicalist_party_long_2
+                         name = FRG_syndicalist_party_2
+                     }
+                     set_party_name = { 
+                         ideology = social_conservative
+                         long_name = FRG_syndicalist_party_long_2
+                         name = FRG_syndicalist_party_2
+                     }
+                     set_party_name = { 
+                         ideology = authoritarian_democrat
+                         long_name = FRG_syndicalist_party_long_2
+                         name = FRG_syndicalist_party_2
+                     }
+                     set_party_name = { 
+                         ideology = syndicalist 
+                         long_name = FRG_syndicalist_party_long_2
+                         name = FRG_syndicalist_party_2
+                     }
+                         set_party_name = { 
+                         ideology = radical_socialist
+                         long_name = FRG_syndicalist_party_long_2
+                         name = FRG_syndicalist_party_2
+                     }
+                     set_party_name = { 
+                         ideology = national_populist
+                         long_name = FRG_syndicalist_party_long_2
+                         name = FRG_syndicalist_party_2
+                     }
+                     set_party_name = { 
+                         ideology = totalist
+                         long_name = FRG_syndicalist_party_long_2
+                         name = FRG_syndicalist_party_2
+                     }
+		}
+	}
+
+focus = {
+		id = SVK_nation_secured
+		icon = GFX_goal_SVK_nation_secured
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 21
+		y = 13
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_great_purge
+		}
+
+		completion_reward = {
+			add_stability = 0.15
+                        add_political_power = 50
+		}
+	}
+
+
+
+focus = {
+		id = SVK_operation_jupiter
+		icon = GFX_goal_SVK_operation_jupiter
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = 21
+		y = 15
+		available = {
+        has_government = paternal_autocrat
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+		}
+
+		completion_reward = {
+			army_experience = 50
+                        add_war_support = 0.15
+		}
+	}
+
+focus = {
+		id = SVK_techno_panslavism
+		icon = GFX_goal_SVK_techno_panslavism
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = 21
+		y = 16
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+                       focus = SVK_operation_jupiter
+		}
+
+		completion_reward = {
+			add_ideas = SVK_techno_panslavism_idea
+		}
+	}
+
+focus = {
+		id = SVK_attack_czechia
+		icon = GFX_goal_SVK_attack_czechia
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = 22
+		y = 17
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+                       focus =  SVK_techno_panslavism
+		}
+
+		completion_reward = {
+			75 = { add_core_of = SVK }
+                        71 = { add_core_of = SVK }
+                        74 = { add_core_of = SVK }
+                        1131 = { add_core_of = SVK }
+                        1132 = { add_core_of = SVK }
+                        786 = { add_core_of = SVK }
+                        9 = { add_core_of = SVK }
+                        1129 = { add_core_of = SVK }
+                        1134 = { add_core_of = SVK }
+                        1138 = { add_core_of = SVK }
+                        69 = { add_core_of = SVK }
+                        1130 = { add_core_of = SVK }
+                        1133 = { add_core_of = SVK }
+                        1139 = { add_core_of = SVK }
+                      declare_war_on = {
+                      target = CZE
+                     type = annex_everything
+                  }
+
+		}
+	}
+
+focus = {
+		id = SVK_attack_poland
+		icon = GFX_goal_SVK_attack_poland
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = 20
+		y = 17
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+                       focus =  SVK_techno_panslavism
+		}
+
+		completion_reward = {
+			90 = { add_core_of = SVK }
+                        87 = { add_core_of = SVK }
+                        10 = { add_core_of = SVK }
+                        98 = { add_core_of = SVK }
+                        1148 = { add_core_of = SVK }
+                        97 = { add_core_of = SVK }
+                        92 = { add_core_of = SVK }
+                        1088 = { add_core_of = SVK }
+                        86 = { add_core_of = SVK }
+                        776 = { add_core_of = SVK }
+                        777 = { add_core_of = SVK }
+                        5 = { add_core_of = SVK }
+                        188 = { add_core_of = SVK }
+                      declare_war_on = {
+                      target = POL
+                     type = annex_everything
+                  }
+		}
+	}
+
+focus = {
+		id = SVK_liberate_silesians
+		icon = GFX_goal_SVK_liberate_silesians
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = 21
+		y = 18
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+                       focus =  SVK_attack_poland
+		}
+                prerequisite = {
+                       focus =  SVK_attack_czechia
+		}
+
+		completion_reward = {
+			66 = { add_core_of = SVK }
+                        67 = { add_core_of = SVK }
+                        declare_war_on = {
+                      target = GER
+                     type = annex_everything
+                  }
+		}
+	}
+
+focus = {
+		id = SVK_transhumanist_zapadoslavia
+		icon = GFX_goal_SVK_transhumanist_zapadoslavia
+                relative_position_id = SVK_pressburg_succ
+		cost = 4
+		x = 21
+		y = 19
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+                       focus =  SVK_liberate_silesians
+		}
+
+		completion_reward = {
+			set_cosmetic_tag = SVK_nattrans_zapad
+                        add_war_support = 0.15
+                        add_research_slot = 1
+		}
+	}
+
+
+#####NATPOP######
+
+focus = {
+		id = SVK_mach_victory
+		icon = GFX_goal_SVK_mach_victory
+                relative_position_id = SVK_pressburg_succ
+		cost = 1.00
+		x = 26
+		y = 3
+		available = {
+                has_country_flag = SVK_Mach_Victory
+                NOT = { SVK = { is_puppet_of = FRG } }
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_right_victory
+		}
+
+		completion_reward = {
+			set_politics = {
+	                ruling_party = national_populist
+                        elections_allowed = no
+                        last_election = "1935.12.17"
+                        election_frequency = 48
+                    }
+                add_popularity = {
+                   ideology = national_populist
+                   popularity = 0.15
+                 }
+
+                add_ideas = {
+                SVK_Alexander_Mach_hog_npo
+                SVK_Ferdinant_urcansky_for_nop
+                SVK_Jozef_Gregor_Tajovsky_sec_sco
+                SVK_Matus_Cernak_sec_npo
+                } 
+
+                add_stability = 0.15
+                add_political_power = 20
+				create_country_leader = {
+				name = "亚历山大·马赫"
+				picture = "gfx/leaders/SVK/SVK_Mach.png"
+				expire = "1965.1.1"
+				ideology = fundementalism_subtype
+			}
+		}
+	}
+
+focus = {
+		id = SVK_slovak_nat_soc
+		icon = GFX_goal_SVK_slovak_ultranationalism
+                relative_position_id = SVK_pressburg_succ
+		cost = 3
+		x = 26
+		y = 4
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_mach_victory
+		}
+
+		completion_reward = {
+			add_war_support = 0.05
+                        add_stability = -0.05
+                        add_popularity = {
+                   ideology = national_populist
+                   popularity = 0.05
+                 }
+                        add_ideas = SVK_slovak_ultranationalism_idea
+		}
+	}
+
+focus = {
+		id = SVK_truly_christian_nation
+		icon = GFX_goal_SVK_truly_christian_nation
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 27
+		y = 5
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_slovak_nat_soc
+		}
+
+		completion_reward = {
+			add_stability = 0.075
+                        add_war_support = 0.05
+                        add_political_power = 35
+		}
+	}
+
+focus = {
+		id = SVK_get_rid_of
+		icon = GFX_goal_SVK_get_rid_of
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 25
+		y = 5
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_slovak_nat_soc
+		}
+
+		completion_reward = {
+                         add_popularity = {
+                   ideology = national_populist
+                   popularity = 0.05
+                 }
+			add_ideas = SVK_get_rid_of_idea
+		}
+	}
+
+focus = {
+		id = SVK_law_of_hun
+		icon = GFX_goal_SVK_law_of_hun
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 26
+		y = 6
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_get_rid_of
+		}
+                prerequisite = {
+			focus = SVK_truly_christian_nation
+		}
+
+		completion_reward = {
+			add_ideas = SVK_hun_revenge_idea
+		}
+	}
+
+focus = {
+		id = SVK_rid_who_control_us
+		icon = GFX_goal_SVK_rid_who_control_us
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 26
+		y = 7
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_law_of_hun
+		}
+
+		completion_reward = {
+			add_stability = -0.05
+                        add_political_power = -25
+		}
+	}
+
+focus = {
+		id = SVK_he_has_control
+		icon = GFX_goal_SVK_he_has_control
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 27
+		y = 8
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_rid_who_control_us
+		}
+
+		completion_reward = {
+                        add_stability = 0.05
+			retire_country_leader = yes
+                        create_country_leader = {
+	name = "亚历山大·马赫"
+	desc = ""
+	picture = "gfx/leaders/SVK/Vojtech_Tuka_2.png"
+	expire = "1965.1.1"
+	ideology = national_populist_subtype
+	traits = {
+	}
+}
+		}
+	}
+
+focus = {
+		id = SVK_ethnic_slovakia
+		icon = GFX_goal_SVK_ethnic_slovakia
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 25
+		y = 8
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_rid_who_control_us
+		}
+
+		completion_reward = {
+			add_stability = 0.15
+                        add_political_power = 30
+		}
+	}
+
+focus = {
+		id = SVK_hail_vodca
+		icon = GFX_goal_SVK_hail_vodca
+                relative_position_id = SVK_pressburg_succ
+		cost = 5
+		x = 26
+		y = 9
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_ethnic_slovakia
+		}
+                prerequisite = {
+			focus = SVK_he_has_control
+		}
+
+		completion_reward = {
+			add_country_leader_trait = vodca
+		}
+	}
+
+focus = {
+		id = SVK_great_slovakia
+		icon = GFX_goal_SVK_great_slovakia
+                relative_position_id = SVK_pressburg_succ
+		cost = 3
+		x = 26
+		y = 13
+		available = {
+        has_government = national_populist
+		}
+		ai_will_do = {
+				factor = 100
+		}
+
+		completion_reward = {
+                        add_war_support = 0.1
+                        1124 = { add_core_of = SVK }
+                        88 = { add_core_of = SVK }
+                        1125 = { add_core_of = SVK }
+                        1127 = { add_core_of = SVK }
+                        1126 = { add_core_of = SVK }
+                        91 = { add_core_of = SVK }
+                        89 = { add_core_of = SVK }
+                        1140 = { add_core_of = SVK }
+                        80 = { add_core_of = SVK }
+                        713 = { add_core_of = SVK }
+                        75 = { add_core_of = SVK }
+                        71 = { add_core_of = SVK }
+                        74 = { add_core_of = SVK }
+                        1131 = { add_core_of = SVK }
+						1314 = { add_core_of = SVK }
+						1319 = { add_core_of = SVK }
+
+
+		}
+	}
+
+focus = {
+		id = SVK_get_halic
+		icon = GFX_goal_SVK_get_galicia
+                relative_position_id = SVK_pressburg_succ
+		cost = 3
+		x = 27
+		y = 14
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_great_slovakia
+		}
+
+		completion_reward = {
+			declare_war_on = {
+                      target = GAL
+                     type = annex_everything
+                  }
+		}
+	}
+
+focus = {
+		id = SVK_get_ruthenia
+		icon = GFX_goal_SVK_get_ruthenia
+                relative_position_id = SVK_pressburg_succ
+		cost = 3
+		x = 25
+		y = 14
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_great_slovakia
+		}
+
+		completion_reward = {
+                        army_experience = 25
+			1119 = { add_core_of = SVK }
+                        73 = { add_core_of = SVK }
+                        
+		}
+	}
+
+focus = {
+		id = SVK_get_moravia
+		icon = GFX_goal_SVK_get_moravia
+                relative_position_id = SVK_pressburg_succ
+		cost = 3
+		x = 25
+		y = 15
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_get_ruthenia
+		}
+
+		completion_reward = {
+			declare_war_on = {
+                      target = CZE
+                     type = annex_everything
+                  }
+		}
+	}
+focus = {
+		id = SVK_final_blow_hun
+		icon = GFX_goal_SVK_final_blow_hun
+                relative_position_id = SVK_pressburg_succ
+		cost = 3
+		x = 27
+		y = 15
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_get_halic
+		}
+
+		completion_reward = {
+			declare_war_on = {
+                      target = HUN
+                     type = annex_everything
+                  }
+		}
+	}
+
+focus = {
+		id = SVK_we_rule_panonia
+		icon = GFX_goal_SVK_we_rule_panonia
+                relative_position_id = SVK_pressburg_succ
+		cost = 3
+		x = 26
+		y = 16
+		available = {
+
+		}
+		ai_will_do = {
+				factor = 100
+		}
+                prerequisite = {
+			focus = SVK_get_moravia
+		}
+                prerequisite = {
+			focus = SVK_final_blow_hun
+		}
+
+		completion_reward = {
+                        add_war_support = 0.15
+			set_cosmetic_tag = SVK_Great_slovakia_Pan
+		}
+	}
+
+###Industry###
+	focus = {
+		id = SVK_industry_start
+		icon = GFX_goal_SVK_new_beginning
+		x = 4
+		y = 19
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+		add_stability = 0.05
+		add_political_power = 25
+		add_tech_bonus = {
+         bonus = 1
+         uses = 1
+         category = industry
+       }
+		random_owned_state= {
+		 add_building_construction = {
+         type = industrial_complex
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 1
+       }
+       random_owned_state= {
+		 add_building_construction = {
+         type = industrial_complex
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 1
+       }
+			
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	
+focus = {
+		id = SVK_expand_infra
+		icon = GFX_goal_SVK_expand_infrastructure
+		relative_position_id = SVK_industry_start
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+		add_stability = 0.025
+        1123 = {
+         add_building_construction = {
+         type = infrastructure
+         level = 2
+         instant_build = yes
+         }
+        }
+
+		 1135 = {
+         add_building_construction = {
+         type = infrastructure
+         level = 1
+         instant_build = yes
+        }
+	  }
+
+	  664 = {
+         add_building_construction = {
+         type = infrastructure
+         level = 1
+         instant_build = yes
+        }
+	  }
+			
+		}
+		prerequisite = {
+			focus = SVK_industry_start
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SVK_expand_mining_operations
+		icon = GFX_goal_SVK_mining_operations
+		relative_position_id = SVK_industry_start
+		x = -2
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+			add_tech_bonus = {
+             bonus = 1
+              uses = 2
+            category = excavation_tech
+          }
+          70 = {
+              add_resource = {
+              type = steel
+              amount = 10
+            }
+            add_resource = {
+              type = tungsten
+              amount = 10
+            }
+          }
+
+          1120 = {
+              add_resource = {
+              type = steel
+              amount = 10
+            }
+            add_resource = {
+              type = tungsten
+              amount = 5
+            }
+            add_resource = {
+              type = aluminium
+              amount = 5
+            }
+          }
+        
+		}
+		prerequisite = {
+			focus = SVK_expand_infra
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SVK_synthetic_refining
+		icon = GFX_goal_SVK_black_gold
+		relative_position_id = SVK_industry_start
+		x = -3
+		y = 3
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+		add_tech_bonus = {
+             bonus = 1
+              uses = 1
+            category = synth_resources
+          }
+         1135 = {
+         add_resource = {
+          type = oil
+          amount = 8
+          }
+          }
+			
+		}
+		prerequisite = {
+			focus = SVK_expand_mining_operations
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SVK_agricultural_land
+		icon = GFX_goal_SVK_agricultural_land
+		relative_position_id = SVK_industry_start
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			SVK = {  owns_state = 1136
+			         owns_state = 1122 } 
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+			1136 = {
+         add_building_construction = {
+         type = infrastructure
+         level = 2
+         instant_build = yes
+         }
+         add_building_construction = {
+         type = industrial_complex
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 1
+        }
+
+		 1122 = {
+         add_building_construction = {
+         type = infrastructure
+         level = 2
+         instant_build = yes
+        }
+        add_building_construction = {
+         type = industrial_complex
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 1
+	  }
+		}
+		prerequisite = {
+			focus = SVK_expand_infra
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SVK_workers_need_jobs
+		icon = GFX_goal_SVK_workers_need_job
+		relative_position_id = SVK_industry_start
+		x = 2
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+		random_owned_state= {
+		 add_building_construction = {
+         type = industrial_complex
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 1
+       }
+       random_owned_state= {
+		 add_building_construction = {
+         type = industrial_complex
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 1
+       }
+       random_owned_state= {
+		 add_building_construction = {
+         type = industrial_complex
+         level = 2
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 2
+       }
+			
+		}
+		prerequisite = {
+			focus = SVK_expand_infra
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = SVK_military_expansion
+		icon = GFX_goal_SVK_military_expansion
+		relative_position_id = SVK_industry_start
+		x = 3
+		y = 3
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+		 random_owned_state= {
+		 add_building_construction = {
+         type = arms_factory
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 1
+       }
+       random_owned_state= {
+		 add_building_construction = {
+         type = arms_factory
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 1
+       }
+       random_owned_state= {
+		 add_building_construction = {
+         type = arms_factory
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 1
+       }
+		}
+		prerequisite = {
+			focus = SVK_workers_need_jobs
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SVK_expand_tatra_exports
+		icon = GFX_goal_SVK_expand_tatra_exports
+		relative_position_id = SVK_industry_start
+		x = -1
+		y = 3
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+         70 = {
+         add_building_construction = {
+         type = infrastructure
+         level = 2
+         instant_build = yes
+         }
+         add_building_construction = {
+         type = industrial_complex
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 1
+        }
+
+		 1120 = {
+         add_building_construction = {
+         type = infrastructure
+         level = 2
+         instant_build = yes
+        }
+        add_building_construction = {
+         type = industrial_complex
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 1
+	  }
+         add_ideas =  SVK_tatra_export 
+		}
+		prerequisite = {
+			focus = SVK_expand_infra
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SVK_expand_railways
+		icon = GFX_goal_SVK_expand_railways
+		relative_position_id = SVK_industry_start
+		x = 1
+		y = 3
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+            add_stability = 0.05
+			add_ideas =  SVK_railway_system
+		}
+		prerequisite = {
+			focus = SVK_expand_infra
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SVK_operation_mars
+		icon = GFX_goal_SVK_operation_mars
+		relative_position_id = SVK_industry_start
+		x = 0
+		y = 4
+		cost = 5
+		available = {
+			 has_government = paternal_autocrat
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 45
+		}
+		prerequisite = {
+			focus = SVK_agricultural_land
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SVK_expand_geoengineering
+		icon = GFX_goal_SVK_expand_geoenineering
+		relative_position_id = SVK_industry_start
+		x = -1
+		y = 5
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+			add_ideas = SVK_geoengineering
+		}
+		prerequisite = {
+			focus = SVK_operation_mars
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SVK_gmo
+		icon = GFX_goal_SVK_gmo
+		relative_position_id = SVK_industry_start
+		x = 1
+		y = 5
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+			add_stability = -0.1
+			add_ideas = SVK_gmo
+		}
+		prerequisite = {
+			focus = SVK_operation_mars
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SVK_jszo
+		icon = GFX_goal_SVK_jzso
+		relative_position_id = SVK_industry_start
+		x = 0
+		y = 6
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+			1136 = {
+         add_building_construction = {
+         type = industrial_complex
+         level = 1
+         instant_build = yes
+        }
+        add_building_construction = {
+         type = arms_factory
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 2
+        }
+
+		 1122 = {
+        add_building_construction = {
+         type = industrial_complex
+         level = 1
+         instant_build = yes
+        }
+        add_building_construction = {
+         type = arms_factory
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 2
+	  }
+		}
+		prerequisite = {
+			focus = SVK_gmo
+		}
+		prerequisite = {
+			focus = SVK_expand_geoengineering
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = SVK_breadbasket_of_ceu
+		icon = GFX_goal_SVK_bread_basket
+		relative_position_id = SVK_industry_start
+		x = 0
+		y = 7
+		cost = 5
+		available = {
+			has_completed_focus = SVK_expand_tatra_exports
+			has_completed_focus = SVK_agricultural_land
+			has_completed_focus = SVK_expand_railways
+			has_completed_focus = SVK_military_expansion
+		}
+
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+		 add_research_slot = 1
+		 add_stability = 0.1
+		 add_political_power = 100
+         random_owned_state = {
+         add_building_construction = {
+         type = industrial_complex
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 1
+      }
+        
+       random_owned_state = {
+        add_building_construction = {
+         type = industrial_complex
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 1
+        }
+			
+		}
+		prerequisite = {
+			focus = SVK_industry_start
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	###military###
+	focus = {
+		id = SVK_military_start
+		icon = GFX_goal_SVK_military_start
+		x = 13
+		y = 21
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			add_command_power = 50
+			army_experience = 15
+		}
+	}
+
+	focus = {
+		id = SVK_finest_army
+		icon = GFX_goal_SVK_slovak_finest_army
+		relative_position_id = SVK_military_start
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		prerequisite = {
+			focus = SVK_military_start
+		}
+		completion_reward = {
+			add_manpower = 3000
+			add_war_support = 0.05
+			add_ideas = SVK_finest_army
+		}
+
+	}
+	focus = {
+		id = SVK_centralized_command
+		icon = GFX_goal_SVK_centralised_command
+		relative_position_id = SVK_military_start
+		x = 1
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		prerequisite = {
+			focus = SVK_finest_army
+		}
+		mutually_exclusive = {
+		focus = SVK_decentralized_command
+	}
+		completion_reward = {
+			add_ideas = SVK_cent_com
+			army_experience = 15
+		}
+
+	}
+
+	focus = {
+		id = SVK_decentralized_command
+		icon = GFX_goal_SVK_decentralised_command
+		relative_position_id = SVK_military_start
+		x = -1
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		prerequisite = {
+			focus = SVK_finest_army
+		}
+		mutually_exclusive = {
+		focus = SVK_centralized_command
+	}
+		completion_reward = {
+			add_ideas = SVK_decent_com
+			army_experience = 15
+		}
+
+	}
+
+	focus = {
+		id = SVK_slovak_strength
+		icon = GFX_goal_SVK_slovak_strenght
+		relative_position_id = SVK_military_start
+		x = 0
+		y = 3
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		prerequisite = {
+			focus = SVK_decentralized_command
+			focus = SVK_centralized_command
+		}
+		completion_reward = {
+		    army_experience = 25
+		    add_war_support = 0.1
+			swap_ideas = {
+             remove_idea = SVK_finest_army
+              add_idea = SVK_finest_army_2 
+           }
+		}
+
+	}
+	focus = {
+		id = SVK_operation_saturn
+		icon = GFX_goal_SVK_operation_saturn
+		relative_position_id = SVK_military_start
+		x = -2
+		y = 4
+		cost = 5
+		available = {
+			 has_government = paternal_autocrat
+		}
+		ai_will_do = {
+			base = 50
+		}
+		prerequisite = {
+			focus = SVK_slovak_strength
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			army_experience = 10
+		}
+
+	}
+	focus = {
+		id = SVK_army_of_future
+		icon = GFX_goal_SVK_army_of_the_future
+		relative_position_id = SVK_military_start
+		x = -2
+		y = 5
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		prerequisite = {
+			focus = SVK_operation_saturn
+		}
+		completion_reward = {
+			add_ideas = SVK_future_army
+		}
+
+	}
+	focus = {
+		id = SVK_project_soldat
+		icon = GFX_goal_SVK_projekt_soldat
+		relative_position_id = SVK_military_start
+		x = -2
+		y = 6
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		prerequisite = {
+			focus = SVK_army_of_future
+		}
+		completion_reward = {
+			add_manpower = 1500
+                        add_war_support = 0.05
+                        add_ideas = SVK_projekt_soldat
+		}
+
+	}
+
+	focus = {
+		id = SVK_status_of_equipment
+		icon = GFX_goal_SVK_status_of_equipment
+		relative_position_id = SVK_military_start
+		x = 5
+		y = 4
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		prerequisite = {
+			focus = SVK_slovak_strength
+		}
+		completion_reward = {
+		    add_war_support = 0.025
+		    army_experience = 10
+			add_equipment_to_stockpile = {
+            type = infantry_equipment
+              amount = 5000
+              producer = SVK
+           }
+		}
+
+	}
+
+	focus = {
+		id = SVK_quantity
+		icon = GFX_goal_SVK_quantity_svk
+		relative_position_id = SVK_military_start
+		x = 4
+		y = 5
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		prerequisite = {
+			focus = SVK_status_of_equipment
+		}
+		mutually_exclusive = {
+		focus = SVK_quality
+	}
+		completion_reward = {
+			add_ideas = SVK_equipment_quan
+		}
+
+	}
+	focus = {
+		id = SVK_quality
+		icon = GFX_goal_SVK_quality_svk
+		relative_position_id = SVK_military_start
+		x = 6
+		y = 5
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		prerequisite = {
+			focus = SVK_status_of_equipment
+		}
+		mutually_exclusive = {
+		focus = SVK_quantity
+	}
+		completion_reward = {
+			add_ideas = SVK_equipment_qual
+		}
+
+	}
+	focus = {
+		id = SVK_light_tank
+		icon = GFX_goal_SVK_slovak_light_tank
+		relative_position_id = SVK_military_start
+		x = 5
+		y = 6
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		prerequisite = {
+			focus = SVK_quality
+			focus = SVK_quantity
+		}
+		completion_reward = {
+			add_ideas = SVK_light_tanks
+		}
+
+	}
+
+	focus = {
+		id = SVK_study_weltkrieg
+		icon = GFX_goal_SVK_study_the_weltkrieg
+		relative_position_id = SVK_military_start
+		x = 1
+		y = 4
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		prerequisite = {
+			focus = SVK_slovak_strength
+		}
+		completion_reward = {
+		    add_war_support = 0.05
+		    army_experience = 15
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
+		}
+
+	}
+	
+	focus = {
+		id = SVK_army_of_iron
+		icon = GFX_goal_SVK_made_out_of_iron
+		relative_position_id = SVK_military_start
+		x = 1
+		y = 5
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		prerequisite = {
+			focus = SVK_study_weltkrieg
+		}
+		completion_reward = {
+			add_ideas = SVK_artillery
+		}
+
+	}
+
+	focus = {
+		id = SVK_offensive_doctrine
+		icon = GFX_goal_SVK_offensive_doctrine
+		relative_position_id = SVK_military_start
+		x = 2
+		y = 6
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		prerequisite = {
+			focus = SVK_army_of_iron
+		}
+		mutually_exclusive = {
+		focus = SVK_defensive_doctrine
+	}
+		completion_reward = {
+			add_war_support = 0.05
+		    army_experience = 15
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cat_mass_assault
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cat_grand_battle_plan
+			}
+		}
+
+	}
+	focus = {
+		id = SVK_defensive_doctrine
+		icon = GFX_goal_SVK_defensive_doctrine
+		relative_position_id = SVK_military_start
+		x = 0
+		y = 6
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		prerequisite = {
+			focus = SVK_army_of_iron
+		}
+		mutually_exclusive = {
+		focus = SVK_offensive_doctrine
+	}
+		completion_reward = {
+            add_war_support = 0.05
+		    army_experience = 15
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cat_superior_firepower
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cat_mobile_warfare
+			}
+		}
+
+	}
+	focus = {
+		id = SVK_army_ready_to_battle
+		icon = GFX_goal_SVK_army_ready_for_battle
+		relative_position_id = SVK_military_start
+		x = 1
+		y = 7
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		prerequisite = {
+			focus = SVK_offensive_doctrine
+			focus = SVK_defensive_doctrine
+		}
+
+		completion_reward = {
+		         add_war_support = 0.15
+		         army_experience = 30
+		         add_manpower = 5500
+		         add_research_slot = 1
+		         random_owned_state= {
+		 add_building_construction = {
+         type = arms_factory
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 1
+       }
+      random_owned_state= {
+		 add_building_construction = {
+         type = arms_factory
+         level = 1
+         instant_build = yes
+        }
+        add_extra_state_shared_building_slots = 1
+       }
+
+		}
+
+	}
+
+	###air###
+	focus = {
+		id = SVK_air_start
+		icon = GFX_goal_air_armada
+		x = 21
+		y = 21
+		cost = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+		    air_experience = 10
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SVK_air_supermacy
+		icon = GFX_goal_poland_goal
+		relative_position_id = SVK_air_start
+		x = 3
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		prerequisite = {
+			focus = SVK_air_start
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cat_battlefield_support
+			}
+		}
+	}
+	focus = {
+		id = SVK_build_airports
+		icon = GFX_goal_generic_construction
+		relative_position_id = SVK_air_start
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			
+		}
+		prerequisite = {
+			focus = SVK_air_start
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+			random_owned_state = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = SVK
+					}
+					add_building_construction = {
+						type = air_base
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			random_owned_state = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = SVK
+					}
+					add_building_construction = {
+						type = air_base
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = SVK_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		relative_position_id = SVK_air_start
+		x = 2
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		prerequisite = {
+			focus = SVK_air_start
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = fighter_techs
+			}
+		}
+	}
+
+	focus = {
+		id = SVK_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		relative_position_id = SVK_air_start
+		x = 1
+		y = 3
+		cost = 5
+		available = {
+			
+		}
+		prerequisite = {
+			focus = SVK_build_airports
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+	focus = {
+		id = SVK_school_for_pilots
+		icon = GFX_goal_generic_air_doctrine
+		relative_position_id = SVK_air_start
+		x = 3
+		y = 3
+		cost = 5
+		available = {
+			
+		}
+		prerequisite = {
+			focus = SVK_air_supermacy
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			air_experience = 15
+		}
+	}
+
+	focus = {
+		id = SVK_operation_uranus
+		icon = GFX_goal_SVK_operation_uranus
+		relative_position_id = SVK_air_start
+		x = -2
+		y = 1
+		cost = 5
+		available = {
+			 has_government = paternal_autocrat
+		}
+		prerequisite = {
+			focus = SVK_air_start
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			army_experience = 10
+		}
+	}
+
+	focus = {
+		id = SVK_acient_technologies
+		icon = GFX_goal_SVK_ancient_technologies
+		relative_position_id = SVK_air_start
+		x = -3
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		prerequisite = {
+			focus = SVK_operation_uranus
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+			add_ideas = SVK_ancient_air
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = jet_technology
+				category = rocketry
+			}
+		}
+	}
+
+	focus = {
+		id = SVK_soldier_wings
+		icon = GFX_goal_SVK_soldier_wings
+		relative_position_id = SVK_air_start
+		x = -1
+		y = 2
+		cost = 5
+		available = {
+			
+		}
+		prerequisite = {
+			focus = SVK_operation_uranus
+		}
+		ai_will_do = {
+			base = 50
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = para_tech
+			}
+			add_ideas = SVK_soldiers_wings
+		}
+	}
+	
+
+}

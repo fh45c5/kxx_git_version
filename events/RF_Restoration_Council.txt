@@ -1,0 +1,27 @@
+add_namespace = PSL
+
+
+country_event = {
+	id = PSL.1
+	title = PSL.1.t
+	desc = PSL.1.desc
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = PSL.1.a
+		ai_chance = {
+			factor = 50
+		}
+		set_country_flag = PSL_nat_boldyrev
+	}
+	option = {
+		name = PSL.1.b
+		ai_chance = {
+			factor = 50
+		}
+		set_country_flag = PSL_dem_boldyrev
+	}
+}

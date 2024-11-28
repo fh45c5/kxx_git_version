@@ -1,0 +1,65 @@
+﻿capital = 561
+
+oob = "ARC_1936"
+set_cosmetic_tag = ARC
+
+set_research_slots = 3 
+
+set_country_flag = is_russian_warlord
+
+add_ideas = {
+
+}
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_recon = 1
+	tech_engineers = 1
+	tech_trucks =1
+	motorised_infantry = 1
+	early_fighter = 1
+}
+
+set_politics = {
+	ruling_party = national_populist
+	last_election = "1933.10.25"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	totalist = 0
+	syndicalist = 0
+	radical_socialist = 0
+	social_liberal = 0
+	market_liberal = 0
+	social_democrat = 0
+	social_conservative = 0
+	authoritarian_democrat = 0
+	paternal_autocrat = 0
+	national_populist = 100
+}
+create_country_leader = {
+	name = "康斯坦丁·罗扎耶夫斯基"
+	picture = "gfx/leaders/ARC/Portrait_Rodzaevsky.png"
+	desc = ARC_konstantin_rodzaevsky_reac_desc
+	expire = "1965.1.1"
+	ideology = solidarism_subtype
+}
+
+set_stability = 0.5
+
+recruit_character = ARC_konstantin_rodzaevsky_reac
+recruit_character = ARC_konstantin_rodzaevsky_despotism
+recruit_character = ARC_Larionov 
+recruit_character = ARC_Lev
+recruit_character = ARC_Okhotin
+recruit_character = ARC_Petlin
+recruit_character = ARC_Syrovy
+recruit_character = ARC_Alexander_Bolotov
+recruit_character = ARC_Mikhail_Matkovsky
+
+
+
+

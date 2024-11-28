@@ -1,0 +1,2 @@
+VER = "countries/British vertin.txt"
+MVD = "countries/Manus Vindictae.txt"

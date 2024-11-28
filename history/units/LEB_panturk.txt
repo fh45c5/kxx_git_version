@@ -1,0 +1,64 @@
+division_template = {
+    name = "Bozkurtlar"
+    
+
+    regiments = {
+        militia = { x = 0 y = 0 }
+        militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+        militia = { x = 1 y = 1 }
+		militia = { x = 0 y = 2 }
+    }
+
+    support = {
+        engineer = { x = 0 y = 0 }
+    }
+	is_locked = yes
+	force_allow_recruiting = no
+}
+
+
+units = {
+	division = {
+		name = "1st Bozkurtlar Brigade"
+		location = 792
+		division_template = "Bozkurtlar"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division = {
+		name = "2nd Bozkurtlar Brigade"
+		location = 792
+		division_template = "Bozkurtlar"
+		start_experience_factor = 0.35
+		start_equipment_factor = 0.6
+	}
+	division = {
+		name = "3rd Bozkurtlar Brigade"
+		location = 792
+		division_template = "Bozkurtlar"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.6
+	}
+	division = {
+		name = "4th Bozkurtlar Brigade"
+		location = 792
+		division_template = "Bozkurtlar"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "5th Bozkurtlar Brigade"
+		location = 792
+		division_template = "Bozkurtlar"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.75
+	}
+	division = {
+		name = "6th Bozkurtlar Brigade"
+		location = 792
+		division_template = "Bozkurtlar"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.75
+	}
+}

@@ -1,0 +1,137 @@
+﻿add_namespace = bor
+
+country_event = {
+	id= bor.1
+	title = bor.1.t
+	desc = bor.1.d
+	trigger = {
+		tag = SIC
+		has_completed_focus = SIC_ride_the_tiger
+
+	}
+	fire_only_once = yes
+	option = {
+		name = bor.1.a
+		set_politics = { ruling_party = totalist }
+		remove_ideas = SIC_Julius_Evola_hog_npo
+		remove_ideas = SIC_Massimo_Scaligero_for_npo
+		remove_ideas = SIC_Giovanni_Antonio_Colonna_di_Cesaro_eco_npo
+		remove_ideas = SIC_Guido_Landra_sec_npo
+		add_ideas = SIC_Amadeo_Bordiga_hog_tot
+		add_ideas = SIC_Onorato_Damen_for_tot
+		add_ideas = SIC_Bruno_Fortichiari_eco_tot
+		add_ideas = SIC_Bruno_Maffi_sec_tot
+		set_cosmetic_tag = SIC_totalist
+	}
+	option = {
+		name = bor.1.b
+		add_stability = 0.1
+	}
+}
+country_event = {
+	id= bor.2
+	title = bor.2.t
+	desc = bor.2.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = bor.2.a
+		add_popularity = { 
+				ideology = radical_socialist popularity = 0.1
+			}	
+			add_political_power = 100
+	}
+	option = {
+		name = bor.2.b
+		add_stability = 0.1
+		add_popularity = { 
+				ideology = radical_socialist popularity = -0.1
+			}	
+	}
+}
+country_event = {
+	id= bor.3
+	title = bor.3.t
+	desc = bor.3.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = bor.3.a 
+		ai_chance = {
+			factor = 100
+			
+		}
+		
+		SIC = {
+			SRI = {
+				transfer_technology = yes
+			}
+		}
+		effect_tooltip = {
+			annex_country = {
+				target = SRI
+				transfer_troops = yes
+			}
+		}
+		
+		
+
+
+			every_state = {
+				limit = {
+					is_core_of = SRI
+				}
+				add_core_of = SIC
+			}
+			
+			SRI = {
+				every_unit_leader = {
+					
+					set_nationality = SIC
+				}
+			}
+			
+			
+			
+		}
+	
+	option = {
+		name = bor.3.b 
+		ai_chance = {
+			factor = 0
+		}
+		add_political_power = -100
+		
+		}
+	
+}
+country_event = {
+	id= bor.4
+	title = bor.4.t
+	desc = bor.4.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = bor.4.a
+		ai_chance = {
+			
+			factor = 0 
+			
+		}
+		every_country = {
+				SIC = {
+		create_wargoal = {
+			type = annex_everything
+			target = PREV
+									 }
+							  }
+			
+			every_state = { add_core_of = SIC}
+		}
+	}
+	option = {
+		name = bor.4.b
+		add_stability = 0.2
+	}
+}
+

@@ -1,0 +1,813 @@
+ideas = {
+	country = {
+
+        FRG_new_order = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_new_order" }
+			removal_cost = -1
+			picture = FRG_new_order
+			modifier = {
+				war_support_factor = 0.1
+                                conscription_factor = 0.05
+                                justify_war_goal_time = -0.5                                	
+			}
+		}
+
+         FRG_extreme_germanophobia = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_extreme_germanophobia" }
+			removal_cost = -1
+			picture = FRG_extreme_germanophobia
+                        targeted_modifier = {
+                                        tag = GER 
+                                        attack_bonus_against = 0.15
+                                        defense_bonus_against = 0.15
+			}
+		}
+
+
+	FRG_nation_turmoil = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_nation_turmoil" }
+			removal_cost = -1
+			picture = FRG_nation_turmoil
+			modifier = {
+				war_support_factor = 0.05
+                                conscription_factor = 0.03
+                                weekly_manpower = 1000 
+                                consumer_goods_factor = 0.1                                	
+                                industrial_capacity_factory = -0.3
+                                stability_weekly_factor = -0.035
+			}
+		}
+
+         FRG_recovery = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_recovery" }
+			removal_cost = -1
+			picture = FRG_recovery
+			modifier = {
+				production_speed_buildings_factor = -0.35 
+            production_speed_infrastructure_factor = -0.25
+            consumer_goods_factor = 0.15
+            monthly_population = -0.015 
+            production_factory_efficiency_gain_factor = -0.15
+             production_factory_max_efficiency_factor = -0.15
+             industry_repair_factor = 0.10
+             add_stability = -0.25  
+			}
+		}
+
+         FRG_recovery_2 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_recovery_2" }
+			removal_cost = -1
+			picture = FRG_recovery
+			modifier = {
+				production_speed_buildings_factor = -0.30 
+                                production_speed_infrastructure_factor = -0.25
+                                consumer_goods_factor = 0.10
+                                monthly_population = -0.015 
+                                production_factory_efficiency_gain_factor = -0.15
+                                production_factory_max_efficiency_factor = -0.15
+                                industry_repair_factor = 0.10
+                                add_stability = -0.15  
+			}
+		}
+
+
+         FRG_recovery_3 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_recovery_3" }
+			removal_cost = -1
+			picture = FRG_recovery
+			modifier = {
+				production_speed_buildings_factor = -0.30 
+                                production_speed_infrastructure_factor = -0.25
+                                consumer_goods_factor = 0.05
+                                monthly_population = -0.015 
+                                production_factory_efficiency_gain_factor = -0.10
+                                production_factory_max_efficiency_factor = -0.10
+                                industry_repair_factor = 0.10
+                                add_stability = -0.10
+                                stability_weekly_factor = 0.05  
+			}
+		}
+
+
+                FRG_recovery_4 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_recovery_4" }
+			removal_cost = -1
+			picture = FRG_recovery
+			modifier = {
+				production_speed_buildings_factor = -0.25 
+                                production_speed_infrastructure_factor = -0.10
+                                consumer_goods_factor = 0.025
+                                monthly_population = 0.02 
+                                production_factory_efficiency_gain_factor = -0.025
+                                production_factory_max_efficiency_factor = -0.025
+                                industry_repair_factor = 0.10
+                                add_stability = 0.05
+                                stability_weekly_factor = 0.075  
+			}
+		}
+
+                FRG_recovery_5 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_recovery_5" }
+			removal_cost = -1
+			picture = FRG_recovery
+			modifier = {
+				production_speed_buildings_factor = -0.05 
+                                production_speed_infrastructure_factor = -0.05
+                                consumer_goods_factor = 0.025
+                                monthly_population = 0.02 
+                                production_factory_efficiency_gain_factor = 0.025
+                                production_factory_max_efficiency_factor = 0.025
+                                industry_repair_factor = 0.10
+                                add_stability = 0.15
+                                stability_weekly_factor = 0.075  
+			}
+		}
+
+
+#####################CIVIL WAR###############################################
+
+        FRG_anti_red = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_anti_red" }
+			removal_cost = -1
+			picture = FRG_anti_red
+            targeted_modifier = {
+				tag = FRA
+				attack_bonus_against = 0.5
+				defense_bonus_against = 0.5
+			}
+		}
+		FRG_anti_red_2 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_anti_red" }
+			removal_cost = -1
+			picture = FRG_anti_red
+           modifier = {
+				production_factory_max_efficiency_factor = -0.9
+				industrial_capacity_factory = -0.9
+				army_morale_factor = -0.2
+			}
+		}
+
+
+#####################ARMY###############################################
+
+
+#####################INDUSTRY###############################################
+
+         FRG_industry = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_industry" }
+			removal_cost = -1
+			picture = FRG_industry
+                        modifier = {
+                                production_speed_buildings_factor = 0.075
+				consumer_goods_factor = 0.035
+                                production_speed_industrial_complex_factor = 0.075
+                                production_speed_arms_factory_factor = 0.05
+                                production_factory_max_efficiency_factor = 0.075
+			}
+		}
+
+        FRG_industry_2 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_industry_2" }
+			removal_cost = -1
+			picture = FRG_industry
+                        modifier = {
+                                production_speed_buildings_factor = 0.1
+				consumer_goods_factor = 0.04
+                                production_speed_industrial_complex_factor = 0.10
+                                production_speed_arms_factory_factor = 0.075
+                                production_factory_max_efficiency_factor = 0.10
+                                recruitable_population_factor = -0.025
+			}
+		}
+
+
+       FRG_industry_3 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_industry_3" }
+			removal_cost = -1
+			picture = FRG_industry
+                        modifier = {
+                                 production_speed_buildings_factor = 0.15
+                                consumer_goods_factor = 0.04
+                                production_speed_industrial_complex_factor = 0.15
+                                production_speed_arms_factory_factor = 0.1
+                                production_factory_max_efficiency_factor = 0.10
+                                recruitable_population_factor = -0.025
+                                production_speed_infrastructure_factor = 0.15 
+			}
+		}
+
+
+         FRG_industry_4 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_industry_4" }
+			removal_cost = -1
+			picture = FRG_industry
+                        modifier = {
+                               production_speed_buildings_factor = 0.20
+                                production_speed_industrial_complex_factor = 0.20
+                                production_speed_arms_factory_factor = 0.15
+                                production_factory_max_efficiency_factor = 0.10
+                                production_speed_infrastructure_factor = 0.20 
+			}
+		}
+
+
+        FRG_industry_5 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_industry_5" }
+			removal_cost = -1
+			picture = FRG_industry
+                        modifier = {
+                                 production_speed_industrial_complex_factor = 0.15
+                                production_speed_arms_factory_factor = 0.15
+                                production_speed_buildings_factor = 0.20 
+                                production_speed_bunker_factor = 0.5 
+                                production_speed_infrastructure_factor = 0.20 
+                                monthly_population = -0.015
+			}
+		}
+
+       FRG_industry_6 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_industry_6" }
+			removal_cost = -1
+			picture = FRG_industry
+                        modifier = {
+                                production_speed_industrial_complex_factor = 0.10
+                                production_speed_buildings_factor = 0.20
+                                production_speed_arms_factory_factor = 0.20
+                                production_factory_max_efficiency_factor = 0.15
+                                production_speed_bunker_factor = 0.5
+                                production_speed_infrastructure_factor = 0.15 
+			}
+		}
+
+       FRG_industry_7 = {
+                        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_industry_7" }
+			removal_cost = -1
+			picture = FRG_industry
+                        modifier = {
+                                production_speed_buildings_factor = 0.25
+                                consumer_goods_factor = 0.05
+                                production_speed_industrial_complex_factor = 0.10
+                                production_speed_arms_factory_factor = 0.25
+                                production_factory_max_efficiency_factor = 0.20
+                                production_speed_infrastructure_factor = 0.25
+                                production_speed_bunker_factor = 0.55 
+			}
+		}
+
+
+#####################ARMY###############################################
+
+#####################FUCKING NAZI NAPOLEON HOLY FUCK#####################
+
+FRG_napoleon_1 = {
+                  on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_napoleon_1" }
+	          removal_cost = -1
+		  picture = FRG_napoleon
+		  modifier = { 
+                           monthly_population = -0.05
+                           research_speed_factor = 0.15
+                           encryption_factor = 0.15
+                           decryption_factor = 0.15 
+                           political_power_factor = 0.3
+                           experience_gain_army_factor = 0.3
+                       }
+		}
+
+FRG_napoleon_2 = {
+                  on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_napoleon_2" }
+	          removal_cost = -1
+		  picture = FRG_napoleon
+		  modifier = { 
+                         recruitable_population_factor = 0.015
+                         training_time_factor = -0.1
+                       }
+		}
+
+FRG_napoleon_3 = {
+                  on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_napoleon_3" }
+	          removal_cost = -1
+		  picture = FRG_napoleon
+		  modifier = { 
+                         party_popularity_stability_factor = 0.10
+                         stability_weekly_factor = 0.03
+                         research_speed_factor = 0.025
+                         consumer_goods_factor = -0.075
+                       }
+		}
+
+FRG_napoleon_4 = {
+                  on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_napoleon_3" }
+	          removal_cost = -1
+		  picture = FRG_napoleon
+		  modifier = { 
+                         party_popularity_stability_factor = 0.10
+                         stability_weekly_factor = 0.1
+                         consumer_goods_factor = -0.075
+                         research_speed_factor = 0.075
+                         weekly_manpower = 1000
+						 recruitable_population_factor = 0.05
+                       }
+		}
+
+#####################HAIL NAPOLEON################################################
+FRG_motor_1 = {
+                  on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_motor_1" }
+	          removal_cost = -1
+		  picture = FRG_motor
+			equipment_bonus = {
+				mechanized_equipment = {
+					build_cost_ic = -0.05
+					mechanized_equipment_attack_factor = 0.15
+					instant = yes
+				}
+				motorized_equipment = {
+					build_cost_ic = -0.05
+					motorized_equipment_attack_factor = 0.15
+					instant = yes
+				}
+			}
+		}
+
+FRG_army_1 = {
+                  on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_army_1" }
+	          removal_cost = -1
+		  picture = FRG_army
+                  modifier = {
+			 army_attack_factor = 0.05
+          army_defence_factor = 0.05
+          army_speed_factor = 0.025
+          army_infantry_attack_factor = 0.15
+          land_reinforce_rate = 0.025
+			}
+		}
+
+FRG_tank_1 = {
+        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_tank_1" }
+	     removal_cost = -1
+		  picture = FRG_tank
+        modifier = {
+	  army_armor_attack_factor = 0.05
+          army_armor_defence_factor = 0.05
+          army_armor_speed_factor = 0.10
+          breakthrough_factor = 0.10
+			}
+		}
+
+FRG_tank_2 = {
+        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_tank_2" }
+	     removal_cost = -1
+		  picture = FRG_tank
+		  equipment_bonus = {
+				cat_medium_armor = {
+					breakthrough = 0.05
+					build_cost_ic = -0.1
+				       }
+			              }
+        modifier = {
+		army_armor_attack_factor = 0.10
+                army_armor_defence_factor = 0.10
+                army_armor_speed_factor = 0.15
+                breakthrough_factor = 0.15
+               }
+          }
+
+   FRG_speed = {
+        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_speed" }
+	     removal_cost = -1
+		 picture = FRG_speed
+                 modifier = {
+                    army_armor_speed_factor = 0.075
+                    army_speed_factor = 0.1
+                    army_org_regain = 0.075
+                    army_org_factor = 0.075
+                             }
+                    }
+
+   FRG_invincible = {
+        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_invincible" }
+	     removal_cost = -1
+		 picture = FRG_invincible
+                 modifier = {
+                    army_armor_speed_factor = 0.1
+                    army_speed_factor = 0.1
+                    army_org_regain = 0.1
+                    army_org_factor = 0.1
+                    army_armor_defence_factor = 0.10
+                    breakthrough_factor = 0.15
+                    army_infantry_attack_factor = 0.10
+                    land_reinforce_rate = 0.05
+                    army_morale_factor = 0.15
+                             }
+                    }
+
+    FRG_invincible_2 = {
+        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_invincible_2" }
+	     removal_cost = -1
+		 picture = FRG_invincible
+                 modifier = {
+                    army_attack_factor = 0.15
+                    army_defence_factor = 0.07
+                    army_fuel_consumption_factor = -0.15
+                    army_speed_factor = 0.07
+                    army_org_regain = 0.075
+                    army_org_factor = 0.1
+                    land_reinforce_rate = 0.10
+                    army_morale_factor = 0.10
+                             }
+                    }
+
+       FRG_invincible_3 = {
+        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_invincible_3" }
+	     removal_cost = -1
+		 picture = FRG_invincible
+                 modifier = {
+                    army_attack_factor = 0.20
+                    army_defence_factor = 0.10
+                    army_fuel_consumption_factor = -0.20
+                    army_speed_factor = 0.10
+                    army_org_regain = 0.1
+                    army_org_factor = 0.15
+                    land_reinforce_rate = 0.15
+                    army_morale_factor = 0.15
+                             }
+                    }
+
+       FRG_sea = {
+        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_invincible_3" }
+	     removal_cost = -1
+		 picture = FRG_sea
+                 modifier = {
+                    amphibious_invasion = 0.075
+                    amphibious_invasion_defence = 0.10
+                    invasion_preparation = -0.15
+                    naval_damage_factor = 0.075
+                    naval_defense_factor = 0.075
+                    naval_invasion_capacity = 3
+                             }
+                    }
+       FRG_air = {
+        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_invincible_3" }
+	     removal_cost = -1
+		 picture = FRG_air
+                 modifier = {
+                    air_defence_factor = 0.05
+                    air_attack_factor = 0.075
+                    air_maximum_speed_factor = 0.1
+                    air_range_factor = 0.075
+                    air_superiority_efficiency = 0.1
+                    army_bonus_air_superiority_factor = 0.05
+                             }
+                    }
+
+
+       FRG_artillery = {
+        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_artillery" }
+	     removal_cost = -1
+		 picture = FRG_artillery
+                 modifier = {
+                    army_artillery_defence_factor = 0.05
+                    army_artillery_attack_factor = 0.05
+                             }
+                    }
+
+      FRG_artillery_2 = {
+        on_add = { log = "[GetDateText]: [Root.GetName]: add idea FRG_artillery_2" }
+	     removal_cost = -1
+		 picture = FRG_artillery
+                 equipment_bonus = {
+				army_artillery = {
+					build_cost_ic = -0.15
+				       }
+			              }
+                 modifier = {
+                    army_artillery_defence_factor = 0.15
+                    army_artillery_attack_factor = 0.15
+                             }
+                    }
+       }
+
+        ##############
+	# Companies - SOrry, I had to
+	##############
+
+	#### General ####
+	industrial_concern = {
+
+		kr_schneider = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea kr_schneider"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				industrial_manufacturer
+			}
+			modifier = {
+				production_speed_arms_factory_factor = 0.15
+				production_speed_industrial_complex_factor = 0.15
+			}
+			research_bonus = {
+				industry = 0.1
+			}
+		}
+
+		machines_bull = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea machines_bull"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				electronics_manufacturer
+			}
+			research_bonus = {
+				electronics = 0.1
+				industry = 0.1
+			}
+		}
+
+		compagnie_petroles = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea compagnie_petroles"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				chemical_producer
+			}
+			research_bonus = {
+				synth_resources = 0.1
+				industry = 0.1
+			}
+		}
+	}
+
+	#### Weapons Manufacturer ####
+	weapons_manufacturer = {
+		designer = yes
+
+		brandt_armament_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea brandt_armament_1"}
+			name = brandt_armament
+			picture = brandt_armament
+			allowed = {
+				tag = FRG
+			}
+			visible = {
+			}
+			available = {  }
+			traits = { 
+				artillery_producer_mass_0 
+			}
+			research_bonus = {
+				artillery = 0.1
+			}
+		}
+
+		brandt_armament_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea brandt_armament_2"}
+			name = brandt_armament
+			picture = brandt_armament
+			allowed = {
+				tag = FRG
+			}
+			visible = {
+
+			}
+			available = {  }
+			traits = { 
+				artillery_producer_mass_2
+			}
+			research_bonus = {
+				artillery = 0.1
+			}
+		}
+
+		darne = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea darne"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				infantry_equipment_producer_offense_1
+			}
+			research_bonus = {
+				infantry_weapons = 0.1
+			}
+		}
+
+		manufacture_armes_tunis = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea manufacture_armes_tunis"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				infantry_equipment_producer_mass_1
+			}
+			research_bonus = {
+				infantry_weapons = 0.1
+			}
+		}
+
+		hotchkiss = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea hotchkiss"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				artillery_producer_offense_1
+			}
+			research_bonus = {
+				artillery = 0.1
+			}
+		}
+
+		delaunay_belleville = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea delaunay_belleville"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				motorised_equipment_producer_offense_1
+			}
+			research_bonus = {
+				motorized_equipment = 0.1
+			}
+		}
+
+		vetra = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea vetra"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				motorised_equipment_producer_mass_1
+			}
+			research_bonus = {
+				motorized_equipment = 0.1
+			}
+		}
+
+	}
+
+	#### Heavy Equipment Manufacturer ####
+	tank_manufacturer = {
+		designer = yes
+
+
+
+
+		renault = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea renault"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				medium_tank_producer_offense_2
+			}
+			research_bonus = {
+				armor = 0.1
+			}
+		}
+
+		peugeot = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea peugeot"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				medium_tank_producer_mass_1
+			}
+			research_bonus = {
+				armor = 0.1
+			}
+		}
+
+		citroen = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea citroen"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				small_tank_producer_defense_1
+			}
+			research_bonus = {
+				armor = 0.1
+			}
+		}
+	}
+
+	#### Air and Naval Manufacturer ####
+	naval_manufacturer = {
+		designer = yes
+
+		ateliers_de_la_loire_nfa = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ateliers_de_la_loire_nfa"}
+			allowed = {
+				tag = FRG
+			}
+			visible = {
+			}
+			available = {  }
+			traits = { capital_ship_producer_offense_2 }
+			research_bonus = {
+				naval_equipment = 0.1
+			}
+		}
+
+		oran_construction_navale = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea oran_construction_navale"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				cruiser_producer_offense_1
+			}
+			research_bonus = {
+				naval_equipment = 0.1
+			}
+		}
+
+		chartiers_dakar = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea chartiers_dakar"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				small_ship_producer_mass_1
+			}
+			research_bonus = {
+				naval_equipment = 0.1
+			}
+		}
+
+	}
+
+	aircraft_manufacturer = {
+		designer = yes
+
+		dewoitine = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea dewoitine"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				fighter_producer_offense_2
+			}
+			research_bonus = {
+				air_equipment = 0.1
+			}
+		}
+
+		bloch = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea bloch"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				fighter_producer_defense_1
+			}
+			research_bonus = {
+				air_equipment = 0.1
+			}
+		}
+
+		amiot = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea amiot"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				bomber_producer_offense_1
+			}
+			research_bonus = {
+				air_equipment = 0.1
+			}
+		}
+
+		bleriot = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea bleriot"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				nav_cas_producer_offense_1
+			}
+			research_bonus = {
+				air_equipment = 0.1
+			}
+		}
+
+		latecoere = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea latecoere"}
+			allowed = {
+				original_tag = FRG
+			}
+			traits = {
+				nav_cas_producer_defense_1
+			}
+			research_bonus = {
+				air_equipment = 0.1
+			}
+		}
+
+	}
+
+}       

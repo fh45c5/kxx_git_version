@@ -1,0 +1,269 @@
+is_federalists = {
+	custom_trigger_tooltip = {
+		tooltip = is_federalists
+		is_ruled_by_npa = no
+		OR = {
+			AND = {
+				original_tag = GXC
+				OR = {
+					has_country_leader = { character = GXC_chen_jiongming }
+					has_cosmetic_tag = GXC_government
+					has_cosmetic_tag = UPC
+				}
+			}
+			AND = {
+				tag = SZC
+				OR = {
+					SZC_federalists_in_exile = yes
+					has_cosmetic_tag = UPC
+					AND = {
+						SZC_has_officer_government = yes
+						NOT = { check_variable = { SZC_alliance = CHI } }
+					}
+				}
+			}
+			AND = {
+				tag = YUN
+				has_country_leader = { character = YUN_tang_jiyao }
+				NOT = { has_government = paternal_autocrat }
+			}
+			AND = {
+				tag = SHX
+				OR = {
+					has_country_flag = SHX_alliance_GXC
+					has_country_flag = SHX_alliance_SZC
+				}
+			}
+			AND = {
+				tag = HNN
+				has_government = social_conservative
+			}
+		}
+	}
+}
+is_fengtian = {
+	custom_trigger_tooltip = {
+		tooltip = is_fengtian
+		is_ruled_by_npa = no
+		OR = {
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+				faction_leader = { tag = FNG }
+			}
+			else_if = {
+				limit = { is_subject = yes }
+				overlord = { is_ruled_by_pro_fengtian = yes }
+			}
+			AND = {
+				tag = ANQ
+				has_country_flag = ANQ_is_profengtian
+			}
+			AND = {
+				tag = SZC
+				check_variable = { SZC_alliance = FNG }
+			}
+			AND = {
+				tag = SQI
+				has_government = paternal_autocrat
+				FNG_JAP_hostile = no
+			}
+			AND = {
+				tag = SHX
+				has_country_flag = SHX_alliance_FNG
+			}
+			AND = {
+				original_tag = GXC
+				OR = {
+					AND = {
+						has_government = market_liberal
+						FNG_JAP_hostile = no
+					}
+					AND = {
+						has_country_leader = { character = GXC_ma_ji }
+						QIE = { has_global_flag = QIE_manchu_restoration }
+					}
+				}
+			}
+		}
+	}	
+}
+is_lkmt_failure = {
+	if = {
+		limit = {
+			OR = {
+				tag = LEP
+				tag = ANQ
+				tag = GEA
+				tag = GEX
+				tag = JAP
+				is_ruled_by_npa = yes
+				tag = ETS
+				tag = TAN
+			}
+		}
+		always = yes
+	} 
+	else_if = {
+		limit = { tag = TIB }
+		has_authoritarian_government = yes
+	}
+	else_if = {
+		limit = { tag = MON }
+		OR = {
+			is_guaranteed_by = RUS
+			has_country_leader = { character = MON_roman_von_ungernsternberg }
+		}
+	}
+	else_if = {
+		limit = { original_tag = GXC }
+		OR = {
+			CHI = { has_country_flag = GXC_kmt_refuse }
+			GXC = {
+				OR = {
+					has_completed_focus = GXC_Guangxi_Warlord_Domination
+					has_completed_focus = GXC_Merchant_Government
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { tag = SZC }
+		CHI = { has_country_flag = SZC_kmt_refuse }
+	}
+	else_if = {
+		limit = { tag = YUN }
+		OR = {
+			CHI = { has_country_flag = YUN_kmt_refuse }
+			YUN = {
+				OR = {
+					has_completed_focus = YUN_Long
+					has_completed_focus = YUN_Federalism
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { tag = HNN }
+		OR = {
+			CHI = { has_country_flag = HNN_kmt_refuse }
+			HNN = {
+				NOT = {
+					has_government = social_democrat
+					has_government = social_liberal
+				}
+			}
+		}
+	}
+	else = { always = no }
+}
+is_wasteland_negotiating_objectives = {
+	custom_trigger_tooltip = {
+		tooltip = is_wasteland_negotiating_objectives_tt
+		SZC = {
+			OR = {
+				is_subject_of = ROOT
+				exists = no
+				has_war_with = ROOT
+			}
+		}
+		QIE = {
+			OR = {
+				is_subject_of = ROOT
+				exists = no
+				has_war_with = ROOT
+			}
+		}
+		SHX = {
+			OR = {
+				is_subject_of = ROOT
+				exists = no
+				has_war_with = ROOT
+			}
+		}
+		GXC = {
+			OR = {
+				is_subject_of = ROOT
+				exists = no
+				has_war_with = ROOT
+			}
+		}
+		YUN = {
+			OR = {
+				is_subject_of = ROOT
+				exists = no
+				has_war_with = ROOT
+			}
+		}
+		HNN = {
+			OR = {
+				is_subject_of = ROOT
+				exists = no
+				has_war_with = ROOT
+			}
+		}
+		LEP = {
+			OR = {
+				is_subject_of = ROOT
+				exists = no
+				has_war_with = ROOT
+			}
+		}
+		ANQ = {
+			OR = {
+				is_subject_of = ROOT
+				exists = no
+				has_war_with = ROOT
+			}
+		}
+		SQI = {
+			OR = {
+				is_subject_of = ROOT
+				exists = no
+				has_war_with = ROOT
+			}
+		}
+		CHI = {
+			is_subject = no
+		}
+		SIK = {
+			OR = {
+				is_subject_of = ROOT
+				exists = no
+				has_war_with = ROOT
+			}
+		}
+	}
+}
+
+is_chinese_state = {
+	OR = {
+		is_china_proper = yes
+		is_manchuria = yes
+		is_xinjiang = yes
+		is_core_of = TIB
+		is_core_of = MON
+		state = 524 #Taiwan
+		state = 858 #Tawang
+		#MON
+		# state = 329
+		# state = 330
+		# state = 1084
+		# #TIB
+		# state = 693
+		# state = 322
+		# state = 748
+		# state = 1086
+	}
+}
+
+default_attack_AI_trigger_FROM_consider_naval_strength = {
+	OR = {
+		is_stronger_than_ROOT_and_not_vulnerable_consider_naval_strength = yes
+		overlord_is_stronger_than_ROOT_and_not_vulnerable_consider_naval_strength = yes
+		faction_leader_is_stronger_than_ROOT_and_not_vulnerable_consider_naval_strength = yes
+		guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes
+	}
+}

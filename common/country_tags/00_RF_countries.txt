@@ -1,0 +1,2 @@
+
+CYN = "countries/SouthAm.txt" #Carribean

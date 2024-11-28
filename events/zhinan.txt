@@ -1,0 +1,419 @@
+add_namespace = zhinan
+country_event = { #两广路线指南
+	id = zhinan.1
+	title = hnn.20004.t
+	desc = hnn.20004.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #红德追加路线指南
+	id = zhinan.2
+	title = zhinan.2.t
+	desc = zhinan.2.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #波兰追加路线指南
+	id = zhinan.3
+	title = zhinan.3.t
+	desc = zhinan.3.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #法国复兴政府路线指南
+	id = zhinan.4
+	title = zhinan.4.t
+	desc = zhinan.4.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #斯洛伐克路线指南
+	id = zhinan.5
+	title = zhinan.5.t
+	desc = zhinan.5.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #山东路线指南
+	id = zhinan.6
+	title = zhinan.6.t
+	desc = zhinan.6.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #加拿大路线指南
+	id = zhinan.7
+	title = zhinan.7.t
+	desc = zhinan.7.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #西班牙路线指南
+	id = zhinan.8
+	title = zhinan.8.t
+	desc = zhinan.8.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #西班牙路线指南
+	id = zhinan.9
+	title = zhinan.9.t
+	desc = zhinan.9.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #法国复兴政府路线指南
+	id = zhinan.10
+	title = zhinan.10.t
+	desc = zhinan.10.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #格鲁吉亚路线指南
+	id = zhinan.11
+	title = zhinan.11.t
+	desc = zhinan.11.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #芬兰路线指南
+	id = zhinan.12
+	title = zhinan.12.t
+	desc = zhinan.12.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #比利时路线指南
+	id = zhinan.13
+	title = zhinan.13.t
+	desc = zhinan.13.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #佛兰德斯路线指南
+	id = zhinan.14
+	title = zhinan.14.t
+	desc = zhinan.14.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #英国
+	id = zhinan.15
+	title = zhinan.15.t
+	desc = zhinan.15.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #爱尔兰
+	id = zhinan.16
+	title = zhinan.16.t
+	desc = zhinan.16.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #葡萄牙
+	id = zhinan.17
+	title = zhinan.17.t
+	desc = zhinan.17.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #意社
+	id = zhinan.18
+	title = zhinan.18.t
+	desc = zhinan.18.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #意大利共和国
+	id = zhinan.19
+	title = zhinan.19.t
+	desc = zhinan.19.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #库班
+	id = zhinan.20
+	title = zhinan.20.t
+	desc = zhinan.20.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #塞尔维亚
+	id = zhinan.21
+	title = zhinan.21.t
+	desc = zhinan.21.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #罗马尼亚
+	id = zhinan.22
+	title = zhinan.22.t
+	desc = zhinan.22.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #保加利亚
+	id = zhinan.23
+	title = zhinan.23.t
+	desc = zhinan.23.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #克罗地亚
+	id = zhinan.24
+	title = zhinan.24.t
+	desc = zhinan.24.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #波斯尼亚
+	id = zhinan.25
+	title = zhinan.25.t
+	desc = zhinan.25.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #诺曼底
+	id = zhinan.26
+	title = zhinan.26.t
+	desc = zhinan.26.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #捷克
+	id = zhinan.27
+	title = zhinan.27.t
+	desc = zhinan.27.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #挪威
+	id = zhinan.28
+	title = zhinan.28.t
+	desc = zhinan.28.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #莱茵
+	id = zhinan.29
+	title = zhinan.29.t
+	desc = zhinan.29.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #黑森
+	id = zhinan.30
+	title = zhinan.30.t
+	desc = zhinan.30.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #南德意志
+	id = zhinan.31
+	title = zhinan.31.t
+	desc = zhinan.31.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #普鲁士
+	id = zhinan.32
+	title = zhinan.32.t
+	desc = zhinan.32.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #西里西亚
+	id = zhinan.33
+	title = zhinan.33.t
+	desc = zhinan.33.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #卡尔梅克
+	id = zhinan.34
+	title = zhinan.34.t
+	desc = zhinan.34.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #直系
+	id = zhinan.35
+	title = zhinan.35.t
+	desc = zhinan.35.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #菲律宾
+	id = zhinan.36
+	title = zhinan.36.t
+	desc = zhinan.36.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #丹麦
+	id = zhinan.37
+	title = zhinan.37.t
+	desc = zhinan.37.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}
+country_event = { #国法
+	id = zhinan.38
+	title = zhinan.38.t
+	desc = zhinan.38.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}

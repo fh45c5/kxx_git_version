@@ -1,0 +1,33 @@
+
+leader_traits = {
+	WSU_upa_officer = {
+		type = all
+		trait_type = personality_trait
+		gain_xp = {
+			always = no
+		}
+		allowed = {
+			FROM = { 
+				OR = {
+					original_tag = WSU
+					tag = UKR
+					tag = WSU
+				}
+			}
+		}
+		modifier = {
+			army_core_defence_factor = 0.1
+			army_core_attack_factor = 0.1
+			modifier_army_infantry_attack_factor = 0.05
+			modifier_army_infantry_defence_factor = 0.05
+			modifier_cavalry_attack_factor = 0.05
+			modifier_cavalry_defence_factor = 0.05
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+}

@@ -1,0 +1,1856 @@
+ideas = {
+    head_of_government = { ### Head of Government ###
+		RRM_Gheorghe_Gheorghiu_Dej_hog_tot = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Gheorghe_Gheorghiu_Dej_hog_tot"
+			}
+			traits = {
+				head_of_government
+				totalist
+				hog_political_protege
+			}
+		}
+
+		RRM_Petru_Groza_hog_tot = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Petru_Groza_hog_tot"
+			}
+			traits = {
+				head_of_government
+				totalist
+				hog_backroom_backstabber
+			}
+		}
+
+		RRM_Iuliu_Maniu_hog_sde = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Iuliu_Maniu_hog_sde"
+			}
+			traits = {
+				head_of_government
+				social_democrat
+				hog_naive_optimist
+			}
+		}
+
+		RRM_Armand_Calinescu_hog_sli = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Armand_Calinescu_hog_sli"
+			}
+			traits = {
+				head_of_government
+				social_liberal
+				hog_smiling_oilman
+			}
+		}
+
+		RRM_Constantin_Argetoianu_hog_sli = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Constantin_Argetoianu_hog_sli"
+			}
+			traits = {
+				head_of_government
+				social_liberal
+				hog_political_protege
+			}
+		}
+
+		RRM_Gheorghe_Argeseanu_hog_sli = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Gheorghe_Argeseanu_hog_sli"
+			}
+			traits = {
+				head_of_government
+				social_liberal
+				hog_silent_workhorse
+			}
+		}
+
+		RRM_Ion_Gigurtu_hog_sli = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Ion_Gigurtu_hog_sli"
+			}
+			traits = {
+				head_of_government
+				social_liberal
+				hog_corporate_suit
+			}
+		}
+
+		RRM_Octavian_Goga_hog_sli = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Octavian_Goga_hog_sli"
+			}
+			traits = {
+				head_of_government
+				social_liberal
+				hog_happy_amateur
+			}
+		}
+
+		RRM_Constantin_Bratianu_hog_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Constantin_Bratianu_hog_sco"
+			}
+			traits = {
+				head_of_government
+				social_conservative
+				hog_corporate_suit
+			}
+		}
+
+		RRM_Gheorghe_Tatarescu_hog_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Gheorghe_Tatarescu_hog_sco"
+			}
+			traits = {
+				head_of_government
+				social_conservative
+				hog_silent_workhorse
+			}
+		}
+
+		RRM_Nicolae_Radescu_hog_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Nicolae_Radescu_hog_sco"
+			}
+			traits = {
+				head_of_government
+				social_conservative
+				hog_happy_amateur
+			}
+		}
+
+		RRM_Constantin_Sanatescu_hog_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Constantin_Sanatescu_hog_ade"
+			}
+			traits = {
+				head_of_government
+				authoritarian_democrat
+				hog_old_general
+			}
+		}
+
+		RRM_Miron_Cristea_hog_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Miron_Cristea_hog_ade"
+			}
+			traits = {
+				head_of_government
+				authoritarian_democrat
+				hog_ambitious_union_boss
+			}
+		}
+
+		RRM_Ion_Antonescu_hog_pau = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Ion_Antonescu_hog_pau"
+			}
+			traits = {
+				head_of_government
+				paternal_autocrat
+				hog_old_general
+			}
+		}
+
+		RRM_Corneliu_Codreanu_hog_npo = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Corneliu_Codreanu_hog_npo"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_flamboyant_tough_guy
+			}
+		}
+
+		RRM_Horia_Sima_hog_npo = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Horia_Sima_hog_npo"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_happy_amateur
+			}
+		}
+
+	}
+
+	person_of_influence = { ### Person of Influence ###
+		## Foreign Minister ##
+		RRM_Ana_Pauker_for_tot = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Ana_Pauker_for_tot"
+			}
+			traits = {
+				foreign_minister
+				totalist
+				for_ideological_crusader
+			}
+		}
+
+		RRM_Constantin_I_Parhon_for_tot = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Constantin_I_Parhon_for_tot"
+			}
+			traits = {
+				foreign_minister
+				totalist
+				for_great_compromiser
+			}
+		}
+
+		RRM_Simon_Bughici_for_tot = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Simon_Bughici_for_tot"
+			}
+			traits = {
+				foreign_minister
+				totalist
+				for_apologetic_clerk
+			}
+		}
+
+		RRM_Elena_Vararesco_for_sde = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Elena_Vararesco_for_sde"
+			}
+			traits = {
+				foreign_minister
+				social_democrat
+				for_general_staffer
+			}
+		}
+
+		RRM_Georges_Oprescu_for_sde = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Georges_Oprescu_for_sde"
+			}
+			traits = {
+				foreign_minister
+				social_democrat
+				for_biased_intellectual
+			}
+		}
+
+		RRM_Iuliu_Hossu_for_sde = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Iuliu_Hossu_for_sde"
+			}
+			traits = {
+				foreign_minister
+				social_democrat
+				for_great_compromiser
+			}
+		}
+
+		RRM_Grigore_Gafencu_for_sli = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Grigore_Gafencu_for_sli"
+			}
+			traits = {
+				foreign_minister
+				social_liberal
+				for_biased_intellectual
+			}
+		}
+
+		RRM_Istrate_Micescu_for_sli = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Istrate_Micescu_for_sli"
+			}
+			traits = {
+				foreign_minister
+				social_liberal
+				for_great_compromiser
+			}
+		}
+
+		RRM_Mihail_Manoilescu_for_sli = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Mihail_Manoilescu_for_sli"
+			}
+			traits = {
+				foreign_minister
+				social_liberal
+				for_apologetic_clerk
+			}
+		}
+
+		RRM_Constantin_Argetoianu_for_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Constantin_Argetoianu_for_sco"
+			}
+			traits = {
+				foreign_minister
+				social_conservative
+				for_general_staffer
+			}
+		}
+
+		RRM_Constantin_Visoianu_for_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Constantin_Visoianu_for_sco"
+			}
+			traits = {
+				foreign_minister
+				social_conservative
+				for_the_cloak_n_dagger_schemer
+			}
+		}
+
+		RRM_Ion_Gigurtu_for_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Ion_Gigurtu_for_sco"
+			}
+			traits = {
+				foreign_minister
+				social_conservative
+				for_ideological_crusader
+			}
+		}
+
+		RRM_Nicolae_Titulescu_for_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Nicolae_Titulescu_for_sco"
+			}
+			traits = {
+				foreign_minister
+				social_conservative
+				for_great_compromiser
+			}
+		}
+
+		RRM_Victor_Antonescu_for_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Victor_Antonescu_for_sco"
+			}
+			traits = {
+				foreign_minister
+				social_conservative
+				for_great_compromiser
+			}
+		}
+
+		RRM_Gheorghe_Tatarescu_for_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Gheorghe_Tatarescu_for_ade"
+			}
+			traits = {
+				foreign_minister
+				authoritarian_democrat
+				for_iron_fisted_brute
+			}
+		}
+
+		RRM_Grigore_Niculesco_Buzesti_for_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Grigore_Niculesco_Buzesti_for_ade"
+			}
+			traits = {
+				foreign_minister
+				authoritarian_democrat
+				for_apologetic_clerk
+			}
+		}
+
+		RRM_Nicolae_Petrescu_Comnen_for_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Nicolae_Petrescu_Comnen_for_ade"
+			}
+			traits = {
+				foreign_minister
+				authoritarian_democrat
+				for_apologetic_clerk
+			}
+		}
+
+		RRM_Ion_Antonescu_for_pau = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Ion_Antonescu_for_pau"
+			}
+			traits = {
+				foreign_minister
+				paternal_autocrat
+				for_general_staffer
+			}
+		}
+
+		RRM_Mihai_Antonescu_for_pau = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Mihai_Antonescu_for_pau"
+			}
+			traits = {
+				foreign_minister
+				paternal_autocrat
+				for_the_cloak_n_dagger_schemer
+			}
+		}
+
+		RRM_Mihail_Sturdza_for_pau = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Mihail_Sturdza_for_pau"
+			}
+			traits = {
+				foreign_minister
+				paternal_autocrat
+				for_ideological_crusader
+			}
+		}
+
+		RRM_Corneliu_Codreanu_for_npo = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Corneliu_Codreanu_for_npo"
+			}
+			traits = {
+				foreign_minister
+				national_populist
+				for_ideological_crusader
+			}
+		}
+
+
+		## Economy Minister ##
+		RRM_Vasile_Luca_eco_tot = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Vasile_Luca_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_administrative_genius
+			}
+		}
+
+		RRM_Constantin_Antoniade_eco_sli = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Constantin_Antoniade_eco_sli"
+			}
+			traits = {
+				economy_minister
+				social_liberal
+				eco_laissez_faire_capitalist
+			}
+		}
+
+		RRM_Virgil_Madgearu_eco_sli = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Virgil_Madgearu_eco_sli"
+			}
+			traits = {
+				economy_minister
+				social_liberal
+				eco_administrative_genius
+			}
+		}
+
+		RRM_Constantin_Bratianu_eco_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Constantin_Bratianu_eco_sco"
+			}
+			traits = {
+				economy_minister
+				social_conservative
+				eco_resource_industrialist
+			}
+		}
+
+		RRM_Iuliu_Maniu_eco_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Iuliu_Maniu_eco_sco"
+			}
+			traits = {
+				economy_minister
+				social_conservative
+				eco_administrative_genius
+			}
+		}
+
+		RRM_Mihail_Racovitza_eco_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Mihail_Racovitza_eco_sco"
+			}
+			traits = {
+				economy_minister
+				social_conservative
+				eco_infantry_proponent
+			}
+		}
+
+		RRM_Caius_Brediceanu_eco_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Caius_Brediceanu_eco_ade"
+			}
+			traits = {
+				economy_minister
+				authoritarian_democrat
+				eco_laissez_faire_capitalist
+			}
+		}
+
+		RRM_Nicolae_Stoenescu_eco_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Nicolae_Stoenescu_eco_ade"
+			}
+			traits = {
+				economy_minister
+				authoritarian_democrat
+				eco_tank_proponent
+			}
+		}
+
+		RRM_Gheorghe_Dobre_eco_pau = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Gheorghe_Dobre_eco_pau"
+			}
+			traits = {
+				economy_minister
+				paternal_autocrat
+				eco_infantry_proponent
+			}
+		}
+
+		RRM_Gheorghe_Potopeanu_eco_pau = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Gheorghe_Potopeanu_eco_pau"
+			}
+			traits = {
+				economy_minister
+				paternal_autocrat
+				eco_military_entrepreneur
+			}
+		}
+
+		RRM_Constantin_Papanace_eco_npo = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Constantin_Papanace_eco_npo"
+			}
+			traits = {
+				economy_minister
+				national_populist
+				eco_administrative_genius
+			}
+		}
+
+
+		## Security Minister ##
+		RRM_Teohari_Georgescu_sec_tot = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Teohari_Georgescu_sec_tot"
+			}
+			traits = {
+				security_minister
+				totalist
+				sec_back_stabber
+			}
+		}
+
+		RRM_Armand_Calinescu_sec_sli = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Armand_Calinescu_sec_sli"
+			}
+			traits = {
+				security_minister
+				social_liberal
+				sec_prince_of_terror
+			}
+		}
+
+		RRM_Ion_Mihalache_sec_sli = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Ion_Mihalache_sec_sli"
+			}
+			traits = {
+				security_minister
+				social_liberal
+				sec_man_of_the_people
+			}
+		}
+
+		RRM_Vasile_Goldis_sec_sli = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Vasile_Goldis_sec_sli"
+			}
+			traits = {
+				security_minister
+				social_liberal
+				sec_man_of_the_people
+			}
+		}
+
+		RRM_Aurel_Aldea_sec_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Aurel_Aldea_sec_sco"
+			}
+			traits = {
+				security_minister
+				social_conservative
+				sec_back_stabber
+			}
+		}
+
+		RRM_Istrate_Micescu_sec_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Istrate_Micescu_sec_sco"
+			}
+			traits = {
+				security_minister
+				social_conservative
+				sec_silent_lawyer
+			}
+		}
+
+		RRM_Nicolae_Radescu_sec_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Nicolae_Radescu_sec_sco"
+			}
+			traits = {
+				security_minister
+				social_conservative
+				sec_compassionate_gentleman
+			}
+		}
+
+		RRM_Cesare_Vaida_Voievod_sec_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Cesare_Vaida_Voievod_sec_ade"
+			}
+			traits = {
+				security_minister
+				authoritarian_democrat
+				sec_crime_fighter
+			}
+		}
+
+		RRM_Ion_Boiteanu_sec_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Ion_Boiteanu_sec_ade"
+			}
+			traits = {
+				security_minister
+				authoritarian_democrat
+				sec_man_of_the_people
+			}
+		}
+
+		RRM_David_Popescu_sec_pau = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_David_Popescu_sec_pau"
+			}
+			traits = {
+				security_minister
+				paternal_autocrat
+				sec_prince_of_terror
+			}
+		}
+
+		RRM_Horia_Sima_sec_npo = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Horia_Sima_sec_npo"
+			}
+			traits = {
+				security_minister
+				national_populist
+				sec_efficient_sociopath
+			}
+		}
+
+		RRM_Ion_Petrovicescu_sec_npo = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Ion_Petrovicescu_sec_npo"
+			}
+			traits = {
+				security_minister
+				national_populist
+				sec_efficient_sociopath
+			}
+		}
+
+	}
+
+	chief_of_staff = { ### Chief of Staff ###
+		RRM_Mihail_Lascar_cos_tot = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Mihail_Lascar_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Mihail_Lascar_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Mihail_Lascar_cos_tot"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_mass_combat
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Ioan_Ilcusu_cos_sli = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Ioan_Ilcusu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Ioan_Ilcusu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Ioan_Ilcusu_cos_sli"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_defence
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Mihail_Racovitza_cos_sli = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Mihail_Racovitza_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Mihail_Racovitza_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Mihail_Racovitza_cos_sli"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_manoeuvre
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Constantin_Pantazi_cos_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Constantin_Pantazi_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Constantin_Pantazi_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Constantin_Pantazi_cos_sco"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_defence
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Gheorghe_Sinaia_Ionescu_cos_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Gheorghe_Sinaia_Ionescu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Gheorghe_Sinaia_Ionescu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Gheorghe_Sinaia_Ionescu_cos_sco"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_defence
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Constantin_Sanatescu_cos_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Constantin_Sanatescu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Constantin_Sanatescu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Constantin_Sanatescu_cos_ade"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_fire_support
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Florea_Tenescu_cos_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Florea_Tenescu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Florea_Tenescu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Florea_Tenescu_cos_ade"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_defence
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Ion_Antonescu_cos_pau = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Ion_Antonescu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Ion_Antonescu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Ion_Antonescu_cos_pau"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_psychology
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Radu_Korne_cos_pau = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Radu_Korne_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Radu_Korne_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Radu_Korne_cos_pau"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_manoeuvre
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Victor_Antonescu_cos_pau = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Victor_Antonescu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Victor_Antonescu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Victor_Antonescu_cos_pau"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_mass_combat
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Gheorghe_Argeseanu_cos_npo = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Gheorghe_Argeseanu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Gheorghe_Argeseanu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Gheorghe_Argeseanu_cos_npo"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_fire_support
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Platon_Chirnoaga_cos_npo = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Platon_Chirnoaga_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Platon_Chirnoaga_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Platon_Chirnoaga_cos_npo"
+			}
+			traits = {
+				chief_of_staff
+				cos_school_of_psychology
+			}
+			cancel_if_invalid = yes
+		}
+
+	}
+
+	chief_of_army = { ### Chief of Army ###
+		RRM_Damian_Rascu_carm_tot = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Damian_Rascu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Damian_Rascu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Damian_Rascu_carm_tot"
+			}
+			traits = {
+				chief_of_army
+				carm_armoured_spearhead_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Costin_Ionascu_carm_sli = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Costin_Ionascu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Costin_Ionascu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Costin_Ionascu_carm_sli"
+			}
+			traits = {
+				chief_of_army
+				carm_static_defence_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Gheorghe_Tatarescu_carm_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Gheorghe_Tatarescu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Gheorghe_Tatarescu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Gheorghe_Tatarescu_carm_sco"
+			}
+			traits = {
+				chief_of_army
+				carm_guns_and_butter_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Marin_Ceausu_carm_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Marin_Ceausu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Marin_Ceausu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Marin_Ceausu_carm_sco"
+			}
+			traits = {
+				chief_of_army
+				carm_static_defence_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Nicolae_Radescu_carm_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Nicolae_Radescu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Nicolae_Radescu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Nicolae_Radescu_carm_sco"
+			}
+			traits = {
+				chief_of_army
+				carm_decisive_battle_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Constantin_Sanatescu_carm_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Constantin_Sanatescu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Constantin_Sanatescu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Constantin_Sanatescu_carm_ade"
+			}
+			traits = {
+				chief_of_army
+				carm_elastic_defence_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Gheorghe_Mihail_carm_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Gheorghe_Mihail_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Gheorghe_Mihail_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Gheorghe_Mihail_carm_ade"
+			}
+			traits = {
+				chief_of_army
+				carm_decisive_battle_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Ilie_Steflea_carm_pau = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Ilie_Steflea_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Ilie_Steflea_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Ilie_Steflea_carm_pau"
+			}
+			traits = {
+				chief_of_army
+				carm_guns_and_butter_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Alexandru_Ioanitiu_carm_npo = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Alexandru_Ioanitiu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Alexandru_Ioanitiu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Alexandru_Ioanitiu_carm_npo"
+			}
+			traits = {
+				chief_of_army
+				carm_armoured_spearhead_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+	}
+
+	chief_of_navy = { ### Chief of Navy ###
+		RRM_Gheorghe_Iliesca_cnav_tot = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Gheorghe_Iliesca_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Gheorghe_Iliesca_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Gheorghe_Iliesca_cnav_tot"
+			}
+			traits = {
+				chief_of_navy
+				cnav_power_projection_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Nicolae_Caranfil_cnav_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Nicolae_Caranfil_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Nicolae_Caranfil_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Nicolae_Caranfil_cnav_sco"
+			}
+			traits = {
+				chief_of_navy
+				cnav_decisive_battle_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Nicolai_Duca_di_Silvania_cnav_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Nicolai_Duca_di_Silvania_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Nicolai_Duca_di_Silvania_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Nicolai_Duca_di_Silvania_cnav_sco"
+			}
+			traits = {
+				chief_of_navy
+				cnav_open_seas_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Horia_Macellariu_cnav_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Horia_Macellariu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Horia_Macellariu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Horia_Macellariu_cnav_ade"
+			}
+			traits = {
+				chief_of_navy
+				cnav_indirect_approach_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Nicolae_Sova_cnav_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Nicolae_Sova_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Nicolae_Sova_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Nicolae_Sova_cnav_ade"
+			}
+			traits = {
+				chief_of_navy
+				cnav_base_control_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Ioan_Georgescu_cnav_pau = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Ioan_Georgescu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Ioan_Georgescu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Ioan_Georgescu_cnav_pau"
+			}
+			traits = {
+				chief_of_navy
+				cnav_indirect_approach_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+	}
+
+	chief_of_air_force = { ### Chief of Air Force ###
+		RRM_Emanoil_Ionescu_cair_tot = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Emanoil_Ionescu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Emanoil_Ionescu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Emanoil_Ionescu_cair_tot"
+			}
+			traits = {
+				chief_of_air_force
+				cair_battlefield_support_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Dante_Vizante_cair_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Dante_Vizante_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Dante_Vizante_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Dante_Vizante_cair_sco"
+			}
+			traits = {
+				chief_of_air_force
+				cair_air_superiority_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Gheorghe_Vasiliu_cair_sco = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Gheorghe_Vasiliu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Gheorghe_Vasiliu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Gheorghe_Vasiliu_cair_sco"
+			}
+			traits = {
+				chief_of_air_force
+				cair_naval_aviation_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Gheorghe_Jienescu_cair_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Gheorghe_Jienescu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Gheorghe_Jienescu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Gheorghe_Jienescu_cair_ade"
+			}
+			traits = {
+				chief_of_air_force
+				cair_battlefield_support_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Paul_Teodorescu_cair_ade = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Paul_Teodorescu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Paul_Teodorescu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Paul_Teodorescu_cair_ade"
+			}
+			traits = {
+				chief_of_air_force
+				cair_carpet_bombing_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+
+		RRM_Ermil_Gheorghiu_cair_pau = {
+			allowed = { original_tag = RRM }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = military_staff_available
+					NOT = { has_country_flag = Ermil_Gheorghiu_dead }
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = Ermil_Gheorghiu_dead }
+			}
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea RRM_Ermil_Gheorghiu_cair_pau"
+			}
+			traits = {
+				chief_of_air_force
+				cair_air_superiority_doctrine
+			}
+			cancel_if_invalid = yes
+		}
+	}
+}

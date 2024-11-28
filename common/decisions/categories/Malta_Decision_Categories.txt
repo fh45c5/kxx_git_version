@@ -1,0 +1,40 @@
+MLT_join_faction = {
+	icon = GFX_decision_category_military_operation
+	allowed = {
+		tag = MLT
+	}
+        visible = {
+		has_completed_focus = MLT_take_a_side
+	} 
+}
+MLT_raiding = {
+	icon = GFX_decision_category_military_operation
+	allowed = {
+		tag = MLT
+	}
+        visible = {
+		has_completed_focus = MLT_red_corsairs
+	} 
+}
+MLT_economic_decisions = {
+	icon = GFX_decision_category_generic_prospect_for_resources
+	allowed = {
+		tag = MLT
+	}
+        visible = {
+		has_completed_focus = MLT_build_up_eco
+	} 
+}
+MLT_expand = {
+	icon = GFX_decision_category_military_operation
+	allowed = {
+		tag = MLT
+	}
+        visible = {
+			or = {
+		has_completed_focus = MLT_march_towards_trve_itlian_socialism
+		has_completed_focus = MLT_godly_italian_socialism
+			}
+	} 
+}
+

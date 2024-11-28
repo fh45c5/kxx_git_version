@@ -1,0 +1,19 @@
+guiTypes = {
+	containerWindowType = {
+		name = "JER_artillery_scripted_gui"
+		position = { x = 50 y = 50 }
+		size = { width = 100% height= 150 }
+		
+		instantTextBoxType = {
+			name = "JER_RESISTANCE_TITLE"
+			position = { x = 120 y = 20 }
+			font = "hoi_24header"
+			text = "JER_SCRIPTED_LOC_AMMO_RED"
+			maxHeight = 24
+			fixedsize = yes
+			maxWidth = 280
+			format = center
+		}						
+	}
+
+}

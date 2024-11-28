@@ -1,0 +1,89 @@
+JER_buy_guns_right = {
+	allowed = {
+	OR = {
+	tag = JER
+	tag = HUL
+	tag = ARE
+	}
+	}
+	priority = 100
+	visible = {
+	OR = {
+	tag = JER
+	tag = HUL
+	tag = ARE
+	}
+	}
+}
+JER_baterie_artillery = {
+	allowed = {
+		has_completed_focus = JER_Batterie_Mirus
+	}
+	priority = 200
+	icon = artillery
+	visible = {
+		has_completed_focus = JER_Batterie_Mirus
+	}
+	scripted_gui = JER_artillery_scripted_gui
+	visible_when_empty = yes
+}
+JER_freikiorps_voran_die_frent = {
+	priority = 180
+	icon = decision_freikorps
+	visible = {
+		always = yes 
+	}
+	
+}
+JER_CREATE_puppet_huile = {
+	priority = 180
+	icon = decision_freikorps
+	visible = {
+		JER = {
+		controls_state = 850
+		}
+	}
+}
+
+
+
+WAR_CRIME_VEN = {
+	priority = 180
+	icon = decision_freikorps
+	visible = {
+		OR = {
+JER = {
+has_war_with = VEN
+}
+JER = {
+    every_owned_state = {
+        is_core_of = VEN
+    }
+}
+HUL= {
+    every_owned_state = {
+        is_core_of = VEN
+    }
+}
+}		
+	}
+}
+DEVISIONE_HULIER = {
+	priority = 180
+	icon = decision_freikorps
+	visible = {
+	tag = HUL
+}
+}		
+
+#JER_resistance_matters = {
+#	allowed = {
+#		original_tag = JER
+#	}
+#	priority = 1000
+#	visible = {
+#	has_idea = JER_syndie_problem
+#	}
+#	scripted_gui = JER_resistance_scripted_gui
+#	visible_when_empty = yes
+#}

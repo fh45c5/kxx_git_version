@@ -1,0 +1,1752 @@
+# Philippine Decisions
+# created by: dax0102
+
+PHI_papacy_in_exile_cat = {
+	
+	PHI_take_back_jerusalem = {
+		icon = GFX_decision_generic_civil_support
+		days_remove = 60
+		fire_only_once = yes
+		target_array = global.countries
+		target_trigger = {
+			FROM = {
+				exists = yes
+				owns_state = 454
+			}
+		}
+		available = {
+			is_subject = no
+			FROM = {
+				exists = yes
+				has_full_control_of_state = 454
+				NOT = {
+					has_war_with = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 200
+				FROM = {
+					is_subject = no
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				owns_state = 454
+			}
+			has_completed_focus = PHI_the_holy_lands
+		}
+		complete_effect = {
+			
+				add_state_core = 454
+			
+		}
+		remove_effect = {
+			create_wargoal = {
+				target = FROM
+				type = annex_everything
+			}
+		}
+	}
+	PHI_take_back_rome = {
+		icon = GFX_decision_generic_civil_support
+		days_remove = 60
+		fire_only_once = yes
+		target_array = global.countries
+		target_trigger = {
+			FROM = {
+				exists = yes
+				owns_state = 2
+			}
+		}
+		available = {
+			is_subject = no
+			FROM = {
+				exists = yes
+				has_full_control_of_state = 2
+				NOT = {
+					has_war_with = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				owns_state = 2
+			}
+			has_completed_focus = PHI_the_holy_lands
+		}
+		complete_effect = {
+			
+				every_state = {
+					limit = {
+						is_core_of = SRI
+					}
+					PHI = { 
+						add_state_core = PREV 
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = LOM
+					}
+					PHI = { 
+						add_state_core = PREV 
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = VNC
+					}
+					PHI = { 
+						add_state_core = PREV 
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = ITA
+					}
+					PHI = { 
+						add_state_core = PREV 
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = PAP
+					}
+					PHI = { 
+						add_state_core = PREV 
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = SIC
+					}
+					PHI = { 
+						add_state_core = PREV 
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = SRD
+					}
+					PHI = { 
+						add_state_core = PREV 
+					}
+				}
+			
+		}
+		remove_effect = {
+			create_wargoal = {
+				target = FROM
+				type = annex_everything
+			}
+		}
+	}
+}
+PHI_catholic_alliance_cat = {
+	PHI_invite_portugal = {
+		icon = GFX_decision_generic_form_nation
+		days_remove = 7
+		cost = 10
+		ai_will_do = {
+			base = 1000
+		}
+		targets = { POR PRR }
+		target_trigger = {
+			country_exists = FROM
+		}
+		available = {
+			FROM = {
+				has_socialist_government = no
+				is_in_faction = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		visible = {
+			is_faction_leader = yes
+			FROM = {
+				exists = yes
+				is_subject = no
+				has_socialist_government = no
+				NOT = {
+					is_in_faction_with = ROOT
+					has_war_with = ROOT
+				}
+			}
+			has_completed_focus = PHI_catholic_dominion
+		}
+		remove_effect = {
+			FROM = {
+				country_event = { id = philippines.70 days = 2 }
+			}
+		}
+	}
+	PHI_invite_spain = {
+		icon = GFX_decision_generic_form_nation
+		days_remove = 7
+		cost = 10
+		ai_will_do = {
+			base = 1000
+		}
+		targets = { CAR SPR }
+		target_trigger = {
+			country_exists = FROM
+		}
+		available = {
+			FROM = {
+				has_socialist_government = no
+				is_in_faction = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		visible = {
+			is_faction_leader = yes
+			FROM = {
+				exists = yes
+				is_subject = no
+				has_socialist_government = no
+				NOT = {
+					is_in_faction_with = ROOT
+					has_war_with = ROOT
+				}
+			}
+			has_completed_focus = PHI_catholic_dominion
+		}
+		remove_effect = {
+			FROM = {
+				country_event = { id = philippines.70 days = 2 }
+			}
+		}
+	}
+	PHI_invite_south_america = {
+		icon = GFX_decision_generic_form_nation
+		days_remove = 7
+		cost = 10
+		ai_will_do = {
+			base = 800
+		}
+		target_array = global.countries
+		target_trigger = {
+			FROM = {
+				exists = yes
+				has_socialist_government = no
+				NOT = { has_government = national_populist }
+				capital_scope = {
+					OR = {
+						is_on_continent = south_america
+						is_on_continent = north_america
+					}
+				}
+				NOT = {
+					has_government = national_populist
+					tag = KNE
+					tag = USA
+					tag = CAN
+					tag = NFL
+				}
+			}
+		}
+		available = {
+			is_ai = no
+			FROM = {
+				exists = yes
+				is_subject = no
+				has_socialist_government = no
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+		}
+		visible = {
+			is_faction_leader = yes
+			FROM = {
+				exists = yes
+				is_subject = no
+				has_socialist_government = no
+				NOT = {
+					is_in_faction_with = ROOT
+					has_war_with = ROOT
+				}
+			}
+			has_completed_focus = PHI_catholic_dominion
+		}
+		remove_effect = {
+			FROM = {
+				country_event = { id = philippines.70 days = 2 }
+			}
+		}
+	}
+}
+PHI_form_confederation_cat = {
+	PHI_convince_insulindia = {
+		icon = GFX_decision_generic_political_discourse
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			base = 200
+		}
+		targets = { INS }
+		target_trigger = {
+			country_exists = FROM
+		}
+		available = {
+			FROM = {
+				has_capitulated = no
+			}
+		}
+		visible = {
+			FROM = {
+				NOT = {
+					has_war_with = ROOT
+					is_subject_of = ROOT
+				}
+			}
+		}
+		complete_effect = {
+			FROM = {
+				country_event = { id = philippines.96 days = 2 }
+			}
+		}
+	}
+	PHI_form_confederation = {
+		icon = GFX_decision_generic_form_nation
+		cost = 100
+		days_remove = 120
+		fire_only_once = yes
+		available = {
+			PHI_owns_and_controls_insulindia = yes
+			PHI_owns_and_controls_malaya = yes
+		}
+		modifier = {
+			civilian_factory_use = 5
+		}
+		remove_effect = {
+			every_owned_state = {
+				limit = { is_core_of = INS }
+				add_core_of = ROOT
+				add_claim_by = INS
+				remove_core_of = INS
+			}
+			every_owned_state = {
+				limit = { is_core_of = MAL }
+				add_core_of = ROOT
+				add_claim_by = MAL
+				remove_core_of = MAL
+			}
+			set_cosmetic_tag = PHI_CONFED
+		}
+	}
+}
+
+PHI_co_prosperity_sphere = {
+	PHI_join_japan = {
+		icon = GFX_decision_generic_political_discourse
+		cost = 20
+		fire_only_once = yes
+		ai_will_do = {
+			base = 800 # Do as soon as possible
+		}
+		targets = { JAP }
+		allowed = { original_tag = PHI }
+		available = {
+			PHI = {
+				has_capitulated = no
+				is_subject = no
+			}
+			JAP = {
+				exists = yes
+				is_subject = no
+				is_faction_leader = yes
+			}
+		}
+		visible = {
+			has_completed_focus = PHI_pivot_to_japan
+			is_in_faction = no
+			JAP = {
+				NOT = { is_in_faction_with = GER }
+			}
+		}
+		complete_effect = {
+			JAP = {
+				country_event = { id = philippines.61 days = 2 }
+			}
+		}
+	}
+	
+}
+
+PHI_anti_colonialist_crusade_cat = {
+	
+	PHI_demand_burma = {
+		icon = GFX_decision_generic_civil_support
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			base = 80
+			modifier = {
+				factor = 10
+				num_divisions > 40
+			}
+		}
+		allowed = { original_tag = PHI }
+		available = {
+			NOT = { country_exists = BRM }
+			FROM = {
+				controls_state = 288
+			}
+			is_neighbor_of = FROM
+		}
+		visible = {
+			has_completed_focus = PHI_the_burmese_question
+		}
+		targets = { BRM }
+		target_trigger = {
+			FROM = {
+				owns_state = 288
+			}
+		}
+		complete_effect = {
+			FROM = {
+				country_event = { id = philippines.73 days = 2 }
+			}
+		}
+	}
+	PHI_invite_burma_dec = {
+		icon = GFX_decision_generic_civil_support
+		days_remove = 7
+		fire_only_once = yes
+		ai_will_do = {
+			base = 800 # do as soon as possible
+		}
+		allowed = { original_tag = PHI }
+		targets = { BRM }
+		target_trigger = {
+			FROM = {
+				exists = yes
+				is_subject = no
+			}
+		}
+		visible = {
+			is_in_faction = yes
+			FROM = {
+				NOT = { is_in_faction_with = ROOT }
+			}
+			has_completed_focus = PHI_the_burmese_question
+		}
+		remove_effect = {
+			FROM = {
+				country_event = { id = philippines.70 days = 2 }
+			}
+		}
+	}
+	PHI_invite_russia_dec = {
+		icon = GFX_decision_generic_civil_support
+		days_remove = 7
+		fire_only_once = yes
+		ai_will_do = {
+			base = 80 # do as soon as possible
+			modifier = {
+				factor = 20
+				num_divisions > 80
+			}
+		}
+		allowed = { original_tag = PHI }
+		targets = { TRM }
+		target_trigger = {
+			FROM = {
+				exists = yes
+			}
+		}
+		visible = {
+			is_in_faction = yes
+			FROM = {
+				NOT = { is_in_faction_with = ROOT }
+			}
+			OR = {
+			has_completed_focus = PHI_the_co_prosperity_sphere
+			has_completed_focus = PHI_arm_the_white_russians
+			}
+			
+		}
+		remove_effect = {
+			FROM = {
+				country_event = { id = philippines.70 days = 2 }
+			}
+		}
+	}
+	PHI_invite_manchuria_dec = {
+		icon = GFX_decision_generic_civil_support
+		days_remove = 7
+		fire_only_once = yes
+		ai_will_do = {
+			base = 80 # do as soon as possible
+			modifier = {
+				factor = 20
+				num_divisions > 80
+			}
+		}
+		allowed = { original_tag = PHI }
+		targets = { FNG }
+		target_trigger = {
+			FROM = {
+				exists = yes
+			}
+		}
+		visible = {
+			is_in_faction = yes
+			FROM = {
+				NOT = { is_in_faction_with = ROOT }
+			}
+			has_completed_focus = PHI_the_co_prosperity_sphere
+		}
+		remove_effect = {
+			FROM = {
+				country_event = { id = philippines.70 days = 2 }
+			}
+		}
+	}
+	PHI_invite_zhili_dec = {
+		icon = GFX_decision_generic_civil_support
+		days_remove = 7
+		fire_only_once = yes
+		ai_will_do = {
+			base = 80 # do as soon as possible
+			modifier = {
+				factor = 20
+				num_divisions > 80
+			}
+		}
+		allowed = { original_tag = PHI }
+		targets = { QIE }
+		target_trigger = {
+			FROM = {
+				exists = yes
+			}
+		}
+		visible = {
+			is_in_faction = yes
+			FROM = {
+				NOT = { is_in_faction_with = ROOT }
+			}
+			has_completed_focus = PHI_the_co_prosperity_sphere
+		}
+		remove_effect = {
+			FROM = {
+				country_event = { id = philippines.70 days = 2 }
+			}
+		}
+	}
+	PHI_invite_china_dec = {
+		icon = GFX_decision_generic_civil_support
+		days_remove = 7
+		fire_only_once = yes
+		ai_will_do = {
+			base = 80 # do as soon as possible
+			modifier = {
+				factor = 20
+				num_divisions > 80
+			}
+		}
+		allowed = { original_tag = PHI }
+		targets = { GXC }
+		target_trigger = {
+			FROM = {
+				exists = yes
+			}
+		}
+		available = {
+			NOT = { is_in_faction_with = JAP }
+		}
+		visible = {
+			is_in_faction = yes
+			FROM = {
+				NOT = { is_in_faction_with = ROOT }
+			}
+			OR = {
+				has_completed_focus = PHI_the_co_prosperity_sphere
+				has_completed_focus = PHI_support_the_kuomitang
+			}
+		}
+		remove_effect = {
+			FROM = {
+				country_event = { id = philippines.70 days = 2 }
+			}
+		}
+	}
+	PHI_invite_commie_india_dec = {
+		icon = GFX_decision_generic_civil_support
+		days_remove = 7
+		fire_only_once = yes
+		ai_will_do = {
+			base = 80 # do as soon as possible
+			modifier = {
+				factor = 20
+				num_divisions > 80
+			}
+		}
+		allowed = { original_tag = PHI }
+		targets = { BHC }
+		target_trigger = {
+			FROM = {
+				exists = yes
+			}
+		}
+		visible = {
+			is_in_faction = yes
+			FROM = {
+				NOT = { is_in_faction_with = ROOT }
+			}
+			has_completed_focus = PHI_influence_india
+			has_socialist_government = yes
+		}
+		remove_effect = {
+			FROM = {
+				country_event = { id = philippines.70 days = 2 }
+			}
+		}
+	}
+	PHI_invite_india_dec = {
+		icon = GFX_decision_generic_civil_support
+		days_remove = 7
+		fire_only_once = yes
+		ai_will_do = {
+			base = 80 # do as soon as possible
+			modifier = {
+				factor = 20
+				num_divisions > 80
+			}
+		}
+		allowed = { original_tag = PHI }
+		targets = { PRF }
+		target_trigger = {
+			FROM = {
+				exists = yes
+			}
+		}
+		visible = {
+			is_in_faction = yes
+			FROM = {
+				NOT = { is_in_faction_with = ROOT }
+			}
+			has_completed_focus = PHI_influence_india
+			has_socialist_government = no
+		}
+		remove_effect = {
+			FROM = {
+				country_event = { id = philippines.70 days = 2 }
+			}
+		}
+	}
+	PHI_invite_insulindia_dec = {
+		icon = GFX_decision_generic_civil_support
+		days_remove = 7
+		fire_only_once = yes
+		ai_will_do = {
+			base = 80 # do as soon as possible
+			modifier = {
+				factor = 20
+				num_divisions > 80
+			}
+		}
+		allowed = { original_tag = PHI }
+		targets = { INS }
+		target_trigger = {
+			FROM = {
+				exists = yes
+			}
+		}
+		visible = {
+			is_in_faction = yes
+			FROM = {
+				NOT = { is_in_faction_with = ROOT }
+			}
+			has_completed_focus = PHI_invite_insulindia
+		}
+		remove_effect = {
+			FROM = {
+				country_event = { id = philippines.70 days = 2 }
+			}
+		}
+	}
+	PHI_support_ins = {
+		icon = ger_military_buildup
+		fire_only_once = yes
+		ai_will_do = {
+			base = 200
+		}
+		custom_cost_text = 1000_infantry_equipment_1
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 999 }
+		}
+		allowed = { original_tag = PHI }
+		targets = { INS }
+		target_trigger = {
+			FROM = { has_war_with = DEI }
+		}
+		visible = {
+			INS = { has_war_with = DEI }
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			army_experience = 5
+			send_equipment = {
+				target = FROM
+				type = infantry_equipment
+				amount = 1000
+			}
+			FROM = { country_event = { id = philippines.39 days = 2 } }
+		}
+	}
+	
+}
+
+foreign_politics = {
+	
+	PHI_guam_issue = {
+		icon = GFX_decision_generic_ignite_civil_war
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 240
+		allowed = {
+			OR = {
+				tag = USA
+				tag = ENG
+				tag = JAP
+			}
+		}
+		available = {
+			any_controlled_state = {
+				OR = {
+					is_core_of = PHI
+					state = 638
+				}
+			}
+		}
+		activation = {
+			has_war_with = PHI
+			has_global_flag = filipino_occupied_guam
+			NOT = { has_global_flag = guam_whitepeace }
+		}
+		complete_effect = {
+			increase_ruling_party_popularity_by_15 = yes
+		}
+		timeout_effect = {
+			every_enemy_country = {
+				limit = {
+					OR = {
+						tag = PHI
+						is_in_faction_with = PHI
+					}
+				}
+				white_peace = PREV
+			}
+			hidden_effect = {
+				every_other_country = {
+					limit = { is_in_faction_with = ROOT }
+					PREV = {
+						country_event = philippines.78 # whitepeace
+					}
+				}
+			}
+		}
+	}
+	PHI_take_guam_force = {
+		icon = GFX_decision_generic_naval
+		cost = 50
+		fire_only_once = yes
+		allowed = { original_tag = PHI }
+		targets = { JAP USA ENG }
+		target_trigger = {
+			FROM = {
+				owns_state = 638
+			}
+		}
+		visible = {
+			NOT = { owns_state = 638 }
+			has_country_flag = PHI_refused_guam
+		}
+		complete_effect = {
+			random_list = {
+				50 = { country_event = { id = philippines.85 days = 2 } }
+				50 = { country_event = { id = philippines.86 days = 2 } }
+			}
+		}
+	}
+	PHI_take_guam = {
+		icon = GFX_decision_infiltrate_state
+		cost = 50
+		fire_only_once = yes
+		allowed = { original_tag = PHI }
+		targets = { JAP USA ENG }
+		target_trigger = {
+			FROM = {
+				owns_state = 638
+			}
+		}
+		visible = {
+			NOT = { owns_state = 638 }
+			has_completed_focus = PHI_spanish_captaincy_general_islands
+		}
+		complete_effect = {
+			FROM = {
+				country_event = { id = philippines.82 days = 2 }
+			}
+		}
+	}
+	PHI_invite_siam_dec = {
+		icon = GFX_decision_generic_civil_support
+		days_remove = 7
+		fire_only_once = yes
+		ai_will_do = {
+			base = 800
+		}
+		allowed = { original_tag = PHI }
+		targets = { SIA }
+		target_trigger = {
+			FROM = {
+				exists = yes
+			}
+		}
+		visible = {
+			is_in_faction = yes
+			FROM = {
+				NOT = { is_in_faction_with = ROOT }
+			}
+			has_completed_focus = PHI_invite_siam
+		}
+		remove_effect = {
+			FROM = {
+				country_event = { id = philippines.70 days = 2 }
+			}
+		}
+	}
+	PHI_safeguard_indochina = {
+		icon = GFX_decision_hol_war_on_pacifism
+		fire_only_once = yes
+		ai_will_do = {
+			base = 80 # do as soon as possible
+			modifier = {
+				factor = 20
+				num_divisions > 80
+			}
+		}
+		targets = { GER }
+		allowed = { original_tag = PHI }
+		available = {
+			
+			GEA = {
+				has_capitulated = no
+			}
+		}
+		visible = {
+			country_exists = GEA
+			has_completed_focus = PHI_safeguard_the_colonies
+		}
+		complete_effect = {
+			FROM = { country_event = philippines.79 }
+		}
+	}
+	PHI_safeguard_insulindia = {
+		icon = GFX_decision_hol_war_on_pacifism
+		fire_only_once = yes
+		ai_will_do = {
+			base = 80 # do as soon as possible
+			modifier = {
+				factor = 20
+				num_divisions > 80
+			}
+		}
+		targets = { HOL }
+		allowed = { original_tag = PHI }
+		available = {
+		
+			DEI = {
+				has_capitulated = no
+			}
+		}
+		visible = {
+			country_exists = DEI
+			has_completed_focus = PHI_safeguard_the_colonies
+		}
+		complete_effect = {
+			FROM = { country_event = philippines.79 }
+		}
+	}
+	
+	PHI_join_entente = {
+		icon = GFX_decision_generic_tank
+		fire_only_once = yes
+		ai_will_do = {
+			base = 80 # do as soon as possible
+			modifier = {
+				factor = 2
+				num_divisions > 80
+			}
+		}
+		targets = { CAN }
+		allowed = { original_tag = PHI }
+		visible = {
+			has_completed_focus = PHI_look_to_the_west
+			CAN = {
+				is_faction_leader = yes
+			}
+		}
+		available = {
+			is_subject = no
+			has_capitulated = no
+		}
+		complete_effect = {
+			CAN = {
+				country_event = { id = philippines.61 days = 2 }
+			}
+		}
+	}
+	PHI_join_reichspakt = {
+		icon = GFX_decision_generic_tank
+		fire_only_once = yes
+		ai_will_do = {
+			base = 80 # do as soon as possible
+			modifier = {
+				factor = 2
+				num_divisions > 80
+			}
+		}
+		targets = { GER }
+		allowed = { original_tag = PHI }
+		visible = {
+			has_completed_focus = PHI_maintain_american_relations
+			GER = {
+				is_faction_leader = yes
+			}
+		}
+		available = {
+			is_subject = no
+			has_capitulated = no
+		}
+		complete_effect = {
+			GER = {
+				country_event = { id = philippines.61 days = 2 }
+			}
+		}
+	}
+	PHI_join_internationale = {
+		icon = GFX_decision_generic_tank
+		fire_only_once = yes
+		ai_will_do = {
+			base = 80 # do as soon as possible
+			modifier = {
+				factor = 2
+				num_divisions > 80
+			}
+		}
+		targets = { FRA }
+		allowed = { original_tag = PHI }
+		visible = {
+			has_completed_focus = PHI_our_soviet_comrades
+			FRA = {
+				is_faction_leader = yes
+			}
+		}
+		available = {
+			is_subject = no
+			has_capitulated = no
+		}
+		complete_effect = {
+			FRA = {
+				country_event = { id = philippines.61 days = 2 }
+			}
+		}
+	}
+	PHI_support_usa = {
+		icon = ger_military_buildup
+		fire_only_once = yes
+		ai_will_do = {
+			base = 100
+		}
+		custom_cost_text = 1000_infantry_equipment_1
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 999 }
+		}
+		allowed = { original_tag = PHI }
+		visible = {
+			NOT = { has_socialist_government = yes }
+		}
+		targets = { USA TEX COR CAL WCC }
+		target_trigger = {
+			FROM = { has_war = yes}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			set_country_flag = PHI_supported_usa
+			army_experience = 5
+			send_equipment = {
+				target = FROM
+				type = infantry_equipment
+				amount = 1000
+			}
+			FROM = { country_event = { id = philippines.39 days = 2 } }
+		}
+	}
+	PHI_support_mex = {
+		icon = ger_military_buildup
+		fire_only_once = yes
+		ai_will_do = {
+			base = 100
+		}
+		custom_cost_text = 1000_infantry_equipment_1
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 999 }
+		}
+		allowed = { original_tag = PHI }
+		visible = {
+			has_socialist_government = yes
+		}
+		targets = { CSA }
+		target_trigger = {
+			FROM = { has_war = yes }
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			set_country_flag = PHI_supported_mex
+			army_experience = 5
+			send_equipment = {
+				target = FROM
+				type = infantry_equipment
+				amount = 1000
+			}
+			FROM = { country_event = { id = philippines.39 days = 2 } }
+		}
+	}
+}
+
+political_actions = {
+	PHI_integrate_fiji = {
+		icon = generic_nationalism
+		days_remove = 60
+		cost = 0
+		fire_only_once = yes
+		allowed = { original_tag = PHI }
+		available = {
+			OR = {
+				owns_state = 633
+				owns_state = 646
+				owns_state = 647
+				owns_state = 684
+			}
+		}
+		visible = {
+			any_owned_state = {
+				OR = {
+					state = 633
+					state = 646
+					state = 647
+					state = 684
+				}
+				NOT = { is_core_of = ROOT }
+			}
+		}
+		ai_will_do = {
+			base = 800
+		}
+		modifier = {
+			civilian_factory_use = 2
+		}
+		remove_effect = {
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 633
+						state = 646
+						state = 647
+						state = 684
+					}
+				}
+
+				add_core_of = ROOT
+			}
+		}
+	}
+	PHI_integrate = {
+		icon = generic_nationalism
+		state_target = yes
+		days_remove = 60
+		cost = 0
+		cancel_if_not_visible = yes
+		ai_will_do = {
+			base = 800
+		}
+		targets = { 828 }
+		target_trigger = {
+			owns_state = FROM
+		}
+		allowed = { original_tag = PHI }
+		available = {
+			has_full_control_of_state = FROM
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		visible = {
+			NOT = { FROM = { is_core_of = ROOT } }
+		}
+		modifier = {
+			civilian_factory_use = 2
+		}
+		remove_effect = {
+			if = {
+				limit = { FROM = { is_claimed_by = ROOT } }
+				remove_state_claim = FROM
+			}
+			add_state_core = FROM
+			
+		}
+	}
+	
+}
+
+PHI_industrialization_plan = {
+	PHI_find_new_trading_partners = {
+		icon = GFX_decision_generic_naval
+		cost = 20
+		days_remove = 120
+		fire_only_once = yes
+		ai_will_do = {
+			base = 1000
+		}
+		visible = {
+			has_idea = PHI_hindered_british_trade
+		}
+		remove_effect = {
+			remove_ideas = PHI_hindered_british_trade
+		}
+	}
+	PHI_pnr_expansion = {
+		icon = GFX_decision_generic_construction
+		cost = 40
+		days_remove = 100
+		fire_only_once = yes
+		ai_will_do = {
+			base = 800
+		}
+		visible = {
+			has_completed_focus = PHI_railway_expansion
+		}
+		complete_effect = {
+			set_country_flag = PHI_has_expanded_pnr
+			build_railway = {
+				level = 5
+				build_only_on_allied = yes
+				fallback = yes
+				path = { 623 1033 327 624 625 1075 }
+				start_state = 1072
+				target_state = 627
+			}
+		}
+	}
+	PHI_invite_investments = {
+		icon = GFX_decision_ger_mefo_bills
+		cost = 20
+		days_remove = 4
+		fire_only_once = yes
+		ai_will_do = {
+			base = 200
+		}
+		targets = { CAN NFA GER USA JAP RUS }
+		target_trigger = {
+			FROM = {
+				NOT = { has_war_with = ROOT }
+				NOT = { is_subject_of = ROOT }
+			}
+		}
+		visible = {
+			has_completed_focus = PHI_invite_foreign_investors
+		}
+		remove_effect = {
+			FROM = {
+				country_event = { id = philippines.4 days = 2 }
+			}
+
+			custom_effect_tooltip = PHI_new_companies_if_accepted_tt
+
+			if = {
+				limit = {
+					FROM = { tag = GER }
+				}
+				show_ideas_tooltip = PHI_mauser
+				show_ideas_tooltip = PHI_daimler_benz
+				show_ideas_tooltip = PHI_junkers
+				show_ideas_tooltip = PHI_blohm_voss
+			}
+			else_if = {
+				limit = {
+					FROM = { tag = ENG }
+				}
+				show_ideas_tooltip = PHI_rolls_royce
+				show_ideas_tooltip = PHI_harland_wolff
+				show_ideas_tooltip = PHI_hawker
+			}
+			else_if = {
+				limit = {
+					FROM = { tag = FRA }
+				}
+				show_ideas_tooltip = PHI_mas
+				show_ideas_tooltip = PHI_brandt
+				show_ideas_tooltip = PHI_morane_saulnier
+				show_ideas_tooltip = PHI_fcm
+			}
+			else_if = {
+				limit = {
+					FROM = { tag = USA }
+				}
+				show_ideas_tooltip = PHI_ford
+				show_ideas_tooltip = PHI_remington
+				show_ideas_tooltip = PHI_higgins
+				show_ideas_tooltip = PHI_lockheed
+			}
+		}
+	}
+	PHI_new_city_construction = {
+		icon = GFX_decision_hol_draw_up_staff_plans
+		cost = 25
+		days_remove = 120
+		fire_only_once = yes
+		state_target = yes
+		ai_will_do = {
+			base = 1200
+		}
+		targets = { 327 623 624 625 626 627 628 1033 1072 1073 1074 1075 }
+		target_trigger = {
+			controls_state = FROM
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		visible = {
+			NOT = {
+				is_in_array = {
+					array = PHI.new_cities_states
+					value = FROM
+				}
+			}
+			has_completed_focus = PHI_new_cities
+		}
+		modifier = {
+			civilian_factory_use = 2
+		}
+		remove_effect = {
+			add_to_array = { PHI.new_cities_states = FROM }
+			FROM = {
+				if = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	PHI_promote_tourism = {
+		icon = GFX_decision_hol_attract_foreign_investors
+		cost = 25
+		days_remove = 60
+		fire_only_once = yes
+		state_target = yes
+		ai_will_do = {
+			base = 1200
+		}
+		targets = { 623 624 625 626 }
+		target_trigger = {
+			controls_state = FROM
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		visible = {
+			NOT = {
+				is_in_array = {
+					array = PHI.tourism_states
+					value = FROM
+				}
+			}
+			has_completed_focus = PHI_tourism_adventures
+		}
+		modifier = {
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			add_to_array = { PHI.tourism_states = FROM }
+			FROM = {
+				if = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	PHI_irrigation_construction = {
+		icon = generic_cement_mixer
+		cost = 25
+		days_remove = 120
+		fire_only_once = yes
+		state_target = yes
+		ai_will_do = {
+			base = 1200
+		}
+		targets = { 623 327 628 627 1033 1072 1073 1074 1075 }
+		target_trigger = {
+			controls_state = FROM
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		visible = {
+			NOT = {
+				is_in_array = {
+					array = PHI.built_irrigation_states
+					value = FROM
+				}
+			}
+			has_completed_focus = PHI_build_up_irrigation_systems
+		}
+		modifier = {
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			add_to_array = { PHI.built_irrigation_states = FROM }
+			FROM = {
+				if = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	PHI_finalize_plan = {
+		icon = GFX_decision_generic_break_treaty
+		fire_only_once = yes
+		days_remove = 30
+		ai_will_do = {
+			base = 2000
+		}
+		available = {
+			PHI_industrialization_complete = yes
+		}
+		visible = {
+			has_completed_focus = PHI_osmena_industrialization_plan
+			has_idea = PHI_agricultural_society
+		}
+		remove_effect = {
+			remove_ideas = PHI_agricultural_society
+		}
+	}
+	PHI_industrial_investments = {
+		icon = GFX_decision_eng_trade_unions_support
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		state_target = yes
+		ai_will_do = {
+			base = 1400
+		}
+		targets = { 623 327 627 624 1033 1072 1073 1074 1075 }
+		target_trigger = {
+			controls_state = FROM
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		visible = {
+			NOT = {
+				is_in_array = {
+					array = PHI.invested_states
+					value = FROM
+				}
+			}
+			has_completed_focus = PHI_osmena_industrialization_plan
+		}
+		modifier = {
+			civilian_factory_use = 1
+		}
+		remove_effect = {
+			add_to_array = { PHI.invested_states = FROM }
+			FROM = {
+				if = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+PHI_spanish_civil_war = {
+	PHI_send_support_monarchist = {
+		icon = GFX_decision_ger_military_buildup
+		fire_only_once = yes
+		custom_cost_text = 1000_infantry_equipment_1
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 999 }
+		}
+		targets = { SPR CAR }
+		target_trigger = {
+			FROM = { has_war = yes }
+		}
+		available = {
+			has_global_flag = spanish_civil_war
+			has_socialist_government = no
+		}
+		visible = {
+			NOT = { has_country_flag = PHI_supported_republican_spain }
+			OR = {
+				country_exists = SPR
+				country_exists = CAR
+			}
+			
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			set_country_flag = PHI_supported_monarchist_spain
+			army_experience = 5
+			send_equipment = {
+				target = FROM
+				type = infantry_equipment
+				amount = 1000
+			}
+			FROM = { country_event = { id = philippines.39 days = 2 } }
+		}
+	}
+	PHI_send_support_republican = {
+		icon = GFX_decision_ger_military_buildup
+		fire_only_once = yes
+		custom_cost_text = 1000_infantry_equipment_1
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 999 }
+		}
+		targets = { CNT }
+		target_trigger = {
+			FROM = { has_war = yes }
+		}
+		available = {
+			has_global_flag = spanish_civil_war
+			has_socialist_government = yes
+		}
+		visible = {
+			NOT = { has_country_flag = PHI_supported_monarchist_spain }
+			country_exists = CNT
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			set_country_flag = PHI_supported_republican_spain
+			army_experience = 5
+			send_equipment = {
+				target = FROM
+				type = infantry_equipment
+				amount = 1000
+			}
+			FROM = { country_event = { id = philippines.39 days = 2 } }
+		}
+	}
+}
+PHI_liberate_china_mainland_cat = {
+	PHI_attack_chinese_warlords = {
+	icon = ger_military_buildup
+	
+	available = {
+		PHI = {
+			is_subject = no
+			is_ai = no
+		}
+	}
+	
+	visible = {
+		tag = PHI
+		has_completed_focus = PHI_save_chinese_socialism
+	}
+	cost = 10
+	targets = { ANQ LEP GXC CHI HNN TAI LEC HKC SQI QIE FNG TIB SZC YUN XSM SHX MON SIK ETS TAN }
+	target_trigger = {
+		FROM = { exists = yes }
+		
+		NOT = {
+			AND = {
+			has_war_with = PREV
+			is_puppet_of = PREV
+			}
+		}
+	}
+	days_remove = 14
+	days_re_enable = 0
+	fire_only_once = no
+	ai_will_do = {
+		factor = 30
+		modifier = {
+			factor = 0
+			has_equipment = { infantry_equipment < 4000 }
+		}
+		modifier = {
+			factor = 0
+			has_war = yes
+		}
+	}
+	complete_effect = {
+		
+	}
+	remove_effect = {
+		if = {
+			limit = {
+				FROM = {
+					has_socialist_government = yes
+
+				}
+			}
+				PHI = {
+					annex_country = { target = FROM transfer_troops = yes }	
+				}
+					
+					
+				
+				FROM = {
+					every_unit_leader = {	
+					set_nationality = PHI
+				}
+				}
+			
+		}
+		else = {
+			declare_war_on = {   type = annex_everything	target = FROM }
+		}
+		
+		
+	}
+}
+PHI_nanyang_liberation = {
+	icon = ger_military_buildup
+	
+	available = {
+		PHI = {
+			is_subject = no
+			is_ai = no
+		}
+	}
+	
+	visible = {
+		tag = PHI
+		has_completed_focus = PHI_save_chinese_socialism
+	}
+	cost = 10
+	targets = { DEI INS GEA MLY SAR }
+	target_trigger = {
+		FROM = { exists = yes }
+		
+		NOT = {
+			AND = {
+			has_war_with = PREV
+			is_puppet_of = PREV
+			}
+		}
+	}
+	days_remove = 14
+	days_re_enable = 0
+	fire_only_once = no
+	ai_will_do = {
+		factor = 30
+		modifier = {
+			factor = 0
+			has_equipment = { infantry_equipment < 4000 }
+		}
+		modifier = {
+			factor = 0
+			has_war = yes
+		}
+	}
+	complete_effect = {
+		
+	}
+	remove_effect = {
+		declare_war_on = {   type = annex_everything	target = FROM }
+		hidden_effect = {
+			every_state = {		
+			limit = {
+				OR = {
+					is_core_of = INS
+					is_core_of = DEI
+					is_core_of = MLY
+					is_core_of = SAR
+					
+				}
+			}					
+			add_core_of = PHI
+			}
+		}
+		
+		
+	}
+}
+PHI_nanjing_capital = {
+	icon = ger_military_buildup
+	
+	available = {
+		PHI = {
+			is_subject = no
+			is_ai = no
+			owns_state = 613
+		}
+	}
+	
+	visible = {
+		tag = PHI
+		has_completed_focus = PHI_save_chinese_socialism
+	}
+	cost = 10
+	
+	days_remove = 14
+	days_re_enable = 0
+	fire_only_once = yes
+	ai_will_do = {
+		factor = 30
+		modifier = {
+			factor = 0
+			has_equipment = { infantry_equipment < 4000 }
+		}
+		modifier = {
+			factor = 0
+			has_war = yes
+		}
+	}
+	complete_effect = {
+		
+	}
+	remove_effect = {
+		set_capital = { state = 613 }
+		add_stability = 0.1
+		hidden_effect = {
+			country_event = {
+				id = philippines.112
+			}
+			
+		}
+	}
+}
+PHI_lost_lands = {
+	icon = ger_military_buildup
+	
+	available = {
+		PHI = {
+			is_subject = no
+			is_ai = no
+			NOT = { country_exists = QIE } 
+			NOT = { country_exists = FNG } 
+		}
+	}
+	
+	visible = {
+		tag = PHI
+		has_completed_focus = PHI_save_chinese_socialism
+	}
+	cost = 10
+	
+	days_remove = 14
+	days_re_enable = 0
+	fire_only_once = yes
+	ai_will_do = {
+		factor = 30
+		modifier = {
+			factor = 0
+			has_equipment = { infantry_equipment < 4000 }
+		}
+		modifier = {
+			factor = 0
+			has_war = yes
+		}
+	}
+	complete_effect = {
+		
+	}
+	remove_effect = {
+		add_state_core = 561
+			add_state_core = 560
+			add_state_core = 657
+			add_state_core = 409
+			add_state_core = 1246
+			add_state_core = 408
+			add_state_core = 537
+			add_state_core = 563
+			add_state_core = 564
+			add_state_core = 586
+			add_state_core = 589
+			add_state_core = 654
+			add_state_core = 404
+			add_state_core = 745
+			add_state_core = 858
+	}
+}
+}

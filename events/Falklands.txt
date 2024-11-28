@@ -1,0 +1,123 @@
+ 
+add_namespace = fls
+
+###King George Death
+country_event = {
+	id = fls.1
+	title = fls.1.t
+	desc = fls.1.d
+	immediate = { log = "[GetDateText]: [Root.GetName]: event fls.1" }
+	picture = GFX_report_event_CAN_death_george
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fls.1.a
+	}
+}
+
+country_event = {
+	id = fls.2
+	title = fls.2.t
+	desc = fls.2.d
+	immediate = { log = "[GetDateText]: [Root.GetName]: event fls.2" }
+	picture = GFX_FLS_Byrd_Event_2_Event
+	fire_only_once = yes
+	trigger = { 
+		tag = FLS
+		date > 1936.1.1
+	}
+
+	option = {
+		name = fls.2.a
+                add_stability = 0.01
+                add_political_power = 5
+	}
+}
+
+country_event = {
+	id = fls.3 ###byrd finds shit
+	title = fls.3.t
+	desc = fls.3.d
+	immediate = { log = "[GetDateText]: [Root.GetName]: event fls.3" }
+	picture = GFX_FLS_Byrd_Event_1_Event
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = { 
+		tag = FLS
+	}
+	
+	option = {
+		name = fls.3.a
+                add_stability = 0.01
+                add_political_power = 5
+                set_country_flag = flk_agartha_open_gates
+	}
+}
+
+country_event = {
+	id = fls.4 ###entente surrenders
+	title = fls.4.t
+	desc = fls.4.d
+	immediate = { log = "[GetDateText]: [Root.GetName]: event fls.4" }
+	picture = GFX_FLS_Byrd_Event_1_Event
+	
+	fire_only_once = yes
+	
+	trigger = { 
+		FLS = {
+                       owns_state = 1176
+                       owns_state = 681
+                       owns_state = 946
+                       owns_state = 719
+                   }
+	}
+	
+	option = {
+		name = fls.4.a
+                white_peace = SAF
+                white_peace = CAN
+                white_peace = NFA 
+                transfer_state = 1176
+                transfer_state = 681
+                transfer_state = 946
+                transfer_state = 719
+	}
+}
+
+country_event = {
+	id = fls.5 ###reichspakt surrenders
+	title = fls.5.t
+	desc = fls.5.d
+	immediate = { log = "[GetDateText]: [Root.GetName]: event fls.5" }
+	picture = GFX_FLS_Byrd_Event_1_Event
+	
+	fire_only_once = yes
+	
+	trigger = { 
+		FLS = {
+                       owns_state = 1179
+                       owns_state = 1178
+                       owns_state = 1177
+                       owns_state = 543
+                   }
+	}
+	
+	option = {
+		name = fls.4.a
+                white_peace = GER
+                white_peace = MAF
+                transfer_state = 1179
+                       transfer_state = 1178
+                       transfer_state = 1177
+                       transfer_state = 543
+                       transfer_state = 708
+                       transfer_state = 706
+                       transfer_state = 707
+	}
+}
+
+
+
+	

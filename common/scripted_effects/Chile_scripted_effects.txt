@@ -1,0 +1,24 @@
+CHL_will_enter_into_civil_war = {
+  if = {
+		limit = {
+		check_variable = {  CHL_strenght_coceat > 69.99 }
+		AND = {
+		check_variable = { CHL_chiloe_influence > 59.99 }		
+		}
+		}
+		CHL = {
+		country_event = chl.60	
+		    }
+		 		  
+		}
+	else_if = {
+		 limit = {
+		 check_variable = national_Populist > 0.59	
+		 }
+
+		CHL = {
+		country_event = chl.60	
+		    }
+	 
+	}
+}

@@ -1,0 +1,6153 @@
+###########################
+#   Left KMT Decisions    #
+###########################
+
+
+####  中国国民革命  ####
+CHI_military_expeditions_category = {
+
+#五省战争
+	
+	CHI_dec_LEP_expedition = {
+		war_with_target_on_remove = yes
+		icon = generic_ignite_civil_war
+		targets = { ANQ LEP }
+		target_root_trigger = {
+			has_completed_focus = CHI_interim_government
+		}
+		visible = {
+			has_completed_focus = CHI_interim_government
+			is_subject = no
+			can_declare_war_on = FROM
+			NOT = {
+				has_country_flag = CHI_mingshu_lkmt
+			}
+		}
+		available = {
+			is_neighbor_of = FROM
+		}
+
+		fire_only_once = no
+		cancel_if_not_visible = yes
+		cost = 0
+		days_remove = 7
+		days_re_enable = 30
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_LEP_expedition target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 14 value = 1 }
+			FROM = { country_event = chi_for.6 }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_LEP_expedition target: [From.GetName]"
+			declare_war_on = {
+				type = annex_everything
+				target = FROM
+			}
+			FROM = { country_event = chi_for.7 }
+		}
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.8
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					is_in_faction = yes
+					var:faction_leader = {
+						strength_ratio = {
+							tag = ROOT
+							ratio > 0.7
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					is_subject = yes
+					overlord = {
+						strength_ratio = {
+							tag = ROOT
+							ratio > 0.7
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = imminent_war
+			}
+		}
+	}
+
+	CHI_dec_SQI_expedition = {
+		war_with_target_on_remove = yes
+		icon = generic_ignite_civil_war
+		targets = { SQI }
+		target_root_trigger = {
+			has_completed_focus = CHI_interim_government
+		}
+		visible = {
+			has_completed_focus = CHI_interim_government
+			is_subject = no
+			can_declare_war_on = FROM
+			NOT = {
+				has_country_flag = CHI_mingshu_lkmt
+			}
+			SQI = {
+				exists = yes
+				is_subject = no
+				is_in_faction = no
+				NOT = {
+					has_guaranteed = QIE
+					has_government = social_conservative
+				}
+			}
+		}
+		available = {
+			is_neighbor_of = FROM
+			LEP = {
+				OR = {
+					exists = no
+					NOT = { is_neighbor_of = ROOT }
+				}
+			}
+		}
+
+		fire_only_once = no
+		cancel_if_not_visible = yes
+		cost = 0
+		days_remove = 7
+		days_re_enable = 30
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_SQI_expedition target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 14 value = 1 }
+			FROM = { country_event = chi_for.6 }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_SQI_expedition target: [From.GetName]"
+			declare_war_on = {
+				type = annex_everything
+				target = FROM
+			}
+			FROM = { country_event = chi_for.7 }
+		}
+		ai_will_do = {
+			factor = 500
+		}
+	}
+
+	CHI_dec_mobilize_jiangxi = {
+		icon = generic_prepare_civil_war
+		visible = {
+			has_idea = KR_CHI_start_army
+			NOT = { has_country_flag = CHI_mingshu_lkmt }
+		}
+		available = {
+			controls_state = 1044
+			controls_state = 1045
+		}
+		highlight_states = { highlight_state_targets = {
+			state = 1044
+		}
+		}
+		fire_only_once = yes
+		cost = 20
+		days_remove = 15
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_mobilize_jiangxi"
+			add_war_support = 0.01
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_mobilize_jiangxi"
+			custom_effect_tooltip = CHI_mobilize_3_special_units_tt
+			hidden_effect = {
+				random_owned_controlled_state = {
+					prioritize = { 1044 1045 }
+					limit = {
+						is_in_home_area = yes
+						impassable = no
+					}
+					create_unit = {
+						division = "division_template = \"Géming Minbing Lü\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Géming Minbing Lü\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Dúli Bubing Lü\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	CHI_dec_mobilize_zhejiang = {
+		icon = generic_prepare_civil_war
+		visible = {
+			has_idea = KR_CHI_start_army
+			NOT = { has_country_flag = CHI_mingshu_lkmt }
+		}
+		available = {
+			controls_state = 596
+			controls_state = 1067
+			controls_state = 1068
+			controls_state = 1069
+		}
+		highlight_states = { highlight_state_targets = {
+			state = 596
+		}
+		}
+
+		fire_only_once = yes
+		cost = 20
+		days_remove = 15
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_mobilize_zhejiang"
+			add_war_support = 0.01
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_mobilize_zhejiang"
+			custom_effect_tooltip = CHI_mobilize_3_special_units_tt
+			hidden_effect = {
+				random_owned_controlled_state = {
+					prioritize = { 596 1067 1068 1069 }
+					limit = {
+						is_in_home_area = yes
+						impassable = no
+					}
+					create_unit = {
+						division = "division_template = \"Géming Minbing Lü\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Géming Minbing Lü\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Dúli Bubing Lü\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	CHI_dec_mobilize_jiangsu = {
+		icon = generic_prepare_civil_war
+		visible = {
+			has_idea = KR_CHI_start_army
+			NOT = { has_country_flag = CHI_mingshu_lkmt }
+		}
+		available = {
+			controls_state = 613
+		}
+		highlight_states = { highlight_state_targets = {
+			state = 613
+		}
+		}
+
+		fire_only_once = yes
+		cost = 20
+		days_remove = 15
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_mobilize_jiangsu"
+			add_war_support = 0.01
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_mobilize_jiangsu"
+			custom_effect_tooltip = CHI_mobilize_3_special_units_tt
+			hidden_effect = {
+				random_owned_controlled_state = {
+					prioritize = { 613 }
+					limit = {
+						is_in_home_area = yes
+						impassable = no
+					}
+					create_unit = {
+						division = "division_template = \"Géming Minbing Lü\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Géming Minbing Lü\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Dúli Bubing Lü\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	CHI_dec_mobilize_anhui = {
+		icon = generic_prepare_civil_war
+		visible = {
+			has_idea = KR_CHI_start_army
+			NOT = { has_country_flag = CHI_mingshu_lkmt }
+		}
+		available = {
+			controls_state = 606
+			controls_state = 1014
+			controls_state = 1050
+		}
+		highlight_states = { highlight_state_targets = {
+			state = 606
+		}
+		}
+
+		fire_only_once = yes
+		cost = 20
+		days_remove = 15
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_mobilize_anhui"
+			add_war_support = 0.01
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_mobilize_anhui"
+			custom_effect_tooltip = CHI_mobilize_3_special_units_tt
+			hidden_effect = {
+				random_owned_controlled_state = {
+					prioritize = { 606 1014 1050 }
+					limit = {
+						is_in_home_area = yes
+						impassable = no
+					}
+					create_unit = {
+						division = "division_template = \"Géming Minbing Lü\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Géming Minbing Lü\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Dúli Bubing Lü\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	#党国兵工厂
+	CHI_dec_arsenal_of_party_state = {
+		icon = generic_ignite_civil_war
+
+		allowed = { original_tag = CHI }
+		visible = {
+			has_country_flag = CHI_Gannan_army_meeting_completed
+		}
+		cost = 10
+		fire_only_once = yes
+		days_remove = 35
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_arsenal_of_party_state"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_arsenal_of_party_state"
+			add_war_support = 0.05
+			add_offsite_building = { type = arms_factory level = 1 }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	CHI_appeal_for_international_support = {
+		icon = GFX_decision_generic_agreement
+		allowed = {
+			tag = CHI
+		}
+		
+		ai_will_do = { factor = 100 }
+
+		fire_only_once = yes
+		cost = 20
+		days_remove = 15
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove china_appeal_for_internationale_support"
+			every_other_country = {
+				limit = {
+					is_in_europe = yes
+					has_socialist_government = yes
+					is_subject = no
+					has_war = no
+				}
+				country_event = CHI.earlygame.004
+			}
+
+			add_timed_idea = {
+				idea = china_foreign_support
+				days = 40
+			}
+		}
+	}
+	#南昌起义
+	CHI_mission_support_nanchang = {   
+		icon = GFX_decision_infiltrate_state  
+		allowed = { always = no }
+
+		available = {
+			controls_state = 1044
+		}
+		cancel_trigger = {
+			owns_state = 1044
+		}                                   
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1044
+			} 
+		}
+		days_mission_timeout = 60
+		is_good = yes
+		complete_effect = {      
+			transfer_state = 1044
+			transfer_state = 1045
+			add_war_support = 0.05
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 200
+				producer = GER
+			}
+			country_event = { hours = 3 id = CHI.earlygame.016 }
+			hidden_effect = { 
+				add_state_core = 1044
+				add_victory_points = {
+					province = 3992
+					value = 2
+				}
+				if = {
+					limit = { 
+						NOT = { has_template = "Zhenggui Shih" }
+					}
+					division_template = {
+						name = "Zhenggui Shih"	
+						division_names_group = CHI_INF_01
+						is_locked = yes
+						regiments = {
+							infantry = { x = 0 y = 0 } 
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 0 y = 3 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 } 
+							infantry = { x = 1 y = 3 } 
+							artillery_brigade = { x = 1 y = 4 } 
+							artillery_brigade = { x = 0 y = 4 } 
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					prioritize = { 3992 }
+					limit = {
+						is_in_home_area = yes
+						impassable = no
+					}
+					create_unit = {
+						division = "name = \"Yìyǒng Jūn 1\" division_template = \"Zhenggui Shih\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+				}
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					random_owned_controlled_state = {
+						prioritize = { 1046 }
+						limit = {
+							is_in_home_area = yes
+							impassable = no
+						}
+						create_unit = {
+							division = "name = \"Nánchāng Yìyǒng Jūn 2\" division_template = \"Zhenggui Shih\" start_experience_factor = 0.3"
+							prioritize_location = 3992
+							owner = ROOT
+						}
+					}
+				}
+			}
+			set_temp_variable = { change_league_war_morale_by = 20 }
+			china_update_morale = yes
+			custom_effect_tooltip  = CHI_garrison_rose_up
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout CHI_mission_support_nanchang"
+			add_political_power = -25
+		}
+	}
+	#井冈山支援
+	CHI_mission_Jinggangshan_reinforcements = {
+		allowed = {
+			tag = CHI
+		}
+		activation = {  
+			OR = {
+				country_exists = ANQ 
+				country_exists = LEP
+			}                       
+		} 
+		icon = GFX_decision_generic_agreement
+		available = {
+			always = no
+		}
+		fire_only_once = yes
+		is_good = yes  
+		days_mission_timeout = 3  
+		timeout_effect  = {
+			country_event = { days = 1 id = CHI.earlygame.014 }
+			hidden_effect = { 
+				random_owned_controlled_state = {
+					prioritize = { 1046 1053 }
+					limit = {
+						is_in_home_area = yes
+						impassable = no
+					}
+					create_unit = {
+						division = "name = \"Chingkangshan Chihtui 1\" division_template = \"Géming Minbing Lü\" start_experience_factor = 0.3"
+						prioritize_location = 1046
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"Chingkangshan Chihtui 2\" division_template = \"Géming Minbing Lü\" start_experience_factor = 0.3"
+						prioritize_location = 1053
+						owner = ROOT
+					}
+				}
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					random_owned_controlled_state = {
+						prioritize = { 1046 }
+						limit = {
+							is_in_home_area = yes
+							impassable = no
+						}
+						create_unit = {
+							division = "name = \"Chingkangshan Chihtui 3\" division_template = \"Géming Minbing Lü\" start_experience_factor = 0.3"
+							prioritize_location = 1053
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"Chingkangshan Chihtui 4\" division_template = \"Géming Minbing Lü\" start_experience_factor = 0.3"
+							prioritize_location = 1053
+							owner = ROOT
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = CHI_red_guard_was_deployed
+		}
+	} 
+
+	CHI_mission_get_access_sea = {
+		icon = generic_naval
+
+		allowed = { always = no }
+
+		available = {
+			controls_state = 802
+		}
+		cancel_trigger = {
+			owns_state = 802
+		}
+
+		is_good = no
+		days_mission_timeout = 14
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_mission_get_access_sea"
+			transfer_state = 802
+			add_stability = 0.03
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 500
+				producer = LEP
+			}
+			custom_effect_tooltip = CHI_mobilize_1_units_tt
+			hidden_effect = {
+				random_owned_controlled_state = {
+					prioritize = { 802 }
+					limit = {
+						is_in_home_area = yes
+						impassable = no
+					}
+					create_unit = {
+						division = "division_template = \"Géming Minbing Lü\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+				}
+			}
+		}
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout CHI_mission_get_access_sea"
+			add_political_power = -25
+		}
+	}
+
+	CHI_mission_secure_fujian = {
+		icon = generic_civil_support
+
+		allowed = { always = no }
+
+		available = {
+			controls_state = 595
+			controls_state = 1066
+		}
+		cancel_trigger = {
+			owns_state = 595
+			owns_state = 1066
+		}
+
+		is_good = no
+		days_mission_timeout = 60
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_mission_secure_fujian"
+			transfer_state = 595
+			transfer_state = 1066
+			add_stability = 0.06
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 500
+				producer = LEP
+			}
+			custom_effect_tooltip = CHI_mobilize_1_units_tt
+			hidden_effect = {
+				random_owned_controlled_state = {
+					prioritize = { 595 1066 }
+					limit = {
+						is_in_home_area = yes
+						impassable = no
+					}
+					create_unit = {
+						division = "division_template = \"Géming Minbing Lü\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+
+	CHI_mission_secure_gannan = {
+		icon = generic_civil_support
+
+		allowed = { always = no }
+
+		available = {
+			controls_state = 600
+		}
+		cancel_trigger = {
+			owns_state = 600
+		}
+
+		is_good = no
+		days_mission_timeout = 60
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_mission_secure_gannan"
+			transfer_state = 600
+			add_stability = 0.03
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 500
+				producer = LEP
+			}
+			custom_effect_tooltip = CHI_mobilize_1_units_tt
+			hidden_effect = {
+				random_owned_controlled_state = {
+					prioritize = { 600 }
+					limit = {
+						is_in_home_area = yes
+						impassable = no
+					}
+					create_unit = {
+						division = "division_template = \"Géming Minbing Lü\" start_experience_factor = 0.3"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+
+#统一全国
+
+	#绥靖华南
+	CHI_dec_south_warlord_expedition = {
+		war_with_target_on_remove = yes
+		icon = generic_ignite_civil_war
+
+		allowed = { always = no }
+
+		visible = {
+			can_declare_war_on = FROM
+			FROM = {
+				kmt_success = no
+			}
+		}
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+		}
+
+		cost = 40
+		days_remove = 20
+		cancel_if_not_visible = yes
+		war_with_target_on_remove = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_south_warlord_expedition target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 21 value = 1 }
+			FROM = { country_event = chi_for.7 }
+			setup_decision_attack_AI = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_south_warlord_expedition target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			declare_war_on = {
+				type = annex_everything
+				target = FROM
+			}
+			declare_war_on_GXC_revolter_if_in_civil_war = yes
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				ROOT_is_threatened = yes
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					OR = {
+						is_stronger_than_ROOT_and_not_vulnerable = yes
+						overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
+						faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
+						guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes
+					}
+				}
+			}
+		}
+	}
+	#同时进攻两广内战双方
+	CHI_attack_with_GXC = {
+		
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+		}
+
+		visible = {
+			has_completed_focus = CHI_defeat_warlords
+			country_exists = FROM
+		}
+		target_trigger = {
+			FROM = {
+				OR = {
+					original_tag = GXC
+					tag = PRC
+				}
+				NOT = { is_subject_of = ROOT }
+			}
+		}
+
+		cost = 40
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_attack_with_GXC target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 21 value = 1 }
+			FROM = { country_event = chi_for.7 }
+			setup_decision_attack_AI = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_attack_with_GXC target: [From.GetName]"
+			declare_war_on = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				factor = 0
+				ROOT_is_threatened = yes
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					OR = {
+						is_stronger_than_ROOT_and_not_vulnerable = yes
+						overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
+						faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
+						guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes
+					}
+				}
+			}
+		}
+	}
+	#收复西南
+	CHI_dec_west_warlord_expedition = {
+		war_with_target_on_remove = yes
+		icon = generic_ignite_civil_war
+
+		allowed = { always = no }
+
+		visible = {
+			can_declare_war_on = FROM
+			is_subject = no
+		}
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+		}
+
+		cost = 0
+		days_remove = 7
+		cancel_if_not_visible = yes
+		war_with_target_on_remove = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_west_warlord_expedition target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 21 value = 1 }
+			FROM = { country_event = chi_for.7 }
+			setup_decision_attack_AI = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_west_warlord_expedition target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				ROOT_is_threatened = yes
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					OR = {
+						is_stronger_than_ROOT_and_not_vulnerable = yes
+						overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
+						faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
+						guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes
+					}
+				}
+			}
+		}
+	}
+	#进攻山西
+	CHI_dec_SHX_expedition = {
+		war_with_target_on_remove = yes
+		icon = generic_ignite_civil_war
+
+		allowed = { always = no }
+
+		visible = {
+			can_declare_war_on = FROM
+			# NOT = {
+			# 	has_country_flag = CHI_Working_with_SHX
+			# }
+		}
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+		}
+
+		cost = 40
+		days_remove = 20
+		cancel_if_not_visible = yes
+		war_with_target_on_remove = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_SHX_expedition target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 21 value = 1 }
+			FROM = { country_event = chi_for.7 }
+			setup_decision_attack_AI = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_SHX_expedition target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			declare_war_on = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				ROOT_is_threatened = yes
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					OR = {
+						is_stronger_than_ROOT_and_not_vulnerable = yes
+						overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
+						faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
+						guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes
+					}
+				}
+			}
+		}
+	}
+	#收复西北三马
+	CHI_dec_XSM_expedition = {
+		war_with_target_on_remove = yes
+		icon = generic_ignite_civil_war
+
+		allowed = { always = no }
+
+		visible = {
+			can_declare_war_on = FROM
+		}
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+		}
+
+		cost = 40
+		days_remove = 20
+		cancel_if_not_visible = yes
+		war_with_target_on_remove = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_XSM_expedition target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 21 value = 1 }
+			FROM = { country_event = chi_for.7 }
+			setup_decision_attack_AI = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_XSM_expedition target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			declare_war_on = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				ROOT_is_threatened = yes
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					OR = {
+						is_stronger_than_ROOT_and_not_vulnerable = yes
+						overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
+						faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
+						guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes
+					}
+				}
+			}
+		}
+	}
+	#收复新疆
+	CHI_dec_xinjiang_expedition = {
+		war_with_target_on_remove = yes
+		icon = generic_ignite_civil_war
+
+		allowed = { always = no }
+
+		visible = {
+			can_declare_war_on = FROM
+		}
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+		}
+
+		cost = 40
+		days_remove = 20
+		cancel_if_not_visible = yes
+		war_with_target_on_remove = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_xinjiang_expedition target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 21 value = 1 }
+			FROM = { country_event = chi_for.7 }
+			setup_decision_attack_AI = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_xinjiang_expedition target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			declare_war_on = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				ROOT_is_threatened = yes
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					OR = {
+						is_stronger_than_ROOT_and_not_vulnerable = yes
+						overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
+						faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
+						guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes
+					}
+				}
+			}
+		}
+	}
+	#收复西藏
+	CHI_dec_TIB_expedition = {
+		war_with_target_on_remove = yes
+		icon = generic_ignite_civil_war
+
+		allowed = { always = no }
+
+		visible = {
+			can_declare_war_on = FROM
+		}
+		available = {
+			NOT = { country_exists = QIE }
+			FNG = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				is_subject = yes
+				NOT = { can_declare_war_on = FROM }
+			}
+		}
+
+		cost = 40
+		days_remove = 20
+		war_with_target_on_remove = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_TIB_expedition target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 21 value = 1 }
+			FROM = { country_event = chi_for.7 }
+			setup_decision_attack_AI = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_TIB_expedition target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			declare_war_on = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				ROOT_is_threatened = yes
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					OR = {
+						is_stronger_than_ROOT_and_not_vulnerable = yes
+						overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
+						faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
+						guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes
+					}
+				}
+			}
+		}
+	}
+	#收复蒙古
+	CHI_dec_MON_expedition = {
+		war_with_target_on_remove = yes
+		icon = generic_ignite_civil_war
+
+		allowed = { always = no }
+
+		visible = {
+			can_declare_war_on = FROM
+		}
+		available = {
+			NOT = { country_exists = QIE }
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				is_subject = yes
+				NOT = { can_declare_war_on = FROM }
+			}
+		}
+
+		cost = 40
+		days_remove = 20
+		war_with_target_on_remove = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_MON_expedition target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 21 value = 1 }
+			FROM = { country_event = chi_for.7 }
+			setup_decision_attack_AI = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_MON_expedition target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			declare_war_on = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				ROOT_is_threatened = yes
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					OR = {
+						is_stronger_than_ROOT_and_not_vulnerable = yes
+						overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
+						faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
+						guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				MON_protected_by_russia_FROM = yes
+			}
+		}
+	}
+	#拿下分地不均留下的大清
+	CHI_evils_must_be_completely_eradicated = {
+		icon = generic_prepare_civil_war
+		available = {
+			OR = {
+				is_neighbor_of = QIE
+				any_allied_country = { is_neighbor_of = QIE }
+				any_subject_country = { is_neighbor_of = QIE }
+			}
+		}
+
+		visible = {
+			has_completed_focus = CHI_annihilate_Qing
+			NOT = { has_war_with = QIE }
+			country_exists = QIE
+		}
+
+		cost = 10
+		days_remove = 7
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		remove_effect = {
+			declare_war_on = {
+				type = annex_everything
+				target = QIE
+			}
+		}
+	}
+	#处理拿下京兆的军阀
+	CHI_cut_off_thief_hand = {
+		icon = generic_prepare_civil_war
+		available = {
+			OR = {
+				is_neighbor_of = FNG
+				any_allied_country = { is_neighbor_of = FNG }
+				any_subject_country = { is_neighbor_of = FNG }
+			}
+			FNG = { has_full_control_of_state = 608 }
+		}
+
+		visible = {
+			QIE = { exists = no }
+			NOT = { has_war_with = FNG }
+			country_exists = FNG
+			FNG = { has_full_control_of_state = 608 }
+		}
+
+		cost = 10
+		days_remove = 7
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				ROOT_is_threatened = yes
+			}
+			modifier = {
+				factor = 0
+				FNG = {
+					OR = {
+						is_stronger_than_ROOT_and_not_vulnerable = yes
+						overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
+						faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
+						guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			declare_war_on = {
+				type = annex_everything
+				target = FNG
+			}
+		}
+	}
+	#武力调停西北冲突
+	CHI_help_ally_of_XSM = {
+		icon = generic_agreement
+		war_with_target_on_remove = yes
+
+		visible = {
+			tag = CHI
+			is_subject = no
+			OR = {
+				has_country_flag = MON_refuse_NE_peace
+				has_country_flag = TIB_refuse_NE_peace
+			}
+		}
+		
+		available = {
+
+		}
+
+		cost = 20
+		fire_only_once = yes
+
+		complete_effect = {
+			if = {
+				limit = { has_country_flag = MON_refuse_NE_peace }
+				add_to_war = {
+					targeted_alliance = XSM
+					enemy = MON
+					hostility_reason = asked_to_join
+				}
+			}
+			if = {
+				limit = { has_country_flag = TIB_refuse_NE_peace }
+				add_to_war = {
+					targeted_alliance = XSM
+					enemy = TIB
+					hostility_reason = asked_to_join
+				}
+			}
+			activate_targeted_decision = {
+				target = XSM
+				decision = CHI_dec_negotiate_with_XSM
+			}
+			XSM = {
+				give_military_access = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 500
+				XSM = { 
+					OR = {
+						has_war_with = TIB
+						has_war_with = MON
+					}
+				}
+			}
+		}
+	}
+	
+#处理外国势力
+
+	#北伐俄罗斯
+	CHI_dec_RUS_expedition = {
+		war_with_target_on_remove = yes
+		icon = generic_ignite_civil_war
+
+		allowed = { always = no }
+
+		visible = {
+			can_declare_war_on = FROM
+		}
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+		}
+
+		cost = 40
+		days_remove = 20
+		cancel_if_not_visible = yes
+		war_with_target_on_remove = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_RUS_expedition target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 21 value = 1 }
+			FROM = { country_event = chi_for.7 }
+			setup_decision_attack_AI = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_RUS_expedition target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			declare_war_on = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				ROOT_is_threatened = yes
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					OR = {
+						is_stronger_than_ROOT_and_not_vulnerable = yes
+						overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
+						faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
+						guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes
+					}
+				}
+			}
+		}
+	}
+	#收复德占殖民地
+	CHI_threaten_ger_treaty_ports = {
+		icon = generic_ignite_civil_war
+		allowed = { always = no }				# Activated by focus CHI_avenge_northern_expedition
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+			has_country_flag = CHI_avenge_century
+		}
+
+		visible = {
+			has_country_flag = CHI_avenge_century
+			can_declare_war_on = FROM
+			FROM = {
+				OR = {
+					has_full_control_of_state = 996
+					has_full_control_of_state = 744
+					has_full_control_of_state = 728
+				}
+			}
+		}
+
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		war_with_target_on_remove = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 300
+				GEA = { has_war = yes }
+			}
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = imminent_war
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: DecisionC HI_threaten_ger_treaty_ports target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 15 value = 1 }
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_threaten_ger_treaty_ports target: [From.GetName]"
+			FROM = {
+				country_event = { id = chi_for.102 days = 3 }
+			}
+		}
+	}
+	#收复葡占澳门
+	CHI_seize_macau = {
+		icon = generic_prepare_civil_war
+		allowed = { always = no }				# Activated by focus CHI_avenge_northern_expedition
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+			FROM = { has_war = yes }
+			has_country_flag = CHI_avenge_century
+		}
+
+		visible = {
+			can_declare_war_on = FROM
+			FROM = { owns_state = 729 }
+			has_country_flag = CHI_avenge_century
+		}
+
+		targets = { POR }
+		target_root_trigger = { has_country_flag = CHI_avenge_century }
+		target_trigger = {
+			can_declare_war_on = FROM
+			FROM = { owns_state = 729 }
+		}
+
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		war_with_target_on_remove = yes
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = imminent_war
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_seize_macau target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 15 value = 1 }
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_seize_macau target: [From.GetName]"
+			FROM = {
+				country_event = { id = chi_for.105 hours = 6 }
+			}
+		}
+	}
+	#夺回唐努乌梁海
+	CHI_dec_get_back_Tuva = {
+		war_with_target_on_remove = yes
+		allowed = { always = no }
+		available = {
+			OR = {
+				is_owner_neighbor_of = RUS
+				any_allied_country = { is_owner_neighbor_of = RUS }
+				any_subject_country = { is_neighbor_of = RUS }
+			}
+			RUS = {
+				owns_state = 329 #Tuva
+				is_subject = no
+			}
+		}
+		visible = {
+			OR = {
+				MON = {
+					is_puppet_of = CHI
+				}
+				NOT = { country_exists = MON }
+			}
+			RUS = {
+				owns_state = 329 #Tuva
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = { can_declare_war_on = RUS }
+				NOT = { 329 = { is_owned_by = RUS } } #Tuva
+			}
+		}
+		
+		cost = 40
+		days_remove = 7
+		fire_only_once = yes
+		war_with_target_on_remove = yes
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					FROM = { RUS_dont_attack_if_target_is_stronger = yes }
+					FROM = { RUS_dont_attack_if_faction_is_stronger = yes }
+					FROM = { RUS_dont_attack_if_overlord_is_stronger = yes }
+				}
+			}
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancelled RUS_Seize_Tuva target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			add_political_power = 40
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_Seize_Tuva target: [From.GetName]"
+			setup_decision_attack_AI = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove RUS_Seize_Tuva target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			RUS = { country_event = chi_tanv.1 }
+		}
+	}
+	#收复协约国殖民地
+	CHI_dec_provoke_brits_expedition = {
+		icon = generic_ignite_civil_war
+		targets = { AST CAN GBR }
+		visible = {
+			OR = {
+				has_completed_focus = CHI_abolish_unequal_treaties
+				has_completed_focus = GT_abolish_unequal_treaties
+				has_completed_focus = Maoism_abolish_unequal_treaties
+				has_completed_focus =  SYN_abolish_unequal_treaties
+			}
+			can_declare_war_on = FROM
+			608 = { is_owned_and_controlled_by = ROOT }
+			613 = { is_owned_and_controlled_by = ROOT }
+			any_state = {
+				OR = {
+					is_mainland_china = yes
+					state = 524
+				}
+				is_owned_by = FROM
+			}
+		}
+		available = {
+			OR = {
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+				is_neighbor_of = FROM
+			}
+		}
+
+		fire_only_once = no
+		cost = 40
+		days_remove = 14
+		days_re_enable = 30
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_provoke_brits_expedition target: [From.GetName]"
+			FROM = { country_event = chi_for.6 }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_provoke_brits_expedition target: [From.GetName]"
+			FROM = { country_event = chi_brits.1 }
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = {
+					tag = FROM
+					ratio < 1.2
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					is_in_faction = yes
+					faction_leader = {
+						strength_ratio = {
+							tag = ROOT
+							ratio > 0.7
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					is_subject = yes
+					overlord = {
+						strength_ratio = {
+							tag = ROOT
+							ratio > 0.7
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = imminent_war
+			}
+		}
+	}
+	#收复藏南
+	CHI_dec_BHC_expedition = {
+		war_with_target_on_remove = yes
+		icon = generic_ignite_civil_war
+
+		allowed = { always = no }
+
+		visible = {
+			can_declare_war_on = FROM
+			FROM = {
+				owns_state = 858
+			}
+		}
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+		}
+
+		cost = 40
+		days_remove = 20
+		cancel_if_not_visible = yes
+		war_with_target_on_remove = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_BHC_expedition target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 21 value = 1 }
+			FROM = { country_event = chi_for.7 }
+			setup_decision_attack_AI = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_BHC_expedition target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			declare_war_on = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				ROOT_is_threatened = yes
+			}
+			modifier = {
+				factor = 0
+				FNG = {
+					exists = yes
+					NOT = { is_subject_of = ROOT }
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_war_with = JAP
+					has_war_with = RUS
+					has_war_with = GER
+					has_war_with = CAN
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					OR = {
+						is_stronger_than_ROOT_and_not_vulnerable = yes
+						overlord_is_stronger_than_ROOT_and_not_vulnerable = yes
+						faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes
+						guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes
+					}
+				}
+			}
+		}
+	}
+	#索要台湾
+	CHI_claim_territory_taiwan = {
+		icon = generic_ignite_civil_war
+
+		allowed = { original_tag = CHI }
+
+		visible = {
+			has_global_flag = JAP_Fading_Sun
+			524 = {
+				NOT = { 
+					is_owned_by = ROOT 
+				}
+			}
+		}
+		available = {
+			is_subject = no
+			has_global_flag = JAP_Fading_Sun
+			FNG = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			QIE = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+		}
+
+		cost = 40
+		days_remove = 14
+		cancel_if_not_visible = yes
+		remove_effect = {
+			524 = {
+				controller = {
+					country_event = chi_McMahon.6
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+
+	### Dealing with the Concessions ###
+	CHI_negotiate_with_legation_cities = {
+		icon = ger_mefo_bills
+
+		available = {
+			NOT = { has_non_aggression_pact_with = FROM }
+			if = {
+				limit = { FROM = { is_subject = yes } }
+				NOT = { has_non_aggression_pact_with = FROM.overlord }
+			}
+			if = {
+				limit = { FROM = { is_in_faction = yes } }
+				NOT = { has_non_aggression_pact_with = FROM.faction_leader }
+			}
+			OR = {
+				is_neighbor_of = FROM
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+			FROM = { surrender_progress < 0.05 }
+		}
+
+		visible = {
+			is_subject = no
+		}
+
+		cancel_trigger = {
+			OR = {
+				is_subject = yes
+				NOT = { country_exists = FROM }
+				has_war_with = FROM
+			}
+		}
+
+		targets = { LEC }
+		target_root_trigger = {
+			has_country_flag = china_concession_decisions_unlocked
+			is_subject = no
+		}
+		target_trigger = {
+			NOT = { has_war_with = FROM }
+		}
+
+		cost = 60
+		days_remove = @china_attack_decision_time
+		fire_only_once = yes
+		war_with_target_on_complete = yes
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = { is_in_faction_with = FROM }
+				OR = {
+					ROOT_is_threatened = yes
+					FROM = { default_attack_AI_trigger_FROM = yes }
+				}
+			}
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancel china_negotiate_with_legation_cities target: [From.GetName]"
+			clear_decision_attack_AI = yes
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete china_negotiate_with_legation_cities target: [From.GetName]"
+			setup_decision_attack_AI = yes
+			FROM = { country_event = china_events.220 }   #warning event
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				annex_country = {
+					target = FROM
+					transfer_troops = no
+				}
+			}
+			custom_effect_tooltip = if_they_refuse_tt
+			effect_tooltip = {
+				if = {
+					limit = { is_in_faction_with = FROM }
+					leave_faction = yes
+				}
+				create_wargoal = {
+					target = FROM
+					type = annex_everything
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove china_negotiate_with_legation_cities target: [From.GetName]"
+			clear_decision_attack_AI = yes
+		}
+	}
+	CHI_request_return_of_concessions = {
+		icon = SWI_dismiss_council
+
+		available = {
+			OR = {
+				NOT = { country_exists = LEC }
+				has_global_flag = LEC_bankrupt
+			}
+			if = {
+				limit = { has_global_flag = JAP_defeated_by_china }
+				if = {
+					limit = { FROM = { owns_state = 326 } } #Hong Kong
+					326 = { is_controlled_by_ROOT_owner_defeated_japan_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 609 } } #Tianjin
+					609 = { is_controlled_by_ROOT_owner_defeated_japan_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 728 } } #Guangzhouwan
+					728 = { is_controlled_by_ROOT_owner_defeated_japan_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 729 } } #Macau
+					729 = { is_controlled_by_ROOT_owner_defeated_japan_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 743 } } #Shanghai
+					743 = { is_controlled_by_ROOT_owner_defeated_japan_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 744 } } #Qingdao
+					744 = { is_controlled_by_ROOT_owner_defeated_japan_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 745 } } #Kwantung
+					745 = { is_controlled_by_ROOT_owner_defeated_japan_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 746 } } #Ningbo
+					746 = { is_controlled_by_ROOT_owner_defeated_japan_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 747 } } #Ningbo
+					747 = { is_controlled_by_ROOT_owner_defeated_japan_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 801 } } #Shantou
+					801 = { is_controlled_by_ROOT_owner_defeated_japan_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 802 } } #Xiamen
+					802 = { is_controlled_by_ROOT_owner_defeated_japan_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 803 } } #Wenzhou
+					803 = { is_controlled_by_ROOT_owner_defeated_japan_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 996 } } #Weihaiwei
+					996 = { is_controlled_by_ROOT_owner_defeated_japan_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 1075 } } #Nantong
+					1075 = { is_controlled_by_ROOT_owner_defeated_japan_or_mutual_enemy = yes }
+				}
+			}
+			else = {
+				if = {
+					limit = { FROM = { owns_state = 326 } } #Hong Kong
+					326 = { is_controlled_by_ROOT_owner_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 609 } } #Tianjin
+					609 = { is_controlled_by_ROOT_owner_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 728 } } #Guangzhouwan
+					728 = { is_controlled_by_ROOT_owner_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 729 } } #Macau
+					729 = { is_controlled_by_ROOT_owner_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 743 } } #Shanghai
+					743 = { is_controlled_by_ROOT_owner_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 744 } } #Qingdao
+					744 = { is_controlled_by_ROOT_owner_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 745 } } #Kwantung
+					745 = { is_controlled_by_ROOT_owner_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 746 } } #Ningbo
+					746 = { is_controlled_by_ROOT_owner_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 747 } } #Ningbo
+					747 = { is_controlled_by_ROOT_owner_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 801 } } #Shantou
+					801 = { is_controlled_by_ROOT_owner_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 802 } } #Xiamen
+					802 = { is_controlled_by_ROOT_owner_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 803 } } #Wenzhou
+					803 = { is_controlled_by_ROOT_owner_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 996 } } #Weihaiwei
+					996 = { is_controlled_by_ROOT_owner_or_mutual_enemy = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 1075 } } #Nantong
+					1075 = { is_controlled_by_ROOT_owner_or_mutual_enemy = yes }
+				}
+			}
+		}
+
+		visible = {
+			is_subject = no
+		}
+
+		targets = {
+			326.OWNER #Hong Kong
+			609.OWNER #Tianjin
+			728.OWNER #Guangzhouwan
+			729.OWNER #Macau
+			743.OWNER #Shanghai
+			744.OWNER #Qingdao
+			745.OWNER #Kwantung
+			746.OWNER #Ningbo
+			747.OWNER #Fuzhou
+			801.OWNER #Shantou
+			802.OWNER #Xiamen
+			803.OWNER #Wenzhou
+			996.OWNER #Weihaiwei
+			1075.OWNER #Nantong
+		}
+		target_root_trigger = {
+			has_country_flag = china_concession_decisions_unlocked
+			is_subject = no
+		}
+		target_trigger = {
+			FROM = {
+				is_tag_in_china_area = no
+				OR = {
+					owns_state = 326 #Hong Kong
+					owns_state = 609 #Tianjin
+					owns_state = 728 #Guangzhouwan
+					owns_state = 729 #Macau
+					owns_state = 743 #Shanghai
+					owns_state = 744 #Qingdao
+					owns_state = 745 #Kwantung
+					owns_state = 746 #Ningbo
+					owns_state = 747 #Fuzhou
+					owns_state = 801 #Shantou
+					owns_state = 802 #Xiamen
+					owns_state = 803 #Wenzhou
+					owns_state = 996 #Weihaiwei
+					owns_state = 1075 #Nantong
+				}
+			}
+			at_war_with_or_justifying_wargoal_against_FROM = no
+		}
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = { factor = 100 }
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete china_request_return_of_concessions target: [From.GetName]"
+			save_event_target_as = china
+			FROM = {
+				save_event_target_as = concession_holder
+				if = {
+					limit = { is_subject = yes }
+					overlord = { country_event = china_events.200 }
+				}
+				else = {
+					country_event = china_events.200
+				}
+			}
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				every_state = {
+					limit = {
+						is_possible_legation_cities_state = yes
+						OR = {
+							is_owned_by = FROM
+							owner = { has_subject = FROM } #for the tooltip
+							owner = { is_subject_of = FROM }
+						}
+					}
+					transfer_state_to = ROOT
+				}
+			}
+			if = {
+				limit = { can_declare_war_on = FROM }
+				custom_effect_tooltip = if_they_refuse_tt
+				effect_tooltip = {
+					activate_targeted_decision = { decision = china_seize_concessions target = FROM }
+				}
+			}
+		}
+	}
+	CHI_seize_concessions = {
+		icon = generic_assassination
+
+		allowed = { always = no } #activated by china_events.202 or china_events.205
+
+		available = {
+			NOT = { has_non_aggression_pact_with = FROM }
+			if = {
+				limit = { FROM = { is_subject = yes } }
+				NOT = { has_non_aggression_pact_with = FROM.overlord }
+			}
+			if = {
+				limit = { FROM = { is_in_faction = yes } }
+				NOT = { has_non_aggression_pact_with = FROM.faction_leader }
+			}
+			if = {
+				limit = { has_global_flag = JAP_defeated_by_china }
+				if = {
+					limit = { FROM = { owns_state = 326 } } #Hong Kong
+					326 = { is_controlled_by_ROOT_owner_or_defeated_japan = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 609 } } #Tianjin
+					609 = { is_controlled_by_ROOT_owner_or_defeated_japan = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 728 } } #Guangzhouwan
+					728 = { is_controlled_by_ROOT_owner_or_defeated_japan = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 729 } } #Macau
+					729 = { is_controlled_by_ROOT_owner_or_defeated_japan = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 743 } } #Shanghai
+					743 = { is_controlled_by_ROOT_owner_or_defeated_japan = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 744 } } #Qingdao
+					744 = { is_controlled_by_ROOT_owner_or_defeated_japan = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 745 } } #Kwantung
+					745 = { is_controlled_by_ROOT_owner_or_defeated_japan = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 746 } } #Ningbo
+					746 = { is_controlled_by_ROOT_owner_or_defeated_japan = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 747 } } #Ningbo
+					747 = { is_controlled_by_ROOT_owner_or_defeated_japan = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 801 } } #Shantou
+					801 = { is_controlled_by_ROOT_owner_or_defeated_japan = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 802 } } #Xiamen
+					802 = { is_controlled_by_ROOT_owner_or_defeated_japan = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 803 } } #Wenzhou
+					803 = { is_controlled_by_ROOT_owner_or_defeated_japan = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 996 } } #Weihaiwei
+					996 = { is_controlled_by_ROOT_owner_or_defeated_japan = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 1075 } } #Nantong
+					1075 = { is_controlled_by_ROOT_owner_or_defeated_japan = yes }
+				}
+			}
+			else = {
+				if = {
+					limit = { FROM = { owns_state = 326 } } #Hong Kong
+					326 = { is_controlled_by_ROOT_or_owner = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 609 } } #Tianjin
+					609 = { is_controlled_by_ROOT_or_owner = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 728 } } #Guangzhouwan
+					728 = { is_controlled_by_ROOT_or_owner = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 729 } } #Macau
+					729 = { is_controlled_by_ROOT_or_owner = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 743 } } #Shanghai
+					743 = { is_controlled_by_ROOT_or_owner = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 744 } } #Qingdao
+					744 = { is_controlled_by_ROOT_or_owner = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 745 } } #Kwantung
+					745 = { is_controlled_by_ROOT_or_owner = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 746 } } #Ningbo
+					746 = { is_controlled_by_ROOT_or_owner = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 747 } } #Ningbo
+					747 = { is_controlled_by_ROOT_or_owner = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 801 } } #Shantou
+					801 = { is_controlled_by_ROOT_or_owner = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 802 } } #Xiamen
+					802 = { is_controlled_by_ROOT_or_owner = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 803 } } #Wenzhou
+					803 = { is_controlled_by_ROOT_or_owner = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 996 } } #Weihaiwei
+					996 = { is_controlled_by_ROOT_or_owner = yes }
+				}
+				if = {
+					limit = { FROM = { owns_state = 1075 } } #Nantong
+					1075 = { is_controlled_by_ROOT_or_owner = yes }
+				}
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				is_subject = yes
+				NOT = { can_declare_war_on = FROM }
+				FROM = {
+					NOT = { owns_state = 326 } #Hong Kong
+					NOT = { owns_state = 609 } #Tianjin
+					NOT = { owns_state = 728 } #Guangzhouwan
+					NOT = { owns_state = 729 } #Macau
+					NOT = { owns_state = 743 } #Shanghai
+					NOT = { owns_state = 744 } #Qingdao
+					NOT = { owns_state = 745 } #Kwantung
+					NOT = { owns_state = 746 } #Ningbo
+					NOT = { owns_state = 747 } #Fuzhou
+					NOT = { owns_state = 801 } #Shantou
+					NOT = { owns_state = 802 } #Xiamen
+					NOT = { owns_state = 803 } #Wenzhou
+					NOT = { owns_state = 996 } #Weihaiwei
+					NOT = { owns_state = 1075 } #Nantong
+				}
+			}
+		}
+
+		target_trigger = {
+			can_declare_war_on = FROM
+		}
+
+		cost = @china_attack_decision_cost
+		days_remove = @china_attack_decision_time
+		fire_only_once = yes
+		war_with_target_on_complete = yes
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				ROOT_is_threatened_cautious = yes
+			}
+			modifier = {
+				factor = 0
+				FROM = { default_attack_AI_trigger_FROM = yes }
+			}
+		}
+
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision cancel china_seize_concessions target: [From.GetName]"
+			clear_decision_attack_AI = yes
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete china_seize_concessions target: [From.GetName]"
+			setup_decision_attack_AI = yes
+			hidden_effect = {
+				if = {
+					limit = {
+						OR = {
+							FROM = { decryption_progress = { target = PREV value > 0.5 } }
+							FROM = { intel_level_over = { target = PREV army_intel > 0.5 } }
+							AND = {
+								NOT = { has_tech = basic_encryption }
+								FROM = { has_tech = basic_decryption }
+							}
+							AND = {
+								NOT = { has_tech = improved_encryption }
+								FROM = { has_tech = improved_decryption }
+							}
+							AND = {
+								NOT = { has_tech = advanced_encryption }
+								FROM = { has_tech = advanced_decryption }
+							}
+						}
+					}
+					FROM = { country_event = { id = china_events.0 days = 7 } }
+				}
+				else = {
+					FROM = { country_event = { id = china_events.0 days = 13 } }
+				}
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove china_seize_concessions target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			save_event_target_as = china
+			FROM = {
+				save_event_target_as = concession_holder
+				country_event = china_events.210
+				if = {
+					limit = { is_subject = yes }
+					effect_tooltip = { overlord = { country_event = china_events.210 } }
+				}
+			}
+			effect_tooltip = {
+				every_state = {
+					limit = {
+						OR = {
+							AND = {
+								is_owned_by = FROM
+								is_core_china = yes
+							}
+							AND = {
+								OR = {
+									is_owned_by = FROM
+									owner = { is_subject_of = FROM }
+								}
+								is_possible_legation_cities_state = yes
+							}
+						}
+					}
+					transfer_state_to = ROOT
+				}
+			}
+			custom_effect_tooltip = maybe_war_tt
+		}
+	}
+
+	#加入第三国际
+	LKMT_join_the_third_International = {
+		icon = GFX_decision_generic_form_nation
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			is_puppet = no
+		}
+		visible = {
+			has_country_flag = CHI_world_revolution_flag
+		}
+		days_remove = 7
+		fire_only_once = yes
+		cost = 100
+		remove_effect = {
+			add_stability = 0.05
+			INT = { add_to_faction = CHI }
+		}
+	}
+	#拒绝毒品，从游戏开始...
+	LKMT_antivirus_software = {
+		ai_will_do = {
+			factor = 5
+		}
+		icon = GFX_decision_faction_bul_zveno
+		available = {
+			any_unit_leader = {
+				OR = {
+					has_trait = substance_abuser
+					has_trait = substance_addict
+				}
+			}
+		}
+		visible = {
+			any_unit_leader = {
+				OR = {
+					has_trait = substance_abuser
+					has_trait = substance_addict
+				}
+			}
+			has_completed_focus = CHI_prohibite_drug_trade
+		}
+		days_remove = 70
+		days_re_enable = 14
+		fire_only_once = no
+		cost = 5
+		remove_effect = {
+			every_unit_leader = {
+				if = {
+					limit = {
+						OR = {
+							has_trait = substance_abuser
+							has_trait = substance_addict
+						}
+					}
+					remove_unit_leader_trait = substance_abuser
+					remove_unit_leader_trait = substance_addict
+				}
+			}
+			custom_effect_tooltip = "这将会帮助有毒瘾的指挥官戒掉毒品"
+		}
+	}
+	#尝试和日本人一起打德佬...
+	LKMT_China_Japan_alliance = {
+		icon = GFX_decision_category_jap_southern_expansion
+		visible = {
+			JAP = { has_war_with = GEA }
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 10000
+		}
+		available = {
+			has_country_flag = chi_combined_fleet_get
+			NOT = { has_war_with = JAP }
+			JAP = { has_war_with = GEA }
+			has_war_with = GEA
+		}
+		days_remove = 14
+		cost = 5
+		remove_effect = {
+			JAP = {
+				country_event = { days = 1 id = chi_cjf.1 }
+			}
+		}
+	}
+	#中日双方应该给点互惠的协议...
+	LKMT_China_Japan_deepen_alliance = {
+		icon = GFX_decision_category_jap_southern_expansion
+		visible = {
+			OR = {
+				has_country_flag = JAP_agree_to_cooperate_with_LKMT
+				JAP = { is_puppet_of = CHI }
+			}
+			NOT = { has_idea = chi_jap_alliance }
+		}
+		fire_only_once = no
+		ai_will_do = {
+			factor = 10000
+		}
+		available = {
+			OR = {
+				has_country_flag = JAP_agree_to_cooperate_with_LKMT
+				JAP = { is_puppet_of = CHI }
+			}
+		}
+		days_remove = 14
+		cost = 100
+		remove_effect = {
+			add_ideas = chi_jap_alliance
+			JAP = { add_ideas = jap_chi_alliance }
+		}
+	}
+	#和帝国阵线议和
+	LKMT_make_peace_with_Germany = {
+		icon = generic_agreement
+		visible = {
+			country_exists = GEA
+			has_war_with = GER
+			NOT = { is_in_faction_with = INT }
+			is_subject = no
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			is_subject = no
+			if = { 
+				limit = { NOT = { country_exists = INS } }
+				857 = { is_fully_controlled_by = ROOT }
+				671 = { is_fully_controlled_by = ROOT }
+				670 = { is_fully_controlled_by = ROOT }
+				827 = { is_fully_controlled_by = ROOT }
+				286 = { is_fully_controlled_by = ROOT }
+				826 = { is_fully_controlled_by = ROOT }
+				750 = { is_fully_controlled_by = ROOT }
+				856 = { is_fully_controlled_by = ROOT }
+				any_country = {
+					is_in_faction_with = GER
+					any_state = {
+						is_core_of = ROOT
+						is_owned_by = ROOT
+						NOT = { is_controlled_by = PREV }
+					}
+				}
+			}
+			else = {
+				any_country = {
+					is_in_faction_with = GER
+					any_state = {
+						is_core_of = ROOT
+						is_owned_by = ROOT
+						NOT = { is_controlled_by = PREV }
+					}
+				}
+				GER = {
+					OR = {
+						has_war_with = RUS
+						has_war_with = FRA
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 7
+		cost = 10
+		remove_effect = {
+			if = { 
+				limit = {
+					NOT = { country_exists = INS }
+					857 = { is_controlled_by = ROOT }
+					671 = { is_controlled_by = ROOT }
+					670 = { is_controlled_by = ROOT }
+					827 = { is_controlled_by = ROOT }
+					286 = { is_controlled_by = ROOT }
+					826 = { is_controlled_by = ROOT }
+					750 = { is_controlled_by = ROOT }
+					856 = { is_controlled_by = ROOT }
+				}
+				transfer_state = 857
+				transfer_state = 670
+				transfer_state = 671
+				transfer_state = 827
+				transfer_state = 286
+				transfer_state = 826
+				transfer_state = 750
+				transfer_state = 856
+			}
+
+			every_other_country = {
+				limit = {
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+					}
+					has_war_with = ROOT
+				}
+				white_peace = ROOT
+			}
+			transfer_state = 744
+			transfer_state = 996
+			transfer_state = 728
+		}
+	}
+	#和印度有限战争
+	LKMT_make_peace_with_India = {
+		icon = generic_agreement
+		visible = {
+			858 = {
+				controller = {
+					original_tag = BHC
+					has_war_with = ROOT
+				}
+			}
+			is_in_faction = no
+			is_subject = no
+			has_country_flag = china_lkmt_leader
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			is_subject = no
+			858 = { is_controlled_by = ROOT }
+			BHC = { surrender_progress > 0.1 }
+		}
+		fire_only_once = yes
+		cost = 0
+		complete_effect = {
+			BHC = {
+				country_event = chi_for.45
+			}
+		}
+	}
+	
+}
+	
+####  中央委员会 ####
+CHI_parliament_decision_category = {
+
+	#本地派系对流亡中央委员的耐心正在耗尽...
+	CHI_Return_Central_Committee = {
+		activation = {               
+			NOT = { has_completed_focus = CHI_central_committee_back }
+		}                                    
+		available = {
+			has_completed_focus = CHI_central_committee_back
+		}
+		fire_only_once = yes
+		days_mission_timeout = 60
+		is_good = no
+		complete_effect = {
+			CHI_RCA_medium_effect = yes
+			add_political_power = 10
+		}
+		timeout_effect = {      
+			hidden_effect = {
+				country_event = CHI.earlygame.030
+			}
+			add_political_power = -10
+		}
+	}
+	#接收许多旧军队后，军纪逐渐变差
+	CHI_discipline_corruption_mission = {
+		activation = {               
+			has_completed_focus = CHI_move_to_Nanjing    
+			has_idea = CHI_discipline_corruption
+		}                                    
+		available = {
+			NOT = { has_idea = CHI_discipline_corruption }
+		}
+		fire_only_once = yes
+		days_mission_timeout = 60
+		is_good = no
+		cancel_trigger = {
+			NOT = { has_idea = CHI_discipline_corruption }
+		}
+		timeout_effect = {  
+			country_event = CHI.midgame.045
+		}
+	}
+	#哦，这个不可以看
+	Ai_enhancement = {
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 1000
+		}
+		available = {
+			has_completed_focus = CHI_move_to_Nanjing
+		}
+		days_remove = 0
+		cost = 0
+		remove_effect = {
+			if = {
+				limit = { NOT = { has_tech = basic_light_tank_chassis } }
+				set_technology = { basic_light_tank_chassis = 1 }
+			}
+			if = {
+				limit = { NOT = { has_tech = improved_light_tank_chassis } }
+				set_technology = { improved_light_tank_chassis = 1 }
+			}
+			if = {
+				limit = { NOT = { has_tech = tech_mountaineers } }
+				set_technology = { tech_mountaineers = 1 }
+			}
+			add_political_power = 2000			
+		}
+	}
+	CHI_hold_the_second_congress = {
+		icon = GFX_decision_generic_nationalism
+		visible = {
+			controls_state = 608
+		}
+		available = {
+			is_subject = no
+			QIE = {
+				OR = {
+					exists = no
+					is_subject = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = yes
+		days_remove = 30
+		remove_effect = {
+			country_event = CHI.lategame.011
+		}
+	}
+}
+	
+CHI_balance_of_power_category = {
+	
+	CHI_stack_the_bureaucracy_decision = {
+		available = {
+			
+		}
+		icon = GFX_decision_generic_political_discourse
+		ai_will_do = {
+			base = 0
+		}
+		fire_only_once = no
+		days_re_enable = 180
+		cost = 50
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete CHI_stack_the_bureaucracy_decision"
+			CHI_RCA_medium_effect = yes
+		}
+	}
+	CHI_enforce_party_orthodoxy_decision = {
+		available = {
+			
+		}
+		icon = GFX_decision_eng_propaganda_campaigns
+		ai_will_do = { 
+			base = 0 
+		}
+		fire_only_once = no
+		days_re_enable = 180
+		cost = 50
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete CHI_enforce_party_orthodoxy_decision"
+			CHI_RCA_medium_effect = yes
+			hidden_effect = {
+				add_war_support = -0.10
+			}
+		}
+	}
+	CHI_shore_up_peasant_communes_decision = {
+		available = {
+			
+		}
+		icon = GFX_decision_POL_looming_peasants_strike
+		ai_will_do = {
+			base = 0
+		}
+		fire_only_once = no
+		days_re_enable = 180
+		cost = 50
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete CHI_shore_up_peasant_communes_decision"
+			CHI_NRC_medium_effect = yes
+		}
+	}
+	CHI_undermine_the_chairmans_grip_decision = {
+		available = {
+			
+		}
+		icon = GFX_decision_generic_speech
+		ai_will_do = { base = 0 }
+		fire_only_once = no
+		days_re_enable = 180
+		cost = 75
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete CHI_undermine_the_chairmans_grip_decision"
+			CHI_NRC_large_effect = yes
+			hidden_effect = {
+				add_stability = -0.10
+			}
+		}
+	}
+	CHI_intimidate_the_opposition_decision = {
+		available = {
+			
+		}
+		icon = GFX_decision_oppression
+		ai_will_do = { 
+			base = 0 
+		}
+		fire_only_once = no
+		days_re_enable = 180
+		cost = 75
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete CHI_intimidate_the_opposition_decision"
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+						id = CHI_power_balance
+						range > CHI_bop_NRC_tilt
+					}
+				}
+				add_war_support = -0.05 #Opposition of RCA's decision
+				CHI_NRC_large_effect = yes
+			}
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+						id = CHI_power_balance
+						range < CHI_bop_RCA_tilt
+					}
+				}
+				add_stability = -0.05 #Opposite of NRC's decision
+				CHI_RCA_large_effect = yes
+			}
+			CHI_add_rad_medium_effect = yes
+		}
+	}
+}
+
+####  建立海军  ####
+The_CHI_naval_construction = {
+	
+	#没船坞，租点火星船坞...
+	CHI_promote_ship_factory = {
+		icon = GFX_decision_generic_merge_plant_ship
+		visible = {
+			has_country_flag = CHI_purchase_western_ships_flag
+		}
+		fire_only_once = no
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				dockyard > 15
+			}
+		}
+		available = {
+			OR = {
+				FRA = {
+					exists = yes
+				}
+				ENG = {
+					exists = yes
+				}
+				CSA = {
+					exists = yes
+				}
+			}
+			industrial_complex > 24
+		}
+		days_remove = 180
+		days_re_enable = 0
+		complete_effect = {
+			if = {
+				limit = { 
+					industrial_complex > 24 
+					industrial_complex < 48
+				}
+				add_offsite_building = { 
+					type = dockyard 
+					level = 4 
+				}
+				add_timed_idea = {
+					idea = CHI_promote_ship_factory_buff1
+					days = 180
+				}
+			}
+			if = {
+				limit = { 
+					industrial_complex > 47 
+					industrial_complex < 72
+				}
+				add_offsite_building = { 
+					type = dockyard 
+					level = 8 
+				}
+				add_timed_idea = {
+					idea = CHI_promote_ship_factory_buff2
+					days = 180
+				}
+			}
+			if = {
+				limit = { 
+					industrial_complex > 71 
+					industrial_complex < 100
+				}
+				add_offsite_building = { 
+					type = dockyard 
+					level = 12
+				}
+				add_timed_idea = {
+					idea = CHI_promote_ship_factory_buff3
+					days = 180
+				}
+			}
+			if = {
+				limit = { industrial_complex > 99 }
+				add_offsite_building = { 
+					type = dockyard 
+					level = 16 
+				}
+				add_timed_idea = {
+					idea = CHI_promote_ship_factory_buff4 
+					days = 180
+				}
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = { 
+					industrial_complex > 24 
+					industrial_complex < 48
+				}
+				add_offsite_building = { 
+					type = dockyard 
+					level = -4 
+				}
+			}
+			if = {
+				limit = { 
+					industrial_complex > 47 
+					industrial_complex < 72
+				}
+				add_offsite_building = { 
+					type = dockyard 
+					level = -8 
+				}
+			}
+			if = {
+				limit = { 
+					industrial_complex > 71 
+					industrial_complex < 100 
+				}
+				add_offsite_building = { 
+					type = dockyard 
+					level = -12
+				}
+			}
+			if = {
+				limit = {
+					industrial_complex > 99 
+				}
+				add_offsite_building = { 
+					type = dockyard 
+					level = -16 
+				}
+			}
+		}
+	}
+	#没舰队，来点英法火星船...
+	LKMT_build_Third_International_Fleet = {
+		icon = GFX_decision_generic_merge_plant_ship
+		visible = {
+			has_country_flag = CHI_purchase_western_ships_flag
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 10000
+		}
+		available = {
+			FRA = {
+				exists = yes
+			}
+			ENG = {
+				exists = yes
+			}
+		}
+		days_remove = 180
+		cost = 50
+		modifier = {
+			political_power_cost = 0.1
+			consumer_goods_factor = 0.1
+			}
+		complete_effect = {
+			FRA = {
+				add_timed_idea = { 
+					idea = CHI_style_thanked
+					days = 90 
+				}
+			}
+			ENG = {
+				add_timed_idea = { 
+					idea = CHI_style_thanked
+					days = 90 
+				}
+			}
+		}
+		remove_effect = {
+			country_event = chi_combined_fleet.1
+		}
+	}
+	#船只少，买...巡洋舰
+	LKMT_imported_ENG_cruiser = {
+		icon = GFX_decision_generic_merge_plant_ship
+		visible = {
+			has_country_flag = CHI_purchase_western_ships_flag
+			ENG = {
+				exists = yes
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 10000
+		}
+		available = {
+			has_country_flag = chi_combined_fleet_get
+			ENG = {
+				exists = yes
+			}
+		}
+		days_remove = 90
+		cost = 50
+		complete_effect = {
+			ENG = {
+				add_timed_idea = { 
+					idea = CHI_style_thanked
+					days = 90 
+				}
+			}
+		}
+		remove_effect = {
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_1
+					creator = "CHI"
+					version_name = "international cruiser"
+				}
+				name = "ENG cruiser 1"
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_1
+					creator = "CHI"
+					version_name = "international cruiser"
+				}
+				name = "ENG cruiser 2"
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_1
+					creator = "CHI"
+					version_name = "international cruiser"
+				}
+				name = "ENG cruiser 3"
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_1
+					creator = "CHI"
+					version_name = "international cruiser"
+				}
+				name = "ENG cruiser 4"
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+			}
+		}
+	}
+	#船只少，买...驱逐舰
+	LKMT_imported_FRA_destroyer = {
+		icon = GFX_decision_generic_merge_plant_ship
+		visible = {
+			has_country_flag = CHI_purchase_western_ships_flag
+			FRA = {
+				exists = yes
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 10000
+		}
+		available = {
+			has_country_flag = chi_combined_fleet_get
+			FRA = {
+				exists = yes
+			}
+		}
+		days_remove = 90
+		cost = 50
+		complete_effect = {
+			FRA = {
+				add_timed_idea = { 
+					idea = CHI_style_thanked
+					days = 90 
+				}
+			}
+		}
+		remove_effect = {
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_1
+					creator = "CHI"
+					version_name = "international destroyer"
+				}
+				name = "FRA destroyer 1"
+				requested_factories = 1
+				progress = 0.90
+				amount = 4
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_1
+					creator = "CHI"
+					version_name = "international destroyer"
+				}
+				name = "FRA destroyer 2"
+				requested_factories = 1
+				progress = 0.90
+				amount = 4
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_1
+					creator = "CHI"
+					version_name = "international destroyer"
+				}
+				name = "FRA destroyer 3"
+				requested_factories = 1
+				progress = 0.90
+				amount = 4
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_1
+					creator = "CHI"
+					version_name = "international destroyer"
+				}
+				name = "FRA destroyer 4"
+				requested_factories = 1
+				progress = 0.90
+				amount = 4
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_1
+					creator = "CHI"
+					version_name = "international destroyer"
+				}
+				name = "FRA destroyer 5"
+				requested_factories = 1
+				progress = 0.90
+				amount = 4
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_1
+					creator = "CHI"
+					version_name = "international destroyer"
+				}
+				name = "FRA destroyer 6"
+				requested_factories = 1
+				progress = 0.90
+				amount = 4
+			}
+		}
+	}
+	#船只少，买...潜艇
+	LKMT_imported_JAP_submarine = {
+		icon = GFX_decision_generic_merge_plant_ship
+		visible = {
+			has_country_flag = CHI_purchase_western_ships_flag
+			JAP = {
+				exists = yes
+			}
+			NOT = { has_war_with = JAP }
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 10000
+		}
+		available = {
+			has_country_flag = chi_combined_fleet_get
+			has_idea = chi_jap_alliance
+			JAP = {
+				exists = yes
+			}
+			NOT = { has_war_with = JAP }
+		}
+		days_remove = 90
+		cost = 100
+		remove_effect = {
+			hidden_effect = {
+				create_equipment_variant = {
+					name = "Kaidai V Class"
+					type = ship_hull_submarine_2
+					name_group = JAP_SS_HISTORICAL
+					modules = {
+						fixed_ship_torpedo_slot = ship_torpedo_sub_2
+						fixed_ship_engine_slot = sub_ship_engine_2
+						rear_1_custom_slot = ship_torpedo_sub_1
+					}
+				}
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_submarine_2
+					creator = "CHI"
+					version_name = "Kaidai V Class"
+				}
+				name = "JAP submarine 1"
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_submarine_2
+					creator = "CHI"
+					version_name = "Kaidai V Class"
+				}
+				name = "JAP submarine 2"
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_submarine_2
+					creator = "CHI"
+					version_name = "Kaidai V Class"
+				}
+				name = "JAP submarine 3"
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_submarine_2
+					creator = "CHI"
+					version_name = "Kaidai V Class"
+				}
+				name = "JAP submarine 4"
+				requested_factories = 1
+				progress = 0.90
+				amount = 1
+			}
+		}
+	}
+
+	CHI_dec_dock_industrialise = {
+		icon = GFX_decision_generic_merge_plant_ship
+		allowed = { always = no }
+
+		visible = {
+			FROM = { is_owned_and_controlled_by = ROOT }
+		}
+		available = {
+			FROM = { is_owned_and_controlled_by = ROOT }
+		}
+
+		fire_only_once = yes
+		state_target = yes
+		cancel_if_not_visible = yes
+		cost = 50
+		days_remove = 70
+
+		ai_will_do = { base = 200 }
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_dock_industrialise target: [From.GetName]"
+			FROM = {
+				set_state_flag = CHI_shore_defense_construction_flag
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	CHI_carrier_ambition = {
+		icon = GFX_decision_generic_merge_plant_ship
+		is_good = no
+		allowed = {
+			always = no
+		}
+		activation = {
+			has_completed_focus = CHI_aircraft_carrier_ambition
+		}
+		available = {
+			has_navy_size = { unit = carrier size > 0 }
+		}
+		fire_only_once = yes
+		days_mission_timeout = 365
+		complete_effect = {
+			add_war_support = 0.1
+			add_political_power = 50
+			navy_experience = 50
+		}
+		timeout_effect = {
+			
+		}
+	}
+	
+}
+
+####  整合故土  ####
+integrate_china = {
+
+	#外东北
+	LKMT_integrate_east_amur_province = {
+		icon = infiltrate_state
+		ai_will_do = {
+			factor = 100
+		}
+		allowed = {
+			tag = CHI
+		}
+		icon = GFX_decision_eng_trade_unions_demand
+		available = {
+			NOT = { country_exists = SOV }
+			408 = { is_owned_by_ROOT_or_ally = yes }
+			409 = { is_owned_by_ROOT_or_ally = yes }
+			560 = { is_owned_by_ROOT_or_ally = yes }
+			561 = { is_owned_by_ROOT_or_ally = yes }
+			657 = { is_owned_by_ROOT_or_ally = yes }
+		}
+		visible = {
+			has_country_flag = CHI_republic_proclaimed
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		days_remove = 210
+		fire_only_once = yes
+		cost = 50
+		highlight_states = {
+			highlight_state_targets = {
+				state = 408
+				state = 409
+				state = 560
+				state = 561
+				state = 657
+			}
+		}
+		modifier = {
+			political_power_cost = 0.1
+		}
+		complete_effect = {  
+			add_state_claim = 408
+			add_state_claim = 409
+			add_state_claim = 560
+			add_state_claim = 561
+			add_state_claim = 657
+		}
+		remove_effect = {
+			transfer_state = 408
+			transfer_state = 409
+			transfer_state = 560
+			transfer_state = 561
+			transfer_state = 657
+			transfer_state = 537
+			408 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+			409 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+			560 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+			561 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+			657 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+			remove_cores_of_dead_tags = yes
+		}
+	}
+	#库页岛
+	LKMT_integrate_Sakhalin = {
+		icon = infiltrate_state
+		ai_will_do = {
+			factor = 100
+		}
+		allowed = {
+			tag = CHI
+		}
+		available = {
+			537 = { is_owned_by_ROOT_or_ally = yes }
+		}
+		visible = {
+			has_country_flag = CHI_republic_proclaimed
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 537
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		days_remove = 60
+		fire_only_once = yes
+		cost = 20
+		modifier = {
+			political_power_cost = 0.1
+		}
+		complete_effect = {  
+			add_state_claim = 537
+		}
+		remove_effect = {
+			transfer_state = 537
+			add_state_core = 537
+			537 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+			remove_cores_of_dead_tags = yes
+		}
+	}
+	# #新疆
+	# LKMT_integrate_sinkiang_province = {
+	# 	icon = infiltrate_state
+	# 	allowed = {
+	# 		can_become_china = yes
+	# 		NOT = { tag = SIK }
+	# 		NOT = { tag = ETS }
+	# 		NOT = { tag = TAN }
+	# 		NOT = { tag = XSM }
+	# 	}
+	# 	visible = {
+	# 		is_puppet = no
+	# 		can_integration_chinese_provinces = yes
+	# 		ETS = { exists = no }
+	# 		OR = {
+	# 			287 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+	# 			617 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+	# 			618 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+	# 			619 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+	# 			897 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+	# 			1083 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+	# 			1085 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+	# 		}
+	# 	}
+	# 	available = {
+	# 		has_full_control_of_state = 287
+	# 		has_full_control_of_state = 617
+	# 		has_full_control_of_state = 618
+	# 		has_full_control_of_state = 619
+	# 		has_full_control_of_state = 897
+	# 		has_full_control_of_state = 1083
+	# 		has_full_control_of_state = 1085
+	# 	}
+	# 	highlight_states = {
+	# 		highlight_state_targets = {
+	# 			state = 287
+	# 			state = 617
+	# 			state = 618
+	# 			state = 619
+	# 			state = 897
+	# 			state = 1083
+	# 			state = 1085
+	# 		}
+	# 	}
+	# 	cost = kr_china_provinceintegration_cost_large?100
+	# 	fire_only_once = yes
+	# 	modifier = {
+	# 		political_power_gain = -0.20
+	# 	}
+	# 	days_remove = kr_china_provinceintegration_speed?90
+	# 	complete_effect = {  
+	# 		add_state_claim = 287
+	# 		add_state_claim = 617
+	# 		add_state_claim = 618
+	# 		add_state_claim = 619
+	# 		add_state_claim = 897
+	# 		add_state_claim = 1083
+	# 		add_state_claim = 1085
+	# 	}
+	# 	remove_effect = {
+	# 		log = "[GetDateText]: [Root.GetName]: Decision remove LKMT_integrate_sinkiang_province target: [From.GetName]"
+	# 		287 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+	# 		617 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+	# 		618 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+	# 		619 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+	# 		897 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+	# 		1083 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+	# 		1085 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+	# 		remove_cores_of_dead_tags = yes
+	# 	}
+	# 	ai_will_do = {
+	# 		factor = 50
+	# 	}
+	# }
+	# #外蒙
+	# LKMT_integrate_outer_mongolia_province = {
+	# 	icon = infiltrate_state
+	# 	allowed = {
+	# 		can_become_china = yes
+	# 	}
+	# 	visible = {
+	# 		is_puppet = no
+	# 		can_integration_chinese_provinces = yes
+	# 		MON = { exists = no }
+	# 		OR = {
+	# 			329 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+	# 			330 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+	# 			1084 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+	# 		}
+	# 	}
+	# 	available = {
+	# 		has_full_control_of_state = 329
+	# 		has_full_control_of_state = 330
+	# 		has_full_control_of_state = 1084
+	# 	}
+	# 	highlight_states = {
+	# 		highlight_state_targets = {
+	# 			state = 329
+	# 			state = 330
+	# 			state = 1084
+	# 		}
+	# 	}
+	# 	cost = kr_china_provinceintegration_cost_large?100
+	# 	fire_only_once = yes
+	# 	modifier = {
+	# 		political_power_gain = -0.20
+	# 	}
+	# 	days_remove = kr_china_provinceintegration_speed?90
+	# 	complete_effect = {
+	# 		add_state_claim = 329
+	# 		add_state_claim = 330
+	# 		add_state_claim = 1084
+	# 	}
+	# 	remove_effect = {
+	# 		log = "[GetDateText]: [Root.GetName]: Decision remove LKMT_integrate_outer_mongolia_province target: [From.GetName]"
+	# 		329 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+	# 		330 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+	# 		1084 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+	# 		remove_cores_of_dead_tags = yes
+	# 		hidden_effect = {
+	# 			every_state = {
+	# 				remove_core_of = MON
+	# 				remove_claim_by = MON
+	# 			}
+	# 		}
+	# 	}
+	# 	ai_will_do = {
+	# 		factor = 50
+	# 	}
+	# }
+	# #西藏
+	# LKMT_integrate_tibet_province = {
+	# 	icon = infiltrate_state
+	# 	allowed = {
+	# 		can_become_china = yes
+	# 	}
+	# 	visible = {
+	# 		is_puppet = no
+	# 		can_integration_chinese_provinces = yes
+	# 		TIB = { exists = no }
+	# 		OR = {
+	# 			693 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+	# 			322 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+	# 			748 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+	# 			1086 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+	# 		}
+	# 	}
+	# 	available = {
+	# 		has_full_control_of_state = 693
+	# 		has_full_control_of_state = 322
+	# 		has_full_control_of_state = 748
+	# 		has_full_control_of_state = 1086
+	# 	}
+	# 	highlight_states = {
+	# 		highlight_state_targets = {
+	# 			state = 693
+	# 			state = 322
+	# 			state = 748
+	# 			state = 1086
+	# 		}
+	# 	}
+	# 	cost = kr_china_provinceintegration_cost_large?100
+	# 	fire_only_once = yes
+	# 	modifier = {
+	# 		political_power_gain = -0.20
+	# 	}
+	# 	days_remove = kr_china_provinceintegration_speed?90
+	# 	complete_effect = {
+	# 		add_state_claim = 693
+	# 		add_state_claim = 322
+	# 		add_state_claim = 748
+	# 		add_state_claim = 1086
+	# 	}
+	# 	remove_effect = {
+	# 		log = "[GetDateText]: [Root.GetName]: Decision remove LKMT_integrate_tibet_province target: [From.GetName]"
+	# 		693 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+	# 		322 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+	# 		748 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+	# 		1086 = { remove_claim_by_ROOT_and_add_core_of_ROOT = yes }
+	# 		remove_cores_of_dead_tags = yes
+	# 		hidden_effect = {
+	# 			every_state = {
+	# 				remove_core_of = TIB
+	# 				remove_claim_by = TIB
+	# 			}
+	# 		}
+	# 	}
+	# 	ai_will_do = {
+	# 		factor = 50
+	# 	}
+	# }
+	#去除使馆核心
+	LKMT_clean_the_house = {
+		icon = infiltrate_state
+		visible = {
+			OR = {
+				has_completed_focus = Maoism_amend_the_constitution
+			}
+			NOT = { country_exists = QIE }
+			FNG = {
+				exists = no
+				is_subject_of = ROOT
+			}
+			GXC = {
+				exists = no
+				is_subject_of = ROOT
+			}
+			SZC = {
+				exists = no
+				is_subject_of = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = LKMT_china_state_tt
+				NOT = {
+					any_state = {
+						has_state_flag = LKMT_china_state
+						NOT = {
+							is_owned_by = ROOT
+						}
+					}
+				}
+			}
+		}
+		cost = 10
+		fire_only_once = yes
+		days_remove = 90
+		remove_effect = {
+			every_state = {
+				limit = {
+					is_chinese_state = yes
+					is_owned_by = ROOT
+				}
+				hidden_effect = {
+					for_each_scope_loop = {
+						array = global.countries
+						if = {
+							limit = {
+								exists = no
+							}
+							remove_state_claim = PREV
+							if = {
+								limit = { check_variable = { PREV.core_countries^num > 1 } }
+								remove_state_core = PREV
+							}
+						}
+					}
+					custom_effect_tooltip = LKMT_clean_the_house_tt
+				}
+			}
+		}
+	}
+	#整合藏南
+	LKMT_interate_tibet_south = {
+		icon = infiltrate_state
+		allowed = {
+			can_become_china = yes
+		}
+		visible = {
+			is_puppet = no
+			can_integration_chinese_provinces = yes
+			858 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+		}
+		available = {
+			has_full_control_of_state = 858
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 858
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		cost = 10
+		fire_only_once = yes
+		modifier = {
+			political_power_gain = -0.20
+		}
+		days_remove = 60
+		complete_effect = {
+			add_state_claim = 858
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove LKMT_integrate_tibet_province target: [From.GetName]"
+			858 = { 
+				remove_claim_by_ROOT_and_add_core_of_ROOT = yes 
+			}
+			remove_cores_of_dead_tags = yes
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+}
+	
+####  工业建设  ####
+CHI_postwar_reconstruction_category = {
+
+	#条件允许，提升地区等级
+	CHI_new_industrial_district = {
+		icon = GFX_decision_generic_construction
+		available = {
+			num_of_civilian_factories_available_for_projects > 3
+		}
+		on_map_mode = map_and_decisions_view
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				OR = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+		}
+		visible = {
+			OR = {
+				has_completed_focus = Maoism_five_year_plan
+				has_completed_focus = CHI_develop_national_industry
+				has_completed_focus = GT_planned_economy
+			}
+			FROM = {
+				free_building_slots = {
+					building = arms_factory
+					size < 1
+					include_locked = no
+				}
+				infrastructure > 2
+				NOT = { 
+					has_state_category = twelve 
+					has_state_flag = CHI_had_new_industrial
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 200
+				num_of_factories > 199
+			}
+		}
+		days_remove = 180
+		fire_only_once = no
+		days_re_enable = 30
+		cost = 50
+		modifier = {
+			civilian_factory_use = 4
+		}
+		remove_effect = {
+			FROM = {
+				CHI_promote_regional_development = yes
+				add_extra_state_shared_building_slots = 2
+				set_state_flag = CHI_had_new_industrial
+			}
+		}
+	}
+	#刺激经济？
+	CHI_stimulate_economy = {
+		available = {
+			
+		}
+		visible = {
+			has_completed_focus = CHI_abandon_silve_standard
+			OR = {
+				has_idea = CHI_economic_collapse4
+				has_idea = CHI_economic_collapse3
+				has_idea = CHI_economic_collapse2
+				has_idea = CHI_economic_collapse1
+				has_idea = CHI_economic_collapse
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		days_remove = 60
+		fire_only_once = no
+		days_re_enable = 30
+		cost = 10
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		complete_effect = {
+			CHI_economic_upturn  = yes
+		}
+		remove_effect = {
+			add_political_power = 25
+		}
+	}
+	#货币混乱倒计时，肯定是敌特干的！
+	CHI_reform_currency_deterioration = {
+		activation = {               
+			has_completed_focus = CHI_move_to_Nanjing   
+			NOT = { has_idea = CHI_new_currency_end } 
+		}                                    
+		available = {
+			has_idea = CHI_new_currency_end
+		}
+		fire_only_once = no
+		days_mission_timeout = 120
+		is_good = no
+		cancel_trigger = {
+			has_idea = CHI_new_currency_end
+		}
+		timeout_effect = {      
+			CHI_economic_deterioration = yes
+			custom_effect_tooltip = CHI_reform_currency_tooltip
+		}
+	}
+	#Maoism土地改革
+	CHI_deal_with_landlords = {
+		priority = 100
+		available = {
+			
+		}
+		visible = {
+			has_completed_focus = Maoism_revolution_of_land
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		cost = 50
+		complete_effect = {
+			set_country_flag = CHI_land_reform_left_1st
+			custom_effect_tooltip = CHI_deal_with_landlords_decsion
+		}
+	}
+	#Maoism土改第一阶段：没收土地
+	CHI_deal_with_landlords_mission = {
+		priority = 100
+		activation = {               
+			has_country_flag = CHI_land_reform_left_1st
+		}                                    
+		available = {
+			always = no
+		}
+		fire_only_once = yes
+		days_mission_timeout = 180
+		is_good = yes
+		timeout_effect = {      
+			CHI_economic_upturn = yes
+			country_event = CHI_laf.1
+		}
+	}
+	#Maoism土改第二阶段：平均地权
+	CHI_distribute_land_mission = {
+		priority = 100
+		activation = {               
+			has_country_flag = CHI_land_reform_left_2nd
+		}                                    
+		available = {
+			always = no
+		}
+		fire_only_once = yes
+		days_mission_timeout = 120
+		is_good = yes
+		timeout_effect = {      
+			CHI_economic_upturn = yes
+			country_event = CHI_laf.2
+		}
+	}
+	#Maoism土改第三阶段：农业改造
+	CHI_agricultural_collectivization = {
+		priority = 100
+		visible = {
+			has_completed_focus = Maoism_Three_great_remould
+		}                               
+		available = {
+			has_country_flag = CHI_land_reform_left_3rd
+		}
+		fire_only_once = yes
+		days_remove = 90
+		remove_effect = {      
+			CHI_economic_upturn = yes
+			country_event = CHI_laf.3
+		}
+	}
+	#Maoism手工业改造
+	CHI_handicraft_collectivization = {
+		priority = 100
+		visible = {
+			has_completed_focus = Maoism_Three_great_remould
+		}                               
+		available = {
+			has_country_flag = CHI_land_reform_left_3rd
+		}
+		fire_only_once = yes
+		days_remove = 90
+		modifier = {
+			political_power_cost = 0.05
+		}
+		remove_effect = {      
+			CHI_economic_upturn = yes
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+				}
+			}
+		}
+	}
+	#Maoism工商业改造
+	CHI_commerce_collectivization = {
+		priority = 100
+		visible = {
+			has_completed_focus = Maoism_Three_great_remould
+		}                               
+		available = {
+			has_country_flag = CHI_land_reform_left_3rd
+		}
+		fire_only_once = yes
+		days_remove = 90
+		modifier = {
+			political_power_cost = 0.05
+		}
+		remove_effect = {      
+			CHI_economic_upturn = yes
+			add_ideas = CHI_reform_economic_system_buff
+		}
+	}
+	#爱国教育
+	CHI_patriotic_education = {
+		ai_will_do = {
+			factor = 100
+		}
+		icon = GFX_decision_category_kuomintang
+		available = {
+			NOT = { has_idea = CHI_eliminating_illiteracy }
+			has_idea = CHI_eliminated_illiteracy
+		}
+		visible = {
+			has_idea = CHI_eliminated_illiteracy
+			OR = {
+				has_completed_focus = CHI_invest_education
+				has_completed_focus = Maoism_scientific_education
+			}
+		}
+		days_remove = 180
+		fire_only_once = yes
+		cost = 10
+		modifier = {
+			political_power_cost = 0.05
+			}
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = CHI_eliminated_illiteracy	
+				add_idea = CHI_patriotic_education_buff
+			}
+		}
+	}
+	#扶持民族资本
+	CHI_developing_national_capital = {
+		icon = GFX_decision_generic_factory
+		available = {
+			num_of_civilian_factories_available_for_projects  > 2
+		}
+		on_map_mode = map_and_decisions_view
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				OR = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+				NOT = { has_state_flag = CHI_developed_national_capital }
+			}
+		}
+		visible = {
+			has_completed_focus = CHI_develop_industry
+			FROM = {
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = no
+				}
+				NOT = { 
+					has_state_category = wasteland_island
+					has_state_category = wasteland 
+					has_state_category = one 
+					has_state_category = two
+					has_state_category = three
+					has_state_category = four
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 20
+			}
+		}
+		days_remove = 100
+		fire_only_once = no
+		cost = 50
+		modifier = {
+			civilian_factory_use = 3
+		}
+		remove_effect = {
+			FROM = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = CHI_developed_national_capital
+			}
+		}
+	}
+	#经济结构改革
+	CHI_reform_economic_system = {
+		priority = 98
+		available = {
+			
+		}
+		visible = {
+			has_completed_focus = CHI_social_reform
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 120
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		remove_effect = {
+			CHI_economic_upturn = yes
+			add_ideas = CHI_reform_economic_system_buff
+		}
+	}
+	CHI_guangzhou_nanning = {
+		icon = train
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+			controls_state = 592
+			controls_state = 593
+			controls_state = 594
+		}
+
+		visible = {
+			has_completed_focus = CHI_road_planning
+			owns_state = 592
+			owns_state = 593
+			owns_state = 594
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 592 state = 593 state = 594 }
+		}
+
+		cost = 30
+		days_remove = 90
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_guangzhou_nanning"
+			set_country_flag = CHI_built_to_nanning
+			build_railway = {
+				level = 1
+				path = { 1047 7152 1187 12077 7039 10105 7192 10050 7137 }
+			}
+		}
+	}
+	CHI_improve_hainan = {
+		icon = steel
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+			has_country_flag = CHI_built_to_nanning
+			controls_state = 591
+		}
+
+		visible = {
+			has_completed_focus = CHI_road_planning
+			owns_state = 591
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 591 }
+		}
+
+		cost = 30
+		days_remove = 90
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_improve_hainan"
+			591 = {
+				add_building_construction = { type = infrastructure level = 1 }
+				add_resource = {
+					type = steel
+					amount = 6
+				}
+			}
+		}
+	}
+	CHI_nanning_guiyang = {
+		icon = railroad
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+			has_country_flag = CHI_built_to_nanning
+			controls_state = 599
+			controls_state = 1055
+			1052 = { is_owned_by_ROOT_or_ally = yes }
+			603 = { is_owned_by_ROOT_or_ally = yes }
+			1051 = { is_owned_by_ROOT_or_ally = yes }
+		}
+
+		visible = {
+			has_completed_focus = CHI_road_planning
+			owns_state = 599
+			owns_state = 1055
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 1055 state = 603 state = 1051 state = 594 }
+		}
+
+		cost = 30
+		days_remove = 90
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_nanning_guiyang"
+			set_country_flag = CHI_built_to_guiyang
+			build_railway = {
+				path = { 7137 10050 4028 1597 4134 12436 4532 4504 }
+			}
+		}
+	}
+	CHI_guiyang_kunming = {
+		icon = railroad
+		visible = {
+			has_completed_focus = CHI_road_planning
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+			has_country_flag = CHI_built_to_guiyang
+			325 = { is_owned_by_ROOT_or_ally = yes }
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 325 }
+		}
+
+		cost = 30
+		days_remove = 90
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_guiyang_kunming"
+			build_railway = {
+				path = { 4504 4192 1319 }
+			}
+		}
+	}
+	CHI_guiyang_chengdu = {
+		icon = railroad
+		visible = {
+			has_completed_focus = CHI_road_planning
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+			has_country_flag = CHI_built_to_guiyang
+			605 = { is_owned_by_ROOT_or_ally = yes }
+			650 = { is_owned_by_ROOT_or_ally = yes }
+		}
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 605 state = 650 state = 603 state = 1051 }
+		}
+
+		cost = 30
+		days_remove = 90
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_guiyang_chengdu"
+			build_railway = {
+				path = { 4504 10763 1010 4431 6999 12705 1395 4925 }
+			}
+		}
+	}
+	CHI_guangzhou_changsha = {
+		icon = railroad
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+			controls_state = 800
+			602 = { is_owned_by_ROOT_or_ally = yes }
+		}
+
+		visible = {
+			has_completed_focus = CHI_road_planning
+			owns_state = 800
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 800 state = 602 state = 593 state = 592 }
+		}
+
+		cost = 30
+		days_remove = 90
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_guangzhou_changsha"
+			set_country_flag = CHI_built_to_changsha
+			build_railway = {
+				path = { 1047 12095 1120 9970 9982 12350 13143 7097 }
+			}
+		}
+	}
+	CHI_guangzhou_fujian = {
+		icon = train
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+			controls_state = 1012
+			controls_state = 1046
+			controls_state = 802
+			controls_state = 1066
+			controls_state = 595
+		}
+
+		visible = {
+			has_completed_focus = CHI_road_planning
+			owns_state = 1012
+			owns_state = 1046
+			owns_state = 802
+			owns_state = 1066
+			owns_state = 595
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 1012 state = 1046 state = 802 state = 1066 state = 595 }
+		}
+
+		cost = 30
+		days_remove = 90
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_guangzhou_fujian"
+			set_country_flag = CHI_built_to_fujian
+			build_railway = {
+				path = { 1120 1162 1078 7141 7099 1006 12057 7131 7071 }
+			}
+			build_railway = {
+				path = { 7071 7131 12057 1193 1138 }
+			}
+		}
+	}
+	CHI_connect_coast = {
+		icon = railroad
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+			OR = {
+				has_country_flag = CHI_built_to_fujian
+				has_country_flag = CHI_built_to_nanjing
+			}
+			controls_state = 803
+			controls_state = 1067
+			controls_state = 1068
+			controls_state = 596
+			controls_state = 1044
+		}
+
+		visible = {
+			has_completed_focus = CHI_road_planning
+			owns_state = 803
+			owns_state = 1067
+			owns_state = 1068
+			owns_state = 596
+			owns_state = 1044
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 803 state = 1067 state = 1068 state = 596 state = 1044 }
+		}
+
+		cost = 30
+		days_remove = 90
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_connect_coast"
+			set_country_flag = CHI_connected_the_coast
+			build_railway = {
+				path = { 1138 11961 7054 1066 9944 11920 1195 4013 }
+			}
+			build_railway = {
+				path = { 11920 12059 11991 7191 }
+			}
+		}
+	}
+	CHI_changsha_nanjing = {
+		icon = railroad
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+			OR = {
+				has_country_flag = CHI_built_to_changsha
+				has_country_flag = CHI_connected_the_coast
+			}
+			controls_state = 1045
+			controls_state = 1044
+			controls_state = 596
+			controls_state = 1014
+			controls_state = 613
+		}
+
+		visible = {
+			has_completed_focus = CHI_road_planning
+			owns_state = 1045
+			owns_state = 1044
+			owns_state = 596
+			owns_state = 1014
+			owns_state = 613
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 1045 state = 1044 state = 1014 state = 613 state = 596 }
+		}
+
+		cost = 30
+		days_remove = 90
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_changsha_nanjing"
+			set_country_flag = CHI_built_to_nanjing
+			build_railway = {
+				path = { 7097 13143 12495 10501 4083 3992 4038 }
+			}
+			build_railway = {
+				path = { 7191 7120 10076 1089 11982 11913 }
+			}
+		}
+	}
+	CHI_wuhan_bridge = {
+		icon = generic_construction
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+			controls_state = 1048
+		}
+
+		visible = {
+			has_completed_focus = CHI_road_planning
+			owns_state = 1048
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 1048 }
+		}
+
+		cost = 75
+		days_remove = 180
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_wuhan_bridge"
+			1048 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			build_railway = {
+				path = { 7097 9999 4631 4619 }
+			}
+		}
+	}
+	CHI_wuhan_beijing = {
+		icon = train
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+			controls_state = 1058
+			controls_state = 1059
+			controls_state = 1060
+			controls_state = 1061
+			controls_state = 1062
+			controls_state = 608
+		}
+
+		visible = {
+			has_completed_focus = CHI_road_planning
+			owns_state = 1058
+			owns_state = 1059
+			owns_state = 1060
+			owns_state = 1061
+			owns_state = 1062
+			owns_state = 608
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 1058 state = 1059 state = 1060 state = 1061 state = 1062 state = 608 }
+		}
+
+		cost = 30
+		days_remove = 90
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_wuhan_beijing"
+			build_railway = {
+				path = { 4619 7167 10462 10446 10434 7540 12012 10364 9958 1139 4144 1169 1188 4190 7109 12026 4140 9843 }
+			}
+		}
+	}
+	CHI_connect_northwest = {
+		icon = railroad
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+			controls_state = 607
+			controls_state = 799
+			controls_state = 283
+			controls_state = 788
+			controls_state = 604
+		}
+
+		visible = {
+			has_completed_focus = CHI_road_planning
+			owns_state = 607
+			owns_state = 799
+			owns_state = 283
+			owns_state = 788
+			owns_state = 604
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 607 state = 799 state = 283 state = 788 state = 604 }
+		}
+
+		cost = 30
+		days_remove = 90
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_connect_northwest"
+			set_country_flag = CHI_connected_northwest
+			build_railway = {
+				path = { 9958 1004 11931 6932 12713 7301 1976 2006 }
+			}
+			build_railway = {
+				path = { 4925 1367 12767 7256 4295 2006 }
+			}
+			build_railway = {
+				path = { 2006 7911 12882 12797 4888 12732 12327 5100 2028 }
+			}
+		}
+	}
+	CHI_connect_xinjiang = {
+		icon = railroad
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+			has_country_flag = CHI_connected_northwest
+			controls_state = 287
+			controls_state = 617
+			controls_state = 1083
+		}
+
+		visible = {
+			has_completed_focus = CHI_road_planning
+			owns_state = 287
+			owns_state = 617
+			owns_state = 1083
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 287 state = 617 state = 1083 }
+		}
+
+		cost = 30
+		days_remove = 90
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_connect_xinjiang"
+			build_railway = {
+				path = { 2028 7971 1778 4843 4704 13728 7732 10614 1143 10545 4709 }
+			}
+		}
+	}
+}
+	
+####  军阀协商  ####
+CHI_warlord_diplomacy_category = {
+	
+	#团结东北抗日
+	CHI_northeast_change_flag = {
+		icon = generic_civil_support
+		available = {
+			OR = {
+				is_neighbor_of = FNG
+				any_allied_country = { is_neighbor_of = FNG }
+				any_subject_country = { is_neighbor_of = FNG }
+			}
+			is_subject = no
+			FNG = {
+				is_subject = no
+				has_war_with = JAP
+			}
+		}
+
+		visible = {
+			QIE = { exists = no }
+			FNG = { 
+				has_war_with = JAP 
+				is_subject = no
+			}
+			country_exists = FNG
+		}
+
+		cost = 10
+		days_remove = 0
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				factor = 0
+				FNG = {
+					is_stronger_than_ROOT_and_not_vulnerable = yes
+				}
+			}
+		}
+		complete_effect = {
+			FNG = { country_event = chi_dss.30 }
+		}
+	}
+	#和老西谈判
+	CHI_dec_negotiate_with_SHX = {
+		icon = generic_agreement
+
+		allowed = { always = no }
+
+		available = {
+			has_war_with = FROM
+			FROM = { surrender_progress > 0.65 }
+		}
+
+		visible = {
+			is_neighbor_of = FROM
+			FROM = {
+				OR = {
+					has_government = paternal_autocrat
+					has_government = authoritarian_democrat
+					has_country_leader = { name = "Feng Yuxiang" ruling_only = yes }
+				}
+				is_subject = no
+			}
+		}
+
+		cost = 40
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_negotiate_with_SHX target: [From.GetName]"
+			FROM = { country_event = { id = chi_for.62 days = 3 } }
+		}
+
+		ai_will_do = {
+			factor = 150
+		}
+	}
+	#要求大帅投降
+	CHI_dec_unite_the_country = {
+		icon = generic_agreement
+
+		allowed = { always = no }
+
+		visible = {
+			owns_state = 608
+			has_country_flag = CHI_Solo_War
+			NOT = { country_exists = QIE }
+			FNG = {
+				exists = yes
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		cost = 25
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_unite_the_country"
+			country_event = chi_fng.19
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	#和湖南谈判
+	CHI_dec_negotiate_with_HNN = {
+		icon = generic_agreement
+
+		allowed = { always = no }
+
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+			FROM = {
+				OR = {
+					is_in_faction = no
+					is_faction_leader = yes
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+
+		visible = {
+			country_exists = FROM
+			FROM = {
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+				OR = {
+					has_completed_focus = HNN_Revolutionary_Buddhism
+					has_completed_focus = HNN_Hunan_Under_the_Kuomintang
+				}
+			}
+		}
+
+		cost = 40
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_negotiate_with_HNN target: [From.GetName]"
+			FROM = { country_event = { id = chi_for.23 days = 7 } }
+			custom_effect_tooltip = effect_after_they_agree
+			effect_tooltip = {
+				every_other_country = {
+					limit = {
+						has_war_with = FROM
+						NOT = { has_war_with = ROOT }
+					}
+					ROOT = {
+						add_to_war = {
+							targeted_alliance = FROM
+							enemy = PREV
+							hostility_reason = asked_to_join
+						}
+					}
+				}
+				set_autonomy = {
+					target = PREV
+					autonomy_state = kmt_puppet
+					end_wars = no
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	#和两广谈判
+	CHI_dec_negotiate_with_GXC = { 
+		icon = generic_agreement
+		allowed = { always = no }
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+			FROM = {
+				OR = {
+					is_in_faction = no
+					is_faction_leader = yes
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+
+		visible = {
+			country_exists = FROM
+			FROM = {
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+				is_ruled_by_kmt = yes
+			}
+		}
+		target_root_trigger = { has_completed_focus = CHI_move_to_Nanjing }
+
+		cost = 40
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_negotiate_with_GXC target: [From.GetName]"
+			FROM = { country_event = { id = chi_for.24 days = 7 } }
+			custom_effect_tooltip = effect_after_they_agree
+			effect_tooltip = {
+				every_other_country = {
+					limit = {
+						has_war_with = FROM
+						NOT = { has_war_with = ROOT }
+					}
+					ROOT = {
+						add_to_war = {
+							targeted_alliance = FROM
+							enemy = PREV
+							hostility_reason = asked_to_join
+						}
+					}
+				}
+				set_autonomy = {
+					target = PREV
+					autonomy_state = kmt_puppet
+					end_wars = no
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	#和四川谈判
+	CHI_dec_negotiate_with_SZC = {
+		icon = generic_agreement
+
+		allowed = { always = no }
+
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+			FROM = {
+				OR = {
+					is_in_faction = no
+					is_faction_leader = yes
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+
+		visible = {
+			FROM = {
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+				has_country_leader = { name = "Lu Chao" ruling_only = yes } 
+			}
+		}
+
+		cost = 40
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_negotiate_with_SZC target: [From.GetName]"
+			FROM = { country_event = { id = chi_for.29 days = 7 } }
+			custom_effect_tooltip = effect_after_they_agree
+			effect_tooltip = {
+				every_other_country = {
+					limit = {
+						has_war_with = FROM
+						NOT = { has_war_with = ROOT }
+					}
+					ROOT = {
+						add_to_war = {
+							targeted_alliance = FROM
+							enemy = PREV
+							hostility_reason = asked_to_join
+						}
+					}
+				}
+				set_autonomy = {
+					target = PREV
+					autonomy_state = kmt_puppet
+					end_wars = no
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	#和云南谈判
+	CHI_dec_negotiate_with_YUN = {
+		icon = generic_agreement
+
+		allowed = { always = no }
+
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+			FROM = {
+				OR = {
+					is_in_faction = no
+					is_faction_leader = yes
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+
+		visible = {
+			country_exists = FROM
+			FROM = {
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+				OR = {
+					is_ruled_by_kmt = yes
+					has_country_leader = { name = "Zhu De" ruling_only = yes }
+				}
+			}
+		}
+
+		cost = 40
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_negotiate_with_YUN target: [From.GetName]"
+			FROM = { country_event = { id = chi_for.30 days = 7 } }
+			custom_effect_tooltip = effect_after_they_agree
+			effect_tooltip = {
+				every_other_country = {
+					limit = {
+						has_war_with = FROM
+						NOT = { has_war_with = ROOT }
+					}
+					ROOT = {
+						add_to_war = {
+							targeted_alliance = FROM
+							enemy = PREV
+							hostility_reason = asked_to_join
+						}
+					}
+				}
+				set_autonomy = {
+					target = PREV
+					autonomy_state = kmt_puppet
+					end_wars = no
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	#和三马谈判
+	CHI_dec_negotiate_with_XSM = {
+		icon = generic_agreement
+
+		allowed = { always = no }
+
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+			FROM = {
+				OR = {
+					is_in_faction = no
+					is_faction_leader = yes
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+
+		visible = {
+			country_exists = FROM
+			FROM = {
+				is_subject = no
+				NOT = {
+					has_war_with = ROOT
+					has_country_leader = { character = XSM_ma_hongkui }
+				}
+			}
+		}
+
+		cost = 40
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_negotiate_with_XSM target: [From.GetName]"
+			FROM = { country_event = { id = chi_for.35 days = 7 } }
+			custom_effect_tooltip = effect_after_they_agree
+			effect_tooltip = {
+				every_other_country = {
+					limit = {
+						has_war_with = FROM
+						NOT = { has_war_with = ROOT }
+					}
+					ROOT = {
+						add_to_war = {
+							targeted_alliance = FROM
+							enemy = PREV
+							hostility_reason = asked_to_join
+						}
+					}
+				}
+				set_autonomy = {
+					target = PREV
+					autonomy_state = kmt_puppet
+					end_wars = no
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	#和新疆谈判
+	CHI_dec_negotiate_with_SIK = {
+		icon = generic_agreement
+
+		allowed = { always = no }
+
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+			FROM = {
+				is_subject = no
+				OR = {
+					is_in_faction = no
+					is_faction_leader = yes
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+
+		visible = {
+			country_exists = FROM
+			FROM = {
+				is_subject = no
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+		}
+
+		cost = 40
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_negotiate_with_SIK target: [From.GetName]"
+			FROM = { country_event = { id = chi_for.38 days = 7 } }
+			custom_effect_tooltip = effect_after_they_agree
+			effect_tooltip = {
+				every_other_country = {
+					limit = {
+						has_war_with = FROM
+						NOT = { has_war_with = ROOT }
+					}
+					ROOT = {
+						add_to_war = {
+							targeted_alliance = FROM
+							enemy = PREV
+							hostility_reason = asked_to_join
+						}
+					}
+				}
+				set_autonomy = {
+					target = PREV
+					autonomy_state = kmt_puppet
+					end_wars = no
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	#和西藏谈判
+	CHI_offer_autonomy_TIB = {
+		icon = generic_ignite_civil_war
+
+		allowed = { always = no }
+
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+		}
+
+		visible = {
+			NOT = {
+				FROM = {
+					is_subject_of = ROOT
+					has_war_with = ROOT
+				}
+			}
+		}
+
+		cost = 40
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_offer_autonomy_TIB target: [From.GetName]"
+			FROM = {
+				country_event = chi_for.51
+			}
+			custom_effect_tooltip = effect_after_they_agree
+			effect_tooltip = {
+				set_autonomy = {
+					target = FROM
+					autonomy_state = kmt_puppet
+					end_wars = no
+				}
+			}
+		}
+	}
+	#和蒙古谈判
+	CHI_offer_autonomy_MON = {
+		icon = generic_ignite_civil_war
+
+		allowed = { always = no }
+
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+		}
+
+		visible = {
+			NOT = {
+				FROM = {
+					is_subject_of = ROOT
+					has_war_with = ROOT
+				}
+			}
+		}
+
+		cost = 40
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_offer_autonomy_MON target: [From.GetName]"
+			FROM = {
+				country_event = chi_for.51
+			}
+			custom_effect_tooltip = effect_after_they_agree
+			effect_tooltip = {
+				set_autonomy = {
+					target = FROM
+					autonomy_state = kmt_puppet
+					end_wars = no
+				}
+			}
+		}
+	}
+	#援助新疆
+	CHI_aid_to_Xinjiang = {
+		icon =  generic_ignite_civil_war
+		allowed = {
+			original_tag = CHI
+		}
+		available = {
+			is_subject = no
+		}
+
+		visible = {
+			SIK = { 
+				has_government = social_democrat 
+				OR = {
+					has_war_with = ETS
+					has_war_with = TAN
+				}
+			}
+			has_completed_focus = CHI_move_to_Nanjing
+			is_subject = no
+		}
+
+		cost = 10
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+
+		ai_will_do = {
+			factor = 20
+		}
+		days_remove = 7
+		remove_effect = {
+			SIK = {
+				country_event = chi_mediate_conflict.9
+			}
+		}
+	}
+	#和新疆少数民族谈判
+	CHI_dec_negotiate_with_SIK_nation = {
+		icon = generic_agreement
+
+		allowed = { always = no }
+
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+			FROM = {
+				is_subject = no
+				OR = {
+					is_in_faction = no
+					is_faction_leader = yes
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+
+		visible = {
+			country_exists = FROM
+			FROM = {
+				is_subject = no
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+		}
+
+		cost = 40
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_negotiate_with_SIK target: [From.GetName]"
+			FROM = { country_event = { id = chi_for.38 days = 7 } }
+			custom_effect_tooltip = effect_after_they_agree
+			effect_tooltip = {
+				every_other_country = {
+					limit = {
+						has_war_with = FROM
+						NOT = { has_war_with = ROOT }
+					}
+					ROOT = {
+						add_to_war = {
+							targeted_alliance = FROM
+							enemy = PREV
+							hostility_reason = asked_to_join
+						}
+					}
+				}
+				set_autonomy = {
+					target = PREV
+					autonomy_state = kmt_puppet
+					end_wars = no
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+}
+	
+####  迁都  ####
+CHI_capital_relocation_category = {
+
+	#南京好
+	CHI_dec_locate_nanjing = {
+		icon = generic_industry
+
+		visible = {
+			has_country_flag = CHI_choose_capital
+
+			NOT = { has_country_flag = CHI_moved_capital }
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 613 }
+		}
+
+		available = {
+			owns_state = 613
+			NOT = { has_country_flag = CHI_moved_capital }
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 7
+		ai_will_do = { base = 20 }
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_locate_nanjing"
+			hidden_effect = {
+				set_country_flag = CHI_moved_capital
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_locate_nanjing"
+			set_capital = { state = 613 remember_old_capital = no }
+		}
+	}
+	#北京好
+	CHI_dec_locate_beijing = {
+		icon = generic_industry
+
+		visible = {
+			has_country_flag = CHI_choose_capital
+
+			NOT = { has_country_flag = CHI_moved_capital }
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 608 }
+		}
+
+		available = {
+			owns_state = 608
+			NOT = { has_country_flag = CHI_moved_capital }
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 7
+		ai_will_do = { base = 0 }
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_locate_beijing"
+			hidden_effect = {
+				set_country_flag = CHI_moved_capital
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_locate_beijing"
+			set_capital = { state = 608 remember_old_capital = no }
+		}
+	}
+	#武汉好
+	CHI_dec_locate_wuchang = {
+		icon = generic_industry
+
+		visible = {
+			has_country_flag = CHI_choose_capital
+
+			NOT = { has_country_flag = CHI_moved_capital }
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 1048 }
+		}
+
+		available = {
+			owns_state = 1048
+			NOT = { has_country_flag = CHI_moved_capital }
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 7
+		ai_will_do = { base = 0 }
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_locate_wuchang"
+			hidden_effect = {
+				set_country_flag = CHI_moved_capital
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_locate_wuchang"
+			set_capital = { state = 1048 remember_old_capital = no }
+		}
+	}
+}
+	
+####  独立自主外交  ####
+CHI_kuomintang_unite_asia_category = {
+	#邀请成员
+	CHI_kuomintang_unite_asia = {
+		icon = generic_agreement
+		war_with_target_on_remove = yes
+		allowed = { always = no }
+		visible = {
+			can_declare_war_on = FROM
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+			country_exists = FROM
+			FROM = {
+				is_subject = no
+				OR = {
+					is_faction_leader = yes
+					is_in_faction = no
+				}
+			}
+		}
+		available = {
+			OR = {
+				is_neighbor_of = FROM
+				any_allied_country = { is_neighbor_of = FROM }
+				any_subject_country = { is_neighbor_of = FROM }
+			}
+		}
+
+		cancel_trigger = {
+			NOT = { can_declare_war_on = FROM }
+			FROM = { 
+				is_subject = no
+				AND = {
+					is_faction_leader = no
+					is_in_faction = yes
+				}
+			}
+		}
+
+		cost = 10
+		days_remove = 14
+		fire_only_once = yes
+		war_with_target_on_remove = yes
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				ROOT_is_threatened = yes
+			}
+			modifier = {
+				factor = 0
+				FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_kuomintang_unite_asia target: [From.GetName]"
+			FROM = { country_event = chi_for_ws.2 }
+		}
+	}
+	#邀请成员
+	CHI_kuomintang_unite_asia_INS = {
+		name = CHI_kuomintang_unite_asia
+		icon = generic_agreement
+		war_with_target_on_remove = yes
+		allowed = { always = no }
+		visible = {
+			FROM = { NOT = { has_war_with = DEI } }
+			can_declare_war_on = FROM
+			country_exists = FROM
+			FROM = {
+				is_subject = no
+				OR = {
+					is_faction_leader = yes
+					is_in_faction = no
+				}
+			}
+		}
+		available = {
+			FROM = {
+				is_subject = no
+				OR = {
+					is_faction_leader = yes
+					is_in_faction = no
+				}
+			}
+		}
+
+		cancel_trigger = {
+			NOT = { can_declare_war_on = FROM }
+			FROM = { 
+				is_subject = no
+				AND = {
+					is_faction_leader = no
+					is_in_faction = yes
+				}
+			}
+		}
+
+		cost = 10
+		days_remove = 14
+		fire_only_once = yes
+		war_with_target_on_remove = yes
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				ROOT_is_threatened = yes
+			}
+			modifier = {
+				factor = 0
+				FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_kuomintang_unite_asia target: [From.GetName]"
+			FROM = { country_event = chi_for_ws.2 }
+		}
+	}
+	#邀请成员
+	CHI_kuomintang_unite_asia_PHI = {
+		name = CHI_kuomintang_unite_asia
+		icon = generic_agreement
+		war_with_target_on_remove = yes
+		allowed = { always = no }
+		visible = {
+			FROM = { 
+				OR = {
+					has_war_with = JAP 
+					has_socialist_government = no
+				}
+			}
+			can_declare_war_on = FROM
+			country_exists = FROM
+			FROM = {
+				is_subject = no
+				OR = {
+					is_faction_leader = yes
+					is_in_faction = no
+				}
+			}
+		}
+		available = {
+			FROM = { 
+				OR = {
+					has_war_with = JAP 
+					has_socialist_government = no
+				}
+			}
+			FROM = {
+				is_subject = no
+				OR = {
+					is_faction_leader = yes
+					is_in_faction = no
+				}
+			}
+		}
+
+		cancel_trigger = {
+			NOT = { can_declare_war_on = FROM }
+			FROM = { 
+				is_subject = no
+				AND = {
+					is_faction_leader = no
+					is_in_faction = yes
+				}
+			}
+		}
+
+		cost = 10
+		days_remove = 14
+		fire_only_once = yes
+		war_with_target_on_remove = yes
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				ROOT_is_threatened = yes
+			}
+			modifier = {
+				factor = 0
+				FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_kuomintang_unite_asia target: [From.GetName]"
+			FROM = { country_event = chi_for_ws.2 }
+		}
+	}
+
+	CHI_kuomintang_unite_asia_BHC = {
+		icon = generic_agreement
+		visible = {
+			is_subject = no
+			OR = {
+				has_completed_focus = CHI_oriental_red_lighthouse
+				AND = {
+					has_completed_focus = CHI_world_revolution
+					is_in_faction_with = INT
+				}
+			}
+		}
+		available = {
+			BHC = { is_neighbor_of = ROOT }
+		}
+		cost = 10
+		days_remove = 3
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		remove_effect = {
+			BHC = { country_event = chi_for.42 }
+		}
+	}
+
+}
+
+#### 上合组织  ####
+CHI_kuomintang_invite_asia_bank_member_category = {
+
+	#给合作伙伴打钱
+	CHI_kuomintang_invite_asia_bank_member = {
+		available = {
+			FROM = { num_of_civilian_factories > 2 }
+		}
+		visible = {
+			has_dynamic_modifier = { modifier = asia_leadership_dynamic_modifier }
+		}
+		target_trigger = {
+			FROM = { 
+				OR = {
+					is_in_faction_with = CHI 
+					is_subject_of = CHI
+				}
+				NOT = { has_idea = KR_CHI_asia_development_bank_member }
+				is_chinese_tag = no
+			}
+		}
+		
+		days_re_enable = 90
+
+		fire_only_once = no
+		
+		icon = ger_military_buildup
+		cost = 10
+		complete_effect = {
+			FROM = { country_event = { hours = 6  id = aisa_bank.1 } }
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	#合作伙伴卷钱跑路
+	CHI_member_quit_asia_bank = {
+		available = {
+			NOT = { is_puppet_of = CHI }
+		}
+		visible = {
+			has_idea = KR_CHI_asia_development_bank_member
+		}
+		
+		fire_only_once = no
+		
+		icon = ger_military_buildup
+		cost = 10
+		complete_effect = {
+			remove_ideas = KR_CHI_asia_development_bank_member
+		}
+		ai_will_do = {
+			base = 0
+		}
+	}
+}
+
+#### 解放亚洲  ####
+CHI_liberate_asia_category = {
+
+	#宣战
+	CHI_liberate_asia = {
+		icon = generic_agreement
+
+		allowed = { always = no }
+		visible = {
+			can_declare_war_on = FROM
+		}
+
+		cancel_trigger = {
+			NOT = { can_declare_war_on = FROM }
+		}
+
+		cost = 10
+		days_remove = 30
+		fire_only_once = yes
+		war_with_target_on_remove = yes
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				ROOT_is_threatened = yes
+			}
+			modifier = {
+				factor = 0
+				FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_liberate_asia target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 35 value = 1 }
+			FROM = { country_event = kr.political.30 } #warning event
+			setup_decision_attack_AI = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_liberate_asia target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			declare_war_on = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+	}
+	#宣战
+	CHI_liberate_asia_PHI = {
+		name = CHI_liberate_asia
+		icon = generic_agreement
+
+		allowed = { always = no }
+		visible = {
+			can_declare_war_on = FROM
+			FROM = {
+				is_subject = yes
+				has_socialist_government = no
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = { can_declare_war_on = FROM }
+				FROM = { is_subject = no }
+				FROM = { has_socialist_government = yes }
+			}
+		}
+
+		cost = 10
+		days_remove = 30
+		fire_only_once = yes
+		war_with_target_on_remove = yes
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				ROOT_is_threatened = yes
+			}
+			modifier = {
+				factor = 0
+				FROM = { is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { overlord_is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { faction_leader_is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { guarantor_is_stronger_than_ROOT_and_not_vulnerable = yes }
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_liberate_asia_PHI target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 35 value = 1 }
+			FROM = { country_event = kr.political.30 } #warning event
+			setup_decision_attack_AI = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_liberate_asia_PHI target: [From.GetName]"
+			clear_decision_attack_AI = yes
+			declare_war_on = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+	}
+}
+	
+####  整合自治区  ####
+CHI_alignment_integration_category = {
+
+	#现在西藏蒙古也能整合，想跑？
+	CHI_dec_integrate = {
+		icon = generic_industry
+		visible = {
+			FROM = {
+				exists = yes
+				is_subject_of = ROOT
+			}
+		}
+
+		available = {
+			is_neighbor_of = FROM
+		}
+
+		targets = { YUN SZC SHX XSM SIK FNG MON TAN ETS TIB KOR ANQ LEP GXC HNN LEC }
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+
+		fire_only_once = yes
+		cost = 50
+		days_remove = 50
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CHI_dec_integrate target: [From.GetName]"
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CHI_dec_integrate target: [From.GetName]"
+			FROM = {
+				every_unit_leader = {
+					set_nationality = ROOT
+				}
+				every_owned_state = {
+					limit = { is_core_of = PREV }
+					add_core_of = ROOT
+				}
+			}
+			annex_country = {
+				target = FROM
+				transfer_troops = no
+			}
+		}
+	}
+}
+#土地革命
+CHI_land_reform_category = {
+	
+}
+	
+#夺取上海
+CHI_influence_category = {
+
+	CHI_time_to_seize_Shanghai = {
+		icon = GFX_decision_generic_nationalism
+		priority = 99
+		allowed = {
+			always = no
+		}
+		activation = {
+			has_country_flag = CHI_time_to_seize_Shanghai_flag
+		}
+		available = {
+			owns_state = 743
+		}
+		fire_only_once = yes
+		is_good = no
+		days_mission_timeout = 180
+		cancel_trigger = {
+			has_country_flag = CHI_complete_the_task_Shanghai
+		}
+		timeout_effect = {
+			hidden_effect = {
+				LEC = {
+					remove_ideas = CHI_pressure_LEC
+				}
+				if = {
+					limit = { has_country_flag = CHI_secret_liaison_with_Zhang }
+					clr_country_flag = CHI_secret_liaison_with_Zhang
+				}
+				clr_country_flag = CHI_time_to_seize_Shanghai_flag
+			}
+		}
+	}
+
+	CHI_establish_secret_liaison_with_Zhang = {
+		icon = GFX_decision_generic_political_discourse
+		priority = 98
+		allowed = {
+			original_tag = CHI
+		}
+		visible = {
+			has_country_flag = CHI_time_to_seize_Shanghai_flag
+		}
+		available = {
+			is_neighbor_of = LEC
+		}
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = yes
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 499 }
+		}
+		custom_cost_text = 500_infantry_equipment_cost
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+			}
+			LEC = {
+				add_popularity = {
+					ideology = social_liberal
+					popularity = 0.05
+				}
+			}
+			set_country_flag = CHI_secret_liaison_with_Zhang
+		}
+	}
+
+	CHI_clandestine_supply_of_firearms = {
+		priority = 97
+		icon = GFX_decision_generic_prepare_civil_war
+		allowed = {
+			original_tag = CHI
+		}
+		cancel_trigger = {
+			NOT = { has_country_flag = CHI_secret_liaison_with_Zhang }
+		}
+		visible = {
+			has_country_flag = CHI_time_to_seize_Shanghai_flag
+			has_country_flag =  CHI_secret_liaison_with_Zhang
+		}
+		available = {
+			613 = {
+				is_fully_controlled_by = ROOT
+			}
+			has_country_flag =  CHI_secret_liaison_with_Zhang
+			LEC = {
+				social_liberal > 0.15
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 199 }
+		}
+		custom_cost_text = 200_infantry_equipment_cost
+		days_remove = 30
+		fire_only_once = no
+		days_re_enable = 30
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -200
+			}
+			LEC = {
+				add_popularity = {
+					ideology = social_liberal
+					popularity = 0.04
+				}
+				add_political_power = -15
+			}
+		}
+	}
+
+	CHI_sending_people_into_gangs = {
+		priority = 96
+		icon = GFX_decision_generic_assassination
+		allowed = {
+			original_tag = CHI
+		}
+		visible = {
+			has_country_flag = CHI_time_to_seize_Shanghai_flag
+			has_country_flag =  CHI_secret_liaison_with_Zhang
+		}
+		cancel_trigger = {
+			NOT = { has_country_flag = CHI_secret_liaison_with_Zhang }
+		}
+		available = {
+			613 = {
+				is_fully_controlled_by = ROOT
+			}
+			has_country_flag =  CHI_secret_liaison_with_Zhang
+			LEC = {
+				social_liberal > 0.15
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 20
+		days_remove = 30
+		fire_only_once = no
+		days_re_enable = 30
+		remove_effect = {
+			add_manpower = -500
+			LEC = {
+				add_popularity = {
+					ideology = social_liberal
+					popularity = 0.04
+				}
+				add_political_power = -15
+			}
+		}
+	}
+
+	CHI_instigate_chinese_patrol = {
+		priority = 95
+		icon = GFX_decision_generic_police_action
+		allowed = {
+			original_tag = CHI
+		}
+		visible = {
+			has_country_flag = CHI_time_to_seize_Shanghai_flag
+			has_country_flag =  CHI_secret_liaison_with_Zhang
+		}
+		cancel_trigger = {
+			NOT = { has_country_flag = CHI_secret_liaison_with_Zhang }
+		}
+		available = {
+			613 = {
+				is_fully_controlled_by = ROOT
+			}
+			has_country_flag =  CHI_secret_liaison_with_Zhang
+			LEC = {
+				social_liberal > 0.20
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 10
+		days_remove = 30
+		fire_only_once = no
+		days_re_enable = 30
+		remove_effect = {
+			LEC = {
+				add_popularity = {
+					ideology = social_liberal
+					popularity = 0.05
+				}
+				add_political_power = -25
+			}
+		}
+	}
+
+	CHI_the_time_has_come = {
+		priority = 94
+		icon = GFX_decision_generic_civil_support
+		allowed = {
+			original_tag = CHI
+		}
+		visible = {
+			has_country_flag = CHI_time_to_seize_Shanghai_flag
+			has_country_flag =  CHI_secret_liaison_with_Zhang
+		}
+		cancel_trigger = {
+			NOT = { has_country_flag = CHI_secret_liaison_with_Zhang }
+		}
+		available = {
+			613 = {
+				is_fully_controlled_by = ROOT
+			}
+			has_country_flag =  CHI_secret_liaison_with_Zhang
+			LEC = {
+				social_liberal > 0.35
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 10
+		days_remove = 7
+		fire_only_once = yes
+		remove_effect = {
+			country_event = CHI.earlygame.022
+			hidden_effect = {
+				clr_country_flag = CHI_secret_liaison_with_Zhang
+				set_country_flag = CHI_complete_the_task_Shanghai
+			}
+		}
+	}
+
+	CHI_liaison_with_shanghai = {
+		visible = {
+			is_subject = no
+			LEC = {
+				exists = yes
+				has_country_flag = shanghai_chaos
+			}
+		}
+		available = {
+			QIE = {
+				exists = no
+			}
+			has_country_flag = CHI_republic_proclaimed
+		}
+		cost = 40
+		fire_only_once = yes
+		days_remove = 14
+		remove_effect = {
+			hidden_effect = {
+				LEC = {
+					get_current_government_type = yes
+					CHI = {
+						set_autonomy = {
+							target = LEC
+							autonomy_state = kmt_puppet
+							end_wars = no
+						}
+					}
+					restore_previous_government_type = yes
+					set_politics = {
+						ruling_party = social_democrat
+					}
+				}
+			}
+			effect_tooltip = {
+				set_autonomy = {
+					target = PREV
+					autonomy_state = LEC
+					end_wars = no
+				}
+			}
+		}
+	}
+}

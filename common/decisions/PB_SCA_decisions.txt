@@ -1,0 +1,1160 @@
+PB_SCA_The_Sleeping_Giant = {
+
+    SCA_With_Open_Eyes = {
+
+		icon = GFX_decision_infiltrate_state
+
+		activation = { 
+			is_ai = no
+			original_tag = SCA
+			has_country_flag = SCA_In_Exile
+			NOT = { 
+				has_country_flag = SCA_Disable_Sleeping_Giant
+				has_country_flag = SCA_Hiding
+				has_idea = PB_SCA_Fear_And_Chaos
+			} 
+			has_country_flag = SCA_Enable_Sleeping_Giant             
+		}
+
+		available = {
+			OR = {
+				has_country_flag = SCA_Hiding 
+				has_country_flag = SCA_Disable_Sleeping_Giant
+				has_war_with = AME  
+				has_country_flag = SCA_got
+			}     
+		}  
+
+		selectable_mission = no
+
+		is_good = no
+		fire_only_once = no
+				
+		days_mission_timeout = 90
+
+		timeout_effect = {
+			custom_effect_tooltip = SCA29tooltip
+			add_ideas = PB_SCA_Fear_And_Chaos
+		}
+	}
+
+	SCA_Hide_From_The_Giant = {
+
+		icon = GFX_decision_generic_operation
+
+		available = {  
+			has_active_mission = SCA_With_Open_Eyes  
+		}
+
+		visible = {
+			has_country_flag = SCA_In_Exile
+			has_country_flag = SCA_Enable_Sleeping_Giant
+			NOT = {
+				has_country_flag = SCA_Disable_Hide_From_Giant_Dec_1
+			}
+		}
+
+		cost = num_battalions
+
+		ai_will_do = {
+			factor = 4000
+		}
+
+		days_re_enable = 40
+
+		complete_effect = {
+			set_country_flag = {
+				flag = SCA_Hiding
+				days = 30
+				value = 1
+			}
+			custom_effect_tooltip = SCA28tooltip
+			hidden_effect = {
+				activate_mission  = SCA_With_Open_Eyes
+			}
+		}
+	}
+
+	SCA_Stabilize_The_Nation = {
+
+		icon = GFX_decision_generic_political_discourse
+
+		visible = {
+			has_country_flag = SCA_In_Exile
+			has_country_flag = SCA_Stabilize_The_Nation_flag
+		}
+
+		available = {
+			NOT = {
+				has_stability > 0.1
+			}
+		}
+
+		cost = 35
+
+		ai_will_do = {
+			factor = 4000
+		}
+
+		days_re_enable = 40
+
+		complete_effect = {
+			add_stability = 0.05
+		}
+	}
+
+	SCA_Grand_Offensive = {
+
+		icon = GFX_decision_generic_ignite_civil_war
+
+		visible = {
+		}
+
+		available = {
+			has_war_support > 0.2
+			has_war = yes
+		}
+
+		cost = 35
+
+		ai_will_do = {
+			factor = 4000
+		}
+
+		days_re_enable = 40
+
+		modifier = {
+			army_attack_factor = 0.1
+		}
+
+	    days_remove = 30
+
+		remove_effect = {
+			add_war_support = -0.05
+		}
+	}
+
+	SCA_Recruit_Cowboys = {
+
+		icon = GFX_decision_generic_civil_support
+
+		visible = {
+			has_country_flag = SCA_In_Exile
+			has_completed_focus = SCA_Outlaw_Country
+		}
+
+		cost = 20
+
+		available = {
+			has_manpower < 5000
+		}
+
+		days_re_enable = 40
+
+		complete_effect = {
+			add_manpower = 5000
+		}
+	}
+
+	SCA_Hide_From_The_Giant_2 = {
+
+		icon = GFX_decision_generic_operation
+
+		available = { 
+			has_active_mission = SCA_With_Open_Eyes 
+		}
+
+		visible = {
+			has_country_flag = SCA_In_Exile
+			has_country_flag = SCA_Hush_Campaigns_flag
+		}
+
+		cost = num_armies
+
+		ai_will_do = {
+			factor = 4000
+		}
+
+		days_re_enable = 40
+
+		complete_effect = {
+			set_country_flag = {
+				flag = SCA_Hiding
+				days = 30
+				value = 1
+			}
+			custom_effect_tooltip = SCA28tooltip
+			hidden_effect = {
+				activate_mission  = SCA_With_Open_Eyes
+			}
+		}
+	}
+
+	SCA_Buy_Time = {
+
+		icon = GFX_decision_generic_special_forces
+
+		available = { 
+			num_divisions > 5
+			has_manpower > 2000
+			has_active_mission = SCA_With_Open_Eyes
+		}
+
+		visible = {
+			has_country_flag = SCA_In_Exile
+		}
+
+		custom_cost_trigger = { has_stability > 0.045 }
+		custom_cost_text = decision_cost_5_stability
+
+		ai_will_do = {
+			factor = 3000
+		}
+
+		days_re_enable = 50
+
+		complete_effect = {
+			add_stability = -0.05
+			add_manpower = -2000
+			add_days_mission_timeout = {
+				mission = SCA_With_Open_Eyes
+				days = 60
+			}
+		}
+	}
+}
+
+PB_SCA_The_Final_Few = {
+
+	SCA_The_Final_Few = {
+
+		icon = GFX_decision_generic_upgrade_colony
+
+		available = {
+			has_country_flag = All_Thats_Left
+		}  
+
+		activation = { 
+			tag = SCA
+			has_country_flag = SCA_In_Exile
+			has_completed_focus = SCA_The_Dead_March_West
+		}
+
+		selectable_mission = no
+		days_mission_timeout = 30
+
+		is_good = no
+		fire_only_once = yes
+
+		timeout_effect = {
+			if = {
+				limit = {
+					has_country_flag = SCA_Final_Few_1
+				}
+				country_event = { id = SCA.2 days = 0 }
+			}
+			if = {
+				limit = {
+					has_country_flag = SCA_Final_Few_2
+				}
+				country_event = { id = SCA.3 days = 0 }
+			}
+			if = {
+				limit = {
+					has_country_flag = SCA_Final_Few_3
+				}
+				country_event = { id = SCA.4 days = 0 }
+			}
+			if = {
+				limit = {
+					has_country_flag = SCA_Final_Few_4
+				}
+				country_event = { id = SCA.5 days = 0 }
+			}
+			if = {
+				limit = {
+					has_country_flag = SCA_Final_Few_5
+				}
+				country_event = { id = SCA.6 days = 0 }
+			}
+			if = {
+				limit = {
+					has_country_flag = SCA_Final_Few_6
+				}
+				country_event = { id = SCA.7 days = 0 }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = All_Thats_Left }
+					}
+					activate_mission = SCA_The_Final_Few
+				}
+			}
+		}
+	}
+}
+
+PB_SCA_A_Truely_American_Revolution = {
+
+	SCA_defeats_Imperial = {
+
+		icon = generic_form_nation
+
+		priority = 100
+		
+		cost = 0
+
+		ai_will_do = {
+			base = 10000
+		}
+
+		available = {
+			NOT = { country_exists = CAL }
+			NOT = { country_exists = DSR }
+			NOT = { country_exists = AML }
+			NOT = { country_exists = TXS }
+			NOT = { country_exists = FSA }
+			NOT = { country_exists = CGL }
+			NOT = { country_exists = USA }
+			NOT = { country_exists = NEE }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			news_event = { 
+				id = PBNews.81
+				days = 1
+			} 
+			complete_national_focus = SCA_War_Is_A_Racket
+			set_country_flag = SCA_got
+			remove_ideas = PB_SCA_Fear_And_Chaos
+			remove_ideas = PB_SCA_Mobolize_The_Workers
+			remove_ideas = PB_SCA_The_Great_Leap_Forward_Idea
+			remove_ideas = PB_SCA_The_Dead_March_West
+			remove_ideas = PB_SCA_The_Dead_March_West_2
+			remove_ideas = PB_SCA_Second_American_Revolution
+		}
+	}
+
+}
+
+PB_SCA_President_For_Life = {
+
+	SCA_Search_For_Oil = {
+
+		icon = GFX_decision_oil
+
+		visible = {
+			original_tag = SCA
+			has_completed_focus = SCA_The_Alaska_Purchase
+		}
+
+		available = {
+			has_tech = excavation2
+			463 = {
+				is_owned_by = SCA
+			}
+		}
+
+        cost = 50
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		fire_only_once = yes
+
+		selectable_mission = yes
+		days_remove = 30
+
+		is_good = yes
+
+		remove_effect = {
+			add_resource = {
+				type = oil
+				amount = 25
+				state = 463
+			}
+		}
+	}
+
+	SCA_The_East_Coast_Boom = {
+
+		icon = GFX_decision_generic_construction
+
+		visible = {
+			original_tag = SCA
+		}
+
+        cost = 100
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		fire_only_once = yes
+
+		selectable_mission = yes
+		days_remove = 100
+
+		is_good = yes
+
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+
+		remove_effect = {
+			360 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			361 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			PB_Industry_Moderate_Progress_Increase = yes
+		}
+	}
+
+	SCA_Support_Our_Subjects = {
+
+		icon = GFX_decision_generic_construction
+
+		visible = {
+			original_tag = SCA
+			has_completed_focus = SCA_Emphasize_The_American_Plight
+		}
+
+		available = {
+			num_subjects > 0
+		}
+
+        cost = 70
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		fire_only_once = yes
+
+		selectable_mission = yes
+
+		days_remove = 60
+
+		is_good = yes
+
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+
+		remove_effect = {
+			every_subject_country = { 
+				limit = {
+					is_subject_of = SCA
+				}
+				add_offsite_building = { type = arms_factory level = 1 }
+				add_offsite_building = { type = industrial_complex level = 1 }
+				add_stability = 0.05
+			}
+		}
+	}
+
+	SCA_Fund_The_Intellectuals = {
+
+		icon = GFX_decision_generic_research
+
+		visible = {
+			original_tag = SCA
+		}
+
+        cost = 50
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		fire_only_once = yes
+
+		selectable_mission = yes
+		days_remove = 50
+
+		is_good = yes
+
+		modifier = {
+			research_speed_factor = 0.05
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = research_center
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = research_center
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = research_center
+					level = 1
+					instant_build = yes
+				}
+			}
+            PB_Literacy_High_Progress_Increase = yes
+		}
+	}
+
+	SCA_Establish_Regional_Committees = {
+
+		icon = GFX_decision_generic_militia
+
+		visible = {
+			original_tag = SCA
+		}
+
+        cost = 50
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		fire_only_once = yes
+
+		selectable_mission = yes
+		days_remove = 30
+
+		is_good = yes
+
+		remove_effect = {
+			custom_effect_tooltip = SCA_Establish_Regional_Committees_tt
+			set_country_flag = SCA_Enable_Occupation_Rev
+		}
+	}
+
+	SCA_Liberty_Radio = {
+
+		icon = GFX_decision_generic_radio
+
+		visible = {
+			original_tag = SCA
+		}
+
+		available = {
+			has_stability < 0.75
+			has_war = no
+		}
+
+        cost = 25
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		days_re_enable = 50
+
+		selectable_mission = yes
+
+		days_remove = 15
+
+		is_good = yes
+
+		remove_effect = {
+			add_stability = 0.025
+		}
+	}
+
+	SCA_Policy_Of_Self_Reliance = {
+
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			original_tag = SCA
+			has_completed_focus = SCA_The_Butler_Manifesto
+		}
+
+		available = {
+		}
+
+        cost = 100
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		fire_only_once = yes
+
+		selectable_mission = yes
+
+		days_remove = 50
+
+		is_good = yes
+
+		remove_effect = {
+			modify_building_resources = {
+				building = synthetic_refinery
+				resource = oil
+				amount = 1
+			}
+			modify_building_resources = {
+				building = synthetic_refinery
+				resource = rubber
+				amount = 1
+			}
+			modify_building_resources = {
+				building = steel_mill
+				resource = steel
+				amount = 1
+			}
+		}
+	}
+
+	SCA_The_Pacific_Springboard = {
+
+		icon = GFX_decision_generic_naval
+
+		visible = {
+			has_completed_focus = SCA_A_Pragmatic_Alliance
+		}
+
+		available = {
+			HWI = {
+				exists = yes
+				is_in_faction = no
+			}
+		}
+
+        cost = 25
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		days_re_enable = 50
+
+		selectable_mission = yes
+
+		days_remove = 15
+
+		is_good = yes
+
+		remove_effect = {
+			if = {
+				limit = {
+					HWI = {
+						is_guaranteed_by = ENG
+					}
+				}
+				ENG = {
+					diplomatic_relation = {
+						country = HWI
+						relation = guarantee
+						active = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					HWI = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = HWI
+				}
+			}
+		}
+	}
+
+	SCA_Milestones_1 = {
+
+		icon = GFX_decision_generic_brain
+
+		visible = {
+			num_of_factories > 100		
+		}
+
+		available = {
+		}
+
+        cost = 0
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		selectable_mission = yes
+
+		fire_only_once = yes
+
+		days_remove = 25
+
+		is_good = yes
+
+		remove_effect = {
+			add_to_variable = { SCA_Milestone = 1 }
+			set_country_flag = SCA_MIL_1_Complete_yes
+			add_ideas = SCA_Milestone_1
+		}
+	}
+
+	SCA_Milestones_2 = {
+
+		icon = GFX_decision_generic_brain
+
+		visible = {
+			has_country_flag = SCA_MIL_1_Complete_yes
+			has_army_experience > 25
+		}
+
+		available = {
+		}
+
+        cost = 0
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		selectable_mission = yes
+
+		fire_only_once = yes
+
+		days_remove = 25
+
+		is_good = yes
+
+		remove_effect = {
+			add_to_variable = { SCA_Milestone = 1 }
+			set_country_flag = SCA_MIL_2_Complete_yes
+			add_doctrine_cost_reduction = {
+				name = SCA_Milestone_2_doctrine
+				cost_reduction = 1
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	SCA_Milestones_3 = {
+
+		icon = GFX_decision_generic_brain
+
+		visible = {
+			has_army_manpower = { size > 500000 }
+			has_country_flag = SCA_MIL_2_Complete_yes
+		}
+
+		available = {
+		}
+
+        cost = 0
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		selectable_mission = yes
+
+		fire_only_once = yes
+
+		days_remove = 25
+
+		is_good = yes
+
+		remove_effect = {
+			add_to_variable = { SCA_Milestone = 1 }
+			set_country_flag = SCA_MIL_3_Complete_yes
+			add_ideas = SCA_Milestone_2
+		}
+	}
+
+	SCA_Milestones_4 = {
+
+		icon = GFX_decision_generic_brain
+
+		visible = {
+			has_stability > 0.40
+			has_country_flag = SCA_MIL_3_Complete_yes
+		}
+
+		available = {
+		}
+
+        cost = 0
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		selectable_mission = yes
+
+		fire_only_once = yes
+
+		days_remove = 25
+
+		is_good = yes
+
+		remove_effect = {
+			add_to_variable = { SCA_Milestone = 1 }
+			set_country_flag = SCA_MIL_4_Complete_yes
+			add_political_power = 150
+		}
+	}
+
+	SCA_Milestones_5 = {
+
+		icon = GFX_decision_generic_brain
+
+		visible = {
+			has_equipment = {
+                infantry_equipment > 4000
+            }
+			has_country_flag = SCA_MIL_4_Complete_yes
+		}
+
+		available = {
+			
+		}
+
+        cost = 0
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		selectable_mission = yes
+
+		fire_only_once = yes
+
+		days_remove = 25
+
+		is_good = yes
+
+		remove_effect = {
+			add_to_variable = { SCA_Milestone = 1 }
+			set_country_flag = SCA_MIL_5_Complete_yes
+			add_ideas = SCA_Milestone_3
+		}
+	}
+
+	SCA_Milestones_6 = {
+
+		icon = GFX_decision_generic_brain
+
+		visible = {
+			ships_in_area = { area = 57 size > 25 } 
+			has_country_flag = SCA_MIL_5_Complete_yes
+		}
+
+		available = {
+		}
+
+        cost = 0
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		selectable_mission = yes
+
+		fire_only_once = yes
+
+		days_remove = 25
+
+		is_good = yes
+
+		remove_effect = {
+			add_to_variable = { SCA_Milestone = 1 }
+			set_country_flag = SCA_MIL_6_Complete_yes
+			add_ideas = SCA_Milestone_4
+		}
+	}
+
+	SCA_Milestones_7 = {
+
+		icon = GFX_decision_generic_brain
+
+		visible = {
+			has_resources_in_country = {
+                resource = oil
+                amount > 20
+            }
+			has_country_flag = SCA_MIL_6_Complete_yes
+		}
+
+		available = {
+		}
+
+        cost = 0
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		selectable_mission = yes
+
+		fire_only_once = yes
+
+		days_remove = 25
+
+		is_good = yes
+
+		remove_effect = {
+			add_to_variable = { SCA_Milestone = 1 }
+			set_country_flag = SCA_MIL_7_Complete_yes
+			add_ideas = SCA_Milestone_5
+		}
+	}
+
+	SCA_Milestones_8 = {
+
+		icon = GFX_decision_generic_brain
+
+		visible = {
+			has_air_experience > 50
+			has_country_flag = SCA_MIL_7_Complete_yes
+		}
+
+		available = {
+		}
+
+        cost = 0
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		selectable_mission = yes
+
+		fire_only_once = yes
+
+		days_remove = 25
+
+		is_good = yes
+
+		remove_effect = {
+			add_to_variable = { SCA_Milestone = 1 }
+			set_country_flag = SCA_MIL_8_Complete_yes
+			add_ideas = SCA_Milestone_6
+		}
+	}
+
+	SCA_Milestones_9 = {
+
+		icon = GFX_decision_generic_brain
+
+		visible = {
+			OR = {
+                SCA = {
+                    is_in_faction_with = JAP
+                }
+                NOT = {
+                    JAP = {
+                        has_government = jc
+                    }
+                }
+            }
+			has_country_flag = SCA_MIL_8_Complete_yes
+		}
+
+		available = {
+		}
+
+        cost = 0
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		selectable_mission = yes
+
+		fire_only_once = yes
+
+		days_remove = 25
+
+		is_good = yes
+
+		remove_effect = {
+			add_to_variable = { SCA_Milestone = 1 }
+			set_country_flag = SCA_MIL_9_Complete_yes
+			add_political_power = 150
+		}
+	}
+
+	SCA_Milestones_10 = {
+
+		icon = GFX_decision_generic_brain
+
+		visible = {
+			has_tech = atomic_research
+			has_country_flag = SCA_MIL_9_Complete_yes
+		}
+
+		available = {
+		}
+
+        cost = 0
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		selectable_mission = yes
+
+		fire_only_once = yes
+
+		days_remove = 25
+
+		is_good = yes
+
+		remove_effect = {
+			add_to_variable = { SCA_Milestone = 1 }
+			set_country_flag = SCA_MIL_10_Complete_yes
+			add_research_slot = 1
+		}
+	}
+}
+
+PB_SCA_The_Great_American_Experiment = {
+
+	SCA_Manifest_Destiny = {
+
+		icon = GFX_decision_generic_upgrade_colony
+
+		visible = {
+		}
+
+		available = {
+		}
+
+        cost = 100
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		selectable_mission = yes
+
+		fire_only_once = yes
+
+		days_remove = 25
+
+		is_good = yes
+
+		remove_effect = {
+			add_manpower = 150000
+		}
+	}
+
+	SCA_Defenders_Of_The_Cause = {
+
+		icon = GFX_decision_generic_civil_support
+
+		visible = {
+		}
+
+		available = {
+		}
+
+        cost = 50
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		selectable_mission = yes
+
+		fire_only_once = yes
+
+		days_remove = 25
+
+		is_good = yes
+
+		remove_effect = {
+			custom_effect_tooltip = SCA_Defenders_Of_The_Cause_tt
+		}
+	}
+
+	SCA_The_Peoples_Police = {
+
+		icon = GFX_decision_generic_militia
+
+		visible = {
+		}
+
+		available = {
+		}
+
+        cost = 30
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		selectable_mission = yes
+
+		days_re_enable = 40
+
+		is_good = yes
+
+		remove_effect = {
+			add_stability = 0.05
+		}
+	}
+}

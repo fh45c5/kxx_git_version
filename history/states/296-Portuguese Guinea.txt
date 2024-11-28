@@ -1,0 +1,32 @@
+state = {
+	id = 296
+	name = "STATE_296" # Guinea-Bissau
+	manpower = 364900
+
+	state_category = two
+	resources = {
+		aluminium = 5
+	}
+	history = {
+		owner = PAF
+		add_claim_by = PAF
+		add_core_of = CVG
+		victory_points = {
+			12747 1 # Bolama
+		}
+		set_demilitarized_zone = yes
+		buildings = {
+			infrastructure = 1
+			12891 = {
+				naval_base = 1
+			}
+		}
+		start_resistance = yes
+		set_resistance = 4
+		set_compliance = 15
+	}
+
+	provinces = {
+		12747 12891
+	}
+}

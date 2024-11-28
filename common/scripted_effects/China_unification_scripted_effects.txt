@@ -1,0 +1,560 @@
+RD_superevent_china = {
+	if = {
+		limit = {
+			original_tag = CHI
+			}
+		if = {
+			limit = {
+				has_country_leader = {
+				name = "Lin Biao"
+				ruling_only = yes
+				}
+			}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = FUJIAN_LIN_BIAO_UNITE_CHINA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_lin_biao_fujian_china"
+		}
+	}
+}
+	else_if = {
+		limit = {
+			original_tag = HNN
+			}
+		if = {
+			limit = {
+				has_country_leader = {
+				name = "Tang Shengzhi"
+				ruling_only = yes
+				}
+			}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = HUNAN_TANG_SHENGZHI_UNITE_CHINA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_tang_shengzhi_hunan_china"
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_leader = {
+				name = "Liu Shaoqi"
+				ruling_only = yes
+			}
+		}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = HUNAN_LIU_SHAOQI_UNITE_CHINA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_liu_shaoqi_hunan_china"
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+			has_cosmetic_tag = HNN_YCP_CHINA
+			has_cosmetic_tag = HNN_YCP_HUNAN
+		}
+		}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = HUNAN_YCP_UNITE_CHINA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_ycp_hunan_china"
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+			has_country_flag = HNN_federalist_unite_china
+			has_country_leader = {
+				name = "Zhao Hengti"
+				ruling_only = yes
+			}
+		}
+		}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = HUNAN_ZHAO_HENGTI_UNITE_CHINA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_zhao_hengti_hunan_china"
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+			has_country_leader = {
+				name = "Tang Xiangming"
+				ruling_only = yes
+			}
+		has_cosmetic_tag = ROC
+		has_cosmetic_tag = MON_CHINA_EMPIRE
+		}
+		}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = HUNAN_TANG_XIANGMING_UNITE_CHINA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_tang_xiangming_hunan_china"
+		}
+	}
+	else_if = {
+		limit = {
+		OR = {
+		has_government = social_liberal
+		has_government = authoritarian_democrat
+		}
+		}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = HUNAN_RKMT_UNITE_CHINA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_rkmt_hunan_china"
+		}
+	}
+	else_if = {
+		limit = {
+		OR = {
+		has_government = social_democrat
+		has_country_flag = HNN_Chen_Qian_Revolution_Won
+		has_idea = HNN_re_organization_committee
+		}
+		}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = HUNAN_LKMT_UNITE_CHINA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_lkmt_hunan_china"
+		}
+	}
+	else_if = {
+		limit = { 
+		NOT = { 
+		OR = {
+		has_government = paternal_autocrat
+		has_government = national_populist 
+		}
+		} }
+		set_global_flag = Super_Event_Visible
+		set_global_flag = HUNAN_MAO_ZEDONG_UNITE_CHINA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_mao_zedong_hunan_china"
+		}
+	}
+
+
+}
+
+	else_if = {
+		limit = {
+			original_tag = TIB
+			}
+		if = {
+			limit = {
+				has_country_leader = {
+				name = "Zhang Guohua"
+				ruling_only = yes
+				}
+			}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = TIBET_UNITE_CHINA_ZHANG_GUOHUA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_guohua_china"
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_leader = {
+				name = "Sanggyai Yuexe"
+				ruling_only = yes
+			}
+		}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = TIBET_UNITE_CHINA_YUEXE
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_yexe_china"
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_leader = {
+				name = "Ngapoi Ngawang Jigme"
+				ruling_only = yes
+			}
+		}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = TIBET_UNITE_CHINA_JIGME
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_jigme_china"
+		}
+	}
+}
+	else_if = {
+		limit = {
+			original_tag = LEC
+			has_country_flag = shanghai_revolution
+			}
+		if = {
+			limit = {
+				has_country_leader = {
+				name = "Qu Qiubai"
+				ruling_only = yes
+				}
+			}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = SHANGHAI_QU_QIUBAI_UNITE_CHINA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_qu_qiubai_shanghai_china"
+		}
+	}
+		else_if = {
+			limit = {
+				has_completed_focus = LEC_CREATION_the_creation_society_heeds_the_revolutionary_call
+			}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = SHANGHAI_CREATION_UNITE_CHINA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_creation_shanghai_china"
+		}
+	}
+		else_if = {
+			limit = {
+				has_completed_focus = LEC_AGRARIAN_the_gang_of_two
+			}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = SHANGHAI_MAOIST_UNITE_CHINA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_dem_maoist_shanghai_china"
+		}
+	}
+		else = {
+		set_global_flag = Super_Event_Visible
+		set_global_flag = SHANGHAI_LLW_UNITE_CHINA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_llw_shanghai_china"
+		}
+	}
+
+}
+
+	else_if = {
+		limit = {
+			original_tag = TAI
+			}
+		if = {
+			limit = {
+				has_country_leader = {
+				name = "Lin Xiongzheng"
+				ruling_only = yes
+				}
+			}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = TAIWAN_XIONGZHENG_UNITE_CHINA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_xiongzheng_taiwan_china"
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_leader = {
+					name = "Lin Xiantang"
+					ruling_only = yes
+				}
+				has_country_leader = {
+					name = "Jiang Weishi"
+					ruling_only = yes
+				}
+			}
+		}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = TAIWAN_TPP_UNITE_CHINA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_tpp_taiwan_china"
+		}
+	}
+	
+	else_if = {
+		limit = {
+			OR = {
+				has_country_leader = {
+					name = "Jian Ji"
+					ruling_only = yes
+				}
+				has_country_leader = {
+					name = "Xie Xuehong"
+					ruling_only = yes
+				}
+				has_country_leader = {
+					name = "Lian Wenqing"
+					ruling_only = yes
+				}
+				has_country_leader = {
+					name = "Shi Ming"
+					ruling_only = yes
+				}
+				has_country_leader = {
+					name = "Lai He"
+					ruling_only = yes
+				}
+			}
+		}
+		if = {
+		limit = {
+			has_country_leader = {
+					name = "Lian Wenqing"
+					ruling_only = yes
+				}
+		}
+		country_event = {
+		id = taiwan.32
+		days = 2
+		}
+		}
+		set_global_flag = Super_Event_Visible
+		set_global_flag = TAIWAN_COMMIE_UNITE_CHINA
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+					has_country_flag = KX_superevent_sounds_off
+				}
+			}
+			scoped_sound_effect = "superev_unifed_commie_taiwan_china"
+		}
+	}
+}
+##add else if country here
+
+
+}
+
+
+
+
+
+Outer_manchuria_cores = {
+add_state_core = 408
+add_state_core = 1246
+add_state_core = 409
+add_state_core = 560
+add_state_core = 561
+add_state_core = 657
+}
+
+China_cores_EASY_for_RD_China_tags = {
+FNG = { enable_coring_at_fifty_compliance = yes }
+QIE = { enable_coring_at_fifty_compliance = yes }
+LEP = { enable_coring_at_fifty_compliance = yes }
+LEC = { enable_coring_at_fifty_compliance = yes }
+ANQ = { enable_coring_at_fifty_compliance = yes }
+CHI = { enable_coring_at_fifty_compliance = yes }
+SQI = { enable_coring_at_fifty_compliance = yes }
+XSM = { enable_coring_at_fifty_compliance = yes }
+GXC = { enable_coring_at_fifty_compliance = yes }
+HNN = { enable_coring_at_fifty_compliance = yes }
+YUN = { enable_coring_at_fifty_compliance = yes }
+SIK = { enable_coring_at_fifty_compliance = yes }
+ETS = { enable_coring_at_fifty_compliance = yes }
+TAN = { enable_coring_at_fifty_compliance = yes }
+SHX = { enable_coring_at_fifty_compliance = yes }
+SZC = { enable_coring_at_fifty_compliance = yes }
+MAN = { enable_coring_at_fifty_compliance = yes }
+TIB = { enable_coring_at_eighty_compliance = yes }
+MON = { enable_coring_at_eighty_compliance = yes }
+TAI = { enable_coring_at_eighty_compliance = yes }
+add_state_core = 1085
+add_state_core = 1086
+add_state_core = 745
+add_state_core = 858
+}
+
+Become_SOV_after_annex_rus = { #for future content after annex russia give claims on russia beforehand
+			RUS_enable_integration = yes
+			ROOT = { save_global_event_target_as = soviet_russia }
+			set_country_flag = soviet_russia_restored
+			set_cosmetic_tag = SOV_union
+			hidden_effect = {
+				for_each_scope_loop = {
+					array = RUS.RUS_starting_states_array
+					add_core_of = RUS
+					remove_claim_by = ROOT
+					add_core_of = ROOT
+				}
+				every_state = {
+					limit = {
+						is_core_rrf_state = yes
+					}
+					add_core_of = RUS
+					remove_core_of = RRF
+					if = {
+						limit = { has_resistance = yes }
+						cancel_resistance = yes
+					}
+					force_disable_resistance = { clear = yes }
+				}
+			}
+			set_capital = { state = 219 }
+			set_party_name = {
+				ideology = var:current_party_ideology_group
+				name = SOV_totalist_party
+				long_name = SOV_totalist_party_long
+			}
+			hidden_effect = {
+				set_party_name = {
+					ideology = national_populist
+					long_name = RUS_national_populist_party_long
+					name = RUS_national_populist_party
+				}
+				set_party_name = {
+					ideology = paternal_autocrat
+					long_name = RUS_paternal_autocrat_party_long
+					name = RUS_paternal_autocrat_party
+				}
+				set_party_name = {
+					ideology = authoritarian_democrat
+					long_name = RUS_authoritarian_democrat_party_long
+					name = RUS_authoritarian_democrat_party
+				}
+				set_party_name = {
+					ideology = social_conservative
+					long_name = RUS_social_conservative_party_long
+					name = RUS_social_conservative_party
+				}
+				set_party_name = {
+					ideology = market_liberal
+					long_name = RUS_market_liberal_party_long
+					name = RUS_market_liberal_party
+				}
+				set_party_name = {
+					ideology = social_liberal
+					long_name = RUS_social_liberal_party_long
+					name = RUS_social_liberal_party
+				}
+				set_party_name = {
+					ideology = social_democrat
+					long_name = RUS_social_democrat_party_long
+					name = RUS_social_democrat_party
+				}
+				set_party_name = {
+					ideology = syndicalist
+					long_name = RUS_syndicalist_party_long
+					name = RUS_syndicalist_party
+				}
+				for_each_scope_loop = {
+					array = CAN.faction_members
+					embargo_ROOT = yes
+				}
+				for_each_scope_loop = {
+					array = GER.faction_members
+					embargo_ROOT = yes
+				}
+				for_each_scope_loop = {
+					array = AUS.faction_members
+					embargo_ROOT = yes
+				}
+				FRP = { embargo_ROOT = yes }
+				GBR = { embargo_ROOT = yes }
+			}
+}

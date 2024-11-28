@@ -1,0 +1,4226 @@
+focus_tree = {
+	id = KAV_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = KAV
+		}
+	}
+	continuous_focus_position = { x = 7500 y = 6000 }
+
+	#Focus for We Live in a Society
+	focus = {
+		id = KAV_we_live_in_a_society
+		icon = GFX_KAV_we_live_in_a_society
+		x = 14
+		y = 1
+		cost = 8
+		available_if_capitulated = yes
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 30
+		}
+		select_effect = {
+			country_event = {
+				id = kav.26
+				days = 9
+			}
+			country_event = {
+				id = kav.27
+				days = 18
+			}
+			country_event = {
+				id = kav.28
+				days = 27
+			}
+			country_event = {
+				id = kav.33
+				days = 36
+			}
+			country_event = {
+				id = kav.32
+				days = 45
+			}
+		}
+		completion_reward = {
+			country_event = {
+				id = kav.1 
+			}
+			custom_effect_tooltip = generic_load_additional_focuses_tt
+		}
+	}
+	#Mayakovsky
+	focus = {
+		id = KAV_i_mayakovsky
+		icon = GFX_KAV_i_mayakovsky
+		x = -44
+		y = 2
+		cost = 1
+		prerequisite={
+			focus = KAV_we_live_in_a_society
+		}
+		available = {
+			has_country_flag = KAV_maya_wins
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = "KAV_i_mayakovsky_tooltip"
+			
+		}
+	}
+	focus = {
+		id = KAV_away_with_bourgeois_morality
+		icon = GFX_KAV_away_with_bourgeois_morality
+		x = -50
+		y = 3
+		cost = 3
+		prerequisite = {
+			focus = KAV_i_mayakovsky
+		}
+		available_if_capitulated = yes
+		available = { 
+		
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.2
+			add_stability = -0.05
+			add_ideas = KAV_away_with_bourgeois_morality_idea
+			hidden_effect = {
+				country_event = {
+					id = kav.34 
+					days = 10
+				}
+			}
+		}
+	}
+	focus = {
+		id = KAV_a_revolution_of_the_spirit
+		icon = GFX_KAV_a_revolution_of_the_spirit
+		x = -38
+		y = 3
+		cost = 3
+		prerequisite = {
+			focus = KAV_i_mayakovsky
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = {
+				KAV_prometheus_unbound_1
+			}
+			add_popularity = {
+				ideology = accelerationism
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = KAV_full_breath_of_life
+		icon = GFX_KAV_full_breath_of_life
+		x = -52
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_away_with_bourgeois_morality
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.5
+			add_ideas = KAV_full_breath_of_life_idea
+		}
+	}
+	focus = {
+		id = KAV_grim_duties
+		icon = GFX_KAV_grim_duties
+		x = -48
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_away_with_bourgeois_morality
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_grim_duties_idea
+		}
+	}
+	focus = {
+		id = KAV_promethean_marxism
+		icon = GFX_KAV_promethean_marxism
+		x = -40
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_a_revolution_of_the_spirit
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_promethean_marxism_idea
+		}
+	}
+	focus = {
+		id = KAV_proletarians_into_thinkers
+		icon = GFX_KAV_proletarians_into_thinkers
+		x = -36
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_a_revolution_of_the_spirit
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_prole_thought
+		}
+	}
+	focus = {
+		id = KAV_war_against_god
+		icon = GFX_KAV_war_against_god
+		x = -52
+		y = 5
+		cost = 3
+		prerequisite = {
+			focus = KAV_full_breath_of_life
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.29
+			add_ideas = KAV_war_against_god_idea
+		}
+	}
+	focus = {
+		id = KAV_man_made_miracles
+		icon = GFX_KAV_man_made_miracles
+		x = -36
+		y = 5
+		cost = 3
+		prerequisite = {
+			focus = KAV_proletarians_into_thinkers
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_man_made_miracles_idea
+		}
+	}
+	focus = {
+		id = KAV_no_price_too_great
+		icon = GFX_KAV_no_price_too_great
+		x = -44
+		y = 6
+		cost = 3
+		prerequisite = {
+			focus = KAV_grim_duties
+		}
+		prerequisite = {
+			focus = KAV_promethean_marxism
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_no_price_too_great_idea
+		}
+	}
+	focus = {
+		id = KAV_no_law_too_sacred
+		icon = GFX_KAV_no_law_too_sacred
+		x = -48
+		y = 7
+		cost = 3
+		prerequisite = {
+			focus = KAV_grim_duties
+		}
+		prerequisite = {
+			focus = KAV_war_against_god
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.3
+			add_ideas = KAV_no_law_too_sacred_idea
+			add_opinion_modifier = {
+				target = RUS
+				modifier = large_decrease
+			}
+			add_opinion_modifier = {
+				target = ENG
+				modifier = large_decrease
+			}
+			add_opinion_modifier = {
+				target = AUS
+				modifier = large_decrease
+			}
+			add_opinion_modifier = {
+				target = ITA
+				modifier = large_decrease
+			}
+			add_opinion_modifier = {
+				target = PRS
+				modifier = large_decrease
+			}
+			add_opinion_modifier = {
+				target = USA
+				modifier = large_decrease
+			}
+		}
+	}
+	focus = {
+		id = KAV_no_obstacle_too_strong
+		icon = GFX_KAV_no_obstacle_too_strong
+		x = -40
+		y = 7
+		cost = 3
+		prerequisite = {
+			focus = KAV_promethean_marxism
+		}
+		prerequisite = {
+			focus = KAV_man_made_miracles
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_no_obstacle_too_strong_idea
+		}
+	}
+	focus = {
+		id = KAV_for_the_future
+		icon = GFX_KAV_for_the_future
+		x = -44
+		y = 8
+		cost = 3
+		prerequisite = {
+			focus=KAV_no_law_too_sacred
+		}
+		prerequisite = {
+			focus = KAV_no_obstacle_too_strong
+		}
+		prerequisite = {
+			focus = KAV_no_price_too_great
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.4
+			add_ideas = KAV_for_the_future
+			set_cosmetic_tag = KAV_greater_utopia_accelerationism
+		}
+	}
+	focus = {
+		id = KAV_putting_eden
+		icon = GFX_KAV_putting_eden
+		x = -44
+		y = 18
+		cost = 3
+		prerequisite = {
+			focus = KAV_eurasia_freed
+		}
+		available = {
+			has_country_flag = KAV_maya_wins
+		}	
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			219 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			978 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			574 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			234 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 192
+				}
+				192 = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			
+		}
+	}
+	focus = {
+		id = KAV_new_socialist_man
+		icon = GFX_KAV_socialist_man
+		x = -45
+		y = 19
+		cost = 3
+		prerequisite = {
+			focus = KAV_putting_eden
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_political_power = 25
+			add_ideas = {
+				KAV_new_soviet
+			}
+			set_party_name = {
+				ideology = accelerationism
+				name = KAV_mayakovsky_party
+				long_name = KAV_mayakovsky_party_long
+			}
+		}
+	}
+	focus = {
+		id = KAV_from_a_regime
+		icon = GFX_KAV_regime 
+		x = -43
+		y = 19
+		cost = 3
+		prerequisite = {
+			focus = KAV_putting_eden
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.6
+			add_ideas = KAV_from_a_regime_idea
+		}
+	}
+	focus = {
+		id = KAV_religion_of_science
+		icon = GFX_KAV_science 
+		x = -46
+		y = 20
+		cost = 3
+		prerequisite = {
+			focus = KAV_new_socialist_man
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_research_slot = 1
+			add_tech_bonus = {
+				bonus = 0.2
+				uses = 4
+				category = electronics
+			}
+		}
+	}
+	focus = {
+		id = KAV_no_room
+		icon = GFX_KAV_no_room
+		x = -44
+		y = 20
+		cost = 3
+		prerequisite = {
+			focus = KAV_new_socialist_man
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_no_room_idea
+		}
+	}
+	focus = {
+		id = KAV_wonders_of_the_city
+		icon = GFX_KAV_wonders 
+		x = -42
+		y = 20
+		cost = 3
+		prerequisite = {
+			focus = KAV_from_a_regime
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.49
+			218 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			231 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			239 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			236 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = KAV_new_demiurge
+		icon = GFX_KAV_demiurge 
+		x = -44
+		y = 21
+		cost = 3
+		prerequisite = {
+			focus = KAV_no_room
+		}
+		prerequisite = {
+			focus = KAV_wonders_of_the_city
+		}
+		prerequisite = {
+			focus = KAV_religion_of_science
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			remove_country_leader_trait = KAV_demigod_of_poetry
+			add_country_leader_trait = KAV_demigod_of_poetry_1
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Khlebs 
+	focus = {
+		id = KAV_enter_king_of_time
+		icon = GFX_KAV_enter_king_of_time
+		x = -20
+		y = 2
+		cost = 1
+		prerequisite={
+			focus = KAV_we_live_in_a_society
+		}
+		available = {
+			has_country_flag = KAV_khleb_wins
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_political_power = 50
+			set_country_flag = integrate_mongolia
+		}
+	}
+	focus = {
+		id = KAV_a_new_vision
+		icon = GFX_KAV_a_new_vision
+		x = -24
+		y = 3
+		cost = 3
+		prerequisite = {
+			focus = KAV_enter_king_of_time
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_new_vision
+		}
+	}
+	focus = {
+		id = KAV_the_riddle_of_time
+		icon = GFX_KAV_the_riddle_of_time
+		x = -16
+		y = 3
+		cost = 3
+		prerequisite = {
+			focus = KAV_enter_king_of_time
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_riddle_of_time
+		}
+	}
+	focus = {
+		id = KAV_ecstasy_of_freedom
+		icon = GFX_KAV_ecstasy_of_freedom
+		x = -25
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_a_new_vision
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_stability = 0.1
+			add_popularity = {
+				ideology = vanguard_socialism
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = popular_socialism
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = anarchism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = KAV_factories_of_honey
+		icon = GFX_KAV_factories_of_honey
+		x = -22
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_a_new_vision
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_factories_of_honey
+		}
+	}
+	focus = {
+		id = KAV_the_science_of_prophecy
+		icon = GFX_KAV_the_science_of_prophecy
+		x = -18
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_the_riddle_of_time
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.2
+				uses = 2
+				category = industry
+				category = electronics
+			}
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.2
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+	focus = {
+		id = KAV_formulation_of_political_rayism
+		icon = GFX_KAV_formulation_of_political_rayism
+		x = -15
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_the_riddle_of_time
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.36
+			add_political_power = 100
+			set_party_name = {
+				ideology = accelerationism
+				name = KAV_khleb_party
+				long_name = KAV_khleb_party_long
+			}
+		}
+	}
+	focus = {
+		id = KAV_the_star_language
+		icon = GFX_KAV_the_star_language
+		x = -25
+		y = 5
+		cost = 3
+		prerequisite = {
+			focus = KAV_ecstasy_of_freedom
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_star_language
+		}
+	}
+	focus = {
+		id = KAV_europe_orbits_asia
+		icon = GFX_KAV_europe_orbits_asia
+		x = -15
+		y = 5
+		cost = 3
+		prerequisite = {
+			focus = KAV_formulation_of_political_rayism
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_between_two_worlds
+		}
+	}
+	focus = {
+		id = KAV_the_government_of_earth
+		icon = GFX_KAV_the_government_of_earth
+		x = -20
+		y = 6
+		cost = 3
+		prerequisite = {
+			focus = KAV_factories_of_honey
+		}
+		prerequisite = {
+			focus = KAV_the_science_of_prophecy
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.35
+			1056 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			229 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			1138 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = KAV_the_futurian_civilization
+		icon = GFX_KAV_the_futurian_civilization
+		x = -22
+		y = 7
+		cost = 3
+		prerequisite = {
+			focus = KAV_factories_of_honey
+		}
+		prerequisite = {
+			focus = KAV_the_star_language
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.38
+			229 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			231 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.3
+				uses = 4
+				category = infantry_weapons
+				category = artillery
+				category = armor
+			}
+		}
+	}
+	focus = {
+		id = KAV_a_jump_beyond_the_mind
+		icon = GFX_KAV_a_jump_beyond_the_mind
+		x = -18
+		y = 7
+		cost = 3
+		prerequisite = {
+			focus = KAV_the_science_of_prophecy
+		}
+		prerequisite = {
+			focus = KAV_europe_orbits_asia
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_a_jump_beyond_the_mind
+		}
+	}
+	focus = {
+		id = KAV_victory_over_the_sun
+		icon = GFX_KAV_victory_over_the_sun
+		x = -20
+		y = 8
+		cost = 3
+		prerequisite = {
+			focus = KAV_the_futurian_civilization
+		}
+		prerequisite = {
+			focus = KAV_a_jump_beyond_the_mind
+		}
+		prerequisite = {
+			focus = KAV_the_government_of_earth
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.37
+			add_stability = 0.2
+			add_war_support = 0.2 
+			add_popularity = {
+				ideology = accelerationism
+				popularity = 0.2
+			}
+			set_cosmetic_tag = KAV_state_of_time
+		}
+	}
+	focus = {
+		id = KAV_in_the_kingdom_of_new_time
+		icon = GFX_KAV_in_the_kingdom_of_new_time
+		x = -20
+		y = 18
+		cost = 3
+		prerequisite = {
+			focus = KAV_eurasia_freed
+		}
+		available = {
+			has_country_flag = KAV_khleb_wins
+		}
+		
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_kingdom
+			hidden_effect = {
+				if = {
+					limit = {
+						FRA = {
+							is_subject = no
+						}
+					}
+					country_event = {
+						id = kav.41
+						days = 14
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = KAV_unlimited_power
+		icon = GFX_KAV_unlimited_power
+		x = -21
+		y = 19
+		cost = 3
+		prerequisite = {
+			focus = KAV_in_the_kingdom_of_new_time
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.39
+			add_research_slot = 1
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 6
+				category = industry
+				category = electronics
+			}
+		}
+	}
+	focus = {
+		id = KAV_marx_squared
+		icon = GFX_KAV_marx_squared
+		x = -19
+		y = 19
+		cost = 3
+		prerequisite = {
+			focus = KAV_in_the_kingdom_of_new_time
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.40
+			add_political_power = 100 
+			add_stability = 0.1
+			add_popularity = {
+				ideology = accelerationism
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = vanguard_socialism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = KAV_poetic_architecture
+		icon = GFX_KAV_poetic_architecture
+		x = -22
+		y = 20
+		cost = 3
+		prerequisite = {
+			focus = KAV_unlimited_power
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.51
+			219 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			978 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			574 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = KAV_advantages_of_aircraft
+		icon = GFX_KAV_advantages_of_aircraft
+		x = -20
+		y = 20
+		cost = 3
+		prerequisite = {
+			focus = KAV_unlimited_power
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			978 = {
+				add_building_construction = {
+					type = air_base 
+					level = 5
+					instant_build = yes
+				}
+			}
+			570 = {
+				add_building_construction = {
+					type = air_base 
+					level = 5
+					instant_build = yes
+				}
+			}
+			234 = {
+				add_building_construction = {
+					type = air_base 
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = KAV_hail_the_genius
+		icon = GFX_KAV_hail_the_genius
+		x = -18
+		y = 20
+		cost = 3
+		prerequisite = {
+			focus = KAV_marx_squared
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_opinion_modifier = {
+				target = RPR
+				modifier = large_increase
+			}
+			add_opinion_modifier = {
+				target = JKR
+				modifier = large_increase
+			}
+			add_opinion_modifier = {
+				target = FIR
+				modifier = large_increase
+			}
+			add_opinion_modifier = {
+				target = KHW
+				modifier = large_increase
+			}
+			add_opinion_modifier = {
+				target = XIA
+				modifier = large_increase
+			}
+			add_opinion_modifier = {
+				target = MPA
+				modifier = large_increase
+			}
+		}
+	}
+	focus = {
+		id = KAV_reminder_from_the_accountant
+		icon = GFX_KAV_reminder_from_the_accountant
+		x = -20
+		y = 21
+		cost = 3
+		prerequisite = {
+			focus = KAV_advantages_of_aircraft
+		}
+		prerequisite = {
+			focus = KAV_hail_the_genius
+		}
+		prerequisite = {
+			focus = KAV_poetic_architecture
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.31
+		}
+	}
+
+	#Mirsky
+	focus = {
+		id = KAV_the_red_princes_dream
+		icon = GFX_KAV_red_prince
+		x = 84
+		y = 2
+		cost = 1
+		prerequisite={
+			focus = KAV_we_live_in_a_society
+		}
+		available = {
+			has_country_flag = KAV_mirsky_wins
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_political_power = 50
+			set_country_flag = integrate_mongolia
+		}
+	}
+	focus = {
+		id = KAV_for_the_common_task
+		icon = GFX_KAV_marvelous_descriptions_of_the_future
+		x = 80
+		y = 3
+		cost = 3
+		prerequisite = {
+			focus = KAV_the_red_princes_dream
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			 add_ideas = KAV_common_task
+			1138 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = KAV_a_russian_symphony
+		icon = GFX_KAV_russian_symphony
+		x = 88
+		y = 3
+		cost = 3
+		prerequisite = {
+			focus = KAV_the_red_princes_dream
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.8
+			add_political_power = 100
+			add_stability = 0.2
+		}
+	}
+	focus = {
+		id = KAV_marx_from_the_right
+		icon = GFX_KAV_marx
+		x = 79
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_for_the_common_task
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+				ideology = accelerationism
+				popularity = 0.2
+			}
+		}
+	}
+	focus = {
+		id = KAV_union_of_the_mystical_and_the_practical
+		icon = GFX_KAV_neo_boyar_aesthetics
+		x = 82
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_for_the_common_task
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.18
+			add_stability = 0.05 
+			add_tech_bonus = {
+			bonus = 0.2
+			uses = 3
+			category = industry
+			}
+		}
+	}
+	focus = {
+		id = KAV_heroes_of_world_creation
+		icon = GFX_KAV_heroes
+		x = 86
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_a_russian_symphony
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.7
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 2
+				category = electronics
+			}
+			231 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = KAV_fedorov_from_the_left
+		icon = GFX_KAV_fedorov
+		x = 89
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_a_russian_symphony
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 2
+				category = radar_tech
+			}
+		}
+	}
+	focus = {
+		id = KAV_a_state_of_harmonious_labour
+		icon = GFX_KAV_labour
+		x = 79
+		y = 5
+		cost = 3
+		prerequisite = {
+			focus = KAV_marx_from_the_right
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_harmonious_labour
+		}
+	}
+	focus = {
+		id = KAV_a_new_kind_of_sobornost
+		icon = GFX_KAV_sobornost
+		x = 89
+		y = 5
+		cost = 3
+		prerequisite = {
+			focus = KAV_fedorov_from_the_left
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_sobornost
+		}
+	}
+	focus = {
+		id = KAV_all_under_one_idea
+		icon = GFX_KAV_all_under_one_idea
+		x = 84
+		y = 6
+		cost = 3
+		prerequisite = {
+			focus = KAV_union_of_the_mystical_and_the_practical
+		}
+		prerequisite = {
+			focus = KAV_heroes_of_world_creation
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.9
+			add_war_support = 0.1
+			build_railway = {
+				level = 1
+				start_province = 1536
+				target_province = 4473
+			}
+			1139 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1056 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1054 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = KAV_the_sacrament_of_technology
+		icon = GFX_KAV_sacrament
+		x = 80
+		y = 7
+		cost = 3
+		prerequisite = {
+			focus = KAV_union_of_the_mystical_and_the_practical
+		}
+		prerequisite = {
+			focus = KAV_a_state_of_harmonious_labour
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 2
+				category = support_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = KAV_a_social_empire
+		icon = GFX_KAV_empire
+		x = 88
+		y = 7
+		cost = 3
+		prerequisite = {
+			focus = KAV_heroes_of_world_creation
+		}
+		prerequisite = {
+			focus = KAV_a_new_kind_of_sobornost
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_social_empire
+		}
+	}
+	focus = {
+		id = KAV_bolshevism_for_eurasia
+		icon = GFX_KAV_russification_over_all
+		x = 84
+		y = 8
+		cost = 3
+		prerequisite = {
+			focus =KAV_the_sacrament_of_technology
+		}
+		prerequisite = {
+			focus = KAV_a_social_empire
+		}
+		prerequisite = {
+			focus = KAV_all_under_one_idea
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.44
+			set_party_name = {
+				ideology = accelerationism
+				name = KAV_mirsky_party
+				long_name = KAV_mirsky_party_long
+			}
+			add_tech_bonus = {
+				bonus = 0.35
+				uses = 3
+				category = infantry_weapons
+				category = artillery
+				category = armor
+			}
+			set_cosmetic_tag = KAV_greater_eurasia_accelerationism
+		}
+	}
+	
+	focus = {
+		id = KAV_the_eurasian_idea
+		icon = GFX_KAV_eurasia
+		x = 84
+		y = 18
+		cost = 3
+		prerequisite = {
+			focus = KAV_eurasia_freed
+		}
+		available = {
+			has_country_flag = KAV_mirsky_wins
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = "Russia stands unified, we can now assert our place on the international scene."
+		}
+	}
+	focus = {
+		id = KAV_the_divine_transfiguration
+		icon = GFX_KAV_divine
+		x = 83
+		y = 19
+		cost = 3
+		prerequisite = {
+			focus = KAV_the_eurasian_idea
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+	focus = {
+		id = KAV_a_plan_for_new_industry
+		icon = GFX_KAV_industry
+		x = 85
+		y = 19
+		cost = 3
+		prerequisite = {
+			focus = KAV_the_eurasian_idea
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_new_plan
+			add_research_slot = 1
+			219 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			651 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			255 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			859 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			571 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			714 = {
+				add_extra_state_shared_building_slots = 2
+			}
+
+		}
+	}
+	focus = {
+		id = KAV_subatomic_alchemy
+		icon = GFX_KAV_subatomic_alchemy
+		x = 82
+		y = 20
+		cost = 3
+		prerequisite = {
+			focus = KAV_the_divine_transfiguration
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 2
+				category = nuclear
+			}
+		}
+	}
+	focus = {
+		id = KAV_experiments_in_rocketry
+		icon = GFX_KAV_experimetns_in_rocketry
+		x = 84
+		y = 20
+		cost = 3
+		prerequisite = {
+			focus = KAV_the_divine_transfiguration
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.46
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 3
+				category = rocketry
+				category = electronics
+			}
+		}
+	}
+	focus = {
+		id = KAV_beyond_city_and_country
+		icon = GFX_KAV_beyond 
+		x = 86
+		y = 20
+		cost = 3
+		prerequisite = {
+			focus = KAV_a_plan_for_new_industry
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.47
+			978 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			574 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			234 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			192 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = KAV_socialist_hearth
+		icon = GFX_KAV_hearth 
+		x = 84
+		y = 21
+		cost = 3
+		prerequisite = {
+			focus = KAV_experiments_in_rocketry
+		}
+		prerequisite = {
+			focus = KAV_beyond_city_and_country
+		}
+		prerequisite = {
+			focus = KAV_subatomic_alchemy
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_stability = 0.2
+			add_political_power = 100 
+			add_popularity = {
+				ideology = accelerationism
+				popularity = 0.1
+			}
+		}
+	}
+
+	#Severyanin 
+	focus = {
+		id = KAV_the_king_of_poets
+		icon = GFX_KAV_the_king_of_poets
+		x = 64
+		y = 2
+		cost = 1
+		prerequisite={
+			focus = KAV_we_live_in_a_society
+		}
+		available = {
+			has_country_flag = KAV_severyanin_wins
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = KAV_away_with_bolshevik_bores
+		icon = GFX_KAV_away_with_bolshevik_bores
+		x = 60
+		y = 3
+		cost = 3
+		prerequisite = {
+			focus = KAV_the_king_of_poets
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.42
+			set_cosmetic_tag = KAV_league
+			retire_character = KAV_iosif_stalin
+			add_popularity = {
+				ideology = vanguard_socialism
+				popularity = -0.2
+			}
+			add_popularity = {
+				ideology = popular_socialism 
+				popularity = -0.2
+			}
+		}
+	}
+	focus = {
+		id = KAV_a_key_to_the_kingdom_of_dreams
+		icon = GFX_KAV_a_key_to_the_kingdom_of_dreams
+		x = 68
+		y = 3
+		cost = 3
+		prerequisite = {
+			focus = KAV_the_king_of_poets
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_stability = 0.1
+			add_popularity = {
+				ideology = accelerationism
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = KAV_a_russian_remedy
+		icon = GFX_KAV_a_russian_remedy
+		x = 59
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_away_with_bolshevik_bores
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_ideas = KAV_russian_remedy 
+			set_party_name = {
+				ideology = accelerationism
+				name = KAV_severyanin_party
+				long_name = KAV_severyanin_party_long
+			}
+		}
+	}
+	focus = {
+		id = KAV_the_bliss_of_extravagance
+		icon = GFX_KAV_the_bliss_of_extravagance
+		x = 62
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_away_with_bolshevik_bores
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.43
+			add_ideas = KAV_bliss
+			231 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = KAV_above_the_masses
+		icon = GFX_KAV_above_the_masses
+		x = 66
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_a_key_to_the_kingdom_of_dreams
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.54
+			add_ideas = KAV_above
+			229 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = KAV_fly_away_from_graves
+		icon = GFX_KAV_fly_away_from_graves
+		x = 69
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_a_key_to_the_kingdom_of_dreams
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.35
+				uses = 3
+				category = infantry_weapons
+				category = artillery
+				category = armor
+			}
+		}
+	}
+	focus = {
+		id = KAV_facing_the_sun_of_the_world
+		icon = GFX_KAV_facing_the_sun_of_the_world
+		x = 59
+		y = 5
+		cost = 3
+		prerequisite = {
+			focus = KAV_a_russian_remedy
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			FRA = {
+				add_opinion_modifier = {
+					target = KAV
+					modifier = large_increase
+				}
+				diplomatic_relation = {
+					country = KAV
+					relation = military_access
+					active = yes
+				}
+			}
+			add_ideas = {
+				FRA_league_observer
+			}
+			diplomatic_relation = {
+				country = FRA
+				relation = military_access
+				active = yes
+			}
+			diplomatic_relation = {
+				country = FRA
+				relation = non_aggression_pact
+				active = yes
+			}
+			add_opinion_modifier = {
+				target = FRA
+				modifier = large_increase
+			}
+		}
+	}
+	focus = {
+		id = KAV_to_the_wondrous_future
+		icon = GFX_KAV_to_the_wondrous_future
+		x = 69
+		y = 5
+		cost = 3
+		prerequisite = {
+			focus = KAV_fly_away_from_graves
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.45
+			add_tech_bonus = {
+				bonus = 0.2
+				uses = 3
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = KAV_a_treasury_in_the_mountains
+		icon = GFX_KAV_a_treasury_in_the_mountains
+		x = 64
+		y = 6
+		cost = 3
+		prerequisite = {
+			focus = KAV_the_bliss_of_extravagance
+		}
+		prerequisite = {
+			focus = KAV_above_the_masses
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.52
+			1138 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			1056 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			229 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = KAV_a_new_star_in_the_revolution
+		icon = GFX_KAV_a_new_star_in_the_revolution
+		x = 60
+		y = 7
+		cost = 3
+		prerequisite = {
+			focus =KAV_the_bliss_of_extravagance
+		}
+		prerequisite = {
+			focus = KAV_facing_the_sun_of_the_world
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_opinion_modifier = {
+				target = IRE
+				modifier = large_increase
+				}
+			IRE = {
+				add_opinion_modifier = {
+				target = KAV
+				modifier = large_increase
+				}
+			}
+			add_opinion_modifier = {
+				target = FIU
+				modifier = large_increase
+				}
+			FIU = {
+				add_opinion_modifier = {
+				target = KAV
+				modifier = large_increase
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+				producer = FIU
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+				producer = FRA
+			}
+		}
+	}
+	focus = {
+		id = KAV_poetry_be_our_god
+		icon = GFX_KAV_poetry_be_our_god
+		x = 68
+		y = 7
+		cost = 3
+		prerequisite = {
+			focus =KAV_above_the_masses
+		}
+		prerequisite = {
+			focus =KAV_to_the_wondrous_future
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_stability = 0.15
+			add_popularity = {
+				ideology = accelerationism
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = KAV_apotheosis_of_igor_severyanin
+		icon = GFX_KAV_apotheosis_of_igor_severyanin
+		x = 64
+		y = 8
+		cost = 3
+		prerequisite = {
+			focus =KAV_a_new_star_in_the_revolution
+		}
+		prerequisite = {
+			focus =KAV_poetry_be_our_god
+		}
+		prerequisite = {
+			focus =KAV_a_treasury_in_the_mountains
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_country_leader_trait = KAV_poetking
+			set_cosmetic_tag = KAV_severyanin
+		}
+	}
+	focus = {
+		id = KAV_world_soul
+		icon = GFX_KAV_worldsoul
+		x = 64
+		y = 18
+		cost = 3
+		prerequisite = {
+			focus = KAV_eurasia_freed
+		}
+		available = {
+			has_country_flag = KAV_severyanin_wins
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_political_power = 100 
+			add_stability = 0.3
+			add_popularity = {
+				ideology = accelerationism
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = KAV_my_part
+		icon = GFX_KAV_part
+		x = 63
+		y = 19
+		cost = 3
+		prerequisite = {
+			focus = KAV_world_soul
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		bypass = {
+			FRA = {
+				OR = {
+					exists = no 
+					is_subject = yes
+				}
+			}
+		}
+		completion_reward = {
+				 FRA = {
+					add_to_faction = KAV
+				 }
+		}
+	}
+	focus = {
+		id = KAV_may_capital
+		icon = GFX_KAV_capital
+		x = 65
+		y = 19
+		cost = 3
+		prerequisite = {
+			focus = KAV_world_soul
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_capital
+			978 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			574 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			234 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = KAV_morality
+		icon = GFX_KAV_lie
+		x = 62
+		y = 20
+		cost = 3
+		prerequisite = {
+			focus = KAV_my_part
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.55
+			add_research_slot = 1 
+			add_tech_bonus = {
+				bonus = 0.2
+				uses = 3
+				category = industry 
+			}
+			add_tech_bonus = {
+				bonus = 0.2
+				uses = 3
+				category = electronics
+			}
+		}
+	}
+	focus = {
+		id = KAV_escape
+		icon = GFX_KAV_escape
+		x = 64
+		y = 20
+		cost = 3
+		prerequisite = {
+			focus = KAV_my_part
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.53
+			add_ideas = KAV_escape_ideas
+			add_tech_bonus = {
+				bonus = 0.2
+				uses = 3
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = KAV_eat_cake
+		icon = GFX_KAV_cake
+		x = 66
+		y = 20
+		cost = 3
+		prerequisite = {
+			focus = KAV_may_capital
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			 add_ideas = KAV_eatcake
+		}
+	}
+	focus = {
+		id = KAV_future
+		icon = GFX_KAV_future
+		x = 64
+		y = 21
+		cost = 3
+		prerequisite = {
+			focus = KAV_escape
+		}
+		prerequisite = {
+			focus = KAV_eat_cake
+		}
+		prerequisite = {
+			focus = KAV_morality
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.56
+			hidden_effect = {
+				remove_country_leader_trait = KAV_poetking
+			}
+			add_country_leader_trait = KAV_poetking_1
+		}
+	}
+
+	#Stalin 
+	focus = {
+		id = KAV_the_transmutation_of_koba
+		icon = GFX_KAV_the_transmutation_of_koba
+		x = 44
+		y = 2
+		cost = 1
+		prerequisite={
+			focus = KAV_we_live_in_a_society
+		}
+		available = {
+			has_country_flag = KAV_stalin_wins
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = "The Revolutionary coup has saved Kavkaz!"
+		}
+	}
+	focus = {
+		id = KAV_russian_revolutionary_sweep
+		icon = GFX_KAV_russian_revolutionary_sweep
+		x = 40
+		y = 3
+		cost = 3
+		prerequisite = {
+			focus =KAV_the_transmutation_of_koba
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.50
+			add_popularity = {
+				ideology = accelerationism
+				popularity = 0.1
+			}
+			add_ideas = KAV_sweep
+		}
+	}
+	focus = {
+		id = KAV_american_efficiency
+		icon = GFX_KAV_american_efficiency
+		x = 48
+		y = 3
+		cost = 3
+		prerequisite = {
+			focus =KAV_the_transmutation_of_koba
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_efficiency
+		}
+	}
+	focus = {
+		id = KAV_revolution_at_revolver_point
+		icon = GFX_KAV_revolution_at_revolver_point
+		x = 39
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_russian_revolutionary_sweep
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.12
+			add_stability = -0.05
+			add_ideas = KAV_revolver
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = military_police_tech
+			}
+		}
+	}
+	focus = {
+		id = KAV_the_catechism_of_a_practician
+		icon = GFX_KAV_the_catechism_of_a_practician
+		x = 42
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus =KAV_russian_revolutionary_sweep
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_catechism
+		}
+	}
+	focus = {
+		id = KAV_no_place_for_manilovs
+		icon = GFX_KAV_no_place_for_manilovs
+		x = 46
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_american_efficiency
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = anarchism
+				popularity = -0.2
+			}
+			add_ideas = KAV_manilovs
+		}
+	}
+	focus = {
+		id = KAV_lessons_from_comrades
+		icon = GFX_KAV_lessons_from_comrades
+		x = 49
+		y = 4
+		cost = 3
+		prerequisite = {
+			focus = KAV_american_efficiency
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.13
+			add_ideas = KAV_lessons
+		}
+	}
+	focus = {
+		id = KAV_mystery_of_yeast_and_bomb
+		icon = GFX_KAV_mystery_of_yeast_and_bomb
+		x = 39
+		y = 5
+		cost = 3
+		prerequisite = {
+			focus =KAV_revolution_at_revolver_point
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_mystery
+		}
+	}
+	focus = {
+		id = KAV_russia_of_the_20th_century
+		icon = GFX_KAV_russia_of_the_20th_century
+		x = 49
+		y = 5
+		cost = 3
+		prerequisite = {
+			focus = KAV_lessons_from_comrades
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = KAV_20thcentury
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = KAV_nothing_outside_of_the_party
+		icon = GFX_KAV_nothing_outside_of_the_party
+		x = 44
+		y = 6
+		cost = 3
+		prerequisite = {
+			focus =KAV_the_catechism_of_a_practician
+		}
+		prerequisite = {
+			focus =KAV_no_place_for_manilovs
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = accelerationism
+				popularity = 0.075
+			}
+			add_stability = 0.15
+			add_ideas = KAV_nothing
+		}
+	}
+	focus = {
+		id = KAV_the_means_to_an_end
+		icon = GFX_KAV_the_means_to_an_end
+		x = 40
+		y = 7
+		cost = 3
+		prerequisite = {
+			focus =KAV_the_catechism_of_a_practician
+		}
+		prerequisite = {
+			focus =KAV_mystery_of_yeast_and_bomb
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_stability = -0.1
+			add_ideas = KAV_means
+		}
+	}
+	focus = {
+		id = KAV_the_indomitable_human_spirit
+		icon = GFX_KAV_the_indomitable_human_spirit
+		x = 48
+		y = 7
+		cost = 3
+		prerequisite = {
+			focus = KAV_no_place_for_manilovs
+		}
+		prerequisite = {
+			focus = KAV_russia_of_the_20th_century
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			1056 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			229 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			1138 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			1136 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = KAV_beyond_good_and_evil
+		icon = GFX_KAV_beyond_good_and_evil
+		x = 44
+		y = 8
+		cost = 3
+		prerequisite = {
+			focus =KAV_the_means_to_an_end
+		}
+		prerequisite = {
+			focus =KAV_the_indomitable_human_spirit
+		}
+		prerequisite = {
+			focus =KAV_nothing_outside_of_the_party
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+				add_ideas = KAV_beyond
+				set_cosmetic_tag = KAV_stalin
+		}
+	}
+	focus = {
+		id = KAV_socialist_solomon
+		icon = GFX_KAV_solomon
+		x = 44
+		y = 18
+		cost = 3
+		prerequisite = {
+			focus = KAV_eurasia_freed
+		}
+		available = {
+			has_country_flag = KAV_stalin_wins
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = accelerationism
+				popularity = 0.20
+			}
+			add_popularity = {
+				ideology = reactionism
+				popularity = -0.15
+			}
+			add_popularity = {
+				ideology = liberalism
+				popularity = -0.15
+			}
+			add_popularity = {
+				ideology = conservatism
+				popularity = -0.15
+			}
+			add_popularity = {
+				ideology = despotism
+				popularity = -0.15
+			}
+			add_popularity = {
+				ideology = anarchism
+				popularity = -0.15
+			}
+			add_popularity = {
+				ideology = right_authoritarianism
+				popularity = -0.15
+			}
+			add_popularity = {
+				ideology = progressivism
+				popularity = -0.15
+			}
+			set_country_leader_portrait = {
+				portrait = GFX_portrait_stalin_postuni
+			}
+			set_party_name = {
+				ideology = accelerationism
+				name = KAV_stalin_party
+				long_name = KAV_stalin_party_long
+			}
+		}
+	}
+	focus = {
+		id = KAV_purification
+		icon = GFX_KAV_purification
+		x = 43
+		y = 19
+		cost = 3
+		prerequisite = {
+			focus = KAV_socialist_solomon
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.2
+				uses = 5
+				category = infantry_weapons
+			}
+		}
+	}
+	focus = {
+		id = KAV_temple_labour
+		icon = GFX_KAV_temple
+		x = 45
+		y = 19
+		cost = 3
+		prerequisite = {
+			focus = KAV_socialist_solomon
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+				country_event = kav.15
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+		}
+	}
+	focus = {
+		id = KAV_forging_hero
+		icon = GFX_KAV_bolshevikhero
+		x = 42
+		y = 20
+		cost = 3
+		prerequisite = {
+			focus = KAV_purification
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_research_slot = 1
+			random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+		}
+	}
+	focus = {
+		id = KAV_constructive_organism
+		icon = GFX_KAV_constructive
+		x = 44
+		y = 20
+		cost = 3
+		prerequisite = {
+			focus = KAV_purification
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+				country_event = kav.17
+				add_political_power = 100
+				add_stability = 0.15
+				add_popularity = {
+				ideology = accelerationism
+				popularity = 0.075
+				}
+		}
+	}
+	focus = {
+		id = KAV_father_stalin
+		icon = GFX_KAV_fatherstalin
+		x = 46
+		y = 20
+		cost = 3
+		prerequisite = {
+			focus = KAV_temple_labour
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = kav.48
+			unlock_decision_category_tooltip = KAV_transformation_stalin
+		}
+	}
+	focus = {
+		id = KAV_five_years
+		icon = GFX_KAV_fiveyears
+		x = 44
+		y = 21
+		cost = 3
+		prerequisite = {
+			focus = KAV_constructive_organism
+		}
+		prerequisite = {
+			focus = KAV_father_stalin
+		}
+		prerequisite = {
+			focus = KAV_forging_hero
+		}
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_country_leader_trait = KAV_stalin_trait
+			country_event = kav.16
+		}
+	}
+
+	###
+
+	#Focus for Forward, to Utopia!
+	focus = {
+		id = KAV_forward_to_utopia
+		icon = GFX_KAV_forward_to_utopia
+		x = 14
+		y = 9
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus=KAV_for_the_future 
+			focus=KAV_apotheosis_of_igor_severyanin 
+			focus=KAV_beyond_good_and_evil 
+			focus=KAV_bolshevism_for_eurasia 
+			focus=KAV_victory_over_the_sun
+		}
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = anarchism
+				popularity = -0.04
+			}
+			add_popularity = {
+				ideology = reactionism
+				popularity = -0.04
+			}
+			add_popularity = {
+				ideology = accelerationism
+				popularity = 0.07
+			}
+			231 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	### Military ###
+
+	#Focus for The Armed Wing of Kavkaz Society
+	focus = {
+		id = KAV_the_armed_wing_of_kavkaz_society
+		icon = GFX_KAV_armed_wing_of_kavkaz_society
+		x = 0
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_forward_to_utopia }
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			231 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			army_experience = 20
+		}
+	}
+
+	#Focus for Expand Sukhumi&Batumi Shipyards
+	focus = {
+		id = KAV_expand_sukhumibatumi_shipyards
+		icon = GFX_KAV_expand_sukhimi_and_batumi_shipyards
+		x = -1
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_the_armed_wing_of_kavkaz_society }
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			1138 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			1136 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Naval Doctrine Dispute
+	focus = {
+		id = KAV_naval_doctrine_dispute
+		icon = GFX_KAV_naval_doctrine_dispute
+		x = -4
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_expand_sukhumibatumi_shipyards }
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			navy_experience = 50
+			country_event = {
+				id = kav.11
+			}
+		}
+	}
+
+	#Focus for Air Doctrine Coffee-break
+	focus = {
+		id = KAV_air_doctrine_coffeebreak
+		icon = GFX_KAV_air_doctrine_coffee_break
+		x = 30
+		y = 13
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_naval_doctrine_dispute }
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			air_experience = 50
+			231 = {
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			country_event = {
+				id = kav.10
+			}
+		}
+	}
+
+	#Focus for Art of Fast Offensive
+	focus = {
+		id = KAV_art_of_fast_offensive
+		icon = GFX_KAV_art_of_fast_offensive
+		x = 1
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_the_armed_wing_of_kavkaz_society }
+		available = {
+		
+		}
+		bypass = { }
+		ai_will_do = {
+			factor = 35
+		}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.4
+				uses = 3
+				category = cat_mobile_warfare
+				category = cat_mass_assault
+			}
+		}
+	}
+
+	#Focus for Our Elite Mountaineers
+	focus = {
+		id = KAV_our_elite_mountaineers
+		icon = GFX_KAV_our_elite_mountaineers
+		x = -2
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_art_of_fast_offensive }
+		available = { 
+		
+		}
+		bypass = { }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = { bonus = 0.5 uses = 2 category = mountaineers_tech }
+		}
+	}
+
+	#Focus for Boost Soldiers' Morale
+	focus = {
+		id = KAV_boost_soldiers_morale
+		icon = GFX_KAV_boost_soldiers_morale
+		x = 0
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_art_of_fast_offensive }
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 35
+		}
+		completion_reward = {
+			army_experience = 10
+			add_ideas = KAV_knights
+		}
+	}
+
+	#Focus for Produce Kavkazian Equipment
+	focus = {
+		id = KAV_produce_kavkazian_equipment
+		icon = GFX_KAV_produce_kavkazian_equipment
+		x = 2
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_art_of_fast_offensive }
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 35
+		}
+		completion_reward = {
+			army_experience = 10
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.35
+				uses = 3
+				category = infantry_weapons
+				category = artillery
+			}
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.35
+				uses = 3
+				category = electronics
+				category = nuclear
+				category = rocketry
+			}
+		}
+	}
+
+	#Focus for Motorization Contracts with Italy
+	focus = {
+		id = KAV_motorization_contracts_with_italy
+		icon = GFX_KAV_motorisation_contracts_with_italy
+		x = 4
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_art_of_fast_offensive }
+		available = { 
+		
+		}
+		bypass = { }
+		ai_will_do = {
+			factor = 35
+		}
+		completion_reward = {
+			army_experience = 10
+			add_opinion_modifier = {
+				target = ITA
+				modifier = large_increase
+			}
+			add_opinion_modifier = {
+				target = FIU
+				modifier = large_increase
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = motorized_equipment
+			}
+			add_ideas = {
+				KAV_rome_colchis
+			}
+		}
+	}
+
+	#Focus for Integrate the Conquered Manpower
+	focus = {
+		id = KAV_integrate_the_conquered_manpower
+		icon = GFX_KAV_integrate_the_conquered_manpower
+		x = 1
+		y = 13
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = KAV_our_elite_mountaineers 
+		}
+		prerequisite = { 
+			focus = KAV_motorization_contracts_with_italy 
+		}
+		prerequisite = { 
+			focus = KAV_boost_soldiers_morale 
+		}
+		prerequisite = { 
+			focus = KAV_produce_kavkazian_equipment 
+		}
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 35
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KAV_knights
+				add_idea = KAV_knights1
+			}
+		}
+	}
+
+	#Focus for A Utopia of Warrior-Poets
+	focus = {
+		id = KAV_a_utopia_of_warriorpoets
+		icon = GFX_KAV_utopia_of_warrior_poets
+		x = 0
+		y = 14
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = KAV_integrate_the_conquered_manpower
+			
+		}
+		prerequisite = {
+			focus = KAV_air_doctrine_coffeebreak 
+		}
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KAV_knights1
+				add_idea = KAV_knights2
+			}
+		}
+	}
+
+	### Diplomacy ###
+
+	focus = {
+		id = KAV_eye_to_world
+		icon = GFX_KAV_review_our_diplomacy
+		x = 14
+		y = 10
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_forward_to_utopia }
+		available = { 
+			is_subject = no
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 60
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 2
+				category = air_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = KAV_heist_of_century
+		icon = GFX_KAV_from_chernigov_to_semipalatinsk
+		x = 14
+		y = 11
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_eye_to_world }
+		available = { 
+			is_subject = no
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 60
+		}
+		completion_reward = {
+			build_railway = {
+				level = 2
+				start_province = 1599
+				target_province = 9663
+			}
+			build_railway = {
+				level = 1
+				start_province = 1599
+				target_province = 3653
+			}
+			build_railway = {
+				level = 1
+				start_province = 1599
+				path = { 1599 12309 4605 11645 4477 4614 1536 7661 7495 4458 }
+				target_province = 4458
+			}
+		}
+	}
+
+	focus = {
+		id = KAV_sow_snakes
+		icon = GFX_KAV_join_fiume_french_alliance
+		x = 12
+		y = 12
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_heist_of_century }
+		available = { 
+			is_subject = no
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 60
+		}
+		completion_reward = {
+			RUS = {
+				add_opinion_modifier = {
+					target = KAV
+					modifier = futurist_scum
+				}
+			}
+			SRU = {
+				add_opinion_modifier = {
+					target = KAV
+					modifier = futurist_scum
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = KAV_abasha_protocols
+		icon = GFX_KAV_antonych_proposals
+		x = 12
+		y = 13
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_sow_snakes }
+		available = { 
+			country_exists = ZHR
+			is_neighbor_of = ZHR
+			ZHR_KAV_peaceful_uni = yes
+			is_subject = no
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 35
+		}
+		completion_reward = {
+			if ={
+				limit ={
+					KAV = {
+						is_ai = no
+					}
+				}
+				KAV = {
+					ZHR = {
+						PREV_annex_CURRENT_warlord = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					ZHR = {
+						is_ai = no
+					}
+				}
+				ZHR = {
+					KAV = {
+						PREV_annex_CURRENT_warlord = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					ZHR = {
+						is_ai = yes
+					}
+					KAV = {
+						is_ai = yes
+					}
+				}
+				country_event = russia.201
+			}
+		}
+	}
+
+	focus = {
+		id = KAV_path_of_zoroaster
+		icon = GFX_KAV_enlighten_the_persians
+		x = 14
+		y = 13
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_sow_snakes }
+		available = { 
+			is_subject = no
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 60
+		}
+		completion_reward = {
+			PER = {
+				add_opinion_modifier = {
+					target = KAV
+					modifier = futurist_scum
+				}
+			}
+			RPR = {
+				add_opinion_modifier = {
+					target = KAV
+					modifier = futurist_scum
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+				producer = PER
+			}
+		}
+	}	
+	
+	focus = {
+		id = KAV_matter_of_prison
+		icon = GFX_KAV_dominate_himalayas
+		x = 16
+		y = 12
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_heist_of_century }
+		available = { 
+			is_subject = no
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 60
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = KAV_fullfill_transcaucasia
+		icon = GFX_KAV_unite_azeris_under_our_rule
+		x = 16
+		y = 13
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_matter_of_prison }
+		available = { 
+			is_subject = no
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 60
+		}
+		completion_reward = {
+			custom_effect_tooltip = "Unlocks a decision to attack and core Armenia."
+			set_country_flag = unify_russia_soc
+			set_country_flag = invade_armenia
+		}
+	}
+
+	focus = {
+		id = KAV_clock_strikes_thirteen
+		icon = GFX_KAV_embrace_transkaukasian_federalism
+		x = 14
+		y = 14
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = KAV_abasha_protocols 
+			focus = KAV_path_of_zoroaster
+		}
+		prerequisite = {
+			focus = KAV_fullfill_transcaucasia
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 60
+		}
+		completion_reward = {
+			hidden_effect = {
+				load_oob = KAV_conquest
+			}
+			add_opinion_modifier = {
+				target = FRA
+				modifier = offered_support
+			}
+			add_opinion_modifier = {
+				target = FIU
+				modifier = offered_support
+			}
+		}
+	}
+
+	focus = {
+		id = KAV_march_north
+		icon = GFX_KAV_attack_whats_to_the_north
+		x = 14
+		y = 15
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_clock_strikes_thirteen }
+		available = { 
+			is_subject = no
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 60
+		}
+		completion_reward = {
+			custom_effect_tooltip = "Unlocks a decision to attack and core the Cossacks of the Don."
+			set_country_flag = invade_seu
+		}
+	}
+
+
+	focus = {
+		id = KAV_trek_east
+		icon = GFX_KAV_kolodzinsky_veselka_war_plans
+		x = 16
+		y = 16
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_march_north }
+		available = { 
+			is_subject = no
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 60
+		}
+		completion_reward = {
+			custom_effect_tooltip = "Unlocks a decision for our armies to march across Russia!"
+			set_country_flag = invade_kazan
+			set_country_flag = invade_siberia
+			set_country_flag = invade_mongolia
+			set_country_flag = invade_central_asia
+			set_country_flag = invade_zhelto
+			set_country_flag = invade_yakutia
+		}
+	}
+
+	focus = {
+		id = KAV_annihilate_kolchakocracy
+		icon = GFX_KAV_bring_future_to_the_three_romes
+		x = 12
+		y = 16
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_march_north }
+		available = { 
+			is_subject = no
+			NOT = {
+				country_exists = ORE
+			}
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 60
+		}
+		completion_reward = {
+			custom_effect_tooltip = "Unlocks a decision to finally claim the Russian Heartland!"
+			set_country_flag = invade_russia
+			set_country_flag = invade_baltics
+			set_country_flag = invade_finland
+		}
+		
+	}
+
+	focus = {
+		id = KAV_eurasia_freed
+		icon = GFX_KAV_eurasian_hegenony
+		x = 14
+		y = 17
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_annihilate_kolchakocracy }
+		prerequisite = { focus = KAV_trek_east }
+		available = { 
+			is_subject = no
+			owns_state = 234
+				owns_state = 652
+				owns_state = 195
+				
+				owns_state = 590
+				owns_state = 570
+				owns_state = 574
+				OR = {
+					owns_state = 978
+					MNS = {
+						exists = yes
+					}
+				}
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 60
+		}
+		completion_reward = {
+			add_political_power = 100
+			custom_effect_tooltip = "We are victorious! Russia is ours!"
+		}
+	}
+
+
+	### Economy ###
+
+	#Focus for Review Our Economy
+	focus = {
+		id = KAV_review_our_economy
+		icon = GFX_KAV_review_our_economy
+		x = 28
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_forward_to_utopia }
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	#Focus for Invite Foreign Bourgeoisie
+	focus = {
+		id = KAV_invite_foreign_bourgeoisie
+		icon = GFX_KAV_invite_foreign_bourgoise
+		x = 26
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_review_our_economy }
+		mutually_exclusive = { focus = KAV_proletarian_corporatism }
+		available = { 
+			OR={
+				has_completed_focus = KAV_apotheosis_of_igor_severyanin 
+				has_completed_focus = KAV_the_red_princes_dream 
+				has_completed_focus = KAV_enter_king_of_time
+			}
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = progressivism
+				popularity = -0.04
+			}
+			add_popularity = {
+				ideology = accelerationism
+				popularity = 0.03
+			}
+			add_ideas = {
+				KAV_dyn_cap
+			}
+			231 = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+	#Focus for Proletarian Corporatism
+	focus = {
+		id = KAV_proletarian_corporatism
+		icon = GFX_KAV_proletarian_corporatism
+		x = 30
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_review_our_economy }
+		mutually_exclusive = { focus = KAV_invite_foreign_bourgeoisie }
+		available = { 
+			OR={
+				has_completed_focus = KAV_the_red_princes_dream 
+				has_completed_focus = KAV_enter_king_of_time
+				has_completed_focus = KAV_i_mayakovsky 
+				has_completed_focus = KAV_the_transmutation_of_koba
+			}
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = vanguard_socialism
+				popularity = -0.04
+			}
+			add_popularity = {
+				ideology = accelerationism
+				popularity = 0.03
+			}
+			add_ideas = {
+				KAV_prole_corp
+			}
+			231 = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+	#Focus for Deregulation
+	focus = {
+		id = KAV_deregulation
+		icon = GFX_KAV_deregulation
+		x = 26
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_invite_foreign_bourgeoisie }
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KAV_dyn_cap
+				add_idea = KAV_dyn_cap1
+			}
+			hidden_effect ={
+				country_event = {
+					id = kav.19
+					days = 7
+				}
+			}
+		}
+	}
+
+	#Focus for Infrastructure Public Works
+	focus = {
+		id = KAV_infrastructure_public_works
+		icon = GFX_KAV_infrastructure_public_works
+		x = 28
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = KAV_invite_foreign_bourgeoisie 
+			focus = KAV_proletarian_corporatism 
+		}
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+			if = {
+				limit = {
+					num_of_controlled_states > 1
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					num_of_controlled_states > 1
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	#Focus for Benevolent Interventionism
+	focus = {
+		id = KAV_benevolent_interventionism
+		icon = GFX_KAV_benevolent_interventionism
+		x = 30
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = KAV_proletarian_corporatism }
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KAV_prole_corp
+				add_idea = KAV_prole_corp1
+			}
+			hidden_effect ={
+				country_event = {
+					id = kav.20
+					days = 14
+				}
+			}
+		}
+	}
+
+
+	#Focus for Privatized and Open to the World
+	focus = {
+		id = KAV_privatized_and_open_to_the_world
+		icon = GFX_KAV_privatized_and_open_to_world
+		x = 26
+		y = 13
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = KAV_deregulation
+			focus = KAV_benevolent_interventionism
+		}
+		prerequisite = { 
+			focus = KAV_infrastructure_public_works
+		}
+		mutually_exclusive = { 
+			focus = KAV_staterun_services_expansion 
+		}
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_stability = 0.1
+			231 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_opinion_modifier = {
+				target = USA
+				modifier = offered_support
+			}
+			add_opinion_modifier = {
+				target = ENG
+				modifier = offered_support
+			}
+			add_opinion_modifier = {
+				target = AST
+				modifier = offered_support
+			}
+			add_opinion_modifier = {
+				target = ITA
+				modifier = offered_support
+			}
+			add_opinion_modifier = {
+				target = CAN
+				modifier = offered_support
+			}
+			add_opinion_modifier = {
+				target = NZL
+				modifier = offered_support
+			}
+			add_opinion_modifier = {
+				target = TAI
+				modifier = offered_support
+			}
+			add_opinion_modifier = {
+				target = HOL
+				modifier = offered_support
+			}
+			add_opinion_modifier = {
+				target = SAF
+				modifier = offered_support
+			}
+			add_opinion_modifier = {
+				target = DEI
+				modifier = offered_support
+			}
+			add_opinion_modifier = {
+				target = MAD
+				modifier = offered_support
+			}
+		}
+	}
+
+	#Focus for State-Run Services Expansion
+	focus = {
+		id = KAV_staterun_services_expansion
+		icon = GFX_KAV_state_run_services_expansion
+		x = 28
+		y = 13
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = KAV_infrastructure_public_works
+		}
+		prerequisite = { 
+			focus = KAV_benevolent_interventionism
+			focus = KAV_deregulation
+		}
+		mutually_exclusive = { focus = KAV_privatized_and_open_to_the_world }
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					num_of_controlled_states > 1
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					num_of_controlled_states > 1
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	#Focus for Never another Zubatovshchina
+	focus = {
+		id = KAV_never_another_zubatovshchina
+		icon = GFX_KAV_never_another_zubatchevchina
+		x = 29
+		y = 14
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = KAV_staterun_services_expansion 
+			focus = KAV_privatized_and_open_to_the_world 
+		}
+		mutually_exclusive = { focus = KAV_a_national_trade_union }
+		available = { 
+		
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = anarchism
+				popularity = -0.04
+			}
+			add_popularity = {
+				ideology = accelerationism
+				popularity = 0.03
+			}
+			add_stability = -0.05
+			add_ideas = {
+				KAV_indep_unions
+			}
+		}
+	}
+
+	#Focus for A National Trade Union
+	focus = {
+		id = KAV_a_national_trade_union
+		icon = GFX_KAV_a_national_trade_union
+		x = 27
+		y = 14
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = KAV_privatized_and_open_to_the_world 
+			focus = KAV_staterun_services_expansion 
+		}
+		mutually_exclusive = { focus = KAV_never_another_zubatovshchina }
+		available = { 
+		
+		}
+		bypass = { }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = right_authoritarianism
+				popularity = -0.04
+			}
+			add_popularity = {
+				ideology = accelerationism
+				popularity = 0.03
+			}
+			add_ideas = {
+				KAV_trade_union
+			}
+		}
+	}
+	focus = {
+		id = KAV_socialize_russia
+		icon = GFX_KAV_socialize_russia
+		x = 28
+		y = 15
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = KAV_a_national_trade_union 
+			focus = KAV_never_another_zubatovshchina 
+		}
+		available = {
+			KAV = {
+				owns_state = 219
+				owns_state = 978
+			}
+		}
+		bypass = { }		
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			army_experience = 10	
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+}

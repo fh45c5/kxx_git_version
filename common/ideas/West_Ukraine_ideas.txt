@@ -1,0 +1,3735 @@
+### Galician Ideas
+
+ideas = {
+##############
+# Country ideas
+##############
+	country = {
+		WSU_Polish_Landowners = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Polish_Landowners"}
+			allowed = { always = no }
+			picture = UKR_polish_landowners
+			modifier = {
+				stability_factor = -0.1
+				consumer_goods_factor = 0.16
+				local_supplies = -0.1
+				out_of_supply_factor = 0.05
+				supply_consumption_factor = 0.03
+			}
+		}
+		WSU_Underindustrialized_Region = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Underindustrialized_Region"}
+			allowed = { always = no }
+			picture = GAL_rural_society
+			modifier = {
+				industrial_capacity_factory = -0.2
+				production_factory_max_efficiency_factor = -0.15
+				research_speed_factor = -0.05
+				monthly_population = 0.15
+			}
+		}
+		WSU_Poor_Administration = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Underindustrialized_Region"}
+			allowed = { always = no }
+			available = { NOT = { owns_state = 202 } }
+			picture = GAL_shattered_unity
+			modifier = {
+				political_power_gain = -0.25
+				command_power_gain_mult = -0.5
+			}
+		}
+		WSU_Poor_Administration_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Poor_Administration_1"}
+			allowed = { always = no }
+			available = { NOT = { owns_state = 202 } }
+			picture = GAL_shattered_unity
+			name = WSU_Poor_Administration
+			modifier = {
+				political_power_gain = -0.2
+				command_power_gain_mult = -0.25
+			}
+		}
+		WSU_Multiethnic_Tensions = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Multiethnic_Tensions"}
+			allowed = { always = no }
+			picture = UKR_ethnic
+			modifier = {
+				political_power_gain = -0.15
+				command_power_gain_mult = -0.25
+			}
+		}
+		WSU_army_0 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_army_0"}
+			allowed = { always = no }
+			picture = advisors_west_ukraine
+			name = WSU_army
+			modifier = {
+				unit_limit_bonus = 10
+			}
+		}
+		WSU_army_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_army_1"}
+			allowed = { always = no }
+			picture = advisors_west_ukraine
+			name = WSU_army
+			modifier = {
+				unit_limit_bonus = 10
+				max_planning = 0.1
+				conscription = 0.02
+			}
+		}
+		WSU_army_1_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_army_1"}
+			allowed = { always = no }
+			picture = advisors_west_ukraine
+			name = WSU_army
+			modifier = {
+				unit_limit_bonus = 10
+				max_planning = 0.1
+				conscription = 0.02
+				special_forces_cap = 0.15
+				special_forces_no_supply_grace = 120
+				special_forces_training_time_factor = 0.15
+			}
+		}
+		WSU_army_2_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_army2_1" }
+			name = WSU_army
+			picture = advisors_west_ukraine
+			allowed = { always = no }
+			modifier = {
+				unit_limit_bonus = 10
+				max_planning = 0.1
+				conscription = 0.02
+				conscription_factor = 0.15
+				training_time_army_factor = -0.10
+			}
+		}
+		WSU_army_3_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_army2_1" }
+			name = WSU_army
+			picture = advisors_west_ukraine
+			allowed = { always = no }
+			modifier = {
+				unit_limit_bonus = 10
+				max_planning = 0.1
+				conscription = 0.02
+				conscription_factor = 0.15
+				training_time_army_factor = -0.10
+				special_forces_cap = 0.15
+				special_forces_no_supply_grace = 120
+				special_forces_training_time_factor = 0.15
+			}
+		}
+		WSU_army_2_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_army2_2" }
+			name = WSU_army
+			picture = advisors_west_ukraine
+			allowed = { always = no }
+			modifier = {
+				unit_limit_bonus = 10
+				max_planning = 0.1
+				conscription = 0.02
+				resistance_growth_on_our_occupied_states = 0.15
+				resistance_target_on_our_occupied_states = 0.20
+			}
+		}
+		WSU_army_3_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_army2_2" }
+			name = WSU_army
+			picture = advisors_west_ukraine
+			allowed = { always = no }
+			modifier = {
+				unit_limit_bonus = 10
+				max_planning = 0.1
+				conscription = 0.02
+				resistance_growth_on_our_occupied_states = 0.15
+				resistance_target_on_our_occupied_states = 0.20
+				special_forces_cap = 0.15
+				special_forces_no_supply_grace = 120
+				special_forces_training_time_factor = 0.15
+			}
+		}
+		WSU_army_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_army2" }
+			name = WSU_army
+			picture = advisors_west_ukraine
+			allowed = { always = no }
+			modifier = {
+				unit_limit_bonus = 10
+				max_planning = 0.1
+				conscription = 0.02
+				conscription_factor = 0.15
+				training_time_army_factor = -0.10
+				resistance_growth_on_our_occupied_states = 0.15
+				resistance_target_on_our_occupied_states = 0.20
+			}
+		}
+		WSU_army_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_army2" }
+			name = WSU_army
+			picture = advisors_west_ukraine
+			allowed = { always = no }
+			modifier = {
+				unit_limit_bonus = 10
+				max_planning = 0.1
+				conscription = 0.02
+				conscription_factor = 0.15
+				training_time_army_factor = -0.10
+				resistance_growth_on_our_occupied_states = 0.15
+				resistance_target_on_our_occupied_states = 0.20
+				special_forces_cap = 0.15
+				special_forces_no_supply_grace = 120
+				special_forces_training_time_factor = 0.15
+			}
+		}
+		WSU_partisan_warfare_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_partisan_warfare_idea" }
+			picture = chi_army_corruption2
+			allowed = { always = no }
+			modifier = {
+				production_speed_bunker_factor = 0.15
+				max_dig_in = 1
+				dig_in_speed_factor = 0.15
+				army_core_defence_factor = 0.10
+			}
+		}
+		WSU_nascent_military_industry = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_nascent_military_industry" }
+			name = WHR_nascent_military_industry
+			picture = generic_production_bonus
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = 0.10
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+		WSU_Ukrainian_Resistance_Army = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Ukrainian_Resistance_Army" }
+			name = WSU_Ukrainian_Resistance_Army
+			picture = WSU_Ukrainian_Resistance_Army
+			allowed = { always = no }
+			modifier = {
+			army_org_factor = 0.05
+			mobilization_speed = 0.2
+			}
+			targeted_modifier = {
+				tag = GAL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = POL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.05
+			}
+		}
+		WSU_Ukrainian_Resistance_Army_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Ukrainian_Resistance_Army_1" }
+			name = WSU_Ukrainian_Resistance_Army_1
+			picture = WSU_Ukrainian_Resistance_Army
+			allowed = { always = no }
+			modifier = {
+			army_org_factor = 0.05
+			mobilization_speed = 0.2
+			land_night_attack = 0.2
+			recon_factor = 3
+			army_core_defence_factor = 0.05
+			}
+			targeted_modifier = {
+				tag = GAL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = POL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.05
+			}
+		}
+		WSU_Ukrainian_Resistance_Army_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Ukrainian_Resistance_Army_2" }
+			name = WSU_Ukrainian_Resistance_Army_2
+			picture = WSU_Ukrainian_Resistance_Army
+			allowed = { always = no }
+			modifier = {
+			army_org_factor = 0.05
+			mobilization_speed = 0.2
+			land_night_attack = 0.2
+			recon_factor = 3
+			army_core_defence_factor = 0.05
+			conscription = 0.05
+			conscription_factor = 0.15
+			}
+			targeted_modifier = {
+				tag = GAL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = POL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.05
+			}
+		}
+		WSU_Ukrainian_Resistance_Army_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Ukrainian_Resistance_Army_3" }
+			name = WSU_Ukrainian_Resistance_Army_3
+			picture = WSU_Ukrainian_Resistance_Army
+			allowed = { always = no }
+			modifier = {
+			army_org_factor = 0.05
+			mobilization_speed = 0.2
+			land_night_attack = 0.2
+			recon_factor = 3
+			army_core_defence_factor = 0.05
+			conscription = 0.05
+			conscription_factor = 0.15
+			consumer_goods_factor = -0.15
+			resistance_target = -0.3
+			required_garrison_factor = 0.1
+			}
+			targeted_modifier = {
+				tag = GAL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = POL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.05
+			}
+		}
+		WSU_Ukrainian_Resistance_Army_4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Ukrainian_Resistance_Army_4" }
+			name = WSU_Ukrainian_Resistance_Army_4
+			picture = WSU_Ukrainian_Resistance_Army
+			allowed = { always = no }
+			modifier = {
+			army_org_factor = 0.05
+			mobilization_speed = 0.2
+			land_night_attack = 0.2
+			recon_factor = 3
+			army_core_defence_factor = 0.05
+			conscription = 0.05
+			conscription_factor = 0.15
+			consumer_goods_factor = -0.15
+			resistance_target = -0.3
+			required_garrison_factor = 0.1
+			drift_defence_factor = 0.5
+			experience_loss_factor = -0.1
+			political_power_factor = 0.1
+			}
+			targeted_modifier = {
+				tag = GAL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = POL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.05
+			}
+		}
+		WSU_Ukrainian_Resistance_Army_5 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Ukrainian_Resistance_Army_5" }
+			name = WSU_Ukrainian_Resistance_Army_5
+			picture = WSU_Ukrainian_Resistance_Army
+			allowed = { always = no }
+			modifier = {
+			army_org_factor = 0.05
+			mobilization_speed = 0.2
+			land_night_attack = 0.2
+			recon_factor = 3
+			army_core_defence_factor = 0.05
+			conscription = 0.05
+			conscription_factor = 0.15
+			consumer_goods_factor = -0.15
+			resistance_target = -0.3
+			required_garrison_factor = 0.1
+			drift_defence_factor = 0.5
+			experience_loss_factor = -0.1
+			political_power_factor = 0.1
+			experience_gain_army_factor = 0.1
+			army_attack_factor = 0.05
+			}
+			targeted_modifier = {
+				tag = GAL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = POL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.05
+			}
+		}
+		WSU_Ukrainian_Resistance_Army_6 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Ukrainian_Resistance_Army_6" }
+			name = WSU_Ukrainian_Resistance_Army_6
+			picture = WSU_Ukrainian_Resistance_Army
+			allowed = { always = no }
+			modifier = {
+			army_org_factor = 0.05
+			mobilization_speed = 0.2
+			land_night_attack = 0.2
+			recon_factor = 3
+			army_core_defence_factor = 0.05
+			conscription = 0.05
+			conscription_factor = 0.13
+			consumer_goods_factor = -0.15
+			resistance_target = -0.3
+			required_garrison_factor = 0.1
+			drift_defence_factor = 0.5
+			experience_loss_factor = -0.1
+			political_power_factor = 0.1
+			experience_gain_army_factor = 0.1
+			army_attack_factor = 0.05
+			max_planning = 0.1
+			planning_speed = 0.1
+			}
+			targeted_modifier = {
+				tag = GAL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = POL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.05
+			}
+		}
+		WSU_Ukrainian_Resistance_Army_7 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Ukrainian_Resistance_Army_7" }
+			name = WSU_Ukrainian_Resistance_Army_7
+			picture = WSU_Ukrainian_Resistance_Army
+			allowed = { always = no }
+			modifier = {
+			army_org_factor = 0.05
+			mobilization_speed = 0.2
+			land_night_attack = 0.2
+			recon_factor = 3
+			army_core_defence_factor = 0.05
+			conscription = 0.05
+			conscription_factor = 0.13
+			consumer_goods_factor = -0.15
+			resistance_target = -0.3
+			required_garrison_factor = 0.1
+			drift_defence_factor = 0.5
+			experience_loss_factor = -0.1
+			political_power_factor = 0.1
+			experience_gain_army_factor = 0.1
+			army_attack_factor = 0.05
+			max_planning = 0.1
+			planning_speed = 0.1
+			weekly_manpower = 100
+			}
+			targeted_modifier = {
+				tag = GAL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = POL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = UKR
+				attack_bonus_against = 0.12
+			}
+		}
+		WSU_Ukrainian_Resistance_Army_8 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Ukrainian_Resistance_Army_8" }
+			name = WSU_Ukrainian_Resistance_Army_8
+			picture = WSU_Ukrainian_Resistance_Army
+			allowed = { always = no }
+			modifier = {
+			army_org_factor = 0.05
+			mobilization_speed = 0.2
+			land_night_attack = 0.2
+			recon_factor = 3
+			army_core_defence_factor = 0.05
+			conscription = 0.05
+			conscription_factor = 0.13
+			consumer_goods_factor = -0.15
+			resistance_target = -0.3
+			required_garrison_factor = 0.1
+			drift_defence_factor = 0.5
+			experience_loss_factor = -0.1
+			political_power_factor = 0.1
+			experience_gain_army_factor = 0.1
+			army_attack_factor = 0.05
+			max_planning = 0.1
+			planning_speed = 0.1
+			weekly_manpower = 100
+			industrial_capacity_factory = 0.08
+			min_export = -0.2
+			production_factory_max_efficiency_factor = 0.05
+			}
+			targeted_modifier = {
+				tag = GAL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = POL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = UKR
+				attack_bonus_against = 0.12
+			}
+		}
+		WSU_Ukrainian_Resistance_Army_9 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Ukrainian_Resistance_Army_9" }
+			name = WSU_Ukrainian_Resistance_Army_9
+			picture = WSU_Ukrainian_Resistance_Army
+			allowed = { always = no }
+			modifier = {
+			army_org_factor = 0.05
+			mobilization_speed = 0.2
+			land_night_attack = 0.2
+			recon_factor = 3
+			army_core_defence_factor = 0.05
+			conscription = 0.05
+			conscription_factor = 0.13
+			consumer_goods_factor = -0.15
+			resistance_target = -0.3
+			required_garrison_factor = 0.1
+			drift_defence_factor = 0.5
+			experience_loss_factor = -0.1
+			political_power_factor = 0.1
+			experience_gain_army_factor = 0.1
+			army_attack_factor = 0.05
+			max_planning = 0.1
+			planning_speed = 0.1
+			weekly_manpower = 100
+			industrial_capacity_factory = 0.16
+			min_export = -0.2
+			production_factory_max_efficiency_factor = 0.07
+			production_factory_efficiency_gain_factor = 0.03
+			}
+			targeted_modifier = {
+				tag = GAL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = POL
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = UKR
+				attack_bonus_against = 0.12
+			}
+		}
+		WSU_Nationalization_of_land = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Nationalization_of_land" }
+			name = WSU_Nationalization_of_land
+			picture = WSU_Nationalization_of_land
+			allowed = { always = no }
+			modifier = {
+			monthly_population = 0.1
+			consumer_goods_factor = -0.1
+			}
+		}
+		WSU_UNO_insurrection = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_UNO_insurrection" }
+			name = WSU_UNO_insurrection
+			picture = WSU_Ukrainian_Resistance_Army
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = -0.03
+			war_support_weekly = -0.03
+			weekly_manpower = -100
+			}
+		}
+		WSU_Eternal_Revolution = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Eternal_Revolution" }
+			name = WSU_Eternal_Revolution
+			picture = WSU_Eternal_Revolution
+			allowed = { always = no }
+			modifier = {
+			totalist_drift = 0.02
+			}
+		}
+		WSU_Eternal_Revolution_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Eternal_Revolution_1" }
+			name = WSU_Eternal_Revolution_1
+			picture = WSU_Eternal_Revolution
+			allowed = { always = no }
+			modifier = {
+			totalist_drift = 0.02
+			conscription = 0.07
+			breakthrough_factor = 0.05
+			}
+		}
+		WSU_Eternal_Revolution_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Eternal_Revolution_2" }
+			name = WSU_Eternal_Revolution_2
+			picture = WSU_Eternal_Revolution
+			allowed = { always = no }
+			modifier = {
+			totalist_drift = 0.02
+			conscription = 0.07
+			breakthrough_factor = 0.05
+			monthly_population = 0.4
+			consumer_goods_factor = -0.2
+			}
+		}
+		WSU_Eternal_Revolution_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Eternal_Revolution_3" }
+			name = WSU_Eternal_Revolution_3
+			picture = WSU_Eternal_Revolution
+			allowed = { always = no }
+			modifier = {
+			totalist_drift = 0.02
+			conscription = 0.07
+			breakthrough_factor = 0.05
+			monthly_population = 0.4
+			consumer_goods_factor = -0.2
+			production_speed_buildings_factor = 0.05
+			line_change_production_efficiency_factor = 0.06
+			production_factory_max_efficiency_factor = 0.06
+			production_factory_efficiency_gain_factor = 0.06
+			}
+		}
+		WSU_Eternal_Revolution_4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Eternal_Revolution_4" }
+			name = WSU_Eternal_Revolution_4
+			picture = WSU_Eternal_Revolution
+			allowed = { always = no }
+			modifier = {
+			totalist_drift = 0.02
+			conscription = 0.07
+			breakthrough_factor = 0.05
+			monthly_population = 0.4
+			consumer_goods_factor = -0.2
+			production_speed_buildings_factor = 0.05
+			line_change_production_efficiency_factor = 0.06
+			production_factory_max_efficiency_factor = 0.06
+			production_factory_efficiency_gain_factor = 0.06
+			surrender_limit = 1
+			}
+		}
+		WSU_Eternal_Revolution_5 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Eternal_Revolution_5" }
+			name = WSU_Eternal_Revolution_5
+			picture = WSU_Eternal_Revolution
+			allowed = { always = no }
+			modifier = {
+			totalist_drift = 0.02
+			conscription = 0.07
+			breakthrough_factor = 0.05
+			monthly_population = 0.4
+			consumer_goods_factor = -0.2
+			production_speed_buildings_factor = 0.05
+			line_change_production_efficiency_factor = 0.06
+			production_factory_max_efficiency_factor = 0.06
+			production_factory_efficiency_gain_factor = 0.06
+			surrender_limit = 1
+			army_core_defence_factor = 0.06
+			land_reinforce_rate	= 0.05
+			intelligence_agency_defense = 1
+			}
+		}
+		WSU_Eternal_Revolution_6 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Eternal_Revolution_6" }
+			name = WSU_Eternal_Revolution_6
+			picture = WSU_Eternal_Revolution
+			allowed = { always = no }
+			modifier = {
+			totalist_drift = 0.02
+			conscription = 0.07
+			breakthrough_factor = 0.05
+			monthly_population = 0.4
+			consumer_goods_factor = -0.2
+			production_speed_buildings_factor = 0.05
+			line_change_production_efficiency_factor = 0.06
+			production_factory_max_efficiency_factor = 0.06
+			production_factory_efficiency_gain_factor = 0.06
+			surrender_limit = 1
+			army_core_defence_factor = 0.06
+			land_reinforce_rate	= 0.05
+			intelligence_agency_defense = 1
+			resistance_target_on_our_occupied_states = 0.45
+			resistance_damage_to_garrison_on_our_occupied_states = 0.2
+			resistance_target = -0.2
+			resistance_decay = 0.2
+			}
+		}
+		WSU_Eternal_Revolution_7 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Eternal_Revolution_7" }
+			name = WSU_Eternal_Revolution_7
+			picture = WSU_Eternal_Revolution
+			allowed = { always = no }
+			modifier = {
+			totalist_drift = 0.02
+			conscription = 0.07
+			breakthrough_factor = 0.05
+			monthly_population = 0.4
+			consumer_goods_factor = -0.2
+			production_speed_buildings_factor = 0.05
+			line_change_production_efficiency_factor = 0.06
+			production_factory_max_efficiency_factor = 0.06
+			production_factory_efficiency_gain_factor = 0.11
+			surrender_limit = 1
+			army_core_defence_factor = 0.06
+			land_reinforce_rate	= 0.05
+			intelligence_agency_defense = 1
+			resistance_target_on_our_occupied_states = 0.45
+			resistance_damage_to_garrison_on_our_occupied_states = 0.2
+			resistance_target = -0.2
+			resistance_decay = 0.2
+			industrial_capacity_factory = 0.06
+			}
+		}
+		WSU_Eternal_Revolution_8 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Eternal_Revolution_8" }
+			name = WSU_Eternal_Revolution_8
+			picture = WSU_Eternal_Revolution
+			allowed = { always = no }
+			modifier = {
+			totalist_drift = 0.02
+			conscription = 0.07
+			breakthrough_factor = 0.05
+			monthly_population = 0.4
+			consumer_goods_factor = -0.2
+			production_speed_buildings_factor = 0.05
+			line_change_production_efficiency_factor = 0.06
+			production_factory_max_efficiency_factor = 0.06
+			production_factory_efficiency_gain_factor = 0.11
+			surrender_limit = 1
+			army_core_defence_factor = 0.06
+			land_reinforce_rate	= 0.05
+			intelligence_agency_defense = 1
+			resistance_target_on_our_occupied_states = 0.45
+			resistance_damage_to_garrison_on_our_occupied_states = 0.2
+			resistance_target = -0.2
+			resistance_decay = 0.2
+			industrial_capacity_factory = 0.06
+			offensive_war_stability_factor = 0.3
+			war_support_weekly = 0.003
+			}
+		}
+		WSU_Eternal_Revolution_9 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Eternal_Revolution_9" }
+			name = WSU_Eternal_Revolution_9
+			picture = WSU_Eternal_Revolution
+			allowed = { always = no }
+			modifier = {
+			totalist_drift = 0.02
+			conscription = 0.07
+			breakthrough_factor = 0.12
+			monthly_population = 0.4
+			consumer_goods_factor = -0.2
+			production_speed_buildings_factor = 0.05
+			line_change_production_efficiency_factor = 0.06
+			production_factory_max_efficiency_factor = 0.06
+			production_factory_efficiency_gain_factor = 0.11
+			surrender_limit = 1
+			army_core_defence_factor = -0.11
+			land_reinforce_rate	= 0.05
+			intelligence_agency_defense = 1
+			resistance_target_on_our_occupied_states = 0.45
+			resistance_damage_to_garrison_on_our_occupied_states = 0.2
+			resistance_target = -0.2
+			resistance_decay = 0.2
+			industrial_capacity_factory = 0.06
+			offensive_war_stability_factor = 0.3
+			war_support_weekly = 0.003
+			army_attack_factor = 0.11
+			initiative_factor = 0.07
+			coordination_bonus = 0.07
+			no_supply_grace = 48
+			army_speed_factor = 0.1
+			}
+		}
+		WSU_Consequences_of_the_conquest_of_Ukraine = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Consequences_of_the_conquest_of_Ukraine" }
+			name = WSU_Consequences_of_the_conquest_of_Ukraine
+			picture = WSU_Consequences_of_the_conquest_of_Ukraine
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = -0.2
+			political_power_factor = -0.3
+			consumer_goods_factor = 0.4
+			production_speed_buildings_factor = -0.1
+			production_factory_efficiency_gain_factor = -0.05
+			}
+		}
+		WSU_Consequences_of_the_conquest_of_Ukraine_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Consequences_of_the_conquest_of_Ukraine_1" }
+			name = WSU_Consequences_of_the_conquest_of_Ukraine_1
+			picture = WSU_The_nation_is_reborn
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = -0.2
+			political_power_factor = 0.2
+			consumer_goods_factor = 0.4
+			production_speed_buildings_factor = -0.1
+			production_factory_efficiency_gain_factor = -0.05
+			industry_repair_factor = 0.2
+			local_resources_factor = 0.15
+			}
+		}
+		WSU_Consequences_of_the_conquest_of_Ukraine_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Consequences_of_the_conquest_of_Ukraine_2" }
+			name = WSU_Consequences_of_the_conquest_of_Ukraine_2
+			picture = WSU_The_nation_is_reborn
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = -0.2
+			political_power_factor = 0.2
+			consumer_goods_factor = 0.4
+			production_speed_buildings_factor = -0.1
+			production_factory_efficiency_gain_factor = -0.05
+			industry_repair_factor = 0.2
+			local_resources_factor = 0.15
+			local_factories = 0.15
+			}
+		}
+		WSU_Consequences_of_the_conquest_of_Ukraine_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Consequences_of_the_conquest_of_Ukraine_3" }
+			name = WSU_Consequences_of_the_conquest_of_Ukraine_3
+			picture = WSU_The_nation_is_reborn
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = -0.2
+			political_power_factor = 0.2
+			consumer_goods_factor = 0.3
+			production_speed_buildings_factor = -0.1
+			production_factory_efficiency_gain_factor = -0.05
+			industry_repair_factor = 0.2
+			local_resources_factor = 0.15
+			local_factories = 0.15
+			monthly_population = 0.2
+			research_speed_factor = 0.07
+			}
+		}
+		WSU_Consequences_of_the_conquest_of_Ukraine_4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Consequences_of_the_conquest_of_Ukraine_4" }
+			name = WSU_Consequences_of_the_conquest_of_Ukraine_4
+			picture = WSU_The_nation_is_reborn
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = -0.2
+			political_power_factor = 0.2
+			consumer_goods_factor = 0.3
+			production_speed_buildings_factor = -0.1
+			production_factory_efficiency_gain_factor = 0.04
+			industry_repair_factor = 0.2
+			local_resources_factor = 0.15
+			local_factories = 0.15
+			monthly_population = 0.2
+			research_speed_factor = 0.07
+			production_factory_max_efficiency_factor = 0.04
+			}
+		}
+		WSU_Consequences_of_the_conquest_of_Ukraine_5 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Consequences_of_the_conquest_of_Ukraine_5" }
+			name = WSU_Consequences_of_the_conquest_of_Ukraine_5
+			picture = WSU_The_nation_is_reborn
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = -0.2
+			political_power_factor = 0.2
+			consumer_goods_factor = 0.25
+			production_speed_buildings_factor = -0.04
+			industry_repair_factor = 0.2
+			local_resources_factor = 0.15
+			local_factories = 0.15
+			monthly_population = 0.2
+			research_speed_factor = 0.07
+			production_factory_max_efficiency_factor = 0.04
+			production_factory_efficiency_gain_factor = 0.04
+			}
+		}
+		WSU_Consequences_of_the_conquest_of_Ukraine_6 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Consequences_of_the_conquest_of_Ukraine_6" }
+			name = WSU_Consequences_of_the_conquest_of_Ukraine_6
+			picture = WSU_The_nation_is_reborn
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = -0.2
+			political_power_factor = 0.2
+			consumer_goods_factor = 0.25
+			production_speed_buildings_factor = -0.04
+			industry_repair_factor = 0.2
+			local_resources_factor = 0.15
+			local_factories = 0.15
+			monthly_population = 0.2
+			research_speed_factor = 0.07
+			production_factory_max_efficiency_factor = 0.04
+			production_factory_efficiency_gain_factor = 0.04
+			min_export = -0.15
+			}
+		}
+		WSU_Consequences_of_the_conquest_of_Ukraine_7 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Consequences_of_the_conquest_of_Ukraine_7" }
+			name = WSU_Consequences_of_the_conquest_of_Ukraine_7
+			picture = WSU_The_nation_is_reborn
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = -0.2
+			political_power_factor = 0.2
+			consumer_goods_factor = 0.25
+			production_speed_buildings_factor = -0.04
+			industry_repair_factor = 0.2
+			local_resources_factor = 0.15
+			local_factories = 0.15
+			monthly_population = 0.2
+			research_speed_factor = 0.07
+			production_factory_max_efficiency_factor = 0.04
+			production_factory_efficiency_gain_factor = 0.04
+			min_export = -0.15
+			production_lack_of_resource_penalty_factor = -0.1
+			}
+		}
+		WSU_Consequences_of_the_conquest_of_Ukraine_8 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Consequences_of_the_conquest_of_Ukraine_8" }
+			name = WSU_Consequences_of_the_conquest_of_Ukraine_8
+			picture = WSU_The_nation_is_reborn
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = -0.2
+			political_power_factor = 0.2
+			consumer_goods_factor = 0.25
+			production_speed_buildings_factor = -0.04
+			industry_repair_factor = 0.2
+			local_resources_factor = 0.15
+			local_factories = 0.15
+			monthly_population = 0.2
+			research_speed_factor = 0.07
+			production_factory_max_efficiency_factor = 0.04
+			production_factory_efficiency_gain_factor = 0.04
+			min_export = -0.15
+			production_lack_of_resource_penalty_factor = -0.1
+			drift_defence_factor = 0.15
+			}
+		}
+		WSU_Consequences_of_the_conquest_of_Ukraine_8 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Consequences_of_the_conquest_of_Ukraine_8" }
+			name = WSU_Consequences_of_the_conquest_of_Ukraine_8
+			picture = WSU_The_nation_is_reborn
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = -0.2
+			political_power_factor = 0.2
+			consumer_goods_factor = 0.25
+			production_speed_buildings_factor = -0.04
+			industry_repair_factor = 0.2
+			local_resources_factor = 0.15
+			local_factories = 0.15
+			monthly_population = 0.2
+			research_speed_factor = 0.07
+			production_factory_max_efficiency_factor = 0.04
+			production_factory_efficiency_gain_factor = 0.04
+			min_export = -0.15
+			production_lack_of_resource_penalty_factor = -0.1
+			drift_defence_factor = 0.15
+			conscription = -0.06
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.09
+			}
+			targeted_modifier = {
+				tag = RUS
+				defence_bonus_against = 0.09
+			}
+		}
+		WSU_Consequences_of_the_conquest_of_Ukraine_9 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Consequences_of_the_conquest_of_Ukraine_9" }
+			name = WSU_Consequences_of_the_conquest_of_Ukraine_9
+			picture = WSU_The_nation_is_reborn
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = 0.2
+			political_power_factor = 0.2
+			consumer_goods_factor = -0.15
+			production_speed_buildings_factor = 0.04
+			industry_repair_factor = 0.2
+			local_resources_factor = 0.15
+			local_factories = 0.15
+			monthly_population = 0.2
+			research_speed_factor = 0.07
+			production_factory_max_efficiency_factor = 0.04
+			production_factory_efficiency_gain_factor = 0.04
+			min_export = -0.15
+			production_lack_of_resource_penalty_factor = -0.1
+			drift_defence_factor = 0.15
+			conscription = -0.06
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.09
+			}
+			targeted_modifier = {
+				tag = RUS
+				defence_bonus_against = 0.09
+			}
+		}
+		WSU_Consequences_of_the_conquest_of_Ukraine_10 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Consequences_of_the_conquest_of_Ukraine_10" }
+			name = WSU_Consequences_of_the_conquest_of_Ukraine_10
+			picture = WSU_The_nation_is_reborn
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = 0.2
+			political_power_factor = 0.2
+			consumer_goods_factor = -0.15
+			production_speed_buildings_factor = 0.04
+			industry_repair_factor = 0.2
+			local_resources_factor = 0.15
+			local_factories = 0.15
+			monthly_population = 0.2
+			research_speed_factor = 0.07
+			production_factory_max_efficiency_factor = 0.04
+			production_factory_efficiency_gain_factor = 0.04
+			min_export = -0.15
+			production_lack_of_resource_penalty_factor = -0.1
+			drift_defence_factor = 0.15
+			conscription = -0.06
+			cavalry_attack_factor = 0.1
+			experience_loss_factor = -0.15
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.09
+			}
+			targeted_modifier = {
+				tag = RUS
+				defence_bonus_against = 0.09
+			}
+		}
+		WSU_Consequences_of_the_conquest_of_Ukraine_11 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Consequences_of_the_conquest_of_Ukraine_11" }
+			name = WSU_Consequences_of_the_conquest_of_Ukraine_11
+			picture = WSU_The_nation_is_reborn
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = 0.2
+			political_power_factor = 0.2
+			consumer_goods_factor = -0.15
+			production_speed_buildings_factor = 0.04
+			industry_repair_factor = 0.2
+			local_resources_factor = 0.15
+			local_factories = 0.15
+			monthly_population = 0.2
+			research_speed_factor = 0.07
+			production_factory_max_efficiency_factor = 0.04
+			production_factory_efficiency_gain_factor = 0.04
+			min_export = -0.15
+			production_lack_of_resource_penalty_factor = -0.1
+			drift_defence_factor = 0.15
+			conscription = -0.06
+			cavalry_attack_factor = 0.1
+			experience_loss_factor = -0.15
+			trade_opinion_factor = 0.5
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.09
+			}
+			targeted_modifier = {
+				tag = RUS
+				defence_bonus_against = 0.09
+			}
+		}
+		WSU_Consequences_of_the_conquest_of_Ukraine_12 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Consequences_of_the_conquest_of_Ukraine_12" }
+			name = WSU_Consequences_of_the_conquest_of_Ukraine_12
+			picture = WSU_The_nation_is_reborn
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = 0.2
+			political_power_factor = 0.2
+			consumer_goods_factor = -0.15
+			production_speed_buildings_factor = 0.04
+			industry_repair_factor = 0.2
+			local_resources_factor = 0.15
+			local_factories = 0.15
+			monthly_population = 0.2
+			research_speed_factor = 0.07
+			production_factory_max_efficiency_factor = 0.04
+			production_factory_efficiency_gain_factor = 0.04
+			min_export = -0.15
+			production_lack_of_resource_penalty_factor = -0.1
+			drift_defence_factor = 0.45
+			conscription = -0.06
+			cavalry_attack_factor = 0.1
+			experience_loss_factor = -0.15
+			trade_opinion_factor = 0.5
+			operative_slot = 2
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.09
+			}
+			targeted_modifier = {
+				tag = RUS
+				defence_bonus_against = 0.09
+			}
+		}
+		WSU_National_Guard_of_Ukraine = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_National_Guard_of_Ukraine" }
+			name = WSU_National_Guard_of_Ukraine
+			picture = WSU_National_Guard_of_Ukraine
+			allowed = { always = no }
+			modifier = {
+			supply_consumption_factor = -0.07
+			terrain_penalty_reduction = 0.09
+			}
+		}
+		WSU_National_Guard_of_Ukraine_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_National_Guard_of_Ukraine_1" }
+			name = WSU_National_Guard_of_Ukraine_1
+			picture = WSU_National_Guard_of_Ukraine
+			allowed = { always = no }
+			modifier = {
+			supply_consumption_factor = -0.07
+			terrain_penalty_reduction = 0.09
+			army_artillery_defence_factor = 0.15
+			}
+		}
+		WSU_National_Guard_of_Ukraine_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_National_Guard_of_Ukraine_2" }
+			name = WSU_National_Guard_of_Ukraine_2
+			picture = WSU_National_Guard_of_Ukraine
+			allowed = { always = no }
+			modifier = {
+			supply_consumption_factor = -0.07
+			terrain_penalty_reduction = 0.09
+			army_artillery_defence_factor = 0.15
+			army_armor_attack_factor = 0.15
+			}
+		}
+		WSU_National_Guard_of_Ukraine_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_National_Guard_of_Ukraine_3" }
+			name = WSU_National_Guard_of_Ukraine_3
+			picture = WSU_National_Guard_of_Ukraine
+			allowed = { always = no }
+			modifier = {
+			supply_consumption_factor = -0.07
+			terrain_penalty_reduction = 0.09
+			army_artillery_defence_factor = 0.15
+			army_armor_attack_factor = 0.15
+			railway_gun_bombardment_factor = 0.3
+			army_morale_factor = 0.1
+			}
+		}
+		WSU_National_Guard_of_Ukraine_4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_National_Guard_of_Ukraine_4" }
+			name = WSU_National_Guard_of_Ukraine_4
+			picture = WSU_National_Guard_of_Ukraine
+			allowed = { always = no }
+			modifier = {
+			supply_consumption_factor = -0.07
+			terrain_penalty_reduction = 0.09
+			army_artillery_defence_factor = 0.15
+			army_armor_attack_factor = 0.15
+			railway_gun_bombardment_factor = 0.3
+			army_morale_factor = 0.1
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			training_time_factor = -0.1
+			breakthrough_factor = 0.05
+			}
+		}
+		WSU_National_Guard_of_Ukraine_5 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_National_Guard_of_Ukraine_5" }
+			name = WSU_National_Guard_of_Ukraine_5
+			picture = WSU_National_Guard_of_Ukraine
+			allowed = { always = no }
+			modifier = {
+			supply_consumption_factor = -0.07
+			terrain_penalty_reduction = 0.09
+			army_artillery_defence_factor = 0.15
+			army_armor_attack_factor = 0.15
+			railway_gun_bombardment_factor = 0.3
+			army_morale_factor = 0.1
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			training_time_factor = -0.1
+			breakthrough_factor = 0.05
+			planning_speed = 0.2
+			max_planning = 0.15
+			}
+		}
+		WSU_Dontsov_thought = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Dontsov_thought" }
+			name = WSU_Dontsov_thought
+			picture = WSU_Dontsov_thought
+			allowed = { always = no }
+			modifier = {
+			national_populist_drift = 0.03
+			}
+		}
+		WSU_Dontsov_thought_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Dontsov_thought_1" }
+			name = WSU_Dontsov_thought_1
+			picture = WSU_Dontsov_thought
+			allowed = { always = no }
+			modifier = {
+			national_populist_drift = 0.03
+			army_attack_factor = 0.03
+			resistance_target = -0.2
+			required_garrison_factor = 0.05
+			resistance_decay = 0.3
+			}
+		}
+		WSU_Dontsov_thought_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Dontsov_thought_2" }
+			name = WSU_Dontsov_thought_2
+			picture = WSU_Dontsov_thought
+			allowed = { always = no }
+			modifier = {
+			national_populist_drift = 0.03
+			army_attack_factor = 0.03
+			resistance_target = -0.2
+			required_garrison_factor = 0.05
+			resistance_decay = 0.3
+			consumer_goods_factor = -0.07
+			supply_consumption_factor = -0.04
+			monthly_population = -0.07
+			}
+		}
+		WSU_Dontsov_thought_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Dontsov_thought_3" }
+			name = WSU_Dontsov_thought_3
+			picture = WSU_Dontsov_thought
+			allowed = { always = no }
+			modifier = {
+			national_populist_drift = 0.03
+			army_attack_factor = 0.03
+			resistance_target = -0.2
+			required_garrison_factor = 0.05
+			resistance_decay = 0.3
+			consumer_goods_factor = -0.15
+			supply_consumption_factor = -0.04
+			monthly_population = -0.1
+			production_speed_buildings_factor = 0.04
+			industrial_capacity_factory = 0.06
+			}
+		}
+		WSU_Dontsov_thought_4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Dontsov_thought_4" }
+			name = WSU_Dontsov_thought_4
+			picture = WSU_Dontsov_thought
+			allowed = { always = no }
+			modifier = {
+			national_populist_drift = 0.05
+			army_attack_factor = 0.03
+			resistance_target = -0.2
+			required_garrison_factor = 0.05
+			resistance_decay = 0.3
+			consumer_goods_factor = -0.15
+			supply_consumption_factor = -0.04
+			monthly_population = -0.1
+			production_speed_buildings_factor = 0.04
+			industrial_capacity_factory = 0.06
+			}
+		}
+		WSU_Dontsov_thought_5 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Dontsov_thought_5" }
+			name = WSU_Dontsov_thought_5
+			picture = WSU_Dontsov_thought
+			allowed = { always = no }
+			modifier = {
+			national_populist_drift = 0.05
+			army_attack_factor = 0.03
+			resistance_target = -0.2
+			required_garrison_factor = 0.05
+			resistance_decay = 0.3
+			consumer_goods_factor = -0.15
+			supply_consumption_factor = -0.04
+			monthly_population = -0.1
+			production_speed_buildings_factor = 0.04
+			industrial_capacity_factory = 0.06
+			stability_weekly = 0.005
+			}
+		}
+		WSU_Dontsov_thought_6 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Dontsov_thought_6" }
+			name = WSU_Dontsov_thought_6
+			picture = WSU_Dontsov_thought
+			allowed = { always = no }
+			modifier = {
+			national_populist_drift = 0.05
+			army_attack_factor = 0.03
+			resistance_target = -0.2
+			required_garrison_factor = 0.05
+			resistance_decay = 0.3
+			consumer_goods_factor = -0.15
+			supply_consumption_factor = -0.04
+			monthly_population = -0.1
+			production_speed_buildings_factor = 0.04
+			industrial_capacity_factory = 0.06
+			stability_weekly = 0.005
+			encryption_factor = 1.5
+			research_speed_factor = 0.06
+			}
+		}
+		WSU_Dontsov_thought_7 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Dontsov_thought_7" }
+			name = WSU_Dontsov_thought_7
+			picture = WSU_Dontsov_thought
+			allowed = { always = no }
+			modifier = {
+			national_populist_drift = 0.05
+			army_attack_factor = 0.03
+			resistance_target = -0.2
+			required_garrison_factor = 0.05
+			resistance_decay = 0.3
+			consumer_goods_factor = -0.15
+			supply_consumption_factor = -0.04
+			monthly_population = -0.1
+			production_speed_buildings_factor = 0.04
+			industrial_capacity_factory = 0.06
+			stability_weekly = 0.005
+			encryption_factor = 1.5
+			research_speed_factor = 0.12
+			production_factory_max_efficiency_factor = 0.04
+			production_factory_efficiency_gain_factor = 0.04
+			}
+		}
+		WSU_Dontsov_thought_8 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Dontsov_thought_8" }
+			name = WSU_Dontsov_thought_8
+			picture = WSU_Dontsov_thought
+			allowed = { always = no }
+			modifier = {
+			national_populist_drift = 0.05
+			army_attack_factor = 0.03
+			resistance_target = -0.2
+			required_garrison_factor = 0.05
+			resistance_decay = 0.3
+			consumer_goods_factor = -0.15
+			supply_consumption_factor = -0.04
+			monthly_population = -0.1
+			production_speed_buildings_factor = 0.04
+			industrial_capacity_factory = 0.06
+			stability_weekly = 0.005
+			encryption_factor = 1.5
+			research_speed_factor = 0.12
+			production_factory_max_efficiency_factor = 0.04
+			production_factory_efficiency_gain_factor = 0.04
+			political_power_factor = 0.15
+			}
+		}
+		WSU_Dontsov_thought_9 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Dontsov_thought_9" }
+			name = WSU_Dontsov_thought_9
+			picture = WSU_Dontsov_thought
+			allowed = { always = no }
+			modifier = {
+			national_populist_drift = 0.05
+			army_attack_factor = 0.03
+			resistance_target = -0.2
+			required_garrison_factor = 0.05
+			resistance_decay = 0.3
+			consumer_goods_factor = -0.28
+			supply_consumption_factor = -0.04
+			monthly_population = 0.4
+			production_speed_buildings_factor = 0.04
+			industrial_capacity_factory = 0.06
+			stability_weekly = 0.005
+			encryption_factor = 1.5
+			research_speed_factor = 0.12
+			production_factory_max_efficiency_factor = 0.04
+			production_factory_efficiency_gain_factor = 0.04
+			political_power_factor = 0.15
+			}
+		}
+		WSU_Dontsov_thought_10 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Dontsov_thought_10" }
+			name = WSU_Dontsov_thought_10
+			picture = WSU_Dontsov_thought
+			allowed = { always = no }
+			modifier = {
+			national_populist_drift = 0.05
+			army_attack_factor = 0.03
+			resistance_target = -0.2
+			required_garrison_factor = 0.05
+			resistance_decay = 0.3
+			consumer_goods_factor = -0.22
+			supply_consumption_factor = -0.04
+			monthly_population = 0.4
+			production_speed_buildings_factor = 0.08
+			industrial_capacity_factory = 0.06
+			stability_weekly = 0.005
+			encryption_factor = 1.5
+			research_speed_factor = 0.19
+			production_factory_max_efficiency_factor = 0.12
+			production_factory_efficiency_gain_factor = 0.12
+			political_power_factor = 0.15
+			}
+		}
+		WSU_Dontsov_thought_11 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Dontsov_thought_11" }
+			name = WSU_Dontsov_thought_11
+			picture = WSU_Dontsov_thought
+			allowed = { always = no }
+			modifier = {
+			national_populist_drift = 0.05
+			army_attack_factor = 0.03
+			resistance_target = -0.2
+			required_garrison_factor = 0.05
+			resistance_decay = 0.3
+			consumer_goods_factor = -0.22
+			supply_consumption_factor = -0.1
+			monthly_population = 0.4
+			production_speed_buildings_factor = 0.12
+			industrial_capacity_factory = 0.06
+			stability_weekly = 0.005
+			encryption_factor = 1.5
+			research_speed_factor = 0.19
+			production_factory_max_efficiency_factor = 0.12
+			production_factory_efficiency_gain_factor = 0.12
+			political_power_factor = 0.15
+			army_core_defence_factor = 0.05
+			}
+		}
+		WSU_We_were_born_in_great_times = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_We_were_born_in_great_times" }
+			name = 我们生在伟大的时代
+			picture = UKR_ukraine_flag_idea
+			allowed = { always = no }
+			modifier = {
+			army_attack_factor = 0.1
+			army_defence_factor = -0.2
+			pocket_penalty = -0.1
+			breakthrough_factor = 0.1
+			army_strength_factor = 0.1
+			army_org_factor = 0.1
+			initiative_factor = 0.1
+			}
+		}
+		WSU_The_essence_of_the_people = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_essence_of_the_people" }
+			name = 人民的精粹
+			picture = ALB_purge
+			allowed = { always = no }
+			modifier = {
+			experience_loss_factor = 0.05
+			breakthrough_factor = 0.1
+			}
+		}
+		WSU_The_essence_of_the_people1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_essence_of_the_people1" }
+			name = 人民的精粹
+			picture = ALB_purge
+			allowed = { always = no }
+			modifier = {
+			experience_loss_factor = 0.05
+			breakthrough_factor = 0.1
+			research_speed_factor = 0.1
+			political_power_factor = -0.03
+			}
+		}
+		WSU_What_to_do = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_What_to_do" }
+			name = 怎么办
+			picture = ALB_cultural_ideological_revolution
+			allowed = { always = no }
+			modifier = {
+			compliance_growth = 0.005
+			non_core_manpower = 0.1
+			}
+		}
+		WSU_What_to_do1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_What_to_do1" }
+			name = 怎么办，只有杀！
+			picture = ALB_cultural_ideological_revolution
+			allowed = { always = no }
+			modifier = {
+			compliance_growth = 0.005
+			non_core_manpower = 0.1
+			local_factory_sabotage = -0.2
+			intelligence_agency_defense = 0.5
+			operation_cost = -0.1
+			operative_slot = 5
+			own_operative_detection_chance_factor = -0.5
+			enemy_operative_detection_chance_factor = 0.5
+			own_operative_intel_extraction_rate = -0.5
+			}
+		}
+		WSU_Unity_government = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Unity_government" }
+			name = 团结政府
+			picture = government
+			allowed = { always = no }
+			modifier = {
+			paternal_autocrat_drift = 0.05
+			}
+		}
+		WSU_Unity_government1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Unity_government1" }
+			name = 团结政府
+			picture = government
+			allowed = { always = no }
+			modifier = {
+			paternal_autocrat_drift = 0.05
+			production_speed_buildings_factor = 0.05
+			industrial_capacity_factory = 0.1
+			production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		WSU_Unity_government2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Unity_government2" }
+			name = 团结政府
+			picture = government
+			allowed = { always = no }
+			modifier = {
+			paternal_autocrat_drift = 0.05
+			production_speed_buildings_factor = 0.05
+			industrial_capacity_factory = 0.1
+			production_factory_efficiency_gain_factor = 0.05
+			conscription = 0.01
+			army_attack_factor = 0.07
+			}
+		}
+		WSU_Unity_government3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Unity_government3" }
+			name = 团结政府
+			picture = government
+			allowed = { always = no }
+			modifier = {
+			paternal_autocrat_drift = 0.05
+			production_speed_buildings_factor = 0.05
+			industrial_capacity_factory = 0.1
+			production_factory_efficiency_gain_factor = 0.05
+			conscription = 0.01
+			army_attack_factor = 0.07
+			max_planning = 0.1
+			army_org_factor = 0.1
+			}
+		}
+		WSU_Unity_government4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Unity_government4" }
+			name = 团结政府
+			picture = government
+			allowed = { always = no }
+			modifier = {
+			paternal_autocrat_drift = 0.05
+			production_speed_buildings_factor = 0.05
+			industrial_capacity_factory = 0.1
+			production_factory_efficiency_gain_factor = 0.05
+			conscription = 0.11
+			resistance_target = -0.3
+			army_attack_factor = 0.07
+			max_planning = 0.1
+			army_org_factor = 0.1
+			}
+		}
+		WSU_Unity_government5 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Unity_government5" }
+			name = 团结政府
+			picture = government
+			allowed = { always = no }
+			modifier = {
+			stability_factor = 0.1
+			research_speed_factor = 0.05
+			paternal_autocrat_drift = 0.05
+			production_speed_buildings_factor = 0.05
+			industrial_capacity_factory = 0.1
+			production_factory_efficiency_gain_factor = 0.05
+			conscription = 0.11
+			resistance_target = -0.3
+			army_attack_factor = 0.07
+			max_planning = 0.1
+			army_org_factor = 0.1
+			}
+		}
+		WSU_New_Eternal_Revolution = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_New_Eternal_Revolution" }
+			name = 新永恒革命
+			picture = Revolt_against_modern_world
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = 0.01
+			}
+		}
+		WSU_New_Eternal_Revolution1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_New_Eternal_Revolution1" }
+			name = 新永恒革命
+			picture = Revolt_against_modern_world
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = 0.01
+			resistance_target = -0.2
+			air_mission_efficiency = 0.3
+			}
+		}
+		WSU_New_Eternal_Revolution2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_New_Eternal_Revolution2" }
+			name = 新永恒革命
+			picture = Revolt_against_modern_world
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = 0.01
+			resistance_target = -0.2
+			air_mission_efficiency = 0.3
+			agency_upgrade_time = -0.3
+			intelligence_agency_defense = 0.03
+			ROOT_OUT_RESISTANCE_EFFECTIVENESS_FACTOR = 0.3
+			}
+		}
+		WSU_Prussian_militarism = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Prussian_militarism" }
+			name = 德意志军国主义
+			picture = GER_Apollo
+			allowed = { always = no }
+			modifier = {
+			conscription_factor = 0.2
+			land_reinforce_rate = 0.1
+			}
+		}
+		WSU_Prussian_militarism1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Prussian_militarism1" }
+			name = 德意志军国主义
+			picture = GER_Apollo
+			allowed = { always = no }
+			modifier = {
+			conscription_factor = 0.2
+			land_reinforce_rate = 0.1
+			conversion_cost_civ_to_mil_factor= -0.4
+			production_speed_arms_factory_factor = 0.4
+			production_speed_industrial_complex_factor = -0.2
+			}
+		}
+		WSU_Prussian_militarism2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Prussian_militarism2" }
+			name = 德意志军国主义
+			picture = GER_Apollo
+			allowed = { always = no }
+			modifier = {
+			conscription_factor = 0.3
+			combat_width_factor = -0.1
+			land_reinforce_rate = 0.1
+			conversion_cost_civ_to_mil_factor= -0.4
+			production_speed_arms_factory_factor = 0.4
+			production_speed_industrial_complex_factor = -0.2
+			}
+		}
+		WSU_Prussian_militarism3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Prussian_militarism3" }
+			name = 德意志军国主义
+			picture = GER_Apollo
+			allowed = { always = no }
+			modifier = {
+			supply_consumption_factor = -0.1
+			training_time_army_factor = -0.1
+			max_training_xp_factor = 0.1
+			conscription_factor = 0.3
+			combat_width_factor = -0.1
+			land_reinforce_rate = 0.1
+			conversion_cost_civ_to_mil_factor= -0.4
+			production_speed_arms_factory_factor = 0.4
+			production_speed_industrial_complex_factor = -0.2
+			}
+		}
+		WSU_Prussian_militarism4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Prussian_militarism4" }
+			name = 德意志军国主义
+			picture = GER_Apollo
+			allowed = { always = no }
+			modifier = {
+			supply_consumption_factor = -0.1
+			army_attack_factor = 0.1
+			army_org_factor = 0.1
+			army_morale_factor = 0.1
+			research_speed_factor = 0.1
+			training_time_army_factor = -0.1
+			max_training_xp_factor = 0.1
+			conscription_factor = 0.3
+			combat_width_factor = -0.2
+			land_reinforce_rate = 0.1
+			conversion_cost_civ_to_mil_factor= -0.4
+			production_speed_arms_factory_factor = 0.4
+			production_speed_industrial_complex_factor = -0.2
+			}
+		}
+		WSU_Revelation_from_the_United_Progressive_Party = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Revelation_from_the_United_Progressive_Party" }
+			name = 联进党的启示
+			picture = OTT_Horrors_of_the_Weltkrieg
+			allowed = { always = no }
+			modifier = {
+			non_core_manpower = -0.03
+			resistance_target = -0.5
+			}
+		}
+		WSU_Revelation_from_the_United_Progressive_Party1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Revelation_from_the_United_Progressive_Party1" }
+			name = 联进党的启示
+			picture = OTT_Horrors_of_the_Weltkrieg
+			allowed = { always = no }
+			modifier = {
+			non_core_manpower = -0.03
+			resistance_target = -0.5
+			breakthrough_factor = 0.1
+			drift_defence_factor = 0.3
+			}
+		}
+		WSU_Revelation_from_the_United_Progressive_Party2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Revelation_from_the_United_Progressive_Party2" }
+			name = 联进党的启示
+			picture = OTT_Horrors_of_the_Weltkrieg
+			allowed = { always = no }
+			modifier = {
+			non_core_manpower = -0.03
+			resistance_target = -0.5
+			breakthrough_factor = 0.1
+			drift_defence_factor = 0.3
+			weekly_manpower = 2000
+			compliance_growth = 0.005
+			}
+		}
+		WSU_Revelation_from_the_United_Progressive_Party3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Revelation_from_the_United_Progressive_Party3" }
+			name = 联进党的启示
+			picture = OTT_Horrors_of_the_Weltkrieg
+			allowed = { always = no }
+			modifier = {
+			non_core_manpower = -0.03
+			resistance_target = -0.5
+			breakthrough_factor = 0.1
+			drift_defence_factor = 0.3
+			weekly_manpower = 2000
+			compliance_growth = 0.005
+			local_building_slots_factor = 0.1
+			local_resources_factor = 0.1
+			industrial_capacity_factory = 0.1
+			resistance_growth = 0.01
+			AUTONOMY_MANPOWER_SHARE  = 0.2
+			}
+		}
+		WSU_Hate_education = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Hate_education" }
+			name = 仇恨教育
+			picture = farm_education_campaign
+			allowed = { always = no }
+			modifier = {
+			non_core_manpower = -0.01
+			monthly_population = -0.1
+			conscription_factor = 0.05
+			army_attack_factor = 0.05
+			breakthrough_factor = 0.05
+			}
+		}
+		WSU_No_class_social = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_No_class_social" }
+			name = 无阶级社会
+			picture = farm_education_campaign
+			allowed = { always = no }
+			modifier = {
+			consumer_goods_factor = -0.1
+			political_power_gain = 0.2
+			industrial_capacity_factory = 0.1
+			}
+		}
+		WSU_Legionalism = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Legionalism" }
+			name = 军团主义
+			picture = purging_black_legion
+			allowed = { always = no }
+			modifier = {
+			conscription_factor = 0.1
+			PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.1
+			industrial_capacity_factory = 0.05
+			}
+		}
+		WSU_National_awakening = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_National_awakening" }
+			name = 民族觉醒
+			picture = purging_black_legion
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = 0.05
+			conscription = 0.01
+			army_core_defence_factor = 0.05
+			army_armor_attack_factor = 0.05
+			experience_loss_factor = -0.1
+			}
+		}
+		WSU_Political_rupture = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Political_rupture" }
+			name = 政治崩溃
+			picture = generic_shackles
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = -0.2
+			political_power_gain = -0.2
+			stability_factor = -0.3
+			stability_weekly = -0.003
+			}
+		}
+		WSU_Ice_man = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Ice_man" }
+			name = 冰人
+			picture = ice_rebirth_of_the_faith
+			allowed = { always = no }
+			modifier = {
+			acclimatization_cold_climate_gain_factor = 0.2
+			attrition = -0.2
+			}
+		}
+		WSU_pan_Left_Alliance = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_pan_Left_Alliance" }
+			name = 泛左翼联盟
+			picture = generic_personality_cult
+			allowed = { always = no }
+			modifier = {
+			totalist_drift = 0.02
+			syndicalist_drift = 0.02
+			radical_socialist_drift = 0.02
+			}
+		}
+		WSU_socialist_revolution = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_socialist_revolution" }
+			name = 社会主义革命
+			picture = progressive_society
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = 0.002
+			}
+		}
+		WSU_socialist_revolution1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_socialist_revolution1" }
+			name = 社会主义革命
+			picture = progressive_society
+			allowed = { always = no }
+			modifier = {
+			breakthrough_factor = -0.05
+			max_planning = 0.15
+			planning_speed = 0.15
+			stability_weekly = 0.002
+			}
+		}
+		WSU_socialist_revolution2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_socialist_revolution2" }
+			name = 社会主义革命
+			picture = progressive_society
+			allowed = { always = no }
+			modifier = {
+			breakthrough_factor = -0.05
+			max_planning = 0.15
+			planning_speed = 0.15
+			stability_weekly = 0.002
+			political_power_factor = -0.1
+			research_speed_factor = 0.05
+			}
+		}
+		WSU_socialist_revolution3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_socialist_revolution3" }
+			name = 社会主义革命
+			picture = progressive_society
+			allowed = { always = no }
+			modifier = {
+			breakthrough_factor = -0.05
+			max_planning = 0.15
+			planning_speed = 0.15
+			stability_weekly = 0.002
+			political_power_factor = -0.1
+			political_power_gain = -0.2
+			research_speed_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		WSU_socialist_revolution4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_socialist_revolution4" }
+			name = 社会主义革命
+			picture = progressive_society
+			allowed = { always = no }
+			modifier = {
+			non_core_manpower = 0.1
+			resistance_target = -0.2
+			local_resources_factor = 0.1
+			breakthrough_factor = -0.05
+			max_planning = 0.15
+			planning_speed = 0.15
+			stability_weekly = 0.002
+			political_power_factor = -0.1
+			political_power_gain = -0.2
+			research_speed_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		WSU_Sharp_struggle = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Sharp_struggle" }
+			name = 尖锐的斗争
+			picture = generic_strong_chairman
+			allowed = { always = no }
+			modifier = {
+			war_support_weekly = 0.002
+			}
+		}
+		WSU_Sharp_struggle1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Sharp_struggle1" }
+			name = 尖锐的斗争
+			picture = generic_strong_chairman
+			allowed = { always = no }
+			modifier = {
+			war_support_weekly = 0.002
+			political_power_gain = 0.1
+			army_org_factor = 0.1
+			army_morale_factor = 0.1
+			}
+		}
+		WSU_Sharp_struggle2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Sharp_struggle2" }
+			name = 尖锐的斗争
+			picture = generic_strong_chairman
+			allowed = { always = no }
+			modifier = {
+			war_support_weekly = 0.002
+			political_power_gain = 0.1
+			army_org_factor = 0.1
+			army_morale_factor = 0.1
+			local_building_slots_factor = 0.2
+			production_speed_buildings_factor = 0.1
+			}
+		}
+		WSU_Sharp_struggle3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Sharp_struggle3" }
+			name = 尖锐的斗争
+			picture = generic_strong_chairman
+			allowed = { always = no }
+			modifier = {
+			war_support_weekly = 0.002
+			political_power_gain = 0.1
+			army_org_factor = 0.1
+			army_morale_factor = 0.1
+			local_building_slots_factor = 0.2
+			production_speed_buildings_factor = 0.1
+			consumer_goods_factor = -0.1
+			production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		WSU_Sharp_struggle4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Sharp_struggle4" }
+			name = 尖锐的斗争
+			picture = generic_strong_chairman
+			allowed = { always = no }
+			modifier = {
+			war_support_weekly = 0.002
+			political_power_gain = 0.1
+			army_org_factor = 0.1
+			army_morale_factor = 0.1
+			local_building_slots_factor = 0.2
+			production_speed_buildings_factor = 0.1
+			consumer_goods_factor = -0.1
+			production_factory_efficiency_gain_factor = 0.05
+			PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.1
+			local_resources_factor = 0.1
+			}
+		}
+		WSU_Sharp_struggle5 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Sharp_struggle5" }
+			name = 尖锐的斗争
+			picture = generic_strong_chairman
+			allowed = { always = no }
+			modifier = {
+			war_support_weekly = 0.002
+			political_power_gain = 0.1
+			army_org_factor = 0.1
+			army_morale_factor = 0.1
+			local_building_slots_factor = 0.2
+			production_speed_buildings_factor = 0.1
+			consumer_goods_factor = -0.1
+			production_factory_efficiency_gain_factor = 0.05
+			PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.1
+			local_resources_factor = 0.1
+			STABILITY_POPULARITY_FACTOR = 0.5
+			compliance_growth = 0.0005
+			}
+		}
+		WSU_Sharp_struggle6 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Sharp_struggle6" }
+			name = 尖锐的斗争
+			picture = generic_strong_chairman
+			allowed = { always = no }
+			modifier = {
+			war_support_weekly = 0.002
+			political_power_gain = 0.1
+			army_org_factor = 0.1
+			army_morale_factor = 0.1
+			local_building_slots_factor = 0.2
+			production_speed_buildings_factor = 0.1
+			consumer_goods_factor = -0.1
+			production_factory_efficiency_gain_factor = 0.05
+			PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.1
+			local_resources_factor = 0.1
+			STABILITY_POPULARITY_FACTOR = 0.5
+			compliance_growth = 0.005
+			drift_defence_factor = 0.5
+			industrial_capacity_factory = 0.1
+			}
+		}
+		WSU_revolution_nationalism = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_revolution_nationalism" }
+			name = 革命民族主义
+			picture = revolutionary_guards
+			allowed = { always = no }
+			modifier = {
+			army_core_defence_factor = 0.1
+			army_core_attack_factor = 0.1
+			}
+		}
+		WSU_revolution_nationalism1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_revolution_nationalism1" }
+			name = 革命民族主义
+			picture = revolutionary_guards
+			allowed = { always = no }
+			modifier = {
+			army_core_defence_factor = 0.1
+			army_core_attack_factor = 0.1
+			political_power_factor = 0.2
+			industrial_capacity_factory = 0.1
+			line_change_production_efficiency_factor = 0.15
+			}
+		}
+		WSU_revolution_nationalism2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_revolution_nationalism2" }
+			name = 革命民族主义
+			picture = revolutionary_guards
+			allowed = { always = no }
+			modifier = {
+			army_core_defence_factor = 0.1
+			army_core_attack_factor = 0.1
+			political_power_factor = 0.2
+			industrial_capacity_factory = 0.1
+			line_change_production_efficiency_factor = 0.15
+			stability_weekly = 0.002
+			PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.3
+			compliance_growth = 0.001
+			resistance_target = -0.2
+			}
+		}
+		WSU_revolution_nationalism3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_revolution_nationalism3" }
+			name = 革命民族主义
+			picture = revolutionary_guards
+			allowed = { always = no }
+			modifier = {
+			army_core_defence_factor = 0.1
+			army_core_attack_factor = 0.1
+			political_power_factor = 0.2
+			industrial_capacity_factory = 0.1
+			line_change_production_efficiency_factor = 0.15
+			stability_weekly = 0.002
+			PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.3
+			compliance_growth = 0.001
+			resistance_target = -0.2
+			consumer_goods_factor = -0.1
+			monthly_population = 0.1
+			production_speed_nuclear_reactor_factor = 0.1
+			}
+		}
+		WSU_revolution_nationalism4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_revolution_nationalism4" }
+			name = 革命民族主义
+			picture = revolutionary_guards
+			allowed = { always = no }
+			modifier = {
+			local_building_slots_factor = 0.3
+			army_core_defence_factor = 0.1
+			army_core_attack_factor = 0.1
+			political_power_factor = 0.2
+			political_power_gain = 0.2
+			industrial_capacity_factory = 0.2
+			line_change_production_efficiency_factor = 0.15
+			stability_weekly = 0.004
+			PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.3
+			compliance_growth = 0.001
+			resistance_target = -0.2
+			consumer_goods_factor = -0.1
+			monthly_population = 0.1
+			production_speed_nuclear_reactor_factor = 0.3
+			}
+		}
+		WSU_makhnoism = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_makhnoism" }
+			name = 马赫诺主义
+			picture = generic_syndicalist_manpower
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = -0.001
+			industrial_capacity_factory = 0.15
+			PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.15
+			production_speed_buildings_factor = 0.15
+			}
+		}
+		WSU_makhnoism1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_makhnoism1" }
+			name = 马赫诺主义
+			picture = generic_syndicalist_manpower
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = -0.002
+			industrial_capacity_factory = 0.15
+			PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.15
+			production_speed_buildings_factor = 0.15
+			compliance_growth = 0.001
+			resistance_target = -0.5
+			required_garrison_factor = -0.5
+			}
+		}
+		WSU_makhnoism2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_makhnoism2" }
+			name = 马赫诺主义
+			picture = generic_syndicalist_manpower
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = -0.003
+			production_speed_arms_factory_factor = 0.2
+			army_attack_factor = 0.15
+			conscription_factor = 0.3
+			land_reinforce_rate = 0.1
+			recon_factor = 0.2
+			industrial_capacity_factory = 0.15
+			PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.15
+			production_speed_buildings_factor = 0.15
+			compliance_growth = 0.001
+			resistance_target = -0.5
+			required_garrison_factor = -0.5
+			}
+		}
+		WSU_makhnoism3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_makhnoism3" }
+			name = 马赫诺主义
+			picture = generic_syndicalist_manpower
+			allowed = { always = no }
+			modifier = {
+			army_core_defence_factor = 0.1
+			army_core_attack_factor = 0.1
+			army_speed_factor = 0.1
+			conscription = 0.03
+			stability_weekly = -0.004
+			production_speed_arms_factory_factor = 0.2
+			army_attack_factor = 0.15
+			conscription_factor = 0.3
+			land_reinforce_rate = 0.1
+			recon_factor = 0.2
+			industrial_capacity_factory = 0.15
+			PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.15
+			production_speed_buildings_factor = 0.15
+			compliance_growth = 0.001
+			resistance_target = -0.5
+			required_garrison_factor = -0.5
+			}
+		}
+		WSU_makhnoism4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_makhnoism4" }
+			name = 马赫诺主义
+			picture = generic_syndicalist_manpower
+			allowed = { always = no }
+			modifier = {
+			army_core_defence_factor = 0.1
+			army_core_attack_factor = 0.1
+			army_speed_factor = 0.1
+			conscription = 0.03
+			stability_weekly = -0.005
+			production_speed_arms_factory_factor = 0.2
+			army_attack_factor = 0.15
+			conscription_factor = 0.3
+			land_reinforce_rate = 0.1
+			recon_factor = 0.2
+			industrial_capacity_factory = 0.3
+			PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.3
+			production_speed_buildings_factor = 0.3
+			compliance_growth = 0.001
+			resistance_target = -0.5
+			required_garrison_factor = -0.5
+			}
+		}
+		WSU_communist_dream = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_communist_dream" }
+			name = 共产主义愿景
+			picture = communal_democracy
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = -0.1
+			research_speed_factor = 0.1
+			}
+		}
+		WSU_communist_dream1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_communist_dream1" }
+			name = 共产主义愿景
+			picture = communal_democracy
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = -0.2
+			research_speed_factor = 0.1
+			consumer_goods_factor = -0.15
+			local_resources_factor = 0.15
+			industrial_capacity_factory = 0.15
+			PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.15
+			}
+		}
+		WSU_communist_dream2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_communist_dream2" }
+			name = 共产主义愿景
+			picture = communal_democracy
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = -0.3
+			command_power_gain_mult = 0.5
+			research_speed_factor = 0.1
+			consumer_goods_factor = -0.15
+			local_resources_factor = 0.15
+			industrial_capacity_factory = 0.15
+			PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.15
+			stability_weekly = 0.005
+			war_support_weekly = 0.005
+			}
+		}
+		WSU_communist_dream3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_communist_dream3" }
+			name = 共产主义愿景
+			picture = communal_democracy
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = -0.3
+			command_power_gain_mult = 0.5
+			weekly_manpower = 2500
+			research_speed_factor = 0.15
+			consumer_goods_factor = -0.15
+			local_resources_factor = 0.15
+			industrial_capacity_factory = 0.15
+			production_speed_buildings_factor = 0.15
+			PRODUCTION_FACTORY_START_EFFICIENCY_FACTOR = 0.15
+			stability_weekly = 0.005
+			war_support_weekly = 0.005
+			}
+		}
+		WSU_lenin = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_lenin" }
+			name = 列宁之志
+			picture = ALB_vanguard_reborn_leninism
+			allowed = { always = no }
+			modifier = {
+			political_power_gain = -0.2
+			intelligence_agency_defense = 0.5
+			operative_slot = 0.5
+			ROOT_OUT_RESISTANCE_EFFECTIVENESS_FACTOR = 0.5
+			INTEL_NETWORK_GAIN_FACTOR = 0.5
+			}
+		}
+		WSU_social_democrat_win = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_social_democrat_win" }
+			name = 社会民主之胜
+			picture = generic_social_democracy
+			allowed = { always = no }
+			modifier = {
+			social_democrat_drift = 0.05
+			}
+		}
+		WSU_Multifaceted_government = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_social_democrat_win" }
+			name = 多面政府
+			picture = government
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = 0.1
+			}
+		}
+		WSU_Bandera_support = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Bandera_support" }
+			name = 班德拉的支持
+			picture = Bandera_support
+			allowed = { always = no }
+			modifier = {
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			breakthrough_factor = 0.05
+			}
+		}
+		WSU_Bandera_support1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Bandera_support1" }
+			name = 班德拉的支持
+			picture = Bandera_support
+			allowed = { always = no }
+			modifier = {
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			breakthrough_factor = 0.05
+			grant_medal_cost_factor = -0.75
+			drift_defence_factor = 0.5
+			army_leader_start_level = 1
+			}
+		}
+		WSU_Bandera_support2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Bandera_support2" }
+			name = 班德拉的支持
+			picture = Bandera_support
+			allowed = { always = no }
+			modifier = {
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			breakthrough_factor = 0.05
+			grant_medal_cost_factor = -0.75
+			drift_defence_factor = 0.5
+			army_leader_start_level = 1
+			attrition = -0.1
+			supply_node_range = 0.3
+			repair_speed_rail_way_factor = 0.2
+			}
+		}
+		WSU_Shumsky_supports = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Shumsky_supports" }
+			name = 舒姆斯基的支持
+			picture = Shumsky_supports
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = 0.1
+			}
+		}
+		WSU_Shumsky_supports1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Shumsky_supports1" }
+			name = 舒姆斯基的支持
+			picture = Shumsky_supports
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = 0.1
+			research_speed_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.1
+			production_factory_start_efficiency_factor = 0.1
+			}
+		}
+		WSU_Shumsky_supports2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Shumsky_supports2" }
+			name = 舒姆斯基的支持
+			picture = Shumsky_supports
+			allowed = { always = no }
+			modifier = {
+			production_factory_start_efficiency_factor = 0.5
+			industrial_capacity_factory = 0.15
+			research_speed_factor = 0.15
+			line_change_production_efficiency_factor = 0.15
+			production_factory_efficiency_gain_factor = 0.15
+			production_factory_start_efficiency_factor = 0.15
+			}
+		}
+		WSU_Winnichenko_support = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Winnichenko_support" }
+			name = 温尼琴科的支持
+			picture = Winnichenko_support
+			allowed = { always = no }
+			modifier = {
+			war_support_weekly = 0.002
+			}
+		}
+		WSU_Winnichenko_support1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Winnichenko_support1" }
+			name = 温尼琴科的支持
+			picture = Winnichenko_support
+			allowed = { always = no }
+			modifier = {
+			war_support_weekly = 0.002
+			political_power_gain = 0.1
+			production_speed_buildings_factor = 0.1
+			production_speed_industrial_complex_factor = 0.1
+			}
+		}
+		WSU_Winnichenko_support2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Winnichenko_support2" }
+			name = 温尼琴科的支持
+			picture = Winnichenko_support
+			allowed = { always = no }
+			modifier = {
+			weekly_manpower = 1500
+			war_support_weekly = 0.002
+			send_volunteer_size = 2
+			war_support_weekly = 0.002
+			political_power_gain = 0.1
+			production_speed_buildings_factor = 0.1
+			production_speed_industrial_complex_factor = 0.1
+			}
+		}
+		WSU_The_Progressive_Era = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_Progressive_Era" }
+			name = 进步主义时代
+			picture = Ukraine_progressivism
+			allowed = { always = no }
+			modifier = {
+			stability_factor = 0.1
+			political_power_gain = 0.1
+			}
+		}
+		WSU_The_Progressive_Era1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_Progressive_Era1" }
+			name = 进步主义时代
+			picture = Ukraine_progressivism
+			allowed = { always = no }
+			modifier = {
+			stability_factor = 0.1
+			political_power_gain = 0.1
+			production_speed_buildings_factor = 0.05
+			production_speed_industrial_complex_factor = 0.05
+			}
+		}
+		WSU_The_Progressive_Era2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_Progressive_Era2" }
+			name = 进步主义时代
+			picture = Ukraine_progressivism
+			allowed = { always = no }
+			modifier = {
+			stability_factor = 0.1
+			political_power_gain = 0.1
+			production_speed_buildings_factor = 0.05
+			production_speed_industrial_complex_factor = 0.05
+			industrial_capacity_factory = 0.05
+			consumer_goods_expected_value = -0.1
+			consumer_goods_factor = -0.2
+			}
+		}
+		WSU_The_Progressive_Era3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_Progressive_Era3" }
+			name = 进步主义时代
+			picture = Ukraine_progressivism
+			allowed = { always = no }
+			modifier = {
+			stability_factor = 0.1
+			political_power_gain = 0.1
+			political_power_factor = 0.1
+			production_speed_buildings_factor = 0.05
+			production_speed_industrial_complex_factor = 0.05
+			industrial_capacity_factory = 0.05
+			consumer_goods_expected_value = -0.1
+			consumer_goods_factor = -0.2
+			stability_popularity_factor = 0.2
+			}
+		}
+		WSU_The_Progressive_Era4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_Progressive_Era4" }
+			name = 进步主义时代
+			picture = Ukraine_progressivism
+			allowed = { always = no }
+			modifier = {
+			army_core_attack_factor = 0.08
+			army_core_defence_factor = 0.08
+			stability_factor = 0.1
+			political_power_gain = 0.1
+			political_power_factor = 0.1
+			production_speed_buildings_factor = 0.05
+			production_speed_industrial_complex_factor = 0.05
+			industrial_capacity_factory = 0.05
+			consumer_goods_expected_value = -0.1
+			consumer_goods_factor = -0.2
+			stability_popularity_factor = 0.2
+			}
+		}
+		WSU_The_triumph_of_liberalism = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_triumph_of_liberalism" }
+			name = 自由之胜
+			picture = Ukraine_liberalism
+			allowed = { always = no }
+			modifier = {
+			social_liberal_drift = 0.03
+			market_liberal_drift = 0.03
+			}
+		}
+		WSU_The_triumph_of_liberalism1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_triumph_of_liberalism1" }
+			name = 自由之胜
+			picture = Ukraine_liberalism
+			allowed = { always = no }
+			modifier = {
+			social_liberal_drift = 0.03
+			market_liberal_drift = 0.03
+			paternal_autocrat_drift = -0.03
+			compliance_growth = 0.002
+			}
+		}
+		WSU_The_triumph_of_liberalism2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_triumph_of_liberalism2" }
+			name = 自由之胜
+			picture = Ukraine_liberalism
+			allowed = { always = no }
+			modifier = {
+			social_liberal_drift = 0.03
+			market_liberal_drift = 0.03
+			paternal_autocrat_drift = -0.03
+			compliance_growth = 0.002
+			political_power_factor = -0.005
+			production_speed_buildings_factor = 0.05
+			}
+		}
+		WSU_The_triumph_of_liberalism3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_triumph_of_liberalism3" }
+			name = 自由之胜
+			picture = Ukraine_liberalism
+			allowed = { always = no }
+			modifier = {
+			stability_factor = 0.1
+			social_liberal_drift = 0.03
+			market_liberal_drift = 0.03
+			paternal_autocrat_drift = -0.03
+			compliance_growth = 0.002
+			political_power_factor = 0.1
+			political_power_gain = 0.1
+			production_speed_buildings_factor = 0.05
+			}
+		}
+		WSU_The_triumph_of_liberalism4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_triumph_of_liberalism4" }
+			name = 自由之胜
+			picture = Ukraine_liberalism
+			allowed = { always = no }
+			modifier = {
+			stability_factor = 0.1
+			social_liberal_drift = 0.03
+			market_liberal_drift = 0.03
+			paternal_autocrat_drift = -0.03
+			compliance_growth = 0.002
+			political_power_factor = 0.1
+			political_power_gain = 0.1
+			production_speed_buildings_factor = 0.05
+			research_speed_factor = 0.1
+			}
+		}
+		WSU_The_left_is_dominant = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_left_is_dominant" }
+			name = 左翼主导
+			picture = Turn_to_the_left_flank
+			allowed = { always = no }
+			modifier = {
+			social_liberal_drift = 0.03
+			}
+		}
+		WSU_The_left_is_dominant1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_left_is_dominant1" }
+			name = 左翼主导
+			picture = Turn_to_the_left_flank
+			allowed = { always = no }
+			modifier = {
+			social_liberal_drift = 0.03
+			army_core_defence_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		WSU_The_left_is_dominant2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_left_is_dominant2" }
+			name = 左翼主导
+			picture = Turn_to_the_left_flank
+			allowed = { always = no }
+			modifier = {
+			social_liberal_drift = 0.03
+			army_core_defence_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.1
+			industrial_capacity_factory = 0.1
+			conscription_factor = 0.1
+			}
+		}
+		WSU_The_left_is_dominant3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_left_is_dominant3" }
+			name = 左翼主导
+			picture = Turn_to_the_left_flank
+			allowed = { always = no }
+			modifier = {
+			social_liberal_drift = 0.03
+			army_core_defence_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.1
+			industrial_capacity_factory = 0.15
+			conscription_factor = 0.1
+			research_speed_factor = 0.05
+			weekly_manpower = 1500
+			production_speed_buildings_factor = 0.05
+			local_building_slots_factor = 0.05
+			}
+		}
+		WSU_The_left_is_dominant4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_left_is_dominant4" }
+			name = 左翼主导
+			picture = Turn_to_the_left_flank
+			allowed = { always = no }
+			modifier = {
+			social_liberal_drift = 0.03
+			army_core_defence_factor = 0.15
+			production_factory_efficiency_gain_factor = 0.1
+			industrial_capacity_factory = 0.15
+			conscription_factor = 0.1
+			research_speed_factor = 0.05
+			weekly_manpower = 1500
+			production_speed_buildings_factor = 0.05
+			local_building_slots_factor = 0.05
+			production_factory_max_efficiency_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		WSU_The_left_is_dominant5 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_left_is_dominant5" }
+			name = 左翼主导
+			picture = Turn_to_the_left_flank
+			allowed = { always = no }
+			modifier = {
+			social_liberal_drift = 0.03
+			army_core_defence_factor = 0.15
+			production_factory_efficiency_gain_factor = 0.1
+			industrial_capacity_factory = 0.15
+			conscription_factor = 0.1
+			research_speed_factor = 0.15
+			consumer_goods_factor = -0.2
+			weekly_manpower = 1500
+			production_speed_buildings_factor = 0.05
+			local_building_slots_factor = 0.05
+			production_factory_max_efficiency_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		WSU_The_right_is_dominant = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_right_is_dominant" }
+			name = 右翼主导
+			picture = The_right_wing_dominates
+			allowed = { always = no }
+			modifier = {
+			market_liberal_drift = 0.03
+			}
+		}
+		WSU_The_right_is_dominant1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_right_is_dominant1" }
+			name = 右翼主导
+			picture = The_right_wing_dominates
+			allowed = { always = no }
+			modifier = {
+			market_liberal_drift = 0.03
+			industrial_capacity_factory = 0.05
+			political_power_factor = -0.1
+			research_speed_factor = 0.05
+			line_change_production_efficiency_factor = 0.05
+			production_speed_buildings_factor = 0.05
+			local_resources_factor = 0.05
+			}
+		}
+		WSU_The_right_is_dominant2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_right_is_dominant2" }
+			name = 右翼主导
+			picture = The_right_wing_dominates
+			allowed = { always = no }
+			modifier = {
+			market_liberal_drift = 0.03
+			industrial_capacity_factory = 0.05
+			political_power_factor = -0.2
+			consumer_goods_factor = 0.05
+			research_speed_factor = 0.05
+			line_change_production_efficiency_factor = 0.05
+			production_speed_buildings_factor = 0.05
+			local_resources_factor = 0.05
+			}
+		}
+		WSU_The_right_is_dominant3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_right_is_dominant3" }
+			name = 右翼主导
+			picture = The_right_wing_dominates
+			allowed = { always = no }
+			modifier = {
+			market_liberal_drift = 0.03
+			industrial_capacity_factory = 0.15
+			political_power_factor = -0.2
+			consumer_goods_factor = 0.05
+			research_speed_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.2
+			line_change_production_efficiency_factor = 0.05
+			production_speed_buildings_factor = 0.05
+			local_resources_factor = 0.05
+			}
+		}
+		WSU_The_right_is_dominant4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_right_is_dominant4" }
+			name = 右翼主导
+			picture = The_right_wing_dominates
+			allowed = { always = no }
+			modifier = {
+			local_building_slots_factor = 0.1
+			market_liberal_drift = 0.03
+			industrial_capacity_factory = 0.15
+			political_power_factor = -0.2
+			consumer_goods_factor = 0.05
+			research_speed_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.2
+			line_change_production_efficiency_factor = 0.05
+			production_speed_buildings_factor = 0.1
+			local_resources_factor = 0.05
+			}
+		}
+		WSU_The_right_is_dominant5 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_right_is_dominant5" }
+			name = 右翼主导
+			picture = The_right_wing_dominates
+			allowed = { always = no }
+			modifier = {
+			local_building_slots_factor = 0.1
+			market_liberal_drift = 0.03
+			industrial_capacity_factory = 0.15
+			political_power_factor = -0.2
+			political_power_gain = -0.05
+			consumer_goods_factor = 0.05
+			research_speed_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.2
+			line_change_production_efficiency_factor = 0.05
+			production_speed_buildings_factor = 0.15
+			local_resources_factor = 0.05
+			}
+		}
+		WSU_The_right_is_dominant6 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_right_is_dominant6" }
+			name = 右翼主导
+			picture = The_right_wing_dominates
+			allowed = { always = no }
+			modifier = {
+			local_building_slots_factor = 0.1
+			market_liberal_drift = 0.03
+			industrial_capacity_factory = 0.15
+			political_power_factor = -0.2
+			political_power_gain = -0.05
+			consumer_goods_factor = 0.05
+			research_speed_factor = 0.2
+			production_factory_efficiency_gain_factor = 0.2
+			line_change_production_efficiency_factor = 0.05
+			production_speed_buildings_factor = 0.15
+			local_resources_factor = 0.05
+			}
+		}
+		WSU_The_right_is_dominant7 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_right_is_dominant7" }
+			name = 右翼主导
+			picture = The_right_wing_dominates
+			allowed = { always = no }
+			modifier = {
+			local_building_slots_factor = 0.1
+			market_liberal_drift = 0.03
+			industrial_capacity_factory = 0.2
+			political_power_factor = -0.2
+			political_power_gain = -0.1
+			consumer_goods_factor = 0.05
+			research_speed_factor = 0.3
+			production_factory_efficiency_gain_factor = 0.2
+			line_change_production_efficiency_factor = 0.05
+			production_speed_buildings_factor = 0.2
+			local_resources_factor = 0.05
+			}
+		}
+		WSU_The_right_is_dominant8 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_right_is_dominant8" }
+			name = 右翼主导
+			picture = The_right_wing_dominates
+			allowed = { always = no }
+			modifier = {
+			local_building_slots_factor = 0.1
+			market_liberal_drift = 0.03
+			industrial_capacity_factory = 0.3
+			political_power_factor = -0.2
+			political_power_gain = -0.1
+			consumer_goods_factor = 0.05
+			research_speed_factor = 0.3
+			production_factory_efficiency_gain_factor = 0.2
+			production_factory_max_efficiency_factor = 0.1
+			line_change_production_efficiency_factor = 0.05
+			production_speed_buildings_factor = 0.3
+			local_resources_factor = 0.05
+			}
+		}
+		WSU_The_right_is_dominant9 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_right_is_dominant9" }
+			name = 右翼主导
+			picture = The_right_wing_dominates
+			allowed = { always = no }
+			modifier = {
+			local_building_slots_factor = 0.1
+			market_liberal_drift = 0.03
+			industrial_capacity_factory = 0.4
+			political_power_factor = -0.2
+			political_power_gain = -0.1
+			consumer_goods_factor = 0.05
+			research_speed_factor = 0.3
+			production_factory_efficiency_gain_factor = 0.2
+			production_factory_max_efficiency_factor = 0.1
+			line_change_production_efficiency_factor = 0.05
+			production_speed_buildings_factor = 0.4
+			local_resources_factor = 0.15
+			}
+		}
+		WSU_The_right_is_dominant10 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_right_is_dominant10" }
+			name = 右翼主导
+			picture = The_right_wing_dominates
+			allowed = { always = no }
+			modifier = {
+			local_building_slots_factor = 0.1
+			market_liberal_drift = 0.03
+			industrial_capacity_factory = 0.55
+			political_power_factor = -0.2
+			political_power_gain = -0.1
+			consumer_goods_factor = 0.05
+			research_speed_factor = 0.3
+			production_factory_efficiency_gain_factor = 0.2
+			production_factory_max_efficiency_factor = 0.1
+			line_change_production_efficiency_factor = 0.05
+			production_speed_buildings_factor = 0.55
+			local_resources_factor = 0.15
+			conscription = 0.1
+			}
+		}
+		WSU_Ukraine_conservatism = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Ukraine_conservatism" }
+			name = 乌克兰保守主义
+			picture = Ukraine_conservatism
+			allowed = { always = no }
+			modifier = {
+			social_conservative_drift = 0.05
+			}
+		}
+		WSU_Ukraine_conservatism1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Ukraine_conservatism1" }
+			name = 乌克兰保守主义
+			picture = Ukraine_conservatism
+			allowed = { always = no }
+			modifier = {
+			social_conservative_drift = 0.05
+			drift_defence_factor = 0.2
+			}
+		}
+		WSU_Ukraine_conservatism2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Ukraine_conservatism2" }
+			name = 乌克兰保守主义
+			picture = Ukraine_conservatism
+			allowed = { always = no }
+			modifier = {
+			social_conservative_drift = 0.05
+			drift_defence_factor = 0.2
+			consumer_goods_factor = -0.3
+			army_attack_factor = 0.05
+			}
+		}
+		WSU_Ukraine_conservatism3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Ukraine_conservatism3" }
+			name = 乌克兰保守主义
+			picture = Ukraine_conservatism
+			allowed = { always = no }
+			modifier = {
+			social_conservative_drift = 0.05
+			weekly_manpower = 500
+			compliance_growth= 0.01
+			drift_defence_factor = 0.2
+			consumer_goods_factor = -0.3
+			army_attack_factor = 0.05
+			}
+		}
+		WSU_Radical_Ukraine = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Radical_Ukraine" }
+			name = 激进乌克兰化
+			picture = Ukraine_progressivism
+			allowed = { always = no }
+			modifier = {
+			army_core_defence_factor = 0.1
+			production_speed_buildings_factor = 0.05
+			}
+		}
+		WSU_Radical_Ukraine1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Radical_Ukraine1" }
+			name = 激进乌克兰化
+			picture = Ukraine_progressivism
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = 0.1
+			research_speed_factor = 0.05
+			army_core_defence_factor = 0.1
+			production_speed_buildings_factor = 0.05
+			}
+		}
+		WSU_Radical_Ukraine2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Radical_Ukraine2" }
+			name = 激进乌克兰化
+			picture = Ukraine_progressivism
+			allowed = { always = no }
+			modifier = {
+			consumer_goods_factor = -0.1
+			political_power_factor = 0.1
+			research_speed_factor = 0.1
+			local_building_slots_factor = 0.1
+			army_core_defence_factor = 0.1
+			production_speed_buildings_factor = 0.05
+			}
+		}
+		WSU_Radical_Ukraine3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Radical_Ukraine3" }
+			name = 激进乌克兰化
+			picture = Ukraine_progressivism
+			allowed = { always = no }
+			modifier = {
+			consumer_goods_factor = -0.1
+			political_power_factor = 0.1
+			research_speed_factor = 0.1
+			local_building_slots_factor = 0.1
+			army_core_defence_factor = 0.1
+			compliance_growth = 0.1
+			production_speed_buildings_factor = 0.05
+			}
+		}
+		WSU_Radical_Ukraine4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Radical_Ukraine4" }
+			name = 激进乌克兰化
+			picture = Ukraine_progressivism
+			allowed = { always = no }
+			modifier = {
+			consumer_goods_factor = -0.1
+			political_power_factor = 0.1
+			research_speed_factor = 0.1
+			local_building_slots_factor = 0.1
+			army_core_defence_factor = 0.15
+			army_core_attack_factor = 0.05
+			compliance_growth = 0.1
+			production_speed_buildings_factor = 0.05
+			}
+		}
+		WSU_social_refroms = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_social_refroms" }
+			name = 社会革新
+			picture = GUA_appease_socialists
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = 0.005
+			}
+		}
+		WSU_social_refroms1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_social_refroms1" }
+			name = 社会革新
+			picture = GUA_appease_socialists
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = 0.005
+			weekly_manpower = 1500
+			research_speed_factor = 0.1
+			}
+		}
+		WSU_social_refroms2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_social_refroms2" }
+			name = 社会革新
+			picture = GUA_appease_socialists
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = 0.005
+			weekly_manpower = 2500
+			research_speed_factor = 0.1
+			compliance_growth = 0.01
+			resistance_target = -0.2
+			}
+		}
+		WSU_social_refroms3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_social_refroms3" }
+			name = 社会革新
+			picture = GUA_appease_socialists
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = 0.005
+			weekly_manpower = 2500
+			research_speed_factor = 0.1
+			compliance_growth = 0.01
+			resistance_target = -0.2
+			supply_consumption_factor = 0.1
+			army_core_defence_factor = 0.1
+			army_core_attack_factor = 0.1
+			}
+		}
+		WSU_social_refroms4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_social_refroms4" }
+			name = 社会革新
+			picture = GUA_appease_socialists
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = 0.005
+			weekly_manpower = 2500
+			research_speed_factor = 0.1
+			compliance_growth = 0.01
+			resistance_target = -0.2
+			supply_consumption_factor = 0.1
+			army_core_defence_factor = 0.1
+			production_speed_buildings_factor = 0.05
+			army_core_attack_factor = 0.1
+			production_factory_max_efficiency_factor = 0.05
+			production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		WSU_social_refroms5 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_social_refroms5" }
+			name = 社会革新
+			picture = GUA_appease_socialists
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = 0.005
+			weekly_manpower = 2500
+			political_power_gain = 0.2
+			research_speed_factor = 0.15
+			compliance_growth = 0.015
+			mobilization_laws_cost_factor = -0.4
+			trade_laws_cost_factor  = -0.4
+			economy_cost_factor = -0.4
+			resistance_target = -0.2
+			supply_consumption_factor = 0.1
+			army_core_defence_factor = 0.1
+			production_speed_buildings_factor = 0.05
+			army_core_attack_factor = 0.1
+			production_factory_max_efficiency_factor = 0.05
+			production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		WSU_A_future_with_God = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_A_future_with_God" }
+			name = 与天主同行的未来
+			picture = TXS_God_Howard
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = 0.01
+			weekly_manpower = 2000
+			consumer_goods_factor = -0.2
+			defensive_war_stability_factor = 1
+			surrender_limit = 0.2
+			production_speed_industrial_complex_factor = 0.1
+			production_speed_infrastructure_factor = 0.1
+			}
+		}
+		WSU_Order_is_paramount = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Order_is_paramount" }
+			name = 秩序至上
+			picture = LBA_Senussi_Order
+			allowed = { always = no }
+			modifier = {
+			authoritarian_democrat_drift = 0.05
+			}
+		}
+		WSU_Order_is_paramount1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Order_is_paramount1" }
+			name = 秩序至上
+			picture = LBA_Senussi_Order
+			allowed = { always = no }
+			modifier = {
+			authoritarian_democrat_drift = 0.05
+			stability_factor = 0.1
+			drift_defence_factor = 0.3
+			}
+		}
+		WSU_Order_is_paramount2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Order_is_paramount2" }
+			name = 秩序至上
+			picture = LBA_Senussi_Order
+			allowed = { always = no }
+			modifier = {
+			authoritarian_democrat_drift = 0.05
+			stability_factor = 0.1
+			drift_defence_factor = 0.3
+			conversion_cost_civ_to_mil_factor= -0.3
+			conversion_cost_mil_to_civ_factor = -0.3
+			production_speed_buildings_factor = 0.1
+			intelligence_agency_defense = 0.1
+			}
+		}
+		WSU_Creative_nationalism = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Creative_nationalism" }
+			name = 创造性民族主义
+			picture = NFA_moral_order
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = 0.1
+			production_speed_buildings_factor = 0.05
+			}
+		}
+		WSU_Creative_nationalism1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Creative_nationalism1" }
+			name = 创造性民族主义
+			picture = NFA_moral_order
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = 0.01
+			political_power_factor = 0.1
+			production_speed_buildings_factor = 0.05
+			consumer_goods_factor = -0.1
+			}
+		}
+		WSU_Creative_nationalism2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Creative_nationalism2" }
+			name = 创造性民族主义
+			picture = NFA_moral_order
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = 0.01
+			political_power_factor = 0.1
+			production_speed_buildings_factor = 0.05
+			consumer_goods_factor = -0.1
+			local_resources_factor = 0.2
+			industrial_capacity_factory  = 0.1
+			production_speed_buildings_factor = 0.1
+			TRADE_OPINION_FACTOR = -0.2
+			}
+		}
+		WSU_Creative_nationalism3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Creative_nationalism3" }
+			name = 创造性民族主义
+			picture = NFA_moral_order
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = 0.01
+			political_power_factor = 0.1
+			production_speed_buildings_factor = 0.05
+			consumer_goods_factor = -0.1
+			local_resources_factor = 0.2
+			industrial_capacity_factory  = 0.1
+			production_speed_buildings_factor = 0.2
+			TRADE_OPINION_FACTOR = -0.2
+			production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		WSU_Political_innovation = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Political_innovation" }
+			name = 政治革新
+			picture = political_liberalism
+			allowed = { always = no }
+			modifier = {
+			research_speed_factor = 0.1
+			IMPROVE_RELATIONS_MAINTAIN_COST_FACTOR = -0.2
+			}
+		}
+		WSU_Political_innovation1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Political_innovation1" }
+			name = 政治革新
+			picture = political_liberalism
+			allowed = { always = no }
+			modifier = {
+			research_speed_factor = 0.15
+			local_resources_factor = 0.1
+			conversion_cost_civ_to_mil_factor= -0.50
+			conversion_cost_mil_to_civ_factor = -0.50		
+			max_planning = 0.1
+			IMPROVE_RELATIONS_MAINTAIN_COST_FACTOR = -0.2
+			}
+		}
+		WSU_Political_innovation2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Political_innovation2" }
+			name = 政治革新
+			picture = political_liberalism
+			allowed = { always = no }
+			modifier = {
+			research_speed_factor = 0.2
+			local_resources_factor = 0.1
+			conversion_cost_civ_to_mil_factor= -0.50
+			conversion_cost_mil_to_civ_factor = -0.50		
+			max_planning = 0.1
+			IMPROVE_RELATIONS_MAINTAIN_COST_FACTOR = -0.2
+			}
+		}
+		WSU_National_identity = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_National_identity" }
+			name = 国家认同
+			picture = UKR_ukraine_flag_idea
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = 0.002
+			war_support_weekly = 0.002
+			}
+		}
+		WSU_National_identity1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_National_identity1" }
+			name = 国家认同
+			picture = UKR_ukraine_flag_idea
+			allowed = { always = no }
+			modifier = {
+			stability_weekly = 0.002
+			war_support_weekly = 0.002
+			weekly_manpower = 4000
+			supply_consumption_factor = -0.1
+			}
+		}
+		WSU_National_identity2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_National_identity2" }
+			name = 国家认同
+			picture = UKR_ukraine_flag_idea
+			allowed = { always = no }
+			modifier = {
+			max_command_power = 100
+			stability_weekly = 0.002
+			war_support_weekly = 0.002
+			weekly_manpower = 4000
+			supply_consumption_factor = -0.1
+			planning_speed = 0.05
+			max_planning = 0.05
+			}
+		}
+		WSU_The_Battle_for_Liberation = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_The_Battle_for_Liberation" }
+			name = 解放之战
+			picture = NFA_start_eco_lib
+			allowed = { always = no }
+			modifier = {
+			required_garrison_factor = -0.1
+			compliance_growth = 0.002
+			}
+		}
+		WSU_Unity_fanaticism = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Unity_fanaticism" }
+			name = 统一狂热
+			picture = NFA_start_eco_lib
+			allowed = { always = no }
+			modifier = {
+			justify_war_goal_time = -0.7
+			}
+		}
+		WSU_Unity_fanaticism1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Unity_fanaticism1" }
+			name = 乌克兰民族团结
+			picture = NFA_start_eco_lib
+			allowed = { always = no }
+			modifier = {
+			justify_war_goal_time = -0.7
+			breakthrough_factor = 0.05
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			industrial_capacity_factory = 0.1
+			conscription = 0.1
+			}
+		}
+		WSU_Liberal_Jihadist = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Liberal_Jihadist" }
+			name = 自由主义圣战士
+			picture = generic_liberalism
+			allowed = { always = no }
+			modifier = {
+			send_volunteer_size = 3
+			}
+		}
+		WSU_Liberal_Jihadist1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Liberal_Jihadist1" }
+			name = 自由主义圣战士
+			picture = generic_liberalism
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = 0.1
+			send_volunteer_size = 3
+			}
+		}
+		WSU_Centralized_economy = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Centralized_economy" }
+			name = 集中经济
+			picture = NOR_planned_economy
+			allowed = { always = no }
+			modifier = {
+			local_resources_factor = 0.1
+			production_speed_synthetic_refinery_factor = 0.1
+			}
+		}
+		WSU_Centralized_economy1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Centralized_economy1" }
+			name = 集中经济
+			picture = NOR_planned_economy
+			allowed = { always = no }
+			modifier = {
+			production_speed_industrial_complex_factor = 0.1
+			local_building_slots_factor = 0.15
+			local_resources_factor = 0.1
+			production_speed_synthetic_refinery_factor = 0.1
+			}
+		}
+		WSU_Centralized_economy2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Centralized_economy2" }
+			name = 集中经济
+			picture = NOR_planned_economy
+			allowed = { always = no }
+			modifier = {
+			consumer_goods_factor = -0.1
+			research_speed_factor = 0.1
+			weekly_manpower = 2000
+			production_speed_industrial_complex_factor = 0.1
+			local_building_slots_factor = 0.15
+			local_resources_factor = 0.1
+			production_speed_synthetic_refinery_factor = 0.1
+			}
+		}
+		WSU_Centralized_economy3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Centralized_economy3" }
+			name = 集中经济
+			picture = NOR_planned_economy
+			allowed = { always = no }
+			modifier = {
+			consumer_goods_factor = -0.15
+
+			research_speed_factor = 0.1
+			weekly_manpower = 2000
+			production_speed_industrial_complex_factor = 0.1
+			local_building_slots_factor = 0.15
+			local_resources_factor = 0.1
+			production_speed_synthetic_refinery_factor = 0.1
+			production_factory_max_efficiency_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.1
+			production_factory_start_efficiency_factor = 0.1
+			}
+		}
+		WSU_Centralized_economy4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Centralized_economy4" }
+			name = 集中经济
+			picture = NOR_planned_economy
+			allowed = { always = no }
+			modifier = {
+			consumer_goods_factor = -0.15
+			consumer_goods_expected_value = -0.1
+			production_speed_buildings_factor = 0.05
+			research_speed_factor = 0.1
+			weekly_manpower = 2000
+			production_speed_industrial_complex_factor = 0.1
+			local_building_slots_factor = 0.15
+			local_resources_factor = 0.1
+			production_speed_synthetic_refinery_factor = 0.1
+			production_factory_max_efficiency_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.1
+			production_factory_start_efficiency_factor = 0.1
+			}
+		}
+		WSU_Centralized_economy5 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Centralized_economy5" }
+			name = 集中经济
+			picture = NOR_planned_economy
+			allowed = { always = no }
+			modifier = {
+			consumer_goods_factor = -0.15
+			consumer_goods_expected_value = -0.1
+			production_speed_buildings_factor = 0.05
+			research_speed_factor = 0.15
+			weekly_manpower = 2000
+			production_speed_industrial_complex_factor = 0.1
+			local_building_slots_factor = 0.15
+			local_resources_factor = 0.15
+			production_speed_synthetic_refinery_factor = 0.1
+			production_factory_max_efficiency_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.1
+			production_factory_start_efficiency_factor = 0.1
+			}
+		}
+		WSU_Centralized_economy6 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Centralized_economy6" }
+			name = 集中经济
+			picture = NOR_planned_economy
+			allowed = { always = no }
+			modifier = {
+			PRODUCTION_LACK_OF_RESOURCE_PENALTY_FACTOR = -0.15
+			consumer_goods_factor = -0.15
+			consumer_goods_expected_value = -0.1
+			production_speed_buildings_factor = 0.05
+			research_speed_factor = 0.15
+			weekly_manpower = 2000
+			production_speed_industrial_complex_factor = 0.1
+			local_building_slots_factor = 0.15
+			local_resources_factor = 0.15
+			production_speed_synthetic_refinery_factor = 0.1
+			production_factory_max_efficiency_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.1
+			production_factory_start_efficiency_factor = 0.1
+			}
+		}
+		WSU_Market_economy_system = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Market_economy_system" }
+			name = 市场经济体制
+			picture = market_efficiency_2
+			allowed = { always = no }
+			modifier = {
+			TRADE_OPINION_FACTOR = 0.3
+			}
+		}
+		WSU_Market_economy_system1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Market_economy_system1" }
+			name = 市场经济体制
+			picture = market_efficiency_2
+			allowed = { always = no }
+			modifier = {
+			TRADE_OPINION_FACTOR = 0.3
+			production_speed_buildings_factor = 0.1
+			}
+		}
+		WSU_Market_economy_system2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Market_economy_system2" }
+			name = 市场经济体制
+			picture = market_efficiency_2
+			allowed = { always = no }
+			modifier = {
+			TRADE_OPINION_FACTOR = 0.3
+			industrial_capacity_factory = 0.1
+			production_factory_efficiency_gain_factor = 0.5
+			production_speed_buildings_factor = 0.1
+			}
+		}
+		WSU_Market_economy_system3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Market_economy_system3" }
+			name = 市场经济体制
+			picture = market_efficiency_2
+			allowed = { always = no }
+			modifier = {
+			local_building_slots_factor = 0.05
+			production_factory_max_efficiency_factor = -0.05
+			TRADE_OPINION_FACTOR = 0.3
+			industrial_capacity_factory = 0.15
+			production_factory_efficiency_gain_factor = 0.05
+			production_speed_buildings_factor = 0.1
+			}
+		}
+		WSU_Market_economy_system4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Market_economy_system4" }
+			name = 市场经济体制
+			picture = market_efficiency_2
+			allowed = { always = no }
+			modifier = {
+			local_building_slots_factor = 0.05
+			production_factory_max_efficiency_factor = -0.05
+			TRADE_OPINION_FACTOR = 0.3
+			industrial_capacity_factory = 0.15
+			production_factory_efficiency_gain_factor = 0.05
+			production_speed_buildings_factor = 0.1
+			consumer_goods_factor = -0.1
+			}
+		}
+		WSU_Market_economy_system5 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Market_economy_system5" }
+			name = 市场经济体制
+			picture = market_efficiency_2
+			allowed = { always = no }
+			modifier = {
+			local_building_slots_factor = 0.05
+			production_factory_max_efficiency_factor = -0.05
+			TRADE_OPINION_FACTOR = 0.3
+			industrial_capacity_factory = 0.15
+			production_factory_efficiency_gain_factor = 0.05
+			production_speed_buildings_factor = 0.2
+			consumer_goods_factor = -0.1
+			}
+		}
+		WSU_Market_economy_system6 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Market_economy_system6" }
+			name = 市场经济体制
+			picture = market_efficiency_2
+			allowed = { always = no }
+			modifier = {
+			local_building_slots_factor = 0.05
+			production_factory_max_efficiency_factor = -0.05
+			TRADE_OPINION_FACTOR = 0.3
+			industrial_capacity_factory = 0.15
+			production_factory_efficiency_gain_factor = 0.1
+			production_speed_buildings_factor = 0.2
+			consumer_goods_factor = -0.1
+			production_factory_start_efficiency_factor = 0.05
+			}
+		}
+		WSU_Integrate_nationalism = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Integrate_nationalism" }
+			name = 整合民族主义
+			picture = UKR_national_revolution
+			allowed = { always = no }
+			modifier = {
+			drift_defence_factor = 0.3
+			}
+		}
+		WSU_Integrate_nationalism1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Integrate_nationalism1" }
+			name = 整合民族主义
+			picture = UKR_national_revolution
+			allowed = { always = no }
+			modifier = {
+			drift_defence_factor = 0.3
+			conscription_factor = -0.07
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.09
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+		}
+		WSU_Integrate_nationalism2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Integrate_nationalism2" }
+			name = 整合民族主义
+			picture = UKR_national_revolution
+			allowed = { always = no }
+			modifier = {
+			drift_defence_factor = 0.3
+			conscription_factor = -0.07
+			cavalry_attack_factor = 0.1
+			cavalry_defence_factor = 0.1
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.09
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+		}
+		WSU_Integrate_nationalism3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Integrate_nationalism3" }
+			name = 整合民族主义
+			picture = UKR_national_revolution
+			allowed = { always = no }
+			modifier = {
+			drift_defence_factor = 0.3
+			conscription_factor = -0.07
+			cavalry_attack_factor = 0.1
+			cavalry_defence_factor = 0.1
+			TRADE_OPINION_FACTOR = 0.5
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.09
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+		}
+		WSU_Integrate_nationalism4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Integrate_nationalism4" }
+			name = 整合民族主义
+			picture = UKR_national_revolution
+			allowed = { always = no }
+			modifier = {
+			drift_defence_factor = 0.3
+			conscription_factor = -0.07
+			cavalry_attack_factor = 0.1
+			cavalry_defence_factor = 0.1
+			TRADE_OPINION_FACTOR = 0.5
+			stability_popularity_factor = 0.3
+			intelligence_agency_defense = 1
+			operative_slot = 3
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.09
+			}
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+		}
+		WSU_Clean_up_the_portal = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Clean_up_the_portal" }
+			name = 清理门户
+			picture = great_cleansing
+			allowed = { always = no }
+			modifier = {
+			justify_war_goal_time = -0.1
+			}
+		}
+		WSU_Clean_up_the_portal1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Clean_up_the_portal1" }
+			name = 清理门户
+			picture = great_cleansing
+			allowed = { always = no }
+			modifier = {
+			justify_war_goal_time = -0.1
+			army_defence_against_major_factor = 0.1
+			army_attack_against_major_factor = 0.1
+			}
+		}
+		WSU_Clean_up_the_portal2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Clean_up_the_portal2" }
+			name = 清理门户
+			picture = great_cleansing
+			allowed = { always = no }
+			modifier = {
+			justify_war_goal_time = -0.1
+			army_defence_against_major_factor = 0.1
+			army_attack_against_major_factor = 0.1
+			cavalry_attack_factor = -0.1
+			max_planning = 0.1
+			army_org_factor = 0.05
+			}
+		}
+		WSU_Clean_up_the_portal3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Clean_up_the_portal2" }
+			name = 清理门户
+			picture = great_cleansing
+			allowed = { always = no }
+			modifier = {
+			justify_war_goal_time = -0.1
+			army_defence_against_major_factor = 0.1
+			army_attack_against_major_factor = 0.1
+			cavalry_attack_factor = -0.1
+			max_planning = 0.1
+			army_org_factor = 0.05
+			research_speed_factor = 0.1
+			political_power_factor = -0.05
+			}
+		}
+		WSU_Clean_up_the_portal3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_Clean_up_the_portal2" }
+			name = 清理门户
+			picture = great_cleansing
+			allowed = { always = no }
+			modifier = {
+			justify_war_goal_time = -0.1
+			army_defence_against_major_factor = 0.1
+			army_attack_against_major_factor = 0.1
+			cavalry_attack_factor = -0.1
+			max_planning = 0.1
+			army_org_factor = 0.05
+			research_speed_factor = 0.1
+			political_power_factor = -0.05
+			compliance_growth = 0.005
+			ANNEX_COST_FACTOR = -0.3
+			}
+		}
+		WSU_realpolitik = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_realpolitik" }
+			name = 现实政治
+			picture = bloated_bureaucracy
+			allowed = { always = no }
+			modifier = {
+			political_power_gain = 0.05
+			}
+		}
+		WSU_realpolitik1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_realpolitik1" }
+			name = 现实政治
+			picture = bloated_bureaucracy
+			allowed = { always = no }
+			modifier = {
+			political_power_gain = 0.05
+			IMPROVE_RELATIONS_MAINTAIN_COST_FACTOR = -0.5
+			}
+		}
+		WSU_realpolitik2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_realpolitik2" }
+			name = 现实政治
+			picture = bloated_bureaucracy
+			allowed = { always = no }
+			modifier = {
+			political_power_gain = 0.05
+			IMPROVE_RELATIONS_MAINTAIN_COST_FACTOR = -0.5
+			compliance_growth = 0.005
+			}
+		}
+		WSU_realpolitik3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_realpolitik3" }
+			name = 现实政治
+			picture = bloated_bureaucracy
+			allowed = { always = no }
+			modifier = {
+			political_power_gain = 0.05
+			IMPROVE_RELATIONS_MAINTAIN_COST_FACTOR = -0.5
+			compliance_growth = 0.005
+			army_core_attack_factor = 0.1
+			army_core_defence_factor = 0.1
+			}
+		}
+		WSU_realpolitik4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea WSU_realpolitik4" }
+			name = 现实政治
+			picture = bloated_bureaucracy
+			allowed = { always = no }
+			modifier = {
+			political_power_gain = 0.05
+			IMPROVE_RELATIONS_MAINTAIN_COST_FACTOR = -0.5
+			compliance_growth = 0.005
+			army_core_attack_factor = 0.1
+			army_core_defence_factor = 0.1
+			stability_weekly = 0.003
+			}
+		}
+	}
+
+##############
+# Companies
+##############
+
+#### General ####
+	industrial_concern = {
+
+		
+	}
+
+#### Weapons Manufacturer ####
+	materiel_manufacturer = {
+		designer = yes
+
+		
+	}
+
+#### Heavy Equipment Manufacturer ####
+	tank_manufacturer = {
+		designer = yes
+
+	}
+
+#### Air and Naval Manufacturer ####
+	aircraft_manufacturer = {
+		designer = yes
+
+		
+	}
+
+}

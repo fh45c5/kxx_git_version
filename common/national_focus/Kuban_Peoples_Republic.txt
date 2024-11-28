@@ -1,0 +1,7036 @@
+focus_tree = {
+	id = Kuban_Peoples_Republic
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = KUB
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 2000 y = 2000}
+	
+	focus = {
+		id = KUB_Raise_Frederica_From_Tsemes_Bay
+		icon = GFX_KUB_navy
+		cost = 4
+		x = 0
+		y = 0
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Raise_Frederica_From_Tsemes_Bay"
+			country_event = kub.1000
+		}
+	}
+	focus = {
+		id = KUB_Restore_Rada_Work
+		icon = GFX_KUB_rada_work
+		cost = 5
+		available = { 
+			OR = {
+				has_country_flag = KUB_ataman_intervenes
+				has_country_flag = KUB_bill_is_passed_or_rada_dissolved
+			}
+		}
+		bypass = {
+			has_country_flag = KUB_Announce_Ivanic_Retirement_unlocked
+		}
+		relative_position_id = KUB_Raise_Frederica_From_Tsemes_Bay
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = KUB_Raise_Frederica_From_Tsemes_Bay
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Restore_Rada_Work"
+			activate_targeted_decision = { target = KUB decision = KUB_Cut_Defence_Expenditures }
+		}
+	}
+	focus = {
+		id = KUB_Announce_Ivanis_Retirement
+		icon = GFX_KUB_ivanis
+		cost = 2
+		relative_position_id = KUB_Raise_Frederica_From_Tsemes_Bay
+		x = 1
+		y = 2
+		prerequisite = {
+			focus = KUB_Restore_Rada_Work
+		}
+		available = { 
+			has_country_flag = KUB_Announce_Ivanic_Retirement_unlocked
+			has_country_leader = {
+				name = "瓦西里·伊万尼斯"
+				ruling_only = yes
+			}
+		}
+		bypass = { 
+			OR = {
+				has_country_flag = KUB_1937_Elections 
+				has_country_flag = KUB_new_ataman_elected
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Announce_Ivanis_Retirement"
+			country_event = kub.1004
+			set_temp_variable = { KUB_integration_process_change = -8 }
+			KUB_change_integration_process = yes
+		}
+	}
+	focus = {
+		id = KUB_Kuban_Ukrainian_Convention
+		icon = GFX_KUB_ukrainian_convention
+		cost = 5
+		relative_position_id = KUB_Raise_Frederica_From_Tsemes_Bay
+		x = -1
+		y = 2
+		available = {
+			has_country_leader = {
+				name = "瓦西里·伊万尼斯"
+				ruling_only = yes
+			}
+			UKR_has_socialist_or_pro_russian_government = no
+		}
+		prerequisite = {
+			focus = KUB_Restore_Rada_Work
+		}
+		cancelable = no
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				AND = {
+					OR = {
+						has_game_rule = {
+							rule = KUB_path
+							option = KUB_PATH_CHERN
+						}
+						has_game_rule = {
+							rule = KUB_path
+							option = KUB_PATH_LIN
+						}
+					}
+					has_idea = KUB_black_monday_1
+				}
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Kuban_Ukrainian_Convention"
+			if = {
+				limit = { has_idea = KUB_black_monday_1 }
+				custom_effect_tooltip = KUB_Kuban_Ukrainian_Convention_tt
+			}
+			country_event = kub.1002
+			set_temp_variable = { KUB_integration_process_change = 10 }
+			KUB_change_integration_process = yes
+		}
+	}
+	focus = {
+		id = KUB_Economic_Relief
+		icon = GFX_goal_NFA_review_economy
+		cost = 8
+		available = { 
+			if = {
+				limit = { has_country_flag = KUB_Announce_Ivanic_Retirement_unlocked }
+				has_country_flag = KUB_new_ataman_elected
+			}
+			else = {
+				has_country_flag = KUB_bill_is_passed_or_rada_dissolved
+			}
+			has_socialist_government = no
+			if = {
+				limit = { has_government = paternal_autocrat }
+				has_completed_focus = KUB_Dissolve_Rada
+			}
+		}
+		relative_position_id = KUB_Raise_Frederica_From_Tsemes_Bay
+		x = 3
+		y = 3
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Economic_Relief"
+			add_stability = 0.1
+			add_political_power = 50
+			if = {
+				limit = { has_country_flag = KUB_install_bread_monopoly_selected }
+				activate_targeted_decision = { target = RUS decision = KUB_Ask_A_Bailout }
+				else = {
+					activate_targeted_decision = { target = GER decision = KUB_Ask_A_Bailout }
+				}
+			}
+			if = {
+				limit = { has_idea = KUB_black_monday_1 }
+				swap_ideas = {
+					remove_idea = KUB_black_monday_1
+					add_idea = KUB_black_monday_2
+					days = kuban_recovery_days
+				}
+			}
+		}
+	}
+	focus = {
+		id = KUB_Install_Bread_Monopoly
+		icon = GFX_goal_PAL_Food_Import
+		cost = 4
+		relative_position_id = KUB_Economic_Relief
+		x = -1
+		y = 1
+		available = {
+			has_democratic_government = yes
+			has_country_flag = KUB_install_bread_monopoly_selected
+			if = {
+				limit = { has_country_flag = KUB_Announce_Ivanic_Retirement_unlocked }
+				has_country_flag = KUB_new_ataman_elected
+			}
+		}
+		prerequisite = {
+			focus = KUB_Economic_Relief
+		}
+		mutually_exclusive = {
+			focus = KUB_Rely_On_Cooperatives
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = KUB_path option = KUB_PATH_CHERN }
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Install_Bread_Monopoly"
+			custom_effect_tooltip = KUB_modify_cooperatives
+			custom_effect_tooltip = KUB_modify_cooperatives_consumer_goods_factor
+			set_temp_variable = { change_state_capacity = -7 }
+			KUB_cooperatives_change_state_capacity = yes
+			set_temp_variable = { change_workers_coop = -10 }
+			KUB_cooperatives_change_workers_coop = yes
+			add_to_variable = { KUB_cooperatives_consumer_goods_factor = -0.1 }
+			recalculate_cooperatives = yes
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = -0.06
+			}
+			add_popularity = {
+				ideology = market_liberal
+				popularity = -0.02
+			}
+			KUB_increase_lineytsy = yes
+		}
+	}
+	focus = {
+		id = KUB_Rely_On_Cooperatives
+		icon = GFX_NEE_coop_management
+		cost = 4
+		relative_position_id = KUB_Economic_Relief
+		x = 1
+		y = 1
+		available = {
+			has_democratic_government = yes
+			NOT = { has_country_flag = KUB_install_bread_monopoly_selected }
+			if = {
+				limit = { has_country_flag = KUB_Announce_Ivanic_Retirement_unlocked }
+				has_country_flag = KUB_new_ataman_elected
+			}
+		}
+		prerequisite = {
+			focus = KUB_Economic_Relief
+		}
+		mutually_exclusive = {
+			focus = KUB_Install_Bread_Monopoly
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = KUB_path option = KUB_PATH_LIN }
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Rely_On_Cooperatives"
+			activate_targeted_decision = { target = KUB decision = KUB_Novorossiysk_Wine }
+			
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.06
+			}
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.02
+			}
+			custom_effect_tooltip = KUB_modify_cooperatives
+			custom_effect_tooltip = KUB_modify_cooperatives_max_factories
+			add_to_variable = { KUB_cooperatives_global_building_slots_factor = 0.1 }
+			set_temp_variable = { change_state_capacity = 15 }
+			KUB_cooperatives_change_state_capacity = yes
+			recalculate_cooperatives = yes
+			KUB_increase_chernomortsy = yes
+		}
+	}
+	focus = {
+		id = KUB_Foes_And_Friends
+		icon = GFX_KUB_chaos
+		cost = 4
+		relative_position_id = KUB_Raise_Frederica_From_Tsemes_Bay
+		x = -1
+		y = 3
+		prerequisite = {
+			focus = KUB_Kuban_Ukrainian_Convention
+			focus = KUB_Announce_Ivanis_Retirement
+		}
+		available = { always = no }
+		bypass = { has_country_flag = KUB_1937_elections }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Foes_And_Friends"
+			custom_effect_tooltip = unlock_focuses
+		}
+	}
+	focus = {
+		id = KUB_Elect_New_Ataman_focus
+		icon = GFX_KUB_Elect_New_Ataman
+		cost = 4
+		relative_position_id = KUB_Raise_Frederica_From_Tsemes_Bay
+		x = 0
+		y = 4
+		available = { always = no }
+		bypass = { 
+			has_country_flag = KUB_new_ataman_elected
+		}
+		prerequisite = {
+			focus = KUB_Foes_And_Friends
+		}
+		prerequisite = {
+			focus = KUB_Announce_Ivanis_Retirement
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Elect_New_Ataman_focus"
+			custom_effect_tooltip = KUB_New_Ataman_tt
+		}
+	}
+	focus = {
+		id = KUB_Seize_Tea_Industry
+		icon = GFX_NEE_import_tea
+		cost = 4
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = 1
+		y = 3
+		prerequisite = {
+			focus = KUB_Support_Cooperative_Movement
+		}
+		available = {
+			has_democratic_government = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Seize_Tea_Industry"
+			custom_effect_tooltip = KUB_modify_cooperatives
+			custom_effect_tooltip = KUB_modify_cooperatives_max_factories
+			add_to_variable = { KUB_cooperatives_global_building_slots_factor = 0.1 }
+			set_temp_variable = { change_agrarian_coop = 5 }
+			KUB_cooperatives_change_agrarian_coop = yes
+			set_temp_variable = { change_consumer_coop = 7 }
+			KUB_cooperatives_change_consumer_coop = yes			
+			recalculate_cooperatives = yes
+		}
+	}
+	focus = {
+		id = KUB_Ensure_Investment_Prosperity
+		icon = GFX_RUS_Foreign_Investments
+		cost = 4
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = KUB_Elect_New_Ataman_focus
+		}
+		prerequisite = {
+			focus = KUB_Install_Bread_Monopoly
+			focus = KUB_Rely_On_Cooperatives
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Ensure_Investment_Prosperity"
+			if = {
+				limit = { KUB_has_active_cooperatives = yes }
+				set_temp_variable = { change_credit_coop = 12 }
+				KUB_cooperatives_change_credit_coop = yes			
+				recalculate_cooperatives = yes
+			}
+			activate_targeted_decision = { target = KUB decision = KUB_Human_Capital_Investments }
+		}
+	}
+	focus = {
+		id = KUB_Establish_Production_Collectives
+		icon = GFX_goal_CSA_department_of_production
+		cost = 4
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = -5
+		y = 1
+		prerequisite = {
+			focus = KUB_Elect_New_Ataman_focus
+		}
+		available = {
+			has_democratic_government = yes
+		}
+		mutually_exclusive = { focus = KUB_Fight_Syndicalist_Tendencies }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Establish_Production_Collectives"
+			if = {
+				limit = { KUB_has_active_cooperatives = yes }
+				set_temp_variable = { change_workers_coop = 12 }
+				KUB_cooperatives_change_workers_coop = yes
+				set_temp_variable = { change_state_capacity = 5 }
+				KUB_cooperatives_change_state_capacity = yes
+				recalculate_cooperatives = yes
+				unlock_decision_tooltip = KUB_establish_partnerships_with_trade_unions
+			}
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.08
+			}
+		}
+	}
+	focus = {
+		id = KUB_Fight_Syndicalist_Tendencies
+		icon = GFX_HOL_crackdown_syndie
+		cost = 4
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = KUB_Elect_New_Ataman_focus
+		}
+		available = {
+			has_democratic_government = yes
+		}
+		mutually_exclusive = { focus = KUB_Establish_Production_Collectives }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Fight_Syndicalist_Tendencies"
+			if = {
+				limit = { KUB_has_active_cooperatives = yes }
+				set_temp_variable = { change_workers_coop = -5 }
+				KUB_cooperatives_change_workers_coop = yes
+				set_temp_variable = { change_agrarian_coop = -5 }
+				KUB_cooperatives_change_agrarian_coop = yes
+			}
+			add_popularity = {
+				ideology = syndicalist
+				popularity = -0.08
+			}
+		}
+	}
+	focus = {
+		id = KUB_Revkom_In_Power
+		icon = GFX_KUB_communists
+		cost = 4
+		relative_position_id = KUB_Raise_Frederica_From_Tsemes_Bay
+		x = 0
+		y = 9
+		available = { 
+			always = no
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Revkom_In_Power"
+			custom_effect_tooltip = unlock_focuses
+		}
+	}	
+	focus = {
+		id = KUB_Nationalize_Land
+		icon = GFX_goal_GEO_Colectivize_the_farms
+		cost = 4
+		relative_position_id = KUB_Revkom_In_Power
+		x = -3
+		y = 2
+		available = { 
+			KUB_has_bolsheviks = yes
+		}
+		prerequisite = {
+			focus = KUB_Dekossackisation
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Nationalize_Land"
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+		id = KUB_Subjugate_Cooperatives
+		icon = GFX_goal_MNT_nationalize_austrian_business
+		cost = 4
+		relative_position_id = KUB_Revkom_In_Power
+		x = -4
+		y = 3
+		available = { 
+			KUB_has_bolsheviks = yes
+		}
+		prerequisite = {
+			focus = KUB_Nationalize_Land
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Subjugate_Cooperatives"
+			if = {
+				limit = {
+					NOT = { has_idea = KUB_Yan_Poluyan_hog_tot }
+				}
+				add_popularity = {
+					ideology = social_democrat
+					popularity = -0.1
+				}
+			}
+			else = {
+				add_popularity = {
+					ideology = radical_socialist
+					popularity = -0.1
+				}
+			}
+			add_popularity = {
+				ideology = market_liberal
+				popularity = -0.1
+			}
+			remove_kuban_cooperation = yes
+		}
+	}	
+	focus = {
+		id = KUB_Nationalization
+		icon = GFX_VK_NATIONALIZE
+		cost = 4
+		relative_position_id = KUB_Revkom_In_Power
+		x = -2
+		y = 3
+		available = { 
+			KUB_has_bolsheviks = yes
+		}
+		prerequisite = {
+			focus = KUB_Nationalize_Land
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Nationalization"
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			234 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+		id = KUB_Bread_Monopoly
+		icon = GFX_RUS_Bread_Monopoly
+		cost = 4
+		relative_position_id = KUB_Revkom_In_Power
+		x = -3
+		y = 4
+		available = { 
+			KUB_has_bolsheviks = yes
+		}
+		prerequisite = { focus = KUB_Subjugate_Cooperatives }
+		prerequisite = { focus = KUB_Nationalization }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Bread_Monopoly"
+			add_ideas = KUB_bread_monopoly			
+		}
+	}
+	focus = {
+		id = KUB_Suppress_Federalists
+		icon = GFX_goal_MEX_broken_democracy
+		cost = 4
+		relative_position_id = KUB_Revkom_In_Power
+		x = 3
+		y = 2
+		available = { 
+			KUB_has_bolsheviks = yes
+		}
+		prerequisite = {
+			focus = KUB_Dekossackisation
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Suppress_Federalists"
+			add_popularity = {
+				ideology = social_liberal
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = social_democrat
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = social_conservative
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = -0.1
+			}
+			remove_ideas = KUB_rada
+			remove_power_balance = { id = KUB_rada_bop }
+		}
+	}
+	focus = {
+		id = KUB_Councils_Of_Cossack_Deputies
+		icon = GFX_DKB_councils
+		cost = 4
+		relative_position_id = KUB_Revkom_In_Power
+		x = 2
+		y = 3
+		available = { 
+			KUB_has_bolsheviks = yes
+			NOT = { has_idea = KUB_Yan_Poluyan_hog_tot }
+		}
+		prerequisite = {
+			focus = KUB_Suppress_Federalists
+		}
+		mutually_exclusive = { focus = KUB_Power_To_Workers_Peasants }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Councils_Of_Cossack_Deputies"
+			increase_ruling_party_popularity_by_5 = yes
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = KUB_Power_To_Workers_Peasants
+		icon = GFX_SOV_strengthen_smychka
+		cost = 4
+		relative_position_id = KUB_Revkom_In_Power
+		x = 4
+		y = 3
+		available = { 
+			KUB_has_bolsheviks = yes
+		}
+		prerequisite = {
+			focus = KUB_Suppress_Federalists
+		}
+		mutually_exclusive = { focus = KUB_Councils_Of_Cossack_Deputies }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Power_To_Workers_Peasants"
+			add_political_power = 100
+			increase_ruling_party_popularity_by_10 = yes			
+		}
+	}
+	focus = {
+		id = KUB_Kuban_Communist_Party
+		icon = GFX_goal_communist_world_revolution
+		cost = 4
+		relative_position_id = KUB_Revkom_In_Power
+		x = 3
+		y = 4
+		available = { 
+			KUB_has_bolsheviks = yes
+		}
+		prerequisite = {
+			focus = KUB_Power_To_Workers_Peasants
+			focus = KUB_Councils_Of_Cossack_Deputies
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Kuban_Communist_Party"
+			country_event = kub.1055
+		}
+	}
+	focus = {
+		id = KUB_Dekossackisation
+		icon = GFX_KLY_decossackisation
+		cost = 4
+		relative_position_id = KUB_Revkom_In_Power
+		x = 0
+		y = 1
+		available = { 
+			KUB_has_bolsheviks = yes
+		}
+		select_effect = {
+			swap_ideas = {
+				remove_idea = KUB_Divided_Region
+				add_idea = KUB_cossack_in_denial
+			}
+			country_event = {
+				id = kub.1036
+				days = 14
+			}
+		}		
+		prerequisite = {
+			focus = KUB_Revkom_In_Power
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Dekossackisation"
+			custom_effect_tooltip = upon_selecting_focus
+			effect_tooltip = { 
+				swap_ideas = {
+					remove_idea = KUB_Divided_Region
+					add_idea = KUB_cossack_in_denial
+				}
+			}
+			custom_effect_tooltip = effect_upon_focus_completion
+			if = {
+				limit = { 
+					DKB = { has_socialist_government = no }
+				}
+				DKB = {
+					every_unit_leader = {
+						limit = { has_trait = hidden_sympathies }
+						set_nationality = ROOT
+					}
+				}
+				FRA = {
+					every_unit_leader = {
+						limit = {
+							has_id = 1956
+						}
+						set_nationality = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					MTR = { has_socialist_government = no }
+				}
+				every_unit_leader = {
+					limit = { has_trait = hidden_sympathies }
+					set_nationality = ROOT
+				}
+			}
+			effect_tooltip = {
+				every_unit_leader = { retire = yes }
+			}
+		}
+	}
+	focus = {
+		id = KUB_Don_Red_Guard
+		icon = GFX_DKB_don_guards
+		cost = 4
+		relative_position_id = KUB_Revkom_In_Power
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			KUB_has_bolsheviks = yes		
+		}
+		prerequisite = {
+			focus = KUB_Dekossackisation
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Don_Red_Guard"
+			army_experience = 50
+			add_ideas = KUB_red_guard_1
+		}
+	}
+	focus = {
+		id = KUB_Mobilization_Red
+		icon = GFX_GRU_mass_conscription-4021
+		cost = 4
+		relative_position_id = KUB_Revkom_In_Power
+		x = 0
+		y = 3
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 4
+				has_war = yes
+			}
+		}
+		available = {
+			KUB_has_bolsheviks = yes		
+		}
+		prerequisite = {
+			focus = KUB_Don_Red_Guard
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Mobilization_Red"
+			increase_conscription = yes
+			add_manpower = 50000
+		}
+	}
+	focus = {
+		id = KUB_Red_Cossacks
+		icon = GFX_UKR_Red_Cossacks
+		cost = 4
+		relative_position_id = KUB_Revkom_In_Power
+		x = -1
+		y = 4
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			KUB_has_bolsheviks = yes		
+			NOT = { has_idea = KUB_Yan_Poluyan_hog_tot }
+		}
+		prerequisite = {
+			focus = KUB_Don_Red_Guard
+		}
+		mutually_exclusive = { focus = KUB_Centralised_Command }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Red_Cossacks"
+			swap_ideas = {
+				remove_idea = KUB_red_guard_1
+				add_idea = KUB_red_guard_2
+			}
+		}
+	}
+	focus = {
+		id = KUB_Centralised_Command
+		icon = GFX_goal_officers
+		cost = 4
+		relative_position_id = KUB_Revkom_In_Power
+		x = 1
+		y = 4
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			KUB_has_bolsheviks = yes		
+		}
+		prerequisite = {
+			focus = KUB_Don_Red_Guard
+		}
+		mutually_exclusive = { focus = KUB_Red_Cossacks }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Centralised_Command"
+			swap_ideas = {
+				remove_idea = KUB_red_guard_1
+				add_idea = KUB_red_guard_3
+			}
+		}
+	}
+	focus = {
+		id = KUB_For_The_Red_Don_Kuban
+		icon = GFX_DKB_kuban_socialists
+		cost = 4
+		relative_position_id = KUB_Revkom_In_Power
+		x = 0
+		y = 5
+		available = { 
+			KUB_has_bolsheviks = yes
+			is_subject = no
+		}
+		prerequisite = {
+			focus = KUB_Red_Cossacks
+			focus = KUB_Centralised_Command
+		}
+		will_lead_to_war_with = DKB
+		prerequisite = { focus = KUB_Bread_Monopoly }
+		prerequisite = { focus = KUB_Kuban_Communist_Party }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			country_event = {
+				id = kub.200
+				days = 2
+			}
+		}
+	}
+	#old commie kuban here
+	focus = {
+		id = KUB_KPA_Restores_Control
+		icon = GFX_KUB_KPA
+		cost = 4
+		relative_position_id = KUB_Raise_Frederica_From_Tsemes_Bay
+		x = -9
+		y = 4
+		available = { 
+			always = no
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_KPA_Restores_Control"
+			custom_effect_tooltip = unlock_focuses
+		}
+	}	
+	focus = {
+		id = KUB_Deal_With_Pokrovsky_Radicals
+		icon = GFX_KUB_pokrovsky
+		cost = 4
+		relative_position_id = KUB_KPA_Restores_Control
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = KUB_KPA_Restores_Control
+			focus = KUB_Elect_New_Ataman_focus
+		}
+		available = {
+			has_democratic_government = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Deal_With_Pokrovsky_Radicals"
+			add_popularity = {
+				ideology = national_populist
+				popularity = -0.15
+			}
+			add_stability = 0.1
+			every_unit_leader = {
+				limit = { 
+					OR = {
+						has_id = 17945 
+						has_id = 179421
+					}
+				}
+				retire = yes
+			}
+		}
+	}	
+	
+	focus = {
+		id = KUB_Base_For_The_New_Host
+		icon = GFX_TRM_Expand_Cossack_Rights
+		cost = 4
+		relative_position_id = KUB_KPA_Restores_Control
+		x = 0
+		y = 1
+		available = { 
+			has_government = paternal_autocrat
+		}
+		prerequisite = {
+			focus = KUB_KPA_Restores_Control
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Base_For_The_New_Host"
+			add_ideas = KUB_KPA
+		}
+	}	
+	focus = {
+		id = KUB_Restore_Regional_Rada
+		icon = GFX_RUS_reform_electoral_law
+		cost = 4
+		relative_position_id = KUB_KPA_Restores_Control
+		x = -1
+		y = 2
+		available = { 
+			has_government = paternal_autocrat
+			is_subject = no
+		}
+		prerequisite = {
+			focus = KUB_Base_For_The_New_Host
+		}
+		mutually_exclusive = { focus = KUB_Dissolve_Rada }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Restore_Regional_Rada"
+			add_stability = 0.1
+			if = {
+				limit = {
+					NOT = { has_idea = KUB_rada }
+				}
+				add_ideas = KUB_rada
+			}
+			set_temp_variable_to_random = {
+				var = KUB_pop_added
+				min = 0.01
+				max = 0.06
+			}
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = KUB_pop_added
+			}
+			set_temp_variable_to_random = {
+				var = KUB_pop_added
+				min = 0.01
+				max = 0.06
+			}
+			add_popularity = {
+				ideology = social_liberal
+				popularity = KUB_pop_added
+			}
+		}
+	}
+	focus = {
+		id = KUB_Dissolve_Rada
+		icon = GFX_goal_NFA_end_parliamentarism
+		cost = 5
+		relative_position_id = KUB_KPA_Restores_Control
+		x = 1
+		y = 2
+		available = { 
+			has_government = paternal_autocrat
+		}
+		prerequisite = {
+			focus = KUB_Base_For_The_New_Host
+		}
+		mutually_exclusive = { focus = KUB_Restore_Regional_Rada }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Dissolve_Rada"
+			add_country_leader_trait = dictator_ataman
+			remove_ideas = KUB_rada
+			remove_power_balance = { id = KUB_rada_bop }
+		}
+	}
+	focus = {
+		id = KUB_Martial_Law
+		icon = GFX_goal_ideology_national_populist
+		cost = 5
+		relative_position_id = KUB_KPA_Restores_Control
+		x = 1
+		y = 4
+		available = { 
+			has_government = paternal_autocrat
+		}
+		prerequisite = {
+			focus = KUB_Dissolve_Rada
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Martial_Law"
+			add_ideas = KUB_martial_law
+		}
+	}		
+	
+	focus = {
+		id = KUB_Mobilize_Host
+		icon = GFX_focus_rus_cossack
+		cost = 5
+		relative_position_id = KUB_KPA_Restores_Control
+		x = 1
+		y = 5
+		available = { 
+			has_government = paternal_autocrat
+		}
+		prerequisite = {
+			focus = KUB_Martial_Law
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Mobilize_Host"
+			increase_mobilisation = yes
+			swap_ideas = {
+				remove_idea = KUB_KPA
+				add_idea = KUB_KPA_1
+			}
+			hidden_effect = {
+				country_event = {
+					id = kub.2000
+					days = 7
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KUB_Lead_The_Restored_Republic
+		icon = GFX_KUB_lead_republic
+		cost = 4
+		relative_position_id = KUB_KPA_Restores_Control
+		x = 0
+		y = 3
+		available = { 
+			has_government = paternal_autocrat
+		}
+		prerequisite = {
+			focus = KUB_Restore_Regional_Rada
+		}
+		mutually_exclusive = {
+			focus = KUB_Formally_Give_Up_Power
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Lead_The_Restored_Republic"
+			country_event = { id = kub.1050 days = 1 }
+		}
+	}
+	focus = {
+		id = KUB_Formally_Give_Up_Power
+		icon = GFX_goal_TEX_democratic_transition
+		cost = 4
+		relative_position_id = KUB_KPA_Restores_Control
+		x = -2
+		y = 3
+		available = { 
+			has_government = paternal_autocrat
+		}
+		prerequisite = {
+			focus = KUB_Restore_Regional_Rada
+		}
+		mutually_exclusive = {
+			focus = KUB_Lead_The_Restored_Republic
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = KUB_path option = KUB_PATH_KPA }
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Formally_Give_Up_Power"
+			country_event = { id = kub.1050 days = 1 }
+		}
+	}
+	focus = {
+		id = KUB_Confirm_Convention
+		icon = GFX_goal_UKR_iron_republic
+		cost = 5
+		prerequisite = {
+			focus = KUB_Official_Ukrainian
+		}
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = -7
+		y = 3
+		available = {
+			has_democratic_government = yes
+			UKR_has_socialist_or_pro_russian_government = no
+			NOT = { has_completed_focus = KUB_Kuban_Samostiynost }
+			has_war = no
+		}		
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = KUB_foreign option = KUB_FOREIGN_INDEPENDENCE }
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Confirm_Convention"
+			var:202.owner = { country_event = kub.1071 }
+		}
+	}
+	focus = {
+		id = KUB_Open_Borders
+		icon = GFX_goal_UKR_contact_diaspora
+		cost = 5
+		prerequisite = {
+			focus = KUB_Official_Ukrainian
+			focus = KUB_Bilingual_Government
+		}
+		available = {
+			has_democratic_government = yes
+			UKR_has_socialist_or_pro_russian_government = no
+			NOT = {
+				has_completed_focus = KUB_Kuban_Samostiynost
+				has_completed_focus = KUB_Reunite_Cossackia
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}		
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = -5
+		y = 3
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Open_Borders"
+			set_temp_variable = { KUB_integration_process_change = 10 }
+			KUB_change_integration_process = yes
+			var:202.owner = { country_event = kub.1024 }
+		}
+	}
+	focus = {
+		id = KUB_Sign_The_Federative_Treaty
+		icon = GFX_KUB_integration
+		cost = 5
+		prerequisite = {
+			focus = KUB_Open_Borders
+		}
+		prerequisite = {
+			focus = KUB_Confirm_Convention
+		}
+		mutually_exclusive = { focus = KUB_Kuban_Samostiynost }
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = KUB_foreign option = KUB_FOREIGN_INDEPENDENCE }
+			}
+		}
+		available = { 
+			has_democratic_government = yes
+			KUB_has_more_80_integration = yes
+			has_war = no
+			is_subject = no
+			var:202.owner = {
+				has_war = no
+				is_subject = no				
+			}
+			UKR_has_socialist_or_pro_russian_government = no
+			has_idea = KUB_Unification_Sentiments_2
+			is_power_balance_in_range = {
+				id = KUB_rada_bop
+				range < KUB_bop_chernomortsy_influence_1
+			}
+		}
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = -6
+		y = 4
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Sign_The_Federative_Treaty"
+			custom_effect_tooltip = KUB_Ukraine_Must_Approve_Of_This
+			set_temp_variable = { KUB_integration_process_change = 10 }
+			KUB_change_integration_process = yes
+			var:202.owner = { country_event = kub.1026 }
+		}
+	}
+	
+	
+	focus = {
+		id = KUB_End_Cooperative_Movement
+		icon = GFX_goal_AUS_suppress_syndicalism
+		cost = 5
+		prerequisite = {
+			focus = KUB_Ensure_Investment_Prosperity
+		}
+		available = {
+			has_democratic_government = yes
+		}
+		mutually_exclusive = { focus = KUB_Support_Cooperative_Movement }
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = 4
+		y = 2
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = KUB_path option = KUB_PATH_CHERN }
+			}			
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_End_Cooperative_Movement"
+			remove_kuban_cooperation = yes
+			add_political_power = 200
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = -0.06
+			}
+			add_popularity = {
+				ideology = market_liberal
+				popularity = -0.02
+			}
+			KUB_increase_lineytsy = yes
+		}
+	}
+	focus = {
+		id = KUB_Request_Russian_Protection
+		icon = GFX_RUS_The_Might_Of_Russian_Army
+		cost = 5
+		prerequisite = {
+			focus = KUB_Elect_New_Ataman_focus
+		}
+		available = {
+			has_democratic_government = yes
+		}
+		mutually_exclusive = { focus = KUB_Request_German_Help }
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				OR = {
+					has_game_rule = { rule = KUB_path option = KUB_PATH_CHERN }
+					has_game_rule = { rule = KUB_foreign option = KUB_FOREIGN_REICHSPAKT }
+				}
+			}
+			modifier = {
+				factor = 2
+				DKB = { has_socialist_government = yes }
+			}
+		}
+		available = {
+			has_democratic_government = yes
+			OR = {
+				is_power_balance_in_range = {
+					id = KUB_rada_bop
+					range > KUB_bop_lineitsy_influence_1
+				}
+				has_completed_focus = KUB_End_Rada_Conflict
+			}
+			has_country_flag = KUB_new_ataman_elected
+			RUS = { has_socialist_government = no }
+			has_war = no
+			hidden_trigger = { 
+				NOT = { has_country_flag = RUS_refused_us }
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Request_Russian_Protection"
+			custom_effect_tooltip = KUB_Request_Russian_Protection_tt
+			RUS = {
+				country_event = kub.1065
+			}
+		}
+	}
+	focus = {
+		id = KUB_Official_Ukrainian
+		icon = GFX_goal_OTT_constitution
+		cost = 5
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = KUB_path option = KUB_PATH_LIN }
+					has_game_rule = { rule = KUB_foreign option = KUB_FOREIGN_DON }
+				}
+			}
+			modifier = {
+				factor = 0.5
+				KUB_has_lineytsy = yes
+			}
+			
+		}
+		available = {
+			has_democratic_government = yes
+			has_country_flag = KUB_new_ataman_elected
+		}	
+		prerequisite = {
+			focus = KUB_Establish_Production_Collectives
+			focus = KUB_Fight_Syndicalist_Tendencies
+		}
+		mutually_exclusive = { focus = KUB_Bilingual_Government }
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = -5
+		y = 2
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Official_Ukrainian"
+			add_political_power = 25
+			set_country_flag = KUB_ukrainian_language
+			if = {
+				limit = { has_country_flag = KUB_chernomortsy_authoritarian }
+				set_party_name = {
+					ideology = authoritarian_democrat
+					name = KUB_chernomortsy_ukrainian_party
+					long_name = KUB_chernomortsy_ukrainian_party_long
+				}
+			}
+			set_party_name = {
+				ideology = social_liberal
+				name = KUB_chernomortsy_ukrainian_party
+				long_name = KUB_chernomortsy_ukrainian_party_long
+			}
+			set_party_name = {
+				ideology = social_democrat
+				name = KUB_chernomortsy_ukrainian_party
+				long_name = KUB_chernomortsy_ukrainian_party_long
+			}
+			set_party_name = {
+				ideology = paternal_autocrat
+				name = KUB_kpa_ukrainian_party
+				long_name = KUB_kpa_ukrainian_party_long
+			}
+			set_temp_variable = { KUB_integration_process_change = 15 }
+			KUB_change_integration_process = yes
+			KUB_increase_chernomortsy = yes
+			if = {
+				limit = { 
+					NOT = { has_completed_focus = KUB_Deal_With_Pokrovsky_Radicals }
+				}
+				custom_effect_tooltip = KUB_Official_Ukrainian_risks
+				hidden_effect = {
+					country_event = {
+						id = kub.1047
+						days = 20
+						random_days = 20
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = KUB_Bilingual_Government
+		icon = GFX_CRM_Small_Autonomy
+		cost = 5
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = KUB_path option = KUB_PATH_CHERN }
+					has_game_rule = { rule = KUB_path option = KUB_PATH_KPA }
+					has_game_rule = { rule = KUB_foreign option = KUB_FOREIGN_UKRAINE }
+				}
+			}
+			modifier = {
+				factor = 0.5
+				KUB_has_chernomortsy = yes
+			}
+			modifier = {
+				set_temp_variable = { KUB_temp = 100 }
+				subtract_from_temp_variable = { KUB_temp = KUB_integration_process }
+				divide_temp_variable = { KUB_temp = 100 }
+				factor = KUB_temp
+			}
+		}
+		available = {
+			has_democratic_government = yes
+			has_country_flag = KUB_new_ataman_elected
+		}	
+		prerequisite = {
+			focus = KUB_Establish_Production_Collectives
+			focus = KUB_Fight_Syndicalist_Tendencies
+		}
+		mutually_exclusive = { focus = KUB_Official_Ukrainian }
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = -3
+		y = 2
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Bilingual_Government"
+			add_political_power = -25
+			set_temp_variable = { KUB_integration_process_change = 5 }
+			KUB_change_integration_process = yes
+			KUB_increase_lineytsy = yes
+		}
+	}
+	focus = {
+		id = KUB_State_Orthodoxy
+		icon = GFX_goal_orthodox_state
+		cost = 5
+		prerequisite = {
+			focus = KUB_Bilingual_Government
+		}
+		available = {
+			has_democratic_government = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = -1
+		y = 3
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_State_Orthodoxy"
+			add_ideas = RUS_state_religion 
+			KUB_increase_lineytsy = yes
+		}
+	}
+	focus = {
+		id = KUB_End_Rada_Conflict
+		icon = GFX_goal_NFA_safe_elections
+		cost = 5
+		prerequisite = {
+			focus = KUB_Bilingual_Government
+		}
+		available = {
+			has_democratic_government = yes
+			is_power_balance_in_range = {
+				id = KUB_rada_bop
+				range > KUB_bop_lineitsy_influence_1
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = -3
+		y = 3
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_End_Rada_Conflict"
+			KUB_increase_lineytsy = yes
+			remove_power_balance = { id = KUB_rada_bop }
+		}
+	}
+	focus = {
+		id = KUB_Kuban_Samostiynost
+		icon = GFX_goal_flag_kuban
+		cost = 5
+		prerequisite = {
+			focus = KUB_End_Rada_Conflict
+			focus = KUB_Official_Ukrainian
+		}
+		prerequisite = {
+			focus = KUB_State_Orthodoxy
+			focus = KUB_Official_Ukrainian
+		}
+		mutually_exclusive = { 
+			focus = KUB_Reunite_Cossackia 
+			focus = KUB_Sign_The_Federative_Treaty
+		}
+		available = {
+			has_democratic_government = yes
+			is_subject = no
+			has_war = no
+			if = {
+				limit = { has_completed_focus = KUB_Official_Ukrainian }
+				UKR_has_socialist_or_pro_russian_government = no
+			}
+			is_power_balance_in_range = {
+				id = KUB_rada_bop
+				range > KUB_bop_chernomortsy_influence_1
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = KUB_foreign option = KUB_FOREIGN_UKRAINE }
+					has_game_rule = { rule = KUB_foreign option = KUB_FOREIGN_DON }
+				}
+			}
+			modifier = {
+				factor = 2
+				UKR_has_socialist_or_pro_russian_government = yes			
+			}
+		}
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = -4
+		y = 4
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Kuban_Samostiynost"
+			if = {
+				limit = { has_any_power_balance = yes }
+				remove_power_balance = { id = KUB_rada_bop }
+			}
+			clear_all_relations = yes
+			KUB_remove_ukrainian_sentiments = yes
+			add_ideas = KUB_samostiynost
+		}
+	}
+	focus = {
+		id = KUB_Reunite_Cossackia
+		icon = GFX_flag_don_kuban
+		cost = 5
+		prerequisite = {
+			focus = KUB_End_Rada_Conflict
+		}
+		prerequisite = {
+			focus = KUB_State_Orthodoxy
+		}
+		available = {
+			has_democratic_government = yes
+			DKB = { 
+				has_country_leader = {
+					name = "彼得·克拉斯诺夫"
+					ruling_only = yes
+				}
+				is_subject = no
+				has_war = no
+			}
+			is_subject = no
+			has_war = no
+			is_power_balance_in_range = {
+				id = KUB_rada_bop
+				range > KUB_bop_lineitsy_influence_1
+			}
+		}
+		mutually_exclusive = { focus = KUB_Kuban_Samostiynost }
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = KUB_foreign option = KUB_FOREIGN_UKRAINE }
+					has_game_rule = { rule = KUB_foreign option = KUB_FOREIGN_INDEPENDENCE }
+				}
+			}
+		}
+		x = -2
+		y = 4
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Reunite_Cossackia"
+			KUB_remove_ukrainian_sentiments = yes
+			country_event = kub.200
+		}
+	}
+	
+	focus = {
+		id = KUB_Support_Cooperative_Movement
+		icon = GFX_goal_CSA_coop_clubs
+		cost = 5
+		prerequisite = {
+			focus = KUB_Ensure_Investment_Prosperity
+		}
+		available = {
+			has_democratic_government = yes
+		}
+		mutually_exclusive = { focus = KUB_End_Cooperative_Movement }
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = KUB_path option = KUB_PATH_LIN }
+			}
+		}
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = 2
+		y = 2
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Support_Cooperative_Movement"
+			if = {
+				limit = { KUB_has_active_cooperatives = yes }
+				add_to_variable = { cooperatives_upper_limit = 0.05 }
+				recalculate_cooperatives = yes
+			}
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.06
+			}
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.02
+			}
+			KUB_increase_chernomortsy = yes
+		}
+	}
+	focus = {
+		id = KUB_Grants_For_oilseed
+		icon = GFX_KUB_butter
+		cost = 5
+		prerequisite = {
+			focus = KUB_End_Cooperative_Movement
+			focus = KUB_Support_Cooperative_Movement
+		}
+		available = {
+			has_democratic_government = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = 3
+		y = 3
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Grants_For_oilseed"
+			if = {
+				limit = { KUB_has_active_cooperatives = yes }
+				set_temp_variable = { change_workers_coop = 3 }
+				KUB_cooperatives_change_workers_coop = yes
+				recalculate_cooperatives = yes
+			}
+			random_owned_controlled_state = {
+				prioritize = { 234 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				increase_state_category_by_one_level = yes
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = KUB_Increase_Oil_Recovery
+		icon = GFX_goal_GAL_sell_oil
+		cost = 5
+		prerequisite = {
+			focus = KUB_Motorisation_Of_The_Cavalry
+		}
+		prerequisite = {
+			focus = KUB_Grants_For_oilseed
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = 4
+		y = 4
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Increase_Oil_Recovery"
+			random_owned_controlled_state = {
+				prioritize = { 234 }
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = fuel_silo size > 0 include_locked = yes }
+				}
+				increase_state_category_by_two_levels = yes
+				add_building_construction = {
+					type = fuel_silo
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_resource = {
+				type = oil
+				amount = 24
+				state = 234
+			}
+			set_country_flag = KUB_has_upgraded_yekaterinodar_neft
+			custom_effect_tooltip = KUB_upgrade_yekaterinodar_neft
+			hidden_effect = {
+				if = {
+					limit = { has_idea = yekaterinodar_neft }
+					swap_ideas = {
+						remove_idea = yekaterinodar_neft
+						add_idea = yekaterinodar_neft_upgraded
+					}
+				}
+			}
+			
+		}
+	}
+	focus = {
+		id = KUB_Request_German_Help
+		icon = GFX_goal_Deutsches_Heer
+		cost = 4
+		prerequisite = {
+			focus = KUB_Elect_New_Ataman_focus
+		}
+		mutually_exclusive = { focus = KUB_Request_Russian_Protection }
+		available = {
+			date > 1937.4.1
+			is_power_balance_in_range = {
+				id = KUB_rada_bop
+				range < KUB_bop_chernomortsy_influence_1
+			}
+			has_country_flag = KUB_new_ataman_elected
+			NOT = { has_global_flag = GER_withdrew_from_caucasus }
+			hidden_trigger = {
+				NOT = { has_country_flag = GER_refused_us }
+			}
+			var:202.owner = {
+				NOT = { has_guaranteed = ROOT }
+			}
+			OR = {
+				UKR_has_socialist_or_pro_russian_government = yes
+				NOT = { country_exists = UKR }
+				var:202.owner = { is_in_faction_with = GER }
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = { rule = KUB_path option = KUB_PATH_LIN }
+					has_game_rule = { rule = KUB_foreign option = KUB_FOREIGN_RUSSIA }
+				}
+			}
+			modifier = {
+				factor = 2
+				DKB = { has_socialist_government = yes }
+			}
+		}
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = 1
+		y = 1
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Request_German_Help"
+			GER = {
+				country_event = {
+					id = kub.1062
+					days = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = KUB_Join_Mitteleuropa
+		text = DKU_Join_Mitteleuropa
+		icon = GFX_goal_Empower_the_Reichsbank
+		cost = 5
+		relative_position_id = KUB_Elect_New_Ataman_focus
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = KUB_Request_German_Help
+		}
+		available = {
+			has_democratic_government = yes
+			has_idea = DON_GER_mil_mis	
+		}
+		bypass = {
+			GER_is_in_mitteleuropa = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Join_Mitteleuropa"
+			GER_add_to_mitteleuropa = yes
+			KUB_increase_chernomortsy = yes
+			activate_targeted_decision = { target = GER decision = KUB_ask_for_investments }
+		}
+	}
+	
+	focus = {
+		id = KUB_A_Cossack_Army
+		text = DKU_A_Cossack_Army
+		icon = GFX_focus_rus_cossack
+		cost = 7
+		x = 7
+		y = 2
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 4
+				has_war = yes
+			}
+		}
+		available = { 
+			OR = {
+				has_completed_focus = KUB_Elect_New_Ataman_focus
+				has_completed_focus = KUB_Base_For_The_New_Host
+			}
+			KUB_has_bolsheviks = no
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_A_Cossack_Army"
+			army_experience = 50
+			custom_effect_tooltip = cossack_corps_tech_effect
+			hidden_effect= {
+				set_technology = {
+					cossack_corps_tech = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = KUB_Follow_Lineitsy_Tactics
+		icon = GFX_DKB_army_focus
+		cost = 5
+		relative_position_id = KUB_A_Cossack_Army
+		x = 1
+		y = 1
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 4
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = KUB_path option = KUB_PATH_CHERN }
+			}
+		}
+		bypass = {
+			has_completed_focus = KUB_Revkom_In_Power
+		}
+		prerequisite = {
+			focus = KUB_A_Cossack_Army
+		}
+		mutually_exclusive = { focus = KUB_Invite_Ukrainian_Advisors }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Follow_Lineitsy_Tactics"
+			DKB = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = KR_approves_of_govt 
+				}
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			set_temp_variable = { KUB_integration_process_change = -20 }
+			KUB_change_integration_process = yes
+			random_unit_leader = {
+				limit = { has_id = 17941 }
+				demote_leader = yes
+			}
+			every_unit_leader = {
+				limit = { has_unit_leader_flag = KUB_line_cossack }
+				add_skill_level = 1
+			}
+			KUB_increase_lineytsy = yes
+		}
+	}
+	focus = {
+		id = KUB_Invite_Ukrainian_Advisors
+		icon = GFX_goal_UKR_army
+		cost = 5
+		relative_position_id = KUB_A_Cossack_Army
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 4
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = KUB_path option = KUB_PATH_LIN }
+			}
+		}
+		bypass = {
+			has_completed_focus = KUB_Revkom_In_Power
+		}
+		prerequisite = {
+			focus = KUB_A_Cossack_Army
+		}
+		mutually_exclusive = { focus = KUB_Follow_Lineitsy_Tactics }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Invite_Ukrainian_Advisors"
+			var:202.owner = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = KR_approves_of_govt 
+				}
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			set_temp_variable = { KUB_integration_process_change = 10 }
+			KUB_change_integration_process = yes
+			random_unit_leader = {
+				limit = { has_id = 18901 }
+				demote_leader = yes
+			}
+			KUB_increase_chernomortsy = yes
+		}
+	}
+	focus = {
+		id = KUB_Import_German_Equipment
+		text = DKU_Import_German_Equipment
+		icon = GFX_goal_generic_heavy_armour_german
+		cost = 4
+		relative_position_id = KUB_A_Cossack_Army
+		x = -1
+		y = 2
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 4
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = KUB_path option = KUB_PATH_LIN }
+			}
+		}
+		bypass = {
+			has_completed_focus = KUB_Revkom_In_Power
+		}
+		prerequisite = {
+			focus = KUB_Invite_Ukrainian_Advisors
+		}
+		mutually_exclusive = {
+			focus = KUB_Import_Russian_Equipment
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Import_German_Equipment"
+			activate_targeted_decision = { target = GER decision = KUB_buy_infantry }
+			activate_targeted_decision = { target = GER decision = KUB_buy_support }
+			KUB_increase_chernomortsy = yes
+		}
+	}
+	focus = {
+		id = KUB_Import_Russian_Equipment
+		text = DKU_Import_Russian_Equipment
+		icon = GFX_goal_generic_heavy_armour_russian
+		cost = 4
+		relative_position_id = KUB_A_Cossack_Army
+		x = 1
+		y = 2
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 4
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = KUB_path option = KUB_PATH_CHERN }
+			}
+		}
+		bypass = {
+			has_completed_focus = KUB_Revkom_In_Power
+		}
+		bypass = {
+			kuban_is_pro_russian = yes
+			RUS = { has_country_flag = soviet_russia_restored }
+			TRM = { has_socialist_government = yes }
+		}
+		prerequisite = {
+			focus = KUB_Follow_Lineitsy_Tactics
+		}
+		mutually_exclusive = {
+			focus = KUB_Import_German_Equipment
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Import_Russian_Equipment"
+			if = {
+				limit = { soviets_exist = yes }
+				if = {
+					limit = { 
+						TRM = { has_socialist_government = no }
+					}
+					activate_targeted_decision = { target = TRM decision = KUB_buy_infantry }
+					activate_targeted_decision = { target = TRM decision = KUB_buy_support }
+					activate_targeted_decision = { target = TRM decision = KUB_buy_artillery }
+				}
+			}
+			else = {
+				activate_targeted_decision = { target = RUS decision = KUB_buy_infantry }
+				activate_targeted_decision = { target = RUS decision = KUB_buy_support }
+				activate_targeted_decision = { target = RUS decision = KUB_buy_artillery }
+			}
+			KUB_increase_lineytsy = yes
+		}
+	}
+	focus = {
+		id = KUB_Modern_Tactics
+		text = DKU_Modern_Tactics
+		icon = GFX_goal_military_academy
+		cost = 5
+		relative_position_id = KUB_A_Cossack_Army
+		x = 0
+		y = 3
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 4
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_Import_German_Equipment
+			focus = KUB_Import_Russian_Equipment
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Modern_Tactics"
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = KUB_Recon_With_Sabres_And_Carbines
+		icon = GFX_focus_generic_horse_studs
+		cost = 5
+		relative_position_id = KUB_A_Cossack_Army
+		x = 0
+		y = 5
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 4
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_Modernize_Artillery
+		}
+		mutually_exclusive = { focus = KUB_Motorisation_Of_The_Cavalry }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Recon_With_Sabres_And_Carbines"
+			custom_effect_tooltip = improved_recon_units_tech_effect
+			hidden_effect = {
+				set_technology = { improved_recon_units_tech = 1 }
+			}
+			add_tech_bonus = {
+				name = KUB_Recon_With_Sabres_And_Carbines
+				bonus = 1
+				uses = 1
+				category = recon_tech
+			}			
+			KUB_increase_lineytsy = yes
+		}
+	}
+	focus = {
+		id = KUB_Motorisation_Of_The_Cavalry
+		icon = GFX_focus_rus_motorised
+		cost = 5
+		relative_position_id = KUB_A_Cossack_Army
+		x = -2
+		y = 5
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 4
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_Modernize_Artillery
+		}
+		mutually_exclusive = { focus = KUB_Recon_With_Sabres_And_Carbines }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Motorisation_Of_The_Cavalry"
+			custom_effect_tooltip = tech_semi_motorised_cav_effect
+			hidden_effect = {
+				set_technology = { tech_semi_motorised_cav = 1 }
+			}
+			add_tech_bonus = {
+				name = KUB_Motorisation_Of_The_Cavalry
+				bonus = 1
+				uses = 1
+				category = cat_armored_cars
+				category = cat_mechanized_equipment
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 10
+				producer = KUB
+			}
+			if = {
+				limit = { has_completed_focus = KUB_Import_German_Equipment }
+				activate_targeted_decision = { target = GER decision = KUB_buy_motorized }		
+			}
+			else_if = {
+				limit = { soviets_exist = yes }
+				if = {
+					limit = { 
+						TRM = { has_socialist_government = no }
+					}
+					activate_targeted_decision = { target = TRM decision = KUB_buy_motorized }
+				}
+			}
+			else = {
+				activate_targeted_decision = { target = RUS decision = KUB_buy_motorized }
+			}
+			KUB_increase_chernomortsy = yes
+		}
+	}
+	focus = {
+		id = KUB_Produce_More_Equipment
+		text = DKU_Produce_More_Equipment
+		icon = GFX_focus_generic_military_equipment
+		cost = 5
+		relative_position_id = KUB_A_Cossack_Army
+		x = -2
+		y = 3
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 4
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_Follow_Lineitsy_Tactics
+			focus = KUB_Invite_Ukrainian_Advisors
+		}
+		prerequisite = {
+			focus = KUB_Install_Bread_Monopoly
+			focus = KUB_Rely_On_Cooperatives
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Produce_More_Equipment"
+			if = {
+				limit = { KUB_has_active_cooperatives = yes }
+				set_temp_variable = { change_workers_coop = 3 }
+				KUB_cooperatives_change_workers_coop = yes
+				recalculate_cooperatives = yes
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KUB_Military_Industrial_Complex
+		text = DKU_Military_Industrial_Complex
+		icon = GFX_goal_Focus_Military_Mobilisation
+		cost = 5
+		relative_position_id = KUB_A_Cossack_Army
+		x = -1
+		y = 4
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 4
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_Produce_More_Equipment
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Military_Industrial_Complex"
+			if = {
+				limit = { KUB_has_active_cooperatives = yes }
+				custom_effect_tooltip = KUB_modify_cooperatives
+				custom_effect_tooltip = KUB_modify_cooperatives_line_change_production_efficiency_factor
+				add_to_variable = { KUB_cooperatives_line_change_production_efficiency_factor = 0.05 }
+			}
+			random_owned_controlled_state = {
+				increase_state_category_by_one_level = yes
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				increase_state_category_by_one_level = yes
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KUB_Modernize_Artillery
+		text = DKU_Modernize_Artillery
+		icon = GFX_goal_artillery
+		cost = 5
+		relative_position_id = KUB_A_Cossack_Army
+		x = 1
+		y = 4
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 4
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_Modern_Tactics
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Modernize_Artillery"
+			add_tech_bonus = {
+				name = DKU_Modernize_Artillery
+				bonus = 1
+				uses = 2
+				category = artillery
+			}
+			if = {
+				limit = { has_completed_focus = KUB_Import_German_Equipment }
+				activate_targeted_decision = { target = GER decision = KUB_buy_artillery }
+			}
+			else_if = {
+				limit = { soviets_exist = yes }
+				if = {
+					limit = { 
+						TRM = { has_socialist_government = no }
+					}
+					activate_targeted_decision = { target = TRM decision = KUB_buy_artillery }
+				}
+			}
+			else = {
+				activate_targeted_decision = { target = RUS decision = KUB_buy_artillery }
+			}
+		}
+	}
+	
+	focus = {
+		id = KUB_Standartized_Equipment_Production
+		text = DKU_Standartized_Equipment_Production
+		icon = GFX_goal_generic_support_equipment
+		cost = 5
+		relative_position_id = KUB_A_Cossack_Army
+		x = -1
+		y = 6
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 4
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_Recon_With_Sabres_And_Carbines
+			focus = KUB_Motorisation_Of_The_Cavalry
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Standartized_Equipment_Production"
+			add_tech_bonus = {
+				name = DKU_Modernize_Artillery
+				bonus = 1
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+	}
+	
+	focus = {
+		id = KUB_Tanks_Of_Don
+		text = DKU_Tanks_Of_Don
+		icon = GFX_goal_POL_light_tanks
+		cost = 6
+		relative_position_id = KUB_A_Cossack_Army
+		x = 1
+		y = 6
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 4
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_Recon_With_Sabres_And_Carbines
+			focus = KUB_Motorisation_Of_The_Cavalry
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Tanks_Of_Don"
+			if = {
+				limit = { has_completed_focus = KUB_Import_German_Equipment }
+				activate_targeted_decision = { target = GER decision = KUB_buy_tank }		
+			}
+			else_if = {
+				limit = { RUS = { NOT = { has_country_flag = soviet_russia_restored } } }
+				activate_targeted_decision = { target = RUS decision = KUB_buy_tank }
+			}
+			add_tech_bonus = {
+				name = DKU_Tanks_Of_Don
+				bonus = 1
+				uses = 2
+				category = armor
+			}
+		}
+	}
+	
+	focus = {
+		id = KUB_A_New_Army
+		text = DKU_A_New_Army
+		icon = GFX_goal_FNG_Army_Modern
+		cost = 6
+		relative_position_id = KUB_A_Cossack_Army
+		x = 0
+		y = 7
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 4
+				has_war = yes
+			}
+		}
+		available = { has_idea = DON_Cossack_army }
+		prerequisite = {
+			focus = KUB_Standartized_Equipment_Production
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_A_New_Army"
+			swap_ideas = {
+				remove_idea = DON_Cossack_army 
+				add_idea = DON_Cossack_army_1
+			}
+		}
+	}
+	
+	focus = {
+		id = KUB_A_Cossack_Airforce
+		text = DKU_A_Cossack_Airforce
+		icon = GFX_goal_air_armada
+		cost = 4
+		relative_position_id = KUB_A_Cossack_Army
+		x = 3
+		y = 1
+		available = {
+			OR = {
+				has_completed_focus = KUB_Elect_New_Ataman_focus
+				has_completed_focus = KUB_Base_For_The_New_Host
+				has_completed_focus = KUB_Revkom_In_Power
+			}
+		}
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				has_war = yes
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_A_Cossack_Airforce"
+			air_experience = 25
+			add_doctrine_cost_reduction = {
+					name = air_doc_bonus
+					cost_reduction = 0.5
+					uses = 1
+					category = air_doctrine
+				}
+		}
+	}
+	focus = {
+		id = KUB_Expand_Airfields
+		text = DKU_Expand_Airfields
+		icon = GFX_MON_improve_airbases_in_mongolia
+		cost = 5
+		relative_position_id = KUB_A_Cossack_Army
+		x = 3
+		y = 2
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_A_Cossack_Airforce
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Expand_Airfields"
+			random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+		}
+	}
+	focus = {
+		id = KUB_Fighters_For_Don
+		text = DKU_Fighters_For_Don
+		icon = GFX_goal_ELS_Basic_Fighter_Development
+		cost = 5
+		relative_position_id = KUB_A_Cossack_Army
+		x = 2
+		y = 3
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_Expand_Airfields
+		}
+		prerequisite = {
+			focus = KUB_Import_German_Equipment
+			focus = KUB_Import_Russian_Equipment
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Fighters_For_Don"
+			if = {
+				limit = { has_completed_focus = KUB_Import_German_Equipment }
+				activate_targeted_decision = { target = GER decision = KUB_buy_fighters }		
+			}
+			else_if = {
+				limit = { soviets_exist = yes }
+				if = {
+					limit = { 
+						TRM = { has_socialist_government = no }
+					}
+					activate_targeted_decision = { target = TRM decision = KUB_buy_fighters }
+				}
+			}
+			else = {
+				activate_targeted_decision = { target = RUS decision = KUB_buy_fighters }
+			}
+		}
+	}
+	focus = {
+		id = KUB_Bombers_For_Don
+		text = DKU_Bombers_For_Don
+		icon = GFX_goal_ELS_Plane_Lease
+		cost = 5
+		relative_position_id = KUB_A_Cossack_Army
+		x = 3
+		y = 4
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_Fighters_For_Don
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Bombers_For_Don"
+			if = {
+				limit = { has_completed_focus = KUB_Import_German_Equipment }
+				activate_targeted_decision = { target = GER decision = KUB_buy_bombers }		
+			}
+			else_if = {
+				limit = { soviets_exist = yes }
+				if = {
+					limit = { 
+						TRM = { has_socialist_government = no }
+					}
+					activate_targeted_decision = { target = TRM decision = KUB_buy_bombers }
+				}
+			}
+			else = {
+				activate_targeted_decision = { target = RUS decision = KUB_buy_bombers }
+			}
+		}
+	}
+	focus = {
+		id = KUB_Secure_The_Sky
+		text = DKU_Secure_The_Sky
+		icon = GFX_focus_generic_air_defense2
+		cost = 5
+		relative_position_id = KUB_A_Cossack_Army
+		x = 2
+		y = 5
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 3
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_Fighters_For_Don
+		}
+		prerequisite = {
+			focus = KUB_Modern_Tactics
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Secure_The_Sky"
+			add_tech_bonus = {
+				name = DKU_Secure_The_Sky
+				bonus = 1
+				uses = 1
+				category = cat_anti_air
+			}
+			add_doctrine_cost_reduction = {
+					name = air_doc_bonus
+					cost_reduction = 0.5
+					uses = 1
+					category = air_doctrine
+			}
+		}
+	}
+	focus = {
+		id = KUB_The_Black_Sea_Fleet
+		text = DKU_The_Black_Sea_Fleet
+		icon = GFX_focus_SOV_reinforce_southern_naval_bases
+		cost = 4
+		x = 13
+		y = 2
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+		available = { 
+			OR = {
+				has_completed_focus = KUB_Elect_New_Ataman_focus
+				has_completed_focus = KUB_KPA_Restores_Control
+				has_completed_focus = KUB_Revkom_In_Power
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_The_Black_Sea_Fleet"
+			navy_experience = 25
+			add_doctrine_cost_reduction = {
+				name = DKU_The_Black_Sea_Fleet
+				cost_reduction = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+	focus = {
+		id = KUB_Port_Of_Capital
+		icon = GFX_goal_generic_coastal_navy
+		cost = 5
+		relative_position_id = KUB_The_Black_Sea_Fleet
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_The_Black_Sea_Fleet
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Port_Of_Capital"
+			navy_experience = 25
+			1227 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = 719
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 719
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = KUB_Ukranian_Exercises
+		text = DKU_Ukranian_Exercises
+		icon = GFX_goal_UKR_navy
+		cost = 5
+		relative_position_id = KUB_The_Black_Sea_Fleet
+		x = 1
+		y = 2
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+		available = {
+			has_socialist_government = no
+		}
+		prerequisite = {
+			focus = KUB_The_Black_Sea_Fleet
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Ukranian_Exercises"
+			add_ideas = DKU_Naval_Exercises
+			var:202.owner = { 
+				activate_targeted_decision = { target = KUB decision = UKR_Invest_In_Kuban_Fleet }
+			}
+			KUB_increase_chernomortsy = yes
+		}
+	}
+	focus = {
+		id = KUB_Defend_Coast
+		text = DKU_Defend_Coast
+		icon = GFX_goal_generic_coastal_navy2
+		cost = 5
+		relative_position_id = KUB_The_Black_Sea_Fleet
+		x = -1
+		y = 2
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_Port_Of_Capital
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Defend_Coast"
+			add_tech_bonus = {
+				name = DKU_Defend_Coast
+				bonus = 1
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+	focus = {
+		id = KUB_Naval_Bombers
+		icon = GFX_goal_generic_air_naval_bomber2_new
+		cost = 5
+		relative_position_id = KUB_The_Black_Sea_Fleet
+		x = -2
+		y = 3
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_Port_Of_Capital
+		}
+		prerequisite = {
+			focus = KUB_Expand_Airfields
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Defend_Coast"
+			add_tech_bonus = {
+				name = KUB_Defend_Coast
+				bonus = 1
+				uses = 1
+				category = naval_bomber
+			}
+		}
+	}
+	focus = {
+		id = KUB_Submarine_Effort
+		text = DKU_Submarine_Effort
+		icon = GFX_goal_generic_navy_submarine
+		cost = 5
+		relative_position_id = KUB_The_Black_Sea_Fleet
+		x = 0
+		y = 5
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_Invest_In_Shipbuilding
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Submarine_Effort"
+			add_tech_bonus = {
+				name = KUB_Submarine_Effort
+				bonus = 1
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+	focus = {
+		id = KUB_Oil_Tankers
+		icon = GFX_USA_navy_top
+		cost = 5
+		relative_position_id = KUB_The_Black_Sea_Fleet
+		x = 0
+		y = 3
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_Port_Of_Capital
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Invest_In_Shipbuilding"
+			add_ideas = KUB_new_oil_tankers
+			add_equipment_to_stockpile = { type = convoy_1 amount = 75 }
+		}
+	}
+	focus = {
+		id = KUB_Invest_In_Shipbuilding
+		text = DKU_Invest_In_Shipbuilding
+		icon = GFX_focus_generic_navy_battleship3
+		cost = 5
+		relative_position_id = KUB_The_Black_Sea_Fleet
+		x = -1
+		y = 4
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = KUB_Defend_Coast
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Submarine_Effort"
+			add_timed_idea = {
+				idea = DKB_naval_investments
+				days = 365
+			}
+			navy_experience = 15
+				add_doctrine_cost_reduction = {
+				name = KUB_Invest_In_Shipbuilding
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+	focus = {
+		id = KUB_Produce_Cruisers
+		text = DKU_Produce_Cruisers
+		icon = GFX_focus_generic_navy_battleship3alt
+		cost = 5
+		relative_position_id = KUB_The_Black_Sea_Fleet
+		x = -2
+		y = 5
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+		prerequisite = {
+			focus = KUB_Invest_In_Shipbuilding
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_Produce_Cruisers"
+			add_tech_bonus = {
+				name = KUB_Produce_Cruisers
+				bonus = 1
+				uses = 2
+				category = ca_tech
+				category = cl_tech
+			}
+		}
+	}
+	focus = {
+		id = KUB_we_are_scythians
+		icon = GFX_KUB_we_are_scythians
+		cost = 4
+		
+		x = 30
+		y = 0
+		available = { 
+			always = no
+			is_subject = no
+		}	
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			hidden_effect = {
+				country_event = {
+					id = kub.2000
+					days = 7
+				} 
+
+			}
+		}
+	}
+	focus = {
+		id = KUB_restore_order
+		icon = GFX_goal_BAN_order_streets
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 0
+		y = 1
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_we_are_scythians
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_stability = 0.2
+		}
+	}
+	focus = {
+		id = KUB_no_capitalists
+		icon = GFX_goal_RUS_crush_capitalists
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -4
+		y = 2
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_restore_order
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_manpower = -451
+			add_ideas = KUB_anticap
+		}
+	}
+	focus = {
+		id = KUB_no_church
+		icon = GFX_CAL_profits_of_the_church
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -2
+		y = 2
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_restore_order
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_manpower = -154
+			add_ideas = KUB_anticlerical
+		}
+	}
+	focus = {
+		id = KUB_no_monarch
+		icon = GFX_goal_RUS_crush_monarchists
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 0
+		y = 2
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_restore_order
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_manpower = -153
+			add_ideas = KUB_antitsar
+		}
+	}
+	focus = {
+		id = KUB_no_despot
+		icon = GFX_goal_COS_No_Place_Dictators_Here
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 2
+		y = 2
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_restore_order
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_manpower = -656
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = -0.1
+			}
+			add_ideas = KUB_antityrant
+		}
+	}
+	focus = {
+		id = KUB_no_germans
+		icon = GFX_goal_WHR_Assert_Independence_Germany
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 4
+		y = 2
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_restore_order
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_manpower = -554
+			add_ideas = KUB_antigerman
+		}
+	}
+	focus = {
+		id = KUB_rebirth_of_great_scythia
+		icon = GFX_focus_gorgulov_skythia
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 0
+		y = 3
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_no_capitalists
+		}
+		prerequisite = {
+			focus = KUB_no_church
+		}
+		prerequisite = {
+			focus = KUB_no_despot
+		}
+		prerequisite = {
+			focus = KUB_no_germans
+		}
+		prerequisite = {
+			focus = KUB_no_monarch
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_political_power = 150
+			add_war_support = 0.1
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = KUB_revolt_against_merchant_world
+		icon = GFX_RUS_Say_No_To_Capitalism
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -6
+		y = 4
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_rebirth_of_great_scythia
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_political_power = 100
+			add_stability = 0.1
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = KUB_end_capitalist_philistinism
+		icon = GFX_goal_WCC_punish_capital
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -8
+		y = 5
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_revolt_against_merchant_world
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			create_intelligence_agency = yes
+			add_war_support = 0.1
+			remove_ideas = KUB_Divided_Region
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = social_democrat
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = social_liberal
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = market_liberal
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = social_conservative
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = -0.1
+			}
+		}
+	}
+	focus = {
+		id = KUB_only_nationality
+		icon = GFX_RUS_Revive_National_Identity
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -6
+		y = 5
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_revolt_against_merchant_world
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_ideas = KUB_new_nationalism
+			remove_ideas = KUB_Unification_Sentiments
+		}
+	}
+	focus = {
+		id = KUB_poems_as_swords
+		icon = GFX_UKR_Borotba_Newspaper
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -4
+		y = 5
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_revolt_against_merchant_world
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_ideas = KUB_poems
+		}
+	}
+	focus = {
+		id = KUB_self_liberates_society
+		icon = GFX_SOV_liberation_of_people
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -6
+		y = 6
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_end_capitalist_philistinism
+		}
+		prerequisite = {
+			focus = KUB_only_nationality
+		}
+		prerequisite = {
+			focus = KUB_poems_as_swords
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_stability = 0.1
+			add_political_power = 150
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = KUB_scythian_army
+		icon = GFX_KUB_scythian_army
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 0
+		y = 4
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_rebirth_of_great_scythia
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+				producer = KUB
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = KUB_enlighten_cossacks
+		icon = GFX_UKR_Red_Cossacks
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -2
+		y = 5
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_scythian_army
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			swap_ideas = {
+				remove_idea = DON_Cossack_army
+				add_idea = KUB_cossacks
+			}
+		}
+	}
+	focus = {
+		id = KUB_arm_the_people
+		icon = GFX_DKB_don_army
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 0
+		y = 5
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_scythian_army
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			load_oob = KUB
+			load_oob = KUB
+			load_oob = KUB
+		}
+	}
+	focus = {
+		id = KUB_army_commisars
+		icon = GFX_goal_CSA_centralist_reorganization
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 2
+		y = 5
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_scythian_army
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_ideas = KUB_commisars
+		}
+	}
+	focus = {
+		id = KUB_messiah_fate
+		icon = GFX_KUB_messiah
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 0
+		y = 6
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_enlighten_cossacks
+		}
+		prerequisite = {
+			focus = KUB_arm_the_people
+		}
+		prerequisite = {
+			focus = KUB_army_commisars
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_ideas = KUB_messiah
+		}
+	}
+	focus = {
+		id = KUB_reorganize_economy
+		icon = GFX_UKR_Necessary_Nationalizations
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 6
+		y = 4
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_rebirth_of_great_scythia
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			remove_ideas = KUB_black_monday_1
+			remove_ideas = KUB_black_monday_2
+			add_ideas = KUB_new_economy
+		}
+	}
+	focus = {
+		id = KUB_land_socialize
+		icon = GFX_RUS_Land_Socialization
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 4
+		y = 5
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_reorganize_economy
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_ideas = KUB_land_socialize
+		}
+	}
+	focus = {
+		id = KUB_protect_farmers
+		icon = GFX_RUS_Emergence_Of_Farmers
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 6
+		y = 5
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_reorganize_economy
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			if = {
+				limit = { KUB_has_active_cooperatives = yes }
+				
+				recalculate_cooperatives = yes
+			}	
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				increase_state_category_by_one_level = yes
+				
+			}
+			random_owned_controlled_state = {
+				
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				increase_state_category_by_one_level = yes
+				
+			}
+			random_owned_controlled_state = {
+				
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				increase_state_category_by_one_level = yes
+				
+			}
+			
+		}
+	}
+	focus = {
+		id = KUB_revise_cooperates
+		icon = GFX_goal_CSA_coop_clubs
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 8
+		y = 5
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_reorganize_economy
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			if = {
+				limit = { KUB_has_active_cooperatives = yes }
+				add_to_variable = { KUB_cooperatives_global_building_slots_factor = 0.1 }
+				add_to_variable = { KUB_cooperatives_consumer_goods_factor = -0.1 }
+				set_temp_variable = { change_workers_coop = 10 }
+				KUB_cooperatives_change_workers_coop = yes
+				set_temp_variable = { change_state_capacity = 10 }
+				KUB_cooperatives_change_state_capacity = yes
+				set_temp_variable = { change_credit_coop = 10 }
+				KUB_cooperatives_change_credit_coop = yes			
+				recalculate_cooperatives = yes
+			}
+		}
+	}
+	focus = {
+		id = KUB_through_struggle
+		icon = GFX_RUS_Through_Struggle
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 6
+		y = 6
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_land_socialize
+		}
+		prerequisite = {
+			focus = KUB_protect_farmers
+		}
+		prerequisite = {
+			focus = KUB_revise_cooperates
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_ideas = KUB_struggle
+		}
+	}
+	focus = {
+		id = KUB_liberate_don
+		icon = GFX_goal_GEO_Strike_the_Don_Kuban_Union
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -1
+		y = 7
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_self_liberates_society
+			focus = KUB_messiah_fate
+			focus = KUB_through_struggle
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			every_state = {
+				limit = {
+					is_core_of = DKB
+				}
+				KUB = { 
+					add_state_claim = PREV 
+				}
+			}
+			create_wargoal = { target = DKB type = annex_everything }
+		}
+	}
+	focus = {
+		id = KUB_liberate_mountain
+		icon = GFX_DKB_annex_mountain
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 1
+		y = 7
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_self_liberates_society
+			focus = KUB_messiah_fate
+			focus = KUB_through_struggle
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			every_state = {
+				limit = {
+					is_core_of = MTR
+				}
+				KUB = { 
+					add_state_claim = PREV 
+				}
+			}
+			create_wargoal = { target = MTR type = annex_everything }
+		}
+	}
+	focus = {
+		id = KUB_liberate_buddists
+		icon = GFX_DKB_annex_kalmykia
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 0
+		y = 8
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_liberate_don
+		}
+		prerequisite = {
+			focus = KUB_liberate_mountain
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			every_state = {
+				limit = {
+					is_core_of = KLY
+				}
+				KUB = { 
+					add_state_claim = PREV 
+				}
+			}
+			create_wargoal = { target = KLY type = annex_everything }
+		}
+	}
+	focus = {
+		id = KUB_liberate_kavkaz
+		icon = GFX_goal_GEO_Transcaucasian_Union
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 0
+		y = 9
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_liberate_buddists
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			every_state = {
+				limit = {
+					is_core_of = GEO
+				}
+				KUB = { 
+					add_state_claim = PREV 
+				}
+			}
+			create_wargoal = { target = GEO type = annex_everything }
+			every_state = {
+				limit = {
+					is_core_of = AZE
+				}
+				KUB = { 
+					add_state_claim = PREV 
+				}
+			}
+			create_wargoal = { target = AZE type = annex_everything }
+			every_state = {
+				limit = {
+					is_core_of = ARM
+				}
+				KUB = { 
+					add_state_claim = PREV 
+				}
+			}
+			create_wargoal = { target = ARM type = annex_everything }
+			every_state = {
+				limit = {
+					is_core_of = ABK
+				}
+				KUB = { 
+					add_state_claim = PREV 
+				}
+			}
+			create_wargoal = { target = ABK type = annex_everything }
+		}
+	}
+	focus = {
+		id = KUB_kavkaz_secured
+		icon = GFX_flag_don_kuban
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 0
+		y = 10
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_liberate_kavkaz
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			every_owned_state = {
+				limit = {
+					OR = {
+						is_core_of = DKB
+						is_core_of = KLY
+						is_core_of = MTR
+						is_core_of = DAG
+						is_core_of = GEO
+						is_core_of = AZE
+						is_core_of = ARM
+					}
+				}
+				add_core_of = ROOT
+			}
+			add_manpower = 100000
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = KUB_annilate_old_russia
+		icon = GFX_CRM_Russian_October
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = 0
+		y = 11
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_kavkaz_secured
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			will_lead_to_war_with = RUS
+			create_wargoal = { target = TRM type = annex_everything }
+			create_wargoal = { target = RUS type = annex_everything }
+			create_wargoal = { target = WRA type = annex_everything }
+			create_wargoal = { target = RRF type = annex_everything }
+			create_wargoal = { target = RVA type = annex_everything }
+			create_wargoal = { target = TTR type = annex_everything }
+			create_wargoal = { target = KAR type = annex_everything }
+
+		}
+	}
+	focus = {
+		id= KUB_Confront_The_Bear
+		icon = GFX_focus_attack_RUS
+		cost = 3
+		relative_position_id = KUB_annilate_old_russia
+		x = 0
+		y = 1
+		available = {
+			is_neighbor_of = RUS
+			has_socialist_government = yes
+			is_subject = no
+		}
+		bypass = {
+			hidden_trigger = {
+				NOT = { country_exists = RUS }
+			}
+		}
+		
+		prerequisite = {
+			focus = KUB_annilate_old_russia
+		}
+		
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 2
+				RUS = {
+					has_war = yes
+				}
+			}
+			modifier = {
+				factor = 4
+				RUS = {
+					surrender_progress > 0.1
+				}
+			}
+		}
+		completion_reward = {
+			for_each_scope_loop = {
+				array = RUS.RUS_starting_states_array
+				add_claim_by = ROOT
+			}
+			add_timed_idea = {
+				idea = KUB_revo
+				days = 365
+			}		
+		}
+	}
+	focus = {
+		id= KUB_Rise_The_Resistance
+		icon = GFX_goal_agrarian_socialism
+		cost = 2
+		relative_position_id = KUB_annilate_old_russia
+		x = -1
+		y = 2
+		available = {
+			has_war_with = RUS
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Confront_The_Bear
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			division_template = {
+				name = "Krasnaya Gvardiya"
+				division_names_group = SOV_GAR_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 195 }
+				create_unit = {
+					division = "division_template = \"Krasnaya Gvardiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "division_template = \"Krasnaya Gvardiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "division_template = \"Krasnaya Gvardiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 219 }
+				create_unit = {
+					division = "division_template = \"Krasnaya Gvardiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "division_template = \"Krasnaya Gvardiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "division_template = \"Krasnaya Gvardiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			division_template = {
+				name = "Gorodskaya Militsiya"
+				division_names_group = SOV_GAR_01
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 0 y = 2 }
+					militia = { x = 1 y = 0 }
+					militia = { x = 1 y = 1 }
+					militia = { x = 1 y = 2 }
+					militia = { x = 2 y = 0 }
+					militia = { x = 2 y = 1 }
+					militia = { x = 2 y = 2 }
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 195 }
+				create_unit = {
+					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 219 }
+				create_unit = {
+					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 242 }
+				create_unit = {
+					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 246 }
+				create_unit = {
+					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 247 }
+				create_unit = {
+					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 223 }
+				create_unit = {
+					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 222 }
+				create_unit = {
+					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 224 }
+				create_unit = {
+					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 220 }
+				create_unit = {
+					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 248 }
+				create_unit = {
+					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 252 }
+				create_unit = {
+					division = "division_template = \"Gorodskaya Militsiya\" start_experience_factor = 0.1"
+					owner = KUB
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id= KUB_Socialist_Propaganda
+		icon = GFX_ITA_syndicalist_unite
+		cost = 2
+		relative_position_id = KUB_annilate_old_russia
+		x = 1
+		y = 2
+		available = {
+			has_war_with = RUS
+			has_socialist_government = yes 
+		}
+		prerequisite = {
+			focus = KUB_Confront_The_Bear
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			RUS = {
+				add_timed_idea = {
+					idea = DKB_soc_prop_in_russia
+					days = 365
+				}
+			}
+		}
+	}
+	focus = {
+		id= KUB_Aftermath_Of_Civil_War
+		icon = GFX_focus_prc_agrarian_socialism
+		cost = 3
+		relative_position_id = KUB_annilate_old_russia
+		x = 0
+		y = 3
+		available = {
+			NOT = { country_exists = RUS }
+			195 = { is_owned_and_controlled_by = ROOT }
+			219 = { is_owned_and_controlled_by = ROOT }
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Confront_The_Bear
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			
+			RUS_enable_integration = yes
+			ROOT = { save_global_event_target_as = soviet_russia }
+			for_each_scope_loop = {
+				array = RUS.RUS_starting_states_array
+				remove_claim_by = KUB
+				add_core_of = KUB
+			}
+			add_dynamic_modifier = {
+				modifier = KUB_aftermath_modifier
+			}
+			KUB_recalculate_aftermath_effects = yes
+			
+		}
+	}
+	focus = {
+		id= KUB_Deal_With_Opposition
+		icon = GFX_goal_purge_opposition
+		cost = 3
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = -5
+		y = 1
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Aftermath_Of_Civil_War
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.1
+			}
+			country_event = {
+				id= DKB.67
+				days = 1
+			}
+		}
+	}
+	focus = {
+		id= KUB_Fate_Of_Socialist_Parties
+		icon = GFX_RUS_Ban_Socialists_vns
+		cost = 3
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = -5
+		y = 3
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Deal_With_Opposition
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			add_popularity = {
+				ideology = social_democrat
+				popularity = -0.15
+			}
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id= KUB_Voluntary_Collectivization
+		text = RUS_Voluntary_Collectivisation
+		icon = GFX_goal_agricultural_aid
+		cost = 4
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = -6
+		y = 2
+		available = {
+			has_government = radical_socialist
+		}
+		prerequisite = {
+			focus = KUB_Deal_With_Opposition
+		}
+		mutually_exclusive = {
+			focus = KUB_Mass_Collectivization
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			if = {
+				limit = {
+					has_idea = DKB_economic_radsoc_2
+				}
+				swap_ideas = {
+					remove_idea = DKB_economic_radsoc_2
+					add_idea = DKB_economic_radsoc_3
+				}
+			}
+			else = {
+				add_ideas = DKB_economic_radsoc
+			}
+		}
+	}
+	
+	focus = {
+		id= KUB_Fight_Bureaucratisation
+		text = RUS_Cut_Red_Tape
+		icon = GFX_SOV_decentralize_the_congress
+		cost = 4
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = -4
+		y = 2
+		available = {
+			has_government = radical_socialist
+		}
+		prerequisite = {
+			focus = KUB_Deal_With_Opposition
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			if = {
+				limit = {
+					has_idea = DKB_economic_radsoc
+				}
+				swap_ideas = {
+					remove_idea = DKB_economic_radsoc
+					add_idea = DKB_economic_radsoc_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = DKB_economic_radsoc_1
+				}
+				swap_ideas = {
+					remove_idea = DKB_economic_radsoc_1
+					add_idea = DKB_economic_radsoc_4
+				}
+			}
+			else = {
+				add_ideas = DKB_economic_radsoc_2
+			}
+		}
+	}
+	
+	focus = {
+		id= KUB_Trade_Unions_Issue
+		text = RUS_Control_Trade_Unions
+		icon = GFX_GBR_fate_of_unions
+		cost = 4
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = -4
+		y = 4
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Fight_Bureaucratisation
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			country_event = {
+				id= DKB.69
+				days = 1
+			}
+		}
+	}
+	focus = {
+		id= KUB_Separation_Of_Powers
+		text = RUS_Separation_Of_Powers
+		icon = GFX_goal_constitutional_guarantees
+		cost = 4
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = -6
+		y = 4
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Voluntary_Collectivization
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			if = {
+				limit = {
+					has_idea = DKB_economic_radsoc_3
+				}
+				swap_ideas = {
+					remove_idea = DKB_economic_radsoc_3
+					add_idea = DKB_economic_radsoc_4
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = DKB_economic_radsoc
+					add_idea = DKB_economic_radsoc_1
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id= KUB_Cement_The_Regime
+		icon = GFX_DKB_cement_regime
+		cost = 4
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = -5
+		y = 5
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Separation_Of_Powers
+			
+		}
+		prerequisite = {
+			focus = KUB_Fate_Of_Socialist_Parties
+		}
+		prerequisite = {
+			focus = KUB_Trade_Unions_Issue
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			add_ideas = CSA_unionist_economics_idea
+		}
+	}
+	focus = {
+		id= KUB_Economic_Integration
+		icon = GFX_SOV_socialist_market
+		cost = 3
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = 0
+		y = 1
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Aftermath_Of_Civil_War
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			add_timed_idea = {
+				idea = DKB_integration
+				days = 730
+			}
+		}
+	}
+	focus = {
+		id= KUB_Expand_The_Plan
+		icon = GFX_socialist_constitution
+		cost = 4
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = KUB_Economic_Integration
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			modify_timed_idea = {
+				idea = DKB_integration
+				days = -275
+			}
+		}
+	}
+	focus = {
+		id= KUB_Industrialize_The_Motherland
+		icon = GFX_goal_manage_industries
+		cost = 6
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = -1
+		y = 3
+		prerequisite = {
+			focus = KUB_Expand_The_Plan
+		}
+		available = {
+			has_socialist_government = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			unlock_decision_category_tooltip = RUS_Economy_decisions
+						hidden_effect = {
+		activate_targeted_decision = { target = 651 decision = RUS_Develop_Civilian_Industry_In_State } #Ufa
+		activate_targeted_decision = { target = 248 decision = RUS_Develop_Civilian_Industry_In_State } #Yaroslavl
+		activate_targeted_decision = { target = 252 decision = RUS_Develop_Civilian_Industry_In_State } #Nizhny Novgorod
+		activate_targeted_decision = { target = 250 decision = RUS_Mechanize_Agriculture_In_State } #Simbirsk
+		activate_targeted_decision = { target = 224 decision = RUS_Mechanize_Agriculture_In_State } #Simbirsk
+				activate_targeted_decision = { target = 249 decision = RUS_Develop_Military_Industry_In_State } #Kazan
+		activate_targeted_decision = { target = 398 decision = RUS_Develop_Military_Industry_In_State } #Perm
+		activate_targeted_decision = { target = 217 decision = RUS_Develop_Military_Industry_In_State } #Tsaritsyn
+		activate_targeted_decision = { target = 247 decision = RUS_Develop_Military_Industry_In_State } #Tver
+				activate_targeted_decision = { target = 566 decision = RUS_Develop_Civilian_Industry_In_State } #Irkutsk
+		activate_targeted_decision = { target = 217 decision = RUS_Develop_Civilian_Industry_In_State } #Tsaritsyn
+		activate_targeted_decision = { target = 252 decision = RUS_Develop_Civilian_Industry_In_State } #Nizhny Novgorod
+				activate_targeted_decision = { target = 220 decision = RUS_Develop_Civilian_Industry_In_State } #Kursk
+		activate_targeted_decision = { target = 398 decision = RUS_Develop_Civilian_Industry_In_State } #Perm
+		activate_targeted_decision = { target = 247 decision = RUS_Develop_Military_Industry_In_State } #Tver
+				activate_targeted_decision = { target = 250 decision = RUS_Mechanize_Agriculture_In_State } #Simbirsk
+		activate_targeted_decision = { target = 257 decision = RUS_Mechanize_Agriculture_In_State } #Simbirsk
+		activate_targeted_decision = { target = 224 decision = RUS_Mechanize_Agriculture_In_State } #Simbirsk
+		activate_targeted_decision = { target = 222 decision = RUS_Mechanize_Agriculture_In_State } #Simbirsk
+			} 
+		}
+	}
+	focus = {
+		id= KUB_GOELRO
+		text = RUS_GOELRO
+		icon = GFX_goal_Schelle
+		cost = 4
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = 1
+		y = 3
+		prerequisite = {
+			focus = KUB_Expand_The_Plan
+		}
+		available = {
+			has_socialist_government = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			swap_ideas = {
+				remove_idea = DKB_gosplan_6
+				add_idea = DKB_gosplan_7
+			}
+		}
+	}
+	focus = {
+		id= KUB_Resource_Prospection
+		text = RUS_ec_mutual8
+		icon = GFX_goal_generic_coal_mining
+		cost = 4
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = -2
+		y = 4
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Industrialize_The_Motherland
+		}
+		prerequisite = {
+			focus = KUB_GOELRO
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			every_owned_state = {
+				display_individual_scopes = yes
+				random_select_amount = 3
+				limit = {
+					is_core_of = ROOT
+					is_valid_state_for_development = yes
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = fuel_silo level = 1 }
+			}
+			every_owned_state = {
+				display_individual_scopes = yes
+				random_select_amount = 2
+				limit = {
+					has_resources_amount = { resource = steel amount > 0 }
+					is_core_of = ROOT
+					is_valid_state_for_development = yes
+					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 }
+				add_resource = { type = steel amount = 5 }
+			}
+			custom_effect_tooltip = tooltip_white_line
+			unlock_decision_category_tooltip = RUS_Resource_decisions 
+		}
+	}
+	focus = {
+		id= KUB_Ural_Tractor_Plants
+		text = RUS_Ural_Tractor_Plants
+		icon = GFX_goal_generic_heavy_armour_russian
+		cost = 4
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = 0
+		y = 4
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Industrialize_The_Motherland
+		}
+		prerequisite = {
+			focus = KUB_GOELRO
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			swap_ideas = {
+				remove_idea = DKB_gosplan_7
+				add_idea = DKB_gosplan_8
+			}
+		}
+	}
+	focus = {
+		id= KUB_Expand_The_Transsiberian
+		text = RUS_Expand_The_Railway_Network
+		icon = GFX_goal_generic_railroad
+		cost = 8
+		available = {
+			561 = { is_owned_and_controlled_by = ROOT } # Amur
+			563 = { is_owned_and_controlled_by = ROOT } # Chita
+			564 = { is_owned_and_controlled_by = ROOT } # Verkhneudinsk
+			566 = { is_owned_and_controlled_by = ROOT } # Irkutsk
+			567 = { is_owned_and_controlled_by = ROOT } # Bratsk
+			568 = { is_owned_and_controlled_by = ROOT } # Krasnoyarsk
+			569 = { is_owned_and_controlled_by = ROOT } # Shcheglovsk
+			657 = { is_owned_and_controlled_by = ROOT } # Blagoveshchensk
+			has_socialist_government = yes
+		}
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = 2
+		y = 4
+		prerequisite = {
+			focus = KUB_Industrialize_The_Motherland
+		}
+		prerequisite = {
+			focus = KUB_GOELRO
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			every_owned_state = {
+				tooltip = RUS_all_states_with_less_than_three_infra
+				limit = {
+					is_siberia = yes
+					is_controlled_by = ROOT
+					infrastructure < 3
+				}
+				add_building_construction = { type = infrastructure level = 1 }
+			}
+			add_tech_bonus = {
+				name = DKB_Expansion_Of_Railways 
+				bonus = 0.5
+				uses = 1
+				category = train_tech
+			}
+			activate_targeted_decision = { target = 653 decision = RUS_Expand_Transsiberian_railways_EKB_OMSK }
+			activate_targeted_decision = { target = 571 decision = RUS_Expand_Transsiberian_railways_OMSK_KRASNOYARSK }
+			activate_targeted_decision = { target = 563 decision = RUS_Expand_Transsiberian_railways_KRASNOYARSK_CHITA }
+			activate_targeted_decision = { target = 408 decision = RUS_Expand_Transsiberian_railways_CHITA_VLADI }
+		}
+	}
+	focus = {
+		id= KUB_Cement_The_Economy
+		icon = GFX_DKB_cement_economy
+		cost = 4
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = 0
+		y = 5
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Ural_Tractor_Plants
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			remove_ideas = DKB_integration
+			add_ideas = RUS_gosplan_7
+		}
+	}
+	focus = {
+		id= KUB_Fate_Of_Russian_Army
+		icon = GFX_DKB_ban_rus_army
+		cost = 4
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = 4
+		y = 1
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Aftermath_Of_Civil_War
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			country_event = {
+				id= DKB.70
+				days = 2
+			}
+		}
+	}
+	focus = {
+		id= KUB_Main_Military_Council
+		icon = GFX_DKB_glavvoyensovet
+		cost = 4
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = 3
+		y = 2
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Fate_Of_Russian_Army
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			country_event = {
+				id= DKB.71
+				days = 2
+			}
+		}
+	}
+	focus = {
+		id= KUB_Increase_Military_Budget
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 4
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = 3
+		y = 3
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Main_Military_Council
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			add_ideas = DKB_military_budget_increased
+		}
+	}
+	
+	focus = {
+		id= KUB_Decentralised_Structure
+		text = RUS_Decentralised_Structure
+		icon = GFX_goal_planning_bonus
+		cost = 4
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = 5
+		y = 2
+		prerequisite = {
+			focus = KUB_Fate_Of_Russian_Army
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			
+			has_socialist_government = yes 
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			
+			add_ideas = DKB_red_guard_3
+		}
+	}
+	focus = {
+		id= KUB_Reorganize_Armament
+		text = RUS_Reorganise_Armament_Production
+		icon = GFX_focus_focus_fra_maquis
+		cost = 4
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = 5
+		y = 3
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			
+			focus = KUB_Decentralised_Structure
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			add_tech_bonus = {
+				name = RUS_Reorganise_Armament_Production
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+			add_ideas = RVA_armament_production_1
+		}
+	}
+	focus = {
+		id= KUB_The_Peoples_Logistics_Corps
+		text = RUS_The_Peoples_Logistics_Corps
+		icon = GFX_goal_generic_war_in_the_plate
+		relative_position_id= KUB_Reorganize_Armament
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Reorganize_Armament
+		}
+		prerequisite = {
+			focus = KUB_Decentralised_Structure
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus RUS_The_Peoples_Logistics_Corps"
+				swap_ideas = {
+					remove_idea = RVA_armament_production_1
+					add_idea = RVA_armament_production_2
+				}
+			
+			
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+	}
+
+	focus = {
+		id= KUB_Local_Workshops
+		text = RUS_Local_Workshops
+		icon = GFX_goal_syndicalist_workers
+		relative_position_id= KUB_Reorganize_Armament
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Reorganize_Armament
+		}
+		prerequisite = {
+			focus = KUB_Decentralised_Structure
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus RUS_Local_Workshops"
+			swap_ideas = {
+				remove_idea = RVA_armament_production_1
+				add_idea = RVA_armament_production_3
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+	}
+	focus = {
+		id= KUB_Cement_The_Army
+		icon = GFX_DKB_cement_army
+		relative_position_id= KUB_Reorganize_Armament
+		x = -2
+		y = 2
+		cost = 4
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_The_Peoples_Logistics_Corps
+			focus = KUB_Local_Workshops
+		}
+		prerequisite = {
+			focus = KUB_Increase_Military_Budget
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = DKB_reduce_aftermath_tt
+			KUB_recalculate_aftermath_effects = yes
+			add_ideas = SOV_new_red_army_4
+		}
+		search_filters = { FOCUS_FILTER_ARMY }
+	}
+	focus = {
+		id= KUB_Invite_Russian_Communists
+		icon = GFX_SOV_militia
+		cost = 3
+		relative_position_id= KUB_Reorganize_Armament
+		x = 0
+		y = 2
+		available = {
+			NOT = { country_exists = RUS }
+			195 = { is_owned_and_controlled_by = ROOT }
+			219 = { is_owned_and_controlled_by = ROOT }
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_The_Peoples_Logistics_Corps
+			focus = KUB_Local_Workshops
+		}
+		prerequisite = {
+			focus = KUB_Increase_Military_Budget
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = {
+				id= DKB.23
+				days = 1
+			}
+		}
+	}
+	
+	focus = {
+		id= KUB_Into_The_Future
+		icon = GFX_DKB_diplomacy
+		cost = 3
+		relative_position_id= KUB_Aftermath_Of_Civil_War
+		x = 0
+		y = 6
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			has_socialist_government = yes
+		}
+		prerequisite = {
+			focus = KUB_Cement_The_Economy
+		}
+		prerequisite = {
+			focus = KUB_Cement_The_Army
+		}
+		prerequisite = {
+			focus = KUB_Cement_The_Regime
+		}
+		completion_reward = {
+			remove_dynamic_modifier = {
+				modifier = KUB_aftermath_modifier
+			}
+		}
+	}
+	focus = {
+		id = KUB_Premier_Spiridonova
+		icon = GFX_RUS_Premier_Spiridonova
+		relative_position_id = KUB_Into_The_Future
+		x = 0
+		y = 1
+		cost = 0
+		
+		prerequisite = { focus = KUB_Into_The_Future }
+		ai_will_do = { factor = 100 }
+		completion_reward = {
+			remove_ideas_with_trait = head_of_government
+			add_ideas = RUS_Maria_A_Spiridonova_hog_rso
+			set_country_flag = LEADER_GUI_NOT_VISIBLE
+			
+		}
+	}
+	focus = {
+		id = KUB_Socialization_Of_Land_plsr
+		text = RUS_Socialization_Of_Land_plsr
+		icon = GFX_RUS_Land_Socialization
+		cost = 5
+		prerequisite = {
+			focus = KUB_Premier_Spiridonova
+			
+		}
+		relative_position_id = KUB_Premier_Spiridonova
+		x = -1
+		y = 1
+		
+		
+		ai_will_do = { factor = 40 }
+		completion_reward = {
+			if = {
+				limit = { has_idea = rus_unfinished_land_reform }
+				destroy_unfinished_land_reform = yes
+			}
+			add_ideas = RUS_socialization_of_land
+		}
+	}
+	focus = {
+		id = KUB_Labour_Collectives
+		text = RUS_Labour_Collectives
+		icon = GFX_RUS_Labour_Collectives
+		cost = 5
+		prerequisite = {
+			focus = KUB_Syndical_Cooperative_Federation_plsr
+		}
+		relative_position_id = KUB_Premier_Spiridonova
+		x = -2
+		y = 3
+		
+		ai_will_do = { factor = 40 }
+		completion_reward = {
+			if = {
+				limit = { has_idea = rus_federation_of_syndicates_1 }
+				swap_ideas = {
+					remove_idea = rus_federation_of_syndicates_1
+					add_idea = rus_federation_of_syndicates_3
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = rus_federation_of_syndicates_2
+					add_idea = rus_federation_of_syndicates_4
+				}
+			}
+		}
+	}
+	focus = {
+		id = KUB_Syndical_Cooperative_Federation_plsr
+		text = RUS_Syndical_Cooperative_Federation
+		icon = GFX_RUS_Syndical_Cooperative_Federation
+		relative_position_id = KUB_Premier_Spiridonova
+		x = 0
+		y = 2
+		cost = 5
+		prerequisite = { focus = KUB_Socialist_Democracy }
+		prerequisite = { focus = KUB_Socialization_Of_Land_plsr }
+		
+		ai_will_do = { factor = 40 }
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		completion_reward = { add_ideas = rus_federation_of_syndicates_1 }
+	}
+	focus = {
+		id = KUB_cooperative_unions
+		text = RUS_cooperative_unions
+		icon = GFX_RUS_Cooperative_Unions
+		cost = 5
+		prerequisite = { focus = KUB_Syndical_Cooperative_Federation_plsr }
+		relative_position_id = KUB_Premier_Spiridonova
+		x = 2
+		y = 3
+		
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			if = {
+				limit = { has_idea = rus_federation_of_syndicates_1 }
+				swap_ideas = {
+					remove_idea = rus_federation_of_syndicates_1
+					add_idea = rus_federation_of_syndicates_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = rus_federation_of_syndicates_3
+					add_idea = rus_federation_of_syndicates_4
+				}
+			}
+		}
+	}
+	focus = {
+		id = KUB_Power_To_The_Local_Councils
+		text = RUS_Power_To_The_Local_Councils
+		icon = GFX_RUS_Power_To_Local_Councils
+		cost = 5
+		prerequisite = { 
+			focus = KUB_village_communes 
+		}
+		prerequisite = { 
+			focus = KUB_Decentralised_Planning 
+		}
+		bypass = { has_idea = RUS_councils }
+		relative_position_id = KUB_Premier_Spiridonova
+		x = 0
+		y = 5
+		ai_will_do = { factor = 40 }
+		completion_reward = { add_ideas = RUS_councils }
+	}
+	
+	
+	
+	
+	focus = {
+		id = KUB_Socialist_Democracy
+		icon = GFX_goal_CZE_radical_changes
+		relative_position_id = KUB_Premier_Spiridonova
+		x = 1
+		y = 1
+		cost = 5
+		
+		prerequisite = { focus = KUB_Premier_Spiridonova }
+
+		ai_will_do = { factor = 20 }
+		completion_reward = {
+			#unity with plsr
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.07
+			}
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.07
+			}
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.07
+			}
+		}
+	}
+	focus = {
+		id = KUB_Socially_Owned_Economy
+		icon = GFX_goal_CSA_business_unionism
+		relative_position_id = KUB_Premier_Spiridonova
+		x = 0
+		y = 3
+		cost = 5
+		
+		prerequisite = { focus = KUB_Syndical_Cooperative_Federation_plsr }
+		ai_will_do = { factor = 20 }
+		completion_reward = { add_ideas = SOV_social_economy }
+	}
+	focus = {
+		id = KUB_Decentralised_Planning
+		icon = GFX_goal_syndicalist_industry
+		relative_position_id = KUB_Premier_Spiridonova
+		x = 1
+		y = 4
+		cost = 5
+		
+		prerequisite = { focus = KUB_Socially_Owned_Economy }
+		ai_will_do = { factor = 20 }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SOV_social_economy
+				add_idea = SOV_social_economy_1
+			}
+			activate_targeted_decision = { target = 217 decision = RUS_Develop_Civilian_Industry_In_State } #Tsaritsyn
+			activate_targeted_decision = { target = 220 decision = RUS_Develop_Civilian_Industry_In_State } #Kursk
+		}
+	}
+	
+	
+	focus = {
+		id = KUB_Labour_Republic
+		icon = GFX_goal_ideology_libsoc
+		relative_position_id = KUB_Power_To_The_Local_Councils
+		x = 0
+		y = 2
+		cost = 5
+		prerequisite = { focus = KUB_Revolutionary_Narodism }
+		prerequisite = { focus = KUB_Rural_Obschinas }
+		
+		bypass = {
+			OR = {
+				has_cosmetic_tag = SOV_union_psr
+				has_cosmetic_tag = SOV_union_labor_republic
+			}
+		}
+		ai_will_do = { factor = 20 }
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		
+		completion_reward = {
+			
+			add_research_slot = 1
+			hidden_effect = {
+				country_event = {
+					id = russoc.140
+					days = 48
+				}
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = KUB_village_communes
+		text = RUS_village_communes
+		icon = GFX_RUS_Village_Communes
+		cost = 5
+		
+		
+		prerequisite = {
+			
+			focus = KUB_Socially_Owned_Economy
+		}
+		
+		relative_position_id = KUB_Premier_Spiridonova
+		x = -1
+		y = 4
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = rus_federation_of_syndicates_4
+				}
+				swap_ideas = {
+					remove_idea = rus_federation_of_syndicates_4
+					add_idea = rus_federation_of_syndicates_5
+				}
+			}
+			else = {
+				add_ideas = village_communes
+			}
+		}
+	}
+	
+	
+	
+	focus = {
+		id = KUB_Rural_Obschinas
+		icon = GFX_focus_generic_agriculture
+		relative_position_id = KUB_Premier_Spiridonova
+		x = 1
+		y = 6
+		cost = 5
+		
+		prerequisite = {
+			
+			focus = KUB_Power_To_The_Local_Councils
+		}
+		ai_will_do = { factor = 20 }
+		completion_reward = {
+			if = {
+				limit = { has_idea = rus_federation_of_syndicates_5 }
+				swap_ideas = {
+					remove_idea = rus_federation_of_syndicates_5
+					add_idea = SOV_labour_republic_2 
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = village_communes
+					add_idea = rural_obschina
+				}
+			}
+			custom_effect_tooltip = SOV_Rural_Obschinas_tooltip
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						OR = {
+							has_state_category = four
+							has_state_category = three
+							has_state_category = two
+							has_state_category = one
+						}
+					}
+					add_state_modifier = {
+						modifier = {
+							local_resources_factor = 0.15
+							local_supplies = 0.3
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = KUB_Revolutionary_Narodism
+		icon = GFX_RUS_Revolutionary_Narodism
+		relative_position_id = KUB_Premier_Spiridonova
+		x = -1
+		y = 6
+		cost = 5
+		
+		prerequisite = {
+			focus = KUB_Power_To_The_Local_Councils
+			
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			add_ideas = peasant_councils
+		}
+	}
+	
+	focus = {
+		id = KUB_Decentralisation_Of_Syndicates
+		icon = GFX_SOV_decentralize_syndicates
+		relative_position_id = KUB_Labour_Republic
+		x = -1
+		y = 1
+		cost = 3
+		prerequisite = {
+			focus = KUB_Labour_Republic
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		
+		completion_reward = {
+			add_ideas = SOV_decentralized_syndicates
+			every_owned_state = {
+				limit = {
+					OR = {
+						has_state_category = six
+						has_state_category = seven
+					} 
+				}
+				increase_state_category_by_one_level = yes
+			}
+		}
+	}
+	
+	focus = {
+		id = KUB_Cooperative_Agrarain_Economy
+		icon = GFX_goal_CSA_agricultural_revolution
+		relative_position_id = KUB_Labour_Republic
+		x = 1
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = KUB_Labour_Republic
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = SOV_labour_republic_2
+				}
+				swap_ideas = {
+					remove_idea = SOV_labour_republic_2
+					add_idea = SOV_labour_republic_3
+				}
+			}
+			else = {
+				add_ideas = SOV_cooperative_economy_idea
+			}
+		}
+	}
+	focus = {
+		id = KUB_Rural_Self_Sufficiency
+		icon = GFX_focus_SOV_breadbasket_of_the_union
+		relative_position_id = KUB_Labour_Republic
+		x = 0
+		y = 3
+		cost = 5
+		prerequisite = {
+			focus = KUB_Separation_Of_Soviet_Powers
+		}
+		prerequisite = {
+			focus = KUB_Powerful_Tradeunionism
+		}
+		prerequisite = {
+			focus = KUB_Universal_Education
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = SOV_labour_republic_3
+				}
+				swap_ideas = {
+					remove_idea = SOV_labour_republic_3
+					add_idea = SOV_labour_republic_4
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = rural_obschina
+					add_idea = SOV_rural_independence
+				}
+			}
+			activate_targeted_decision = { target = 254 decision = RUS_Mechanize_Agriculture_In_State } #Simbirsk
+			activate_targeted_decision = { target = 246 decision = RUS_Mechanize_Agriculture_In_State } #Simbirsk
+			activate_targeted_decision = { target = 258 decision = RUS_Mechanize_Agriculture_In_State } #Simbirsk
+			activate_targeted_decision = { target = 260 decision = RUS_Mechanize_Agriculture_In_State } #Simbirsk
+			activate_targeted_decision = { target = 265 decision = RUS_Mechanize_Agriculture_In_State } #Simbirsk
+		}
+	}
+	
+	focus = {
+		id = KUB_Universal_Education
+		icon = GFX_goal_FRA_union_education
+		relative_position_id = KUB_Labour_Republic
+		x = 2
+		y = 2
+		cost = 5
+		prerequisite = {
+			focus = KUB_Cooperative_Agrarain_Economy
+		}
+		prerequisite = {
+			focus = KUB_Decentralisation_Of_Syndicates
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		
+		completion_reward = {
+			add_ideas = RUS_general_education
+		}
+	}
+	focus = {
+		id = KUB_Public_Healthcare
+		icon = GFX_goal_FIN_promote_the_red_cross
+		relative_position_id = KUB_Labour_Republic
+		x = -2
+		y = 4
+		cost = 5
+		prerequisite = {
+			focus = KUB_Rural_Self_Sufficiency
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		
+		completion_reward = {
+			add_ideas = RUS_public_healthcare
+			add_tech_bonus = {
+				name = SOV_Public_Healthcare
+				bonus = 0.5
+				uses = 2
+				category = hospital_tech
+			}
+			custom_effect_tooltip = improved_field_hospitals_effect
+			hidden_effect = {
+				set_technology = { improved_field_hospitals = 1 popup = no }
+			}
+		}
+	}
+	focus = {
+		id = KUB_Freedom_Of_Socialist_Print
+		icon = GFX_goal_AST_freedom_of_the_press
+		relative_position_id = KUB_Labour_Republic
+		x = 2
+		y = 4
+		cost = 5
+		prerequisite = {
+			focus = KUB_Rural_Self_Sufficiency
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		
+		completion_reward = {
+			add_ideas = RUS_freedom_of_ideas
+		}
+	}
+	focus = {
+		id = KUB_Ensure_Universeal_Employment
+		icon = GFX_goal_syndicalist_workers
+		relative_position_id = KUB_Labour_Republic
+		x = 0
+		y = 4
+		cost = 5
+		prerequisite = {
+			focus = KUB_Rural_Self_Sufficiency
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		
+		completion_reward = {
+			add_ideas = social_security
+		}
+	}
+	
+	
+	focus = {
+		id = KUB_Separation_Of_Soviet_Powers
+		icon = GFX_SOV_separation_of_powers
+		relative_position_id = KUB_Labour_Republic
+		x = -2
+		y = 2
+		cost = 3
+		prerequisite = {
+			focus = KUB_Decentralisation_Of_Syndicates
+		}
+		prerequisite = {
+			focus = KUB_Cooperative_Agrarain_Economy
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		
+		completion_reward = {
+			add_ideas = SOV_separation_of_powers
+		}
+	}
+	
+	focus = {
+		id = KUB_Powerful_Tradeunionism
+		icon = GFX_syndicalism
+		relative_position_id = KUB_Labour_Republic
+		x = 0
+		y = 2
+		cost = 3
+		prerequisite = {
+			focus = KUB_Decentralisation_Of_Syndicates
+		}
+		prerequisite = {
+			focus = KUB_Cooperative_Agrarain_Economy
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		
+		completion_reward = {
+			add_ideas = SOV_power_to_trade_unions
+		}
+	}
+	
+	
+	focus = {
+		id = KUB_Peasant_Russia
+		icon = GFX_BBR_acricultural_revolution
+		relative_position_id = KUB_Labour_Republic
+		x = 0
+		y = 5
+		cost = 5
+		
+		ai_will_do = {
+			factor = 20
+		}
+		prerequisite ={
+			focus = KUB_Ensure_Universeal_Employment
+		}
+		
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = KUB_Welfare_State
+		icon = GFX_VNC_model_of_dem_socialism
+		relative_position_id = KUB_Labour_Republic
+		x = 1
+		y = 6
+		cost = 5
+		
+		ai_will_do = {
+			factor = 20
+		}
+		prerequisite ={
+			focus = KUB_Peasant_Russia
+		}
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		
+		completion_reward = {
+			add_stability = 0.05
+			increase_ruling_party_popularity_by_10 = yes
+		}
+	}
+	focus = {
+		id = KUB_Socialist_Humanism
+		icon = GFX_goal_workers_for_business
+		relative_position_id = KUB_Labour_Republic
+		x = -1
+		y = 6
+		cost = 5
+		
+		ai_will_do = {
+			factor = 20
+		}
+		prerequisite ={
+			focus = KUB_Peasant_Russia
+		}
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		
+		completion_reward = {
+			add_ideas = SOV_socialist_humanism
+		}
+	}
+	focus = {
+		id = KUB_Left_Eurasianists
+		icon = GFX_RUS_left_eurasians2
+		cost = 5
+		relative_position_id = KUB_Premier_Spiridonova
+		x = 7
+		y = 0
+		prerequisite = {
+			focus = KUB_Into_The_Future
+		}
+		
+		
+		completion_reward = {
+			remove_ideas_with_trait = foreign_minister
+			add_ideas = KUB_Dmitri_Mirsky_for_rso
+			
+		}
+	}
+	focus = {
+		id = KUB_The_Red_Prince
+		icon = GFX_RUS_red_prince
+		cost = 5
+		relative_position_id = KUB_Left_Eurasianists
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = KUB_Left_Eurasianists
+		}
+		
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			
+			add_political_power = 100
+			add_stability = 0.1
+		}
+	}
+	
+	focus = {
+		id = KUB_Eurasian_Wide_Narodism
+		icon = GFX_RUS_nationwide_narodism
+		cost = 5
+		relative_position_id = KUB_Left_Eurasianists
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = KUB_The_Red_Prince
+		}
+		
+		
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+		
+			
+			add_political_power = 150
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			every_owned_state = {
+				limit = { has_resistance = yes }
+				add_compliance = 10
+			}
+		}
+	}
+	focus = {
+		id = KUB_Alliance_With_Left_SRs
+		icon = GFX_RUS_left_coalition_2
+		cost = 5
+		relative_position_id = KUB_Left_Eurasianists
+		x = -2
+		y = 2
+		prerequisite = {
+			focus = KUB_The_Red_Prince
+		}
+		
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_ideas = RUS_Left_Eurasian_Coalition_6
+		}
+	}
+	focus = {
+		id = KUB_Eurasian_Soviets
+		icon = GFX_RUS_eurasian_soviets
+		cost = 5
+		relative_position_id = KUB_Left_Eurasianists
+		x = -3
+		y = 3
+		prerequisite = {
+			focus = KUB_Alliance_With_Left_SRs
+		}
+		
+		
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_ideas = RUS_Eurasian_Bolsheviks
+		}
+	}
+	focus = {
+		id = KUB_We_Are_Building_A_Better_Future
+		icon = GFX_RUS_better_future
+		cost = 5
+		relative_position_id = KUB_Left_Eurasianists
+		x = -2
+		y = 4
+		prerequisite = {
+			focus = KUB_Eurasian_Soviets
+		}
+		ai_will_do = {
+			factor = 70
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = RUS_Eurasian_Bolsheviks
+				add_idea = RUS_Eurasian_Bolsheviks_1
+			}
+			every_owned_state = {
+				limit = { has_resistance = yes }
+				add_compliance = 3
+			}
+		}
+	}
+	focus = {
+		id = KUB_Issue_Of_Ethnic_Councils
+		icon = GFX_RUS_ethnic_soviets_eurasia
+		cost = 5
+		relative_position_id = KUB_Left_Eurasianists
+		x = -1
+		y = 5
+		prerequisite = {
+			focus = KUB_We_Are_Building_A_Better_Future
+		}
+		ai_will_do = {
+			factor = 70
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = RUS_Eurasian_Bolsheviks_1
+				add_idea = RUS_Eurasian_Bolsheviks_2
+			}
+		}
+	}
+	focus = {
+		id = KUB_Eurasian_Popular_Front
+		icon = GFX_RUS_eurasian_popular_front
+		cost = 5
+		relative_position_id = KUB_Left_Eurasianists
+		x = 2
+		y = 2
+		prerequisite = {
+			focus = KUB_The_Red_Prince
+			
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_ideas = RUS_eurasian_popular_front
+			if = { 
+				limit = { NOT = { has_government = syndicalist } }
+				add_synd_to_coalition = yes
+			}
+			if = { 
+				limit = { NOT = { has_government = radical_socialist } }
+				add_radsoc_to_coalition = yes
+			}
+			if = { 
+				limit = { NOT = { has_government = social_democrat } }
+				add_socdem_to_coalition = yes
+			}
+		}
+	}
+	focus = {
+		id = KUB_Panslavist_Internationalism
+		icon = GFX_RUS_panslavic_eurasia
+		cost = 5
+		relative_position_id = KUB_Left_Eurasianists
+		x = 2
+		y = 4
+		prerequisite = {
+			focus = KUB_Struggle_With_Clericalism
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+		add_ideas = RUS_Bolshevist_Enlightenment
+			
+		}
+	}
+	focus = {
+		id = KUB_Ceaser_Of_October
+		icon = GFX_RUS_ceaser_of_october
+		cost = 5
+		relative_position_id = KUB_Left_Eurasianists
+		x = -1
+		y = 3
+		prerequisite = {
+			focus = KUB_Eurasian_Wide_Narodism
+		}
+		
+		
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = KUB_Brutus_Of_The_World_Bourgeousie
+		icon = GFX_RUS_brutus_of_world_revolution
+		cost = 5
+		relative_position_id = KUB_Left_Eurasianists
+		x = 1
+		y = 3
+		prerequisite = {
+			focus = KUB_Eurasian_Wide_Narodism
+		}
+		
+		
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_manpower = 100000
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = KUB_Strengthen_The_Chairman
+		icon = GFX_RUS_strengthen_chairman
+		cost = 5
+		relative_position_id = KUB_Left_Eurasianists
+		x = 0
+		y = 4
+		prerequisite = {
+			focus = KUB_Ceaser_Of_October
+		}
+		prerequisite = {
+			focus = KUB_Brutus_Of_The_World_Bourgeousie
+		}
+		
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_political_power = 200
+		}
+	}
+	
+	focus = {
+		id = KUB_Socialism_With_Eurasianist_Characteristics
+		icon = GFX_RUS_totalism_with_eurasianism
+		cost = 5
+		relative_position_id = KUB_Left_Eurasianists
+		x = 0
+		y = 6
+		prerequisite = {
+			focus = KUB_Strengthen_The_Chairman
+		}
+		prerequisite = {
+			focus =  KUB_Scythian_Reserve_of_Revolution
+		}
+		prerequisite = {
+			
+			focus = KUB_Issue_Of_Ethnic_Councils
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = RUS_Eurasian_Bolsheviks_2
+				add_idea = RUS_Eurasian_Bolsheviks_4
+			}
+			swap_ideas = {
+				remove_idea = RUS_Bolshevist_Enlightenment_1
+				add_idea = RUS_Bolshevist_Enlightenment_3
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = KUB_Scythian_Reserve_of_Revolution
+		icon = GFX_RUS_scythian_eurasia
+		cost = 5
+		relative_position_id = KUB_Left_Eurasianists
+		x = 1
+		y = 5
+		prerequisite = {
+			focus = KUB_Avanguardist_Eurasian_Thought
+		}
+		prerequisite = {
+			focus = KUB_Panslavist_Internationalism
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = RUS_Bolshevist_Enlightenment
+				add_idea = RUS_Bolshevist_Enlightenment_1
+			}
+		}
+	}
+	focus = {
+		id = KUB_Struggle_With_Clericalism
+		icon = GFX_RUS_fight_clericalism
+		cost = 5
+		relative_position_id = KUB_Left_Eurasianists
+		x = 3
+		y = 3
+		
+		prerequisite = {
+			focus = KUB_Eurasian_Popular_Front
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_political_power = -50
+			add_stability = -0.05
+			add_ideas = RUS_church_of_all_religions
+		}
+	}
+	focus = {
+		id = KUB_scythian_sarmartian
+		icon = GFX_RUS_gorgpitch
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -10
+		y = 21
+		available = { 
+			
+			is_subject = no
+		}	
+		mutually_exclusive = {
+			focus = KUB_eurasian_revolution
+		}
+		prerequisite = {
+			focus = KUB_Into_The_Future
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_ideas = KUB_scy_sar_slav_ary
+		}
+	}
+	focus = {
+		id = KUB_eurasian_revolution
+		icon = GFX_goal_CSA_revolutionary_army
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -8
+		y = 21
+		available = { 
+			
+			is_subject = no
+		}	
+		
+		mutually_exclusive = {
+			focus = KUB_scythian_sarmartian
+		}
+		prerequisite = {
+			focus = KUB_Into_The_Future
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			add_ideas = Revolutionary_spirit
+		}
+	}
+	focus = {
+		id = KUB_between_west_and_east
+		icon = GFX_focus_rus_iron_curtain
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -12
+		y = 22
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_scythian_sarmartian
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			set_war_support = 1
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 10000
+				producer = KUB
+			}
+		}
+	}
+	focus = {
+		id = KUB_last_aryans
+		icon = GFX_goal_AFG_Land_Aryan
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -12
+		y = 23
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_between_west_and_east
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			every_state = {
+				limit = {
+					is_core_of = PER
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			
+			every_state = {
+				limit = {
+					is_core_of = ALO
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = TRK
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = ALO
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = KYR
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = UZB
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = UZB
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = AFG
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = DEH
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = BHC
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = PRF
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			
+			every_state = {
+				limit = {
+					is_core_of = LIT
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			
+			every_state = {
+				limit = {
+					is_core_of = BAT
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = EST
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = LAT
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = GAL
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = RUS
+						is_claimed_by = RUS
+						is_core_of = TRM
+						is_claimed_by = TRM
+						is_core_of = UKR
+						is_claimed_by = UKR
+						is_core_of = WHR
+						is_claimed_by = WHR
+						is_core_of = SER
+						is_claimed_by = SER
+						is_core_of = BUL
+						is_claimed_by = BUL
+						is_core_of = CZE
+						is_claimed_by = CZE
+						is_core_of = SVK
+						is_claimed_by = SVK
+						is_core_of = POL
+						is_claimed_by = POL
+						is_core_of = GAL
+						is_claimed_by = GAL						
+						is_core_of = SLO
+						is_claimed_by = SLO
+						is_core_of = CRO
+						is_claimed_by = CRO
+						is_core_of = BOS
+						is_claimed_by = BOS
+						is_core_of = MNT
+						is_claimed_by = MNT
+						}
+					}
+				add_core_of = ROOT
+				}			
+				#加利西亚
+				88 = { add_core_of = ROOT 
+						}
+				1314 = { add_core_of = ROOT 
+						}
+				1125 = { add_core_of = ROOT 
+						}
+				1319 = { add_core_of = ROOT 
+						}
+				1126 = { add_core_of = ROOT 
+						}
+				1127 = { add_core_of = ROOT 
+						}
+				89 = { add_core_of = ROOT 
+						}
+				1140 = { add_core_of = ROOT 
+						}
+				91 = { add_core_of = ROOT 
+						}
+				1124 = { add_core_of = ROOT 
+						}
+				#波兰 
+				10 = { add_core_of = ROOT 
+						}
+				90 = { add_core_of = ROOT 
+						}
+				87 = { add_core_of = ROOT 
+						}
+				98 = { add_core_of = ROOT 
+						}
+				92 = { add_core_of = ROOT 
+						}
+				1088 = { add_core_of = ROOT 
+						}
+				97 = { add_core_of = ROOT 
+						}
+				1148 = { add_core_of = ROOT 
+						}
+				1329 = { add_core_of = ROOT 
+						}
+				94 = { add_core_of = ROOT 
+						}		
+				#乌克兰
+				997 = { add_core_of = ROOT 
+						}
+				93 = { add_core_of = ROOT 
+						}
+				792 = { add_core_of = ROOT 
+						}
+				1228 = { add_core_of = ROOT 
+						}
+				1244 = { add_core_of = ROOT 
+						}
+				201 = { add_core_of = ROOT 
+						}
+				199 = { add_core_of = ROOT 
+						}
+				1245 = { add_core_of = ROOT 
+						}
+				198 = { add_core_of = ROOT 
+						}
+				791 = { add_core_of = ROOT 
+						}
+				1241 = { add_core_of = ROOT 
+						}
+				1240 = { add_core_of = ROOT 
+						}
+				1233 = { add_core_of = ROOT 
+						}
+				226 = { add_core_of = ROOT 
+						}
+				203 = { add_core_of = ROOT 
+						}
+				1237 = { add_core_of = ROOT 
+						}
+				202 = { add_core_of = ROOT 
+						}
+				1238 = { add_core_of = ROOT 
+						}
+				259 = { add_core_of = ROOT 
+						}
+				1243 = { add_core_of = ROOT 
+						}
+				225 = { add_core_of = ROOT 
+						}
+				1242 = { add_core_of = ROOT 
+						}
+				193 = { add_core_of = ROOT 
+						}
+				1230 = { add_core_of = ROOT 
+						}
+				241 = { add_core_of = ROOT 
+						}
+				192 = { add_core_of = ROOT 
+						}
+				1232 = { add_core_of = ROOT 
+						}
+				197 = { add_core_of = ROOT 
+						}
+				196 = { add_core_of = ROOT 
+						}
+				1220 = { add_core_of = ROOT 
+						}
+				137 = { add_core_of = ROOT 
+						}
+				1221 = { add_core_of = ROOT 
+						}
+				1234 = { add_core_of = ROOT 
+						}
+				200 = { add_core_of = ROOT 
+						}
+				1286 = { add_core_of = ROOT 
+						}
+				228 = { add_core_of = ROOT 
+						}
+				227 = { add_core_of = ROOT 
+						}
+				1283 = { add_core_of = ROOT 
+						}
+				1239 = { add_core_of = ROOT 
+						}
+				221 = { add_core_of = ROOT 
+						}
+				1285 = { add_core_of = ROOT 
+						}
+				1284 = { add_core_of = ROOT 
+						}
+				1282 = { add_core_of = ROOT 
+						}
+				#俄罗斯
+				240 = { add_core_of = ROOT 
+						}
+				260 = { add_core_of = ROOT 
+						}
+				253 = { add_core_of = ROOT 
+						}
+				257 = { add_core_of = ROOT 
+						}
+				254 = { add_core_of = ROOT 
+						}
+				258 = { add_core_of = ROOT 
+						}
+				1229 = { add_core_of = ROOT 
+						}
+				821 = { add_core_of = ROOT 
+						}
+				220 = { add_core_of = ROOT 
+						}
+				222 = { add_core_of = ROOT 
+						}
+				224 = { add_core_of = ROOT 
+						}
+				223 = { add_core_of = ROOT 
+						}
+				205 = { add_core_of = ROOT 
+						}
+				243 = { add_core_of = ROOT 
+						}
+				248 = { add_core_of = ROOT 
+						}
+				351 = { add_core_of = ROOT 
+						}
+				214 = { add_core_of = ROOT 
+						}
+				219 = { add_core_of = ROOT 
+						}
+				247 = { add_core_of = ROOT 
+						}
+				246 = { add_core_of = ROOT 
+						}
+				264 = { add_core_of = ROOT 
+						}
+				755 = { add_core_of = ROOT 
+						}
+				210 = { add_core_of = ROOT 
+						}
+				1287 = { add_core_of = ROOT 
+						}
+				880 = { add_core_of = ROOT 
+						}
+				263 = { add_core_of = ROOT 
+						}
+				244 = { add_core_of = ROOT 
+						}
+				1290 = { add_core_of = ROOT 
+						}
+				1289 = { add_core_of = ROOT 
+						}
+				209 = { add_core_of = ROOT 
+						}
+				1291 = { add_core_of = ROOT 
+						}
+				1288 = { add_core_of = ROOT 
+						}
+				208 = { add_core_of = ROOT 
+						}
+				195 = { add_core_of = ROOT 
+						}
+				1328 = { add_core_of = ROOT 
+						}
+				1327 = { add_core_of = ROOT 
+						}
+				216 = { add_core_of = ROOT 
+						}
+				1274 = { add_core_of = ROOT 
+						}
+				215 = { add_core_of = ROOT 
+						}
+				242 = { add_core_of = ROOT 
+						}
+				#白罗斯
+				194 = { add_core_of = ROOT 
+						}
+				95 = { add_core_of = ROOT 
+						}
+				1295 = { add_core_of = ROOT 
+						}
+				204 = { add_core_of = ROOT 
+						}
+				207 = { add_core_of = ROOT 
+						}
+				206 = { add_core_of = ROOT 
+						}
+				1087 = { add_core_of = ROOT 
+						}
+				1294 = { add_core_of = ROOT 
+						}
+				722 = { add_core_of = ROOT 
+						}
+				213 = { add_core_of = ROOT 
+						}
+				96 = { add_core_of = ROOT 
+						}
+				#西俄罗斯
+				252 = { add_core_of = ROOT 
+						}
+				255 = { add_core_of = ROOT 
+						}
+				1205 = { add_core_of = ROOT 
+						}
+				1204 = { add_core_of = ROOT 
+						}
+				239 = { add_core_of = ROOT 
+						}
+				401 = { add_core_of = ROOT 
+						}
+				1207 = { add_core_of = ROOT 
+						}
+				265 = { add_core_of = ROOT 
+						}
+				217 = { add_core_of = ROOT 
+						}
+				236 = { add_core_of = ROOT 
+						}
+				1224 = { add_core_of = ROOT 
+						}
+				256 = { add_core_of = ROOT 
+						}
+				250 = { add_core_of = ROOT 
+						}
+				1198 = { add_core_of = ROOT 
+						}
+				262 = { add_core_of = ROOT 
+						}
+				397 = { add_core_of = ROOT 
+						}
+				398 = { add_core_of = ROOT 
+						}
+				399 = { add_core_of = ROOT 
+						}
+				400 = { add_core_of = ROOT 
+						}
+				1193 = { add_core_of = ROOT 
+						}
+				249 = { add_core_of = ROOT 
+						}
+				1199 = { add_core_of = ROOT 
+						}
+				251 = { add_core_of = ROOT 
+						}
+				652 = { add_core_of = ROOT 
+						}
+				651 = { add_core_of = ROOT 
+						}
+				1194 = { add_core_of = ROOT 
+						}
+				1195 = { add_core_of = ROOT 
+						}
+				1197 = { add_core_of = ROOT 
+						}
+				398 = { add_core_of = ROOT 
+						}
+				581 = { add_core_of = ROOT 
+						}
+				582 = { add_core_of = ROOT 
+						}
+				573 = { add_core_of = ROOT 
+						}
+				#大顿河军团
+				1231 = { add_core_of = ROOT 
+						}
+				1263 = { add_core_of = ROOT 
+						}
+				218 = { add_core_of = ROOT 
+						}
+				1265 = { add_core_of = ROOT 
+						}
+				1264 = { add_core_of = ROOT 
+						}
+				1226 = { add_core_of = ROOT 
+						}
+				237 = { add_core_of = ROOT 
+						}
+				238 = { add_core_of = ROOT 
+						}
+				245 = { add_core_of = ROOT 
+						}
+				1266 = { add_core_of = ROOT 
+						}
+				#库班
+				234 = { add_core_of = ROOT 
+						}
+				235 = { add_core_of = ROOT 
+						}
+				1227 = { add_core_of = ROOT 
+						}
+				#北高加索   
+				1186 = { add_core_of = ROOT 
+						}
+				1187 = { add_core_of = ROOT 
+						}
+				1189 = { add_core_of = ROOT 
+						}
+				233 = { add_core_of = ROOT 
+						}
+				787 = { add_core_of = ROOT 
+						}
+				1191 = { add_core_of = ROOT 
+						}
+				232 = { add_core_of = ROOT 
+						}
+				#东西伯利亚
+				40 = { add_core_of = ROOT 
+						}
+				1292 = { add_core_of = ROOT 
+						}
+				569 = { add_core_of = ROOT 
+						}
+				575 = { add_core_of = ROOT 
+						}
+				567 = { add_core_of = ROOT 
+						}
+				568 = { add_core_of = ROOT 
+						}
+				576 = { add_core_of = ROOT 
+						}
+				516 = { add_core_of = ROOT 
+						}
+				566 = { add_core_of = ROOT 
+						}
+				565 = { add_core_of = ROOT 
+						}
+				564 = { add_core_of = ROOT 
+						}
+				563 = { add_core_of = ROOT 
+						}
+				562 = { add_core_of = ROOT 
+						}
+				637 = { add_core_of = ROOT 
+						}
+				644 = { add_core_of = ROOT 
+						}
+				574 = { add_core_of = ROOT 
+						}
+				1246 = { add_core_of = ROOT 
+						}
+				409 = { add_core_of = ROOT 
+						}
+				560 = { add_core_of = ROOT 
+						}
+				561 = { add_core_of = ROOT 
+						}
+				657 = { add_core_of = ROOT 
+						}
+				408 = { add_core_of = ROOT 
+						}
+				1202 = { add_core_of = ROOT 
+						}
+				654 = { add_core_of = ROOT 
+						}
+				1293 = { add_core_of = ROOT 
+						}
+				811 = { add_core_of = ROOT 
+						}
+				#西西伯利亚
+				1200 = { add_core_of = ROOT 
+						}
+				580 = { add_core_of = ROOT 
+						}
+				653 = { add_core_of = ROOT 
+						}
+				572 = { add_core_of = ROOT 
+						}
+				583 = { add_core_of = ROOT 
+						}
+				588 = { add_core_of = ROOT 
+						}		
+				403 = { add_core_of = ROOT 
+						}
+				570 = { add_core_of = ROOT 
+						}
+				577 = { add_core_of = ROOT 
+						}		
+				578 = { add_core_of = ROOT 
+						}
+				1201 = { add_core_of = ROOT 
+						}
+				571 = { add_core_of = ROOT 
+						}
+				
+				48 = { add_core_of = ROOT 
+						}
+				211 = { add_core_of = ROOT 
+						}
+				212 = { add_core_of = ROOT 
+						}
+				77 = { add_core_of = ROOT 
+						}
+				184 = { add_core_of = ROOT 
+						}
+				769 = { add_core_of = ROOT 
+						}
+				1089 = { add_core_of = ROOT 
+						}
+				106 = { add_core_of = ROOT 
+						}
+				1271 = { add_core_of = ROOT 
+						}
+				841 = { add_core_of = ROOT 
+						}
+				1090 = { add_core_of = ROOT 
+						}
+				770 = { add_core_of = ROOT 
+						}
+				771 = { add_core_of = ROOT 
+						}
+				772 = { add_core_of = ROOT 
+						}
+	
+				1222 = { add_core_of = ROOT 
+						}
+				
+				1269 = { add_core_of = ROOT 
+						}
+				107 = { add_core_of = ROOT 
+						}
+				765 = { add_core_of = ROOT 
+						}
+				108 = { add_core_of = ROOT 
+						}
+				767 = { add_core_of = ROOT 
+						}
+				
+				109 = { add_core_of = ROOT 
+						}
+				1142 = { add_core_of = ROOT 
+						}
+				1105 = { add_core_of = ROOT 
+						}
+				1206 = { add_core_of = ROOT 
+						}
+				103 = { add_core_of = ROOT 
+						}
+				163 = { add_core_of = ROOT 
+						}
+				1143 = { add_core_of = ROOT 
+						}
+				1141 = { add_core_of = ROOT 
+						}
+				104 = { add_core_of = ROOT 
+						}
+				1145 = { add_core_of = ROOT 
+						}
+				1098 = { add_core_of = ROOT 
+						}
+				1270 = { add_core_of = ROOT 
+						}
+				1099 = { add_core_of = ROOT 
+						}
+				1102 = { add_core_of = ROOT 
+						}
+				794 = { add_core_of = ROOT 
+						}
+				1128 = { add_core_of = ROOT 
+						}
+				105 = { add_core_of = ROOT 
+						}
+				1097 = { add_core_of = ROOT 
+						}	
+				#捷克
+				1139 = { add_core_of = ROOT 
+						}
+				1133 = { add_core_of = ROOT 
+						}
+				1130 = { add_core_of = ROOT 
+						}
+				786 = { add_core_of = ROOT 
+						}
+				9 = { add_core_of = ROOT 
+						}
+				1132 = { add_core_of = ROOT 
+						}
+				71 = { add_core_of = ROOT 
+						}
+				75 = { add_core_of = ROOT 
+						}
+				74 = { add_core_of = ROOT 
+						}
+				1131 = { add_core_of = ROOT 
+						}
+				1138 = { add_core_of = ROOT 
+						}
+				69 = { add_core_of = ROOT 
+						}
+				1129 = { add_core_of = ROOT 
+						}
+				1134 = { add_core_of = ROOT 
+						}
+				#斯洛伐克
+				1123 = { add_core_of = ROOT 
+						}
+				70 = { add_core_of = ROOT 
+						} 
+				1120 = { add_core_of = ROOT 
+						} 
+				664 = { add_core_of = ROOT 
+						} 
+				1121 = { add_core_of = ROOT 
+						} 
+				1119 = { add_core_of = ROOT 
+						} 
+				73 = { add_core_of = ROOT 
+						} 
+				1136 = { add_core_of = ROOT 
+						} 
+				1135 = { add_core_of = ROOT 
+						}
+				1122 = { add_core_of = ROOT 
+						}	
+				#斯洛文尼亚
+				736 = { add_core_of = ROOT 
+						}
+				1100 = { add_core_of = ROOT 
+						}
+				1144 = { add_core_of = ROOT 
+						}
+				102 = { add_core_of = ROOT 
+						}
+				1104 = { add_core_of = ROOT 
+						}
+				1272 = { add_core_of = ROOT 
+						}
+				1103 = { add_core_of = ROOT 
+						}
+				1101 = { add_core_of = ROOT 
+						}
+				#伏伊伏丁那
+				45 = { add_core_of = ROOT }
+				#西巴纳特
+				875 = { add_core_of = ROOT }
+				#卡林西亚（原奥地利领土）	   
+				835 = { add_claim_by = ROOT }
+				#波兹南
+				86 = { add_core_of = ROOT }
+				#西里西亚
+				66 = { add_core_of = ROOT }
+				67 = { add_core_of = ROOT }
+				#波美拉尼亚
+				63 = { add_core_of = ROOT }
+				62 = { add_claim_by = ROOT }
+				#但泽
+				776 = { add_core_of = ROOT }
+				#马祖里亚
+				777 = { add_core_of = ROOT }
+				#诺伊马尔克
+				68 = { add_core_of = ROOT }
+				#梅克伦堡
+				61 = { add_claim_by = ROOT }
+				#柏林
+				64 = { add_claim_by = ROOT }
+				#萨克森
+				65 = { add_claim_by = ROOT }
+				#萨哈林岛
+				537 = { add_core_of = ROOT }
+				#千岛群岛
+				555 = { add_core_of = ROOT }	
+			add_state_core = 320
+			add_state_core = 321 
+			add_state_core = 422
+			every_state = {
+				limit = {
+					is_core_of = GER
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = AUS
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = CZE
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = SWI
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = DEN
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = BEL
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = HOL
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = WLL
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = FLN
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = NOR
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = SWE
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = FIN
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+		}
+	}
+	focus = {
+		id = KUB_erdicrate_nationalism
+		icon = GFX_goal_AUS_destroy_nationalism
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -6
+		y = 22
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_eurasian_revolution
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			set_popularities = {
+				radical_socialist = 100
+			}	
+			add_political_power = 100
+			add_ideas = KUB_eurasian_liberation
+		}
+	}
+	focus = {
+		id = KUB_war_of_liberation
+		icon = GFX_goal_AUS_fly_red_flag
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -6
+		y = 23
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_erdicrate_nationalism
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			every_state = {
+				limit = {
+					is_on_continent = europe
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_on_continent = asia
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_on_continent = india
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+			every_state = {
+				limit = {
+					is_on_continent = middle_east
+				}
+				KUB = { 
+					add_state_core = PREV 
+				}
+			}
+		}
+	}
+	focus = {
+		id = KUB_world_revolution
+		icon = GFX_goal_CSA_inevitable_world_socialism
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -9
+		y = 22
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_scythian_sarmartian
+			focus = KUB_eurasian_revolution
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			set_stability = 1
+		}
+	}
+	focus = {
+		id = KUB_fuck_europe
+		icon = GFX_focus_SOV_the_glory_of_the_red_army_communism
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -10
+		y = 23
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_world_revolution
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			every_country = {
+				limit = {
+					NOT = {
+						tag = KUB
+					}
+					capital_scope = { is_on_continent = europe }
+					
+				}
+				KUB = {
+					create_wargoal = { target = PREV type = annex_everything }
+				}
+				
+			}
+		}
+	}
+	focus = {
+		id = KUB_fuck_asia
+		icon = GFX_focus_usa_focus_on_asia
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -8
+		y = 23
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_world_revolution
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			every_country = {
+				limit = {
+					
+					capital_scope = { is_on_continent = asia }
+					
+				}
+				KUB = {
+					create_wargoal = { target = PREV type = annex_everything }
+				}
+				
+			}
+			every_country = {
+				limit = {
+					
+					capital_scope = { is_on_continent = middle_east }
+					
+				}
+				KUB = {
+					create_wargoal = { target = PREV type = annex_everything }
+				}
+				
+			}
+			every_country = {
+				limit = {
+					
+					capital_scope = { is_on_continent = india }
+					
+				}
+				KUB = {
+					create_wargoal = { target = PREV type = annex_everything }
+				}
+				
+			}
+		}
+	}
+	focus = {
+		id = KUB_trial_in_the_storm
+		icon = GFX_goal_CAN_pacifying_yankees
+		cost = 4
+		relative_position_id = KUB_we_are_scythians
+		x = -9
+		y = 24
+		available = { 
+			
+			is_subject = no
+		}	
+		prerequisite = {
+			focus = KUB_fuck_asia
+			focus = KUB_fuck_europe
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus KUB_For_The_Red_Don_Kuban"
+			create_wargoal = { target = CAN type = annex_everything }
+			create_wargoal = { target = USA type = annex_everything }
+			create_wargoal = { target = COR type = annex_everything }
+			create_wargoal = { target = CAL type = annex_everything }
+			create_wargoal = { target = TEX type = annex_everything }
+			create_wargoal = { target = NEE type = annex_everything }
+			create_wargoal = { target = WCC type = annex_everything }
+			create_wargoal = { target = CSA type = annex_everything }
+		}
+	}
+}

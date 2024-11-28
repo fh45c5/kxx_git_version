@@ -1,0 +1,128 @@
+CNT_political_military_balance = {
+	initial_value = 0
+	left_side = CNT_bop_left_side	
+	right_side = CNT_bop_right_side	
+	decision_category = CNT_balance_of_power_category
+	
+	range = {
+		id = CNT_unstable_government
+		min = -0.1
+		max = 0.1
+		modifier = {
+		stability_factor = 0.3
+		war_support_factor = 0.3
+		army_core_attack_factor = 0.3
+		army_core_defence_factor = 0.3
+		army_attack_factor = 0.3
+		army_defence_factor = 0.3
+		army_org_factor = 0.4
+		army_morale_factor = 0.3
+		experience_gain_army_unit_factor = 0.5
+		justify_war_goal_time = -0.5
+		industrial_capacity_factory = 0.3
+		consumer_goods_factor = -0.3
+		production_factory_max_efficiency_factor = 0.5
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	# Civilian Side
+	side = {
+		id = CNT_bop_left_side	
+		icon = GFX_ideology_spanish_syndicalism
+		range = {
+			id = CNT_independent_civilian_government
+			min = -1
+			max = -0.7
+			modifier = {
+			}
+			on_activate = {
+			country_event = fe_jons.13
+			
+			}
+			on_deactivate = {		
+			
+			}
+
+		}
+		range = {
+			id = CNT_strong_civilian_government
+			min = -0.7
+			max = -0.4
+			modifier = {
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+			
+			}
+
+		}
+		range = {
+			id = CNT_weak_civilian_government
+			min = -0.4
+			max = -0.1
+			modifier = {
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			
+			}
+
+		}
+	}
+
+	# Military Side
+	side = {
+		id = CNT_bop_right_side	
+		icon = GFX_ideology_falangism
+		range = {
+			id = CNT_strong_military_influence
+			min = 0.1
+			max = 0.4
+			modifier = {
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			
+			}
+
+		}
+		range = {
+			id = CNT_puppet_government
+			min = 0.4
+			max = 0.7
+			modifier = {
+			
+			}
+			on_activate = {
+			
+			}
+			on_deactivate = {
+			
+			}
+
+		}
+		range = {
+			id = CNT_junta_in_power
+			min = 0.7
+			max = 1
+			modifier = {
+			}
+			on_activate = {
+			country_event = fe_jons.14
+				
+			}
+			on_deactivate = {
+				
+			}
+
+		}
+	}
+}

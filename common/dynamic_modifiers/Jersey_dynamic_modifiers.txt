@@ -1,0 +1,17 @@
+famine_serious_jer = {
+	icon = "GFX_idea_famine_jer_icon"
+	enable = { always = no }
+	weekly_manpower = -20000 
+	resistance_growth = -0.8
+	resistance_decay = -0.6
+	compliance_gain = -0.8
+}
+jer_kidnapping_children_why_not = {
+	icon = "GFX_idea_famine_jer_icon"
+	enable = { always = no }
+	monthly_population = 0.08
+	production_speed_buildings_factor = 0.5 
+	consumer_goods_factor = -0.4
+	industry_free_repair_factor = 0.6
+	line_change_production_efficiency_factor = 0.5
+}

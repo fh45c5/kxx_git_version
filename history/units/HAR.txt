@@ -1,0 +1,76 @@
+division_template = {
+	name = "Harbin Infantry Guard"
+	division_names_group = RUS_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+        infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+       	artillery = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Harbin Cavalry"	
+
+	division_names_group = RUS_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 0 y = 3 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+		cavalry = { x = 1 y = 3 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }      
+	}
+}
+
+division_template = {
+	name = "Harbin Motor"
+
+	division_names_group = RUS_ARM_01
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+        motorized = { x = 0 y = 2 }
+		light_armor = { x = 1 y = 0 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }      
+	}
+}
+
+units = {
+	division = {
+		name = "Harbinski Garnizonnaya Diviziya 1"
+		location = 12412
+		division_template = "Harbin Infantry Guard"
+		start_experience_factor = 0.7
+	}
+	division = {
+		name = "Harbinski Garnizonnaya Diviziya 2"
+		location = 12412
+		division_template = "Harbin Infantry Guard"
+		start_experience_factor = 0.65
+	}
+	division = {
+		name = "Gorodskaya Konnaya Politsiya"
+		location = 12412
+		division_template = "Harbin Cavalry"
+		start_experience_factor = 0.8
+	}
+}

@@ -1,0 +1,33 @@
+add_namespace = jernew
+
+news_event = { #The Crowning of George Child Villiers, 9th Earl of Jersey
+	id = jernew.1
+	title =jernew.1.t
+	desc =jernew.1.d
+	picture = GFX_news_event_JER_George
+	trigger = {
+		JER = {
+		 has_completed_focus = JER_Herzotg_Normandien
+		}
+	}
+	is_triggered_only = yes
+	
+	major = yes
+	fire_only_once = yes
+	
+	option = { #Back to 1066 
+		name = jernew.1.a
+		ai_chance = { factor = 100 }
+		trigger = {
+		NOT = {
+			tag = JER 
+			   }
+	    	}
+		}
+		option = {
+		trigger = {
+			tag = JER
+		}
+		name =jernew.1.b
+	}
+}

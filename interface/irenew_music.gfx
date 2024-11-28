@@ -1,0 +1,7 @@
+﻿spriteTypes = {
+      
+	spriteType = {
+		name = "GFX_iraland_red_music"
+            texturefile = "gfx//interface//topbar//musicplayer//GFX_iraland_red_music.dds"
+      }
+}

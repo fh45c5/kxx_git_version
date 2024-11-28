@@ -1,0 +1,75 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					OR = {
+						original_tag = ANQ
+						original_tag = CHI
+						original_tag = FNG
+						original_tag = GXC
+						original_tag = HNN
+						original_tag = LEP
+						original_tag = QIE
+						original_tag = SHX
+						original_tag = SIK
+						original_tag = SQI
+						original_tag = SZC
+						original_tag = XSM
+						original_tag = YUN
+						original_tag = MAN
+						original_tag = ETS
+						original_tag = TAN
+						original_tag = MON
+						original_tag = TIB
+					}
+				}
+				set_country_flag = LKMT_is_chinese_tag
+			}
+			every_state = {
+				limit = {
+					is_claimed_by = QIE
+				}
+				set_state_flag = LKMT_china_state
+			}
+			524 = {
+				set_state_flag = LKMT_china_state
+			}
+			858 = {
+				set_state_flag = LKMT_china_state
+			}
+			745 = {
+				set_state_flag = LKMT_china_state
+			}
+
+			every_country = {
+				limit = {
+					OR = {
+						tag = ETS
+						tag = TAN
+						tag = MON
+						tag = TIB
+					}
+				}
+				set_country_flag = LKMT_china_national_state
+			}
+		}
+	}
+	on_annex = {
+		effect = {
+			if = {
+				limit = {
+					FROM = { 
+						is_chinese_tag = yes 
+						NOT = {
+							is_subject_of = CHI
+						}
+					}
+				}	
+				CHI = {
+					country_event = chi_embrace_general.1
+				}
+			}
+		}
+	}
+}

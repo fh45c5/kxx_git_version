@@ -1,0 +1,47 @@
+﻿###########################
+# World News Events
+###########################
+# By many many people
+###########################
+#Alpinia events are being moved to their tag's event file!
+
+add_namespace = worldnews
+
+news_event = { #Anti-SHDYY Coup
+	id = worldnews.4240
+	immediate = { log = "[GetDateText]: [Root.GetName]: event worldnews.4240" }
+	title = worldnews.4240.t
+	desc = worldnews.4240.d
+	picture = GFX_news_event_AST_riot
+
+	major = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			wants_world_news = yes
+		}
+	}
+
+	show_major = {
+		regional_north_america_news = yes
+		regional_south_america_news = yes
+	}
+
+	option = {
+		name = worldnews.4240.a
+		trigger = {
+			NOT = {
+				has_socialist_government = yes
+			}
+		}
+	}
+
+	option = {
+		name = worldnews.4240.b
+		trigger = {
+			has_socialist_government = yes
+		}
+	}
+}

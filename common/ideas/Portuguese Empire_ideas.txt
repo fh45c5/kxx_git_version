@@ -1,0 +1,165 @@
+### Portuguese Empire Ideas ###
+
+ideas = {
+
+### Country Ideas ###
+	country = {
+
+		PAF_the_overseas_provinces = {
+		picture = advisors_portugal
+			modifier = {
+				industrial_factory_donations = 1
+				military_factory_donations = 1
+				dockyard_donations = 1
+				war_support_factor = 0.05
+				stability_factor = -0.05
+			}
+		}
+
+		PAF_the_offensive = {
+		picture = advisors_portugal
+			modifier = {
+				army_core_attack_factor = 0.15
+				army_attack_speed_factor = 0.15
+				army_defence_factor = 0.1
+			}
+		}
+		
+		PAF_bandits_and_strikes = {
+			picture = NOR_uob_support_idea
+			modifier = {
+				stability_factor = -0.1
+				production_speed_buildings_factor = -0.05
+				mobilization_speed = -0.15
+				no_compliance_gain = 1
+			}
+		}
+		
+		PAF_the_swaziland_dispute = {
+			picture = SAF_wavering_dominion_idea
+			available = {
+				owns_state = 738
+				SAF = {
+					country_exists = yes
+					is_subject = no
+				}
+			}
+			modifier = {
+				stability_factor = -0.1
+			}
+		}
+		
+		PAF_black_monday_idea = {
+			picture = HON_bad_stability
+			available = {
+
+			}
+			modifier = {
+				industrial_capacity_factory = -0.15
+				production_speed_buildings_factor = -0.25
+				stability_factor = -0.15
+			}
+		}
+		PAF_camacho_plan = {
+			picture = KTG_Gold_Trade
+			available = {
+
+			}
+			modifier = {
+				industrial_capacity_factory = 0.15
+				production_speed_buildings_factor = 0.15
+				consumer_goods_factor = -0.1
+				stability_factor = -0.05
+				no_compliance_gain = 0
+			}
+		}
+		PAF_belo_plan = {
+			picture = LEC_high_reserves
+			available = {
+
+			}
+			modifier = {
+				industrial_factory_donations = 1
+				military_factory_donations = 1
+				stability_factor = 0.05
+				no_compliance_gain = 0
+			}
+		}
+		PAF_colonial_officers = {
+			picture = LIB_african1
+			available = {
+	
+			}
+			modifier = {
+				army_attack_factor = 0.1
+				compliance_growth_on_our_occupied_states = 0.2
+				heat_attrition_factor = -0.2
+			}
+		}
+		POR_diplomacy_idea = {
+			picture = LIB_whiter_pale
+			available = {
+	
+			}
+			modifier = {
+				political_power_factor = 0.15
+				trade_opinion_factor = 0.15
+			}
+		}
+		PAF_a_freehand_idea = {
+			picture = ZAM_postwar_instability_idea
+			available = {
+				
+			}
+			modifier = {
+				ai_focus_aggressive_factor = 0.5
+				war_support_factor = 0.05
+			}
+		}
+		PAF_modelcolonyidea = {
+			picture = KIV_masters_jungle_idea
+			available = {
+				
+			}
+			modifier = {
+				monthly_population = 0.02
+				army_core_defence_factor = 0.05
+			}
+		}
+		PAF_provincialcouncilsidea = {
+			picture = generic_lightbulb
+			available = {
+				
+			}
+			modifier = {
+				cic_construction_boost_factor = 0.15
+				stability_factor = 0.05
+			}
+		}
+		PAF_integrated_colonies_idea = {
+			picture = KTG_collapsing_fp_idea
+			available = {
+				
+			}
+			modifier = {
+				local_resources_factor = 0.2
+				research_speed_factor = 0.1
+				stability_factor = -0.05
+			}
+		}
+		PAF_imperial_obligations = {
+			picture = WAB_jesuits
+			available = {
+				POR = {
+					exists = yes
+				}
+			}
+			modifier = {
+				military_factory_donations = 1
+				dockyard_donations = 2
+			}
+		}
+		
+}
+
+}

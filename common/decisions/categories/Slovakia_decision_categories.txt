@@ -1,0 +1,37 @@
+SVK_redzapadoslavia = {
+	icon = GFX_decision_category_military_operation
+        priority = 100
+        picture = GFX_decision_cat_picture_gateway_to_europe
+        visible = {
+                OR = { has_completed_focus = SVK_totalist_panslavism
+                       has_completed_focus = SVK_totalist_centreu
+	}
+   }
+}
+
+SVK_anarchy = {
+	icon = GFX_decision_category_military_operation
+        priority = 100
+        picture = GFX_decision_cat_picture_gateway_to_europe
+        visible = {
+            has_completed_focus = SVK_radsoc_conquest
+	}
+}
+
+SVK_liberal_dilemma = {
+	icon = GFX_decision_category_military_operation
+        priority = 100
+        picture = GFX_decision_srobar_dilemma
+        visible = {
+            has_completed_focus = SVK_srobar_lib
+	}
+}
+
+SVK_south_slovakia_attck = {
+	icon = GFX_decision_category_military_operation
+        priority = 100
+        picture = GFX_decision_slovakia_south_fight
+        visible = {
+            has_country_flag = svk_south_attack_event_flag
+	}
+}

@@ -1,0 +1,320 @@
+﻿capital = 553
+
+set_technology = {
+	### Infantry ###
+	infantry_weapons = 3
+	basic_train = 3
+}
+### Navy - MtG ###
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_light = 3
+		basic_ship_hull_light = 3
+		early_ship_hull_cruiser = 3
+		basic_ship_hull_cruiser = 3
+		
+		basic_naval_mines = 3
+
+		## Modules##
+		basic_battery = 3
+		basic_light_battery = 3
+		smoke_generator = 3
+	}
+}
+
+### Navy - Non MtG ###
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_technology = {
+		early_destroyer = 3
+		basic_destroyer = 3
+		early_light_cruiser = 3
+		basic_light_cruiser = 3
+	}
+}
+set_technology = {
+	basic_train = 2
+	### General ###
+	electronic_mechanical_engineering = 2
+	fuel_silos = 2
+
+	
+
+	### Infantry ###
+	infantry_weapons = 3
+	infantry_weapons1 = 3
+	tech_support = 3
+	tech_trucks = 3
+	motorised_infantry = 3
+	tech_recon = 3
+	tech_engineers = 3
+	tech_mountaineers = 3
+	marines = 3
+	gw_artillery = 3
+	interwar_antiair = 3
+
+}
+
+set_research_slots = 2
+set_politics = {
+	ruling_party = authoritarian_democrat
+	last_election = "1888.6.15"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	totalist = 22
+	radical_socialist = 0
+	syndicalist = 0
+	social_democrat = 13
+	social_liberal = 12
+	market_liberal = 0
+	social_conservative = 0
+	authoritarian_democrat = 35
+	paternal_autocrat = 0
+	national_populist = 18
+}
+add_ideas = {
+	KXX_JYBD_hog_tot
+	KXX_QSGCTYS_eco_ade
+	KXX_GRJCD_for_sil
+	KXX_GMDL_sec_sde	
+}
+set_country_flag = Pierre_Gemayel_dead
+
+### Party Leaders
+create_country_leader = {
+	name = "钾钇炳丁"
+	picture = "gfx/leaders/KXX/Plague_Inc.png"
+	expire = "1.1.1"
+	desc = "POLITICS_JYBD_DESC"
+	ideology = tot_jiayibingdingism
+}
+create_country_leader = {
+	name = "暂无"
+	picture = "gfx/leaders/CNT/no_leader-Helou.png"
+	desc = "NO"
+	expire = "1.1.1"
+	ideology = centralized_syndicalism_subtype
+}
+
+create_country_leader = {
+	name = "暂无"
+	picture = "gfx/leaders/CNT/no_leader-Helou.png"
+	desc = "NO"
+	expire = "1.1.1"
+	ideology = radsoc_communism_subtype
+}
+
+create_country_leader = {
+	name = "汉化组长古明地恋"
+	desc = "NO"
+	picture = "gfx/leaders/KXX/HHZGMDL.png"
+	expire = "1.1.1"
+	ideology = socdem_junta_subtype
+}
+
+create_country_leader = {
+	name = "暂无"
+	picture = "gfx/leaders/CNT/no_leader.png"
+	desc = "POLITICS_SAEB_SALAM_DESC"
+	expire = "1.1.1"
+	ideology = soclib_progressive_democracy_subtype
+}
+
+create_country_leader = {
+	name = "暂无"
+	picture = "gfx/leaders/CNT/no_leader.png"
+	desc = "NO"
+	expire = "1.1.1"
+	ideology = marlib_national_liberalism_subtype
+}
+
+create_country_leader = {
+	name = "暂无"
+	picture = "gfx/leaders/CNT/no_leader.png"
+	desc = "NO"
+	expire = "1.1.1"
+	ideology = moderate_authoritarianism_subtype
+}
+
+create_country_leader = {
+	name = "秋天"
+	picture = "gfx/leaders/KXX/QSGCTYS.png"
+	desc = "NO"
+	expire = "1.1.1"
+	ideology = kemalism_subtype
+}
+
+create_country_leader = {
+	name = "暂无"
+	picture = "gfx/leaders/CNT/no_leader.png"
+	desc = "NO"
+	expire = "1.1.1"
+	ideology = theocracy_subtype
+}
+
+create_country_leader = {
+	name = "钾钇炳丁"
+	picture = "gfx/leaders/KXX/Plague_Inc.png"
+	desc = "POLITICS_JYBD_DESC"
+	expire = "1.1.1"
+	ideology = npo_jiayibingdingism
+}
+
+### Corps Commanders ###
+create_field_marshal = {
+	name = "钾钇炳丁复制体0号"
+	portrait_path = "gfx/leaders/KXX/Plague_Inc.png"
+	traits = { 
+	}
+	id = 1114522
+	skill = 9
+	attack_skill = 10
+	defense_skill = 10
+	planning_skill = 10
+	logistics_skill = 10
+}
+create_field_marshal = {
+	name = "钾钇炳丁复制体6号"
+	portrait_path = "gfx/leaders/KXX/Plague_Inc.png"
+	traits = { 
+	}
+	id = 1114523
+	skill = 9
+	attack_skill = 10
+	defense_skill = 10
+	planning_skill = 10
+	logistics_skill = 10
+}
+
+create_corps_commander = {
+	name = "钾钇炳丁复制体1号"
+	portrait_path = "gfx/leaders/KXX/Plague_Inc.png"
+	traits = {
+	}
+	id = 1114524
+	skill = 9
+	attack_skill = 10
+	defense_skill = 10
+	planning_skill = 10
+	logistics_skill = 10
+}
+create_corps_commander = {
+	name = "钾钇炳丁复制体2号"
+	portrait_path = "gfx/leaders/KXX/Plague_Inc.png"
+	traits = {
+	}
+	id = 1114525
+	skill = 9
+	attack_skill = 10
+	defense_skill = 10
+	planning_skill = 10
+	logistics_skill = 10
+}
+create_corps_commander = {
+	name = "钾钇炳丁复制体3号"
+	portrait_path = "gfx/leaders/KXX/Plague_Inc.png"
+	traits = {
+	}
+	id =1 114526
+	skill = 9
+	attack_skill = 10
+	defense_skill = 10
+	planning_skill = 10
+	logistics_skill = 10
+}
+create_corps_commander = {
+	name = "钾钇炳丁复制体4号"
+	portrait_path = "gfx/leaders/KXX/Plague_Inc.png"
+	traits = {
+	}
+	id = 1114527
+	skill = 9
+	attack_skill = 10
+	defense_skill = 10
+	planning_skill = 10
+	logistics_skill = 10
+}
+create_corps_commander = {
+	name = "钾钇炳丁复制体5号"
+	portrait_path = "gfx/leaders/KXX/Plague_Inc.png"
+	traits = {
+	}
+	id = 1114528
+	skill = 9
+	attack_skill = 10
+	defense_skill = 10
+	planning_skill = 10
+	logistics_skill = 10
+}
+create_corps_commander = {
+	name = "钾钇炳丁复制体7号"
+	portrait_path = "gfx/leaders/KXX/Plague_Inc.png"
+	traits = {
+	}
+	id = 1114529
+	skill = 9
+	attack_skill = 10
+	defense_skill = 10
+	planning_skill = 10
+	logistics_skill = 10
+}
+create_corps_commander = {
+	name = "钾钇炳丁复制体8号"
+	portrait_path = "gfx/leaders/KXX/Plague_Inc.png"
+	traits = {
+	}
+	id = 1114530
+	skill = 9
+	attack_skill = 10
+	defense_skill = 10
+	planning_skill = 10
+	logistics_skill = 10
+}
+create_corps_commander = {
+	name = "钾钇炳丁复制体9号"
+	portrait_path = "gfx/leaders/KXX/Plague_Inc.png"
+	traits = {
+	}
+	id = 1114531
+	skill = 9
+	attack_skill = 10
+	defense_skill = 10
+	planning_skill = 10
+	logistics_skill = 10
+}
+create_corps_commander = {
+	name = "钾钇炳丁复制体10号"
+	portrait_path = "gfx/leaders/KXX/Plague_Inc.png"
+	traits = {
+	}
+	id = 1114532
+	skill = 9
+	attack_skill = 10
+	defense_skill = 10
+	planning_skill = 10
+	logistics_skill = 10
+}
+create_corps_commander = {
+	name = "钾钇炳丁复制体11号"
+	portrait_path = "gfx/leaders/KXX/Plague_Inc.png"
+	traits = {
+	}
+	id = 1114533
+	skill = 9
+	attack_skill = 10
+	defense_skill = 10
+	planning_skill = 10
+	logistics_skill = 10
+}

@@ -1,0 +1,861 @@
+#####################
+#	Kavkaz - now Khard	#
+#####################
+
+ideas = {
+	country = {
+		KAV_sweep = {
+			removal_cost = -1
+			picture = KAV_sweep
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				conscription = 0.01
+			}
+		}
+		KAV_efficiency = {
+			removal_cost = -1
+			picture = KAV_efficiency
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				production_speed_buildings_factor = 0.05
+				production_factory_start_efficiency_factor = 0.02
+			}
+		}
+		KAV_harmonious_labour = {
+			removal_cost = -1
+			picture = KAV_harmonious_labour
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				production_speed_buildings_factor = 0.05
+				production_factory_start_efficiency_factor = 0.05
+				production_factory_max_efficiency_factor = 0.1
+			}
+		}
+		KAV_new_vision = {
+			removal_cost = -1
+			picture = KAV_new_vision
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				army_attack_factor = 0.05
+				war_support_factor = 0.1
+			}
+		}
+		KAV_social_empire = {
+			removal_cost = -1
+			picture = KAV_social_empire
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				army_org_factor = 0.05
+				army_attack_factor = 0.05
+				army_morale_factor = 0.05
+				army_speed_factor = 0.05
+			}
+		}
+		KAV_eatcake = {
+			removal_cost = -1
+			picture = KAV_eatcake
+		    allowed = {
+				original_tag = KAV
+			}
+			modifier= {
+				consumer_goods_expected_value = -0.025
+				army_attack_factor = 0.05
+				war_support_factor = 0.1
+			}
+		}
+		KAV_wake_up = {
+			removal_cost = -1
+			picture = KAV_wake_up
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				production_factory_start_efficiency_factor = -0.05
+				production_speed_buildings_factor = -0.05
+				consumer_goods_expected_value = -0.1
+				stability_weekly = -0.0001
+			}
+		}
+		KAV_escape_ideas = {
+			removal_cost = -1
+			picture = KAV_escape
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				consumer_goods_expected_value = -0.075
+			}
+		}
+		KAV_kingdom = {
+			removal_cost = -1
+			picture = KAV_kingdom
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				industry_free_repair_factor = 0.2
+				industry_repair_factor = 0.2
+				resistance_target = -0.2
+			}
+		}
+		KAV_capital = {
+			removal_cost = -1
+			picture = KAV_capital
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				production_speed_buildings_factor = 0.05
+				production_factory_start_efficiency_factor = 0.05
+				production_factory_max_efficiency_factor = 0.1
+			}
+		}
+		KAV_a_jump_beyond_the_mind = {
+			removal_cost = -1
+			picture = KAV_a_jump_beyond_the_mind
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				army_org_factor = 0.05
+				army_speed_factor = 0.05 
+				army_morale_factor = 0.05
+			}
+		}
+		KAV_bliss = {
+			removal_cost = -1
+			picture = KAV_bliss
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				production_speed_buildings_factor = 0.05
+				production_factory_start_efficiency_factor = 0.05
+				production_factory_max_efficiency_factor = 0.1
+			}
+		}
+		KAV_between_two_worlds = {
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				weekly_manpower = 250
+				local_non_core_manpower = 0.05
+				local_manpower = 0.05
+				local_supply_impact_factor = -0.1
+				local_non_core_supply_impact_factor = -0.1
+			}
+		}
+		KAV_above = {
+			removal_cost = -1
+			picture = KAV_above
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				party_popularity_stability_factor = 0.15
+			}
+		}
+		KAV_star_language = {
+			removal_cost = -1
+			picture = KAV_star_language
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				political_power_gain = 0.15
+				party_popularity_stability_factor = 0.1
+				accelerationism_drift = 0.03
+			}
+		}
+		KAV_russian_remedy = {
+			removal_cost = -1
+			picture = KAV_russian_remedy
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				consumer_goods_expected_value = -0.05
+			}
+		}
+		KAV_riddle_of_time = {
+			removal_cost = -1
+			picture = KAV_riddle_of_time
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				production_speed_buildings_factor = 0.05
+				production_speed_infrastructure_factor = 0.05
+			}
+		}
+		KAV_new_plan = {
+			removal_cost = -1
+			picture = KAV_new_plan
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				production_speed_buildings_factor = 0.05
+				production_speed_infrastructure_factor = 0.15
+			}
+		}
+		KAV_factories_of_honey = {
+			removal_cost = -1
+			picture = KAV_factories_of_honey
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				production_speed_buildings_factor = 0.05
+				production_speed_infrastructure_factor = 0.05
+			}
+		}
+		KAV_sobornost = {
+			removal_cost = -1
+			picture = KAV_sobornost
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				conscription = 0.01
+			}
+		}
+		KAV_common_task = {
+			removal_cost = -1
+			picture = KAV_common_task
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+				production_speed_buildings_factor = 0.05
+				production_factory_start_efficiency_factor = 0.05
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		KAV_revolver = {
+			removal_cost = -1
+			picture = KAV_revolver
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+			    political_power_gain = 0.1
+			}
+		}
+		KAV_catechism = {
+			removal_cost = -1
+			picture = KAV_catechism
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+			    army_org_factor = 0.05
+				consumer_goods_expected_value = -0.025
+			}
+		}
+		KAV_manilovs = {
+			removal_cost = -1
+			picture = KAV_manilovs
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+			    production_factory_max_efficiency_factor = 0.1
+				consumer_goods_expected_value = -0.05
+			}
+		}
+		KAV_lessons = {
+			removal_cost = -1
+			picture = KAV_lessons
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+			    research_speed_factor = 0.1
+				production_factory_start_efficiency_factor = 0.05
+			}
+		}
+		KAV_mystery = {
+			removal_cost = -1
+			picture = KAV_mystery
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+			    research_speed_factor = 0.1
+				army_attack_factor = 0.05
+			}
+		}
+		KAV_20thcentury = {
+			removal_cost = -1
+			picture = KAV_20thcentury
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+			    production_speed_buildings_factor = 0.1
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		KAV_nothing = {
+			removal_cost = -1
+			picture = KAV_nothing
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+			    army_org_factor = 0.1
+			}
+		}
+		KAV_means =  {
+			removal_cost = -1
+			picture = KAV_means
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+			    resistance_growth = -0.1
+				army_morale_factor = 0.05
+			}
+		}
+		KAV_beyond = {
+			removal_cost = -1
+			picture = KAV_beyond
+			cancel = { has_country_flag = remove_idea }
+			modifier= {
+			    army_attack_factor = 0.05
+				consumer_goods_expected_value = 0.025
+				research_speed_factor = 0.05
+			}
+		}
+		KAV_globe_society = {
+			removal_cost = -1
+			picture = KAV_society_globe
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				justify_war_goal_time = -0.1
+				encryption_factor = 0.1
+				decryption_factor = 0.1
+			}
+		}
+		KAV_zaum = {
+			picture = KAV_zaum
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				encryption_factor = 0.1
+				decryption_factor = 0.1
+				political_power_factor = 0.1
+				research_speed_factor = 0.05
+			}
+		}
+		KAV_reformed_complex = {
+			picture = KAV_reformed_complex
+			cancel = { has_country_flag = remove_idea }
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.05 instant = yes
+				}
+			}
+		}
+
+		KAV_futurist_poetry = {
+			removal_cost = -1
+			picture = KAV_poetry
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				political_power_factor = 0.1
+				justify_war_goal_time = -0.05
+				army_attack_factor = 0.05
+
+			}
+		}
+		KAV_prole_thought = {
+			removal_cost = -1
+			picture = KAV_poetry
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				political_power_factor = 0.1
+				justify_war_goal_time = -0.05
+				drift_defence_factor = 0.15
+				research_speed_factor = 0.05
+			}
+		}
+
+		KAV_council_reform = {
+			removal_cost = -1
+			picture = KAV_council_reforms
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				political_power_factor = 0.1
+				justify_war_goal_time = -0.1
+			}
+		}
+		KAV_new_soviet = {
+			removal_cost = -1
+			picture = KAV_council_reforms
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				recruitable_population_factor = 0.10
+				army_infantry_attack_factor = 0.05
+				army_infantry_defence_factor = 0.05
+				army_org_factor = 0.05
+			}
+		}
+		KAV_bolshevism = {
+			removal_cost = -1
+			picture = KAV_council_reforms
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				war_support_factor = 0.1
+				conscription = 0.01
+				production_factory_start_efficiency_factor = 0.1
+				industrial_capacity_factory = 0.05
+			}
+		}
+		KAV_fast_social = {
+			removal_cost = -1
+			picture = KAV_fast_state
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				consumer_goods_expected_value = -0.03
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.05 instant = yes
+				}
+			}
+		}
+		KAV_poetic_education = {
+			removal_cost = -1
+			picture = KAV_council_reforms
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				political_power_factor = 0.15
+				justify_war_goal_time = -0.1
+				research_speed_factor = 0.05
+				trade_opinion_factor = 0.1
+			}
+		}
+		KAV_innovative_spirit = {
+			removal_cost = -1
+            picture = KAV_innovation
+			cancel = { has_country_flag = remove_idea }
+            modifier = {
+				research_speed_factor = 0.05
+            }
+			equipment_bonus = {
+				infantry_equipment = {
+					reliability = 0.1
+				}
+				artillery_equipment = {
+					reliability = 0.1
+				}
+			}
+        }
+        KAV_beyond_nat = {
+			removal_cost = -1
+			picture = KAV_beyond_nat
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				justify_war_goal_time = -0.1
+			}
+		}
+
+		KAV_modernist_prose = {
+			removal_cost = -1
+			picture = KAV_modernist_prose
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				research_speed_factor = 0.1
+				consumer_goods_expected_value = -0.03
+			}
+		}
+		KAV_boyars = {
+			removal_cost = -1
+			picture = KAV_boyars
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.05
+				production_speed_infrastructure_factor = 0.05
+			}
+		}
+
+		KAV_knights = {
+			removal_cost = -1
+			picture = KAV_knights
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				conscription = 0.01
+				cavalry_attack_factor = 0.1
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+		}
+		KAV_knights1 = {
+			removal_cost = -1
+			picture = KAV_knights
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				conscription = 0.02
+				cavalry_attack_factor = 0.1
+				resistance_target = -0.1
+			}
+		}
+		KAV_knights2 = {
+			removal_cost = -1
+			picture = KAV_knights
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				conscription = 0.02
+				cavalry_attack_factor = 0.1
+				resistance_target = -0.15
+				accelerationism_drift = 0.1
+				army_core_attack_factor = 0.02
+				army_core_defence_factor = 0.02
+			}
+		}
+		KAV_rome_colchis = {
+			picture = KAV_rome_colchis
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				army_speed_factor = 0.02
+				special_forces_cap = 0.075
+			}
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.15 instant = yes
+				}
+			}
+			targeted_modifier = {
+				tag = ITA
+				license_armor_purchase_cost = -0.3
+			}
+			targeted_modifier = {
+				tag = FIU
+				license_armor_purchase_cost = -0.3
+			}
+		}
+		KAV_austrian_advisors = {
+			picture = KAV_austrian_mission
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				special_forces_cap = 0.075
+				special_forces_attack_factor = 0.1
+			}
+			targeted_modifier = {
+				tag = AUS
+				license_armor_purchase_cost = -0.3
+			}
+		}
+
+		KAV_futurist_hegemony = {
+			#picture = 
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				justify_war_goal_time = -0.25
+			}
+		}
+
+		KAV_dyn_cap = {
+			picture = KAV_dynamic_cap
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				industrial_capacity_dockyard = 0.05
+				industrial_capacity_factory = 0.05
+				min_export = 0.05
+			}
+		}
+		KAV_dyn_cap1 = {
+			picture = KAV_dynamic_cap
+			removal_cost = -1
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				industrial_capacity_dockyard = 0.05
+				industrial_capacity_factory = 0.05
+				min_export = 0.1
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		KAV_prole_corp = {
+			removal_cost = -1
+			picture = KAV_prole_corp
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				industrial_capacity_dockyard = 0.05
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		KAV_prole_corp1 = {
+			removal_cost = -1
+			picture = KAV_prole_corp
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				industrial_capacity_dockyard = 0.1
+				industrial_capacity_factory = 0.1
+				production_speed_buildings_factor = 0.05
+				political_power_factor = 0.1
+			}
+		}
+		KAV_militant_atheism = {
+			removal_cost = -1
+			picture = KAV_trade_union
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				research_speed_factor = 0.05
+				war_support_factor = 0.1
+				army_artillery_attack_factor = 0.02
+			}
+		}
+		
+		KAV_indep_unions = {
+			removal_cost = -1
+			picture = KAV_indep_union
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				conversion_cost_civ_to_mil_factor = -0.1
+				compliance_gain = 0.01
+			}
+		}
+		KAV_trade_union = {
+			removal_cost = -1
+			picture = KAV_trade_union
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				industrial_capacity_dockyard = 0.05
+				industrial_capacity_factory = 0.05
+				political_power_factor = 0.1
+			}
+		}
+		KAV_prometheus_unbound_1 = {
+			removal_cost = -1
+			picture = KAV_promethean_marxism_idea
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				consumer_goods_expected_value = -0.05
+			}
+		}
+		KAV_reach_for_the_stars = {
+			removal_cost = -1
+			picture = KAV_reach_for_the_stars
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				war_support_factor = 0.02
+				army_morale_factor = 0.01
+				army_speed_factor = 0.02
+			}
+		}
+		KAV_dominion_over_matter = {
+			removal_cost = -1
+			picture = KAV_dominion_over_matter
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				local_resources_factor = 0.1
+				fuel_gain_factor = 0.05
+				nuclear_production_factor = 0.2
+				production_speed_nuclear_reactor_factor = 0.1
+			}
+		}
+		KAV_revolution_of_spirit = {
+			removal_cost = -1
+			picture = KAV_revolution_of_spirit
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				war_support_factor = 0.1
+			}
+		}
+
+
+	   KAV_away_with_bourgeois_morality_idea = {
+		    removal_cost = -1
+			picture = KAV_away_with_bourgeois_morality_idea
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				army_strength_factor = 0.05
+				initiative_factor = 0.03
+			}
+	   }
+
+		KAV_full_breath_of_life_idea = {
+			removal_cost = -1
+			picture = KAV_full_breath_of_life_idea
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				industrial_capacity_factory = 0.05
+				compliance_gain = 0.2
+			}
+		}
+
+		KAV_grim_duties_idea = {
+			removal_cost = -1
+			picture = KAV_grim_duties_idea
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				resistance_growth = -0.2
+			}
+		}
+
+		KAV_promethean_marxism_idea = {
+			removal_cost = -1
+			picture = KAV_promethean_marxism_idea
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		KAV_war_against_god_idea = {
+			removal_cost = -1
+			picture = KAV_war_against_god_idea
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				research_speed_factor = 0.05
+				stability_factor = -0.1
+			}
+		 }
+
+		KAV_man_made_miracles_idea = {
+			removal_cost = -1
+			picture = KAV_man_made_miracles_idea
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				research_speed_factor = 0.15
+			}
+		}
+
+		KAV_no_price_too_great_idea = {
+			removal_cost = -1
+			picture = KAV_no_price_too_great_idea
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				production_speed_buildings_factor = 0.075
+				resistance_growth = 0.05
+			}
+		}
+
+		KAV_no_law_too_sacred_idea = {
+			removal_cost = -1
+			picture = KAV_no_law_too_sacred_idea
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				offence = 0.1
+				research_speed_factor = 0.05
+			}
+		}
+
+		KAV_no_obstacle_too_strong_idea = {
+			removal_cost = -1
+			picture = KAV_no_obstacle_too_strong_idea
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				army_morale_factor = 0.1
+				army_speed_factor = 0.1
+			}
+		}
+
+		KAV_for_the_future = {
+			removal_cost = -1
+			picture = KAV_for_the_future_idea
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				stability_factor = 0.075
+				weekly_manpower = 500
+			}
+		}
+
+		KAV_from_a_regime_idea = {
+			removal_cost = -1
+			picture = KAV_from_a_regime_idea
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				production_speed_buildings_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+
+
+		KAV_no_room_idea = {
+			removal_cost = -1
+			picture = KAV_no_room_idea
+			cancel = { has_country_flag = remove_idea }
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				war_support_factor = 0.1
+			}
+		}
+	}
+
+	materiel_manufacturer = {
+		designer = yes
+		georgian_syndicate = {
+			picture = georgian_syndicate
+			available = {
+				has_full_control_of_state = 231
+			}
+			allowed = { 
+				original_tag = KAV
+			}
+			traits = { infantry_equipment_producer_offense_2 }
+			modifier = {}
+			research_bonus = {
+				infantry_weapons = 0.1
+			}
+		}
+    }
+
+	tank_manufacturer = {
+		designer = yes
+		locomotive_union = {
+			picture = locomotive_union
+			available = {
+				has_full_control_of_state = 231
+			}
+			allowed = { 
+				original_tag = KAV
+			}
+			traits = { artillery_producer_offense_1 }
+			modifier = {}
+			research_bonus = {
+				armor = 0.05
+			}
+		}
+	}
+
+	naval_manufacturer = {
+		designer = yes
+		batumi_dockyards = {
+			picture = batumi_dockyards
+			available = {
+				has_full_control_of_state = 1136
+			}
+			allowed = { 
+				original_tag = KAV
+			}
+			traits = { capital_ship_producer_offense_1 }
+			modifier = {}
+			research_bonus = {
+				naval_equipment = 0.05
+			}
+		}
+	}
+
+	aircraft_manufacturer = {
+		designer = yes
+		tiblisi_aircraft = {
+			picture = tiblisi_aircraft
+			available = {
+				has_full_control_of_state = 231
+			}
+			allowed = { 
+				original_tag = KAV
+			}
+			traits = { fighter_producer_mass_1 }
+			modifier = {}
+			research_bonus = {
+				air_equipment = 0.05
+			}
+		}
+	}
+
+	industrial_concern = {
+		progress_institute_kav = {
+			picture = progress_institute_kav
+			available = {
+				has_full_control_of_state = 231
+			}
+			allowed = { 
+				original_tag = KAV
+			}
+			traits = { electronics_manufacturer }
+			modifier = {
+				production_speed_radar_station_factor = 0.1
+			}
+			research_bonus = {
+				electronics = 0.1
+				industry = 0.05
+			}
+		}
+	}
+}

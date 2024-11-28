@@ -1,0 +1,241 @@
+ideas = {
+		#### General ####
+		industrial_concern = {
+
+			CHI_cfhi = {
+				picture = GFX_idea_CHI_cfhi
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_cfhi" }
+				allowed = { original_tag = CHI }
+				traits = { industrial_manufacturer }
+				visible = {
+					has_completed_focus = CHI_move_to_Nanjing
+				}
+				ai_will_do = {
+					base = 10
+				}
+				modifier = {
+					production_speed_arms_factory_factor = 0.1
+					production_speed_industrial_complex_factor = 0.1
+				}
+				research_bonus = {
+					industry = 0.1
+				}
+			}
+			CHI_national_railway_corporation = {
+				picture = GFX_idea_CHI_national_railway_corporation
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea national_railway_corporation" }
+				allowed = { original_tag = CHI }
+				visible = {
+					has_completed_focus = CHI_move_to_Nanjing
+				}
+				traits = { industrial_manufacturer }
+				modifier = {
+					production_speed_infrastructure_factor = 0.1
+					production_speed_rail_way_factor = 0.2
+				}
+				research_bonus = {
+					industry = 0.1
+				}
+			}
+			CHI_cetc = {
+				picture = GFX_idea_CHI_cetc
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea cetc" }
+				allowed = { original_tag = CHI }
+				visible = {
+					has_completed_focus = CHI_move_to_Nanjing
+				}
+				traits = { electronics_manufacturer }
+				modifier = {
+					production_speed_radar_station_factor = 0.1
+				}
+				research_bonus = {
+					electronics = 0.1
+					industry = 0.1
+				}
+			}
+			CHI_sinopec = {
+				picture = GFX_idea_CHI_sinopec
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea sinopec" }
+				allowed = { original_tag = CHI }
+				visible = {
+					has_completed_focus = CHI_move_to_Nanjing
+				}
+				traits = { chemical_producer }
+				modifier = {
+					production_speed_synthetic_refinery_factor = 0.1
+				}
+				research_bonus = {
+					synth_resources = 0.1
+					industry = 0.1
+				}
+			}
+		}
+	
+		#### Weapons Manufacturer ####
+		weapons_manufacturer = {
+			designer = yes
+			CHI_jinling_arsenal = {
+				picture = GFX_idea_CHI_jinling_arsenal
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_jinling_arsenal"}
+				allowed = { original_tag = CHI }
+				available = {
+					owns_state = 613
+				}
+				traits = { infantry_equipment_producer_allround_2 }
+				research_bonus = { infantry_weapons = 0.1 }
+			}
+			
+			CHI_military_engineering_department = {
+				picture = GFX_idea_CHI_military_engineering_department
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_military_engineering_department" }
+				allowed = { original_tag = CHI }
+				visible = {
+					has_completed_focus = CHI_move_to_Nanjing
+				}
+				traits = { infantry_equipment_producer_assualt_2 }
+				research_bonus = {
+					infantry_weapons = 0.10
+				}
+			}
+			CHI_norinco = {
+				picture = GFX_idea_norinco
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_norinco" }
+				allowed = { original_tag = CHI }
+				visible = {
+					has_completed_focus = CHI_move_to_Nanjing
+				}
+				ai_will_do = {
+					base = 10
+				}
+				traits = { artillery_producer_mass_2 }
+				research_bonus = {
+					artillery = 0.10
+				}
+			}
+			CHI_faw_motors = {
+				picture = GFX_idea_faw_motors
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea CHI_faw_motors" }
+				allowed = { original_tag = CHI }
+				visible = {
+					has_completed_focus = CHI_move_to_Nanjing
+				}
+				traits = { motorised_equipment_producer_mass_2 }
+				research_bonus = {
+					motorized_equipment = 0.1
+				}
+			}
+		}
+	
+		#### Tank Manufacturers ####
+		tank_manufacturer = {
+			designer = yes
+	
+			sinotruk = {
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea sinotruk" }
+				allowed = { original_tag = CHI }
+				visible = {
+					has_completed_focus = CHI_move_to_Nanjing
+				}
+				traits = { small_tank_producer_mass_2 }
+				research_bonus = {
+					armor = 0.1
+				}
+				ai_will_do = {
+					base = 0
+				}
+			}
+			CHI_qisuya_machinery = {
+				picture = GFX_idea_CHI_wusong_locomotive_works
+				allowed = { original_tag = CHI }
+				visible = {
+					has_completed_focus = CHI_move_to_Nanjing
+				}
+				ai_will_do = {
+					base = 10
+				}
+				available = { 
+					controls_state = 596 
+					has_completed_focus = CHI_set_up_arsenal
+				}
+				traits = { medium_tank_producer_mass_2 }
+				research_bonus = {
+					armor = 0.1
+				}
+			}
+		}
+	
+		#### Aircraft Manufacturer ####
+		aircraft_manufacturer = {
+			designer = yes
+	
+			china_aviation_corporation_CHI = {
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea china_aviation_corporation_CHI" }
+				name = china_aviation_corporation
+				picture = china_aviation_corporation
+				allowed = { original_tag = CHI }
+				visible = {
+					has_completed_focus = CHI_move_to_Nanjing
+				}
+				traits = { fighter_producer_defense_2 }
+				research_bonus = {
+					air_equipment = 0.1
+				}
+			}
+			central_aircraft_manufacturing_company = {
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea central_aircraft_manufacturing_company" }
+				allowed = { original_tag = CHI }
+				visible = {
+					has_completed_focus = CHI_move_to_Nanjing
+				}
+				ai_will_do = {
+					base = 10
+				}
+				traits = { fighter_producer_mass_2 }
+				research_bonus = {
+					air_equipment = 0.1
+				}
+			}
+			central_air_transport = {
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea central_air_transport" }
+				allowed = { original_tag = CHI }
+				visible = {
+					has_completed_focus = CHI_move_to_Nanjing
+				}
+				traits = { nav_cas_producer_defense_2 }
+				research_bonus = {
+					air_equipment = 0.1
+				}
+			}
+		}
+	
+		#### Naval Manufacturers ####
+		naval_manufacturer = {
+			designer = yes
+	
+			csic = {
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea csic" }
+				allowed = { original_tag = CHI }
+				visible = {
+					has_completed_focus = CHI_move_to_Nanjing
+				}
+				ai_will_do = {
+					base = 10
+				}
+				traits = { small_ship_producer_defense_2 }
+				research_bonus = {
+					naval_equipment = 0.1
+				}
+			}
+			china_state_shipbuilding_corporation = {
+				on_add = { log = "[GetDateText]: [Root.GetName]: add idea china_state_shipbuilding_corporation" }
+				allowed = { original_tag = CHI }
+				visible = {
+					has_completed_focus = CHI_move_to_Nanjing
+				}
+				traits = { cruiser_producer_mass_2 }
+				research_bonus = {
+					naval_equipment = 0.1
+				}
+			}
+		}
+	}

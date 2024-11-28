@@ -1,0 +1,106 @@
+ideas = {
+	country = {
+	
+		PRI_appeal_to_the_market = {
+			picture = PRI_appeal_market
+			removal_cost = -1
+			allowed = {
+				original_tag = PRI
+			}
+			modifier = {
+				trade_opinion_factor = 0.25
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		PRI_a_land_of_intellectuals = {
+			picture = PRI_landnewminds
+			removal_cost = -1
+			allowed = {
+				original_tag = PRI
+			}
+			modifier = {
+				research_speed_factor = 0.075
+				political_power_factor = 0.15
+			}
+		}
+		PRI_a_land_of_boyars = {
+			picture = PRI_newboyarsland
+			removal_cost = -1
+			allowed = {
+				original_tag = PRI
+			}
+			modifier = {
+				army_attack_factor = 0.1
+				army_morale_factor = 0.15
+			}
+		}
+		PRI_compromise_for_liberty = {
+			picture = PRI_dealliberty
+			removal_cost = -1
+			allowed = {
+				original_tag = PRI
+			}
+			modifier = {
+				consumer_goods_expected_value = 0.05
+				production_factory_efficiency_gain_factor = 0.15
+			}
+		}
+		PRI_the_judge = {
+			picture = PRI_judge
+			removal_cost = -1
+			allowed = {
+				original_tag = PRI
+			}
+			modifier = {
+				command_power_gain = 0.2
+			}
+		}
+		PRI_the_heavy_hand = {
+			picture = PRI_heavyhand
+			removal_cost = -1
+			allowed = {
+				original_tag = PRI
+			}
+			modifier = {
+				army_attack_factor = 0.1
+				consumer_goods_expected_value = -0.075
+			}
+		}
+		PRI_supply_for_violence = {
+			picture = PRI_suppysoldier
+			removal_cost = -1
+			allowed = {
+				original_tag = PRI
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				army_speed_factor = 0.05
+			}
+		}
+		PRI_new_new_york = {
+			picture = PRI_newyork
+			removal_cost = -1
+			allowed = {
+				original_tag = PRI
+			}
+			modifier = {
+				monthly_population = 0.4
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		PRI_doge_of_vladivostok_idea = {
+			picture = generic_idea_RF_idea_coins
+			removal_cost = -1
+			allowed = {
+				original_tag = PRI
+			}
+			modifier = {
+				political_power_factor = 0.25
+				base_fuel_gain_factor = 0.2
+			}
+		}
+	}
+
+}
+
+

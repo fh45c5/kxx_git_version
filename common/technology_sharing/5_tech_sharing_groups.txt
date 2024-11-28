@@ -1,0 +1,12 @@
+technology_sharing_group = { 
+	id = szc_lian_he_research
+	name = szc_research_name
+	desc = szc_research_desc
+	picture = z_k_y
+
+	research_sharing_per_country_bonus = 0.1
+	available = {
+		country_exists = SZC
+		NOT = { has_war_with = SZC }
+	}
+}

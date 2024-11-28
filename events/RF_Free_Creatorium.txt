@@ -1,0 +1,102 @@
+add_namespace = FCR
+
+
+country_event = {
+	id = FCR.1 #leader choice
+	title = FCR.1.t
+	desc = FCR.1.desc
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = FCR.1.a
+		ai_chance = {
+			factor = 50
+		}
+		set_country_flag = FCR_yaroslav_prevails
+	}
+	option = {
+		name = FCR.1.b
+		ai_chance = {
+			factor = 50
+		}
+		create_country_leader = {
+			name = "瓦勒里安·穆拉维耶夫"
+			picture = "gfx/leaders/FCR/Valerian_Muravyev.png"
+			desc = FCR_valerian_murayev_desc
+			expire = "1965.1.1"
+			ideology = technocracy_subtype
+			traits = { for_biased_intellectual }
+		}
+		set_country_flag = FCR_murayev_take_office
+	}
+}
+
+country_event = {
+	id = FCR.2 #harbin event to join creatorium
+	title = FCR.2.t
+	desc = FCR.2.desc
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = FCR.2.a
+		ai_chance = {
+			factor = 50
+		}
+		FCR = {
+			annex_country = {
+				target = HAR
+				transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_owned_by = HAR
+				}
+				add_core_of = FCR
+			}
+		}
+	}
+	option = {
+		name = FCR.2.b
+		ai_chance = {
+			factor = 50
+		}
+		FCR = {
+			country_event = {
+				id = FCR.3
+				days = 2
+			}
+			
+		}
+	}
+}
+
+country_event = {
+	id = FCR.3 #harbin refuses
+	title = FCR.3.t
+	desc = FCR.3.desc
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = FCR.1.a
+		create_wargoal = {
+			target = HAR
+			type = annex_everything
+		}
+		every_state = {
+				limit = {
+					is_owned_by = HAR
+				}
+				add_core_of = FCR
+			}
+	}
+	
+}

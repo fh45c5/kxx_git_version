@@ -1,0 +1,5 @@
+opinion_modifiers = {
+	chi_jap = { value = 200 }
+	CHI_friend = { value = 150 }
+	CHI_national_autonomy = { value = 100 }
+}

@@ -1,0 +1,326 @@
+AST_AAPAs = {
+	choose_flag_aapa = {
+
+		available = {
+                	has_completed_focus = AST_AAPA
+		}
+
+		visible = {
+			has_completed_focus = AST_AAPA
+		}  
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision choose_flag_kwant"
+                        set_country_flag = AST_choose_flag_aapa_flag
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove choose_flag_kwant"
+                        clr_country_flag = AST_choose_flag_aapa_flag
+                        country_event = austral.2003
+		}
+	}	
+	Garvey_internation= {
+
+		available = {
+                	has_completed_focus = AST_Garveite
+			BBR = {
+				has_completed_focus = BBR_unia
+			}
+			NOT = {
+				is_in_faction_with = BBR
+			}
+		}
+
+		visible = {
+			has_completed_focus = AST_Garveite
+		}  
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision choose_flag_kwant"
+                        set_country_flag = AST_Garvey_internation
+			set_rule = {
+    				can_create_factions = yes
+			}
+			create_faction = black_international
+			add_to_faction = BBR
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove choose_flag_kwant"
+                        clr_country_flag = AST_Garvey_internation
+		}
+	}
+	join_third_int5 = {
+
+		available = {
+                	has_completed_focus = AST_AAPA
+		}
+
+		visible = {
+			has_completed_focus = AST_AAPA
+		}  
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision choose_flag_kwant"
+                        set_country_flag = AST_join_third_int 
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove choose_flag_kwant"
+                        clr_country_flag = AST_join_third_int 
+                        INT = { country_event = { id = austral.108 days = 5 } }
+		}
+	}	
+}
+AST_SLPs = {
+	choose_flag_slp = {
+
+		available = {
+                	has_completed_focus = AST_SLP_victory
+		}
+
+		visible = {
+			has_completed_focus = AST_SLP_victory
+		}  
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision AST_choose_flag_slp_flag"
+                        set_country_flag = AST_choose_flag_slp_flag
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove AST_choose_flag_slp_flag"
+                        clr_country_flag = AST_choose_flag_slp_flag
+                        country_event = austral.2017
+		}
+	}
+	join_third_int1 = {
+
+		available = {
+                	has_completed_focus = AST_SLP_victory
+		}
+
+		visible = {
+			has_completed_focus = AST_SLP_victory
+		}  
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision choose_flag_kwant"
+                        set_country_flag = AST_join_third_int 
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove choose_flag_kwant"
+                        clr_country_flag = AST_join_third_int 
+                        INT = { country_event = { id = austral.108 days = 5 } }
+		}
+	}
+}
+AST_CPAs = {
+	choose_flag_cpa = {
+
+		available = {
+                	has_completed_focus = AST_CPA_victory
+		}
+
+		visible = {
+			has_completed_focus = AST_CPA_victory
+		}  
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision choose_flag_kwant"
+                        set_country_flag = AST_choose_flag_cpa_flag
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove choose_flag_kwant"
+                        clr_country_flag = AST_choose_flag_cpa_flag
+                        country_event = austral.2018
+		}
+	}
+	join_third_int2 = {
+
+		available = {
+                	has_completed_focus = AST_CPA_victory
+		}
+
+		visible = {
+			has_completed_focus = AST_CPA_victory
+		}  
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision choose_flag_kwant"
+                        set_country_flag = AST_join_third_int 
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove choose_flag_kwant"
+                        clr_country_flag = AST_join_third_int 
+                        INT = { country_event = { id = austral.108 days = 5 } }
+		}
+	}
+}
+
+AST_ACTUs = {
+	join_third_int3 = {
+
+		available = {
+                	has_completed_focus = AST_ACTU
+		}
+
+		visible = {
+			has_completed_focus = AST_ACTU
+		}  
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision choose_flag_kwant"
+                        set_country_flag = AST_join_third_int 
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove choose_flag_kwant"
+                        clr_country_flag = AST_join_third_int 
+                        INT = { country_event = { id = austral.108 days = 5 } }
+		}
+	}
+}
+
+AST_IWWs = { 
+	join_third_int4 = {
+
+		available = {
+                	has_completed_focus = AST_australasian_iww
+		}
+
+		visible = {
+			has_completed_focus = AST_australasian_iww
+		}  
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision choose_flag_kwant"
+                        set_country_flag = AST_join_third_int 
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove choose_flag_kwant"
+                        clr_country_flag = AST_join_third_int 
+                        INT = { country_event = { id = austral.108 days = 5 } }
+		}
+	}
+}
+AST_IWWs = { 
+	join_third_int6 = {
+
+		available = {
+                	has_completed_focus = AST_australasian_iww
+		}
+
+		visible = {
+			has_completed_focus = AST_australasian_iww
+		}  
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision choose_flag_kwant"
+                        set_country_flag = AST_join_third_int 
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove choose_flag_kwant"
+                        clr_country_flag = AST_join_third_int 
+                        INT = { country_event = { id = austral.108 days = 5 } }
+		}
+	}
+}
+AST_RUMs = { 
+	join_third_ent = {
+
+		available = {
+                	has_completed_focus = AST_second_rum_rebellion
+		}
+
+		visible = {
+			has_completed_focus = AST_second_rum_rebellion
+		}  
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision choose_flag_kwant"
+                        set_country_flag = AST_join_third_int 
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove choose_flag_kwant"
+                        clr_country_flag = AST_join_third_int 
+                        ENT = { add_to_faction = AST}
+		}
+	}
+	join_third_ger = {
+
+		available = {
+                	has_completed_focus = AST_second_rum_rebellion
+		}
+
+		visible = {
+			has_completed_focus = AST_second_rum_rebellion
+		}  
+		fire_only_once = no  
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision choose_flag_kwant"
+                        set_country_flag = AST_join_third_int 
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove choose_flag_kwant"
+                        clr_country_flag = AST_join_third_int 
+                        GER = { add_to_faction = AST}
+		}
+	}
+}

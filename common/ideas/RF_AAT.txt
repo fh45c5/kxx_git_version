@@ -1,0 +1,138 @@
+###-Autonomous Army Territory Ideas-###
+ideas = {
+	country = {
+		MNS_forward_march = {
+			picture = MNS_forward_march
+			cancel = { has_country_flag = remove_idea }
+			modifier = { 
+				war_support_factor = 0.15
+				army_defence_factor = 0.05
+			}
+		}
+		MNS_pan_asian_unity = {
+			picture = MNS_pan_asian_unity
+			cancel = { has_country_flag = remove_idea }
+			modifier = { 
+				army_defence_factor = 0.06
+			}
+		}
+		MNS_pan_asian_unity2 = {
+			picture = MNS_pan_asian_unity
+			cancel = { has_country_flag = remove_idea }
+			modifier = { 
+				army_defence_factor = 0.06
+				army_attack_factor = 0.06
+				army_morale_factor = 0.06
+			}
+		}
+		MNS_pan_asian_unity3 = {
+			picture = MNS_pan_asian_unity
+			cancel = { has_country_flag = remove_idea }
+			modifier = { 
+				army_defence_factor = 0.06
+				army_attack_factor = 0.06
+				army_morale_factor = 0.06
+				conscription_factor = 0.05
+				local_resources_factor = 0.15
+				despotism_drift = 0.02
+			}
+		}
+		MNS_raised_banners = {
+			picture = MNS_raised_banners
+			cancel = { has_country_flag = remove_idea }
+			modifier = { 
+				consumer_goods_expected_value = 0.075
+				research_speed_factor = 0.06
+			}
+		}
+		MNS_raised_banners_2 = {
+			picture = MNS_raised_banners
+			cancel = { has_country_flag = remove_idea }
+			modifier = { 
+				consumer_goods_expected_value = 0.025
+				research_speed_factor = 0.1
+			}
+		}
+		MNS_noble_manchu = {
+			picture = MNS_noble_manchu
+			cancel = { has_country_flag = remove_idea }
+			modifier = { 
+				weekly_manpower = 100
+				war_support_factor = 0.075
+				army_org_regain = 0.05
+			}
+		}
+		MNS_rattling_sabres = {
+			picture = MNS_rattling_sabres
+			cancel = { has_country_flag = remove_idea }
+			modifier = { 
+				weekly_manpower = 100
+				war_support_factor = 0.05
+				training_time_factor = -0.1
+				conscription_factor = 0.05
+			}
+		}
+		MNS_fair_due = {
+			picture = MNS_fair_due
+			cancel = { has_country_flag = remove_idea }
+			modifier = { 
+				local_resources_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.08
+			}
+		}
+		MNS_landback = {
+			picture = MNS_landback
+			cancel = { has_country_flag = remove_idea }
+			modifier = { 
+				political_power_gain = 0.05
+				stability_factor = -0.05
+				monthly_population = -0.05
+				army_speed_factor = 0.06
+			}
+		}
+		MNS_landback2 = {
+			picture = MNS_landback
+			cancel = { has_country_flag = remove_idea }
+			modifier = { 
+				political_power_gain = 0.15
+				army_speed_factor = 0.06
+				war_support_factor = 0.2
+			}
+		}
+		MNS_situation_excellent = {
+			picture = MNS_situation_excellent
+			cancel = { has_country_flag = remove_idea }
+			modifier = { 
+				army_speed_factor = 0.05
+				research_speed_factor = -0.05
+				stability_factor = 0.06
+				production_speed_buildings_factor = 0.07
+			}
+		}
+		MNS_control_time2 = {
+			cancel = { has_country_flag = remove_idea }
+			modifier = { 
+				army_speed_factor = 0.06
+				production_speed_buildings_factor = 0.12
+				production_factory_efficiency_gain_factor = 0.08
+			}
+		}
+		MNS_control_time3 = {
+			cancel = { has_country_flag = remove_idea }
+			modifier = { 
+				army_speed_factor = 0.06
+				production_speed_buildings_factor = 0.12
+				production_factory_efficiency_gain_factor = 0.1
+				army_morale_factor = 0.06
+			}
+		}
+		MNS_totalitarism = {
+			cancel = { has_country_flag = remove_idea }
+			modifier = { 
+				political_power_gain = -0.12
+				research_speed_factor = 0.06
+			}
+		}
+		
+	}
+}

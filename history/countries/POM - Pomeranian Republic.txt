@@ -1,0 +1,34 @@
+capital = 1986
+
+oob = "POM"
+
+set_research_slots = 3
+set_convoys = 50
+set_stability = 0.40
+set_war_support = 0.40
+
+set_politics = {	
+	ruling_party = social_conservative
+	last_election = "1935.9.8"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	totalist = 2
+    syndicalist = 5
+	radical_socialist = 8
+    social_democrat = 30
+    social_liberal = 3
+    market_liberal = 10
+    social_conservative = 40
+    authoritarian_democrat = 0
+    paternal_autocrat = 2
+    national_populist = 0
+}
+create_country_leader = {
+	name = "卡尔·西奥多·布勒克"
+	picture = "gfx/leaders/POM/Portrait_POM_Karl_Theodor_Bleek.png"
+	expire = "1.1.1"
+	ideology = soccon_oligarchy_subtype
+}

@@ -1,0 +1,1070 @@
+﻿add_namespace = KX_KLY
+add_namespace = BRYX
+
+country_event = { #The Spark
+	id = KX_KLY.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.2" }
+	title = KX_KLY.2.t
+	desc = KX_KLY.2.desc
+	picture = GFX_report_event_RUS_war_planning
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.2.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #The Shackles Broken
+	id = BRYX.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.10" }
+	title = BRYX.10.t
+	desc = BRYX.10.desc
+	picture = GFX_report_event_generic_female_soldiers
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = BRYX.10.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Trying the NKVD
+	id = BRYX.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.11" }
+	title = BRYX.11.t
+	desc = BRYX.11.desc
+	picture = GFX_report_event_generic_court_case_4
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Justice for the bereaved
+		name = BRYX.11.a
+		ai_chance = { factor = 1 }
+        complete_national_focus = KX_KLY_justice_for_the_bereaved
+	}
+	option = { #Chance at redemption
+		name = BRYX.11.b
+		ai_chance = { factor = 1 }
+		complete_national_focus = KX_KLY_a_chance_at_redemption
+	}
+}
+
+country_event = { #Justice for the bereaved - flavor
+	id = BRYX.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.12" }
+	title = BRYX.12.t
+	desc = BRYX.12.desc
+	picture = GFX_report_event_IBR_prison_jail_cell
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = BRYX.12.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Chance at redemption - flavor
+	id = BRYX.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.13" }
+	title = BRYX.13.t
+	desc = BRYX.13.desc
+	picture = GFX_report_event_RUS_nkvd_officer
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = BRYX.13.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Trial of Genrikh Yagoda
+	id = BRYX.14
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.14" }
+	title = BRYX.14.t
+	desc = BRYX.14.desc
+	picture = GFX_report_event_RUS_court
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Life in prison
+		name = BRYX.14.a
+		complete_national_focus = KX_KLY_the_peoples_judgement
+	}
+	option = { #The Egg gets shot
+		name = BRYX.14.b
+		complete_national_focus = KX_KLY_sic_semper_tyrannis
+	}
+}
+
+country_event = { #Yagoda in prison flavor event
+	id = BRYX.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.15" }
+	title = BRYX.15.t
+	desc = BRYX.15.desc
+	picture = GFX_report_event_IBR_prison_jail_cell
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = BRYX.15.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #The Execution of Yagoda
+	id = BRYX.16
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.16" }
+	title = BRYX.16.t
+	desc = BRYX.16.desc
+	picture = GFX_report_event_RUS_soviet_officer_pistol
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = BRYX.16.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+
+country_event = { #Tragedy and Farce in Exile
+	id = BRYX.19
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.19" }
+	title = BRYX.19.t
+	desc = BRYX.19.desc
+	picture = GFX_report_event_RUS_soviet_symbol
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = BRYX.19.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #
+	id = KX_KLY.25
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.25" }
+	title = KX_KLY.25.t
+	desc = KX_KLY.25.desc
+	picture = GFX_report_event_RUS_soviet_propaganda
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.25.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #A New Red October
+	id = KX_KLY.26
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.26" }
+	title = KX_KLY.26.t
+	desc = KX_KLY.26.desc
+	picture = GFX_report_event_RUS_court
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.26.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #The State
+	id = KX_KLY.27
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.27" }
+	title = KX_KLY.27.t
+	desc = KX_KLY.27.desc
+	picture = GFX_report_event_IBR_salazar_speech
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.27.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #The Revolution
+	id = KX_KLY.28
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.28" }
+	title = KX_KLY.28.t
+	desc = KX_KLY.28.desc
+	picture = GFX_report_event_RUS_soviet_propaganda
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.28.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Likbez
+	id = KX_KLY.29
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.29" }
+	title = KX_KLY.29.t
+	desc = KX_KLY.29.desc
+	picture = GFX_report_event_generic_woman_books
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.29.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Expanding the Party
+	id = KX_KLY.30
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.30" }
+	title = KX_KLY.30.t
+	desc = KX_KLY.30.desc
+	picture = GFX_report_event_generic_tv
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.30.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #The First Reformed Party Congress
+	id = KX_KLY.31
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.31" }
+	title = KX_KLY.31.t
+	desc = KX_KLY.31.desc
+	picture = GFX_report_event_RUS_soviet_propaganda
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { 
+		name = KX_KLY.31.a
+	}
+}
+
+country_event = { #Economics in the Era of the Dictatorship of the Proletariat
+	id = KX_KLY.32
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.32" }
+	title = KX_KLY.32.t
+	desc = KX_KLY.32.desc
+	picture = GFX_report_event_RUS_soviet_tank_factory
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.32.a
+		complete_national_focus = KX_KLY_council_of_workers_and_peasants_defense
+		ai_chance = { factor = 1 }
+	}
+	option = { #
+		name = KX_KLY.32.b
+		complete_national_focus = KX_KLY_supreme_soviet_of_the_peoples_economy
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Defending The Revolution
+	id = KX_KLY.33
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.33" }
+	title = KX_KLY.33.t
+	desc = KX_KLY.33.desc
+	picture = GFX_report_event_RUS_soviet_soldiers_2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.33.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Krasnaya Armiya Vsekh Silney!
+	id = KX_KLY.34
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.34" }
+	title = KX_KLY.34.t
+	desc = KX_KLY.34.desc
+	picture = GFX_report_event_RUS_soldier_weapon_1
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.34.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Reaching Out To The World
+	id = KX_KLY.35
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.35" }
+	title = KX_KLY.35.t
+	desc = KX_KLY.35.desc
+	picture = GFX_report_event_generic_globe
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.35.a
+		ai_chance = { factor = 1 }
+
+	}
+}
+
+country_event = { #Reaching Out To The World
+	id = KX_KLY.37
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.35" }
+	title = KX_KLY.37.t
+	desc = KX_KLY.37.desc
+	picture = GFX_report_event_RUS_soviet_propaganda
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.37.a
+		ai_chance = { factor = 1 }
+
+	}
+}
+
+country_event = { #Farewell, Red October
+	id = KX_KLY.56
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.56" }
+	title = KX_KLY.56.t
+	desc = KX_KLY.56.desc
+	picture = GFX_report_event_RUS_soviet_propaganda
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.56.a
+		ai_chance = { factor = 1 }
+		setup_soviet_russia = yes
+		ROOT = { save_global_event_target_as = soviet_russia }
+		set_country_flag = soviet_congress_end
+		set_country_flag = SOV_red_army_congress
+		set_country_flag = core
+		add_ideas = {
+			RUS_Rafail_Abramovich_hog_sde
+		}
+		complete_national_focus = SOV_Premier_Lozovsky
+		complete_national_focus = RUS_First_Five_Year_Plan
+		set_politics = {
+			ruling_party = totalist
+		}
+		create_country_leader = {
+			name = "雅科夫·斯维尔德洛夫"
+			picture = "gfx/leaders/KLY/Portrait_BRY_ykf_swedlf.png"
+			expire = "1.1.1"
+			ideology = internationalism_subtype
+			desc = "POLITICS_YKF_SWEDLF_DESC"
+		}
+		set_country_flag = soviet_russia_restored
+	}
+}
+
+country_event = { #The New Socialist Man
+	id = KX_KLY.58
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.58" }
+	title = KX_KLY.58.t
+	desc = KX_KLY.58.desc
+	picture = GFX_report_event_RUS_soviet_propaganda
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.58.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Tomorrow is Ours!
+	id = KX_KLY.59
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.59" }
+	title = KX_KLY.59.t
+	desc = KX_KLY.59.desc
+	picture = GFX_report_event_KOM_syktyvkar_5
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.59.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Superregional: The People March On
+	id = KX_KLY.61
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.61" }
+	title = KX_KLY.61.t
+	desc = KX_KLY.61.desc
+	picture = GFX_report_event_RUS_soviet_propaganda
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.61.a
+	}
+}
+
+country_event = { #Superregional: In Lenin's Footsteps
+	id = KX_KLY.62
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.62" }
+	title = KX_KLY.62.t
+	desc = KX_KLY.62.desc
+	picture = GFX_report_event_generic_riots
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.62.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Superregional: Friends in America
+	id = KX_KLY.63
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.63" }
+	title = KX_KLY.63.t
+	desc = KX_KLY.63.desc
+	picture = GFX_report_event_RUS_soviet_soldiers_2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.63.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Superregional: Replace the Doubters
+	id = KX_KLY.64
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.64" }
+	title = KX_KLY.64.t
+	desc = KX_KLY.64.desc
+	picture = GFX_report_event_RUS_soviet_soldiers_5
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.64.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Steady Reform
+	id = KX_KLY.67
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.67" }
+	title = KX_KLY.67.t
+	desc = KX_KLY.67.desc
+	picture = GFX_report_event_generic_woman_books
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.67.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #The Dominoes Set
+	id = KX_KLY.68
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.68" }
+	title = KX_KLY.68.t
+	desc = KX_KLY.68.desc
+	picture = GFX_report_event_generic_female_soldiers
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.68.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #In Our Homes
+	id = KX_KLY.69
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.69" }
+	title = KX_KLY.69.t
+	desc = KX_KLY.69.desc
+	picture = GFX_report_event_RUS_siberian_worker
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.69.a
+		complete_national_focus = KX_KLY_light_centralization
+	}
+	option = { #
+		name = KX_KLY.69.b
+		complete_national_focus = KX_KLY_workers_councils
+	}
+}
+
+country_event = { #Workers' Councils
+	id = KX_KLY.70
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.70" }
+	title = KX_KLY.70.t
+	desc = KX_KLY.70.desc
+	picture = GFX_report_event_KOM_committee
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.70.a
+		complete_national_focus = KX_KLY_rebuild_the_factories
+	}
+}
+
+country_event = { #Light Centralization
+	id = KX_KLY.71
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.71" }
+	title = KX_KLY.71.t
+	desc = KX_KLY.71.desc
+	picture = GFX_report_event_KOM_committee
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.71.a
+		ai_chance = { factor = 1 }
+		complete_national_focus = KX_KLY_repair_the_roads
+	}
+}
+
+country_event = { #embracing our new comrades
+	id = KX_KLY.72
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.72" }
+	title = KX_KLY.72.t
+	desc = KX_KLY.72.desc
+	picture = GFX_report_event_generic_happy_crowd
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.72.a
+		ai_chance = { factor = 1 }
+
+	}
+}
+
+country_event = { #An Open Hand
+	id = KX_KLY.73
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.73" }
+	title = KX_KLY.73.t
+	desc = KX_KLY.73.desc
+	picture = GFX_report_event_generic_commune_protest
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.73.a
+		ai_chance = { factor = 1 }
+
+	}
+}
+
+country_event = { #Uplift the Proleteriat
+	id = KX_KLY.74
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.74" }
+	title = KX_KLY.74.t
+	desc = KX_KLY.74.desc
+	picture = GFX_report_event_KOM_factory
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.74.a
+		ai_chance = { factor = 1 }
+
+	}
+}
+
+country_event = { #Unity in Diversity
+	id = KX_KLY.75
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.75" }
+	title = KX_KLY.75.t
+	desc = KX_KLY.75.desc
+	picture = GFX_report_event_RUS_soviet_symbol
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.75.a
+		ai_chance = { factor = 1 }
+
+	}
+}
+
+country_event = { #Tyranny of None, Republic of All
+	id = KX_KLY.76
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.76" }
+	title = KX_KLY.76.t
+	desc = KX_KLY.76.desc
+	picture = GFX_report_event_IBR_voting_women
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.76.a
+		ai_chance = { factor = 1 }
+
+	}
+}
+
+country_event = { #Endorse Small Business
+	id = KX_KLY.77
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.77" }
+	title = KX_KLY.77.t
+	desc = KX_KLY.77.desc
+	picture = GFX_report_event_RUS_city
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.77.a
+		ai_chance = { factor = 1 }
+
+	}
+}
+
+country_event = { #Destroy Monopoly
+	id = KX_KLY.78
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.78" }
+	title = KX_KLY.78.t
+	desc = KX_KLY.78.desc
+	picture = GFX_report_event_RUS_city
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.78.a
+		ai_chance = { factor = 1 }
+
+	}
+}
+
+country_event = { #Rule of the Collective
+	id = KX_KLY.79
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.79" }
+	title = KX_KLY.79.t
+	desc = KX_KLY.79.desc
+	picture = GFX_report_event_IBR_meeting_table
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.79.a
+		ai_chance = { factor = 1 }
+
+	}
+}
+
+country_event = { #Celebrate Party Democracy
+	id = KX_KLY.80
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.80" }
+	title = KX_KLY.80.t
+	desc = KX_KLY.80.desc
+	picture = GFX_report_event_IBR_voting_women
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.80.a
+		ai_chance = { factor = 1 }
+
+	}
+}
+
+country_event = { #Truly Red Army
+	id = KX_KLY.81
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.81" }
+	title = KX_KLY.81.t
+	desc = KX_KLY.81.desc
+	picture = GFX_report_event_RUS_soviet_soldiers_2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.81.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Increase International Outreach
+	id = KX_KLY.82
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.82" }
+	title = KX_KLY.82.t
+	desc = KX_KLY.82.desc
+	picture = GFX_report_event_RUS_court
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.82.a
+		ai_chance = { factor = 1 }
+
+	}
+}
+
+country_event = { #An Eternal October
+	id = KX_KLY.83
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.83" }
+	title = KX_KLY.83.t
+	desc = KX_KLY.83.desc
+	picture = GFX_report_event_generic_military_parade
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.83.a
+		setup_soviet_russia = yes
+		ROOT = { save_global_event_target_as = soviet_russia }
+		set_country_flag = soviet_congress_end
+		set_country_flag = SOV_red_army_congress
+		set_country_flag = core
+		add_ideas = {
+			RUS_Nikolay_I_Bukharin_hog_syn
+		}
+		complete_national_focus = SOV_Premier_Bukharin
+		complete_national_focus = RUS_First_Five_Year_Plan
+		set_politics = {
+			ruling_party = totalist
+		}
+		create_country_leader = {
+			name = "雅科夫·斯维尔德洛夫"
+			picture = "gfx/leaders/KLY/Portrait_BRY_ykf_swedlf.png"
+			expire = "1.1.1"
+			ideology = internationalism_subtype
+			desc = "POLITICS_YKF_SWEDLF_DESC"
+		}
+		set_country_flag = soviet_russia_restored
+	}
+}
+
+country_event = { #On the Threshold
+	id = KX_KLY.84
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.84" }
+	title = KX_KLY.84.t
+	desc = KX_KLY.84.desc
+	picture = GFX_report_event_generic_soldier_2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.84.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #The True Heir
+	id = KX_KLY.85
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.85" }
+	title = KX_KLY.85.t
+	desc = KX_KLY.85.desc
+	picture = GFX_report_event_generic_woman_books
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.85.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #An American Proposition
+	id = KX_KLY.86
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.86" }
+	title = KX_KLY.86.t
+	desc = KX_KLY.86.desc
+	picture = GFX_report_event_generic_congress
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.86.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #The American National Exhibition
+	id = KX_KLY.87
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.87" }
+	title = KX_KLY.87.t
+	desc = KX_KLY.87.desc
+	picture = GFX_report_event_generic_economic_policy
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.87.a
+	}
+}
+
+country_event = { #The Far Eastern Exhibition
+	id = KX_KLY.88
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.88" }
+	title = KX_KLY.88.t
+	desc = KX_KLY.88.desc
+	picture = GFX_report_event_RUS_soviet_soldiers_2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.88.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #A Visit from Havana #cut
+	id = KX_KLY.89
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.89" }
+	title = KX_KLY.89.t
+	desc = KX_KLY.89.desc
+	picture = GFX_report_event_RUS_soviet_soldiers_2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.89.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #A Visit to London
+	id = KX_KLY.90
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.90" }
+	title = KX_KLY.90.t
+	desc = KX_KLY.90.desc
+	picture = GFX_report_event_RUS_soviet_soldiers_2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.90.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Communal Blues
+	id = KX_KLY.91
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.91" }
+	title = KX_KLY.91.t
+	desc = KX_KLY.91.desc
+	picture = GFX_report_event_generic_tv
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.91.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #What More Do They Need?
+	id = KX_KLY.92
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.92" }
+	title = KX_KLY.92.t
+	desc = KX_KLY.92.desc
+	picture = GFX_report_event_generic_congress
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.92.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #The Red Tide
+	id = KX_KLY.94
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.94" }
+	title = KX_KLY.94.t
+	desc = KX_KLY.94.desc
+	picture = GFX_report_event_RUS_soviet_soldiers_6
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.94.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #入线事件
+	id = KX_KLY.95
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.95" }
+	title = KX_KLY.95.t
+	desc = KX_KLY.95.desc
+	picture = GFX_report_event_UKR_chernyakhovsky
+	fire_only_once = yes
+	trigger = {
+		tag = KLY
+		is_ai = no
+		KLY = {
+			has_completed_focus = KLY_Khan_Tundutov
+		}
+	}
+
+	option = { #
+		name = KX_KLY.95.a
+		country_event = {
+				id = KX_KLY.96
+				days = 7
+			}
+	}
+}
+
+country_event = { #入线事件
+	id = KX_KLY.96
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.95" }
+	title = KX_KLY.96.t
+	desc = KX_KLY.96.desc
+	picture = GFX_report_event_RUS_soviet_soldiers_6
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.96.a
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	option = { #
+		name = KX_KLY.96.b
+		ai_will_do = {
+			factor = 0
+		}
+		country_event = {
+				id = KX_KLY.97
+				days = 7
+			}
+	}
+}
+
+country_event = { #入线事件
+	id = KX_KLY.97
+	immediate = { log = "[GetDateText]: [Root.GetName]: event BRY.95" }
+	title = KX_KLY.97.t
+	desc = KX_KLY.97.desc
+	picture = GFX_report_event_swedlf
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #
+		name = KX_KLY.97.a
+		load_focus_tree = KX_KLY_Buryatia_intro
+		create_country_leader = {
+				name = "雅科夫·斯维尔德洛夫"
+				picture = "gfx/leaders/KLY/Portrait_BRY_ykf_swedlf.png"
+				expire = "1.1.1"
+				ideology = internationalism_subtype
+				desc = "POLITICS_YKF_SWEDLF_DESC"
+				traits = { CSA_fervent_revolutionary }
+			}
+		add_popularity = {
+				ideology = totalist
+				popularity = 0.4
+			}	
+		set_politics = {
+				ruling_party = totalist
+				elections_allowed = no
+			}	
+		remove_ideas = {
+                KLM_Cossack_army
+                DON_Cossack_state
+				KLM_backwards_country
+				KLM_Buddhist_faith
+            }
+		remove_all_ministers = yes
+		add_ideas = {
+			KLY_Anton_M_Amur_Sanan_hog_tot
+			KLY_Esin_E_Kokshunov_for_tot
+			KLY_Boris_D_Ochirov_eco_tot
+			KLY_Anton_M_Amur_Sanan_sec_tot
+		}	
+		set_cosmetic_tag = SOV_tukhachevsky
+		set_country_flag = tukhachevsky_power	
+		set_party_name = {
+				ideology = totalist
+				long_name = SOV_tukh_party_long
+				name = SOV_tukh_party
+			}
+		every_unit_leader = {
+				remove_unit_leader = yes
+			}
+		RUS = {
+		    every_unit_leader = {
+				limit = {
+					has_trait = hidden_sympathies
+				}
+				set_unit_leader_flag = SOV_leader
+				set_nationality = KLY
+			}
+		}	
+	}
+}

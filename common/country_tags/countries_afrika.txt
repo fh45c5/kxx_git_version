@@ -1,0 +1,2 @@
+SFA = "countries/SFA.txt"#Spanish Africa
+PAF = "countries/PAF.txt" #Portuguese Africa

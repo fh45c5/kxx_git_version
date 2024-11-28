@@ -1,0 +1,2622 @@
+###########################
+##CHANNEL ISLANDS FOCUS TREE##
+###########################
+
+focus_tree = {
+	id = jersey_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = JER
+		}
+	}
+	default = no
+
+	continuous_focus_position = { x = 1550 y = 1420 }
+
+	focus = {
+		id = JER_great_assembly
+		icon = GFX_goal_JER_state_assemble
+		x = -5
+		y = 0
+		cost = 2
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+			}
+		ai_will_do = {
+			factor = 1000
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		custom_effect_tooltip = FRA_will_get_bypassed_tooltip
+		}
+	}
+	focus = {
+		id = JER_moderate_victor_neut
+		cost = 4
+		icon = GFX_goal_JER_neut
+		relative_position_id = JER_great_assembly
+		x = 6
+		y = 1
+		available = {
+         has_country_flag = JER_MODERATE_APPROACH
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		prerequisite = { focus = JER_great_assembly }
+		mutually_exclusive = { 
+			focus = JER_britists_victoire
+			focus = JER_prussianist_first
+		}
+		completion_reward = {
+		#	country_event = arm.213
+		#	add_popularity = {
+		#		ideology = market_liberal
+		#		popularity = 0.03
+		#	}
+		}
+	}
+	focus = {
+		id = JER_britists_victoire
+		cost = 4
+		relative_position_id = JER_great_assembly
+		icon = GFX_goal_JER_brit
+		x = 0
+		y = 1
+		available = {
+         has_country_flag = JER_BRITISQUE_APPROACH
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		prerequisite = { focus = JER_great_assembly }
+		mutually_exclusive = {
+			focus = JER_moderate_victor_neut
+			focus = JER_prussianist_first
+		}
+		completion_reward = {
+		#	country_event = arm.213
+		#	add_popularity = {
+		#		ideology = market_liberal
+		#		popularity = 0.03
+		#	}
+		}
+	}
+	focus = {
+		id = JER_prussianist_first
+		icon = GFX_goal_JER_prussens
+		cost = 4
+		relative_position_id = JER_great_assembly
+		x = -10
+		y = 1
+		available = {
+          has_country_flag = JER_PRUSSENS_APPROACH
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		prerequisite = { focus = JER_great_assembly }
+		mutually_exclusive = {
+			focus = JER_moderate_victor_neut
+			focus = JER_britists_victoire
+
+		}
+		completion_reward = {
+		#	country_event = arm.213
+		#	add_popularity = {
+		#		ideology = market_liberal
+		#		popularity = 0.03
+		#	}
+		}
+	} 
+
+	focus = {
+		id = JER_atract_the_junkers
+		icon = GFX_focus_ger_revive_kaiserreich
+		cost = 7
+		relative_position_id = JER_prussianist_first
+		x = 0
+		y = 1
+		available = {
+			NOT = {
+				has_country_leader = {
+       				ruling_only = yes
+       				name = "利德尔·哈特"
+      			}	
+			}
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_prussianist_first
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+		country_event = prusjer.1 
+		}
+	}
+	focus = {
+		id = JER_Freikorps_sielnd_gunnen
+		icon = GFX_goal_JER_freikorps_voran_die_
+		cost = 7
+		relative_position_id = JER_atract_the_junkers
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_atract_the_junkers
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+	add_equipment_to_stockpile = {
+    type = infantry_equipment
+    amount = 5000
+    producer = GER
+}
+		}
+	}
+	focus = {
+		id = JER_Freikorps_sielnd
+		icon = GFX_goal_JER_freik
+		cost = 7
+		relative_position_id = JER_Freikorps_sielnd_gunnen
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_Freikorps_sielnd_gunnen
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+division_template = {
+    name = "Franc Cors Devision"
+    is_locked = yes
+    division_names_group = JER_FREI
+    priority = 1
+    regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+    }
+    support = {
+        artillery = { x = 0 y = 0 }
+    }
+}
+custom_effect_tooltip = JER_FRIEN
+          add_ideas = JER_freikorps_voran
+		}
+	}
+	focus = {
+		id = JER_invite_ger_garr
+		icon = GFX_goal_JER_invite_gar  
+		cost = 7
+		relative_position_id = JER_Freikorps_sielnd
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_Freikorps_sielnd
+		}
+		completion_reward = {
+add_ideas = JER_prussian_garry
+GER = {
+		diplomatic_relation = {
+	country = JER
+	relation = military_access
+	active = yes
+}
+}
+}
+	}
+	focus = {
+		id = JER_officer_training_ger
+		icon = GFX_goal_jer_ger_helpe
+		cost = 7
+		relative_position_id = JER_invite_ger_garr
+		x = 2
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_invite_ger_garr
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+         add_ideas = JER_prussian_staff
+		}
+	}
+	focus = {
+		id = JER_join_reich
+		icon = GFX_goal_JOIN_REICHPAKT_JER
+		cost = 7
+		relative_position_id = JER_invite_ger_garr
+		x = 0
+		y = 1
+		available = {
+			NOT = {has_government = totalist } 
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_invite_ger_garr
+		}
+		completion_reward = {
+		GER = {
+		country_event = prusjer.4  }
+		}
+	}
+
+	focus = {
+		id = JER_Herzotg_Normandien
+		icon = GFX_goal_JER_kaiser_george
+		cost = 7
+		relative_position_id = JER_join_reich
+		x = 0
+		y = 2
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_join_reich
+		}
+		completion_reward = {
+		15 = {
+		add_core_of = JER
+		}		
+		1317 = { 
+		add_core_of = JER 
+		}
+		123 = { 
+		add_core_of = JER 
+		}
+		127 = {
+		add_core_of = JER
+		}
+		338 = {
+		add_core_of = JER
+		}
+		126 = {
+		add_core_of = JER
+		}
+		125 = { 
+		add_core_of = JER
+		}
+		129 = {
+		add_core_of = JER
+		}
+		128 = {
+		add_core_of = JER
+		}
+		122 = {
+		add_core_of = JER
+		}
+		130 = {
+		add_core_of = JER
+		}
+		132 = {
+		add_core_of = JER
+		}
+		131 = {
+		add_core_of = JER
+		}
+		133 = {
+		add_core_of = JER
+		}
+		136 = {
+		add_core_of = JER
+		}
+		120 = {
+		add_core_of = JER
+		}
+		938= {
+		add_core_of = JER
+		}
+        create_wargoal = {
+            target = ENG
+            type = annex_everything
+        }		
+		country_event = prusjer.5
+		
+		
+		}
+		
+	}
+	focus = {
+		id = JER_le_internationale_front_devisione
+		icon = GFX_goal_JER_freikorpse
+		cost = 7
+		relative_position_id = JER_britists_victoire
+		x = 3
+		y = 1
+		available = {
+			NOT = {
+				has_country_leader = {
+       				ruling_only = yes
+       				name = "利德尔·哈特"
+      			}	
+			}
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_britists_victoire
+		focus = JER_moderate_victor_neut	
+		}
+		completion_reward = {
+division_template = {
+    name = "Étrangère Cors"
+    is_locked = yes
+    division_names_group = JER_INF_05
+    priority = 1
+    regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+    }
+    support = {
+        artillery = { x = 0 y = 0 }
+    }
+}
+custom_effect_tooltip = JER_FRIEN
+		add_ideas = JER_internationale_freikorpse
+		}
+	}
+	focus = {
+		id = JER_defence_territoriale
+		icon = GFX_goal_JER_defance_ter
+		cost = 7
+		relative_position_id = JER_prussianist_first
+		x = 6
+		y = 1
+		available = {
+			NOT = {
+				has_country_leader = {
+       				ruling_only = yes
+       				name = "利德尔·哈特"
+      			}	
+			}
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_britists_victoire
+		focus = JER_moderate_victor_neut
+		focus = JER_prussianist_first	
+		}
+		completion_reward = {
+		 army_experience = 100
+		 add_tech_bonus = {
+    bonus = 0.5
+    uses = 1
+    category = cat_superior_firepower
+}
+		 add_tech_bonus = {
+    bonus = 0.5
+    uses = 1
+    category = cat_grand_battle_plan
+}
+
+		}
+	}
+	focus = {
+		id = JER_chatau_great
+		icon = GFX_goal_JER_chatau
+		cost = 7
+		relative_position_id = JER_defence_territoriale
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_defence_territoriale
+		}
+		completion_reward = {
+	add_building_construction = {
+    type = coastal_bunker
+    level = 4
+    instant_build = yes
+    province = 1315
+}
+		}
+	}
+
+	focus = {
+		id = JER_chatau_anti_air
+		icon = GFX_goal_JER_chatau_defenses
+		cost = 7
+		relative_position_id = JER_chatau_great
+		x = 1
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_chatau_great
+		}
+		completion_reward = {
+		1315 = {
+		 add_building_construction = {
+    type = anti_air_building
+    level = 4
+    instant_build = yes
+}
+		}
+		}
+	}
+	focus = {
+		id = JER_chatau_antiair_sim
+		icon = GFX_goal_jer_not_a_simulacree
+		cost = 7
+		relative_position_id = JER_chatau_anti_air
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_chatau_anti_air
+		}
+		completion_reward = {
+		add_ideas = { JER_anti_air_simulacree }
+		}
+	}
+	focus = {
+		id = JER_chatau_always_alert_to_air #AWARENESS CAMPAIGN, REGARD ENEMIES PLANES
+		icon = GFX_goal_jer_always_alert
+		cost = 7
+		relative_position_id = JER_chatau_antiair_sim
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_chatau_antiair_sim
+		}
+		completion_reward = {
+		custom_effect_tooltip = JER_chatau_air
+		air_experience = 100
+				add_ideas = { JER_anti_air_simulacree_2 }
+		}
+	}
+
+	focus = {
+		id = JER_coastal_defence_training
+		icon = GFX_goal_JER_EXTREME_TRAIN
+		cost = 7
+		relative_position_id = JER_chatau_great
+		x = -1
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_chatau_great
+		}
+		completion_reward = {
+		add_ideas = JER_coste_training
+		initiative_factor = 0.2
+		}
+	}
+	focus = {
+		id = JER_coastal_trench_warfare 
+		icon = GFX_goal_JER_always_ready
+		cost = 7
+		relative_position_id = JER_coastal_defence_training
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_coastal_defence_training
+		}
+		completion_reward = {
+		custom_effect_tooltip = JER_coste
+		add_ideas = {
+		JER_defence_nationale
+		 }		
+		}
+	}
+	focus = {
+		id = JER_the_lions_roar_across_again #NAVAL MORE FAST INVASION
+		icon = GFX_goal_JER_roar_again
+		cost = 7
+		relative_position_id = JER_coastal_trench_warfare
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_coastal_trench_warfare
+		}
+		completion_reward = {
+		add_ideas = {
+		JER_spritite_of_normands
+		}
+		}
+	}
+
+	focus = {
+		id = JER_english_channel_bunker_projekt
+		icon = GFX_goal_JER_fort_line
+		cost = 7
+		relative_position_id = JER_join_reich
+		x = 6
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_chatau_always_alert_to_air
+		}		
+		prerequisite = {
+		focus = JER_the_lions_roar_across_again
+		}
+		completion_reward = {
+		add_ideas = JER_no_syndies_here
+	add_building_construction = {
+    type = coastal_bunker
+    level = 6
+    instant_build = yes
+    province = 1315
+}	
+add_building_construction = {
+    type = bunker
+    level = 6
+    instant_build = yes
+    province = 1315
+}
+		}
+	}
+	focus = {
+		id = JER_Batterie_Mirus
+		icon = GFX_goal_JER_mirou_battery  
+		cost = 10
+		relative_position_id = JER_english_channel_bunker_projekt
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_english_channel_bunker_projekt
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+		custom_effect_tooltip = JER_baterie_mirus
+		set_variable = { var = jer_ammo value = 2000 }
+		1315 = {
+	add_building_construction = {
+    type = radar_station
+    level = 3
+    instant_build = yes
+}
+}
+		add_ideas = JER_battery_mirou
+		}
+	}
+	
+	#ENGLISHSE CONTENT
+	focus = {
+		id = JER_eng_telegram
+		icon = GFX_goal_JER_telegrame
+		cost = 7
+		relative_position_id = JER_britists_victoire
+		x = 0
+		y = 1
+		available = {
+			NOT = {
+				has_country_leader = {
+       				ruling_only = yes
+       				name = "利德尔·哈特"
+      			}	
+			}
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_britists_victoire
+		}
+
+		completion_reward = {
+		CAN = {
+		country_event = engjer.1
+		}
+		}
+	}		
+	focus = {
+		id = JER_submarine_meeting_in_st_john
+		icon = GFX_goal_JER_st_john
+		cost = 7
+		relative_position_id = JER_eng_telegram
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_eng_telegram
+		}
+
+		completion_reward = {
+		country_event = engjer.2
+		}
+	}	 
+	focus = {
+		id = JER_empower_the_originals #NOW IS FRIENDSHIP GIFT! GIVE A FUCKTONS OF GUNS
+		icon = GFX_goal_jer_frens_gifte
+		cost = 7
+		relative_position_id = JER_submarine_meeting_in_st_john
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_submarine_meeting_in_st_john
+		}
+
+		completion_reward = {
+		country_event = engjer.4
+		}
+	}
+	focus = {
+		id = JER_the_lion_roar_together
+		icon = GFX_goal_JER_lion_roar
+		cost = 7
+		relative_position_id = JER_empower_the_originals
+		x = 0
+		y = 1
+		available = {
+			NOT = {has_government = totalist } 
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_empower_the_originals
+		}
+
+		completion_reward = {
+		CAN = {
+		country_event = engjer.3
+		}
+		}
+	}
+	focus = {
+		id = JER_the_duchy_ressurects
+		icon = GFX_goal_JER_phoenix_lion
+		cost = 7
+		relative_position_id = JER_the_lion_roar_together
+		x = 0
+		y = 4
+		available = {
+			NOT = {has_government = totalist } 
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_the_lion_roar_together
+		}
+		mutually_exclusive = { focus = JER_our_ambitions }
+		completion_reward = {
+		1317 = {
+		add_core_of = JER
+		}		
+		CAN= {
+		country_event = engjer.5
+		}
+		}
+	}
+
+
+	focus = {
+		id = JER_patriotic_front
+		icon = GFX_goal_JER_volksturme 
+		cost = 7
+		relative_position_id = JER_submarine_meeting_in_st_john
+		x = 4
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_submarine_meeting_in_st_john focus = JER_we_are_the_channelers
+		}
+
+		completion_reward = {
+		add_ideas = JER_patriotic_front_jer
+		}
+	}	
+	focus = {
+		id = JER_planifiqued_actione
+		icon = GFX_goal_JER_officer_eng
+		cost = 7
+		relative_position_id = JER_submarine_meeting_in_st_john
+		x = 2
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_submarine_meeting_in_st_john
+		}
+		prerequisite = {
+		focus = JER_radio_del_channele
+		}
+
+		completion_reward = {
+		add_ideas = JER_eng_planifiqued_actione
+		}
+	}	
+
+
+
+    #jerraies
+	focus = {
+		id = JER_diplomacy_of_rich
+		icon = GFX_goal_JER_monay
+		cost = 7
+		relative_position_id = JER_moderate_victor_neut
+		x = 0
+		y = 1
+		available = {
+			NOT = {
+				has_country_leader = {
+       				ruling_only = yes
+       				name = "利德尔·哈特"
+      			}	
+			}
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_moderate_victor_neut
+		}
+		completion_reward = {
+		country_event = jerneu.1
+		}
+	}	
+		focus = {
+		id = JER_we_are_the_channelers
+		icon = GFX_goal_JER_we_are_channelers
+		cost = 7
+		relative_position_id = JER_diplomacy_of_rich
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_diplomacy_of_rich
+		}
+		completion_reward = {
+		add_ideas = JER_channaler
+		}
+	}	
+		focus = {
+		id = JER_enjoy_isolation #ARMED ISOLATION WE SHOULD BE PREPARED TO STRIKE FIRST IF THE CASE IS NEEDED
+		icon = GFX_goal_JER_enjoy_isolation
+		cost = 7
+		relative_position_id = JER_we_are_the_channelers
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_we_are_the_channelers
+		}
+		mutually_exclusive = {
+		}
+		completion_reward = {
+		add_ideas = JER_aislatione
+		}
+	}
+	
+
+	
+	focus = {
+		id = JER_our_ambitions
+		icon = GFX_goal_JER_attack_frenc
+		cost = 7
+		relative_position_id = JER_the_duchy_ressurects
+		x = -4
+		y = 0
+		available = {
+			NOT = {has_government = totalist } 
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_Herzotg_Normandien focus = JER_the_duchy_ressurects
+		}
+		mutually_exclusive = { focus = JER_the_duchy_ressurects }
+		completion_reward = {
+		24 = {
+		add_core_of = JER
+		}
+		16 = {
+		add_core_of = JER
+		}
+		33 = {
+		add_core_of = JER
+		}
+		30 = {
+		add_core_of = JER
+		}
+		23 = {
+		add_core_of = JER
+		}
+		25 = {
+		add_core_of = JER
+		}
+		19 = {
+		add_core_of = JER
+		}
+		984 = {
+		add_core_of = JER
+		}
+
+		}
+	}
+		focus = {
+		id = JER_create_the_marquis_of_burgundy
+		icon = GFX_goal_JER_bourgogne
+		cost = 7
+		relative_position_id = JER_our_ambitions
+		x = 4
+		y = 1
+		available = {
+			NOT = {has_government = totalist } 
+		27 = {
+		is_owned_by = JER
+		}
+		20 = {
+		is_owned_by = JER
+		}
+		26 = {
+		is_owned_by = JER
+		}		
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_our_ambitions focus = JER_the_duchy_ressurects
+		}
+		completion_reward = {
+		ARE = {
+		set_state_owner = 27
+}		ARE = {
+		set_state_owner = 20
+}		ARE = {
+		set_state_owner = 26
+}
+release_puppet = ARE
+		}
+		
+	}	
+	focus = {
+		id = JER_destroy_paris
+		icon = GFX_goal_JER_destroi_paris
+		cost = 7
+		relative_position_id = JER_our_ambitions
+		x = 2
+		y = 1
+		available = {
+			NOT = {has_government = totalist } 
+		16 = {
+		 is_controlled_by = JER
+		}
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_our_ambitions focus = JER_the_duchy_ressurects
+		}
+		completion_reward = {
+		custom_effect_tooltip = JER_MASSACRE_BEGINS
+		16 ={
+		add_manpower = -200000
+		add_building_construction = {
+    type = infrastructure
+    level = -10
+    instant_build = yes
+}
+		}
+		}
+		
+	}	
+	focus = {
+		id = JER_remake_the_old_regime
+		icon = GFX_goal_JER_me_and_the_boys
+		cost = 12
+		relative_position_id = JER_our_ambitions
+		x = 0
+		y = 1
+		available = {
+			NOT = {has_government = totalist } 
+		15 = {
+		is_owned_by = JER
+		}		
+		24 = {
+		is_owned_by = JER
+		}		
+		16 = {
+		is_owned_by = JER
+		}		
+		33 = {
+		is_owned_by = JER
+		}		
+		30 = {
+		is_owned_by = JER
+		}		
+		25 = {
+		is_owned_by = JER
+		}			
+		23 = {
+		is_owned_by = JER
+		}				
+		19 = {
+		is_owned_by = JER
+		}		984 = {
+		is_owned_by = JER
+		}
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_our_ambitions focus = JER_the_duchy_ressurects
+		}
+		completion_reward = {
+		custom_effect_tooltip = JER_FAMINE_YEY
+    #add_ideas = JER_no_literacy   
+15  = {
+add_dynamic_modifier = { modifier = famine_serious_jer days = 3000 }
+     }
+24  = {
+add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+     }
+16  = {
+add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+     }
+33  = {
+add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+     }
+30  = {
+add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+     }
+25 = {
+add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+     }
+23  = {
+add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+     }
+19  = {
+add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+     }
+984  = {
+add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+     }
+
+}
+		}	
+	focus = {
+		id = JER_rebuild_the_palace_of_toulleries
+		icon = GFX_goal_JER_palace
+		cost = 17
+		relative_position_id = JER_destroy_paris
+		x = 0
+		y = 1
+		available = {
+			NOT = {has_government = totalist } 
+				16 = {
+		 is_owned_by = JER
+		   }
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_destroy_paris
+		}
+		completion_reward = {
+		16 ={
+		add_manpower = -40000
+		}
+		add_political_power = 400
+		}
+		
+	}
+	#INDUSTRY
+focus = {
+		id = JER_backdoor_deals
+		icon = GFX_goal_JER_shady_business
+		cost = 7
+		x = 5
+		y = 0
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+			}
+		ai_will_do = {
+			factor = 1200
+		}
+		completion_reward = {
+		custom_effect_tooltip = FRA_will_get_bypassed_tooltip
+add_offsite_building = { type = industrial_complex level = 2 }
+add_tech_bonus = {
+    bonus = 0.5
+    uses = 1
+    category = industry
+}
+add_research_slot = 1
+		}
+		}
+	focus = {
+		id = JER_shady_schemes
+		icon = GFX_goal_JER_shady
+		cost = 7
+		relative_position_id = JER_backdoor_deals
+		x = 4
+		y = 1
+		available = {
+			NOT = {
+				has_country_leader = {
+       				ruling_only = yes
+       				name = "利德尔·哈特"
+      			}	
+			}
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_backdoor_deals
+		}
+		completion_reward = {
+		set_rule = {
+   can_create_collaboration_government = yes
+   can_puppet = yes
+}
+		}
+	}
+		#DEGENATION
+	focus = {
+		id = JER_epsteinreich
+		icon = GFX_goal_Epsteinreich
+		cost = 7
+		relative_position_id = JER_shady_schemes
+		x = 0
+		y = 1
+		available = {
+			date > 1937.5.1
+		}
+hidden_trigger = {
+    USA = {
+	NOT = {
+	has_civil_war = yes
+	 } 
+	}
+}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_shady_schemes
+		}
+		completion_reward = {
+			USA = {
+			country_event = jer.2
+			
+			}
+		add_political_power = 50
+		
+		}
+	}
+	focus = {
+		id = JER_kidnaping_rings
+		icon = GFX_goal_JER_kidnap_ring
+		cost = 7
+		relative_position_id = JER_epsteinreich
+		x = 0
+		y = 1
+		available = {
+		has_global_flag = USA_civil_war_begun_flag
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_epsteinreich
+		}
+		completion_reward = {
+		add_ideas = JER_kidnap_ring
+		add_political_power = 50
+		}
+	}	
+	focus = {
+		id = JER_the_sade_live_on
+		icon = GFX_goal_JER_sade
+		cost = 7
+		relative_position_id = JER_kidnaping_rings
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_kidnaping_rings
+		}
+		completion_reward = {
+		add_ideas = JER_marquis_lives
+		add_political_power = 150
+		}
+	}
+	focus = {
+		id = JER_the_rouge_haus
+		icon = GFX_goal_JER_rouge_chatau
+		cost = 7
+		relative_position_id = JER_the_sade_live_on
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_the_sade_live_on
+		}
+		completion_reward = {
+		 custom_effect_tooltip = sade_rouge_haus
+		add_political_power = 150
+		}
+	}	
+	focus = {
+		id = JER_we_do_not_ask_questions
+		icon = GFX_goal_JER_no_questions
+		cost = 7
+		relative_position_id = JER_shady_schemes
+		x = 2
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_shady_schemes
+		}
+		completion_reward = {
+		add_political_power = 50
+		add_ideas =  {
+		JER_no_questions 
+		}
+		}
+	}
+	focus = {
+		id = JER_money_washing
+		icon = GFX_goal_jer_money_wash
+		cost = 7
+		relative_position_id = JER_we_do_not_ask_questions
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_we_do_not_ask_questions
+		}
+		completion_reward = {
+		add_political_power = 50
+		add_ideas = {
+		JER_money_washing 
+		}
+		add_research_slot = 1
+		
+		}
+	}
+	focus = {
+		id = JER_curazao_new_horizon
+		icon = GFX_goal_JER_CURAZAO
+		cost = 7
+		relative_position_id = JER_epsteinreich
+		x = -2
+		y = 1
+		available = {
+		has_global_flag = USA_civil_war_begun_flag
+		1312 = {
+		 is_controlled_by = JER
+		}
+		}
+		ai_will_do = {
+			factor = 600
+		}
+		prerequisite = {
+		focus = JER_epsteinreich
+		}
+		completion_reward = {
+		add_political_power = 200
+		HOL = {
+		country_event = curazaojer.1
+		}
+		}
+	}
+	focus = {
+		id = JER_a_new_mercenary_horizon
+		icon = GFX_goal_JER_mercenary
+		cost = 7
+		relative_position_id = JER_curazao_new_horizon
+		x = 0
+		y = 1
+		available = {
+		695 = {
+		 is_controlled_by = JER
+		}
+		}
+		ai_will_do = {
+			factor = 600
+		}
+		prerequisite = {
+		focus = JER_curazao_new_horizon
+		}
+		completion_reward = {
+division_template = {
+    name = "Armée Coloignel"
+    division_names_group = JER_INF_04
+    priority = 1
+    regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+    }
+}
+1312 = {
+	create_unit = {
+    division = "name = \"Armée Coloignel\" division_template = \"Armée Coloignel\" start_experience_factor = 0.2 start_equipment_factor = 0.6"
+    owner = JER
+}
+}
+695 = {
+	create_unit = {
+    division = "name = \"Armée Coloignel\" division_template = \"Armée Coloignel\" start_experience_factor = 0.2 start_equipment_factor = 0.6"
+    owner = JER
+}
+}
+		add_political_power = 20
+		swap_ideas = { 
+		remove_idea = JER_merc_problm
+		add_idea = JER_merc_problm_1
+		}
+		}
+	}	
+	
+	
+	
+	focus = {
+		id = JER_westerkommando
+		icon = GFX_goal_JER_WESTKOMMANDO
+		cost = 7
+		relative_position_id = JER_a_new_mercenary_horizon
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 600
+		}
+		prerequisite = {
+		focus = JER_a_new_mercenary_horizon
+		}
+		completion_reward = {
+		add_ideas = JER_westkomando
+			set_rule = {
+    can_not_declare_war = no
+}
+	}
+	}
+	
+	focus = {
+		id = JER_an_american_empress
+		icon = GFX_goal_jer_attack_vene
+		cost = 7
+		relative_position_id = JER_westerkommando
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 600
+		}
+		prerequisite = {
+		focus = JER_westerkommando
+		}
+		completion_reward = {
+		#for JERSEY
+		489 = {
+		add_core_of = JER
+		}		
+		849 = {
+		add_core_of = JER
+		}		
+		
+		#FOR HULIE
+		#850 = {
+		#add_core_of = HUL
+		#}
+		#912 = {
+		#add_core_of = HUL
+		#}
+    ROOT = {
+        create_wargoal = {
+            target = VEN
+            type = take_state_focus
+            generator = { 489 849 307}
+        }		
+		add_threat = 4
+		}
+	}
+}	
+focus = {
+		id = JER_great_coloigne_empire
+		icon = GFX_goal_jer_huile_greate
+		cost = 7
+		relative_position_id = JER_an_american_empress
+		x = 0
+		y = 1
+		available = {
+		NOT = {
+				country_exists = VEN
+		}
+		AND = {
+		country_exist = HUL
+		}
+		}
+		ai_will_do = {
+			factor = 600
+		}
+		prerequisite = {
+		focus = JER_an_american_empress
+		}
+		completion_reward = {
+		
+		#for JERSEY
+		493 = {
+		add_core_of = JER
+		}		
+		1216 = {
+		add_core_of = JER
+		}		
+			853 = {
+		add_core_of = JER
+		}		
+		649 = {
+		add_core_of = JER
+		}		
+		#FOR HULIE
+		486 = {
+		add_core_of = HUL
+		}
+		851 = {
+		add_core_of = HUL
+		}		
+		852 = {
+		add_core_of = HUL
+		}		
+		306 = {
+		add_core_of = HUL
+		}		
+		1215 = {
+		add_core_of = HUL
+		}
+		305 = {
+		add_core_of = HUL
+		}		
+		490 = {
+		add_core_of = HUL
+		}		
+		1280 = {
+		add_core_of = HUL
+		}		
+    ROOT = {
+        create_wargoal = {
+            target = COL
+            type = take_state_focus
+            generator = { 489 849 307}
+        }		     
+		create_wargoal = {
+            target = ECU
+            type = take_state_focus
+            generator = { 305 1280 649}
+        }		
+		create_wargoal = {
+            target = PRU
+            type = take_state_focus
+            generator = { 490 }
+        }	
+}		
+		 	
+
+add_threat = 6
+		}
+	}	
+	#INDUSTRIAL
+focus = {
+		id = JER_industry_for_you
+		icon = GFX_goal_JER_industrial_frens
+		cost = 7
+		relative_position_id = JER_backdoor_deals
+		x = -2
+		y = 1
+		available = {
+			NOT = {
+				has_country_leader = {
+       				ruling_only = yes
+       				name = "利德尔·哈特"
+      			}	
+			}
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_backdoor_deals
+		}
+		completion_reward = {
+		add_offsite_building = { type = arms_factory level = 3 }
+		}
+	}
+
+focus = {
+		id = JER_industrual_contact
+		icon = GFX_goal_JER_indu_contact
+		cost = 7
+		relative_position_id = JER_industry_for_you
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_industry_for_you
+		}
+		completion_reward = {
+		add_offsite_building = { type = industrial_complex level = 3 } 
+		add_political_power = 100
+		swap_ideas = { 
+		remove_idea = JER_medieval_society
+		add_idea = JER_medieval_society_1
+		}
+		}
+	}
+focus = {
+		id = JER_prussian_arm_deal
+		icon = GFX_goal_JER_arm_deal
+		cost = 7
+		relative_position_id = JER_industrual_contact
+		x = 0
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_industrual_contact
+		}
+		completion_reward = {
+		add_offsite_building = { type = arms_factory level = 5 }
+				remove_ideas = JER_medieval_society_1
+		}
+	}
+focus = {
+		id = JER_prussian_dockyards
+		icon = GFX_goal_JER_docks
+		cost = 7
+		relative_position_id = JER_industrual_contact
+		x = 2
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_industrual_contact
+		}
+		add_offsite_building = { type = dockyard level = 3 }
+		completion_reward = {
+		add_equipment_to_stockpile = {
+    type = convoy
+    amount = 100
+    producer = GER
+}		
+add_equipment_to_stockpile = {
+    type = convoy
+    amount = 100
+    producer = CAN
+}
+		}
+	}
+focus = {
+		id = JER_sorelians
+		icon = GFX_goal_FRA_sorelians
+		x = -10
+		y = 12
+		cost = 2
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+			}
+		ai_will_do = {
+			factor = 1000
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		custom_effect_tooltip = FRA_will_get_bypassed_tooltip
+		}
+	}
+	focus = {
+		id = JER_death_to_reactionaries
+		icon = GFX_goal_FRA_slay_bourgeois_decadence
+		cost = 2
+		relative_position_id = JER_sorelians
+		x = -1
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_sorelians
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+			remove_ideas = JER_the_psn
+			remove_ideas = JER_armed_neutrality
+			add_manpower = -100
+			add_popularity = { ideology = totalist popularity = 0.1 } 
+		}
+	}	
+	focus = {
+		id = JER_death_to_traitors
+		icon = GFX_goal_TXS_arrest
+		cost = 2
+		relative_position_id = JER_sorelians
+		x = 1
+		y = 1
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+		focus = JER_sorelians
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+			remove_ideas = JER_merc_problm
+			add_manpower = -100
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = JER_sorelianlist_policy
+		icon = GFX_goal_FRA_sorealians_alt
+		cost = 7
+		relative_position_id = JER_sorelians
+		x = 0
+		y = 2
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+			focus = JER_death_to_reactionaries
+		}
+		prerequisite = {
+			focus = JER_death_to_traitors
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+			add_ideas = FRA_sorelians_supreme_idea
+			add_ideas = FRA_corporate_syndie_idea
+			add_ideas = FRA_french_nationalism_idea
+			add_ideas = French_Revanchism_idea
+			add_ideas = FRA_ultranat
+			add_ideas = FRA_supremacy
+			add_ideas = FRA_violence
+		}
+	}
+	focus = {
+		id = JER_prepare_for_reclamation
+		icon = GFX_goal_NFA_France_Aux_Francais
+		cost = 5
+		relative_position_id = JER_sorelians
+		x = -1
+		y = 3
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+			focus = JER_sorelianlist_policy
+		}
+		
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+			add_manpower = 1000
+			add_war_support = 0.2
+			add_ideas = JER_fra_reclaim
+		}
+	}
+	focus = {
+		id = JER_army_preparation
+		icon = GFX_goal_FRA_glory_of_war_2
+		cost = 5
+		relative_position_id = JER_sorelians
+		x = 1
+		y = 3
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+			focus = JER_sorelianlist_policy
+		}
+		
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			load_oob = JER
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+				producer = FRA
+			}
+		}
+	}
+	focus = {
+		id = JER_march
+		icon = GFX_goal_CSA_internationale_treachery
+		cost = 2
+		relative_position_id = JER_sorelians
+		x = 0
+		y = 4
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+			focus = JER_prepare_for_reclamation
+		}
+		prerequisite = {
+			focus = JER_army_preparation
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+			JER = { transfer_state = 15 }
+			create_wargoal = { target = FRA type = annex_everything } 
+			create_wargoal = { target = ENG type = annex_everything } 
+			create_wargoal = { target = SRI type = annex_everything }
+			add_war_support = 0.1 
+			every_state = {
+				limit = {
+					is_core_of = FRA
+				}
+				add_core_of = JER
+			}
+			every_state = {
+				limit = {
+					is_core_of = FRG
+				}
+				add_core_of = JER
+			}
+		}
+	}
+	focus = {
+		id = JER_return_to_paris
+		icon = GFX_goal_LUX_Ties_with_Paris
+		cost = 1
+		relative_position_id = JER_sorelians
+		x = 0
+		y = 5
+		available = {
+			owns_state = 16
+			NOT = { country_exists = FRA }
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		
+		prerequisite = {
+			focus = JER_march
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+			set_cosmetic_tag = FRA_Ultranatsynd
+			set_capital = { state = 16}
+			add_stability = 0.1
+			add_political_power = 100
+			set_party_name = {
+				ideology = totalist
+				long_name = FRA_ultranatsynd
+				name = FRA_ultranatsynd
+			}
+			FRA = {
+				every_unit_leader = {	
+					set_nationality = JER
+				}
+				
+			}
+		}
+	}
+	focus = {
+		id = JER_reverage
+		icon = GFX_goal_ARZ_Sword
+		cost = 2
+		relative_position_id = JER_sorelians
+		x = -1
+		y = 6
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		
+		prerequisite = {
+			focus = JER_return_to_paris
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+			country_event = jersor.2
+			add_manpower = -1000
+		}
+	}
+	focus = {
+		id = JER_rebuild_our_rule
+		icon = GFX_goal_FRA_ideal_france
+		cost = 5
+		relative_position_id = JER_sorelians
+		x = -1
+		y = 7
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		
+		prerequisite = {
+			focus = JER_reverage
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = FRA_sorelians_supreme_idea
+				add_idea = FRA_sorelians_supreme_idea2
+			}
+			
+			swap_ideas = {
+				remove_idea = FRA_french_nationalism_idea
+				add_idea = FRA_french_nationalism_idea2
+			}
+			swap_ideas = {
+				remove_idea = FRA_corporate_syndie_idea
+				add_idea = FRA_corporate_syndie_idea2
+			}
+			add_ideas = FRA_society
+			add_political_power = 100
+			set_popularities = {
+				totalist = 100
+			}	
+			
+		}
+	}
+	focus = {
+		id = JER_red_angrvin
+		icon = GFX_goal_FRA_bucard_destroy_albion
+		cost = 5
+		relative_position_id = JER_sorelians
+		x = 1
+		y = 6
+		available = {
+			owns_state = 126
+			NOT = { country_exists = ENG }
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		
+		prerequisite = {
+			focus = JER_return_to_paris
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = ENG
+				}
+				add_core_of = JER
+			}
+			every_state = {
+				limit = {
+					is_core_of = WAL
+				}
+				add_core_of = JER
+			}
+			every_state = {
+				limit = {
+					is_core_of = SCT
+				}
+				add_core_of = JER
+			}
+			every_state = {
+				limit = {
+					is_core_of = IRE
+				}
+				add_core_of = JER
+			}
+		}
+	}
+	
+	focus = {
+		id = JER_eat_italy
+		icon = GFX_goal_CZE_attack_italy
+		cost = 5
+		relative_position_id = JER_sorelians
+		x = 1
+		y = 7
+		available = {
+			owns_state = 158
+			NOT = { country_exists = SRI }
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		
+		prerequisite = {
+			focus = JER_red_angrvin
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = SRI
+				}
+				add_core_of = JER
+			}
+		}
+	}
+	focus = {
+		id = JER_another_1806
+		icon = GFX_goal_MLT_fuck_germany
+		cost = 2
+		relative_position_id = JER_sorelians
+		x = 0
+		y = 8
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		
+		prerequisite = {
+			focus = JER_eat_italy
+		}
+		prerequisite = {
+			focus = JER_rebuild_our_rule
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = JER_fra_reclaim
+				add_idea = JER_fra_reclaim2
+			}
+			create_wargoal = { target = GER type = annex_everything }
+			create_wargoal = { target = AUS type = annex_everything }  
+		}
+	}
+	focus = {
+		id = JER_destroy_germans
+		icon = GFX_goal_JER_me_and_the_boys
+		cost = 3
+		relative_position_id = JER_sorelians
+		x = -2
+		y = 9
+		available = {
+			NOT = { country_exists = GER }
+			NOT = { country_exists = AUS }
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		
+		prerequisite = {
+			focus = JER_another_1806
+		}
+		
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+				64  = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000 }
+					 }
+				5  = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					 }
+				776  = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					 }
+				66  = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					 }
+				67  = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					 }
+				65 = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					 }
+				59  = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					 }
+				58  = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					 }
+				52  = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					 }
+				54  = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					}
+				55  = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					}
+				50  = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					}
+				781 = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					}
+				51  = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					}
+				57  = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					}
+				1137  = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					}
+				152  = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					}
+				39 = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					}
+				775  = {
+				add_dynamic_modifier = { modifier = famine_serious_jer days = 3000}
+					}
+		}
+	}
+	focus = {
+		id = JER_destroy_berlin
+		icon = GFX_goal_JER_destroi_paris
+		cost = 1
+		relative_position_id = JER_sorelians
+		x = 0
+		y = 9
+		available = {
+			64 = {
+				is_controlled_by = JER
+			}
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		
+		prerequisite = {
+			focus = JER_another_1806
+		}
+		
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+			custom_effect_tooltip = JER_MASSACRE_BEGINS
+		64 ={
+			add_manpower = -200000
+			set_building_level = {
+				type = infrastructure
+				level = 0
+			}
+			set_building_level = {
+				type = industrial_complex
+				level = 0
+			}
+			set_building_level = {
+				type = arms_factory
+				level = 0
+			}
+			add_extra_state_shared_building_slots = -25
+			
+		}
+		}
+	}
+	focus = {
+		id = JER_destroy_vienna
+		icon = GFX_goal_JER_palace
+		cost = 1
+		relative_position_id = JER_sorelians
+		x = 2
+		y = 9
+		available = {
+			1137 = {
+				is_controlled_by = JER
+			   }
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		
+		
+		prerequisite = {
+			focus = JER_another_1806
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+			custom_effect_tooltip = JER_MASSACRE_BEGINS
+			1137 ={
+			add_manpower = -200000
+			set_building_level = {
+				type = infrastructure
+				level = 0
+			}
+			set_building_level = {
+				type = industrial_complex
+				level = 0
+			}
+			set_building_level = {
+				type = arms_factory
+				level = 0
+			}
+			add_extra_state_shared_building_slots = -25
+
+		}
+		}
+	}
+	focus = {
+		id = JER_red_frankish
+		icon = GFX_goal_BAY_FRANKISH_DREAM
+		cost = 6
+		relative_position_id = JER_sorelians
+		x = 0
+		y = 10
+		available = {
+		}
+		ai_will_do = {
+			factor = 1200
+		}
+		prerequisite = {
+			focus = JER_destroy_vienna
+		}
+		prerequisite = {
+			focus = JER_destroy_berlin
+		}
+		prerequisite = {
+			focus = JER_destroy_germans
+		}
+		mutually_exclusive = { 
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = GER
+				}
+				add_core_of = JER
+			}
+			every_state = {
+				limit = {
+					is_core_of = BEL
+				}
+				add_core_of = JER
+			}
+			every_state = {
+				limit = {
+					is_core_of = HOL
+				}
+				add_core_of = JER
+			}
+			every_state = {
+				limit = {
+					is_core_of =FLA
+				}
+				add_core_of = JER
+			}
+			every_state = {
+				limit = {
+					is_core_of = WLL
+				}
+				add_core_of = JER
+			}
+			every_state = {
+				limit = {
+					is_core_of = SWI
+				}
+				add_core_of = JER
+			}
+			every_state = {
+				limit = {
+					is_core_of = PAP
+				}
+				add_core_of = JER
+			}
+			every_state = {
+				limit = {
+					is_core_of = SIC
+				}
+				add_core_of = JER
+			}
+			every_state = {
+				limit = {
+					is_core_of = AUS
+				}
+				add_core_of = JER
+			}
+			every_state = {
+				limit = {
+					is_core_of = SWI
+				}
+				add_core_of = JER
+			}
+			every_state = {
+				limit = {
+					is_core_of = SRD
+				}
+				add_core_of = JER
+			}
+			every_state = {
+				limit = {
+					is_core_of = CZE
+				}
+				add_core_of = JER
+			}
+			every_state = {
+				limit = {
+					is_core_of = ITA
+				}
+				add_core_of = JER
+			}
+			add_state_core = 1313
+			add_state_core = 172
+			add_state_core = 940
+			add_state_core = 165
+			create_wargoal = { target = CZE type = annex_everything }
+			create_wargoal = { target = SPR type = annex_everything }
+			create_wargoal = { target = CAR type = annex_everything }
+			create_wargoal = { target = CNT type = annex_everything }
+			create_wargoal = { target = HOL type = annex_everything }
+			create_wargoal = { target = BEL type = annex_everything }
+			create_wargoal = { target = PAP type = annex_everything }
+			create_wargoal = { target = SIC type = annex_everything }
+			create_wargoal = { target = SRD type = annex_everything }
+			create_wargoal = { target = ITA type = annex_everything }
+			set_cosmetic_tag = FORM_FRK
+		}
+	}
+	###鸡舍线
+	focus = {
+		id = JER_eng_1
+		icon = GFX_goal_SOV_navy
+		x = -4
+		y = 13
+		cost = 2
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+			}
+		ai_will_do = {
+			factor = 1000
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			FRA = {
+				add_to_faction = JER
+			}
+		}
+	}
+	focus = {
+		id = JER_eng_2
+		icon = GFX_goal_JER_chatau
+		x = -2
+		y = 1
+		cost = 2
+		available = {
+		}
+		prerequisite = {
+			focus = JER_eng_1
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		relative_position_id = JER_eng_1
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_building_construction = {
+    			type = coastal_bunker
+    			level = -4
+    			instant_build = yes
+    			province = 1315
+			}
+		}
+	}
+	focus = {
+		id = JER_eng_3
+		icon = GFX_goal_CSA_militia_support
+		x = 0
+		y = 1
+		cost = 2
+		available = {
+		}
+		prerequisite = {
+			focus = JER_eng_1
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		relative_position_id = JER_eng_1
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_manpower = -100
+		}
+	}
+	focus = {
+		id = JER_eng_4
+		icon = GFX_goal_artillery
+		x = 2
+		y = 1
+		cost = 2
+		available = {
+		}
+		prerequisite = {
+			focus = JER_eng_1
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		relative_position_id = JER_eng_1
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			FRA = {
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 1200
+					producer = JER
+				}
+			}
+			ENG = {
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 1200
+					producer = JER
+				}
+			}
+			SRI = {
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 1200
+					producer = JER
+				}
+			}
+		}
+	}
+	focus = {
+		id = JER_eng_5
+		icon = GFX_BBR_industrializing_land
+		x = -1
+		y = 2
+		cost = 2
+		available = {
+		}
+		prerequisite = {
+			focus = JER_eng_2
+		}
+		prerequisite = {
+			focus = JER_eng_3
+		}
+		prerequisite = {
+			focus = JER_eng_4
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		relative_position_id = JER_eng_1
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			1315 = {
+				add_building_construction = {
+         			type = industrial_complex
+          			level = 4
+          			instant_build = yes
+       			 }
+			}
+			1315 = {
+				add_building_construction = {
+         			type = arms_factory
+          			level = 4
+          			instant_build = yes
+       			 }
+			}
+		}
+	}
+	focus = {
+		id = JER_eng_6
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 1
+		y = 2
+		cost = 2
+		available = {
+		}
+		prerequisite = {
+			focus = JER_eng_2
+		}
+		prerequisite = {
+			focus = JER_eng_3
+		}
+		prerequisite = {
+			focus = JER_eng_4
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		relative_position_id = JER_eng_1
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			1315 = {
+				add_building_construction = {
+    				type = radar_station
+    				level = 4
+    				instant_build = yes
+				}
+			}
+			1315 = {
+				add_building_construction = {
+    				type = dockyard
+    				level = 5
+    				instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = JER_eng_7
+		icon = GFX_goal_GUA_People_Army
+		x = -2
+		y = 3
+		cost = 2
+		available = {
+		}
+		prerequisite = {
+			focus = JER_eng_5
+		}
+		prerequisite = {
+			focus = JER_eng_6
+		}
+		mutually_exclusive = { 
+			focus = JER_eng_8
+			focus = JER_eng_9
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		relative_position_id = JER_eng_1
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			ENG = {
+				annex_country = { target = JER  }
+				add_state_core = 1315
+			}
+		}
+	}
+	focus = {
+		id = JER_eng_8
+		icon = GFX_goal_JER_mirou_battery
+		x = 0
+		y = 3
+		cost = 2
+		available = {
+		}
+		prerequisite = {
+			focus = JER_eng_5
+		}
+		prerequisite = {
+			focus = JER_eng_6
+		}
+		mutually_exclusive = { 
+			focus = JER_eng_7
+			focus = JER_eng_9
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		relative_position_id = JER_eng_1
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = JER_battery_mirou
+			add_ideas = JER_anti_air_simulacree_2 
+			ENG = {
+				add_ideas = JER_battery_mirou
+			}
+			FRA = {
+				add_ideas = JER_battery_mirou
+			}
+		}
+	}
+	focus = {
+		id = JER_eng_9
+		icon = GFX_goal_FRA_Internationale_Congress
+		x = 2
+		y = 3
+		cost = 2
+		available = {
+		}
+		prerequisite = {
+			focus = JER_eng_5
+		}
+		prerequisite = {
+			focus = JER_eng_6
+		}
+		mutually_exclusive = { 
+			focus = JER_eng_7
+			focus = JER_eng_8
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		relative_position_id = JER_eng_1
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			FRA = {
+				annex_country = { target = JER  }
+				add_state_core = 1315
+			}
+		}
+	}
+}
+

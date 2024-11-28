@@ -1,0 +1,22 @@
+ideas = {
+
+	country = {
+
+		Helicopter_Researching_idea = {
+			
+			allowed = {
+			}
+
+			available = {
+			}
+
+			removal_cost = -1
+						
+			research_bonus = { air_equipment = -0.05 }
+			
+		}
+		
+		
+	
+}
+}

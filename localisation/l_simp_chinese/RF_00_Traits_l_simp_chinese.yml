@@ -1,0 +1,16 @@
+﻿l_simp_chinese:
+ #trait
+ GDP_xv_trait:0 "能文能武"
+ GDP_ou_trait:0 "茶楼常客"
+ GDP_bj_trait:0 "理想安那其"
+ GDP_liang_trait:0 "大儒"
+ GDP_cqt_trait:0 "商君"
+ GDP_pengpai_trait:0 "农运大王"
+ 
+ #Peng Pai Cabinet trait
+ GDP_li_chuntao_trait:0 "赤心同仁"
+ GDP_ruan_xiaoxian_trait:0 "农运英雄"
+ GDP_zhang_tailei_trait:0 "惊雷"
+ GDP_peng_hanyuan_trait:0 "农会管家"
+ GDP_deng_fa_trait:0 "罪恶斗士"
+ GDP_Zhang_shan_ming_trait:0 "屡败屡战的革命家"

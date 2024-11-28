@@ -1,0 +1,5017 @@
+focus_tree = {
+	id = ZHR
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ZHR
+		}
+	}
+	continuous_focus_position = { x = 50 y = 3200 }
+	focus = {
+		id = ZHR_adawninyellowrussia
+		icon = GFX_Adawninyellowrussia
+		x = 14
+		y = 1
+		cost = 1
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#
+			add_political_power = 45
+			country_event = {
+				id = ZHR.29
+			}
+		}
+	}
+
+
+	focus = {
+		id = ZHR_troublingreports
+		icon = GFX_Troublingreports
+		x = 14
+		y = 2
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_adawninyellowrussia }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	
+			country_event = {
+				id = ZHR.30
+			}
+			ZHR = {
+				add_opinion_modifier = {
+				target = RUS
+				modifier = large_decrease
+			    }
+				add_opinion_modifier = {
+				target = TRM
+				modifier = large_decrease
+			    }
+			}
+			RUS = {
+				add_opinion_modifier = {
+				target = ZHR
+				modifier = large_decrease
+			    }
+			}
+			TRM = {
+				add_opinion_modifier = {
+				target = ZHR
+				modifier = large_decrease
+			    }
+			}
+		}
+	}
+
+	focus = {
+		id = ZHR_thefamineofzheltorossiya
+		icon = GFX_Thefamineofzheltorossia
+		x = 14
+		y = 3
+		cost = 4
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_troublingreports }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.1
+			}
+		}
+	}
+
+
+	focus = {
+		id = ZHR_inthewest
+		icon = GFX_Inthewest
+		x = 12
+		y = 3
+		cost = 4
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_troublingreports }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	
+			country_event = {
+				id = ZHR.33
+			}
+		}
+	}
+
+
+	focus = {
+		id = ZHR_intheeast
+		icon = GFX_Intheeast
+		x = 16
+		y = 3
+		cost = 4
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_troublingreports }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	
+			ZHR = {
+				add_opinion_modifier = {
+				target = QIE
+				modifier = small_increase
+			    }
+				add_opinion_modifier = {
+				target = JAP
+				modifier = small_decrease
+			    }
+			}
+			hidden_effect = {
+				country_event = {
+                days = 1
+				id = ZHR.34
+				}
+			}
+			custom_effect_tooltip = "ZHR_bingchilling"
+		}
+	}
+
+	focus = {
+		id = ZHR_waitinggame
+		icon = GFX_ZHR_waitinggame
+		x = 12
+		y = 4
+		cost = 10
+		available = {
+			has_country_flag = ZHR_good
+		}
+		allow_branch = {
+			has_country_flag = ZHR_good
+		}
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_intheeast }
+		prerequisite = { focus = ZHR_inthewest }
+		prerequisite = { focus = ZHR_thefamineofzheltorossiya }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex size > 0 include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+
+	focus = {  #rising sun burns
+		id = ZHR_inthecentralareas
+		icon = GFX_Inthecentralareas
+		x = 14
+		y = 4
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_intheeast }
+		prerequisite = { focus = ZHR_inthewest }
+		prerequisite = { focus = ZHR_thefamineofzheltorossiya }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	
+			country_event = ZHR.2035
+			remove_ideas = ZHR_japanese_influence
+			add_ideas = {
+				ZHR_railway_crash
+			}
+		}
+	}
+
+	#Focus for Ultimatum of the Supreme Zheltorossiya Soviet
+	focus = {
+		id = ZHR_ultimatumofthesupremezheltorossiyasoviet
+		icon = GFX_Ultimatumofthecongressofsoviets
+		x = 14
+		y = 5
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_inthecentralareas 
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		select_effect = {
+        	country_event = {
+				id = ZHR.2036
+				days = 10
+			}
+    	}
+		completion_reward = {	#event asking Kerensky to Resign, his refusal causes resignations - potentially a civil war?
+			country_event = {
+				id = ZHR.1
+			}
+			add_stability = 0.05
+			set_country_flag = zhr_military_time
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+	#Focus for Kerensky Prevails
+	focus = {
+		id = ZHR_kerenskyprevails
+		icon = GFX_Kerenskyprevail
+		x = -3
+		y = 6
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_ultimatumofthesupremezheltorossiyasoviet }
+		mutually_exclusive = { focus = ZHR_kerenskyresigns }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			has_country_flag = ZHR_kerensky_prevails
+		}
+		completion_reward = {
+			add_stability = 0.25
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.15
+			}
+		}
+	}
+
+	#Focus for Kerensky Resigns
+	focus = {
+		id = ZHR_kerenskyresigns
+		icon = GFX_Kerenskyresigns
+		x = 14
+		y = 6
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_ultimatumofthesupremezheltorossiyasoviet }
+		mutually_exclusive = { focus = ZHR_kerenskyprevails }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			has_country_flag = ZHR_kerensky_resigns
+		}
+		completion_reward = {
+			add_stability = -0.05
+			add_popularity = {
+				ideology = social_democrat
+				popularity = -0.15
+			}
+			country_event = {
+				id = ZHR.2
+			}
+		}
+	}
+
+	#Focus for The Soldiers Step In
+	focus = {
+		id = ZHR_thesoldiersstepin
+		icon = GFX_Soldiersstepin
+		x = 4
+		y = 7
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_kerenskyresigns }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			has_country_flag = junfangjieru
+		}
+		completion_reward = {
+			add_stability = -0.05
+			add_political_power = 25
+			country_event = {
+				id = ZHR.4
+			}
+		}
+	}
+
+	#Focus for Popular State
+	focus = {
+		id = ZHR_popularstate
+		icon = GFX_Popularstate
+		x = 22
+		y = 7
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_kerenskyresigns }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			has_country_leader = { name = "亚历山大·博格丹诺夫" ruling_only = yes }
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+			country_event = {
+				id = ZHR.500
+			}
+		}
+	}
+
+	#Focus for The Freedom Bloc
+	focus = {
+		id = ZHR_thefreedombloc
+		icon = GFX_Blocofthefreedom
+		x = 65
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_kerenskyresigns }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			has_government = market_liberal
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.25
+			}
+		}
+	}
+
+	#Focus for Comrade Trotsky
+	focus = {
+		id = ZHR_comradetrotsky
+		icon = GFX_Comradetrotsky
+		x = 2
+		y = 8
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_thesoldiersstepin }
+		mutually_exclusive = { 
+			focus = ZHR_theherowedeserve 
+		}
+		
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			has_country_leader = { name = "列夫·托洛茨基" ruling_only = yes }
+		}
+		completion_reward = {
+			country_event = ZHR.2025
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.25
+			}
+		}
+	}
+
+	#Focus for The Hero We Deserve
+	focus = {
+		id = ZHR_theherowedeserve
+		icon = GFX_Theherowedeserve
+		x = 7
+		y = 8
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_thesoldiersstepin }
+		mutually_exclusive = { 
+			focus = ZHR_comradetrotsky 
+		}
+		
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			has_country_leader = { name = "夏伯阳" ruling_only = yes }
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.25
+			}
+			hidden_effect = {
+				set_country_flag = cannot_have_conscription 
+				add_ideas = volunteer_only
+			}
+		}
+	}
+
+	#Focus for Military Commisar of Vladivostok
+	
+
+	### Kerensky ###
+
+	#Focus for Support Bourgeoisie
+	focus = {
+		id = ZHR_supportbourgeoisie
+		icon = GFX_Supportbourgeoisie
+		x = -1
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_newconstitution }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#lower stab and consumer goods, add popularity to Rev-An and Van-Socs, lower popularity for libs and soc-dem
+			add_popularity = { 
+				ideology = social_democrat
+				popularity = 0.07
+			}
+			add_popularity = { 
+				ideology = social_liberal
+				popularity = 0.08
+			}
+			add_popularity = { 
+				ideology = syndicalist
+				popularity = -0.05
+			}
+			add_popularity = { 
+				ideology = totalist
+				popularity = -0.1
+			}
+			add_stability = -0.05
+		}
+	}
+
+	#Focus for New Constitution
+	focus = {
+		id = ZHR_newconstitution
+		icon = GFX_NewConstitution
+		x = -3
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_subordinatethesoviets 
+		}
+		prerequisite = { 
+			focus = ZHR_createdirectorate 
+		}
+		prerequisite = { 
+			focus = ZHR_strengthencontrolovertheparty 
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_popularity = { 
+				ideology = social_democrat
+				popularity = 0.15
+			}
+			add_political_power = 80
+		}
+	}
+
+	#Focus for Abolish Land Allotment Restrictions
+	focus = {
+		id = ZHR_abolishlandallotmentrestrictions
+		icon = GFX_Abolishlandallotmentrestrictions
+		x = -1
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_supportbourgeoisie }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#build slots
+			every_owned_state = {
+				limit = {
+					is_core_of = ZHR
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	#Focus for Create ROSTA
+	focus = {
+		id = ZHR_createrosta
+		icon = GFX_CreateROSTA
+		x = -5
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_newconstitution }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_ideas = ZHR_ROSTA
+		}
+	}
+
+	#Focus for All Praise We Chant to Thee!
+	focus = {
+		id = ZHR_allpraisewechanttothee
+		icon = GFX_AllPowertokerensky
+		x = -3
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_nationalrepresentativeassembly }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_war_support = 0.10
+			country_event = {
+				id = ZHR.27
+			}
+		}
+	}
+
+	#Focus for Create Directorate
+	focus = {
+		id = ZHR_createdirectorate
+		icon = GFX_CreateDirectorate
+		x = -3
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_kerenskyprevails }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#hog_minister?
+			add_ideas = ZHR_directorate
+			country_event = {
+				id = ZHR.24
+			}
+		}
+	}
+
+	#Focus for Subordinate The Soviets
+	focus = {
+		id = ZHR_subordinatethesoviets
+		icon = GFX_Subordinatesoviets
+		x = -5
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_kerenskyprevails }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#event, soviets protest!, pop of hard left drops, lose stab
+			country_event = {
+				id = ZHR.7
+			}
+			add_popularity = { 
+				ideology = syndicalist
+				popularity = -0.1
+			}
+			add_popularity = { 
+				ideology = totalist
+				popularity = -0.05
+			}
+			add_stability = -0.03
+		}
+	}
+
+	#Focus for Strengthen Control Over The Party
+	focus = {
+		id = ZHR_strengthencontrolovertheparty
+		icon = GFX_Strengthencontrolovertheparty
+		x = -1
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_kerenskyprevails }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_popularity = { 
+				ideology = social_democrat
+				popularity = 0.05
+			}
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for National Representative Assembly
+	focus = {
+		id = ZHR_nationalrepresentativeassembly
+		icon = GFX_Nationalrepresentativeassembly
+		x = -3
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_newconstitution }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_stability = 0.1
+			add_ideas = ZHR_nra
+			remove_ideas = {
+				ZHR_manchurians
+			}
+		}
+	}
+	
+	#Focus for President's Radio Speeches
+	focus = {
+		id = ZHR_presidentsradiospeeches
+		icon = GFX_PresidentsRadioSpeeches
+		x = -5
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_createrosta }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#stab over time, pp gain, drop pop of some opposition.
+			add_timed_idea = {
+				idea = ZHR_speeches
+				days = 180
+			}
+			country_event = {
+				id = ZHR.25
+			}
+		}
+	}
+
+	focus = {
+		id = ZHR_endthefamine
+		icon = GFX_endthefamine
+		x = -3
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_allpraisewechanttothee }
+		prerequisite = { focus = ZHR_presidentsradiospeeches }
+		prerequisite = { focus = ZHR_abolishlandallotmentrestrictions }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			remove_ideas = ZHR_railway_crash
+			country_event = {
+				id = ZHR.26
+			}
+			set_country_flag = zhr_politic_done
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+	### Trotsky ###
+
+	#Focus for Create the Revolution
+	focus = {
+		id = ZHR_createtherevolution
+		icon = GFX_Createtherevolution
+		x = 2
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_comradetrotsky }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			country_event = ZHR.2026
+			add_ideas = {
+				ZHR_creatingrevolution
+			}
+		}
+	}
+
+	#Focus for Factionalist Democracy
+	focus = {
+		id = ZHR_factionalistdemocracy
+		icon = GFX_Factionalistdemocracy
+		x = 1
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_createtherevolution }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_stability = -0.1
+			add_political_power = 50
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.12
+			}
+		}
+	}
+
+	#Focus for Soviet Power
+	focus = {
+		id = ZHR_sovietpower
+		icon = GFX_Sovietpower
+		x = 3
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_createtherevolution }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_ideas = {
+				ZHR_soviet_power
+			}
+		}
+	}
+
+	#Focus for Defend the Revolution
+	focus = {
+		id = ZHR_defendtherevolution
+		icon = GFX_Defendtherevolution
+		x = 2
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_factionalistdemocracy 
+		}
+		prerequisite = { 
+			focus = ZHR_sovietpower 
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			country_event = ZHR.2027
+			add_ideas = {
+				ZHR_defendrevolution
+			}
+		}
+	}
+
+	#Focus for Sober up the Workers
+	focus = {
+		id = ZHR_soberuptheworkers
+		icon = GFX_Soberuptheworkers
+		x = 1
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_defendtherevolution }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			country_event = ZHR.2028
+			add_ideas = {
+				ZHR_soberup
+			}
+		}
+	}
+
+	#Focus for Purge the Bureaucracy
+	focus = {
+		id = ZHR_purgethebureaucracy
+		icon = GFX_Purgetheburocracy
+		x = 3
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_defendtherevolution }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = ZHR_purgebureaucracy
+				days = 730
+			}
+		}
+	}
+
+	#Focus for Five Year Plans
+	focus = {
+		id = ZHR_fiveyearplans
+		icon = GFX_Fiveyearplans
+		x = 2
+		y = 13
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_soberuptheworkers 
+		}
+		prerequisite = { 
+			focus = ZHR_purgethebureaucracy 
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_ideas = ZHR_fiveyearplans
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex size > 0 include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex level = 3
+					instant_build = yes
+				}
+			}
+			remove_ideas = ZHR_railway_crash
+		}
+	}
+
+	#Focus for Expand the Revolution
+	focus = {
+		id = ZHR_expandtherevolution
+		icon = GFX_Expandtherevolution
+		x = 2
+		y = 14
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_fiveyearplans }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#boosts the reds in some neighbouring lands?
+			add_ideas = {
+				ZHR_exportingtherevolution	#volunteers costs/limits
+			}
+		}
+	}
+
+	#Focus for Revolutionary Order
+	focus = {
+		id = ZHR_revolutionaryorder
+		icon = GFX_Revolutionaryorder
+		x = 1
+		y = 15
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_expandtherevolution }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_stability = 0.2
+			hidden_effect = {
+			    load_oob = ZHR_NKVD
+				country_event = {
+					id = ZHR.2029
+					days = 14
+				}
+			}
+		}
+	}
+
+	#Focus for Labour Armies
+	focus = {
+		id = ZHR_labourarmies
+		icon = GFX_Labourarmies
+		x = 3
+		y = 15
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_expandtherevolution }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#conscription boost, female service
+			add_ideas = {
+				ZHR_labourarmies
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory size > 0 include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Permanent Revolution
+	focus = {
+		id = ZHR_permanentrevolution
+		icon = GFX_Permanentrevolution
+		x = 2
+		y = 16
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_revolutionaryorder 
+		}
+		prerequisite = { 
+			focus = ZHR_labourarmies 
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#the "NKVD" begins a purge of counter-revolutionaries
+			country_event = {
+				days = 1
+				id = ZHR.2032
+			}
+			set_war_support = 1
+			add_ideas = ZHR_permanent_revolution
+			set_country_flag = zhr_politic_done
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+	### Chapayev ###
+	
+	#Focus for The Angry Cup
+	focus = {
+		id = ZHR_the_angry_cup
+		icon = GFX_ZHR_the_angry_cup
+		x = 5
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_theherowedeserve }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = -0.1
+		}
+	}
+
+	#Focus for The Hundred Cow Program
+	focus = {
+		id = ZHR_hundred_cow_program
+		icon = GFX_ZHR_hundred_cow_program
+		x = 5
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_the_angry_cup }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.2
+			}
+			add_stability = 0.1
+			add_political_power = 100
+		}
+	}
+
+	#Focus for Pens to Plows
+	focus = {
+		id = ZHR_pens_to_plows
+		icon = GFX_ZHR_pens_to_plows
+		x = 5
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_hundred_cow_program }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {		
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.1
+			}
+			add_ideas = {
+				ZHR_antiintellectualism
+			}
+		}
+	}
+
+	#Focus for A Commonwealth of Toil
+	focus = {
+		id = ZHR_commonwealth_of_toil
+		icon = GFX_ZHR_commonwealth_of_toil
+		x = 5
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_pens_to_plows }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#reduce conscription, boost pop growth, consumer goods +3%
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_stability = 0.05
+		}
+	}
+
+	#Focus for Proclaim the Sonarodestvo
+	focus = {
+		id = ZHR_proclaim_sonarodestvo
+		icon = GFX_ZHR_proclaim_sonarodestvo
+		x = 9
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_theherowedeserve }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			set_cosmetic_tag = ZHR_chapzhelto
+			add_political_power = 50
+		}
+	}
+
+	#Focus for Bestir the Peasantry
+	focus = {
+		id = ZHR_bestir_the_peasantry
+		icon = GFX_ZHR_bestir_the_peasantry
+		x = 7
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_proclaim_sonarodestvo }
+		mutually_exclusive = {
+			focus = ZHR_chapayevs_light
+		}
+		mutually_exclusive = {
+			focus = ZHR_the_mob_rushes_in
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ZHR_antiintellectualism
+				add_idea = ZHR_antiintellectualism1
+			}
+
+		}
+	}
+
+	#Focus for Comrade Chapayev's Guiding Light
+	focus = {
+		id = ZHR_chapayevs_light
+		icon = GFX_ZHR_chapayevs_light
+		x = 9
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_proclaim_sonarodestvo }
+		mutually_exclusive = {
+			focus = ZHR_bestir_the_peasantry
+		}
+		mutually_exclusive = {
+			focus = ZHR_the_mob_rushes_in
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_stability = 0.07
+		}
+	}
+
+	#Focus for The Mob Rushes In
+	focus = {
+		id = ZHR_the_mob_rushes_in
+		icon = GFX_ZHR_the_mob_rushes_in
+		x = 11
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_proclaim_sonarodestvo }
+		mutually_exclusive = {
+			focus = ZHR_bestir_the_peasantry
+		}
+		mutually_exclusive = {
+			focus = ZHR_chapayevs_light
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#enforced Anarchy
+			add_ideas = {
+				ZHR_enforced_anarchy
+			}
+		}
+	}
+
+	#Focus for Our Flag Means Death
+	focus = {
+		id = ZHR_our_flag_means_death
+		icon = GFX_ZHR_our_flag_means_death
+		x = 9
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = ZHR_bestir_the_peasantry
+			focus = ZHR_chapayevs_light
+			focus = ZHR_the_mob_rushes_in
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_ideas = ZHR_wisdom_of_the_mob
+		}
+	}
+
+	#Focus for Communal Ownership
+	focus = {
+		id = ZHR_all_power_to_the_narod
+		icon = GFX_ZHR_all_power_to_the_narod
+		x = 9
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_our_flag_means_death }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_ideas = {
+				ZHR_common_man
+			}
+		}
+	}
+
+	#Focus for Redistribute the Wealth
+	focus = {
+		id = ZHR_an_outstanding_personality
+		icon = GFX_ZHR_an_outstanding_personality
+		x = 7
+		y = 13
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_commonwealth_of_toil }
+		prerequisite = { focus = ZHR_all_power_to_the_narod }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_stability = -0.15
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.15
+			}
+			714 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			1202 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for The Brotherly Leader
+	focus = {
+		id = ZHR_brotherly_leader
+		icon = GFX_ZHR_brotherly_leader
+		x = 5
+		y = 14
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_an_outstanding_personality }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_country_leader_trait = ZHR_chapayev_brotherly_leader
+		}
+	}
+	#Focus for The Revolution's Guide
+	focus = {
+		id = ZHR_revolutions_guide
+		icon = GFX_ZHR_revolutions_guide
+		x = 7
+		y = 14
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_an_outstanding_personality }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_country_leader_trait = ZHR_chapayev_revolutions_guide
+		}
+	}
+	#Focus for The Masses' Rifle
+	focus = {
+		id = ZHR_masses_rifle
+		icon = GFX_ZHR_masses_rifle
+		x = 9
+		y = 14
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_an_outstanding_personality }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_country_leader_trait = ZHR_chapayev_masses_rifle
+		}
+	}
+
+	#Focus for People's Will
+	focus = {
+		id = ZHR_peoples_will
+		icon = GFX_ZHR_peoples_will
+		x = 7
+		y = 15
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_brotherly_leader
+		}
+		prerequisite = { 
+			focus = ZHR_revolutions_guide
+		}
+		prerequisite = { 
+			focus = ZHR_masses_rifle
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_ideas = ZHR_folks_socialism
+			remove_ideas = ZHR_railway_crash
+			set_country_flag = zhr_politic_done
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+
+	### Gastev ###
+
+	focus = {
+		id = ZHR_vperedists_in_soviet
+		icon = GFX_ZHR_vperedists_in_soviet
+		relative_position_id = ZHR_popularstate
+		x = 0
+		y = 1
+		cost = 1
+		available = {
+			has_country_flag = ZHR_vpered
+		}
+		
+		prerequisite = {
+			focus = ZHR_popularstate
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+	#Focus for We
+	focus = {
+		id = ZHR_we
+		icon = GFX_We
+		x = 6
+		y = 1
+		cost = 5
+		relative_position_id = ZHR_vperedists_in_soviet
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_vperedists_in_soviet }
+		mutually_exclusive = {
+			focus = ZHR_homogeneous_socialist_government
+			focus = ZHR_triumvirate_unites_the_centre
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			has_country_flag = zhr_gastev
+		}
+		completion_reward = {	#erase individualism - boost production, lower initiative
+			add_popularity = { 
+				ideology = totalist
+				popularity = 0.25
+			}
+			add_ideas = {
+				ZHR_We
+			}
+		}
+	}
+
+	#Focus for Ustanovka
+	focus = {
+		id = ZHR_ustanovka
+		icon = GFX_Ustanovka
+		relative_position_id = ZHR_we
+		x = -2
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_we }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#Productivity buffs
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Homo Metallum
+	focus = {
+		id = ZHR_homometallum
+		icon = GFX_Homometallum
+		relative_position_id = ZHR_we
+		x = 2
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_we }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_ideas = {
+				ZHR_homo_metallum
+			}
+		}
+	}
+
+	#Focus for Live and Die in a Factory
+	focus = {
+		id = ZHR_liveanddieinafactory
+		icon = GFX_Liveanddieinfactory
+		relative_position_id = ZHR_ustanovka
+		x = -1
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_ustanovka }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#production buffs, construction buffs, war support debuff and conscription debuff
+			add_ideas = {
+				ZHR_factory_life
+			}
+		}
+	}
+
+	#Focus for Iron Hearts
+	focus = {
+		id = ZHR_ironhearts
+		icon = GFX_Ironhearts
+		relative_position_id = ZHR_ustanovka
+		x = 1
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_ustanovka }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#resource gain, pp gain, new propaganda event
+			add_ideas = ZHR_ironhearts
+			hidden_effect = {
+				country_event = {
+					id = ZHR.2500
+					days = 30
+				}
+			}
+		}
+	}
+
+	#Focus for Bureau of Guardians
+	focus = {
+		id = ZHR_bureauofguardians
+		icon = GFX_Bureauofguardians
+		relative_position_id = ZHR_homometallum
+		x = -1
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_homometallum }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_stability = -0.15
+			add_ideas = ZHR_guardians
+		}
+	}
+
+	#Focus for One State
+	focus = {
+		id = ZHR_onestate
+		icon = GFX_Onestate
+		relative_position_id = ZHR_homometallum
+		x = 1
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_homometallum }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#cosmetic tag
+			set_cosmetic_tag = "ZHR_ONE"
+			add_stability = 0.1
+			remove_ideas = {
+				ZHR_manchurians
+			}
+		}
+	}
+
+	#Focus for Children of the State
+	focus = {
+		id = ZHR_childrenofthestate
+		icon = GFX_Childrenofthestate
+		relative_position_id = ZHR_bureauofguardians
+		x = 0
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_bureauofguardians }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#pp gain, pop growth, consumer goods -6%
+			add_ideas = ZHR_childrenofstate
+		}
+	}
+
+	#Focus for Proletkult
+	focus = {
+		id = ZHR_proletkult
+		icon = GFX_Proletkult
+		relative_position_id = ZHR_onestate
+		x = 0
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_onestate }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_ideas = war_economy
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Just another Number
+	focus = {
+		id = ZHR_justanothernumber
+		icon = GFX_Justanothernumber
+		relative_position_id = ZHR_liveanddieinafactory
+		x = 1
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_liveanddieinafactory 
+		}
+		prerequisite = { 
+			focus = ZHR_ironhearts 
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#all major characters, leaders, generals, aces etc. recieve number names
+			#hidden_effect = {
+			#}
+			set_country_leader_name = { ideology = totalist name = "OP_01" }
+			set_character_name = {
+				character = ZHR_Pavel_Milyukov
+				name = VD_8572
+			}
+			set_character_name = {
+				character = ZHR_vasily_chapayev
+				name = OZ_425
+			}
+			set_character_name = {
+				character = ZHR_Vasily_Boldyrev
+				name = WZ_5661
+			}
+			set_character_name = {
+				character = ZHR_mikhail_muravyov
+				name = G_988
+			}
+			set_character_name = {
+				character = ZHR_alexander_kerensky
+				name = C_657
+			}
+			set_character_name = {
+				character = ZHR_bogdanov
+				name = U_9258
+			}
+			set_character_name = {
+				character = ZHR_maria_spiridonova
+				name = SS_382
+			}
+			set_character_name = {
+				character = ZHR_leon_trotsky
+				name = ED_3996
+			}
+			set_character_name = {
+				character = ZHR_lev_kamenev
+				name = LT_196
+			}
+			set_character_name = {
+				character = ZHR_fyodor_dan
+				name = T_626
+			}
+			set_character_name = {
+				character = ZHR_Nikolai_Avksentiev
+				name = E_845
+			}
+			set_character_name = {
+				character = ZHR_alisa_rosenbaum
+				name = U_5575
+			}
+			set_character_name = {
+				character = ZHR_venedikt_myakotin
+				name = IE_706
+			}
+			set_character_name = {
+				character = ZHR_nikolay_avksentiev
+				name = GC_9641
+			}
+			set_character_name = {
+				character = ZHR_Ivan_Smirnov
+				name = YW_551
+			}
+			set_character_name = {
+				character = ZHR_Peter_Isayev
+				name = G_3784
+			}
+			set_character_name = {
+				character = ZHR_Nikolay_Nekrasov
+				name = F_931
+			}
+			set_character_name = {
+				character = ZHR_Yakov_Sverdlov
+				name = Z_691
+			}
+			set_character_name = {
+				character = ZHR_Boris_Kamkov
+				name = SS_577
+			}
+			set_character_name = {
+				character = ZHR_Vladimir_Nabokov
+				name = AQ_1650
+			}
+			set_character_name = {
+				character = ZHR_maxim_gorky
+				name = UC_178
+			}
+			set_character_name = {
+				character = ZHR_anatoly_lunacharsky
+				name = S_6108
+			}
+			set_character_name = {
+				character = ZHR_nikolai_bukharin
+				name = T_86
+			}
+			set_character_name = {
+				character = ZHR_yakov_perelman
+				name = D_3258
+			}
+			set_character_name = {
+				character = ZHR_Nikolaj_Kondratiev
+				name = AB_613
+			}
+			set_character_name = {
+				character = ZHR_Yevgeny_Preobrazhensky
+				name = PY_11
+			}
+			set_character_name = {
+				character = ZHR_Alexander_Chayanov
+				name = OB_183
+			}
+			set_character_name = {
+				character = ZHR_Andrei_Shingarev
+				name = G_4885
+			}
+			set_character_name = {
+				character = ZHR_Stanislav_Strumlin
+				name = O_964
+			}
+			set_character_name = {
+				character = ZHR_Mikhail_Tereshchenko
+				name = P_4673
+			}
+			set_character_name = {
+				character = ZHR_Semyon_Maslov
+				name = EP_34
+			}
+			set_character_name = {
+				character = ZHR_Christian_Rakovsky
+				name = BH_4064
+			}
+			set_character_name = {
+				character = ZHR_Dmitry_Furmanov
+				name = EZ_196
+			}
+			set_character_name = {
+				character = ZHR_Nikolay_Lvov
+				name = W_1950
+			}
+			set_character_name = {
+				character = ZHR_Osip_Yermansky
+				name = Q_771
+			}
+			set_character_name = {
+				character = ZHR_Ariadna_Tyrkova_Williams
+				name = X_9433
+			}
+			set_character_name = {
+				character = ZHR_Anastasia_Bitsenko
+				name = XH_512
+			}
+			set_character_name = {
+				character = ZHR_Alexander_Gukovsky
+				name = IF_4606
+			}
+			set_character_name = {
+				character = ZHR_Konstantin_Nabokov
+				name = FC_182
+			}
+			set_character_name = {
+				character = ZHR_Alexei_Nikitin
+				name = Z_1246
+			}
+			set_character_name = {
+				character = ZHR_Alexander_Beloborodov
+				name = V_801
+			}
+			set_character_name = {
+				character = ZHR_Grigory_Rogov
+				name = T_4543
+			}
+			set_character_name = {
+				character = ZHR_Sergei_Voytsekhovsky
+				name = JT_763
+			}
+			set_character_name = {
+				character = ZHR_Viktor_Pertsov
+				name = MM_9571
+			}
+			set_character_name = {
+				character = ZHR_Innokentiy_Yeremeyev
+				name = CZ_810
+			}
+			set_character_name = {
+				character = ZHR_Ivan_Yefremov
+				name = R_384
+			}
+			set_character_name = {
+				character = ZHR_Sergei_Melgunov
+				name = Y_7346
+			}
+			set_character_name = {
+				character = ZHR_Lev_Sosnovsky
+				name = II_551
+			}
+			set_character_name = {
+				character = ZHR_Nestor_kalandarishvili
+				name = FF_9906
+			}
+			set_character_name = {
+				character = ZHR_Victorin_Molchanov
+				name = OE_963
+			}
+			set_character_name = {
+				character = ZHR_Vladimir_Nemtsov
+				name = O_2842
+			}
+			set_character_name = {
+				character = ZHR_Alexander_Bublikov
+				name = O_894
+			}
+			set_character_name = {
+				character = ZHR_Vyacheslav_Menzhinsky
+				name = S_6742
+			}
+			set_character_name = {
+				character = ZHR_sergey_wojciechowski
+				name = PG_959
+			}
+			set_character_name = {
+				character = ZHR_mikhail_tukhachevsky
+				name = XH_6232
+			}
+			set_character_name = {
+				character = ZHR_boris_shaposhnikov
+				name = HL_280
+			}
+			set_character_name = {
+				character = ZHR_vasiliy_blyukher
+				name = J_1286
+			}
+			set_character_name = {
+				character = ZHR_yuriy_sablin
+				name = X_18
+			}
+			set_character_name = {
+				character = ZHR_Syrovy
+				name = R_2591
+			}
+			set_character_name = {
+				character = ZHR_dmitrij_karbyshev
+				name = ZT_934
+			}
+			set_character_name = {
+				character = ZHR_pyotr_lutskov
+				name = FK_5776
+			}
+			set_character_name = {
+				character = ZHR_Stepan_Petrichenko
+				name = VQ_102
+			}
+			set_character_name = {
+				character = ZHR_Volin
+				name = M_2874
+			}
+			set_character_name = {
+				character = ZHR_Alexander_Kozlovsky
+				name = N_338
+			}
+			set_character_name = {
+				character = ZHR_alexandr_vekman
+				name = D_6293
+			}
+			set_character_name = {
+				character = ZHR_vladimir_orlov
+				name = YE_875
+			}
+			set_character_name = {
+				character = ZHR_andrej_maksimov
+				name = UN_8919
+			}
+			set_character_name = {
+				character = ZHR_eduard_pantserzhansky
+				name = GT_618
+			}
+			set_character_name = {
+				character = ZHR_mikhail_viktorov
+				name = J_4202
+			}
+			set_character_name = {
+				character = ZHR_Nikolai_Papivin
+				name = C_339
+			}
+			set_character_name = {
+				character = ZHR_Pavel_Zhigarev
+				name = O_9757
+			}
+			set_character_name = {
+				character = ZHR_Alexander_Novikov
+				name = NW_149
+			}
+			set_character_name = {
+				character = ZHR_Grigory_Zinoviev
+				name = EG_479
+			}
+			custom_effect_tooltip = ZHR_justanothernumber_TT
+		}
+	}
+
+	#Focus for Estabilish the CIT
+	focus = {
+		id = ZHR_estabilishthecit
+		icon = GFX_Establishcit
+		relative_position_id = ZHR_childrenofthestate
+		x = 1
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_childrenofthestate 
+		}
+		prerequisite = { 
+			focus = ZHR_proletkult 
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#research slots +1
+			add_research_slot = 1
+			978 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Nature submits to the Five Year Plan
+	focus = {
+		id = ZHR_naturesubmitstothefiveyearplan
+		icon = GFX_Naturesubmitstofiveyearplan
+		relative_position_id = ZHR_justanothernumber
+		x = 2
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_justanothernumber 
+		}
+		prerequisite = { 
+			focus = ZHR_estabilishthecit 
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#resources, factories, attrition for enemies, slightly slower pop growth
+			add_ideas = ZHR_thefiveyearplan
+			set_war_support = 1
+			remove_ideas = ZHR_railway_crash
+			set_country_flag = zhr_politic_done
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+	### Rosenbaum ###
+
+	#Focus for Atlas Shrugged no More
+	focus = {
+		id = ZHR_atlasshruggednomore
+		icon = GFX_Atlasshruggednomore
+		x = 62
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		mutually_exclusive = {
+			focus = ZHR_dawn_of_peoples_freedom
+		}
+		prerequisite = { focus = ZHR_thefreedombloc }
+		available = {
+			NOT = {
+				has_country_flag = ZHR_no_rosenbaum
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_stability = 0.15
+			add_political_power = 100
+		}
+	}
+
+	#Focus for Religion Is Not Profitable
+	focus = {
+		id = ZHR_religionisnotprofitable
+		icon = GFX_Religionisnotprofitable
+		x = 64
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_atlasshruggednomore }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_ideas = {
+				ZHR_no_religion
+			}
+			add_stability = 0.05
+		}
+	}
+
+	#Focus for The Rapture Is Coming
+	focus = {
+		id = ZHR_theraptureiscoming
+		icon = GFX_Theraptureiscoming
+		x = 60
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_atlasshruggednomore }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			remove_ideas = ZHR_railway_crash	
+			714 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			560 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for No Freedom For Parasites
+	focus = {
+		id = ZHR_nofreedomforparasites
+		icon = GFX_Nofreedomforparasites
+		relative_position_id = ZHR_theraptureiscoming
+		x = 0
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_blindtorace 
+		}
+		prerequisite = { 
+			focus = ZHR_buythechinese 
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			#add 2 civs in Primorye
+			409 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_stability = 0.05
+		}
+	}
+
+	#Focus for Liberate The Market
+	focus = {
+		id = ZHR_liberatethemarket
+		icon = GFX_Liberatethemarket
+		relative_position_id = ZHR_atlasshruggednomore
+		x = 0
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_rationalstate
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_popularity = { 
+				ideology = market_liberal
+				popularity = 0.2
+			}
+		}
+	}
+
+	#Focus for Buy The Chinese
+	focus = {
+		id = ZHR_buythechinese
+		icon = GFX_BuytheChinese
+		relative_position_id = ZHR_theraptureiscoming
+		x = 1
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_theraptureiscoming }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {	#
+			add_ideas = ZHR_manchurians1
+		}
+	}
+
+	#Focus for Individual Mind
+	focus = {
+		id = ZHR_individualmind
+		icon = GFX_Individualmind
+		relative_position_id = ZHR_religionisnotprofitable
+		x = -1
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_religionisnotprofitable }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_ideas = ZHR_firm_individualism
+		}
+	}
+
+	#Focus for The Golden Chain Of Industry
+	focus = {
+		id = ZHR_thegoldenchainofindustry
+		icon = GFX_Thegoldenchainofindustry
+		relative_position_id = ZHR_religionisnotprofitable
+		x = 0
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_individualmind 
+		}
+		prerequisite = { 
+			focus = ZHR_revolutionaryobjectivity 
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			978 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			409 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Revolutionary Objectivity
+	focus = {
+		id = ZHR_revolutionaryobjectivity
+		icon = GFX_RevolutionaryObjectivism
+		relative_position_id = ZHR_religionisnotprofitable
+		x = 1
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_religionisnotprofitable }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_research_slot = 1
+			add_war_support = 0.10
+		}
+	}
+
+	#Focus for Blind To Race
+	focus = {
+		id = ZHR_blindtorace
+		icon = GFX_Blindtotherace
+		relative_position_id = ZHR_theraptureiscoming
+		x = -1
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_theraptureiscoming }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_ideas = {
+				ZHR_blind_to_race
+			}
+		}
+	}
+
+	#Focus for Rational State
+	focus = {
+		id = ZHR_rationalstate
+		icon = GFX_Rationalstate
+		relative_position_id = ZHR_atlasshruggednomore
+		x = 0
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_atlasshruggednomore
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+    		add_popularity = { 
+				ideology = market_liberal
+				popularity = 0.15
+			}
+		}
+	}
+
+	#Focus for Everyone For Themselves
+	focus = {
+		id = ZHR_everyoneforthemselves
+		icon = GFX_Everyoneforthemselves
+		x = 62
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_nofreedomforparasites 
+		}
+		prerequisite = { 
+			focus = ZHR_thegoldenchainofindustry 
+		}
+		prerequisite = { 
+			focus = ZHR_liberatethemarket
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ZHR_firm_individualism
+				add_idea = ZHR_firm_individualism1
+			}
+			set_country_flag = zhr_politic_done
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+	#Triumvirate
+
+	#Focus for Triumvirate Unites the Centre
+	focus = {
+		id = ZHR_triumvirate_unites_the_centre
+		icon = GFX_Triumvirateunitesthecentre
+		x = 36
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_popularstate }
+		mutually_exclusive = {
+			focus = ZHR_homogeneous_socialist_government
+			focus = ZHR_we
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			has_country_leader = { name = "费奥多·丹" ruling_only = yes }
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.25
+			}
+		}
+	}
+	#Focus for TNSP - Nationalise the Land
+	focus = {
+		id = ZHR_tnsp_nationalise_the_land
+		icon = GFX_RSDRP_TNSP_Nationalisetheland
+		x = 34
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_triumvirate_unites_the_centre }
+		mutually_exclusive = { focus = ZHR_psr_socialise_the_land }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#add 6 build slots, boost rev-soc 15, pp boost 50
+			560 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			810 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			930 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.15
+			}
+			add_political_power = 50
+			set_party_name = {
+				ideology = revisionist_socialism
+				long_name = "Rossiyskaya Sotsial-Demokraticheskaya Rabochaya Partiya(Storonniki Dana)"
+				name = "RSDRP (Danists)"
+			}
+		}
+	}
+	#Focus for PSR - Socialise the Land
+	focus = {
+		id = ZHR_psr_socialise_the_land
+		icon = GFX_PSR_Socialisetheland
+		x = 38
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_triumvirate_unites_the_centre }
+		mutually_exclusive = { focus = ZHR_tnsp_nationalise_the_land }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#add 4 build slots, boost rev-soc 25, pp boost 100
+			560 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			930 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.25
+			}
+			add_political_power = 100
+			create_country_leader = {
+				name = "尼古拉·阿夫先季耶夫"
+				desc="POLITICS_DAN_DESC"
+				picture = "gfx/leaders/ZHR/Portrait_ZHR_Nikolay_Avksentiev.png"
+				expire = "1965.1.1"
+				ideology = socdem_developing_leftism_subtype
+			}
+			set_party_name = {
+				ideology = social_democrat
+				long_name = "Partiya Sotsialistov-Revolyutsionerov"
+				name = "PSR"
+			}
+		}
+	}
+	#Focus for Progressive Taxation
+	focus = {
+		id = ZHR_progressive_taxation
+		icon = GFX_Progressivetaxation
+		x = 36
+		y = 13
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_revise_the_labour_land_reform }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#LL reform 2
+			swap_ideas = {
+				remove_idea = ZHR_ll_reform
+				add_idea = ZHR_ll_reform1
+			}
+		}
+	}
+	#Focus for Cheap Credits For Industry
+	focus = {
+		id = ZHR_cheap_credits_for_industry
+		icon = GFX_Cheapcreditsforindustry
+		x = 34
+		y = 14
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_workers_social_security 
+		}
+		prerequisite = { 
+			focus = ZHR_progressive_taxation 
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#industry 3
+			swap_ideas = {
+				remove_idea = ZHR_rev_soc_industry1
+				add_idea = ZHR_rev_soc_industry2
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex size > 0 include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#Focus for Worker's Social Security
+	focus = {
+		id = ZHR_workers_social_security
+		icon = GFX_Workerssocialsecurity
+		x = 33
+		y = 13
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_promote_labour_associations }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#industry 2
+			swap_ideas = {
+				remove_idea = ZHR_rev_soc_industry
+				add_idea = ZHR_rev_soc_industry1
+			}
+		}
+	}
+	#Focus for Mandatory Rural Education
+	focus = {
+		id = ZHR_mandatory_rural_education
+		icon = GFX_Mandatoryruraleducation
+		x = 39
+		y = 13
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_abolish_taxes_for_the_poor }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#peasants and research 2
+			swap_ideas = {
+				remove_idea = ZHR_peasant_research
+				add_idea = ZHR_peasant_research1
+			}
+		}
+	}
+	#Focus for Realm Of Socialism
+	focus = {
+		id = ZHR_realm_of_socialism
+		icon = GFX_Realmofsocialism
+		x = 36
+		y = 15
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_cheap_credits_for_industry
+		}
+		prerequisite = { 
+			focus = ZHR_subsidising_peasants 
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#LL reform 3
+			swap_ideas = {
+				remove_idea = ZHR_ll_reform1
+				add_idea = ZHR_ll_reform2
+			}
+			add_research_slot = 1
+			remove_ideas = ZHR_railway_crash
+			set_country_flag = zhr_politic_done
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	#Focus for Subsidising Peasants
+	focus = {
+		id = ZHR_subsidising_peasants
+		icon = GFX_Subsidisingpeasants
+		x = 38
+		y = 14
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_progressive_taxation 
+		}
+		prerequisite = { 
+			focus = ZHR_mandatory_rural_education 
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#peaseants and research 3
+			swap_ideas = {
+				remove_idea = ZHR_peasant_research1
+				add_idea = ZHR_peasant_research2
+			}
+		}
+	}
+	#Focus for Abolish Taxes for the Poor
+	focus = {
+		id = ZHR_abolish_taxes_for_the_poor
+		icon = GFX_Abolishtaxesforthepoor
+		x = 38
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_revise_the_labour_land_reform }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#peasants and research 1
+			add_ideas = ZHR_peasant_research
+		}
+	}
+	#Focus for Promote Labour Associations
+	focus = {
+		id = ZHR_promote_labour_associations
+		icon = GFX_Promotelabourassociations
+		x = 34
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_revise_the_labour_land_reform }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#industry 1
+			add_ideas = ZHR_rev_soc_industry
+		}
+	}
+	#Focus for Revise the Labour Land Reform
+	focus = {
+		id = ZHR_revise_the_labour_land_reform
+		icon = GFX_Revisethelabourlandreform
+		x = 36
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_psr_socialise_the_land 
+			focus = ZHR_tnsp_nationalise_the_land 
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#LL reform 1
+			add_ideas = ZHR_ll_reform
+			add_political_power = -75
+			add_stability = 0.05
+		}
+	}
+
+	
+	#Focus for Roll Back Land Restrictions
+	focus = {
+		id = ZHR_roll_back_land_restrictions
+		icon = GFX_Rollbacklandrestrictions
+		x = 72
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_support_migration_to_manchuria }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			560 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			912 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			930 = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+	#Focus for The Sun Rises Bright
+	focus = {
+		id = ZHR_the_sun_rises_bright
+		icon = GFX_Thesunarisesbright
+		x = 70
+		y = 14
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_unitary_republic}
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+		
+		}
+		completion_reward = {
+			add_stability = 0.15
+			add_war_support = 0.1
+			remove_ideas = ZHR_railway_crash
+			set_country_flag = zhr_politic_done
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+	#Focus for Compulsory State Insurance
+	focus = {
+		id = ZHR_compulsory_state_insurance
+		icon = GFX_Compulsorystateinsurance
+		x = 68
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_revise_budget_spending }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#consoom idea
+			add_ideas = ZHR_lib_consoom_idea
+		}
+	}
+
+	#Focus for Reduce Customs Duties
+	focus = {
+		id = ZHR_reduce_customs_duties
+		icon = GFX_Reducecustomduties
+		x = 70
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_revise_budget_spending }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#trade idea
+			add_ideas = ZHR_lib_trade_idea
+		}
+	}
+
+	#Focus for Revise Budget Spending
+	focus = {
+		id = ZHR_revise_budget_spending
+		icon = GFX_Revisebudgetspending
+		x = 70
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_dawn_of_peoples_freedom }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#econ idea 1
+			add_ideas = ZHR_lib_economy_idea
+		}
+	}
+
+	#Focus for Support Migration to Manchuria
+	focus = {
+		id = ZHR_support_migration_to_manchuria
+		icon = GFX_Supportmigrationtomanchuria
+		x = 72
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_commissar_of_temporarily_occupied_territories }
+		prerequisite = { focus = ZHR_reduce_customs_duties }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			remove_ideas = {
+				ZHR_manchurians
+			}
+		}
+	}
+
+	#Focus for Commissar Of Temporarily Occupied Territories
+	focus = {
+		id = ZHR_commissar_of_temporarily_occupied_territories
+		icon = GFX_Commissaroftemporarilyoccupiedterritories
+		x = 72
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_revise_budget_spending }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#stability
+			#worse resistance
+			#better compliance
+			add_ideas = { ZHR_lib_compliance }
+		}
+	}
+
+	#Focus for Unitary Republic
+	focus = {
+		id = ZHR_unitary_republic
+		icon = GFX_Unitaryrepublic
+		x = 70
+		y = 13
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_credits_to_the_peasants }
+		prerequisite = { focus = ZHR_roll_back_land_restrictions }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#compliance idea 2
+			swap_ideas = {
+				remove_idea = ZHR_lib_compliance
+				add_idea = ZHR_lib_compliance1
+			}
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Broad Autonomy Of Universities
+	focus = {
+		id = ZHR_broad_autonomy_of_universities
+		icon = GFX_Broadautonomyofuniversities
+		x = 68
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_compulsory_state_insurance }
+		prerequisite = { focus = ZHR_reduce_customs_duties }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#research and research buff
+			add_research_slot = 1
+			add_ideas = {
+				ZHR_lib_research_idea
+			}
+		}
+	}
+	#Focus for Credits To The Peasants
+	focus = {
+		id = ZHR_credits_to_the_peasants
+		icon = GFX_Creditstothepeasants
+		x = 68
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_broad_autonomy_of_universities }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#economy idea 2
+			swap_ideas = {
+				remove_idea = ZHR_lib_economy_idea
+				add_idea = ZHR_lib_economy_idea1
+			}
+		}
+	}
+	#Focus for Dawn Of People's Freedom
+	focus = {
+		id = ZHR_dawn_of_peoples_freedom
+		icon = GFX_Dawnofpeoplesfreedom
+		x = 70
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_thefreedombloc }
+		mutually_exclusive = {
+			focus = ZHR_atlasshruggednomore
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		
+		available = {
+			has_country_flag = ZHR_no_rosenbaum
+		}
+		completion_reward = {
+			#liberalisation idea
+			add_ideas = {
+				ZHR_liberalisation
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						RUS = {
+							is_subject_of = ITA
+						}
+						ITA = {
+							has_completed_focus = ITA_fifteenth_point
+						}
+					}
+					every_state = {
+						limit = {
+							OR = {
+								state = 209
+								state = 858
+							}
+							is_core_of = DKB
+						}
+						ZHR = { add_state_core = PREV }
+					}
+					annex_country = {
+						target = RUS
+						transfer_troops = yes
+					}
+					ITA = {
+						add_to_faction = ZHR
+						country_event = {
+							id = italy.131
+						}
+					}
+				}
+			}
+		}
+	}
+	
+
+	#Focus for RSDRP - Chairman Kamenev
+	focus = {
+		id = ZHR_rsdrp_chairman_kamenev
+		icon = GFX_RSDRP_ChairmanKamenev
+		x = 51
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_homogeneous_socialist_government }
+		mutually_exclusive = { focus = ZHR_oln_chairwoman_spiridonova }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			has_country_leader = { name = "列夫·加米涅夫" ruling_only = yes }
+		}
+		completion_reward = {
+			add_popularity = { 
+				ideology = radical_socialist
+				popularity = 0.15
+			}
+		}
+	}
+	#Focus for OLN - Chairwoman Spiridonova
+	focus = {
+		id = ZHR_oln_chairwoman_spiridonova
+		icon = GFX_OLN_ChairwomanSpiridonova
+		x = 43
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_homogeneous_socialist_government }
+		mutually_exclusive = { focus = ZHR_rsdrp_chairman_kamenev }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			has_country_leader = { name = "玛丽亚·斯皮里多诺娃" ruling_only = yes }
+		}
+		completion_reward = {
+			hidden_effect = {
+				set_country_flag = cannot_have_conscription 
+				add_ideas = volunteer_only
+			}
+			add_popularity = { 
+				ideology = syndicalist
+				popularity = 0.15
+			}
+		}
+	}	
+	#Focus for Homogeneous Socialist Government
+	focus = {
+		id = ZHR_homogeneous_socialist_government
+		icon = GFX_Homogeneoussocialistgovernment
+		x = 47
+		y = 9
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_popularstate }
+		mutually_exclusive = {
+			focus = ZHR_we
+			focus = ZHR_triumvirate_unites_the_centre
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			OR = {
+				has_country_leader = { name = "玛丽亚·斯皮里多诺娃" ruling_only = yes }
+				has_country_leader = { name = "列夫·加米涅夫" ruling_only = yes }
+			}
+		}
+		completion_reward = {
+			add_popularity = { 
+				ideology = radical_socialist
+				popularity = 0.15
+			}
+			add_popularity = { 
+				ideology = syndicalist
+				popularity = 0.15
+			}
+		}
+	}
+	#Focus for Right to Revolt
+	focus = {
+		id = ZHR_right_to_revolt
+		icon = GFX_Righttorevolt
+		x = 41
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_oln_chairwoman_spiridonova }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#anarchism support
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.25
+			}
+			add_stability = 0.1
+		}
+	}
+	#Focus for Soviets of People not Parties
+	focus = {
+		id = ZHR_soviets_of_people_not_parties
+		icon = GFX_Sovietsofpeoplenotparties
+		x = 41
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_right_to_revolt }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#pp boost
+			#ideology defence
+			add_political_power = 50
+			add_ideas = {
+				ZHR_peoples_soviet
+			}
+		}
+	}
+	#Focus for Socialist Labour Code
+	focus = {
+		id = ZHR_socialist_labour_code
+		icon = GFX_Socialistlabourcode
+		x = 53
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_rsdrp_chairman_kamenev }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#industry idea
+			#buff libmarx
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.25
+			}
+			add_ideas = {
+				ZHR_labour_code
+			}
+		}
+	}
+	#Focus for Promote Voluntary Collectivisation
+	focus = {
+		id = ZHR_promote_voluntary_collectivisation
+		icon = GFX_Promotevoluntarycollectivisation
+		x = 53
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_socialist_labour_code }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#industry idea2
+			#buff libmarx
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.1
+			}
+		}
+	}
+	#Focus for All Power to the Soviets!
+	focus = {
+		id = ZHR_all_power_to_the_soviets
+		icon = GFX_Allpowertothesoviets
+		x = 47
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_oln_chairwoman_spiridonova 
+			focus = ZHR_rsdrp_chairman_kamenev 
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#pp boost
+			#stability
+			add_political_power = 75
+			add_stability = 0.15
+		}
+	}
+	#Focus for Destroy Capitalist Exploitation
+	focus = {
+		id = ZHR_destroy_capitalist_exploitation
+		icon = GFX_Destroycapitalistexploitation
+		x = 47
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_all_power_to_the_soviets }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#lose pp
+			#remove one civ, add one military
+			add_political_power = -50
+			978 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					industrial_complex > 1
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+		}
+	}
+	#Focus for Long Live The Republic Of Councils!
+	focus = {
+		id = ZHR_long_live_the_republic_of_councils
+		icon = GFX_Longlivetherepublicofcouncils
+		x = 51
+		y = 14
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_plan_of_industrialisation }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+		
+		}
+		completion_reward = {
+			add_war_support = 0.2
+			add_ideas = ZHR_russian_councils
+			set_country_flag = zhr_politic_done
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	#Focus for Plan Of Industrialisation
+	focus = {
+		id = ZHR_plan_of_industrialisation
+		icon = GFX_Planofindustrialisation
+		x = 51
+		y = 13
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_nationalise_the_industry }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#4 cvis
+			930 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			561 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#Focus for Likbez
+	focus = {
+		id = ZHR_likbez
+		icon = GFX_Likbez
+		x = 47
+		y = 14
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_wide_local_autonomy 
+			focus = ZHR_centralised_federation 
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#mass literacy
+			add_research_slot = 1
+			add_ideas = {
+				ZHR_likbez
+			}
+		}
+	}
+	#Focus for GOELRO
+	focus = {
+		id = ZHR_goelro
+		icon = GFX_GOELRO
+		x = 47
+		y = 15
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_likbez }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#electronics and encryption
+			add_tech_bonus = { bonus = 1 uses = 2 category = electronics }
+			remove_ideas = ZHR_railway_crash
+		}
+	}
+	#Focus for Proletarian Dictatorship
+	focus = {
+		id = ZHR_proletarian_dictatorship
+		icon = GFX_Dictatorshipoftheproletariat
+		x = 51
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_rsdrp_chairman_kamenev }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#pp and ideological idea
+			add_political_power = 50
+			add_stability = 0.1
+			add_war_support = 0.1
+			add_ideas = {
+				ZHR_prole_dict
+			}
+		}
+	}
+	#Focus for Wide Local Autonomy
+	focus = {
+		id = ZHR_wide_local_autonomy
+		icon = GFX_Widelocalautonomy
+		x = 46
+		y = 13
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_destroy_capitalist_exploitation }
+		mutually_exclusive = { focus = ZHR_centralised_federation }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#add build slots and political idea
+			930 = {
+				add_extra_state_shared_building_slots = 3
+			}
+			810 = {
+				add_extra_state_shared_building_slots = 3
+			}
+			swap_ideas = {
+				remove_idea = ZHR_manchurians
+				add_idea = ZHR_local_autonomy
+			}
+		}
+	}
+	#Focus for Nationalise The Industry
+	focus = {
+		id = ZHR_nationalise_the_industry
+		icon = GFX_Nationalisetheindustry
+		x = 51
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_proletarian_dictatorship }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#add 2 civs
+			409 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			408 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#Focus for Labour Is A Duty
+	focus = {
+		id = ZHR_labour_is_a_duty
+		icon = GFX_Labourisaduty
+		x = 43
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_oln_chairwoman_spiridonova }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#economy buff idea
+			add_ideas = {
+				ZHR_labour_duty
+			}
+			978 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			408 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#Focus for Put An End To The Kulaks
+	focus = {
+		id = ZHR_put_an_end_to_the_kulaks
+		icon = GFX_Putanendtokulaks
+		x = 43
+		y = 12
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_labour_is_a_duty }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#pop debuff and lose manpower
+			#if MO2 exists, they gain manpower
+			add_manpower = -12781
+			if = {
+				limit = {
+					MO2 = {
+						exists = yes
+					}
+				}
+				MO2 = {
+					add_manpower = 12135
+				}
+			}
+		}
+	}
+	#Focus for Long Live The Republic Of Labour!
+	focus = {
+		id = ZHR_long_live_the_republic_of_labour
+		icon = GFX_Longlivetheworkersrepublic
+		x = 43
+		y = 14
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_improve_farming_technologies }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+		
+		}
+		completion_reward = {
+			add_war_support = 0.2
+			add_ideas = ZHR_russian_syndicalism
+			set_country_flag = zhr_politic_done
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	#Focus for Improve Farming Technologies
+	focus = {
+		id = ZHR_improve_farming_technologies
+		icon = GFX_Improvefarmingtechnologies
+		x = 43
+		y = 13
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_put_an_end_to_the_kulaks }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#pop and economy buff
+			add_ideas = {
+				ZHR_oln_farms
+			}
+		}
+	}
+	#Focus for Centralised Federation
+	focus = {
+		id = ZHR_centralised_federation
+		icon = GFX_Centralisedfederation
+		x = 48
+		y = 13
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_destroy_capitalist_exploitation }
+		mutually_exclusive = { focus = ZHR_wide_local_autonomy }
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			#add infra, pol idea buff
+			912 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			810 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			930 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				remove_idea = ZHR_manchurians
+				add_idea = ZHR_federation
+			}
+		}
+	}
+	### VPERED ###
+	focus = {
+		id = ZHR_designing_freedom
+		icon = GFX_ZHR_designing_freedom
+		relative_position_id = ZHR_vperedists_in_soviet
+		x = -6
+		y = 1
+		cost = 5
+		available = {
+			has_country_flag = ZHR_bog
+		}
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_vperedists_in_soviet 
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			add_stability = 0.10
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.1
+			}
+			country_event = {
+				id = ZHR.2001
+			}
+		}
+	}
+	focus = {
+		id = ZHR_warm_hearts
+		icon = GFX_ZHR_warm_hearts
+		relative_position_id = ZHR_designing_freedom
+		x = -2
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_designing_freedom 
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = {
+				ZHR_proletkult_i
+			}
+		}
+	}
+	focus = {
+		id = ZHR_cold_minds
+		icon = GFX_ZHR_cold_minds
+		relative_position_id = ZHR_designing_freedom
+		x = 2
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_designing_freedom 
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			add_ideas = {
+				ZHR_organisational_socialism
+			}
+		}
+	}
+	focus = {
+		id = ZHR_crucible_of_socialism
+		icon = GFX_ZHR_crucible_of_socialism
+		relative_position_id = ZHR_warm_hearts
+		x = -1
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_warm_hearts 
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ZHR_proletkult_i
+				add_idea = ZHR_proletkult_1
+			}
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = ZHR_embrace_cosmism
+		icon = GFX_ZHR_embrace_cosmism
+		relative_position_id = ZHR_warm_hearts
+		x = 1
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_warm_hearts 
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			add_ideas = {
+				ZHR_biocosmism
+			}
+			country_event = {
+				id = ZHR.2002
+			}
+		}
+	}
+	focus = {
+		id = ZHR_homo_dominus
+		icon = GFX_ZHR_homo_dominus
+		relative_position_id = ZHR_embrace_cosmism
+		x = 0
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_embrace_cosmism 
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			add_ideas = {
+				ZHR_homo_dominus
+			}
+		}
+	}
+	focus = {
+		id = ZHR_physiological_collectivism
+		icon = GFX_ZHR_physiological_collectivism
+		relative_position_id = ZHR_warm_hearts
+		x = 0
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_homo_dominus
+		}
+		prerequisite = {
+			focus = ZHR_setting_up_the_clockwork
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			add_popularity = { 
+				ideology = totalist
+				popularity = 0.25
+			}
+		}
+	}
+	
+	focus = {
+		id = ZHR_the_technocratic_method
+		icon = GFX_ZHR_the_technocratic_method
+		relative_position_id = ZHR_cold_minds
+		x = -1
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_cold_minds 
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			add_research_slot = 1	
+			swap_ideas = {
+				remove_idea = ZHR_organisational_socialism
+				add_idea = ZHR_organisational_socialism_1
+			}
+		}
+	}
+	focus = {
+		id = ZHR_ministry_of_labour
+		icon = GFX_ZHR_ministry_of_labour
+		relative_position_id = ZHR_cold_minds
+		x = 1
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_cold_minds
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ZHR_tektological_planning
+		icon = GFX_ZHR_tektological_planning
+		relative_position_id = ZHR_ministry_of_labour
+		x = -1
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1000
+		}
+		prerequisite = { 
+			focus = ZHR_the_technocratic_method 
+		}
+		prerequisite = {
+			focus = ZHR_ministry_of_labour
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = ZHR_railway_crash
+			add_ideas = {
+				ZHR_tektological_plan
+			}
+		}
+	}
+	focus = {
+		id = ZHR_setting_up_the_clockwork
+		icon = GFX_ZHR_setting_up_the_clockwork
+		relative_position_id = ZHR_crucible_of_socialism
+		x = 0
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_crucible_of_socialism 
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ZHR_proletkult_1
+				add_idea = ZHR_proletkult_2
+			}
+		}
+	}
+	focus = {
+		id = ZHR_alchemy_of_blood
+		icon = GFX_ZHR_alchemy_of_blood
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = ZHR_physiological_collectivism
+		ai_will_do = {
+			factor = 1000
+		}
+		prerequisite = {
+			focus = ZHR_tektological_planning
+		}
+		prerequisite = {
+			focus = ZHR_physiological_collectivism
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = hospital_tech
+			}
+			country_event = {
+				id = ZHR.2022
+			}
+		}
+	}
+	focus = {
+		id = ZHR_creators_of_god
+		icon = GFX_ZHR_creators_of_god
+		relative_position_id = ZHR_alchemy_of_blood
+		x = 0
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_alchemy_of_blood 
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			set_country_flag = zhr_politic_done
+			add_ideas = {
+				ZHR_creators_of_god
+			}
+			country_event = ZHR.2023
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	
+
+	### Army ###
+
+	#Focus for Reforms Of RAVS
+	focus = {
+		id = ZHR_reformsofravs
+		icon = GFX_ReformsRASR
+		x = 25
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do={
+			factor = 10
+		}
+		
+		available = {
+			has_completed_focus = ZHR_amidthenations
+			
+		}
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+
+	#Focus for Discussion Of Doctrine
+	focus = {
+		id = ZHR_discussionofdoctrine
+		icon = GFX_Discussionofdoctrine
+		x = 21
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_reformsofravs }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {
+			army_experience = 50
+		}
+	}
+
+	#Focus for Go With Voenspetsy
+	focus = {
+		id = ZHR_gowithvoenspetsy
+		icon = GFX_Gowithventopensy
+		x = 19
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_discussionofdoctrine }
+		mutually_exclusive = { focus = ZHR_gowithkraskomy }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {
+		 #????? what is this supposed to do?
+		}
+	}
+
+	#Focus for Strategic Planning
+	focus = {
+		id = ZHR_strategicplanning
+		icon = GFX_Strategicplanning
+		x = 20
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_gowithvoenspetsy }
+		mutually_exclusive = { focus = ZHR_focusonfirepower }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction= 0.5
+				uses = 2
+				category = cat_grand_battle_plan
+			}
+		}
+	}
+
+	#Focus for Focus On Firepower
+	focus = {
+		id = ZHR_focusonfirepower
+		icon = GFX_Focusonfirepower
+		x = 18
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_gowithvoenspetsy }
+		mutually_exclusive = { focus = ZHR_strategicplanning }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_superior_firepower #change me to superior firepower
+			}
+		}
+	}
+
+	#Focus for Standarise Equipment
+	focus = {
+		id = ZHR_standardiseequipment
+		icon = GFX_Standardiseequipment
+		x = 20
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_strategicplanning }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+	}
+
+	#Focus for Artillery Modernisation
+	focus = {
+		id = ZHR_artillerymodernisation
+		icon = GFX_Artilleryadministration
+		x = 18
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_focusonfirepower }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = artillery
+			}
+		}
+	}
+
+	#Focus for Experience Of Previous Wars
+	focus = {
+		id = ZHR_experienceofpreviouswars
+		icon = GFX_Experienceofpreviouswars
+		x = 19
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_artillerymodernisation 
+			focus = ZHR_standardiseequipment 
+		}
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {
+			army_experience = 35
+		}
+	}
+
+	#Focus for Go With Kraskomy
+	focus = {
+		id = ZHR_gowithkraskomy
+		icon = GFX_Gowithkraskomy
+		x = 23
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_discussionofdoctrine }
+		mutually_exclusive = { focus = ZHR_gowithvoenspetsy }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {	#chief of army minister
+		
+		}
+	}
+
+	#Focus for Large Front Operations
+	focus = {
+		id = ZHR_largefrontoperations
+		icon = GFX_Largefrontoperations
+		x = 22
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_gowithkraskomy }
+		mutually_exclusive = { focus = ZHR_focusonmobility }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_mass_assault
+			}
+		}
+	}
+
+	#Focus for Focus On Mobility
+	focus = {
+		id = ZHR_focusonmobility
+		icon = GFX_Focusonmobility
+		x = 24
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_gowithkraskomy }
+		mutually_exclusive = { focus = ZHR_largefrontoperations }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_mobile_warfare #change me to mobile doc
+			}
+		}
+	}
+
+	#Focus for War On Attrition
+	focus = {
+		id = ZHR_waronattrition
+		icon = GFX_Waronattrition
+		x = 22
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_largefrontoperations }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = logistics_tech
+			}
+		}
+	}
+
+	#Focus for Tank Experiments
+	focus = {
+		id = ZHR_tankexperiments
+		icon = GFX_Tankexperiments
+		x = 24
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_focusonmobility }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+	}
+
+	#Focus for Boldness Of New Generation
+	focus = {
+		id = ZHR_boldnessofnewgeneration
+		icon = GFX_Boldnessofnewgeneration
+		x = 23
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_waronattrition 
+			focus = ZHR_tankexperiments 
+		}
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {	#conscription
+			add_ideas = ZHR_boldness
+		}
+	}
+
+	#Focus for Institure Of Revolutionary Commanders
+	focus = {
+		id = ZHR_institureofrevolutionarycommanders
+		icon = GFX_Instituteofrevolutionarycommanders
+		x = 25
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_reformsofravs }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {
+		add_ideas = ZHR_IoRC
+		}
+	}
+
+	#Focus for Discussion Of Command
+	focus = {
+		id = ZHR_discussionofcommand
+		icon = GFX_Discussionofcommand
+		x = 29
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_reformsofravs }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {	#event picking chief of army minister
+			if = {
+				limit = {
+					has_completed_focus = ZHR_justanothernumber
+				}
+				country_event = {
+					id = ZHR.15
+				}
+			}
+			else = {
+				country_event = {
+					id = ZHR.14
+				}
+			}
+		}
+	}
+
+	#Focus for Single Command Principle
+	focus = {
+		id = ZHR_singlecommandprinciple
+		icon = GFX_Singlecommandprinciple
+		x = 28
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_discussionofcommand }
+		mutually_exclusive = { focus = ZHR_preventanewrednapoleon }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {	#promote cost redction, max command power loss, command power gain
+			add_ideas = ZHR_singlecommandprinciple
+		}
+	}
+
+	#Focus for Prevent A New Red Napoleon
+	focus = {
+		id = ZHR_preventanewrednapoleon
+		icon = GFX_Preventanewrednapoleon
+		x = 30
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_discussionofcommand }
+		mutually_exclusive = { focus = ZHR_singlecommandprinciple }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {	#promote cost increase, max command increase, command power loss
+			add_ideas = ZHR_preventnewnapoleon
+		}
+	}
+
+	#Focus for Strengthen Discipline
+	focus = {
+		id = ZHR_strengthendiscipline
+		icon = GFX_Strengthendiscipline
+		x = 27
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_singlecommandprinciple }
+		mutually_exclusive = { focus = ZHR_restoresoldierscouncils }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {	#idea to buff org
+			add_ideas = ZHR_discipline
+		}
+	}
+
+	#Focus for Restore Soldiers' Councils
+	focus = {
+		id = ZHR_restoresoldierscouncils
+		icon = GFX_Restoresoldierscouncils
+		x = 29
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_singlecommandprinciple 
+			focus = ZHR_preventanewrednapoleon 
+		}
+		mutually_exclusive = { 
+			focus = ZHR_strengthendiscipline 
+		}
+		mutually_exclusive = { 
+			focus = ZHR_sendpolitrukstothearmy 
+		}
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = ZHR_soldierscouncils
+		}
+	}
+
+	#Focus for Send Politruks To The Army
+	focus = {
+		id = ZHR_sendpolitrukstothearmy
+		icon = GFX_Sendpolitrukstothearmy
+		x = 31
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_preventanewrednapoleon }
+		mutually_exclusive = { focus = ZHR_restoresoldierscouncils }
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {	#boost attack, nerf hardness/hp
+			add_ideas = ZHR_politruksinarmy
+		}
+	}
+
+	#Focus for Hail To Those Who Gave Thee Freedom
+	focus = {
+		id = ZHR_hailtothosewhogavetheefreedom
+		icon = GFX_Hailtothosewhogavethyfreedom
+		x = 29
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_strengthendiscipline 
+			focus = ZHR_restoresoldierscouncils 
+			focus = ZHR_sendpolitrukstothearmy 
+		}
+		ai_will_do={
+			factor = 10
+		}
+		completion_reward = {
+    		add_war_support = 0.15
+		}
+	}
+
+	### Navy and air ###
+
+	#Focus for Russian Revolutionary Fleet
+	focus = {
+		id = ZHR_russianrevolutionaryfleet
+		icon = GFX_Russianrevolutionaryfleet
+		x = 45
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 2
+		}
+		
+		available = {
+			has_completed_focus = ZHR_amidthenations
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = bb_tech
+				category = bc_tech
+			}
+		}
+	}
+
+	#Focus for Air Fleet Of Free Russia
+	focus = {
+		id = ZHR_airfleetoffreerussia
+		icon = GFX_Airfleetoffreerussia
+		x = 37
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+			has_completed_focus = ZHR_amidthenations
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = air_equipment
+			}
+		}
+	}
+
+	#Focus for Bearing Destruction
+	focus = {
+		id = ZHR_bearingdestruction
+		icon = GFX_Bearingdestruction
+		x = 35
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_airfleetoffreerussia }
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = medium_air
+			}
+		}
+	}
+
+	#Focus for Supporting Army
+	focus = {
+		id = ZHR_supportingarmy
+		icon = GFX_Supportingarmy
+		x = 39
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_airfleetoffreerussia }
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = CAS_bomber 
+			}
+		}
+	}
+
+	#Focus for Fleet Of Support
+	focus = {
+		id = ZHR_fleetofsupport
+		icon = GFX_Fleetsupport
+		x = 43
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_russianrevolutionaryfleet }
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = dd_tech
+			}
+		}
+	}
+
+	#Focus for Far Eastern Fleet
+	focus = {
+		id = ZHR_fareasternfleet
+		icon = GFX_Fareasternfleet
+		x = 45
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_russianrevolutionaryfleet }
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.25
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	#Focus for Expand Docks Of Vladivostok
+	focus = {
+		id = ZHR_expanddocksofvladivostok
+		icon = GFX_Expanddocksofvladivostok
+		x = 47
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_russianrevolutionaryfleet }
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+			ZHR = {
+				owns_state = 408
+			}
+		}
+		completion_reward = {
+			408 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Naval Bombers
+	focus = {
+		id = ZHR_navalbombers
+		icon = GFX_Navalbombers
+		x = 39
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_supportingarmy }
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = naval_bomber
+			}
+		}
+	}
+
+	#Focus for Expand Air Bases
+	focus = {
+		id = ZHR_expandairbases
+		icon = GFX_Expandairbases
+		x = 37
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_airfleetoffreerussia
+		}
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			761 = {
+				add_building_construction = {
+					type = air_base 
+					level = 2
+					instant_build = yes
+				}
+			}
+			560 = {
+				add_building_construction = {
+					type = air_base 
+					level = 2
+					instant_build = yes
+				}
+			}
+			978 = {
+				add_building_construction = {
+					type = air_base 
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#Focus for Supporting Fleet
+	focus = {
+		id = ZHR_supportingfleet
+		icon = GFX_Supportingfleet
+		x = 41
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ZHR_supportingarmy 
+		}
+		prerequisite = { 
+			focus = ZHR_fleetofsupport 
+		}
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 3
+				category = cv_tech
+			}
+		}
+	}
+
+	#Focus for Naval Research Centre
+	focus = {
+		id = ZHR_navalresearchcentre
+		icon = GFX_Navalresearch
+		x = 45
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_fareasternfleet }
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+
+	#Focus for Aerial Doctrines
+	focus = {
+		id = ZHR_aerialdoctrines
+		icon = GFX_Aerialdoctrines
+		x = 37
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_expandairbases }
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+
+	#Focus for Submarines On The Hunt
+	focus = {
+		id = ZHR_submarinesonthehunt
+		icon = GFX_Submarinesonhunt
+		x = 43
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_fleetofsupport }
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	### Diplomacy ###
+
+	#Focus for Amid The Nations
+	focus = {
+		id = ZHR_amidthenations
+		icon = GFX_Amidthenations
+		x = 12
+		y = 17
+		cost = 5
+		available_if_capitulated = yes
+		available = {
+			OR = {
+		    	has_completed_focus = ZHR_endthefamine
+				has_completed_focus = ZHR_permanentrevolution
+				has_completed_focus = ZHR_peoples_will
+				has_completed_focus = ZHR_naturesubmitstothefiveyearplan
+		    	has_completed_focus = ZHR_everyoneforthemselves	
+		    	has_completed_focus = ZHR_realm_of_socialism
+		    	has_completed_focus = ZHR_the_sun_rises_bright
+		    	has_completed_focus = ZHR_long_live_the_republic_of_labour
+		    	has_completed_focus = ZHR_long_live_the_republic_of_councils
+			has_completed_focus = ZHR_creators_of_god
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	#Focus for Liberation Of The Motherland
+	focus = {
+		id = ZHR_liberationofthemotherland
+		icon = GFX_Liberationofmotherland
+		x = 12
+		y = 18
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_amidthenations }
+		available = {
+
+		}
+		ai_will_do={
+			factor = 500
+		}
+		completion_reward = {
+    		custom_effect_tooltip = "We are ready to reclaim our motherland!"
+			hidden_effect = {
+				every_state = {		
+					limit = {
+						OR = {
+							is_core_of = RUS
+						}
+					}					
+					add_core_of = ZHR
+				}
+				add_state_core = 587
+				add_state_core = 406
+				add_state_core = 1208
+   				add_state_core = 402
+   				add_state_core = 590
+   				add_state_core = 1212
+    			add_state_core = 1203
+    			add_state_core = 589
+    			add_state_core = 810
+    			add_state_core = 404
+    			add_state_core = 654
+    			add_state_core = 811
+    			add_state_core = 329
+    			add_state_core = 555
+    			add_state_core = 537
+    			add_state_core = 884
+    			add_state_core = 714
+    			add_state_core = 885
+    			add_state_core = 717
+    			add_state_core = 883
+    			add_state_core = 1231
+    			add_state_core = 1265
+    			add_state_core = 238
+    			add_state_core = 245
+    			add_state_core = 1264
+    			add_state_core = 1263
+    			add_state_core = 218
+    			add_state_core = 1226
+    			add_state_core = 237
+    			add_state_core = 1266
+    			add_state_core = 234
+    			add_state_core = 1227
+    			add_state_core = 235
+    			add_state_core = 1187
+    			add_state_core = 1189
+    			add_state_core = 1191
+    			add_state_core = 232
+    			add_state_core = 1186
+    			add_state_core = 233
+    			add_state_core = 787
+    			add_state_core = 1190
+    			add_state_core = 1080
+    			add_state_core = 1188
+    			add_state_core = 1329
+    			add_state_core = 231
+    			add_state_core = 1267
+    			add_state_core = 1320
+    			add_state_core = 1082
+    			add_state_core = 1298
+    			add_state_core = 1299
+    			add_state_core = 998
+    			add_state_core = 1302
+    			add_state_core = 1303
+    			add_state_core = 1300
+    			add_state_core = 1301
+    			add_state_core = 1081
+    			add_state_core = 229
+    			add_state_core = 1304
+    			add_state_core = 990
+    			add_state_core = 230
+    			add_state_core = 190
+    			add_state_core = 1091
+    			add_state_core = 12
+    			add_state_core = 191
+    			add_state_core = 13
+    			add_state_core = 146
+    			add_state_core = 1324
+    			add_state_core = 1325
+    			add_state_core = 1326
+    			add_state_core = 147
+    			add_state_core = 420
+   				add_state_core = 418
+    			add_state_core = 804
+   				add_state_core = 584
+    			add_state_core = 1281
+    			add_state_core = 861
+    			add_state_core = 1275
+    			add_state_core = 1276
+    			add_state_core = 405
+    			add_state_core = 1277
+    			add_state_core = 1210
+    			add_state_core = 732
+    			add_state_core = 1278
+    			add_state_core = 585
+    			add_state_core = 1209
+    			add_state_core = 712
+    			add_state_core = 407
+    			add_state_core = 1196
+    			add_state_core = 1279
+    			add_state_core = 1042
+    			add_state_core = 1211
+    			add_state_core = 586
+    			add_state_core = 1294
+    			add_state_core = 1087
+    			add_state_core = 194
+    			add_state_core = 95
+    			add_state_core = 1295
+    			add_state_core = 207
+    			add_state_core = 206
+    			add_state_core = 204
+    			add_state_core = 1213
+    			add_state_core = 1000
+    			add_state_core = 1221
+    			add_state_core = 137
+    			add_state_core = 1220
+    			add_state_core = 189
+    			add_state_core = 11
+    			add_state_core = 655
+    			add_state_core = 94
+    			add_state_core = 96
+    			add_state_core = 97
+    			add_state_core = 1148
+    			add_state_core = 98
+    			add_state_core = 92
+    			add_state_core = 1088
+    			add_state_core = 90
+    			add_state_core = 87
+    			add_state_core = 10
+    			add_state_core = 1222
+    			add_state_core = 78
+    			add_state_core = 564
+    			add_state_core = 565
+    			add_state_core = 563
+    			add_state_core = 657
+    			add_state_core = 574
+    			add_state_core = 562
+    			add_state_core = 637
+    			add_state_core = 561
+   				add_state_core = 560
+    			add_state_core = 409
+    			add_state_core = 1246
+    			add_state_core = 408
+    			add_state_core = 1284
+    			add_state_core = 1282
+    			add_state_core = 228
+    			add_state_core = 227
+    			add_state_core = 1283
+    			add_state_core = 1239
+    			add_state_core = 1285
+    			add_state_core = 1234
+    			add_state_core = 1286
+    			add_state_core = 200
+    			add_state_core = 221
+    			add_state_core = 196
+    			add_state_core = 197
+    			add_state_core = 226
+    			add_state_core = 1238
+    			add_state_core = 259
+    			add_state_core = 1243
+    			add_state_core = 225
+    			add_state_core = 1237
+    			add_state_core = 1242
+    			add_state_core = 193
+    			add_state_core = 1230
+    			add_state_core = 241
+    			add_state_core = 192
+    			add_state_core = 1232
+    			add_state_core = 1233
+    			add_state_core = 791
+    			add_state_core = 1241
+    			add_state_core = 203
+    			add_state_core = 199
+    			add_state_core = 1245
+    			add_state_core = 198
+    			add_state_core = 1240
+    			add_state_core = 202
+    			add_state_core = 1244
+    			add_state_core = 201
+    			add_state_core = 1228
+    			add_state_core = 792
+    			add_state_core = 997
+    			add_state_core = 93
+    			add_state_core = 713
+    			add_state_core = 80
+    			add_state_core = 89
+    			add_state_core = 1140
+    			add_state_core = 91
+    			add_state_core = 1127
+    			add_state_core = 1126
+			}
+		}
+	}
+
+	#Focus for Yakutia Switching Sides
+	focus = {
+		id = ZHR_yakutiaswitchingsides
+		icon = GFX_Yakutiaswitchingsides
+		x = 12
+		y = 19
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_liberationofthemotherland }
+		ai_will_do={
+			factor = 50
+		}
+		bypass = {
+			TRM = {
+				exists = no
+			}
+		}
+		completion_reward = {	
+			create_wargoal = {
+				type = annex_everything
+				target = TRM
+			}
+		}
+	}
+
+	#Focus for Assassinate The Siberian General-Governor
+	focus = {
+		id = ZHR_assassinatethesiberiangeneralgovernor	#actually not an assassination anymore.
+		icon = GFX_Helpourbrothersinsiberia
+		x = 12
+		y = 20
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_yakutiaswitchingsides }
+		ai_will_do = {
+			factor = 500
+		}
+		available = {
+			OR = {
+				is_neighbor_of = SIB
+			}
+		}
+		bypass = {
+			SIB = {
+				exists = no
+			}
+		}
+		completion_reward = {	
+			create_wargoal = {
+				type = annex_everything
+				target = SIB
+			}
+		}
+	}
+
+	#Focus for Return To Central Asia
+	focus = {
+		id = ZHR_returntocentralasia
+		icon = GFX_Returntocentralasia
+		x = 10
+		y = 21
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_assassinatethesiberiangeneralgovernor }
+		ai_will_do = {
+			factor = 500
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = ALO
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = UZB
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = TRK
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = KYR
+			}
+		}
+	}
+
+	#Focus for Steppe Campaign
+	focus = {
+		id = ZHR_desertcampaign
+		icon = GFX_Desertcampaign
+		x = 14
+		y = 21
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_assassinatethesiberiangeneralgovernor }
+		ai_will_do = {
+			factor = 500
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = DKB
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = KlY
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = MTR
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = KUB
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = AZE
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = GEO
+			}
+		}
+	}
+
+	#Focus for Offensive On Moscow
+	focus = {
+		id = ZHR_offensiveonmoscow
+		icon = GFX_Offensiveonmoscow
+		x = 12
+		y = 21
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_assassinatethesiberiangeneralgovernor }
+		ai_will_do = {
+			factor = 500
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = RUS
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = TTR
+			}
+		}
+	}
+
+	#Focus for Young Russia, Hail, Victorious!
+	focus = {
+		id = ZHR_youngrussiahailvictorious
+		icon = GFX_Youngrussiahailvictorious
+		x = 12
+		y = 22
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = ZHR_offensiveonmoscow }
+		prerequisite = { focus = ZHR_returntocentralasia}
+		prerequisite = { focus = ZHR_desertcampaign }
+		available = {
+			owns_state = 219
+		}
+		ai_will_do = {
+			factor = 500
+		}
+		completion_reward = {	
+			add_war_support = 0.3
+			add_stability = 0.3
+			add_research_slot = 1
+			hidden_effect = {
+				remove_ideas = {
+					ZHR_manchurians
+					ZHR_besieged_republic
+					ZHR_safe_haven
+					ZHR_japanese_influence
+				}
+				clr_country_flag = is_russian_warlord
+				set_global_flag = united_russia
+			    save_global_event_target_as = russian_unification
+			}
+			if = {
+				limit = { has_completed_focus = ZHR_comradetrotsky }   #托老#
+				set_cosmetic_tag = "ZHR_russiansovietrepublic_vanguard_socialism"
+				news_event = news.33
+			}
+			if = {
+				limit = { has_completed_focus = ZHR_atlasshruggednomore }   #安·兰德#
+				set_cosmetic_tag = "ZHR_rand"
+				news_event = news.31
+			}
+			if = {
+				limit = { has_completed_focus = ZHR_kerenskyprevails }   #克伦斯基#
+				set_cosmetic_tag = "ZHR_russianrepublic"
+				news_event = news.35
+			}
+			if = {
+				limit = { has_completed_focus = ZHR_theherowedeserve }   #夏伯阳#
+				set_cosmetic_tag = "ZHR_freepeopleofrussia"
+				news_event = news.32
+			}
+			if = {
+				limit = {   #op-01#
+					has_completed_focus = ZHR_we
+					NOT = { has_country_flag = ZHR_bog }
+				}
+				news_event = news.34
+			}
+			if = {
+				limit = { has_completed_focus = ZHR_rsdrp_chairman_kamenev }   #加米涅夫#
+				set_cosmetic_tag = "ZHR_russiansovietrepublic_kamenev"
+				news_event = news.79
+			}
+			if = {
+				limit = { has_completed_focus = ZHR_oln_chairwoman_spiridonova }   #女武神#
+				set_cosmetic_tag = "ZHR_russiansovietrepublic_popular_socialism"
+				news_event = news.77
+			}
+			if = {
+				limit = { has_completed_focus = ZHR_triumvirate_unites_the_centre }   #三人团#
+				set_cosmetic_tag = "ZHR_russianpeoplesrepublic"
+				news_event = news.78
+			}
+			if = {
+				limit = { has_completed_focus = ZHR_dawn_of_peoples_freedom }   #米留科夫#
+				set_cosmetic_tag = "ZHR_russianrepublic"
+				news_event = news.76
+			}
+			if = {
+				limit = {    #博格丹诺夫#
+					has_completed_focus = ZHR_designing_freedom
+					has_country_flag = ZHR_bog
+				}
+				set_cosmetic_tag = ZHR_uni_accelerationism
+				country_event = {
+					days = 15
+					id = ZHR.2024
+				}
+				news_event = news.158
+			}
+			set_capital = { state = 219 }
+		}
+	}
+
+	#End of focuses 
+}

@@ -1,0 +1,291 @@
+ideas = {
+	country = {
+	
+		CHI_ideological_fanaticism_focus = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = FRA_scw_intervention_republicans_focus
+	
+	
+			modifier = {
+				war_support_factor = 0.25
+				army_morale_factor = 0.25
+				surrender_limit = 0.25
+				OUT_OF_SUPPLY_FACTOR = -0.25
+				POCKET_PENALTY = -0.25
+				justify_war_goal_time = -0.75
+			}
+		}
+	
+		CHI_political_commissars_focus = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = HUN_red_army_idea
+	
+			modifier = {
+				political_power_cost = 0.25
+				DRIFT_DEFENCE_FACTOR = 1
+				consumer_goods_factor = 0.03
+				org_loss_at_low_org_factor = -0.25
+			}
+		}
+	
+		CHI_militarism_focus = {
+			name = militarism_focus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_manpower_bonus
+	
+			modifier = {
+				conscription = 0.03
+				resistance_damage_to_garrison = -0.1 
+				justify_war_goal_time = -0.2
+			}
+		}
+	
+		CHI_military_youth_focus = {
+			name = military_youth_focus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = idea_generic_fascism_drift_2
+	
+			modifier = {
+				conscription = 0.02
+				training_time_army_factor = -0.1
+			}
+		}
+
+		CHI_why_we_fight_focus = {
+			name = why_we_fight_focus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = idea_yug_federal_defense_council
+			
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				defensive_war_stability_factor = 0.1
+			}
+		}	
+
+		CHI_foreign_expeditions_focus = {
+			name = foreign_expeditions_focus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_volunteer_expedition_bonus
+			
+			modifier = {
+				send_volunteer_divisions_required = -0.5
+				SEND_VOLUNTEER_SIZE = 5
+				lend_lease_tension = -0.80
+				SEND_VOLUNTEER_FACTOR = 0.25
+				send_volunteers_tension = -0.8
+				consumer_goods_factor = -0.05
+			}
+		}
+	
+		fight_for_dongbei = {
+			name = "为东北而战！"
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = FRA_scw_intervention_republicans_focus
+	
+			rule = {
+				can_not_declare_war = yes
+			}
+	
+			modifier = {
+				war_support_factor = 0.2
+				army_core_attack_factor = 0.2
+				army_core_defence_factor = 0.2
+				surrender_limit = 0.5
+				army_org_factor = 0.2
+				army_org_regain = 0.2
+				army_morale_factor = 0.2
+				OUT_OF_SUPPLY_FACTOR = -0.6
+			}
+		}
+	
+		new_dongbei_army = {
+			name = "奉天新军"
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_manpower_bonus
+
+			rule = {
+				can_create_collaboration_government = yes
+				can_declare_war_on_same_ideology = yes
+				can_send_volunteers = yes
+				can_puppet = yes
+				can_only_justify_war_on_threat_country = no
+			}
+	
+			modifier = {
+				conscription = 0.05
+				resistance_damage_to_garrison = -0.2
+				justify_war_goal_time = -0.5
+				army_attack_factor = 0.1
+				army_org_factor = -0.1
+				army_morale_factor = 0.1
+				army_org_regain = 0.1
+				generate_wargoal_tension = -1
+				join_faction_tension = -0.50
+				lend_lease_tension = -0.25
+				send_volunteers_tension = -0.25
+				guarantee_tension = -0.10
+			}
+		}
+	
+		the_spirit_of_commuism = {
+			name = "抗联精神"
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = idea_generic_communist_army
+	
+			modifier = {
+				army_org_factor = 0.15
+				army_core_attack_factor = 0.15
+				resistance_damage_to_garrison = -0.2
+				weekly_manpower = 3500
+				compliance_growth_on_our_occupied_states = -0.5
+				resistance_growth_on_our_occupied_states = 0.5
+				compliance_growth = 0.25
+			}
+		}
+	
+		CHI_great_and_honor_amry = {
+			name = "伟大而光荣的军队"
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = FRA_scw_intervention_republicans_focus
+	
+			rule = {
+				can_create_factions = yes
+			}
+	
+			modifier = {
+				war_support_factor = 0.5
+				org_loss_at_low_org_factor = -0.75
+				resistance_target = -0.5
+				ai_focus_aggressive_factor = 1
+				fascism_drift = 0.3
+			}
+		}
+		CHI_maoism = {
+			name = PRC_maoism
+
+			picture = generic_infantry_bonus
+
+			allowed = {}
+
+			removal_cost = -1
+			traits = {
+				revolutionary_author
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		CHI_finally_fighting_of_kmt_idea = {
+			picture = CAN_darkest_hour
+			name = CHI_last_stand_of_kmt_idea
+			allowed = { always = no }
+			modifier = {
+				breakthrough_factor = 0.25
+				army_org_factor = 0.4
+			}
+		}
+	}
+}

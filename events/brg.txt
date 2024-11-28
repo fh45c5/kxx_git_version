@@ -1,0 +1,2144 @@
+###########################
+# Counterrevolutionary Britain Events
+###########################
+# By JOCN, ANGRYCATHOLIC and AMCATH
+###########################
+
+add_namespace = brg
+
+country_event = { #monarchist flavor 
+	id =  brg.93
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.93.t
+	desc =  brg.93.d
+	picture = GFX_report_event_brg_crown
+
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.93.a
+	}
+}
+
+country_event = { #death of willy
+	id =  brg.61
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.61.t
+	desc =  brg.61.d
+	picture = GFX_report_event_brg_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.61.a
+		create_country_leader = {
+			name = "威廉六世"
+			picture = "gfx/leaders/brg/Portrait_brg_Wilhelm_III.png"
+			expire = "1965.1.1"
+			ideology = junta_subtype
+			traits = { brg_the_New_King }
+		}
+		create_country_leader = {
+			name = "威廉六世"
+			picture = "gfx/leaders/brg/Portrait_brg_Wilhelm_III.png"
+			expire = "1965.1.1"
+			ideology = authoritarian_democrat_subtype
+			traits = { brg_the_New_King }
+		}
+		create_country_leader = {
+			name = "威廉六世"
+			picture = "gfx/leaders/brg/Portrait_brg_Wilhelm_III.png"
+			expire = "1965.1.1"
+			ideology = christian_democracy_subtype
+			traits = { brg_the_New_King }
+		}
+		create_country_leader = {
+			name = "威廉六世"
+			picture = "gfx/leaders/brg/Portrait_brg_Wilhelm_III.png"
+			expire = "1965.1.1"
+			ideology = liberal_conservative_subtype
+			traits = { brg_the_New_King }
+		}
+		create_country_leader = {
+			name = "威廉六世"
+			picture = "gfx/leaders/brg/Portrait_brg_Wilhelm_III.png"
+			expire = "1965.1.1"
+			ideology = national_liberalism_subtype
+			traits = { brg_the_New_King }
+		}
+		create_country_leader = {
+			name = "威廉六世"
+			picture = "gfx/leaders/brg/Portrait_brg_Wilhelm_III.png"
+			expire = "1965.1.1"
+			ideology = socdem_radical_progressivism_subtype
+			traits = { brg_the_New_King }
+		}
+	}
+}
+
+country_event = { #monarch flavor
+	id =  brg.63
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.63.t
+	desc =  brg.63.d
+	picture = GFX_report_event_brg_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.63.a
+	}
+}
+
+country_event = { #monarchist flavor 
+	id =  brg.71
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.71.t
+	desc =  brg.71.d
+	picture = GFX_report_event_brg_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.71.a
+	}
+}
+
+country_event = { #death of tsar romanov guy
+	id =  brg.62
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.62.t
+	desc =  brg.62.d
+	picture = GFX_report_event_brg_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.62.a
+		hidden_effect = {
+			country_event = {
+				id = brg.64
+				days = 15
+			}
+			country_event = {
+				id = brg.72
+				days = 3
+			}
+		}
+		create_country_leader = {
+			name = "布鲁图斯三世"
+			picture = "gfx/leaders/brg/Portrait_brg_vlad.png"
+			expire = "1965.1.1"
+			ideology = junta_subtype
+			traits = { brg_the_New_King }
+		}
+		create_country_leader = {
+			name = "布鲁图斯三世"
+			picture = "gfx/leaders/brg/Portrait_brg_vlad.png"
+			expire = "1965.1.1"
+			ideology = authoritarian_democrat_subtype
+			traits = { brg_the_New_King }
+		}
+		create_country_leader = {
+			name = "布鲁图斯三世"
+			picture = "gfx/leaders/brg/Portrait_brg_vlad.png"
+			expire = "1965.1.1"
+			ideology = christian_democracy_subtype
+			traits = { brg_the_New_King }
+		}
+		create_country_leader = {
+			name = "布鲁图斯三世"
+			picture = "gfx/leaders/brg/Portrait_brg_vlad.png"
+			expire = "1965.1.1"
+			ideology = liberal_conservative_subtype
+			traits = { brg_the_New_King }
+		}
+		create_country_leader = {
+			name = "布鲁图斯三世"
+			picture = "gfx/leaders/brg/Portrait_brg_vlad.png"
+			expire = "1965.1.1"
+			ideology = national_liberalism_subtype
+			traits = { brg_the_New_King }
+		}
+		create_country_leader = {
+			name = "布鲁图斯三世"
+			picture = "gfx/leaders/brg/Portrait_brg_vlad.png"
+			expire = "1965.1.1"
+			ideology = socdem_radical_progressivism_subtype
+			traits = { brg_the_New_King }
+		}
+	}
+}
+
+country_event = { #monarch flavor
+	id =  brg.64
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.64.t
+	desc =  brg.64.d
+	picture = GFX_report_event_brg_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.64.a
+	}
+}
+
+country_event = { #monarchist flavor 
+	id =  brg.72
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.72.t
+	desc =  brg.72.d
+	picture = GFX_report_event_brg_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.72.a
+	}
+}
+
+country_event = { #monarchist flavor 
+	id =  brg.73
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.73.t
+	desc =  brg.73.d
+	picture = GFX_report_event_brg_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.73.a
+	}
+}
+
+country_event = { #monarch flavor
+	id =  brg.66
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.66.t
+	desc =  brg.66.d
+	picture = GFX_report_event_brg_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.66.a
+	}
+}
+
+country_event = { #monarchist flavor 
+	id =  brg.75
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.75.t
+	desc =  brg.75.d
+	picture = GFX_report_event_brg_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.75.a
+	}
+}
+
+country_event = { #monarch flavor
+	id =  brg.68
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.68.t
+	desc =  brg.68.d
+	picture = GFX_report_event_BRG_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.68.a
+	}
+}
+
+country_event = { #monarchist flavor 
+	id =  brg.78
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.78.t
+	desc =  brg.78.d
+	picture = GFX_report_event_BRG_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.78.a
+	}
+}
+
+country_event = { #monarchist flavor BUT HOLY SHIT IT'S THE FUNNY SEX NUMBER HAHAHAHAHAHAh
+	id =  brg.69
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.69.t
+	desc =  brg.69.d
+	picture = GFX_report_event_BRG_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.69.a
+	}
+}
+
+country_event = { #monarchist flavor 
+	id =  brg.80
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.80.t
+	desc =  brg.80.d
+	picture = GFX_report_event_BRG_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.80.a
+	}
+}
+
+country_event = { #monarchist flavor 
+	id =  brg.81
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.81.t
+	desc =  brg.81.d
+	picture = GFX_report_event_BRG_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.81.a
+	}
+}
+country_event = { #monarchist flavor 
+	id =  brg.82
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.82.t
+	desc =  brg.82.d
+	picture = GFX_report_event_BRG_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.82.a
+	}
+}
+
+country_event = { #monarchist flavor 
+	id =  brg.83
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.83.t
+	desc =  brg.83.d
+	picture = GFX_report_event_BRG_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.83.a
+	}
+}
+
+country_event = { #monarchist flavor 
+	id =  brg.84
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.84.t
+	desc =  brg.84.d
+	picture = GFX_report_event_BRG_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.84.a
+	}
+}
+
+country_event = { #monarchist flavor 
+	id =  brg.85
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.85.t
+	desc =  brg.85.d
+	picture = GFX_report_event_BRG_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.85.a
+	}
+}
+
+country_event = { #monarchist flavor 
+	id =  brg.86
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.86.t
+	desc =  brg.86.d
+	picture = GFX_report_event_BRG_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.86.a
+	}
+}
+
+country_event = { #monarchist flavor 
+	id =  brg.87
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.87.t
+	desc =  brg.87.d
+	picture = GFX_report_event_BRG_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.87.a
+	}
+}
+
+country_event = { #monarchist flavor 
+	id =  brg.88
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.88.t
+	desc =  brg.88.d
+	picture = GFX_report_event_BRG_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.88.a
+	}
+}
+
+country_event = { #monarchist flavor 
+	id =  brg.91
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.91.t
+	desc =  brg.91.d
+	picture = GFX_report_event_BRG_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.91.a
+	}
+}
+
+country_event = { #monarchist flavor 
+	id =  brg.70
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.70.t
+	desc =  brg.70.d
+	picture = GFX_report_event_BRG_crown
+	is_triggered_only = yes
+
+	option = {
+		name =  brg.70.a
+	}
+}
+
+country_event = { #death of john very sad
+	id =  brg.118
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.118.t
+	desc =  brg.118.d
+	picture = GFX_report_event_BRG_crown
+	fire_only_once = yes
+	trigger = {
+		tag = BRG
+		has_country_flag = BRG_ORLEANISTS_king
+		date > 1940.6.27
+	}
+	option = {
+		name =  brg.118.a
+		create_country_leader = {
+			name = "亨利六世"
+			picture = "gfx/leaders/BRG/Portrait_BRG_Henri_VI.png"
+			expire = "1965.1.1"
+			ideology = junta_subtype
+			traits = { BRG_the_New_King }
+		}
+		create_country_leader = {
+			name = "亨利六世"
+			picture = "gfx/leaders/BRG/Portrait_BRG_Henri_VI.png"
+			expire = "1965.1.1"
+			ideology = authoritarian_democrat_subtype
+			traits = { BRG_the_New_King }
+		}
+		create_country_leader = {
+			name = "亨利六世"
+			picture = "gfx/leaders/BRG/Portrait_BRG_Henri_VI.png"
+			expire = "1965.1.1"
+			ideology = christian_democracy_subtype
+			traits = { BRG_the_New_King }
+		}
+		create_country_leader = {
+			name = "亨利六世"
+			picture = "gfx/leaders/BRG/Portrait_BRG_Henri_VI.png"
+			expire = "1965.1.1"
+			ideology = liberal_conservative_subtype
+			traits = { BRG_the_New_King }
+		}
+		create_country_leader = {
+			name = "亨利六世"
+			picture = "gfx/leaders/BRG/Portrait_BRG_Henri_VI.png"
+			expire = "1965.1.1"
+			ideology = national_liberalism_subtype
+			traits = { BRG_the_New_King }
+		}
+		create_country_leader = {
+			name = "亨利六世"
+			picture = "gfx/leaders/BRG/Portrait_BRG_Henri_VI.png"
+			expire = "1965.1.1"
+			ideology = socdem_radical_progressivism_subtype
+			traits = { BRG_the_New_King }
+		}
+	}
+}
+
+country_event = { #do we keep caroll or go with michael
+	id =  brg.119
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title =  brg.119.t
+	desc =  brg.119.d
+	picture = GFX_report_event_BRG_crown
+	fire_only_once = yes
+	trigger = {
+		tag = BRG
+		has_country_flag = BRG_carol
+		ROM = {
+			has_completed_focus = ROM_michael
+		}
+
+	}
+
+	option = {
+		name =  brg.119.a #mike
+		add_political_power = -50
+		create_country_leader = {
+			name = "迈克尔一世"
+			picture = "gfx/leaders/BRG/Portrait_BRG_Michael_I.png"
+			expire = "1965.1.1"
+			ideology = junta_subtype
+			traits = { BRG_the_New_King }
+		}
+		create_country_leader = {
+			name = "迈克尔一世"
+			picture = "gfx/leaders/BRG/Portrait_BRG_Michael_I.png"
+			expire = "1965.1.1"
+			ideology = authoritarian_democrat_subtype
+			traits = { BRG_the_New_King }
+		}
+		create_country_leader = {
+			name = "迈克尔一世"
+			picture = "gfx/leaders/BRG/Portrait_BRG_Michael_I.png"
+			expire = "1965.1.1"
+			ideology = christian_democracy_subtype
+			traits = { BRG_the_New_King }
+		}
+		create_country_leader = {
+			name = "迈克尔一世"
+			picture = "gfx/leaders/BRG/Portrait_BRG_Michael_I.png"
+			expire = "1965.1.1"
+			ideology = liberal_conservative_subtype
+			traits = { BRG_the_New_King }
+		}
+		create_country_leader = {
+			name = "迈克尔一世"
+			picture = "gfx/leaders/BRG/Portrait_BRG_Michael_I.png"
+			expire = "1965.1.1"
+			ideology = national_liberalism_subtype
+			traits = { BRG_the_New_King }
+		}
+		create_country_leader = {
+			name = "迈克尔一世"
+			picture = "gfx/leaders/BRG/Portrait_BRG_Michael_I.png"
+			expire = "1965.1.1"
+			ideology = socdem_radical_progressivism_subtype
+			traits = { BRG_the_New_King }
+		}
+	}
+
+	option = {
+		name =  brg.119.b #caroll
+		add_political_power = 50
+	}
+}
+
+country_event = { #yo we got the same king
+	id = brg.124
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title = brg.124.t
+	desc = brg.124.d
+	picture = GFX_report_event_BRG_crown
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			tag = ENG
+			tag = NFA
+		}
+		is_ai = no
+		NFA = {
+			OR = {
+			has_completed_focus = NFA_the_restored_empire
+			}
+		}
+		ENG = {
+			has_country_flag = BRG_nap
+		}
+	}
+
+	option = { #annex
+		name = brg.124.a
+		set_cosmetic_tag = BRG_FROG_UK
+		if = {
+			limit = {
+				tag = NFA
+			}
+			annex_country = {
+			target = ENG
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENG
+				}
+				NFA = {
+					add_state_core = PREV
+				}
+			}
+			ENG = {
+				every_unit_leader = {
+					set_nationality = NFA
+				}
+				NFA = { transfer_technology = yes }
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			annex_country = {
+			target = NFA
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = { is_core_of = FRA }
+			add_core_of = ENG
+			}
+			every_state = {
+				limit = {
+					is_core_of = NFA
+				}
+				ENG = {
+					add_state_core = PREV
+				}
+			}
+			NFA = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+				ENG = { transfer_technology = yes }
+			}
+		}
+
+	}
+	option = { #annex
+		name = brg.124.b
+		if = {
+			limit = {
+				tag = NFA
+			}
+			annex_country = {
+			target = ENG
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENG
+				}
+				NFA = {
+					add_state_core = PREV
+				}
+			}
+			ENG = {
+				every_unit_leader = {
+					set_nationality = NFA
+				}
+				NFA = { transfer_technology = yes }
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			annex_country = {
+			target = NFA
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = NFA
+				}
+				ENG = {
+					add_state_core = PREV
+				}
+			}
+			NFA = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+				ENG = { transfer_technology = yes }
+			}
+		}
+
+	}
+	option = { #annex
+		name = brg.124.c
+		if = {
+			limit = {
+				tag = NFA
+			}
+			puppet = ENG
+			NFA = {
+			set_autonomy = {
+				target = ENG
+				autonomous_state = kx_colored_puppet
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			puppet = NFA
+			ENG = {
+			set_autonomy = {
+				target = NFA
+				autonomous_state = kx_colored_puppet
+				}
+			}
+		}
+
+	}
+	option = { #annex
+		name = brg.124.e
+		if = {
+			limit = {
+				tag = NFA
+			}
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_faction = ENG
+			}
+			if = {
+				limit = {
+					is_in_faction = yes
+					NOT = {
+						is_faction_leader = yes
+					}
+				}
+				every_country = {
+					limit = {
+						is_faction_leader = yes
+						is_in_faction_with = NFA
+					}
+					add_to_faction = ENG
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_in_faction = yes
+					}
+				}
+				create_faction = "United Commonwealth Realms"
+				add_to_faction = ENG
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_faction = NFA
+			}
+			if = {
+				limit = {
+					is_in_faction = yes
+					NOT = {
+						is_faction_leader = yes
+					}
+				}
+				every_country = {
+					limit = {
+						is_faction_leader = yes
+						is_in_faction_with = ENG
+					}
+					add_to_faction = NFA
+				}
+			}
+			if = {
+				limit = {
+					is_in_faction = yes
+					NOT = {
+						is_faction_leader = yes
+					}
+				}
+				every_country = {
+					limit = {
+						is_faction_leader = yes
+						is_in_faction_with = ENG
+					}
+					add_to_faction = NFA
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_in_faction = yes
+					}
+				}
+				create_faction = "United Commonwealth Realms"
+				add_to_faction = NFA
+			}
+		}
+
+	}
+}
+
+country_event = { #yo we got the same king
+	id = brg.125
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title = brg.125.t
+	desc = brg.125.d
+	picture = GFX_report_event_BRG_crown
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			tag = ENG
+			tag = NFA
+		}
+		is_ai = no
+		NFA = {
+			OR = {
+			has_completed_focus = NFA_return_of_the_king
+			}
+		}
+		ENG = {
+			has_country_flag = BRG_ORLEANISTS_king
+		}
+	}
+
+	option = { #annex
+		name = brg.125.a
+		set_cosmetic_tag = BRG_FROG_UK
+		if = {
+			limit = {
+				tag = NFA
+			}
+			annex_country = {
+			target = ENG
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENG
+				}
+				NFA = {
+					add_state_core = PREV
+				}
+			}
+			ENG = {
+				every_unit_leader = {
+					set_nationality = NFA
+				}
+				NFA = { transfer_technology = yes }
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			annex_country = {
+			target = NFA
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = { is_core_of = FRA }
+			add_core_of = ENG
+			}
+			every_state = {
+				limit = {
+					is_core_of = NFA
+				}
+				ENG = {
+					add_state_core = PREV
+				}
+			}
+			NFA = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+				ENG = { transfer_technology = yes }
+			}
+		}
+
+	}
+	option = { #annex
+		name = brg.125.b
+		if = {
+			limit = {
+				tag = NFA
+			}
+			annex_country = {
+			target = ENG
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENG
+				}
+				NFA = {
+					add_state_core = PREV
+				}
+			}
+			ENG = {
+				every_unit_leader = {
+					set_nationality = NFA
+				}
+				NFA = { transfer_technology = yes }
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			annex_country = {
+			target = NFA
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = NFA
+				}
+				ENG = {
+					add_state_core = PREV
+				}
+			}
+			NFA = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+				ENG = { transfer_technology = yes }
+			}
+		}
+
+	}
+	option = { #annex
+		name = brg.125.c
+		if = {
+			limit = {
+				tag = NFA
+			}
+			puppet = ENG
+			NFA = {
+			set_autonomy = {
+				target = ENG
+				autonomous_state = kx_colored_puppet
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			puppet = NFA
+			ENG = {
+			set_autonomy = {
+				target = NFA
+				autonomous_state = kx_colored_puppet
+				}
+			}
+		}
+
+	}
+	option = { #annex
+		name = brg.125.e
+		if = {
+			limit = {
+				tag = NFA
+			}
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_faction = ENG
+			}
+			if = {
+				limit = {
+					is_in_faction = yes
+					NOT = {
+						is_faction_leader = yes
+					}
+				}
+				every_country = {
+					limit = {
+						is_faction_leader = yes
+						is_in_faction_with = NFA
+					}
+					add_to_faction = ENG
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_in_faction = yes
+					}
+				}
+				create_faction = "United Commonwealth Realms"
+				add_to_faction = ENG
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_faction = NFA
+			}
+			if = {
+				limit = {
+					is_in_faction = yes
+					NOT = {
+						is_faction_leader = yes
+					}
+				}
+				every_country = {
+					limit = {
+						is_faction_leader = yes
+						is_in_faction_with = ENG
+					}
+					add_to_faction = NFA
+				}
+			}
+			if = {
+				limit = {
+					is_in_faction = yes
+					NOT = {
+						is_faction_leader = yes
+					}
+				}
+				every_country = {
+					limit = {
+						is_faction_leader = yes
+						is_in_faction_with = ENG
+					}
+					add_to_faction = NFA
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_in_faction = yes
+					}
+				}
+				create_faction = "United Commonwealth Realms"
+				add_to_faction = NFA
+			}
+		}
+
+	}
+}
+
+country_event = { #古斯塔夫 北海帝国
+	id = brg.126
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title = brg.126.t
+	desc = brg.126.d
+	picture = GFX_report_event_BRG_crown
+	fire_only_once = yes
+	trigger = {
+		NOT = { country_exists = NOR }
+		NOT = { country_exists = DEN }
+		OR = {
+			tag = ENG
+			tag = SWE
+		}
+		is_ai = no
+		SWE = {
+			OR = {
+				has_cosmetic_tag = SWE_EMP
+				has_cosmetic_tag = SCA_KALMAR				
+			}
+			OR = {
+				has_completed_focus = SWE_a_new_king
+				has_completed_focus = SWE_marlib_welfare_reforms
+			}
+		}
+		ENG = {
+			has_country_flag = BRG_BERNADOTTE
+		}
+	}
+
+	option = { #annex
+		name = brg.126.a
+		set_cosmetic_tag = BRG_BERNADOTTE_UK
+		if = {
+			limit = {
+				tag = SWE
+			}
+			annex_country = {
+			target = ENG
+			transfer_troops = yes
+			}
+			annex_country = {
+			target = NOR
+			transfer_troops = No
+			}
+			annex_country = {
+			target = DEN
+			transfer_troops = No
+			}
+			every_state = {
+				limit =  { is_core_of = NOR }
+				add_core_of = SWE
+			}
+			every_state = {
+				limit =  { is_core_of = DEN }
+				add_core_of = SWE
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENG
+				}
+				SWE = {
+					add_state_core = PREV
+				}
+			}
+			ENG = {
+				every_unit_leader = {
+					set_nationality = SWE
+				}
+				SWE = { transfer_technology = yes }
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			annex_country = {
+			target = SWE
+			transfer_troops = yes
+			}
+			annex_country = {
+			target = NOR
+			transfer_troops = No
+			}
+			annex_country = {
+			target = DEN
+			transfer_troops = No
+			}
+			every_state = {
+				limit =  { is_core_of = NOR }
+				ENG = {
+					add_state_core = PREV
+				}
+			}
+			every_state = {
+				limit =  { is_core_of = DEN }
+				ENG = {
+					add_state_core = PREV
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = SWE
+				}
+				ENG = {
+					add_state_core = PREV
+				}
+			}
+			SWE = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+				ENG = { transfer_technology = yes }
+			}
+		}
+	}
+
+	option = {
+		name =  brg.126.b 
+		add_political_power = 50
+	}
+}
+
+country_event = { #卡洛斯派卡尔皮乌斯-不列颠-西班牙哈布斯堡王国
+	id = brg.127
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title = brg.127.t
+	desc = brg.127.d
+	picture = GFX_report_event_BRG_crown
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			tag = ENG
+			tag = CAR
+		}
+		is_ai = no
+		CAR = {
+			has_completed_focus = CAR_viva_el_rey
+			has_country_leader_ideology = natpop_carlism_subtype
+		}
+		ENG = {
+			has_country_flag = BRG_austria_king
+		}
+	}
+
+	option = { #annex
+		name = brg.127.a
+		set_cosmetic_tag = BRG_austria_UK
+		if = {
+			limit = {
+				tag = CAR
+			}
+			annex_country = {
+			target = ENG
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENG
+				}
+				CAR = {
+					add_state_core = PREV
+				}
+			}
+			ENG = {
+				every_unit_leader = {
+					set_nationality = CAR
+				}
+				CAR = { transfer_technology = yes }
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			annex_country = {
+			target = CAR
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = CAR
+				}
+				ENG = {
+					add_state_core = PREV
+				}
+			}
+			CAR = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+				ENG = { transfer_technology = yes }
+			}
+		}
+	}
+
+	option = {
+		name =  brg.127.b 
+		add_political_power = 50
+	}
+}
+
+country_event = { #卢森堡大公妹妹联统-神圣罗马帝国
+	id = brg.128
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title = brg.128.t
+	desc = brg.128.d
+	picture = GFX_report_event_BRG_crown
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			tag = ENG
+			tag = LUX
+		}
+		is_ai = no
+		LUX = {
+			has_cosmetic_tag = AUS_HRE
+		}
+		ENG = {
+			has_country_flag = BRG_ADELAIDE
+		}
+	}
+
+	option = { #annex
+		name = brg.128.a
+		set_cosmetic_tag = BRG_HRE_UK
+		if = {
+			limit = {
+				tag = LUX
+			}
+			annex_country = {
+			target = ENG
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENG
+				}
+				LUX = {
+					add_state_core = PREV
+				}
+			}
+			ENG = {
+				every_unit_leader = {
+					set_nationality = LUX
+				}
+				LUX = { transfer_technology = yes }
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			annex_country = {
+			target = LUX
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = LUX
+				}
+				ENG = {
+					add_state_core = PREV
+				}
+			}
+			LUX = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+				ENG = { transfer_technology = yes }
+			}
+		}
+	}
+
+	option = {
+		name =  brg.128.b 
+		add_political_power = 50
+	}
+}
+
+country_event = { #卢森堡德意志民族运动联统-德意志民族的神圣罗马帝国
+	id = brg.129
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title = brg.129.t
+	desc = brg.129.d
+	picture = GFX_report_event_BRG_crown
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			tag = ENG
+			tag = LUX
+		}
+		is_ai = no
+		LUX = {
+			has_cosmetic_tag = LUX_GER_FAKE
+		}
+		ENG = {
+			has_country_flag = BRG_ADELAIDE
+		}
+	}
+
+	option = { #annex
+		name = brg.129.a
+		set_cosmetic_tag = BRG_HRE_UK2
+		if = {
+			limit = {
+				tag = LUX
+			}
+			annex_country = {
+			target = ENG
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENG
+				}
+				LUX = {
+					add_state_core = PREV
+				}
+			}
+			ENG = {
+				every_unit_leader = {
+					set_nationality = LUX
+				}
+				LUX = { transfer_technology = yes }
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			annex_country = {
+			target = LUX
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = LUX
+				}
+				ENG = {
+					add_state_core = PREV
+				}
+			}
+			LUX = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+				ENG = { transfer_technology = yes }
+			}
+		}
+	}
+
+	option = {
+		name =  brg.129.b 
+		add_political_power = 50
+	}
+}
+
+country_event = { #不列颠奥地利联统-不列颠-奥地利哈布斯堡王国
+	id = brg.130
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title = brg.130.t
+	desc = brg.130.d
+	picture = GFX_report_event_BRG_crown
+	fire_only_once = yes
+	trigger = {
+		NOT = { country_exists = CZE }
+		NOT = { country_exists = CRO }
+		NOT = { country_exists = HUN }
+		NOT = { country_exists = GAL }
+		OR = {
+			tag = ENG
+			tag = AUS
+		}
+		is_ai = no
+		AUS = {
+			OR = {
+				has_completed_focus = AUS_am_followup_5
+				has_completed_focus = AUS_us_looking_outwards
+			}
+		}
+		ENG = {
+			has_country_flag = BRG_karl
+		}
+	}
+
+	option = { #annex
+		name = brg.130.a
+		set_cosmetic_tag = BRG_karl_UK
+		if = {
+			limit = {
+				tag = AUS
+			}
+			annex_country = {
+			target = ENG
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENG
+				}
+				AUS = {
+					add_state_core = PREV
+				}
+			}
+			ENG = {
+				every_unit_leader = {
+					set_nationality = AUS
+				}
+				AUS = { transfer_technology = yes }
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			annex_country = {
+			target = AUS
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = AUS
+				}
+				ENG = {
+					add_state_core = PREV
+				}
+			}
+			AUS = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+				ENG = { transfer_technology = yes }
+			}
+		}
+	}
+
+	option = {
+		name =  brg.130.b 
+		add_political_power = 50
+	}
+}
+
+country_event = { #波兰 不列颠-皮亚斯特王朝
+	id = brg.131
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title = brg.131.t
+	desc = brg.131.d
+	picture = GFX_report_event_BRG_crown
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			tag = ENG
+			tag = POL
+		}
+		is_ai = no
+		POL = {
+			has_completed_focus = POL_False_Piast
+		}
+		ENG = {
+			has_country_flag = BRG_PIAST_king
+		}
+	}
+
+	option = { #annex
+		name = brg.131.a
+		set_cosmetic_tag = BRG_PIAST_UK
+		if = {
+			limit = {
+				tag = POL
+			}
+			annex_country = {
+			target = ENG
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENG
+				}
+				POL = {
+					add_state_core = PREV
+				}
+			}
+			ENG = {
+				every_unit_leader = {
+					set_nationality = POL
+				}
+				POL = { transfer_technology = yes }
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			annex_country = {
+			target = POL
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = POL
+				}
+				ENG = {
+					add_state_core = PREV
+				}
+			}
+			POL = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+				ENG = { transfer_technology = yes }
+			}
+		}
+	}
+
+	option = {
+		name =  brg.131.b 
+		add_political_power = 50
+	}
+}
+
+country_event = { #丹麦 盎格鲁-斯堪的纳维亚王国
+	id = brg.132
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title = brg.132.t
+	desc = brg.132.d
+	picture = GFX_report_event_BRG_crown
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			tag = ENG
+			tag = DEN
+		}
+		is_ai = no
+		DEN = {
+			has_cosmetic_tag = SCA_KALMAR
+		}
+		ENG = {
+			has_country_flag = BRG_GLUCKSBURG_king
+		}
+	}
+
+	option = { #annex
+		name = brg.132.a
+		set_cosmetic_tag = BRG_GLUCKSBURG_UK
+		if = {
+			limit = {
+				tag = DEN
+			}
+			annex_country = {
+			target = ENG
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENG
+				}
+				DEN = {
+					add_state_core = PREV
+				}
+			}
+			ENG = {
+				every_unit_leader = {
+					set_nationality = DEN
+				}
+				DEN = { transfer_technology = yes }
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			annex_country = {
+			target = DEN
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = DEN
+				}
+				ENG = {
+					add_state_core = PREV
+				}
+			}
+			DEN = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+				ENG = { transfer_technology = yes }
+			}
+		}
+	}
+
+	option = {
+		name =  brg.132.b 
+		add_political_power = 50
+	}
+}
+
+country_event = { #希腊 罗马帝国
+	id = brg.133
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title = brg.133.t
+	desc = brg.133.d
+	picture = GFX_report_event_BRG_crown
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			tag = ENG
+			tag = GRE
+		}
+		is_ai = no
+		GRE = {
+			has_completed_focus = GRE_restore_monarchy
+			has_country_leader_with_trait = byz_emporer
+		}
+		ENG = {
+			has_country_flag = BRG_gayreek
+		}
+	}
+
+	option = { #annex
+		name = brg.133.a
+		set_cosmetic_tag = BRG_byzantium_rome
+		if = {
+			limit = {
+				tag = GRE
+			}
+			annex_country = {
+			target = ENG
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENG
+				}
+				GRE = {
+					add_state_core = PREV
+				}
+			}
+			ENG = {
+				every_unit_leader = {
+					set_nationality = GRE
+				}
+				GRE = { transfer_technology = yes }
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			annex_country = {
+			target = GRE
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = GRE
+				}
+				ENG = {
+					add_state_core = PREV
+				}
+			}
+			GRE = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+				ENG = { transfer_technology = yes }
+			}
+			add_state_core = 460
+			add_state_core = 459
+			add_state_core = 805
+			add_state_core = 461
+			add_state_core = 290
+			add_state_core = 114
+			add_state_core = 1002
+			add_state_core = 1
+			add_state_core = 177
+			add_state_core = 179
+			add_state_core = 112
+			add_state_core = 181
+			add_state_core = 180
+			add_state_core = 171
+			add_state_core = 793
+			add_state_core = 174
+			add_state_core = 951
+			add_state_core = 170
+			add_state_core = 1316
+			add_state_core = 169
+			add_state_core = 118
+			add_state_core = 173
+			add_state_core = 795
+			add_state_core = 175
+			add_state_core = 41
+			add_state_core = 176
+			add_state_core = 172
+			add_state_core = 940
+			add_state_core = 166
+			add_state_core = 167
+			add_state_core = 168
+			add_state_core = 165
+			add_state_core = 1313
+			add_state_core = 942
+			add_state_core = 1235
+			add_state_core = 39
+			add_state_core = 759
+			add_state_core = 783
+			add_state_core = 160
+			add_state_core = 151
+			add_state_core = 761
+			add_state_core = 3
+			add_state_core = 760
+			add_state_core = 943
+			add_state_core = 764
+			add_state_core = 1005
+			add_state_core = 157
+			add_state_core = 1236
+			add_state_core = 162
+			add_state_core = 161
+			add_state_core = 1004
+			add_state_core = 159
+			add_state_core = 838
+			add_state_core = 158
+			add_state_core = 1003
+			add_state_core = 762
+			add_state_core = 21
+			add_state_core = 763
+			add_state_core = 735
+			add_state_core = 20
+			add_state_core = 32
+			add_state_core = 26
+			add_state_core = 25
+			add_state_core = 23
+			add_state_core = 19
+			add_state_core = 984
+			add_state_core = 31
+			add_state_core = 817
+			add_state_core = 22
+			add_state_core = 983
+			add_state_core = 14
+			add_state_core = 30
+			add_state_core = 33
+			add_state_core = 27
+			add_state_core = 785
+			add_state_core = 18
+			add_state_core = 16
+			add_state_core = 15
+			add_state_core = 24
+			add_state_core = 980
+			add_state_core = 17
+			add_state_core = 1315
+			add_state_core = 1317
+			add_state_core = 122
+			add_state_core = 32
+			add_state_core = 26
+			add_state_core = 25
+			add_state_core = 23
+			add_state_core = 19
+			add_state_core = 984
+			add_state_core = 31
+			add_state_core = 817
+			add_state_core = 22
+			add_state_core = 983
+			add_state_core = 14
+			add_state_core = 30
+			add_state_core = 33
+			add_state_core = 27
+			add_state_core = 785
+			add_state_core = 18
+			add_state_core = 16
+			add_state_core = 15
+			add_state_core = 24
+			add_state_core = 980
+			add_state_core = 17
+			add_state_core = 1315
+			add_state_core = 1317
+			add_state_core = 122
+			add_state_core = 123
+			add_state_core = 127
+			add_state_core = 338
+			add_state_core = 126
+			add_state_core = 125
+			add_state_core = 129
+			add_state_core = 128
+			add_state_core = 132
+			add_state_core = 130
+			add_state_core = 131
+			add_state_core = 462
+			add_state_core = 513
+			add_state_core = 346
+			add_state_core = 346
+			add_state_core = 680
+			add_state_core = 344
+			add_state_core = 677
+			add_state_core = 995
+			add_state_core = 554
+			add_state_core = 553
+			add_state_core = 455
+			add_state_core = 992
+			add_state_core = 454
+			add_state_core = 753
+			add_state_core = 446
+			add_state_core = 447
+			add_state_core = 452
+			add_state_core = 552
+			add_state_core = 1008
+			add_state_core = 457
+			add_state_core = 456
+			add_state_core = 1089
+			add_state_core = 211
+			add_state_core = 771
+			add_state_core = 77
+			add_state_core = 772
+			add_state_core = 770
+			add_state_core = 1090
+			add_state_core = 212
+			add_state_core = 48
+			add_state_core = 106
+			add_state_core = 766
+			add_state_core = 44
+			add_state_core = 841
+			add_state_core = 765
+			add_state_core = 767
+			add_state_core = 108
+			add_state_core = 107
+			add_state_core = 105
+			add_state_core = 163
+			add_state_core = 104
+			add_state_core = 103
+			add_state_core = 1143
+			add_state_core = 1270
+			add_state_core = 1206
+			add_state_core = 1144
+		    add_state_core = 1100
+		    add_state_core = 736
+		    add_state_core = 1103
+		    add_state_core = 1101
+		    add_state_core = 102
+		    add_state_core = 1104
+		    add_state_core = 1105
+			add_state_core = 2
+			add_state_core = 117
+			add_state_core = 742
+			add_state_core = 837
+			add_state_core = 1006
+			add_state_core = 156
+			add_state_core = 115
+			add_state_core = 1149
+			add_state_core = 451
+			add_state_core = 663
+			add_state_core = 450
+			add_state_core = 448
+			add_state_core = 665
+			add_state_core = 458
+			add_state_core = 116
+		}
+	}
+
+	option = {
+		name =  brg.133.b 
+		add_political_power = 50
+	}
+}
+
+country_event = { #西班牙胡安 不列颠-西班牙联盟
+	id = brg.134
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title = brg.134.t
+	desc = brg.134.d
+	picture = GFX_report_event_BRG_crown
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			tag = ENG
+			tag = SPR
+		}
+		is_ai = no
+		SPR = {
+			has_country_flag = SPR_King_Juan
+			OR = {
+				has_completed_focus = SPR_stable_spain
+				has_completed_focus = SPR_a_free_spain
+			}
+		}
+		ENG = {
+			has_country_flag = BRG_SPAIN_king
+		}
+	}
+
+	option = { #annex
+		name = brg.134.a
+		set_cosmetic_tag = BRG_SPAIN_UK
+		if = {
+			limit = {
+				tag = SPR
+			}
+			annex_country = {
+			target = ENG
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENG
+				}
+				SPR = {
+					add_state_core = PREV
+				}
+			}
+			ENG = {
+				every_unit_leader = {
+					set_nationality = SPR
+				}
+				SPR = { transfer_technology = yes }
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			annex_country = {
+			target = SPR
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = SPR
+				}
+				ENG = {
+					add_state_core = PREV
+				}
+			}
+			SPR = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+				ENG = { transfer_technology = yes }
+			}
+			create_country_leader = {
+			name = "胡安三世"
+			picture = "gfx/leaders/brg/Portrait_BRG_Juan_III.png"
+			expire = "1965.1.1"
+			ideology = junta_subtype
+			traits = { brg_the_New_King }
+			}
+			create_country_leader = {
+			name = "胡安三世"
+			picture = "gfx/leaders/brg/Portrait_BRG_Juan_III.png"
+			expire = "1965.1.1"
+			ideology = authoritarian_democrat_subtype
+			traits = { brg_the_New_King }
+			}
+			create_country_leader = {
+			name = "胡安三世"
+			picture = "gfx/leaders/brg/Portrait_BRG_Juan_III.png"
+			expire = "1965.1.1"
+			ideology = christian_democracy_subtype
+			traits = { brg_the_New_King }
+			}
+			create_country_leader = {
+			name = "胡安三世"
+			picture = "gfx/leaders/brg/Portrait_BRG_Juan_III.png"
+			expire = "1965.1.1"
+			ideology = liberal_conservative_subtype
+			traits = { brg_the_New_King }
+			}
+			create_country_leader = {
+			name = "胡安三世"
+			picture = "gfx/leaders/brg/Portrait_BRG_Juan_III.png"
+			expire = "1965.1.1"
+			ideology = national_liberalism_subtype
+			traits = { brg_the_New_King }
+			}
+			create_country_leader = {
+			name = "胡安三世"
+			picture = "gfx/leaders/brg/Portrait_BRG_Juan_III.png"
+			expire = "1965.1.1"
+			ideology = socdem_radical_progressivism_subtype
+			traits = { brg_the_New_King }
+			}
+		}
+	}
+
+	option = {
+		name =  brg.134.b 
+		add_political_power = 50
+	}
+}
+
+country_event = { #西班牙海梅 波旁帝国
+	id = brg.135
+	immediate = { log = "[GetDateText]: [Root.GetName]: event whiteruthenia.1003" }
+	title = brg.135.t
+	desc = brg.135.d
+	picture = GFX_report_event_BRG_crown
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			tag = ENG
+			tag = SPR
+		}
+		is_ai = no
+		SPR = {
+			has_country_flag = SPR_King_Jaime
+			has_cosmetic_tag = SPR_BOURBON
+		}
+		ENG = {
+			has_country_flag = BRG_SPAIN_king
+		}
+	}
+
+	option = { #annex
+		name = brg.135.a
+		set_cosmetic_tag = BRG_SPAIN_UK2
+		if = {
+			limit = {
+				tag = SPR
+			}
+			annex_country = {
+			target = ENG
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENG
+				}
+				SPR = {
+					add_state_core = PREV
+				}
+			}
+			ENG = {
+				every_unit_leader = {
+					set_nationality = SPR
+				}
+				SPR = { transfer_technology = yes }
+			}
+		}
+		if = {
+			limit = {
+				tag = ENG
+			}
+			annex_country = {
+			target = SPR
+			transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = SPR
+				}
+				ENG = {
+					add_state_core = PREV
+				}
+			}
+			SPR = {
+				every_unit_leader = {
+					set_nationality = ENG
+				}
+				ENG = { transfer_technology = yes }
+			}
+			create_country_leader = {
+			name = "亨利六世"
+			picture = "gfx/leaders/brg/Portrait_BRG_Jaime_I.png"
+			expire = "1965.1.1"
+			ideology = junta_subtype
+			traits = { brg_the_New_King }
+			}
+			create_country_leader = {
+			name = "亨利六世"
+			picture = "gfx/leaders/brg/Portrait_BRG_Jaime_I.png"
+			expire = "1965.1.1"
+			ideology = authoritarian_democrat_subtype
+			traits = { brg_the_New_King }
+			}
+			create_country_leader = {
+			name = "亨利六世"
+			picture = "gfx/leaders/brg/Portrait_BRG_Jaime_I.png"
+			expire = "1965.1.1"
+			ideology = christian_democracy_subtype
+			traits = { brg_the_New_King }
+			}
+			create_country_leader = {
+			name = "亨利六世"
+			picture = "gfx/leaders/brg/Portrait_BRG_Jaime_I.png"
+			expire = "1965.1.1"
+			ideology = liberal_conservative_subtype
+			traits = { brg_the_New_King }
+			}
+			create_country_leader = {
+			name = "亨利六世"
+			picture = "gfx/leaders/brg/Portrait_BRG_Jaime_I.png"
+			expire = "1965.1.1"
+			ideology = national_liberalism_subtype
+			traits = { brg_the_New_King }
+			}
+			create_country_leader = {
+			name = "亨利六世"
+			picture = "gfx/leaders/brg/Portrait_BRG_Jaime_I.png"
+			expire = "1965.1.1"
+			ideology = socdem_radical_progressivism_subtype
+			traits = { brg_the_New_King }
+			}
+		}
+	}
+
+	option = {
+		name =  brg.135.b 
+		add_political_power = 50
+	}
+}

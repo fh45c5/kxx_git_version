@@ -1,0 +1,13 @@
+scripted_gui = {
+	LKMT_gui = {
+		context_type = decision_category
+		window_name = "CHI_parliament_gui_container"
+		properties = {
+			
+			CHI_degree_of_party_radicalism_progress = {
+				frame = CHI_radicalism_var
+			}
+
+		}	
+	} 
+}

@@ -1,0 +1,375 @@
+﻿add_namespace = red_qing
+
+
+country_event = {
+	id = red_qing.5
+	title = 后续步骤
+	desc = 我们计划为溥仪提供任何成年人都应该具备的基本生活技能，这已经足够顺利了。随着他的仆人被忠于政府的人取代，溥仪被他的新仆人强迫学习以前的仆人会为他做的基本任务。当然，他们不可能在短短一年内打破溥仪一生养成的习惯。这很可能是溥仪要成为一个真正自给自足的人，他需要面对的一场终生的战斗。虽然这个自给自足的计划将继续下去，但现在是时候继续我们为溥仪进行的下一步康复计划了，因为他抱怨他现在必须做的工作很困难。我们会让溥仪面对自己过去懦弱行为的后果，把被溥仪行为冤枉的人带到他面前。
+	picture = "-"
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+	name = 至少他现在可以系鞋带了。
+		hidden_effect = {
+		country_event = {
+			id = red_qing.6
+			days = 180
+			}
+		}
+	}
+}
+country_event = {
+	id = red_qing.6
+	title = 后果
+	desc = 溥仪不再抱怨自己刷牙的辛苦。事实上，他一点也不抱怨。他认为他没有权利这样做。不是在看到他的行为帮助造成的土地上的伤疤之后。今年，我们带溥仪到乡下许多不同的地方，听听生活在“他”领地下的人们的故事。也许对溥仪影响最大的时刻是，我们邀请了一位在直隶集团统治下一家几乎挨饿的农妇与溥仪交谈。当溥仪请求原谅时，她说“现在都结束了，我们不要谈论它”，这让溥仪泪流满面。随着越来越多的以溥仪的名义延续的恐怖被界内的人揭露给他，他越来越感到内疚，甚至在最低谷时考虑过自杀。这使得改革溥仪变得容易得多，因为他现在同意他自己做错了，应该面对后果。
+	picture = "-"
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+	name = 也许他真的可以被改造。
+	hidden_effect = {
+		country_event = {
+			id = red_qing.2
+			days = 180
+			}
+		}
+	}
+}
+country_event = {
+
+		id = red_qing.2
+		title = 再教育的成功
+		desc = 我国政府刚上台时，溥仪是一个可怜懦弱的人，他为了奢侈的生活方式而与直隶集团勾结。他太可怜了，没有仆人的帮助，他甚至无法完成基本任务。这种愿意与任何人合作以保持奢侈生活的意愿使我们能够如此轻松地巩固我们的统治，因为溥仪同意了我们让他成为国家傀儡的计划。他当时不知道的是，我们无意保持我们这边的讨价还价。因此，我们的再教育计划开始了。虽然一路上有困难，但当溥仪与他的行为伤害过的人面对面时，他隐藏的人性一面就闪耀出来了。正如溥仪所描述的那样，“我面对的是一股不可抗拒的力量，它不会休息，直到它发现一切”。现在，在看到这么多之后，溥仪显然已经改过自新，并试图弥补他对中国人民造成的所有伤害。
+		picture = "-"
+		
+		fire_only_once = yes
+
+		is_triggered_only = yes
+
+		option = {
+		name = 很好
+		}
+		
+		
+		option = {
+		name = 既然他可以被信任，也许应该给他多一点权力。
+		if = {
+		limit = {
+		has_country_leader_ideology = socdem_paternal_socialism_subtype
+		}
+		set_country_leader_ideology = socdem_mladorossi_subtype
+		}
+		
+		else_if = {
+		limit = {
+		has_country_leader_ideology = authdem_agrarianism_subtype
+		}
+		set_country_leader_ideology = Authdem_monsoc_subtype
+		}
+		else = {
+		set_country_leader_ideology = monsoc_subtype
+		}
+
+		}
+	}
+
+country_event = {
+	id = red_qing.3 
+	immediate = { log = "[GetDateText]: [Root.GetName]: event red_qing.3" }
+	
+	
+	title = 中国社会党的成立
+	desc = 今天，新帝国宪政会，中国青年党，工团党联合宣布重组，建立中国社会党。这三个组织因最近之间的合作以及由于帝国在不久的将来将不得不应对的许多挑战而需要更大团结的必要性作为合并的原因，同时还邀请其他进步组织与政党参加第一次党代会。在代表大会上，与会代表提出了一个尖锐的问题，我们的意识形态是什么？
+	picture = "-"
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { 
+	name = 保持广泛的左翼民族主义立场，以避免疏远任何派别。
+	set_politics = {
+				ruling_party = radical_socialist
+				elections_allowed = no
+			}
+	create_country_leader = {
+			name = "溥仪"
+			desc = "POLITICS_PUYI_RESTORED_DESC"
+			picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+			expire = "1965.1.1"
+			ideology = left_nationalism_subtype
+	}
+	set_temp_variable = { coalition_partner_var = token:social_liberal }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:totalist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:syndicalist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:social_democrat }
+	add_to_coalition = yes
+}
+option = { 
+	name = 接受温和化的三民主义。
+	set_politics = {
+				ruling_party = radical_socialist
+				elections_allowed = no
+			}
+	create_country_leader = {
+			name = "溥仪"
+			desc = "POLITICS_PUYI_RESTORED_DESC"
+			picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+			expire = "1965.1.1"
+			ideology = radsoc_tridemism_subtype
+	}
+	set_temp_variable = { coalition_partner_var = token:social_liberal }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:totalist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:syndicalist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:social_democrat }
+	add_to_coalition = yes
+}
+
+	option = { #if fidel ever happens he's gonna be a syndie 
+	name = 拥抱中央化的工团主义。
+	set_politics = {
+				ruling_party = syndicalist
+				elections_allowed = no
+			}
+	create_country_leader = {
+			name = "溥仪"
+			desc = "POLITICS_PUYI_RESTORED_DESC"
+			picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+			expire = "1965.1.1"
+			ideology = centralized_syndicalism_subtype
+	}
+	set_temp_variable = { coalition_partner_var = token:social_liberal }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:radical_socialist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:totalist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:social_democrat }
+	add_to_coalition = yes
+}
+option = { #if fidel ever happens he's gonna be a syndie 
+	name = 拥抱更加分权与民主的工团主义。
+	set_politics = {
+				ruling_party = syndicalist
+				elections_allowed = no
+			}
+	create_country_leader = {
+			name = "溥仪"
+			desc = "POLITICS_PUYI_RESTORED_DESC"
+			picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+			expire = "1965.1.1"
+			ideology = democratic_syndicalism_subtype
+	}
+	set_temp_variable = { coalition_partner_var = token:social_liberal }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:radical_socialist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:totalist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:social_democrat }
+	add_to_coalition = yes
+}
+
+	option = { #Sun Yat Sen spotted rolling in his grave
+	name = 接纳青年俄罗斯联盟的思想。
+	set_politics = {
+				ruling_party = totalist
+				elections_allowed = no
+			}
+	create_country_leader = {
+			name = "溥仪"
+			desc = "POLITICS_PUYI_RESTORED_DESC"
+			picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+			expire = "1965.1.1"
+			ideology = mladorossi_subtype
+	}
+	set_temp_variable = { coalition_partner_var = token:social_liberal }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:radical_socialist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:syndicalist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:social_democrat }
+	add_to_coalition = yes
+	}
+	option = { #Sun Yat Sen spotted rolling in his grave
+	name = 重拾康有为的大同思想。
+	set_politics = {
+				ruling_party = totalist
+				elections_allowed = no
+			}
+	create_country_leader = {
+			name = "溥仪"
+			desc = "POLITICS_PUYI_RESTORED_DESC"
+			picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+			expire = "1965.1.1"
+			ideology = tot_datong_shu_subtype
+	}
+	set_temp_variable = { coalition_partner_var = token:social_liberal }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:radical_socialist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:syndicalist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:social_democrat }
+	add_to_coalition = yes
+	}
+	option = { #Sun Yat Sen spotted rolling in his grave
+	name = 由于对中国具体情况的理解，在为现代化而奋斗的同时，拥抱三民主义。
+	set_politics = {
+				ruling_party = totalist
+				elections_allowed = no
+			}
+	create_country_leader = {
+			name = "溥仪"
+			desc = "POLITICS_PUYI_RESTORED_DESC"
+			picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+			expire = "1965.1.1"
+			ideology = tot_tridemism_subtype
+	}
+	set_temp_variable = { coalition_partner_var = token:social_liberal }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:radical_socialist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:syndicalist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:social_democrat }
+	add_to_coalition = yes
+	}
+	option = { #Sun Yat Sen spotted rolling in his grave
+	name = 重拾康有为的大同思想。
+	set_politics = {
+				ruling_party = totalist
+				elections_allowed = no
+			}
+	create_country_leader = {
+			name = "溥仪"
+			desc = "POLITICS_PUYI_RESTORED_DESC"
+			picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+			expire = "1965.1.1"
+			ideology = tot_datong_shu_subtype
+	}
+	set_temp_variable = { coalition_partner_var = token:social_liberal }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:radical_socialist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:syndicalist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:social_democrat }
+	add_to_coalition = yes
+	}
+	option = { 
+	name = 现在就不错。
+	
+	set_temp_variable = { coalition_partner_var = token:social_liberal }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:totalist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:syndicalist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:social_democrat }
+	add_to_coalition = yes
+	}
+}
+
+country_event = {
+	id = red_qing.4 #Conservative socialist one struggle
+	immediate = { log = "[GetDateText]: [Root.GetName]: event qiefocus.16"}
+	
+	title = NCERA的未来
+	desc = 随着NCERA重新关注普通农民的生活，NCERA和青年党之间自然爆发了冲突。随着我们失去盟友，部长们建议我们接触任何愿意与我们合作的团体，以巩固我们的立场。
+	picture = "-"
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #for class unity
+	name = 采取更加保守主义的立场。
+	set_country_flag = soc_dems_are_socialists
+	set_politics = {
+				ruling_party = social_democrat
+				elections_allowed = no
+			}
+	create_country_leader = {
+			name = "溥仪"
+			desc = "POLITICS_PUYI_RESTORED_DESC"
+			picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+			expire = "1965.1.1"
+			ideology = socdem_paternal_socialism_subtype
+	}
+	set_temp_variable = { coalition_partner_var = token:radical_socialist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:social_conservative }
+	add_to_coalition = yes
+}
+option = { #for class unity
+	name = 试着接触中国工团党。
+	set_country_flag = soc_dems_are_socialists
+	set_politics = {
+				ruling_party = social_democrat
+				elections_allowed = no
+			}
+	create_country_leader = {
+			name = "溥仪"
+			desc = "POLITICS_PUYI_RESTORED_DESC"
+			picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+			expire = "1965.1.1"
+			ideology = syndie_social_democrat_subtype
+	}
+	set_temp_variable = { coalition_partner_var = token:radical_socialist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:syndicalist }
+	add_to_coalition = yes
+}
+	option = { #for the backwards peasants 
+	name = 在贫困人口中兴盛的许多宗教派别与我们有着相似的目标。
+	set_politics = {
+				ruling_party = radical_socialist
+				elections_allowed = no
+			}
+	create_country_leader = {
+			name = "溥仪"
+			desc = "POLITICS_PUYI_RESTORED_DESC"
+			picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+			expire = "1965.1.1"
+			ideology = radsoc_popular_patriotism_subtype
+	}
+	
+	set_temp_variable = { coalition_partner_var = token:national_populist }
+	add_to_coalition = yes
+	set_temp_variable = { coalition_partner_var = token:social_democrat }
+	add_to_coalition = yes
+}
+	option = { #for me only 
+	name = 我们不需要通过与他人合作来淡化我们的目标。农民会支持我们。
+	create_country_leader = {
+			name = "溥仪"
+			desc = "POLITICS_PUYI_RESTORED_DESC"
+			picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+			expire = "1965.1.1"
+			ideology = agrarian_socialism_subtype
+	}
+	set_temp_variable = { coalition_partner_var = token:social_democrat }
+	add_to_coalition = yes
+}
+option = { #for me only 
+	name = 接纳俄罗斯的民粹主义。
+	create_country_leader = {
+			name = "溥仪"
+			desc = "POLITICS_PUYI_RESTORED_DESC"
+			picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Uniform.png"
+			expire = "1965.1.1"
+			ideology = narodism_subtype
+	}
+	set_temp_variable = { coalition_partner_var = token:social_democrat }
+	add_to_coalition = yes
+}
+}
+

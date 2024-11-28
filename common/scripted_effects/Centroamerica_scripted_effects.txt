@@ -1,0 +1,647 @@
+CA_SET_UFC_VAR = {
+  set_variable = {
+    UFC_effect11 = UFC_power
+  }
+  multiply_variable = {
+    var = UFC_effect11
+    value = -0.004
+  }
+  set_variable = {
+    UFC_effect12 = UFC_power
+  }
+  multiply_variable = {
+    var = UFC_effect12
+    value = 0.003
+  }
+  set_variable = {
+    UFC_effect13 = UFC_power
+  }
+  multiply_variable = {
+    var = UFC_effect13
+    value = -0.001
+  }
+  set_variable = {
+    UFC_effect14 = UFC_power
+  }
+  multiply_variable = {
+    var = UFC_effect14
+    value = -0.006
+  }
+  set_variable = {
+    UFC_effect1 = UFC_power
+  }
+  multiply_variable = {
+    var = UFC_effect1
+    value = 0.004
+  }
+  set_variable = {
+    UFC_effect2 = UFC_power
+  }
+  multiply_variable = {
+    var = UFC_effect2
+    value = 0.3
+  }
+  set_variable = {
+    UFC_effect3 = UFC_power
+  }
+  multiply_variable = {
+    var = UFC_effect3
+    value = 0.1
+  }
+  set_variable = {
+    UFC_effect4 = UFC_power
+  }
+  multiply_variable = {
+    var = UFC_effect4
+    value = 0.6
+  }
+}
+CEN_add_D_minister = {
+  clr_country_flag = Emiliano_Chamorro_Vargas_dead
+  clr_country_flag = Juan_Manuel_Galvez_dead
+}
+CEN_add_M_minister = {
+  clr_country_flag = Maximiliano_Hernandez_Martinez_dead
+  clr_country_flag = Osmin_Aguirre_y_Salinas_dead
+  clr_country_flag = Andres_Ignacio_Menendez_dead
+  clr_country_flag = Jose_Leon_Castro_dead
+  clr_country_flag = Federico_Davidson_Blanco_dead
+  clr_country_flag = Jorge_Ubico_dead
+}
+CEN_add_L_minister = {
+  clr_country_flag = Augusto_Sandino_dead
+  clr_country_flag = Yank_Levy_dead
+  clr_country_flag = Agustin_Farabundo_Marti_Rodriguez_dead
+  clr_country_flag = Feliciano_Ama_dead
+  clr_country_flag = Juan_Jose_Arevalo_dea
+}
+CEN_remove_D_minister = {
+  set_country_flag = Emiliano_Chamorro_Vargas_dead
+  set_country_flag = Juan_Manuel_Galvez_dead
+}
+CEN_remove_M_minister = {
+  set_country_flag = Maximiliano_Hernandez_Martinez_dead
+  set_country_flag = Osmin_Aguirre_y_Salinas_dead
+  set_country_flag = Andres_Ignacio_Menendez_dead
+  set_country_flag = Jose_Leon_Castro_dead
+  set_country_flag = Federico_Davidson_Blanco_dead
+  set_country_flag = Jorge_Ubico_dead
+}
+CEN_remove_L_minister = {
+  set_country_flag = Augusto_Sandino_dead
+  set_country_flag = Yank_Levy_dead
+  set_country_flag = Agustin_Farabundo_Marti_Rodriguez_dead
+  set_country_flag = Feliciano_Ama_dead
+  set_country_flag = Juan_Jose_Arevalo_dea
+}
+CEN_setleaders = {
+  hidden_effect = {
+    GUA = {
+      every_unit_leader = {
+        set_nationality = NSW
+      }
+    }
+    HON = {
+      every_unit_leader = {
+        set_nationality = NSW
+      }
+    }
+    ELS = {
+      every_unit_leader = {
+        set_nationality = NSW
+      }
+    }
+    NIC = {
+      every_unit_leader = {
+        set_nationality = NSW
+      }
+    }
+    CEN = {
+      every_unit_leader = {
+        set_nationality = NSW
+      }
+    }
+  }
+  if = {
+    limit = {
+      has_socialist_government = yes
+    }
+    CEN = {
+      custom_effect_tooltip = CEN_socgeneraltransfer_tt
+    }
+    hidden_effect = {
+      NSW = {
+        every_unit_leader = {
+          limit = {
+            OR = {
+              has_id = 6971
+              has_id = 16220
+              has_id = 16230
+              has_id = 1594
+              has_id = 1595
+              has_id = 1600
+              has_id = 1601
+              has_id = 1602
+            }
+          }
+          set_nationality = CEN
+        }
+        if = {
+          limit = {
+            ELS = {
+              has_completed_focus = ELS_revolutionary_ideals
+              NOT = {
+                has_country_flag = ELS_labour_victory_flag
+                has_country_flag = ELS_national_democratic_victory_flag
+              }
+            }
+            has_unit_leader = 1598
+          }
+          random_unit_leader = {
+            limit = {
+              has_id = 1598
+            }
+            set_nationality = CEN
+          }
+        }
+      }
+      CEN = {
+        CEN_remove_D_minister = yes
+        CEN_remove_M_minister = yes
+        CEN_add_L_minister = yes
+      }
+    }
+  }
+  else_if = {
+    limit = {
+      has_elected_government = yes
+    }
+    CEN = {
+      custom_effect_tooltip = CEN_demgeneraltransfer_tt
+    }
+    hidden_effect = {
+      NSW = {
+        every_unit_leader = {
+          limit = {
+            OR = {
+              has_id = 6968
+              has_id = 6970
+              has_id = 16200
+              has_id = 16220
+              has_id = 16230
+              has_id = 1604
+              has_id = 1605
+            }
+          }
+          set_nationality = CEN
+        }
+        if = {
+          limit = {
+            has_unit_leader = 1596
+            ELS = {
+              has_country_flag = ELS_menendezdem
+            }
+          }
+          random_unit_leader = {
+            limit = {
+              has_id = 1596
+            }
+            set_nationality = CEN
+          }
+        }
+        if = {
+          limit = {
+            ELS = {
+              OR = {
+                has_country_flag = ELS_labour_victory_flag
+                has_country_flag = ELS_national_democratic_victory_flag
+              }
+              NOT = {
+                has_completed_focus = ELS_revolutionary_ideals
+              }
+            }
+            has_unit_leader = 1598
+          }
+          random_unit_leader = {
+            limit = {
+              has_id = 1598
+            }
+            set_nationality = CEN
+          }
+        }
+      }
+      CEN = {
+        CEN_add_D_minister = yes
+        CEN_remove_M_minister = yes
+        CEN_remove_L_minister = yes
+      }
+    }
+  }
+  else_if = {
+    limit = {
+      has_authoritarian_government = yes
+    }
+    CEN = {
+      custom_effect_tooltip = CEN_milgeneraltransfer_tt
+    }
+    hidden_effect = {
+      NSW = {
+        every_unit_leader = {
+          limit = {
+            OR = {
+              has_id = 6967
+              has_id = 6969
+              has_id = 1603
+              has_id = 1606
+              has_id = 16060
+              has_id = 16210
+              has_id = 16220
+              has_id = 16230
+              has_id = 1596
+              has_id = 1597
+              has_id = 1599
+            }
+          }
+          set_nationality = CEN
+        }
+        if = {
+          limit = {
+            has_unit_leader = 1598
+            ELS = {
+              NOT = {
+                has_completed_focus = ELS_revolutionary_ideals
+                has_country_flag = ELS_labour_victory_flag
+                has_country_flag = ELS_national_democratic_victory_flag
+              }
+            }
+          }
+          random_unit_leader = {
+            limit = {
+              has_id = 1598
+            }
+            set_nationality = CEN
+          }
+        }
+      }
+      CEN = {
+        CEN_remove_D_minister = yes
+        CEN_add_M_minister = yes
+        CEN_remove_L_minister = yes
+      }
+    }
+  }
+}
+GUA_setleaders = {
+  hidden_effect = {
+    GUA = {
+      every_unit_leader = {
+        set_nationality = NSW
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          country_exists = CEN
+        }
+      }
+      CEN = {
+        every_unit_leader = {
+          set_nationality = NSW
+        }
+      }
+    }
+    if = {
+      limit = {
+        has_socialist_government = yes
+      }
+      NSW = {
+        random_unit_leader = {
+          limit = {
+            has_id = 6971
+          }
+          set_nationality = GUA
+        }
+      }
+    }
+    else_if = {
+      limit = {
+        has_elected_government = yes
+      }
+      NSW = {
+        every_unit_leader = {
+          limit = {
+            OR = {
+              has_id = 6968
+              has_id = 6970
+            }
+          }
+          set_nationality = GUA
+        }
+      }
+    }
+    else_if = {
+      limit = {
+        has_authoritarian_government = yes
+      }
+      NSW = {
+        every_unit_leader = {
+          limit = {
+            OR = {
+              has_id = 6967
+              has_id = 6969
+            }
+          }
+          set_nationality = GUA
+        }
+      }
+      NIC = {
+        create_country_leader = {
+          name = "豪尔赫·乌维科·卡斯塔涅达"  # Jorge Ubico Castañeda
+          picture = "gfx/leaders/GUA/Portrait_GUA_Jorge_Ubico_Casteneda.png"
+          expire = "1.1.1"
+          ideology = junta_subtype
+        }
+      }
+    }
+  }
+}
+HON_setleaders = {
+  hidden_effect = {
+    HON = {
+      every_unit_leader = {
+        set_nationality = NSW
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          country_exists = CEN
+        }
+      }
+      CEN = {
+        every_unit_leader = {
+          set_nationality = NSW
+        }
+      }
+    }
+    if = {
+      limit = {
+        has_socialist_government = yes
+      }
+      NSW = {
+        every_unit_leader = {
+          limit = {
+            OR = {
+              has_id = 16220
+              has_id = 16230
+            }
+          }
+          set_nationality = HON
+        }
+      }
+    }
+    else_if = {
+      limit = {
+        has_elected_government = yes
+      }
+      NSW = {
+        every_unit_leader = {
+          limit = {
+            OR = {
+              has_id = 16200
+              has_id = 16220
+              has_id = 16230
+            }
+          }
+          set_nationality = HON
+        }
+      }
+    }
+    else_if = {
+      limit = {
+        has_authoritarian_government = yes
+      }
+      NSW = {
+        every_unit_leader = {
+          limit = {
+            OR = {
+              has_id = 1603
+              has_id = 1606
+              has_id = 16060
+              has_id = 16220
+              has_id = 16230
+            }
+          }
+          set_nationality = HON
+        }
+      }
+    }
+  }
+}
+ELS_setleaders = {
+  hidden_effect = {
+    ELS = {
+      every_unit_leader = {
+        set_nationality = NSW
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          country_exists = CEN
+        }
+      }
+      CEN = {
+        every_unit_leader = {
+          set_nationality = NSW
+        }
+      }
+    }
+    if = {
+      limit = {
+        has_socialist_government = yes
+      }
+      NSW = {
+        every_unit_leader = {
+          limit = {
+            OR = {
+              has_id = 1594
+              has_id = 1595
+            }
+          }
+          set_nationality = ELS
+        }
+        if = {
+          limit = {
+            ELS = {
+              has_completed_focus = ELS_revolutionary_ideals
+              NOT = {
+                has_country_flag = ELS_labour_victory_flag
+                has_country_flag = ELS_national_democratic_victory_flag
+              }
+            }
+            has_unit_leader = 1598
+          }
+          random_unit_leader = {
+            limit = {
+              has_id = 1598
+            }
+            set_nationality = ELS
+          }
+        }
+      }
+    }
+    else_if = {
+      limit = {
+        has_elected_government = yes
+      }
+      NSW = {
+        if = {
+          limit = {
+            has_unit_leader = 1596
+            ELS = {
+              has_country_flag = ELS_menendezdem
+            }
+          }
+          random_unit_leader = {
+            limit = {
+              has_id = 1596
+            }
+            set_nationality = ELS
+          }
+        }
+        if = {
+          limit = {
+            ELS = {
+              OR = {
+                has_country_flag = ELS_labour_victory_flag
+                has_country_flag = ELS_national_democratic_victory_flag
+              }
+              NOT = {
+                has_completed_focus = ELS_revolutionary_ideals
+              }
+            }
+            has_unit_leader = 1598
+          }
+          random_unit_leader = {
+            limit = {
+              has_id = 1598
+            }
+            set_nationality = ELS
+          }
+        }
+      }
+    }
+    else_if = {
+      limit = {
+        has_authoritarian_government = yes
+      }
+      NSW = {
+        every_unit_leader = {
+          limit = {
+            OR = {
+              has_id = 1596
+              has_id = 1597
+              has_id = 1599
+            }
+          }
+          set_nationality = ELS
+        }
+        if = {
+          limit = {
+            has_unit_leader = 1598
+            ELS = {
+              NOT = {
+                has_completed_focus = ELS_revolutionary_ideals
+                has_country_flag = ELS_labour_victory_flag
+                has_country_flag = ELS_national_democratic_victory_flag
+              }
+            }
+          }
+          random_unit_leader = {
+            limit = {
+              has_id = 1598
+            }
+            set_nationality = ELS
+          }
+        }
+      }
+    }
+  }
+}
+NIC_setleaders = {
+  hidden_effect = {
+    NIC = {
+      every_unit_leader = {
+        set_nationality = NSW
+      }
+    }
+    if = {
+      limit = {
+        NOT = {
+          country_exists = CEN
+        }
+      }
+      CEN = {
+        every_unit_leader = {
+          set_nationality = NSW
+        }
+      }
+    }
+    if = {
+      limit = {
+        has_socialist_government = yes
+      }
+      NSW = {
+        every_unit_leader = {
+          limit = {
+            OR = {
+              has_id = 1600
+              has_id = 1601
+              has_id = 1602
+            }
+          }
+          set_nationality = NIC
+        }
+      }
+    }
+    else_if = {
+      limit = {
+        has_elected_government = yes
+      }
+      NSW = {
+        every_unit_leader = {
+          limit = {
+            OR = {
+              has_id = 1604
+              has_id = 1605
+            }
+          }
+          set_nationality = NIC
+        }
+      }
+    }
+    else_if = {
+      limit = {
+        has_authoritarian_government = yes
+      }
+      NSW = {
+        random_unit_leader = {
+          limit = {
+            has_id = 16210
+          }
+          set_nationality = NIC
+        }
+      }
+      NIC = {
+        create_country_leader = {
+          name = "阿纳斯塔西奥·索摩查·加西亚"  # Anastasio Somoza García
+          desc = "POLITICS_ANASTASIO_SOMOZA_GARCIA_DESC"
+          picture = "gfx/leaders/NIC/Portrait_NIC_Anastasio_Somoza_Garcia_2.png"
+          expire = "1.1.1"
+          ideology = junta_subtype
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+YSYQ = {
+	enable= { always= yes }
+    icon = "GFX_idea_generic_comintern"
+	army_attack_factor = mod_factor
+	army_defence_factor = mod_factor
+	industrial_capacity_factory = mod_factor
+	industrial_capacity_dockyard = mod_factor
+}

@@ -1,0 +1,186 @@
+SpriteTypes = {
+	SpriteType = {
+		name = "GFX_goal_LEB_a_land_hard_to_govern"
+		texturefile = "gfx/interface/goals/LEB_a_land_hard_to_govern.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_the_fluttering_cedar"
+		texturefile = "gfx/interface/goals/LEB_the_fluttering_cedar.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_emergency_food_assistance"
+		texturefile = "gfx/interface/goals/LEB_emergency_food_assistance.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_agricultural_subsidies"
+		texturefile = "gfx/interface/goals/LEB_agricultural_subsidies.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_let_overseas_remittance_return"
+		texturefile = "gfx/interface/goals/LEB_let_overseas_remittance_return.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_ottoman_gendarme"
+		texturefile = "gfx/interface/goals/LEB_ottoman_gendarme.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_check_the_disorder"
+		texturefile = "gfx/interface/goals/LEB_check_the_disorder.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_a_straw_from_capital"
+		texturefile = "gfx/interface/goals/LEB_a_straw_from_capital.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_storm_has_dissipated"
+		texturefile = "gfx/interface/goals/LEB_storm_has_dissipated.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_the_dark_tide"
+		texturefile = "gfx/interface/goals/LEB_the_dark_tide.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_the_heir_of_antioch"
+		texturefile = "gfx/interface/goals/LEB_the_heir_of_antioch.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_operation_broken_spear"
+		texturefile = "gfx/interface/goals/LEB_operation_broken_spear.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_the_gathering_whirlwind"
+		texturefile = "gfx/interface/goals/LEB_the_gathering_whirlwind.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_printing_factory_incident"
+		texturefile = "gfx/interface/goals/LEB_printing_factory_incident.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_meet_patriarch"
+		texturefile = "gfx/interface/goals/LEB_meet_patriarch.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_operation_breezeless"
+		texturefile = "gfx/interface/goals/LEB_operation_breezeless.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_the_red_devil"
+		texturefile = "gfx/interface/goals/LEB_the_red_devil.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_operation_red_dusk"
+		texturefile = "gfx/interface/goals/LEB_operation_red_dusk.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_the_shape_of_imam"
+		texturefile = "gfx/interface/goals/LEB_the_shape_of_imam.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_anti_communist_mullah"
+		texturefile = "gfx/interface/goals/LEB_anti_communist_mullah.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_operation_resurrection"
+		texturefile = "gfx/interface/goals/LEB_operation_resurrection.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_meet_mujtahid"
+		texturefile = "gfx/interface/goals/LEB_meet_mujtahid.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_the_calm_sea"
+		texturefile = "gfx/interface/goals/LEB_the_calm_sea.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_the_path_to_prosperous"
+		texturefile = "gfx/interface/goals/LEB_the_path_to_prosperous.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_revitalization_of_the_tourism"
+		texturefile = "gfx/interface/goals/LEB_revitalization_of_the_tourism.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_casino_grand_prix"
+		texturefile = "gfx/interface/goals/LEB_casino_grand_prix.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_ancient_ruins"
+		texturefile = "gfx/interface/goals/LEB_ancient_ruins.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_alpine_skiing"
+		texturefile = "gfx/interface/goals/LEB_alpine_skiing.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_countryside_revitalized"
+		texturefile = "gfx/interface/goals/LEB_countryside_revitalized.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_beirut_racecourse"
+		texturefile = "gfx/interface/goals/LEB_beirut_racecourse.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_let_the_oil_flow"
+		texturefile = "gfx/interface/goals/LEB_let_the_oil_flow.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_reopen_the_bank"
+		texturefile = "gfx/interface/goals/LEB_reopen_the_bank.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_micro_credit"
+		texturefile = "gfx/interface/goals/LEB_micro_credit.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_alpine_skiing"
+		texturefile = "gfx/interface/goals/LEB_alpine_skiing.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_port_for_hajj"
+		texturefile = "gfx/interface/goals/LEB_port_for_hajj.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_the_new_jerusalam"
+		texturefile = "gfx/interface/goals/LEB_the_new_jerusalam.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_domestic_storage_facilities"
+		texturefile = "gfx/interface/goals/LEB_domestic_storage_facilities.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_refining_industry"
+		texturefile = "gfx/interface/goals/LEB_refining_industry.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_international_airport"
+		texturefile = "gfx/interface/goals/LEB_international_airport.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_1st_mid_east_trade_expo"
+		texturefile = "gfx/interface/goals/LEB_1st_mid_east_trade_expo.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_industry_plan"
+		texturefile = "gfx/interface/goals/LEB_industry_plan.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_tyre_shipyard"
+		texturefile = "gfx/interface/goals/LEB_tyre_shipyard.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_tripoli_soap_factory"
+		texturefile = "gfx/interface/goals/LEB_tripoli_soap_factory.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_expand_beirut_university"
+		texturefile = "gfx/interface/goals/LEB_expand_beirut_university.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_model_vilayet"
+		texturefile = "gfx/interface/goals/LEB_model_vilayet.png"
+	}
+	SpriteType = {
+		name = "GFX_goal_LEB_beirut_ordnance"
+		texturefile = "gfx/interface/goals/LEB_beirut_ordnance.png"
+	}
+}

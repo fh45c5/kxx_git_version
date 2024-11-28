@@ -1,0 +1,116 @@
+ideas = {
+	head_of_government = { ### Head of Government ###
+
+	KUB_Alexander_Blok_hog_rso = {
+		allowed = { original_tag = KUB }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = head_of_gov_available
+				always = no
+			}
+		}
+		cancel_if_invalid = no
+		on_add = {
+			log = "[GetDateText]: [Root.GetName]: add idea FLN_War_van_Overstraeten_hog_rso"
+		}
+		traits = {
+			head_of_government
+			radical_socialist
+			hog_backroom_backstabber
+		}
+	}
+	
+	
+	}
+	
+	person_of_influence = { ### Person of Influence ###
+	## Foreign Minister ##
+	
+	KUB_Sergei_Yesenin_for_rso = {
+		allowed = { original_tag = KUB }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = minister_available
+				always = no
+			}
+		}
+		cancel_if_invalid = no
+		on_add = {
+			log = "[GetDateText]: [Root.GetName]: add idea FLN_Jef_van_Extergem_for_rso"
+		}
+		traits = {
+			foreign_minister
+			radical_socialist
+			for_biased_intellectual
+		}
+	}
+	KUB_Dmitri_Mirsky_for_rso = {
+		allowed = { original_tag = KUB }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = minister_available
+				always = no
+			}
+		}
+		cancel_if_invalid = no
+		on_add = {
+			log = "[GetDateText]: [Root.GetName]: add idea FLN_Jef_van_Extergem_for_rso"
+		}
+		traits = {
+			foreign_minister
+			radical_socialist
+			for_biased_intellectual
+		}
+	}
+	
+	
+	## Economy Minister ##
+	
+	KUB_Ivanov_Razumnik_eco_rso = {
+		allowed = { original_tag = KUB }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = minister_available
+				always = no
+			}
+		}
+		cancel_if_invalid = no
+		on_add = {
+			log = "[GetDateText]: [Root.GetName]: add idea FLN_Felix_Van_den_Bergh_eco_rso"
+		}
+		traits = {
+			economy_minister
+			radical_socialist
+			eco_infantry_proponent
+		}
+	}
+	
+	
+	
+	## Security Minister ##
+	
+	KUB_Andrei_Bely_sec_rso = {
+		allowed = { original_tag = KUB }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = minister_available
+				always = no
+			}
+		}
+		cancel_if_invalid = no
+		on_add = {
+			log = "[GetDateText]: [Root.GetName]: add idea FLN_Ferdinand_Minnaert_sec_rso"
+		}
+		traits = {
+			security_minister
+			radical_socialist
+			sec_media_magnate
+		}
+	}
+	
+	
+	}
+	
+	
+	
+}

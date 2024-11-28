@@ -1,0 +1,221 @@
+### Lebanon Ideas ###
+
+ideas = {
+	country = {
+		LEB_Initial_industrialization = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_Initial_industrialization" }
+			name = LEB_Initial_industrialization
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = 0.1
+			production_speed_buildings_factor = 0.1
+			}
+		}
+		LEB_Initial_industrialization_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_Initial_industrialization_1" }
+			name = LEB_Initial_industrialization_1
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			industrial_capacity_factory = 0.25
+			production_speed_buildings_factor = 0.25
+			production_factory_max_efficiency_factor = 0.2
+			line_change_production_efficiency_factor = 0.1
+			}
+		}
+		LEB_Imported_agricultural_machinery = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_Imported_agricultural_machinery" }
+			name = LEB_Imported_agricultural_machinery
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			consumer_goods_factor = -0.1
+			local_factories = 0.2
+			local_manpower = 0.2
+			}
+		}
+		LEB_Imported_agricultural_machinery_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_Imported_agricultural_machinery_1" }
+			name = LEB_Imported_agricultural_machinery_1
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			political_power_gain = 0.15
+			consumer_goods_factor = -0.1
+			local_factories = 0.5
+			local_manpower = 1
+			}
+		}
+		LEB_Imported_agricultural_machinery_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_Imported_agricultural_machinery_2" }
+			name = LEB_Imported_agricultural_machinery_2
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			political_power_gain = 0.2
+			consumer_goods_factor = -0.2
+			local_factories = 0.8
+			local_manpower = 1.5
+			}
+		}
+		LEB_slum = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_slum" }
+			name = LEB_slum
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			political_power_gain = -0.2
+			consumer_goods_factor = 0.30
+			production_speed_buildings_factor = -0.15
+			}
+		}
+		LEB_slum_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_slum_1" }
+			name = LEB_slum_1
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			political_power_gain = -0.4
+			consumer_goods_factor = 0.15
+			stability_factor = -0.1
+			}
+		}
+		LEB_Reconquest_War = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_Reconquest_War" }
+			name = LEB_Reconquest_War
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			conscription = 0.15
+			industrial_capacity_factory = 0.15
+			production_factory_efficiency_gain_factor = 0.3
+			}
+		}
+		LEB_Reconquest_War_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_Reconquest_War_1" }
+			name = LEB_Reconquest_War_1
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			conscription = 0.3
+			mobilization_speed = 0.5
+			industrial_capacity_factory = 0.15
+			production_factory_efficiency_gain_factor = 0.3
+			}
+		}
+		LEB_Reconquest_War_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_Reconquest_War_2" }
+			name = LEB_Reconquest_War_2
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			conscription = 0.4
+			army_attack_factor = 0.1
+			army_defence_factor = 0.1
+			mobilization_speed = 0.5
+			industrial_capacity_factory = 0.15
+			production_factory_efficiency_gain_factor = 0.3
+			war_support_factor = 0.1
+			}
+		}
+		LEB_Purchase_of_armaments = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_Purchase_of_armaments" }
+			name = LEB_Purchase_of_armaments
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			consumer_goods_factor = 0.25
+			}
+		}
+		LEB_Greater_Syria = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_Greater_Syria" }
+			name = LEB_Greater_Syria
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			political_power_gain = 0.2
+			}
+		}
+		LEB_Greater_Syria_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_Greater_Syria_1" }
+			name = LEB_Greater_Syria_1
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			political_power_gain = 0.2
+			totalist_drift = 0.02
+			stability_factor = 0.05
+			research_speed_factor = 0.15
+			}
+		}
+		LEB_Greater_Syria_2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_Greater_Syria_2" }
+			name = LEB_Greater_Syria_2
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			political_power_gain = 0.3
+			totalist_drift = 0.02
+			stability_factor = 0.19
+			research_speed_factor = 0.15
+			consumer_goods_factor = -0.1
+			production_speed_buildings_factor = 0.1
+			}
+		}
+		LEB_Greater_Syria_3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_Greater_Syria_3" }
+			name = LEB_Greater_Syria_3
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			political_power_gain = 0.3
+			totalist_drift = 0.02
+			stability_factor = 0.29
+			war_support_factor = 0.07
+			research_speed_factor = 0.15
+			consumer_goods_factor = -0.1
+			production_speed_buildings_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.2
+			industrial_capacity_factory = 0.1
+			}
+		}
+		LEB_Greater_Syria_4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_Greater_Syria_4" }
+			name = LEB_Greater_Syria_4
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			political_power_gain = 0.5
+			totalist_drift = 0.02
+			stability_factor = 0.34
+			war_support_factor = 0.07
+			compliance_gain = 0.15
+			research_speed_factor = 0.25
+			consumer_goods_factor = -0.1
+			production_speed_buildings_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.2
+			industrial_capacity_factory = 0.1
+			}
+		}
+		LEB_Greater_Syria_5 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea LEB_Greater_Syria_5" }
+			name = LEB_Greater_Syria_5
+			picture = the_ssnp_ideas
+			allowed = { always = no }
+			modifier = {
+			political_power_gain = 0.6
+			totalist_drift = 0.02
+			stability_factor = 0.40
+			war_support_factor = 0.17
+			compliance_gain = 0.15
+			research_speed_factor = 0.25
+			consumer_goods_factor = -0.1
+			production_speed_buildings_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.2
+			industrial_capacity_factory = 0.3
+			production_factory_max_efficiency_factor = 0.1
+			}
+		}
+	}
+}

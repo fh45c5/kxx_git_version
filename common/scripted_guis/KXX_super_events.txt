@@ -1,0 +1,368 @@
+scripted_gui = {
+	KXX_Pax_Super_Event_Window = {
+		context_type = player_context
+		window_name = "KXX_Super_Event_Window"
+
+		visible = {
+			has_global_flag  = KXX_Super_Event_Visible
+		}
+		###kxx
+		triggers = {
+			GRU_Super_Event_Image_ger_civl_visible = {
+				has_global_flag = ger_civl
+			}
+		}
+
+		triggers = {
+			GRU_Super_Event_Image_greater_germanic_state_goebbels_visible = {
+				has_global_flag = greater_germanic_state_goebbels
+			}
+		}
+
+		triggers = {
+			GRU_Super_Event_Image_endsieg_goebbels_visible = {
+				has_global_flag = endsieg_goebbels
+			}
+		}
+		
+		triggers = {
+			Super_Event_Image_EUROPE_UNIFICATION_thirart_visible = {
+				has_global_flag = FLN_EUROPE_UNIFICATION_thirart
+			}
+		}
+
+		###KX
+		triggers = {
+			Super_Event_Image_Valoi_Dead_visible = {
+				has_global_flag = FRA_valoi_dead
+			}
+		}
+
+		triggers = {
+			Super_Event_Image_Anarchist_Frances_visible = {
+				has_global_flag = FRA_anarchist_takeover
+			}
+		}
+
+		triggers = {
+			Super_Event_Image_Caucasus_Chao_visible = {
+				has_global_flag = GEO_chaos_in_caucasus
+			}
+		}
+
+		triggers = {
+			Super_Event_Image_Romania_Restoration_visible = {
+				has_global_flag = BAN_took_homeland
+			}
+		}
+
+		triggers = {
+			Super_Event_Image_Collapse_Britains_visible = {
+				has_global_flag = ENG_secession_occurred
+			}
+		}
+
+		triggers = {
+			Super_Event_Image_Gastev_Technocracys_visible = {
+				has_global_flag = SOV_gastev_technocracy
+			}
+		}
+
+		###民族与革命
+		triggers = {
+			Super_Event_Image_ukraine_civilwar_visible = {
+				has_global_flag = WSU_ukraine_civilwar
+			}
+		}
+		
+		triggers = {
+			Super_Event_Image_west_ukraine_win_visible = {
+				has_global_flag = WSU_west_ukraine_win
+			}
+		}
+		
+		triggers = {
+			Super_Event_Image_west_ukraine_lost_visible = {
+				has_global_flag = WSU_west_ukraine_lost
+			}
+		}
+
+		triggers = {
+			Super_Event_Image_cnt_fai_vitory_visible = {
+				has_global_flag = CNT_cnt_fai_vitory
+			}
+		}
+		
+		triggers = {
+			Super_Event_Image_sco_unit_germany_visible = {
+				has_global_flag = WGR_sco_unit_germany
+			}
+		}
+		
+		triggers = {
+			Super_Event_Image_syn_unit_germany_visible = {
+				has_global_flag = WGR_syn_unit_germany
+			}
+		}
+
+		triggers = {
+			Super_Event_Image_Pop_Po_War_visible = {
+				has_global_flag = DDR_the_pop_po_war
+			}
+		}
+		triggers = {
+			Super_Event_Image_Prussia_Collapsed_visible = {
+				has_global_flag = DDR_Prussia_Collapsed
+			}
+		}
+
+		###红龙
+		triggers = {
+			Super_Event_Image_SPEVNT_JAPAN_CW_visible = {
+				has_global_flag = JAPAN_CW_superev
+			}
+		}
+		
+		triggers = {
+			Super_Event_Image_SPEVNT_JAPAN_CW_Socialist_win_visible = {
+				has_global_flag = JAPAN_CW_Socialist_win_superev
+			}
+		}
+		
+		triggers = {
+			Super_Event_Image_SPEVNT_JAPAN_CW_Military_win_visible = {
+				has_global_flag = JAPAN_CW_military_win_superev
+			}
+		}
+		
+		triggers = {
+			Super_Event_Image_SPEVNT_TIBET_UNITE_CHINA_ZHANG_GUOHUA_visible = {
+				has_global_flag = TIBET_UNITE_CHINA_ZHANG_GUOHUA
+			}
+		}
+		
+		triggers = {
+			Super_Event_Image_SPEVNT_TIBET_UNITE_CHINA_YUEXE_visible = {
+				has_global_flag = TIBET_UNITE_CHINA_YUEXE
+			}
+		}
+		
+		triggers = {
+			Super_Event_Image_SPEVNT_TIBET_UNITE_CHINA_JIGME_visible = {
+				has_global_flag = TIBET_UNITE_CHINA_JIGME
+			}
+		}
+		
+		triggers = {
+			Super_Event_Image_TAIWAN_XIONGZHENG_UNITE_CHINA_visible = {
+				has_global_flag = TAIWAN_XIONGZHENG_UNITE_CHINA
+			}
+		}
+		
+		triggers = {
+			Super_Event_Image_SPEVNT_TAIWAN_TPP_UNITE_CHINA_visible = {
+				has_global_flag = TAIWAN_TPP_UNITE_CHINA
+			}
+		}
+		
+		triggers = {
+			Super_Event_Image_SPEVNT_TAIWAN_COMMIE_UNITE_CHINA_visible = {
+				has_global_flag = TAIWAN_COMMIE_UNITE_CHINA
+			}
+		}
+
+		###	
+		properties = {
+			KXX_Super_Event_Image_Default = {
+				image = "[get_my_superevent_texture]"
+			}
+		}
+
+		effects = {
+			KXX_Super_Event_Close_click = {
+				clr_global_flag = KXX_Super_Event_Visible
+				###KXX
+				if = {
+					limit = {	
+						has_global_flag = ger_civl
+					}
+					clr_global_flag  = ger_civl
+				}
+				if = {
+					limit = {	
+						has_global_flag = greater_germanic_state_goebbels
+					}
+					clr_global_flag  = greater_germanic_state_goebbels
+				}
+				if = {
+					limit = {	
+						has_global_flag = endsieg_goebbels
+					}
+					clr_global_flag  = endsieg_goebbels
+				}
+				if = {
+					limit = {	
+						has_global_flag = FLN_EUROPE_UNIFICATION_thirart
+					}
+					clr_global_flag  = FLN_EUROPE_UNIFICATION_thirart
+				}
+
+				###KX
+				if = {
+					limit = {	
+						has_global_flag = FRA_valoi_dead
+					}
+					clr_global_flag  = FRA_valoi_dead
+				}
+
+				if = {
+					limit = {	
+						has_global_flag = FRA_anarchist_takeover
+					}
+					clr_global_flag  = FRA_anarchist_takeover
+				}
+
+				if = {
+					limit = {	
+						has_global_flag = GEO_chaos_in_caucasus
+					}
+					clr_global_flag  = GEO_chaos_in_caucasus
+				}
+
+				if = {
+					limit = {	
+						has_global_flag = BAN_took_homeland
+					}
+					clr_global_flag  = BAN_took_homeland
+				}
+
+				if = {
+					limit = {	
+						has_global_flag = ENG_secession_occurred
+					}
+					clr_global_flag  = ENG_secession_occurred
+				}
+
+				if = {
+					limit = {	
+						has_global_flag = SOV_gastev_technocracy
+					}
+					clr_global_flag  = SOV_gastev_technocracy
+				}
+
+				###民族与革命
+				if = {
+					limit = {	
+						has_global_flag = WSU_west_ukraine_win
+					}
+					clr_global_flag  = WSU_west_ukraine_win
+				}
+				if = {
+					limit = {	
+						has_global_flag = WSU_west_ukraine_lost
+					}
+					clr_global_flag  = WSU_west_ukraine_lost
+				}
+				if = {
+					limit = {	
+						has_global_flag = WSU_ukraine_civilwar
+					}
+					clr_global_flag  = WSU_ukraine_civilwar
+				}
+				if = {
+					limit = {	
+						has_global_flag = CNT_cnt_fai_vitory
+					}
+					clr_global_flag  = CNT_cnt_fai_vitory
+				}
+				if = {
+					limit = {	
+						has_global_flag = WGR_sco_unit_germany
+					}
+					clr_global_flag  = WGR_sco_unit_germany
+				}
+				if = {
+					limit = {	
+						has_global_flag = WGR_syn_unit_germany
+					}
+					clr_global_flag  = WGR_syn_unit_germany
+				}
+				if = {
+					limit = {	
+						has_global_flag = DDR_the_pop_po_war
+					}
+					clr_global_flag  = DDR_the_pop_po_war
+				}
+				if = {
+					limit = {	
+						has_global_flag = DDR_Prussia_Collapsed
+					}
+					clr_global_flag  = DDR_Prussia_Collapsed
+				}
+
+				###红龙
+				if = {
+					limit = {	
+						has_global_flag = JAPAN_CW_superev
+					}
+					clr_global_flag  = JAPAN_CW_superev
+				}
+				if = {
+					limit = {	
+						has_global_flag = JAPAN_CW_Socialist_win_superev
+					}
+					clr_global_flag  = JAPAN_CW_Socialist_win_superev
+				}
+
+				if = {
+					limit = {	
+						has_global_flag = JAPAN_CW_military_win_superev
+					}
+					clr_global_flag  = JAPAN_CW_military_win_superev
+				}
+				
+				if = {
+					limit = {	
+						has_global_flag = TIBET_UNITE_CHINA_ZHANG_GUOHUA
+					}
+					clr_global_flag  = TIBET_UNITE_CHINA_ZHANG_GUOHUA
+				}
+				
+				if = {
+					limit = {	
+						has_global_flag = TIBET_UNITE_CHINA_YUEXE
+					}
+					clr_global_flag  = TIBET_UNITE_CHINA_YUEXE
+				}
+				
+				if = {
+					limit = {	
+						has_global_flag = TIBET_UNITE_CHINA_JIGME
+					}
+					clr_global_flag  = TIBET_UNITE_CHINA_JIGME
+				}
+				
+				if = {
+					limit = {	
+						has_global_flag = TAIWAN_XIONGZHENG_UNITE_CHINA
+					}
+					clr_global_flag  = TAIWAN_XIONGZHENG_UNITE_CHINA
+				}
+				
+				if = {
+					limit = {	
+						has_global_flag = TAIWAN_TPP_UNITE_CHINA
+					}
+					clr_global_flag  = TAIWAN_TPP_UNITE_CHINA
+				}
+				
+				if = {
+					limit = {	
+						has_global_flag = TAIWAN_COMMIE_UNITE_CHINA
+					}
+					clr_global_flag  = TAIWAN_COMMIE_UNITE_CHINA
+				}
+			}
+		}
+	}
+}

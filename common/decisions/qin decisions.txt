@@ -1,0 +1,746 @@
+qin_cs = {
+	gong_ji = {
+		icon = generic_prepare_civil_war
+		visible = {
+			FROM = {
+				NOT = { has_war_with = ROOT }
+				NOT = { is_subject_of = ROOT }
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+		target_trigger = {
+			FROM = {
+				any_neighbor_country ={
+					or = {
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		cost = 0
+		days_remove = 20
+		war_with_target_on_remove = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision QIE_attack_warlord target: [From.GetName]"
+			set_country_flag = { flag = imminent_war days = 21 value = 1 }
+		}
+
+		remove_effect = {
+			declare_war_on = { target = FROM type = annex_everything }
+		}
+	}
+}
+zhong_ke_yuan = {
+	jia_ru_zky = {
+		icon = generic_research
+		days_remove = 0
+		ai_will_do = {
+			factor = 10
+		}
+		visible = {
+			SZC = {
+				is_faction_leader = yes
+			}
+			NOT = { is_in_tech_sharing_group = szc_lian_he_research }
+		}
+		remove_effect = {
+			add_to_tech_sharing_group = szc_lian_he_research
+		}
+	}
+}
+shou_du = {
+	shou_du_1 = {
+		icon = scales
+		days_remove = 30
+		fire_only_once = yes
+		cost = 50
+		ai_will_do = {
+			factor = 10
+		}
+		remove_effect = {
+			set_country_flag = QIN_di_du
+			random_owned_controlled_state = { 
+				prioritize = { 799 }
+				increase_state_category_by_one_level = yes
+			}
+			799 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes #立刻完成，no反之
+				}
+			}
+		}
+	}
+	shou_du_2 = {
+		icon = cement_mixer
+		days_remove = 30
+		fire_only_once = yes
+		cost = 50
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			set_country_flag = { flag = kai_fa_shou_du value = 1 days = 30 }
+		}
+		available = {
+			NOT = {
+				has_country_flag = kai_fa_shou_du
+			}
+		}
+		visible = {
+			has_country_flag = QIN_di_du
+		}
+		remove_effect = {
+			random_owned_controlled_state = { 
+				prioritize = { 799 }
+				increase_state_category_by_one_level = yes
+			}
+			799 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes #立刻完成，no反之
+				}
+				add_resource = {
+					type = aluminium
+					amount = 24
+				}
+			}
+		}
+	}
+	shou_du_3 = {
+		icon = train
+		days_remove = 30
+		fire_only_once = yes
+		cost = 50
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			set_country_flag = { flag = kai_fa_shou_du value = 1 days = 30 }
+		}
+		available = {
+			NOT = {
+				has_country_flag = kai_fa_shou_du
+			}
+		}
+		visible = {
+			has_country_flag = QIN_di_du
+		}
+		remove_effect = {
+			random_owned_controlled_state = { 
+				prioritize = { 799 }
+				increase_state_category_by_one_level = yes
+			}
+			build_railway = { #铺设铁路,铁路沿线地块代码
+				path = { 1976 10257 4295 7256 12767 1367 4925 } 
+			}
+			hidden_effect = {	
+				country_event = { id = qin.6 days = 10 }		
+			}
+		}
+	}
+	shou_du_4 = {
+		icon = GFX_decision_bomber
+		days_remove = 30
+		fire_only_once = yes
+		cost = 50
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			set_country_flag = { flag = kai_fa_shou_du value = 1 days = 30 }
+		}
+		available = {
+			NOT = {
+				has_country_flag = kai_fa_shou_du
+			}
+		}
+		visible = {
+			has_country_flag = QIN_di_du
+		}
+		remove_effect = {
+			random_owned_controlled_state = { 
+				prioritize = { 799 }
+				increase_state_category_by_one_level = yes
+			}
+			799 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes #立刻完成，no反之
+				}
+			}
+		}
+	}
+	shou_du_5 = {
+		icon = road
+		days_remove = 30
+		fire_only_once = yes
+		cost = 50
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			set_country_flag = { flag = kai_fa_shou_du value = 1 days = 30 }
+		}
+		available = {
+			NOT = {
+				has_country_flag = kai_fa_shou_du
+			}
+		}
+		visible = {
+			has_country_flag = QIN_di_du
+		}
+		remove_effect = {
+			random_owned_controlled_state = { 
+				prioritize = { 799 }
+				increase_state_category_by_one_level = yes
+			}
+			799 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes #立刻完成，no反之
+				}
+			}
+		}
+	}
+}
+zao_chuan = {
+	zao_chuan_1 = {
+		icon = generic_naval
+		days_remove = 10
+		fire_only_once = yes
+		cost = 50
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			add_timed_idea = { idea = mai_chuan_idea days = 30 } 
+			GER = {
+				add_timed_idea = { idea = mmai_chuan_idea days = 30 } 
+			}
+		}
+		available = {
+			NOT = {
+				has_idea = mai_chuan_idea
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = { NOT = { has_tech = basic_battery } }
+				set_technology = { basic_battery = 1 } 
+			}	
+			if = {
+				limit = { NOT = { has_tech = basic_depth_charges } }
+				set_technology = { basic_depth_charges = 1 } 
+			}
+			if = {
+				limit = { NOT = { has_tech = basic_cruiser_armor_scheme } }
+				set_technology = { basic_cruiser_armor_scheme = 1 } 
+			}	
+			if = {
+				limit = { NOT = { has_tech = basic_light_battery } }
+				set_technology = { basic_light_battery = 1 } 
+			}
+			if = {
+				limit = { NOT = { has_tech = sonar } }
+				set_technology = { sonar = 1 } 
+			}
+			if = {
+				limit = { NOT = { has_tech = early_ship_hull_light } }
+				set_technology = { early_ship_hull_light = 1 }
+			}	
+		}
+	}
+	zao_chuan_2 = {
+		icon = generic_naval
+		days_remove = 10
+		fire_only_once = yes
+		cost = 50
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			add_timed_idea = { idea = mai_chuan_idea days = 30 } 
+			GER = {
+				add_timed_idea = { idea = mmai_chuan_idea days = 30 } 
+			}
+		}
+		available = {
+			NOT = {
+				has_idea = mai_chuan_idea
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = { NOT = { has_tech = basic_medium_battery } }
+				set_technology = { basic_medium_battery = 1 } 
+			}
+			if = {
+				limit = { NOT = { has_tech = basic_heavy_battery } }
+				set_technology = { basic_heavy_battery = 1 } 
+			}
+			if = {
+				limit = { NOT = { has_tech = early_ship_hull_cruiser } }
+				set_technology = { early_ship_hull_cruiser = 1 }
+			}
+			if = {
+				limit = { NOT = { has_tech = early_ship_hull_heavy } }
+				set_technology = { early_ship_hull_heavy = 1 }
+			}
+		}
+	}
+	zao_chuan_3 = {
+		icon = generic_naval
+		days_remove = 10
+		fire_only_once = yes
+		cost = 50
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			add_timed_idea = { idea = mai_chuan_idea days = 30 } 
+			GER = {
+				add_timed_idea = { idea = mmai_chuan_idea days = 30 } 
+			}
+		}
+		available = {
+			NOT = {
+				has_idea = mai_chuan_idea
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = { NOT = { has_tech = transport } }
+				set_technology = { transport = 1 } 
+			}	
+			if = {
+				limit = { NOT = { has_tech = early_ship_hull_submarine } }
+				set_technology = { early_ship_hull_submarine = 1 } 
+			}
+			if = {
+				limit = { NOT = { has_tech = basic_torpedo } }
+				set_technology = { basic_torpedo = 1 } 
+			}		 		
+		}
+	}
+	zao_chuan_4 = {
+		icon = generic_naval
+		days_remove = 30
+		fire_only_once = yes
+		available = {
+			country_exists = GEA
+		}			
+		cost = 50
+		ai_will_do = {
+			factor = 10
+		}
+		remove_effect = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5  #减少50%
+				uses = 1  #使用1次
+				category = naval_doctrine  #学说花
+			}
+			navy_experience = 50
+		}
+	}
+}
+xi_bei= {
+	xi_zang_1 = {		
+		icon = GFX_decision_generic_flags		
+		fire_only_once = yes
+		days_remove = 30
+		cost = 50
+		visible = {
+			china_is_potential_government = yes
+			or = {
+				and = {
+				    owns_state = 322
+				    NOT = { country_exists = TIB }
+				}               
+                TIB = { is_subject_of = ROOT }
+            }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			every_state = {
+				limit = { 
+					or = {
+						is_core_of = TIB
+						is_claimed_by = TIB
+					}
+				}
+				add_claim_by = ROOT
+			}
+		}
+		remove_effect = {
+			set_country_flag = xz_zh_1
+			if = {
+				limit = {
+					TIB = { is_subject_of = ROOT }
+				}
+				FROM = { 
+					set_autonomy = {
+						target = TIB
+						autonomy_state = kr_occupied_puppet
+					}
+				}
+				TIB = {
+					add_political_power = 100
+				}
+				add_political_power = 100
+			}
+			else = {
+				add_political_power = 100
+				every_owned_state = {
+					limit = {
+						is_core_of = TIB
+					}				
+					add_compliance = 20
+				}
+			}
+		}
+	}
+	xi_zang_2 = {		
+		icon = GFX_decision_generic_flags		
+		fire_only_once = yes
+		days_remove = 30
+		cost = 50
+		visible = {
+			has_country_flag = xz_zh_1
+			china_is_potential_government = yes
+			or = {
+				and = {
+				    owns_state = 322
+				    NOT = { country_exists = TIB }
+				}               
+                TIB = { is_subject_of = ROOT }
+            }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		remove_effect = {
+			set_country_flag = xz_zh_2
+			if = {
+				limit = {
+					TIB = { is_subject_of = ROOT }
+				}
+				FROM = { 
+					set_autonomy = {
+						target = TIB
+						autonomy_state = kr_integrated_puppet
+					}
+				}
+				TIB = {
+					army_experience = 20
+				}
+				army_experience = 20
+			}
+			else = {
+				limit = {
+					is_core_of = TIB
+				}
+				army_experience = 20
+				add_compliance = 20
+			}
+		}
+	}
+	xi_zang = {		
+		icon = GFX_decision_generic_flags		
+		fire_only_once = yes
+		days_remove = 30
+		cost = 50
+		visible = {
+			has_country_flag = xz_zh_2
+			china_is_potential_government = yes
+			or = {
+				and = {
+				    owns_state = 322
+				    NOT = { country_exists = TIB }
+				}               
+                TIB = { is_subject_of = ROOT }
+            }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					TIB = { is_subject_of = ROOT }
+				}
+				annex_country = { target = TIB transfer_troops = yes }
+			}
+			every_state = {
+				limit = { is_core_of = TIB }
+				add_core_of = ROOT
+			}
+			hidden_effect = {	
+				every_state = {
+					limit = { is_core_of = TIB }
+					remove_core_of = TIB
+				}		
+			}
+		}
+	}
+    xin_jiang = {		
+		icon = GFX_decision_generic_flags		
+		fire_only_once = yes
+        visible = {
+			china_is_potential_government = yes
+			NOT = { 
+				617 = { is_core_of= ROOT } 
+			}
+			owns_state = 617
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		remove_effect = {
+			every_state = {
+				limit = { 
+					is_core_of = SIK 
+				}
+				add_core_of = ROOT
+			}
+			hidden_effect = {	
+				every_state = {
+					limit = { is_core_of = SIK }
+					remove_core_of = SIK
+				}
+				every_state = {
+					limit = { is_core_of = KUM }
+					remove_core_of = KUM
+				}
+				every_state = {
+					limit = { is_core_of = ETS }
+					remove_core_of = ETS
+				}		
+			}
+		}
+	}
+	meng_gu_1 = {		
+		icon = GFX_decision_generic_flags		
+		fire_only_once = yes
+		days_remove = 30
+		cost = 50
+        visible = {
+			china_is_potential_government = yes
+			or = {
+				and = {
+				    owns_state = 330
+				    NOT = { country_exists = MON }
+				}               
+                MON = { is_subject_of = ROOT }
+            }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			every_state = {
+				limit = { 
+					or = {
+						is_core_of = MON
+						is_claimed_by = MON
+					}
+				}
+				add_claim_by = ROOT
+			}
+		}
+		remove_effect = {
+			set_country_flag = mg_zh_1
+			if = {
+				limit = {
+					MON = { is_subject_of = ROOT }
+				}
+				FROM = { 
+					set_autonomy = {
+						target = MON
+						autonomy_state = kr_occupied_puppet
+					}
+				}
+				MON = {
+					add_political_power = 100
+				}
+				add_political_power = 100
+			}
+			else = {
+				add_political_power = 100
+				every_owned_state = {
+					limit = {
+						is_core_of = MON
+					}				
+					add_compliance = 20
+				}
+			}
+		}
+	}
+	meng_gu_2 = {		
+		icon = GFX_decision_generic_flags		
+		fire_only_once = yes
+		days_remove = 30
+		cost = 50
+        visible = {
+			has_country_flag = mg_zh_1
+			china_is_potential_government = yes
+			or = {
+				and = {
+				    owns_state = 330
+				    NOT = { country_exists = MON }
+				}               
+                MON = { is_subject_of = ROOT }
+            }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		remove_effect = {
+			set_country_flag = mg_zh_2
+			if = {
+				limit = {
+					MON = { is_subject_of = ROOT }
+				}
+				FROM = { 
+					set_autonomy = {
+						target = MON
+						autonomy_state = kr_integrated_puppet
+					}
+				}
+				MON = {
+					army_experience = 20
+				}
+				army_experience = 20
+			}
+			else = {
+				army_experience = 20
+				every_owned_state = {
+					limit = {
+						is_core_of = MON
+					}				
+					add_compliance = 20
+				}
+			}
+		}
+	}
+	meng_gu = {		
+		icon = GFX_decision_generic_flags		
+		fire_only_once = yes
+		days_remove = 30
+		cost = 50
+        visible = {
+			has_country_flag = mg_zh_2
+			china_is_potential_government = yes
+			or = {
+				and = {
+				    owns_state = 330
+				    NOT = { country_exists = MON }
+				}               
+                MON = { is_subject_of = ROOT }
+            }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					MON = { is_subject_of = ROOT }
+				}
+				annex_country = { target = MON transfer_troops = yes }
+			}
+			every_state = {
+				limit = { is_core_of = MON }
+				add_core_of = ROOT
+			}
+			hidden_effect = {	
+				every_state = {
+					limit = { is_core_of = MON }
+					remove_core_of = MON
+				}		
+			}
+		}
+	}
+	zang_nan = {		
+		icon = GFX_decision_generic_flags	
+		fire_only_once = yes	
+		visible = {
+			china_is_potential_government = yes
+			owns_state = 858
+			NOT = { 
+				858 = { is_core_of= ROOT } 
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		remove_effect = {
+			add_state_core = 858
+		}
+	}
+	tu_wa = {		
+		icon = GFX_decision_generic_flags	
+		fire_only_once = yes	
+		visible = {
+			china_is_potential_government = yes
+			owns_state = 329
+			NOT = { 
+				329 = { is_core_of= ROOT } 
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		remove_effect = {
+			add_state_core = 329
+		}
+	}
+	hai_shen_wan = {		
+		icon = GFX_decision_generic_flags
+		fire_only_once = yes		
+		visible = {
+			china_is_potential_government = yes
+			NOT = { 
+				408 = { is_core_of= ROOT } 
+			}
+			owns_state = 408
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		remove_effect = {
+			set_province_name = { id = 957 name = "海参崴" }
+			add_state_core = 408
+			add_state_core = 409
+		}
+	}
+	ku_ye_dao = {		
+		icon = GFX_decision_generic_flags
+		fire_only_once = yes		
+		visible = {
+			china_is_potential_government = yes
+			NOT = { 
+				537 = { is_core_of= ROOT } 
+			}
+			owns_state = 537
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		remove_effect = {
+			add_state_core = 537
+		}
+	}
+}

@@ -1,0 +1,261 @@
+﻿capital = 978
+set_research_slots = 3
+set_convoys = 35
+
+set_country_flag = is_russian_warlord
+set_cosmetic_tag = ZHR
+
+if = { limit = { has_dlc = "By Blood Alone" } set_air_oob = "ZHR_air" }
+if = { limit = {  NOT = { has_dlc = "By Blood Alone" } }  set_air_oob = "ZHR_air_legacy" }
+set_naval_oob = "ZHR_naval"
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_mountaineers = 1
+	marines = 1
+	tech_trucks =1
+	motorised_infantry = 1
+	gw_artillery = 1
+	basic_machine_tools = 1
+	electronic_mechanical_engineering = 1
+	interwar_antiair = 1
+	interwar_antitank = 1
+	synth_oil_experiments = 1
+	basic_machine_tools = 1
+	fuel_silos = 1
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_submarine = 1
+		basic_submarine = 1
+		early_destroyer = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+		early_battleship = 1
+		early_battlecruiser = 1
+		transport = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_torpedo = 1
+		basic_depth_charges = 1
+		mtg_transport = 1
+	}
+}
+#NSB
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		engine_tech_1 = 1
+		basic_light_tank_chassis = 1
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+	set_technology = {
+		iw_small_airframe = 1
+		aa_lmg = 1
+		aa_cannon_1 = 1
+		early_bombs = 1
+		engines_1 = 1
+		engines_2 = 1
+		iw_medium_airframe = 1
+		iw_large_airframe = 1
+		basic_small_airframe = 1
+		basic_medium_airframe = 1
+		aircraft_construction = 1
+	}
+}
+if = {
+	limit = { NOT = { has_dlc = "By Blood Alone" } }
+	set_technology = {
+		early_fighter = 1
+		fighter1 = 1
+		early_bomber = 1
+		strategic_bomber1 = 1
+		naval_bomber1 = 1
+	}
+}
+
+add_equipment_to_stockpile = {
+	type = fighter_equipment_1
+	amount = 200
+}
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 5000
+}
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 300
+}
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 1000
+}
+add_equipment_to_stockpile = {
+	type = train_equipment_1
+	amount = 30
+}
+add_equipment_to_stockpile = {
+	type = motorized_equipment_1
+	amount = 500
+}
+
+add_ideas = {
+	ZHR_manchurians
+	ZHR_besieged_republic
+	ZHR_safe_haven
+	ZHR_japanese_influence
+	extensive_conscription
+	#free_trade
+	low_economic_mobilisation
+}
+set_politics = {
+	ruling_party = social_democrat
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	totalist = 4
+	syndicalist = 10
+	radical_socialist = 5
+	social_liberal = 12
+	market_liberal = 22
+	social_democrat = 39
+	social_conservative = 2
+	authoritarian_democrat = 0
+	paternal_autocrat = 5
+	national_populist = 1
+}
+
+recruit_character = ZHR_Pavel_Milyukov
+recruit_character = ZHR_Vasily_Boldyrev
+recruit_character = ZHR_alexander_kerensky
+recruit_character = ZHR_aleksei_gastev
+recruit_character = ZHR_maria_spiridonova
+recruit_character = ZHR_leon_trotsky
+recruit_character = ZHR_lev_kamenev
+recruit_character = ZHR_fyodor_dan
+recruit_character = ZHR_sergey_wojciechowski
+recruit_character = ZHR_mikhail_tukhachevsky
+recruit_character = ZHR_vasily_chapayev
+recruit_character = ZHR_boris_shaposhnikov
+recruit_character = ZHR_vasiliy_blyukher
+recruit_character = ZHR_yuriy_sablin
+recruit_character = ZHR_dmitrij_karbyshev
+recruit_character = ZHR_pyotr_lutskov
+recruit_character = ZHR_alexandr_vekman
+recruit_character = ZHR_vladimir_orlov
+recruit_character = ZHR_andrej_maksimov
+recruit_character = ZHR_eduard_pantserzhansky
+recruit_character = ZHR_mikhail_viktorov
+recruit_character = ZHR_bogdanov
+#recruit_character = ZHR_vladimir_antonov
+#recruit_character = ZHR_lavr_nikolaevich
+#recruit_character = ZHR_yuri_antonov
+recruit_character = ZHR_maxim_gorky
+recruit_character = ZHR_anatoly_lunacharsky
+recruit_character = ZHR_nikolai_bukharin
+recruit_character = ZHR_yakov_perelman
+recruit_character = ZHR_venedikt_myakotin
+recruit_character = ZHR_Ivan_Smirnov
+recruit_character = ZHR_Peter_Isayev
+recruit_character = ZHR_Nikolay_Lossky
+recruit_character = ZHR_Zinovy_Rosenbaum
+recruit_character = ZHR_Alexander_Bublikov
+recruit_character = ZHR_Olga_Vladimirovna_Petkevich
+recruit_character = ZHR_Yakov_Sverdlov
+recruit_character = ZHR_Boris_Kamkov
+recruit_character = ZHR_Vladimir_Nabokov
+recruit_character = ZHR_Emergency_Directorate
+recruit_character = ZHR_Nikolaj_Kondratiev
+recruit_character = ZHR_Yevgeny_Preobrazhensky
+recruit_character = ZHR_Alexander_Chayanov
+recruit_character = ZHR_Andrei_Shingarev
+recruit_character = ZHR_Stanislav_Strumlin
+recruit_character = ZHR_Mikhail_Tereshchenko
+recruit_character = ZHR_Semyon_Maslov
+recruit_character = ZHR_Christian_Rakovsky
+recruit_character = ZHR_Dmitry_Furmanov
+recruit_character = ZHR_Nikolay_Lvov
+recruit_character = ZHR_Osip_Yermansky
+recruit_character = ZHR_Ariadna_Tyrkova_Williams
+recruit_character = ZHR_Anastasia_Bitsenko
+recruit_character = ZHR_Alexander_Gukovsky
+recruit_character = ZHR_Konstantin_Nabokov
+recruit_character = ZHR_Alexei_Nikitin
+recruit_character = ZHR_Alexander_Beloborodov
+recruit_character = ZHR_Grigory_Rogov
+recruit_character = ZHR_Sergei_Voytsekhovsky
+recruit_character = ZHR_Viktor_Pertsov
+recruit_character = ZHR_Grigory_Zinoviev
+recruit_character = ZHR_Ivan_Yefremov
+recruit_character = ZHR_Sergei_Melgunov
+recruit_character = ZHR_Lev_Sosnovsky
+recruit_character = ZHR_Nestor_kalandarishvili
+recruit_character = ZHR_Victorin_Molchanov
+recruit_character = ZHR_Vladimir_Nemtsov
+recruit_character = ZHR_Vyacheslav_Menzhinsky
+recruit_character = ZHR_Alexander_Novikov
+recruit_character = ZHR_Nikolai_Papivin
+recruit_character = ZHR_Pavel_Zhigarev
+recruit_character = ZHR_Syrovy
+
+recruit_character = ZHR_Nikolai_Avksentiev
+recruit_character = ZHR_alisa_rosenbaum
+recruit_character = ZHR_anarchy
+
+#har generals
+recruit_character = ZHR_Stepan_Petrichenko
+recruit_character = ZHR_Volin
+recruit_character = ZHR_Alexander_Kozlovsky
+
+#pri generals
+recruit_character = ZHR_mikhail_muravyov
+
+activate_advisor = ZHR_Pavel_Milyukov 
+activate_advisor = ZHR_Nikolaj_Kondratiev
+activate_advisor = ZHR_Mikhail_Tereshchenko2 
+activate_advisor = ZHR_Alexei_Nikitin 
+activate_advisor = ZHR_Sergei_Melgunov
+
+create_country_leader = {
+	name = "亚历山大·克伦斯基"
+	desc="POLITICS_KERENSKY_DESC"
+	picture = "gfx/leaders/ZHR/Portrait_Alexander_Kerensky.png"
+	expire = "1965.1.1"
+	ideology = socdem_left_nationalism_subtype
+}

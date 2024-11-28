@@ -1,0 +1,13 @@
+MVD_ai_debug = {
+	icon = /
+	allowed = {
+		original_tag = MVD
+	}
+	visible = {
+		or = {
+			is_debug = yes
+			is_ai = yes
+		}
+	}
+	priority = 100
+}

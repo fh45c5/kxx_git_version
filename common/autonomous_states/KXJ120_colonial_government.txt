@@ -1,0 +1,16 @@
+autonomy_state = {
+	id = kxj120_colonial_government
+
+	is_puppet = yes
+
+	min_freedom_level = 0.0
+
+	allowed = {
+		tag = JER
+		overlord = { 
+				tag = CAN
+		
+		}
+	}
+}
+ 

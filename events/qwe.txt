@@ -1,0 +1,4052 @@
+country_event = {#俄社
+	id = brg.1
+	title = brg.1.t
+	desc = brg.1.d
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			has_idea = RUS_army_mutiny
+			OR = {
+				has_completed_focus = RUS_Hold_The_Congress
+			}
+		}
+	}
+
+    option = {
+		name =  brg.1.a 
+		remove_ideas = RUS_army_mutiny
+	}
+}
+
+country_event = {
+	id = brg.2
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			has_completed_focus = SOV_Homogeneous_Socialist_Government
+			has_completed_focus = SOV_Cautious_Industrialization_nsp
+			has_completed_focus = SOV_Foreign_Concessions
+			OR = {
+				has_country_flag = bukharin_chairman_chosen
+			}
+		}
+	}
+
+   option = {
+		name =  brg.5001.a 
+		create_country_leader = {
+			name = "Nikolay Bukharin"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Nikolay_Bukharin.png"
+			expire = "1.1.1"
+			ideology = bukharinist_subtype 
+			traits = { RUS_ex_bolshevik  }
+		}
+	}
+
+	option = {
+		name =  brg.5001.b 
+		create_country_leader = {
+			name = "尼古拉·布哈林"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Nikolay_Bukharin.png"
+			expire = "1.1.1"
+			ideology = bukharinist_subtype 
+			traits = { RUS_ex_bolshevik  }
+		}
+	}
+}
+
+country_event = {
+	id = brg.3
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			has_completed_focus = SOV_Homogeneous_Socialist_Government
+			OR = {
+				has_country_flag = spiridonova_chairman_chosen
+			}
+		}
+	}
+
+    option = {
+		name =  brg.3.a 
+		complete_national_focus = SOV_Premier_Spiridonova
+	}
+}
+
+country_event = {
+	id = brg.4
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			has_completed_focus = SOV_Homogeneous_Socialist_Government
+			has_completed_focus = SOV_Left_SR_Countercoup
+		}
+	}
+
+    option = {
+		name =  brg.4.a 
+		set_politics = {
+			ruling_party = syndicalist
+		}
+	}
+}
+
+country_event = {
+	id = brg.6
+	title = brg.6.t
+	desc = brg.6.d
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			has_completed_focus = SOV_Congress_Of_Soviets
+			has_country_flag = mayakovsky_returned
+		}
+	}
+
+    option = {
+		name =  brg.6.a 
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+ 	option = {
+		name =  brg.6.b 
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+	option = {
+		name =  brg.6.c 
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.e 
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.f 
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.g 
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.h
+		set_country_flag = bolsheviks
+	}
+}
+
+country_event = {
+	id = brg.7
+	title = brg.7.t
+	desc = brg.7.d
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			has_country_flag = bolsheviks
+		}
+	}
+	
+    option = {
+		name =  brg.7.a 
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.7.b
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.7.c
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+	option = {
+	name =  brg.7.e
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+	name =  brg.7.f
+	}
+}
+
+country_event = {
+	id = brg.8
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			has_completed_focus = SOV_Homogeneous_Socialist_Government
+			OR = {
+				has_country_flag = bukharin_chairman_chosen
+			}
+		}
+	}
+
+    option = {
+		name =  brg.2.a 
+		complete_national_focus = SOV_Premier_Bukharin
+	}
+}
+
+
+country_event = {
+	id = brg.9
+	title = brg.9.t
+	desc = brg.9.d
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			OR = {
+				has_completed_focus = RUS_Rebuild_The_Red_Army
+				has_completed_focus = RUS_Empower_The_Krasnaya_Gvardiya
+			}
+		}
+	}
+
+    option = {
+		name =  brg.9.a 
+		complete_national_focus = RUS_Frunzes_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_chairman_frunze
+		complete_national_focus = RUS_Control_Press
+	}
+
+	option = {
+		name =  brg.9.b 
+		complete_national_focus = RUS_Tukhachevskiys_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_dictatorship_tukhachevsky
+		complete_national_focus = RUS_Control_Press
+	}
+
+	option = {
+		name =  brg.9.c 
+		complete_national_focus = RUS_Defensive_Buildup_Strategy
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = RUS_Zhukov_Rules_Alone
+		complete_national_focus = RUS_Control_Press
+	}
+}
+
+country_event = { #
+	id = brg.5
+	title = brg.5.t
+	desc = brg.5.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			NOT{ has_idea = RUS_Eurasianism_idea }
+			has_completed_focus = RUS_Hold_The_Congress
+		}
+	}
+	option = {
+		name = brg.5.a
+		set_country_flag = core
+		bolsheviks_gome_home = yes
+		hidden_effect = {
+			country_event = { id = brg.5002 }
+		} 
+	}
+}
+
+country_event = { #立宪-全俄君主制公投权威
+	id = brg.10
+	title = brg.10.t
+	desc = brg.10.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			OR = {
+				has_completed_focus = RUS_Lobby_Republican_Senators
+				has_completed_focus = RUS_Convince_Republican_Officers
+			}
+		}
+	}
+	option = {
+		name = brg.10.a
+		add_to_variable = { RUS_state_monarchy_referendum_turnout = 2 }
+		add_to_variable = { RUS_monarchy_candidate_legitimacy = 2 }
+		add_to_variable = { RUS_monarchy_referendum_legitimacy = 2 }
+		add_to_variable = { RUS_monarchy_popular_support = 2 }
+	}
+
+	option = {
+		name = brg.10.b
+	}
+}
+
+country_event = { #外阿穆尔
+	id = brg.11
+	title = brg.6.t
+	desc = brg.6.d
+	fire_only_once = yes
+	trigger = {
+		tag = TRM
+		is_ai = no
+		TRM = {
+			has_completed_focus = SOV_Congress_Of_Soviets
+			has_country_flag = mayakovsky_returned
+		}
+	}
+
+    option = {
+		name =  brg.6.a 
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+ 	option = {
+		name =  brg.6.b 
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+	option = {
+		name =  brg.6.c 
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.e 
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.f 
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.g 
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.h
+		set_country_flag = bolsheviks
+	}
+}
+
+country_event = {
+	id = brg.12
+	title = brg.7.t
+	desc = brg.7.d
+	fire_only_once = yes
+	trigger = {
+		tag = TRM
+		is_ai = no
+		TRM = {
+			has_country_flag = bolsheviks
+		}
+	}
+	
+    option = {
+		name =  brg.7.a 
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.7.b
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.7.c
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+	option = {
+	name =  brg.7.e
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+	name =  brg.7.f
+	}
+}
+
+country_event = { #
+	id = brg.13
+	title = brg.5.t
+	desc = brg.5.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = TRM
+		is_ai = no
+		TRM = {
+			or = {
+				has_country_flag = mayakovsky_returned
+				has_completed_focus = SOV_chairman_frunze
+				has_completed_focus = SOV_dictatorship_tukhachevsky
+			}
+		}
+	}
+	option = {
+		name = brg.5.a
+		set_country_flag = core
+		bolsheviks_gome_home = yes
+		hidden_effect = {
+			country_event = { id = brg.5002 }
+		} 
+	}
+}
+
+country_event = {
+	id = brg.14
+	title = brg.9.t
+	desc = brg.9.d
+	fire_only_once = yes
+	trigger = {
+		tag = TRM
+		is_ai = no
+		TRM = {
+			OR = {
+				has_completed_focus = RUS_Rebuild_The_Red_Army
+				has_completed_focus = RUS_Empower_The_Krasnaya_Gvardiya
+			}
+		}
+	}
+
+    option = {
+		name =  brg.9.a 
+		complete_national_focus = RUS_Frunzes_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_chairman_frunze
+		complete_national_focus = RUS_Control_Press
+	}
+
+	option = {
+		name =  brg.9.b 
+		complete_national_focus = RUS_Tukhachevskiys_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_dictatorship_tukhachevsky
+		complete_national_focus = RUS_Control_Press
+	}
+}
+
+country_event = { #欧亚权威
+	id = brg.500
+	title = brg.500.t
+	desc = brg.500.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			or = {
+				has_completed_focus = RUS_Turn_The_Other_Cheek
+				has_completed_focus = RUS_Evil_Comes_From_Everywhereness
+			}
+		}
+	}
+
+	option = {
+		name = brg.500.a
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+		RUS_increase_left_eur_by_little_ammount = yes
+	}
+
+	option = {
+		name = brg.500.b
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+		RUS_increase_center_eur_by_little_ammount = yes
+	}
+
+	option = {
+		name = brg.500.c
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+		RUS_increase_natmax_by_little_ammount = yes
+	}
+
+	option = {
+		name = brg.500.e
+	}
+}
+
+country_event = { #
+	id = brg.501
+	title = brg.501.t
+	desc = brg.501.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			has_completed_focus = RUS_Young_Eurasianists
+		}
+	}
+
+	option = {
+		name = brg.501.a
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+		RUS_increase_young_eur_nrpr_by_little_ammount = yes
+	}
+
+	option = {
+		name = brg.501.b
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+	}
+	
+	option = {
+		name = brg.500.e
+	}
+}
+
+country_event = { #
+	id = brg.502
+	title = brg.502.t
+	desc = brg.502.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			has_completed_focus = RUS_Rule_Of_Intelligentsia
+		}
+	}
+
+	option = {
+		name = brg.502.a
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+		RUS_increase_center_eur_jakobson_by_little_ammount = yes
+	}
+
+	option = {
+		name = brg.502.b
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes
+		RUS_increase_center_eur_tyrkova_by_little_ammount = yes	
+	}
+
+	option = {
+		name = brg.502.c
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+		RUS_increase_center_eur_vernadsky_by_little_ammount = yes
+	}
+
+	option = {
+		name = brg.502.e
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+		RUS_increase_center_eur_trubetzkoy_by_little_ammount = yes
+	}
+
+	option = {
+		name = brg.502.f
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+		RUS_increase_center_eur_chkheidze_by_little_ammount = yes
+	}
+
+	option = {
+		name = brg.502.g
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+		RUS_increase_young_eur_savitsky_by_little_ammount = yes
+	}
+
+	option = {
+		name = brg.500.e	
+	}
+}
+
+country_event = { #
+	id = brg.503
+	title = brg.503.t
+	desc = brg.503.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			has_completed_focus = RUS_The_Red_Prince
+		}
+	}
+
+	option = {
+		name = brg.503.a
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+		RUS_increase_left_eur_plsr_by_little_ammount = yes
+	}
+
+	option = {
+		name = brg.503.b
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+		RUS_increase_left_eur_socdem_by_little_ammount = yes
+	}
+
+	option = {
+		name = brg.500.e	
+	}
+}
+
+country_event = { #俄罗斯-俄社继承人们
+	id = brg.504
+	title = brg.504.t
+	desc = brg.504.d
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			has_completed_focus = SOV_Cement_Zinoviev_Authority
+		}
+	}
+
+    option = {
+		name =  brg.504.a 
+		country_event = {
+			id = nkvd.52
+		}
+	}
+
+	option = {
+		name =  brg.504.b 
+	}
+}
+
+country_event = {
+	id = brg.505
+	title = brg.505.t
+	desc = brg.505.d
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			has_completed_focus = SOV_Power_Of_The_Chekists
+		}
+	}
+
+    option = {
+		name =  brg.505.a 
+		country_event = {
+			id = nkvd.50
+		}
+	}
+
+	option = {
+		name =  brg.505.b 
+	}
+}
+
+country_event = {
+	id = brg.506
+	title = brg.506.t
+	desc = brg.506.d
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			has_completed_focus = SOV_True_Bolshevism
+		}
+	}
+
+    option = {
+		name =  brg.506.a 
+		country_event = {
+			id = kaganovich.8
+		}
+	}
+
+	option = {
+		name =  brg.506.b 
+	}
+}
+
+country_event = {
+	id = brg.507
+	title = brg.507.t
+	desc = brg.507.d
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			has_completed_focus = SOV_Creating_An_Efficient_Economy
+			OR = {
+				has_completed_focus = SOV_Peasants_Republic
+				has_completed_focus = SOV_The_Workers_Constitution
+			}
+		}
+	}
+
+    option = {
+		name =  brg.507.a 
+		country_event = {
+			id = rusd.110
+		}
+	}
+
+	option = {
+		name =  brg.507.b 
+	}
+}
+
+country_event = {
+	id = brg.508
+	title = brg.508.t
+	desc = brg.508.d
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		is_ai = no
+		RUS = {
+			has_completed_focus = SOV_Soyuzmultfilm
+			OR = {
+				has_completed_focus = SOV_Peasants_Republic
+				has_completed_focus = SOV_The_Workers_Constitution
+			}
+		}
+	}
+
+    option = {
+		name =  brg.508.a 
+		country_event = {
+			id = russoc.125
+		}
+	}
+
+	option = {
+		name =  brg.508.b 
+	}
+}
+
+country_event = { #克里米亚
+	id = brg.512
+	title = brg.5.t
+	desc = brg.5.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = CRM
+		is_ai = no
+		CRM = {
+			or = {
+				has_completed_focus = CRM_Revive_Russian_October
+			}
+		}
+	}
+	option = {
+		name = brg.5.a
+		set_country_flag = core
+		bolsheviks_gome_home = yes
+		hidden_effect = {
+			country_event = { id = brg.5002 }
+		} 
+	}
+}
+
+country_event = {
+	id = brg.513
+	title = brg.9.t
+	desc = brg.9.d
+	fire_only_once = yes
+	trigger = {
+		tag = CRM
+		is_ai = no
+		CRM = {
+			OR = {
+				has_completed_focus = RUS_Rebuild_The_Red_Army
+				has_completed_focus = RUS_Empower_The_Krasnaya_Gvardiya
+			}
+		}
+	}
+
+    option = {
+		name =  brg.9.a 
+		complete_national_focus = RUS_Frunzes_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_chairman_frunze
+		complete_national_focus = RUS_Control_Press
+	}
+
+	option = {
+		name =  brg.9.b 
+		complete_national_focus = RUS_Tukhachevskiys_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_dictatorship_tukhachevsky
+		complete_national_focus = RUS_Control_Press
+	}
+}
+
+country_event = {
+	id = brg.514
+	title = brg.514.t
+	desc = brg.514.d
+	fire_only_once = yes
+	trigger = {
+		tag = CRM
+		is_ai = no
+		CRM = {
+			has_cosmetic_tag = CRM_SOV_RUS
+		}
+	}
+
+    option = {
+		name =  brg.514.a 
+		add_ideas = {
+			RUS_Maria_A_Spiridonova_hog_rso
+		}
+		complete_national_focus = SOV_Premier_Spiridonova
+	}
+
+	option = {
+		name =  brg.514.b 
+		add_ideas = {
+			RUS_Vladimir_K_Volsky_hog_rso
+		}
+		complete_national_focus = SOV_Premier_Volsky
+	}
+
+	option = {
+		name =  brg.514.c 
+		add_ideas = {
+			RUS_Rafail_Abramovich_hog_sde
+		}
+		complete_national_focus = SOV_Premier_Lozovsky
+	}
+
+	option = {
+		name =  brg.514.e
+		add_ideas = {
+			RUS_Grigoriy_Y_Zinoviev_hog_tot
+		}
+		complete_national_focus = SOV_Chairman_Zinoviev
+		complete_national_focus = SOV_Congress_Of_Soviets
+		complete_national_focus = RUS_Bureaucratic_Centralism
+	}
+
+	option = {
+		name =  brg.514.f 
+		set_politics = {
+			ruling_party = totalist
+		}
+		complete_national_focus = RUS_Bolsheviks_In_Power
+	}
+
+	option = {
+		name =  brg.514.g 
+		add_ideas = {
+			RUS_Nikolay_I_Bukharin_hog_syn
+		}
+		complete_national_focus = SOV_Premier_Bukharin
+	}
+
+	option = {
+		name =  brg.514.h 
+	}
+}
+
+country_event = {
+	id = brg.515
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = CRM
+		is_ai = no
+		CRM = {
+			has_completed_focus = SOV_Left_SR_Countercoup
+		}
+	}
+
+    option = {
+		name =  brg.4.a 
+		set_politics = {
+			ruling_party = syndicalist
+		}
+	}
+}
+
+country_event = {
+	id = brg.516
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = CRM
+		is_ai = no
+		CRM = {
+			has_completed_focus = SOV_Cautious_Industrialization_nsp
+			has_completed_focus = SOV_Foreign_Concessions
+		}
+	}
+
+    option = {
+		name =  brg.5001.a 
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		create_country_leader = {
+			name = "Nikolay Bukharin"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Nikolay_Bukharin.png"
+			expire = "1.1.1"
+			ideology = bukharinist_subtype 
+			traits = { RUS_ex_bolshevik  }
+		}
+	}
+
+	option = {
+		name =  brg.5001.b 
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		create_country_leader = {
+			name = "尼古拉·布哈林"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Nikolay_Bukharin.png"
+			expire = "1.1.1"
+			ideology = bukharinist_subtype 
+			traits = { RUS_ex_bolshevik  }
+		}
+	}
+}
+
+country_event = {
+	id = brg.517
+	title = brg.6.t
+	desc = brg.6.d
+	fire_only_once = yes
+	trigger = {
+		tag = CRM
+		is_ai = no
+		CRM = {
+			has_completed_focus = SOV_Congress_Of_Soviets
+			has_country_flag = mayakovsky_returned
+		}
+	}
+
+    option = {
+		name =  brg.6.a 
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+ 	option = {
+		name =  brg.6.b 
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+	option = {
+		name =  brg.6.c 
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.e 
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.f 
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.g 
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.h
+		set_country_flag = bolsheviks
+	}
+}
+
+country_event = {
+	id = brg.518
+	title = brg.7.t
+	desc = brg.7.d
+	fire_only_once = yes
+	trigger = {
+		tag = CRM
+		is_ai = no
+		CRM = {
+			has_country_flag = bolsheviks
+		}
+	}
+	
+    option = {
+		name =  brg.7.a 
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.7.b
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.7.c
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+	option = {
+	name =  brg.7.e
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+}
+
+country_event = {
+	id = brg.519
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = CRM
+		is_ai = no
+		CRM = {
+			has_completed_focus = SOV_Homogeneous_Socialist_Government
+			OR = {
+				has_country_flag = spiridonova_chairman_chosen
+			}
+		}
+	}
+
+    option = {
+		name =  brg.3.a 
+		complete_national_focus = SOV_Premier_Spiridonova
+	}
+}
+
+country_event = {
+	id = brg.520
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = CRM
+		is_ai = no
+		CRM = {
+			has_completed_focus = SOV_Homogeneous_Socialist_Government
+			OR = {
+				has_country_flag = bukharin_chairman_chosen
+			}
+		}
+	}
+
+    option = {
+		name =  brg.2.a 
+		complete_national_focus = SOV_Premier_Bukharin
+	}
+}
+
+country_event = {
+	id = brg.521
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = CRM
+		is_ai = no
+		CRM = {
+			has_completed_focus = SOV_Homogeneous_Socialist_Government
+			OR = {
+				has_country_flag = abramovich_chairman_chosen
+			}
+		}
+	}
+
+    option = {
+		name =  brg.2.a 
+		complete_national_focus = SOV_Premier_Lozovsky
+	}
+}
+
+country_event = { #克里米亚-俄社继承人们
+	id = brg.522
+	title = brg.504.t
+	desc = brg.504.d
+	fire_only_once = yes
+	trigger = {
+		tag = CRM
+		is_ai = no
+		CRM = {
+			has_completed_focus = SOV_Cement_Zinoviev_Authority
+		}
+	}
+
+    option = {
+		name =  brg.504.a 
+		country_event = {
+			id = nkvd.52
+		}
+	}
+
+	option = {
+		name =  brg.504.b 
+	}
+}
+
+country_event = {
+	id = brg.523
+	title = brg.505.t
+	desc = brg.505.d
+	fire_only_once = yes
+	trigger = {
+		tag = CRM
+		is_ai = no
+		CRM = {
+			has_completed_focus = SOV_Power_Of_The_Chekists
+		}
+	}
+
+    option = {
+		name =  brg.505.a 
+		country_event = {
+			id = nkvd.50
+		}
+	}
+
+	option = {
+		name =  brg.505.b 
+	}
+}
+
+country_event = {
+	id = brg.524
+	title = brg.506.t
+	desc = brg.506.d
+	fire_only_once = yes
+	trigger = {
+		tag = CRM
+		is_ai = no
+		CRM = {
+			has_completed_focus = SOV_True_Bolshevism
+		}
+	}
+
+    option = {
+		name =  brg.506.a 
+		country_event = {
+			id = kaganovich.8
+		}
+	}
+
+	option = {
+		name =  brg.506.b 
+	}
+}
+
+country_event = {
+	id = brg.525
+	title = brg.507.t
+	desc = brg.507.d
+	fire_only_once = yes
+	trigger = {
+		tag = CRM
+		is_ai = no
+		CRM = {
+			has_completed_focus = SOV_Creating_An_Efficient_Economy
+			OR = {
+				has_completed_focus = SOV_Peasants_Republic
+				has_completed_focus = SOV_The_Workers_Constitution
+			}
+		}
+	}
+
+    option = {
+		name =  brg.507.a 
+		country_event = {
+			id = rusd.110
+		}
+	}
+
+	option = {
+		name =  brg.507.b 
+	}
+}
+
+country_event = {
+	id = brg.526
+	title = brg.508.t
+	desc = brg.508.d
+	fire_only_once = yes
+	trigger = {
+		tag = CRM
+		is_ai = no
+		CRM = {
+			has_completed_focus = SOV_Soyuzmultfilm
+			OR = {
+				has_completed_focus = SOV_Peasants_Republic
+				has_completed_focus = SOV_The_Workers_Constitution
+			}
+		}
+	}
+
+    option = {
+		name =  brg.508.a 
+		country_event = {
+			id = russoc.125
+		}
+	}
+
+	option = {
+		name =  brg.508.b 
+	}
+}
+
+country_event = { #顿河
+	id = brg.527
+	title = brg.527.t
+	desc = brg.527.d
+	fire_only_once = yes
+	trigger = {
+		tag = DKB
+		is_ai = no
+		DKB = {
+			has_completed_focus = DKB_Cement_The_Regime
+			has_completed_focus = DKB_Cement_The_Economy
+			has_completed_focus = DKB_Cement_The_Army
+		}
+	}
+
+    option = {
+		name =  brg.527.a 
+		setup_soviet_russia = yes
+		ROOT = { save_global_event_target_as = soviet_russia }
+		every_state = {
+			limit = {
+				is_core_of = RUS
+				is_owned_and_controlled_by = ROOT
+			}
+			add_core_of = ROOT
+		}
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		create_country_leader = {
+			name = "谢尔盖·瑟尔佐夫"
+			picture = "gfx/leaders/DKB/Portrait_DKB_Sergey_Syrtsov.png"
+			expire = "1.1.1"
+			ideology = radsoc_communism_subtype
+		}
+		set_party_name = {
+			ideology = totalist
+			name = SOV_kamenev_party
+			long_name = SOV_kamenev_party_long
+		}
+		set_cosmetic_tag = DKB_soviet_union
+		add_ideas = rus_unfinished_land_reform
+		set_country_flag = core
+	}
+}
+
+country_event = { 
+	id = brg.528
+	title = brg.5.t
+	desc = brg.5.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = DKB
+		is_ai = no
+		DKB = {
+			or = {
+				has_completed_focus = DKB_Confront_The_Bear
+			}
+		}
+	}
+	option = {
+		name = brg.5.a
+		bolsheviks_gome_home = yes
+		hidden_effect = {
+			country_event = { id = brg.5002 }
+		} 
+	}
+}
+
+country_event = {
+	id = brg.529
+	title = brg.9.t
+	desc = brg.9.d
+	fire_only_once = yes
+	trigger = {
+		tag = DKB
+		is_ai = no
+		DKB = {
+			OR = {
+				has_completed_focus = RUS_Rebuild_The_Red_Army
+				has_completed_focus = RUS_Empower_The_Krasnaya_Gvardiya
+			}
+		}
+	}
+
+    option = {
+		name =  brg.9.a 
+		complete_national_focus = RUS_Frunzes_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_chairman_frunze
+		complete_national_focus = RUS_Control_Press
+	}
+
+	option = {
+		name =  brg.9.b 
+		complete_national_focus = RUS_Tukhachevskiys_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_dictatorship_tukhachevsky
+		complete_national_focus = RUS_Control_Press
+	}
+}
+
+country_event = {
+	id = brg.530
+	title = brg.530.t
+	desc = brg.530.d
+	fire_only_once = yes
+	trigger = {
+		tag = DKB
+		is_ai = no
+		DKB = {
+			has_idea = rus_unfinished_land_reform
+		}
+	}
+
+    option = {
+		name =  brg.514.a 
+		add_ideas = {
+			RUS_Maria_A_Spiridonova_hog_rso
+		}
+		complete_national_focus = SOV_Premier_Spiridonova
+	}
+
+	option = {
+		name =  brg.514.b 
+		add_ideas = {
+			RUS_Vladimir_K_Volsky_hog_rso
+		}
+		complete_national_focus = SOV_Premier_Volsky
+	}
+
+	option = {
+		name =  brg.514.c 
+		add_ideas = {
+			RUS_Rafail_Abramovich_hog_sde
+		}
+		complete_national_focus = SOV_Premier_Lozovsky
+	}
+
+	option = {
+		name =  brg.530.e
+		set_politics = {
+			ruling_party = totalist
+		}
+		complete_national_focus = RUS_Bolsheviks_In_Power
+	}
+	option = {
+		name =  brg.514.h 
+	}
+}
+
+country_event = {
+	id = brg.531
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = DKB
+		is_ai = no
+		DKB = {
+			has_completed_focus = SOV_Left_SR_Countercoup
+		}
+	}
+
+    option = {
+		name =  brg.4.a 
+		set_politics = {
+			ruling_party = syndicalist
+		}
+	}
+}
+
+country_event = {
+	id = brg.532
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = DKB
+		is_ai = no
+		DKB = {
+			has_completed_focus = SOV_Cautious_Industrialization_nsp
+			has_completed_focus = SOV_Foreign_Concessions
+		}
+	}
+
+    option = {
+		name =  brg.5001.a 
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		create_country_leader = {
+			name = "Nikolay Bukharin"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Nikolay_Bukharin.png"
+			expire = "1.1.1"
+			ideology = bukharinist_subtype 
+			traits = { RUS_ex_bolshevik  }
+		}
+	}
+
+	option = {
+		name =  brg.5001.b 
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		create_country_leader = {
+			name = "尼古拉·布哈林"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Nikolay_Bukharin.png"
+			expire = "1.1.1"
+			ideology = bukharinist_subtype 
+			traits = { RUS_ex_bolshevik  }
+		}
+	}
+}
+
+country_event = {
+	id = brg.534
+	title = brg.6.t
+	desc = brg.6.d
+	fire_only_once = yes
+	trigger = {
+		tag = DKB
+		is_ai = no
+		DKB = {
+			has_completed_focus = SOV_Congress_Of_Soviets
+			has_country_flag = mayakovsky_returned
+		}
+	}
+
+    option = {
+		name =  brg.6.a 
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+ 	option = {
+		name =  brg.6.b 
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+	option = {
+		name =  brg.6.c 
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.e 
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.f 
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.g 
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.h
+		set_country_flag = bolsheviks
+	}
+}
+
+country_event = {
+	id = brg.535
+	title = brg.7.t
+	desc = brg.7.d
+	fire_only_once = yes
+	trigger = {
+		tag = DKB
+		is_ai = no
+		DKB = {
+			has_country_flag = bolsheviks
+		}
+	}
+	
+    option = {
+		name =  brg.7.a 
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.7.b
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.7.c
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+	option = {
+	name =  brg.7.e
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+}
+
+country_event = {
+	id = brg.536
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = DKB
+		is_ai = no
+		DKB = {
+			has_completed_focus = SOV_Homogeneous_Socialist_Government
+			OR = {
+				has_country_flag = spiridonova_chairman_chosen
+			}
+		}
+	}
+
+    option = {
+		name =  brg.3.a 
+		complete_national_focus = SOV_Premier_Spiridonova
+	}
+}
+
+country_event = {
+	id = brg.537
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = DKB
+		is_ai = no
+		DKB = {
+			has_completed_focus = SOV_Homogeneous_Socialist_Government
+			OR = {
+				has_country_flag = bukharin_chairman_chosen
+			}
+		}
+	}
+
+    option = {
+		name =  brg.2.a 
+		complete_national_focus = SOV_Premier_Bukharin
+	}
+}
+
+country_event = {
+	id = brg.538
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = DKB
+		is_ai = no
+		DKB = {
+			has_completed_focus = SOV_Homogeneous_Socialist_Government
+			OR = {
+				has_country_flag = abramovich_chairman_chosen
+			}
+		}
+	}
+
+    option = {
+		name =  brg.2.a 
+		complete_national_focus = SOV_Premier_Lozovsky
+	}
+}
+
+country_event = { #顿河-俄社继承人们
+	id = brg.539
+	title = brg.504.t
+	desc = brg.504.d
+	fire_only_once = yes
+	trigger = {
+		tag = DKB
+		is_ai = no
+		DKB = {
+			has_completed_focus = SOV_Cement_Zinoviev_Authority
+		}
+	}
+
+    option = {
+		name =  brg.504.a 
+		country_event = {
+			id = nkvd.52
+		}
+	}
+
+	option = {
+		name =  brg.504.b 
+	}
+}
+
+country_event = {
+	id = brg.540
+	title = brg.505.t
+	desc = brg.505.d
+	fire_only_once = yes
+	trigger = {
+		tag = DKB
+		is_ai = no
+		DKB = {
+			has_completed_focus = SOV_Power_Of_The_Chekists
+		}
+	}
+
+    option = {
+		name =  brg.505.a 
+		country_event = {
+			id = nkvd.50
+		}
+	}
+
+	option = {
+		name =  brg.505.b 
+	}
+}
+
+country_event = {
+	id = brg.541
+	title = brg.506.t
+	desc = brg.506.d
+	fire_only_once = yes
+	trigger = {
+		tag = DKB
+		is_ai = no
+		DKB = {
+			has_completed_focus = SOV_True_Bolshevism
+		}
+	}
+
+    option = {
+		name =  brg.506.a 
+		country_event = {
+			id = kaganovich.8
+		}
+	}
+
+	option = {
+		name =  brg.506.b 
+	}
+}
+
+country_event = {
+	id = brg.542
+	title = brg.507.t
+	desc = brg.507.d
+	fire_only_once = yes
+	trigger = {
+		tag = DKB
+		is_ai = no
+		DKB = {
+			has_completed_focus = SOV_Creating_An_Efficient_Economy
+			OR = {
+				has_completed_focus = SOV_Peasants_Republic
+				has_completed_focus = SOV_The_Workers_Constitution
+			}
+		}
+	}
+
+    option = {
+		name =  brg.507.a 
+		country_event = {
+			id = rusd.110
+		}
+	}
+
+	option = {
+		name =  brg.507.b 
+	}
+}
+
+country_event = {
+	id = brg.543
+	title = brg.508.t
+	desc = brg.508.d
+	fire_only_once = yes
+	trigger = {
+		tag = DKB
+		is_ai = no
+		DKB = {
+			has_completed_focus = SOV_Soyuzmultfilm
+			OR = {
+				has_completed_focus = SOV_Peasants_Republic
+				has_completed_focus = SOV_The_Workers_Constitution
+			}
+		}
+	}
+
+    option = {
+		name =  brg.508.a 
+		country_event = {
+			id = russoc.125
+		}
+	}
+
+	option = {
+		name =  brg.508.b 
+	}
+}
+
+country_event = { #库班苏维埃
+	id = brg.544
+	title = brg.527.t
+	desc = brg.527.d
+	fire_only_once = yes
+	trigger = {
+		tag = KUB
+		is_ai = no
+		KUB = {
+			NOT = { country_exists = RUS }
+			owns_state = 219
+		}
+	}
+
+    option = {
+		name =  brg.527.a 
+		setup_soviet_russia = yes
+		ROOT = { save_global_event_target_as = soviet_russia }
+		every_state = {
+			limit = {
+				is_core_of = RUS
+				is_owned_and_controlled_by = ROOT
+			}
+			add_core_of = ROOT
+		}
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		create_country_leader = {
+			name = "阿列克谢·阿夫托莫诺夫"
+			picture = "gfx/leaders/KUB/Portrait_KUB_Aleksey_Avtonomov.png"
+			expire = "1.1.1"
+			ideology = red_cossack_dictatorship_subtype
+		}
+		set_party_name = {
+			ideology = totalist
+			name = SOV_kamenev_party
+			long_name = SOV_kamenev_party_long
+		}
+		add_ideas = rus_unfinished_land_reform
+		set_country_flag = soviet_congress_end
+		set_country_flag = SOV_red_army_congress
+		set_country_flag = core
+		complete_national_focus = RUS_First_Five_Year_Plan
+		complete_national_focus = RUS_The_Fourth_Internationale
+	}
+}
+
+country_event = { 
+	id = brg.545
+	title = brg.5.t
+	desc = brg.5.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = KUB
+		is_ai = no
+		KUB = {
+			or = {
+				has_completed_focus = KUB_Mobilization_Red
+			}
+		}
+	}
+	option = {
+		name = brg.5.a
+		bolsheviks_gome_home = yes
+		hidden_effect = {
+			country_event = { id = brg.5002 }
+		} 
+	}
+}
+
+country_event = {
+	id = brg.546
+	title = brg.530.t
+	desc = brg.546.d
+	fire_only_once = yes
+	trigger = {
+		tag = KUB
+		is_ai = no
+		KUB = {
+			has_idea = rus_unfinished_land_reform
+		}
+	}
+
+    option = {
+		name =  brg.514.a 
+		add_ideas = {
+			RUS_Maria_A_Spiridonova_hog_rso
+		}
+		complete_national_focus = SOV_Premier_Spiridonova
+	}
+
+	option = {
+		name =  brg.514.b 
+		add_ideas = {
+			RUS_Vladimir_K_Volsky_hog_rso
+		}
+		complete_national_focus = SOV_Premier_Volsky
+	}
+
+	option = {
+		name =  brg.514.c 
+		add_ideas = {
+			RUS_Rafail_Abramovich_hog_sde
+		}
+		complete_national_focus = SOV_Premier_Lozovsky
+	}
+
+	option = {
+		name =  brg.546.e
+		set_politics = {
+			ruling_party = totalist
+		}
+		complete_national_focus = RUS_Bolsheviks_In_Power
+	}
+
+	option = {
+		name =  brg.546.g 
+		add_ideas = {
+			RUS_Nikolay_I_Bukharin_hog_syn
+		}
+		complete_national_focus = SOV_Premier_Bukharin
+	}
+
+	option = {
+		name =  brg.514.h 
+	}
+}
+
+country_event = {
+	id = brg.547
+	title = brg.9.t
+	desc = brg.9.d
+	fire_only_once = yes
+	trigger = {
+		tag = KUB
+		is_ai = no
+		KUB = {
+			OR = {
+				has_completed_focus = RUS_Rebuild_The_Red_Army
+				has_completed_focus = RUS_Empower_The_Krasnaya_Gvardiya
+			}
+		}
+	}
+
+    option = {
+		name =  brg.9.a 
+		complete_national_focus = RUS_Frunzes_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_chairman_frunze
+		complete_national_focus = RUS_Control_Press
+	}
+
+	option = {
+		name =  brg.9.b 
+		complete_national_focus = RUS_Tukhachevskiys_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_dictatorship_tukhachevsky
+		complete_national_focus = RUS_Control_Press
+	}
+}
+
+country_event = {
+	id = brg.548
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = KUB
+		is_ai = no
+		KUB = {
+			has_completed_focus = SOV_Left_SR_Countercoup
+		}
+	}
+
+    option = {
+		name =  brg.4.a 
+		set_politics = {
+			ruling_party = syndicalist
+		}
+	}
+}
+
+country_event = {
+	id = brg.549
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = KUB
+		is_ai = no
+		KUB = {
+			has_completed_focus = SOV_Cautious_Industrialization_nsp
+			has_completed_focus = SOV_Foreign_Concessions
+		}
+	}
+
+   	option = {
+		name =  brg.5001.a 
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		create_country_leader = {
+			name = "Nikolay Bukharin"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Nikolay_Bukharin.png"
+			expire = "1.1.1"
+			ideology = bukharinist_subtype 
+			traits = { RUS_ex_bolshevik  }
+		}
+	}
+
+	option = {
+		name =  brg.5001.b 
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		create_country_leader = {
+			name = "尼古拉·布哈林"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Nikolay_Bukharin.png"
+			expire = "1.1.1"
+			ideology = bukharinist_subtype 
+			traits = { RUS_ex_bolshevik  }
+		}
+	}
+}
+
+
+country_event = {
+	id = brg.550
+	title = brg.6.t
+	desc = brg.6.d
+	fire_only_once = yes
+	trigger = {
+		tag = KUB
+		is_ai = no
+		KUB = {
+			has_completed_focus = SOV_Congress_Of_Soviets
+			has_country_flag = mayakovsky_returned
+		}
+	}
+
+    option = {
+		name =  brg.6.a 
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		sovnarkom_increase_mayakovsky_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+ 	option = {
+		name =  brg.6.b 
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		sovnarkom_increase_gastev_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+	option = {
+		name =  brg.6.c 
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		sovnarkom_increase_lunacharsky_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.e 
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		sovnarkom_increase_zinoviev_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.f 
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		sovnarkom_increase_kamenev_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.g 
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		sovnarkom_increase_sokolnikov_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.6.h
+		set_country_flag = bolsheviks
+	}
+}
+
+country_event = {
+	id = brg.551
+	title = brg.7.t
+	desc = brg.7.d
+	fire_only_once = yes
+	trigger = {
+		tag = KUB
+		is_ai = no
+		KUB = {
+			has_country_flag = bolsheviks
+		}
+	}
+	
+    option = {
+		name =  brg.7.a 
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		sovnarkom_increase_chicherin_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.7.b
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		sovnarkom_increase_molotov_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+
+	option = {
+		name =  brg.7.c
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		sovnarkom_increase_yagoda_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+	option = {
+	name =  brg.7.e
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		sovnarkom_increase_kaganovich_authority = yes
+		country_event = {
+			id = bolsheviks.35
+		}
+	}
+}
+
+country_event = {
+	id = brg.552
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = KUB
+		is_ai = no
+		KUB = {
+			has_completed_focus = SOV_Homogeneous_Socialist_Government
+			OR = {
+				has_country_flag = spiridonova_chairman_chosen
+			}
+		}
+	}
+
+    option = {
+		name =  brg.3.a 
+		complete_national_focus = SOV_Premier_Spiridonova
+	}
+}
+
+country_event = {
+	id = brg.553
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = KUB
+		is_ai = no
+		KUB = {
+			has_completed_focus = SOV_Homogeneous_Socialist_Government
+			OR = {
+				has_country_flag = bukharin_chairman_chosen
+			}
+		}
+	}
+
+    option = {
+		name =  brg.2.a 
+		complete_national_focus = SOV_Premier_Bukharin
+	}
+}
+
+country_event = {
+	id = brg.554
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = KUB
+		is_ai = no
+		KUB = {
+			has_completed_focus = SOV_Homogeneous_Socialist_Government
+			OR = {
+				has_country_flag = abramovich_chairman_chosen
+			}
+		}
+	}
+
+    option = {
+		name =  brg.2.a 
+		complete_national_focus = SOV_Premier_Lozovsky
+	}
+}
+
+country_event = { #库班-俄社继承人们
+	id = brg.555
+	title = brg.504.t
+	desc = brg.504.d
+	fire_only_once = yes
+	trigger = {
+		tag = KUB
+		is_ai = no
+		KUB = {
+			has_completed_focus = SOV_Cement_Zinoviev_Authority
+		}
+	}
+
+    option = {
+		name =  brg.504.a 
+		country_event = {
+			id = nkvd.52
+		}
+	}
+
+	option = {
+		name =  brg.504.b 
+	}
+}
+
+country_event = {
+	id = brg.556
+	title = brg.505.t
+	desc = brg.505.d
+	fire_only_once = yes
+	trigger = {
+		tag = KUB
+		is_ai = no
+		KUB = {
+			has_completed_focus = SOV_Power_Of_The_Chekists
+		}
+	}
+
+    option = {
+		name =  brg.505.a 
+		country_event = {
+			id = nkvd.50
+		}
+	}
+
+	option = {
+		name =  brg.505.b 
+	}
+}
+
+country_event = {
+	id = brg.557
+	title = brg.506.t
+	desc = brg.506.d
+	fire_only_once = yes
+	trigger = {
+		tag = KUB
+		is_ai = no
+		KUB = {
+			has_completed_focus = SOV_True_Bolshevism
+		}
+	}
+
+    option = {
+		name =  brg.506.a 
+		country_event = {
+			id = kaganovich.8
+		}
+	}
+
+	option = {
+		name =  brg.506.b 
+	}
+}
+
+country_event = {
+	id = brg.558
+	title = brg.507.t
+	desc = brg.507.d
+	fire_only_once = yes
+	trigger = {
+		tag = KUB
+		is_ai = no
+		KUB = {
+			has_completed_focus = SOV_Creating_An_Efficient_Economy
+			OR = {
+				has_completed_focus = SOV_Peasants_Republic
+				has_completed_focus = SOV_The_Workers_Constitution
+			}
+		}
+	}
+
+    option = {
+		name =  brg.507.a 
+		country_event = {
+			id = rusd.110
+		}
+	}
+
+	option = {
+		name =  brg.507.b 
+	}
+}
+
+country_event = {
+	id = brg.559
+	title = brg.508.t
+	desc = brg.508.d
+	fire_only_once = yes
+	trigger = {
+		tag = KUB
+		is_ai = no
+		KUB = {
+			has_completed_focus = SOV_Soyuzmultfilm
+			OR = {
+				has_completed_focus = SOV_Peasants_Republic
+				has_completed_focus = SOV_The_Workers_Constitution
+			}
+		}
+	}
+
+    option = {
+		name =  brg.508.a 
+		country_event = {
+			id = russoc.125
+		}
+	}
+
+	option = {
+		name =  brg.508.b 
+	}
+}
+
+country_event = { #格鲁吉亚
+	id = brg.560
+	title = brg.560.t
+	desc = brg.560.d
+	fire_only_once = yes
+	trigger = {
+		tag = GEO
+		is_ai = no
+		GEO = {
+			has_completed_focus = GEO_chairman_focus
+			NOT = { country_exists = AZE }
+		}
+	}
+
+    option = {
+		name =  brg.560.a 
+		add_state_core = 1298
+        add_state_core = 1299
+        add_state_core = 998
+        add_state_core = 1302
+        add_state_core = 1303
+        add_state_core = 1300
+        add_state_core = 1301
+        add_state_core = 1081
+        add_state_core = 229
+        add_state_core = 1304
+        add_state_core = 990
+        add_state_core = 230
+		declare_war_on = {
+			target = MTR
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = KUB
+			type = annex_everything
+		}
+		KUB = {
+			leave_faction = yes
+		}
+		MTR = {
+			leave_faction = yes
+		}
+	}
+}
+
+country_event = { 
+	id = brg.561
+	title = brg.561.t
+	desc = brg.561.d
+	fire_only_once = yes
+	trigger = {
+		tag = GEO
+		is_ai = no
+		GEO = {
+			has_completed_focus = GEO_chairman_focus
+			NOT = { country_exists = MTR }
+			NOT = { country_exists = KUB }
+		}
+	}
+
+    option = {
+		name =  brg.561.a 
+		add_state_core = 234
+        add_state_core = 1227
+        add_state_core = 235
+        add_state_core = 1187
+        add_state_core = 1189
+        add_state_core = 1191
+        add_state_core = 232
+        add_state_core = 1186
+        add_state_core = 233
+        add_state_core = 787
+		declare_war_on = {
+			target = DKB
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = KLY
+			type = annex_everything
+		}
+		KLY = {
+			leave_faction = yes
+		}
+		DKB = {
+			leave_faction = yes
+		}
+	}
+}
+
+
+country_event = { #
+	id = brg.563
+	title = brg.5.t
+	desc = brg.5.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = GEO
+		is_ai = no
+		GEO = {
+			has_completed_focus = GEO_chairman_focus
+		}
+	}
+	option = {
+		name = brg.5.a
+		bolsheviks_gome_home = yes
+		hidden_effect = {
+			country_event = { id = brg.5002 }
+		} 
+	}
+}
+
+country_event = { #
+	id = brg.564
+	title = brg.527.t
+	desc = brg.527.d
+	fire_only_once = yes
+	trigger = {
+		tag = GEO
+		is_ai = no
+		GEO = {
+			has_completed_focus = GEO_cult_of_stalin
+		}
+	}
+
+    option = {
+		name =  brg.527.a 
+		setup_soviet_russia = yes
+		ROOT = { save_global_event_target_as = soviet_russia }
+		every_state = {
+			limit = {
+				is_core_of = RUS
+				is_owned_and_controlled_by = ROOT
+			}
+			add_core_of = ROOT
+		}
+		create_country_leader = {
+			name = "约瑟夫·朱加什维利"
+			picture = "gfx/leaders/GEO/Portrait_GEO_Ioseb_Jughashvili.png"
+			expire = "1.1.1"
+			ideology = georgian_socialism_subtype
+			traits = {supreme_leader}
+			
+		}
+		set_party_name = {
+			ideology = totalist
+			name = SOV_kamenev_party
+			long_name = SOV_kamenev_party_long
+		}
+		add_ideas = rus_unfinished_land_reform
+		set_country_flag = core
+	}
+}
+
+country_event = {
+	id = brg.565
+	title = brg.565.t
+	desc = brg.565.d
+	fire_only_once = yes
+	trigger = {
+		tag = GEO
+		is_ai = no
+		GEO = {
+			has_idea = rus_unfinished_land_reform
+		}
+	}
+
+    option = {
+		name =  brg.565.a 
+		set_country_flag = soviet_congress_end
+		set_country_flag = SOV_red_army_congress
+		add_ideas = {
+			SOV_Vyacheslav_Molotov_hog_tot
+		}
+		complete_national_focus = SOV_Chairman_Molotov
+		complete_national_focus = SOV_Down_With_The_Village
+		complete_national_focus = SOV_Promote_Urbanisation
+		complete_national_focus = RUS_First_Five_Year_Plan
+		complete_national_focus = RUS_The_Fourth_Internationale
+	}
+}
+
+country_event = {
+	id = brg.566
+	title = brg.9.t
+	desc = brg.9.d
+	fire_only_once = yes
+	trigger = {
+		tag = GEO
+		is_ai = no
+		GEO = {
+			OR = {
+				has_completed_focus = RUS_Rebuild_The_Red_Army
+				has_completed_focus = RUS_Empower_The_Krasnaya_Gvardiya
+			}
+		}
+	}
+
+    option = {
+		name =  brg.9.a 
+		complete_national_focus = RUS_Frunzes_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_chairman_frunze
+		complete_national_focus = RUS_Control_Press
+	}
+
+	option = {
+		name =  brg.9.b 
+		complete_national_focus = RUS_Tukhachevskiys_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_dictatorship_tukhachevsky
+		complete_national_focus = RUS_Control_Press
+	}
+}
+
+country_event = { #米高扬
+	id = brg.567
+	title = brg.5.t
+	desc = brg.5.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = ARM
+		is_ai = no
+		ARM = {
+			has_completed_focus = ARM_revolutionary_ideal
+		}
+	}
+	option = {
+		name = brg.5.a
+		bolsheviks_gome_home = yes
+		hidden_effect = {
+			country_event = { id = brg.5002 }
+		} 
+	}
+}
+
+country_event = {
+	id = brg.568
+	title = brg.9.t
+	desc = brg.9.d
+	fire_only_once = yes
+	trigger = {
+		tag = ARM
+		is_ai = no
+		ARM = {
+			OR = {
+				has_completed_focus = RUS_Rebuild_The_Red_Army
+				has_completed_focus = RUS_Empower_The_Krasnaya_Gvardiya
+			}
+		}
+	}
+
+    option = {
+		name =  brg.9.a 
+		complete_national_focus = RUS_Frunzes_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_chairman_frunze
+		complete_national_focus = RUS_Control_Press
+	}
+
+	option = {
+		name =  brg.9.b 
+		complete_national_focus = RUS_Tukhachevskiys_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_dictatorship_tukhachevsky
+		complete_national_focus = RUS_Control_Press
+	}
+}
+
+country_event = {
+	id = brg.569
+	title = brg.565.t
+	desc = brg.569.d
+	fire_only_once = yes
+	trigger = {
+		tag = ARM
+		is_ai = no
+		ARM = {
+			has_country_flag = soviet_russia_restored
+		}
+	}
+
+    option = {
+		name =  brg.514.a 
+		set_country_flag = core
+		add_ideas = {
+			RUS_Maria_A_Spiridonova_hog_rso
+		}
+		complete_national_focus = SOV_Premier_Spiridonova
+	}
+
+	option = {
+		name =  brg.514.b 
+		set_country_flag = core
+		add_ideas = {
+			RUS_Vladimir_K_Volsky_hog_rso
+		}
+		complete_national_focus = SOV_Premier_Volsky
+	}
+
+	option = {
+		name =  brg.514.c 
+		set_country_flag = core
+		add_ideas = {
+			RUS_Rafail_Abramovich_hog_sde
+		}
+		complete_national_focus = SOV_Premier_Lozovsky
+	}
+
+	option = {
+		name =  brg.514.e
+		set_country_flag = core
+		add_ideas = {
+			RUS_Grigoriy_Y_Zinoviev_hog_tot
+		}
+		complete_national_focus = SOV_Chairman_Zinoviev
+		complete_national_focus = SOV_Congress_Of_Soviets
+		complete_national_focus = RUS_Bureaucratic_Centralism
+	}
+
+	option = {
+		name =  brg.569.a 
+		set_country_flag = core
+		add_ideas = {
+			SOV_Vyacheslav_Molotov_hog_tot
+		}
+		complete_national_focus = SOV_Chairman_Molotov
+		complete_national_focus = SOV_Down_With_The_Village
+		complete_national_focus = SOV_Promote_Urbanisation
+	}
+}
+
+country_event = {
+	id = brg.570
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = ARM
+		is_ai = no
+		ARM = {
+			has_completed_focus = SOV_Left_SR_Countercoup
+		}
+	}
+
+    option = {
+		name =  brg.4.a 
+		set_politics = {
+			ruling_party = syndicalist
+		}
+	}
+}
+
+country_event = {
+	id = brg.571
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = ARM
+		is_ai = no
+		ARM = {
+			has_completed_focus = SOV_Cautious_Industrialization_nsp
+			has_completed_focus = SOV_Foreign_Concessions
+		}
+	}
+
+    option = {
+		name =  brg.5001.a 
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		create_country_leader = {
+			name = "Nikolay Bukharin"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Nikolay_Bukharin.png"
+			expire = "1.1.1"
+			ideology = bukharinist_subtype 
+			traits = { RUS_ex_bolshevik  }
+		}
+	}
+
+	option = {
+		name =  brg.5001.b 
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		create_country_leader = {
+			name = "尼古拉·布哈林"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Nikolay_Bukharin.png"
+			expire = "1.1.1"
+			ideology = bukharinist_subtype 
+			traits = { RUS_ex_bolshevik  }
+		}
+	}
+}
+
+#卡尔梅克
+country_event = { 
+	id = brg.572
+	title = brg.5.t
+	desc = brg.5.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = KLY
+		is_ai = no
+		OR = {
+			has_country_leader = {
+				name = "雅科夫·斯维尔德洛夫"
+				ruling_only = yes
+			}
+		}
+	}
+	option = {
+		name = brg.5.a
+		bolsheviks_gome_home = yes
+		hidden_effect = {
+			country_event = { id = brg.5002 }
+		} 
+	}
+}
+
+country_event = {
+	id = brg.573
+	title = brg.9.t
+	desc = brg.9.d
+	fire_only_once = yes
+	trigger = {
+		tag = KLY
+		is_ai = no
+		KLY = {
+			OR = {
+				has_completed_focus = RUS_Rebuild_The_Red_Army
+				has_completed_focus = RUS_Empower_The_Krasnaya_Gvardiya
+			}
+		}
+	}
+
+    option = {
+		name =  brg.9.a 
+		complete_national_focus = RUS_Frunzes_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_chairman_frunze
+		complete_national_focus = RUS_Control_Press
+	}
+
+	option = {
+		name =  brg.9.b 
+		complete_national_focus = RUS_Tukhachevskiys_Reform_Plan
+		complete_national_focus = RUS_Zhukov_Restores_Socialism
+		complete_national_focus = SOV_dictatorship_tukhachevsky
+		complete_national_focus = RUS_Control_Press
+	}
+}
+
+country_event = {
+	id = brg.574
+	title = brg.2.t
+	desc = brg.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = KLY
+		is_ai = no
+		KLY = {
+			has_completed_focus = SOV_Cautious_Industrialization_nsp
+			has_completed_focus = SOV_Foreign_Concessions
+		}
+	}
+
+   option = {
+		name =  brg.5001.a 
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		create_country_leader = {
+			name = "Nikolay Bukharin"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Nikolay_Bukharin.png"
+			expire = "1.1.1"
+			ideology = bukharinist_subtype 
+			traits = { RUS_ex_bolshevik  }
+		}
+	}
+
+	option = {
+		name =  brg.5001.b 
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		create_country_leader = {
+			name = "尼古拉·布哈林"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Nikolay_Bukharin.png"
+			expire = "1.1.1"
+			ideology = bukharinist_subtype 
+			traits = { RUS_ex_bolshevik  }
+		}
+	}
+}

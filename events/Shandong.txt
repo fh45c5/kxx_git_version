@@ -1,0 +1,2839 @@
+add_namespace = shandong
+add_namespace = sqiwr
+country_event = {#
+	id = shandong.480
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "红卐字协会政变"
+	desc = shandong.457.desc
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		set_cosmetic_tag = SQI_RED
+		name = 公平的社会已到来
+		set_politics = { ruling_party = authoritarian_democrat }
+		
+		set_country_leader_name = {
+				ideology = authoritarian_democrat
+				name = "熊希龄"
+			}
+			
+		set_country_leader_portrait = {
+				ideology = authoritarian_democrat
+				portrait = "gfx/leaders/SQI/Portrait_SQI_Xiong_Xiling.png"
+			}
+			
+			set_party_name = { 
+				ideology = authoritarian_democrat
+				name = "Red Swastika Society"
+					
+			}
+			
+			set_party_name = { 
+				ideology = national_populist
+				name = "Red Swastika Society"
+					
+			}
+			set_party_name = { 
+				ideology = social_democrat
+				name = "Red Swastika Society"
+					
+			}
+			set_country_leader_ideology = red_tinted_autocracy_subtype
+			complete_national_focus = SQI_the_shandong_takeover
+			set_country_flag = not_china_republic
+			add_ideas = {
+			SQI_xiong_xiling_hog_ade
+			}
+		}	
+	}
+	
+	country_event = {#
+	id = shandong.470
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "双龙相争"
+	desc = shandong.470.desc
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		
+		name = 熊十力获胜
+		
+		set_country_leader_name = {
+				ideology = authoritarian_democrat
+				name = "熊十力"
+			}
+			
+		set_country_leader_portrait = {
+				ideology = authoritarian_democrat
+				portrait = "gfx/leaders/SQI/Portrait_Xiong_Shili.png"
+			}
+		
+			remove_ideas = {
+			SQI_xiong_xiling_hog_ade
+			}
+			add_ideas = {
+			SQI_xiong_shili_hog_npo
+			}
+			set_country_leader_ideology = neo_confucianism_subtype
+		}
+		
+		
+		option = {
+		name = 熊希龄获胜
+		
+		}
+	
+	}
+	
+	
+	
+	country_event = {#
+	id = shandong.471
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "十力参悟洛里奇思想"
+	desc = shandong.471.desc
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = 追随洛里奇思想
+		set_politics = { ruling_party = radical_socialist }
+		set_country_leader_name = {
+				ideology = radical_socialist
+				name = "熊十力"
+			}
+			
+		set_country_leader_portrait = {
+				ideology = radical_socialist
+				portrait = "gfx/leaders/SQI/Portrait_Xiong_Shili.png"
+			}
+		
+			
+			set_party_name = { 
+				ideology = radical_socialist
+				name = "Red Swastika Society"
+					
+			}
+			set_country_leader_ideology = radsoc_esoteric_leninism_subtype
+			add_authdem_to_coalition = yes
+		}
+		option = {
+		name = "坚持自己的道路"
+		}
+	
+	}
+	country_event = {#
+	id = shandong.472
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "暗杀熊希龄"
+	desc = 突发事件！熊希龄在烟台被人刺杀，如今在医院急救....
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = 熊希龄死了！
+		set_party_name = { 
+				ideology = paternal_autocrat
+				name = "Red Swastika Society"
+			}
+		add_authdem_to_coalition = yes
+		set_politics = { ruling_party = paternal_autocrat }
+		add_ideas = {
+		SQI_mao_yenwan_hog_npo
+		}
+		create_country_leader = {
+			name = "毛彦文"
+			picture = "gfx/leaders/SQI/Portrait_SQI_Mao_Yenwan.png"
+			expire = "1965.1.1"
+			ideology = pataut_occultism_subtype
+		}
+		}
+		
+		option = {
+		name = 熊希龄成功活了下来
+		set_politics = { ruling_party = social_democrat }
+		set_country_leader_name = {
+				ideology = social_democrat
+				name = "熊希龄"
+			}
+		set_country_leader_portrait = {
+				ideology = social_democrat
+				portrait = "gfx/leaders/SQI/Portrait_SQI_Xiong_Xiling.png"
+			}
+			set_country_leader_ideology = socdem_buddhist_socialism_subtype
+			add_authdem_to_coalition = yes
+		}
+	
+	}
+	
+	
+	country_event = {#
+	id = shandong.458
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "来自新月协会的抗议活动"
+	desc = shandong.458.desc
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		
+		name = "密切关注他们"
+		}
+		
+		
+	
+	}
+	
+	country_event = {#
+	id = shandong.459
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "新月社革命"
+	desc = shandong.459.desc
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		
+		name = "抗议者冲击政府"
+		complete_national_focus = SQI_the_moon_shines_throughout_china
+		set_cosmetic_tag = SQI_REP
+		
+		set_country_leader_name = {
+				ideology = social_democrat
+				name = "闻一多"
+			}
+			
+		set_country_leader_portrait = {
+				ideology = social_democrat
+				portrait = "gfx/leaders/SQI/Portrait_SQI_Wen_Yiduo.png"
+			}
+			
+			set_party_name = { 
+				ideology = social_democrat
+				name = "新月社"
+					
+			}
+			
+			
+			set_country_leader_name = {
+				ideology = social_liberal
+				name = "徐志摩"
+			}
+			
+		set_country_leader_portrait = {
+				ideology = social_liberal
+				portrait = "gfx/leaders/SQI/Portrait_SQI_Xu_Zhimo.png"
+			}
+			
+			set_party_name = { 
+				ideology = social_liberal
+				name = "新月社"
+					
+			}
+			
+			
+		}		
+		
+	
+	}
+	
+	country_event = {#
+	id = shandong.460
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "民主国家的未来"
+	desc = shandong.460.desc
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		
+		name = "自由党确保了该省的安全"
+		set_politics = { ruling_party = social_liberal }
+		set_country_leader_ideology = national_liberalism_subtype
+		}
+		
+		option = {
+		
+		name = "民族主义者宣布胜利"
+		set_politics = { ruling_party = social_democrat }
+		set_country_leader_ideology = socdem_left_nationalism_subtype
+		}
+		option = {
+		
+		name = "温和的农业者至高无上"
+		set_politics = { ruling_party = social_democrat }
+		
+		set_country_leader_name = {
+				ideology = social_democrat
+				name = "陶行知"
+			}
+			
+		set_country_leader_portrait = {
+				ideology = social_democrat
+				portrait = "gfx/leaders/SQI/Portrait_SQI_Tao_Xingzhi.png"
+			}
+			
+			set_country_leader_ideology = socdem_mao_zedong_thought_subtype
+		}
+		
+	
+	}
+	
+	country_event = {#
+	id = shandong.461
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "加入国民党？"
+	desc = shandong.461.desc
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		
+		name = "我们将忠于我们自己的事业"
+		}
+		option = {
+		
+		name = "是时候加入国民党了"
+		complete_national_focus = SQI_align_with_the_kmt
+		set_politics = { ruling_party = radical_socialist }
+		set_cosmetic_tag = SQI_KMT
+		set_country_leader_name = {
+				ideology = radical_socialist
+				name = "闻一多"
+			}
+			
+		set_country_leader_portrait = {
+				ideology = radical_socialist
+				portrait = "gfx/leaders/SQI/Portrait_SQI_Wen_Yiduo.png"
+			}
+			
+			set_country_leader_ideology = radsoc_tridemism_subtype
+		}
+		option = {
+		name = "加入国民党，但保持独立"
+		add_socdem_to_coalition = yes
+		set_politics = { ruling_party = radical_socialist }
+		set_country_leader_name = {
+				ideology = radical_socialist
+				name = "闻一多"
+			}
+			
+		set_country_leader_portrait = {
+				ideology = radical_socialist
+				portrait = "gfx/leaders/SQI/Portrait_SQI_Wen_Yiduo.png"
+			}
+			set_country_leader_ideology = left_nationalism_subtype
+		set_party_name = { 
+				ideology = radical_socialist
+				name = "Crescent Moon Society"
+					
+			}
+		}
+		
+	
+	}
+	
+	country_event = {#
+	id = shandong.462
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "给地主的建议"
+	desc = shandong.462.desc
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		
+		name = "愿所有人都能得到和平"
+		add_ideas = {
+		SQI_landlord_economics
+		}
+		}
+		
+		
+	
+	}
+	
+	country_event = {#
+	id = shandong.463
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "来自山东的报价"
+	desc = "来自山东的消息传到了胡适那里，其中提出了要约。这个提议是山东和直隶之间的和平统一，以实现更美好的共和未来。胡适沉思了一下，然后接受了这个提议。"
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		
+		name = "立即告诉志摩"
+		QIE = {
+		annex_country = {
+				target = SQI
+				transfer_troops = yes
+			}
+		change_tag_from = SQI
+		}
+		}
+		
+		
+	
+	}
+	
+	country_event = {#
+	id = shandong.464
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "济南红军"
+	desc = shandong.464.desc
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		
+		name = "闻起来有鱼腥味"
+		}
+		
+		
+	
+	}
+	
+	country_event = {#
+	id = shandong.465
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "济南之战"
+	desc = shandong.465.desc
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		
+		name = "我们现在已经取得了胜利！为了革命！"
+		custom_effect_tooltip = sqi_revolution_done_tt
+		hidden_effect = {
+		set_politics = { ruling_party = totalist }
+		set_cosmetic_tag = SQI_REVOLUTION
+		set_country_leader_name = {
+				ideology = totalist
+				name = "八路军议会"
+			}
+			
+		set_country_leader_portrait = {
+				ideology = totalist
+				portrait = "gfx/leaders/SQI/Portrait_SQI_8th_Route_Army.png"
+			}
+			
+			set_country_leader_ideology = totalist_subtype
+			country_event = {
+			id = shandong.466
+			days = 3
+			
+			}
+			
+		}
+		
+		set_party_name = { 
+				ideology = totalist
+				name = "8RA/AJSF"
+				name_long = "8th Route Army/Shandong Revolutionary Society/Anti-Japanese Solidarity Front"
+					
+			}
+			
+		complete_national_focus = SQITWO_the_fire_of_revolution_shines_through_shandong
+		}		
+	
+	}
+	
+	country_event = {#
+	id = shandong.466
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "决定新的领导层"
+	desc = shandong.466.desc
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		
+		name = "真正的抗日革命万岁！"
+		complete_national_focus = SQITWO_ultranationalist_victory
+		
+		
+		set_country_leader_name = {
+				ideology = totalist
+				name = "习仲勋"
+			}
+			
+		set_country_leader_portrait = {
+				ideology = totalist
+				portrait = "gfx/leaders/SQI/Portrait_SQI_Xi_Zhongxun.png"
+			}
+			
+			set_country_leader_ideology = red_junta_subtype
+			
+			
+		
+		
+		set_party_name = { 
+				ideology = totalist
+				name = "山东第八路军"
+			}
+			SQI = {
+				every_state = {		
+			limit = {
+			OR = {
+	is_core_of = LEP
+	is_core_of = CHI
+	is_core_of = SQI
+	is_core_of = ANQ
+	is_core_of = QIE
+	is_core_of = FNG
+	is_core_of = GXC
+	is_core_of = YUN
+	is_core_of = XSM
+	is_core_of = Mon
+	is_core_of = HNN
+	is_core_of = shx
+	is_core_of = szc
+	is_core_of = lec
+	is_core_of = sik
+	is_core_of = tib
+	is_core_of = TAI
+	is_core_of = JST
+	}
+			}					
+	add_core_of = SQI
+							}
+	add_state_core = 537
+	add_state_core = 525
+	add_state_core = 527
+	add_state_core = 858
+	add_state_core = 745
+	add_state_core = 1246
+	add_state_core = 409
+	add_state_core = 561
+	add_state_core = 560
+	add_state_core = 657
+	add_state_core = 654
+	add_state_core = 1293
+	add_state_core = 811
+	add_state_core = 329
+	add_state_core = 729
+	add_state_core = 600
+	add_state_core = 1046
+	add_state_core = 802
+	add_state_core = 1066
+	add_state_core = 595
+	add_state_core = 1044
+	add_state_core = 1045
+	add_state_core = 1069
+	add_state_core = 803
+	add_state_core = 1068
+	add_state_core = 1067
+	add_state_core = 596
+	add_state_core = 613
+	add_state_core = 1014
+	add_state_core = 606
+	add_state_core = 1050
+	add_state_core = 598
+	add_state_core = 1047
+	add_state_core = 1064
+	add_state_core = 597
+	add_state_core = 1065
+	add_state_core = 996
+	add_state_core = 744
+			}
+		}
+		
+		option = {
+		
+		name = "恩铭确保军队安全"
+		complete_national_focus = SQITWO_denouncing_the_japanese_menance
+		
+		
+		set_country_leader_name = {
+				ideology = totalist
+				name = "邓恩铭"
+			}
+			
+		set_country_leader_portrait = {
+				ideology = totalist
+				portrait = "gfx/leaders/SQI/Portrait_SQI_Deng_Enming.png"
+			}
+			
+			set_country_leader_ideology = tot_anti_japaneseism_subtype
+			
+			
+		
+		
+		set_party_name = { 
+				ideology = totalist
+				name = "抗日民族统一战线"
+				
+					
+			}
+			SQI = {
+				every_state = {		
+			limit = {
+			OR = {
+	is_core_of = LEP
+	is_core_of = CHI
+	is_core_of = SQI
+	is_core_of = ANQ
+	is_core_of = QIE
+	is_core_of = FNG
+	is_core_of = GXC
+	is_core_of = YUN
+	is_core_of = XSM
+	is_core_of = Mon
+	is_core_of = HNN
+	is_core_of = shx
+	is_core_of = szc
+	is_core_of = lec
+	is_core_of = sik
+	is_core_of = tib
+	is_core_of = TAI
+	is_core_of = JST
+	}
+			}					
+	add_core_of = SQI
+							}
+	add_state_core = 537
+	add_state_core = 525
+	add_state_core = 527
+	add_state_core = 858
+	add_state_core = 745
+	add_state_core = 1246
+	add_state_core = 409
+	add_state_core = 561
+	add_state_core = 560
+	add_state_core = 657
+	add_state_core = 654
+	add_state_core = 1293
+	add_state_core = 811
+	add_state_core = 329
+	add_state_core = 729
+	add_state_core = 600
+	add_state_core = 1046
+	add_state_core = 802
+	add_state_core = 1066
+	add_state_core = 595
+	add_state_core = 1044
+	add_state_core = 1045
+	add_state_core = 1069
+	add_state_core = 803
+	add_state_core = 1068
+	add_state_core = 1067
+	add_state_core = 596
+	add_state_core = 613
+	add_state_core = 1014
+	add_state_core = 606
+	add_state_core = 1050
+	add_state_core = 598
+	add_state_core = 1047
+	add_state_core = 1064
+	add_state_core = 597
+	add_state_core = 1065
+	add_state_core = 996
+	add_state_core = 744
+			}
+		}
+		
+		
+		
+		
+	
+	}
+	
+	country_event = {#
+	id = shandong.467
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "山东逮捕我们的外交官"
+	desc = shandong.467.desc
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		
+		name = "要求进一步释放！"
+		SQI = {
+		country_event = {
+		id = shandong.468
+		days = 3
+		}
+		}
+		}
+	
+	}
+	
+	country_event = {#
+	id = shandong.468
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "日本要求我们释放外交官"
+	desc = shandong.468.desc
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		
+		name = "给我滚！"
+		JAP = {
+		country_event = {
+		id = shandong.469
+		days = 3
+		}
+		}
+		}
+		
+		option = {
+		name = "让他们离开"
+		add_stability = -0.5
+		add_war_support = -0.3
+		add_political_power = -100
+		
+		}
+	
+	}
+	
+	country_event = {#
+	id = shandong.469
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "山东拒绝了！"
+	desc = shandong.469.desc
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		
+		name = "所以这就发生了？"
+		add_stability = -0.05
+		add_war_support = -0.03
+		add_political_power = -100
+		
+		}
+	
+	}
+	
+	
+	country_event = {#
+	id = shandong.473
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "日本的未来"
+	desc = shandong.473.desc
+	picture = GFX_rus_black_tsar_event
+
+	
+	fire_only_once = yes
+	trigger = {
+		tag = SQI
+		SQI = {
+			has_country_leader = {
+				name = "邓恩铭"
+				ruling_only = yes
+			}
+		}
+		NOT = { country_exists = JAP }
+	}
+	immediate = {
+	hidden_effect = {
+		add_state_core = 537
+		KYU = {
+			add_state_core = 528
+			add_state_core = 526
+			}
+			JSI = {
+			add_state_core = 530
+			}	
+			
+			HOJ = {
+			
+			
+			add_state_core = 529
+			add_state_core = 531
+			add_state_core = 532
+			add_state_core = 535
+			add_state_core = 282
+			add_state_core = 534
+			add_state_core = 533
+			}
+			
+			JOK = {
+			add_state_core = 536
+			add_state_core = 555
+			}
+		
+		
+		
+		}
+	}
+	option = {
+		
+		name = "吞并他们！"
+		annex_country = {
+			target = JAP
+			transfer_troops = yes
+		}
+			add_state_core = 528
+			add_state_core = 526
+			add_state_core = 530
+			add_state_core = 529
+			add_state_core = 531
+			add_state_core = 532
+			add_state_core = 535
+			add_state_core = 282
+			add_state_core = 534
+			add_state_core = 533
+			add_state_core = 536
+			add_state_core = 555
+		}
+		
+		option = {
+		name = "拆分他们"
+		annex_country = {
+			target = JAP
+			transfer_troops = yes
+		}
+		release = KYU
+			release = JSI
+			release = HOJ
+			release = JOK
+			puppet = KYU
+			puppet = JSI
+			puppet = HOJ
+			puppet = JOK	
+		
+		}
+	
+	}
+
+
+
+country_event = {#
+	id = shandong.474
+	title = "山东权力真空"
+	desc = shandong.474.desc
+	picture = GFX_report_event_generic_riot
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = { 
+	hidden_effect = {
+	remove_ideas = SQI_honored_master
+	remove_ideas = SQI_flight_north
+	remove_ideas = SQI_dogmeat_general
+	remove_ideas = SQI_Rampant_drug_trade
+	random_unit_leader = {
+			limit = { has_id = 1193 }
+			set_nationality = ANQ
+		}
+		random_unit_leader = {
+			limit = { has_id = 1199 }
+			retire = yes
+		}
+		random_unit_leader = {
+			limit = { has_id = 1304 }
+			retire = yes
+	}
+	if = {
+			limit = { has_unit_leader = 1191 }
+			random_unit_leader = {
+				limit = { has_id = 1191 }			
+				remove_unit_leader = yes
+			}
+		}
+		if = {
+			limit = { has_unit_leader = 1197 }
+			random_unit_leader = {
+				limit = { has_id = 1197 }			
+				remove_unit_leader = yes
+			}
+		}
+	}
+	}
+	option = {
+		name = "人们在这些令人不安的时代寻求精神指导。"
+		country_event = {
+		id = shandong.480 #Red Swastika Coup
+		days = 2
+		}
+		}
+		
+		option = {
+		name = "人民现在终于摆脱了暴政，只想要更多的自由。"
+		country_event = {
+		id = shandong.459 #Shandong Democracy
+		days = 2
+		}
+		}
+
+	option = {
+		name = "人民一如既往地希望结束外国殖民"
+		country_event = {
+		id = shandong.465 #Red bandit
+		days = 2
+		}
+		}
+	}
+
+	country_event = {#
+	id = shandong.888
+	immediate = { log = "[GetDateText]: [Root.GetName]: event shandong.455" }
+	title = "未知的部队？"
+	desc =  "在我们夺得山东的控制权之后，有军官报告最近几天济南附近总有一股股未知的部队进进出出，我们该怎么办？"
+	picture = GFX_rus_black_tsar_event
+
+	fire_only_once = yes
+	trigger = {
+		tag = SQI
+		SQI = {
+			OR = {
+				has_completed_focus = SQI_Zhang_Tianran
+				has_completed_focus = SQI_Zhang_Zongchang
+			}
+		}
+	}
+
+	option = {
+		
+		name = "调查一下"
+		SQI = {
+		country_event = {
+		id = shandong.474
+		days = 3
+		}
+		}
+		}
+
+	option = {
+		
+		name = "只是市民而已，别这么敏感"
+	}
+
+	}
+
+#白俄雇佣军
+country_event = {#雇佣军闹饷
+	id = sqiwr.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.1" }
+	title = sqiwr.1.t
+	desc = sqiwr.1.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = SQI
+		SQI = {
+			OR = {
+				has_country_leader = { name = "Zhang Tianran" ruling_only = yes }
+				has_country_leader = { name = "张天然" ruling_only = yes }
+			}
+		}
+	}
+	option = {#强硬
+		name = sqiwr.1.a
+		ai_chance = {
+			factor = 0
+		}
+		add_stability = -0.10
+		hidden_effect = {
+			country_event = {
+				id = sqiwr.2
+				days = 7
+			}
+		}
+	}
+	option = {#妥协
+		name = sqiwr.1.b
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -100
+	}
+}
+
+country_event = {#天师府被袭击
+	id = sqiwr.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.2" }
+	title = sqiwr.2.t
+	desc = sqiwr.2.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwr.2.a
+		create_country_leader = {
+			name = "鲍里斯·阿年科夫"
+			desc = "POLITICS_Boris_Annenkov_DESC"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Boris_Annenkov.png"
+			expire = "1965.1.1"
+			ideology = authdem_cossack_subtype
+		}
+		set_politics = {
+			ruling_party = authoritarian_democrat
+		}
+		set_party_name = {
+			ideology = authoritarian_democrat
+			long_name =  SQI_authoritarian_democrat_party_BE_long
+			name =  SQI_authoritarian_democrat_party_BE
+		}
+		division_template = { #白俄军
+			name = "白俄军"
+			division_names_group = "CHYN_MIL_01"
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				artillery_brigade = { x = 0 y = 3 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+				artillery_brigade = { x = 1 y = 3 }
+			}
+			support = {
+					
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 597 }
+			limit = { is_in_home_area = yes }
+			create_unit = {
+				division = "division_template = \"白俄军\" start_experience_factor = 0.3"
+				owner = PREV
+				count = 2
+			}
+		}
+		clr_country_flag = SQI_Tianran_beat_Zongchang
+		set_country_flag = SQI_baie_jue_qi
+		add_popularity = {
+			ideology = national_populist
+			popularity = -0.10
+		}
+		remove_ideas = SQI_Zhang_Fuyuan_for_pau
+		add_ideas = {
+			SQI_bao_li_si_hog
+			SQI_kang_si_tan_ding_for
+		}
+		set_cosmetic_tag = SQI_SHA
+		hidden_effect = {
+			random_unit_leader = {
+				limit = {
+					has_id = 454
+				}
+				promote_leader = yes
+			}
+			set_party_name = {
+				ideology = market_liberal
+				long_name =  SQI_market_liberal_party_BE_long
+				name =  SQI_market_liberal_party_BE
+			}
+			set_party_name = {
+				ideology = national_populist
+				long_name =  SQI_national_populist_party_BE_long
+				name =  SQI_national_populist_party_BE
+			}
+			remove_ideas = SQI_Zongchang_revolt
+			remove_ideas = SQI_honored_master
+			add_ideas = SQI_Yiguandao_revolt
+			ANQ = {
+				every_unit_leader = {
+					limit = {
+						OR = {
+							has_id = 1301
+							has_id = 1302
+							has_id = 1303
+						}
+					}
+					set_nationality = SQI
+				}
+			}
+			country_event = {
+				id = sqiwr.3
+				days = 2
+			}
+			country_event = {
+				id = sqiwr.37
+				days = 4
+			}
+			country_event = {
+				id = sqiwr.4
+				days = 7
+			}
+			if = {
+				limit = { 
+					TRM = {
+						has_country_leader = {
+							ruling_only = yes
+							name = "Aleksandr Kolchak"
+						}
+					}
+				}
+				country_event = {
+					id = sqiwr.5
+					days = 14
+				}
+			}
+			CHI = {
+				country_event = {
+					id = sqiwr.9
+					days = 4
+				}
+			}
+			ANQ = {
+				country_event = {
+					id = sqiwr.9
+					days = 4
+				}
+			}
+			MON = {
+				country_event = {
+					id = sqiwr.9
+					days = 4
+				}
+			}
+			GER = {
+				country_event = {
+					id = sqiwr.9
+					days = 4
+				}
+			}
+			JAP = {
+				country_event = {
+					id = sqiwr.9
+					days = 4
+				}
+			}
+			RUS = {
+				country_event = {
+					id = sqiwr.9
+					days = 4
+				}
+			}
+		}
+	}
+}
+
+country_event = {#和吴佩孚的交涉
+	id = sqiwr.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.3" }
+	title = sqiwr.3.t
+	desc = sqiwr.3.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#给他们够多的钱
+		name = sqiwr.3.a
+		add_political_power = -100
+		diplomatic_relation = {
+			country = QIE
+			relation = non_aggression_pact
+		}
+		QIE = {
+			country_event = {
+				id = sqiwr.7
+				days = 2
+			}
+		}
+	}
+
+	option = {#我们才不接受他们的领导
+		name = sqiwr.3.b
+		custom_effect_tooltip = SQI_wei_xian
+		QIE = {
+			country_event = {
+				id = sqiwr.8
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = {#处理张宗昌的妻妾
+	id = sqiwr.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.4" }
+	title = sqiwr.4.t
+	desc = sqiwr.4.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = sqiwr.4.a
+		every_other_country = {
+			limit = {
+				is_chinese_tag = yes
+			}
+			add_opinion_modifier = {
+				target = SQI
+				modifier = SQI_bi_yi
+			}
+		}
+	}
+
+	option = {#
+		name = sqiwr.4.b
+		add_political_power = -50
+		every_other_country = {
+			limit = {
+				is_chinese_tag = yes
+			}
+			add_opinion_modifier = {
+				target = SQI
+				modifier = SQI_gou_yi_si
+			}
+		}
+	}
+}
+
+country_event = {#写给高尔察克的信
+	id = sqiwr.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.5" }
+	title = sqiwr.5.t
+	desc = sqiwr.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = sqiwr.5.a
+		TRM = {
+			country_event = {
+				id = sqiwr.6
+				days = 3
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = sqiwr.10
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {#山东的新主人
+	id = sqiwr.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.6" }
+	title = sqiwr.6.t
+	desc = sqiwr.6.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#接受
+		name = sqiwr.6.a
+		ai_chance = {
+			factor = 10
+		}
+		reverse_add_opinion_modifier = {
+			target = SQI
+			modifier = DEN_thank
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_0
+			amount = -1000
+			producer = TRM
+		}
+		SQI = {
+			country_event = {
+				id = sqiwr.18
+				days = 3
+			}
+		}
+		hidden_effect = {
+
+		}
+	}
+
+	option = {#拒绝
+		name = sqiwr.6.b
+		ai_chance = {
+			factor = 20
+		}
+		SQI = {
+			country_event = {
+				id = sqiwr.19
+				days = 3
+			}
+		}
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {#处理山东问题
+	id = sqiwr.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.7" }
+	title = sqiwr.7.t
+	desc = sqiwr.7.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = sqiwr.7.a
+		diplomatic_relation = {
+			country = SQI
+			relation = non_aggression_pact
+		}
+		add_political_power = 100
+	}
+}
+
+country_event = {#处理山东问题
+	id = sqiwr.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.8" }
+	title = sqiwr.8.t
+	desc = sqiwr.8.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = sqiwr.8.a
+		ai_chance = {
+			factor = 20
+		}
+		declare_war_on = {
+			target = SQI
+			type = annex_everything
+		}
+	}
+
+	option = {#
+		name = sqiwr.8.b
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = -0.05
+	}
+}
+
+country_event = {#山东的新主人
+	id = sqiwr.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.9" }
+	title = sqiwr.9.t
+	desc = {
+		text = sqiwr.9.anq
+		trigger = {
+			tag = ANQ
+		}
+	}
+	desc = {
+		text = sqiwr.9.chi
+		trigger = {
+			tag = CHI
+		}
+	}
+	desc = {
+		text = sqiwr.9.mon
+		trigger = {
+			tag = MON
+		}
+	}
+	desc = {
+		text = sqiwr.9.ger
+		trigger = {
+			tag = GER
+		}
+	}
+	desc = {
+		text = sqiwr.9.jap
+		trigger = {
+			tag = JAP
+		}
+	}
+	desc = {
+		text = sqiwr.9.rus
+		trigger = {
+			tag = RUS
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = {#
+		name = sqiwr.8.a
+
+	}
+}
+
+country_event = {#外阿穆尔的移民
+	id = sqiwr.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.10" }
+	title = sqiwr.10.t
+	desc = sqiwr.10.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = sqiwr.10.a
+		add_manpower = 20215
+	}
+}
+
+country_event = {#我们的脚步
+	id = sqiwr.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.11" }
+	title = sqiwr.11.t
+	desc = sqiwr.11.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#北伐
+		name = sqiwr.11.a
+		set_country_flag = SQI_bei_fa
+		if = {
+			limit = {
+				has_government = authoritarian_democrat
+			}
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.02
+			}
+		}
+		else = {
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = 0.02
+			}
+		}
+		hidden_effect = {
+			H_to_china = yes
+			every_state = {
+				limit = {
+					is_controlled_by = SQI 
+				}
+				add_core_of = SQI
+			}
+		}
+	}
+
+	option = {#留在中国
+		name = sqiwr.11.b
+		add_political_power = -100
+		if = {
+			limit = {
+				has_government = authoritarian_democrat
+			}
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = -0.10
+			}
+		}
+		else = {
+			add_popularity = {
+				ideology = paternal_autocrat
+				popularity = -0.10
+			}
+		}
+		hidden_effect = {
+			country_event = {#背叛
+				id = sqiwr.28
+				days = 2
+			}
+			H_to_china = yes
+			every_state = {
+				limit = {
+					H_in_china = yes
+				}
+				add_core_of = SQI
+			}
+		}
+	}
+}
+
+country_event = {#大审判
+	id = sqiwr.12
+	title = sqiwr.12.t
+	desc = vlasov.9.d
+	picture = GFX_report_event_RUS_trial_2
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { #Only inprison schizos
+		name = vlasov.9.a
+		add_stability = 0.05
+		add_political_power = -25
+	}
+	option = { #Inprsion more 
+		name = vlasov.9.b
+		add_stability = -0.05
+		add_political_power = 25
+	}
+}
+
+country_event = {#君主制？
+	id = sqiwr.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.13" }
+	title = sqiwr.13.t
+	desc = sqiwr.13.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#君主制
+		name = sqiwr.13.a
+		add_stability = -0.20
+		set_country_flag = SQI_jun_zhu
+		set_cosmetic_tag = SQI_KITAI_B
+		country_event = {#选王
+			id = sqiwr.16
+			days = 1
+		}
+	}
+
+	option = {#共和制
+		name = sqiwr.13.b
+		add_stability = 0.05
+		set_country_leader_ideology = authdem_junta_subtype
+		set_cosmetic_tag = SQI_ROC
+	}
+}
+
+country_event = {#北京的新主人
+	id = sqiwr.14
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.14" }
+	title = sqiwr.14.t
+	desc = sqiwr.14.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = SQI
+		owns_state = 608
+		has_country_flag = SQI_baie_jue_qi
+	}
+
+	option = {
+		name = sqiwr.14.a
+		add_political_power = 10
+		hidden_effect = {
+			country_event = {#君主制问题
+				id = sqiwr.13
+				days = 3
+			}
+			country_event = {#北伐问题
+				id = sqiwr.11
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = {#在天坛的加冕礼
+	id = sqiwr.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.15" }
+	title = sqiwr.15.t
+	desc = sqiwr.15.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwr.15.a
+		add_stability = 0.01
+	}
+}
+	
+country_event = {#加冕谁
+	id = sqiwr.16
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.16" }
+	title = sqiwr.16.t
+	desc = {
+		text = sqiwr.16.rusno
+		trigger = {
+			RUS_russian_monarch = no
+		}
+	}
+	desc = {
+		text = sqiwr.16.rusyes
+		trigger = {
+			RUS_russian_monarch = yes
+		}
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#基里尔·弗拉基米罗维奇
+		name = sqiwr.16.a
+		trigger = {
+			RUS = {
+				RUS_russian_monarch = no
+			}
+		}
+		create_country_leader = {
+			name = "基里尔一世"
+			desc = "POLITICS_KIRILL_ROMANOV_DESC"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Kyril_Romanov.png"
+			expire = "1.1.1"
+			ideology = oligarchy_subtype
+			traits = { RUS_self_proclaimed_emperor }
+		}
+		hidden_effect = {
+			country_event = {#加冕礼
+				id = sqiwr.15
+				days = 3
+			}
+		}
+	}
+
+	option = {#德米特里·帕夫洛维奇
+		name = sqiwr.16.b
+		trigger = {
+			RUS = {
+				RUS_russian_monarch = no
+			}
+		}
+		create_country_leader = {
+			name = "德米特里三世"
+			desc = "POLITICS_DMITRI_ROMANOV_DESC"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Dmitri_Romanov_Tsar.png"
+			expire = "1.1.1"
+			ideology = oligarchy_subtype
+			traits = { RUS_autocratic_charmer }
+		}
+		hidden_effect = {
+			country_event = {#加冕礼
+				id = sqiwr.15
+				days = 3
+			}
+		}
+	}
+
+	option = {#鲍里斯本人
+		name = sqiwr.16.c
+		create_country_leader = {
+			name = "鲍里斯二世"
+			desc = "POLITICS_DMITRI_ROMANOV_DESC"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Boris_Annenkov.png"
+			expire = "1.1.1"
+			ideology = absolute_monarchy_subtype
+			traits = { RUS_autocratic_charmer }
+		}
+		set_politics = {
+			ruling_party = paternal_autocrat
+			elections_allowed = no
+		}
+		set_party_name = {
+			ideology = paternal_autocrat
+			long_name =  SQI_paternal_autocrat_party_BE_long
+			name =  SQI_paternal_autocrat_party_BE
+		}
+		hidden_effect = {
+			country_event = {#加冕礼
+				id = sqiwr.15
+				days = 3
+			}
+			country_event = {#君主制问题
+				id = sqiwr.33
+				days = 10
+			}
+		}
+	}
+
+	option = {
+		name = dkb.111.a
+		trigger = {
+			RUS = {
+				RUS_russian_monarch = yes
+			}
+		}
+		create_country_leader = {
+			name = "Mikhail II"
+			picture = "gfx/leaders/MON/Portrait_MON_Mikhail_II.png"
+			expire = "1.1.1"
+			ideology = absolute_monarchy_subtype
+			traits = {}
+		}
+		set_politics = {
+			ruling_party = paternal_autocrat
+			elections_allowed = no
+		}
+		set_party_name = {
+			ideology = paternal_autocrat
+			long_name =  SQI_paternal_autocrat_party_BE_long
+			name =  SQI_paternal_autocrat_party_BE
+		}
+	}
+
+	option = {
+		name = dkb.111.b
+		trigger = {
+			RUS = {
+				RUS_russian_monarch = yes
+			}
+		}
+		create_country_leader = {
+			name = "Vsevolod I"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Vsevolod_I.png"
+			expire = "1.1.1"
+			ideology = absolute_monarchy_subtype
+			traits = {}
+		}
+		set_politics = {
+			ruling_party = paternal_autocrat
+			elections_allowed = no
+		}
+		set_party_name = {
+			ideology = paternal_autocrat
+			long_name =  SQI_paternal_autocrat_party_BE_long
+			name =  SQI_paternal_autocrat_party_BE
+		}
+	}
+
+	option = {
+		name = dkb.111.c
+		trigger = {
+			RUS = {
+				RUS_russian_monarch = yes
+			}
+		}
+		create_country_leader = {
+			name = "Roman I"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Roman_I.png"
+			expire = "1.1.1"
+			ideology = absolute_monarchy_subtype
+			traits = {}
+		}
+		set_politics = {
+			ruling_party = paternal_autocrat
+			elections_allowed = no
+		}
+		set_party_name = {
+			ideology = paternal_autocrat
+			long_name =  SQI_paternal_autocrat_party_BE_long
+			name =  SQI_paternal_autocrat_party_BE
+		}
+	}
+
+	option = {
+		name = dkb.111.e
+		trigger = {
+			RUS = {
+				RUS_russian_monarch = yes
+			}
+		}
+		create_country_leader = {
+			name = "Vladimir III"
+			picture = "gfx/leaders/RUS/Portrait_RUS_Vladimir_Romanov.png"
+			expire = "1.1.1"
+			ideology = absolute_monarchy_subtype
+			traits = {}
+		}
+		set_politics = {
+			ruling_party = paternal_autocrat
+			elections_allowed = no
+		}
+		set_party_name = {
+			ideology = paternal_autocrat
+			long_name =  SQI_paternal_autocrat_party_BE_long
+			name =  SQI_paternal_autocrat_party_BE
+		}
+	}
+}
+
+country_event = {#鲍里斯的来信
+	id = sqiwr.17
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.17" }
+	title = sqiwr.17.t
+	desc = sqiwr.17.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#接受
+		name = sqiwr.17.a
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 4.0
+				has_army_manpower = {
+					size > 100000
+				}
+			}
+		}
+		country_event = {
+			id = sqiwr.24
+			days = 3
+		}
+	}
+
+	option = {#拒绝
+		name = sqiwr.17.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 4.0
+				has_army_manpower = {
+					size < 50000
+				}
+			}
+		}
+		country_event = {
+			id = sqiwr.25
+			days = 3
+		}
+	}
+}
+
+country_event = {#鲍里斯的来信
+	id = sqiwr.18
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.18" }
+	title = sqiwr.18.t
+	desc = sqiwr.18.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#接受
+		name = sqiwr.18.a
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 4.0
+				has_army_manpower = {
+					size > 100000
+				}
+			}
+		}
+		country_event = {
+			id = sqiwr.26
+			days = 3
+		}
+	}
+
+	option = {#拒绝
+		name = sqiwr.18.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 4.0
+				has_army_manpower = {
+					size < 50000
+				}
+			}
+		}
+		country_event = {
+			id = sqiwr.27
+			days = 3
+		}
+	}
+}
+
+country_event = {#他们同意了
+	id = sqiwr.19
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.19" }
+	title = sqiwr.19.t
+	desc = sqiwr.19.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = sqiwr.19.a
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_0
+			amount = 1000
+			producer = TRM
+		}
+	}
+}
+
+country_event = {#他们拒绝了
+	id = sqiwr.20
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.20" }
+	title = sqiwr.20.t
+	desc = sqiwr.20.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = sqiwr.20.a
+		add_opinion_modifier = {
+			target = TRM
+			modifier = SQI_ju_jue
+		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = -0.02
+		}
+	}
+}
+
+country_event = {#挖开泰山
+	id = sqiwr.21
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.21" }
+	title = sqiwr.21.t
+	desc = sqiwr.21.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = sqiwr.21.a
+		add_political_power = 20
+	}
+}
+
+country_event = {#国民党骚乱
+	id = sqiwr.22
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.22" }
+	title = sqiwr.22.t
+	desc = sqiwr.22.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = sqiwr.22.a
+		add_stability = -0.05
+		597 = { #潮汕
+			damage_building = {
+				type = industrial_complex
+				damage = 0.30
+			}
+		}
+	}
+}
+
+country_event = {#骚乱
+	id = sqiwr.23
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.23" }
+	title = sqiwr.23.t
+	desc = sqiwr.23.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = sqiwr.23.a
+		add_stability = -0.05
+		597 = { #潮汕
+			damage_building = {
+				type = industrial_complex
+				damage = 0.30
+			}
+		}
+	}
+}
+
+country_event = {#恩琴接受了
+	id = sqiwr.24
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.24" }
+	title = sqiwr.24.t
+	desc = sqiwr.24.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = sqiwr.24.a
+		puppet = {
+			target = MON
+			end_wars = YES
+		}
+	}
+}
+
+country_event = {#恩琴拒绝了
+	id = sqiwr.25
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.25" }
+	title = sqiwr.25.t
+	desc = sqiwr.25.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = sqiwr.25.a
+		declare_war_on = {
+			target = MON
+			type = annex_everything
+		}
+	}
+}
+
+country_event = {#高尔察克接受了
+	id = sqiwr.26
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.26" }
+	title = sqiwr.26.t
+	desc = sqiwr.26.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = sqiwr.26.a
+		puppet = {
+			target = TRM
+			end_wars = YES
+		}
+	}
+}
+
+country_event = {#高尔察克拒绝了
+	id = sqiwr.27
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.27" }
+	title = sqiwr.27.t
+	desc = sqiwr.27.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = sqiwr.27.a
+		declare_war_on = {
+			target = TRM
+			type = annex_everything
+		}
+	}
+}
+
+country_event = {#背叛
+	id = sqiwr.28
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.28" }
+	title = sqiwr.28.t
+	desc = sqiwr.28.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#
+		name = sqiwr.28.a
+		add_stability = -0.05
+		add_timed_idea = {
+			idea = SQI_guang_fan_de_di_kang
+			days = 365
+		}
+	}
+}
+
+country_event = {#俄罗斯帝国的新生
+	id = sqiwr.29
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.29" }
+	title = sqiwr.29.t
+	desc = sqiwr.29.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwr.29.a
+		country_event = {
+			id = sqiwr.31
+			days = 10
+		}
+		hidden_effect = {
+			country_event = {
+				id = sqiwr.30
+				days = 2
+			}
+			set_party_name = {
+				ideology = social_liberal
+				long_name =  RUS_social_liberal_party_long
+				name =  RUS_social_liberal_party
+			}
+			set_party_name = {
+				ideology = market_liberal
+				long_name =  RUS_The_Liberal_Democratic_Party_long
+				name =  RUS_The_Liberal_Democratic_Party
+			}
+			set_party_name = {
+				ideology = social_conservative
+				long_name =  RUS_social_conservative_party_long
+				name =  RUS_social_conservative_party
+			}
+		}
+	}
+}
+
+country_event = {#二元帝国的方向
+	id = sqiwr.30
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.30" }
+	title = sqiwr.30.t
+	desc = sqiwr.30.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#合并
+		name = sqiwr.30.a
+		country_event = {#背叛
+			id = sqiwr.28
+			days = 3
+		}
+		hidden_effect = {
+			
+		}
+	}
+
+	option = {#拆分
+		name = sqiwr.30.b
+		if = {
+			limit = { 
+				has_country_flag = SQI_jun_zhu
+			}
+			country_event = {#中国的新王
+				id = sqiwr.35
+				days = 3
+			}
+		}
+		else = {
+			country_event = {#中国的新总统
+				id = sqiwr.36
+				days = 3
+			}
+		}
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {#帝国的首都
+	id = sqiwr.31
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.31" }
+	title = sqiwr.31.t
+	desc = sqiwr.31.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwr.31.a
+		set_capital = { state = 195 }
+	}
+
+	option = {
+		name = sqiwr.31.b
+		set_capital = { state = 219 }
+	}
+
+	option = {
+		name = sqiwr.31.c
+		trigger = {
+			QIE = {
+				exists = no
+			}
+			owns_state = 608
+		}
+		set_capital = { state = 608 }
+	}
+
+	option = {
+		name = sqiwr.31.f
+		trigger = {
+			QIE = {
+				exists = no
+			}
+			owns_state = 613
+		}
+		set_capital = { state = 613 }
+	}
+}
+
+country_event = {#二次加冕
+	id = sqiwr.32
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.32" }
+	title = sqiwr.32.t
+	desc = sqiwr.32.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwr.32.a
+		add_stability = 0.01
+	}
+}
+
+country_event = {#谋杀拉斯普京的凶手！
+	id = sqiwr.33
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.33" }
+	picture = GFX_event_russia_rasputin
+	title = sqiwr.33.t
+	desc = sqiwr.33.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwr.33.a
+		add_stability = -0.05
+		add_political_power = -25
+	}
+}
+
+country_event = {#东正教的地位
+	id = sqiwr.34
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.34" }
+	picture = GFX_report_event_RUS_orthodox
+	title = sqiwr.34.t
+	desc = sqiwr.34.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwr.34.a
+		add_stability = 0.01
+	}
+}
+
+country_event = {#中国的新王
+	id = sqiwr.35
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.35" }
+	title = sqiwr.35.t
+	desc = sqiwr.35.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#满清
+		name = sqiwr.35.a
+		country_event = {
+			id = sqiwr.45
+			days = 1
+		}
+	}
+
+	option = {#袁家
+		name = sqiwr.35.b
+		release = QIE
+		puppet = QIE
+		hidden_effect = {
+			QIE = {
+				set_cosmetic_tag = SQI_KITAI_B
+				load_focus_tree = generic_focus
+				create_country_leader = {
+					name = "袁克定"
+					picture = "gfx/leaders/MON/Portrait_MON_Yuan_Keding.png"
+					expire = "1.1.1"
+					ideology = authdem_junta_subtype
+					traits = {}
+				}
+				set_party_name = {
+					ideology = authoritarian_democrat
+					long_name = SQI_authoritarian_democrat_party_QIE_long
+					name =  SQI_authoritarian_democrat_party_QIE
+				}
+				set_politics = {
+					ruling_party = authoritarian_democrat
+				}
+
+				G_China = yes
+			}
+		}
+	}
+
+	option = {#孔家
+		name = sqiwr.35.c
+		release = QIE
+		puppet = QIE
+		hidden_effect = {
+			QIE = {
+				set_cosmetic_tag = SQI_KITAI_B
+				load_focus_tree = generic_focus
+				create_country_leader = {
+					name = "孔令贻"
+					picture = "gfx/leaders/FNG/Portrait_FNG_Kong_Lingyi.png"
+					expire = "1.1.1"
+					ideology = neo_confucianism_subtype
+					traits = {}
+				}
+				set_party_name = {
+					ideology = social_conservative
+					long_name = SQI_social_conservative_party_QIE_long
+					name =  SQI_social_conservative_party_QIE
+				}
+				set_politics = {
+					ruling_party = social_conservative
+				}
+
+				G_China = yes
+			}
+		}
+	}
+
+	option = {#罗曼洛夫家族
+		name = sqiwr.35.f
+		trigger = {
+			has_country_leader = {
+				name = "鲍里斯二世"
+				ruling_only = yes
+			}
+		}
+		country_event = {
+			id = sqiwr.46
+			days = 1
+		}
+	}
+}
+
+country_event = {#中国的新总统
+	id = sqiwr.36
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.36" }
+	title = sqiwr.36.t
+	desc = sqiwr.36.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#汪精卫
+		name = sqiwr.36.a
+		release = QIE
+		puppet = QIE
+		hidden_effect = {
+			QIE = {
+				set_cosmetic_tag = SQI_ROCR
+				load_focus_tree = generic_focus
+				create_country_leader = {
+					name = "汪精卫"
+					picture = "gfx/leaders/SQI/Portrait_SQI_Wang_Jing_Wei.png"
+					expire = "1.1.1"
+					ideology = colonial_govt_subtype
+				}
+				set_party_name = {
+					ideology = authoritarian_democrat 
+					long_name = SQI_authoritarian_democrat_party_QIEB_long
+					name =  SQI_authoritarian_democrat_party_QIEB
+				}
+				set_politics = {
+					ruling_party = authoritarian_democrat
+				}
+
+				G_China = yes
+			}
+		}
+	}
+
+	option = {#高宗武
+		name = sqiwr.36.b
+		release = QIE
+		puppet = QIE
+		hidden_effect = {
+			QIE = {
+				set_cosmetic_tag = SQI_ROCR
+				load_focus_tree = generic_focus
+				create_country_leader = {
+					name = "高宗武"
+					picture = "gfx/leaders/SQI/Portrait_SQI_Gao_Zhong_Wu.png"
+					expire = "1.1.1"
+					ideology = colonial_govt_subtype
+				}
+				set_party_name = {
+					ideology = authoritarian_democrat 
+					long_name = SQI_authoritarian_democrat_party_QIEB_long
+					name =  SQI_authoritarian_democrat_party_QIEB
+				}
+				set_politics = {
+					ruling_party = authoritarian_democrat
+				}
+
+				G_China = yes
+			}
+		}
+	}
+
+	option = {#袁克定
+		name = sqiwr.36.c
+		release = QIE
+		puppet = QIE
+		hidden_effect = {
+			QIE = {
+				set_cosmetic_tag = SQI_ROCR
+				load_focus_tree = generic_focus
+				create_country_leader = {
+					name = "袁克定"
+					picture = "gfx/leaders/MON/Portrait_MON_Yuan_Keding.png"
+					expire = "1.1.1"
+					ideology = colonial_govt_subtype
+					traits = {}
+				}
+				set_party_name = {
+					ideology = authoritarian_democrat
+					long_name = SQI_authoritarian_democrat_party_QIE_long
+					name =  SQI_authoritarian_democrat_party_QIE
+				}
+				set_politics = {
+					ruling_party = authoritarian_democrat
+				}
+
+				G_China = yes
+			}
+		}
+	}
+
+	# option = {
+	# 	name = sqiwr.36.f
+
+	# }
+}
+
+country_event = {#鲍里斯的副手
+	id = sqiwr.37
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.37" }
+	title = sqiwr.37.t
+	desc = sqiwr.37.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwr.37.a
+		add_war_support = 0.01
+	}
+}
+
+country_event = {#《民国日报》
+	id = sqiwr.38
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.38" }
+	title = sqiwr.38.t
+	desc = sqiwr.38.d
+
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = SQI_baie_jue_qi
+		date > 1936.7.1
+	}
+
+	option = {
+		name = sqiwr.38.a
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = market_liberal
+			popularity = -0.03
+		}
+	}
+}
+
+country_event = {#徳属东亚海军殴打中国警察
+	id = sqiwr.39
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.39" }
+	title = sqiwr.39.t
+	desc = sqiwr.39.d
+
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = SQI_baie_jue_qi
+		date > 1936.8.20
+	}
+
+	option = {
+		name = sqiwr.39.a
+		add_political_power = -20
+		add_popularity = {
+			ideology = market_liberal
+			popularity = 0.03
+		}
+	}
+}
+
+country_event = {#鲍里斯黯然靠后-清
+	id = sqiwr.40
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.40" }
+	title = sqiwr.40.t
+	desc = sqiwr.40.d
+
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = SQI_baie_jue_qi
+		social_conservative > 0.5
+	}
+
+	option = {
+		name = sqiwr.40.a
+		QIE = {
+			annex_country = {
+				target = YUN
+				transfer_troops = yes
+			}
+		}
+	}
+}
+
+country_event = {#鲍里斯黯然靠后-徳
+	id = sqiwr.41
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.41" }
+	title = sqiwr.41.t
+	desc = sqiwr.41.d
+
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = SQI_baie_jue_qi
+		market_liberal > 0.5
+	}
+
+	option = {
+		name = sqiwr.41.a
+		GER = {
+			puppet = SQI
+		}
+	}
+}
+
+country_event = {#鲍里斯黯然靠后-日
+	id = sqiwr.42
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.42" }
+	title = sqiwr.42.t
+	desc = sqiwr.42.d
+
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = SQI_baie_jue_qi
+		national_populist > 0.5
+	}
+
+	option = {
+		name = sqiwr.42.a
+		JAP = {
+			puppet = SQI
+		}
+	}
+}
+
+country_event = {#日侨聚众殴打青岛市民
+	id = sqiwr.43
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.43" }
+	title = sqiwr.43.t
+	desc = sqiwr.43.d
+
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = SQI_baie_jue_qi
+		date > 1936.9.21
+	}
+
+	option = {
+		name = sqiwr.43.a
+		add_popularity = {
+			ideology = national_populist
+			popularity = -0.03
+		}
+		add_popularity = {
+			ideology = social_conservative
+			popularity = -0.03
+		}
+	}
+}
+
+country_event = {#路中节投降
+	id = sqiwr.44
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.44" }
+	title = sqiwr.44.t
+	desc = sqiwr.44.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = sqiwr.44.a
+		add_stability = 0.02
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = -0.02
+		}
+	}
+
+	option = {
+		name = sqiwr.44.b
+		add_stability = -0.02
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.02
+		}
+	}
+}
+
+country_event = {#满清
+	id = sqiwr.45
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.45" }
+	title = sqiwr.45.t
+	desc = sqiwr.45.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#溥仪
+		name = sqiwr.45.a
+		release = QIE
+		puppet = QIE
+		hidden_effect = {
+			QIE = {
+				set_cosmetic_tag = SQI_KITAI_B
+				load_focus_tree = generic_focus
+				create_country_leader = {
+					name = "溥仪"
+					picture = "gfx/leaders/QIE/Portrait_QIE_Puyi_Suit.png"
+					expire = "1.1.1"
+					ideology = absolute_monarchy_subtype
+					}
+				set_party_name = {
+					ideology = paternal_autocrat
+					long_name = SQI_paternal_autocrat_party_QIE_long
+					name =  SQI_paternal_autocrat_party_QIE
+				}
+				set_politics = {
+					ruling_party = paternal_autocrat
+				}
+
+				G_China = yes
+			}
+		}
+	}
+
+	option = {#浦杰
+		name = sqiwr.45.b
+		release = QIE
+		puppet = QIE
+		hidden_effect = {
+			QIE = {
+				set_cosmetic_tag = SQI_KITAI_B
+				load_focus_tree = generic_focus
+				create_country_leader = {
+					name = "溥杰"
+					picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+					expire = "1.1.1"
+					ideology = absolute_monarchy_subtype
+				}
+				set_party_name = {
+					ideology = paternal_autocrat
+					long_name = SQI_paternal_autocrat_party_QIE_long
+					name =  SQI_paternal_autocrat_party_QIE
+				}
+				set_politics = {
+					ruling_party = paternal_autocrat
+				}
+
+				G_China = yes
+			}
+		}
+	}
+
+	option = {#显玗
+		name = sqiwr.45.c
+		release = QIE
+		puppet = QIE
+		hidden_effect = {
+			QIE = {
+				set_cosmetic_tag = SQI_KITAI_B
+				load_focus_tree = generic_focus
+				create_country_leader = {
+					name = "显玗"
+					picture = "gfx/leaders/QIE/QIE_Xianyu_Qing_Uniform.png"
+					expire = "1.1.1"
+					ideology = absolute_monarchy_subtype
+				}
+				set_party_name = {
+					ideology = paternal_autocrat
+					long_name = SQI_paternal_autocrat_party_QIE_long
+					name =  SQI_paternal_autocrat_party_QIE
+				}
+				set_politics = {
+					ruling_party = paternal_autocrat
+				}
+
+				G_China = yes
+			}
+		}
+	}
+}
+
+country_event = {#罗曼诺夫
+	id = sqiwr.46
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.46" }
+	title = sqiwr.46.t
+	desc = sqiwr.46.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {#基里尔
+		name = sqiwr.46.a
+		release = QIE
+		puppet = QIE
+		hidden_effect = {
+			QIE = {
+				set_cosmetic_tag = SQI_KITAI_B
+				load_focus_tree = generic_focus
+				create_country_leader = {
+					name = "基里尔一世"
+					picture = "gfx/leaders/RUS/Portrait_RUS_Kyril_Romanov.png"
+					expire = "1.1.1"
+					ideology = absolute_monarchy_subtype
+				}
+				set_party_name = {
+					ideology = paternal_autocrat
+					long_name = SQI_paternal_autocrat_party_QIE_long
+					name =  SQI_paternal_autocrat_party_QIE
+				}
+				set_politics = {
+					ruling_party = paternal_autocrat
+				}
+
+				G_China = yes
+			}
+		}
+	}
+
+	option = {#德米特里
+		name = sqiwr.46.b
+		release = QIE
+		puppet = QIE
+		hidden_effect = {
+			QIE = {
+				set_cosmetic_tag = SQI_KITAI_B
+				load_focus_tree = generic_focus
+				create_country_leader = {
+					name = "德米特里三世"
+					picture = "gfx/leaders/RUS/Portrait_RUS_Dmitri_Romanov_Tsar.png"
+					expire = "1.1.1"
+					ideology = absolute_monarchy_subtype
+				}
+				set_party_name = {
+					ideology = paternal_autocrat
+					long_name = SQI_paternal_autocrat_party_QIE_long
+					name =  SQI_paternal_autocrat_party_QIE
+				}
+				set_politics = {
+					ruling_party = paternal_autocrat
+				}
+
+				G_China = yes
+			}
+		}
+	}
+
+	option = {#米哈伊尔
+		name = sqiwr.46.c
+		release = QIE
+		puppet = QIE
+		hidden_effect = {
+			QIE = {
+				set_cosmetic_tag = SQI_KITAI_B
+				load_focus_tree = generic_focus
+				create_country_leader = {
+					name = "米哈伊尔二世"
+					picture = "gfx/leaders/MON/Portrait_MON_Mikhail_II.png"
+					expire = "1.1.1"
+					ideology = absolute_monarchy_subtype
+				}
+				set_party_name = {
+					ideology = paternal_autocrat
+					long_name = SQI_paternal_autocrat_party_QIE_long
+					name =  SQI_paternal_autocrat_party_QIE
+				}
+				set_politics = {
+					ruling_party = paternal_autocrat
+				}
+
+				G_China = yes
+			}
+		}
+	}
+}
+
+country_event = {#鸦片贩子被捕
+	id = sqiwr.47
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.47" }
+	title = sqiwr.47.t
+	desc = sqiwr.47.d
+
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = SQI_baie_jue_qi
+		date > 1936.9.13
+	}
+
+	option = {
+		name = sqiwr.47.a
+		add_political_power = -20
+		add_popularity = {
+			ideology = social_conservative
+			popularity = 0.02
+		}
+	}
+}
+
+country_event = {#圣战
+	id = sqiwr.48
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.48" }
+	title = sqiwr.48.t
+	desc = sqiwr.48.d
+
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = SQI_baie_jue_qi
+		has_war_with = CHI
+	}
+
+	option = {
+		name = sqiwr.48.a
+		add_war_support = 0.02
+	}
+}
+
+country_event = {#南京之劫
+	id = sqiwr.49
+	immediate = { log = "[GetDateText]: [Root.GetName]: event sqiwr.49" }
+	title = sqiwr.49.t
+	desc = sqiwr.49.d
+	picture = GFX_report_event_generic_diplomacy4
+
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = SQI_baie_jue_qi
+		613 = {
+			is_controlled_by = SQI
+		}
+	}
+
+	option = {
+		name = sqiwr.49.a
+		add_political_power = 100
+		add_stability = -0.05
+		613 = { 
+			damage_building = {
+				type = industrial_complex
+				damage = 0.30
+			}
+		}
+	}
+}

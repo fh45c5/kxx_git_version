@@ -1,0 +1,358 @@
+GXC_pb_peace = {
+	white_peace = {
+		tag = LEC
+		message = GXC_peace_shan_tt
+	}
+	white_peace = {
+		tag = JAP
+		message = GXC_peace_shan_tt
+	}
+	white_peace = {
+		tag = GER
+		message = GXC_peace_shan_tt
+	}
+	white_peace = {
+		tag = USA
+		message = GXC_peace_shan_tt
+	}
+	white_peace = {
+		tag = AUS
+		message = GXC_peace_shan_tt
+	}
+	white_peace = {
+		tag = AST
+		message = GXC_peace_shan_tt
+	}
+	white_peace = {
+		tag = CAN
+		message = GXC_peace_shan_tt
+	}
+	white_peace = {
+		tag = NFA
+		message = GXC_peace_shan_tt
+	}
+}
+
+H_to_china = {#对全中国的宣战借口
+	create_wargoal = {
+		type = annex_everything
+		target = GXC
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = HNN
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = YUN
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = SZC
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = CHI
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = SQI
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = QIE
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = LEC
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = FNG
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = TIB
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = SHX
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = XSM
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = MON
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = SIK
+	}
+	create_wargoal = {
+		type = annex_everything
+		target = TAN
+	}
+}
+
+G_China = {
+	transfer_state = 613
+	transfer_state = 610
+	transfer_state = 716
+	transfer_state = 328
+	transfer_state = 715
+	transfer_state = 886
+	transfer_state = 885
+	transfer_state = 884
+	transfer_state = 714
+	transfer_state = 883
+	transfer_state = 717
+	transfer_state = 1014
+	transfer_state = 1068
+	transfer_state = 596
+	transfer_state = 1067
+	transfer_state = 1044
+	transfer_state = 1069
+	transfer_state = 595
+	transfer_state = 1066
+	transfer_state = 1046
+	transfer_state = 600
+	transfer_state = 602
+	transfer_state = 1052
+	transfer_state = 1013
+	transfer_state = 1055
+	transfer_state = 1054
+	transfer_state = 1053
+	transfer_state = 599
+	transfer_state = 594
+	transfer_state = 1056
+	transfer_state = 591
+	transfer_state = 593
+	transfer_state = 800
+	transfer_state = 1012
+	transfer_state = 1045
+	transfer_state = 592
+	transfer_state = 802
+	transfer_state = 803
+	transfer_state = 322
+	transfer_state = 748
+	transfer_state = 693
+	transfer_state = 330
+	transfer_state = 612
+	transfer_state = 1084
+	transfer_state = 329
+	transfer_state = 811
+	transfer_state = 654
+	transfer_state = 606
+	transfer_state = 611
+	transfer_state = 614
+	transfer_state = 608
+	transfer_state = 615
+	transfer_state = 1062
+	transfer_state = 1063
+	transfer_state = 1061
+	transfer_state = 1060
+	transfer_state = 1059
+	transfer_state = 607
+	transfer_state = 1058
+	transfer_state = 1048
+	transfer_state = 620
+	transfer_state = 1050
+	transfer_state = 608
+	transfer_state = 1047
+	transfer_state = 598
+	transfer_state = 1064
+	transfer_state = 1065
+	transfer_state = 597
+	transfer_state = 603
+	transfer_state = 1051
+	transfer_state = 325
+	transfer_state = 816
+	transfer_state = 601
+	transfer_state = 605
+	transfer_state = 661
+	transfer_state = 650
+	transfer_state = 788
+	transfer_state = 283
+	transfer_state = 604
+	transfer_state = 353
+	transfer_state = 774
+	transfer_state = 348
+	transfer_state = 616
+	transfer_state = 621
+	transfer_state = 622
+	transfer_state = 1015
+	transfer_state = 1072
+	transfer_state = 1083
+	transfer_state = 618
+	transfer_state = 617
+	transfer_state = 619
+	transfer_state = 287
+	transfer_state = 897
+	transfer_state = 1085
+	transfer_state = 1049
+	transfer_state = 1086
+	transfer_state = 1075
+	transfer_state = 799
+
+	613 = { add_core_of = QIE }
+	592 = { add_core_of = QIE }
+	1045 = { add_core_of = QIE }
+	1014 = { add_core_of = QIE }
+	1068 = { add_core_of = QIE }
+	596 = { add_core_of = QIE }
+	1067 = { add_core_of = QIE }
+	1069 = { add_core_of = QIE }
+	595 = { add_core_of = QIE }
+	1066 = { add_core_of = QIE }
+	1046 = { add_core_of = QIE }
+	600 = { add_core_of = QIE }
+	602 = { add_core_of = QIE }
+	1052 = { add_core_of = QIE }
+	1013 = { add_core_of = QIE }
+	1055 = { add_core_of = QIE }
+	1053 = { add_core_of = QIE }
+	599 = { add_core_of = QIE }
+	594 = { add_core_of = QIE }
+	1056 = { add_core_of = QIE }
+	591 = { add_core_of = QIE }
+	593 = { add_core_of = QIE }
+	800 = { add_core_of = QIE }
+	1012 = { add_core_of = QIE }
+	1044 = { add_core_of = QIE }
+	1054 = { add_core_of = QIE }
+	802 = { add_core_of = QIE }
+	803 = { add_core_of = QIE }
+	322 = { add_core_of = QIE }
+	748 = { add_core_of = QIE }
+	693 = { add_core_of = QIE }
+	330 = { add_core_of = QIE }
+	612 = { add_core_of = QIE }
+	1084 = { add_core_of = QIE }
+	329 = { add_core_of = QIE }
+	811 = { add_core_of = QIE }
+	654 = { add_core_of = QIE }
+	611 = { add_core_of = QIE }
+	606 = { add_core_of = QIE }
+	614 = { add_core_of = QIE }
+	608 = { add_core_of = QIE }
+	615 = { add_core_of = QIE }
+	1062 = { add_core_of = QIE }
+	1063 = { add_core_of = QIE }
+	1061 = { add_core_of = QIE }
+	1060 = { add_core_of = QIE }
+	1059 = { add_core_of = QIE }
+	607 = { add_core_of = QIE }
+	1058 = { add_core_of = QIE }
+	1048 = { add_core_of = QIE }
+	620 = { add_core_of = QIE }
+	1050 = { add_core_of = QIE }
+	608 = { add_core_of = QIE }
+	1047 = { add_core_of = QIE }
+	598 = { add_core_of = QIE }
+	1064 = { add_core_of = QIE }
+	1065 = { add_core_of = QIE }
+	597 = { add_core_of = QIE }
+}
+
+HNN_educational = {#给文盲率定值
+	add_dynamic_modifier = {
+		modifier = HNN_educational_modifier
+	}
+	hidden_effect = { add_ideas = HNN_education_idea }
+	if = {
+		limit = {
+			has_completed_focus = HNN_yi_wu_jiao_yu
+		}
+		set_variable = { HNN_illiteracy = 30 }
+	}
+	else_if = {
+		limit = { 
+			has_completed_focus = HNN_kuo_zhan_jiao_yu
+		}
+		set_variable = { HNN_illiteracy = 20 }
+	}
+	else = {
+		set_variable = { HNN_illiteracy = 15 }
+	}
+	set_variable = { HNN_illiteracy_imrovement_rate = 0 }
+	HNN_educational_effects = yes
+}
+
+HNN_educational_effects = {#通过文盲率变动来给效果变化
+	set_variable = { HNN_wen_mang_var = HNN_illiteracy }
+	set_temp_variable = { HNN_wen_mang_factor = 100 }
+	subtract_from_temp_variable = { HNN_wen_mang_factor = HNN_wen_mang_var }
+	if = {
+		limit = { 
+			check_variable = {
+				HNN_wen_mang_factor > 50
+			}
+		}
+		divide_temp_variable = { HNN_wen_mang_factor = -500 }
+	}
+	else = {
+		divide_temp_variable = { HNN_wen_mang_factor = 500 }
+	}
+
+	
+	set_variable = { HNN.HNN_education_war_support = HNN_wen_mang_factor }
+	set_variable = { HNN.HNN_education_stability = HNN_wen_mang_factor }
+		
+	multiply_temp_variable = { HNN_wen_mang_factor = -1 }
+	
+	set_variable = { HNN.HNN_education_consumer_goods_factor = HNN_wen_mang_factor }
+	
+	divide_temp_variable = { HNN_wen_mang_factor = -1 }
+	
+	set_variable = { HNN.HNN_education_political_power_factor = HNN_wen_mang_factor }
+	
+	
+	if = {
+		limit = {
+			check_variable = { HNN_illiteracy_imrovement_rate = 1 }
+		}
+		add_to_variable = { HNN.HNN_education_political_power_factor = -0.025 }
+	}
+	if = {
+		limit = {
+			check_variable = { HNN_illiteracy_imrovement_rate = 2 }
+		}
+		add_to_variable = { HNN.HNN_education_political_power_factor = -0.05 }
+	}
+
+	clear_variable = HNN_wen_mang_var
+	force_update_dynamic_modifier = yes
+}
+
+HNN_daily_update_educational = {#每日变化
+		
+	set_variable = { 
+		var = HNN_educational_dailyupdate_var
+		value = 0
+	}
+	if = {
+		limit = {
+			check_variable = { HNN_illiteracy_imrovement_rate = 1 }
+		}
+		add_to_variable = { HNN_educational_dailyupdate_var = 0.04 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { HNN_illiteracy_imrovement_rate = 2 }
+		}
+		add_to_variable = { HNN_educational_dailyupdate_var = 0.08 }
+	}
+	add_to_variable = { HNN.HNN_illiteracy = HNN_educational_dailyupdate_var }
+	
+	HNN_education_clamp = yes
+}
+
+HNN_education_clamp = {#确定上下限
+	clamp_variable = {
+		var = HNN_illiteracy
+		min = 0
+		max = 100
+	}
+}

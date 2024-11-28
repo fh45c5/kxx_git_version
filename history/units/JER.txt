@@ -1,0 +1,75 @@
+﻿### Templates
+### Territorial Army Infantry Division
+
+division_template = {
+	name = "Milice Ducale"
+	division_names_group = JER_INF_02
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 1 y = 2 }
+		militia = { x = 2 y = 0 }
+		militia = { x = 2 y = 1 }
+		militia = { x = 2 y = 2 }
+	}
+	support = {
+		anti_air =  { x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "Devision d'Defance Ducale"
+	division_names_group = JER_INF_03
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		artillery_brigade = { x = 1 y = 2 }
+		artillery_brigade = { x = 2 y = 0 }
+		anti_air_brigade = { x = 2 y = 1 }
+		anti_air_brigade = { x = 2 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+		anti_air =  { x = 0 y = 2 }
+	}
+}
+### Land Units
+units = {
+
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 14791
+		division_template = "Devision d'Defance Ducale"
+		start_experience_factor = 0.3
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 14791
+		division_template = "Devision d'Defance Ducale"
+		start_experience_factor = 0.3
+	}
+	#Sankt Polten
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 14791
+		division_template = "Milice Ducale"
+		start_experience_factor = 0.3
+	}
+	
+}

@@ -1,0 +1,328 @@
+﻿
+###########################
+# Spanish African Events
+###########################
+# By IratePirate
+###########################
+
+add_namespace = spanishafrica
+
+country_event = { # Spanish Africa Intro Event
+	id = spanishafrica.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event spanishafrica.1" }
+	title = spanishafrica.1.t
+	desc = spanishafrica.1.d
+
+  picture = GFX_report_event_port_rail
+  
+	is_triggered_only = yes
+	
+
+	immediate = {
+	}
+
+	option = {
+		name = spanishafrica.1.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Reform?
+	id = spanishafrica.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event spanishafrica.2" }
+	title = spanishafrica.2.t
+	desc = spanishafrica.2.d
+	picture = GFX_report_event_pedro
+	is_triggered_only = yes
+	
+
+	immediate = {
+	}
+
+	option = {
+		name = spanishafrica.2.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			}
+		}
+		
+	option = {
+		name = spanishafrica.2.b
+		ai_chance = {
+			factor = 100
+		}
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.30
+			}
+		add_stability = -0.05
+		add_war_support = 0.1
+		hidden_effect = {
+			}
+		}
+	}
+
+country_event = { # Death of Abd el-Krim
+	id = spanishafrica.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event spanishafrica.3" }
+	title = spanishafrica.3.t
+	desc = spanishafrica.3.d
+	picture = GFX_report_event_krim
+	is_triggered_only = yes
+	
+
+	immediate = {
+	}
+
+	option = {
+		name = spanishafrica.3.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				tag = SFA
+			}
+			add_stability = -0.05
+		}
+		add_political_power = -10
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Worker shortages
+	id = spanishafrica.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event spanishafrica.4" }
+	title = spanishafrica.4.t
+	desc = spanishafrica.4.d
+	picture = GFX_report_event_picking
+	is_triggered_only = yes
+	
+
+	immediate = {
+	}
+
+	option = {
+		name = spanishafrica.4.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+		limit = {
+			tag = SFA
+			}
+			add_ideas = SFA_labour_shortages
+		}
+		add_stability = -0.05
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Black Monday
+	id = spanishafrica.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event spanishafrica.5" }
+	title = spanishafrica.5.t
+	desc = spanishafrica.5.d
+	picture = GFX_report_event_stonetown
+	is_triggered_only = yes
+	
+
+	immediate = {
+	}
+
+	option = {
+		name = spanishafrica.5.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+		limit = {
+			tag = SFA
+			}
+			add_stability = -0.25
+			add_political_power = -80
+			add_war_support = -0.15
+			decrease_ruling_party_popularity_by_10 = yes
+		}
+		hidden_effect = {
+			}
+		}
+	}
+	
+country_event = { # Collapse of Spanish Africa
+	id = spanishafrica.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event spanishafrica.6" }
+	title =  spanishafrica.6.t
+	desc =  spanishafrica.6.d
+	picture = GFX_report_event_desert_huts
+
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	trigger = {
+		NOT = {
+			has_country_flag = SFA_collapse
+		}
+		tag = SFA
+		date > 1936.06.01
+		has_stability < 0.01
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_war = yes
+			}
+		}
+	}
+
+	option = {
+		name = spanishafrica.6.a
+		ai_chance = {
+			factor = 100
+		}
+		news_event = {
+			id = sharedafrika.12
+			days = 1
+		}
+		hidden_effect = {
+			SFA_collapse = yes
+			set_country_flag = SFA_collapse
+		}
+	}
+	option = {
+		name = spanishafrica.6.b
+		trigger = {
+			SPR = {
+				country_exists = yes
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+		news_event = {
+			id = sharedafrika.12
+			days = 1
+		}
+		hidden_effect = {
+			SFA_collapse = yes
+			set_country_flag = SFA_collapse
+		}
+		SPR = {
+			change_tag_from = SFA
+		}
+	}
+	option = {
+		name = spanishafrica.6.c
+		trigger = {
+			CAR = {
+				country_exists = yes
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+		news_event = {
+			id = sharedafrika.12
+			days = 1
+		}
+		hidden_effect = {
+			SFA_collapse = yes
+			set_country_flag = SFA_collapse
+		}
+		CAR = {
+			change_tag_from = SFA
+		}
+	}
+	option = {
+		name = spanishafrica.6.e
+		trigger = {
+			CNT = {
+				country_exists = yes
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+		news_event = {
+			id = sharedafrika.12
+			days = 1
+		}
+		hidden_effect = {
+			SFA_collapse = yes
+			set_country_flag = SFA_collapse
+		}
+		CNT = {
+			change_tag_from = SFA
+		}
+	}
+}
+
+country_event = { # Rif raiders
+	id = spanishafrica.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event spanishafrica.7" }
+	title = spanishafrica.7.t
+	desc = spanishafrica.7.d
+	picture = GFX_report_event_stonetown
+	is_triggered_only = yes
+	
+
+	immediate = {
+	}
+
+	option = {
+		name = spanishafrica.7.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = -50
+		}
+	option = {
+		name = spanishafrica.7.b
+		ai_chance = {
+			factor = 30
+		}
+	add_stability = -0.05
+		}
+	}
+	
+country_event = { # Rio Muni border
+	id = spanishafrica.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event spanishafrica.8" }
+	title = spanishafrica.8.t
+	desc = spanishafrica.8.d
+	picture = GFX_report_event_rural
+	is_triggered_only = yes
+	
+
+	immediate = {
+	}
+
+	option = {
+		name = spanishafrica.8.a
+		ai_chance = {
+			factor = 30
+		}
+		add_stability = -0.05
+		add_war_support = 0.05
+		}
+	option = {
+		name = spanishafrica.8.b
+		ai_chance = {
+			factor = 100
+		}
+	add_stability = 0.05
+	add_political_power = -50
+		}
+	}

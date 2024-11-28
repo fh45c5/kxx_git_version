@@ -1,0 +1,331 @@
+######################
+#	INFANTRY ROLE
+######################
+
+infantry_CHI = {
+	available_for = {
+		CHI
+	}
+	roles = { infantry }
+	upgrade_prio = { factor = 15 }
+	match_to_count = 0.35
+
+	# For countries with <10 military factories (or designated as using cheap infantry)
+	CHI_infantry_template_a = {
+		upgrade_prio = { factor = 15 }
+
+		target_width = 12
+		width_weight = 1.3
+		column_swap_factor = 0.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 9000.0
+
+			regiments = {
+				irregular_infantry = 8
+			}
+		}
+
+		allowed_types = {
+			irregular_infantry
+		}
+	}
+}
+
+infantry_CHI2 = {
+	available_for = {
+		CHI
+	}
+	roles = { infantry }
+	upgrade_prio = { 
+		base = 0
+		modifier = {
+			add = 100
+			num_of_military_factories > 15
+		}
+	}
+	match_to_count = 0.35
+
+	# For countries with <10 military factories (or designated as using cheap infantry)
+	CHI_infantry_template_b = {
+		upgrade_prio = { factor = 15 }
+
+		target_width = 12
+		width_weight = 1.3
+		column_swap_factor = 0.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 9000.0
+
+			regiments = {
+				infantry = 9
+				artillery_brigade = 1
+			}
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_tank = 1
+			}
+		}
+
+		allowed_types = {
+			infantry
+			artillery_brigade
+
+			engineer
+			artillery
+			anti_tank
+		}
+	}
+}
+
+medium_armor_CHI = {
+	roles = { armor }
+	available_for = {
+		CHI
+	}
+	upgrade_prio = {
+		factor = 5
+		modifier = {
+			factor = 0
+		}
+		modifier = {
+			factor = 0.5
+			num_of_military_factories < 14
+		}
+	}
+	match_to_count = 0.4
+
+	CHI_medium_armor_template_a = {
+		upgrade_prio = {
+			factor = 10
+		}
+		production_prio = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { has_tech = basic_medium_tank }
+			}
+			modifier = {
+				factor = 0
+				num_of_military_factories > 89
+			}
+		}
+
+		target_width = 22.0
+		width_weight = 3.0
+		column_swap_factor = 0.1
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 6000.0
+
+			regiments = {
+				medium_armor = 6
+				infantry = 5
+			}
+
+			support = {
+				engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				anti_tank = 1
+				artillery = 1
+			}
+		}
+
+		allowed_types = {
+			medium_armor
+			infantry
+
+			engineer
+			light_tank_recon
+			logistics_company
+			anti_tank
+			artillery
+		}
+
+		replace_at_match = 0.8
+		target_min_match = 0.5
+	}
+}
+
+modern_armor_CHI = {
+	available_for = {
+		CHI
+	}
+	roles = { armor }
+	upgrade_prio = {
+		factor = 20
+		modifier = {
+			factor = 0
+			NOT = { has_tech = main_battle_tank }
+		}
+	}
+	match_to_count = 0.4
+	CHI_modern_armor_template_a = {
+		upgrade_prio = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { has_tech = main_battle_tank }
+			}
+		}
+		production_prio = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { has_tech = main_battle_tank }
+			}
+		}
+
+		target_width = 42.0
+		width_weight = 3.0
+		column_swap_factor = 0.1
+		reinforce_prio = 2
+
+		target_template = {
+			weight = 0.9
+			match_value = 7000.0
+
+			regiments = {
+				modern_armor = 11
+				mechanized = 10
+			}
+
+			support = {
+				engineer = 1
+				recon = 1
+				maintenance_company = 1
+				logistics_company = 1
+				anti_tank = 1
+			}
+		}
+
+		allowed_types = {
+			modern_armor
+			modern_sp_artillery_brigade
+			modern_tank_destroyer_brigade
+			modern_sp_anti_air_brigade
+			motorized
+			mechanized
+			motorized_rocket_brigade
+			engineer
+			recon
+			signal_company
+			maintenance_company
+			logistics_company
+			anti_tank
+			military_police
+			artillery
+			anti_air
+			rocket_artillery
+		}
+	}
+}
+
+mountaineer_CHI = {
+	roles = { mountaineer }
+	available_for = {
+		CHI
+	}
+	upgrade_prio = {
+		factor = 5
+		modifier = {
+			factor = 0
+			NOT = { has_tech = tech_mountaineers }
+		}
+	}
+	match_to_count = 0.35
+
+	CHI_mountaineer_template_a = {
+		production_prio = {
+			base = 10
+		}
+		upgrade_prio = {
+			factor = 5
+			modifier = {
+				factor = 0
+				NOT = { has_tech = tech_mountaineers }
+			}
+		}
+
+		target_width = 22
+		width_weight = 3
+		column_swap_factor = 0.2
+		reinforce_prio = 2
+
+		target_template = {
+			weight = 0.9
+			match_value = 3000
+
+			regiments = {
+				mountaineers = 5
+				artillery_brigade = 4
+			}
+
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_tank = 1
+				logistics_company = 1
+			}
+		}
+
+		allowed_types = {
+			mountaineers
+			artillery_brigade
+
+			engineer
+			artillery
+			anti_tank
+			logistics_company
+		}
+	}
+}
+
+garrison_CHI = {
+	available_for = {
+		CHI
+	}
+	roles = { garrison }
+	upgrade_prio = { factor = 5 }
+	match_to_count = 0.4
+
+	CHI_garrison_template_a = {
+		production_prio = {
+			base = 0
+		}
+		
+		upgrade_prio = {
+			base = 0
+		}
+
+		#TEMPLATE
+		target_width = 16
+		width_weight = 1
+		column_swap_factor = 0.5
+		reinforce_prio = 0
+		custom_icon = 6
+
+		target_template = {
+			weight = 0.9
+			match_value = 3000
+			support = {
+				military_police = 1
+			}
+			regiments = {
+				cavalry = 8
+			}
+		}
+		allowed_types = {
+			military_police
+			cavalry
+		}
+	}
+}

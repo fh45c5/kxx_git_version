@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_idea_The_troubles_caused_by_the_uprising_sailors"
+		textureFile = "gfx/interface/ideas/ideas1.png"
+	}
+}

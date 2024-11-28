@@ -1,0 +1,116 @@
+﻿capital = 290
+OOB = "SFA_AFR"
+
+set_technology = {
+	### MOD ###
+	### INF ###
+	infantry_weapons = 1
+	basic_train = 1
+	early_fighter = 1
+}
+
+SPR = {
+	set_autonomy = {
+		target = SFA
+		autonomy_state = kr_default_puppet
+	}
+}
+
+
+hidden_effect = {
+	set_rule = {
+		can_send_volunteers = yes
+	}
+}
+
+country_event = { id = spanishafrica.1 days = 1 }  # Intro
+SPR = { country_event = { id = spanishafrica.1 days = 14 }  }
+
+country_event = { id = spanishafrica.4 days = 23 }  # Ongoing work shortages in Guinea
+SPR = { country_event = { id = spanishafrica.4 days = 23 }  }
+
+country_event = { id = spanishafrica.5 days = 57 } # Black Monday
+SPR = { country_event = { id = spanishafrica.5 days = 57 }  }
+
+country_event = { id = spanishafrica.3 days = 214 }  # Abd-el-Krim assassinated
+SPR = { country_event = { id = spanishafrica.3 days = 214 }  }
+GER = { country_event = { id = spanishafrica.3 days = 214 }  }
+DJI = { country_event = { id = spanishafrica.3 days = 214 }  }
+MOR = { country_event = { id = spanishafrica.3 days = 214 }  }
+
+country_event = { id = spanishafrica.7 days = 89 }  # Fight Rif raiders
+
+country_event = { id = spanishafrica.8 days = 134 }  # Rio Muni border
+
+set_stability = 0.19
+set_war_support = 0.29
+set_convoys = 25
+
+set_research_slots = 2
+set_politics = {
+	ruling_party = paternal_autocrat
+	last_election = "1888.6.15"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+
+add_ideas = {
+	Generic_Colonial_Nation_lesser
+	SFA_divisionsintheadministration
+	SFA_colonial_fragmentation
+	SPR_JM_Gil_Robles_Quinones_hog_ade
+	SPR_Francisco_de_Asis_Serrat_y_Bonastre_for_pau
+	SPR_German_Gil_y_Yuste_eco_pau
+	SPR_Miguel_Ponte_Manso_de_Zuniga_sec_ade
+}
+
+set_popularities = {
+    totalist = 0
+    radical_socialist = 0
+    syndicalist = 0
+    social_democrat = 2
+    social_liberal = 6
+    market_liberal = 6
+    social_conservative = 12
+    authoritarian_democrat = 15
+    paternal_autocrat = 47
+    national_populist = 12
+}
+create_country_leader = {
+	name = "马丁内斯·阿尼多"
+	desc = "POLITICS_MARTINEZ_ANIDO_DESC"
+	picture = "gfx/leaders/SPR/Portrait_SPR_Martinez_Anido.png"
+	expire = "1965.1.1"
+	ideology = soccon_colonial_govt_subtype 
+	traits = {}
+}
+create_country_leader = {
+	name = "马丁内斯·阿尼多"
+	desc = "POLITICS_MARTINEZ_ANIDO_DESC"
+	picture = "gfx/leaders/SPR/Portrait_SPR_Martinez_Anido.png"
+	expire = "1965.1.1"
+	ideology = colonial_govt_subtype
+	traits = {}
+}
+create_country_leader = {
+	name = "马丁内斯·阿尼多"
+	desc = "POLITICS_MARTINEZ_ANIDO_DESC"
+	picture = "gfx/leaders/SPR/Portrait_SPR_Martinez_Anido.png"
+	expire = "1965.1.1"
+	ideology = autocratic_colonial_govt_subtype
+	traits = {}
+}
+
+create_corps_commander = {
+	name = "曼努埃尔·戈代德·略皮斯"
+	portrait_path = "gfx/leaders/SPR/Portrait_SPR_Goded_Llopis.png"
+	traits = { }
+	skill = 3
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 2
+	id = 307
+}
+

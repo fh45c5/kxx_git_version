@@ -1,0 +1,342 @@
+ideas = {
+	country = {
+		SIL_Industrial = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_Industrial" }
+			name = SIL_Industrial
+			picture = industrial_protectionism
+			allowed = { always = no }
+			modifier = {
+			production_speed_buildings_factor = 0.15
+			production_speed_arms_factory_factor = 0.15
+			production_speed_industrial_complex_factor = 0.15
+			}
+		}
+		SIL_Industrial2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_Industrial2" }
+			name = SIL_Industrial2
+			picture = industrial_protectionism
+			allowed = { always = no }
+			modifier = {
+			local_building_slots_factor = 0.25
+			production_speed_buildings_factor = 0.2
+			line_change_production_efficiency_factor = 0.15
+			industrial_capacity_factory = 0.15
+			production_factory_max_efficiency_factor = 0.15
+			production_factory_efficiency_gain_factor = 0.15
+			}
+		}
+		SIL_Industrial3 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_Industrial3" }
+			name = SIL_Industrial3
+			picture = industrial_protectionism
+			allowed = { always = no }
+			modifier = {
+			local_building_slots_factor = 0.25
+			production_speed_buildings_factor = 0.2
+			line_change_production_efficiency_factor = 0.15
+			industrial_capacity_factory = 0.15
+			production_factory_max_efficiency_factor = 0.15
+			production_factory_efficiency_gain_factor = 0.15
+			local_resources_factor = 0.2
+			}
+		}
+		SIL_Industrial4 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_Industrial4" }
+			name = SIL_Industrial4
+			picture = industrial_protectionism
+			allowed = { always = no }
+			modifier = {
+			local_building_slots_factor = 0.25
+			production_speed_buildings_factor = 0.25
+			line_change_production_efficiency_factor = 0.2
+			industrial_capacity_factory = 0.2
+			production_factory_max_efficiency_factor = 0.2
+			production_factory_efficiency_gain_factor = 0.2
+			local_resources_factor = 0.3
+			}
+		}
+		SIL_Unit = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_Unit" }
+			name = SIL_Unit
+			picture = GER_New_Reich_Goering
+			allowed = { always = no }
+			modifier = {
+			stability_factor = 0.07
+			war_support_factor = 0.1
+			surrender_limit = -0.1
+			army_attack_factor = 0.1
+			}
+		}
+		SIL_Unit1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_Unit1" }
+			name = SIL_Unit1
+			picture = GER_New_Reich_Goering
+			allowed = { always = no }
+			modifier = {
+			stability_factor = 0.07
+			war_support_factor = 0.1
+			surrender_limit = -0.1
+			army_attack_factor = 0.1
+			army_defence_factor = 0.1
+			attrition = -0.05
+			initiative_factor = 0.05
+			}
+		}
+		SIL_Military = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_Military" }
+			name = SIL_Military
+			picture = advisors_germany
+			allowed = { always = no }
+			modifier = {
+			stability_factor = 0.02
+			war_support_factor = 0.05
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			political_power_factor = 0.3
+			political_power_gain = 0.5
+			conscription = 0.1
+			}
+		}
+		SIL_Gun = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_Gun" }
+			name = SIL_Gun
+			picture = guns_shield
+			allowed = { always = no }
+			modifier = {
+			war_support_factor = 0.05
+			army_infantry_attack_factor = 0.1
+			army_artillery_attack_factor = 0.1
+			army_artillery_defence_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		SIL_freely = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_freely" }
+			name = SIL_freely
+			picture = political_liberalism
+			allowed = { always = no }
+			modifier = {
+			research_speed_factor = 0.15
+			political_power_factor = 0.2
+			political_power_gain = 0.5
+			stability_weekly = 0.005
+			}
+		}
+		SIL_freely1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_freely1" }
+			name = SIL_freely1
+			picture = political_liberalism
+			allowed = { always = no }
+			modifier = {
+			research_speed_factor = 0.15
+			political_power_factor = 0.25
+			political_power_gain = 0.7
+			recon_factor = 0.5
+			initiative_factor = 0.2
+			planning_speed = 0.2
+			stability_weekly = 0.005
+			}
+		}
+		SIL_Unity_and_justice = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_Unity_and_justice" }
+			name = SIL_Unity_and_justice
+			picture = GER_imperial_pride_guns
+			allowed = { always = no }
+			modifier = {
+			war_support_weekly = 0.005
+			command_power_gain = 0.5
+			max_command_power = 1000
+			training_time_army_factor = -0.15
+			military_leader_cost_factor = -0.5
+			conscription_factor = 0.3
+			}
+		}
+		SIL_Unity_justice_and_freedom = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_Unity_justice_and_freedom" }
+			name = SIL_Unity_justice_and_freedom
+			picture = political_liberalism
+			allowed = { always = no }
+			modifier = {
+			research_speed_factor = 0.15
+			political_power_factor = 0.25
+			political_power_gain = 0.7
+			recon_factor = 0.7
+			initiative_factor = 0.25
+			planning_speed = 0.25
+			stability_weekly = 0.005
+			war_support_weekly = 0.005
+			command_power_gain = 0.7
+			max_command_power = 5000
+			training_time_army_factor = -0.15
+			military_leader_cost_factor = -0.5
+			conscription_factor = 0.3
+			experience_loss_factor = -0.5
+			experience_gain_factor = 0.25
+			mobilization_speed = 1
+			}
+		}
+		SIL_The_struggle_continues = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_The_struggle_continues" }
+			name = SIL_The_struggle_continues
+			picture = Revolt_against_modern_world
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = 0.5
+			political_power_gain = 0.5
+			production_speed_buildings_factor = 0.15
+			production_speed_industrial_complex_factor = 0.15
+			drift_defence_factor = 0.5
+			}
+		}
+		SIL_The_struggle_continues1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_The_struggle_continues1" }
+			name = SIL_The_struggle_continues1
+			picture = Revolt_against_modern_world
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = 0.5
+			political_power_gain = 0.8
+			production_speed_buildings_factor = 0.25
+			production_speed_industrial_complex_factor = 0.25
+			drift_defence_factor = 1
+			war_support_weekly = 0.003
+			breakthrough_factor = 0.1
+			}
+		}
+		SIL_Welfare_system = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_Welfare_system" }
+			name = SIL_Welfare_system
+			picture = TEX_american_revovery_period
+			allowed = { always = no }
+			modifier = {
+			monthly_population = 0.3
+			conscription_factor = 0.2
+			stability_weekly = 0.003
+			attrition = -0.3
+			defensive_war_stability_factor = 0.2
+			}
+		}
+		SIL_Welfare_system1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_Welfare_system1" }
+			name = SIL_Welfare_system1
+			picture = TEX_american_revovery_period
+			allowed = { always = no }
+			modifier = {
+			monthly_population = 0.4
+			conscription_factor = 0.3
+			stability_weekly = 0.005
+			attrition = -0.3
+			defensive_war_stability_factor = 0.2
+			army_strength_factor = 0.2
+			research_speed_factor = 0.2
+			}
+		}
+		SIL_Welfare_system2 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_Welfare_system2" }
+			name = SIL_Welfare_system2
+			picture = TEX_american_revovery_period
+			allowed = { always = no }
+			modifier = {
+			monthly_population = 0.4
+			conscription_factor = 0.3
+			stability_weekly = 0.005
+			attrition = -0.3
+			defensive_war_stability_factor = 0.3
+			local_resources_factor = 0.2
+			production_speed_industrial_complex_factor = 0.2
+			army_strength_factor = 0.25
+			research_speed_factor = 0.25
+			}
+		}
+		SIL_educate = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_educate" }
+			name = SIL_educate
+			picture = educate_rural_whites
+			allowed = { always = no }
+			modifier = {
+			research_speed_factor = 0.25
+			pocket_penalty = -0.2
+			surrender_limit = -0.1
+			}
+		}
+		SIL_Political_transparency = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_Political_transparency" }
+			name = SIL_Political_transparency
+			picture = UK_politics_syn_idea
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = 0.2
+			political_power_gain = 0.3
+			production_speed_buildings_factor = 0.2
+			resistance_decay = 0.2
+			resistance_growth = -0.2
+			}
+		}
+		SIL_Working_women = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_Working_women" }
+			name = SIL_Working_women
+			picture = farmer_labor_alliance
+			allowed = { always = no }
+			modifier = {
+			conscription = 0.1
+			conscription_factor = 0.25
+			non_core_manpower = 0.5
+			}
+		}
+		SIL_Germany_supremacy = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_Germany_supremacy" }
+			name = SIL_Germany_supremacy
+			picture = GER_flag_idea
+			allowed = { always = no }
+			modifier = {
+			army_attack_factor = 0.15
+			army_defence_factor = 0.15
+			conscription = 0.05
+			conscription_factor = 0.2
+			army_attack_speed_factor = 0.3
+			}
+		}
+		SIL_National_Church = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_National_Church" }
+			name = SIL_National_Church
+			picture = CNT_free_church_school
+			allowed = { always = no }
+			modifier = {
+			political_power_factor = 0.4
+			political_power_gain = 0.4
+			stability_weekly = 0.005
+			resistance_decay = 0.2
+			}
+		}
+		SIL_RHmilitary = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_RHmilitary" }
+			name = SIL_RHmilitary
+			picture = advisors_germany
+			allowed = { always = no }
+			modifier = {
+			stability_factor = 0.02
+			war_support_factor = 0.05
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			political_power_factor = 0.3
+			political_power_gain = 0.5
+			conscription = 0.1
+			}
+		}
+		SIL_RHmilitary1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SIL_RHmilitary1" }
+			name = SIL_RHmilitary1
+			picture = advisors_germany
+			allowed = { always = no }
+			modifier = {
+			stability_factor = 0.07
+			war_support_factor = 0.1
+			army_attack_factor = 0.1
+			army_defence_factor = 0.1
+			political_power_factor = 0.3
+			political_power_gain = 0.5
+			conscription = 0.12
+			}
+		}
+	}
+}

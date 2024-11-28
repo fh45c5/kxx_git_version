@@ -1,0 +1,30 @@
+FRG_nuit_decisions = {
+        priority = 10
+	icon = hol_prepare_the_inundation_lines
+        picture = GFX_decision_crystal_nights
+	available = {  
+                    has_completed_focus = FRG_ARMY_19
+                    NOT = { country_exists = FRA }
+                   }
+}
+
+FRG_industry_north = {
+        priority = 9
+	allowed = { tag = FRG }
+}
+
+FRG_industry_south = {
+        priority = 9
+	allowed = { tag = FRG }
+}
+
+FRG_imperialates = {
+        priority = 10
+        picture = GFX_decision_EAGLE
+	allowed = { tag = FRG }
+}
+
+FRG_attack = {
+        priority = 9
+	allowed = { tag = FRG }
+}

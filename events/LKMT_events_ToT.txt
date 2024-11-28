@@ -1,0 +1,49 @@
+
+add_namespace = LKMT_tot_gt
+add_namespace = LKMT_tot
+add_namespace = LKMT_tot_condiment
+add_namespace = CHI.midgame
+
+#三人集团政治事件
+	country_event = {
+		id = chi_flavor.19
+		title = chi_flavor.19.t
+		desc = chi_flavor.19.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		picture = GFX_report_event_hu_zongnan
+		option = {
+			name = chi_flavor.19.a
+			add_political_power = 15
+		}
+	}
+
+	country_event = {
+		id = chi_flavor.20
+		title = chi_flavor.20.t
+		desc = chi_flavor.20.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		picture = GFX_report_event_dai_chunfeng2
+		option = {
+			name = chi_flavor.20.a
+			add_political_power = 15
+			effect_tooltip = {
+				retire_character = CHI_wang_jingwei
+			}
+		}
+	}
+
+	country_event = {
+		id = chi_flavor.21
+		title = chi_flavor.21.t
+		desc = chi_flavor.21.d
+		is_triggered_only = yes
+		fire_only_once = yes
+		picture = GFX_report_event_dai_chunfeng2
+		option = {
+			name = chi_flavor.21.a
+			add_political_power = 5
+			add_stability = 0.02
+		}
+	}

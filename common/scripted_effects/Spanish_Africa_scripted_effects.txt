@@ -1,0 +1,107 @@
+SPA_collapse = {
+
+	set_global_flag = SFA_collapse
+
+
+	# First give away any owned states to their controller, if we're at war
+	every_owned_state = {
+		limit = { NOT = { is_controlled_by = SFA } }
+		save_event_target_as = giveaway
+		controller = { transfer_state = event_target:giveaway }
+	}
+
+	# Now mark all existing breakaways
+	every_country = {
+		limit = {
+			exists = yes
+		}
+		set_country_flag = SFA_already_exists
+	}
+
+	# Special people 
+	# Canaries
+	if = {
+		limit = { owns_state = 178 }
+		var:41.owner = { transfer_state = 178 }
+	}
+	if = {
+		limit = { owns_state = 297 }
+		var:539.owner  = { transfer_state = 297 }
+	}	
+	if = {
+		limit = { owns_state = 699 }
+		MOR = { transfer_state = 699 }
+	}
+	if = {
+		limit = { owns_state = 1318 }
+		MOR = { transfer_state = 1318 }
+	}
+	if = {
+		limit = { owns_state = 290 }
+		MOR = { transfer_state = 290 }
+	}
+
+	# Anything left, give it to a random neighbor
+	every_owned_state = {
+		limit = { 
+			any_neighbor_state = { 
+				NOT = { 
+					is_owned_by = SFA
+					} 
+				}
+			}
+		save_event_target_as = giveaway
+		random_neighbor_state = {
+			limit = { 
+				NOT = { 
+					is_owned_by = SFA 
+					} 
+				}
+			owner = { 
+				transfer_state = event_target:giveaway
+			}
+		}
+	}
+	every_owned_state = {
+		limit = { 
+			any_neighbor_state = { 
+				NOT = { is_owned_by = SFA } 
+				} 
+			}
+		save_event_target_as = giveaway
+		random_neighbor_state = {
+			limit = { 
+				NOT = { 
+					is_owned_by = SFA 
+					} 
+				}
+			owner = { 
+				transfer_state = event_target:giveaway 
+			}
+		}
+	}
+
+	# Still stuff left? Give it to SPR
+	if = {
+		limit = { 
+			country_exists = SFA 
+		}
+		every_owned_state = {
+			SPR = { 
+				transfer_state = PREV 
+			}
+		}
+	}
+	every_country = {
+		limit = { has_country_flag = SFA_already_exists }
+		clr_country_flag = SFA_already_exists
+	}
+	
+	
+# Now set up Dschibouti
+	add_named_threat = {
+		threat = 1
+		name = Spanish_African_collapse
+	}
+}
+

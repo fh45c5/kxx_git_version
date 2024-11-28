@@ -1,0 +1,114 @@
+ideas = {
+	head_of_government = {
+		POL_Michal_Kalecki_hog_rso = {
+			allowed = { original_tag = POL }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea POL_Hilary_Minc_sec_tot"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_pragmatic_statesman
+			}
+		}
+		POL_Oskar_Lange_hog_tot = {
+			allowed = { original_tag = POL }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea POL_Hilary_Minc_sec_tot"
+			}
+			traits = {
+				head_of_government
+				totalist
+				hog_pragmatic_statesman
+			}
+		}
+	}
+	person_of_influence = {
+		POL_Hilary_Minc_sec_tot = {
+			allowed = { original_tag = POL }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea POL_Hilary_Minc_sec_tot"
+			}
+			traits = {
+				security_minister
+				totalist
+				sec_secret_police_chief
+			}
+		}
+		POL_Czeslaw_Borowski_for_tot = {
+			allowed = { original_tag = POL }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea POL_Hilary_Minc_sec_tot"
+			}
+			traits = {
+				foreign_minister
+				totalist
+				for_great_compromiser
+			}
+		}
+		POL_Michal_Kalecki_eco_rso = {
+			allowed = { original_tag = POL }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea POL_Hilary_Minc_sec_tot"
+			}
+			traits = {
+				economy_minister
+				radical_socialist
+				eco_keynesian_economy
+			}
+		}
+		POL_Oskar_Lange_eco_tot = {
+			allowed = { original_tag = POL }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea POL_Hilary_Minc_sec_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_planned_economy_proponent
+			}
+		}
+	}
+}

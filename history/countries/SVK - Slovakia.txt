@@ -1,0 +1,211 @@
+﻿capital = 1123
+OOB = "empty"
+
+set_technology = {
+	### Infantry ###
+	infantry_weapons = 1
+}
+
+set_research_slots = 3
+set_politics = {
+	ruling_party = social_democrat
+	last_election = "1888.6.15"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+    totalist = 10
+    radical_socialist = 10
+    syndicalist = 10
+    social_democrat = 10
+    social_liberal = 10
+    market_liberal = 10
+    social_conservative = 10
+    authoritarian_democrat = 10
+    paternal_autocrat = 10
+    national_populist = 10
+}
+
+set_stability = 0.40
+
+create_country_leader = {
+	name = "伊曼纽尔·莱霍基"
+	picture = "gfx/leaders/SVK/Portrait_SVK_Emanuel_Lehocky.png"
+	expire = "1965.1.1"
+	ideology = social_democrat_subtype
+}
+
+create_country_leader = {
+	name = "瓦夫罗·斯罗巴尔"
+	picture = "gfx/leaders/SVK/Portrait_SVK_Vavro_Srobar.png"
+	expire = "1965.1.1"
+	ideology = soclib_agrarianism_subtype
+}
+
+create_country_leader = {
+	name = "瓦夫罗·斯罗巴尔"
+	picture = "gfx/leaders/SVK/Portrait_SVK_Vavro_Srobar.png"
+	expire = "1965.1.1"
+	ideology = marlib_agrarianism_subtype
+}
+
+create_country_leader = {
+	name = "米兰·霍扎"
+	picture = "gfx/leaders/SVK/Portrait_SVK_Milan_Hodza.png"
+	expire = "1965.1.1"
+	ideology = soccon_agrarianism_subtype
+}
+
+create_country_leader = {
+	name = "奥托·冯·哈布斯堡"
+	picture = "gfx/leaders/SVK/SVK_Otto_Habsburg.png"
+	expire = "1965.1.1"
+	ideology = oligarchy_subtype
+}
+
+create_country_leader = {
+	name = "米兰·拉斯蒂斯拉夫·斯特凡尼克"
+	picture = "gfx/leaders/SVK/SVK_Stefanik.png"
+	expire = "1965.1.1"
+	ideology = national_transhumanism_subtype
+}
+
+create_country_leader = {
+	name = "亚历山大·马赫"
+	picture = "gfx/leaders/SVK/SVK_Mach.png"
+	expire = "1965.1.1"
+	ideology = fundementalism_subtype
+}
+
+create_country_leader = {
+	name = "古斯塔夫·胡萨克"
+	picture = "gfx/leaders/SVK/SVK_Gustav_Husak.png"
+	expire = "1965.1.1"
+	ideology = syndicalist_subtype
+}
+
+create_country_leader = {
+	name = "卡罗尔·斯密德克"
+	picture = "gfx/leaders/SVK/SVK_Smidke.png"
+	expire = "1965.1.1"
+	ideology = anarchism_subtype
+}
+
+create_country_leader = {
+	name = "维利亚姆·希罗基"
+	picture = "gfx/leaders/SVK/SVK_Viliam_Siroky.png"
+	expire = "1965.1.1"
+	ideology = nazbol_subtype
+}
+
+### Field Marshals ###
+create_field_marshal = {
+	name = "费迪南德·查特罗斯"
+	portrait_path = "gfx/leaders/SVK/SVK_Catlos.png"
+	traits = {
+		infantry_officer
+		logistics_wizard
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+### Corps Commanders ###
+create_corps_commander = {
+	name = "扬·戈利安"
+	portrait_path = "gfx/leaders/SVK/SVK_Golian.png"
+	traits = {
+		trickster
+		trait_mountaineer
+	}
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "斯特凡·尤雷奇"
+	portrait_path = "gfx/leaders/Generic/Portrait_Balkan_Generic_land_new_2.png"
+	traits = {
+		armor_officer
+		trait_reckless
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "奥古斯丁·马拉尔"
+	portrait_path = "gfx/leaders/Generic/Portrait_Balkan_Generic_land_new_1.png"
+	traits = {
+		trait_cautious
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "约瑟夫·斯内达雷克"
+	portrait_path = "gfx/leaders/Generic/Portrait_Balkan_Generic_land_new_5.png"
+	traits = {
+		old_guard
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "米库拉什·费尔延奇克"
+	portrait_path = "gfx/leaders/Generic/Portrait_Balkan_Generic_land_new_4.png"
+	traits = {
+		ranger
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "鲁道夫·维斯特"
+	portrait_path = "gfx/leaders/SVK/SVK_Viest.png"
+        id = 6
+	traits = {
+		ranger
+	}
+	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "维利亚姆·辛戈尔"
+	portrait_path = "gfx/leaders/Generic/Portrait_Europe_Generic_land_new_2.png"
+	traits = {
+		winter_specialist
+		trickster
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}

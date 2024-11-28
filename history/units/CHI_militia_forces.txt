@@ -1,0 +1,90 @@
+division_template = {
+	name = "Chingpei Shih"	
+	division_names_group = CHI_INF_01
+	regiments = {
+		militia = { x = 0 y = 0 } 
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 0 y = 3 }
+		militia = { x = 0 y = 4 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 1 y = 2 }
+		militia = { x = 1 y = 3 }
+		militia = { x = 1 y = 4 }
+	}
+}
+units = {
+	division= {
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 3992
+		division_template = "Chingpei Shih"		
+		start_equipment_factor = 1
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 3992
+		division_template = "Chingpei Shih"		
+		start_equipment_factor = 1
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 3992
+		division_template = "Chingpei Shih"		
+		start_equipment_factor = 1
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 3992
+		division_template = "Chingpei Shih"		
+		start_equipment_factor = 1
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 3992
+		division_template = "Chingpei Shih"		
+		start_equipment_factor = 1
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 3992
+		division_template = "Chingpei Shih"		
+		start_equipment_factor = 1
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 3992
+		division_template = "Chingpei Shih"		
+		start_equipment_factor = 1
+		start_experience_factor = 0.3
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 3992
+		division_template = "Chingpei Shih"		
+		start_equipment_factor = 1
+		start_experience_factor = 0.3
+	}
+}

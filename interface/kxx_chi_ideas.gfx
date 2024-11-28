@@ -1,0 +1,20 @@
+spriteTypes = {
+	
+	### SubIdeologies ###
+	spriteType = {
+		name = "GFX_idea_chi_gaizupaizhengtong"
+		texturefile = "gfx/interface/ideas/CHI/KR_focus_KMT_democracy.png"
+	}
+	spriteType = {
+		name = "GFX_idea_chi_fohaiquanwei"
+		texturefile = "gfx/interface/ideas/CHI/KR_focus_KMT_democracy.png"
+	}
+	spriteType = {
+		name = "GFX_idea_chi_fohaiquanwei_2"
+		texturefile = "gfx/interface/ideas/CHI/KR_focus_KMT_democracy.png"
+	}
+	spriteType = {
+		name = "GFX_idea_chi_yiguandao"
+		texturefile = "gfx/interface/ideas/ideas/SQI_honored_master.png"
+	}
+}
