@@ -2124,6 +2124,7 @@ country_event = {
 			country_event = { id = gre.106 days = 45 } #Pro-Republican Riot
 			country_event = { id = gre.107 days = 55 } #Monarchists might win?
 			country_event = { id = gre.108 days = 55 } #Republicans might win?
+			country_event = { id = gre.109 days = 60 }
 		}
 	}
 }
@@ -3046,6 +3047,7 @@ country_event = {
 
 	option = {
 		name = gre.111.a
+		complete_national_focus = GRE_elections
 		set_country_flag = GRE_republicans_win_referendum
 		add_stability = 0.05
 		country_event = { id = gre.52 days = 30 }
@@ -7999,6 +8001,10 @@ country_event = {
 
 	option = {
 		name = gre.415.a
+		set_party_name = {
+			name =  GRE_valkist_party
+			long_name =  GRE_valkist_party_long
+		}
 		set_country_flag = GRE_golden_dawn_off
 		remove_ideas = GRE_golden_dawn
 		meta_effect = {
