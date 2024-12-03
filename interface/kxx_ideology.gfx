@@ -81,6 +81,10 @@ spriteTypes = {
 		name = "GFX_ideology_hayek_neoliberalism_subtype"
 		texturefile = "gfx/interface/ideologies/subideologies/hayek_neoliberalism.png"
 	}		
+	spriteType = {
+		name = "GFX_ideology_syn_volkisch_communitarianism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/volkisch_communitarianism_group.png"
+	}
 
 	##毛主义衍生
 	spriteType = {
@@ -241,8 +245,17 @@ spriteTypes = {
 		name = "GFX_ideology_natpop_zadrugism_subtype"
 		texturefile = "gfx/interface/ideologies/subideologies/zadrugism.png"
 	}
+	#fx
 	spriteType = {
 		name = "GFX_ideology_pataut_metaxism_subtype"
 		texturefile = "gfx/interface/ideologies/subideologies/metaxism_pataut.png"
+	}
+	spriteType = {
+		name = "GFX_ideology_venizelism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/venizelism_group.png"
+	}
+	spriteType = {
+		name = "GFX_ideology_mercourism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/mercourism_group.png"
 	}
 }

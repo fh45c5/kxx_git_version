@@ -410,12 +410,6 @@ defined_text = {
 		}
 		localization_key =  volkisch_communitarianism_subtype
 	}
-	text = {
-		trigger = {
-			has_country_leader_ideology = syn_volkisch_communitarianism_subtype
-		}
-		localization_key = syn_volkisch_communitarianism_subtype
-	}
     text = {
 		trigger = {
 			has_country_leader_ideology = internationalism_subtype
@@ -6963,6 +6957,18 @@ text = {
 		}
 		localization_key = nihonyudaya_shugi_subtype  
 	}	
+	text = {
+		trigger = {
+			has_country_leader_ideology = rejuvenated_prussianism_subtype
+		}
+		localization_key = rejuvenated_prussianism_subtype  
+	}	
+	text = {
+		trigger = {
+			has_country_leader_ideology = syn_volkisch_communitarianism_subtype
+		}
+		localization_key = syn_volkisch_communitarianism_subtype  
+	}	
 	#柏柏尔主义
 	text = {
 		trigger = {
@@ -7135,4 +7141,16 @@ text = {
 		}
 		localization_key = pataut_metaxism_subtype
 	}	
+	text = {
+		trigger = {
+			has_country_leader_ideology = venizelism_subtype
+		}
+		localization_key = venizelism_subtype
+	}	
+	text = {
+		trigger = {
+			has_country_leader_ideology = mercourism_subtype
+		}
+		localization_key = mercourism_subtype
+	}
 }

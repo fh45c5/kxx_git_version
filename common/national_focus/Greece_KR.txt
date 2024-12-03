@@ -36,25 +36,32 @@ focus_tree = {
 	focus = {
 		id = GRE_smyrna_crisis
 		icon = GFX_goal_GRE_smyrna_crisis
-		cost = 6
+		cost = 1
 		x = 5
 		y = 0
 		available = {
-			hidden_trigger = { always = no }
+			EGY = {
+				has_war_with = TUR
+			}
+			NOT = {
+						has_country_flag = GRE_balkan_war_loss
+					}
 		}
+		
 		ai_will_do = {
 			factor = 4000
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_smyrna_crisis"
 			custom_effect_tooltip = GRE_tt_smyrna_crisis
+			add_war_support = 0.05
 		}
 	}
 
 	focus = {
 		id = GRE_request_support
 		icon = GFX_goal_GRE_request_support
-		cost = 3
+		cost = 1
 		x = -3
 		y = 1
 		prerequisite = { focus = GRE_smyrna_crisis }
@@ -64,8 +71,15 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_request_support"
-			hidden_effect = {
-				country_event = gre.16
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 2000
+				producer = CAN
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 2000
+				producer = NFA
 			}
 			custom_effect_tooltip = GRE_tt_request_support
 		}
@@ -74,7 +88,7 @@ focus_tree = {
 	focus = {
 		id = GRE_logistics
 		icon = GFX_goal_GRE_logistics
-		cost = 3
+		cost = 1
 		x = -1
 		y = 1
 		prerequisite = { focus = GRE_smyrna_crisis }
@@ -84,7 +98,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_logistics"
-			763 = {
+			every_owned_state = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = infrastructure
@@ -92,22 +106,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			342 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			341 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
+			
 		}
 	}
 
@@ -124,17 +123,14 @@ focus_tree = {
 		relative_position_id = GRE_smyrna_crisis
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_militia_problem"
-			country_event = {
-				id = gre.12
-				days = 3
-			}
+			load_oob = GRE
 		}
 	}
 
 	focus = {
 		id = GRE_propaganda_warfare
 		icon = GFX_goal_GRE_propaganda_warfare
-		cost = 3
+		cost = 1
 		x = 3
 		y = 1
 		ai_will_do = {
@@ -145,6 +141,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_propaganda_warfare"
 			add_political_power = 100
+			increase_ruling_party_popularity_by_10 = yes
 		}
 	}
 
@@ -153,7 +150,7 @@ focus_tree = {
 	focus = {
 		id = GRE_fortify_smyrna
 		icon = GFX_goal_GRE_fortify_smyrna
-		cost = 3
+		cost = 1
 		x = -3
 		y = 2
 		ai_will_do = {
@@ -163,32 +160,20 @@ focus_tree = {
 		relative_position_id = GRE_smyrna_crisis
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_fortify_smyrna"
-			763 = {
-				add_extra_state_shared_building_slots = 2
+			
+		
+			184 = {
 				add_building_construction = {
-					type = infrastructure
+					type = bunker
 					level = 2
 					instant_build = yes
-				}
-			}
-			339 = {
-				add_building_construction = {
-					type = bunker
-					level = 1
-					instant_build = yes
-					province = 9921
+					province = 13633
 				}
 				add_building_construction = {
 					type = bunker
-					level = 1
+					level = 2
 					instant_build = yes
-					province = 928
-				}
-				add_building_construction = {
-					type = bunker
-					level = 1
-					instant_build = yes
-					province = 6992
+					province = 11905
 				}
 			}
 		}
@@ -198,7 +183,7 @@ focus_tree = {
 	focus = {
 		id = GRE_counterespionage
 		icon = GFX_goal_GRE_counterespionage
-		cost = 3
+		cost = 1
 		x = -1
 		y = 2
 		ai_will_do = {
@@ -227,7 +212,7 @@ focus_tree = {
 	focus = {
 		id = GRE_show_of_force
 		icon = GFX_goal_GRE_show_of_force
-		cost = 3
+		cost = 2
 		x = 1
 		y = 2
 		ai_will_do = {
@@ -238,13 +223,14 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_show_of_force"
 			add_war_support = 0.1
+			add_manpower = 10000
 		}
 	}
 
 	focus = {
 		id = GRE_reveal_the_connections
 		icon = GFX_goal_GRE_reveal_the_connections
-		cost = 3
+		cost = 1
 		x = 3
 		y = 2
 		ai_will_do = {
@@ -255,11 +241,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_reveal_the_connections"
 			TUR = {
-				add_political_power = -50
+				add_political_power = -100
+				add_stability = -0.05
 			}
-			GER = {
-				add_stability = -0.03
-			}
+			add_stability = 0.1
 		}
 	}
 
@@ -268,7 +253,7 @@ focus_tree = {
 	focus = {
 		id = GRE_unavoidable
 		icon = GFX_goal_GRE_unavoidable
-		cost = 3
+		cost = 2
 		x = -3
 		y = 3
 		ai_will_do = {
@@ -286,7 +271,7 @@ focus_tree = {
 	focus = {
 		id = GRE_fortify_horn
 		icon = GFX_goal_GRE_fortify_horn
-		cost = 3
+		cost = 1
 		x = -1
 		y = 3
 		ai_will_do = {
@@ -296,49 +281,29 @@ focus_tree = {
 		relative_position_id = GRE_smyrna_crisis
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: GRE_fortify_horn"
-			342 = {
+			47 = {
+				
 				add_building_construction = {
 					type = bunker
-					level = 1
+					level = 2
 					instant_build = yes
-					province = 6895
-				}
-				add_building_construction = {
-					type = bunker
-					level = 1
-					instant_build = yes
-					province = 11842
-				}
-			}
-			341 = {
-				add_building_construction = {
-					type = bunker
-					level = 1
-					instant_build = yes
-					province = 9833
+					province = 4109
 				}
 				add_building_construction = {
 					type = coastal_bunker
-					level = 1
+					level = 2
 					instant_build = yes
-					province = 9833
+					province = 4109
 				}
 			}
-			1067 = {
-				add_building_construction = {
-					type = coastal_bunker
-					level = 1
-					instant_build = yes
-					province = 849
-				}
-			}
+			
 		}
 	}
 
 	focus = {
 		id = GRE_industrial_convert
 		icon = GFX_goal_GRE_industrial_convert
-		cost = 3
+		cost = 2
 		x = 1
 		y = 3
 		ai_will_do = {
@@ -348,17 +313,17 @@ focus_tree = {
 		relative_position_id = GRE_smyrna_crisis
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: GRE_industrial_conversion"
-			add_timed_idea = {
-				idea = GRE_emergency_conversion
-				days = 200
-			}
+			add_ideas = GRE_emergency_conversion
+			
+				
+			
 		}
 	}
 
 	focus = {
 		id = GRE_an_example
 		icon = GFX_goal_GRE_an_example
-		cost = 3
+		cost = 1
 		x = 3
 		y = 3
 		ai_will_do = {
@@ -368,10 +333,8 @@ focus_tree = {
 		relative_position_id = GRE_smyrna_crisis
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_an_example"
-			country_event = {
-				id = gre.11
-				days = 2
-			}
+			add_manpower = -100
+			add_war_support = 0.1
 		}
 	}
 
@@ -380,12 +343,10 @@ focus_tree = {
 	focus = {
 		id = GRE_greco_turkish_war
 		icon = GFX_goal_GRE_greco_turkish_war
-		cost = 6
+		cost = 5
 		x = 0
 		y = 4
-		available = {
-			hidden_trigger = { always = no }
-		}
+		
 		ai_will_do = {
 			factor = 5
 		}
@@ -396,7 +357,15 @@ focus_tree = {
 		relative_position_id = GRE_smyrna_crisis
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_greco_turkish_war"
-			custom_effect_tooltip = GRE_tt_greco_turkish_war
+			declare_war_on = { target = TUR type = annex_everything }
+			set_global_flag = greco_turkey_war
+
+			hidden_effect = {
+				add_ideas = GRE_greco_turkey_war
+				TUR = {
+					add_ideas = TUR_greco_turkey_war
+				}
+			}
 		}
 	}
 
@@ -619,19 +588,7 @@ focus_tree = {
 		y = 1
 		available = {
 			has_country_flag = GRE_LIBCONFRE_victory
-			hidden_trigger = {
-				OR = {
-					AND = {
-						has_elected_government = yes
-						NOT = {
-							has_government = market_liberal
-						}
-					}
-					AND = {
-						has_government = paternal_autocrat 	
-					}
-				}
-			}
+			
 		}
 		prerequisite = { focus = GRE_greco_turkish_war }
 		relative_position_id = GRE_greco_turkish_war
@@ -810,24 +767,15 @@ focus_tree = {
 		relative_position_id = GRE_treaty_of_ankara
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_megali_idea"
-			every_state = {
-				limit = {
-					OR = {
-						state = 341
-						state = 342
-						state = 1067
-						state = 347
-						state = 340
-						state = 776
-						state = 339
-						state = 1064
-					}
-					NOT = {
-						is_core_of = GRE
-					}
-				}
-				add_core_of = GRE
-			}
+			add_state_core = 341
+			add_state_core = 773
+			add_state_core = 1225
+			add_state_core = 340
+			add_state_core = 187
+			add_state_core = 339
+			add_state_core = 164
+			add_state_core = 342
+			add_state_core = 183
 			add_ideas = GRE_megali
 			unlock_decision_category_tooltip = GRE_megisti_idea_decisions
 		}
@@ -6598,6 +6546,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_safeguard_banking"
 			add_political_power = 75
+			swap_ideas = {
+				remove_idea = GRE_black_monday_1
+				add_idea = GRE_black_monday_2
+			}
 		}
 	}
 
@@ -6614,7 +6566,8 @@ focus_tree = {
 		relative_position_id = GRE_drachma_devaluation
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_smyrna_aid"
-			
+			remove_ideas = GRE_foreign_industry_GER1
+			remove_ideas = GRE_foreign_industry_AUS1
 			custom_effect_tooltip = GRE_tt_GRE_smyrna_aid
 		}
 	}
@@ -6656,6 +6609,10 @@ focus_tree = {
 		relative_position_id = GRE_drachma_devaluation
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_promote_trade"
+			swap_ideas = {
+				remove_idea = GRE_black_monday_2
+				add_idea = GRE_black_monday_3
+			}
 			add_offsite_building = { type = industrial_complex level = 2 }
 		}
 	}
@@ -6680,6 +6637,10 @@ focus_tree = {
 				remove_idea = GRE_abysmal_economy3
 				add_idea = GRE_abysmal_economy4
 			}
+			
+				remove_ideas = GRE_black_monday_3
+			
+			
 			custom_effect_tooltip = GRE_tt_GRE_back_on_feet
 		}
 	}
@@ -10303,10 +10264,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_a_tank_for_every_man
 		}
-		mutually_exclusive = {
-			focus = GRE_deus_vult
-			focus = GRE_byzantine_army
-		}
+		
 		x = 3
 		y = 1
 
@@ -10317,7 +10275,11 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_legacy_of_alexander"
-			add_ideas = GRE_legacy_of_alexander_idea
+			swap_ideas = {
+				remove_idea = GRE_legacy_of_alexander_idea
+				add_idea = GRE_legacy_of_alexander2_idea
+			}
+			
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER }
 	}
@@ -10334,10 +10296,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_the_onassis_initiative focus = GRE_the_pyrkal_deal
 		}
-		mutually_exclusive = {
-			focus = GRE_legacy_of_alexander
-			focus = GRE_deus_vult
-		}
+		
 		relative_position_id = GRE_the_pyrkal_deal
 		completion_reward = {
 			add_ideas = GRE_byzantine_army
@@ -10354,10 +10313,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_the_onassis_initiative focus = GRE_the_pyrkal_deal
 		}
-		mutually_exclusive = {
-			focus = GRE_legacy_of_alexander
-			focus = GRE_byzantine_army
-		}
+		
 		completion_reward = {
 			add_ideas = GRE_orthodox_idea
 		}

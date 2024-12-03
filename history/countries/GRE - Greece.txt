@@ -124,7 +124,6 @@ add_ideas = {
 	GRE_Georgios_Athanasiadis_Novas_eco_sli
 	GRE_Pafsanias_Katsotas_sec_sli
     GRE_abysmal_economy
-	GRE_minority_unrests
 	GRE_anathema
 	GRE_venizelist_officers
 	GRE_golden_dawn
@@ -189,7 +188,7 @@ create_country_leader = {
 	desc = "POLITICS_GEORGIOS_PAPANDREOU_DESC"
 	picture = "gfx/leaders/GRE/Portrait_GRE_Georgios_Papandreou.png"
 	expire = "1.1.1"
-	ideology = centrist_subtype
+	ideology = venizelism_subtype
 }
 create_country_leader = {
 	name = "Georgios Kondylis"
@@ -210,7 +209,7 @@ create_country_leader = {
 
 create_country_leader = {
 	name = "Monarchist Comitee"
-	picture = "gfx/leaders/GREPortrait_GRE_Monarchist_Comitee.png"
+	picture = "gfx/leaders/GRE/Portrait_GRE_Monarchist_Comitee.png"
 	expire = "1.1.1"
 	ideology = oligarchy_subtype
 }
@@ -225,7 +224,7 @@ create_country_leader = {
 	name = "Georgios Merkouris"
 	picture = "gfx/leaders/GRE/Portrait_GRE_Georgios_Spyridon_Merkouris_fx.png"
 	expire = "1.1.1"
-	ideology = legionarism_subtype
+	ideology = mercourism_subtype
 }
 
 ### Field Marshals ###
