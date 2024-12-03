@@ -1,0 +1,92 @@
+spriteTypes = {
+	#Ideology Bling
+	#NatSoc
+	
+	#kxx
+	
+	spriteType = {
+		name = "GFX_ideology_herve_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/herve.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_pan_celticism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/pan_celticism.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_national_collectivist_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/national_collectivist.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_left_scythian_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/left_scythian.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_finnoegypt_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/finnoegypt.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_atenism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/atenism.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_francism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/francism.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_futurism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/futurism.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_zoroastrianism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/zoroastrianism.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_paniranism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/paniranism.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_polish_natsynd_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/polish_natsynd.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_nasserism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/nasserism.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_national_marxism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/national_marxism.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_germanic_socialism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/germanic_socialism.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_gottwaldism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/gottwaldism.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_sansepolcrismo_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/sansepolcrismo.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_mosley_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kxx/mosley.png"
+		legacy_lazy_load = no
+	}
+}

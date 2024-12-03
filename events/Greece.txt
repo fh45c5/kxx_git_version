@@ -2048,7 +2048,7 @@ country_event = {
 					is_ai = yes
 				}
 				news_event = {
-					id = worldnews.152
+					id = 152
 					days = 1
 				}
 			}
@@ -3052,6 +3052,7 @@ country_event = {
 		add_stability = 0.05
 		country_event = { id = gre.52 days = 30 }
 		hidden_effect = {
+			remove_ideas = GRE_memories_of_king
 			if = {
 				limit = {
 					has_country_flag = GRE_republic_rig
@@ -3089,6 +3090,7 @@ country_event = {
 	option = {
 		name = gre.112.a
 		set_country_flag = GRE_monarchists_win_referendum
+		remove_ideas = GRE_memories_of_king
 		add_stability = 0.05
 		set_politics = {
 			ruling_party = authoritarian_democrat
@@ -7980,6 +7982,11 @@ country_event = {
 				days = 2
 			}
 		}
+		else = {
+			hidden_effect = {
+				remove_ideas = GRE_golden_dawn
+			}
+		}
 	}
 	option = {
 		name = gre.414.b
@@ -8096,3 +8103,103 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = gre.444 #turkey busted ask for peace
+	immediate = { log = "[GetDateText]: [Root.GetName]: event gre.23 FROM = [From.GetName]" }
+	hidden = yes
+	trigger = {
+		tag = TUR
+		has_global_flag = greco_turkey_war
+		has_war_with = GRE
+		NOT = { controls_state = 773 }
+		GRE = {
+			has_country_flag = GRE_republicans_win_referendum
+			NOT = {
+				has_socialist_government = yes
+				has_government = market_liberal
+			}
+		}
+	}
+	fire_only_once = yes
+	immediate = {
+		clr_global_flag = greco_turkey_war
+		remove_ideas = TUR_greco_turkey_war
+		GRE = {
+			remove_ideas = GRE_greco_turkey_war
+		}
+	}
+	option = { #we are fucked
+	ai_chance = {
+		factor = 100
+	}
+		name = gre.444.a
+		GRE = { transfer_state = 341 }
+		GRE = { transfer_state = 773 }
+		GRE = { transfer_state = 1225 }
+		GRE = { transfer_state = 340 }
+		GRE = { transfer_state = 187 }
+		GRE = { transfer_state = 339 }
+		GRE = { transfer_state = 164 }
+		GRE = { transfer_state = 342 }
+		GRE = { transfer_state = 183 }
+		GRE = {
+			add_state_claim = 341
+			add_state_claim = 773
+			add_state_claim = 1225
+			add_state_claim = 340
+			add_state_claim = 187
+			add_state_claim = 339
+			add_state_claim = 164
+			add_state_claim = 342
+			add_state_claim = 183
+		}
+		if = {
+			limit = { owns_state = 1089 }
+			GRE = { transfer_state = 1089 }
+		}
+		if = {
+			limit = { owns_state = 184 }
+			GRE = { transfer_state = 184 }
+		}
+		white_peace = GRE
+		
+			GRE = {
+				set_country_flag = GRE_LIBCONFRE_victory
+			}
+		
+		
+	}
+	option = { #screw it
+		name = gre.423.b
+		add_stability = -0.1
+	}
+}
+
+country_event = {
+	id = gre.445 #hidden event to trigger socialist and marlib victory
+	
+	hidden = yes
+	trigger = {
+		tag = GRE
+		TUR = {
+			is_subject_of = GRE
+		}
+	}
+	fire_only_once = yes
+immediate = { 
+	log = "[GetDateText]: [Root.GetName]: event gre.15 FROM = [From.GetName]" 
+	if = {
+		limit = {
+			has_government = market_liberal
+		}
+		set_country_flag = GRE_EEK_victory
+	}
+	if = {
+		limit = {
+			has_socialist_government = yes
+		}
+		set_country_flag = GRE_SOC_victory
+	}
+}
+	
+}

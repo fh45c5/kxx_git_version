@@ -102,7 +102,34 @@ guiTypes = {
 		    name = "N_Jose_Antonio"
 		    position = { x = 8 y = 10 }
 		    spriteType = "GFX_Portrait_NPL_Jose_Antonio"
-    	}		
+    	}
+		###################刚果&葡萄牙##########################
+		iconType = { #
+		    name = "Duarte_II"
+		    position = { x = 8 y = 10 }
+		    spriteType = "GFX_Portrait_POR_Duarte_II"
+    	}
+		iconType = { #
+		    name = "Pedro_VII"
+		    position = { x = 8 y = 10 }
+		    spriteType = "GFX_Portrait_KOG_Pedro_VII"
+    	}
+		iconType = { #
+		    name = "Gilberto_de_Mello_Freyre"
+		    position = { x = 8 y = 10 }
+		    spriteType = "GFX_Portrait_BRA_Gilberto_de_Mello_Freyre"
+    	}
+		iconType = { #
+		    name = "Antonio_Salazar"
+		    position = { x = 8 y = 10 }
+		    spriteType = "GFX_Portrait_POR_Antonio_Salazar"
+    	}
+		iconType = { #
+		    name = "Oswald_de_Andrade"
+		    position = { x = 8 y = 10 }
+		    spriteType = "GFX_Portrait_BRA_Oswald_de_Andrade"
+    	}
+		
 		##################法公社##############################
 		
 		iconType = { #
@@ -685,7 +712,7 @@ guiTypes = {
 			position = { x = 8 y = 226 }
 			font = "hoi_18mbs"
 			text = "[KXXGetOtherPrimeMinister]"
-			pdx_tooltip = "KXXGUIHEADNAME"
+			pdx_tooltip = "KXXsecondGUIHEADNAME"
 			maxWidth = 155
 			maxHeight = 20
 			format = center
@@ -697,7 +724,7 @@ guiTypes = {
 			position = { x = 8 y = 226 }
 			font = "hoi_18mbs"
 			text = "[KXXGetthirdPrimeMinister]"
-			pdx_tooltip = "KXXGUIHEADNAME"
+			pdx_tooltip = "KXXthirdGUIHEADNAME"
 			maxWidth = 155
 			maxHeight = 20
 			format = center
@@ -710,7 +737,7 @@ guiTypes = {
 			position = { x = 8 y = 226 }
 			font = "hoi_18mbs"
 			text = "[KXXGetgruMinister]"
-			pdx_tooltip = "KXXGUIHEADNAME"
+			pdx_tooltip = "KXXgruGUIHEADNAME"
 			maxWidth = 155
 			maxHeight = 20
 			format = center

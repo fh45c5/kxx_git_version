@@ -1,7 +1,4 @@
 ﻿l_simp_chinese:
-#子意识形态
-gottwaldism_subtype:0 "哥特瓦尔德主义"
-gottwaldism_subtype_desc:0 "§Y(哥特瓦尔德主义)§!\n\nBased"
 
 #精神
 CZE_generals_mutiny:0 "将军的阴谋"
@@ -101,3 +98,4 @@ gottwaldism.3.a:0 "邪恶的马铃薯虫!"
 gottwaldism.2.t:0 "向内发展"
 gottwaldism.2.d:0 "克莱门特·哥特瓦尔德主席刚刚宣布，他将把布拉格市更名为 "哥特瓦尔德"，以摧毁奥地利统治下的前波希米亚的残余，并增强自己在捷克斯洛伐克的影响力。主席还部署了国家安全局以帮助捷克斯洛伐克人民迅速适应这一转变。"
 gottwaldism.2.a:0 "欢迎来到哥特瓦尔德！"
+

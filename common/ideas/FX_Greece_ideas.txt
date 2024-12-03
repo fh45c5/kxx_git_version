@@ -6,6 +6,40 @@ ideas = {
 	################
 	country = {
 		#STARTING
+		GRE_greco_turkey_war = {
+			on_add = {
+				log = "[GetLogIdeaInfo] GRE_secret_reform"
+			}
+			
+			picture = GEN_army_core
+			modifier = {
+				war_support_weekly = 0.01
+			}
+			targeted_modifier = {
+			tag = TUR
+			attack_bonus_against = 1
+			defense_bonus_against = 1
+			breakthrough_factor_against = 1
+			}
+
+		}
+		TUR_greco_turkey_war = {
+			on_add = {
+				log = "[GetLogIdeaInfo] GRE_secret_reform"
+			}
+			
+			picture = GEN_army_core
+			modifier = {
+				war_support_weekly = 0.01
+			}
+			targeted_modifier = {
+			tag = GRE
+			attack_bonus_against = 1
+			defense_bonus_against = 1
+			breakthrough_factor_against = 1
+	}
+
+		}
 		GRE_abysmal_economy = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea GRE_abysmal_economy"}
 			picture = GRE_debt
@@ -568,6 +602,7 @@ ideas = {
 			picture = GRE_factory
 			modifier = {
 				conversion_cost_civ_to_mil_factor = -1
+				production_speed_arms_factory_factor = 0.1
 			}
 			allowed = {
 				original_tag = GRE
@@ -578,7 +613,7 @@ ideas = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea GRE_emergency_conversion"}
 			picture = GRE_army
 			modifier = {
-				army_morale = 5
+				army_org_factor = 0.25
 			}
 			allowed = {
 				original_tag = GRE

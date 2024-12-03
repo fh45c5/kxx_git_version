@@ -59,6 +59,39 @@ scripted_gui = {
 				}
 			}
 
+			#刚果&葡萄牙
+			Duarte_II_visible = {  #杜阿尔特二世
+				AND = {
+					has_country_flag = KXX_HOG_veiw
+					has_country_flag = POR_Duarte_II_VISIBLE
+				}
+			}
+			Pedro_VII_visible = {  #佩德罗七世
+				AND = {
+					has_country_flag = KXX_HOG_veiw
+					has_country_flag = KOG_Pedro_VII_VISIBLE
+				}
+			}
+			Gilberto_de_Mello_Freyre_visible = { #吉尔贝托·德·梅洛·弗雷雷
+				AND = {
+					has_country_flag = KXX_HOG_second_veiw
+					has_country_flag = BRA_Gilberto_de_Mello_Freyre_VISIBLE
+				}
+			}
+			Antonio_Salazar_visible = { #安东尼奥·萨拉查
+				AND = {
+					has_country_flag = KXX_HOG_second_veiw
+					has_country_flag = POR_Antonio_Salazar_VISIBLE
+				}
+			}
+			Oswald_de_Andrade_visible = { #奥斯瓦尔德·德·安德拉德
+				AND = {
+					has_country_flag = KXX_HOG_second_veiw
+					has_country_flag = BRA_Oswald_de_Andrade_VISIBLE
+				}
+			}
+
+
 			###杜克洛
      		Maurice_Thorez_visible = {   #多列士
 				AND = {

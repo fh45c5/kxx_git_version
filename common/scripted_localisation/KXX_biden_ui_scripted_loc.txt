@@ -1,6 +1,20 @@
 
 
 defined_text = {
+	name = KXXGUIHOGNAME  #定义副领袖框架
+	text = {
+    	trigger = {
+			OR = {
+				has_country_flag = POL_Jozef_Chacinski_VISIBLE
+			}
+ 		}
+    	localization_key =  KXXGUIHOGNAME
+  	}
+}
+
+
+
+defined_text = {
 	name = KXXGetHOGTitle  #定义按钮名字
 
 	#小黄副元首
@@ -17,6 +31,21 @@ defined_text = {
       		has_country_flag= FRA_the_red_win
     	}
  		localization_key = FR_OR_LEADER3
+ 	}
+	#刚果&葡萄牙
+	text = {
+    	trigger = {
+     	 	tag = KOG
+      		has_country_flag= POR_Duarte_II_VISIBLE
+    	}
+ 		localization_key = KOG_OR_LEADER
+ 	}
+	text = {
+    	trigger = {
+     	 	tag = KOG
+      		has_country_flag= KOG_Pedro_VII_VISIBLE
+    	}
+ 		localization_key = KOG_OR_LEADER1
  	}
 	#法兰西公社
 	text = {
@@ -272,6 +301,21 @@ defined_text = {
     	}
     	localization_key = FR_OR_LEADER4
   	}
+	#刚果&葡萄牙
+	text = {
+    	trigger = {
+     	 	tag = KOG
+      		has_country_flag= POR_Duarte_II_VISIBLE
+    	}
+ 		localization_key = KOG_OR_LEADER2
+ 	}
+	text = {
+    	trigger = {
+     	 	tag = KOG
+      		has_country_flag= KOG_Pedro_VII_VISIBLE
+    	}
+ 		localization_key = KOG_OR_LEADER3
+ 	}
 	#法兰西公社
 	text = {
     	trigger = {
@@ -564,6 +608,21 @@ defined_text = {
  		}
     	localization_key =  FRA_Maurice_Thorez_sec_tot
   	}
+	#刚果&葡萄牙
+	text = {
+    	trigger = {
+     	 	tag = KOG
+      		has_country_flag= POR_Duarte_II_VISIBLE
+    	}
+ 		localization_key = KOG_OR_Duarte_II
+ 	}
+	text = {
+    	trigger = {
+     	 	tag = KOG
+      		has_country_flag= KOG_Pedro_VII_VISIBLE
+    	}
+ 		localization_key = KOG_OR_Pedro_VII
+ 	}
 	#法兰西公社
 	text = {
     	trigger = {
@@ -1286,6 +1345,21 @@ defined_text = {
     	}
     	localization_key = GFX_Portrait_France_Maurice_Thorez
   	}
+	#刚果&葡萄牙
+	text = {
+    	trigger = {
+     	 	tag = KOG
+      		has_country_flag= POR_Duarte_II_VISIBLE
+    	}
+ 		localization_key = GFX_Portrait_POR_Duarte_II
+ 	}
+	text = {
+    	trigger = {
+     	 	tag = KOG
+      		has_country_flag= KOG_Pedro_VII_VISIBLE
+    	}
+ 		localization_key = GFX_Portrait_KOG_Pedro_VII
+ 	}
 
 	#法兰西公社
 	text = {
@@ -2028,6 +2102,18 @@ defined_text = {
 		}
 		localization_key = WRS_OR_Tukhachevskiy
 	}
+	
+	#刚果&葡萄牙
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = BRA_Gilberto_de_Mello_Freyre_VISIBLE
+				has_country_flag = POR_Antonio_Salazar_VISIBLE
+				has_country_flag = BRA_Oswald_de_Andrade_VISIBLE
+			}
+		}
+		localization_key = KOG_OR_LEADER4
+	}
 
 	#红德
 	text = {
@@ -2068,6 +2154,18 @@ defined_text = {
 			has_country_flag = WRS_Mikhail_Tukhachevskiy_VISIBLE
 		}
 		localization_key = WRS_OR_Tukhachevskiy_2
+	}
+
+	#刚果&葡萄牙
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = BRA_Gilberto_de_Mello_Freyre_VISIBLE
+				has_country_flag = POR_Antonio_Salazar_VISIBLE
+				has_country_flag = BRA_Oswald_de_Andrade_VISIBLE
+			}
+		}
+		localization_key = KOG_OR_LEADER5
 	}
 
 	#红德
@@ -2130,6 +2228,34 @@ defined_text = {
 		localization_key = WRS_LC_Tukhachevskiy
 	}
 
+	
+	#刚果&葡萄牙
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = BRA_Gilberto_de_Mello_Freyre_VISIBLE
+				
+			}
+		}
+		localization_key = KOG_OR_Freyre
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = POR_Antonio_Salazar_VISIBLE
+			}
+		}
+		localization_key = KOG_OR_Salazar
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = BRA_Oswald_de_Andrade_VISIBLE
+			}
+		}
+		localization_key = KOG_OR_Andrade
+	}
+
 	#红德
 	text = {
 		trigger = {
@@ -2183,6 +2309,33 @@ defined_text = {
 		}
 		localization_key = GFX_Portrait_WRS_Mikhail_Tukhachevskiy
 	}
+
+	#刚果&葡萄牙
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = BRA_Gilberto_de_Mello_Freyre_VISIBLE
+				
+			}
+		}
+		localization_key = GFX_Portrait_BRA_Gilberto_de_Mello_Freyre
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = POR_Antonio_Salazar_VISIBLE
+			}
+		}
+		localization_key = GFX_Portrait_POR_Antonio_Salazar
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = BRA_Oswald_de_Andrade_VISIBLE
+			}
+		}
+		localization_key = GFX_Portrait_BRA_Oswald_de_Andrade
+	}
 	
 	#法国复兴政府
 	text = {
@@ -2223,7 +2376,7 @@ defined_text = {
     	trigger = {
       		has_idea = UKR_Oleksander_Shumsky_sec_rso
     	}
-    	localization_key = "GFX_Portrait_Oleksander_Shumsky"
+    	localization_key = GFX_Portrait_Oleksander_Shumsky
   	}
 }
 
@@ -2331,4 +2484,16 @@ defined_text = {
 		}
 		localization_key =  GFX_Portrait_GRU_Gregor_Strasser
 	}
+}
+
+
+
+defined_text = {
+	name = KXXGetHOGTrait  #
+	text = {
+    	trigger = {
+   		   has_country_flag = POL_Jozef_Chacinski_VISIBLE
+ 		}
+    	localization_key =  Jozef_Chacinski_Trait
+  	}
 }

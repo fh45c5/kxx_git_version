@@ -100,6 +100,28 @@ spriteTypes = {
 		name = "GFX_Portrait_FRG_Xavier_Vallat"
 		texturefile = "gfx/leaders/FRG/Portrait_PB_FRA_Xavier_Vallat.png"
 	}
+
+	###刚果&葡萄牙###
+	spriteType = {
+		name = "GFX_Portrait_POR_Duarte_II"
+		texturefile = "gfx/leaders/POR/Portrait_Portugal_Duarte_Nuno.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_KOG_Pedro_VII"
+		texturefile = "gfx/leaders/KOG/Portrait_Kongo_Pedro_VII_Afonso.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_BRA_Gilberto_de_Mello_Freyre"
+		texturefile = "gfx/leaders/BRA/Portrait_Gilberto_de_Mello_Freyre.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_POR_Antonio_Salazar"
+		texturefile = "gfx/leaders/POR/Portrait_POR_Antonio_Salazar.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_BRA_Oswald_de_Andrade"
+		texturefile = "gfx/leaders/BRA/Portrait_Oswald_de_Andrade.png"
+	}
 	
 	###法公社###
 
