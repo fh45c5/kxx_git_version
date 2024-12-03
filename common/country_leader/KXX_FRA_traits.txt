@@ -91,4 +91,20 @@ leader_traits = {
 		command_power_gain = 0.15
 		experience_gain_factor = 0.1
 	}
+	saviour_of_the_people = {
+		random = no
+		monthly_population = 0.2
+	}
+	
+	defender_of_freedom_of_religion = {
+		random = no
+		stability = 0.1
+		opinion_gain_monthly_factor = 0.2
+	  
+	}
+	father_of_freedom = {
+		random = no
+		political_power_gain = 0.10
+		market_liberal_drift = 0.01
+	}
 }

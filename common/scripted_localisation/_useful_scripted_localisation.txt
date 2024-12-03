@@ -7153,4 +7153,10 @@ text = {
 		}
 		localization_key = mercourism_subtype
 	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = syn_volkisch_communitarianism_subtype
+		}
+		localization_key = syn_volkisch_communitarianism_subtype
+	}
 }

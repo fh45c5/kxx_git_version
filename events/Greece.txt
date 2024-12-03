@@ -8106,7 +8106,9 @@ country_event = {
 country_event = {
 	id = gre.444 #turkey busted ask for peace
 	immediate = { log = "[GetDateText]: [Root.GetName]: event gre.23 FROM = [From.GetName]" }
-	hidden = yes
+	title = gre.444.t
+	desc = gre.444.d
+	picture = GFX_report_event_generic_diplomacy1
 	trigger = {
 		tag = TUR
 		has_global_flag = greco_turkey_war
@@ -8202,4 +8204,30 @@ immediate = {
 	}
 }
 	
+}
+
+country_event = {
+	id = gre.446 #greece demand crete
+	title = gre.446.t
+	desc = gre.446.d
+	picture = GFX_report_event_generic_diplomacy1
+	is_triggered_only = yes
+	fire_only_once = yes
+immediate = { 
+	log = "[GetDateText]: [Root.GetName]: event gre.15 FROM = [From.GetName]" 
+	
+}
+option = { #screw it
+	name = gre.446.a
+	
+}
+option = { #alright
+	name = gre.446.b
+	GRE = {
+		annex_country = {
+			target = CRE
+			transfer_troops = yes
+		}
+	}
+}
 }

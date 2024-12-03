@@ -3,114 +3,16 @@
 #GRE_arms_industry
 #GRE_golden_dawn_decisions
 
-political_actions = {
-	GRE_golden_dawn_take_greenland = {
-		targets = { DEN }
-		target_trigger = {
-			911 = { is_core_of = ROOT }
-			101 = { is_core_of = ROOT }
-		}
-		visible = {
-			911 = { is_core_of = ROOT }
-			101 = { is_core_of = ROOT }
-			has_country_leader_ideology = mercourism_subtype
-		}
-		days_remove = 50
-		fire_only_once = yes
-		remove_effect = {
-			declare_war_on = {
-				target = DEN
-				type = take_state_focus
-				generator = {
-					911 101
-				}
-			}
-		}
-	}
-	GRE_take_claimed_states = {
-		targets = { TUR ITA BUL SER }
-		target_trigger = {
-			NOT = {
-				is_puppet_of = ROOT
-				is_in_faction_with = ROOT
-				has_war_with = ROOT
-			}
-		}
-		allowed = { original_tag = GRE }
-		visible = {
-			AND = {
-				original_tag = GRE
-				OR = {
-					has_country_leader_ideology = mercourism_subtype
-					has_government = authoritarian_democrat #idk why or how but anyway
-				}
-			}
-		}
-		days_remove = 30
-		fire_only_once = yes
-		remove_effect = {
-			declare_war_on = {
-				target = FROM
-				type = take_state_focus
-			}
-			every_state = {
-				limit = {
-					is_owned_and_controlled_by = FROM
-					is_core_of = FROM
-					OR = {
-						is_in_array = { GRE.megaliteri_idea_states = THIS }
-						is_in_array = { GRE.megali_turkey_states = THIS }
-						is_in_array = { GRE.megali_balkan_states = THIS }
-					}
-				}
-				add_core_of = ROOT
-			}
-		}
-	}
-	GRE_greater_state = {
-		available = {
-			original_tag = GRE
-			all_state = {
-				OR = {
-					is_in_array = { GRE.megaliteri_idea_states = THIS }
-					is_in_array = { GRE.megali_turkey_states = THIS }
-					is_in_array = { GRE.megali_balkan_states = THIS }
-				}
-				is_owned_and_controlled_by = ROOT
-				is_core_of = ROOT
-			}
-		}
-		visible = {
-			AND = {
-				original_tag = GRE
-				OR = {
-					has_country_leader_ideology = mercourism_subtype
-					has_government = authoritarian_democrat #idk why or how but anyway
-				}
-			}
-		}
-		fire_only_once = yes
-		days_remove = 50
-		cost = 50
-		remove_effect = {
-			set_cosmetic_tag = GRE_greater_hellas
-		}
-	}
-}
 
 GRE_industrial_development_program = {
 	GRE_expand_industry = {
 		icon = generic_political_discourse
-		state_target = yes
-		target_array = GRE.initial_states
-		target_trigger = {
-			FROM = {
-				is_owned_by = ROOT
-				NOT = { has_state_flag = INDUSTRY_DECISION_COMPLETED_2_TIMES }
-			}
+		available = {
+			tag = GRE
+			has_completed_focus = GRE_economic_boom
 		}
 		visible = {
-			has_completed_focus = GRE_reconstruction_funding
+			has_completed_focus = GRE_economic_boom
 		}
 		ai_will_do = {
 			factor = 1
@@ -118,67 +20,30 @@ GRE_industrial_development_program = {
 		days_re_enable = 75
 		cost = 50
 		days_remove = 60
+		fire_only_once = yes
 		modifier = {
 			political_power_cost = 0.15
 			civilian_factory_use = 1
 		}
 		remove_effect = {
-			hidden_effect = {
-				add_to_variable = { industry_decision_@FROM = 1 }
-				meta_effect = {
-					text = {
-						FROM = {
-							set_state_flag = INDUSTRY_DECISION_COMPLETED_[NUMBER]_TIMES
-						}
+			random_owned_controlled_state = {
+				random_list = {
+					5 = {
+						add_two_random_military_factories = yes
 					}
-					NUMBER = "[?industry_decision_@FROM]"
-				}
-			}
-			if = {
-				limit = {
-					FROM = {
-						is_island_state = yes
+					5 = {
+						add_two_random_civilian_factories = yes
 					}
-				}
-				add_two_random_dockyards = yes
-				else_if = {
-					limit = {
-						NOT = {
-							FROM = {
-								state = 1045
-								state = 339
-							}
-						}
+					10 = {
+						add_one_random_airbase = yes
 					}
-					random_list = {
-						5 = {
-							add_two_random_military_factories = yes
-						}
-						5 = {
-							add_two_random_civilian_factories = yes
-						}
-						10 = {
-							add_one_random_airbase = yes
-						}
-						20 = {
-							add_one_random_infrastructure = yes
-						}
-						20 = {
-							add_one_random_synthetic_refinery = yes
-						}
-						20 = {
-							add_one_random_military_factory = yes
-						}
-						20 = {
-							add_one_random_civilian_factory = yes
-						}
+					20 = {
+						add_one_random_infrastructure = yes
 					}
-				}
-				else_if = {
-					limit = {
-						FROM = { state = 1045 }
+					10 = {
+						add_one_random_synthetic_refinery = yes
 					}
-					FROM = {
+					10 = {
 						add_resource = {
 							type = steel
 							amount = 4
@@ -191,73 +56,20 @@ GRE_industrial_development_program = {
 							type = tungsten
 							amount = 7
 						}
-					}
-				}
-				else_if = {
-					limit =  {
-						FROM = { state = 339 }
-					}
-					FROM = {
 						add_resource = {
 							type = chromium
 							amount = 20
 						}
 					}
+					20 = {
+						add_one_random_military_factory = yes
+					}
+					20 = {
+						add_one_random_civilian_factory = yes
+					}
 				}
 			}
-		}
-	}
-}
-
-GRE_greek_turkish_war_decision = {
-	GRE_prepare_for_war_fx = {
-		icon = generic_political_discourse
-		days_mission_timeout = 264
-		allowed = { always = no }
-		activation = { has_global_flag = GRE_activate_pfw_mission }
-		cancel_trigger = {
-			GRE = { has_country_flag = GRE_warwithturkey }
-		}
-		available = { always = no }
-		fire_only_once = yes
-	}
-	GRE_greek_turkish_war_timer = {
-		name = GRE_greek_turkish_war_timer
-		icon = generic_political_discourse
-		days_mission_timeout = 365
-		allowed = { tag = GRE }
-		is_good = no
-		fire_only_once = yes
-		activation = { has_completed_focus = GRE_greco_turkish_war }
-		available = {
-			GRE = { has_country_flag = GRE_warwithturkey }
-			original_tag = GRE
-		}
-		timeout_effect = {
-			country_event = gre.56
-			custom_effect_tooltip = GRE_tt_turkish_war_timer
-		}
-	}
-	GRE_greek_turkish_war_timer2 = {
-		name = GRE_greek_turkish_war_timer
-		icon = generic_political_discourse
-		days_mission_timeout = 365
-		is_good = no
-		fire_only_once = yes
-		allowed = { tag = GRE }
-		activation = {
-			has_completed_focus = GRE_greece_and_turkey_at_war_again
-		}
-		available = {
-			GRE = {
-				has_country_flag = GRE_third_warwithturkey
-			}
-			original_tag = GRE
-		}
-		complete_effect = {
-		}
-		timeout_effect = {
-			country_event = gre.57
+			
 		}
 	}
 }
