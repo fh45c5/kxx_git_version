@@ -209,7 +209,7 @@ country_event = {
 	country_event = {
 
 		id = cambodia.1
-		title = "共和党与军方之间的权力斗争"
+		title = "共和派与军方之间的权力斗争"
 		desc = cambodia.1.desc
 		picture = "-"
 
@@ -435,7 +435,7 @@ country_event = {
 		
 
 		option = {
-		name = "共和党的胜利"
+		name = "共和派的胜利"
 		trigger = {
 		check_variable = { CAM_REP > 2 }
 		}
@@ -933,7 +933,6 @@ country_event = {
 			ideology = authcom_subtype
 		}
 		complete_national_focus = CAMCOMUNIE_coup_of_the_issarak_front
-		set_cosmetic_tag = CAM_khmer_rouge
 		country_event = {
 		id = cambodia_revolution.7
 		days = 30
