@@ -7597,6 +7597,7 @@ focus_tree = {
 				female = yes
 			}
 			add_political_power = 150
+			set_cosmetic_tag = DEN_maximist
 		}
 		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_RESISTANCE }
 	}

@@ -3465,6 +3465,7 @@ country_event = { #Jensen vs Christensen
 			
 		}
 		complete_national_focus = DEN_return_to_the_past
+		set_cosmetic_tag = DEN_aryan
 	}
 }
 
