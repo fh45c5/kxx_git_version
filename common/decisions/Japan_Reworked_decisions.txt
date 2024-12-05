@@ -462,6 +462,7 @@ JAP_declare_civil_war_win_military = {
 			}
 			clr_country_flag = japan_civil_war
 			country_event = japan_new_event.19
+			set_cosmetic_tag = JAP_Araki
 			complete_national_focus = JAPARAKI_arakissuccess
 			set_country_flag = factionalism_japan_no
 		}

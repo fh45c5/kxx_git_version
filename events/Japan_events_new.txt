@@ -2506,6 +2506,7 @@ country_event = { #The Kokuhonsha & The Sakurakai
 			long_name = JAP_party_kokuhonsha_long
 			name = JAP_party_kokuhonsha
 		}
+		set_cosmetic_tag = JAP_Araki
 		complete_national_focus = JAPARAKI_arakissuccess
 		create_country_leader = {
 			name = "裕仁"
