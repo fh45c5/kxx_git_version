@@ -3276,7 +3276,9 @@ focus_tree = {
 		x = -1
 		y = 1
 		 cost = 4
-		
+		 ai_will_do = {
+			base = 0
+		}		
 		prerequisite = { focus = PHI_an_entente_outpost_in_the_east }
 		relative_position_id = PHI_an_entente_outpost_in_the_east
 		completion_reward = {
@@ -3459,6 +3461,9 @@ focus_tree = {
 		x = 1
 		y = 2
 		 cost = 4
+		 ai_will_do = {
+			base = 0
+		}
 		available = {
 			GXC = {
 				exists = yes
@@ -3986,7 +3991,9 @@ focus_tree = {
 		x = 0
 		y = 2
 		 cost = 4
-		
+		 ai_will_do = {
+			base = 0
+		}		
 		mutually_exclusive = {
 			focus = PHI_liberate_india
 		}
@@ -5712,11 +5719,6 @@ focus_tree = {
 		 cost = 4
 		available = {
 			has_capitulated = no
-			has_socialist_government = no
-			has_country_leader = {
-				character = ITA_Alfredo_Ildefonso_Schuster
-				ruling_only = yes
-			}
 		}
 		prerequisite = { focus = PHI_purge_unbelievers }
 		relative_position_id = PHI_purge_unbelievers
