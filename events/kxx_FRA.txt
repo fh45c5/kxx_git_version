@@ -622,10 +622,16 @@ country_event = {
 
 option = { 
 	name = kxxfrance.16.a
+		ai_chance = {
+			factor = 0
+		}
 	complete_national_focus = FRA_Restoring_Socialist_Order
 }
 option = { 
 	name = kxxfrance.16.b
+		ai_chance = {
+			factor = 10000
+		}
 	country_event = {
 		id = kxxfrance.17
 		days = 7
@@ -643,11 +649,31 @@ country_event = {
 
 option = { 
 	name = kxxfrance.17.a #yay deat again
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = FRA_after_deat
+					option = FRA_AFTER_DEAT_DEAT
+				}
+			}
+		}
 	complete_national_focus = FRA_Restoring_Socialist_Order
 }
 
 option = { 
 	name = kxxfrance.17.b #yay dorgeres
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = FRA_after_deat
+					option = FRA_AFTER_DEAT_DORGERES
+				}
+			}
+		}
 	create_country_leader = {
 		name = "亨利·多尔热"
 
@@ -686,6 +712,16 @@ option = {
 }
 option = { 
 	name = kxxfrance.17.c #yay herve
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = FRA_after_deat
+					option = FRA_AFTER_DEAT_HERVE
+				}
+			}
+		}
 	create_country_leader = {
 		name = "古斯塔夫·爱尔威"
 
@@ -724,6 +760,16 @@ option = {
 }
 option = { 
 	name = kxxfrance.17.f #ohhhhhh napoleon!!!!
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = FRA_after_deat
+					option = FRA_AFTER_DEAT_NAPOLEON
+				}
+			}
+		}
 	create_country_leader = {
 		name = "安德烈·肖梅"
 
@@ -761,6 +807,16 @@ option = {
 }
 option = { 
 	name = kxxfrance.17.e #yay red flood garbage
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = FRA_after_deat
+					option = FRA_AFTER_DEAT_CHRIST
+				}
+			}
+		}
 	create_country_leader = {
 		name = "西蒙娜·威尔"
 
@@ -799,6 +855,16 @@ option = {
 }
 option = { 
 	name = kxxfrance.17.g #who fucking cares just a cringe commie chad
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = FRA_after_deat
+					option = FRA_AFTER_DEAT_ANTIGOD
+				}
+			}
+		}
 	create_country_leader = {
 		name = "安德烈·洛吕奥"
 
@@ -837,6 +903,16 @@ option = {
 }
 option = { 
 	name = kxxfrance.17.h #red flood garbage again
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = FRA_after_deat
+					option = FRA_AFTER_DEAT_CELTIC
+				}
+			}
+		}
 	create_country_leader = {
 		name = "罗伯特·佩尔蒂埃"
 

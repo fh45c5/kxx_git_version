@@ -6665,11 +6665,21 @@ country_event = {
 		ai_chance = {
 			factor = 30
 			modifier = {
-				factor = 100
+				factor = 10000
+				OR = {
 					has_game_rule = {
 						rule = FRA_day_of_imfamy
 						option = FRA_BLACK_GUARD_COUNTERREVOLUTION
 					}
+					has_game_rule = {
+						rule = FRA_day_of_imfamy
+						option = FRA_ARTHUYS_ASSUMES_CONTROL
+					}
+					has_game_rule = {
+						rule = FRA_day_of_imfamy
+						option = FRA_CLEMEN_ASSUMES_CONTROL
+					}
+				}
 			  }
 		}
 
@@ -6722,7 +6732,7 @@ country_event = {
 		ai_chance = {
 			factor = 70
 			modifier = {
-				factor = 100
+				factor = 10000
 				OR = {
 					has_game_rule = {
 						rule = FRA_day_of_imfamy
@@ -6731,6 +6741,14 @@ country_event = {
 					has_game_rule = {
 						rule = FRA_day_of_imfamy
 						option = FRA_DEAT_ASSUMES_CONTROL
+					}
+					has_game_rule = {
+						rule = FRA_day_of_imfamy
+						option = FRA_ORTHOR_ASSUMES_CONTROL
+					}
+					has_game_rule = {
+						rule = FRA_day_of_imfamy
+						option = FRA_NIZAN_ASSUMES_CONTROL
 					}
 				}
 			}
@@ -6826,7 +6844,7 @@ country_event = {
 		ai_chance = {
 			factor = 50
 			modifier = {
-				factor = 100
+				factor = 10000
 					has_game_rule = {
 						rule = FRA_day_of_imfamy
 						option = FRA_BLACK_GUARD_COUNTERREVOLUTION
@@ -6946,17 +6964,11 @@ country_event = {
 		ai_chance = {
 			factor = 50
 			modifier = {
-				factor = 100
-				OR = {
+				factor = 10000
 					has_game_rule = {
 						rule = FRA_day_of_imfamy
-						option = FRA_BUCARD_ASSUMES_CONTROL
+						option = FRA_CLEMEN_ASSUMES_CONTROL
 					}
-					has_game_rule = {
-						rule = FRA_day_of_imfamy
-						option = FRA_DEAT_ASSUMES_CONTROL
-					}
-				}
 			}
 		}
 		create_country_leader = { #Auto-Generated
@@ -6983,7 +6995,7 @@ country_event = {
 				factor = 100
 				has_game_rule = {
 					rule = FRA_day_of_imfamy
-					option = FRA_BUCARD_ASSUMES_CONTROL
+					option = FRA_ARTHUYS_ASSUMES_CONTROL
 				}
 			}
 		}
@@ -7187,6 +7199,13 @@ country_event = {
 		name = comfrance.926.a
 		ai_chance = {
 			factor = 34
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = FRA_day_of_imfamy
+					option = FRA_NIZAN_ASSUMES_CONTROL
+				}
+			}
 		}
 		add_stability = 0.12
 		hidden_effect = {	
@@ -7226,7 +7245,7 @@ country_event = {
 		ai_chance = {
 			factor = 40
 			modifier = {
-				factor = 100
+				factor = 10000
 				has_game_rule = {
 					rule = FRA_day_of_imfamy
 					option = FRA_BUCARD_ASSUMES_CONTROL
@@ -7273,6 +7292,13 @@ country_event = {
 		name = comfrance.926.c
 		ai_chance = {
 			factor = 34
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = FRA_day_of_imfamy
+					option = FRA_ORTHOR_ASSUMES_CONTROL
+				}
+			}
 		}
 		add_stability = 0.12
 		
@@ -7975,9 +8001,15 @@ country_event = {
 			factor = 50
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = FRA_jacobin_split 
-					option = FRA_JACOBIN_SPLIT_NATS
+				OR = {
+					has_game_rule = {
+						rule = FRA_jacobin_split 
+						option = FRA_JACOBIN_SPLIT_NATS
+					}
+					has_game_rule = {
+						rule = FRA_jacobin_split 
+						option = FRA_JACOBIN_SPLIT_MODE
+					}
 				}
 			}
 		}
@@ -7996,9 +8028,15 @@ country_event = {
 			factor = 50
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = FRA_jacobin_split 
-					option = FRA_JACOBIN_SPLIT_REDS
+				OR = {
+					has_game_rule = {
+						rule = FRA_jacobin_split 
+						option = FRA_JACOBIN_SPLIT_REDS
+					}
+					has_game_rule = {
+						rule = FRA_jacobin_split 
+						option = FRA_JACOBIN_SPLIT_MODE
+					}
 				}
 			}
 		}
@@ -8021,9 +8059,15 @@ country_event = {
 			factor = 50
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = FRA_jacobin_split 
-					option = FRA_JACOBIN_SPLIT_REDS
+				OR = {
+					has_game_rule = {
+						rule = FRA_jacobin_split 
+						option = FRA_JACOBIN_SPLIT_REDS
+					}
+					has_game_rule = {
+						rule = FRA_jacobin_split 
+						option = FRA_JACOBIN_SPLIT_NATS
+					}
 				}
 			}
 		}

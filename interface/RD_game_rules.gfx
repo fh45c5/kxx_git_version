@@ -149,5 +149,60 @@ spriteTypes = {
 		texturefile = "gfx/flags/small/JAP_Araki.tga"
 		legacy_lazy_load = no
 	}
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_FRA_Jacobinmod"
+		texturefile = "gfx/flags/small/FRA_Jacobinmod.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_FRA_Arthuys"
+		texturefile = "gfx/flags/small/FRA_Arthuys.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_FRA_natcol"
+		texturefile = "gfx/flags/small/FRA_natcol.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_FRA_Vanguard"
+		texturefile = "gfx/flags/small/FRA_Vanguard.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_FRA_orthodox"
+		texturefile = "gfx/flags/small/FRA_orthodox.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_FRA_dorgeres"
+		texturefile = "gfx/flags/small/FRA_dorgeres.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_FRA_herve"
+		texturefile = "gfx/flags/small/FRA_herve.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_FRA_consulat"
+		texturefile = "gfx/flags/small/FRA_consulat.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_FRA_christsoc"
+		texturefile = "gfx/flags/small/FRA_christsoc.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_FRA_atheist"
+		texturefile = "gfx/flags/small/FRA_atheist.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_FRA_celt"
+		texturefile = "gfx/flags/small/FRA_celt.tga"
+		legacy_lazy_load = no
+	}
 
 	}
