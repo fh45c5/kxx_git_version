@@ -612,6 +612,8 @@ JAP_socialist_leader = {
 		desc = RULE_OPTION_JAP_SOCIALIST_FUKUMOTO_DESC
 		allow_achievements = yes
 	}
+	
+}
 
 FRA_jacobin_split = {
 	name = "FRA_JACOBIN_SPLIT"
@@ -748,5 +750,3 @@ FRA_after_deat= {
 	}
 }
 
-	
-}
