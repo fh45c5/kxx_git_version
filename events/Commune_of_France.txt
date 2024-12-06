@@ -6668,15 +6668,15 @@ country_event = {
 				factor = 10000
 				OR = {
 					has_game_rule = {
-						rule = FRA_day_of_imfamy
+						rule = FRA_xday_of_imfamy
 						option = FRA_BLACK_GUARD_COUNTERREVOLUTION
 					}
 					has_game_rule = {
-						rule = FRA_day_of_imfamy
+						rule = FRA_xday_of_imfamy
 						option = FRA_ARTHUYS_ASSUMES_CONTROL
 					}
 					has_game_rule = {
-						rule = FRA_day_of_imfamy
+						rule = FRA_xday_of_imfamy
 						option = FRA_CLEMEN_ASSUMES_CONTROL
 					}
 				}
@@ -6735,19 +6735,19 @@ country_event = {
 				factor = 10000
 				OR = {
 					has_game_rule = {
-						rule = FRA_day_of_imfamy
+						rule = FRA_xday_of_imfamy
 						option = FRA_BUCARD_ASSUMES_CONTROL
 					}
 					has_game_rule = {
-						rule = FRA_day_of_imfamy
+						rule = FRA_xday_of_imfamy
 						option = FRA_DEAT_ASSUMES_CONTROL
 					}
 					has_game_rule = {
-						rule = FRA_day_of_imfamy
+						rule = FRA_xday_of_imfamy
 						option = FRA_ORTHOR_ASSUMES_CONTROL
 					}
 					has_game_rule = {
-						rule = FRA_day_of_imfamy
+						rule = FRA_xday_of_imfamy
 						option = FRA_NIZAN_ASSUMES_CONTROL
 					}
 				}
@@ -6846,7 +6846,7 @@ country_event = {
 			modifier = {
 				factor = 10000
 					has_game_rule = {
-						rule = FRA_day_of_imfamy
+						rule = FRA_xday_of_imfamy
 						option = FRA_BLACK_GUARD_COUNTERREVOLUTION
 					}
 			  }
@@ -6966,7 +6966,7 @@ country_event = {
 			modifier = {
 				factor = 10000
 					has_game_rule = {
-						rule = FRA_day_of_imfamy
+						rule = FRA_xday_of_imfamy
 						option = FRA_CLEMEN_ASSUMES_CONTROL
 					}
 			}
@@ -6994,7 +6994,7 @@ country_event = {
 			modifier = {
 				factor = 10000
 				has_game_rule = {
-					rule = FRA_day_of_imfamy
+					rule = FRA_xday_of_imfamy
 					option = FRA_ARTHUYS_ASSUMES_CONTROL
 				}
 			}
@@ -7202,7 +7202,7 @@ country_event = {
 			modifier = {
 				factor = 10000
 				has_game_rule = {
-					rule = FRA_day_of_imfamy
+					rule = FRA_xday_of_imfamy
 					option = FRA_NIZAN_ASSUMES_CONTROL
 				}
 			}
@@ -7247,7 +7247,7 @@ country_event = {
 			modifier = {
 				factor = 10000
 				has_game_rule = {
-					rule = FRA_day_of_imfamy
+					rule = FRA_xday_of_imfamy
 					option = FRA_BUCARD_ASSUMES_CONTROL
 				}
 			}
@@ -7295,7 +7295,7 @@ country_event = {
 			modifier = {
 				factor = 10000
 				has_game_rule = {
-					rule = FRA_day_of_imfamy
+					rule = FRA_xday_of_imfamy
 					option = FRA_ORTHOR_ASSUMES_CONTROL
 				}
 			}
@@ -7316,7 +7316,7 @@ country_event = {
 			modifier = {
 				factor = 100
 				has_game_rule = {
-					rule = FRA_day_of_imfamy
+					rule = FRA_xday_of_imfamy
 					option = FRA_DEAT_ASSUMES_CONTROL
 				}
 			}
@@ -7991,7 +7991,7 @@ country_event = {
 	immediate = {log = "[GetDateText]: [Root.GetName]: event comfrance.950"}
 	title = comfrance.950.t
 	desc = comfrance.950.d
-	picture = GFX_news_event_FRA_jacobin_split
+	picture = GFX_news_event_FRA_JACOBIN_SPLITX
 
 	is_triggered_only = yes
 
@@ -8003,12 +8003,12 @@ country_event = {
 				factor = 0
 				OR = {
 					has_game_rule = {
-						rule = FRA_jacobin_split 
-						option = FRA_JACOBIN_SPLIT_NATS
+						rule = FRA_JACOBIN_SPLITX 
+						option = FRA_JACOBIN_SPLITX_NATS
 					}
 					has_game_rule = {
-						rule = FRA_jacobin_split 
-						option = FRA_JACOBIN_SPLIT_MODE
+						rule = FRA_JACOBIN_SPLITX 
+						option = FRA_JACOBIN_SPLITX_MODE
 					}
 				}
 			}
@@ -8030,12 +8030,12 @@ country_event = {
 				factor = 0
 				OR = {
 					has_game_rule = {
-						rule = FRA_jacobin_split 
-						option = FRA_JACOBIN_SPLIT_REDS
+						rule = FRA_JACOBIN_SPLITX 
+						option = FRA_JACOBIN_SPLITX_REDS
 					}
 					has_game_rule = {
-						rule = FRA_jacobin_split 
-						option = FRA_JACOBIN_SPLIT_MODE
+						rule = FRA_JACOBIN_SPLITX 
+						option = FRA_JACOBIN_SPLITX_MODE
 					}
 				}
 			}
@@ -8061,12 +8061,12 @@ country_event = {
 				factor = 0
 				OR = {
 					has_game_rule = {
-						rule = FRA_jacobin_split 
-						option = FRA_JACOBIN_SPLIT_REDS
+						rule = FRA_JACOBIN_SPLITX 
+						option = FRA_JACOBIN_SPLITX_REDS
 					}
 					has_game_rule = {
-						rule = FRA_jacobin_split 
-						option = FRA_JACOBIN_SPLIT_NATS
+						rule = FRA_JACOBIN_SPLITX 
+						option = FRA_JACOBIN_SPLITX_NATS
 					}
 				}
 			}

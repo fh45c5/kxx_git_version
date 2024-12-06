@@ -615,37 +615,37 @@ JAP_socialist_leader = {
 	
 }
 
-FRA_jacobin_split = {
-	name = "FRA_JACOBIN_SPLIT"
+FRA_JACOBIN_SPLITX = {
+	name = "FRA_JACOBIN_SPLITX"
 	group = "RULE_GROUP_KAISERREICH_RULES_EUROPE"
 	option = {
 		name = DEFAULT
-		text = "RULE_OPTION_FRA_JACOBIN_SPLIT_RANDOM"
-		desc = "RULE_OPTION_FRA_JACOBIN_SPLIT_RANDOM_DESC"
+		text = "RULE_OPTION_FRA_JACOBIN_SPLITX_RANDOM"
+		desc = "RULE_OPTION_FRA_JACOBIN_SPLITX_RANDOM_DESC"
 		allow_achievements = yes
 	}
 	option = {
-		name = FRA_JACOBIN_SPLIT_REDS
-		text = "RULE_OPTION_FRA_JACOBIN_SPLIT_REDS"
-		desc = "RULE_OPTION_FRA_JACOBIN_SPLIT_REDS_DESC"
+		name = FRA_JACOBIN_SPLITX_REDS
+		text = "RULE_OPTION_FRA_JACOBIN_SPLITX_REDS"
+		desc = "RULE_OPTION_FRA_JACOBIN_SPLITX_REDS_DESC"
 		allow_achievements = yes
 	}
 	option = {
-		name = FRA_JACOBIN_SPLIT_NATS
-		text = "RULE_OPTION_FRA_JACOBIN_SPLIT_NATS"
-		desc = "RULE_OPTION_FRA_JACOBIN_SPLIT_NATS_DESC"
+		name = FRA_JACOBIN_SPLITX_NATS
+		text = "RULE_OPTION_FRA_JACOBIN_SPLITX_NATS"
+		desc = "RULE_OPTION_FRA_JACOBIN_SPLITX_NATS_DESC"
 		allow_achievements = yes
 	}
 	option = {
-		name = FRA_JACOBIN_SPLIT_MODE
-		text = "RULE_OPTION_FRA_JACOBIN_SPLIT_MODE"
-		desc = "RULE_OPTION_FRA_JACOBIN_SPLIT_MODE_DESC"
+		name = FRA_JACOBIN_SPLITX_MODE
+		text = "RULE_OPTION_FRA_JACOBIN_SPLITX_MODE"
+		desc = "RULE_OPTION_FRA_JACOBIN_SPLITX_MODE_DESC"
 		allow_achievements = yes
 	}
 }
 
-FRA_day_of_imfamy = {
-	name = "FRA_DAY_OF_INFAMY"
+FRA_xday_of_imfamy = {
+	name = "FRA_XDAY_OF_INFAMY"
 	group = "RULE_GROUP_KAISERREICH_RULES_EUROPE"
 	option = {
 		name = DEFAULT
@@ -749,4 +749,5 @@ FRA_after_deat= {
 		allow_achievements = yes
 	}
 }
+
 
