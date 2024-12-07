@@ -1,0 +1,1661 @@
+﻿###########################
+# Socialist Canada Events
+###########################
+
+add_namespace = kxx_canada_soc
+
+#soc canada
+
+country_event = {
+	id = kxx_canada_soc.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada_soc.1" }
+	title = kxx_canada_soc.1.t
+	desc = kxx_canada_soc.1.d
+	picture = GFX_report_event_CAN_ccs
+
+	trigger = {
+		tag = CAN
+		has_idea = CAN_quebec_in_flames_idea
+		has_global_flag = CAN_Edward_Dead
+	}
+
+	fire_only_once = yes
+	
+	option = {
+		name = kxx_canada_soc.1.a
+		
+		
+	}
+	option = {
+		name = kxx_canada_soc.1.b
+		if = {
+			limit = {
+				is_in_faction = yes
+			}
+			leave_faction = yes
+			separate_peace_all_wars = yes
+		}
+		set_country_flag = LEADER_GUI_NOT_VISIBLE
+		CAN_remove_from_iedc = yes
+		remove_from_tech_sharing_group = entente_research
+		remove_power_balance = { id = CAN_brit_exile_balance }
+		remove_dynamic_modifier = {
+			modifier = CAN_brit_govt_exile_idea
+		}
+		remove_ideas = CAN_Douglas_Hogg_lobe_ade
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.1
+		}
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.1
+		}
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.1
+		}
+		set_cosmetic_tag = NFL_CANADA
+		remove_all_ministers = yes
+		GBR_reset_GB_PM = yes
+		CAN_add_socialist_generals_effect = yes
+		set_global_flag = CAN_became_socialist
+		set_country_flag = CAN_is_socialist_canada
+		clr_country_flag = KR_british_king_base
+		
+			
+		
+		every_owned_state = {
+			limit = {
+				OR = {
+					has_dynamic_modifier = { modifier = CAN_french_resistance_3 }
+					has_dynamic_modifier = { modifier = CAN_french_resistance_2 }
+					has_dynamic_modifier = { modifier = CAN_french_resistance_1 }
+				}
+			}
+			custom_effect_tooltip = CAN_resistance_effects_removed
+			CAN_remove_french_resistance = yes
+		}
+		hidden_effect = {
+			### Parties ###
+			CAN_remove_french_tensions = yes
+			set_party_name = {
+				long_name = SCC_totalist_party_long
+				name = SCC_totalist_party
+				ideology = totalist
+			}
+			
+			
+				set_party_name = {
+					long_name = SCC_syndicalist_party2_long
+					name = SCC_syndicalist_party2
+					ideology = syndicalist
+				}
+			
+			set_party_name = {
+				long_name = SCC_radical_socialist_party_long
+				name = SCC_radical_socialist_party
+				ideology = radical_socialist
+			}
+			set_party_name = {
+				long_name = SCC_social_democrat_party_long
+				name = SCC_social_democrat_party
+				ideology = social_democrat
+			}
+			set_party_name = {
+				long_name = SCC_social_liberal_party_long
+				name = SCC_social_liberal_party
+				ideology = social_liberal
+			}
+			set_party_name = {
+				long_name = SCC_market_liberal_party_long
+				name = SCC_market_liberal_party
+				ideology = market_liberal
+			}
+			set_party_name = {
+				long_name = SCC_social_conservative_party_long
+				name = SCC_social_conservative_party
+				ideology = social_conservative
+			}
+			set_party_name = {
+				long_name = SCC_authoritarian_democrat_party_long
+				name = SCC_authoritarian_democrat_party
+				ideology = authoritarian_democrat
+			}
+			set_party_name = {
+				long_name = SCC_paternal_autocrat_party_long
+				name = SCC_paternal_autocrat_party
+				ideology = paternal_autocrat
+			}
+			set_party_name = {
+				long_name = SCC_national_populist_party_long
+				name = SCC_national_populist_party
+				ideology = national_populist
+			}
+			
+			end_coalition = yes
+			
+			### Leaders ###
+			
+			create_country_leader = {
+				name = "Congress of Canadian Socialists"
+				picture = "gfx/leaders/CAN/Portrait_Canada_Vacant_Office_2.png"
+				expire = "1.1.1"
+				ideology = totalist_subtype
+			}
+			
+				
+				create_country_leader = {
+					name = "Congress of Canadian Socialists"
+					picture = "gfx/leaders/CAN/Portrait_Canada_Vacant_Office_2.png"
+					expire = "1.1.1"
+					ideology = syndicalist_subtype
+				}
+			
+			
+			create_country_leader = {
+				name = "Congress of Canadian Socialists"
+				picture = "gfx/leaders/CAN/Portrait_Canada_Vacant_Office_2.png"
+				expire = "1.1.1"
+				ideology = radical_socialist_subtype
+			}
+			
+			if = {
+				limit = { date > 1942.3.21 }
+					create_country_leader = {
+					name = "J.S. Woodsworth"
+					picture = "gfx/leaders/CAN/Portrait_Canada_JS_Woodsworth.png"
+					expire = "1.1.1"
+					ideology = socdem_democratic_socialism_subtype
+				}
+			}
+			else = {
+				create_country_leader = {
+					name = "Major James Coldwell"
+					picture = "gfx/leaders/CAN/Portrait_Canada_Major_James_Coldwell.png"
+					expire = "1.1.1"
+					ideology = socdem_democratic_socialism_subtype
+				}
+			}
+			
+			create_country_leader = {
+				name = "Humphrey Mitchell"
+				picture = "gfx/leaders/CAN/Portrait_Canada_Humphrey_Mitchell.png"
+				expire = "1.1.1"
+				ideology = soclib_liberal_socialism_subtype
+			}
+			
+			create_country_leader = {
+				name = "Charles Gavan Power"
+				picture = "gfx/leaders/CAN/Portrait_Canada_Charles_Gavan_Power.png"
+				expire = "1.1.1"
+				ideology = marlib_national_liberalism_subtype
+			}
+			
+			create_country_leader = {
+				name = "John Bracken"
+				picture = "gfx/leaders/CAN/Portrait_Canada_John_Bracken.png"
+				expire = "1.1.1"
+				ideology = progressive_conservatism_subtype
+			}
+			
+			create_country_leader = {
+				name = "Henry Herbert Stevens"
+				picture = "gfx/leaders/CAN/Portrait_Canada_Henry_Herbert_Stevens.png"
+				expire = "1.1.1"
+				ideology = authdem_national_conservative_subtype
+			}
+			
+			create_country_leader = {
+				name = "William Duncan Herridge"
+				picture = "gfx/leaders/CAN/Portrait_Canada_William_Duncan_Herridge.png"
+				expire = "1.1.1"
+				ideology = social_credit_subtype
+			}
+			
+			create_country_leader = {
+				name = "Adrien Arcand"
+				picture = "gfx/leaders/CAN/Portrait_Canada_Adrien_Arcand_Suit.png"
+				expire = "1.1.1"
+				ideology = legionarism_subtype
+			}
+	
+			### Ideas ###
+			
+			add_ideas = CAN_reactionary_resistance
+			if = {
+				limit = { NOT = { country_exists = QUE } }
+				add_ideas = CAN_red_quebec_issue
+			}
+			add_ideas = CAN_reactionary_resistance
+			add_ideas = CAN_ruined_nation
+			
+			### Events ###
+			
+			country_event = { id = canada_soc.17 days = 340 random_days = 120 }
+			country_event = { id = canada_soc_flavour.2 days = 10 }
+			country_event = { id = canada_soc_flavour.3 days = 250 random_days = 140 }
+			country_event = { id = canada_soc_flavour.8 days = 400 }
+			country_event = { id = canada_soc_flavour.9 days = 320 }
+			country_event = { id = canada_soc_flavour.11 days = 500 }
+		}
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = syndicalist
+					last_election = "[CURRENT_DATE]"
+					election_frequency = 24
+					elections_allowed = yes
+				}
+			}
+			CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+		}
+	}
+}
+
+#reelection
+
+country_event = {
+	id = kxx_canada_soc.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada_soc.2" }
+	title = kxx_canada_soc.2.t
+	desc = kxx_canada_soc.2.d
+	picture = GFX_report_event_CAN_fpu
+	is_triggered_only = yes
+	fire_only_once = yes
+
+
+	option = {
+		name = kxx_canada_soc.2.a
+		ai_chance = {
+			factor = 20
+		}
+		country_event = kxx_canada_soc.7
+		
+	}
+	
+	option = {
+		name = kxx_canada_soc.2.b
+		ai_chance = {
+			factor = 80
+		}
+		country_event = kxx_canada_soc.8
+	}
+	
+	option = {
+		name = kxx_canada_soc.2.c
+		ai_chance = {
+			factor = 80
+		}
+		country_event = kxx_canada_soc.9
+	}
+	option = {
+		name = kxx_canada_soc.2.e
+		ai_chance = {
+			factor = 80
+		}
+		country_event = kxx_canada_soc.10
+	}
+}
+
+#peoples federation
+
+country_event = {
+	id = kxx_canada_soc.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada_soc.3" }
+	title = kxx_canada_soc.3.t
+	desc = kxx_canada_soc.3.d
+	picture = GFX_report_event_CAN_fate_tories
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = kxx_canada_soc.3.a
+		ai_chance = {
+			factor = 100
+		}
+		
+		add_political_power = 20
+		
+	}
+	option = {
+		name = kxx_canada_soc.3.b
+		set_cosmetic_tag = BRG_peoples_commonwealth2
+		add_state_core = 1219
+		add_state_core = 445
+		add_state_core = 442
+		hidden_effect = {
+			add_state_core = 700
+			add_state_core = 274
+			add_state_core = 1321
+			add_state_core = 1322
+			add_state_core = 1323
+			add_state_core = 311
+			add_state_core = 846
+			add_state_core = 751
+			add_state_core = 336
+			add_state_core = 333
+			add_state_core = 828
+			add_state_core = 831
+			add_state_core = 749
+			add_state_core = 751
+			add_state_core = 753
+			add_state_core = 453
+			}
+			create_wargoal = { type = annex_everything target = 700.owner }
+		create_wargoal = { type = annex_everything target = 274.owner }
+		create_wargoal = { type = annex_everything target = 311.owner }
+		create_wargoal = { type = annex_everything target = 336.owner }
+		create_wargoal = { type = annex_everything target = 751.owner }
+		create_wargoal = { type = annex_everything target = 453.owner }
+		create_wargoal = { type = annex_everything target = 753.owner }
+		create_wargoal = { type = annex_everything target = UGA }
+					every_state = {
+						limit = {
+							is_owned_by = UGA
+						}
+						CAN = {
+							add_state_core = PREV
+						}
+					}
+				create_wargoal = { type = annex_everything target = KIK }
+					every_state = {
+						limit = {
+							is_owned_by = KIK
+						}
+						CAN = {
+							add_state_core = PREV
+						}
+					}
+				create_wargoal = { type = annex_everything target = ZZB }
+					every_state = {
+						limit = {
+							is_owned_by = ZZB
+						}
+						CAN = {
+							add_state_core = PREV
+						}
+					}
+				create_wargoal = { type = annex_everything target = MLW }
+					every_state = {
+						limit = {
+							is_owned_by = MLW
+						}
+						CAN = {
+							add_state_core = PREV
+						}
+					}
+				create_wargoal = { type = annex_everything target = BRT }
+					every_state = {
+						limit = {
+							is_owned_by = BRT
+						}
+						CAN = {
+							add_state_core = PREV
+						}
+					}
+		every_state = {
+			limit = {
+				is_owned_by = ZAM
+			}
+			CAN = {
+				add_state_core = PREV
+			}
+		}
+	create_wargoal = { type = annex_everything target = ZIM }
+		every_state = {
+			limit = {
+				is_owned_by = ZIM
+			}
+			CAN = {
+				add_state_core = PREV
+			}
+		}
+	create_wargoal = { type = annex_everything target = KEN }
+		every_state = {
+			limit = {
+				is_owned_by = KEN
+			}
+			CAN = {
+				add_state_core = PREV
+			}
+		}
+	create_wargoal = { type = annex_everything target = EGY }
+		every_state = {
+			limit = {
+				is_owned_by = EGY
+			}
+			CAN = {
+				add_state_core = PREV
+			}
+		}
+	create_wargoal = { type = annex_everything target = NGR }
+		every_state = {
+			limit = {
+				is_owned_by = NGR
+			}
+			CAN = {
+				add_state_core = PREV
+			}
+		}
+	create_wargoal = { type = annex_everything target = YEM }
+		every_state = {
+			limit = {
+				is_owned_by = YEM
+			}
+			CAN = {
+				add_state_core = PREV
+			}
+		}
+	create_wargoal = { type = annex_everything target = OMA }
+		every_state = {
+			limit = {
+				is_owned_by = OMA
+			}
+			CAN = {
+				add_state_core = PREV
+			}
+		}
+	create_wargoal = { type = annex_everything target = BRM }
+		every_state = {
+			limit = {
+				is_owned_by = BRM
+			}
+			CAN = {
+				add_state_core = PREV
+			}
+		}
+		create_wargoal = { type = annex_everything target = PRF }
+			every_state = {
+				limit = {
+					is_owned_by = PRF
+				}
+				CAN = {
+					add_state_core = PREV
+				}
+			}
+		
+		create_wargoal = { type = annex_everything target = MAD }
+			every_state = {
+				limit = {
+					is_owned_by = MAD
+				}
+				CAN = {
+					add_state_core = PREV
+				}
+			}
+		create_wargoal = { type = annex_everything target = BHC }
+			every_state = {
+				limit = {
+					is_owned_by = BHC
+				}
+				CAN = {
+					add_state_core = PREV
+				}
+			}
+		
+		create_wargoal = { type = annex_everything target = SAF }
+			every_state = {
+				limit = {
+					is_owned_by = SAF
+				}
+				CAN = {
+					add_state_core = PREV
+				}
+			}
+		create_wargoal = { type = annex_everything target = DEH }
+			every_state = {
+				limit = {
+					is_owned_by = DEH
+				}
+				CAN = {
+					add_state_core = PREV
+				}
+			}
+		
+		create_wargoal = { type = annex_everything target = IRE }
+				every_state = {
+					limit = {
+						is_owned_by = IRE
+					}
+					CAN = {
+						add_state_core = PREV
+					}
+				}
+		create_wargoal = { type = annex_everything target = CAF }
+				every_state = {
+					limit = {
+						is_owned_by = CAF
+					}
+					CAN = {
+						add_state_core = PREV
+					}
+				}
+		
+	}
+	
+}
+
+# Totalist Victory
+
+country_event = {
+	id = kxx_canada_soc.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada_soc.7" }
+	title = canada_soc.7.t
+	desc = canada_soc.7.d
+	picture = GFX_report_event_CAN_tot_victory
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Chuck Crate
+		name = canada_soc.7.c
+		remove_all_ministers = yes
+		set_country_flag = CAN_CUM_Victory
+		mark_focus_tree_layout_dirty = yes
+		add_ideas = {
+			CAN_Chuck_Crate_hog_tot
+			CAN_Howard_Simpkin_for_tot
+			CAN_Tom_King_eco_tot
+			CAN_WF_Elsey_sec_tot
+		}
+		set_politics = {
+			ruling_party = totalist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Chuck Crate"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Chuck_Crate.png"
+			expire = "1.1.1"
+			ideology = tot_reformed_natsynd_subtype
+		}
+		set_party_name = {
+			name = SCC_maximist_party
+			long_name = SCC_maximist_party_long
+			ideology = totalist
+		}
+	}
+	
+	option = { #William Moriarty
+		name = canada_soc.7.b
+		remove_all_ministers = yes
+		set_country_flag = CAN_MEL_Victory
+		mark_focus_tree_layout_dirty = yes
+		add_ideas = {
+			CAN_William_Moriarty_hog_tot
+			CAN_Jack_MacDonald_for_tot
+			CAN_Israel_Breslow_eco_tot
+			CAN_Michael_Bushay_sec_tot
+		}
+		set_politics = {
+			ruling_party = totalist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "William Moriarty"
+			picture = "gfx/leaders/CAN/Portrait_Canada_William_Moriarty.png"
+			expire = "1.1.1"
+			ideology = lovestoneism_subtype
+		}
+		set_party_name = {
+			name = SCC_lovestone_party
+			long_name = SCC_lovestone_party_long
+			ideology = totalist
+		}
+	}
+	
+	option = { # Tim Buck
+		name = canada_soc.7.a
+		remove_all_ministers = yes
+		set_country_flag = CAN_CPC_Victory
+		mark_focus_tree_layout_dirty = yes
+		add_ideas = {
+			CAN_Tim_Buck_hog_tot
+			CAN_Alexander_Albert_MacLeod_for_tot
+			CAN_Norman_Bethune_eco_tot
+			CAN_Hannes_Sula_sec_tot
+		}
+		set_politics = {
+			ruling_party = totalist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Tim Buck"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Tim_Buck_kr.png"
+			expire = "1.1.1"
+			ideology = popcom_subtype
+		}
+		set_party_name = {
+			name = SCC_buck_party
+			long_name = SCC_buck_party_long
+			ideology = totalist
+		}
+	}
+}
+
+# Synd Victory
+
+country_event = {
+	id = kxx_canada_soc.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada_soc.8" }
+	title = canada_soc.8.t
+	desc = {
+		text = canada_soc.8.d
+		trigger = {
+			NOT = { has_country_flag = SCC_fpu_ran }
+		}
+	}
+	desc = {
+		text = canada_soc.8.d_fpu
+		trigger = {
+			has_country_flag = SCC_fpu_ran 
+		}
+	}
+	picture = GFX_report_event_CAN_syn_victory
+	
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = canada_soc.12
+				days = 10
+			}
+			country_event = {
+				id = canada_soc.15
+				days = 15
+			}
+		}
+		set_country_flag = CAN_congress_over
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Roger Ernest Bray
+		name = canada_soc.8.a
+		remove_all_ministers = yes
+		set_country_flag = CAN_OBU_Victory
+		mark_focus_tree_layout_dirty = yes
+		add_ideas = {
+			CAN_Robert_B_Russell_hog_syn
+			CAN_Frank_Burke_for_syn
+			CAN_Fred_W_Thompson_eco_syn
+			CAN_Jan_Lakeman_sec_syn
+		}
+		set_politics = {
+			ruling_party = syndicalist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Roger Ernest Bray"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Roger_Ernest_Bray.png"
+			expire = "1.1.1"
+			ideology = centralized_syndicalism_subtype
+		}
+		set_party_name = {
+			name = SCC_one_big_union_party
+			long_name = SCC_one_big_union_party_long
+			ideology = syndicalist
+		}
+	}
+	
+	option = { #Robert B. Russell
+		name = canada_soc.8.b
+		remove_all_ministers = yes
+		set_country_flag = CAN_OBU_Victory
+		mark_focus_tree_layout_dirty = yes
+		add_ideas = {
+			CAN_Robert_B_Russell_hog_syn
+			CAN_Frank_Burke_for_syn
+			CAN_Fred_W_Thompson_eco_syn
+			CAN_Jan_Lakeman_sec_syn
+		}
+		set_politics = {
+			ruling_party = syndicalist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Robert B. Russell"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Robert_B_Russell.png"
+			expire = "1.1.1"
+			ideology = centralized_syndicalism_subtype
+		}
+		set_party_name = {
+			name = SCC_one_big_union_party
+			long_name = SCC_one_big_union_party_long
+			ideology = syndicalist
+		}
+	}
+	
+	option = { #Tom Moore
+		name = canada_soc.8.c
+		remove_all_ministers = yes
+		set_country_flag = CAN_TLC_Victory
+		mark_focus_tree_layout_dirty = yes
+		add_ideas = {
+			CAN_TLC_Union_Congress_hog_syn
+			CAN_James_C_Watters_for_syn
+			CAN_Pat_Sullivan_eco_syn
+			CAN_Paddy_Draper_sec_syn
+		}
+		set_politics = {
+			ruling_party = syndicalist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Tom Moore"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Tom_Moore.png"
+			expire = "1.1.1"
+			ideology = democratic_syndicalism_subtype
+		}
+		set_party_name = {
+			name = SCC_trades_and_labour_congress_party
+			long_name = SCC_trades_and_labour_congress_party_long
+			ideology = syndicalist
+		}
+		
+		hidden_effect = {
+			country_event = {
+				id = canada_soc.57
+				days = 1460
+			}
+			country_event = {
+				id = canada_soc.58
+				days = 2920
+			}
+		}
+	}
+	
+	option = { #Arthur Herbert 'Slim' Evans
+		name = canada_soc.8.e
+		remove_all_ministers = yes
+		set_country_flag = CAN_WUL_Victory
+		mark_focus_tree_layout_dirty = yes
+		add_ideas = {
+			CAN_Arthur_Herbert_Evans_hog_syn
+			CAN_Annie_Buller_for_syn
+			CAN_Tom_McEwen_eco_syn
+			CAN_J_B_McLachlan_sec_syn
+		}
+		set_politics = {
+			ruling_party = syndicalist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Arthur Herbert Evans"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Arthur_Herbert_Evans.png"
+			expire = "1.1.1"
+			ideology = liberalized_syndicalism_subtype
+		}
+		set_party_name = {
+			name = SCC_workers_unity_party
+			long_name = SCC_workers_unity_party_long
+			ideology = syndicalist
+		}
+	}
+	
+	option = { #K.M. Brown
+		name = canada_soc.8.f
+		trigger = {
+			has_country_flag = SCC_fpu_ran
+		}
+		remove_all_ministers = yes
+		set_country_flag = CAN_FPU_Victory
+		mark_focus_tree_layout_dirty = yes
+		add_ideas = {
+			NFL_Herman_William_Quinton_hog_syn
+			NFL_Ronald_Fahey_for_syn
+			NFL_Frank_Fogwill_eco_syn
+			NFL_David_Jackman_sec_syn
+		}	
+		set_politics = {
+			ruling_party = syndicalist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Kenneth McKenzie Brown"
+			picture = "gfx/leaders/NFL/Portrait_Newfoundland_Kenneth_McKenzie_Brown.png"
+			expire = "1.1.1"
+			ideology = liberalized_syndicalism_subtype
+		}
+		set_party_name = {
+			name = NFL_syndicalist_party
+			long_name = NFL_syndicalist_party_long
+			ideology = syndicalist
+		}
+	}
+	
+	option = { #Joey Smallwood
+		name = canada_soc.8.g
+		trigger = {
+			has_country_flag = SCC_fpu_ran
+		}
+		remove_all_ministers = yes
+		set_country_flag = CAN_FPU_Victory
+		mark_focus_tree_layout_dirty = yes
+		add_ideas = {
+			NFL_Herman_William_Quinton_hog_syn
+			NFL_Ronald_Fahey_for_syn
+			NFL_Frank_Fogwill_eco_syn
+			NFL_David_Jackman_sec_syn
+		}	
+		set_politics = {
+			ruling_party = syndicalist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Joey Smallwood"
+			picture = "gfx/leaders/NFL/Portrait_Newfoundland_Joey_Smallwood.png"
+			expire = "1.1.1"
+			ideology = liberalized_syndicalism_subtype
+		}
+		set_party_name = {
+			name = NFL_syndicalist_party
+			long_name = NFL_syndicalist_party_long
+			ideology = syndicalist
+		}
+	}
+}
+
+# RadSoc Victory
+
+country_event = {
+	id = kxx_canada_soc.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada_soc.9" }
+	title = canada_soc.9.t
+	desc = canada_soc.9.d
+	picture = GFX_report_event_CAN_radsoc_victory
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = canada_soc.12
+				days = 10
+			}
+			country_event = {
+				id = canada_soc.14
+				days = 15
+			}
+		}
+		set_country_flag = CAN_congress_over
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Richard Parmater Pettipiece
+		name = canada_soc.9.a
+		remove_all_ministers = yes
+		set_country_flag = CAN_SPC_Victory
+		mark_focus_tree_layout_dirty = yes
+		add_ideas = {
+			CAN_Richard_Parmater_Pettipiece_hog_rso
+			CAN_George_Armstrong_for_rso
+			CAN_Charles_M_O_Brien_eco_rso
+			CAN_Joseph_Andrew_Clarke_sec_rso
+		}
+		set_politics = {
+			ruling_party = radical_socialist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Richard Parmater Pettipiece"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Richard_Pettipiece.png"
+			expire = "1.1.1"
+			ideology = radical_socialist_subtype
+		}
+		set_party_name = {
+			name = SCC_socialist_party_of_canada_party
+			long_name = SCC_socialist_party_of_canada_party_long
+			ideology = radical_socialist
+		}
+	}
+	
+	option = { #Jacob Penner
+		name = canada_soc.9.b
+		remove_all_ministers = yes
+		set_country_flag = CAN_SDP_Victory
+		mark_focus_tree_layout_dirty = yes
+		add_ideas = {
+			CAN_Jacob_Penner_hog_rso
+			CAN_John_Queen_for_rso
+			CAN_Fred_Dixon_eco_rso
+			CAN_James_Simpson_sec_rso
+		}
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = radical_socialist
+					last_election = "[CURRENT_DATE]"
+					election_frequency = 24
+					elections_allowed = yes
+				}
+			}
+			CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+		}
+		create_country_leader = {
+			name = "Jacob Penner"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Jacob_Penner.png"
+			expire = "1.1.1"
+			ideology = radsoc_revisionist_marxism_subtype
+		}
+		set_party_name = {
+			name = SCC_social_democratic_party_of_canada_party
+			long_name = SCC_social_democratic_party_of_canada_party_long
+			ideology = radical_socialist
+		}
+		set_cosmetic_tag = CAN_sdp_exists
+		set_cosmetic_tag = CAN_ccf_exists
+	}
+	
+	option = { #Bill Kardash
+		name = canada_soc.9.c
+		remove_all_ministers = yes
+		set_country_flag = CAN_RadSoc_CPC_Victory
+		mark_focus_tree_layout_dirty = yes
+		add_ideas = {
+			CAN_Bill_Kardash_hog_rso
+			CAN_Joe_Zuken_for_rso
+			CAN_William_Kashtan_eco_rso
+			CAN_Robert_Laxer_sec_rso
+		}
+		set_politics = {
+			ruling_party = radical_socialist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Bill Kardash"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Bill_Kardash.png"
+			expire = "1.1.1"
+			ideology = radsoc_communism_subtype
+		}
+		set_party_name = {
+			name = SCC_radsoc_communist_party
+			long_name = SCC_radsoc_communist_party_long
+			ideology = radical_socialist
+		}
+	}
+	
+	option = { #James Litterick
+		name = canada_soc.9.e
+		remove_all_ministers = yes
+		set_country_flag = CAN_RadSoc_CPC_Victory
+		mark_focus_tree_layout_dirty = yes
+		add_ideas = {
+			CAN_Bill_Kardash_hog_rso
+			CAN_Joe_Zuken_for_rso
+			CAN_William_Kashtan_eco_rso
+			CAN_Robert_Laxer_sec_rso
+		}
+		set_politics = {
+			ruling_party = radical_socialist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "James Litterick"
+			picture = "gfx/leaders/CAN/Portrait_Canada_James_Litterick.png"
+			expire = "1.1.1"
+			ideology = radsoc_communism_subtype
+		}
+		set_party_name = {
+			name = SCC_radsoc_communist_party
+			long_name = SCC_radsoc_communist_party_long
+			ideology = radical_socialist
+		}
+	}
+}
+
+# CCF Victory
+
+country_event = {
+	id = kxx_canada_soc.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada_soc.10" }
+	title = canada_soc.10.t
+	desc = canada_soc.10.d
+	picture = GFX_report_event_CAN_ccf_victory
+
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = soc_dems_are_socialists
+		}
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #J.S. Woodsworth
+		name = canada_soc.10.a
+		trigger = {
+			date < 1942.3.21
+		}
+		create_country_leader = {
+			name = "J.S. Woodsworth"
+			picture = "gfx/leaders/CAN/Portrait_Canada_JS_Woodsworth.png"
+			expire = "1.1.1"
+			ideology = socdem_democratic_socialism_subtype
+		}
+		remove_all_ministers = yes
+		add_ideas = {
+			CAN_Major_James_Coldwell_hog_sde
+			CAN_Thomas_C_Douglas_for_sde
+			CAN_Clarence_Gillis_eco_sde
+			CAN_Stanley_Knowles_sec_sde
+		}
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = social_democrat
+					last_election = "[CURRENT_DATE]"
+					election_frequency = 24
+					elections_allowed = yes
+				}
+			}
+			CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+		}
+		
+	}
+	
+	option = { #Major James Coldwell
+		name = canada_soc.10.b
+		remove_all_ministers = yes
+		add_ideas = {
+			CAN_Major_James_Coldwell_hog_sde
+			CAN_Thomas_C_Douglas_for_sde
+			CAN_Clarence_Gillis_eco_sde
+			CAN_Stanley_Knowles_sec_sde
+		}
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = social_democrat
+					last_election = "[CURRENT_DATE]"
+					election_frequency = 24
+					elections_allowed = yes
+				}
+			}
+			CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+		}
+		create_country_leader = {
+			name = "Major James Coldwell"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Major_James_Coldwell.png"
+			expire = "1.1.1"
+			ideology = socdem_democratic_socialism_subtype
+		}
+	}
+	
+	option = { #Tommy Douglas
+		name = canada_soc.10.c
+		remove_all_ministers = yes
+		add_ideas = {
+			CAN_Major_James_Coldwell_hog_sde
+			CAN_Thomas_C_Douglas_for_sde
+			CAN_Clarence_Gillis_eco_sde
+			CAN_Stanley_Knowles_sec_sde
+		}
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = social_democrat
+					last_election = "[CURRENT_DATE]"
+					election_frequency = 24
+					elections_allowed = yes
+				}
+			}
+			CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+		}
+		create_country_leader = {
+			name = "Tommy Douglas"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Tommy_Douglas.png"
+			expire = "1.1.1"
+			ideology = socdem_democratic_socialism_subtype
+		}
+	}
+	
+	option = { #William Irvine
+		name = canada_soc.10.e
+		remove_all_ministers = yes
+		add_ideas = {
+			CAN_Major_James_Coldwell_hog_sde
+			CAN_Thomas_C_Douglas_for_sde
+			CAN_Clarence_Gillis_eco_sde
+			CAN_Stanley_Knowles_sec_sde
+		}
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = social_democrat
+					last_election = "[CURRENT_DATE]"
+					election_frequency = 24
+					elections_allowed = yes
+				}
+			}
+			CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+		}
+		create_country_leader = {
+			name = "William Irvine"
+			picture = "gfx/leaders/CAN/Portrait_Canada_William_Irvine.png"
+			expire = "1.1.1"
+			ideology = socdem_christian_socialism_subtype
+		}
+	}
+	
+	option = { #William Irvine
+		name = canada_soc.10.f
+		remove_all_ministers = yes
+		add_ideas = {
+			CAN_Major_James_Coldwell_hog_sde
+			CAN_Thomas_C_Douglas_for_sde
+			CAN_Clarence_Gillis_eco_sde
+			CAN_Stanley_Knowles_sec_sde
+		}
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = social_democrat
+					last_election = "[CURRENT_DATE]"
+					election_frequency = 24
+					elections_allowed = yes
+				}
+			}
+			CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+		}
+		create_country_leader = {
+			name = "Clarence Gillis"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Clarence_Gillis.png"
+			expire = "1.1.1"
+			ideology = socdem_democratic_socialism_subtype
+		}
+	}
+}
+
+# Draw
+
+country_event = {
+	id = canada_soc.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada_soc.11" }
+	title = canada_soc.11.t
+	desc = canada_soc.11.d
+	picture = GFX_report_event_CAN_deadlock
+
+	trigger = {
+		#tag = CAN
+		has_socialist_government = yes
+		NOT = {
+			has_country_flag = CAN_CPC_Victory
+			has_country_flag = CAN_CUM_Victory
+			has_country_flag = CAN_MEL_Victory
+			has_country_flag = CAN_WUL_Victory
+			has_country_flag = CAN_OBU_Victory
+			has_country_flag = CAN_TLC_Victory
+			has_country_flag = CAN_SPC_Victory
+			has_country_flag = CAN_SDP_Victory
+			has_country_flag = CAN_RadSoc_CPC_Victory
+			has_country_flag = CAN_CCF_Victory
+		}
+		OR = {
+			AND = {
+				check_variable = {
+					var = CAN_congress_radsoc
+					value < 2
+				}
+				check_variable = {
+					var = CAN_congress_synd
+					value < 2
+				}
+				check_variable = {
+					var = CAN_congress_tot
+					value < 2
+				}
+				check_variable = {
+					var = CAN_congress_ccf
+					value < 2
+				}
+			}
+			check_variable = { CAN_congress_ccf = CAN_congress_tot }
+			check_variable = { CAN_congress_ccf = CAN_congress_synd }
+			check_variable = { CAN_congress_ccf = CAN_congress_radsoc }
+			check_variable = { CAN_congress_radsoc = CAN_congress_synd }
+			check_variable = { CAN_congress_radsoc = CAN_congress_tot }
+			check_variable = { CAN_congress_synd = CAN_congress_tot }
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = canada_soc.12
+				days = 10
+			}
+			country_event = {
+				id = canada_soc.15
+				days = 15
+			}
+		}
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Annie Buller
+		name = canada_soc.11.a
+		remove_all_ministers = yes
+		set_country_flag = CAN_Synd_CPC_Victory
+		mark_focus_tree_layout_dirty = yes
+		add_ideas = {
+			CAN_Richard_Parmater_Pettipiece_hog_syn
+			CAN_Joe_Zuken_for_syn
+			CAN_William_Kashtan_eco_syn
+			CAN_Norman_Bethune_sec_syn
+		}
+		set_politics = {
+			ruling_party = syndicalist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Annie Buller"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Annie_Buller.png"
+			expire = "1.1.1"
+			ideology = feminist_syndicalist_subtype
+		}
+		set_party_name = {
+			name = SCC_synd_communists_party
+			long_name = SCC_synd_communists_party_long
+			ideology = syndicalist
+		}
+	}
+	
+	option = { #Tom McEwen
+		name = canada_soc.11.b
+		remove_all_ministers = yes
+		set_country_flag = CAN_Synd_CPC_Victory
+		mark_focus_tree_layout_dirty = yes
+		add_ideas = {
+			CAN_Richard_Parmater_Pettipiece_hog_syn
+			CAN_Joe_Zuken_for_syn
+			CAN_William_Kashtan_eco_syn
+			CAN_Norman_Bethune_sec_syn
+		}
+		set_politics = {
+			ruling_party = syndicalist
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Tom McEwen"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Tom_McEwen.png"
+			expire = "1.1.1"
+			ideology = centralized_syndicalism_subtype
+		}
+		set_party_name = {
+			name = SCC_synd_communists_party
+			long_name = SCC_synd_communists_party_long
+			ideology = syndicalist
+		}
+	}
+}
+
+# Leader of the Tots
+
+country_event = {
+	id = canada_soc.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada_soc.12" }
+	title = canada_soc.12.t
+	desc = canada_soc.12.d
+	picture = GFX_report_event_CAN_tot_leader
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Chuck Crate
+		name = canada_soc.7.c
+		create_country_leader = {
+			name = "Chuck Crate"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Chuck_Crate.png"
+			expire = "1.1.1"
+			ideology = tot_reformed_natsynd_subtype
+		}
+		set_party_name = {
+			name = SCC_maximist_party
+			long_name = SCC_maximist_party_long
+			ideology = totalist
+		}
+		if = {
+			limit = { is_subject = yes }
+			set_country_flag = CAN_CUM_Victory
+		}
+	}
+	
+	option = { #William Moriarty
+		name = canada_soc.7.b
+		create_country_leader = {
+			name = "William Moriarty"
+			picture = "gfx/leaders/CAN/Portrait_Canada_William_Moriarty.png"
+			expire = "1.1.1"
+			ideology = lovestoneism_subtype
+		}
+		set_party_name = {
+			name = SCC_lovestone_party
+			long_name = SCC_lovestone_party_long
+			ideology = totalist
+		}
+		if = {
+			limit = { is_subject = yes }
+			set_country_flag = CAN_MEL_Victory
+		}
+	}
+	
+	option = { # Tim Buck
+		name = canada_soc.7.a
+		create_country_leader = {
+			name = "Tim Buck"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Tim_Buck_kr.png"
+			expire = "1.1.1"
+			ideology = popcom_subtype
+		}
+		set_party_name = {
+			name = SCC_buck_party
+			long_name = SCC_buck_party_long
+			ideology = totalist
+		}
+		set_country_flag = CAN_tots_are_communists
+		if = {
+			limit = { is_subject = yes }
+			set_country_flag = CAN_CPC_Victory
+		}
+	}
+}
+
+# Leader of the Synds
+
+country_event = {
+	id = canada_soc.14
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada_soc.14" }
+	title = canada_soc.14.t
+	desc = canada_soc.14.d
+	picture = GFX_report_event_CAN_syn_leader
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Roger Ernest Bray
+		name = canada_soc.8.a
+		create_country_leader = {
+			name = "Roger Ernest Bray"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Roger_Ernest_Bray.png"
+			expire = "1.1.1"
+			ideology = centralized_syndicalism_subtype
+		}
+		set_party_name = {
+			name = SCC_one_big_union_party
+			long_name = SCC_one_big_union_party_long
+			ideology = syndicalist
+		}
+		if = {
+			limit = { is_subject = yes }
+			set_country_flag = CAN_OBU_Victory
+		}
+	}
+	
+	option = { #Robert B. Russell
+		name = canada_soc.8.b
+		create_country_leader = {
+			name = "Robert B. Russell"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Robert_B_Russell.png"
+			expire = "1.1.1"
+			ideology = centralized_syndicalism_subtype
+		}
+		set_party_name = {
+			name = SCC_one_big_union_party
+			long_name = SCC_one_big_union_party_long
+			ideology = syndicalist
+		}
+		if = {
+			limit = { is_subject = yes }
+			set_country_flag = CAN_OBU_Victory
+		}
+	}
+	
+	option = { #Tom Moore
+		name = canada_soc.8.c
+		create_country_leader = {
+			name = "Tom Moore"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Tom_Moore.png"
+			expire = "1.1.1"
+			ideology = democratic_syndicalism_subtype
+		}
+		set_party_name = {
+			name = SCC_trades_and_labour_congress_party
+			long_name = SCC_trades_and_labour_congress_party_long
+			ideology = syndicalist
+		}
+		if = {
+			limit = { is_subject = yes }
+			set_country_flag = CAN_TLC_Victory
+		}
+	}
+	
+	option = { #Arthur Herbert 'Slim' Evans
+		name = canada_soc.8.e
+		create_country_leader = {
+			name = "Arthur Herbert Evans"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Arthur_Herbert_Evans.png"
+			expire = "1.1.1"
+			ideology = liberalized_syndicalism_subtype
+		}
+		set_party_name = {
+			name = SCC_workers_unity_party
+			long_name = SCC_workers_unity_party_long
+			ideology = syndicalist
+		}
+		set_country_flag = CAN_wul_leads_synds
+		if = {
+			limit = { is_subject = yes }
+			set_country_flag = CAN_WUL_Victory
+		}
+	}
+}
+
+# Leader of the RadSocs
+
+country_event = {
+	id = canada_soc.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada_soc.15" }
+	title = canada_soc.15.t
+	desc = canada_soc.15.d
+	picture = GFX_report_event_CAN_radsoc_victory
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Richard Parmater Pettipiece
+		name = canada_soc.9.a
+		create_country_leader = {
+			name = "Richard Parmater Pettipiece"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Richard_Pettipiece.png"
+			expire = "1.1.1"
+			ideology = moderate_socialist_subtype
+		}
+		set_party_name = {
+			name = SCC_socialist_party_of_canada_party
+			long_name = SCC_socialist_party_of_canada_party_long
+			ideology = radical_socialist
+		}
+		if = {
+			limit = { is_subject = yes }
+			set_country_flag = CAN_SPC_Victory
+		}
+	}
+	
+	option = { #Jacob Penner
+		name = canada_soc.9.b
+		create_country_leader = {
+			name = "Jacob Penner"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Jacob_Penner.png"
+			expire = "1.1.1"
+			ideology = radsoc_revisionist_marxism_subtype
+		}
+		set_party_name = {
+			name = SCC_social_democratic_party_of_canada_party
+			long_name = SCC_social_democratic_party_of_canada_party_long
+			ideology = radical_socialist
+		}
+		if = {
+			limit = { is_subject = yes }
+			set_country_flag = CAN_SDP_Victory
+		}
+	}
+	
+	option = { #Bill Kardash
+		name = canada_soc.9.c
+		create_country_leader = {
+			name = "Bill Kardash"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Bill_Kardash.png"
+			expire = "1.1.1"
+			ideology = radsoc_communism_subtype
+		}
+		set_party_name = {
+			name = SCC_radsoc_communist_party
+			long_name = SCC_radsoc_communist_party_long
+			ideology = radical_socialist
+		}
+		set_country_flag = CAN_radsocs_are_communists
+		if = {
+			limit = { is_subject = yes }
+			set_country_flag = CAN_RadSoc_CPC_Victory
+		}
+	}
+	
+	option = { #James Litterick
+		name = canada_soc.9.e
+		create_country_leader = {
+			name = "James Litterick"
+			picture = "gfx/leaders/CAN/Portrait_Canada_James_Litterick.png"
+			expire = "1.1.1"
+			ideology = radsoc_communism_subtype
+		}
+		set_party_name = {
+			name = SCC_radsoc_communist_party
+			long_name = SCC_radsoc_communist_party_long
+			ideology = radical_socialist
+		}
+		set_country_flag = CAN_radsocs_are_communists
+		if = {
+			limit = { is_subject = yes }
+			set_country_flag = CAN_RadSoc_CPC_Victory
+		}
+	}
+}
+
+# Leader of the SocDems
+
+country_event = {
+	id = canada_soc.1500
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada_soc.1500" }
+	title = canada_soc.1500.t
+	desc = canada_soc.1500.d
+	picture = GFX_report_event_CAN_ccf_victory
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #J.S. Woodsworth
+		name = canada_soc.10.a
+		trigger = {
+			date > 1942.3.21
+		}
+		remove_all_ministers = yes
+		add_ideas = {
+			CAN_Major_James_Coldwell_hog_sde
+			CAN_Thomas_C_Douglas_for_sde
+			CAN_Clarence_Gillis_eco_sde
+			CAN_Stanley_Knowles_sec_sde
+		}
+		set_politics = {
+			ruling_party = social_democrat
+			elections_allowed = no
+		}
+		
+	}
+	
+	option = { #Major James Coldwell
+		name = canada_soc.10.b
+		remove_all_ministers = yes
+		add_ideas = {
+			CAN_Major_James_Coldwell_hog_sde
+			CAN_Thomas_C_Douglas_for_sde
+			CAN_Clarence_Gillis_eco_sde
+			CAN_Stanley_Knowles_sec_sde
+		}
+		set_politics = {
+			ruling_party = social_democrat
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Major James Coldwell"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Major_James_Coldwell.png"
+			expire = "1.1.1"
+			ideology = socdem_democratic_socialism_subtype
+		}
+	}
+	
+	option = { #Tommy Douglas
+		name = canada_soc.10.c
+		remove_all_ministers = yes
+		add_ideas = {
+			CAN_Major_James_Coldwell_hog_sde
+			CAN_Thomas_C_Douglas_for_sde
+			CAN_Clarence_Gillis_eco_sde
+			CAN_Stanley_Knowles_sec_sde
+		}
+		set_politics = {
+			ruling_party = social_democrat
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Tommy Douglas"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Tommy_Douglas.png"
+			expire = "1.1.1"
+			ideology = socdem_democratic_socialism_subtype
+		}
+	}
+	
+	option = { #William Irvine
+		name = canada_soc.10.e
+		remove_all_ministers = yes
+		add_ideas = {
+			CAN_Major_James_Coldwell_hog_sde
+			CAN_Thomas_C_Douglas_for_sde
+			CAN_Clarence_Gillis_eco_sde
+			CAN_Stanley_Knowles_sec_sde
+		}
+		set_politics = {
+			ruling_party = social_democrat
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "William Irvine"
+			picture = "gfx/leaders/CAN/Portrait_Canada_William_Irvine.png"
+			expire = "1.1.1"
+			ideology = socdem_christian_socialism_subtype
+		}
+	}
+	
+	option = { #William Irvine
+		name = canada_soc.10.f
+		remove_all_ministers = yes
+		add_ideas = {
+			CAN_Major_James_Coldwell_hog_sde
+			CAN_Thomas_C_Douglas_for_sde
+			CAN_Clarence_Gillis_eco_sde
+			CAN_Stanley_Knowles_sec_sde
+		}
+		set_politics = {
+			ruling_party = social_democrat
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Clarence Gillis"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Clarence_Gillis.png"
+			expire = "1.1.1"
+			ideology = socdem_democratic_socialism_subtype
+		}
+	}
+}

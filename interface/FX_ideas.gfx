@@ -855,6 +855,18 @@ spriteTypes = {
         name = "GFX_idea_GFX_revolts"
         texturefile = "gfx/interface/ideas/ideas/revolt.png"
     }
+    spriteType = {
+        name = "GFX_idea_GRE_leonidas_legacy"
+        texturefile = "gfx/interface/ideas/KXX_FX_ideas/GRE/GRE_leonidas_legacy.png"
+    }
+    spriteType = {
+        name = "GFX_idea_GRE_minority"
+        texturefile = "gfx/interface/ideas/KXX_FX_ideas/GRE/GRE_minority.png"
+    }
+    spriteType = {
+        name = "GFX_idea_GRE_anathema"
+        texturefile = "gfx/interface/ideas/KXX_FX_ideas/GRE/GRE_anathema.png"
+    }
 	spriteType = {
         name = "GFX_idea_GRE_army"
         texturefile = "gfx/interface/ideas/KXX_FX_ideas/GRE/GRE_army.png"

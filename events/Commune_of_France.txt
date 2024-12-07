@@ -1432,6 +1432,7 @@ country_event = {
 			ideology = syndicalist
 			popularity = 0.20
 		}
+		
 		hidden_effect = {
 			country_event = {
 				days = 7

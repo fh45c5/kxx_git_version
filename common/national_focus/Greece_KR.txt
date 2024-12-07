@@ -19,7 +19,11 @@ focus_tree = {
 	}
 	default = no
 
+<<<<<<< Updated upstream
 	continuous_focus_position = { x = 2250 y = 5 }
+=======
+	continuous_focus_position = { x = -200 y = 5 }
+>>>>>>> Stashed changes
 
 	################################################################################
 	##############################Table of contents#################################
@@ -2947,7 +2951,7 @@ focus_tree = {
 		prerequisite = { focus = GRE_freethinker }
 		relative_position_id = GRE_freethinker
 		available = {
-				has_government = paternal_autocrat
+			has_government = paternal_autocrat
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_the_meeting"
@@ -3011,8 +3015,10 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus GRE_the_incident"
 			add_manpower = -1
 			set_politics = {
+				ruling_party = paternal_autocrat
 				elections_allowed = no
 			}
+			set_country_flag = GRE_incident
 			set_country_flag = GRE_ready_to_go_byz
 		}
 	}
@@ -4556,7 +4562,9 @@ focus_tree = {
 			}
 		}
 		allow_branch = {
-		
+		NOT = {
+			tag = GRE
+		}
 		}
 		completion_reward = {
 			set_politics = {
@@ -5187,7 +5195,13 @@ focus_tree = {
 			
 				
 				add_ideas = GRE_legacy_leonidas
-			
+			hidden_effect = {
+				country_event = {
+					id = gre.500
+					days = 7
+				}
+				
+			}
 		}
 	}
 	# Theocracy Political Path
@@ -5793,12 +5807,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_the_monarchy
 		}
-		available = {
-			OR = {
-				has_country_leader_ideology = metaxism_subtype
-				has_country_leader_ideology = pataut_metaxism_subtype
-			}
-		}
+		
 		completion_reward = {
 			add_political_power = 50
 			add_ideas = GRE_the_state
@@ -6107,7 +6116,7 @@ focus_tree = {
 			focus = GRE_anti_monarchism
 		}
 		completion_reward = {
-			add_ideas = GRE_george_is_bacc
+			
 			set_temp_variable = {
 				coalition_partner_var = token:paternal_autocrat
 			}
@@ -7539,7 +7548,9 @@ focus_tree = {
 			focus = GRE_employ_ideas_of_the_freethinkers
 			focus = GRE_not_bow_valkist_natpop_demands
 		}
-		completion_reward = { }
+		completion_reward = { 
+			add_stability = 0.15
+		}
 	}
 	#Byzantinists
 	#KAZAKHSTAN GREATEST COUNTRY IN THE WORLD
@@ -8210,14 +8221,7 @@ focus_tree = {
 		relative_position_id = GRE_byz
 		x = 0
 		y = 1
-			available = {
-					OR = {
-							has_government = social_conservative
-							has_government = authoritarian_democrat
-							has_government = paternal_autocrat
-							has_government = national_populist
-						}
-				}
+			
 			available = {
 					NOT = {
 						is_subject = yes
@@ -8272,16 +8276,7 @@ focus_tree = {
 		relative_position_id = GRE_byz
 		x = -2
 		y = 2
-			available = {
-					OR = {
-							has_government = social_conservative
-							has_government = social_liberal
-							has_government = radical_socialist
-							has_government = authoritarian_democrat
-							has_government = paternal_autocrat
-							has_government = national_populist
-						}
-				}
+			
 			available = {
 					NOT = {
 						is_subject = yes
@@ -8367,16 +8362,7 @@ focus_tree = {
 		relative_position_id = GRE_byz
 		x = -3
 		y = 3
-			available = {
-					OR = {
-							has_government = social_conservative
-							has_government = social_liberal
-							has_government = radical_socialist
-							has_government = authoritarian_democrat
-							has_government = paternal_autocrat
-							has_government = national_populist
-						}
-				}
+			
 			available = {
 					NOT = {
 						is_subject = yes
@@ -8407,16 +8393,7 @@ focus_tree = {
 				is_in_faction = yes
 			}
 		}
-			available = {
-					OR = {
-							has_government = social_conservative
-							has_government = social_liberal
-							has_government = radical_socialist
-							has_government = authoritarian_democrat
-							has_government = paternal_autocrat
-							has_government = national_populist
-						}
-				}
+			
 			available = {
 					NOT = {
 						is_subject = yes
@@ -8448,14 +8425,7 @@ focus_tree = {
 		x = 2
 		y = 2
 			available = {
-					OR = {
-							has_government = social_conservative
-							has_government = social_liberal
-							has_government = radical_socialist
-							has_government = authoritarian_democrat
-							has_government = paternal_autocrat
-							has_government = national_populist
-						}
+					 
 				}
 			available = {
 					NOT = {
@@ -8487,16 +8457,7 @@ focus_tree = {
 		relative_position_id = GRE_byz
 		x = 0
 		y = 3
-			available = {
-					OR = {
-							has_government = social_conservative
-							has_government = social_liberal
-							has_government = radical_socialist
-							has_government = authoritarian_democrat
-							has_government = paternal_autocrat
-							has_government = national_populist
-						}
-				}
+			
 			available = {
 					NOT = {
 						is_subject = yes
@@ -8535,14 +8496,7 @@ focus_tree = {
 		x = 0
 		y = 4
 			available = {
-					OR = {
-							has_government = social_conservative
-							has_government = social_liberal
-							has_government = radical_socialist
-							has_government = authoritarian_democrat
-							has_government = paternal_autocrat
-							has_government = national_populist
-						}
+				
 					owns_state = 773
 					owns_state = 49
 					owns_state = 341
@@ -8607,14 +8561,7 @@ focus_tree = {
 		x = 3
 		y = 3
 			available = {
-					OR = {
-							has_government = social_conservative
-							has_government = social_liberal
-							has_government = radical_socialist
-							has_government = authoritarian_democrat
-							has_government = paternal_autocrat
-							has_government = national_populist
-						}
+					 
 				}
 			available = {
 					NOT = {
@@ -8640,16 +8587,7 @@ focus_tree = {
 		relative_position_id = GRE_purple_pheonix
 		x = -1
 		y = 1
-			available = {
-					OR = {
-							has_government = social_conservative
-							has_government = social_liberal
-							has_government = radical_socialist
-							has_government = authoritarian_democrat
-							has_government = paternal_autocrat
-							has_government = national_populist
-						}
-				}
+			
 			available = {
 					NOT = {
 						is_subject = yes
@@ -8726,16 +8664,7 @@ focus_tree = {
 		relative_position_id = GRE_purple_pheonix
 		x = 1
 		y = 1
-			available = {
-					OR = {
-							has_government = social_conservative
-							has_government = social_liberal
-							has_government = radical_socialist
-							has_government = authoritarian_democrat
-							has_government = paternal_autocrat
-							has_government = national_populist
-						}
-				}
+			
 			available = {
 					NOT = {
 						is_subject = yes
@@ -8787,14 +8716,7 @@ focus_tree = {
 		x = -3
 		y = 1
 			available = {
-					OR = {
-							has_government = social_conservative
-							has_government = social_liberal
-							has_government = radical_socialist
-							has_government = authoritarian_democrat
-							has_government = paternal_autocrat
-							has_government = national_populist
-						}
+					 
 				}
 			available = {
 					NOT = {
@@ -8854,16 +8776,7 @@ focus_tree = {
 		relative_position_id = GRE_purple_pheonix
 		x = 3
 		y = 1
-			available = {
-					OR = {
-							has_government = social_conservative
-							has_government = social_liberal
-							has_government = radical_socialist
-							has_government = authoritarian_democrat
-							has_government = paternal_autocrat
-							has_government = national_populist
-						}
-				}
+			
 			available = {
 					NOT = {
 						is_subject = yes
@@ -8914,17 +8827,7 @@ focus_tree = {
 		relative_position_id = GRE_purple_pheonix
 		x = 0
 		y = 2
-			available = {
-					OR = {
-							has_government = social_conservative
-							has_government = social_liberal
-							has_government = radical_socialist
-							has_government = authoritarian_democrat
-							has_government = paternal_autocrat
-							has_government = national_populist
-							has_government = social_democrat
-						}
-				}
+			
 			available = {
 					NOT = {
 						is_subject = yes
@@ -8953,11 +8856,7 @@ focus_tree = {
 		x = -3
 		y = 1
 			available = {
-				OR ={
-							has_government = social_democrat
-							has_government = radical_socialist
-							has_government = syndicalist
-					}
+			
 				has_country_flag = GRE_gommies_win
 				}
 			available = {
@@ -8984,13 +8883,7 @@ focus_tree = {
 		relative_position_id = GRE_byz_gommie
 		x = -1
 		y = 1
-		available = {
-			OR ={
-						has_government = radical_socialist
-						has_government = syndicalist
-						has_government = social_democrat
-			}
-			}
+		
 			available = {
 					NOT = {
 						is_subject = yes
@@ -9032,13 +8925,7 @@ focus_tree = {
 		relative_position_id = GRE_byz_gommie
 		x = -1
 		y = 2
-		available = {
-			OR ={
-						has_government = radical_socialist
-						has_government = syndicalist
-						has_government = social_democrat
-			}
-			}
+		
 			available = {
 					NOT = {
 						is_subject = yes
@@ -9068,13 +8955,7 @@ focus_tree = {
 		relative_position_id = GRE_byz_gommie
 		x = 1
 		y = 1
-		available = {
-			OR ={
-						has_government = radical_socialist
-						has_government = syndicalist
-						has_government = social_democrat
-			}
-			}
+		
 			available = {
 					NOT = {
 						is_subject = yes
@@ -9098,13 +8979,7 @@ focus_tree = {
 		relative_position_id = GRE_byz_gommie
 		x = 1
 		y = 2
-		available = {
-			OR ={
-						has_government = radical_socialist
-						has_government = syndicalist
-						has_government = social_democrat
-			}
-			}
+		
 			available = {
 					NOT = {
 						is_subject = yes
@@ -9206,15 +9081,7 @@ focus_tree = {
 		x = 3
 		y = 1
 			available = {
-				OR = {
-				has_government = social_democrat
-				has_government = social_conservative
-				has_government = market_liberal
-				has_government = social_liberal
-				has_government = authoritarian_democrat
-				has_government = paternal_autocrat
-				has_government = national_populist
-					}
+			
 				has_country_flag = GRE_greeks_win
 				}
 			available = {
@@ -9240,17 +9107,7 @@ focus_tree = {
 		relative_position_id = GRE_byz_nationalist
 		x = 1
 		y = 1
-		available = {
-			OR = {
-			has_government = social_conservative
-			has_government = social_liberal
-			has_government = market_liberal
-			has_government = authoritarian_democrat
-			has_government = paternal_autocrat
-			has_government = social_democrat
-			has_government = national_populist
-			}
-			}
+		
 			available = {
 					NOT = {
 						is_subject = yes
@@ -9274,17 +9131,7 @@ focus_tree = {
 		relative_position_id = GRE_byz_nationalist
 		x = -1
 		y = 1
-		available = {
-			OR = {
-			has_government = social_conservative
-			has_government = social_liberal
-			has_government = market_liberal
-			has_government = authoritarian_democrat
-			has_government = paternal_autocrat
-			has_government = social_democrat
-			has_government = national_populist
-			}
-			}
+		
 			available = {
 					NOT = {
 						is_subject = yes
@@ -9314,17 +9161,7 @@ focus_tree = {
 		relative_position_id = GRE_byz_nationalist
 		x = -1
 		y = 2
-		available = {
-			OR = {
-			has_government = social_conservative
-			has_government = social_liberal
-			has_government = market_liberal
-			has_government = authoritarian_democrat
-			has_government = paternal_autocrat
-			has_government = national_populist
-			has_government = social_democrat
-			}
-			}
+		
 			available = {
 					NOT = {
 						is_subject = yes
@@ -9383,17 +9220,7 @@ focus_tree = {
 		relative_position_id = GRE_byz_nationalist
 		x = 1
 		y = 2
-		available = {
-			OR = {
-			has_government = social_conservative
-			has_government = social_liberal
-			has_government = market_liberal
-			has_government = authoritarian_democrat
-			has_government = paternal_autocrat
-			has_government = national_populist
-			has_government = social_democrat
-			}
-			}
+		
 			available = {
 					NOT = {
 						is_subject = yes
@@ -9418,17 +9245,7 @@ focus_tree = {
 		relative_position_id = GRE_byz_nationalist
 		x = 0
 		y = 3
-		available = {
-			OR = {
-			has_government = social_conservative
-			has_government = social_liberal
-			has_government = market_liberal
-			has_government = authoritarian_democrat
-			has_government = paternal_autocrat
-			has_government = national_populist
-			has_government = social_democrat
-			}
-			}
+		
 			available = {
 					NOT = {
 						is_subject = yes
@@ -10144,9 +9961,7 @@ focus_tree = {
 		cost = 5
 		x = 3
 		y = 1
-		available = {
-			has_cosmetic_tag = BYZ
-		}
+		
 		prerequisite = {
 			focus = GRE_the_onassis_initiative focus = GRE_the_pyrkal_deal
 		}

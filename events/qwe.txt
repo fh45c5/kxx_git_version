@@ -2835,6 +2835,7 @@ country_event = { #库班苏维埃
 		KUB = {
 			NOT = { country_exists = RUS }
 			owns_state = 219
+			NOT = { has_completed_focus = KUB_we_are_scythians }
 		}
 	}
 
