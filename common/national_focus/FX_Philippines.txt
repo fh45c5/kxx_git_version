@@ -1648,7 +1648,7 @@ focus_tree = {
 		 cost = 4
 		available = {
 			has_capitulated = no
-			has_government = radical_socialist
+			has_socialist_government = yes
 		}
 		prerequisite = { focus = PHI_secure_our_control }
 		relative_position_id = PHI_secure_our_control
@@ -1670,7 +1670,7 @@ focus_tree = {
 		 cost = 4
 		available = {
 			has_capitulated = no
-			has_government = radical_socialist
+			has_socialist_government = yes
 		}
 		prerequisite = { focus = PHI_secure_our_control }
 		relative_position_id = PHI_secure_our_control
@@ -1697,7 +1697,7 @@ focus_tree = {
 		 cost = 4
 		available = {
 			has_capitulated = no
-			has_government = radical_socialist
+			has_socialist_government = yes
 		}
 		prerequisite = { focus = PHI_nationalize_the_haciendas }
 		relative_position_id = PHI_nationalize_the_haciendas
@@ -1718,7 +1718,7 @@ focus_tree = {
 		 cost = 4
 		available = {
 			has_capitulated = no
-			has_government = radical_socialist
+			has_socialist_government = yes
 		}
 		prerequisite = { focus = PHI_christian_socialism }
 		relative_position_id = PHI_christian_socialism
@@ -1739,7 +1739,7 @@ focus_tree = {
 		 cost = 4
 		available = {
 			has_capitulated = no
-			has_government = radical_socialist
+			has_socialist_government = yes
 		}
 		prerequisite = { focus = PHI_christian_socialism }
 		relative_position_id = PHI_christian_socialism
@@ -1761,7 +1761,7 @@ focus_tree = {
 		 cost = 4
 		available = {
 			has_capitulated = no
-			has_government = radical_socialist
+			has_socialist_government = yes
 		}
 		prerequisite = { focus = PHI_establish_philhealth }
 		prerequisite = { focus = PHI_nationwide_social_security }
@@ -1786,7 +1786,7 @@ focus_tree = {
 		 cost = 4
 		available = {
 			has_capitulated = no
-			has_government = radical_socialist
+			has_socialist_government = yes
 		}
 		prerequisite = { focus = PHI_nationalize_the_haciendas }
 		relative_position_id = PHI_nationalize_the_haciendas
@@ -1807,7 +1807,7 @@ focus_tree = {
 		 cost = 4
 		available = {
 			has_capitulated = no
-			has_government = radical_socialist
+			has_socialist_government = yes
 		}
 		prerequisite = { focus = PHI_nationalize_the_haciendas }
 		relative_position_id = PHI_nationalize_the_haciendas
@@ -1879,7 +1879,7 @@ focus_tree = {
 		 cost = 4
 		available = {
 			has_capitulated = no
-			has_government = radical_socialist
+			has_socialist_government = yes
 		}
 		prerequisite = { focus = PHI_publicly_owned_enterprise }
 		relative_position_id = PHI_publicly_owned_enterprise
@@ -1901,7 +1901,7 @@ focus_tree = {
 		 cost = 4
 		available = {
 			has_capitulated = no
-			has_government = radical_socialist
+			has_socialist_government = yes
 		}
 		prerequisite = { focus = PHI_publicly_owned_enterprise }
 		relative_position_id = PHI_publicly_owned_enterprise
@@ -1923,7 +1923,7 @@ focus_tree = {
 		 cost = 4
 		available = {
 			has_capitulated = no
-			has_government = radical_socialist
+			has_socialist_government = yes
 		}
 		prerequisite = { focus = PHI_communal_farms }
 		prerequisite = { focus = PHI_townhall_democracy }
