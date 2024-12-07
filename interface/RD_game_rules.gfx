@@ -205,4 +205,86 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_TAI"
+		texturefile = "gfx/flags/small/TWI_AN.tga"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_TWI_SEEDIQ"
+		texturefile = "gfx/flags/small/TWI_SEEDIQ.tga"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_TWI_soclib"
+		texturefile = "gfx/flags/small/TAI_REPUBLIC.tga"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_TAI_CNT"
+		texturefile = "gfx/flags/small/TAI_CNT.tga"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_TWI_YULUNANA"
+		texturefile = "gfx/flags/small/TWI_YULUNANA.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_TWI_FORMOSA"
+		texturefile = "gfx/flags/small/TWI_FORMOSA.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_TAI_tan_accelerationism"
+		texturefile = "gfx/flags/small/TAI_tan_accelerationism.tga"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_TWI_radsoc"
+		texturefile = "gfx/flags/small/TAI_REPUBLIC_radical_socialist.tga"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_TAI_AGRARIAN"
+		texturefile = "gfx/flags/small/TAI_AGRARIAN.tga"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_TWI_syn"
+		texturefile = "gfx/flags/small/TAI_COMMUNIST_syndicalist.tga"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_TWI_tot"
+		texturefile = "gfx/flags/small/TAI_COMMUNIST_totalist.tga"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_TAI_CUONGDE"
+		texturefile = "gfx/flags/small/TAI_CUONGDE.tga"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_TAI_XIONGZHENG"
+		texturefile = "gfx/flags/small/TAI_XIONGZHENG.tga"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_TAI_MIN"
+		texturefile = "gfx/flags/small/TAI_MIN.tga"
+		legacy_lazy_load = no
+	}
+
 	}

@@ -750,4 +750,175 @@ FRA_after_deat= {
 	}
 }
 
+TAI_path = {
+	name = TAI_PATH
+	group = RULE_GROUP_KAISERREICH_RULES_EAST_ASIA
+	default = {
+		name = DEFAULT
+		text = RULE_OPTION_TAI_PATH
+		desc = RULE_OPTION_TAI_PATH_DESC
+		allow_achievements = yes
+	}
+
+	option = {
+		name = TAI_PATH_JAPAN
+		text = RULE_OPTION_TAI_PATH_JAPAN
+		desc = RULE_OPTION_TAI_PATH_JAPAN_DESC
+		allow_achievements = yes
+	}
+	
+	option = {
+		name = TAI_PATH_NATIVE
+		text = RULE_OPTION_TAI_PATH_NATIVE
+		desc = RULE_OPTION_TAI_PATH_NATIVE_DESC
+		allow_achievements = yes
+	}
+	
+	option = {
+		name = TAI_PATH_RED
+		text = RULE_OPTION_TAI_PATH_RED
+		desc = RULE_OPTION_TAI_PATH_RED_DESC
+		allow_achievements = yes
+	}
+
+	option = {
+		name = TAI_PATH_ANARCHY
+		text = RULE_OPTION_TAI_PATH_ANARCHY
+		desc = RULE_OPTION_TAI_PATH_ANARCHY_DESC
+		allow_achievements = yes
+	}
+}
+
+TAI_wushe = {
+	name = TAI_WUSHE
+	group = RULE_GROUP_KAISERREICH_RULES_EAST_ASIA
+	default = {
+		name = DEFAULT
+		text = RULE_OPTION_TAI_WUSHE
+		desc = RULE_OPTION_TAI_WUSHE_DESC
+		allow_achievements = yes
+	}
+
+	option = {
+		name = TAI_WUSHE_SEEDIQ
+		text = RULE_OPTION_TAI_WUSHE_SEEDIQ
+		desc = RULE_OPTION_TAI_WUSHE_SEEDIQ_DESC
+		allow_achievements = yes
+	}
+	
+	option = {
+		name = TAI_WUSHE_DEMO
+		text = RULE_OPTION_TAI_WUSHE_DEMO
+		desc = RULE_OPTION_TAI_WUSHE_DEMO_DESC
+		allow_achievements = yes
+	}
+	
+	option = {
+		name = TAI_WUSHE_AUTO
+		text = RULE_OPTION_TAI_WUSHE_AUTO
+		desc = RULE_OPTION_TAI_WUSHE_AUTO_DESC
+		allow_achievements = yes
+	}
+
+	option = {
+		name = TAI_WUSHE_CHENGBO
+		text = RULE_OPTION_TAI_WUSHE_CHENGBO
+		desc = RULE_OPTION_TAI_WUSHE_CHENGBO_DESC
+		allow_achievements = yes
+	}
+}
+
+TAI_second_wushe = {
+	name = TAI_SECOND_WUSHE
+	group = RULE_GROUP_KAISERREICH_RULES_EAST_ASIA
+	default = {
+		name = DEFAULT
+		text = RULE_OPTION_TAI_SECOND_WUSHE
+		desc = RULE_OPTION_TAI_SECOND_WUSHE_DESC
+		allow_achievements = yes
+	}
+	
+	option = {
+		name = TAI_SECOND_WUSHE_LIN
+		text = RULE_OPTION_TAI_SECOND_WUSHE_LIN
+		desc = RULE_OPTION_TAI_SECOND_WUSHE_LIN_DESC
+		allow_achievements = yes
+	}
+	
+	option = {
+		name = TAI_SECOND_WUSHE_JIANG
+		text = RULE_OPTION_TAI_SECOND_WUSHE_JIANG
+		desc = RULE_OPTION_TAI_SECOND_WUSHE_JIANG_DESC
+		allow_achievements = yes
+	}
+	
+	option = {
+		name = TAI_SECOND_WUSHE_JIAN
+		text = RULE_OPTION_TAI_SECOND_WUSHE_JIAN
+		desc = RULE_OPTION_TAI_SECOND_WUSHE_JIAN_DESC
+		allow_achievements = yes
+	}
+
+	option = {
+		name = TAI_SECOND_WUSHE_XIE
+		text = RULE_OPTION_TAI_SECOND_WUSHE_XIE
+		desc = RULE_OPTION_TAI_SECOND_WUSHE_XIE_DESC
+		allow_achievements = yes
+	}
+
+	option = {
+		name = TAI_SECOND_WUSHE_LIAN
+		text = RULE_OPTION_TAI_SECOND_WUSHE_LIAN
+		desc = RULE_OPTION_TAI_SECOND_WUSHE_LIAN_DESC
+		allow_achievements = yes
+	}
+}
+
+TAI_japan = {
+	name = TAI_JAPAN
+	group = RULE_GROUP_KAISERREICH_RULES_EAST_ASIA
+	default = {
+		name = DEFAULT
+		text = RULE_OPTION_TAI_JAPAN
+		desc = RULE_OPTION_TAI_JAPAN_DESC
+		allow_achievements = yes
+	}
+
+	option = {
+		name = TAI_JAPAN_ANDO
+		text = RULE_OPTION_TAI_JAPAN_ANDO
+		desc = RULE_OPTION_TAI_JAPAN_ANDO_DESC
+		allow_achievements = yes
+	}
+	
+	option = {
+		name = TAI_JAPAN_JAPAN
+		text = RULE_OPTION_TAI_JAPAN_JAPAN
+		desc = RULE_OPTION_TAI_JAPAN_JAPAN_DESC
+		allow_achievements = yes
+	}
+	
+	option = {
+		name = TAI_JAPAN_VIET
+		text = RULE_OPTION_TAI_JAPAN_VIET
+		desc = RULE_OPTION_TAI_JAPAN_VIET_DESC
+		allow_achievements = yes
+	}
+
+	option = {
+		name = TAI_JAPAN_LIN
+		text = RULE_OPTION_TAI_JAPAN_LIN
+		desc = RULE_OPTION_TAI_JAPAN_LIN_DESC
+		allow_achievements = yes
+	}
+
+	option = {
+		name = TAI_JAPAN_MING
+		text = RULE_OPTION_TAI_JAPAN_MING
+		desc = RULE_OPTION_TAI_JAPAN_MING_DESC
+		allow_achievements = yes
+	}
+
+}
+
 

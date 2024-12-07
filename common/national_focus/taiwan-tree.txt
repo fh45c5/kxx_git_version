@@ -6339,8 +6339,15 @@ focus_tree = {
 		y = 10
 		cost = 3
 		ai_will_do = {
-			factor = 20
+			factor = 0
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = TAI_japan
+					option = TAI_JAPAN_MING
+				}
 			}
+		}
 		completion_reward = {
 			add_ideas = Taiwan_stillindependence
 			add_manpower = -1000

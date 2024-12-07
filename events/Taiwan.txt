@@ -189,6 +189,16 @@ country_event = { #Encirlement of the Wushe Rebels
 
 	option = { #Encirle Them
 	name = taiwan.5.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = TAI_path
+					option = TAI_PATH_NATIVE
+				}
+			}
+		}
 		add_stability = 0.1
 		add_to_variable = {
 					var = JAP_TWI_INT
@@ -203,6 +213,22 @@ country_event = { #Encirlement of the Wushe Rebels
 	}
 	option = { #Leave Them Be
 	name = taiwan.5.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = TAI_path
+						option = TAI_PATH_RED
+					}
+					has_game_rule = {
+						rule = TAI_path
+						option = TAI_PATH_JAPAN
+					}
+				}
+			}
+		}
 		add_stability = -0.1
 		add_to_variable = {
 					var = JAP_TWI_INT
@@ -291,6 +317,16 @@ country_event = { #Success of the Wushe Rebellion
 	
 	option = { #Leave Them Be
 	name = taiwan.8.a
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = TAI_wushe
+					option = TAI_WUSHE_SEEDIQ
+				}
+			}
+		}
 		complete_national_focus = TWI_seediq_takeover
 		set_politics = { ruling_party = national_populist }
 		add_popularity = {
@@ -313,6 +349,22 @@ country_event = { #Success of the Wushe Rebellion
 	option = { #Leave Them Be
 	name = taiwan.8.b
 		complete_national_focus = TWI_birth_of_a_native_republic
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 10000
+				OR = {
+					has_game_rule = {
+						rule = TAI_wushe
+						option = TAI_WUSHE_AUTO
+					}
+					has_game_rule = {
+						rule = TAI_wushe
+						option = TAI_WUSHE_DEMO
+					}
+				}
+			}
+		}
 		country_event = taiwan.9
 		JAP = {
 		end_puppet = TAI
@@ -321,6 +373,16 @@ country_event = { #Success of the Wushe Rebellion
 	}
 	option = {
 		name = taiwan.8.c
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = TAI_wushe
+					option = TAI_WUSHE_CHENGBO
+				}
+			}
+		}
 		set_country_flag = chenchengbo
 		complete_national_focus = TAI_penspencilstreatise
 		JAP = {
@@ -351,6 +413,16 @@ country_event = { #Choosing a Republican Leader
 	
 	option = { #Leave Them Be
 	name = taiwan.9.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = TAI_wushe
+					option = TAI_WUSHE_AUTO
+				}
+			}
+		}
 		set_politics = { ruling_party = paternal_autocrat }
 		add_popularity = {
 		ideology = paternal_autocrat
@@ -375,6 +447,16 @@ country_event = { #Choosing a Republican Leader
 	}
 	option = { #Leave Them Be
 	name = taiwan.9.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = TAI_wushe
+					option = TAI_WUSHE_DEMO
+				}
+			}
+		}
 	complete_national_focus = TWI_a_democratic_republic
 		set_politics = { ruling_party = social_liberal }
 		add_popularity = {
@@ -446,6 +528,22 @@ country_event = { #The Taiwanese United Front Comes Together
 	
 	option = { #Go With TPP
 	name = taiwan.11.a
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 10000
+				OR = {
+					has_game_rule = {
+						rule = TAI_second_wushe
+						option = TAI_SECOND_WUSHE_LIN
+					}
+					has_game_rule = {
+						rule = TAI_second_wushe
+						option = TAI_SECOND_WUSHE_JIANG
+					}
+				}
+			}
+		}
 		set_politics = { ruling_party = social_democrat }
 		add_popularity = {
 		ideology = social_democrat
@@ -477,6 +575,16 @@ country_event = { #The Taiwanese United Front Comes Together
 	}
 	option = { #Jian Ji
 	name = taiwan.11.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = TAI_second_wushe
+					option = TAI_SECOND_WUSHE_JIAN
+				}
+			}
+		}
 		set_politics = { ruling_party = radical_socialist }
 		set_country_flag = RD_commies_love_each_other
 		add_popularity = {
@@ -506,6 +614,22 @@ country_event = { #The Taiwanese United Front Comes Together
 	
 	option = { #TCP
 	name = taiwan.11.c
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 10000
+				OR = {
+					has_game_rule = {
+						rule = TAI_second_wushe
+						option = TAI_SECOND_WUSHE_XIE
+					}
+					has_game_rule = {
+						rule = TAI_second_wushe
+						option = TAI_SECOND_WUSHE_LIAN
+					}
+				}
+			}
+		}
 		set_politics = { ruling_party = totalist }
 		add_popularity = {
 		ideology = totalist
@@ -547,6 +671,16 @@ country_event = { #Meeting to the First National TCP Congress
 	
 	option = { #Xuehong
 	name = taiwan.12.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = TAI_second_wushe
+					option = TAI_SECOND_WUSHE_XIE
+				}
+			}
+		}
 		complete_national_focus = TAISOC_xuehong_stays_the_course
 		add_popularity = {
 		ideology = totalist
@@ -563,6 +697,16 @@ country_event = { #Meeting to the First National TCP Congress
 	}
 	option = { #Syndicalist
 	name = taiwan.12.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = TAI_second_wushe
+					option = TAI_SECOND_WUSHE_LIAN
+				}
+			}
+		}
 		complete_national_focus = TAISOC_syndicalist_primacy
 		set_politics = { ruling_party = syndicalist }
 		add_popularity = {
@@ -674,6 +818,16 @@ country_event = { #Choosing a Republican Leader
 	
 	option = { #SocLib
 	name = taiwan.14.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = TAI_second_wushe
+					option = TAI_SECOND_WUSHE_LIN
+				}
+			}
+		}
 		set_politics = { ruling_party = social_liberal }
 		complete_national_focus = TAISOC_linxiantangsrepublicangamble
 		add_popularity = {
@@ -690,6 +844,16 @@ country_event = { #Choosing a Republican Leader
 	}
 	option = { #Socdem - Xiantang
 	name = taiwan.14.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = TAI_second_wushe
+					option = TAI_SECOND_WUSHE_LIN
+				}
+			}
+		}
 	complete_national_focus = TAISOC_linxiantangsrepublicangamble
 		set_politics = { ruling_party = social_democrat }
 		add_popularity = {
@@ -706,6 +870,16 @@ country_event = { #Choosing a Republican Leader
 	
 	option = { #radsoc
 	name = taiwan.14.c
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = TAI_second_wushe
+					option = TAI_SECOND_WUSHE_JIANG
+				}
+			}
+		}
 		complete_national_focus = TAISOC_supporter_of_the_workers
 		set_politics = { ruling_party = radical_socialist }
 		add_popularity = {
@@ -728,6 +902,16 @@ country_event = { #Choosing a Republican Leader
 	}
 	option = { #Socdem - Weishi
 	name = taiwan.14.d
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = TAI_second_wushe
+					option = TAI_SECOND_WUSHE_JIANG
+				}
+			}
+		}
 		complete_national_focus = TAISOC_supporter_of_the_workers
 		set_politics = { ruling_party = social_democrat }
 		add_popularity = {
@@ -860,6 +1044,22 @@ country_event = { #Battle of Mountain Yushan
 	
 	option = { #Fuckin Hell
 	name = taiwan.19.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = TAI_path
+						option = TAI_PATH_NATIVE
+					}
+					has_game_rule = {
+						rule = TAI_path
+						option = TAI_PATH_JAPAN
+					}
+				}
+			}
+		}
 		add_to_variable  = {
 			var = TAI_JAP_REVOLT
 			value = 1
@@ -873,6 +1073,16 @@ country_event = { #Battle of Mountain Yushan
 	
 	option = { #Fuckin Hell
 	name = taiwan.19.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = TAI_path
+					option = TAI_PATH_RED
+				}
+			}
+		}
 		country_event = {
 		id = taiwan.20
 		days = 7
@@ -897,6 +1107,22 @@ country_event = { #Battle of Yilan
 	
 	option = { #Fuckin Hell
 	name = taiwan.20.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = TAI_path
+						option = TAI_PATH_NATIVE
+					}
+					has_game_rule = {
+						rule = TAI_path
+						option = TAI_PATH_JAPAN
+					}
+				}
+			}
+		}
 		add_to_variable  = {
 			var = TAI_JAP_REVOLT
 			value = 1
@@ -910,6 +1136,16 @@ country_event = { #Battle of Yilan
 	
 	option = { #Fuckin Hell
 	name = taiwan.20.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = TAI_path
+					option = TAI_PATH_RED
+				}
+			}
+		}
 		country_event = {
 		id = taiwan.21
 		days = 7
@@ -932,6 +1168,22 @@ country_event = { #Battle of Taipei
 	
 	option = { #Fuckin Hell
 	name = taiwan.21.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = TAI_path
+						option = TAI_PATH_NATIVE
+					}
+					has_game_rule = {
+						rule = TAI_path
+						option = TAI_PATH_JAPAN
+					}
+				}
+			}
+		}
 		add_to_variable  = {
 			var = TAI_JAP_REVOLT
 			value = 1
@@ -959,6 +1211,16 @@ country_event = { #Battle of Taipei
 	
 	option = { #Fuckin Hell
 	name = taiwan.21.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = TAI_path
+					option = TAI_PATH_RED
+				}
+			}
+		}
 		if = {
 			limit = {
 				OR = {
@@ -1060,6 +1322,16 @@ country_event = { #Restoring the Imperial Throne
 	
 	option = { #Fuckin Hell
 	name = taiwan.23.a
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = TAI_japan
+					option = TAI_JAPAN_JAPAN
+				}
+			}
+		}
 		set_politics = { ruling_party = paternal_autocrat }
 		set_cosmetic_tag = TAI_JAPAN_EMPIRE
 		add_popularity = {
@@ -1079,6 +1351,16 @@ country_event = { #Restoring the Imperial Throne
 	
 	option = { #Fuckin Hell
 	name = taiwan.23.b
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = TAI_japan
+					option = TAI_JAPAN_JAPAN
+				}
+			}
+		}
 		set_politics = { ruling_party = national_populist }
 		set_cosmetic_tag = TAI_JAPAN_EMPIRE
 		set_party_name = {
@@ -1123,6 +1405,16 @@ country_event = { #Restoring the Imperial Throne
 			}
 		}
 	}
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = TAI_japan
+					option = TAI_JAPAN_VIET
+				}
+			}
+		}
 		set_politics = { ruling_party = national_populist }
 		set_party_name = {
 			ideology = national_populist
@@ -1169,6 +1461,30 @@ country_event = { #Electing the New Governor
 	is_triggered_only = yes
 	option = { #Fuckin Hell
 	name = taiwan.24.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				OR = {
+					has_game_rule = {
+						rule = TAI_japan
+						option = TAI_JAPAN_ANDO
+					}
+					has_game_rule = {
+						rule = TAI_japan
+						option = TAI_JAPAN_JAPAN
+					}
+					has_game_rule = {
+						rule = TAI_japan
+						option = TAI_JAPAN_VIET
+					}
+					has_game_rule = {
+						rule = TAI_japan
+						option = TAI_JAPAN_MING
+					}
+				}
+			}
+		}
 		set_politics = { ruling_party = paternal_autocrat }
 		add_popularity = {
 		ideology = paternal_autocrat
@@ -1194,6 +1510,16 @@ country_event = { #Electing the New Governor
 	
 	option = { #Fuckin Hell
 	name = taiwan.24.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10000
+				has_game_rule = {
+					rule = TAI_japan
+					option = TAI_JAPAN_LIN
+				}
+			}
+		}
 		set_politics = { ruling_party = authoritarian_democrat }
 		add_popularity = {
 		ideology = authoritarian_democrat
@@ -1201,7 +1527,7 @@ country_event = { #Electing the New Governor
 		}
 		complete_national_focus = TAIMON_aligning_the_taiwanese_business_men
 		create_country_leader = {
-				name = "林雄征"
+				name = "林熊征"
 				desc = ""
 				picture = "gfx/leaders/TWI/TAI_portrait_lin_xiongzheng.png"
 				expire = "1965.1.1"
@@ -2014,6 +2340,13 @@ country_event = {
 		name = "tai.32.a"
 		ai_chance = {
 			factor = 100
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = TAI_path
+					option = TAI_PATH_ANARCHY
+				}
+			}
 		}
 		add_political_power = -50
 	}
@@ -2021,6 +2354,13 @@ country_event = {
 		name = "tai.32.b"
 		ai_chance = {
 			factor = 0
+			modifier = {
+				factor = 100
+				has_game_rule = {
+					rule = TAI_path
+					option = TAI_PATH_ANARCHY
+				}
+			}
 		}
 		set_cosmetic_tag = TAI_CNT
 		hidden_effect = {
@@ -2047,3 +2387,4 @@ country_event = {
 	set_politics = { ruling_party = radical_socialist elections_allowed = no }
 	}
 	}
+}
