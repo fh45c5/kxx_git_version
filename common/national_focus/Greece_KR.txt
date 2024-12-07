@@ -7348,9 +7348,6 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_the_royalists_succeed
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
 		completion_reward = {
 			add_popularity = {
 				ideology = var:current_party_ideology_group
@@ -7384,9 +7381,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_purge_remaining_venizelists
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			add_ideas = GRE_condemned_nationalists
 		}
@@ -7400,9 +7395,6 @@ focus_tree = {
 		relative_position_id = GRE_purge_remaining_venizelists
 		prerequisite = {
 			focus = GRE_purge_remaining_venizelists
-		}
-		available = {
-			has_government = authoritarian_democrat
 		}
 		completion_reward = {
 			add_ideas = GRE_moves_against_republicans
@@ -7418,9 +7410,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_take_a_firm_stance_against_republicans
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		prerequisite = {
 			focus = GRE_condemn_nationalist_rabble
 		}
@@ -7442,9 +7432,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_end_the_national_schism
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			country_event = gre.93
 		}
@@ -7463,9 +7451,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_the_question_of_the_royal_succession
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			add_popularity = {
 				ideology = var:current_party_ideology_group
@@ -7501,9 +7487,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_the_question_of_the_royal_succession
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			GRE_Ioannis_Michail_Metaxas = {
 				remove_all_country_leader_roles = yes
@@ -7593,9 +7577,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_byzantinists_succeed
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			increase_ruling_party_popularity_by_10 = yes
 			add_stability = 0.1
@@ -7611,9 +7593,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_secure_the_succession
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			add_political_power = 100
 			add_stability = 0.2
@@ -7629,9 +7609,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_a_personal_union
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			custom_effect_tooltip = GRE_propagade_culture_revival_tt
 			add_ideas = GRE_propaganda
@@ -7647,9 +7625,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_propagade_byzantine_culture_revival
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			set_country_leader_name = {
 				name = "Aftokrátor Loukás IV' Palaiológos of the Hellenes"
@@ -7671,9 +7647,7 @@ focus_tree = {
 			focus = GRE_byzantinists_succeed
 			focus = GRE_the_mainstream_royalists_glucksburg
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			add_ideas = GRE_greek_culture
 		}
@@ -7689,9 +7663,7 @@ focus_tree = {
 			focus = GRE_byzantinists_succeed
 			focus = GRE_the_mainstream_royalists_glucksburg
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			add_ideas = GRE_orthodoxy
 		}
@@ -7706,9 +7678,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_the_greek_culture
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		prerequisite = {
 			focus = GRE_the_orthodox_religion
 		}
@@ -7727,9 +7697,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_education_reform_byz
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			add_stability = 0.05
 			add_political_power = 200
@@ -7748,9 +7716,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = GRE_rule_with_an_iron_fist
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = { 
 			add_political_power = 100
 		}
@@ -7765,9 +7731,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_the_divine_mediator
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		mutually_exclusive = {
 			focus = GRE_rule_with_a_velvet_glove
 		}
@@ -7786,9 +7750,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_establish_a_personality_cult
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			add_ideas = GRE_technocracy
 		}
@@ -7806,9 +7768,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_rule_with_a_velvet_glove
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			increase_ruling_party_popularity_by_15 = yes
 		}
@@ -7826,9 +7786,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_rule_with_an_iron_fist
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			add_war_support = 0.2
 		}
@@ -7871,9 +7829,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_the_mainstream_royalists_glucksburg
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			add_political_power = 100
 			increase_ruling_party_popularity_by_15 = yes
@@ -7909,9 +7865,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_fund_royalist_youth
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			add_two_random_civilian_factories = yes
 		}
@@ -7941,9 +7895,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GRE_polish_image_monarchy
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			add_ideas = GRE_militarist
 		}
@@ -7963,9 +7915,7 @@ focus_tree = {
 			focus = GRE_a_militaristic_byzantium
 			focus = GRE_a_technocratic_byzantium
 		}
-		available = {
-			has_government = authoritarian_democrat
-		}
+
 		completion_reward = {
 			add_stability = 0.05	
 			increase_ruling_party_popularity_by_10 = yes		
