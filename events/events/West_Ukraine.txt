@@ -1,0 +1,2432 @@
+﻿###################
+# Galicia Events
+###################
+
+add_namespace = wsu
+add_namespace = nz_wsu
+add_namespace = wsunewsevent
+
+news_event = {
+	id = wsunewsevent.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsunewsevent.1" }
+	title = wsunewsevent.1.t
+	desc = wsunewsevent.1.d
+	picture = GFX_news_event_Uprising_in_Western_Ukraine
+
+	major = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		wants_world_news = yes
+	}
+
+	show_major = {
+		regional_europe_news = yes
+	}
+
+	option = {
+		name = wsunewsevent.1.a
+	}
+}
+country_event = {
+	id = nz_wsu.1
+    title = nz_wsu.1.t
+    desc = nz_wsu.1.d
+	picture = GFX_The_UPA
+	
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { 
+		name = nz_wsu.1.b
+		country_event = nz_wsu.2	
+		hidden_effect = {
+			news_event = {
+				id = wsunewsevent.1
+				days = 1
+			}
+		}
+		WSU = {
+		transfer_state = 89
+		transfer_state = 1140
+		transfer_state = 91
+		transfer_state = 1127
+		transfer_state = 1126
+		}
+		WSU =  {
+		89 = { add_core_of = WSU }
+		1140 = { add_core_of = WSU }
+		91 = { add_core_of = WSU }
+		1127 = { add_core_of = WSU }
+		1126 = { add_core_of = WSU }
+		}
+		WSU = {
+			division_template = {
+			name = "Dywizja Piechoty Obrony Krajowej"
+			priority = 1
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 0 y = 5 }
+					infantry = { x = 0 y = 6 }
+					infantry = { x = 0 y = 7 }
+				}
+				support = { 
+					engineer = { x = 0 y = 0 }
+				} 
+			}
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"1-ma Lvivska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"2-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"3-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"4-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"5-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"6-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"3-ta Belzka bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+			}
+		change_tag_from = GAL
+		}
+	}
+}
+country_event = {
+	id = nz_wsu.2
+    title = nz_wsu.2.t
+    desc = nz_wsu.2.d
+	
+    is_triggered_only = yes
+
+	option = { 
+		name = nz_wsu.2.a
+		country_event = nz_wsu.3
+		OVERLORD =  {
+		end_puppet = ROOT
+		}
+		leave_faction = yes
+	}
+}
+country_event = {
+	id = nz_wsu.3
+    title = nz_wsu.3.t
+    desc = nz_wsu.3.d
+	
+    is_triggered_only = yes
+
+	option = { 
+		name = nz_wsu.3.a
+		ROM = {
+		transfer_state = 713
+		transfer_state = 80
+		}
+	}
+}
+	country_event = {
+	id = nz_wsu.5
+    title = nz_wsu.5.t
+    desc = nz_wsu.5.d
+	
+    is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { 
+		name = nz_wsu.5.a
+		set_country_flag = WSU_WAR_WITH_UKR
+		UKR = {
+		OVERLORD =  {
+		end_puppet = ROOT
+		}
+		leave_faction = yes
+		}
+		declare_war_on = { target = UKR type = annex_everything }
+	}
+}
+country_event = {
+	id = nz_wsu.6
+    title = nz_wsu.6.t
+    desc = nz_wsu.6.d
+	
+	trigger = {
+	tag = WSU
+	owns_state = 202
+	owns_state = 192
+	owns_state = 221
+	NOT = { country_exists = UKR }
+    }
+	
+	fire_only_once = yes
+
+	option = { 
+		name = nz_wsu.6.a
+		set_country_flag = WSU_UKR_WIN_flag
+		custom_effect_tooltip = WSU_UKR_WIN
+	}
+}
+country_event = {
+	id = nz_wsu.7
+    title = nz_wsu.7.t
+    desc = nz_wsu.7.d
+	
+    is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { 
+		name = nz_wsu.7.a
+		add_ideas = WSU_Consequences_of_the_conquest_of_Ukraine
+		remove_ideas = WSU_Underindustrialized_Region
+		set_cosmetic_tag = WSU_UKR_UNION_tot
+		country_event = nz_wsu.14
+		WSU =  {
+		set_politics = {
+			ruling_party = totalist
+			elections_allowed = no
+		}
+		}
+		WSU = {
+			set_popularities = {
+			totalist = 50
+			national_populist = 50
+			}
+		}
+	}
+	option = { 
+		name = nz_wsu.7.b
+		add_ideas = WSU_Consequences_of_the_conquest_of_Ukraine
+		remove_ideas = WSU_Underindustrialized_Region
+		set_cosmetic_tag = WSU_UKR_UNION_npo
+		country_event = nz_wsu.14
+		WSU =  {
+		set_politics = {
+			ruling_party = national_populist
+			elections_allowed = no
+		}
+		}
+		WSU = {
+			set_popularities = {
+			national_populist = 50
+			totalist = 50
+			}
+		}
+	}
+}
+country_event = {
+	id = nz_wsu.8
+    title = nz_wsu.8.t
+    desc = nz_wsu.8.d
+	
+    is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { 
+		name = nz_wsu.8.a
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"11-ma Lvivska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"12-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"13-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"14-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"15-ma Lvivska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"16-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"17-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"18-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"19-ma Lvivska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"20-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"21-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"22-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"23-ma Lvivska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"24-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"25-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"26-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"27-ma Lvivska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"28-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"29-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"30-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"31-ma Lvivska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"32-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"33-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"34-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"35-ma Lvivska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"36-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"37-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"38-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+			}
+	}
+}
+
+country_event = {
+	id = nz_wsu.9
+    title = nz_wsu.9.t
+    desc = nz_wsu.9.d
+	
+    is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { 
+		name = nz_wsu.9.a
+		random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"11-ma Lvivska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"12-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"13-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"14-ma Sambirska bryhada\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+			}
+	}
+}
+country_event = {
+	id = nz_wsu.14
+	title = nz_wsu.14.t
+	desc = nz_wsu.14.d
+	is_triggered_only = yes
+	option = {
+		name = nz_wsu.14.a
+		ai_chance = {
+			factor = 10
+		}
+		UKR = {
+			
+			every_unit_leader = {
+				
+				set_nationality = WSU
+			}
+			
+			set_country_flag = annex_ukr
+				
+		}
+	}
+}
+
+country_event = {
+	id = nz_wsu.15
+	title = nz_wsu.15.t
+	desc = nz_wsu.15.d
+	is_triggered_only = yes
+	option = {
+		name = nz_wsu.15.a
+		custom_effect_tooltip = WSU_Yes_ukraine
+		add_political_power = -50
+		add_manpower = 5000
+		hidden_effect = {
+			country_event = {
+				id = nz_wsu.18
+				days = 5
+			}
+		}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=1
+				add_building_construction={
+					type=industrial_complex
+					level=1
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=1
+				add_building_construction={
+					type=industrial_complex
+					level=1
+					instant_build=yes
+				}
+			}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = kxx_wsu
+					option = KXX_WSU_YES
+				}
+			}
+		}
+	}
+	option = {
+		name = nz_wsu.15.b
+		custom_effect_tooltip = WSU_Fuck_you_Poland
+		add_political_power = 50
+		add_manpower = -2000
+		add_stability = -0.03
+		hidden_effect = {
+			country_event = {
+				id = nz_wsu.16
+				days = 5
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = kxx_wsu
+					option = KXX_WSU_NO
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = nz_wsu.16
+	title = nz_wsu.16.t
+	desc = nz_wsu.16.d
+	is_triggered_only = yes
+	option = {
+		name = nz_wsu.16.a
+		custom_effect_tooltip = WSU_Yes_ukraine2
+		add_stability = 0.02
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			country_event = {
+				id = nz_wsu.18
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = nz_wsu.16.b
+		custom_effect_tooltip = WSU_Fuck_you_Poland2
+		add_stability = -0.02
+		add_manpower = -156
+		hidden_effect = {
+			country_event = {
+				id = nz_wsu.17
+				days = 5
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = nz_wsu.17
+	title = nz_wsu.17.t
+	desc = nz_wsu.17.d
+	is_triggered_only = yes
+	option = {
+		name = nz_wsu.17.a
+		custom_effect_tooltip = WSU_Yes_ukraine3
+		add_stability = 0.02
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			country_event = {
+				id = nz_wsu.18
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = nz_wsu.17.b
+		custom_effect_tooltip = WSU_Fuck_you_Poland3
+		add_stability = -0.02
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			country_event = {
+				id = nz_wsu.1
+				days = 5
+			}
+		}
+	}
+}
+country_event = {
+	id = nz_wsu.18
+	title = nz_wsu.18.t
+	desc = nz_wsu.18.d
+	is_triggered_only = yes
+	option = {
+		name = nz_wsu.18.a
+		custom_effect_tooltip = WSU_Yes_ukraine4
+		add_stability = 0.02
+		add_political_power = 100
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=1
+				add_building_construction={
+					type=industrial_complex
+					level=1
+					instant_build=yes
+				}
+			}
+		random_owned_controlled_state={
+				prioritize={
+				}
+				limit={
+					free_building_slots={
+						building=industrial_complex
+						size>0
+						include_locked=yes
+					}
+				}
+				add_extra_state_shared_building_slots=1
+				add_building_construction={
+					type=industrial_complex
+					level=1
+					instant_build=yes
+				}
+			}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = nz_wsu.22
+	title = nz_wsu.22.t
+	desc = nz_wsu.22.d
+	is_triggered_only = no
+	fire_only_once = yes
+	trigger = {
+		tag = WSU
+		OR = {
+			WSU = { check_variable = { WSU.WSU_UNO_unrest > 10 } }
+			WSU = { check_variable = { WSU.WSU_WSUREP_unrest > 10 } }
+			WSU = { check_variable = { WSU.WSUREV_unrest > 10 } }
+		}
+	}
+	immediate = {
+		set_country_flag = WSU_The_struggle_is_over_flag
+	}
+	option = {
+		name = nz_wsu.22.a
+		custom_effect_tooltip = WSU_The_struggle_is_over
+		if = {
+			limit = {
+				check_variable = { WSU.WSU_UNO_unrest > 10 }
+			}
+			hidden_effect = {
+				country_event = {
+					id = nz_wsu.28
+					days = 7
+				}
+			}
+			set_country_flag = West_Ukraine_OUN_WIN
+			create_country_leader = {
+				name = "斯捷潘·班德拉"
+				desc = ""
+				picture = "gfx/leaders/WSU/Portrait_Stepan_Bandera.png"
+				expire = "1.1.1"
+				ideology = tot_eternal_revolution
+			}
+			create_country_leader = {
+				name = "斯捷潘·班德拉"
+				desc = ""
+				picture = "gfx/leaders/WSU/Portrait_Stepan_Bandera.png"
+				expire = "1.1.1"
+				ideology = pau_eternal_revolution
+			}
+			create_country_leader = {
+				name = "斯捷潘·班德拉"
+				desc = ""
+				picture = "gfx/leaders/WSU/Portrait_Stepan_Bandera.png"
+				expire = "1.1.1"
+				ideology = ukrainian_nationalism_subtype
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { WSU.WSU_WSUREP_unrest > 10 }
+			}
+			set_country_flag = West_Ukraine_DEM_WIN
+			create_country_leader = {
+				name = "斯捷潘·班德拉"
+				desc = ""
+				picture = "gfx/leaders/WSU/Portrait_Stepan_Bandera2.png"
+				expire = "1.1.1"
+				ideology = pataut_national_conservative_subtype
+			}
+			set_country_leader_portrait = {
+				portrait = "gfx/leaders/WSU/Portrait_Stepan_Bandera2.png"
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { WSU.WSUREV_unrest > 10 }
+			}
+			set_country_flag = West_Ukraine_REV_WIN
+			create_country_leader = {
+				name = "斯捷潘·班德拉"
+				desc = ""
+				picture = "gfx/leaders/WSU/Portrait_Stepan_Bandera3.png"
+				expire = "1.1.1"
+				ideology = red_tinted_autocracy_subtype
+			}
+			set_country_leader_portrait = {
+				portrait = "gfx/leaders/WSU/Portrait_Stepan_Bandera3.png"
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = nz_wsu.19
+	title = nz_wsu.19.t
+	desc = nz_wsu.19.d
+	is_triggered_only = no
+	trigger = {
+		tag = WSU
+		has_country_flag = WSU_The_struggle_is_over_flag
+		OR = {
+			WSU = { check_variable = { WSU.WSU_WSUREP_unrest > 10 } }
+			WSU = { check_variable = { WSU.WSUREV_unrest > 10 } }
+		}
+		WSU = { check_variable = { WSU.WSU_UNO_unrest > 5 } }
+	}
+	fire_only_once = yes
+	option = {
+		name = nz_wsu.19.a
+		add_timed_idea = {
+			idea = WSU_Political_rupture
+			days = 100
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = nz_wsu.20
+	title = nz_wsu.20.t
+	desc = nz_wsu.20.d
+	is_triggered_only = no
+	trigger = {
+		tag = WSU
+		has_country_flag = WSU_The_struggle_is_over_flag
+		OR = {
+			WSU = { check_variable = { WSU.WSU_UNO_unrest > 10 } }
+			WSU = { check_variable = { WSU.WSUREV_unrest > 10 } }
+		}
+		WSU = { check_variable = { WSU.WSU_WSUREP_unrest > 5 } }
+	}
+	fire_only_once = yes
+	option = {
+		name = nz_wsu.20.a
+		add_timed_idea = {
+			idea = WSU_Political_rupture
+			days = 100
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = nz_wsu.21
+	title = nz_wsu.21.t
+	desc = nz_wsu.21.d
+	is_triggered_only = no
+	trigger = {
+		tag = WSU
+		has_country_flag = WSU_The_struggle_is_over_flag
+		OR = {
+			WSU = { check_variable = { WSU.WSU_UNO_unrest > 10 } }
+			WSU = { check_variable = { WSU.WSU_WSUREP_unrest > 10 } }
+		}
+		WSU = { check_variable = { WSU.WSUREV_unrest > 5 } }
+	}
+	fire_only_once = yes
+	option = {
+		name = nz_wsu.21.a
+		add_timed_idea = {
+			idea = WSU_Political_rupture
+			days = 100
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = nz_wsu.23
+	title = nz_wsu.23.t
+	desc = nz_wsu.23.d
+	picture = GFX_Icefield_World_Theory
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nz_wsu.23.a
+		ai_chance = {
+			factor = 0
+		}
+		set_country_leader_ideology = ariosophy_subtype
+		add_ideas = WSU_Ice_man
+	}
+	option = {
+		name = nz_wsu.23.b
+		add_political_power = 50
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = nz_wsu.24
+	title = nz_wsu.24.t
+	desc = nz_wsu.24.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		FRA = {
+			every_unit_leader = {
+				limit = {
+						has_id = 202
+				}
+				set_nationality = WSU
+			}
+		}
+	}
+	option = {
+		name = nz_wsu.24.a
+		set_politics = {
+			ruling_party = radical_socialist
+			elections_allowed = no
+			name = WSU_OUN_radical_socialist_party
+			long_name = WSU_OUN_radical_socialist_party_long
+		}
+		set_cosmetic_tag = WSU_REV_ukraine_radical_socialist1
+		add_popularity = { ideology = radical_socialist popularity = 0.45 }
+		set_country_flag = KXX_LEADER_GUI_VISIBLE
+		remove_ideas_with_trait = head_of_government
+		add_ideas = WSU_Stepan_Bandera_hog_tot
+		remove_ideas_with_trait = economy_minister
+		add_ideas = WSU_Mishka_Yaponchik_eco_rso
+		remove_ideas_with_trait = foreign_minister
+		add_ideas = UKR_Mykola_Khvylovyi_for_rso
+		remove_ideas_with_trait = security_minister
+		add_ideas = WSU_Fedir_Shchus_sec_rso
+		create_country_leader = {
+			name = "涅斯托尔·马赫诺"
+			desc = ""
+			picture = "gfx/leaders/WSU/Portrait_Nestor_Makhno2.png"
+			expire = "1.1.1"
+			ideology = national_programmatism
+		}
+		set_country_leader_portrait = {
+			portrait = "gfx/leaders/WSU/Portrait_Nestor_Makhno2.png"
+		}
+	}
+	option = {
+		name = nz_wsu.24.b
+		set_politics = {
+			ruling_party = syndicalist
+			elections_allowed = no
+		}
+		set_cosmetic_tag = WSU_REV_ukraine
+		add_popularity = { ideology = syndicalist popularity = 0.45 }
+		set_country_flag = KXX_LEADER_GUI_VISIBLE
+		remove_ideas_with_trait = head_of_government
+		add_ideas = WSU_Stepan_Bandera_hog_tot
+		remove_ideas_with_trait = economy_minister
+		add_ideas = UKR_Mykhailo_Yalovy_eco_rso
+		remove_ideas_with_trait = foreign_minister
+		add_ideas = UKR_Mykola_Khvylovyi_for_rso
+		remove_ideas_with_trait = security_minister
+		add_ideas = UKR_Mykola_Skrypnyk_sec_rso
+		create_country_leader = {
+			name = "亚历山大·舒姆斯基"
+			desc = ""
+			picture = "gfx/leaders/WSU/Portrait_UKR_Oleksander_Shumsky.png"
+			expire = "1.1.1"
+			ideology = syn_left_nationalism_subtype
+		}
+	}
+	option = {
+		name = nz_wsu.24.c
+		set_politics = {
+			ruling_party = totalist
+			elections_allowed = no
+			name = WSU_OUN_totalist_party
+			long_name = WSU_OUN_totalist_party_long
+		}
+		set_cosmetic_tag = WSU_REV_ukraine_totalist1
+		add_popularity = { ideology = totalist popularity = 0.45 }
+		set_country_flag = KXX_LEADER_GUI_VISIBLE
+		remove_ideas_with_trait = head_of_government
+		add_ideas = WSU_Stepan_Bandera_hog_tot
+		remove_ideas_with_trait = economy_minister
+		add_ideas = UKR_Kirill_Osmak_eco_tot
+		remove_ideas_with_trait = foreign_minister
+		add_ideas = UKR_Vlas_Chubar_for_tot
+		remove_ideas_with_trait = security_minister
+		add_ideas = UKR_Mykola_Skrypnyk_sec_rso
+		create_country_leader = {
+			name = "瓦西里·沙赫赖"
+			desc = ""
+			picture = "gfx/leaders/WSU/Portrait_UKR_Vasyl_Shakhrai.png"
+			expire = "1.1.1"
+			ideology = national_communism_subtype
+		}
+	}
+}
+country_event = {
+	id = nz_wsu.25
+	title = nz_wsu.25.t
+	desc = nz_wsu.25.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nz_wsu.25.a
+		set_politics = {
+			ruling_party = social_democrat
+			elections_allowed = no
+		}
+		set_cosmetic_tag = WSU_REP_ukraine
+		add_popularity = { ideology = social_democrat popularity = 0.45 }
+		set_country_flag = KXX_LEADER_GUI_VISIBLE
+		set_country_flag = KXX_DOUBLE_LEADER_GUI_VISIBLE
+		remove_ideas_with_trait = head_of_government
+		add_ideas = WSU_Stepan_Bandera_hog_tot
+		remove_ideas_with_trait = economy_minister
+		add_ideas = WSU_Volodymyr_Vynnychenko_eco_sde
+		remove_ideas_with_trait = foreign_minister
+		add_ideas = UKR_Andrey_Livytskyi_for_sde
+		remove_ideas_with_trait = security_minister
+		add_ideas = UKR_Oleksander_Shumsky_sec_rso
+		create_country_leader = {
+			name = "西蒙·彼得留拉"
+			desc = ""
+			picture = "gfx/leaders/WSU/Portrait_UKR_Symon_Petliura_Civilian.png"
+			expire = "1.1.1"
+			ideology = popular_patriotism_subtype
+		}
+	}
+	option = {
+		name = nz_wsu.25.b
+		country_event = nz_wsu.29
+	}
+	option = {
+		name = nz_wsu.25.c
+		set_politics = {
+			ruling_party = social_conservative
+			elections_allowed = no
+		}
+		set_cosmetic_tag = WSU_REP_ukraine
+		add_popularity = { ideology = social_conservative popularity = 0.45 }
+		set_country_flag = KXX_LEADER_GUI_VISIBLE
+		remove_ideas_with_trait = head_of_government
+		add_ideas = WSU_Stepan_Bandera_hog_tot
+		remove_ideas_with_trait = economy_minister
+		add_ideas = WSU_Oleksander_Yareshchenko_eco_sco
+		remove_ideas_with_trait = foreign_minister
+		add_ideas = WSU_Dionisii_Valedinsky_for_sco
+		remove_ideas_with_trait = security_minister
+		add_ideas = WSU_Polikarp_Sikorsky_sec_sco
+		create_country_leader = {
+			name = "沃洛基米尔·契赫夫斯基"
+			desc = ""
+			picture = "gfx/leaders/WSU/Portrait_UKR_Volodymyr_Chekhivsky.png"
+			expire = "1.1.1"
+			ideology = paternal_socialism_subtype
+		}
+	}
+	option = {
+		name = nz_wsu.25.e
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = no
+		}
+		set_cosmetic_tag = WSU_REP_ukraine
+		add_popularity = { ideology = authoritarian_democrat popularity = 0.45 }
+		set_country_flag = KXX_LEADER_GUI_VISIBLE
+		remove_ideas_with_trait = head_of_government
+		add_ideas = WSU_Stepan_Bandera_hog_tot
+		remove_ideas_with_trait = economy_minister
+		add_ideas = WSU_Volodymyr_Kokhan_eco_ade
+		remove_ideas_with_trait = foreign_minister
+		add_ideas = WSU_Stepan_Volynets_for_ade
+		remove_ideas_with_trait = security_minister
+		add_ideas = WSU_Mykola_Shlemkevych_sec_ade
+		create_country_leader = {
+			name = "帕利夫·德米特罗"
+			desc = ""
+			picture = "gfx/leaders/WSU/Portrait_Paliiv_Dmytro.png"
+			expire = "1.1.1"
+			ideology = generic_national_democracy_subtype
+		}
+	}
+}
+country_event = {
+	id = nz_wsu.26
+	title = nz_wsu.26.t
+	desc = nz_wsu.26.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nz_wsu.26.a
+		add_manpower = 1
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 1
+			producer = WSU
+		}
+	}
+}
+country_event = {
+	id = nz_wsu.27
+	title = nz_wsu.27.t
+	desc = nz_wsu.27.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nz_wsu.27.a
+		add_manpower = -164
+	}
+}
+country_event = {
+	id = nz_wsu.28
+	title = nz_wsu.28.t
+	desc = nz_wsu.28.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nz_wsu.28.a
+		set_politics = {
+			ruling_party = totalist
+			elections_allowed = no
+		}
+		set_cosmetic_tag = WSU_OUN_ukraine
+		add_popularity = { ideology = totalist popularity = 0.45 }
+		set_country_flag = KXX_LEADER_GUI_VISIBLE
+		remove_ideas_with_trait = head_of_government
+		add_ideas = WSU_Vasyl_Kuk_hog_tot
+		remove_ideas_with_trait = economy_minister
+		add_ideas = UKR_Kirill_Osmak_eco_tot
+		remove_ideas_with_trait = foreign_minister
+		add_ideas = UKR_Stepan_Lenkavskyi_for_tot
+		remove_ideas_with_trait = security_minister
+		add_ideas = WSU_Mihailo_Stepanjak_sec_tot
+	}
+	option = {
+		name = nz_wsu.28.b
+		set_politics = {
+			ruling_party = paternal_autocrat
+			elections_allowed = no
+		}
+		set_cosmetic_tag = WSU_OUN_ukraine
+		add_popularity = { ideology = paternal_autocrat popularity = 0.45 }
+		set_country_flag = KXX_LEADER_GUI_VISIBLE
+		remove_ideas_with_trait = head_of_government
+		add_ideas = WSU_Roman_Shukhevych_hog_pau
+		remove_ideas_with_trait = economy_minister
+		add_ideas = WSU_Lev_Shankovsky_eco_ade
+		remove_ideas_with_trait = foreign_minister
+		add_ideas = WSU_Stetsko_Yaroslav_for_npo
+		remove_ideas_with_trait = security_minister
+		add_ideas = WSU_Ivan_Hrynokh_sec_sco
+	}
+	option = {
+		name = nz_wsu.28.c
+		set_politics = {
+			ruling_party = national_populist
+			elections_allowed = no
+		}
+		set_cosmetic_tag = WSU_OUN_ukraine
+		add_popularity = { ideology = national_populist popularity = 0.45 }
+		set_country_flag = KXX_LEADER_GUI_VISIBLE
+		remove_ideas_with_trait = head_of_government
+		add_ideas = WSU_Dmytro_Dontsov_hog_npo
+		remove_ideas_with_trait = economy_minister
+		add_ideas = WSU_Yevhen_Onatsky_eco_npo
+		remove_ideas_with_trait = foreign_minister
+		add_ideas = WSU_Stetsko_Yaroslav_for_npo
+		remove_ideas_with_trait = security_minister
+		add_ideas = WSU_Lev_Rebet_sec_pau
+	}
+}
+country_event = {
+	id = nz_wsu.29
+	title = nz_wsu.29.t
+	desc = nz_wsu.29.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nz_wsu.29.a
+		set_politics = {
+			ruling_party = social_liberal
+			elections_allowed = no
+			name = WSU_social_liberal2_party
+			long_name = WSU_social_liberal2_party_long
+		}
+		set_cosmetic_tag = WSU_REP_ukraine
+		add_popularity = { ideology = social_liberal popularity = 0.45 }
+		set_country_flag = KXX_LEADER_GUI_VISIBLE
+		remove_ideas_with_trait = head_of_government
+		add_ideas = WSU_Stepan_Bandera_hog_tot
+		remove_ideas_with_trait = economy_minister
+		add_ideas = UKR_Stepan_Baran_eco_sli
+		remove_ideas_with_trait = foreign_minister
+		add_ideas = UKR_Sydor_Holubovych_for_sde
+		remove_ideas_with_trait = security_minister
+		add_ideas = UKR_Volodymyr_Tselevych_sec_sli
+		create_country_leader = {
+			name = "德米特罗·列维茨基"
+			desc = ""
+			picture = "gfx/leaders/WSU/Portrait_UKR_Dmytro_Levytsky.png"
+			expire = "1.1.1"
+			ideology = soclib_liberal_socialism_subtype
+		}
+	}
+	option = {
+		name = nz_wsu.29.a
+		set_politics = {
+			ruling_party = market_liberal
+			elections_allowed = no
+			name = WSU_market_liberal2_party
+			long_name = WSU_market_liberal2_party_long
+		}
+		set_cosmetic_tag = WSU_REP_ukraine
+		add_popularity = { ideology = market_liberal popularity = 0.45 }
+		set_country_flag = KXX_LEADER_GUI_VISIBLE
+		remove_ideas_with_trait = head_of_government
+		add_ideas = WSU_Stepan_Bandera_hog_tot
+		remove_ideas_with_trait = economy_minister
+		add_ideas = WSU_Ostap_Lutsky_eco_mli
+		remove_ideas_with_trait = foreign_minister
+		add_ideas = UKR_Sydor_Holubovych_for_sde
+		remove_ideas_with_trait = security_minister
+		add_ideas = UKR_Vasyl_Mudryi_sec_mli
+		create_country_leader = {
+			name = "德米特罗·列维茨基"
+			desc = ""
+			picture = "gfx/leaders/WSU/Portrait_UKR_Dmytro_Levytsky.png"
+			expire = "1.1.1"
+			ideology = marlib_national_liberalism_subtype
+		}
+	}
+}
+
+country_event = { #East Galicia becomes independent
+	id = wsu.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.1" }
+	title = wsu.1.t
+	desc = wsu.1.d
+	trigger = {
+		owns_state = 91
+	}
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #play as wsu
+		name = wsu.1.a
+		trigger = {
+			is_ai = no
+		}
+		WSU_create_rebellion = yes
+		WSU = { change_tag_from = ROOT }
+	}
+	option = { #how dare they?
+		name = wsu.1.b
+		ai_chance = {
+			factor = 100
+		}
+		add_stability = -0.1
+		WSU_create_rebellion = yes
+	}
+}
+
+country_event = { #Clashes in Lemberg
+	id = wsu.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.2" }
+	title = wsu.2.t
+	desc = wsu.2.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #bad
+		name = wsu.2.a
+		add_political_power = -25
+		91 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 1
+			}
+		}
+		hidden_effect =  {
+			country_event = {
+				id = wsu.1
+				days = 5
+			}
+		}
+	}
+}
+country_event = { #Clashes in Lemberg
+	id = wsu.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.3" }
+	title = wsu.3.t
+	desc = wsu.3.d
+
+	is_triggered_only = yes
+
+	option = { #bad
+		name = wsu.3.a
+		add_stability = -0.05
+		add_war_support = -0.05
+		every_state = {
+			limit = {
+				state = 91
+			}
+			hidden_effect = { 
+				add_core_of = GAL
+				remove_core_of = WSU
+				add_claim_by = WSU
+			}
+			start_resistance = yes
+			set_resistance = 15
+		}
+	}
+}
+country_event = { #History
+	id = wsu.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.4" }
+	title = wsu.4.t
+	desc = wsu.4.d
+
+	is_triggered_only = yes
+
+	option = { #bad
+		name = wsu.4.a
+		add_political_power = 50
+	}
+}
+country_event = { #History
+	id = wsu.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.5" }
+	title = wsu.5.t
+	desc = wsu.5.d
+
+	is_triggered_only = yes
+
+	option = { #bad
+		name = wsu.5.a
+		add_stability = 0.1
+		add_political_power = 15
+		swap_ideas = {
+			remove_idea = WSU_Poor_Administration
+			add_idea = WSU_Poor_Administration_1
+		}
+	}
+}
+country_event = { #Battle For Lviv
+	id = wsu.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.6" }
+	title = wsu.6.t
+	desc = wsu.6.d
+	picture = GFX_report_event_UKR_lviv
+	is_triggered_only = yes
+
+	option = { #bad
+		name = wsu.6.a
+		ai_chance = {
+			base = 50
+		}
+		91 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = wsu.7
+				days = 2
+			}
+		}
+	}
+	option = { #bad
+		name = wsu.6.b
+		ai_chance = {
+			base = 50
+		}
+		91 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = wsu.8
+				days = 2
+			}
+		}
+	}
+}
+country_event = { #Battle For Lviv
+	id = wsu.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.7" }
+	title = wsu.7.t
+	desc = wsu.7.d
+	picture = GFX_report_event_UKR_lviv2
+	is_triggered_only = yes
+
+	option = { #bad
+		name = wsu.7.a
+		ai_chance = {
+			base = 35
+		}
+		hidden_effect = {
+			country_event = {
+				id = wsu.9
+				days = 3
+			}
+		}
+	}
+	option = { #bad
+		name = wsu.7.b
+		ai_chance = {
+			base = 65
+		}
+		hidden_effect = {
+			country_event = {
+				id = wsu.11
+				days = 3
+			}
+		}
+	}
+}
+country_event = { #Battle For Lviv
+	id = wsu.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.8" }
+	title = wsu.8.t
+	desc = wsu.8.d
+	picture = GFX_report_event_UKR_lviv3
+	is_triggered_only = yes
+
+	option = { #bad
+		name = wsu.8.a
+		ai_chance = {
+			base = 35
+		}
+		hidden_effect = {
+			country_event = {
+				id = wsu.10
+				days = 3
+			}
+		}
+	}
+	option = { #bad
+		name = wsu.8.b
+		ai_chance = {
+			base = 65
+		}
+		hidden_effect = {
+			country_event = {
+				id = wsu.11
+				days = 3
+			}
+		}
+	}
+}
+country_event = { #Battle For Lviv
+	id = wsu.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.9" }
+	title = wsu.9.t
+	desc = wsu.9.d
+	picture = GFX_report_event_UKR_lviv3
+	is_triggered_only = yes
+
+	option = { #bad
+		name = wsu.8.a
+		ai_chance = {
+			base = 35
+		}
+		hidden_effect = {
+			country_event = {
+				id = wsu.10
+				days = 3
+			}
+		}
+	}
+	option = { #bad
+		name = wsu.8.b
+		ai_chance = {
+			base = 65
+		}
+		hidden_effect = {
+			country_event = {
+				id = wsu.11
+				days = 3
+			}
+		}
+	}
+}
+country_event = { #Battle For Lviv
+	id = wsu.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.10" }
+	title = wsu.10.t
+	desc = wsu.10.d
+	picture = GFX_report_event_UKR_lviv
+	is_triggered_only = yes
+
+	option = { #bad
+		name = wsu.10.a
+		complete_national_focus = WSU_Battle_For_Lviv
+		add_stability = -0.07
+		add_war_support = -0.15
+		if = {
+			limit = {
+				POL = {
+					OR = {
+						has_war_with = GAL
+						has_war_with = AUS
+					}
+					is_neighbor_of = WSU
+					has_socialist_government = no 
+				}
+			}
+			91 = {
+				set_demilitarized_zone = no
+				if = {
+					limit = { has_resistance = yes }
+					cancel_resistance = yes
+				} 
+				transfer_state_to = POL
+				create_unit = {
+					division = "name = \"Dywizja Obrony Lwowa\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.2 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = POL
+				}
+				create_unit = {
+					division = "name = \"Dywizja Obrony Lwowa\" division_template = \"Dywizja Piechoty\" start_experience_factor = 0.2 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = POL
+				}
+			}
+			POL = {
+				country_event = {
+					id = wsu.18
+					days = 2
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				country_exists = GAL
+			}
+			91 = {
+				set_demilitarized_zone = no
+				if = {
+					limit = { has_resistance = yes }
+					cancel_resistance = yes
+				} 
+				transfer_state_to = GAL
+				create_unit = {
+					division = "name = \"Dywizja Obrony Lwowa\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 0.2 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = GAL
+				}
+				create_unit = {
+					division = "name = \"Dywizja Obrony Lwowa\" division_template = \"Dywizja Piechoty Obrony Krajowej\" start_experience_factor = 0.2 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = GAL
+				}
+			}
+			GAL = {
+				country_event = {
+					id = wsu.18
+					days = 2
+				}
+			}
+		}
+	}
+}
+country_event = { #Battle For Lviv
+	id = wsu.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.11" }
+	title = wsu.11.t
+	desc = wsu.11.d
+	picture = GFX_report_event_UKR_lviv
+	is_triggered_only = yes
+
+	option = { #bad
+		name = wsu.11.a
+		complete_national_focus = WSU_Battle_For_Lviv
+		91 = {
+			hidden_effect = { 
+				remove_claim_by = WSU
+				add_core_of = WSU
+			}
+			set_demilitarized_zone = no
+			if = {
+					limit = { has_resistance = yes }
+					cancel_resistance = yes
+				} 
+		}
+		add_stability = 0.07
+		add_war_support = 0.07
+		if = {
+			limit = {
+				POL = {
+					OR = {
+						has_war_with = GAL
+						has_war_with = AUS
+					}
+				}
+			}
+			POL = {
+				country_event = {
+					id = wsu.18
+					days = 2
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				GAL = {
+					NOT = { has_war_with = POL }
+				}
+			}
+			GAL = {
+				country_event = {
+					id = wsu.18
+					days = 2
+				}
+			}
+		}
+	}
+}
+country_event = { #Bukovina
+	id = wsu.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.12" }
+	title = wsu.12.t
+	desc = wsu.12.d
+	is_triggered_only = yes
+
+	option = { #bad
+		name = wsu.12.a
+		713 = {
+			owner = {
+				country_event = wsu.14
+			}
+			transfer_state_to = ROM
+			add_core_of = ROM
+			remove_core_of = WSU
+		}
+		hidden_effect = {
+			country_event = {
+				id = wsu.13
+				days = 25
+			}
+		}
+	}
+}
+country_event = { #Bukovina
+	id = wsu.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.13" }
+	title = wsu.13.t
+	desc = wsu.13.d
+	is_triggered_only = yes
+
+	option = { #bad
+		name = wsu.13.a
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = balkan_war_ended }
+			}			
+		}
+		80 = { add_claim_by = ROM }
+		WSU = {
+			country_event = {
+				id = wsu.15
+				days = 2
+			}
+		}		
+	}
+	option = { #bad
+		name = wsu.13.b
+		ai_chance = {
+			base = 40
+		}
+		add_political_power = -15
+	}
+}
+country_event = { #Bukovina
+	id = wsu.14
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.14" }
+	title = wsu.14.t
+	desc = wsu.14.d
+	is_triggered_only = yes
+
+	option = { #bad
+		name = wsu.14.a
+		add_political_power = -15
+		add_opinion_modifier = {
+			target = FROM
+			modifier = KR_hates_govt
+		}
+	}
+}
+country_event = { #Bukovina
+	id = wsu.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.15" }
+	title = wsu.15.t
+	desc = wsu.15.d
+	is_triggered_only = yes
+
+	option = { #bad
+		name = wsu.15.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+		}
+		declare_war_on = {
+			target = FROM
+			type = annex_everything
+		}
+	}
+	option = { #bad
+		name = wsu.15.b
+		ai_chance = {
+			base = 80
+			modifier = {
+				factor = 1.5
+				has_war = yes
+			}
+		}
+		FROM = {
+			transfer_state = 80
+		}
+	}	
+}
+country_event = { #Bukovina
+	id = wsu.16
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.16" }
+	title = wsu.16.t
+	desc = wsu.16.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = HUN
+		is_subject = no
+		OR = {
+			has_war_with = GAL
+			has_war_with = AUS
+		}
+		WSU = { 
+			country_exists = yes
+			OR = {
+				controls_state = 73
+				controls_state = 1119
+			}
+		}		
+	}
+
+	option = { #bad
+		name = wsu.16.a
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 0.5
+				surrender_progress > 0.1
+			}
+		}
+		declare_war_on = {
+			target = FROM
+			type = annex_everything
+		}
+	}
+	option = { #bad
+		name = wsu.16.b
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 1.8
+				surrender_progress > 0.1
+			}
+		}
+		add_stability = -0.05
+	}	
+}
+country_event = { #Lviv
+	id = wsu.17
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.17" }
+	title = wsu.17.t
+	desc = wsu.17.d
+	picture = GFX_report_event_UKR_lviv
+	is_triggered_only = yes
+	
+	option = { #bad
+		name = wsu.17.a
+		trigger = {
+			tag = GAL
+			is_subject_of = AUS
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0.4
+				AUS = { has_left_democratic_government = yes }
+			}
+		}
+		AUS = {
+			country_event = {
+				id = wsu.19
+				days = 2
+			}
+		}
+	}
+	option = { #bad
+		name = wsu.17.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0.6
+				AUS = { has_left_democratic_government = yes }
+			}
+		}
+		declare_war_on = {
+			target = WSU
+			type = annex_everything
+		}
+		#hidden_effect = {
+		#	if = {
+		#		limit = {
+		#			country_exists = HUN
+		#		}
+		#		HUN = { country_event = wsu.16 }
+		#	}
+		#}
+	}	
+}
+country_event = { #Lviv
+	id = wsu.18
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.18" }
+	title = wsu.18.t
+	desc = wsu.18.d
+	picture = GFX_report_event_UKR_lviv
+	is_triggered_only = yes
+	
+	option = { #bad
+		name = wsu.17.a
+		trigger = {
+			tag = GAL
+			is_subject_of = AUS
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0.4
+				AUS = { has_left_democratic_government = yes }
+			}
+		}
+		AUS = {
+			country_event = {
+				id = wsu.19
+				days = 2
+			}
+		}
+	}
+	option = { #bad
+		name = wsu.17.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0.6
+				AUS = { has_left_democratic_government = yes }
+			}
+		}
+		declare_war_on = {
+			target = WSU
+			type = annex_everything
+		}
+		#hidden_effect = {
+		#	if = {
+		#		limit = {
+		#			country_exists = HUN
+		#		}
+		#		HUN = { country_event = wsu.16 }
+		#	}
+		#}
+	}	
+}
+country_event = { #Austria
+	id = wsu.19
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.19" }
+	title = wsu.19.t
+	desc = wsu.19.d
+	
+	is_triggered_only = yes
+	
+	option = { #bad
+		name = wsu.19.a
+		ai_chance = {
+			base = 80
+			modifier = {
+				factor = 0.5
+				has_left_democratic_government = no
+			}
+			modifier = {
+				factor = 0.5
+				WSU = { NOT = { owns_state = 91 } }
+			}
+		}
+		WSU = {
+			country_event = {
+				id = wsu.20
+				days = 2
+			}
+		}
+	}
+	option = { #bad
+		name = wsu.19.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 3
+				has_left_democratic_government = no
+			}
+			modifier = {
+				factor = 0.5
+				WSU = { owns_state = 91 }
+			}
+		}
+		declare_war_on = {
+			target = WSU
+			type = annex_everything
+		}
+		FROM = {
+			declare_war_on = {
+				target = WSU
+				type = annex_everything
+			}
+		}
+		#hidden_effect = {
+		#	if = {
+		#		limit = {
+		#			country_exists = HUN
+		#		}
+		#		HUN = { country_event = wsu.16 }
+		#	}
+		#}
+	}	
+}
+country_event = { #Austria
+	id = wsu.20
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.20" }
+	title = wsu.20.t
+	desc = wsu.20.d
+	
+	is_triggered_only = yes
+	
+	option = { #bad
+		name = wsu.20.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				NOT = { owns_state = 91 }
+			}
+		}
+		FROM = {
+			country_event = {
+				id = wsu.21
+				days = 2
+			}
+		}
+	}
+	option = { #bad
+		name = wsu.20.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				owns_state = 91
+			}
+		}
+		FROM = {
+			country_event = {
+				id = wsu.22
+				days = 2
+			}
+		}
+	}	
+}
+country_event = { #Austria
+	id = wsu.21
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.21" }
+	title = wsu.21.t
+	desc = wsu.21.d
+	
+	is_triggered_only = yes
+	
+	option = { #bad
+		name = wsu.21.a
+		trigger = {
+			has_left_democratic_government = yes
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0.5
+				FROM = { owns_state = 91 }
+			}
+		}
+		set_country_flag = WSU_autonomy
+		FROM = {
+			country_event = {
+				id = wsu.23
+				days = 2
+			}
+		}
+	}
+	option = { #bad
+		name = wsu.21.b
+		trigger = {
+			has_left_democratic_government = yes
+			FROM = { owns_state = 91 }
+		}
+		ai_chance = {
+			base = 100
+		}
+		set_country_flag = WSU_alliance
+		FROM = {
+			country_event = {
+				id = wsu.24
+				days = 2
+			}
+		}
+	}
+	option = { #bad
+		name = wsu.21.c
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				has_government = social_democrat
+			}
+			modifier = {
+				factor = 0.5
+				has_government = social_liberal
+			}
+		}
+		FROM = {
+			country_event = {
+				id = wsu.25
+				days = 2
+			}
+		}
+	}	
+}
+country_event = { #Austria
+	id = wsu.22
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.22" }
+	title = wsu.22.t
+	desc = wsu.22.d
+	
+	is_triggered_only = yes
+	
+	option = { #bad
+		name = wsu.22.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				FROM = { NOT = { owns_state = 91 } }
+			}
+		}
+		GAL = {
+			country_event = {
+				id = wsu.28
+				days = 2
+			}
+		}
+	}
+	option = { #bad
+		name = wsu.22.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0.5
+				FROM = { owns_state = 91 }
+			}
+		}
+		declare_war_on = {
+			target = WSU
+			type = annex_everything
+		}
+		GAL = {
+			declare_war_on = {
+				target = WSU
+				type = annex_everything
+			}
+		}
+		#hidden_effect = {
+		#	if = {
+		#		limit = {
+		#			country_exists = HUN
+		#		}
+		#		HUN = { country_event = wsu.16 }
+		#	}
+		#}
+	}	
+}
+country_event = { #Austria
+	id = wsu.23
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.23" }
+	title = wsu.23.t
+	desc = wsu.23.d
+	
+	is_triggered_only = yes
+	
+	option = { #bad
+		name = wsu.23.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				NOT = { owns_state = 91 }
+			}
+		}
+		FROM = {
+			country_event = {
+				id = wsu.26
+				days = 2
+			}
+		}
+	}
+	option = { #bad
+		name = wsu.23.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 2
+				owns_state = 91
+			}
+		}
+		FROM = {
+			country_event = {
+				id = wsu.27
+				days = 2
+			}
+		}
+	}
+}
+country_event = { #Austria
+	id = wsu.24
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.24" }
+	title = wsu.24.t
+	desc = wsu.24.d
+	
+	is_triggered_only = yes
+	
+	option = { #bad
+		name = wsu.24.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				NOT = { owns_state = 91 }
+			}
+		}
+		FROM = {
+			country_event = {
+				id = wsu.26
+				days = 2
+			}
+		}
+	}
+	option = { #bad
+		name = wsu.23.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 2
+				owns_state = 91
+			}
+		}
+		FROM = {
+			country_event = {
+				id = wsu.27
+				days = 2
+			}
+		}
+	}
+}
+country_event = { #Austria
+	id = wsu.25
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.25" }
+	title = wsu.25.t
+	desc = wsu.25.d
+	
+	is_triggered_only = yes
+	
+	option = { #bad
+		name = wsu.23.b
+		FROM = {
+			country_event = {
+				id = wsu.27
+				days = 2
+			}
+		}
+	}
+}
+country_event = { #Austria
+	id = wsu.26
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.26" }
+	title = wsu.26.t
+	desc = wsu.26.d
+	
+	is_triggered_only = yes
+	
+	option = { #bad
+		name = wsu.26.a
+		if = {
+			limit = {
+				has_country_flag = WSU_autonomy
+			}
+			clr_country_flag = WSU_autonomy
+			FROM = { get_current_government_type = yes }
+			set_autonomy = {
+				target = FROM
+				autonomous_state = botde_constituent
+				freedom_level = 0.75
+			}
+			FROM = { 
+				restore_previous_government_type = yes
+				add_ideas = AUS_part_of_the_Empire				
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = WSU_alliance
+			}
+			clr_country_flag = WSU_alliance
+			add_to_faction = FROM
+			FROM = { 
+				set_country_flag = WSU_independent
+				add_ideas = AUS_part_of_the_Empire				
+			}
+		}
+	}
+}
+country_event = { #Austria
+	id = wsu.27
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.27" }
+	title = wsu.27.t
+	desc = wsu.27.d
+	
+	is_triggered_only = yes
+	
+	option = { #bad
+		name = wsu.22.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				FROM = { NOT = { owns_state = 91 } }
+			}
+		}
+		GAL = {
+			country_event = {
+				id = wsu.28
+				days = 2
+			}
+		}
+	}
+	option = { #bad
+		name = wsu.22.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0.5
+				FROM = { owns_state = 91 }
+			}
+		}
+		declare_war_on = {
+			target = WSU
+			type = annex_everything
+		}
+		GAL = {
+			declare_war_on = {
+				target = WSU
+				type = annex_everything
+			}
+		}
+		#hidden_effect = {
+		#	if = {
+		#		limit = {
+		#			country_exists = HUN
+		#		}
+		#		HUN = { country_event = wsu.16 }
+		#	}
+		#}
+	}	
+}
+country_event = { #Austria
+	id = wsu.28
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.28" }
+	title = wsu.28.t
+	desc = wsu.28.d
+	
+	is_triggered_only = yes
+	
+	option = { #bad
+		name = wsu.28.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 1.5
+				WSU = { NOT = { owns_state = 91 } }
+			}
+		}
+		declare_war_on = {
+			target = WSU
+			type = annex_everything
+		}
+		#hidden_effect = {
+		#	if = {
+		#		limit = {
+		#			country_exists = HUN
+		#		}
+		#		HUN = { country_event = wsu.16 }
+		#	}
+		#}
+	}
+	option = { #bad
+		name = wsu.28.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0.5
+				WSU = { owns_state = 91 }
+			}
+		}
+		add_stability = -0.05
+		WSU = { set_country_flag = WSU_independent }
+		#hidden_effect = {
+		#	if = {
+		#		limit = {
+		#			country_exists = HUN
+		#		}
+		#		HUN = { country_event = wsu.16 }
+		#	}
+		#}
+	}	
+}
+country_event = { #Lost
+	id = wsu.30
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.30" }
+	title = wsu.30.t
+	desc = wsu.30.d
+	
+	is_triggered_only = yes
+	
+	option = { #bad
+		name = wsu.30.a
+		add_stability = -0.05
+		add_war_support = -0.05		
+		set_truce = {
+			target = FROM
+			days = 365
+		}
+	}	
+}
+
+country_event = { #Land
+	id = wsu.31
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.31" }
+	title = wsu.31.t
+	desc = wsu.31.d
+	
+	is_triggered_only = yes
+	
+	option = { #nationalization
+		name = wsu.31.a
+		remove_ideas = WSU_Polish_Landowners
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.07
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.07
+		}		
+	}
+	option = { #socialization
+		name = wsu.31.b
+		remove_ideas = WSU_Polish_Landowners
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.07
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.03
+		}		
+	}
+	option = { #socialization
+		name = wsu.31.c
+		remove_ideas = WSU_Polish_Landowners
+		add_popularity = {
+			ideology = market_liberal
+			popularity = 0.07
+		}
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.07
+		}		
+	}	
+}
+country_event = { #Carpathians
+	id = wsu.32
+	immediate = { log = "[GetDateText]: [Root.GetName]: event wsu.32" }
+	title = wsu.32.t
+	desc = wsu.32.d
+	
+	is_triggered_only = yes
+	
+	option = { #join
+		name = wsu.32.a
+		add_war_support = 0.05		
+		if = {
+			limit = { has_war_with = var:73.owner }
+			add_state_core = 73
+			add_state_core = 1119
+			73 = {
+				create_unit = {
+					division = "name = \"1 Rusynske opolchennia\" division_template = \"Ukrainska Halytska Armiia\" start_experience_factor = 0.1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"2 Rusynske opolchennia\" division_template = \"Ukrainska Halytska Armiia\" start_experience_factor = 0.1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+			}
+			1119 = {
+				create_unit = {
+					division = "name = \"Uzhhorodskyi harnizon\" division_template = \"Ukrainska Halytska Armiia\" start_experience_factor = 0.2 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+				create_unit = {
+					division = "name = \"3 Rusynske opolchennia\" division_template = \"Ukrainska Halytska Armiia\" start_experience_factor = 0.1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = WSU
+				}
+			}			
+		}
+		else = {
+			transfer_state = 73
+			transfer_state = 1119
+			add_state_core = 73
+			add_state_core = 1119
+			73 = {
+				owner = {
+					country_event = {
+						id = wsu.16
+						days = 5
+					}
+				}
+			}
+		}
+	}	
+}
+
+
+
