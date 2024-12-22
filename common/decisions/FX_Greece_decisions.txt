@@ -381,55 +381,7 @@ GRE_golden_dawn_decisions = {
 }
 
 GRE_final_solution = {
-	GRE_complete_focus = {
-		name = GRE_complete_focus
-		icon = generic_political_discourse
-		days_mission_timeout = 400
-		is_good = no
-		fire_only_once = yes
-		activation = {
-			has_completed_focus = GRE_turkish_plot
-			tag = GRE
-		}
-		available = {
-			GRE = {
-				has_completed_focus = GRE_remain_calm
-			}
-		}
-		complete_effect = {
-		}
-		timeout_effect = {
-			country_event = {
-				id = gre.56
-			}
-		}
-	}
-	GRE_pacify_ankara = {
-		name = GRE_pacify_ankara
-		icon = generic_political_discourse
-		days_mission_timeout = 30
-		is_good = no
-		fire_only_once = yes
-		activation = {
-			has_completed_focus = GRE_the_final_solution
-			tag = GRE
-		}
-		available = {
-			GRE = {
-				divisions_in_state = {
-					size > 2
-					state = 49
-				}
-			}
-		}
-		complete_effect = {
-			add_to_variable = { romevar = 1 }
-		}
-		timeout_effect = {
-			add_stability = -0.02
-			add_political_power = -20
-		}
-	}
+	
 	GRE_pacify = {
 		name = GRE_pacify
 		icon = GFX_decision_generic_cement_mixer
@@ -455,8 +407,7 @@ GRE_final_solution = {
 				type = infantry_equipment
 				amount = -200
 			}
-			add_state_core = 49
-			add_to_variable = { romevar = 1 }
+			GRE_ANATOLIA_stablize_effect = yes
 		}
 	}
 	GRE_spread_the_word = {
@@ -477,7 +428,7 @@ GRE_final_solution = {
 		cost = 75
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GRE_pyrkal"
-			add_to_variable = { romevar = 1 }
+			GRE_ANATOLIA_stablize_effect = yes
 		}
 	}
 	GRE_amnestic_testing = {
@@ -499,7 +450,7 @@ GRE_final_solution = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GRE_pyrkal"
 			add_political_power = 50
-			add_to_variable = { romevar = 1 }
+			GRE_ANATOLIA_stablize_effect = yes
 		}
 	}
 	GRE_fake_amnestics = {
@@ -528,41 +479,10 @@ GRE_final_solution = {
 				type = infantry_equipment
 				amount = -50
 			}
-			add_to_variable = { romevar = 1 }
+			GRE_ANATOLIA_stablize_effect = yes
 		}
 	}
-	GRE_to_ashes_decision = {
-		name = GRE_to_ashes_decision
-		icon = generic_political_discourse
-		days_mission_timeout = 27
-		is_good = no
-		fire_only_once = yes
-		activation = {
-			focus_progress = {
-				focus = GRE_to_ashes
-				progress > 0.01
-			}
-			tag = GRE
-		}
-		available = {
-			GRE = {
-				# 49 = {
-					divisions_in_state = {
-						size > 9
-						state = 49
-					}
-					# }
-			}
-		}
-		complete_effect = {
-			add_ideas = GRE_to_ashes
-			add_to_variable = { romevar = 1 }
-		}
-		timeout_effect = {
-			add_stability = -0.02
-			add_political_power = -20
-		}
-	}
+	
 }
 
 GRE_megisti_idea_decisions = {
@@ -1371,6 +1291,398 @@ GRE_join_ww2_decisions = {
 				target = FROM
 				type = annex_everything
 			}
+		}
+	}
+}
+GRE_national_ambitions_decision = {
+	GRE_balkan_unification_demo = {
+		name = "成立巴尔干联邦"
+		icon = GFX_decision_generic_cement_mixer
+		fire_only_once = yes
+		available = {
+			tag = GRE
+			
+				80 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				713 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				789 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				1117 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				76 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				1118 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				83 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				1114 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				82 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				1113 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				1116 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				84 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				1115 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				1112 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				45 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				875 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				1101 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				1272 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				102 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				736 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				1100 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				1144 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				1103 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+				1104 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			
+		}
+		visible = {
+			tag = GRE
+			OR = {
+				has_completed_focus = GRE_balkan_friendship
+				has_completed_focus = GRE_demand_islands
+			}
+			
+		}
+		ai_will_do = {
+			factor = 0
+			
+		}
+		cost = 0
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GRE_recruitment"
+			#Bulgaria
+			48 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 211 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 212 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 77 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 184 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 731 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 769 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1089 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 106 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1271 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 841 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1090 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 770 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 771 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 772 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }				
+	 #Albania
+	 44 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 766 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1268 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 #Serbia
+	 1269 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 107 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 765 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 108 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 767 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }				
+	 #crete
+	 182 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 #illyria
+	 109 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1142 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1105 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1206 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 103 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 163 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1143 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1141 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 104 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1145 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1098 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1270 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1099 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1102 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 794 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1128 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 105 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1097 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 #galica
+	 80 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 713 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 #hungary
+	 789 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1117 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 76 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1118 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 83 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1114 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 82 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1113 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1116 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 84 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1115 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1112 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 45 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 875 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 #romania
+	 81 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 46 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 79 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 78 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1222 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1320 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 #austria
+	 1101 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1272 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 102 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 736 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1100 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1144 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1103 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 1104 = { add_core_of = ROOT 
+			transfer_state_to = ROOT }
+	 #ottoman empire
+	 341 = { add_core_of = ROOT }
+	 773 = { add_core_of = ROOT }
+	 1225 = { add_core_of = ROOT }
+		}
+	}
+	GRE_east_europe_unification = {
+		name = "合并东欧"
+		icon = GFX_decision_generic_cement_mixer
+		fire_only_once = yes
+		available = {
+			tag = GRE
+			49 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			91 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			1314 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			88 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			1124 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			1125 = { is_owned_and_controlled_by_ROOT_or_subject = yes }
+			1319 = { is_owned_and_controlled_by_ROOT_or_subject = yes }	
+				
+		}
+		visible = {
+			tag = GRE
+			has_completed_focus = GRE_megisti_idea_realised
+		}
+		ai_will_do = {
+			factor = 0
+			
+		}
+		cost = 0
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision GRE_recruitment"
+			70 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				664 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				155 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				43 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				154 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				83 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				82 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				84 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				76 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				73 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				45 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				784 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1111 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1106 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1107 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1108 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1114 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				875 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1113 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				789 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1116 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1123 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1135 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1136 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1115 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1112 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1118 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1117 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1110 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1119 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1109 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1121 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1122 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1120 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				#galicia
+				1314 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				88 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1124 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1125 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1319 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1126 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				89 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1127 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }	   
+				91 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }		   
+				1140 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }	   
+					   #poland
+				10 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				90 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				87 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				98 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				92 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1088 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				97 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1148 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				#bohemia
+				1139 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1133 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1130 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1131 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				786 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				9 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1132 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				71 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				75 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				74 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1134 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1138 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				69 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1129 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1134 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				343 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				49 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				346 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				345 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				344 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				354 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				360 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				352 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
+				1001 = { add_core_of = ROOT 
+				       transfer_state_to = ROOT }
 		}
 	}
 }

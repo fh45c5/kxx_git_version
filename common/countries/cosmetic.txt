@@ -901,6 +901,14 @@ ALA_RAPTURE_USA = {
 	color = rgb { 254 193 27 }
 	color_ui = rgb { 254 193 27 }
 }
+ALA_CASCADIA = {
+	color = rgb { 39 95 47 }
+	color_ui = rgb { 39 95 47 }
+}
+ALA_ASTORIA = {
+	color = rgb { 39 95 47 }
+	color_ui = rgb { 39 95 47 }
+}
 
 ALA_JAP = {
 	color = rgb { 255 200 200 }
@@ -1545,6 +1553,21 @@ KOG_KON = {
 }
 
 KOG_KONGO = {
+	color = rgb { 199 160 139 }
+	color_ui = rgb { 199 160 139 }
+}
+
+KOG_KONGO_ALT = {
+	color = rgb { 199 160 139 }
+	color_ui = rgb { 199 160 139 }
+}
+
+KOG_KONGO_ALT_2 = {
+	color = rgb { 199 160 139 }
+	color_ui = rgb { 199 160 139 }
+}
+
+KOG_KONGO_ALT_3 = {
 	color = rgb { 199 160 139 }
 	color_ui = rgb { 199 160 139 }
 }
@@ -2987,6 +3010,10 @@ ABP = {
 	color = rgb { 29 52 119 }
 	color_ui = rgb { 29 52 119 }
 }
+BDN_SAV = {
+	color = rgb { 2 73 124 }
+	color_ui = rgb { 2 73 124 }
+}
 ARG_LA_PLATA = {
 	color = rgb { 153 217 234 }
 	color_ui = rgb { 153 217 234 }
@@ -3870,6 +3897,22 @@ MON_CHINA = {
 MON_ROERICH = {
 	color = rgb { 92 92 92 }
 	color_ui = rgb { 92 92 92 }
+}
+MON_CHINA_CONFEDERATION = {
+	color = rgb { 8 99 156 }
+	color_ui = rgb { 8 99 156 }
+}
+MON_CHINA_KHANATE = {
+	color = rgb { 8 99 156 }
+	color_ui = rgb { 8 99 156 }
+}
+MON_TURKIC = {
+	color = rgb { 93 184 238 }
+	color_ui = rgb { 93 184 238 }
+}
+MON_TURKIC_KHANATE = {
+	color = rgb { 93 184 238 }
+	color_ui = rgb { 93 184 238 }
 }
 KLY_JA_LAMA = {
 	color = rgb { 92 92 92 }
@@ -6743,6 +6786,10 @@ JONS_Provisional_Government = {
 	color = rgb { 113 109 109 }
 	color_ui = rgb { 113 109 109 }
 }
+CNT_totalist_state = {
+	color = rgb { 89 0 0 }
+	color_ui = rgb { 89 0 0 }
+}
 CNT_New_Socialist_state = {
 	color = rgb { 89 0 0 }
 	color_ui = rgb { 89 0 0 }
@@ -6786,6 +6833,10 @@ WSU_REV_ukraine2_radical_socialist1 = {
 WSU_REV_ukraine2_totalist1 = {
 	color = rgb { 123 0 28 }
 	color_ui = rgb { 163 17 31 }
+}
+CNT_totalist1_state = {
+	color = rgb { 23 22 22 }
+	color_ui = rgb { 23 22 22 }
 }
 #################
 ### 成立新国家 ###
@@ -9671,7 +9722,14 @@ FRA_celt_slav_union = {
 	color = rgb { 90 137 0 }
 	color_ui = rgb { 90 137 0 }
 }
-
+FRA_Possibiliste = {
+    color = rgb {0 35 149 }
+	color_ui = rgb { 0 35 149}
+}
+FRA_radical_Possibiliste = {
+    color = rgb {229 64 64 }
+	color_ui = rgb { 229 64 64}
+}
 ###法公社拿破仑特殊傀儡
 FRA_consulat = {
 	color = rgb { 0 51 128 }
@@ -9760,4 +9818,76 @@ OMO_Anarchy = {
 GAL_pan_slav = {
 	color = rgb { 1 56 147 }
 	color_ui = rgb { 1 56 147 }
+}
+GAL_pan_slav = {
+	color = rgb { 1 56 147 }
+	color_ui = rgb { 1 56 147 }
+}
+GAL_sislav = {
+	color = rgb { 0 91 187 }
+	color_ui = rgb { 0 91 187 }
+}
+GAL_ziyoudiqu = {
+	color = rgb { 30 30 30 }
+	color_ui = rgb { 30 30 30 }
+}
+GAL_renmingongshe = {
+	color = rgb { 30 30 30 }
+	color_ui = rgb { 30 30 30 }
+}
+GAL_eu = {
+	color = rgb { 219 20 27 }
+	color_ui = rgb { 219 20 27 }
+}
+GAL_pan_sislav = {
+	color = rgb { 178 26 67 }
+	color_ui = rgb { 178 26 67 }
+}
+GAL_luosi = {
+	color = rgb { 83 126 0 }
+	color_ui = rgb { 83 126 0 }
+}
+
+###法公社第二次选举
+FRA_Frangleterre = {
+	color = rgb { 126 53 117 }
+	color_ui = rgb { 126 53 117 }
+}
+FRA_Frangleterre_federation = {
+	color = rgb { 126 53 117 }
+	color_ui = rgb { 126 53 117 }
+}
+FRA_yellowsyndie = {
+	color = rgb { 216 166 0 }
+	color_ui = rgb { 216 166 0 }
+}
+FRA_socdem_republic = {
+	color = rgb { 43 78 178 }
+	color_ui = rgb { 43 78 178 }
+}
+
+###凯尔特拓展
+IRE_Atlantic_Celts = {
+    color = rgb { 46 139 87 }
+    color_ui = rgb { 46 139 87 }
+}
+IRE_Red_Avalonia = {
+    color = rgb { 231 27 100 }
+    color_ui = rgb { 231 27 100 }
+}
+HIS_Celt = {
+    color = rgb { 13 156 13 }
+    color_ui = rgb { 13 156 13 }
+}
+NOR_Celt = {
+    color = rgb { 255 209 0 }
+    color_ui = rgb { 255 209 0 }
+}
+AST_Celt = {
+    color = rgb { 0 128 0 }
+    color_ui = rgb { 0 128 0 }
+}
+ARG_Celt = {
+    color = rgb { 177 14 41 }
+    color_ui = rgb { 177 14 41 }
 }

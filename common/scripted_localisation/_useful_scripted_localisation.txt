@@ -6845,6 +6845,54 @@ text = {
 		}
 		localization_key = radsoc_saint_simonianism_subtype
 	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = radsoc_united_front
+		}
+		localization_key = radsoc_united_front
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = tot_united_front
+		}
+		localization_key = tot_united_front
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = syn_united_front
+		}
+		localization_key = syn_united_front
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = socdem_united_front
+		}
+		localization_key = socdem_united_front
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = individualist_anarchism
+		}
+		localization_key = individualist_anarchism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = anarcho_market_socialism
+		}
+		localization_key = anarcho_market_socialism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = radsoc_social_anarchism
+		}
+		localization_key = radsoc_social_anarchism
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = military_anarchism
+		}
+		localization_key = military_anarchism
+	}
 
 	#风雨欲来	
 	text = {
@@ -6969,6 +7017,30 @@ text = {
 		}
 		localization_key = syn_volkisch_communitarianism_subtype  
 	}	
+	text = {
+		trigger = {
+			has_country_leader_ideology = natpop_goebbels_subtype
+		}
+		localization_key = natpop_goebbels_subtype  
+	}	
+	text = {
+		trigger = {
+			has_country_leader_ideology = venizelism_subtype
+		}
+		localization_key = venizelism_subtype  
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = mercourism_subtype
+		}
+		localization_key = mercourism_subtype  
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = pataut_metaxism_subtype
+		}
+		localization_key = pataut_metaxism_subtype  
+	}
 	#柏柏尔主义
 	text = {
 		trigger = {
@@ -7006,6 +7078,61 @@ text = {
 		}
 		localization_key = iset_worship_subtype  
 	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = socdem_algerian_socialism_subtype
+		}
+		localization_key = socdem_algerian_socialism_subtype  
+	}	
+	text = {
+		trigger = {
+			has_country_leader_ideology = algerian_socialism_subtype
+		}
+		localization_key = algerian_socialism_subtype  
+	}
+	#刚果-葡萄牙拓展
+	text = {
+		trigger = {
+			has_country_leader_ideology = radsoc_cannibalism_subtype
+		}
+		localization_key = radsoc_cannibalism_subtype  
+	}	
+	text = {
+		trigger = {
+			has_country_leader_ideology = soclib_cannibalism_subtype
+		}
+		localization_key = soclib_cannibalism_subtype  
+	}
+	text = {
+		trigger = {
+			has_country_leader_ideology = cannibalism_proto_subtype
+		}
+		localization_key = cannibalism_proto_subtype
+	}		
+	text = {
+		trigger = {
+			has_country_leader_ideology = soccon_lusotropicalism_subtype
+		}
+		localization_key = soccon_lusotropicalism_subtype  
+	}	
+	text = {
+		trigger = {
+			has_country_leader_ideology = autdem_lusotropicalism_subtype
+		}
+		localization_key = autdem_lusotropicalism_subtype  
+	}	
+	text = {
+		trigger = {
+			has_country_leader_ideology = lusotropicalism_subtype
+		}
+		localization_key = lusotropicalism_subtype  
+	}	
+	text = {
+		trigger = {
+			has_country_leader_ideology = natpop_lusotropicalism_subtype
+		}
+		localization_key = natpop_lusotropicalism_subtype  
+	}	
 	#我的第三十七年
 	text = {
 		trigger = {
@@ -7135,28 +7262,4 @@ text = {
 		}
 		localization_key = fredaism_subtype  
 	}	
-	text = {
-		trigger = {
-			has_country_leader_ideology = pataut_metaxism_subtype
-		}
-		localization_key = pataut_metaxism_subtype
-	}	
-	text = {
-		trigger = {
-			has_country_leader_ideology = venizelism_subtype
-		}
-		localization_key = venizelism_subtype
-	}	
-	text = {
-		trigger = {
-			has_country_leader_ideology = mercourism_subtype
-		}
-		localization_key = mercourism_subtype
-	}
-	text = {
-		trigger = {
-			has_country_leader_ideology = syn_volkisch_communitarianism_subtype
-		}
-		localization_key = syn_volkisch_communitarianism_subtype
-	}
 }

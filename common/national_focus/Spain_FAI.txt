@@ -1658,6 +1658,7 @@ focus_tree = {
 			has_country_flag = JONS_WIN
 		}
 		bypass = {
+			has_country_flag = JONS_WIN
 			NOT = { country_exists = CAR }
 			NOT = { country_exists = SPR }
 		}
@@ -2684,6 +2685,7 @@ focus_tree = {
 			has_completed_focus = JONS_7
 		}
 		bypass = {
+		has_completed_focus = JONS_7
 			NOT = {
 				has_idea = SPR_black_monday
 			}
@@ -3220,7 +3222,7 @@ focus_tree = {
 		prerequisite={focus=JONS_47}
 		cost=7
 		ai_will_do={
-			factor=0
+			factor=1
 		}
 		available_if_capitulated=yes
 		search_filters={
@@ -3497,6 +3499,9 @@ focus_tree = {
 		available_if_capitulated=yes
 		search_filters={
 		}
+		available = {
+			has_completed_focus = NCNT_7
+		}
 		completion_reward={
 		swap_ideas = {
 				remove_idea = NJONS_The_Anarchist_Revolution1
@@ -3521,6 +3526,7 @@ focus_tree = {
 		completion_reward={
 		add_research_slot = 1
 		add_ideas = NJONS_Reborn_from_the_ashes
+		country_event =  SPRelection.2
 		}
 	}
 	focus={
@@ -3757,6 +3763,7 @@ focus_tree = {
 		}
 		completion_reward={
 		add_ideas = NJONS_National_Union_of_Syndicalism
+		country_event =  SPRelection.2
 		}
 	}
 	focus={
@@ -4183,6 +4190,7 @@ focus_tree = {
 		add_stability =  0.03
 		add_war_support = 0.03
 		add_popularity = { ideology = totalist popularity = 0.1 }
+		country_event = SPRelection.4
 		}
 	}
 	focus={
@@ -4675,6 +4683,9 @@ focus_tree = {
 		ai_will_do={
 			factor=1
 		}
+		bypass = {
+			has_completed_focus = PCE_7
+		}
 		available_if_capitulated=yes
 		search_filters={
 		}
@@ -5160,6 +5171,3222 @@ focus_tree = {
 		add_manpower = 20000
 		add_ideas = NJONS_reason
 		country_event = jons.21
+		}
+	}
+	focus={
+		id=CNTJONS_1
+		icon=JONS_The_Falangists_and_the_National_Syndicalists
+		x=38
+		y=12
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_country_flag = FE_NOM
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 100
+		}
+	}
+	focus={
+		id=CNTJONS_2
+		icon=JONS_Triumph_of_national_syndicalism
+		x=34
+		y=13
+		prerequisite={focus=CNTJONS_1}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_country_flag = ledesma_win
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 150
+		add_stability = 0.03
+		add_war_support = 0.03
+		add_manpower = 50000
+		}
+	}
+	focus={
+		id=CNTJONS_3
+		icon=JONS_Kick_out_the_nationalist_movement
+		x=32
+		y=14
+		prerequisite={focus=CNTJONS_2}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_New_Revolutionism
+		}
+	}
+	focus={
+		id=CNTJONS_4
+		icon=JONS_Full_syndication
+		x=34
+		y=14
+		prerequisite={focus=CNTJONS_2}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Full_syndication
+		}
+	}
+	focus={
+		id=CNTJONS_5
+		icon=JONS_New_nationalism
+		x=36
+		y=14
+		prerequisite={focus=CNTJONS_2}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_New_Nationism
+		}
+	}
+	focus={
+		id=CNTJONS_6
+		icon=JONS_Factory_democracy
+		x=33
+		y=15
+		prerequisite={focus=CNTJONS_4}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_Full_syndication
+			add_idea = NJONS_Full_syndication1
+			}
+		}
+	}
+	focus={
+		id=CNTJONS_7
+		icon=JONS_Expand_the_class_struggle
+		x=35
+		y=15
+		prerequisite={focus=CNTJONS_4}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_National_Movement_for_Change
+		}
+	}
+	focus={
+		id=CNTJONS_8
+		icon=GFX_goal_ALB_Remove_Squat
+		x=34
+		y=16
+		prerequisite={focus=CNTJONS_6}
+		prerequisite={focus=CNTJONS_7}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_National_Movement_for_Change
+			add_idea = NJONS_National_Movement_for_Change1
+			}
+		}
+	}
+	focus={
+		id=CNTJONS_9
+		icon = GFX_goal_FRA_warrior_ethics
+		x=33
+		y=17
+		prerequisite={focus=CNTJONS_8}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_National_Movement_for_Change1
+			add_idea = NJONS_National_Movement_for_Change2
+			}
+		}
+	}
+	focus={
+		id=CNTJONS_10
+		icon=JONS_Be_wary_of_bureaucracy
+		x=35
+		y=17
+		prerequisite={focus=CNTJONS_8}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_Full_syndication1
+			add_idea = NJONS_Full_syndication2
+			}
+		}
+	}
+	focus={
+		id=CNTJONS_11
+		icon=JONS_Fight_against_extremism
+		x=32
+		y=18
+		prerequisite={focus=CNTJONS_3}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_New_Revolutionism
+			add_idea = NJONS_New_Revolutionism1
+			}
+		}
+	}
+	focus={
+		id=CNTJONS_12
+		icon=JONS_Social_Renewal_Movement
+		x=34
+		y=18
+		prerequisite={focus=CNTJONS_9}
+		prerequisite={focus=CNTJONS_10}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_National_Movement_for_Change2
+			add_idea = NJONS_National_Movement_for_Change3
+			}
+		}
+	}
+	focus={
+		id=CNTJONS_13
+		icon=JONS_Pursue_national_rejuvenation
+		x=36
+		y=18
+		prerequisite={focus=CNTJONS_5}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_research_slot = 1
+		swap_ideas = {
+			remove_idea = NJONS_New_Nationism
+			add_idea = NJONS_New_Nationism1
+			}
+		}
+	}
+	focus={
+		id=CNTJONS_14
+		icon=JONS_The_rise_of_Spain
+		x=34
+		y=19
+		prerequisite={focus=CNTJONS_11}
+		prerequisite={focus=CNTJONS_12}
+		prerequisite={focus=CNTJONS_13}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_National_Movement_for_Change3
+			add_idea = NJONS_National_Movement_for_Change4
+			}
+		}
+	}
+	focus={
+		id=CNTJONS_15
+		icon=JONS_Embrace_ultra_nationalism
+		x=42
+		y=13
+		prerequisite={focus=CNTJONS_1}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_country_flag = redondo_win
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 150
+		add_stability = 0.03
+		add_war_support = 0.03
+		add_manpower = 50000
+		}
+	}
+	focus={
+		id=CNTJONS_16
+		icon=JONS_Ledesmas_folly
+		x=40
+		y=14
+		prerequisite={focus=CNTJONS_15}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Eliminate_idealism
+		}
+	}
+	focus={
+		id=CNTJONS_17
+		icon=JONS_Mass_arrests_of_Jews
+		x=42
+		y=14
+		prerequisite={focus=CNTJONS_15}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_ultranationalism
+		add_manpower = -10000
+		}
+	}
+	focus={
+		id=CNTJONS_18
+		icon=JONS_Cleaning_of_the_CNT_FAI_Group
+		x=44
+		y=14
+		prerequisite={focus=CNTJONS_15}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		remove_ideas = NJONS_keep_cnt
+		add_ideas = NJONS_anti_revolution
+		}
+	}
+	focus={
+		id=CNTJONS_19
+		icon=JONS_Propaganda_of_Spain_supremacism
+		x=41
+		y=15
+		prerequisite={focus=CNTJONS_17}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_ultranationalism
+			add_idea = NJONS_ultranationalism1
+			}
+		}
+	}
+	focus={
+		id=CNTJONS_20
+		icon=JONS_Liquidation_of_the_internal_national_liberation_movement
+		x=43
+		y=15
+		prerequisite={focus=CNTJONS_17}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Class_collaboration
+		}
+	}
+	focus={
+		id=CNTJONS_21
+		icon=JONS_Merge_the_Falangist_Party_of_Spain
+		x=42
+		y=16
+		prerequisite={focus=CNTJONS_19}
+		prerequisite={focus=CNTJONS_20}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_ultranationalism1
+			add_idea = NJONS_ultranationalism2
+			}
+		}
+	}
+	focus={
+		id=CNTJONS_22
+		icon=JONS_Promote_class_cooperation
+		x=41
+		y=17
+		prerequisite={focus=CNTJONS_21}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_Class_collaboration
+			add_idea = NJONS_Class_collaboration1
+			}
+		}
+	}
+	focus={
+		id=CNTJONS_23
+		icon=JONS_Suppression_of_the_workers_movement
+		x=43
+		y=17
+		prerequisite={focus=CNTJONS_21}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_ultranationalism2
+			add_idea = NJONS_ultranationalism3
+			}
+		}
+	}
+	focus={
+		id=CNTJONS_24
+		icon=JONS_Marginalized_national_syndicalists
+		x=40
+		y=18
+		prerequisite={focus=CNTJONS_16}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_Eliminate_idealism
+			add_idea = NJONS_Eliminate_idealism1
+			}
+		}
+	}
+	focus={
+		id=CNTJONS_25
+		icon=GFX_GRU_National_Corporatism
+		x=42
+		y=18
+		prerequisite={focus=CNTJONS_22}
+		prerequisite={focus=CNTJONS_23}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_Class_collaboration1
+			add_idea = NJONS_Class_collaboration2
+			}
+		}
+	}
+	focus={
+		id=CNTJONS_26
+		icon=JONS_Sweep_away_the_influence_of_the_red_thugs
+		x=44
+		y=18
+		prerequisite={focus=CNTJONS_18}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_anti_revolution
+			add_idea = NJONS_anti_revolution1
+			}
+		}
+	}
+	focus={
+		id=CNTJONS_27
+		icon=JONS_Forward_Spain
+		x=42
+		y=19
+		prerequisite={focus=CNTJONS_24}
+		prerequisite={focus=CNTJONS_25}
+		prerequisite={focus=CNTJONS_26}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_research_slot = 1
+		swap_ideas = {
+			remove_idea = NJONS_ultranationalism3
+			add_idea = NJONS_ultranationalism4
+			}
+		}
+	}
+	focus={
+		id=TCNT_1
+		icon=CNT_between_anarchism_and_syndicalism
+		x=37
+		y=22
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_country_flag = FE_NOM
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 150
+		}
+	}
+	focus={
+		id=TCNT_2
+		icon=CNT_The_horror_of_anarchism
+		x=26
+		y=23
+		prerequisite={focus=TCNT_1}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		available = {
+			has_idea = CNT_felipe_emilo_sandoval_cabrerizo_hog_rso
+		}
+		completion_reward={
+		add_political_power = 150
+		add_stability = 0.03
+		add_war_support = 0.03
+		add_manpower = 50000
+		}
+	}
+	focus={
+		id=TCNT_3
+		icon=GFX_GRU_Proclaim_Victory_Over_Spectre_Marx
+		x=24
+		y=24
+		prerequisite={focus=TCNT_2}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_manpower = -10000
+		add_stability = 0.02
+		add_ideas = NJONS_anti_communism
+		}
+	}
+	focus={
+		id=TCNT_4
+		icon=CNT_Anarchic_military_martial_law
+		x=26
+		y=24
+		prerequisite={focus=TCNT_2}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Martial_law_throughout_the_country
+		}
+	}
+	focus={
+		id=TCNT_5
+		icon=GFX_focus_generic_ban_right_wing
+		x=28
+		y=24
+		prerequisite={focus=TCNT_2}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_anti_right
+		}
+	}
+	focus={
+		id=TCNT_6
+		icon=CNT_Occupy_the_Streets_Movement
+		x=25
+		y=25
+		prerequisite={focus=TCNT_3}
+		prerequisite={focus=TCNT_4}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			swap_ideas = {
+				remove_idea = NJONS_anti_communism
+				add_idea = NJONS_anti_communism1
+			}
+		}
+	}
+	focus={
+		id=TCNT_7
+		icon=CNT_Rely_on_the_Black_Army
+		x=27
+		y=25
+		prerequisite={focus=TCNT_4}
+		prerequisite={focus=TCNT_5}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			swap_ideas = {
+				remove_idea = NJONS_anti_right
+				add_idea = NJONS_anti_right1
+			}
+		}
+	}
+	focus={
+		id=TCNT_8
+		icon=CNT_Stability_brings_freedom
+		x=26
+		y=26
+		prerequisite={focus=TCNT_6}
+		prerequisite={focus=TCNT_7}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Martial_law_throughout_the_country
+				add_idea = NJONS_Martial_law_throughout_the_country1
+			}
+		}
+	}
+	focus={
+		id=TCNT_9
+		icon=CNT_Revelation
+		x=33
+		y=23
+		prerequisite={focus=TCNT_1}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_idea = CNT_isaac_puente_amestoy_hog_rso
+			}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 150
+		add_stability = 0.03
+		add_war_support = 0.03
+		add_manpower = 50000
+		}
+	}
+	focus={
+		id=TCNT_10
+		icon=GFX_goal_AST_break_the_protectionist_establishment
+		x=31
+		y=24
+		prerequisite={focus=TCNT_9}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Ecology
+		}
+	}
+	focus={
+		id=TCNT_11
+		icon=GFX_NEE_positive_eugenics
+		x=33
+		y=24
+		prerequisite={focus=TCNT_9}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_eugenics
+		}
+	}
+	focus={
+		id=TCNT_12
+		icon=CNT_Malthusianism
+		x=35
+		y=24
+		prerequisite={focus=TCNT_9}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Malthusianism
+		}
+	}
+	focus={
+		id=TCNT_13
+		icon=CNT_Get_rid_of_the_lazy
+		x=32
+		y=25
+		prerequisite={focus=TCNT_10}
+		prerequisite={focus=TCNT_11}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_manpower = -12000
+		add_stability = 0.05
+		swap_ideas = {
+				remove_idea = NJONS_Ecology
+				add_idea = NJONS_Ecology1
+			}
+		}
+	}
+	focus={
+		id=TCNT_14
+		icon=GFX_goal_AUS_All_For_Family
+		x=34
+		y=25
+		prerequisite={focus=TCNT_11}
+		prerequisite={focus=TCNT_12}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Malthusianism
+				add_idea = NJONS_Malthusianism1
+			}
+		}
+	}
+	focus={
+		id=TCNT_15
+		icon=CNT_Harmonious_symbiosis
+		x=33
+		y=26
+		prerequisite={focus=TCNT_13}
+		prerequisite={focus=TCNT_14}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Ecology1
+				add_idea = NJONS_Ecology2
+			}
+		}
+	}
+	focus={
+		id=TCNT_16
+		icon=CNT_Sound_the_clarion_call_for_change
+		x=41
+		y=23
+		prerequisite={focus=TCNT_1}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_idea = CNT_antonio_de_hoyos_y_vinent_hog_rso
+			}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 150
+		add_stability = 0.03
+		add_war_support = 0.03
+		add_manpower = 50000
+		}
+	}
+	focus={
+		id=TCNT_17
+		icon=GFX_goal_AST_class_collaboration_dominated_by_the_worker
+		x=39
+		y=24
+		prerequisite={focus=TCNT_16}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Work_Movement
+		}
+	}
+	focus={
+		id=TCNT_18
+		icon=GFX_goal_ALB_Liberation_Army
+		x=41
+		y=24
+		prerequisite={focus=TCNT_16}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_National_struggle
+		}
+	}
+	focus={
+		id=TCNT_19
+		icon=CNT_Decriminalization_of_sexual_minorities
+		x=43
+		y=24
+		prerequisite={focus=TCNT_16}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Decriminalization_of_sexual_minorities
+		}
+	}
+	focus={
+		id=TCNT_20
+		icon=GFX_goal_AST_further_the_one_big_union_policy
+		x=40
+		y=25
+		prerequisite={focus=TCNT_17}
+		prerequisite={focus=TCNT_18}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Work_Movement
+				add_idea = NJONS_Work_Movement1
+			}
+		}
+	}
+	focus={
+		id=TCNT_21
+		icon=GFX_goal_NYC_Colorblind_Proletariat
+		x=42
+		y=25
+		prerequisite={focus=TCNT_18}
+		prerequisite={focus=TCNT_19}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_National_struggle
+				add_idea = NJONS_National_struggle1
+			}
+		}
+	}
+	focus={
+		id=TCNT_22
+		icon=CNT_Spring_in_Spain
+		x=41
+		y=26
+		prerequisite={focus=TCNT_20}
+		prerequisite={focus=TCNT_21}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Decriminalization_of_sexual_minorities
+				add_idea = NJONS_Decriminalization_of_sexual_minorities1
+			}
+		}
+	}
+	focus={
+		id=TCNT_23
+		icon=CNT_Personal_independence
+		x=48
+		y=23
+		prerequisite={focus=TCNT_1}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_idea = CNT_miguel_jimenez_igualada_hog_sde
+			}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 150
+		add_stability = 0.03
+		add_war_support = 0.03
+		add_manpower = 50000
+		}
+	}
+	focus={
+		id=TCNT_24
+		icon=CNT_Godwins_Wish
+		x=46
+		y=24
+		prerequisite={focus=TCNT_23}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Godwins_Wish
+		}
+	}
+	focus={
+		id=TCNT_25
+		icon=GFX_goal_ALB_Collective_Militarization
+		x=48
+		y=24
+		prerequisite={focus=TCNT_23}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Against_collectivism
+		}
+	}
+	focus={
+		id=TCNT_26
+		icon=CNT_Follow_Proudhon
+		x=50
+		y=24
+		prerequisite={focus=TCNT_23}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Follow_Proudhon
+		}
+	}
+	focus={
+		id=TCNT_27
+		icon=CNT_Soulist_speculation
+		x=47
+		y=25
+		prerequisite={focus=TCNT_24}
+		prerequisite={focus=TCNT_25}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Godwins_Wish
+				add_idea = NJONS_Godwins_Wish1
+			}
+		}
+	}
+	focus={
+		id=TCNT_28
+		icon=CNT_An_attempt_at_mutualism
+		x=49
+		y=25
+		prerequisite={focus=TCNT_25}
+		prerequisite={focus=TCNT_26}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Follow_Proudhon
+				add_idea = NJONS_Follow_Proudhon1
+			}
+		}
+	}
+	focus={
+		id=TCNT_29
+		icon=CNT_Harmony_equality_fraternity
+		x=48
+		y=26
+		prerequisite={focus=TCNT_27}
+		prerequisite={focus=TCNT_28}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Against_collectivism
+				add_idea = NJONS_Against_collectivism1
+			}
+		}
+	}
+	focus={
+		id=TCNT_30
+		icon=CNT_between_anarchism_and_syndicalism2
+		x=40
+		y=28
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_country_flag = FE_NOM
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 150
+		}
+	}
+	focus={
+		id=TCNT_31
+		icon=CNT_Syndicalism_and_democracy
+		x=26
+		y=29
+		prerequisite={focus=TCNT_30}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_idea = CNT_Juan_Lopez_Sanchez_hog_syn
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 150
+		add_stability = 0.03
+		add_war_support = 0.03
+		add_manpower = 50000
+		}
+	}
+	focus={
+		id=TCNT_32
+		icon=GFX_goal_NIC_Victory_Social_Democracy
+		x=24
+		y=30
+		prerequisite={focus=TCNT_31}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_stability = 0.05
+		set_temp_variable = { coalition_partner_var = token:social_democrat }
+		add_to_coalition = yes
+		set_temp_variable = { coalition_partner_var = token:social_liberal }
+		add_to_coalition = yes
+		add_popularity = { ideology = social_democrat popularity = 0.07 }
+		add_popularity = { ideology = social_liberal popularity = 0.05 }
+		}
+	}
+	focus={
+		id=TCNT_33
+		icon=GFX_goal_NFA_empower_parliament
+		x=26
+		y=30
+		prerequisite={focus=TCNT_31}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Empowering_Parliaments
+		}
+	}
+	focus={
+		id=TCNT_34
+		icon=GFX_goal_AST_abolish_wage_system
+		x=28
+		y=30
+		prerequisite={focus=TCNT_31}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_The_big_leagues
+		}
+	}
+	focus={
+		id=TCNT_35
+		icon=GFX_goal_NEE_Our_Washington_Yields_To_Democracy_Once_More
+		x=25
+		y=31
+		prerequisite={focus=TCNT_32}
+		prerequisite={focus=TCNT_33}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Empowering_Parliaments
+				add_idea = NJONS_Empowering_Parliaments1
+			}
+		}
+	}
+	focus={
+		id=TCNT_36
+		icon=GFX_goal_NIC_New_Coalition
+		x=27
+		y=31
+		prerequisite={focus=TCNT_33}
+		prerequisite={focus=TCNT_34}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_The_big_leagues
+				add_idea = NJONS_The_big_leagues1
+			}
+		}
+	}
+	focus={
+		id=TCNT_37
+		icon=GFX_goal_FIU_france_east
+		x=26
+		y=32
+		prerequisite={focus=TCNT_35}
+		prerequisite={focus=TCNT_36}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_The_big_leagues1
+				add_idea = NJONS_The_big_leagues2
+			}
+		}
+	}
+	focus={
+		id=TCNT_38
+		icon=CNT_Solidarity_comes_first
+		x=33
+		y=29
+		prerequisite={focus=TCNT_30}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		available = {
+			has_idea = CNT_Jose_Buenaventura_Durruti_Dumange_hog_syn
+		}
+		completion_reward={
+		add_political_power = 150
+		add_stability = 0.03
+		add_war_support = 0.03
+		add_manpower = 50000
+		}
+	}
+	focus={
+		id=TCNT_39
+		icon=GFX_goal_FOP_Sow_Organized_Illegalist_Chaos
+		x=31
+		y=30
+		prerequisite={focus=TCNT_38}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_manpower = -10000
+		add_ideas = NJONS_Clean_up_the_portal
+		}
+	}
+	focus={
+		id=TCNT_40
+		icon=GFX_goal_FOP_Fiefdom_Patagonias_Red_Robin_Hood
+		x=33
+		y=30
+		prerequisite={focus=TCNT_38}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Righteous_people_in_society
+		}
+	}
+	focus={
+		id=TCNT_41
+		icon=FE_The_Godfather_of_Anarchy
+		x=35
+		y=30
+		prerequisite={focus=TCNT_38}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		add_command_power = 200
+			create_field_marshal = {
+				name = "何塞·布维纳文图拉·杜鲁蒂"
+				portrait_path = "gfx/leaders/CNT/Portrait_CNT_Durruti_Dumange.png"
+				traits = {
+					brilliant_strategist
+					war_hero
+					trait_mountaineer
+					inspirational_leader
+				}
+				skill = 5
+				attack_skill = 5
+				defense_skill = 5
+				planning_skill = 4
+				logistics_skill = 4
+			}
+			create_corps_commander = {
+				name = "马西连亚诺·佩德罗·杜鲁蒂"
+				portrait_path = "gfx/leaders/CAR/CNT_Marciano_Pedro_Durruti.png"
+				traits = {
+					war_hero
+					trait_mountaineer
+					inspirational_leader
+				}
+				skill = 4
+				attack_skill = 4
+				defense_skill = 4
+				planning_skill = 3
+				logistics_skill = 3
+			}
+		}
+	}
+	focus={
+		id=TCNT_42
+		icon = GFX_goal_FOP_Sole_Heir_True_Internationalism
+		x=32
+		y=31
+		prerequisite={focus=TCNT_39}
+		prerequisite={focus=TCNT_40}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Clean_up_the_portal
+				add_idea = NJONS_Clean_up_the_portal1
+			}
+		}
+	}
+	focus={
+		id=TCNT_43
+		icon = GFX_goal_FOP_European_Anarchism_Lorenz_Peyre_Vlasko
+		x=34
+		y=31
+		prerequisite={focus=TCNT_40}
+		prerequisite={focus=TCNT_41}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Righteous_people_in_society
+				add_idea = NJONS_Righteous_people_in_society1
+			}
+		}
+	}
+	focus={
+		id=TCNT_44
+		icon=FE_Anarchic_brothers
+		x=33
+		y=32
+		prerequisite={focus=TCNT_42}
+		prerequisite={focus=TCNT_43}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Clean_up_the_portal1
+				add_idea = NJONS_Clean_up_the_portal2
+			}
+		}
+	}
+	focus={
+		id=TCNT_45
+		icon=CNT_A_second_chance_for_national_syndicalism
+		x=40
+		y=29
+		prerequisite={focus=TCNT_30}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		available = {
+			has_idea = CNT_Francisco_Guillen_Salaya_hog_syn
+		}
+		completion_reward={
+		add_political_power = 150
+		add_stability = 0.03
+		add_war_support = 0.03
+		add_manpower = 50000
+		}
+	}
+	focus={
+		id=TCNT_46
+		icon=NCNT_friend_of_JONS
+		x=38
+		y=30
+		prerequisite={focus=TCNT_45}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		remove_ideas_with_trait = head_of_government
+		add_ideas = CNT_Ramiro_Ledesma_Ramos_hog_tot
+		set_country_flag = KXX_LEADER_GUI_VISIBLE
+		}
+	}
+	focus={
+		id=TCNT_47
+		icon=GFX_goal_NEE_New_Labor_Movement
+		x=40
+		y=30
+		prerequisite={focus=TCNT_45}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NFE_The_Big_Uion
+		}
+	}
+	focus={
+		id=TCNT_48
+		icon=CNT_Criticism_of_the_Standardists
+		x=42
+		y=30
+		prerequisite={focus=TCNT_45}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Power_is_in_the_hands_of_the_people
+		}
+	}
+	focus={
+		id=TCNT_49
+		icon=GFX_goal_SRI_Revolutionary_Commissars
+		x=39
+		y=31
+		prerequisite={focus=TCNT_46}
+		prerequisite={focus=TCNT_47}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NFE_The_Big_Uion
+				add_idea = NFE_The_Big_Uion1
+			}
+		}
+	}
+	focus={
+		id=TCNT_50
+		icon=GFX_goal_SRI_Squadrismo
+		x=41
+		y=31
+		prerequisite={focus=TCNT_47}
+		prerequisite={focus=TCNT_48}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Power_is_in_the_hands_of_the_people
+				add_idea = NJONS_Power_is_in_the_hands_of_the_people1
+			}
+		}
+	}
+	focus={
+		id=TCNT_51
+		icon = GFX_goal_ENG_Maximist_Fanaticism
+		x=40
+		y=32
+		prerequisite={focus=TCNT_49}
+		prerequisite={focus=TCNT_50}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Power_is_in_the_hands_of_the_people1
+				add_idea = NJONS_Power_is_in_the_hands_of_the_people2
+			}
+		}
+	}
+	focus={
+		id=TCNT_52
+		icon=CNT_Revolutionary_unity
+		x=47
+		y=29
+		prerequisite={focus=TCNT_30}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		available = {
+			has_idea = CNT_Federica_Monsteny_Mane_hog_rso
+		}
+		completion_reward={
+		add_political_power = 150
+		add_stability = 0.03
+		add_war_support = 0.03
+		add_manpower = 50000
+		}
+	}
+	focus={
+		id=TCNT_53
+		icon=GFX_goal_BRG_Kill_Revolution
+		x=45
+		y=30
+		prerequisite={focus=TCNT_52}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Countering_extremism
+		}
+	}
+	focus={
+		id=TCNT_54
+		icon=CNT_Absorption_of_national_liberation_movements
+		x=47
+		y=30
+		prerequisite={focus=TCNT_52}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_National_struggle
+		}
+	}
+	focus={
+		id=TCNT_55
+		icon=GFX_goal_FRA_libertine_society
+		x=49
+		y=30
+		prerequisite={focus=TCNT_52}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NFE_justice
+		}
+	}
+	focus={
+		id=TCNT_56
+		icon=GFX_UKR_Decentralization_Under_Supervision
+		x=46
+		y=31
+		prerequisite={focus=TCNT_53}
+		prerequisite={focus=TCNT_54}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Countering_extremism
+				add_idea = NJONS_Countering_extremism1
+			}
+		}
+	}
+	focus={
+		id=TCNT_57
+		icon=GFX_goal_ALB_No_Famine
+		x=48
+		y=31
+		prerequisite={focus=TCNT_54}
+		prerequisite={focus=TCNT_55}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Emancipation_of_women
+		}
+	}
+	focus={
+		id=TCNT_58
+		icon=CNT_Viva_la_revolution
+		x=47
+		y=32
+		prerequisite={focus=TCNT_56}
+		prerequisite={focus=TCNT_57}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Emancipation_of_women
+				add_idea = NJONS_Emancipation_of_women1
+			}
+		}
+	}
+	focus={
+		id=TCNT_59
+		icon=CNT_Market_oriented_thinking
+		x=54
+		y=29
+		prerequisite={focus=TCNT_30}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		available = {
+			has_idea = CNT_Abraham_Guillen_hog_rso
+		}
+		completion_reward={
+		add_political_power = 150
+		add_stability = 0.03
+		add_war_support = 0.03
+		add_manpower = 50000
+		}
+	}
+	focus={
+		id=TCNT_60
+		icon=GFX_RUS_Allow_Small_Traders
+		x=52
+		y=30
+		prerequisite={focus=TCNT_59}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Emancipate_the_petty_traders
+		}
+	}
+	focus={
+		id=TCNT_61
+		icon=GFX_RUS_Free_Trade_Unions
+		x=54
+		y=30
+		prerequisite={focus=TCNT_59}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = free_trade
+		}
+	}
+	focus={
+		id=TCNT_62
+		icon=GFX_goal_CAN_Enshrine_Private_Property
+		x=56
+		y=30
+		prerequisite={focus=TCNT_59}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Tolerance_of_private_ownership
+		}
+	}
+	focus={
+		id=TCNT_63
+		icon=GFX_goal_FRA_social_free_market
+		x=53
+		y=31
+		prerequisite={focus=TCNT_60}
+		prerequisite={focus=TCNT_61}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Emancipate_the_petty_traders
+				add_idea = NJONS_Emancipate_the_petty_traders1
+			}
+		}
+	}
+	focus={
+		id=TCNT_64
+		icon=GFX_LEC_Illegitimate_Economy
+		x=55
+		y=31
+		prerequisite={focus=TCNT_61}
+		prerequisite={focus=TCNT_62}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Tolerance_of_private_ownership
+				add_idea = NJONS_Tolerance_of_private_ownership1
+			}
+		}
+	}
+	focus={
+		id=TCNT_65
+		icon=CNT_The_goods_go_out_and_the_money_comes_in
+		x=54
+		y=32
+		prerequisite={focus=TCNT_63}
+		prerequisite={focus=TCNT_64}
+		cost=4
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_Emancipate_the_petty_traders1
+				add_idea = NJONS_Emancipate_the_petty_traders2
+			}
+		}
+	}
+	focus={
+		id=PCE_0
+		icon=PCE_The_last_end_of_the_road
+		x=92
+		y=20
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_country_flag = FE_NOM
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 150
+		}
+	}
+	focus={
+		id=PCE_1
+		icon=PCE_The_tiger_sat_in_front_of_the_temple
+		x=75
+		y=21
+		prerequisite={focus=PCE_0}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_idea = CNT_Jose_Diaz_Ramos_hog_tot
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 100
+		add_stability = 0.05
+		add_manpower = 20000
+		}
+	}
+	focus={
+		id=PCE_2
+		icon=PCE_Sweep_up_the_domestic_opposition
+		x=74
+		y=22
+		prerequisite={focus=PCE_1}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_popularity = { ideology = syndicalist popularity = -1 }
+		add_popularity = { ideology = radical_socialist popularity = -1 }
+		add_political_power = 200
+		}
+	}
+	focus={
+		id=PCE_3
+		icon=PCE_Strengthen_the_shackles_on_the_party
+		x=76
+		y=22
+		prerequisite={focus=PCE_1}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 250
+		add_stability = 0.05
+		}
+	}
+	focus={
+		id=PCE_4
+		icon=PCE_New_victory
+		x=75
+		y=23
+		prerequisite={focus=PCE_2}
+		prerequisite={focus=PCE_3}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_country_leader_trait = Supreme_party_chairman
+		}
+	}
+	focus={
+		id=PCE_5
+		icon=GFX_goal_GER_Industry_Fund
+		x=73
+		y=24
+		prerequisite={focus=PCE_4}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		random_owned_controlled_state={
+					prioritize = { }
+					limit={
+						free_building_slots={
+						building = industrial_complex
+						size > 0 
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+					prioritize = { }
+					limit={
+						free_building_slots={
+						building = industrial_complex
+						size > 0 
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+					prioritize = { }
+					limit={
+						free_building_slots={
+						building = arms_factory
+						size > 0 
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+					prioritize = { }
+					limit={
+						free_building_slots={
+						building = arms_factory
+						size > 0 
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=PCE_6
+		icon=PCE_Develop_a_five_year_plan
+		x=75
+		y=24
+		prerequisite={focus=PCE_4}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_five_year_plan
+		random_owned_controlled_state={
+					prioritize = { }
+					limit={
+						free_building_slots={
+						building = industrial_complex
+						size > 0 
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+					prioritize = { }
+					limit={
+						free_building_slots={
+						building = industrial_complex
+						size > 0 
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+					prioritize = { }
+					limit={
+						free_building_slots={
+						building = arms_factory
+						size > 0 
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+					prioritize = { }
+					limit={
+						free_building_slots={
+						building = arms_factory
+						size > 0 
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+					prioritize = { }
+					limit={
+						free_building_slots={
+						building = industrial_complex
+						size > 0 
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+					prioritize = { }
+					limit={
+						free_building_slots={
+						building = arms_factory
+						size > 0 
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction={
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=PCE_7
+		icon=PCE_Promote_Marxism_Leninism
+		x=77
+		y=24
+		prerequisite={focus=PCE_4}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_Vanguard_of_the_revolution
+			add_idea = NJONS_Vanguard_of_the_revolution1
+		}
+		}
+	}
+	focus={
+		id=PCE_8
+		icon=GFX_goal_ALB_Village_Collectivization
+		x=74
+		y=25
+		prerequisite={focus=PCE_5}
+		prerequisite={focus=PCE_6}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_five_year_plan
+			add_idea = NJONS_five_year_plan1
+		}
+		}
+	}
+	focus={
+		id=PCE_9
+		icon=PCE_The_principle_of_democratic_centralism
+		x=76
+		y=25
+		prerequisite={focus=PCE_6}
+		prerequisite={focus=PCE_7}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_Vanguard_of_the_revolution1
+			add_idea = NJONS_Vanguard_of_the_revolution2
+		}
+		}
+	}
+	focus={
+		id=PCE_10
+		icon=PCE_A_true_vanguard
+		x=75
+		y=26
+		prerequisite={focus=PCE_8}
+		prerequisite={focus=PCE_9}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_Vanguard_of_the_revolution2
+			add_idea = NJONS_Vanguard_of_the_revolution3
+		}
+		}
+	}
+	focus={
+		id=PCE_11
+		icon=PCE_Watered_with_enthusiasm
+		x=82
+		y=21
+		prerequisite={focus=PCE_0}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_idea = CNT_Dolores_Ibaurri_Gomez_hog_tot
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 100
+		add_stability = 0.05
+		add_manpower = 20000
+		}
+	}
+	focus={
+		id=PCE_12
+		icon=PCE_Regulatory_discord
+		x=81
+		y=22
+		prerequisite={focus=PCE_11}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_popularity = { ideology = syndicalist popularity = -1 }
+		add_popularity = { ideology = radical_socialist popularity = -1 }
+		add_popularity = { ideology = social_democrat popularity = -1 }
+		add_political_power = 250
+		}
+	}
+	focus={
+		id=PCE_13
+		icon=PCE_Tolerate_intra_party_dissent
+		x=83
+		y=22
+		prerequisite={focus=PCE_11}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 300
+		add_stability = 0.1
+		}
+	}
+	focus={
+		id=PCE_14
+		icon=PCE_Expose_the_falsehood_of_anarchy
+		x=82
+		y=23
+		prerequisite={focus=PCE_12}
+		prerequisite={focus=PCE_13}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_The_evils_of_anarchy
+		}
+	}
+	focus={
+		id=PCE_15
+		icon=GFX_goal_CSA_socialist_friendly_media
+		x=80
+		y=24
+		prerequisite={focus=PCE_14}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_The_evils_of_anarchy
+			add_idea = NJONS_The_evils_of_anarchy1
+		}
+		}
+	}
+	focus={
+		id=PCE_16
+		icon=GFX_goal_socialist_infrastructure
+		x=82
+		y=24
+		prerequisite={focus=PCE_14}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Industrial_improvements
+		random_owned_controlled_state={
+					prioritize = { }
+					limit={
+						free_building_slots={
+						building = infrastructure
+						size > 0 
+						include_locked = yes
+					}
+				}
+				add_building_construction={
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+					prioritize = { }
+					limit={
+						free_building_slots={
+						building = infrastructure
+						size > 0 
+						include_locked = yes
+					}
+				}
+				add_building_construction={
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+					prioritize = { }
+					limit={
+						free_building_slots={
+						building = infrastructure
+						size > 0 
+						include_locked = yes
+					}
+				}
+				add_building_construction={
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state={
+					prioritize = { }
+					limit={
+						free_building_slots={
+						building = infrastructure
+						size > 0 
+						include_locked = yes
+					}
+				}
+				add_building_construction={
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus={
+		id=PCE_17
+		icon=GFX_goal_AUS_Ensure_Integrity_Economy_Culture
+		x=84
+		y=24
+		prerequisite={focus=PCE_14}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_State_regulation
+		}
+	}
+	focus={
+		id=PCE_18
+		icon=PCE_Stabilize_the_regime
+		x=81
+		y=25
+		prerequisite={focus=PCE_15}
+		prerequisite={focus=PCE_16}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_The_evils_of_anarchy1
+			add_idea = NJONS_The_evils_of_anarchy2
+		}
+		}
+	}
+	focus={
+		id=PCE_19
+		icon=GFX_goal_ALB_Guardians
+		x=83
+		y=25
+		prerequisite={focus=PCE_16}
+		prerequisite={focus=PCE_17}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_State_regulation
+			add_idea = NJONS_State_regulation1
+		}
+		}
+	}
+	focus={
+		id=PCE_20
+		icon=GFX_goal_NIC_Socialist_Revolution
+		x=82
+		y=26
+		prerequisite={focus=PCE_18}
+		prerequisite={focus=PCE_19}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_Industrial_improvements
+			add_idea = NJONS_Industrial_improvements1
+		}
+		}
+	}
+	focus={
+		id=PCE_21
+		icon=PCE_Alternative_string_rhythms
+		x=92
+		y=21
+		prerequisite={focus=PCE_0}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			OR = {
+				has_idea = CNT_andreu_nin_perez_hog_tot
+				has_idea = CNT_Joaquin_Maurin_Julia_hog_rso
+			}
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 150
+		}
+	}
+	focus={
+		id=PCE_22
+		icon=PCE_Reshuffle_political_parties
+		x=91
+		y=22
+		prerequisite={focus=PCE_21}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		set_party_name = {
+				ideology = totalist
+				long_name = CNT_POUM_party_long
+				name = CNT_POUM_party
+			}
+		set_party_name = {
+				ideology = radical_socialist
+				long_name = CNT_POUM_party_long
+				name = CNT_POUM_party
+			}
+		}
+	}
+	focus={
+		id=PCE_23
+		icon=PCE_Raise_the_flag
+		x=93
+		y=22
+		prerequisite={focus=PCE_21}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 250
+		add_research_slot = 1
+		}
+	}
+	focus={
+		id=PCE_24
+		icon=PCE_Apprentice_of_the_World_Revolution
+		x=89
+		y=23
+		prerequisite={focus=PCE_22}
+		prerequisite={focus=PCE_23}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_idea = CNT_andreu_nin_perez_hog_tot
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 100
+		add_stability = 0.05
+		add_manpower = 20000
+		}
+	}
+	focus={
+		id=PCE_25
+		icon=GFX_goal_AUS_industrialist_wienerkommission
+		x=87
+		y=24
+		prerequisite={focus=PCE_24}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Hyper_industrialized
+		}
+	}
+	focus={
+		id=PCE_26
+		icon=PCE_Adhere_to_the_dictatorship_of_the_proletariat
+		x=89
+		y=24
+		prerequisite={focus=PCE_24}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Revolution_forever
+		}
+	}
+	focus={
+		id=PCE_27
+		icon=PCE_Strike_hard_at_capitalism
+		x=91
+		y=24
+		prerequisite={focus=PCE_24}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Against_capitalism
+		}
+	}
+	focus={
+		id=PCE_28
+		icon=GFX_goal_BEL_Social_Equality_All_True_Belgians
+		x=88
+		y=25
+		prerequisite={focus=PCE_25}
+		prerequisite={focus=PCE_26}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_Revolution_forever
+			add_idea = NJONS_Revolution_forever1
+			}
+		}
+	}
+	focus={
+		id=PCE_29
+		icon=GFX_goal_FRA_jacobin_nationalism
+		x=90
+		y=25
+		prerequisite={focus=PCE_26}
+		prerequisite={focus=PCE_27}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_Against_capitalism
+			add_idea = NJONS_Against_capitalism1
+			}
+		}
+	}
+	focus={
+		id=PCE_30
+		icon=GFX_goal_SOV_internationalism
+		x=89
+		y=26
+		prerequisite={focus=PCE_28}
+		prerequisite={focus=PCE_29}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_Revolution_forever1
+			add_idea = NJONS_Revolution_forever2
+			}
+		}
+	}
+	focus={
+		id=PCE_31
+		icon=PCE_Friend_of_the_peasant_class
+		x=95
+		y=23
+		prerequisite={focus=PCE_23}
+		prerequisite={focus=PCE_22}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_idea = CNT_Joaquin_Maurin_Julia_hog_rso
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 100
+		add_stability = 0.05
+		add_manpower = 20000
+		}
+	}
+	focus={
+		id=PCE_32
+		icon=GFX_UKR_Agrarian_Economy
+		x=93
+		y=24
+		prerequisite={focus=PCE_31}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_New_Economic_Policy
+		}
+	}
+	focus={
+		id=PCE_33
+		icon=PCE_Petty_traders_are_allowed
+		x=95
+		y=24
+		prerequisite={focus=PCE_31}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Emancipate_the_petty_traders1
+		}
+	}
+	focus={
+		id=PCE_34
+		icon=GFX_goal_SRI_Socialized_Utilities_Public_Healthcare
+		x=97
+		y=24
+		prerequisite={focus=PCE_31}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Socialism_in_development
+		}
+	}
+	focus={
+		id=PCE_35
+		icon=PCE_Maintain_the_workers_and_peasants_union
+		x=94
+		y=25
+		prerequisite={focus=PCE_32}
+		prerequisite={focus=PCE_33}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_New_Economic_Policy
+			add_idea = NJONS_New_Economic_Policy1
+			}
+		}
+	}
+	focus={
+		id=PCE_36
+		icon=PCE_Against_revolutionary_violence
+		x=96
+		y=25
+		prerequisite={focus=PCE_33}
+		prerequisite={focus=PCE_34}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_Emancipate_the_petty_traders1
+			add_idea = NJONS_Emancipate_the_petty_traders2
+			}
+		}
+	}
+	focus={
+		id=PCE_37
+		icon=GFX_goal_communist_world_revolution
+		x=95
+		y=26
+		prerequisite={focus=PCE_35}
+		prerequisite={focus=PCE_36}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+			remove_idea = NJONS_New_Economic_Policy1
+			add_idea = NJONS_New_Economic_Policy2
+			}
+		}
+	}
+	focus={
+		id=PCE_38
+		icon=PSE_Rallier_of_the_revolution
+		x=102
+		y=21
+		prerequisite={focus=PCE_0}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		available = {
+			has_idea = CNT_Francisco_Largo_Caballero_hog_rso
+		}
+		completion_reward={
+		add_political_power = 100
+		add_stability = 0.05
+		add_manpower = 20000
+		}
+	}
+	focus={
+		id=PCE_39
+		icon=GFX_SOV_Central_Moscow
+		x=101
+		y=22
+		prerequisite={focus=PCE_38}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		add_stability = 0.1
+		}
+	}
+	focus={
+		id=PCE_40
+		icon=GFX_goal_FOP_Agrarian_Anarchism_Federacion_Obrera
+		x=103
+		y=22
+		prerequisite={focus=PCE_38}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = CNT_rally_anarchists_idea
+				add_idea = CNT_rally_anarchists_idea1
+			}
+		}
+	}
+	focus={
+		id=PCE_41
+		icon=GFX_goal_COL_Socialist_Government
+		x=102
+		y=23
+		prerequisite={focus=PCE_39}
+		prerequisite={focus=PCE_40}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		add_stability = 0.1
+		}
+	}
+	focus={
+		id=PCE_42
+		icon=GFX_goal_BRG_Moderate_Unions
+		x=100
+		y=24
+		prerequisite={focus=PCE_41}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 200
+		add_popularity = { ideology = totalist popularity = 0.1 }
+		set_temp_variable = { coalition_partner_var = token:totalist }
+		add_to_coalition = yes 
+		add_popularity = { ideology = syndicalist popularity = 0.1 }
+		set_temp_variable = { coalition_partner_var = token:syndicalist }
+		add_to_coalition = yes 
+		add_popularity = { ideology = radical_socialist popularity = 0.1 }
+		set_temp_variable = { coalition_partner_var = token:radical_socialist }
+		add_to_coalition = yes 
+		add_popularity = { ideology = social_democrat popularity = 0.1 }
+		set_temp_variable = { coalition_partner_var = token:social_democrat }
+		add_to_coalition = yes 
+		}
+	}
+	focus={
+		id=PCE_43
+		icon=GFX_goal_COR_Champion_Womens_Three_Movements
+		x=102
+		y=24
+		prerequisite={focus=PCE_41}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Women_can_hold_up_half_the_sky
+		}
+	}
+	focus={
+		id=PCE_44
+		icon=GFX_goal_NFA_Slowly_Desocialize_Economy
+		x=104
+		y=24
+		prerequisite={focus=PCE_41}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Develop_a_planned_economy
+		}
+	}
+	focus={
+		id=PCE_45
+		icon=GFX_goal_MEX_Shining_Stable_Red
+		x=101
+		y=25
+		prerequisite={focus=PCE_42}
+		prerequisite={focus=PCE_43}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			swap_ideas = {
+				remove_idea = NJONS_Women_can_hold_up_half_the_sky
+				add_idea = NJONS_Women_can_hold_up_half_the_sky1
+			}
+		}
+	}
+	focus={
+		id=PCE_46
+		icon=PSE_Regaining_national_identity
+		x=103
+		y=25
+		prerequisite={focus=PCE_43}
+		prerequisite={focus=PCE_44}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			swap_ideas = {
+				remove_idea = NJONS_Develop_a_planned_economy
+				add_idea = NJONS_Develop_a_planned_economy1
+			}
+		}
+	}
+	focus={
+		id=PCE_47
+		icon=GFX_goal_FIU_popular_internationalism
+		x=102
+		y=26
+		prerequisite={focus=PCE_45}
+		prerequisite={focus=PCE_46}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			swap_ideas = {
+				remove_idea = NJONS_Women_can_hold_up_half_the_sky1
+				add_idea = NJONS_Women_can_hold_up_half_the_sky2
+			}
+			hidden_effect = {
+				country_event =  SPRelection.1
+			}
+			
+		}
+	}
+	focus={
+		id=PCE_48
+		icon=PSE_Vanguard_in_the_Black_Mist
+		x=109
+		y=21
+		prerequisite={focus=PCE_0}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available = {
+			has_idea = CNT_Helios_Gomez_Rodriguez_hog_tot
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_political_power = 100
+		add_stability = 0.05
+		add_manpower = 20000
+		}
+	}
+	focus={
+		id=PCE_49
+		icon=PSE_Decentralization
+		x=108
+		y=22
+		prerequisite={focus=PCE_48}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_Decentralization
+		}
+	}
+	focus={
+		id=PCE_50
+		icon=PSE_Reorganize_the_vanguard
+		x=110
+		y=22
+		prerequisite={focus=PCE_48}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_war_support = 0.1
+		add_political_power = 200
+		add_command_power = 200
+		}
+	}
+	focus={
+		id=PCE_51
+		icon=GFX_goal_AUS_austromarxism_heroines
+		x=109
+		y=23
+		prerequisite={focus=PCE_49}
+		prerequisite={focus=PCE_50}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_revolution
+		}
+	}
+	focus={
+		id=PCE_52
+		icon=PSE_Complete_elimination_of_private_ownership
+		x=107
+		y=24
+		prerequisite={focus=PCE_51}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_NThere_is_no_oppression
+		}
+	}
+	focus={
+		id=PCE_53
+		icon=GFX_goal_AUS_Blank_Check_Investigations_Rogue_Politickers
+		x=109
+		y=24
+		prerequisite={focus=PCE_51}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+			swap_ideas = {
+				remove_idea = NJONS_revolution
+				add_idea = NJONS_revolution1
+			}
+		}
+	}
+	focus={
+		id=PCE_54
+		icon=GFX_goal_AUS_Ascertained_Placidity
+		x=111
+		y=24
+		prerequisite={focus=PCE_51}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		add_ideas = NJONS_communist_army
+		}
+	}
+	focus={
+		id=PCE_55
+		icon=GFX_goal_CSA_great_purge
+		x=108
+		y=25
+		prerequisite={focus=PCE_52}
+		prerequisite={focus=PCE_53}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_NThere_is_no_oppression
+				add_idea = NJONS_NThere_is_no_oppression1
+			}
+		}
+	}
+	focus={
+		id=PCE_56
+		icon=GFX_goal_AUS_anarchist_social_revolution
+		x=110
+		y=25
+		prerequisite={focus=PCE_53}
+		prerequisite={focus=PCE_54}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		swap_ideas = {
+				remove_idea = NJONS_revolution1
+				add_idea = NJONS_revolution2
+			}
+		}
+	}
+	focus={
+		id=PCE_57
+		icon=GFX_goal_AUS_einsturz
+		x=109
+		y=26
+		prerequisite={focus=PCE_55}
+		prerequisite={focus=PCE_56}
+		cost=5
+		ai_will_do={
+			factor=1
+		}
+		available_if_capitulated=yes
+		search_filters={
+		}
+		completion_reward={
+		set_cosmetic_tag = CNT_totalist1_state
+		swap_ideas = {
+				remove_idea = NJONS_communist_army
+				add_idea = NJONS_communist_army1
+			}
 		}
 	}
 }

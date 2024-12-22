@@ -74,37 +74,5 @@ leader_traits = {
 				factor = 1
 		}
 	}
-	protector_of_the_army = {
-		random = no
-		experience_gain_army_factor = 0.1
-		experience_gain_air_factor = 0.1
-		experience_gain_navy_factor = 0.1
-		command_power_gain_mult = 0.1
-	  }
-	  byzantine_emperor = {
-		random = no
-		stability_factor = 0.05
-		war_support_factor = 0.1
-		army_core_defence_factor = 0.1
-		army_core_attack_factor = 0.05
-		army_morale_factor = 0.1
-		command_power_gain = 0.15
-		experience_gain_factor = 0.1
-	}
-	saviour_of_the_people = {
-		random = no
-		monthly_population = 0.2
-	}
 	
-	defender_of_freedom_of_religion = {
-		random = no
-		stability = 0.1
-		opinion_gain_monthly_factor = 0.2
-	  
-	}
-	father_of_freedom = {
-		random = no
-		political_power_gain = 0.10
-		market_liberal_drift = 0.01
-	}
 }

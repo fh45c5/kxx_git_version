@@ -2902,7 +2902,7 @@ PLA_cpczywyh_category = {
     }
     remove_effect = {
       hidden_effect = {
-      NSW = {
+      PLA = {
         add_popularity = { ideology = totalist popularity = 0.05 }
       }
       }
@@ -2919,7 +2919,7 @@ PLA_cpczywyh_category = {
       }
       remove_effect = {
         hidden_effect = {
-        NSW = {
+        PLA = {
           add_popularity = { ideology = syndicalist popularity = 0.05 }
         }
         }
@@ -2936,7 +2936,7 @@ PLA_cpczywyh_category = {
         }
         remove_effect = {
           hidden_effect = {
-          NSW = {
+          PLA = {
             add_popularity = { ideology = radical_socialist popularity = 0.05 }
           }
           }

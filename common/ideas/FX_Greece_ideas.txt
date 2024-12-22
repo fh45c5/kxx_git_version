@@ -6,6 +6,74 @@ ideas = {
 	################
 	country = {
 		#STARTING
+		GRE_turkish_resistence = {
+			on_add = {
+				log = "[GetLogIdeaInfo] GRE_secret_reform"
+			}
+			
+			picture = OTT_Horrors_of_the_Weltkrieg_idea_icon
+			modifier = {
+				political_power_cost = 0.2
+				stability_weekly = -0.02
+				war_support_weekly = -0.02
+				army_org_factor = -0.1
+				conscription_factor = -0.2
+			}
+			
+		}
+		GRE_turkish_resistence1 = {
+			on_add = {
+				log = "[GetLogIdeaInfo] GRE_secret_reform"
+			}
+			
+			picture = OTT_Horrors_of_the_Weltkrieg_idea_icon
+			modifier = {
+				political_power_cost = 0.1
+				stability_weekly = -0.01
+				war_support_weekly = -0.01
+				army_org_factor = -0.05
+				conscription_factor = -0.1
+			}
+			
+		}
+		GRE_turkish_resistence2 = {
+			on_add = {
+				log = "[GetLogIdeaInfo] GRE_secret_reform"
+			}
+			
+			picture = OTT_Horrors_of_the_Weltkrieg_idea_icon
+			modifier = {
+				stability_weekly = -0.01
+				war_support_weekly = -0.01
+				army_org_factor = -0.05
+			}
+			
+		}
+		GRE_turkish_resistence3 = {
+			on_add = {
+				log = "[GetLogIdeaInfo] GRE_secret_reform"
+			}
+			
+			picture = OTT_Horrors_of_the_Weltkrieg_idea_icon
+			modifier = {
+				stability_factor = -0.01
+				war_support_factor = -0.01
+				army_org_factor = -0.05
+			}
+			
+		}
+		GRE_TUR_payment = {
+			on_add = {
+				log = "[GetLogIdeaInfo] GRE_secret_reform"
+			}
+			
+			picture = KTG_Industrial_Crisis_Town
+			modifier = {
+				cic_to_overlord_factor = 0.75
+				mic_to_overlord_factor = 0.75
+			}
+			
+		}
 		GRE_greco_turkey_war = {
 			on_add = {
 				log = "[GetLogIdeaInfo] GRE_secret_reform"
@@ -1782,23 +1850,70 @@ ideas = {
 				consumer_goods_factor = 0.05
 			}
 		}
+		GRE_export_focus_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GRE_export_focus_idea"}
+			allowed = { always = no }
+			picture = can_wartime_prices_and_trade_board
+			modifier = {
+				consumer_goods_factor = -0.15
+				local_resources_factor = 0.20
+				industrial_capacity_factory = 0.10
+			}
+		}
+		GRE_strong_executive = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GRE_strong_executive"}
+			allowed = { always = no }
+			name = "反腐战役"
+			available = { has_elected_government = yes }
+			picture = generic_abolished_parliament
+			modifier = {
+				political_power_cost = -0.1
+				stability_factor = 0.1
+				local_resources_factor = 0.1
+
+			}
+		}
+		GRE_empowered_parliament = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GRE_empowered_parliament"}
+			allowed = { always = no }
+			name = "经济监管局"
+			picture = NFA_strong_assembly
+			modifier = {
+				political_power_gain = 0.10
+				global_building_slots_factor = 0.1
+
+			}
+		}
+		GRE_finding_our_own_way_idea = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GRE_finding_our_own_way_idea"}
+			allowed = { always = no }
+			name = "烟草的利润"
+			picture = generic_taxation
+			modifier = {
+				consumer_goods_factor = -0.1
+				industrial_capacity_factory = 0.20
+
+			}
+		}
 		GRE_privatised_industry = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GRE_privatised_industry" }
 			picture = can_wartime_prices_and_trade_board
+			name = "复苏的帝国经济"
 			allowed = {
 				OR = {
 					original_tag = GRE
 				}
 			}
 			modifier = {
-				production_factory_max_efficiency_factor = 0.10
-				consumer_goods_factor = -0.05
-				stability_factor = -0.05
+				line_change_production_efficiency_factor = 0.10
+				consumer_goods_factor = -0.15
+				stability_factor = 0.05
 			}
 		}
 		GRE_nationalised_industry = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GRE_nationalised_industry" }
 			picture = economic_control_icon
+			name = "帝国经济委员会"
 			allowed = {
 				OR = {
 					original_tag = GRE
@@ -1806,8 +1921,8 @@ ideas = {
 			}
 			allowed_civil_war = { always = yes }
 			modifier = {
-				production_factory_max_efficiency_factor = 0.10
-				production_speed_buildings_factor = 0.20
+				production_factory_efficiency_gain_factor = 0.1
+				production_speed_industrial_complex_factor = 0.20
 				political_power_gain = 0.20
 			}
 		}
@@ -1820,7 +1935,7 @@ ideas = {
 				}
 			}
 			modifier = {
-				production_factory_max_efficiency_factor = -0.10
+				production_factory_max_efficiency_factor = 0.10
 				production_speed_arms_factory_factor = 0.2
 				political_power_gain = 0.2
 			}

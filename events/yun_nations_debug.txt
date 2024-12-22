@@ -1,0 +1,209 @@
+add_namespace = yundebug
+
+country_event = { 
+	id = yundebug.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event yundebug.1" }
+	title = yundebug.1.t
+	desc = yundebug.1.d
+	trigger = { tag = WLL }		
+	fire_only_once = yes
+	option = {
+		name = yundebug.1.a
+		ai_chance = { base = 0 }
+		custom_effect_tooltip = fuck_ai_flanders
+		FLN = {
+			country_event = yundebug.2
+		}
+	}
+
+	option = {
+		name = yundebug.1.b
+		ai_chance = { base = 100 }
+	}
+}
+
+
+country_event = { 
+	id = yundebug.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event yundebug.2" }
+	title = yundebug.2.t
+	desc = yundebug.2.d
+		
+	is_triggered_only = yes
+
+	option = {
+		name = yundebug.2.a
+		ai_chance = { base = 100 }
+		HOL = {
+			puppet = FLN
+		}
+	}
+
+	option = {
+		name = yundebug.2.b
+		ai_chance = { base = 1 }
+		if = {
+			limit = {
+				is_in_faction = yes
+				is_faction_leader = yes
+			}
+			dismantle_faction = yes
+			}
+		else_if = {
+			limit = { is_in_faction = yes }
+			leave_faction = yes
+			}	
+		declare_war_on = {
+			target = WLL
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { 
+	id = yundebug.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event yundebug.3" }
+	title = yundebug.3.t
+	desc = yundebug.3.d
+	picture = GFX_arz_color
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = yundebug.3.a
+		ai_chance = {
+			factor = 0
+		}
+		add_political_power = 200
+		set_country_flag = ARZ_war_over
+	}
+
+	option = { 
+		name = yundebug.3.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+}
+
+country_event = { 
+	id = yundebug.77
+	immediate = { log = "[GetDateText]: [Root.GetName]: event yundebug.77" }
+	title = yundebug.77.t
+	desc = yundebug.77.d
+	picture = GFX_report_event_PAP_vatican
+    trigger = {
+		country_exists = CNT	
+		OR = { 
+		country_exists = SVK
+		country_exists = JER
+		CNT = { has_cosmetic_tag = CNT_FE }
+		CNT = { has_cosmetic_tag = CNT_FE_JONS }
+		CNT = { has_cosmetic_tag = CNT_JONS }
+		}
+	  }
+
+	is_triggered_only = yes
+	major = yes
+
+	option = { 
+		name = yundebug.77.a
+		custom_effect_tooltip = fatima_fuckex	
+		trigger = {
+			has_socialist_government = no
+		}
+		hidden_effect = {
+			if = {
+				limit = { 
+					is_ai = yes
+				 }
+				add_political_power = 150
+				}
+			else_if = {
+				limit = { 
+					OR = {
+					tag = SVK 
+					tag = CNT 
+					tag = JER 
+					}
+				}
+				add_political_power = -150
+			}									
+			else = {
+				CNT = {
+					add_ideas = yun_fatimah_punishment
+				}
+				SVK = {
+					add_ideas = yun_fatimah_punishment
+				}
+				JER = {
+					add_ideas = yun_fatimah_punishment
+				}
+			}				
+		}
+	}
+
+	option = { 
+		name = yundebug.77.b
+		custom_effect_tooltip = fatima_fuckex
+		trigger = {
+			has_socialist_government = yes
+		}		
+		hidden_effect = {
+			if = {
+				limit = { 
+					is_ai = yes
+				 }
+				add_political_power = 200
+				}
+			else_if = {
+				limit = { 
+					OR = {
+					tag = SVK 
+					tag = CNT 
+					tag = JER 
+					}
+				}
+				add_political_power = -200
+			}									
+			else = {
+				CNT = {
+					add_ideas = yun_fatimah_punishment
+				}
+				SVK = {
+					add_ideas = yun_fatimah_punishment
+				}
+				JER = {
+					add_ideas = yun_fatimah_punishment
+				}
+			}				
+		}
+	}
+	option = {
+		name = yundebug.77.c
+	}
+}
+
+country_event = { 
+	id = yundebug.999
+	title = yundebug.999.t
+	desc = yundebug.999.d
+	picture = GFX_report_event_mydearlady2
+    trigger = {
+       tag = ZZZ
+	   any_other_country = { has_war_with = ZZZ }
+    }
+	
+	option = { #Yes
+		name = yundebug.999.a
+		every_other_country = {
+				limit = {
+					has_war_with = ZZZ
+				}
+				white_peace = ROOT
+			}
+	}
+}

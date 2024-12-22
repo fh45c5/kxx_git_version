@@ -697,7 +697,7 @@ guiTypes = {
 			textureFile = ""
 			font = "hoi_20b"
 			borderSize = {x = 28 y = -226}
-			text = "清政府"
+			text = "希腊共和国"
 			maxWidth = 340
 			maxHeight = 30	
 			format = centre

@@ -34,23 +34,7 @@ HNN_luxianzhinan = {
 	}
 }
 
-NOR_luxianzhinan = {
-	NOR_tree = {
-		icon = GFX_decision_generic_agreement
-		visible = {
-			tag = NOR
-		}
-		available = {
-			original_tag = NOR
-		}
-		ai_will_do = {
-			factor = 0
-		}
-		complete_effect = {
-			country_event = zhinan.28
-		}
-	}
-}
+
 
 GXC_luxianzhinan = {
 	GXC_tree = {

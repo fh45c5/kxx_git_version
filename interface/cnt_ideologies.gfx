@@ -1,5 +1,20 @@
 spriteTypes = {	
-
+	SpriteType = {
+	name = "GFX_ideology_military_anarchism"
+	texturefile = "gfx/interface/ideologies/military_anarchism.png"
+	}
+	SpriteType = {
+	name = "GFX_ideology_radsoc_social_anarchism"
+	texturefile = "gfx/interface/ideologies/radsoc_social_anarchism.png"
+	}
+	SpriteType = {
+	name = "GFX_ideology_individualist_anarchism"
+	texturefile = "gfx/interface/ideologies/individualist_anarchism.png"
+	}
+	SpriteType = {
+	name = "GFX_ideology_anarcho_market_socialism"
+	texturefile = "gfx/interface/ideologies/anarcho_market_socialism.png"
+	}
 	SpriteType = {
 	name = "GFX_ideology_national_programmatism"
 	texturefile = "gfx/interface/ideologies/national_programmatism.png"
@@ -9,7 +24,7 @@ spriteTypes = {
 	texturefile = "gfx/interface/ideologies/tot_eternal_revolution.png"
 	}
 	SpriteType = {
-	name = "GFX_ideology_pau_erternal_revolution"
+	name = "GFX_ideology_pau_eternal_revolution"
 	texturefile = "gfx/interface/ideologies/pau_rternal_revolution.png"
 	}
 	SpriteType = {

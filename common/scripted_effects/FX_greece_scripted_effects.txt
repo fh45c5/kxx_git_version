@@ -1,0 +1,36 @@
+GRE_ANATOLIA_stablize_effect = {
+	if = {
+		limit = {
+			has_idea = GRE_turkish_resistence
+		}
+		swap_ideas = {
+			remove_idea = GRE_turkish_resistence
+			add_idea = GRE_turkish_resistence1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GRE_turkish_resistence1
+		}
+		swap_ideas = {
+			remove_idea = GRE_turkish_resistence1
+			add_idea = GRE_turkish_resistence2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GRE_turkish_resistence2
+		}
+		swap_ideas = {
+			remove_idea = GRE_turkish_resistence2
+			add_idea = GRE_turkish_resistence3
+		}
+	}
+	
+	else = {
+		
+		remove_ideas = GRE_turkish_resistence3
+			
+		
+	}
+}

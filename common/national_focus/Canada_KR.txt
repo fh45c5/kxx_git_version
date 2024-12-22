@@ -24,7 +24,10 @@ focus_tree = {
 	shared_focus = CAN_Triumph_of_the_FPU
 	shared_focus = CAN_Socialist_Party_of_Canada
 	shared_focus = CAN_Social_Democratic_Party_of_Canada
-	shared_focus =  CAN_Moderate_Communists
+	shared_focus = CAN_Moderate_Communists
+	shared_focus = CAN_second_chance_of_social_credit
+	shared_focus = CAN_socialist_action_union
+	shared_focus = CAN_technocracy_in_canada
 	### POLITICAL
 
 	focus = {

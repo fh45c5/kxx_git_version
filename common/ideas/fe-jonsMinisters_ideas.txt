@@ -2512,6 +2512,186 @@ ideas = {
 
 	}
     head_of_government = {
+		CNT_antonio_de_hoyos_y_vinent_hog_rso = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_antonio_de_hoyos_y_vinent_hog_rso"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_rebellious_baron
+			}
+		}
+		CNT_isaac_puente_amestoy_hog_rso = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_isaac_puente_amestoy_hog_rso"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_environmental_protection_malthusians
+			}
+		}
+		CNT_miguel_jimenez_igualada_hog_sde = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_miguel_jimenez_igualada_hog_sde"
+			}
+			traits = {
+				head_of_government
+				social_democrat
+				hog_supporters_of_mutualism
+			}
+		}
+		CNT_felipe_emilo_sandoval_cabrerizo_hog_rso = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_felipe_emilo_sandoval_cabrerizo_hog_rso"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_brutal_beasts
+			}
+		}
+		CNT_Onesimo_Redondo_Ortega_hog_npo = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_Onesimo_Redondo_Ortega_hog_npo"
+			}
+			traits = {
+				head_of_government
+				national_populist
+				hog_popular_leader_of_the_people
+			}
+		}
+		CNT_Federica_Monsteny_Mane_hog_rso = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_Federica_Monsteny_Mane_hog_rso"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_ambitious_union_boss
+			}
+		}
+		CNT_Abraham_Guillen_hog_rso = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_Abraham_Guillen_hog_rso"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_spiritual_leader
+			}
+		}
+		CNT_Francisco_Guillen_Salaya_hog_syn = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_Francisco_Guillen_Salaya_hog_syn"
+			}
+			traits = {
+				head_of_government
+				syndicalist
+				hog_naive_optimist
+			}
+		}
+		CNT_Jose_Buenaventura_Durruti_Dumange_hog_syn = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_Jose_Buenaventura_Durruti_Dumange_hog_syn"
+			}
+			traits = {
+				head_of_government
+				syndicalist
+				hog_respected_war_hero
+			}
+		}
+		CNT_Juan_Lopez_Sanchez_hog_syn = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_Juan_Lopez_Sanchez_hog_syn"
+			}
+			traits = {
+				head_of_government
+				syndicalist
+				hog_humanitarian
+			}
+		}
 		WSU_Stepan_Bandera_hog_tot = {
 			allowed = { original_tag = WSU }
 			available = {
@@ -2708,6 +2888,96 @@ ideas = {
 				head_of_government
 				national_populist
 				hog_heredero_de_los_pecados_de_los_padres
+			}
+		}
+		CNT_andreu_nin_perez_hog_tot = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_andreu_nin_perez_hog_tot"
+			}
+			traits = {
+				head_of_government
+				totalist
+				hog_pragmatic_statesman
+			}
+		}
+		CNT_Joaquin_Maurin_Julia_hog_rso = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_Joaquin_Maurin_Julia_hog_rso"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_the_peasant_marshal
+			}
+		}
+		CNT_Francisco_Largo_Caballero_hog_rso = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_Francisco_Largo_Caballero_hog_rso"
+			}
+			traits = {
+				head_of_government
+				radical_socialist
+				hog_ambitious_union_boss
+			}
+		}
+		CNT_Helios_Gomez_Rodriguez_hog_tot = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_Helios_Gomez_Rodriguez_hog_tot"
+			}
+			traits = {
+				head_of_government
+				totalist
+				int_dismal_enigma
+			}
+		}
+		CNT_Dolores_Ibaurri_Gomez_hog_tot = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_Dolores_Ibaurri_Gomez_hog_tot"
+			}
+			traits = {
+				head_of_government
+				totalist
+				lobe_mover_and_shaker
 			}
 		}
 		MNT_Dracha_Mikhailovich_hog_npo = {
@@ -3322,6 +3592,78 @@ ideas = {
 				economy_minister
 				national_populist
 				eco_theorist_of_national_syndicalism
+			}
+		}
+		CNT_Juan_Aparicio_Lopez_eco_tot = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_Juan_Aparicio_Lopez_eco_tot"
+			}
+			traits = {
+				economy_minister
+				totalist
+				eco_theorist_of_national_syndicalism
+			}
+		}
+		CNT_Juan_Bautista_Perez_de_Cabo_sec_npo = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_Juan_Bautista_Perez_de_Cabo_sec_npo"
+			}
+			traits = {
+				security_minister
+				national_populist
+				sec_nationalis_martyrs
+			}
+		}
+		CNT_Ramiro_de_Maeztu_eco_npo = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_Ramiro_de_Maeztu_eco_npo"
+			}
+			traits = {
+				economy_minister
+				national_populist
+				eco_fans_of_traditionalism
+			}
+		}
+		CNT_Jose_Luis_Arrese_for_npo = {
+			allowed = { original_tag = CNT }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea CNT_Jose_Luis_Arrese_for_npo"
+			}
+			traits = {
+				foreign_minister
+				national_populist
+				for_ideological_crusader
 			}
 		}
 		MNT_Jovan_Babunsk_for_npo = {

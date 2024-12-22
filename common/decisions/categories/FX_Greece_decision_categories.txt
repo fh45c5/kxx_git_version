@@ -35,7 +35,16 @@ GRE_greek_turkish_war_decision = {
 	priority = 213769
 	icon = decision_generic_flags
 }
-
+GRE_national_ambitions_decision = {
+	allowed = {
+		tag = GRE 
+	}
+	visible = {
+		tag = GRE
+	}
+	priority = 213769
+	icon = decision_generic_flags
+}
 GRE_final_solution = {
 	allowed = {
 		tag = GRE

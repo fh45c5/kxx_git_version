@@ -1,0 +1,166 @@
+ideas = {
+	country = {
+
+		#公社可能派
+		FRA_student_scholarships = {
+			visible = {
+				always = yes
+			}
+			picture = generic_research_bonus
+
+			modifier = {
+				research_speed_factor = 0.15
+			}
+		}
+		FRA_marketization_1 = {
+			visible = {
+				always = yes
+			}
+			picture = laissez_faires_economy
+
+			modifier = {
+				local_resources_factor = 0.12
+				consumer_goods_factor = 0.05
+			}
+		}
+		FRA_marketization_2 = {
+			visible = {
+				always = yes
+			}
+			picture = laissez_faires_economy
+
+			modifier = {
+				local_resources_factor = 0.45
+				line_change_production_efficiency_factor = 0.2
+				consumer_goods_factor = 0.1
+			}
+		}
+		FRA_marketization_3 = {
+			visible = {
+				always = yes
+			}
+			picture = HOL_syndicalist_neutrality
+
+			modifier = {
+				local_resources_factor = 0.15
+				production_factory_max_efficiency_factor = 0.35
+				production_factory_efficiency_gain_factor = 0.35
+				consumer_goods_factor = 0.05
+			}
+		}
+		FRA_Lighthouse_of_Democratic_Society = {
+			visible = {
+				always = yes
+			}
+			picture = syndie_republic
+
+			modifier = {
+				
+				consumer_goods_factor = -0.4
+				political_power_gain = 0.1
+				war_support_weekly = 0.01
+				stability_factor = 0.3
+			}
+		}
+		FRA_Between_possibility_and_impossibility = {
+			visible = {
+				always = yes
+			}
+			picture = GER_praise_marx
+
+			modifier = {
+				send_volunteer_size = 4
+				command_power_gain = 0.01
+				max_command_power = 200
+			}
+		}
+		FRA_The_third_road = {
+			visible = {
+				always = yes
+			}
+			picture = GUA_appease_socialists
+
+			modifier = {
+				monthly_population = 0.35
+				local_building_slots_factor = 0.2
+				consumer_goods_factor = -0.24
+			}
+		}
+		FRA_Still_moving_forward_in_the_midst_of_confusion = {
+			visible = {
+				always = yes
+			}
+			picture = NFA_empire_of_people
+
+			modifier = {
+				research_speed_factor = 0.24
+				production_speed_buildings_factor = 0.3
+				production_speed_nuclear_reactor_factor = 0.3
+				production_speed_arms_factory_factor = 0.3
+				production_speed_industrial_complex_factor = 0.3
+				production_speed_synthetic_refinery_factor = 0.3
+				production_speed_dockyard_factor = 0.3
+				production_speed_bunker_factor = 0.3
+				production_speed_infrastructure_factor = 0.3
+			}
+		}
+		FRA_public_expenditure = {
+			visible = {
+				always = yes
+			}
+			picture = LEC_staggering_reserves
+
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.15
+				consumer_goods_factor = 0.1
+			}
+		}
+		FRA_Workers_and_entrepreneurs = {
+			visible = {
+				always = yes
+			}
+			picture = generic_mutual_aid
+
+			modifier = {
+				production_speed_infrastructure_factor = 0.2
+				stability_weekly = 0.01
+				consumer_goods_factor = -0.2
+			}
+		}
+		FRA_social_welfare = {
+			visible = {
+				always = yes
+			}
+			picture = freedom_from_want_2
+
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				line_change_production_efficiency_factor = 0.1
+				consumer_goods_factor = 0.05
+			}
+		}
+		#公社内战前置
+		FRG_large_tear = {
+			visible = {
+				always = yes
+			}
+			picture = GFX_idea_FRG_large_tear
+
+			modifier = {
+				war_support_factor = -0.4
+				stability_factor = -0.4
+			}
+		}
+		FRG_crime_problem_peace = {
+			picture = NYC_mob_cooperation_idea
+			allowed = { always = yes }
+			modifier = {
+				political_power_cost = 0.4
+				consumer_goods_factor = 0.1
+				production_speed_buildings_factor = -0.1
+			}
+		}
+	}
+}

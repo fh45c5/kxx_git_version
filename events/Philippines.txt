@@ -23,67 +23,6 @@ country_event = { # Introduction
 	}
 }
 
-country_event = { # Syndicalist uprising in Manilla
-	id = phil.1
-	immediate = { log = "[GetDateText]: [Root.GetName]: event phil.1" }
-	title = phil.1.t
-	desc = phil.1.d
-	picture = GFX_report_event_PHI_manila_uprising
-
-	is_triggered_only = yes
-
-	trigger = {
-		tag = PHI
-		is_subject = no
-		has_elected_government = yes
-	}
-
-	option = { # Rebels seize the capital and prepare to establish a Syndicalist regime
-		name = phil.1.a
-		ai_chance = {
-			factor = 40
-		}
-		complete_national_focus = PHI_collapse_of_an_empire
-		hidden_effect = {
-			if = {
-				limit = { country_exists = GEA }
-				GEA = { country_event = Ostasien.60 }
-			}
-			country_event = { id = phil.2 days = 10 }
-			
-		}
-	}
-	option = { # Order our forces to resist the uprising
-		name = phil.1.b
-		ai_chance = {
-			factor = 60
-		}
-		complete_national_focus = PHI_collapse_of_an_empire
-		complete_national_focus = PHI_democracy_restored
-		hidden_effect = {
-			#This immediately causes a Democratic victory
-			news_event = { id = worldnews.58 days = 1 }
-			set_country_flag = PHI_DEMOCRACY
-			add_popularity = {
-				ideology = social_democrat
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = social_liberal
-				popularity = 0.16
-			}
-			add_popularity = {
-				ideology = market_liberal
-				popularity = 0.08
-			}
-			add_popularity = {
-				ideology = social_conservative
-				popularity = 0.04
-			}
-		}
-	}
-}
-
 # The Army Counter-Coup
 country_event = { # A counter-coup?
 	id = phil.2

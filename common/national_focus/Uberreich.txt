@@ -448,7 +448,7 @@ focus = {
 	
 focus = {
 		id = UBR_National_Corporatism
-		icon = GRU_National_corporate
+		icon = GFX_GRU_National_Corporatism
 		relative_position_id = UBR_natsoc_victory
 		x = -6
 		y = 2
@@ -472,7 +472,7 @@ focus = {
 
 focus = {
 		id = UBR_national_labour_service
-		icon = GRU_NAD
+		icon = GFX_GRU_Redeem_Freiwilliger_Arbeitsdienst
 		relative_position_id = UBR_natsoc_victory
 		x = -7
 		y = 3
@@ -607,7 +607,7 @@ focus = {
 	#Spz.Proj.PFEIL
 focus = {
 		id = UBR_spzprojpfeil
-		icon = GRU_SPZ_PFEIL
+		icon = GFX_GRU_SPZ_PFEIL
 		relative_position_id = UBR_natsoc_victory
 		x = -7
 		y = 9
@@ -629,7 +629,7 @@ focus = {
 	#Autobahn
 focus = {
 		id = UBR_autobahnen
-		icon = GRU_autobahnen_focus
+		icon = GFX_GRU_autobahnen_focus
 		relative_position_id = UBR_natsoc_victory
 		x = -9
 		y = 9
@@ -895,7 +895,7 @@ focus = {
 
 focus = {
 		id = UBR_technocrat_influence
-		icon = GRU_Technocratic
+		icon = GFX_GRU_Technocratic
 		relative_position_id = UBR_natsoc_victory
 		x = -8
 		y = 4
@@ -960,7 +960,7 @@ focus = {
 	
 focus = {
 		id = UBR_organic_growth
-		icon = GRU_ORGANIC_GROWITH
+		icon = GFX_GRU_ORGANIC_GROWITH
 		relative_position_id = UBR_natsoc_victory
 		x = -7
 		y = 5
@@ -1150,7 +1150,7 @@ focus = {
 
 focus = {
 		id = UBR_agrarian_subsides
-		icon = GRU_agrarian_subsides
+		icon = GFX_GRU_agrarian_subsides
 		relative_position_id = UBR_natsoc_victory
 		x = -5
 		y = 3

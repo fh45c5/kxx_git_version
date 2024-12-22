@@ -478,7 +478,7 @@ CAN_expanding_red_entente = {
 			}
 			hidden_effect = {
 				country_event = {
-					id = kxx_canada_soc.2
+					id = kxx_canada_soc.3
 					days = 7
 				}
 			}

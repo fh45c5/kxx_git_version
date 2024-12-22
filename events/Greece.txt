@@ -7774,7 +7774,146 @@ country_event = { #rome shit
 		hidden_effect = { set_country_flag = BYZ_rome_larp_shit_full }
 	}
 }			
+country_event = {
+	id = gre.400 #greece demand serbia
+	title = gre.400.t
+	desc = gre.400.d
+	picture = GFX_report_event_generic_diplomacy1
+	is_triggered_only = yes
+	fire_only_once = yes
+immediate = { 
+	log = "[GetDateText]: [Root.GetName]: event gre.15 FROM = [From.GetName]" 
+	
+}
+option = { #screw it
+	name = gre.400.a
+	
+}
+option = { #alright
 
+	name = gre.400.b
+	ai_chance = {
+		factor = 100
+	}
+	GRE = {
+		annex_country = {
+			target = SER
+			transfer_troops = yes
+		}
+	}
+}
+}
+country_event = {
+	id = gre.401 #greece demand bulgaria
+	title = gre.400.t
+	desc = gre.400.d
+	picture = GFX_report_event_generic_diplomacy1
+	is_triggered_only = yes
+	fire_only_once = yes
+immediate = { 
+	log = "[GetDateText]: [Root.GetName]: event gre.15 FROM = [From.GetName]" 
+	
+}
+option = { #screw it
+	name = gre.400.a
+	
+}
+option = { #alright
+
+	name = gre.400.b
+	ai_chance = {
+		factor = 100
+	}
+	GRE = {
+		annex_country = {
+			target = BUL
+			transfer_troops = yes
+		}
+	}
+}
+}
+country_event = {
+	id = gre.402 #greece ask for help
+	title = gre.402.t
+	desc = gre.402.d
+	picture = GFX_report_event_generic_diplomacy1
+	is_triggered_only = yes
+	fire_only_once = yes
+immediate = { 
+	log = "[GetDateText]: [Root.GetName]: event gre.15 FROM = [From.GetName]" 
+	
+}
+option = { #screw it
+	name = gre.402.a
+	
+}
+option = { #alright
+
+	name = gre.402.b
+	ai_chance = {
+		factor = 100
+	}
+	GRE = {
+		set_country_flag = GRE_ARM_JOINED_THIRD_GRETUR_WAR
+	}
+}
+}
+country_event = {
+	id = gre.403 #greece ask for malta
+	title = gre.400.t
+	desc = gre.400.d
+	picture = GFX_report_event_generic_diplomacy1
+	is_triggered_only = yes
+	fire_only_once = yes
+immediate = { 
+	log = "[GetDateText]: [Root.GetName]: event gre.15 FROM = [From.GetName]" 
+	
+}
+option = { #screw it
+	name = gre.400.a
+	
+}
+option = { #alright
+
+	name = gre.400.b
+	ai_chance = {
+		factor = 100
+	}
+	GRE = {
+		add_state_core = 116
+		annex_country = {
+			target = MLT
+			transfer_troops = yes
+		}
+	}
+}
+}
+country_event = {
+	id = gre.404 #greece ask for malta
+	title = gre.404.t
+	desc = gre.404.d
+	picture = GFX_report_event_generic_diplomacy1
+	trigger = {
+		tag = GRE
+		49 = {
+			is_owned_and_controlled_by = GRE
+		}
+		NOT = {
+			has_completed_focus = GRE_glre
+		}
+	}
+	fire_only_once = yes
+immediate = { 
+	log = "[GetDateText]: [Root.GetName]: event gre.15 FROM = [From.GetName]" 
+	
+}
+option = { #screw it
+	name = gre.404.a
+	add_ideas = GRE_turkish_resistence
+	complete_national_focus = GRE_turkish_plot
+}
+
+}
 country_event = {
 	id = gre.407 #FREE GUNS
 	immediate = { log = "[GetDateText]: [Root.GetName]: event gre.9 FROM = [From.GetName]" }

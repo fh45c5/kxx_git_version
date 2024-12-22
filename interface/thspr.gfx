@@ -5,6 +5,10 @@ spriteTypes = {
 	texturefile = "gfx/interface/decision/friend_to_france.png"			
 	}
 	SpriteType = {
+	name = "GFX_decision_JONS_the_power_struggles"
+	texturefile = "gfx/interface/decision/JONS_the_power_struggles.png"			
+	}
+	SpriteType = {
 	name = "GFX_decision_war_to_france"
 	texturefile = "gfx/interface/decision/war_to_france.png"			
 	}

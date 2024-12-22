@@ -17703,7 +17703,493 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = IRE_irish_social_credit
+		icon = GFX_goal_CAN_democratic_soccreds
+		cost = 3.00
+		x = 20
+		y = 14
+
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_country_flag = IRE_SOCCRED
+		}
+		bypass = {
+			has_country_flag = IRE_SOCCRED
+		}
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus IRE_Thormond_Redeemed"
+			custom_effect_tooltip = unlock_focuses
+		}
+	}
+	focus = {
+		id = IRE_restore_republicanism
+		icon = GFX_goal_IRE_discredit_monarch
+		cost = 3.00
+		x = -2
+		y = 1
+		relative_position_id = IRE_irish_social_credit
+		prerequisite = {
+			focus = IRE_irish_social_credit
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_country_flag = IRE_O_Brien_Coup
+		}
+
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus IRE_Thormond_Redeemed"
+			add_ideas = IRE_new_republicanism
+			remove_ideas = IRE_False_King_Resistance
+		}
+	}
+	focus = {
+		id = IRE_ally_RWP
+		icon = GFX_IRE_RWG
+		cost = 3.00
+		x = -3
+		y = 2
+		relative_position_id = IRE_irish_social_credit
+		prerequisite = {
+			focus = IRE_restore_republicanism
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_country_flag = IRE_O_Brien_Coup
+		}
+
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus IRE_Thormond_Redeemed"
+			add_tot_to_coalition = yes
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.1
+			}
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = IRE_ally_lp
+		icon = GFX_IRE_Labour
+		cost = 3.00
+		x = -1
+		y = 2
+		relative_position_id = IRE_irish_social_credit
+		prerequisite = {
+			focus = IRE_restore_republicanism
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_country_flag = IRE_O_Brien_Coup
+		}
+
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus IRE_Thormond_Redeemed"
+			add_socdem_to_coalition = yes
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.1
+			}
+			add_political_power = 100
+		}
+	}
 	
+	focus = {
+		id = IRE_catholicism
+		icon = GFX_goal_MEX_friendship_with_church
+		cost = 3.00
+		x = -2
+		y = 3
+		relative_position_id = IRE_irish_social_credit
+		prerequisite = {
+			focus = IRE_ally_lp
+			
+		}
+		prerequisite = {
+			focus = IRE_ally_RWP
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_country_flag = IRE_O_Brien_Coup
+		}
+
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus IRE_Thormond_Redeemed"
+			add_ideas = IRE_catholic_socialism
+			add_war_support = 0.05
+			add_popularity = {
+				ideology = national_populist
+				popularity = -0.1
+			}
+		}
+	}
+	focus = {
+		id = IRE_total_eco_reform
+		icon = GFX_goal_ENG_Begin_Reforms
+		cost = 3.00
+		x = 2
+		y = 1
+		relative_position_id = IRE_irish_social_credit
+		prerequisite = {
+			focus = IRE_irish_social_credit
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_country_flag = IRE_O_Brien_Coup
+		}
+
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus IRE_Thormond_Redeemed"
+			add_ideas = IRE_soccred_economy
+			
+		}
+	}
+	focus = {
+		id = IRE_destroy_bankers
+		icon = GFX_goal_NYC_Break_Banks
+		cost = 3.00
+		x = 1
+		y = 2
+		relative_position_id = IRE_irish_social_credit
+		prerequisite = {
+			focus = IRE_total_eco_reform
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_country_flag = IRE_O_Brien_Coup
+		}
+
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus IRE_Thormond_Redeemed"
+			add_political_power = 100
+			swap_ideas = {
+				remove_idea = IRE_soccred_economy
+				add_idea = IRE_soccred_economy2
+			}
+		}
+	}
+	focus = {
+		id = IRE_national_dividend
+		icon = GFX_goal_generic_market_socialism
+		cost = 3.00
+		x = 3
+		y = 2
+		relative_position_id = IRE_irish_social_credit
+		prerequisite = {
+			focus = IRE_total_eco_reform
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_country_flag = IRE_O_Brien_Coup
+		}
+
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus IRE_Thormond_Redeemed"
+			
+			add_stability = 0.1
+			add_one_random_civilian_factory = yes
+			add_one_random_civilian_factory = yes
+			add_one_random_military_factory = yes
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = IRE_finacial_freedom
+		icon = GFX_goal_generic_free_market
+		cost = 3.00
+		x = 2
+		y = 3
+		relative_position_id = IRE_irish_social_credit
+		prerequisite = {
+			focus = IRE_destroy_bankers
+			
+		}
+		prerequisite = {
+			focus = IRE_national_dividend
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_country_flag = IRE_O_Brien_Coup
+		}
+
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus IRE_Thormond_Redeemed"
+			swap_ideas = {
+				remove_idea = IRE_soccred_economy2
+				add_idea = IRE_soccred_economy3
+			}
+
+		}
+	}
+	focus = {
+		id = IRE_woman_Liberation
+		icon = GFX_SRI_fascist_woman
+		cost = 3.00
+		x = -2
+		y = 4
+		relative_position_id = IRE_irish_social_credit
+		prerequisite = {
+			focus = IRE_catholicism
+			focus = IRE_finacial_freedom
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_country_flag = IRE_O_Brien_Coup
+		}
+
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus IRE_Thormond_Redeemed"
+			add_ideas = IRE_daughter_of_ireland
+			add_stability = 0.1
+			
+		}
+	}
+	focus = {
+		id = IRE_crush_party_system
+		icon = GFX_goal_FRA_democratic_error
+		cost = 3.00
+		x = 0
+		y = 4
+		relative_position_id = IRE_irish_social_credit
+		prerequisite = {
+			focus = IRE_catholicism
+			focus = IRE_finacial_freedom
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_country_flag = IRE_O_Brien_Coup
+		}
+
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus IRE_Thormond_Redeemed"
+			add_stability = 0.1
+			add_political_power = 100
+			add_popularity = {
+				ideology = social_liberal
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = market_liberal
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = social_conservative
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = IRE_economic_democracy
+		icon = GFX_goal_ENG_Appoint_Russell
+		cost = 3.00
+		x = 2
+		y = 4
+		relative_position_id = IRE_irish_social_credit
+		prerequisite = {
+			focus = IRE_catholicism
+			focus = IRE_finacial_freedom
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_country_flag = IRE_O_Brien_Coup
+		}
+
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus IRE_Thormond_Redeemed"
+			add_ideas = IRE_economic_democracy
+		}
+	}
+	focus = {
+		id = IRE_end_anglo_reactionism_remains
+		icon = GFX_focus_attack_britain
+		cost = 3.00
+		x = -1
+		y = 5
+		relative_position_id = IRE_irish_social_credit
+		prerequisite = {
+			focus = IRE_woman_Liberation
+			focus = IRE_crush_party_system
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_country_flag = IRE_O_Brien_Coup
+		}
+
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus IRE_Thormond_Redeemed"
+			add_ideas = IRE_anti_anglos
+			
+		}
+	}
+	focus = {
+		id = IRE_equalty_and_humanity
+		icon = GFX_goal_NIC_Victory_Social_Democracy
+		cost = 3.00
+		x = 1
+		y = 5
+		relative_position_id = IRE_irish_social_credit
+		prerequisite = {
+			focus = IRE_economic_democracy
+			focus = IRE_crush_party_system
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_country_flag = IRE_O_Brien_Coup
+		}
+
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus IRE_Thormond_Redeemed"
+			add_one_random_civilian_factory = yes
+			add_one_random_civilian_factory = yes
+			add_one_random_civilian_factory = yes
+			add_one_random_civilian_factory = yes
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = IRE_social_credit_to_justice
+		icon = GFX_goal_CAN_soccreds
+		cost = 3.00
+		x = 0
+		y = 6
+		relative_position_id = IRE_irish_social_credit
+		prerequisite = {
+			focus = IRE_end_anglo_reactionism_remains
+			focus = IRE_equalty_and_humanity
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_country_flag = IRE_O_Brien_Coup
+		}
+
+		available_if_capitulated = yes
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus IRE_Thormond_Redeemed"
+			add_ideas = IRE_soccred_justice
+			
+		}
+	}
 	focus = {
 		id = IRE_renovate_rail_line
 		icon = GFX_goal_generic_railroad
@@ -22098,6 +22584,7 @@ focus_tree = {
 			is_subject = no
 		}
 		completion_reward = {
+			custom_effect_tooltip = "celtic_internationale_subject"
 			add_opinion_modifier = {
 				target = ENG
 				modifier = IRE_promoted_gaelic
@@ -22145,6 +22632,39 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 	focus = {
+		id = IRE_attack_greenland_faroes
+		icon = GFX_goal_SCA_economy_greenland_faroes
+		x = 2
+		y = 7
+		cost = 3
+		relative_position_id = IRE_Failure_of_the_British_Revolution
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = {
+			focus = IRE_attack_iceland
+		}
+		available = {
+			has_socialist_government = yes
+			is_subject = no
+		}
+		completion_reward = {
+			337 = { add_core_of = ROOT 
+					transfer_state_to = ROOT }
+			101 = { add_core_of = ROOT 
+					transfer_state_to = ROOT }
+			926 = { add_core_of = ROOT 
+					transfer_state_to = ROOT }
+			DEN = {
+			create_wargoal = {
+				type = annex_everything
+				target = IRE
+			    }
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}	
+	focus = {
 		id = IRE_liberate_brittany
 		icon = GFX_BEL_Reclaim_France
 		x = 6
@@ -22163,16 +22683,9 @@ focus_tree = {
 			is_subject = no
 		}
 		completion_reward = {
+			custom_effect_tooltip = "celtic_internationale_subject2"
 			add_state_core = 983
 			add_state_core = 14
-			every_state = {
-				limit = {
-					is_core_of = FRA
-				}
-				IRE = { 
-					add_state_claim = PREV 
-				}
-			}
 			create_wargoal = {
 				type = annex_everything
 				target = FRA
@@ -22199,49 +22712,18 @@ focus_tree = {
 			is_subject = no
 		}
 		completion_reward = {
-			every_state = {
-				limit = {
-					is_core_of = POR
-				}
-				IRE = { 
-					add_state_core = PREV 
-				}
-			}
+			custom_effect_tooltip = "celtic_internationale_subject2"
 			create_wargoal = {
 				type = annex_everything
 				target = POR
-			}
-			every_state = {
-				limit = {
-					is_core_of = CNT
-				}
-				IRE = { 
-					add_state_core = PREV 
-				}
 			}
 			create_wargoal = {
 				type = annex_everything
 				target = CNT
 			}
-			every_state = {
-				limit = {
-					is_core_of = CAR
-				}
-				IRE = { 
-					add_state_core = PREV 
-				}
-			}
 			create_wargoal = {
 				type = annex_everything
 				target = CAR
-			}
-			every_state = {
-				limit = {
-					is_core_of = SPR
-				}
-				IRE = { 
-					add_state_core = PREV 
-				}
 			}
 			create_wargoal = {
 				type = annex_everything
@@ -22269,14 +22751,7 @@ focus_tree = {
 			is_subject = no
 		}
 		completion_reward = {
-			every_state = {
-				limit = {
-					is_core_of = NOR
-				}
-				IRE = { 
-					add_state_core = PREV 
-				}
-			}
+			custom_effect_tooltip = "celtic_internationale_subject2"
 			create_wargoal = {
 				type = annex_everything
 				target = NOR
@@ -22305,7 +22780,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = IRE_irish_hegemony
-			set_cosmetic_tag = IRE_celticsphere
+			set_cosmetic_tag = IRE_Atlantic_Celts
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
@@ -22482,25 +22957,10 @@ focus_tree = {
 			is_subject = no
 		}
 		completion_reward = {
-			every_state = {
-				limit = {
-					is_core_of = ARG
-				}
-				IRE = { 
-					add_state_core = PREV 
-				}
-			}
+			custom_effect_tooltip = "celtic_internationale_subject2"
 			create_wargoal = {
 				type = annex_everything
 				target = ARG
-			}
-			every_state = {
-				limit = {
-					is_core_of = FOP
-				}
-				IRE = { 
-					add_state_core = PREV 
-				}
 			}
 			create_wargoal = {
 				type = annex_everything
@@ -22536,9 +22996,21 @@ focus_tree = {
 					add_state_core = PREV 
 				}
 			}
+			every_state = {
+				limit = {
+					is_core_of = NFL
+				}
+				IRE = { 
+					add_state_core = PREV 
+				}
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = CAN
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = NFL
 			}
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -22562,6 +23034,11 @@ focus_tree = {
 			is_subject = no
 		}
 		completion_reward = {
+			custom_effect_tooltip = "celtic_internationale_subject2"
+			737 = { add_core_of = ROOT }
+			634 = { add_core_of = ROOT }
+			635 = { add_core_of = ROOT }
+			734 = { add_core_of = ROOT }
 			every_state = {
 				limit = {
 					is_core_of = AST

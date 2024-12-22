@@ -1,6 +1,6 @@
 PLA_xmzygmdjc = {
 	set_variable = { var_INC_qiyi = GEA.party_popularity@radical_socialist }
-	set_variable = { var_PLA_confa = NSW.party_popularity@totalist }
+	set_variable = { var_PLA_confa = PLA.party_popularity@totalist }
 	multiply_variable = { var_PLA_confa = PLA_nyzdhsp }
 	if = {
 		limit = {
@@ -41,13 +41,13 @@ PLA_xmzygmdjc = {
 	}
 	set_variable = { PLA_nyzdhsp_rate = PLA_nyzdhsp }
 	multiply_variable = { PLA_nyzdhsp_rate = 100 }
-	set_variable = { var_PLA_psa = NSW.party_popularity@syndicalist }
+	set_variable = { var_PLA_psa = PLA.party_popularity@syndicalist }
 	multiply_variable = { var_PLA_psa = PLA_gyhcddrm }
-	set_variable = { var_PLA_zgy_confa = NSW.party_popularity@syndicalist }
+	set_variable = { var_PLA_zgy_confa = PLA.party_popularity@syndicalist }
 	multiply_variable = { var_PLA_zgy_confa = -0.8}
-	set_variable = {  var_PLA_factory_psi = NSW.party_popularity@radical_socialist }
+	set_variable = {  var_PLA_factory_psi = PLA.party_popularity@radical_socialist }
 	multiply_variable = {  var_PLA_factory_psi = PLA_gyhcddrm }
-	set_variable = { var_PLA_qgy_confa = NSW.party_popularity@radical_socialist }
+	set_variable = { var_PLA_qgy_confa = PLA.party_popularity@radical_socialist }
 	multiply_variable = { var_PLA_qgy_confa = -0.8 }
 	set_variable = {  PLA_industrialization_rate = PLA.num_of_factories }
 	divide_variable = { PLA_industrialization_rate = 75 }

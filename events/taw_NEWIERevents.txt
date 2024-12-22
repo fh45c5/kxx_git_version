@@ -239,3 +239,38 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = newIreland.5 #social credit coup king
+	title = newIreland.5.t
+	desc = newIreland.5.d
+	picture = GFX_report_event_IRE_raymond_o_brien
+	fire_only_once = yes
+	trigger = {
+		tag = IRE
+		has_country_flag = IRE_O_Brien_Coup
+	}
+	
+	option = { #get out
+		name = newIreland.5.a		
+		add_stability = 0.1
+	}
+    option = { #oh no
+		name = newIreland.5.b
+		set_politics = { ruling_party = radical_socialist } 
+		set_party_name = {
+			name = "爱尔兰社会信用党"
+			long_name = "爱尔兰社会信用党"
+			ideology = radical_socialist
+		}
+		create_country_leader = {
+			name = "莫德·贡娜"
+			picture = "gfx/leaders/IRE/Portrait_Ireland_Maud_Gonne.png"
+			expire = "1.1.1"
+			ideology = radsoc_social_credit_subtype
+		}
+		
+		remove_all_ministers = yes
+		set_country_flag = IRE_SOCCRED
+	}
+	
+}

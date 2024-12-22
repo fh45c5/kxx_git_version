@@ -84,5 +84,17 @@ spriteTypes = {
 	name = "GFX_idea_CNT_national_and_revolution"
 	texturefile = "gfx/interface/cnt_ideas/national_and_revolution.png"			
 	}
+	SpriteType = {
+	name = "GFX_idea_Godwins_Wish"
+	texturefile = "gfx/interface/cnt_ideas/Godwins_Wish.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_Follow_Proudhon"
+	texturefile = "gfx/interface/cnt_ideas/Follow_Proudhon.png"			
+	}
+	SpriteType = {
+	name = "GFX_idea_Viva_la_Rif"
+	texturefile = "gfx/interface/cnt_ideas/Viva_la_Rif.png"			
+	}
 
 }

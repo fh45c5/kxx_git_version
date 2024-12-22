@@ -10,7 +10,6 @@ focus_tree = {
 	}
 	
 	continuous_focus_position = { x = 6000 y = 1565 }
-	shared_focus = FRA_form_joint_alliance
 	default = no
 	shared_focus = ITA_Consolidate_Italy
 	shared_focus = ITA_Interventionism

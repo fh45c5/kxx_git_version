@@ -145,19 +145,19 @@ bookmarks = {
 			}
 		}
 
-		"QIE" = {
+		"GRE" = {
 			minor = yes
-			history = "QIE_KR_GATHERING_STORM_DESC"
-			ideology = authoritarian_democrat
+			history = "GRE_KR_GATHERING_STORM_DESC"
+			ideology = social_liberal
 			ideas = {
-				QIE_fractured_empire
-				QIE_big_debt
-				QIE_leadership_crisis
+				GRE_anathema
+				GRE_memories_of_king
+				GRE_legacy_of_alexander_idea
 			}
 			focuses = {
-				HNN_victory_of_the_united_front
-				QIE_XHHSD
-				QIE_the_red_sun_over_the_dragon
+				GRE_old_order_overthrown
+				GRE_golden_dawn_focus
+				GRE_united_forever
 			}
 		}
 		

@@ -10,9 +10,8 @@ focus_tree = {
 	default = no
 	continuous_focus_position = {
     x = 50
-    y = 2800
+    y = 4000
   }
-  shared_focus = FRA_form_joint_alliance
 	focus = {
 		id = FRA_eco_direction
 		icon = GFX_goal_FRA_syndicate_of_production
@@ -1088,7 +1087,7 @@ focus_tree = {
 			focus = FRA_Host_the_Internationale
 		}
 		x = 10
-		y = 21
+		y = 16
 		ai_will_do = {
 			factor = 1000
 			modifier = {
@@ -1750,7 +1749,7 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_Host_the_Internationale
 		}
-		x = 7
+		x = 4
 		y = 1
 		relative_position_id = FRA_Host_the_Internationale
 		available = {
@@ -9954,41 +9953,7 @@ focus_tree = {
       FOCUS_FILTER_RESEARCH
     }
   }
-	focus = {
-		id = FRA_mission_bhartiya
-		icon = GFX_goal_SKM_Bhartiya
-		cost = 4
-		prerequisite = {
-			focus = FRA_asian_policy
-		}
-		x = 3
-		y = 5
-		relative_position_id = FRA_Host_the_Internationale
-		available = {
-			country_exists = BHC
-			BHC = {
-				has_socialist_government = yes
-			}
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_mission_bhartiya"
-			BHC = {
-				country_event = comfrance.62
-			}
-			BHC = {
-				add_ideas = internationale_support
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 1000
-					producer = FRA
-				}
-				country_event = comfrance.129
-			}
-		}
-	}
+	
 	focus = {
 		id = FRA_arab_committee
 		icon = GFX_BBR_radical_anti_imperialism
@@ -9996,7 +9961,7 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_Host_the_Internationale
 		}
-		x = -2
+		x = -4
 		y = 1
 		relative_position_id = FRA_Host_the_Internationale
 		ai_will_do = {
@@ -10016,7 +9981,7 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_Host_the_Internationale
 		}
-		x = 12
+		x = 6
 		y = 1
 		relative_position_id = FRA_Host_the_Internationale
 		ai_will_do = {
@@ -10146,23 +10111,15 @@ focus_tree = {
 		available = {
 			has_global_flag = RCW_begun
 		}
-		x = 16
-		y = 2
+		x = 7
+		y = 3
 		relative_position_id = FRA_Host_the_Internationale
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			RUS = {
-				add_ideas = internationale_support
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 1000
-					producer = FRA
-				}
-				country_event = comfrance.129
-			}
+			activate_targeted_decision = { decision = FRA_RUS_weapons_decision  target = RUS }
 		}
 	}
 	focus = {
@@ -10170,22 +10127,20 @@ focus_tree = {
 		icon = GFX_goal_VIN_pan_asian_appeals
 		cost = 5
 		prerequisite = {
-			focus = FRA_Host_the_Internationale
+			focus = FRA_Phalanstere_internationale
 		}
-		x = 2
-		y = 4
+		x = -11
+		y = 2
 		relative_position_id = FRA_Host_the_Internationale
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			JAP = {
-				add_stability = -0.1
-			}
-			LEC = {
-				add_stability = -0.1
-			}
+			activate_targeted_decision = { decision = FRA_aid_japanese_revolution_decision target = JSR }
+			activate_targeted_decision = { decision = FRA_aid_chinese_revolution_decision target = CHI }
+			activate_targeted_decision = { decision = FRA_aid_indian_revolution_decision target = BHC }
+			activate_targeted_decision = { decision = FRA_asian_supports_decision target = BHC }
 		}
 	}
 	focus = {
@@ -10193,9 +10148,9 @@ focus_tree = {
 		icon = GFX_goal_SCA_nordic_council_soc
 		cost = 1
 		prerequisite = {
-			focus = FRA_Host_the_Internationale
+			focus = FRA_Phalanstere_internationale
 		}
-		x = 3
+		x = -3
 		y = 2
 		relative_position_id = FRA_Host_the_Internationale
 		ai_will_do = {
@@ -10208,52 +10163,6 @@ focus_tree = {
 				NOR = {
 				set_country_flag = NOR_uob_support
 			}
-			if = {
-				limit = {
-					SWE = {
-						has_socialist_government = no
-					}
-				}
-				SWE = {
-				add_popularity = {
-					ideology = totalist
-					popularity = 0.1
-				}
-				add_popularity = {
-					ideology = syndicalist
-					popularity = 0.1
-				}
-				add_popularity = {
-					ideology = radical_socialist
-					popularity = 0.1
-				}
-				add_stability = -0.1
-			}
-			}
-			if = {
-				limit = {
-					FIN = {
-						has_socialist_government = no
-					}
-				}
-				FIN = {
-				add_popularity = {
-					ideology = totalist
-					popularity = 0.1
-				}
-				add_popularity = {
-					ideology = syndicalist
-					popularity = 0.1
-				}
-				add_popularity = {
-					ideology = radical_socialist
-					popularity = 0.1
-				}
-				add_stability = -0.1
-			}
-			}
-			
-			
 			
 		}
 	}
@@ -10262,9 +10171,9 @@ focus_tree = {
 		icon = GFX_goal_KIV_pan_africa
 		cost = 1
 		prerequisite = {
-			focus = FRA_Host_the_Internationale
+			focus = FRA_asian_policy
 		}
-		x = 4
+		x = -10
 		y = 3
 		relative_position_id = FRA_Host_the_Internationale
 		ai_will_do = {
@@ -10287,23 +10196,18 @@ focus_tree = {
 		icon = GFX_goal_CSA_true_revolutionary_alliance
 		cost = 1
 		prerequisite = {
-			focus = FRA_Host_the_Internationale
+			focus = FRA_Phalanstere_internationale
 		}
-		x = 5
-		y = 4
+		x = -5
+		y = 2
 		relative_position_id = FRA_Host_the_Internationale
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			
-			CAN = {
-				add_stability = -0.1
-			}
-			USA = {
-				add_stability = -0.1
-			}
+			activate_targeted_decision = { decision = FRA_aid_nicaruaga_decision target = NIC }
+			activate_targeted_decision = { decision = FRA_aid_mexico_decision target = MEX }
 		}
 	}
 	focus = {
@@ -10318,108 +10222,28 @@ focus_tree = {
 				has_socialist_government = yes
 			}
 		}
-		x = 5
-		y = 5
+		x = -4
+		y = 3
 		relative_position_id = FRA_Host_the_Internationale
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			CHL = {
-					add_ideas = internationale_support
-					add_equipment_to_stockpile = {
-						type = infantry_equipment
-						amount = 1000
-						producer = FRA
-					}
-					country_event = comfrance.129
-					add_manpower = 10000
-				}
-				FOP = {
-					add_ideas = internationale_support
-					add_equipment_to_stockpile = {
-						type = infantry_equipment
-						amount = 1000
-						producer = FRA
-					}
-					country_event = comfrance.129
-					add_manpower = 10000
-				}
-			
+			activate_targeted_decision = { decision = FRA_CHL_weapons_decision  target = CHL }
+			activate_targeted_decision = { decision = FRA_FOP_weapons_decision  target = FOP }
 		}
 	}
-	focus = {
-		id = FRA_support_sandino
-		icon = GFX_goal_NIC_General_Free_Men
-		cost = 1
-		prerequisite = {
-			focus = FRA_revolution_in_america
-		}
-		available = {
-			NIC = {
-				has_socialist_government = yes
-			}
-		}
-		x = 7
-		y = 5
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			NIC = {
-				add_ideas = internationale_support
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 1000
-					producer = FRA
-				}
-				country_event = comfrance.129
-			}
-		}
-	}
-	focus = {
-		id = FRA_support_mexico
-		icon = GFX_goal_MEX_Trabajadores_y_Sindicatos
-		cost = 1
-		prerequisite = {
-			focus = FRA_revolution_in_america
-		}
-		available = {
-			MEX = {
-				has_socialist_government = yes
-			}
-		}
-		x = 9
-		y = 5
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			MEX = {
-				add_ideas = internationale_support
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 1000
-					producer = FRA
-				}
-				country_event = comfrance.129
-			}
-		}
-	}
+	
 	focus = {
 		id = FRA_quebec_uprising
 		icon = GFX_goal_CAN_quebec_flames
 		cost = 1
 		prerequisite = {
-			focus = FRA_revolution_in_america
+			focus = FRA_ACW
 		}
-		x = 6
-		y = 6
+		x = -7
+		y = 4
 		relative_position_id = FRA_Host_the_Internationale
 		ai_will_do = {
 			factor = 100
@@ -10427,10 +10251,8 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
 			CAN = {
-				add_stability = -0.1
-				add_war_support = -0.1
+				country_event = kxxfrance.35
 			}
-			custom_effect_tooltip = FRA_soon_can_tooltip
 		}
 	}
 	focus = {
@@ -10443,214 +10265,20 @@ focus_tree = {
 		available = {
 			country_exists = CSA
 	   }
-		x = 8
-		y = 6
+		x = -6
+		y = 3
 		relative_position_id = FRA_Host_the_Internationale
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			CSA = {
-				add_ideas = internationale_support
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 1000
-					producer = FRA
-				}
-				country_event = comfrance.129
-			}
+			activate_targeted_decision = { decision = FRA_ACW_weapons_decision target = CSA }
+			activate_targeted_decision = { decision = FRA_ACW_manpower_decision target = CSA }
 		}
 	}
-	focus = {
-		id = FRA_help_kmt
-		icon = GFX_goal_CHI_military_affairs_cmsn
-		cost = 5
-		prerequisite = {
-			focus = FRA_asian_policy
-		}
-		available = {
-			 country_exists = CHI
-		}
-		x = 1
-		y = 5
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			CHI = {
-				add_ideas = internationale_support
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 1000
-					producer = FRA
-				}
-				country_event = comfrance.129
-			}
-		}
-	}
-	focus = {
-		id = FRA_oppose_panasianism
-		icon = GFX_SQITWO_thepeoplesantijapaneserevolution-248360
-		cost = 5
-		prerequisite = {
-			focus = FRA_asian_policy
-		}
-		mutually_exclusive = {
-			focus = FRA_japanese_revolution
-		}
-		available = {
-			JAP  = {
-				has_war = no
-			}
-		}
-		x = -3
-		y = 5
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			JAP = {
-				add_stability = -0.1
-				add_war_support = -0.1
-			}
-		}
-	}
-	focus = {
-		id = FRA_japanese_revolution
-		icon = GFX_JAPSOCIALISM_letsdoourbest-248360
-		cost = 5
-		prerequisite = {
-			focus = FRA_asian_policy
-		}
-		mutually_exclusive = {
-			focus = FRA_oppose_panasianism
-		}
-		available = {
-			 country_exists = JSR
-		}
-		x = -1
-		y = 5
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			JSR = {
-				add_ideas = internationale_support
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 1000
-					producer = FRA
-				}
-				country_event = comfrance.129
-			}
-		}
-	}
-	focus = {
-		id = FRA_asian_support
-		icon = GFX_goal_VIN_uniting_asia_under_heaven
-		cost = 5
-		prerequisite = {
-			focus = FRA_help_kmt
-		}
-		prerequisite = {
-			focus = FRA_mission_bhartiya
-		}
-		x = 2
-		y = 6
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			every_country = {
-				limit = {
-					has_socialist_government = yes
-					OR = {
-					capital_scope = { is_on_continent = australia }
-					capital_scope = { is_on_continent = middle_east }
-					capital_scope = { is_on_continent = asia }
-					capital_scope = { is_on_continent = india 
-					}
-					}
-				}
-				add_ideas = internationale_support
-			}
-			
-		}
-	}
-	focus = {
-		id = FRA_radicalize_bsdp
-		icon = GFX_goal_WHR_assembly
-		cost = 1
-		prerequisite = {
-			focus = FRA_free_ostwall
-		}
-		available = {
-			WHR = {
-				has_socialist_government = no
-			}
-		}
-		x = 12
-		y = 2
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			WHR = {
-				add_popularity = {
-					ideology = radical_socialist
-					popularity = 0.1
-				}
-				add_popularity = {
-					ideology = social_democrat
-					popularity = -0.1
-				}
-				add_stability = -0.1
-			}
-		}
-	}
-	focus = {
-		id = FRA_morning_star
-		icon = GFX_LAT_socialist
-		cost = 1
-		prerequisite = {
-			focus = FRA_free_ostwall
-		}
-		x = 14
-		y = 2
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			LIT = {
-				add_popularity = {
-					ideology = totalist
-					popularity = 0.1
-				}
-				add_popularity = {
-					ideology = syndicalist
-					popularity = 0.1
-				}
-				add_popularity = {
-					ideology = radical_socialist
-					popularity = 0.1
-				}
-				add_stability = -0.1
-			}
-		}
-	}
+	
+	
 	focus = {
 		id = FRA_latvian_rifleman
 		icon = GFX_goals_FRA_latvian
@@ -10663,7 +10291,7 @@ focus_tree = {
 				has_idea = BAT_forest_brothers
 			}
 		}
-		x = 14
+		x = 5
 		y = 3
 		relative_position_id = FRA_Host_the_Internationale
 		ai_will_do = {
@@ -10671,19 +10299,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			12 = {
-				
-				
-				add_compliance = -20
-				add_resistance = 20
-			}
-			
-			190 = {
-				
-				
-				add_compliance = -20
-				add_resistance = 20
-			}
+			activate_targeted_decision = { decision = FRA_BAT_collapse_decision target = BAT }
 		}
 	}
 	focus = {
@@ -10694,12 +10310,11 @@ focus_tree = {
 			focus = FRA_free_ostwall
 		}
 		available = {
-			POL = {
-				
+			POL = {		
 				has_completed_focus = KX_PL_AS_COMMON_COUP
 			}
 		}
-		x = 10
+		x = 6
 		y = 2
 		relative_position_id = FRA_Host_the_Internationale
 		ai_will_do = {
@@ -10707,46 +10322,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-				POL = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 1000
-					producer = FRA
-				}
-				country_event = comfrance.129
-			}
+			activate_targeted_decision = { decision = FRA_POL_weapons_decision  target = POL }
+			activate_targeted_decision = { decision = FRA_WHR_weapons_decision  target = WHR }
 		}
 	}
-	focus = {
-		id = FRA_legionary_sydicate
-		icon = GFX_goal_POL_Do_Boju
-		cost = 1
-		prerequisite = {
-			focus = FRA_rise_warsaw
-		}
-		available = {
-			POL = {
-				OR = {
-					has_socialist_government = yes
-					has_completed_focus = KX_PL_ZL_TAKES_POWER
-				}
-				
-			}
-			
-		}
-		x = 10
-		y = 3
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			INT = {
-				add_to_faction = POL
-			}
-		}
-	}
+	
 	focus = {
 		id = FRA_topple_ukr
 		icon = GFX_goal_RUS_crush_monarchists
@@ -10754,7 +10334,7 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_free_ostwall
 		}
-		x = 7
+		x = 4
 		y = 2
 		relative_position_id = FRA_Host_the_Internationale
 		ai_will_do = {
@@ -10762,159 +10342,25 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			UKR = {
-				UKR_decrease_hetman_strength = yes
-				UKR_decrease_king = yes
-				UKR_increase_direktoria = yes
-			}
-			
+			activate_targeted_decision = { decision = FRA_ukrinian_revolution_decision  target = UKR }
+			activate_targeted_decision = { decision = FRA_approach_UPR_decision  target = UKR }
+			activate_targeted_decision = { decision = FRA_support_Borotbysts_decision  target = UKR }
 		}
 	}
-	focus = {
-		id = FRA_approach_UPR
-		icon = GFX_goal_UKR_coat_of_arms_republican
-		cost = 5
-		prerequisite = {
-			focus = FRA_topple_ukr
-		}
-		mutually_exclusive = {
-			focus = FRA_support_Borotbysts
-		}
-		available = {
-			UKR = {
-				has_country_flag = UKR_dyrektoria_tree_unlocked
-			}
-		}
-		x = 6
-		y = 3
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			UKR = {
-				diplomatic_relation = { country = FRA relation = guarantee active = yes } 
-					 }
-				UKR = {
-				diplomatic_relation = { country = FRA relation = military_access active = yes } 
-					 }
-				diplomatic_relation = { country = UKR relation = military_access  active = yes }
-				diplomatic_relation = { country = UKR relation = guarantee active = yes } 
-				UKR = {
-				diplomatic_relation = { country = FRA relation = non_aggression_pact active = yes } 
-					 }
-				diplomatic_relation = {
-					country = UKR
-					relation = non_aggression_pact
-					active = yes
-				}
-		}
-
-	}
-	focus = {
-		id = FRA_support_Borotbysts
-		icon = GFX_UKR_Borotba
-		cost = 5
-		prerequisite = {
-			focus = FRA_topple_ukr
-		}
-		mutually_exclusive = {
-			focus = FRA_approach_UPR
-		}
-		available = {
-			UKR = {
-				has_idea = UKR_land_reform
-			}
-		}
-		x = 8
-		y = 3
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			UKR = {
-				country_event = ukrsoc.190
-			}
-			UKR = {
-				country_event = ukrsoc.191
-			}
-			UKR = {
-				country_event = ukrsoc.192
-			}
-			UKR = {
-				country_event = ukrsoc.193
-			}
-			UKR = {
-				country_event = ukrsoc.194
-			}
-			UKR = {
-				country_event = ukrsoc.195
-			}
-			UKR = {
-				country_event = ukrsoc.196
-			}
-		}
-	}
+	
 	focus = {
 		id = FRA_across_the_channel
 		icon = GFX_goal_FRA_bucard_england_question
 		cost = 1
 		prerequisite = {
-			focus = FRA_Host_the_Internationale
+			focus = FRA_Phalanstere_internationale
 		}
 		bypass = {
 			ENG = {
 				has_completed_focus = BRG_death_to_revoltuion
 			}
 		}
-		x = -4
-		y = 1
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			ENG = {
-				random_owned_state = {
-					limit = {
-						free_building_slots = {
-							building = arms_factory
-							size > 1
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = arms_factory
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = FRA_anglo_french_friendship
-		icon = GFX_goal_INT_channel_treaty
-		cost = 1
-		prerequisite = {
-			focus = FRA_across_the_channel
-		}
-		mutually_exclusive = {
-			focus = FRA_end_hobart
-		}
-		available = {
-			NOT = {
-			ENG = {
-				has_completed_focus = BRG_death_to_revoltuion
-			}
-		}
-		}
-		x = -5
+		x = -7
 		y = 2
 		relative_position_id = FRA_Host_the_Internationale
 		ai_will_do = {
@@ -10922,223 +10368,44 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			
-			add_opinion_modifier = {
-				target = ENG
-				modifier = FRA_internationalism
-			}
-			ENG = {
-				random_owned_state = {
-					limit = {
-						free_building_slots = {
-							building = arms_factory
-							size > 1
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = arms_factory
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
+			activate_targeted_decision = { decision = FRA_fuck_hobart_decision target = ENG }
+			activate_targeted_decision = { decision = FRA_fuck_ireland_decision target = ENG }
 		}
 	}
-	focus = {
-		id = FRA_end_hobart
-		icon = GFX_goals_FRA_fuck_hobart
-		cost = 4
-		prerequisite = {
-			focus = FRA_across_the_channel
-		}
-		mutually_exclusive = {
-			focus = FRA_anglo_french_friendship
-		}
-		available = {
-			
-			ENG = {
-				has_completed_focus = BRG_death_to_revoltuion
-			}
-		
-		}
-		x = -3
-		y = 2
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			create_wargoal = {
-				type = annex_everything
-				target = ENG
-			}
-		}
-	}
-	focus = {
-		id = FRA_attack_ireland
-		icon = GFX_goal_CSA_irish_revolution
-		cost = 4
-		prerequisite = {
-			focus = FRA_anglo_french_friendship
-			focus = FRA_end_hobart
-		}
-		bypass = {
-			IRE = {
-				has_socialist_government = yes
-			}
-		}
-		x = -4
-		y = 3
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			create_wargoal = {
-				type = annex_everything
-				target = IRE
-			}
-		}
-	}
+
 	focus = {
 		id = FRA_lowlands_policy
 		icon = GFX_goal_BEL_Reaffirm_Belgicist_Mission
 		cost = 1
 		prerequisite = {
-			focus = FRA_Host_the_Internationale
+			focus = FRA_italy_policy
 		}
-		
-		x = 0
-		y = 1
+		prerequisite = {
+			focus = FRA_across_the_channel
+		}
+		x = -8
+		y = 3
 		relative_position_id = FRA_Host_the_Internationale
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			if = {
-				limit = {
-					country_exists = BEL
-				}
-				BEL = {
-					add_stability = -0.1
-					add_manpower = -100000
-				}
-			}else_if = {
-				limit = {
-					country_exists = WLL
-				}
-				WLL = {
-					add_stability = -0.1
-					add_manpower = -100000
-				}
-			}
-			add_manpower = 100000
+			activate_targeted_decision = { decision = FRA_coup_belgium_decision target = BEL }
+		}
+	}
 	
-		}
-	}
-	focus = {
-		id = FRA_belgium_strike
-		icon = GFX_RUS_Raise_The_Red_Banners
-		cost = 5
-		prerequisite = {
-			focus = FRA_lowlands_policy
-		}
-		mutually_exclusive = {
-			focus = FRA_reattachime
-		}
-		x = -1
-		y = 2
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			
-			if = {
-				limit = {
-					country_exists = BEL
-				}
-				BEL = {
-					country_event = kxxfrance.1
-				}
-			}else_if = {
-				limit = {
-					country_exists = WLL
-				}
-				WLL = {
-					country_event = kxxfrance.1
-				}
-			}
-		}
-	}
-	focus = {
-		id = FRA_reattachime
-		icon = GFX_goal_WLL_Greater_Wallonia
-		cost = 5
-		prerequisite = {
-			focus = FRA_lowlands_policy
-		}
-		mutually_exclusive = {
-			focus = FRA_belgium_strike
-		}
-		available = {
-			OR = {
-				AND = {
-					country_exists = BEL
-					BEL = { has_socialist_government = no }
-				NOT = {
-					BEL = { is_in_faction_with = GER }
-				}
-			}
-			AND = {
-				NOT = {
-					WLL = { is_in_faction_with = GER }
-				}
-				country_exists = WLL
-				WLL = { has_socialist_government = no }
-			}
-				
-			}
-		}
-		x = 1
-		y = 2
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			create_wargoal = {
-				type = annex_everything
-				target = BEL
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = FLN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = WLL
-			}
-		}
-	}
 	focus = {
 		id = FRA_overthrow_batavia
 		icon = GFX_goal_HOL_dutch_pannationalism
 		cost = 5
 		prerequisite = {
-			focus = FRA_belgium_strike
-			focus = FRA_reattachime
+			focus = FRA_lowlands_policy
+			
 		}
 		
-		x = 0
-		y = 3
+		x = -9
+		y = 4
 		relative_position_id = FRA_Host_the_Internationale
 		ai_will_do = {
 			factor = 100
@@ -11148,39 +10415,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			custom_effect_tooltip = FRA_FUCK_DUTCH
-                
-				if = {
-				limit = {
-					HOL = {
-						has_idea = HOL_idea_instability
-					}
-				}
-				annex_country = { target = HOL  }
-				GER = {
-					set_autonomy = {
-						target = DEI
-						autonomy_state = kr_autonomous_puppet
-					}
-				
-				}
-				CAF = {
-					transfer_state = 1038
-					transfer_state = 309
-					transfer_state = 695
-				}
-			}else = {
-				create_wargoal = {
-						type = annex_everything
-						target = HOL
-				}
-			} 
-				
-            
-			
-					
-				
-			
+			activate_targeted_decision = { decision = FRA_coup_holland_decision target = HOL }
 		}
 	}
 	focus = {
@@ -11211,311 +10446,6 @@ focus_tree = {
 			}
 			
 		}
-		x = -12
-		y = 1
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			CNT = {
-				add_ideas = internationale_support
-			}
-		}
-	}
-	focus = {
-		id = FRA_help_cnt
-		icon = GFX_goal_CSA_iberian_revolution
-		cost = 1
-		prerequisite = {
-			focus = FRA_intervene_SCW
-		}
-		mutually_exclusive = {
-			focus = FRA_fuck_monarchs
-		}
-		available = {
-			 country_exists = CNT 
-		}
-			
-		x = -13
-		y = 2
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			CNT = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 1000
-					producer = FRA
-				}
-				country_event = comfrance.129
-			}
-		}
-	}		
-			
-			
-		
-		
-	focus = {
-		id = FRA_fuck_monarchs
-		icon = GFX_goals_FRA_fuck_monarch
-		cost = 4
-		prerequisite = {
-			focus = FRA_intervene_SCW
-		}
-		mutually_exclusive = {
-			focus = FRA_help_cnt
-		}
-		x = -11
-		y = 2
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		available = {
-			OR = {
-				CNT = {surrender_progress > 0.5}
-				NOT = { country_exists = CNT }
-			}
-			
-		}
-		bypass = {
-			NOT = { country_exists = SPR }
-			NOT = { country_exists = CAR }
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			create_wargoal = {
-				type = annex_everything
-				target = SPR
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = CAR
-			}
-		}
-	}
-	focus = {
-		id = FRA_destory_portual
-		icon = GFX_Focus_FEJONS88
-		cost = 4
-		prerequisite = {
-			focus = FRA_help_cnt
-			focus = FRA_fuck_monarchs
-		}
-		bypass = {
-			NOT = { country_exists = POR }
-		}
-		available = {
-			 country_exists = CNT
-		}
-		x = -12
-		y = 3
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			create_wargoal = {
-				type = annex_everything
-				target = POR
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = PAF
-			}
-		}
-	}
-	focus = {
-		id = FRA_unrest_in_daunbe
-		icon = GFX_goal_AUS_Paramilitary_Beatdowns
-		cost = 1
-		prerequisite = {
-			focus = FRA_destory_portual	
-		}
-		prerequisite = {
-			focus = FRA_italy_rossa
-		}
-		prerequisite = {
-			focus = FRA_attack_ireland
-		}
-		x = -8
-		y = 4
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			custom_effect_tooltip = FRA_soon_aus_tooltip
-			AUS = {
-				add_stability = -0.1
-				add_war_support = -0.1
-			}
-		}
-	}
-	focus = {
-		id = FRA_support_hungary
-		icon = GFX_HUN_1848_redeemed
-		cost = 1
-		prerequisite = {
-			focus = FRA_unrest_in_daunbe
-		}
-		available = {
-			HUN = {
-				has_war_with = AUS
-			}
-		}
-		bypass = {
-			OR = {
-				HUN = {
-					is_in_faction_with = AUS
-
-			}
-			NOT = { country_exists = HUN }
-			}
-			
-		}
-		x = -10
-		y = 5
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			HUN = {
-				add_popularity = {
-					ideology = totalist
-					popularity = 0.1
-				}
-				add_stability = -0.1
-			}
-			custom_effect_tooltip = FRA_soon_aus_tooltip
-		}
-	}
-	focus = {
-		id = FRA_czech_destability
-		icon = GFX_goal_CZE_czechoslovakia_surrounded
-		cost = 1
-		prerequisite = {
-			focus = FRA_unrest_in_daunbe
-		}
-		
-		x = -8
-		y = 5
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			CZE = {
-				decrease_ruling_party_popularity_by_10 = yes
-				add_stability = -0.1
-			}
-			custom_effect_tooltip = FRA_soon_aus_tooltip
-		}
-	}
-	focus = {
-		id = FRA_ignite_illiya
-		icon = GFX_goal_CRO_stick_to_south
-		cost = 1
-		prerequisite = {
-			focus = FRA_unrest_in_daunbe
-		}
-		
-		x = -6
-		y = 5
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			CRO = {
-				decrease_ruling_party_popularity_by_10 = yes
-				add_stability = -0.1
-			}
-			custom_effect_tooltip = FRA_soon_aus_tooltip
-		}
-	}
-	focus = {
-		id = FRA_march_into_vienna
-		icon = GFX_BAY_SKEWER_AUSTRIA
-		cost = 4
-		prerequisite = {
-			focus = FRA_support_hungary
-		}
-		prerequisite = {
-			focus = FRA_czech_destability
-		}
-		prerequisite = {
-			focus = FRA_ignite_illiya
-		}
-		x = -8
-		y = 6
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			create_wargoal = {
-				type = annex_everything
-				target = AUS
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = HUN
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = CZE
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = CRO
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = BOS
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = SVK
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = SLO
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = TRS
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = GAL
-			}
-		}
-	}
-	focus = {
-		id = FRA_eat_channel_islands
-		icon = GFX_goal_JER_sade
-		cost = 1
-		prerequisite = {
-			focus = FRA_Host_the_Internationale
-		}
-		bypass = {
-			JER = {
-				is_ai = no
-			}
-		}
 		x = -10
 		y = 1
 		relative_position_id = FRA_Host_the_Internationale
@@ -11524,52 +10454,25 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			annex_country = { target = JER  }
-			add_state_core = 1315
+			activate_targeted_decision = { decision = FRA_SCW_weapons_decision target = CNT }
+			activate_targeted_decision = { decision = FRA_take_catalonia_decision target = CNT }
+			activate_targeted_decision = { decision = FRA_SCW_attack_decision target = CNT }	
+			activate_targeted_decision = { decision = FRA_attack_portual_decision target = CNT }		
 		}
 	}
+	
+	
 	focus = {
 		id = FRA_italy_policy
 		icon = GFX_SRI_fascist_italy
 		cost = 1
 		prerequisite = {
-			focus = FRA_Host_the_Internationale
+			focus = FRA_Phalanstere_internationale
 		}
 		bypass = {
 			SRI = {
 				has_completed_focus = SRI_garibaldi_ii
 			}
-		}
-		x = -8
-		y = 1
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			SRI = {
-				add_ideas = internationale_support
-			}
-		}
-	}
-	focus = {
-		id = FRA_fuck_garlibadi
-		icon = GFX_goals_FRA_fuck_galibaldi
-		cost = 4
-		prerequisite = {
-			focus = FRA_italy_policy
-		}
-		mutually_exclusive = {
-			focus = FRA_help_reorganissmo
-		}
-		available = {
-			SRI = {
-				has_completed_focus = SRI_garibaldi_ii
-			}
-		}
-		bypass = {
-			NOT = { country_exists = SRI }
 		}
 		x = -9
 		y = 2
@@ -11579,106 +10482,14 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			create_wargoal = {
-				type = annex_everything
-				target = SRI
-			}
-		}
-	}
-	focus = {
-		id = FRA_help_reorganissmo
-		icon = GFX_ITA_unification
-		cost = 1
-		prerequisite = {
-			focus = FRA_italy_policy
-		}
-		mutually_exclusive = {
-			focus = FRA_fuck_garlibadi
-		}
-		available = {
-			NOT = {
-			SRI = {
-				has_completed_focus = SRI_garibaldi_ii
-			}
-		}
-		}
-		bypass = {
-			NOT = { country_exists = SRI }
-		}
-		x = -7
-		y = 2
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			SRI = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 1000
-					producer = FRA
-				}
-				country_event = comfrance.129
-			}
-		}
-	}
-	focus = {
-		id = FRA_italy_rossa
-		icon = GFX_goal_SRI_red
-		cost = 4
-		prerequisite = {
-			focus = FRA_fuck_garlibadi
-			focus = FRA_help_reorganissmo
-		}
-		available = {
-			OR = {
-				NOT = {
-					ITA = {
-						has_socialist_government = yes
-					}
-				}
-				SRI = {
-					has_war = yes
-				}
-				NOT = { country_exists = SRI }
-			}
+			activate_targeted_decision = { decision = FRA_ICW_weapons_decision target = SRI }
+			activate_targeted_decision = { decision = FRA_attack_italy_decision target = SRI }
+			activate_targeted_decision = { decision = FRA_fuck_garibaldi_decision target = SRI }
 			
 		}
-		bypass = {
-			SRI = {
-				has_country_flag = SRI_italy_unified_flag
-			}
-		}
-		x = -8
-		y = 3
-		relative_position_id = FRA_Host_the_Internationale
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
-			create_wargoal = {
-				type = annex_everything
-				target = SRD
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = ITA
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = SIC
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = PAP
-			}
-			SRI = {
-				remove_ideas = SRI_french_advisors_idea
-			}
-		}
 	}
+	
+	
 	focus = {
 		id = FRA_working_women
 		icon = GFX_goal_FRA_le_nouvel_age
@@ -12386,22 +11197,10 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_Host_the_Internationale
 		}
-		x = -6
+		x = -7
 		y = 1
 		relative_position_id = FRA_Host_the_Internationale
-		available = {
-			NOT = {
-				has_war_with = GER
-				has_war_with = ENG
-				has_war_with = SRI
-			}
-			ENG = {
-				has_socialist_government = yes
-			}
-			SRI = {
-				has_socialist_government = yes
-			}
-		}
+		
 		ai_will_do = {
 			factor = 100
 		}
@@ -12416,12 +11215,20 @@ focus_tree = {
 				uses = 1
 				category = construction_tech
 			}
-			ENG = {
+			if = {
+				limit ={
+					ENG = {
+					has_socialist_government = yes
+					}
+				} 
+				ENG = {
 				country_event = comfrance.127
 			}
 			ENG = {
 				country_event = comfrance.128
 			}
+			}
+			
 		}
 		search_filters = {
 			FOCUS_FILTER_RESEARCH
@@ -12431,7 +11238,7 @@ focus_tree = {
 		id = FRA_begin_revolution
 		icon = GFX_goal_Red_France
 		cost = 3
-		x = 59
+		x = 70
 		y = 0
 		available = {
 			has_country_leader = {
@@ -12457,8 +11264,9 @@ focus_tree = {
 		id = FRA_moderate
 		icon = GFX_goal_FRA_workers_and_peasants_party
 		cost = 3
-		x = 59
+		x = 0
 		y = 1
+		relative_position_id = FRA_begin_revolution
 		mutually_exclusive = {
 			focus = FRA_lenin_legacy
 		}
@@ -12485,8 +11293,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_moderate
 		}
-		x = 57
-		y = 2
+		x = -2
+		y = 1
+		relative_position_id = FRA_moderate
 		available = {
 			has_country_flag = FRA_mod_jac_sup
 			has_government = totalist
@@ -12506,8 +11315,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_moderate
 		}
-		x = 59
-		y = 2
+		x = 0
+		y = 1
+		relative_position_id = FRA_moderate
 		available = {
 			has_country_flag = FRA_mod_jac_sup
 			has_government = totalist
@@ -12530,8 +11340,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_left_union
 		}
-		x = 58
-		y = 3
+		x = -1
+		y = 2
+		relative_position_id = FRA_moderate
 		available = {
 			has_country_flag = FRA_mod_jac_sup
 			has_government = totalist
@@ -12613,8 +11424,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_worker_peasant_union
 		}
-		x = 58
-		y = 4
+		x = -1
+		y = 3
+		relative_position_id = FRA_moderate
 		available = {
 			has_country_flag = FRA_mod_jac_sup
 			has_government = totalist
@@ -12635,8 +11447,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_left_union
 		}
-		x = 60
-		y = 3
+		x = 1
+		y = 2
+		relative_position_id = FRA_moderate
 		available = {
 			has_country_flag = FRA_mod_jac_sup
 			has_government = totalist
@@ -12661,8 +11474,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_approach_cgt
 		}
-		x = 60
-		y = 4
+		x = 1
+		y = 3
+		relative_position_id = FRA_moderate
 		available = {
 			has_country_flag = FRA_mod_jac_sup
 			has_government = totalist
@@ -12694,8 +11508,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_bolsheviks_wrong
 		}
-		x = 59
-		y = 5
+		x = 0
+		y = 4
+		relative_position_id = FRA_moderate
 		available = {
 			has_country_flag = FRA_mod_jac_sup
 			has_government = totalist
@@ -12720,8 +11535,9 @@ focus_tree = {
 			focus = FRA_revolutionary_party
 		}
 		
-		x = 62
-		y = 3
+		x = 3
+		y = 2
+		relative_position_id = FRA_moderate
 		available = {
 			has_country_flag = FRA_mod_jac_sup
 			has_government = totalist
@@ -12747,8 +11563,9 @@ focus_tree = {
 			focus = FRA_broad_not_narrow
 		}
 		
-		x = 62
-		y = 4
+		x = 3
+		y = 3
+		relative_position_id = FRA_moderate
 		available = {
 			has_country_flag = FRA_mod_jac_sup
 			has_government = totalist
@@ -12772,8 +11589,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_moderate
 		}
-		x = 61
-		y = 2
+		x = 2
+		y = 1
+		relative_position_id = FRA_moderate
 		available = {
 			has_country_flag = FRA_mod_jac_sup
 			has_government = totalist
@@ -12794,8 +11612,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_regional_rights
 		}
-		x = 56
-		y = 3
+		x = -3
+		y = 2
+		relative_position_id = FRA_moderate
 		available = {
 			has_country_flag = FRA_mod_jac_sup
 			has_government = totalist
@@ -12844,8 +11663,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_partial_collectivization
 		}
-		x = 56
-		y = 4
+		x = -3
+		y = 3
+		relative_position_id = FRA_moderate
 		available = {
 			has_country_flag = FRA_mod_jac_sup
 			has_government = totalist
@@ -12872,8 +11692,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_Fraternite
 		}
-		x = 59
+		x = 0
 		y = 8
+		relative_position_id = FRA_begin_revolution
 		available = {
 			has_completed_focus = FRA_win
 			has_government = totalist
@@ -12897,8 +11718,10 @@ focus_tree = {
 			focus = FRA_communism_reborn
 			focus = FRA_lenin_lives
 		}
-		x = 56
+
+		x = -3
 		y = 6
+		relative_position_id = FRA_begin_revolution
 		available = {
 			has_government = totalist
 		}
@@ -12916,8 +11739,9 @@ focus_tree = {
 			focus = FRA_no_nationalism
 			
 		}
-		x = 57
+		x = -2
 		y = 7
+		relative_position_id = FRA_begin_revolution
 		available = {
 			has_government = totalist
 		}
@@ -12934,8 +11758,9 @@ focus_tree = {
 			focus = FRA_fourth_faction
 			
 		}
-		x = 59
+		x = 0
 		y = 7
+		relative_position_id = FRA_begin_revolution
 		available = {
 			has_government = totalist
 		}
@@ -12952,8 +11777,9 @@ focus_tree = {
 			focus = FRA_war_with_capitalists
 			
 		}
-		x = 61
+		x = 2
 		y = 7
+		relative_position_id = FRA_begin_revolution
 		available = {
 			has_government = totalist
 		}
@@ -12971,8 +11797,9 @@ focus_tree = {
 			focus = FRA_communism_reborn
 			focus = FRA_lenin_lives
 		}
-		x = 59
+		x = 0
 		y = 6
+		relative_position_id = FRA_begin_revolution
 		available = {
 			has_government = totalist
 		}
@@ -12997,8 +11824,9 @@ focus_tree = {
 			focus = FRA_communism_reborn
 			focus = FRA_lenin_lives
 		}
-		x = 62
+		x = 3
 		y = 6
+		relative_position_id = FRA_begin_revolution
 		available = {
 			has_government = totalist
 		}
@@ -13021,8 +11849,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = FRA_moderate
 		}
-		x = 51
+		x = -8
 		y = 1
+		relative_position_id = FRA_begin_revolution
 		available = {
 			has_country_flag = FRA_nat_jac_sup
 			has_country_leader = {
@@ -13046,8 +11875,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_new_jacobin
 		}
-		x = 49
-		y = 2
+		x = -2
+		y = 1
+		relative_position_id = FRA_new_jacobin
 		available = {
 			has_government = totalist
 		}
@@ -13068,8 +11898,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_reign_of_terror
 		}
-		x = 48
-		y = 3
+		x = -3
+		y = 2
+		relative_position_id = FRA_new_jacobin
 		available = {
 			has_government = totalist
 		}
@@ -13108,8 +11939,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_syndie_blood
 		}
-		x = 48
-		y = 4
+		x = -3
+		y = 3
+		relative_position_id = FRA_new_jacobin
 		available = {
 			has_government = totalist
 		}
@@ -13128,8 +11960,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_new_jacobin
 		}
-		x = 51
-		y = 2
+		x = 0
+		y = 1
+		relative_position_id = FRA_new_jacobin
 		available = {
 			has_government = totalist
 		}
@@ -13150,8 +11983,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_french_marxism
 		}
-		x = 50
-		y = 3
+		x = -1
+		y = 2
+		relative_position_id = FRA_new_jacobin
 		ai_will_do = {
 			factor = 1
 		}
@@ -13174,8 +12008,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		x = 50
-		y = 4
+		x = -1
+		y = 3
+		relative_position_id = FRA_new_jacobin
 		available = {
 			has_government = totalist
 		}
@@ -13188,8 +12023,9 @@ focus_tree = {
 		id = FRA_commune_virtue
 		icon = GFX_goal_FRA_national_liberation
 		cost = 5
-		x = 52
-		y = 3
+		x = 1
+		y = 2
+		relative_position_id = FRA_new_jacobin
 		prerequisite = {
 			focus = FRA_french_marxism
 		}
@@ -13208,8 +12044,9 @@ focus_tree = {
 		id = FRA_new_worker
 		icon = GFX_goal_generic_happy_workers
 		cost = 5
-		x = 52
-		y = 4
+		x = 1
+		y = 3
+		relative_position_id = FRA_new_jacobin
 		prerequisite = {
 			focus = FRA_commune_virtue
 		}
@@ -13234,8 +12071,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_new_jacobin
 		}
-		x = 53
-		y = 2
+		x = 2
+		y = 1
+		relative_position_id = FRA_new_jacobin
 		available = {
 			has_government = totalist
 		}
@@ -13260,8 +12098,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_revolutionary_youth
 		}
-		x = 54
-		y = 3
+		x = 3
+		y = 2
+		relative_position_id = FRA_new_jacobin
 		available = {
 			has_government = totalist
 		}
@@ -13282,8 +12121,9 @@ focus_tree = {
 			focus = FRA_new_national_culture 
 		}	
 		
-		x = 54
-		y = 4
+		x = 3
+		y = 3
+		relative_position_id = FRA_new_jacobin
 		available = {
 			has_government = totalist
 		}
@@ -13323,8 +12163,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		x = 51
-		y = 5
+		x = 0
+		y = 4
+		relative_position_id = FRA_new_jacobin
 		available = {
 			has_government = totalist
 		}
@@ -13353,8 +12194,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		x = 67
+		x = 8
 		y = 1
+		relative_position_id = FRA_begin_revolution
 		available = {
 			has_country_flag = FRA_red_jac_sup
 			has_country_leader = {
@@ -13380,8 +12222,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-		x = 65
-		y = 2
+		x = -2
+		y = 1
+		relative_position_id = FRA_lenin_legacy
 		available = {
 			has_government = totalist
 		}
@@ -13415,8 +12258,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-		x = 64
-		y = 3
+		x = -3
+		y = 2
+		relative_position_id = FRA_lenin_legacy
 		available = {
 			has_government = totalist
 		}
@@ -13436,8 +12280,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-		x = 64
-		y = 4
+		x = -3
+		y = 3
+		relative_position_id = FRA_lenin_legacy
 		available = {
 			has_government = totalist
 		}
@@ -13461,8 +12306,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		x = 67
-		y = 2
+		x = 0
+		y = 1
+		relative_position_id = FRA_lenin_legacy
 		available = {
 			has_government = totalist
 		}
@@ -13487,8 +12333,9 @@ focus_tree = {
 		id = FRA_new_economic_plan
 		icon = GFX_SOV_soviet_syndicalism
 		cost = 4
-		x = 66
-		y = 3
+		x = -1
+		y = 2
+		relative_position_id = FRA_lenin_legacy
 		prerequisite = {
 			focus = FRA_bolshevik_learn
 		}
@@ -13508,8 +12355,9 @@ focus_tree = {
 		id = FRA_five_year_plan
 		icon = GFX_goal_ALB_Five_Years_Plan
 		cost = 5
-		x = 66
-		y = 4
+		x = -1
+		y = 3
+		relative_position_id = FRA_lenin_legacy
 		prerequisite = {
 			focus = FRA_new_economic_plan
 		}
@@ -13576,8 +12424,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		x = 68
-		y = 3
+		x = 1
+		y = 2
+		relative_position_id = FRA_lenin_legacy
 		available = {
 			has_government = totalist
 		}
@@ -13596,8 +12445,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		x = 68
-		y = 4
+		x = 1
+		y = 3
+		relative_position_id = FRA_lenin_legacy
 		available = {
 			has_government = totalist
 		}
@@ -13660,8 +12510,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		x = 69
-		y = 2
+		x = 2
+		y = 1
+		relative_position_id = FRA_lenin_legacy
 		available = {
 			has_government = totalist
 		}
@@ -13688,8 +12539,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_eradicate_boys
 		}
-		x = 70
-		y = 3
+		x = 3
+		y = 2
+		relative_position_id = FRA_lenin_legacy
 		available = {
 			has_government = totalist
 		}
@@ -13721,8 +12573,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		x = 70
-		y = 4
+		x = 3
+		y = 3
+		relative_position_id = FRA_lenin_legacy
 		available = {
 			has_government = totalist
 		}
@@ -13750,8 +12603,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		x = 67
-		y = 5
+		x = 0
+		y = 4
+		relative_position_id = FRA_lenin_legacy
 		available = {
 			has_government = totalist
 		}
@@ -13774,7 +12628,7 @@ focus_tree = {
 		id = FRA_sorelians_rule_supreme
 		icon = GFX_goal_FRA_sorealians_alt
 		cost = 3.00
-		x = 75
+		x = 100
 		y = 0
 		available = {
 			has_country_leader = {
@@ -14055,8 +12909,9 @@ focus_tree = {
 		id = FRA_direct_rule
 		icon = GFX_goal_LUX_Ties_with_Paris
 		cost = 5.00
-		x = 75
+		x = 0
 		y = 3
+		relative_position_id = FRA_sorelians_rule_supreme
 		prerequisite = {
 			focus = FRA_centralise_the_state
 		}
@@ -14125,8 +12980,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		x = 75
+		x = 0
 		y = 5
+		relative_position_id = FRA_sorelians_rule_supreme
 		available = {
 			has_government = totalist
 		}
@@ -14147,12 +13003,14 @@ focus_tree = {
 			focus = FRA_glory_to_the_chairman
 			focus = FRA_france_awake 
 			focus = FRA_sorelian_dream
+			focus = FRACOM_12
 			}
 		ai_will_do = {
 			factor = 1
 		}
-		x = 75
-		y = 12
+		x = 0
+		y = 7
+		relative_position_id = FRA_who_shall_lead
 		available = {
 			has_government = totalist
 		}
@@ -14170,9 +13028,9 @@ focus_tree = {
 		id = FRA_valois_vision
 		icon = GFX_goal_FRA_empire_of_french_worker
 		cost = 4.00
-		relative_position_id = FRA_every_worker_a_patriot
-		x = -8
-		y = 3
+		relative_position_id = FRA_who_shall_lead
+		x = 0
+		y = 8
 		prerequisite = {
 			 focus = FRA_france_awake 
 			 focus = FRA_sorelian_dream
@@ -14220,8 +13078,9 @@ focus_tree = {
 		text = FRA_expand_focus
 		icon = GFX_goal_FRA_european_peoples_republicanism
 		cost = 3.00
-		x = 72
-		y = 14
+		x = 2
+		y = 1
+		relative_position_id = FRA_valois_vision
 		prerequisite = {
 			focus = FRA_valois_vision
 		}
@@ -14255,8 +13114,9 @@ focus_tree = {
 		text = FRA_deat_europe_focus
 		icon = GFX_goal_FRA_deat_europe
 		cost = 3.00
-		x = 74
-		y = 14
+		x = -2
+		y = 1
+		relative_position_id = FRA_valois_vision
 		prerequisite = {
 			focus = FRA_valois_vision
 		}
@@ -14287,8 +13147,9 @@ focus_tree = {
 		text = FRA_bucard_europe_focus
 		icon = GFX_goal_FRA_bucard_europe_focus
 		cost = 1.00
-		x = 76
-		y = 14
+		x = 0
+		y = 1
+		relative_position_id = FRA_valois_vision
 		prerequisite = {
 			focus = FRA_valois_vision
 		}
@@ -14317,8 +13178,9 @@ focus_tree = {
 		text = FRA_bucard_pacify_iberia
 		icon = GFX_goal_FRA_bucard_spain_question
 		cost = 0.00
-		x = 75
-		y = 15
+		x = -4
+		y = 1
+		relative_position_id = FRA_bucard_europe_focus
 		prerequisite = {
 			focus = FRA_bucard_europe_focus
 		}
@@ -14348,8 +13210,9 @@ focus_tree = {
 		text = FRA_bucard_subdue_anarchists
 		icon = GFX_goal_CSA_iberian_revolution
 		cost = 7.00
-		x = 76
-		y = 16
+		x = 1
+		y = 1
+		relative_position_id = FRA_bucard_pacify_iberia
 		prerequisite = {
 			focus = FRA_bucard_pacify_iberia
 		}
@@ -14390,8 +13253,9 @@ focus_tree = {
 		text = FRA_bucard_plunge_iberia_in_flames
 		icon = GFX_goal_FRA_bucard_plunge_iberia_in_flames
 		cost = 7.00
-		x = 74
-		y = 16
+		x = -1
+		y = 1
+		relative_position_id = FRA_bucard_pacify_iberia
 		prerequisite = {
 			focus = FRA_bucard_pacify_iberia
 		}
@@ -14435,8 +13299,9 @@ focus_tree = {
 		text = FRA_bucard_conquer_portugal
 		icon = GFX_goal_FRA_liberate_Iberia
 		cost = 7.00
-		x = 75
-		y = 17
+		x = 0
+		y = 2
+		relative_position_id = FRA_bucard_pacify_iberia
 		prerequisite = {
 			focus = FRA_bucard_plunge_iberia_in_flames
 			focus = FRA_bucard_subdue_anarchists
@@ -14477,8 +13342,9 @@ focus_tree = {
 		text = FRA_bucard_form_iberia
 		icon = GFX_goal_FRA_bucard_form_spain
 		cost = 2.00
-		x = 75
-		y = 18
+		x = 0
+		y = 3
+		relative_position_id = FRA_bucard_pacify_iberia
 		prerequisite = {
 			focus = FRA_bucard_conquer_portugal
 		}
@@ -14598,8 +13464,9 @@ focus_tree = {
 		text = FRA_bucard_pacify_britain
 		icon = GFX_goal_FRA_bucard_england_question
 		cost = 0
-		x = 79
-		y = 15
+		x = 0
+		y = 1
+		relative_position_id = FRA_bucard_europe_focus
 		prerequisite = {
 			focus = FRA_bucard_europe_focus
 		}
@@ -14629,8 +13496,9 @@ focus_tree = {
 		text = FRA_bucard_suggestion_to_syndicalists
 		icon = GFX_goal_FRA_bucard_subdue_syndies
 		cost = 7.00
-		x = 80
-		y = 16
+		x = 1
+		y = 1
+		relative_position_id = FRA_bucard_pacify_britain
 		prerequisite = {
 			focus = FRA_bucard_pacify_britain
 		}
@@ -14671,8 +13539,9 @@ focus_tree = {
 		text = FRA_bucard_destroy_albion
 		icon = GFX_goal_FRA_bucard_destroy_albion
 		cost = 7.00
-		x = 78
-		y = 16
+		x = -1
+		y = 1
+		relative_position_id = FRA_bucard_pacify_britain
 		prerequisite = {
 			focus = FRA_bucard_pacify_britain
 		}
@@ -14716,8 +13585,9 @@ focus_tree = {
 		text = FRA_bucard_conquer_ireland
 		icon = GFX_goal_CSA_irish_revolution
 		cost = 7.00
-		x = 79
-		y = 17
+		x = 0
+		y = 2
+		relative_position_id = FRA_bucard_pacify_britain
 		prerequisite = {
 			focus = FRA_bucard_destroy_albion
 			focus = FRA_bucard_suggestion_to_syndicalists
@@ -14759,8 +13629,9 @@ focus_tree = {
 		text = FRA_bucard_form_britain
 		icon = GFX_goal_FRA_bucard_form_britain
 		cost = 2.00
-		x = 79
-		y = 18
+		x = 0
+		y = 3
+		relative_position_id = FRA_bucard_pacify_britain
 		prerequisite = {
 			focus = FRA_bucard_conquer_ireland
 		}
@@ -14864,8 +13735,9 @@ focus_tree = {
 		text = FRA_bucard_sort_out_germany
 		icon = GFX_goal_FRA_bucard_germany_question
 		cost = 0
-		x = 83
-		y = 15
+		x = 4
+		y = 1
+		relative_position_id = FRA_bucard_europe_focus
 		prerequisite = {
 			focus = FRA_bucard_europe_focus
 		}
@@ -14912,8 +13784,9 @@ focus_tree = {
 		text = FRA_bucard_napoleonic_tradition
 		icon = GFX_goal_FRA_bucard_napoleon_tradition
 		cost = 1
-		x = 84
-		y = 16
+		x = 1
+		y = 1
+		relative_position_id = FRA_bucard_sort_out_germany
 		prerequisite = {
 			focus = FRA_bucard_sort_out_germany
 		}
@@ -14946,8 +13819,9 @@ focus_tree = {
 		text = FRA_bucard_frankish_tradition
 		icon = GFX_goal_FRA_bucard_charlemagne_tradition
 		cost = 1
-		x = 82
-		y = 16
+		x = -1
+		y = 1
+		relative_position_id = FRA_bucard_sort_out_germany
 		prerequisite = {
 			focus = FRA_bucard_sort_out_germany
 		}
@@ -14980,8 +13854,9 @@ focus_tree = {
 		text = FRA_bucard_conquer_austria
 		icon = GFX_goal_attack_austria
 		cost = 7.00
-		x = 83
-		y = 17
+		x = 0
+		y = 2
+		relative_position_id = FRA_bucard_sort_out_germany
 		prerequisite = {
 			focus = FRA_bucard_frankish_tradition
 			focus = FRA_bucard_napoleonic_tradition
@@ -15022,8 +13897,9 @@ focus_tree = {
 		text = FRA_bucard_form_germany
 		icon = GFX_goal_FRA_bucard_form_germany
 		cost = 2.00
-		x = 83
-		y = 18
+		x = 0
+		y = 3
+		relative_position_id = FRA_bucard_sort_out_germany
 		prerequisite = {
 			focus = FRA_bucard_conquer_austria
 		}
@@ -15185,8 +14061,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_who_shall_lead
 		}
-		x = 75
-		y = 6
+		x = 0
+		y = 1
+		relative_position_id = FRA_who_shall_lead
 		available = {
 			has_country_leader = {
 				ruling_only = yes
@@ -15212,8 +14089,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_sorels_win
 		}
-		x = 75
-		y = 7
+		x = 0
+		y = 1
+		relative_position_id = FRA_sorels_win
 		available = {
 			has_government = totalist
 		}
@@ -15235,8 +14113,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_class_rejuvenation
 		}
-		x = 77
-		y = 8
+		x = 2
+		y = 1
+		relative_position_id = FRA_class_rejuvenation
 		available = {
 			has_government = totalist
 		}
@@ -15258,8 +14137,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_establish_one_true_ideal
 		}
-		x = 78
-		y = 9
+		x = 3
+		y = 2
+		relative_position_id = FRA_class_rejuvenation
 		available = {
 			has_government = totalist
 		}
@@ -15280,8 +14160,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_three_french_leaders
 		}
-		x = 77
-		y = 10
+		x = 2
+		y = 3
+		relative_position_id = FRA_class_rejuvenation
 		available = {
 			has_government = totalist
 		}
@@ -15302,8 +14183,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_class_rejuvenation
 		}
-		x = 75
-		y = 8
+		x = 0
+		y = 1
+		relative_position_id = FRA_class_rejuvenation
 		available = {
 			has_government = totalist
 			AND = {
@@ -15328,8 +14210,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_true_revolution
 		}
-		x = 75
-		y = 9
+		x = 0
+		y = 2
+		relative_position_id = FRA_class_rejuvenation
 		available = {
 			has_government = totalist
 		}
@@ -15357,8 +14240,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_remove_false_prophets
 		}
-		x = 75
-		y = 10
+		x = 0
+		y = 3
+		relative_position_id = FRA_class_rejuvenation
 		available = {
 			has_government = totalist
 		}
@@ -15380,8 +14264,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_class_rejuvenation
 		}
-		x = 73
-		y = 8
+		x = -2
+		y = 1
+		relative_position_id = FRA_class_rejuvenation
 		available = {
 			has_government = totalist
 		}
@@ -15405,8 +14290,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_pardon_anarchists
 		}
-		x = 72
-		y = 9
+		x = -3
+		y = 2
+		relative_position_id = FRA_class_rejuvenation
 		available = {
 			has_government = totalist
 		}
@@ -15427,8 +14313,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_societal_order
 		}
-		x = 73
-		y = 10
+		x = -2
+		y = 3
+		relative_position_id = FRA_class_rejuvenation
 		available = {
 			has_government = totalist
 		}
@@ -15459,8 +14346,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_new_syndicalism
 		}
-		x = 75
-		y = 11
+		x = 0
+		y = 4
+		relative_position_id = FRA_class_rejuvenation
 		available = {
 			has_government = totalist
 		}
@@ -15481,8 +14369,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_who_shall_lead
 		}
-		x = 67
-		y = 6
+		x = -8
+		y = 1
+		relative_position_id = FRA_who_shall_lead
 		available = {
 			has_country_leader = {
 				ruling_only = yes
@@ -15508,8 +14397,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_nazbols_win
 		}
-		x = 67
-		y = 7
+		x = 0
+		y = 1
+		relative_position_id = FRA_nazbols_win
 		ai_will_do = {
 			factor = 100
 		}
@@ -15536,8 +14426,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_the_great_purge
 		}
-		x = 65
-		y = 8
+		x = -2
+		y = 1
+		relative_position_id = FRA_the_great_purge
 		ai_will_do = {
 			factor = 100
 		}
@@ -15560,8 +14451,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_merge_all_trade_unions
 		}
-		x = 64
-		y = 9
+		x = -3
+		y = 2
+		relative_position_id = FRA_the_great_purge
 		ai_will_do = {
 			factor = 100
 		}
@@ -15611,8 +14503,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_agricultural_collectivisation
 		}
-		x = 65
-		y = 10
+		x = -2
+		y = 3
+		relative_position_id = FRA_the_great_purge
 		ai_will_do = {
 			factor = 100
 		}
@@ -15636,8 +14529,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_the_great_purge
 		}
-		x = 67
-		y = 8
+		x = 0
+		y = 1
+		relative_position_id = FRA_the_great_purge
 		ai_will_do = {
 			factor = 100
 		}
@@ -15659,8 +14553,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_establish_secret_police
 		}
-		x = 67
-		y = 9
+		x = 0
+		y = 2
+		relative_position_id = FRA_the_great_purge
 		ai_will_do = {
 			factor = 100
 		}
@@ -15685,8 +14580,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_destory_reactionary_thought
 		}
-		x = 67
-		y = 10
+		x = 0
+		y = 3
+		relative_position_id = FRA_the_great_purge
 		ai_will_do = {
 			factor = 100
 		}
@@ -15760,8 +14656,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_the_great_purge
 		}
-		x = 69
-		y = 8
+		x = 2
+		y = 1
+		relative_position_id = FRA_the_great_purge
 		ai_will_do = {
 			factor = 100
 		}
@@ -15787,8 +14684,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_vanguard_commissars
 		}
-		x = 70
-		y = 9
+		x = 3
+		y = 2
+		relative_position_id = FRA_the_great_purge
 			available = {
 			has_government = totalist
 		}
@@ -15819,8 +14717,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_deat_youth
 		}
-		x = 69
-		y = 10
+		x = 2
+		y = 3
+		relative_position_id = FRA_the_great_purge
 		ai_will_do = {
 			factor = 100
 		}
@@ -15846,8 +14745,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_replace_industrial_leaders
 		}
-		x = 67
-		y = 11
+		x = 0
+		y = 4
+		relative_position_id = FRA_the_great_purge
 		ai_will_do = {
 			factor = 100
 		}
@@ -16182,8 +15082,9 @@ focus_tree = {
 		prerequisite = { focus = FRA_every_worker_a_patriot }
 		prerequisite = { focus = FRA_red_colonialism }
 		prerequisite = { focus = FRA_establish_the_corporates }
-		x = 83
-		y = 11
+		x = 0
+		y = 2
+		relative_position_id = FRA_revolutionary_voilence
 		available = {
 			has_government = totalist
 		}
@@ -16261,8 +15162,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_counter
 		}
-		x = 88
+		x = -2
 		y = 1
+		relative_position_id = FRA_counter
 		available = {
 			OR = {
 				has_country_leader = {
@@ -16289,8 +15191,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_state_anarchy
 		}
-		x = 86
-		y = 2
+		x = -2
+		y = 1
+		relative_position_id = FRA_state_anarchy
 		available = {
 			OR = {
 				has_country_leader = {
@@ -16317,8 +15220,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_state_anarchy
 		}
-		x = 88
-		y = 2
+		x = 0
+		y = 1
+		relative_position_id = FRA_state_anarchy
 		available = {
 			OR = {
 				has_country_leader = {
@@ -16344,8 +15248,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_state_anarchy
 		}
-		x = 90
-		y = 2
+		x = 2
+		y = 1
+		relative_position_id = FRA_state_anarchy
 		available = {
 			OR = {
 				has_country_leader = {
@@ -16385,8 +15290,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_true_equality
 		}
-		x = 87
-		y = 3
+		x = -1
+		y = 2
+		relative_position_id = FRA_state_anarchy
 		available = {
 			OR = {
 				has_country_leader = {
@@ -16453,8 +15359,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_true_equality
 		}
-		x = 89
-		y = 3
+		x = 1
+		y = 2
+		relative_position_id = FRA_state_anarchy
 		available = {
 			OR = {
 				has_country_leader = {
@@ -16495,8 +15402,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_abolish
 		}
-		x = 88
-		y = 4
+		x = 0
+		y = 3
+		relative_position_id = FRA_state_anarchy
 		available = {
 			OR = {
 				has_country_leader = {
@@ -16532,8 +15440,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_death
 		}
-		x = 88
-		y = 5
+		x = 0
+		y = 4
+		relative_position_id = FRA_state_anarchy
 		available = {
 			OR = {
 				has_country_leader = {
@@ -17642,8 +16551,8 @@ focus_tree = {
 	available = {
 		always = no
 	}
-	x = 51
-	y = 14
+	x = 80
+	y = 22
 	cost = 2
 	ai_will_do = {
 		factor = 1000
@@ -17662,8 +16571,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_Paris_en_ordre
 		}
-		x = 33
-		y = 15
+		x = -18
+		y = 1
+		relative_position_id = FRA_Paris_en_ordre
 		cost = 2
 		ai_will_do = {
 			factor = 1000
@@ -18219,6 +17129,350 @@ focus_tree = {
 			unlock_decision_tooltip = FRA_claim_deat_europe
 		}
 	}
+	#戴亚选举-可能派
+	focus = {
+		id = FRA_Possibiliste_win
+		icon = GFX_goal_GER_Moderate_Unions
+		prerequisite = {
+			focus = FRA_Paris_en_ordre
+		}
+		available = {
+			always = no
+		}
+		x = 24
+		y = 1
+		relative_position_id = FRA_Paris_en_ordre
+		cost = 3
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FRA_Pursue_European_Republicanism"
+			add_political_power = 100
+		}
+	}	
+
+	focus = {
+		id = FRA_Resist_radicalism
+		icon = GFX_BBR_crush_ultraradicals
+		
+		prerequisite = {
+			focus = FRA_Possibiliste_win
+		}
+		relative_position_id = FRA_Possibiliste_win
+		x = -2
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FRA_Pursue_European_Republicanism"
+			remove_ideas = FRA_black_guard_insurgency_idea
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.1
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_Suppressing_syndicalism
+		icon = GFX_goal_CRO_eliminate_syndies
+		
+		prerequisite = {
+			focus = FRA_Possibiliste_win
+		}
+		relative_position_id = FRA_Possibiliste_win
+		x = 0
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FRA_Pursue_European_Republicanism"
+			add_popularity = {
+				ideology = syndicalist
+				popularity = -0.1
+			}
+			add_manpower = -500
+		}
+	}
+
+	focus = {
+		id = FRA_Oppose_communist_ideology
+		icon = GFX_goal_FRA_Combat_Anarchist_Chaos
+		
+		prerequisite = {
+			focus = FRA_Possibiliste_win
+		}
+		relative_position_id = FRA_Possibiliste_win
+		x = 2
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FRA_Pursue_European_Republicanism"
+			add_popularity = {
+				ideology = totalist
+				popularity = -0.1
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_Improve_social_welfare
+		icon = GFX_goal_workers_rights
+		
+		prerequisite = {
+			focus = FRA_Resist_radicalism
+		}
+		prerequisite = {
+			focus = FRA_Suppressing_syndicalism
+		}
+		relative_position_id = FRA_Possibiliste_win
+		x = -1
+		y = 2
+		cost = 3
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FRA_Pursue_European_Republicanism"
+			add_ideas = FRA_social_welfare
+
+		}
+	}
+
+	focus = {
+		id = FRA_Increase_public_expenditure
+		icon = GFX_goal_CZE_rural_education
+		
+		prerequisite = {
+			focus = FRA_Oppose_communist_ideology
+		}
+		prerequisite = {
+			focus = FRA_Suppressing_syndicalism
+		}
+		relative_position_id = FRA_Possibiliste_win
+		x = 1
+		y = 2
+		cost = 3
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FRA_Pursue_European_Republicanism"
+			add_ideas = FRA_public_expenditure
+
+		}
+	}
+
+	focus = {
+		id = FRA_Partial_marketization
+		icon = GFX_goal_generic_happy_dollar_bag
+		
+		prerequisite = {
+			focus = FRA_Improve_social_welfare
+		}
+		prerequisite = {
+			focus = FRA_Increase_public_expenditure
+		}
+		relative_position_id = FRA_Possibiliste_win
+		x = 0
+		y = 3
+		cost = 3
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FRA_Pursue_European_Republicanism"
+			add_ideas = FRA_marketization_1
+
+		}
+	}
+
+	focus = {
+		id = FRA_Attracting_the_Christian_Labor_Union
+		icon = GFX_goal_FRA_christian_socialism
+		
+		prerequisite = {
+			focus = FRA_Partial_marketization
+		}
+		relative_position_id = FRA_Possibiliste_win
+		x = -2
+		y = 4
+		cost = 3
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FRA_Pursue_European_Republicanism"
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.1
+			}
+			add_war_support = 0.1
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = FRA_Expand_municipal_administration
+		icon = GFX_NEE_support_small_businesses
+		
+		prerequisite = {
+			focus = FRA_Partial_marketization
+		}
+		relative_position_id = FRA_Possibiliste_win
+		x = -1
+		y = 5
+		cost = 3
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FRA_Pursue_European_Republicanism"
+			add_resource = {
+				type = steel
+				amount = 20
+				state = 16
+			}
+
+		}
+	}
+
+	focus = {
+		id = FRA_Central_decentralization_local_autonomy
+		icon = GFX_goal_NFA_localist_ideals
+		
+		prerequisite = {
+			focus = FRA_Partial_marketization
+		}
+		relative_position_id = FRA_Possibiliste_win
+		x = 0
+		y = 4
+		cost = 3
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FRA_Pursue_European_Republicanism"
+			add_ideas = FRA_regionalism
+
+		}
+	}
+
+	focus = {
+		id = FRA_Establishing_student_scholarships
+		icon = GFX_goal_CRO_education_number_one
+		
+		prerequisite = {
+			focus = FRA_Partial_marketization
+		}
+		relative_position_id = FRA_Possibiliste_win
+		x = 1
+		y = 5
+		cost = 3
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FRA_Pursue_European_Republicanism"
+			add_ideas = FRA_student_scholarships
+
+		}
+	}
+
+	focus = {
+		id = FRA_Establish_public_housing
+		icon = GFX_goal_VNC_venice_the_bank_will_have_its_due_new
+		
+		prerequisite = {
+			focus = FRA_Partial_marketization
+		}
+		relative_position_id = FRA_Possibiliste_win
+		x = 2
+		y = 4
+		cost = 3
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FRA_Pursue_European_Republicanism"
+			add_stability = 0.15
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.1
+			}
+
+		}
+	}
+
+	focus = {
+		id = FRA_Workers_and_entrepreneurs_unite
+		icon = GFX_goal_CAN_build_canadian_welfare_state
+		
+		prerequisite = {
+			focus = FRA_Expand_municipal_administration
+		}
+		prerequisite = {
+			focus = FRA_Establishing_student_scholarships
+		}
+		prerequisite = {
+			focus = FRA_Establish_public_housing
+		}
+		prerequisite = {
+			focus = FRA_Central_decentralization_local_autonomy
+		}
+		prerequisite = {
+			focus = FRA_Attracting_the_Christian_Labor_Union
+		}
+		relative_position_id = FRA_Possibiliste_win
+		x = 0
+		y = 6
+		cost = 3
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FRA_Pursue_European_Republicanism"
+			add_ideas = FRA_Workers_and_entrepreneurs
+
+		}
+	}
+
+	focus = {
+		id = FRA_True_democratic_socialism
+		icon = GFX_goal_generic_democratic_socialism
+		
+		prerequisite = {
+			focus = FRA_Workers_and_entrepreneurs_unite
+		}
+		relative_position_id = FRA_Possibiliste_win
+		x = 0
+		y = 7
+		cost = 3
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FRA_Pursue_European_Republicanism"
+			add_stability = 0.1
+			add_political_power = 100
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.2
+			}
+			country_event = { id = kxxfrance.31 } 
+			hidden_effect = {
+				country_event = { id = comfranceeu.4 days = 30 } 
+			}
+		}
+	}
 	focus = {
 		id = FRA_millitant_godless
 		icon = GFX_goal_MEX_atheism
@@ -18229,8 +17483,9 @@ focus_tree = {
 		available = {
 			always = no
 		}
-		x = 69
-		y = 15
+		x = 18
+		y = 1
+		relative_position_id = FRA_Paris_en_ordre
 		cost = 4
 		ai_will_do = {
 			factor = 1000
@@ -18619,8 +17874,9 @@ focus_tree = {
 		available = {
 			always = no
 		}
-		x = 63
-		y = 15
+		x = 12
+		y = 1
+		relative_position_id = FRA_Paris_en_ordre
 		cost = 4
 		ai_will_do = {
 			factor = 1000
@@ -18996,8 +18252,9 @@ focus_tree = {
 		available = {
 			always = no
 		}
-		x = 57
-		y = 15
+		x = 6
+		y = 1
+		relative_position_id = FRA_Paris_en_ordre
 		cost = 4
 		ai_will_do = {
 			factor = 1000
@@ -19413,8 +18670,9 @@ focus_tree = {
 		available = {
 			always = no
 		}
-		x = 51
-		y = 15
+		x = 0
+		y = 1
+		relative_position_id = FRA_Paris_en_ordre
 		cost = 4
 		ai_will_do = {
 			factor = 1000
@@ -19813,8 +19071,9 @@ focus_tree = {
 		available = {
 			always = no
 		}
-		x = 45
-		y = 15
+		x = -6
+		y = 1
+		relative_position_id = FRA_Paris_en_ordre
 		cost = 4
 		ai_will_do = {
 			factor = 1000
@@ -19833,8 +19092,9 @@ focus_tree = {
 		available = {
 			always = no
 		}
-		x = 39
-		y = 15
+		x = -12
+		y = 1
+		relative_position_id = FRA_Paris_en_ordre
 		cost = 4
 		ai_will_do = {
 			factor = 1000
@@ -20702,2181 +19962,7 @@ focus_tree = {
 			
 		}
 	}
-	focus = {
-		id = FRA_Between_Marxism_Narodism
-		icon = GFX_goal_FRA_cgt_mandate
-		cost = 2
-		
-		x = 4
-		y = 6
-		
-		ai_will_do = {
-			factor = 20
-		}
-		available = {
-			
-			date >1936.4.1
-       
-		OR = {
-			 has_government = radical_socialist
-			 has_government = syndicalist
-		}
-       
-      
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Between_Marxism_Narodism"
-			add_political_power = 25
-			
-		}
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-	}
-	focus = {
-		id = FRA_Enforce_Land_Socialization
-		icon = GFX_goal_SKM_Socialized_Land_Redistribution
-		cost = 4
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = -7
-		y = 1
-		available = {
-			
-        
-        has_government = radical_socialist
-      
-	}
-		prerequisite = {
-			focus = FRA_Between_Marxism_Narodism
-		}
-		mutually_exclusive = {
-			focus = FRA_Ultimate_Goal_Of_Land_Nationalization
-		}
-		ai_will_do = {
-			factor = 70
-			modifier = {
-				factor = 200
-				has_game_rule = {
-					rule = UKR_future
-					option = UKR_FUTURE_SHUMSKYI
-				}
-			}
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Enforce_Land_Socialization"
-			add_ideas = UKR_socialization_of_land
-			
-		}
-		search_filters = {
-			FOCUS_FILTER_UKR_BREADBASKET
-		}
-	}
-	focus = {
-		id = FRA_Ultimate_Goal_Of_Land_Nationalization
-		icon = GFX_goal_SRI_agrarian_power
-		cost = 4
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = -5
-		y = 1
-		available = {
-			
-        has_government = syndicalist
-        
-      
-	}
-		prerequisite = {
-			focus = FRA_Between_Marxism_Narodism
-		}
-		mutually_exclusive = {
-			focus = FRA_Enforce_Land_Socialization
-		}
-		ai_will_do = {
-			factor = 70
-			modifier = {
-				factor = 200
-				has_game_rule = {
-					rule = UKR_future
-					option = UKR_FUTURE_SHUMSKYI_SOVIET
-				}
-			}
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Ultimate_Goal_Of_Land_Nationalization"
-			add_ideas = UKR_nationalisation_of_land
-			
-		}
-		search_filters = {
-			FOCUS_FILTER_UKR_BREADBASKET
-		}
-	}
-	focus = {
-		id = FRA_Promote_Collective_Agriculture
-		icon = GFX_UKR_Agrarian_Economy
-		cost = 4
-		relative_position_id = FRA_Enforce_Land_Socialization
-		x = 1
-		y = 1
-		
-		prerequisite = {
-			focus = FRA_Ultimate_Goal_Of_Land_Nationalization
-			focus = FRA_Enforce_Land_Socialization
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Promote_Collective_Agriculture"
-			add_political_power = 200
-			add_stability = 0.05
-		}
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-			FOCUS_FILTER_UKR_BREADBASKET
-		}
-	}
-	focus = {
-		id = FRA_Mass_Nationalizations_B
-		text = UKR_Mass_Nationalization
-		icon = GFX_UKR_Necessary_Nationalizations
-		cost = 10
-		relative_position_id = FRA_Enforce_Land_Socialization
-		x = -1
-		y = 1
-		
-		bypass = {
-			OR = {
-				has_completed_focus = FRA_Mass_Nationalization
-				has_completed_focus = FRA_Mass_Nationalizations
-				has_completed_focus = FRA_USDRP_Nationalization
-			}
-		}
-		prerequisite = {
-			focus = FRA_Ultimate_Goal_Of_Land_Nationalization
-			focus = FRA_Enforce_Land_Socialization
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Mass_Nationalizations_B"
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = FRA_Socialization_Factories_Enterprises_B
-		text = UKR_Socialization_Factories_Enterprises
-		icon = GFX_goal_AUS_nonmarxist_economics
-		cost = 4
-		relative_position_id = FRA_Enforce_Land_Socialization
-		x = 3
-		y = 1
-		
-		bypass = {
-			has_idea = UKR_workers_management
-		}
-		prerequisite = {
-			focus = FRA_Ultimate_Goal_Of_Land_Nationalization
-			focus = FRA_Enforce_Land_Socialization
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Socialization_Factories_Enterprises_B"
-			add_ideas = UKR_workers_management
-			
-		}
-	}
-	focus = {
-		id = FRA_Workers_Self_Management_B
-		text = UKR_Workers_Self_Management
-		icon = GFX_TRM_Appease_Workers
-		cost = 4
-		relative_position_id = FRA_Enforce_Land_Socialization
-		x = 4
-		y = 2
-		
-		prerequisite = {
-			focus = FRA_Socialization_Factories_Enterprises_B
-		}
-		prerequisite = {
-			focus = FRA_Mass_Nationalizations_B
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Workers_Self_Management_B"
-			swap_ideas = {
-				remove_idea = UKR_workers_management
-				add_idea = UKR_workers_management_1
-			}
-			add_stability = 0.075
-		}
-	}
-	focus = {
-		id = FRA_Invite_French_Advisors
-		icon = GFX_goal_FRA_syndicate_of_production
-		cost = 4
-		relative_position_id = FRA_Enforce_Land_Socialization
-		x = -2
-		y = 2
-		
-		prerequisite = {
-			focus = FRA_Socialization_Factories_Enterprises_B
-		}
-		prerequisite = {
-			focus = FRA_Mass_Nationalizations_B
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Invite_French_Advisors"
-			add_ideas = UKR_french_assistance
-		}
-	}
-	focus = {
-		id = FRA_All_To_Coops
-		icon = GFX_goal_CSA_coop_clubs
-		cost = 4
-		relative_position_id = FRA_Enforce_Land_Socialization
-		x = 0
-		y = 2
-		available = {
-			
-			
-			has_government = radical_socialist
-		  
-		}
-		
-		prerequisite = {
-			focus = FRA_Promote_Collective_Agriculture
-		}
-		mutually_exclusive = {
-			focus = FRA_Establish_State_Estates
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_All_To_Coops"
-			add_ideas = SOV_labour_republic_2
-		}
-	}
-	focus = {
-		id = FRA_Establish_State_Estates
-		icon = GFX_UKR_Voluntary_Collectivisation
-		cost = 4
-		relative_position_id = FRA_Enforce_Land_Socialization
-		x = 2
-		y = 2
-		available = {
-			
-			has_government = syndicalist
-			
-		  
-		}
-		prerequisite = {
-			focus = FRA_Promote_Collective_Agriculture
-		}
-		mutually_exclusive = {
-			focus = FRA_All_To_Coops
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Establish_State_Estates"
-			
-			
-			add_ideas = UKR_state_estates
-		}
-	}
-	focus = {
-		id = FRA_Modernisation_Of_Rural_Life
-		icon = GFX_UKR_Rural_Development
-		cost = 4
-		relative_position_id = FRA_Enforce_Land_Socialization
-		x = -1
-		y = 3
-		available = {
-			
-		
-			has_government = radical_socialist
-		  
-		}
-		prerequisite = {
-			focus = FRA_All_To_Coops
-			focus = FRA_Establish_State_Estates
-		}
-		prerequisite = {
-			focus = FRA_Workers_Self_Management_B
-		}
-		prerequisite = {
-			focus = FRA_Invite_French_Advisors
-		}
-		mutually_exclusive = {
-			focus = FRA_Industrialisation_Of_Cities
-		}
-		ai_will_do = {
-			factor = 70
-			modifier = {
-				factor = 0.8
-				UKR_blakytnyi_in_power = yes
-			}
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Modernisation_Of_Rural_Life"
-			add_to_variable = {
-				borotbyst_village = 1
-			}
-			add_ideas = UKR_modernisation_of_rural_life
-			random_owned_controlled_state = {
-				limit = {
-					impassable = no
-					OR = {
-						has_state_category = four
-						has_state_category = three
-						has_state_category = two
-					}
-				}
-				ROOT = {
-					activate_targeted_decision = {
-						target = PREV
-						decision = UKR_develop_rural_infrastructure
-					}
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					impassable = no
-					OR = {
-						has_state_category = four
-						has_state_category = three
-						has_state_category = two
-					}
-				}
-				ROOT = {
-					activate_targeted_decision = {
-						target = PREV
-						decision = UKR_develop_rural_infrastructure
-					}
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					impassable = no
-					OR = {
-						has_state_category = four
-						has_state_category = three
-						has_state_category = two
-					}
-				}
-				ROOT = {
-					activate_targeted_decision = {
-						target = PREV
-						decision = UKR_develop_rural_infrastructure
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = FRA_Promote_Peasant_Worker_Cooperation
-		icon = GFX_goal_AUS_paris_marx_fusion
-		cost = 4
-		relative_position_id = FRA_Enforce_Land_Socialization
-		x = 0
-		y = 4
-		
-		prerequisite = {
-			focus = FRA_Modernisation_Of_Rural_Life
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Promote_Peasant_Worker_Cooperation"
-			if = {
-				limit = {
-					has_idea = UKR_modernisation_of_rural_life_2
-				}
-				swap_ideas = {
-					remove_idea = UKR_modernisation_of_rural_life_2
-					add_idea = UKR_modernisation_of_rural_life_3
-				}
-			}
-			else = {
-				swap_ideas = {
-					remove_idea = UKR_modernisation_of_rural_life
-					add_idea = UKR_modernisation_of_rural_life_1
-				}
-			}
-		}
-	}
-	focus = {
-		id = FRA_Rural_Self_Efficiency
-		icon = GFX_focus_SOV_breadbasket_of_the_union
-		cost = 4
-		relative_position_id = FRA_Enforce_Land_Socialization
-		x = -2
-		y = 4
-		
-		prerequisite = {
-			focus = FRA_Modernisation_Of_Rural_Life
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Rural_Self_Efficiency"
-			if = {
-				limit = {
-					has_idea = UKR_modernisation_of_rural_life_1
-				}
-				swap_ideas = {
-					remove_idea = UKR_modernisation_of_rural_life_1
-					add_idea = UKR_modernisation_of_rural_life_3
-				}
-			}
-			else = {
-				swap_ideas = {
-					remove_idea = UKR_modernisation_of_rural_life
-					add_idea = UKR_modernisation_of_rural_life_2
-				}
-			}
-		}
-	}
-	focus = {
-		id = FRA_Break_The_Urban_Rural_Divide
-		icon = GFX_SOV_break_smychka
-		cost = 4
-		relative_position_id = FRA_Enforce_Land_Socialization
-		x = -1
-		y = 5
-		
-		prerequisite = {
-			focus = FRA_Rural_Self_Efficiency
-		}
-		prerequisite = {
-			focus = FRA_Promote_Peasant_Worker_Cooperation
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRA_Break_The_Urban_Rural_Divide"
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}	
-		search_filters = {
-			FOCUS_FILTER_UKR_BREADBASKET
-		}
-	}
-	focus = {
-		id = FRA_Industrialisation_Of_Cities
-		icon = GFX_UKR_Hammer_And_Heart
-		cost = 4
-		relative_position_id = FRA_Enforce_Land_Socialization
-		x = 3
-		y = 3
-		available = {
-			
-			has_government = syndicalist
-			
-		  
-		}
-		prerequisite = {
-			focus = FRA_All_To_Coops
-			focus = FRA_Establish_State_Estates
-		}
-		prerequisite = {
-			focus = FRA_Workers_Self_Management_B
-		}
-		prerequisite = {
-			focus = FRA_Invite_French_Advisors
-		}
-		mutually_exclusive = {
-			focus = FRA_Modernisation_Of_Rural_Life
-		}
-		ai_will_do = {
-			factor = 70
-			modifier = {
-				factor = 1.2
-				UKR_blakytnyi_in_power = yes
-			}
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Industrialisation_Of_Cities"
-			add_to_variable = {
-				borotbyst_city = 1
-			}
-			add_ideas = UKR_strokes_of_hammer_and_heart
-			
-			set_country_flag = UKR_strokes_of_hammer_and_heart_bonus
-		}
-	}
-	focus = {
-		id = FRA_Tax_The_Peasants
-		icon = GFX_RUS_Tax_Peasants
-		cost = 4
-		relative_position_id = FRA_Enforce_Land_Socialization
-		x = 2
-		y = 4
-		
-		prerequisite = {
-			focus = FRA_Industrialisation_Of_Cities
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Tax_The_Peasants"
-			
-		
-			if = {
-				limit = {
-					has_idea = UKR_strokes_of_hammer_and_heart_2
-				}
-				swap_ideas = {
-					remove_idea = UKR_strokes_of_hammer_and_heart_2
-					add_idea = UKR_strokes_of_hammer_and_heart_3
-				}
-			}
-			else = {
-				swap_ideas = {
-					remove_idea = UKR_strokes_of_hammer_and_heart
-					add_idea = UKR_strokes_of_hammer_and_heart_1
-				}
-			}
-		}
-	}
-	focus = {
-		id = FRA_Production_Goals
-		icon = GFX_goal_CSA_department_of_production
-		cost = 4
-		relative_position_id = FRA_Enforce_Land_Socialization
-		x = 4
-		y = 4
-		
-		prerequisite = {
-			focus = FRA_Industrialisation_Of_Cities
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Production_Goals"
-			
-			if = {
-				limit = {
-					has_idea = UKR_strokes_of_hammer_and_heart_1
-				}
-				swap_ideas = {
-					remove_idea = UKR_strokes_of_hammer_and_heart_1
-					add_idea = UKR_strokes_of_hammer_and_heart_3
-				}
-			}
-			else = {
-				swap_ideas = {
-					remove_idea = UKR_strokes_of_hammer_and_heart
-					add_idea = UKR_strokes_of_hammer_and_heart_2
-				}
-			}
-		}
-	}
-	focus = {
-		id = FRA_Leap_Into_Modernity
-		icon = GFX_goal_UMN_high_productivity
-		cost = 4
-		relative_position_id = FRA_Enforce_Land_Socialization
-		x = 3
-		y = 5
-		
-		prerequisite = {
-			focus = FRA_Tax_The_Peasants
-		}
-		prerequisite = {
-			focus = FRA_Production_Goals
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Leap_Into_Modernity"
-			
-			swap_ideas = {
-				remove_idea = UKR_strokes_of_hammer_and_heart_3
-				add_idea = UKR_strokes_of_hammer_and_heart_4
-			}
-			activate_targeted_decision = {
-				target = 221
-				decision = UKR_develop_civilian_industry_in_state
-			}
-			activate_targeted_decision = {
-				target = 221
-				decision = UKR_develop_military_industry_in_state
-			}
-			activate_targeted_decision = {
-				target = 226
-				decision = UKR_develop_civilian_industry_in_state
-			}
-			activate_targeted_decision = {
-				target = 227
-				decision = UKR_develop_civilian_industry_in_state
-			}
-			activate_targeted_decision = {
-				target = 227
-				decision = UKR_develop_military_industry_in_state
-			}
-			activate_targeted_decision = {
-				target = 228
-				decision = UKR_develop_civilian_industry_in_state
-			}
-		}
-	}
-	focus = {
-		id = FRA_Revolutionary_National_Idea
-		icon = GFX_goal_FRA_germanophobia
-		cost = 4
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = -1
-		y = 1
-		
-		prerequisite = {
-			focus = FRA_Between_Marxism_Narodism
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Revolutionary_National_Idea"
-			add_political_power = 75
-			increase_ruling_party_popularity_by_3 = yes
-			add_stability = 0.05
-		}
-	}
-	focus = {
-		id = FRA_Develop_Network_Party_Emmisars
-		icon = GFX_BBR_party_with_a_state
-		cost = 2
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = 1
-		y = 1
-		
-		prerequisite = {
-			focus = FRA_Between_Marxism_Narodism
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Develop_Network_Party_Emmisars"
-			increase_ruling_party_popularity_by_5 = yes
-			add_political_power = 100
-			if = {
-				limit = {
-					has_idea = UKR_unpolitical_population
-				}
-				remove_ideas = UKR_unpolitical_population
-			}
-		}
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-	}
-	focus = {
-		id = FRA_Anti_Corruption_Policies
-		icon = GFX_UKR_Anti_Corruption
-		cost = 4
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = 0
-		y = 2
-		
-		prerequisite = {
-			focus = FRA_Develop_Network_Party_Emmisars
-		}
-		prerequisite = {
-			focus = FRA_Revolutionary_National_Idea
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Anti_Corruption_Policies"
-			add_timed_idea = {
-				idea = UKR_anti_corruption_raids
-				days = 365
-			}
-		}
-	}
-	focus = {
-		id = FRA_Negotiations_With_Red_Otomans
-		icon = GFX_UKR_Negotiations_With_Red_Otomans
-		cost = 4
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = 2
-		y = 2
-		
-		prerequisite = {
-			focus = FRA_Develop_Network_Party_Emmisars
-		}
-		prerequisite = {
-			focus = FRA_Revolutionary_National_Idea
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Negotiations_With_Red_Otomans"
-			add_manpower = 100000
-			add_war_support = 0.1
-		}
-	}
-	focus = {
-		id = FRA_Poale_Zion
-		icon = GFX_UKR_Poale_Zion
-		cost = 3
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = -2
-		y = 2
-		
-		prerequisite = {
-			focus = FRA_Develop_Network_Party_Emmisars
-		}
-		prerequisite = {
-			focus = FRA_Revolutionary_National_Idea
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Poale_Zion"
-			country_event = ukrsoc.226
-		}
-	}
-	focus = {
-		id = FRA_Organize_Red_Cossackry
-		icon = GFX_goal_FRA_Reinforce_ARF_Command
-		cost = 4
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = 1
-		y = 3
-		
-		prerequisite = {
-			focus = FRA_Negotiations_With_Red_Otomans
-		}
-		prerequisite = {
-			focus = FRA_Anti_Corruption_Policies
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Organize_Red_Cossackry"
-			army_experience = 50
-			add_command_power = 20
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_1
-				amount = 1000
-				
-			}
-		
-		}
-	}
-	focus = {
-		id = FRA_Borotba_Newspaper
-		icon = GFX_UKR_Borotba_Newspaper
-		cost = 3
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = -1
-		y = 3
-		
-		prerequisite = {
-			focus = FRA_Poale_Zion
-		}
-		prerequisite = {
-			focus = FRA_Anti_Corruption_Policies
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Borotba_Newspaper"
-			add_political_power = 50
-			increase_ruling_party_popularity_by_5 = yes
-		}
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-	}
-	focus = {
-		id = FRA_Ukrainisation_Borotbyst
-		icon = GFX_goal_AUS_anarchist_social_revolution
-		cost = 4
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = -1
-		y = 4
-		
-		prerequisite = {
-			focus = FRA_Borotba_Newspaper
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Ukrainisation_Borotbyst"
-			add_political_power = 200
-			add_stability = 0.1
-			increase_ruling_party_popularity_by_10 = yes
-		}
-	}
-	focus = {
-		id = FRA_Detente_Ukapists
-		icon = GFX_goal_FRA_purity_of_marx
-		cost = 4
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = 1
-		y = 4
-		
-		bypass = {
-			hidden_trigger = {
-				has_country_flag = UKR_borotbyst_against_skrypnyk
-			}
-		}
-		prerequisite = {
-			focus = FRA_Organize_Red_Cossackry
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Detente_Ukapists"
-			add_popularity = { ideology = totalist popularity = -0.2 }
-			add_popularity = { ideology = syndicalist popularity = 0.1 }
-			add_popularity = { ideology = radical_socialist popularity = 0.1 }
-		}
-	}
-	focus = {
-		id = FRA_World_Socialist_Federation
-		icon = GFX_goal_CSA_inevitable_world_socialism
-		cost = 4
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = 0
-		y = 5
-		
-		prerequisite = {
-			focus = FRA_Ukrainisation_Borotbyst
-		}
-		prerequisite = {
-			focus = FRA_Detente_Ukapists
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_World_Socialist_Federation"
-			country_event = ukrsoc.229
-			add_political_power = 200
-		}
-	}
-	focus = {
-		id = FRA_Dictatorship_Of_Toilers
-		icon = GFX_goal_CSA_dictatorship_of_proletariat
-		cost = 4
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = -1
-		y = 6
-		
-		prerequisite = {
-			focus = FRA_World_Socialist_Federation
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Dictatorship_Of_Toilers"
-			add_stability = 0.075
-			increase_ruling_party_popularity_by_5 = yes
-			
-		}
-		search_filters = {
-			FOCUS_FILTER_STABILITY
-		}
-	}
-	focus = {
-		id = FRA_National_Personal_Federation
-		icon = GFX_goal_autonomism
-		cost = 4
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = 1
-		y = 6
-		
-		prerequisite = {
-			focus = FRA_World_Socialist_Federation
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_National_Personal_Federation"
-			add_stability = 0.1
-			add_war_support = 0.1
-			add_manpower = 10000
-		}
-	}
-	focus = {
-		id = FRA_Endorse_Antietatist_Vision
-		icon = GFX_FAUD_PROMOTE_ANARCHISM
-		cost = 4
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = 7
-		y = 1
-		
-		prerequisite = {
-			focus = FRA_Between_Marxism_Narodism
-		}
-		mutually_exclusive = {
-			focus = FRA_Necessity_Of_State_Apparatus
-		}
-		 available = {
-        has_government = radical_socialist
-    }
-		ai_will_do = {
-			factor = 70
-			modifier = {
-				factor = 0.8
-				UKR_blakytnyi_in_power = yes
-			}
-			modifier = {
-				factor = 2000
-				has_game_rule = {
-					rule = UKR_future
-					option = UKR_FUTURE_SHUMSKYI
-				}
-			}
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Endorse_Antietatist_Vision"
-			add_to_variable = {
-				borotbyst_anarchist = 1
-			}
-			add_stability = -0.1
-			add_war_support = 0.1
-			custom_effect_tooltip = UKR_Endorse_Antietatist_Vision_tt
-		}
-	}
-	focus = {
-		id = FRA_Necessity_Of_State_Apparatus
-		icon = GFX_goal_FRA_general_states_of_workers
-		cost = 4
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = 5
-		y = 1
-		
-		prerequisite = {
-			focus = FRA_Between_Marxism_Narodism
-		}
-		mutually_exclusive = {
-			focus = FRA_Endorse_Antietatist_Vision
-		}
-		 available = {
-        has_government = syndicalist
-    }
-		
-		
-		ai_will_do = {
-			factor = 70
-			modifier = {
-				factor = 1.2
-				UKR_blakytnyi_in_power = yes
-			}
-			modifier = {
-				factor = 2000
-				has_game_rule = {
-					rule = UKR_future
-					option = UKR_FUTURE_SHUMSKYI_SOVIET
-				}
-			}
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Necessity_Of_State_Apparatus"
-			
-			add_stability = 0.1
-			custom_effect_tooltip = UKR_Necessity_Of_State_Apparatus_tt
-		}
-		search_filters = {
-			FOCUS_FILTER_STABILITY
-		}
-	}
-	focus = {
-		id = FRA_Oppose_Centralisation
-		icon = GFX_goal_CSA_hit_the_superstructure
-		cost = 4
-		relative_position_id = FRA_Necessity_Of_State_Apparatus
-		x = 1
-		y = 1
-		
-		prerequisite = {
-			focus = FRA_Necessity_Of_State_Apparatus
-			focus = FRA_Endorse_Antietatist_Vision
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Oppose_Centralisation"
-			add_stability = 0.1
-			add_political_power = -50
-			add_popularity = {
-				ideology = totalist
-				popularity = -0.15
-			}
-			increase_ruling_party_popularity_by_10 = yes
-		}
-		search_filters = {
-			FOCUS_FILTER_STABILITY
-		}
-	}
-	focus = {
-		id = FRA_Moderate_Decentralization
-		icon = GFX_goal_CSA_revolution_at_homee
-		cost = 4
-		relative_position_id = FRA_Necessity_Of_State_Apparatus
-		x = -1
-		y = 1
-		
-		prerequisite = {
-			focus = FRA_Necessity_Of_State_Apparatus
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Moderate_Decentralization"
-			random_owned_controlled_state = {
-				limit = {
-					impassable = no
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						has_state_category = four
-						has_state_category = three
-						has_state_category = two
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-				add_state_modifier = {
-					modifier = {
-						local_resources_factor = 0.15
-						local_supplies = 0.3
-					}
-				}
-				ROOT = {
-					activate_targeted_decision = {
-						target = PREV
-						decision = UKR_develop_civilian_industry_in_state
-					}
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					impassable = no
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						has_state_category = four
-						has_state_category = three
-						has_state_category = two
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-				add_state_modifier = {
-					modifier = {
-						local_resources_factor = 0.15
-						local_supplies = 0.3
-					}
-				}
-				ROOT = {
-					activate_targeted_decision = {
-						target = PREV
-						decision = UKR_develop_civilian_industry_in_state
-					}
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					impassable = no
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						has_state_category = four
-						has_state_category = three
-						has_state_category = two
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-				add_state_modifier = {
-					modifier = {
-						local_resources_factor = 0.15
-						local_supplies = 0.3
-					}
-				}
-				ROOT = {
-					activate_targeted_decision = {
-						target = PREV
-						decision = UKR_develop_military_industry_in_state
-					}
-				}
-			}
-		}
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-	}
-	focus = {
-		id = FRA_Establish_Cheka
-		icon = GFX_goal_CSA_revolutionary_guards
-		cost = 4
-		relative_position_id = FRA_Necessity_Of_State_Apparatus
-		x = -2
-		y = 2
-		
-		prerequisite = {
-			focus = FRA_Moderate_Decentralization
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Establish_Cheka"
-			if = {
-				limit = {
-					has_idea = UKR_revolutionary_terror
-				}
-				remove_ideas = UKR_revolutionary_terror
-			}
-			add_ideas = UKR_cheka
-		}
-	}
-	focus = {
-		id = FRA_Workers_Commissions
-		icon = GFX_BBR_work_communes
-		cost = 4
-		relative_position_id = FRA_Necessity_Of_State_Apparatus
-		x = 0
-		y = 2
-		
-		prerequisite = {
-			focus = FRA_Moderate_Decentralization
-		}
-		prerequisite = {
-			focus = FRA_Oppose_Centralisation
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Workers_Commissions"
-			add_ideas = UKR_workers_commissions
-		}
-	}
-	focus = {
-		id = FRA_Introduce_Planned_Elements
-		icon = GFX_goal_CSA_craft_unions_committee
-		cost = 4
-		relative_position_id = FRA_Necessity_Of_State_Apparatus
-		x = -1
-		y = 3
-		
-		prerequisite = {
-			focus = FRA_Establish_Cheka
-		}
-		prerequisite = {
-			focus = FRA_Workers_Commissions
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Introduce_Planned_Elements"
-			swap_ideas = {
-				remove_idea = UKR_workers_commissions
-				add_idea = UKR_planned_economy_borotbysts
-			}
-		}
-	}
-	focus = {
-		id = FRA_Balance_The_Highs_And_Lows
-		icon = GFX_UKR_State_Management
-		cost = 4
-		relative_position_id = FRA_Necessity_Of_State_Apparatus
-		x = -2
-		y = 4
-		
-		prerequisite = {
-			focus = FRA_Introduce_Planned_Elements
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Balance_The_Highs_And_Lows"
-			swap_ideas = {
-				remove_idea = UKR_planned_economy_borotbysts
-				add_idea = UKR_planned_economy_borotbysts_1
-			}
-		}
-	}
-	focus = {
-		id = FRA_Syndicalist_Economy
-		icon = GFX_syndicalism
-		cost = 4
-		relative_position_id = FRA_Necessity_Of_State_Apparatus
-		x = 0
-		y = 4
-		
-		prerequisite = {
-			focus = FRA_Introduce_Planned_Elements
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Syndicalist_Economy"
-			
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			add_tech_bonus = {
-				name = UKR_Syndicalist_Economy
-				bonus = 0.5
-				uses = 3
-				category = industry
-			}
-		}
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-	}
-	focus = {
-		id = FRA_Devolve_Administration
-		icon = GFX_FAUD_ANARCHO_SOCIETY
-		cost = 4
-		relative_position_id = FRA_Necessity_Of_State_Apparatus
-		x = 3
-		y = 1
-		
-		prerequisite = {
-			focus = FRA_Endorse_Antietatist_Vision
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Devolve_Administration"
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
 	
-	
-	focus = {
-		id = FRA_Empower_Local_Committees
-		icon = GFX_goal_FRA_peasant_commitees
-		cost = 4
-		relative_position_id = FRA_Necessity_Of_State_Apparatus
-		x = 2
-		y = 2
-		
-		prerequisite = {
-			focus = FRA_Devolve_Administration
-		}
-		prerequisite = {
-			focus = FRA_Oppose_Centralisation
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Empower_Local_Committees"
-			add_ideas = UKR_peasant_committees
-		}
-	}
-	focus = {
-		id = FRA_Autonomous_Councils
-		icon = GFX_goal_agrarian_socialism
-		cost = 4
-		relative_position_id = FRA_Necessity_Of_State_Apparatus
-		x = 4
-		y = 2
-		
-		prerequisite = {
-			focus = FRA_Devolve_Administration
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Autonomous_Councils"
-			add_stability = 0.03
-			add_political_power = 25
-			random_owned_controlled_state = {
-				limit = {
-					impassable = no
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						has_state_category = four
-						has_state_category = three
-						has_state_category = two
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_state_modifier = {
-					modifier = {
-						local_resources_factor = 0.1
-						local_supplies = 0.25
-					}
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					impassable = no
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						has_state_category = four
-						has_state_category = three
-						has_state_category = two
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_state_modifier = {
-					modifier = {
-						local_resources_factor = 0.1
-						local_supplies = 0.25
-					}
-				}
-			}
-		}
-		search_filters = {
-			FOCUS_FILTER_STABILITY
-			FOCUS_FILTER_POLITICAL
-		}
-	}
-	focus = {
-		id = FRA_Establish_National_Collectives
-		icon = GFX_UKR_National_Autonomy
-		cost = 4
-		relative_position_id = FRA_Necessity_Of_State_Apparatus
-		x = 3
-		y = 3
-		
-		prerequisite = {
-			focus = FRA_Empower_Local_Committees
-		}
-		prerequisite = {
-			focus = FRA_Autonomous_Councils
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Establish_National_Collectives"
-			add_ideas = UKR_national_autonomy
-		}
-	}
-	focus = {
-		id = FRA_Work_With_Makhnovtsy
-		icon = GFX_goal_FRA_no_gods
-		cost = 4
-		relative_position_id = FRA_Necessity_Of_State_Apparatus
-		x = 4
-		y = 4
-		
-		prerequisite = {
-			focus = FRA_Establish_National_Collectives
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Work_With_Makhnovtsy"
-			country_event = ukrsoc.232
-		}
-	}
-	focus = {
-		id = FRA_Decentralized_Development_B
-		icon = GFX_SOV_decentralize_syndicates
-		cost = 4
-		relative_position_id = FRA_Necessity_Of_State_Apparatus
-		x = 2
-		y = 4
-		
-		prerequisite = {
-			focus = FRA_Establish_National_Collectives
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Decentralized_Development_B"
-			
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-			}
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-			}
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 1
-			}
-		}
-	}
-	focus = {
-		id = FRA_Soviet_Framework
-		icon = GFX_goal_TRM_Soviet_Democracy
-		cost = 4
-		relative_position_id = FRA_Necessity_Of_State_Apparatus
-		x = -1
-		y = 5
-		
-		prerequisite = {
-			focus = FRA_Balance_The_Highs_And_Lows
-		}
-		prerequisite = {
-			focus = FRA_Syndicalist_Economy
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Soviet_Framework"
-			add_to_variable = {
-				borotbyst_soviet = 1
-			}
-			add_ideas = UKR_soviet_democracy
-		}
-	}
-	focus = {
-		id = FRA_Communal_Democracy
-		icon = GFX_goal_FRA_Communal_Dominance
-		cost = 4
-		relative_position_id = FRA_Necessity_Of_State_Apparatus
-		x = 3
-		y = 5
-		
-		prerequisite = {
-			focus = FRA_Decentralized_Development_B
-		}
-		prerequisite = {
-			focus = FRA_Work_With_Makhnovtsy
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Communal_Democracy"
-			
-			hidden_effect = {
-				remove_ideas = UKR_national_autonomy
-				remove_ideas = UKR_peasant_committees
-				add_ideas = UKR_communal_democracy
-			}
-			custom_effect_tooltip = UKR_Communal_Democracy_tt
-			show_ideas_tooltip = UKR_communal_democracy
-		}
-	}
-	focus = {
-		id = FRA_Union_Of_Communites
-		icon = GFX_goal_FRA_commune_of_liberty
-		cost = 4
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = 0
-		y = 7
-		prerequisite = {
-			focus = FRA_Leap_Into_Modernity
-			focus = FRA_Break_The_Urban_Rural_Divide
-		}
-		prerequisite = {
-			focus = FRA_Soviet_Framework
-			focus = FRA_Communal_Democracy
-		}
-		prerequisite = {
-			focus = FRA_Dictatorship_Of_Toilers
-		}
-		prerequisite = {
-			focus = FRA_National_Personal_Federation
-		}
-		mutually_exclusive = {
-			focus = FRA_Peasant_Worker_Soviet_Power
-			focus = FRA_Extend_Provisional_Dictatorship
-		}
-		ai_will_do = {
-			factor = 70
-			modifier = {
-				factor = 2000
-				has_game_rule = {
-					rule = UKR_future
-					option = UKR_FUTURE_SHUMSKYI
-				}
-			}
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Union_Of_Communites"
-			add_stability = 0.05
-			increase_ruling_party_popularity_by_5 = yes
-		}
-		search_filters = {
-			FOCUS_FILTER_STABILITY
-		}
-	}
-	
-	
-	focus = {
-		id = FRA_Borotbyst_Ukraine
-		icon = GFX_goal_CSA_true_revolutionary_alliance
-		cost = 4
-		relative_position_id = FRA_Between_Marxism_Narodism
-		x = 0
-		y = 8
-		
-		prerequisite = {
-			focus = FRA_Union_Of_Communites
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus UKR_Extend_Provisional_Dictatorship"
-			increase_ruling_party_popularity_by_10 = yes
-			add_stability = 0.05
-		}
-	}
 	focus = {
 		id = FRA_national_collectivists
 		icon = GFX_goal_FRA_natcol
@@ -25174,9 +22260,10 @@ random_owned_state = {
 	focus={
 		id=FRACOM_1
 		icon = GFX_Focus_COMFRA1
-		x=50
-		y=8
-		cost=10
+		x=-16
+		y=1
+		relative_position_id = FRA_who_shall_lead
+		cost=0
 		ai_will_do={
 			factor=1
 		}
@@ -25186,20 +22273,24 @@ random_owned_state = {
 				name = "雅克·阿尔蒂"
 			}
 		}
+		prerequisite = {
+			focus = FRA_who_shall_lead
+		}
 		available_if_capitulated=yes
 		search_filters={
 		}
 		completion_reward={
 		remove_ideas = FRA_valois_dead_idea
+		add_authdem_to_coalition = yes
 		}
 	}
 	focus={
 		id=FRACOM_2
-		icon = GFX_Focus_COMFRA9
+		icon = GFX_goal_SOV_cleaning_opposition
 		x=0
 		y=1
 		prerequisite={focus=FRACOM_1}
-		cost=10
+		cost=5
 		ai_will_do={
 			factor=1
 		}
@@ -25213,11 +22304,11 @@ random_owned_state = {
 	}
 	focus={
 		id=FRACOM_3
-		icon = GFX_Focus_COMFRA10
+		icon = GFX_goal_FRA_organizational_debate
 		x=-2
 		y=2
 		prerequisite={focus=FRACOM_2}
-		cost=10
+		cost=5
 		ai_will_do={
 			factor=1
 		}
@@ -25230,6 +22321,14 @@ random_owned_state = {
 			remove_idea = FRA_corporate_syndie_idea
 			add_idea = FRA_Revolutionary_syndicalism
 			}
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.10
+			}
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.10
+			}
 		}
 	}
 	focus={
@@ -25238,7 +22337,7 @@ random_owned_state = {
 		x=0
 		y=2
 		prerequisite={focus=FRACOM_2}
-		cost=10
+		cost=5
 		ai_will_do={
 			factor=1
 		}
@@ -25253,6 +22352,7 @@ random_owned_state = {
 				remove_unit_leader = yes
 			}
 			add_manpower = -10
+			add_stability = 0.15
 		}
 	}
 	focus={
@@ -25261,7 +22361,7 @@ random_owned_state = {
 		x=2
 		y=2
 		prerequisite={focus=FRACOM_2}
-		cost=10
+		cost=5
 		ai_will_do={
 			factor=1
 		}
@@ -25275,6 +22375,14 @@ random_owned_state = {
 				limit = { has_id = 14099 }			
 				remove_unit_leader = yes
 			}
+			add_popularity = {
+				ideology = radical_socialist
+				popularity = -0.2
+			}
+			add_popularity = {
+				ideology = totalist
+				popularity = 0.10
+			}
 			add_manpower = -10
 		}
 	}
@@ -25284,7 +22392,7 @@ random_owned_state = {
 		x=-3
 		y=3
 		prerequisite={focus=FRACOM_3}
-		cost=10
+		cost=5
 		ai_will_do={
 			factor=1
 		}
@@ -25302,7 +22410,7 @@ random_owned_state = {
 		x=0
 		y=3
 		prerequisite={focus=FRACOM_4}
-		cost=10
+		cost=5
 		ai_will_do={
 			factor=1
 		}
@@ -25323,7 +22431,7 @@ random_owned_state = {
 		x=3
 		y=3
 		prerequisite={focus=FRACOM_5}
-		cost=10
+		cost=5
 		ai_will_do={
 			factor=1
 		}
@@ -25337,11 +22445,11 @@ random_owned_state = {
 	}
 	focus={
 		id=FRACOM_9
-		icon = GFX_goal_FRA_sorealians_alt
+		icon = GFX_goal_FRA_technocratic_ministry
 		x=-2
 		y=4
 		prerequisite={focus=FRACOM_6}
-		cost=10
+		cost=5
 		ai_will_do={
 			factor=1
 		}
@@ -25350,19 +22458,45 @@ random_owned_state = {
 		search_filters={
 		}
 		completion_reward={
-		swap_ideas = {
-			remove_idea = FRA_Estates_General
-			add_idea = FRA_Estates_General2
-		}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus={
 		id=FRACOM_10
-		icon = GFX_Focus_COMFRA7
+		icon = GFX_UKR_Necessary_Nationalizations
 		x=0
 		y=4
 		prerequisite={focus=FRACOM_7}
-		cost=10
+		cost=5
 		ai_will_do={
 			factor=1
 		}
@@ -25411,11 +22545,11 @@ random_owned_state = {
 	}
 	focus={
 		id=FRACOM_11
-		icon = GFX_Focus_COMFRA11
+		icon = GFX_goal_FRA_popular_combat_front
 		x=2
 		y=4
 		prerequisite={focus=FRACOM_8}
-		cost=10
+		cost=5
 		ai_will_do={
 			factor=1
 		}
@@ -25432,13 +22566,13 @@ random_owned_state = {
 	}
 	focus={
 		id=FRACOM_12
-		icon = GFX_Focus_COMFRA6
+		icon = GFX_Focus_COMFRA9
 		x=0
 		y=5
 		prerequisite={focus=FRACOM_9}
 		prerequisite={focus=FRACOM_10}
 		prerequisite={focus=FRACOM_11}
-		cost=10
+		cost=5
 		ai_will_do={
 			factor=1
 		}

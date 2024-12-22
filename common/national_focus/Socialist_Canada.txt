@@ -2205,7 +2205,359 @@ shared_focus = {
 	}
 }
 
+shared_focus = {
+	id = CAN_second_chance_of_social_credit
+	icon = GFX_goal_CAN_agrarian_heritage
+	
+	x = 5
+	y = 1
+	offset = {
+		y = 48
+		trigger = { 	
+			tag = CAN
+			
+		}
+	}
+	available = {
+		has_completed_focus = CAN_Congress_of_Canadian_Socialists
+		has_country_flag = CAN_REDSOCCRED_victory
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus CAN_Come_Farmer_Soldier_Labourer"
+		
+		add_ideas = CAN_redsoccred
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+		
+	}
+}
+shared_focus = {
+	id = CAN_conservative_socialism
+	icon = GFX_VNC_model_of_dem_socialism
+	prerequisite = {
+		focus = CAN_second_chance_of_social_credit
+	}
+	x = -1
+	y = 1
+	relative_position_id = CAN_second_chance_of_social_credit
+	
+	cost = 5
+	
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus CAN_Come_Farmer_Soldier_Labourer"
+		swap_ideas = {
+			remove_idea = CAN_redsoccred
+			add_idea = CAN_redsoccred2
+		}
 
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+		
+	}
+}
+shared_focus = {
+	id = CAN_oppose_maning
+	icon = GFX_goal_CAN_agrarian_heritage
+	prerequisite = {
+		focus = CAN_second_chance_of_social_credit
+	}
+	available = {
+		has_completed_focus = CAN_conservative_socialism
+	}
+	x = 1
+	y = 1
+	relative_position_id = CAN_second_chance_of_social_credit
+	
+	cost = 5
+	
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus CAN_Come_Farmer_Soldier_Labourer"
+		swap_ideas = {
+			remove_idea = CAN_redsoccred2
+			add_idea = CAN_redsoccred3
+		}
+
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+		
+	}
+}
+shared_focus = {
+	id = CAN_true_soccred
+	icon = GFX_goal_CAN_agrarian_heritage
+	prerequisite = {
+		focus = CAN_conservative_socialism
+	}
+	prerequisite = {
+		focus = CAN_oppose_maning
+	}
+	x = 0
+	y = 2
+	relative_position_id = CAN_second_chance_of_social_credit
+	
+	cost = 5
+	
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus CAN_Come_Farmer_Soldier_Labourer"
+		swap_ideas = {
+			remove_idea = CAN_redsoccred3
+			add_idea = CAN_redsoccred4
+		}
+		add_one_random_civilian_factory = yes
+		
+	}
+}
+shared_focus = {
+	id = CAN_socialist_action_union
+	icon = GFX_goal_CAN_agrarian_heritage
+	
+	x = -3
+	y = 1
+	offset = {
+		y = 48
+		trigger = { 	
+			tag = CAN
+			
+		}
+	}
+	available = {
+		has_completed_focus = CAN_Congress_of_Canadian_Socialists
+		has_country_flag = CAN_SAU_victory
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus CAN_Come_Farmer_Soldier_Labourer"
+		
+		add_ideas = CAN_trots
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+		
+	}
+}
+shared_focus = {
+	id = CAN_canonist_enlightment
+	icon = GFX_goal_CAN_agrarian_heritage
+	prerequisite = {
+		focus = CAN_socialist_action_union
+	}
+	x = -1
+	y = 1
+	relative_position_id = CAN_socialist_action_union
+	
+	cost = 5
+	
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus CAN_Come_Farmer_Soldier_Labourer"
+		swap_ideas = {
+			remove_idea = CAN_trots
+			add_idea = CAN_trots2
+		}
+
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+		
+	}
+}
+shared_focus = {
+	id = CAN_legacy_of_trots
+	icon = GFX_goal_CAN_agrarian_heritage
+	available = {
+		has_completed_focus = CAN_canonist_enlightment
+	}
+	prerequisite = {
+		focus = CAN_socialist_action_union
+	}
+	x = 1
+	y = 1
+	relative_position_id = CAN_socialist_action_union
+	
+	cost = 5
+	
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus CAN_Come_Farmer_Soldier_Labourer"
+		swap_ideas = {
+			remove_idea = CAN_trots2
+			add_idea = CAN_trots3
+		}
+		add_political_power = 100
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+		
+	}
+}
+shared_focus = {
+	id = CAN_frontier_of_world_revolution
+	icon = GFX_goal_CSA_lead_american_revolution
+	
+	prerequisite = {
+		focus = CAN_canonist_enlightment
+	}
+	prerequisite = {
+		focus = CAN_legacy_of_trots
+	}
+	x = 0
+	y = 2
+	relative_position_id = CAN_socialist_action_union
+	
+	cost = 5
+	
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus CAN_Come_Farmer_Soldier_Labourer"
+		swap_ideas = {
+			remove_idea = CAN_trots3
+			add_idea = CAN_trots4
+		}
+		add_war_support = 0.1
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+		hidden_effect = {
+			country_event = {
+				id = kxx_canada_soc.4
+				days = 7
+			}
+		}
+	}
+}
+shared_focus = {
+	id = CAN_technocracy_in_canada
+	icon = GFX_goal_CAN_agrarian_heritage
+	
+	x = -11
+	y = 1
+	offset = {
+		y = 48
+		trigger = { 	
+			tag = CAN
+			
+		}
+	}
+	available = {
+		has_completed_focus = CAN_Congress_of_Canadian_Socialists
+		has_country_flag = CAN_tech_victory
+	}
+	
+	cost = 5
+	
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus CAN_Come_Farmer_Soldier_Labourer"
+		
+		add_ideas = CAN_technocracy
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+		
+	}
+}
+
+shared_focus = {
+	id = CAN_combine_social_credit_with_scott_thought
+	icon = GFX_goal_CAN_agrarian_heritage
+	prerequisite = {
+		focus = CAN_technocracy_in_canada
+	}
+	x = -1
+	y = 1
+	relative_position_id = CAN_technocracy_in_canada
+	
+	cost = 5
+	
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus CAN_Come_Farmer_Soldier_Labourer"
+		swap_ideas = {
+			remove_idea = CAN_technocracy
+			add_idea = CAN_technocracy2
+		}
+
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+		
+	}
+}
+shared_focus = {
+	id = CAN_zased
+	icon = GFX_goal_COR_jewish_segregation
+	available = {
+		has_completed_focus = CAN_combine_social_credit_with_scott_thought
+	}
+	prerequisite = {
+		focus = CAN_technocracy_in_canada
+	}
+	x = 1
+	y = 1
+	relative_position_id = CAN_technocracy_in_canada
+	
+	cost = 5
+	
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus CAN_Come_Farmer_Soldier_Labourer"
+		swap_ideas = {
+			remove_idea = CAN_technocracy2
+			add_idea = CAN_technocracy3
+		}
+		add_political_power = 100
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+		
+	}
+}
+shared_focus = {
+	id = CAN_far_north_technate
+	icon = GFX_goal_CAN_agrarian_heritage
+	prerequisite = {
+		focus = CAN_combine_social_credit_with_scott_thought
+	}
+	prerequisite = {
+		focus = CAN_zased
+	}
+	x = 0
+	y = 2
+	relative_position_id = CAN_technocracy_in_canada
+	
+	cost = 5
+	
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus CAN_Come_Farmer_Soldier_Labourer"
+		swap_ideas = {
+			remove_idea = CAN_technocracy3
+			add_idea = CAN_technocracy4
+		}
+		
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.05
+		}
+		hidden_effect = {
+			country_event = {
+				id = kxx_canada_soc.5
+				days = 7
+			}
+		}
+	}
+}
 ################
 ### Military ###
 ################

@@ -518,6 +518,9 @@ country_event = {
 
 option = { 
 	name = kxxfrance.14.a
+	ai_chance = {
+		factor = 100
+	}
 	create_country_leader = {
 		name = "利奥十四世"
 		picture = "gfx/leaders/PAP/Portrait_Papal_State_Leo.png"
@@ -622,16 +625,10 @@ country_event = {
 
 option = { 
 	name = kxxfrance.16.a
-		ai_chance = {
-			factor = 0
-		}
 	complete_national_focus = FRA_Restoring_Socialist_Order
 }
 option = { 
 	name = kxxfrance.16.b
-		ai_chance = {
-			factor = 10000
-		}
 	country_event = {
 		id = kxxfrance.17
 		days = 7
@@ -645,35 +642,20 @@ country_event = {
 	desc = kxxfrance.17.d
 
 	is_triggered_only = yes
-	fire_only_once = yes
 
 option = { 
 	name = kxxfrance.17.a #yay deat again
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 10000
-				has_game_rule = {
-					rule = FRA_after_deat
-					option = FRA_AFTER_DEAT_DEAT
-				}
-			}
-		}
+	ai_chance = {
+		factor = 50
+	}
 	complete_national_focus = FRA_Restoring_Socialist_Order
 }
 
 option = { 
 	name = kxxfrance.17.b #yay dorgeres
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 10000
-				has_game_rule = {
-					rule = FRA_after_deat
-					option = FRA_AFTER_DEAT_DORGERES
-				}
-			}
-		}
+	ai_chance = {
+		factor = 50
+	}
 	create_country_leader = {
 		name = "亨利·多尔热"
 
@@ -712,16 +694,9 @@ option = {
 }
 option = { 
 	name = kxxfrance.17.c #yay herve
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 10000
-				has_game_rule = {
-					rule = FRA_after_deat
-					option = FRA_AFTER_DEAT_HERVE
-				}
-			}
-		}
+	ai_chance = {
+		factor = 50
+	}
 	create_country_leader = {
 		name = "古斯塔夫·爱尔威"
 
@@ -760,16 +735,9 @@ option = {
 }
 option = { 
 	name = kxxfrance.17.f #ohhhhhh napoleon!!!!
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 10000
-				has_game_rule = {
-					rule = FRA_after_deat
-					option = FRA_AFTER_DEAT_NAPOLEON
-				}
-			}
-		}
+	ai_chance = {
+		factor = 50
+	}
 	create_country_leader = {
 		name = "安德烈·肖梅"
 
@@ -807,16 +775,9 @@ option = {
 }
 option = { 
 	name = kxxfrance.17.e #yay red flood garbage
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 10000
-				has_game_rule = {
-					rule = FRA_after_deat
-					option = FRA_AFTER_DEAT_CHRIST
-				}
-			}
-		}
+	ai_chance = {
+		factor = 50
+	}
 	create_country_leader = {
 		name = "西蒙娜·威尔"
 
@@ -854,101 +815,161 @@ option = {
 	}
 }
 option = { 
-	name = kxxfrance.17.g #who fucking cares just a cringe commie chad
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 10000
-				has_game_rule = {
-					rule = FRA_after_deat
-					option = FRA_AFTER_DEAT_ANTIGOD
-				}
-			}
-		}
-	create_country_leader = {
-		name = "安德烈·洛吕奥"
-
-		picture = "gfx/leaders/FRA/Portrait_FRA_Andre_Lorulot.png"
-		expire = "1.1.1"
-		traits = { anti_christ }
-		ideology = militant_atheism_subtype
+	name = kxxfrance.30.a #who fucking cares just a cringe commie chad
+	ai_chance = {
+		factor = 50
 	}
-	set_politics = {
-		ruling_party = totalist
-	}
-	set_party_name = {
-		ideology = totalist
-		long_name = FRA_atheist_party
-		name = FRA_atheist_party
-	}
-	set_cosmetic_tag = FRA_atheist
-	hidden_effect = {	
-		remove_ideas_with_trait = head_of_government
-		add_ideas = FRA_Jacques_Duclos_hog_tot
-		remove_ideas_with_trait = foreign_minister
-		add_ideas = FRA_Marcel_Cachin_for_tot
-		remove_ideas_with_trait = economy_minister
-		add_ideas = FRA_Jean_Jerome_eco_tot
-		remove_ideas_with_trait = security_minister
-		add_ideas = FRA_Lucien_Midol_sec_tot
-		add_popularity = {
-		  ideology = totalist
-		   popularity = 0.20
-		 }
-		complete_national_focus = FRA_millitant_godless
-		remove_ideas = FRA_valois_dead_idea
-		remove_ideas = French_Revanchism_idea
-		 
+	country_event = {
+		id = kxxfrance.30
 	}
 }
-option = { 
-	name = kxxfrance.17.h #red flood garbage again
+}
+
+country_event = {	#戴亚选举第二部分
+	id = kxxfrance.30
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Frajocbin.war"}
+	title = kxxfrance.17.t
+	desc = kxxfrance.17.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = kxxfrance.17.g #who fucking cares just a cringe commie chad
 		ai_chance = {
 			factor = 50
-			modifier = {
-				factor = 10000
-				has_game_rule = {
-					rule = FRA_after_deat
-					option = FRA_AFTER_DEAT_CELTIC
-				}
-			}
 		}
-	create_country_leader = {
-		name = "罗伯特·佩尔蒂埃"
-
-		picture = "gfx/leaders/FRA/FRA_Robert_Pelletier.png"
-		expire = "1.1.1"
-		traits = { gaul_man }
-		ideology = pan_celticism_subtype
+		create_country_leader = {
+			name = "安德烈·洛吕奥"
+	
+			picture = "gfx/leaders/FRA/Portrait_FRA_Andre_Lorulot.png"
+			expire = "1.1.1"
+			traits = { anti_christ }
+			ideology = militant_atheism_subtype
+		}
+		set_politics = {
+			ruling_party = totalist
+		}
+		set_party_name = {
+			ideology = totalist
+			long_name = FRA_atheist_party
+			name = FRA_atheist_party
+		}
+		set_cosmetic_tag = FRA_atheist
+		hidden_effect = {	
+			remove_ideas_with_trait = head_of_government
+			add_ideas = FRA_Jacques_Duclos_hog_tot
+			remove_ideas_with_trait = foreign_minister
+			add_ideas = FRA_Marcel_Cachin_for_tot
+			remove_ideas_with_trait = economy_minister
+			add_ideas = FRA_Jean_Jerome_eco_tot
+			remove_ideas_with_trait = security_minister
+			add_ideas = FRA_Lucien_Midol_sec_tot
+			add_popularity = {
+			  ideology = totalist
+			   popularity = 0.20
+			 }
+			complete_national_focus = FRA_millitant_godless
+			remove_ideas = FRA_valois_dead_idea
+			remove_ideas = French_Revanchism_idea
+			 
+		}
 	}
-	set_politics = {
-		ruling_party = radical_socialist
+	option = { 
+		name = kxxfrance.17.h #red flood garbage again
+		ai_chance = {
+			factor = 50
+		}
+		create_country_leader = {
+			name = "罗伯特·佩尔蒂埃"
+	
+			picture = "gfx/leaders/FRA/FRA_Robert_Pelletier.png"
+			expire = "1.1.1"
+			traits = { gaul_man }
+			ideology = pan_celticism_subtype
+		}
+		set_politics = {
+			ruling_party = radical_socialist
+		}
+		set_party_name = {
+			ideology = radical_socialist
+			long_name = FRA_celt_party
+			name = FRA_celt_party
+		}
+		set_cosmetic_tag = FRA_celt
+		hidden_effect = {	
+			remove_ideas_with_trait = head_of_government
+			add_ideas = FRA_Robert_Pelletier_hog_rso
+			remove_ideas_with_trait = foreign_minister
+			add_ideas = FRA_Phileas_Lebesgue_for_rso
+			remove_ideas_with_trait = economy_minister
+			add_ideas = FRA_Eugene_Figuiere_eco_rso
+			remove_ideas_with_trait = security_minister
+			add_ideas = FRA_Francois_Jaffrennou_sec_rso
+			add_popularity = {
+			  ideology = radical_socialist
+			   popularity = 0.20
+			 }
+			complete_national_focus = FRA_return_to_past
+			remove_ideas = FRA_valois_dead_idea
+			remove_ideas = French_Revanchism_idea
+			 
+		}
 	}
-	set_party_name = {
-		ideology = radical_socialist
-		long_name = FRA_celt_party
-		name = FRA_celt_party
+	option = { 
+		name = kxxfrance.17.i #可能派
+		ai_chance = {
+			factor = 50
+		}
+		create_country_leader = {
+			name = "皮埃尔·雷诺德尔"
+	
+			picture = "gfx/leaders/FRA/Portrait_FRA_Pierre_Renaudel.png"
+			expire = "1.1.1"
+			traits = {  }
+			ideology = socdem_possibilism_subtype
+		}
+		set_politics = {
+			ruling_party = social_democrat
+		}
+		set_party_name = {
+			ideology = social_democrat
+			long_name = "法兰西社会党-可能派"
+			name = "法兰西社会党"
+		}
+		set_party_name = {
+			ideology = radical_socialist
+			long_name = "法兰西社会党"
+			name = "法兰西社会党"
+		}
+		set_cosmetic_tag = FRA_Possibiliste
+		hidden_effect = {	
+			remove_ideas_with_trait = head_of_government
+			add_ideas = FRA_Guy_Mollet_hog_sde
+			remove_ideas_with_trait = foreign_minister
+			add_ideas = FRA_Joseph_Paul_Boncour_for_sde
+			remove_ideas_with_trait = economy_minister
+			add_ideas = FRA_Daniel_Guerin_eco_rso
+			remove_ideas_with_trait = security_minister
+			add_ideas = FRA_Sebastien_Faure_sec_rso
+			add_popularity = {
+			  ideology = social_democrat
+			   popularity = 0.20
+			}
+			complete_national_focus = FRA_Possibiliste_win
+			remove_ideas = FRA_valois_dead_idea
+			remove_ideas = French_Revanchism_idea
+			 
+		}
 	}
-	set_cosmetic_tag = FRA_celt
-	hidden_effect = {	
-		remove_ideas_with_trait = head_of_government
-		add_ideas = FRA_Robert_Pelletier_hog_rso
-		remove_ideas_with_trait = foreign_minister
-		add_ideas = FRA_Phileas_Lebesgue_for_rso
-		remove_ideas_with_trait = economy_minister
-		add_ideas = FRA_Eugene_Figuiere_eco_rso
-		remove_ideas_with_trait = security_minister
-		add_ideas = FRA_Francois_Jaffrennou_sec_rso
-		add_popularity = {
-		  ideology = radical_socialist
-		   popularity = 0.20
-		 }
-		complete_national_focus = FRA_return_to_past
-		remove_ideas = FRA_valois_dead_idea
-		remove_ideas = French_Revanchism_idea
-		 
+	option = { 
+		name = kxxfrance.30.b #who fucking cares just a cringe commie chad
+		ai_chance = {
+			factor = 50
+		}
+		country_event = {
+			id = kxxfrance.17
+		}
 	}
-}
 }
 country_event = {	
 	id = kxxfrance.18 #core italy
@@ -960,7 +981,10 @@ country_event = {
 	fire_only_once = yes
 
 option = { #cores!!!!
-name = kxxfrance.18.a
+	name = kxxfrance.18.a
+	ai_chance = {
+		factor = 50
+	}
 	create_wargoal = {
 		type = annex_everything
 		target = SRI
@@ -1034,6 +1058,9 @@ country_event = {
 
 option = { 
 	name = kxxfrance.19.a
+	ai_chance = {
+		factor = 50
+	}
 	set_country_flag = FRA_nap_puppet
 			add_state_core = 42
 			add_state_core = 781
@@ -1061,6 +1088,9 @@ option = {
 	name = kxxfrance.19.b
 	set_country_flag = FRA_nap_euro
 	set_cosmetic_tag = FRA_nap_europe
+	ai_chance = {
+		factor = 50
+	}
 	every_state = {
 		limit = {
 			is_on_continent = europe
@@ -2540,6 +2570,7 @@ option = {
 	
 }
 }
+
 country_event = {
 	id = kxxfrance.27 #gamelin ideo picker
 	immediate = {log = "[GetDateText]: [Root.GetName]: event Frajocbin.win"}
@@ -2548,51 +2579,45 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 
-option = { 
-	name = kxxfrance.27.a
+	option = { 
+		name = kxxfrance.27.a
+	}	
 
-}	
-
-option = { 
-	name = kxxfrance.27.b
-
-	set_country_leader_ideology = socdem_junta_subtype
-	
-}
-option = { 
-	name = kxxfrance.27.c
-
-	set_country_leader_ideology = popular_patriotism_subtype
-	
-}
-option = { 
-	name = kxxfrance.27.e
-
-	set_country_leader_ideology = authoritarian_social_democracy_subtype
-	
-}
-option = { 
-	name = kxxfrance.27.f
-	set_politics = {
-		ruling_party = paternal_autocrat
+	option = { 
+		name = kxxfrance.27.b
+		set_country_leader_ideology = socdem_junta_subtype
 	}
-	add_socdem_to_coalition = yes
-	add_soccon_to_coalition = yes
-	add_authdem_to_coalition = yes
-	create_country_leader = {
-		name = "莫里斯·甘末林"
-		desc = "POLITICS_GAMELIN_DESC"
-		picture = "gfx/leaders/FRA/Portrait_France_Maurice_Gamelin_KR.png"
-		expire = "1965.1.1"
-		ideology = red_tinted_autocracy_subtype
-		traits = {
-			marshal_leader
-			socialist_dictator
+	option = { 
+		name = kxxfrance.27.c
+		set_country_leader_ideology = popular_patriotism_subtype
+	}
+	option = { 
+		name = kxxfrance.27.e
+		set_country_leader_ideology = authoritarian_social_democracy_subtype
+	
+	}
+	option = { 
+		name = kxxfrance.27.f
+		set_politics = {
+			ruling_party = paternal_autocrat
+		}
+		add_socdem_to_coalition = yes
+		add_soccon_to_coalition = yes
+		add_authdem_to_coalition = yes
+		create_country_leader = {
+			name = "莫里斯·甘末林"
+			desc = "POLITICS_GAMELIN_DESC"
+			picture = "gfx/leaders/FRA/Portrait_France_Maurice_Gamelin_KR.png"
+			expire = "1965.1.1"
+			ideology = red_tinted_autocracy_subtype
+			traits = {
+				marshal_leader
+				socialist_dictator
+			}
 		}
 	}
 }
 
-}
 country_event = {
 	id = kxxfrance.28 
 	immediate = {log = "[GetDateText]: [Root.GetName]: event Frajocbin.win"}
@@ -2601,18 +2626,18 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 
-option = { 
-	name = kxxfrance.28.a
-	complete_national_focus = FRA_popular_front_contiunes
-}	
+	option = { 
+		name = kxxfrance.28.a
+		complete_national_focus = FRA_popular_front_contiunes
+	}	
 
-option = { 
-	name = kxxfrance.28.b
-	complete_national_focus = FRA_military_government
-	clr_country_flag = LEADER_GUI_VISIBLE
-	
+	option = { 
+		name = kxxfrance.28.b
+		complete_national_focus = FRA_military_government
+		clr_country_flag = LEADER_GUI_VISIBLE
+	}
 }
-}
+
 country_event = {
 	id = kxxfrance.29
 	immediate = {log = "[GetDateText]: [Root.GetName]: event Frajocbin.win"}
@@ -2630,17 +2655,732 @@ country_event = {
 			has_government = paternal_autocrat
 		}
 	}
-	
+	option = { 
+		set_politics = {
+			ruling_party = radical_socialist
+		}	
+	}
+}
+
+country_event = {	
+	id = kxxfrance.31
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Frajocbin.war"}
+	title = kxxfrance.31.t
+	desc = kxxfrance.31.d
+
+	is_triggered_only = yes
+
+	option = { 
+		name = kxxfrance.31.a #who fucking cares just a cringe commie chad
+		ai_chance = {
+			factor = 50
+		}
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = social_democrat
+					last_election = "[CURRENT_DATE]"
+					election_frequency = 60
+					elections_allowed = yes
+				}
+			}
+			CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+		}
+		hidden_effect = {
+			country_event = { id = comfrance.1004 days = 1825 } 
+			create_country_leader = {
+				name = "皮埃尔·雷诺德尔"
+		
+				picture = "gfx/leaders/FRA/Portrait_FRA_Pierre_Renaudel.png"
+				expire = "1.1.1"
+				traits = {  }
+				ideology = socdem_humanistic_capitalism_subtype
+			}
+		}
+		swap_ideas = {
+			remove_idea = FRA_marketization_1
+			add_idea = FRA_marketization_2
+		}
+	}
+
+	option = { 
+		name = kxxfrance.31.b #who fucking cares just a cringe commie chad
+		ai_chance = {
+			factor = 50
+		}	
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = social_democrat
+					last_election = "[CURRENT_DATE]"
+					election_frequency = 60
+					elections_allowed = yes
+				}
+			}
+			CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+		}	
+		swap_ideas = {
+			remove_idea = FRA_marketization_1
+			add_idea = FRA_marketization_3
+		}
+		hidden_effect = {
+			country_event = { id = comfrance.1004 days = 1825 } 
+			create_country_leader = {
+				name = "皮埃尔·雷诺德尔"
+		
+				picture = "gfx/leaders/FRA/Portrait_FRA_Pierre_Renaudel.png"
+				expire = "1.1.1"
+				traits = {  }
+				ideology = socdem_liberalized_syndicalism_subtype
+			}
+		}
+	}
+
+	option = { 
+		name = kxxfrance.31.c #who fucking cares just a cringe commie chad
+		ai_chance = {
+			factor = 50
+		}	
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = social_democrat
+					last_election = "[CURRENT_DATE]"
+					election_frequency = 60
+					elections_allowed = yes
+				}
+			}
+			CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+		}	
+		add_ideas = FRA_Lighthouse_of_Democratic_Society
+		hidden_effect = {
+			country_event = { id = comfrance.1004 days = 1825 } 
+			create_country_leader = {
+				name = "皮埃尔·雷诺德尔"
+		
+				picture = "gfx/leaders/FRA/Portrait_FRA_Pierre_Renaudel.png"
+				expire = "1.1.1"
+				traits = {  }
+				ideology = socdem_democratic_socialism_subtype
+			}
+		}
+	}
+
+	option = { 
+		name = kxxfrance.31.e #who fucking cares just a cringe commie chad
+		ai_chance = {
+			factor = 50
+		}	
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = radical_socialist
+					last_election = "[CURRENT_DATE]"
+					election_frequency = 60
+					elections_allowed = yes
+				}
+			}
+			CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+		}	
+		add_ideas = FRA_Between_possibility_and_impossibility
+		hidden_effect = {
+			set_cosmetic_tag = FRA_radical_Possibiliste
+			country_event = { id = comfrance.1004 days = 1825 } 
+			create_country_leader = {
+				name = "皮埃尔·雷诺德尔"
+		
+				picture = "gfx/leaders/FRA/Portrait_FRA_Pierre_Renaudel.png"
+				expire = "1.1.1"
+				traits = {  }
+				ideology = radsoc_revisionist_marxism_subtype
+			}
+		}
+	}
+
+	option = { 
+		name = kxxfrance.31.f #who fucking cares just a cringe commie chad
+		ai_chance = {
+			factor = 50
+		}	
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = radical_socialist
+					last_election = "[CURRENT_DATE]"
+					election_frequency = 60
+					elections_allowed = yes
+				}
+			}
+			CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+		}	
+		add_ideas = FRA_The_third_road
+		hidden_effect = {
+			set_cosmetic_tag = FRA_radical_Possibiliste
+			country_event = { id = comfrance.1004 days = 1825 } 
+			create_country_leader = {
+				name = "皮埃尔·雷诺德尔"
+		
+				picture = "gfx/leaders/FRA/Portrait_FRA_Pierre_Renaudel.png"
+				expire = "1.1.1"
+				traits = {  }
+				ideology = radsoc_liberal_socialism_subtype
+			}
+		}
+	}
+
+	option = { 
+		name = kxxfrance.31.g #who fucking cares just a cringe commie chad
+		ai_chance = {
+			factor = 50
+		}	
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = radical_socialist
+					last_election = "[CURRENT_DATE]"
+					election_frequency = 60
+					elections_allowed = yes
+				}
+			}
+			CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+		}	
+		add_ideas = FRA_Still_moving_forward_in_the_midst_of_confusion
+		hidden_effect = {
+			set_cosmetic_tag = FRA_radical_Possibiliste
+			country_event = { id = comfrance.1004 days = 1825 } 
+			create_country_leader = {
+				name = "皮埃尔·雷诺德尔"
+		
+				picture = "gfx/leaders/FRA/Portrait_FRA_Pierre_Renaudel.png"
+				expire = "1.1.1"
+				traits = {  }
+				ideology = radsoc_possibilism_subtype
+			}
+		}
+	}
+}
+country_event = {
+	id = kxxfrance.32
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Frajocbin.win"}
+	title = kxxfrance.32.t
+	desc = kxxfrance.32.d
+	is_triggered_only = yes
+	fire_only_once = yes
 
 option = { 
-	set_politics = {
-		ruling_party = radical_socialist
-	}
-	
+	#fuck
+	name = kxxfrance.32.a
+	set_country_flag = FRA_COUPBEL_FAIL
 }	
 
+}
+country_event = {
+	id = kxxfrance.33
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Frajocbin.win"}
+	title = kxxfrance.33.t
+	desc = kxxfrance.33.d
+	is_triggered_only = yes
+	fire_only_once = yes
+
+option = { 
+	name = kxxfrance.33.a
+	annex_country = { target = HOL  }
+	GER = {
+	set_autonomy = {
+	target = DEI
+	autonomy_state = kr_autonomous_puppet
+	}
+				
+	}
+	CAF = {
+	transfer_state = 1038
+	transfer_state = 309
+	transfer_state = 695
+	}
+}	
+option = { 
+	name = kxxfrance.33.b
+	country_event = kxxfrance.34
+}	
+}
+country_event = {
+	id = kxxfrance.34
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Frajocbin.win"}
+	title = kxxfrance.34.t
+	desc = kxxfrance.34.d
+	is_triggered_only = yes
+	fire_only_once = yes
+
+option = { 
+	#fuck
+	name = kxxfrance.34.a
+	set_country_flag = FRA_COUPHOL_FAIL
+}	
 
 }
+country_event = {
+	id = kxxfrance.35
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Frajocbin.win"}
+	title = kxxfrance.35.t
+	desc = kxxfrance.35.d
+	is_triggered_only = yes
+	fire_only_once = yes
+
+option = { #whatever
+	name = kxxfrance.35.a
+	country_event = {
+		id = kxxfrance.36
+		days = 30
+	}
+}	
+option = { #no please no
+	name = kxxfrance.35.b
+	
+}	
+}
+country_event = {
+	id = kxxfrance.36 #boom
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Frajocbin.win"}
+	title = kxxfrance.36.t
+	desc = kxxfrance.36.d
+	is_triggered_only = yes
+	fire_only_once = yes
+
+option = { #no god no please no
+	name = kxxfrance.36.a
+	leave_faction = yes
+
+	set_autonomy = {
+		target = NFL
+		autonomy_state = autonomy_free 
+	}
+	NFL = {
+		leave_faction = yes
+		set_politics = {
+			ruling_party = syndicalist
+			elections_allowed = no
+		}
+		transfer_state = 332
+		transfer_state = 331
+		load_oob = NFL
+	}
+	QUE = {
+		transfer_state = 466
+		transfer_state = 832
+		transfer_state = 468
+	}
+	IQR = {
+		add_state_core = 796
+		add_state_core = 933
+		transfer_state = 933
+		transfer_state = 796
+		load_oob = IroqouisRoyalArmy
+		load_oob = IRQ
+		load_oob = IRQ_extra
+		load_oob = IRQ_revolt
+	}
+	set_country_flag = iqr_independent
+	hidden_effect = {
+		IQR = {
+			country_event = {
+				id = IQR.1
+				days = 9
+			}
+		}
+	}
+	WAB = {
+		add_state_core = 464
+		add_state_core = 357
+		add_state_core = 934
+		add_state_core = 488
+		add_state_core = 465
+		transfer_state = 357
+		transfer_state = 464
+		transfer_state = 934
+		transfer_state = 468
+		transfer_state = 465
+		transfer_state = 1330
+		transfer_state = 1331
+		add_state_core = 1330
+		add_state_core = 1331
+		load_oob = WabanakiRoyalArmy
+		
+	}
+	set_country_flag = wab_independent
+	hidden_effect = {
+		WAB = {
+			country_event = {
+				id = WAB.1
+				days = 9
+			}
+		}
+	}
+	create_dynamic_country = {	
+				original_tag = CAN
+				copy_tag = CAN
+
+				#State
+				every_state = {
+					limit = {
+						is_core_of = CAN
+					}
+					add_state_core = ROOT
+				}
+				transfer_state = 740
+				transfer_state = 473
+				transfer_state = 470
+				set_technology = {
+					reservation_musket = 1
+				}
+				
+				### Leader
+				create_country_leader = {
+					name = "Congress of Canadian Socialists"
+					picture = "gfx/leaders/CAN/Portrait_Canada_Vacant_Office_2.png"
+					expire = "1.1.1"
+					ideology = syndicalist_subtype
+				}
+
+				### Politics
+				set_popularities = {
+					totalist = 30
+					radical_socialist = 30
+					syndicalist = 30
+					social_democrat = 10
+					social_liberal = 0
+					market_liberal = 0
+					social_conservative = 0
+					authoritarian_democrat = 0
+					paternal_autocrat = 0
+					national_populist = 0
+				}
+				
+				set_party_name = {
+					long_name = SCC_syndicalist_party2_long
+					name = SCC_syndicalist_party2
+					ideology = syndicalist
+				}
+				set_country_flag = soc_dems_are_socialists
+				set_politics = {
+					ruling_party = syndicalist
+					elections_allowed = no
+				}
+				set_cosmetic_tag = NFL_CANADA
+
+				#Units
+				division_template = {
+					name = "民兵"
+					division_names_group = CSA_INF_01
+
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+					}
+					priority = 0
+				}
+				declare_war_on = { target = CAN type = annex_everything } 
+			load_oob = CAN
+			}
+			
+	declare_war_on = { target = WAB type = annex_everything } 
+	declare_war_on = { target = NFL type = annex_everything } 
+	declare_war_on = { target = QUE type = annex_everything } 
+	declare_war_on = { target = IQR type = annex_everything } 
+
+}	
+option = { #no god no please no
+	name = kxxfrance.36.b
+	leave_faction = yes
+	create_dynamic_country = {	
+		original_tag = CAN
+		copy_tag = CAN
+
+		#State
+		every_state = {
+			limit = {
+				is_core_of = CAN
+			}
+			add_state_core = ROOT
+		}
+		transfer_state = 740
+		transfer_state = 473
+		transfer_state = 470
+		set_technology = {
+			reservation_musket = 1
+		}
+		
+		### Leader
+		create_country_leader = {
+			name = "Congress of Canadian Socialists"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Vacant_Office_2.png"
+			expire = "1.1.1"
+			ideology = syndicalist_subtype
+		}
+
+		### Politics
+		set_popularities = {
+			totalist = 30
+			radical_socialist = 30
+			syndicalist = 30
+			social_democrat = 10
+			social_liberal = 0
+			market_liberal = 0
+			social_conservative = 0
+			authoritarian_democrat = 0
+			paternal_autocrat = 0
+			national_populist = 0
+		}
+		
+		set_party_name = {
+			long_name = SCC_syndicalist_party2_long
+			name = SCC_syndicalist_party2
+			ideology = syndicalist
+		}
+		set_country_flag = soc_dems_are_socialists
+		set_politics = {
+			ruling_party = syndicalist
+			elections_allowed = no
+		}
+		set_cosmetic_tag = NFL_CANADA
+
+		#Units
+		division_template = {
+			name = "民兵"
+			division_names_group = CSA_INF_01
+
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+			}
+			priority = 0
+		}
+		declare_war_on = { target = CAN type = annex_everything } 
+	load_oob = CAN
+	}
+	set_autonomy = {
+		target = NFL
+		autonomy_state = autonomy_free 
+	}
+	NFL = {
+		leave_faction = yes
+		set_politics = {
+			ruling_party = syndicalist
+			elections_allowed = no
+		}
+		transfer_state = 332
+		transfer_state = 331
+		load_oob = NFL
+	}
+	QUE = {
+		transfer_state = 466
+		transfer_state = 832
+		transfer_state = 468
+	}
+	IQR = {
+		add_state_core = 796
+		add_state_core = 933
+		transfer_state = 933
+		transfer_state = 796
+		load_oob = IroqouisRoyalArmy
+		load_oob = IRQ
+		load_oob = IRQ_extra
+		load_oob = IRQ_revolt
+	}
+	set_country_flag = iqr_independent
+	hidden_effect = {
+		IQR = {
+			country_event = {
+				id = IQR.1
+				days = 9
+			}
+		}
+	}
+	WAB = {
+		add_state_core = 464
+		add_state_core = 357
+		add_state_core = 934
+		add_state_core = 488
+		add_state_core = 465
+		transfer_state = 357
+		transfer_state = 464
+		transfer_state = 934
+		transfer_state = 468
+		transfer_state = 465
+		transfer_state = 1330
+		transfer_state = 1331
+		add_state_core = 1330
+		add_state_core = 1331
+		load_oob = WabanakiRoyalArmy
+		
+	}
+	set_country_flag = wab_independent
+	hidden_effect = {
+		WAB = {
+			country_event = {
+				id = WAB.1
+				days = 9
+			}
+		}
+	}
+
+	declare_war_on = { target = WAB type = annex_everything } 
+	declare_war_on = { target = NFL type = annex_everything } 
+	declare_war_on = { target = QUE type = annex_everything } 
+	declare_war_on = { target = IQR type = annex_everything } 
+	IQR = { change_tag_from = CAN }
+}	
+option = { #no god no please no
+	name = kxxfrance.36.c
+	leave_faction = yes
+	create_dynamic_country = {	
+		original_tag = CAN
+		copy_tag = CAN
+
+		#State
+		every_state = {
+			limit = {
+				is_core_of = CAN
+			}
+			add_state_core = ROOT
+		}
+		transfer_state = 740
+		transfer_state = 473
+		transfer_state = 470
+		set_technology = {
+			reservation_musket = 1
+		}
+		
+		### Leader
+		create_country_leader = {
+			name = "Congress of Canadian Socialists"
+			picture = "gfx/leaders/CAN/Portrait_Canada_Vacant_Office_2.png"
+			expire = "1.1.1"
+			ideology = syndicalist_subtype
+		}
+
+		### Politics
+		set_popularities = {
+			totalist = 30
+			radical_socialist = 30
+			syndicalist = 30
+			social_democrat = 10
+			social_liberal = 0
+			market_liberal = 0
+			social_conservative = 0
+			authoritarian_democrat = 0
+			paternal_autocrat = 0
+			national_populist = 0
+		}
+		
+		set_party_name = {
+			long_name = SCC_syndicalist_party2_long
+			name = SCC_syndicalist_party2
+			ideology = syndicalist
+		}
+		set_country_flag = soc_dems_are_socialists
+		set_politics = {
+			ruling_party = syndicalist
+			elections_allowed = no
+		}
+		set_cosmetic_tag = NFL_CANADA
+
+		#Units
+		division_template = {
+			name = "民兵"
+			division_names_group = CSA_INF_01
+
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+			}
+			priority = 0
+		}
+		declare_war_on = { target = CAN type = annex_everything } 
+	load_oob = CAN
+	}
+	set_autonomy = {
+		target = NFL
+		autonomy_state = autonomy_free 
+	}
+	NFL = {
+		leave_faction = yes
+		set_politics = {
+			ruling_party = syndicalist
+			elections_allowed = no
+		}
+		transfer_state = 332
+		transfer_state = 331
+		load_oob = NFL
+	}
+	QUE = {
+		transfer_state = 466
+		transfer_state = 832
+		transfer_state = 468
+	}
+	IQR = {
+		add_state_core = 796
+		add_state_core = 933
+		transfer_state = 933
+		transfer_state = 796
+		load_oob = IroqouisRoyalArmy
+		
+	}
+	set_country_flag = iqr_independent
+	hidden_effect = {
+		IQR = {
+			country_event = {
+				id = IQR.1
+				days = 9
+			}
+		}
+	}
+	WAB = {
+		add_state_core = 464
+		add_state_core = 357
+		add_state_core = 934
+		add_state_core = 488
+		add_state_core = 465
+		transfer_state = 357
+		transfer_state = 464
+		transfer_state = 934
+		transfer_state = 468
+		transfer_state = 465
+		transfer_state = 1330
+		transfer_state = 1331
+		add_state_core = 1330
+		add_state_core = 1331
+		load_oob = WabanakiRoyalArmy
+		
+	}
+	set_country_flag = wab_independent
+	hidden_effect = {
+		WAB = {
+			country_event = {
+				id = WAB.1
+				days = 9
+			}
+		}
+	}
+	declare_war_on = { target = WAB type = annex_everything } 
+	declare_war_on = { target = NFL type = annex_everything } 
+	declare_war_on = { target = QUE type = annex_everything } 
+	declare_war_on = { target = IQR type = annex_everything } 
+	WAB = { change_tag_from = CAN }
+}	
+}
+
 country_event = {
 	id = Frajocbin.rev.win
 	immediate = {log = "[GetDateText]: [Root.GetName]: event Frajocbin.win"}

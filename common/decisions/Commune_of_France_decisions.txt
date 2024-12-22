@@ -748,3 +748,1068 @@ FRA_liberate_europe_category = {
 		}
     }
 }
+FRA_world_revolution_category = {
+	FRA_SCW_weapons_decision = {
+		icon = generic_construction
+
+		visible = {
+			has_completed_focus = FRA_intervene_SCW
+			
+		}
+		available = {
+			country_exists = CNT 
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+			CNT = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+					producer = FRA
+				}
+				add_ideas = internationale_support
+				country_event = comfrance.129
+			}
+		}
+	}
+	FRA_take_catalonia_decision = {
+		icon = generic_construction
+
+		visible = {
+			has_completed_focus = FRA_intervene_SCW
+			
+		}
+		available = {
+			NOT = {
+				has_country_flag = FRA_INTERVENE
+			}
+			CNT = {surrender_progress > 0.5}			
+			
+		}
+		fire_only_once = yes
+		cost = 100
+		days_remove = 7
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+			set_country_flag = FRA_CATALONIA_TAKEN
+			FRA = {
+				transfer_state = 1313
+				transfer_state = 165
+			}
+		}
+	}
+	FRA_SCW_attack_decision = {
+		icon = generic_construction
+
+		visible = {
+			has_completed_focus = FRA_intervene_SCW
+			
+		}
+		available = {
+			NOT = {
+				has_country_flag = FRA_CATALONIA_TAKEN
+			}
+			CNT = {surrender_progress > 0.5}			
+			
+		}
+		fire_only_once = yes
+		cost = 100
+		days_remove = 30
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+			set_country_flag = FRA_INTERVENE
+			create_wargoal = {
+				type = annex_everything
+				target = SPR
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = CAR
+			}
+		}
+	}
+	FRA_attack_portual_decision = {
+		icon = generic_construction
+
+		visible = {
+			has_completed_focus = FRA_intervene_SCW
+			
+		}
+		available = {
+					
+			
+		}
+		fire_only_once = yes
+		cost = 100
+		days_remove = 30
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+			custom_effect_tooltip = "此决议将会在葡萄牙重置之后追加效果。"
+		}
+	}
+	FRA_ICW_weapons_decision = {
+		icon = generic_construction
+
+		visible = {
+			has_completed_focus = FRA_italy_policy
+			
+		}
+		available = {
+			country_exists = SRI
+			SRI = {
+				NOT = {
+					has_completed_focus = SRI_garibaldi_ii
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+			SRI = {
+				add_ideas = internationale_support
+				
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+					producer = FRA
+				}
+				country_event = comfrance.129
+			}
+		}
+	}
+	FRA_attack_italy_decision = {
+		icon = generic_construction
+
+		visible = {
+			has_completed_focus = FRA_italy_policy
+			
+		}
+		available = {
+			SRI = {surrender_progress > 0.5}	
+			SRI = {
+				NOT = {
+					has_completed_focus = SRI_garibaldi_ii
+				}
+			}		
+		}
+		fire_only_once = yes
+		cost = 100
+		days_remove = 30
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+			create_wargoal = {
+				type = annex_everything
+				target = SRD
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = ITA
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = SIC
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = PAP
+			}
+			SRI = {
+				remove_ideas = SRI_french_advisors_idea
+			}
+		}
+	}
+	FRA_fuck_garibaldi_decision = {
+		icon = generic_construction
+
+		visible = {
+			has_completed_focus = FRA_italy_policy
+			
+		}
+		available = {
+			
+			SRI = {
+				has_completed_focus = SRI_garibaldi_ii
+			}		
+		}
+		fire_only_once = yes
+		cost = 100
+		days_remove = 30
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+			create_wargoal = {
+				type = annex_everything
+				target = SRI
+			}
+			
+		}
+	}
+	FRA_fuck_hobart_decision = {
+		icon = generic_construction
+
+		visible = {
+			has_completed_focus = FRA_across_the_channel
+		}
+		available = {
+			
+			ENG = {
+				has_completed_focus = BRG_death_to_revoltuion
+			}		
+		}
+		fire_only_once = yes
+		cost = 100
+		days_remove = 30
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+			create_wargoal = {
+				type = annex_everything
+				target = ENG
+			}
+			
+		}
+	}
+	FRA_fuck_ireland_decision = {
+		icon = generic_construction
+
+		visible = {
+			has_completed_focus = FRA_across_the_channel
+		}
+		available = {
+			IRE = {
+				is_in_faction = no
+				has_socialist_government = no
+			}	
+		}
+		fire_only_once = yes
+		cost = 100
+		days_remove = 30
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+			create_wargoal = {
+				type = annex_everything
+				target = IRE
+			}
+			
+		}
+	}
+	FRA_coup_belgium_decision = {
+		icon = generic_construction
+
+		visible = {
+			has_completed_focus = FRA_lowlands_policy
+		}
+		available = {
+			if = {
+				limit = {
+					country_exists = BEL
+				}
+			BEL = {
+				has_socialist_government = no
+			}
+			}
+			if = {
+				limit = {
+					country_exists = WLL
+				}
+
+			WLL = {
+				has_socialist_government = no
+			}
+			}	
+		}
+		fire_only_once = yes
+		cost = 100
+		days_remove = 30
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+			if = {
+				limit = {
+					country_exists = BEL
+				}
+				BEL = {
+					country_event = kxxfrance.1
+				}
+			}else_if = {
+				limit = {
+					country_exists = WLL
+				}
+				WLL = {
+					country_event = kxxfrance.1
+				}
+			}
+			
+		}
+	}
+	FRA_fuck_belgium_decision = {
+		icon = generic_construction
+
+		visible = {
+			has_completed_focus = FRA_across_the_channel
+		}
+		available = {
+			has_country_flag = FRA_COUPBEL_FAIL
+			if = {
+				limit = {
+					country_exists = BEL
+				}
+			BEL = {
+				has_socialist_government = no
+				is_in_faction = no
+			}
+			}
+			if = {
+				limit = {
+					country_exists = WLL
+				}
+
+			WLL = {
+				has_socialist_government = no
+				is_in_faction = no
+			}
+			}	
+		}
+		fire_only_once = yes
+		cost = 100
+		days_remove = 30
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+			create_wargoal = {
+				type = annex_everything
+				target = BEL
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = WLL
+			}
+
+		}
+	}
+	FRA_aid_japanese_revolution_decision = {
+		icon = generic_construction
+
+		visible = {
+			has_completed_focus = FRA_asian_policy
+		}
+		available = {
+			country_exists = JSR
+			
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+			JSR = {
+				add_ideas = internationale_support
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+					producer = FRA
+				}
+				country_event = comfrance.129
+			}
+
+		}
+	}
+	FRA_aid_chinese_revolution_decision = {
+		icon = generic_construction
+
+		visible = {
+			has_completed_focus = FRA_asian_policy
+		}
+		available = {
+			country_exists = CHI
+			
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+			CHI = {
+				add_ideas = internationale_support
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+					producer = FRA
+				}
+				country_event = comfrance.129
+			}
+
+		}
+	}
+	FRA_aid_indian_revolution_decision = {
+		icon = generic_construction
+
+		visible = {
+			has_completed_focus = FRA_asian_policy
+		}
+		available = {
+			country_exists = BHC
+			BHC = {
+				has_socialist_government = yes
+			}
+			
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 0
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+			
+			BHC = {
+				add_ideas = internationale_support
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+					producer = FRA
+				}
+				country_event = comfrance.62
+			}
+		}
+	}
+	
+	FRA_asian_supports_decision = {
+	icon = generic_construction
+	
+	available = {
+		FROM = {
+			has_socialist_government = yes
+		}
+	}
+	
+	visible = {
+		tag = QIE
+		has_completed_focus = QIE_beyond_the_han
+	}
+	cost = 10
+	targets = { PHI TRM INC SIA BRM LAO VIN CAM MON PER INS SKM AFG YAK BRY  }
+	target_trigger = {
+		FROM = { 
+			exists = yes 
+			is_subject = no
+		}
+		
+	}
+	days_remove = 0
+	fire_only_once = yes
+	ai_will_do = {
+		factor = 6
+		
+	}
+	
+	remove_effect = {
+		FROM = {
+			add_ideas = internationale_support
+		}
+	}
+}
+FRA_aid_nicaruaga_decision = {
+	icon = generic_construction
+
+	visible = {
+		has_completed_focus = FRA_revolution_in_america
+	}
+	available = {
+		country_exists = NIC
+		NIC = {
+			has_socialist_government = yes
+		}
+		
+	}
+	fire_only_once = yes
+	cost = 0
+	days_remove = 0
+
+	ai_will_do = {
+		factor = 6
+	}
+
+	remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+		
+		NIC = {
+			add_ideas = internationale_support
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = FRA
+			}
+			country_event = comfrance.129
+		}
+	}
+}
+FRA_aid_mexico_decision = {
+	icon = generic_construction
+
+	visible = {
+		has_completed_focus = FRA_revolution_in_america
+	}
+	available = {
+		country_exists = MEX
+		MEX = {
+			has_socialist_government = yes
+		}
+		
+	}
+	fire_only_once = yes
+	cost = 0
+	days_remove = 0
+
+	ai_will_do = {
+		factor = 6
+	}
+
+	remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+		
+		MEX = {
+			add_ideas = internationale_support
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = FRA
+			}
+			country_event = comfrance.129
+		}
+	}
+}
+FRA_ACW_weapons_decision = {
+	icon = generic_construction
+
+	visible = {
+		has_completed_focus = FRA_ACW
+	}
+	available = {
+		country_exists = CSA
+		CSA = {
+			has_socialist_government = yes
+		}
+		
+	}
+	fire_only_once = yes
+	cost = 0
+	days_remove = 0
+
+	ai_will_do = {
+		factor = 6
+	}
+
+	remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+		
+		CSA = {
+			add_ideas = internationale_support
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = FRA
+			}
+			country_event = comfrance.129
+		}
+	}
+}
+FRA_ACW_manpower_decision = {
+	icon = generic_construction
+
+	visible = {
+		has_completed_focus = FRA_ACW
+	}
+	available = {
+		country_exists = CSA
+		CSA = {
+			has_socialist_government = yes
+		}
+		
+	}
+	fire_only_once = yes
+	cost = 0
+	days_remove = 0
+
+	ai_will_do = {
+		factor = 6
+	}
+
+	remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+		add_manpower = -10000
+		CSA = {
+			add_manpower = 10000
+			add_command_power = 50
+			army_experience = 50
+		}
+	}
+}
+FRA_CHL_weapons_decision = {
+	icon = generic_construction
+
+	visible = {
+		has_completed_focus = FRA_support_chlie
+	}
+	available = {
+		
+		country_exists = CHL
+		CHL = {
+			has_socialist_government = yes
+		}
+
+	}
+	fire_only_once = yes
+	cost = 0
+	days_remove = 0
+
+	ai_will_do = {
+		factor = 6
+	}
+
+	remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+		CHL = {
+			add_ideas = internationale_support
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = FRA
+			}
+			country_event = comfrance.129
+			add_manpower = 10000
+		}
+		
+	}
+}
+FRA_FOP_weapons_decision = {
+	icon = generic_construction
+
+	visible = {
+		has_completed_focus = FRA_support_chlie
+	}
+	available = {
+		
+		country_exists = FOP
+		FOP = {
+			has_socialist_government = yes
+		}
+	}
+	fire_only_once = yes
+	cost = 0
+	days_remove = 0
+
+	ai_will_do = {
+		factor = 6
+	}
+
+	remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+		
+		FOP = {
+			add_ideas = internationale_support
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = FRA
+			}
+			country_event = comfrance.129
+			add_manpower = 10000
+		}
+	}
+}
+FRA_ukrinian_revolution_decision = {
+	icon = generic_construction
+
+	visible = {
+		has_completed_focus = FRA_topple_ukr
+	}
+	available = {
+		
+	}
+	fire_only_once = yes
+	cost = 100
+	days_remove = 7
+
+	ai_will_do = {
+		factor = 6
+	}
+
+	remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+		UKR = {
+			UKR_decrease_hetman_strength = yes
+			UKR_decrease_king = yes
+			UKR_increase_direktoria = yes
+		}
+	}
+}
+FRA_approach_UPR_decision = {
+	icon = generic_construction
+
+	visible = {
+		has_completed_focus = FRA_topple_ukr
+	}
+	available = {
+		NOT = {
+			has_country_flag = FRA_BOROTBYSTS_CHOSEN
+		}
+		UKR = {
+			
+			has_country_flag = UKR_dyrektoria_tree_unlocked
+		}
+	}
+	fire_only_once = yes
+	cost = 100
+	days_remove = 30
+
+	ai_will_do = {
+		factor = 6
+	}
+
+	remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+		set_country_flag = FRA_UPR_CHOSEN
+		UKR = {
+			diplomatic_relation = { country = FRA relation = guarantee active = yes } 
+				 }
+			UKR = {
+			diplomatic_relation = { country = FRA relation = military_access active = yes } 
+				 }
+			diplomatic_relation = { country = UKR relation = military_access  active = yes }
+			diplomatic_relation = { country = UKR relation = guarantee active = yes } 
+			UKR = {
+			diplomatic_relation = { country = FRA relation = non_aggression_pact active = yes } 
+				 }
+			diplomatic_relation = {
+				country = UKR
+				relation = non_aggression_pact
+				active = yes
+		}
+	}
+}
+FRA_support_Borotbysts_decision = {
+	icon = generic_construction
+
+	visible = {
+		has_completed_focus = FRA_topple_ukr
+	}
+	available = {
+		NOT = {
+			has_country_flag = FRA_UPR_CHOSEN
+		}
+		UKR = {
+			has_country_flag = UKR_dyrektoria_tree_unlocked
+		}
+	}
+	fire_only_once = yes
+	cost = 100
+	days_remove = 30
+
+	ai_will_do = {
+		factor = 6
+	}
+
+	remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+		set_country_flag = FRA_BOROTBYSTS_CHOSEN
+		UKR = {
+			country_event = ukrsoc.190
+		}
+		UKR = {
+			country_event = ukrsoc.191
+		}
+		UKR = {
+			country_event = ukrsoc.192
+		}
+		UKR = {
+			country_event = ukrsoc.193
+		}
+		UKR = {
+			country_event = ukrsoc.194
+		}
+		UKR = {
+			country_event = ukrsoc.195
+		}
+		UKR = {
+			country_event = ukrsoc.196
+		}
+	}
+}
+FRA_POL_weapons_decision = {
+	icon = generic_construction
+
+	visible = {
+		has_completed_focus = FRA_rise_warsaw
+	}
+	available = {
+		POL = {
+			has_war_with = GER
+		}
+		POL = {
+			has_socialist_government = yes
+		}
+		
+	}
+	fire_only_once = yes
+	cost = 0
+	days_remove = 0
+
+	ai_will_do = {
+		factor = 6
+	}
+
+	remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+		
+		POL = {
+			add_ideas = internationale_support
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = FRA
+			}
+			country_event = comfrance.129
+		}
+	}
+}
+FRA_WHR_weapons_decision = {
+	icon = generic_construction
+
+	visible = {
+		has_completed_focus = FRA_rise_warsaw
+	}
+	available = {
+		WHR = {
+			has_war_with = GER
+		}
+		WHR = {
+			has_socialist_government = yes
+		}
+		
+	}
+	fire_only_once = yes
+	cost = 0
+	days_remove = 0
+
+	ai_will_do = {
+		factor = 6
+	}
+
+	remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+		
+		WHR = {
+			add_ideas = internationale_support
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = FRA
+			}
+			country_event = comfrance.129
+		}
+	}
+}
+FRA_BAT_collapse_decision = {
+	icon = generic_construction
+
+	visible = {
+		has_completed_focus = FRA_rise_warsaw
+	}
+	available = {
+		BAT = {
+			has_idea = BAT_forest_brothers
+		}
+	}
+	fire_only_once = yes
+	cost = 100
+	days_remove = 30
+
+	ai_will_do = {
+		factor = 6
+	}
+
+	remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+		every_state = {
+			limit = {
+				is_controlled_by = BAT
+			}
+			add_compliance = -20
+			add_resistance = 20
+		}
+	}
+}
+FRA_RUS_weapons_decision = {
+	icon = generic_construction
+
+	visible = {
+		has_completed_focus = FRA_rise_warsaw
+	}
+	available = {
+		
+		RUS = {
+			has_socialist_government = yes
+		}
+		
+	}
+	fire_only_once = yes
+	cost = 0
+	days_remove = 0
+
+	ai_will_do = {
+		factor = 6
+	}
+
+	remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+		
+		RUS = {
+			add_ideas = internationale_support
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = FRA
+			}
+			country_event = comfrance.129
+		}
+	}
+}
+FRA_coup_holland_decision = {
+	icon = generic_construction
+
+	visible = {
+		has_completed_focus = FRA_overthrow_batavia
+	}
+	available = {
+		
+		
+			
+
+		HOL = {
+			has_socialist_government = no
+		}
+		
+	}
+	fire_only_once = yes
+	cost = 100
+	days_remove = 30
+
+	ai_will_do = {
+		factor = 6
+	}
+
+	remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+		
+			
+			HOL = {
+				country_event = kxxfrance.33
+			}
+		
+		
+	}
+}
+FRA_fuck_holland_decision = {
+	icon = generic_construction
+
+	visible = {
+		has_completed_focus = FRA_overthrow_batavia
+	}
+	available = {
+		has_country_flag = FRA_COUPHOL_FAIL
+		
+		HOL = {
+			has_socialist_government = no
+			is_in_faction = no
+		}
+		
+	}
+	fire_only_once = yes
+	cost = 100
+	days_remove = 30
+
+	ai_will_do = {
+		factor = 6
+	}
+
+	remove_effect = {
+		log = "[GetDateText]: [Root.GetName]: Decision remove FRA_Savoy_Hydroelectricity_decision"
+		
+		create_wargoal = {
+			type = annex_everything
+			target = HOL
+		}
+
+	}
+}
+}

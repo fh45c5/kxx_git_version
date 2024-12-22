@@ -1,0 +1,19 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_idea_Aurelianus_fu_gui"
+		texturefile = "gfx/interface/ideas/idea_Aurelianus_fu_gui.png"
+	}
+	spriteType = {
+		name = "GFX_idea_yun_skull_army"
+		texturefile = "gfx/interface/ideas/idea_kamen_rider_skull.png"
+	}	
+	SpriteType = {
+		name = "GFX_ideology_byronism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/byronism.png"
+	}	
+	SpriteType = {
+		name = "GFX_ideology_radsoc_byronism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/radsoc_byronism.png"
+	}		
+}

@@ -1,0 +1,25 @@
+unique_id = kxxflavourachievements_1936
+
+################################################################
+# The Achievements, most of them
+################################################################
+
+
+where_everything_begins = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        has_start_date < 1936.01.02
+		#achievment specific
+        original_tag = FRA		
+        game_rules_allow_achievements = yes
+    }
+    happened = {
+       FRA = {
+        has_completed_focus = FRA_national_collectivists
+       }
+    }
+}
+
+
+
+
