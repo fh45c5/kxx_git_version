@@ -287,4 +287,16 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_WSU_paternal_autocrat"
+		texturefile = "gfx/flags/small/WSU_paternal_autocrat.tga"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_KR_game_rule_flag_GAL"
+		texturefile = "gfx/flags/small/GAL.tga"
+		legacy_lazy_load = no
+	}
+
 	}

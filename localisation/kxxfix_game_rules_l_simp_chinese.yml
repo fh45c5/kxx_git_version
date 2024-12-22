@@ -15,6 +15,13 @@
  KXX_RM_GERCIVILWAR_YES_DESC:0 "请注意，这会破坏kx的游戏体验，请斟酌是否开启"
  KXX_RM_GERCIVILWAR_NO:0 "一切正常"
  KXX_RM_GERCIVILWAR_NO_DESC:0 "德国内战永远不会发生。"
+ KXX_WSU:0 "“民族与革命的  £KXX_game_rule_flag_WSU_paternal_autocrat  西乌克兰起义"
+ KXX_WSU_RANDOM:0 "默认"
+ KXX_WSU_RANDOM_DESC:0 "AI会决定乌克兰人是否在加利西亚起义。"
+ KXX_WSU_YES:0 "£KXX_game_rule_flag_WSU_paternal_autocrat  起义必定发生"
+ KXX_WSU_YES_DESC:0 "乌克兰人决定在斯捷潘·班德拉的领导下反抗波兰人。"
+ KXX_WSU_NO:0 "£KXX_game_rule_flag_GAL  起义不会发生"
+ KXX_WSU_NO_DESC:0 "乌克兰人没有起义。"
 
 FRA_JACOBIN_SPLITX:0 "£GFX_KR_game_rule_flag_FRA_Lenin 雅各宾派分裂(KXX)"
  RULE_OPTION_FRA_JACOBIN_SPLITX_RANDOM:0 "默认"

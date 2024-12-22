@@ -506,7 +506,14 @@ country_event = {
 				}
 			}
 		ai_chance = {
-			factor = 10
+			factor = 50
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = kxx_wsu
+					option = KXX_WSU_YES
+				}
+			}
 		}
 	}
 	option = {
@@ -522,7 +529,14 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 90
+			factor = 50
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = kxx_wsu
+					option = KXX_WSU_NO
+				}
+			}
 		}
 	}
 }
