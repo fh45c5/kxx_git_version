@@ -4665,6 +4665,16 @@ country_event = {
 			has_war_with = SPO
 			has_war_with = PIR
 		}
+		
+			GOY = {
+				is_ai = no
+			}
+			SPO = {
+				is_ai = no
+			}
+			PIR = {
+				is_ai = no
+			}
 		has_idea = BRA_in_revolt
 		surrender_progress > 0.80
 	}

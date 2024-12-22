@@ -2,164 +2,165 @@
 ## Amazon Events #
 ##############
 
-add_namespace = ass
+add_namespace = rf_ass
 
 	country_event = { #cows with guns
-		id = ass.1
-		title = ass.1.t
-		desc = ass.1.desc
+		id =  rf_ass.1
+		title =  rf_ass.1.t
+		desc =  rf_ass.1.desc
 		fire_only_once = yes
 		picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = { #what the fuck
-			name = ass.1.a
+			name =  rf_ass.1.a
 			add_manpower = -10
 		}
 	}
 	country_event = { #into the jungle
-		id = ass.2
-		title = ass.2.t
-		desc = ass.2.desc
+		id =  rf_ass.2
+		title =  rf_ass.2.t
+		desc =  rf_ass.2.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = { #hell ye
-			name = ass.2.a
+			name =  rf_ass.2.a
 			country_event = {
-				id = ass.3
+				id =  rf_ass.3
 				days = 3
 			}
 		}
 		option = { #no thanks
-			name = ass.2.b
+			name =  rf_ass.2.b
 			country_event = {
-				id = ass.6
+				id =  rf_ass.6
 				days = 3
 			}
 		}
 	}
 	country_event = { #jungle stuff
-		id = ass.3
-		title = ass.3.t
-		desc = ass.3.desc
+		id =  rf_ass.3
+		title =  rf_ass.3.t
+		desc =  rf_ass.3.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = { #what the fuck
-			name = ass.3.a
+			name =  rf_ass.3.a
 			add_manpower = -5
 			custom_effect_tooltip = "Amleto Vespa dies."
 			hidden_effect = {
 				country_event = {
-					id = ass.4
+					id =  rf_ass.4
 					days = 18
 				}
 			}
 		}
 	}
 	country_event = { #coup time
-		id = ass.4
-		title = ass.4.t
-		desc = ass.4.desc
+		id =  rf_ass.4
+		title =  rf_ass.4.t
+		desc =  rf_ass.4.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = { #time to kill scientists
-			name = ass.4.a
+			name =  rf_ass.4.a
 			add_manpower = -75
 			country_event = {
-				id = ass.5
+				id =  rf_ass.5
 				days = 5
 			}
 		}
 	}
 	country_event = { #coupy coupy!
-		id = ass.5
-		title = ass.5.t
-		desc = ass.5.desc
+		id =  rf_ass.5
+		title =  rf_ass.5.t
+		desc =  rf_ass.5.desc
 		fire_only_once = yes
 		picture = GFX_report_event_ASS_coup
 		is_triggered_only = yes
 
 		option = { #time to kill scientists
-			name = ass.5.a
+			name =  rf_ass.5.a
 			add_manpower = -250
-			kill_country_leader = yes
+			set_cosmetic_tag = ASS_despotism
 			set_politics = {
-				ruling_party = despotism
+				ruling_party = national_populist
 				elections_allowed = no
 			}
+			set_party_name = { 
+				ideology = national_populist
+				long_name = "亚马逊雇佣兵"
+				name = "亚马逊雇佣兵"
+			}
+			create_country_leader = {
+				name = "彼得·弗莱明"
+				picture = "gfx/leaders/ASS/Portrait_ASS_Peter_Fleming.png"
+				expire = "1.1.1"
+				ideology = merc_subtype
+			}
 			add_popularity = {
-				ideology = despotism
+				ideology = national_populist
 				popularity = 0.80
 			}
 			add_popularity = {
-				ideology = accelerationism
-				popularity = 0.20
+				ideology = social_democrat
+				popularity = -0.20
 			}
-			hidden_effect = {
-				every_country = {
-					limit = {
-						is_ai = no
-					}
-					news_event = {
-						id = news.26
-						days = 1
-					}
-				}
-			}
+			
 			complete_national_focus = ASS_beasts_of_no_nation
 		}
 	}
 
 	country_event = {
-		id = ass.6
-		title = ass.6.t
-		desc = ass.6.desc
+		id =  rf_ass.6
+		title =  rf_ass.6.t
+		desc =  rf_ass.6.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.6.a
+			name =  rf_ass.6.a
 			hidden_effect = {
 				country_event = {
-					id = ass.7
+					id =  rf_ass.7
 					days = 20
 				}
 			}
 		}
 	}
 	country_event = {
-		id = ass.7
-		title = ass.7.t
-		desc = ass.7.desc
+		id =  rf_ass.7
+		title =  rf_ass.7.t
+		desc =  rf_ass.7.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.7.a
+			name =  rf_ass.7.a
 			country_event = {
-				id = ass.8
+				id =  rf_ass.8
 				days = 2
 			}
 		}
 	}
 	country_event = {
-		id = ass.8
-		title = ass.8.t
-		desc = ass.8.desc
+		id =  rf_ass.8
+		title =  rf_ass.8.t
+		desc =  rf_ass.8.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.8.a
+			name =  rf_ass.8.a
 			add_manpower = -250
 			add_popularity = {
 				ideology = despotism
@@ -181,15 +182,15 @@ add_namespace = ass
 	}
 
 	country_event = {
-		id = ass.10
-		title = ass.10.t
-		desc = ass.10.desc
+		id =  rf_ass.10
+		title =  rf_ass.10.t
+		desc =  rf_ass.10.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.10.a
+			name =  rf_ass.10.a
 			ASS = {
 				annex_country = {
 					target = MCM
@@ -202,7 +203,7 @@ add_namespace = ass
 			}
 		}
 		option = {
-			name = ass.10.b
+			name =  rf_ass.10.b
 			ASS = {
 				create_wargoal = {
 					type = annex_everything
@@ -214,208 +215,228 @@ add_namespace = ass
 	}
 
 	country_event = {
-		id = ass.11
-		title = ass.11.t
-		desc = ass.11.desc
+		id =  rf_ass.11
+		title =  rf_ass.11.t
+		desc =  rf_ass.11.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.11.a
+			name =  rf_ass.11.a
 			army_experience = 10
 		}
 	}
 	country_event = {
-		id = ass.12
-		title = ass.12.t
-		desc = ass.12.desc
+		id =  rf_ass.12
+		title =  rf_ass.12.t
+		desc =  rf_ass.12.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.12.a
+			name =  rf_ass.12.a
 		}
 	}
 	country_event = {
-		id = ass.13
-		title = ass.13.t
-		desc = ass.13.desc
+		id =  rf_ass.13
+		title =  rf_ass.13.t
+		desc =  rf_ass.13.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.13.a
+			name =  rf_ass.13.a
 			country_event = {
-			id = ass.14
+			id =  rf_ass.14
 			days = 10
 			}
 		}
 	}
 	country_event = {
-		id = ass.14
-		title = ass.14.t
-		desc = ass.14.desc
+		id =  rf_ass.14
+		title =  rf_ass.14.t
+		desc =  rf_ass.14.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.14.a
+			name =  rf_ass.14.a
 		}
 	}
 	country_event = {
-		id = ass.15
-		title = ass.15.t
-		desc = ass.15.desc
+		id =  rf_ass.15
+		title =  rf_ass.15.t
+		desc =  rf_ass.15.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.15.a
+			name =  rf_ass.15.a
 			country_event = {
-			id = ass.16
+			id =  rf_ass.16
 			days = 20
 			}
 		}
 	}
 	country_event = {
-		id = ass.16
-		title = ass.16.t
-		desc = ass.16.desc
+		id =  rf_ass.16
+		title =  rf_ass.16.t
+		desc =  rf_ass.16.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.16.a
+			name =  rf_ass.16.a
 		}
 	}
 	country_event = {
-		id = ass.17
-		title = ass.17.t
-		desc = ass.17.desc
+		id =  rf_ass.17
+		title =  rf_ass.17.t
+		desc =  rf_ass.17.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.17.a
+			name =  rf_ass.17.a
 			country_event = {
-			id = ass.18
+			id =  rf_ass.18
 			days = 10
 			}
 		}
 	}
 	country_event = {
-		id = ass.18
-		title = ass.18.t
-		desc = ass.18.desc
+		id =  rf_ass.18
+		title =  rf_ass.18.t
+		desc =  rf_ass.18.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.18.a
+			name =  rf_ass.18.a
 		}
 	}
 	country_event = {
-		id = ass.19
-		title = ass.19.t
-		desc = ass.19.desc
+		id =  rf_ass.19
+		title =  rf_ass.19.t
+		desc =  rf_ass.19.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.19.a
+			name =  rf_ass.19.a
 			country_event = {
-			id = ass.20
+			id =  rf_ass.20
 			days = 15
 			}
 		}
 	}
 	country_event = {
-		id = ass.20
-		title = ass.20.t
-		desc = ass.20.desc
+		id =  rf_ass.20
+		title =  rf_ass.20.t
+		desc =  rf_ass.20.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.20.a
+			name =  rf_ass.20.a
 			country_event = {
-			id = ass.21
+			id =  rf_ass.21
 			days = 15
 			}
 		}
 	}
 	country_event = {
-		id = ass.21
-		title = ass.21.t
-		desc = ass.21.desc
+		id =  rf_ass.21
+		title =  rf_ass.21.t
+		desc =  rf_ass.21.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.21.a
+			name =  rf_ass.21.a
 			country_event = {
-			id = ass.22
+			id =  rf_ass.22
 			days = 15
 			}
 		}
 	}
 	country_event = {
-		id = ass.22
-		title = ass.22.t
-		desc = ass.22.desc
+		id =  rf_ass.22
+		title =  rf_ass.22.t
+		desc =  rf_ass.22.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.22.a
+			name =  rf_ass.22.a
 		}
 	}
 	country_event = {
-		id = ass.23
-		title = ass.23.t
-		desc = ass.23.desc
+		id =  rf_ass.23
+		title =  rf_ass.23.t
+		desc =  rf_ass.23.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
-		is_triggered_only = yes
+		trigger = {
+			tag = GOY
+			has_war_with = BRA
+		}
 
 		option = {
-			name = ass.23.a
+			name =  rf_ass.23.a
 		}
 		option = {
-			name = ass.23.b
+			name =  rf_ass.23.b
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_1
 				amount = 1000
 			}	
 			hidden_effect = {
 				country_event = {
-					id = ass.24
+					id =  rf_ass.24
+					days = 2
 				}
 			}
 		}
 	}
 	country_event = {
-		id = ass.24
-		title = ass.24.t
-		desc = ass.24.desc
+		id =  rf_ass.24
+		title =  rf_ass.24.t
+		desc =  rf_ass.24.desc
 		fire_only_once = yes
 		#picture = GFX_report_event_ASS_cowswguns
 		is_triggered_only = yes
 
 		option = {
-			name = ass.24.a
+			name =  rf_ass.24.a
+			set_politics = {
+				ruling_party = social_democrat
+				elections_allowed = no
+			}
+			create_country_leader = {
+				name = "奥兰多·维拉斯·博阿斯"
+				picture = "gfx/leaders/ASS/Portrait_ASS_Orlando_Villas_Boas.png"
+				expire = "1.1.1"
+				ideology = socdem_utopian_technocracy_subtype
+			}
+			set_party_name = { 
+				ideology = social_democrat
+				long_name = "亚马逊国防委员会（Conselho de Defesa Amazoniana）"
+				name = "亚马逊国防委员会"
+			}
+			set_cosmetic_tag = ASS_accelerationism
 			load_focus_tree = ASS
 		}
 		

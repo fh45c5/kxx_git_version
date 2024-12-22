@@ -70,6 +70,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_communal_army"
+			add_war_support = 0.05
+			army_experience = 50
 		}
 	}
 	focus = {
@@ -92,7 +94,7 @@ focus_tree = {
 		id = FRA_armee_de_lair
 		icon = GFX_goal_FRA_airforce
 		cost = 4
-		x = 43
+		x = 50
 		y = 0
 		ai_will_do = {
 			factor = 1
@@ -106,7 +108,7 @@ focus_tree = {
 		id = FRA_navy_focus
 		icon = GFX_goal_FRA_navy
 		cost = 4
-		x = 43
+		x = 50
 		y = 4
 		ai_will_do = {
 			factor = 1
@@ -6890,7 +6892,7 @@ focus_tree = {
 			focus = FRA_equipment_modern
 		}
 		x = 2
-		y = 4
+		y = 3
 		relative_position_id = FRA_road_to_war
 		ai_will_do = {
 			factor = 3
@@ -6998,20 +7000,28 @@ focus_tree = {
 		icon = GFX_goal_FRA_Principle_Concentration
 		cost = 3
 		prerequisite = {
-			focus = FRA_la_guardia_rossa
-	}
-		x = -2
-		y = 1
-		relative_position_id = FRA_la_guardia_rossa
+			focus = FRA_reform_the_high_command
+		}
+		mutually_exclusive = {
+			focus = FRA_centralized_hc
+			focus = FRA_officers_initiative
+			focus = FRA_mass_conscription
+		}
+		x = -10
+		y = 3
+		relative_position_id = FRA_communal_army
 		ai_will_do = {
 			factor = 10
+		}
+		available = {
+			has_country_flag = ARMY_TRAV
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_principe_concentration"
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
 				cost_reduction = 0.5
-				uses = 1
+				uses = 2
 				category = land_doctrine
 			}
 		}
@@ -7023,7 +7033,7 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_principe_concentration
 		}
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = FRA_principe_concentration
 		ai_will_do = {
@@ -7044,11 +7054,14 @@ focus_tree = {
 		icon = GFX_goal_FRA_Speed_Cult
 		cost = 3
 		prerequisite = {
-			focus = FRA_tank_research
+			focus = FRA_la_petite_reine
+			focus = FRA_overrun_capitals_front_lines
+			focus = FRA_tank_assembly_line
+			focus = FRA_tank_quality_line
 		}
 		x = 0
-		y = 1.5
-		relative_position_id = FRA_tank_research
+		y = 3
+		relative_position_id = FRA_principe_concentration
 		ai_will_do = {
 			factor = 3
 		}
@@ -7066,19 +7079,16 @@ focus_tree = {
 	focus = {
 		id = FRA_tank_assembly_line
 		icon = GFX_goal_NIC_Military_Industry
-		cost = 4
-		prerequisite = {
+		cost = 3
+		prerequisite = { 
 			focus = FRA_tank_research
+			
 		}
-		mutually_exclusive = {
-			focus = FRA_tank_quality_line
-		}
-		x = -2.75
-		y = 3
+		mutually_exclusive = { focus = FRA_tank_quality_line }
+		x = -1
+		y = 2
 		relative_position_id = FRA_principe_concentration
-		ai_will_do = {
-			factor = 3
-		}
+		ai_will_do = { factor = 3 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_tank_assembly_line"
 			add_ideas = FRA_tank_assembly_line_idea
@@ -7087,19 +7097,16 @@ focus_tree = {
 	focus = {
 		id = FRA_tank_quality_line
 		icon = GFX_goal_TEX_maneuver_excersices
-		cost = 4
-		prerequisite = {
+		cost = 3
+		prerequisite = { 
 			focus = FRA_tank_research
+			
 		}
-		mutually_exclusive = {
-			focus = FRA_tank_assembly_line
-		}
-		x = 0
-		y = 3
+		mutually_exclusive = { focus = FRA_tank_assembly_line }
+		x = 1
+		y = 2
 		relative_position_id = FRA_principe_concentration
-		ai_will_do = {
-			factor = 3
-		}
+		ai_will_do = { factor = 3 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_tank_quality_line"
 			add_ideas = FRA_tank_quality_line_idea
@@ -7110,15 +7117,21 @@ focus_tree = {
 		icon = GFX_goal_FRA_class_rejuvenation
 		cost = 3
 		prerequisite = {
-			focus = FRA_la_legione_proletaria
-			focus= FRA_la_guardia_rossa
+			focus = FRA_reform_the_high_command
 		}
-		x = 1
-		y = 1
-		
-		relative_position_id = FRA_la_guardia_rossa
+		mutually_exclusive = {
+			focus = FRA_principe_concentration
+			focus = FRA_officers_initiative
+			focus = FRA_mass_conscription
+		}
+		x = -5
+		y = 3
+		relative_position_id = FRA_communal_army
 		ai_will_do = {
 			factor = 10
+		}
+		available = {
+			has_country_flag = ARMY_JACO
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_centralized_hc"
@@ -7132,9 +7145,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_centralized_hc
 		}
-		x = -2
-		y = 1
-		relative_position_id = FRA_centralized_hc
+		x = -5
+		y = 4
+		relative_position_id = FRA_communal_army
 		ai_will_do = {
 			factor = 3
 		}
@@ -7143,7 +7156,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
 				cost_reduction = 0.5
-				uses = 1
+				uses = 2
 				category = land_doctrine
 			}
 		}
@@ -7153,32 +7166,34 @@ focus_tree = {
 		icon = GFX_goal_FRA_sacrificial_apotheosis
 		cost = 3
 		prerequisite = {
-			focus = FRA_centralized_hc
+			focus = FRA_analysing_wki
 		}
-		x = 0
-		y = 1
-		relative_position_id = FRA_centralized_hc
+		x = -5
+		y = 5
+		relative_position_id = FRA_communal_army
 		ai_will_do = {
 			factor = 3
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_war_experience"
-			army_experience = 50
+			army_experience = 100
+			air_experience = 25
+			navy_experience = 25
 		}
 	}
 	focus = {
 		id = FRA_military_academy
 		icon = GFX_goal_CSA_peoples_military_academy
-		cost = 4
-		prerequisite = {
-			focus = FRA_analysing_wki
-		}
+		cost = 3
 		prerequisite = {
 			focus = FRA_war_experience
 		}
-		x =  -1
-		y = 2
-		relative_position_id = FRA_centralized_hc
+		prerequisite = {
+			focus = FRA_an_armys_stomach
+		}
+		x = -6
+		y = 6
+		relative_position_id = FRA_communal_army
 		ai_will_do = {
 			factor = 3
 		}
@@ -7198,30 +7213,39 @@ focus_tree = {
 		icon = GFX_goal_FRA_clan_belonging
 		cost = 3
 		prerequisite = {
-			focus = FRA_la_legione_proletaria
-			focus = FRA_la_guardia_rossa
+			focus = FRA_reform_the_high_command
 		}
-		
-		x = -0.5
-		y = 1
-		relative_position_id = FRA_la_legione_proletaria
+		mutually_exclusive = {
+			focus = FRA_principe_concentration
+			focus = FRA_centralized_hc
+			focus = FRA_mass_conscription
+		}
+		x = 5
+		y = 3
+		relative_position_id = FRA_communal_army
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			has_country_flag = ARMY_SORE
+		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_officers_initiative"
-			army_experience = 50
+			army_experience = 150
+			add_command_power = 75
 		}
+
 	}
 	focus = {
 		id = FRA_empower_rifleman
 		icon = GFX_goal_CSA_militia_support
 		cost = 3
 		prerequisite = {
-			focus = FRA_officers_initiative
+			focus = FRA_mission_type
+			focus = FRA_aero_terrestrial_integration
 		}
-		x = -1
-		y = 2
+		x = 1
+		y = 3
 		relative_position_id = FRA_officers_initiative
 		ai_will_do = {
 			factor = 5
@@ -7234,11 +7258,11 @@ focus_tree = {
 	focus = {
 		id = FRA_mission_type
 		icon = GFX_goal_FRA_arms_of_the_people
-		cost = 2
+		cost = 3
 		prerequisite = {
 			focus = FRA_flexible_support
 		}
-		x = 1
+		x = 0
 		y = 2
 		relative_position_id = FRA_officers_initiative
 		ai_will_do = {
@@ -7249,7 +7273,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
 				cost_reduction = 0.5
-				uses = 1
+				uses = 2
 				category = land_doctrine
 			}
 		}
@@ -7257,11 +7281,11 @@ focus_tree = {
 	focus = {
 		id = FRA_flexible_support
 		icon = GFX_goal_FRA_dionysian_excuberance
-		cost = 2
+		cost = 3
 		prerequisite = {
 			focus = FRA_officers_initiative
 		}
-		x = 1
+		x = -1
 		y = 1
 		relative_position_id = FRA_officers_initiative
 		ai_will_do = {
@@ -7272,7 +7296,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = FRA_flexible_support
 				bonus = 1
-				uses = 1
+				uses = 2
 				category = artillery
 			}
 			add_tech_bonus = {
@@ -7288,13 +7312,21 @@ focus_tree = {
 		icon = GFX_goal_FRA_Levee_Masse
 		cost = 3
 		prerequisite = {
-			focus = FRA_la_legione_proletaria
+			focus = FRA_reform_the_high_command
 		}
-		x = 3
-		y = 1
-		relative_position_id = FRA_la_legione_proletaria
+		mutually_exclusive = {
+			focus = FRA_principe_concentration
+			focus = FRA_centralized_hc
+			focus = FRA_officers_initiative
+		}
+		x = 10
+		y = 3
+		relative_position_id = FRA_communal_army
 		ai_will_do = {
 			factor = 10
+		}
+		available = {
+			has_country_flag = ARMY_ANAR
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRA_mass_conscription"
@@ -7309,7 +7341,7 @@ focus_tree = {
 			focus = FRA_mass_conscription
 		}
 		x = 0
-		y = 2
+		y = 1
 		relative_position_id = FRA_mass_conscription
 		ai_will_do = {
 			factor = 3
@@ -7319,7 +7351,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
 				cost_reduction = 0.5
-				uses = 1
+				uses = 2
 				category = land_doctrine
 			}
 		}
@@ -7329,9 +7361,11 @@ focus_tree = {
 		icon = GFX_goal_FRA_Reign_Fire
 		cost = 3
 		prerequisite = {
-			focus = FRA_global_organization
+			focus = FRA_improve_manufactures
+			focus = FRA_our_comrades_fight_too
+			focus = FRA_levee_en_masse
 		}
-		x = -2
+		x = 0
 		y = 3
 		relative_position_id = FRA_mass_conscription
 		ai_will_do = {
@@ -7349,8 +7383,8 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_global_organization
 		}
-		x = 0
-		y = 3
+		x = -1
+		y = 2
 		relative_position_id = FRA_mass_conscription
 		ai_will_do = {
 			factor = 3
@@ -7368,16 +7402,18 @@ focus_tree = {
 	focus = {
 		id = FRA_grand_army_reform
 		icon = GFX_goal_FRA_Reinforce_ARF_Command
-		cost = 10
+		cost = 5
 		prerequisite = {
-			focus = FRA_tank_assembly_line
-			focus = FRA_tank_quality_line
-			focus = FRA_military_academy
-			focus = FRA_empower_rifleman
-			focus = FRA_mass_fire_support
+			focus = FRA_corps_francs_hunters
+			focus = FRA_deepen_the_fog_of_war
+			focus = FRA_rapid_response_detachments
+			focus = FRA_mobile_fortresses
+			focus = FRA_overwhelming_firepower
+			focus = FRA_la_legione_proletaria
+			focus = FRA_la_guardia_rossa
 		}
 		x = 0
-		y = 10
+		y = 9
 		relative_position_id = FRA_communal_army
 		ai_will_do = {
 			factor = 3
@@ -7387,2572 +7423,2592 @@ focus_tree = {
 			add_ideas = FRA_Red_Army
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
-				cost_reduction =0.75
-				uses = 4
+				cost_reduction = 0.5
+				uses = 1
 				category = land_doctrine
 			}
 		}
 	}
 	focus = {
-    id = FRA_modernise_the_armata_rossa
-    icon = GFX_goal_FRA_army
-    cost = 3
-    x = 0
-    y = 0.75
-	relative_position_id = FRA_communal_army
-	
-    ai_will_do = {
-      factor = 20
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_modernise_the_armata_rossa"
-      army_experience = 20
-	  add_war_support = 0.1
-      add_doctrine_cost_reduction = {
-        name = SRI_modernise_the_armata_rossa
-        cost_reduction = 0.75
-        uses = 1
-        category = land_doctrine
-      }
-      add_tech_bonus = {
-        name = SRI_modernise_the_armata_rossa
-        bonus = 0.25
-        uses = 2
-        category = infantry_weapons
-        category = support_tech
-        category = armor
-        category = artillery
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_XP
-      FOCUS_FILTER_RESEARCH
-    }
-  }
-  focus = {
-    id = FRA_commissione_armi_e_munizioni
-    icon = GFX_HUN_new_warfighting_technology
-    cost = 3
+		id = FRA_la_legione_proletaria
+		icon = GFX_goal_FRA_red_legionaries
+		cost = 5
+		relative_position_id = FRA_reform_the_high_command	
+		x = -8
+		y = 5
+		prerequisite = {
+			focus = FRA_fast_army
+			focus = FRA_military_academy
+		}
+		 
+		completion_reward = {
+		  log = "[GetDateText]: [Root.GetName]: Focus SRI_la_legione_proletaria"
+		 
+			add_ideas = FRA_legione_proletaria_dummy
+		  
+		}
+		search_filters = {
+		  FOCUS_FILTER_ARMY_BONUS
+		  FOCUS_FILTER_MANPOWER
+		}
+	  }
+	focus = {
+		id = FRA_la_guardia_rossa
+		icon = GFX_goal_reform_socialist_army
+		cost = 5
+		relative_position_id = FRA_reform_the_high_command	
+		x = 8
+		y = 5
+		
+		prerequisite = {
+			focus = FRA_empower_rifleman
+			focus = FRA_mass_fire_support
+		}
+		 
+		
+		ai_will_do = {
+		  factor = 15
+		  modifier = {
+			factor = 4
+			has_war = yes
+		  }
+		  modifier = {
+			factor = 1.5
+			date > 1937.1.1
+		  }
+		  modifier = {
+			factor = 1.5
+			date > 1938.1.1
+		  }
+		  modifier = {
+			factor = 1.5
+			date > 1939.1.1
+		  }
+		}
+		completion_reward = {
+		  log = "[GetDateText]: [Root.GetName]: Focus SRI_la_guardia_rossa"
+			add_ideas = FRA_guardia_rossa_dummy
+		}
+		search_filters = {
+		  FOCUS_FILTER_ARMY_BONUS
+		}
+	  }
+		### New Military Tree ###
 
-    x = 24
-    y = 1
-    prerequisite = {
-      focus = FRA_road_to_war	
-    }
-    ai_will_do = {
-      factor = 15
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_commissione_armi_e_munizioni"
-      add_one_random_military_factory = yes
-      add_one_random_military_factory = yes
-      if = {
-        limit = {
-          has_dlc_nsb = yes
-        }
-        custom_effect_tooltip = tooltip_white_line
-        if = {
-          limit = {
-            has_tech = tech_engineers2
-          }
-          SRI_add_flamethrower_tank_variant = yes
-        }
-        else = {
-          custom_effect_tooltip = SRI_upon_researching_engineers_2
-          effect_tooltip = {
-            SRI_add_flamethrower_tank_variant = yes
-          }
-        }
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_INDUSTRY
-      FOCUS_FILTER_ARMY_BONUS
-    }
-  }
-  focus = {
-    id = FRA_motorise_the_bersaglieri
-    icon = GFX_goal_VIN_motorization
-    cost = 3
-    relative_position_id = FRA_commissione_armi_e_munizioni
-    x = -2
-    y = 1
-    prerequisite = {
-      focus = FRA_commissione_armi_e_munizioni
-    }
-    ai_will_do = {
-      factor = 15
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_motorise_the_bersaglieri"
-      add_tech_bonus = {
-        name = SRI_motorise_the_bersaglieri
-        uses = 1
-        bonus = 1
-        category = motorized_equipment
-      }
-      custom_effect_tooltip = tooltip_white_line
-      set_technology = {
-        bicycle_infantry = 1
-        popup = no
-      }
-      if = {
-        limit = {
-          has_template = "Divisione Bersaglieri"
-        }
-        delete_unit_template_and_units = {
-          division_template = "Divisione Bersaglieri"
-          disband = yes
-        }
-      }
-      division_template = {
-        name = "Divisione Bersaglieri"
-        division_names_group = SRI_INF_01
-        regiments = {
-          bicycle_battalion = {
-            x = 0
-            y = 0
-          }
-          bicycle_battalion = {
-            x = 0
-            y = 1
-          }
-          bicycle_battalion = {
-            x = 0
-            y = 2
-          }
-          bicycle_battalion = {
-            x = 1
-            y = 0
-          }
-          bicycle_battalion = {
-            x = 1
-            y = 1
-          }
-          bicycle_battalion = {
-            x = 1
-            y = 2
-          }
-        }
-        support = {
-          engineer = {
-            x = 0
-            y = 0
-          }
-          artillery = {
-            x = 0
-            y = 1
-          }
-        }
-      }
-      random_owned_controlled_state = {
-        limit = {
-          is_in_home_area = yes
-        }
-        create_unit = {
-          division = "name = \"神射手第一师\" division_template = \"Divisione Bersaglieri\" start_experience_factor = 0.3"  # 1a Divisione Bersaglieri
-          owner = ROOT
-        }
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-      FOCUS_FILTER_RESEARCH
-    }
-  }
-  focus = {
-    id = FRA_carri_di_rottura
-    icon = GFX_goal_CSA_tanks_of_the_revolution
-    cost = 3
-    available = {
-      if = {
-        limit = {
-          has_dlc_nsb = yes
-        }
-        has_tech = radio
-        custom_trigger_tooltip = {
-          tooltip = SRI_has_tech_interwar_antiair
-          has_tech = interwar_antiair
-        }
-        custom_trigger_tooltip = {
-          tooltip = SRI_has_tech_interwar_antitank
-          has_tech = interwar_antitank
-        }
-      }
-    }
-    relative_position_id = FRA_motorise_the_bersaglieri
-    x = -1
-    y = 1
-    prerequisite = {
-      focus = FRA_motorise_the_bersaglieri
-    }
-    ai_will_do = {
-      factor = 15
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_carri_di_rottura"
-      add_one_random_military_factory = yes
-      custom_effect_tooltip = tooltip_white_line
-      add_tech_bonus = {
-        name = SRI_carri_di_rottura
-        bonus = 1
-        uses = 1
-        category = armor
-      }
-      if = {
-        limit = {
-          has_dlc_nsb = yes
-        }
-        custom_effect_tooltip = tooltip_white_line
-        create_equipment_variant = {
-          name = "L6"
-          type = light_tank_chassis_2
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_auto_cannon
-            turret_type_slot = tank_light_one_man_tank_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_riveted_armor
-            engine_type_slot = tank_gasoline_engine
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 4
-            tank_nsb_armor_upgrade = 2
-          }
-        }
-        create_equipment_variant = {
-          name = "M11/39"
-          type = medium_tank_chassis_1
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_high_velocity_cannon
-            turret_type_slot = tank_medium_fixed_superstructure_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_riveted_armor
-            engine_type_slot = tank_diesel_engine
-            special_type_slot_1 = secondary_turret_hmg
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 3
-            tank_nsb_armor_upgrade = 2
-          }
-        }
-        create_equipment_variant = {
-          name = "M11/41"
-          type = medium_tank_chassis_2
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_medium_cannon
-            turret_type_slot = tank_medium_two_man_tank_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_riveted_armor
-            engine_type_slot = tank_diesel_engine
-            special_type_slot_1 = additional_machine_guns
-            special_type_slot_2 = tank_radio_1
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 3
-            tank_nsb_armor_upgrade = 3
-          }
-        }
-        create_equipment_variant = {
-          name = "P26"
-          type = heavy_tank_chassis_2
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_heavy_cannon
-            turret_type_slot = tank_heavy_two_man_tank_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_riveted_armor
-            engine_type_slot = tank_diesel_engine
-            special_type_slot_1 = tank_radio_1
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 6
-            tank_nsb_armor_upgrade = 6
-          }
-        }
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-      FOCUS_FILTER_RESEARCH
-      FOCUS_FILTER_INDUSTRY
-    }
-  }
-  focus = {
-    id = FRA_semoventi_dartiglieria
-    icon = GFX_goal_generic_tank_destroyer_german
-    cost = 3
-    available = {
-      if = {
-        limit = {
-          has_dlc_nsb = yes
-        }
-        has_tech = radio
-        custom_trigger_tooltip = {
-          tooltip = SRI_has_tech_interwar_antiair
-          has_tech = interwar_antiair
-        }
-        has_tech = interwar_artillery
-        custom_trigger_tooltip = {
-          tooltip = SRI_has_tech_interwar_antitank
-          has_tech = interwar_antitank
-        }
-      }
-    }
-    relative_position_id = FRA_motorise_the_bersaglieri
-    x = 1
-    y = 1
-    prerequisite = {
-      focus = FRA_howitzer_standardisation
-    }
-    prerequisite = {
-      focus = FRA_motorise_the_bersaglieri
-    }
-    ai_will_do = {
-      factor = 15
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_semoventi_dartiglieria"
-      add_one_random_military_factory = yes
-      custom_effect_tooltip = tooltip_white_line
-      add_tech_bonus = {
-        name = SRI_semoventi_dartiglieria
-        uses = 1
-        bonus = 1
-        category = armor
-      }
-      if = {
-        limit = {
-          has_dlc_nsb = yes
-        }
-        custom_effect_tooltip = tooltip_white_line
-        create_equipment_variant = {
-          name = "L3 反坦克型"  # L3 Contro Carro
-          type = light_tank_destroyer_chassis_1
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_high_velocity_cannon
-            turret_type_slot = tank_light_fixed_superstructure_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_riveted_armor
-            engine_type_slot = tank_gasoline_engine
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 1
-            tank_nsb_armor_upgrade = 1
-          }
-        }
-        create_equipment_variant = {
-          name = "L6 反坦克型"  # L6 Contro Carro
-          type = light_tank_destroyer_chassis_2
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_medium_cannon
-            turret_type_slot = tank_light_fixed_superstructure_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_riveted_armor
-            engine_type_slot = tank_gasoline_engine
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 4
-            tank_nsb_armor_upgrade = 2
-          }
-        }
-        create_equipment_variant = {
-          name = "M11/39 反坦克型"  # M11/39 Contro Carro
-          type = medium_tank_destroyer_chassis_1
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_high_velocity_cannon
-            turret_type_slot = tank_medium_fixed_superstructure_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_riveted_armor
-            engine_type_slot = tank_gasoline_engine
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 3
-            tank_nsb_armor_upgrade = 3
-          }
-        }
-        create_equipment_variant = {
-          name = "M11/41 反坦克型"  # M11/41 Contro Carro
-          type = medium_tank_destroyer_chassis_2
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_high_velocity_cannon
-            turret_type_slot = tank_medium_fixed_superstructure_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_riveted_armor
-            engine_type_slot = tank_gasoline_engine
-            special_type_slot_1 = tank_radio_1
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 4
-            tank_nsb_armor_upgrade = 4
-          }
-        }
-        create_equipment_variant = {
-          name = "塞莫凡提 M11/39"  # Semovente M11/39
-          type = medium_tank_artillery_chassis_1
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_close_support_gun
-            turret_type_slot = tank_medium_fixed_superstructure_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_riveted_armor
-            engine_type_slot = tank_gasoline_engine
-            special_type_slot_1 = tank_radio_1
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 4
-            tank_nsb_armor_upgrade = 3
-          }
-        }
-        create_equipment_variant = {
-          name = "塞莫凡提 M11/41"  # Semovente M11/41
-          type = medium_tank_artillery_chassis_2
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_medium_howitzer
-            turret_type_slot = tank_medium_fixed_superstructure_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_welded_armor
-            engine_type_slot = tank_gasoline_engine
-            special_type_slot_1 = tank_radio_1
-            special_type_slot_2 = additional_machine_guns
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 6
-            tank_nsb_armor_upgrade = 4
-          }
-        }
-        create_equipment_variant = {
-          name = "塞莫凡提 M11/41 防空型"  # Semovente M11/41 Contraereo
-          type = medium_tank_aa_chassis_2
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_anti_air_cannon
-            turret_type_slot = tank_medium_two_man_tank_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_riveted_armor
-            engine_type_slot = tank_gasoline_engine
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 4
-            tank_nsb_armor_upgrade = 4
-          }
-        }
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-      FOCUS_FILTER_RESEARCH
-      FOCUS_FILTER_INDUSTRY
-    }
-  }
-  focus = {
-    id = FRA_ferrea_mole_ferreo_cuore
-    icon = GFX_goal_NEE_armored_spearhead
-    cost = 3
-    relative_position_id = FRA_motorise_the_bersaglieri
-    x = 0
-    y = 2
-    prerequisite = {
-      focus = FRA_semoventi_dartiglieria
-      focus = FRA_carri_di_rottura
-    }
-    ai_will_do = {
-      factor = 15
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_ferrea_mole_ferreo_cuore"
-      SRI_add_upon_completion_lp_ga_tooltip_if_necessary = yes
-      SRI_get_modify_army_dynmod_custom_effect_tooltip = yes
-      add_to_variable = {
-        SRI_ar_army_armor_defence_factor = 0.05
-        tooltip = army_armor_defence_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_army_armor_speed_factor = 0.05
-        tooltip = army_armor_speed_factor_tooltip
-      }
-      custom_effect_tooltip = tooltip_white_line
-      add_tech_bonus = {
-        name = SRI_ferrea_mole_ferreo_cuore
-        ahead_reduction = 2
-        bonus = 1
-        uses = 1
-        category = armor
-      }
-      if = {
-        limit = {
-          has_dlc_nsb = yes
-        }
-        custom_effect_tooltip = tooltip_white_line
-        create_equipment_variant = {
-          name = "M16/43"
-          type = medium_tank_chassis_3
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_medium_cannon
-            turret_type_slot = tank_medium_two_man_tank_turret
-            suspension_type_slot = tank_torsion_bar_suspension
-            armor_type_slot = tank_riveted_armor
-            engine_type_slot = tank_gasoline_engine
-            special_type_slot_1 = tank_radio_1
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 6
-            tank_nsb_armor_upgrade = 3
-          }
-        }
-        create_equipment_variant = {
-          name = "M43 反坦克型"  # M43 Contro Carro
-          type = medium_tank_destroyer_chassis_3
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_heavy_cannon
-            turret_type_slot = tank_medium_fixed_superstructure_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_riveted_armor
-            engine_type_slot = tank_diesel_engine
-            special_type_slot_1 = tank_radio_1
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 7
-            tank_nsb_armor_upgrade = 4
-          }
-        }
-        create_equipment_variant = {
-          name = "塞莫凡提 M43"  # Semovente M43
-          type = medium_tank_artillery_chassis_3
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_medium_howitzer
-            turret_type_slot = tank_medium_fixed_superstructure_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_riveted_armor
-            engine_type_slot = tank_gasoline_engine
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 6
-            tank_nsb_armor_upgrade = 4
-          }
-        }
-        create_equipment_variant = {
-          name = "塞莫凡提 M43 防空型"  # Semovente M43 Contraereo
-          type = medium_tank_aa_chassis_3
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_anti_air_cannon
-            turret_type_slot = tank_medium_two_man_tank_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_riveted_armor
-            engine_type_slot = tank_gasoline_engine
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 4
-            tank_nsb_armor_upgrade = 4
-          }
-        }
-        create_equipment_variant = {
-          name = "P43"
-          type = heavy_tank_chassis_3
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_heavy_cannon
-            turret_type_slot = tank_heavy_three_man_tank_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_welded_armor
-            engine_type_slot = tank_diesel_engine
-            special_type_slot_1 = tank_radio_1
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 10
-            tank_nsb_armor_upgrade = 8
-          }
-        }
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-      FOCUS_FILTER_RESEARCH
-    }
-  }
-  focus = {
-    id = FRA_howitzer_standardisation
-    icon = GFX_goal_generic_mountain_artillery
-    cost = 3
-    relative_position_id = FRA_commissione_armi_e_munizioni
-    x = 0
-    y = 1
-    prerequisite = {
-      focus = FRA_commissione_armi_e_munizioni
-    }
-    ai_will_do = {
-      factor = 15
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_howitzer_standardisation"
-      add_tech_bonus = {
-        name = SRI_howitzer_standardisation
-        bonus = 0.75
-        uses = 2
-        category = artillery
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
-  }
-  focus = {
-    id = FRA_cannone_da_novanta
-    icon = GFX_goal_KSV_rail_gun
-    cost = 3
-    available = {
-      has_tech = interwar_artillery
-    }
-    relative_position_id = FRA_howitzer_standardisation
-    x = 0
-    y = 2
-    prerequisite = {
-      focus = FRA_howitzer_standardisation
-    }
-    ai_will_do = {
-      factor = 15
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_cannone_da_novanta"
-      SRI_add_upon_completion_lp_ga_tooltip_if_necessary = yes
-      SRI_get_modify_army_dynmod_custom_effect_tooltip = yes
-      add_to_variable = {
-        SRI_ar_breakthrough_factor = 0.05
-        tooltip = breakthrough_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_army_artillery_defence_factor = 0.05
-        tooltip = army_artillery_defence_factor_tooltip
-      }
-      custom_effect_tooltip = tooltip_white_line
-      add_one_random_military_factory = yes
-      custom_effect_tooltip = tooltip_white_line
-      add_tech_bonus = {
-        name = SRI_cannone_da_novanta
-        ahead_reduction = 2
-        bonus = 1
-        uses = 1
-        category = artillery
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-      FOCUS_FILTER_RESEARCH
-      FOCUS_FILTER_INDUSTRY
-    }
-  }
-  focus = {
-    id = FRA_replace_the_six_point_five_milimetres
-    icon = GFX_BRY_Every_Hand_A_Rifle
-    cost = 3
-    relative_position_id = FRA_commissione_armi_e_munizioni
-    x = 2
-    y = 1
-    prerequisite = {
-      focus = FRA_commissione_armi_e_munizioni
-    }
-    ai_will_do = {
-      factor = 15
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_replace_the_six_point_five_milimetres"
-      add_tech_bonus = {
-        name = SRI_replace_the_six_point_five_milimetres
-        bonus = 0.75
-        uses = 2
-        category = infantry_weapons
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
-  }
-  focus = {
-    id = FRA_armaguerra
-    icon = GFX_goeringshundreds
-    cost = 3
-    available = {
-      custom_trigger_tooltip = {
-        tooltip = SRI_has_tech_infantry_weapons2
-        has_tech = infantry_weapons2
-      }
-      custom_trigger_tooltip = {
-        tooltip = SRI_has_tech_support_weapons2
-        has_tech = support_weapons2
-      }
-    }
-    relative_position_id = FRA_replace_the_six_point_five_milimetres
-    x = -1
-    y = 1
-    prerequisite = {
-      focus = FRA_replace_the_six_point_five_milimetres
-    }
-    ai_will_do = {
-      factor = 15
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_armaguerra"
-      add_tech_bonus = {
-        name = SRI_armaguerra
-        ahead_reduction = 2
-        bonus = 1
-        uses = 1
-        category = infantry_weapons
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-    }
-  }
-  focus = {
-    id = FRA_telo_mimetico
-    icon = GFX_goal_TEX_night_assaults
-    cost = 3
-    available = {
-      custom_trigger_tooltip = {
-        tooltip = SRI_has_tech_infantry_weapons2
-        has_tech = infantry_weapons2
-      }
-      custom_trigger_tooltip = {
-        tooltip = SRI_has_tech_support_weapons2
-        has_tech = support_weapons2
-      }
-    }
-    relative_position_id = FRA_replace_the_six_point_five_milimetres
-    x = 0
-    y = 2
-    prerequisite = {
-      focus = FRA_replace_the_six_point_five_milimetres
-    }
-    ai_will_do = {
-      factor = 15
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_telo_mimetico"
-      SRI_add_upon_completion_lp_ga_tooltip_if_necessary = yes
-      SRI_get_modify_army_dynmod_custom_effect_tooltip = yes
-      add_to_variable = {
-        SRI_ar_max_dig_in = 5
-        tooltip = max_dig_in_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_dig_in_speed_factor = 0.05
-        tooltip = dig_in_speed_factor_tooltip
-      }
-      custom_effect_tooltip = tooltip_white_line
-      add_tech_bonus = {
-        name = SRI_telo_mimetico
-        bonus = 0.75
-        uses = 2
-        category = support_tech
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_RESEARCH
-      FOCUS_FILTER_ARMY_BONUS
-    }
-  }
-  focus = {
-    id = FRA_la_legione_proletaria
-    icon = GFX_goal_FRA_red_legionaries
-    cost = 1
-	relative_position_id = FRA_modernise_the_armata_rossa
-    x = 2
-    y = 1
-	prerequisite = {
-		focus = FRA_modernise_the_armata_rossa
-	  }
-	  available = {
-		OR = {
-		has_country_flag = ARMY_ANAR
-		has_country_flag = ARMY_JACO
-		has_country_flag = ARMY_SORE
+		focus = {
+			id = FRA_integrate_the_corps_francs
+			icon = GFX_goal_integrate_the_militia
+			cost = 3
+	
+			x = -2
+			y = 1
+			relative_position_id = FRA_communal_army
+			prerequisite = {
+				focus = FRA_communal_army
+			}
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_integrate_the_corps_francs"
+				army_experience = 20
+				add_doctrine_cost_reduction = {
+					name = FRA_integrate_the_corps_francs
+					cost_reduction = 0.75
+					uses = 1
+					category = land_doctrine
+				}
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = tech_assault_battalion_effect
+				hidden_effect = {
+					set_technology = { tech_assault_battalion = 1 popup = no }
+				}
+			}
 		}
-		
-	}
-    mutually_exclusive = {
-      focus = FRA_la_guardia_rossa
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_la_legione_proletaria"
-      effect_tooltip = {
-        add_ideas = SRI_legione_proletaria_dummy
-      }
-      hidden_effect = {
-        add_to_variable = {
-          SRI_ar_conscription = 0.005
-        }
-        add_dynamic_modifier = {
-          modifier = SRI_legione_proletaria_modifier
-        }
-      }
-      custom_effect_tooltip = tooltip_white_line
-      add_doctrine_cost_reduction = {
-        name = SRI_la_legione_proletaria
-        cost_reduction = 0.25
-        uses = 1
-        category = land_doctrine
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-      FOCUS_FILTER_MANPOWER
-    }
-  }
-  focus = {
-    id = FRA_establish_military_inspectorate
-    icon = GFX_goal_CRE_inspect_garrison
-    cost = 3
-   
-    x = 38
-    y = 8
-	prerequisite = {
-		focus = FRA_la_legione_proletaria
-	}
-    ai_will_do = {
-      factor = 20
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_establish_military_inspectorate"
-      army_experience = 25
-      add_command_power = 25
-      custom_effect_tooltip = SRI_modify_legione_proletaria
-      add_to_variable = {
-        SRI_ar_army_org_factor = 0.05
-        tooltip = army_org_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_army_morale_factor = 0.05
-        tooltip = army_morale_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_army_infantry_defence_factor = 0.05
-        tooltip = army_infantry_defence_factor_tooltip
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-      FOCUS_FILTER_ARMY_XP
-    }
-  }
-  focus = {
-    id = FRA_one_army_one_command
-    icon = GFX_goal_generic_army_high_command
-    cost = 3
-    relative_position_id = FRA_establish_military_inspectorate
-    x = -1
-    y = 1
-    prerequisite = {
-      focus = FRA_establish_military_inspectorate
-    }
-    mutually_exclusive = {
-      focus = FRA_maintain_officer_autonomy
-    }
-    ai_will_do = {
-      factor = 20
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_one_army_one_command"
-      custom_effect_tooltip = SRI_modify_legione_proletaria
-      add_to_variable = {
-        SRI_ar_max_command_power_mult = 0.15
-        tooltip = max_command_power_mult_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_command_power_gain_mult = 0.15
-        tooltip = command_power_gain_mult_tooltip
-      }
-      custom_effect_tooltip = tooltip_white_line
-      add_doctrine_cost_reduction = {
-        name = SRI_one_army_one_command
-        cost_reduction = 0.5
-        uses = 1
-        category = land_doctrine
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-    }
-  }
-  focus = {
-    id = FRA_maintain_officer_autonomy
-    icon = GFX_goal_NFA_Galvanize_Officer_Corp
-    cost = 3
-    relative_position_id = FRA_establish_military_inspectorate
-    x = 1
-    y = 1
-    prerequisite = {
-      focus = FRA_establish_military_inspectorate
-    }
-    mutually_exclusive = {
-      focus = FRA_one_army_one_command
-    }
-    ai_will_do = {
-      factor = 20
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_maintain_officer_autonomy"
-      custom_effect_tooltip = SRI_modify_legione_proletaria
-      add_to_variable = {
-        SRI_ar_army_org_factor = 0.05
-        tooltip = army_org_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_experience_gain_factor = 0.1
-        tooltip = experience_gain_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_out_of_supply_factor = -0.1
-        tooltip = out_of_supply_factor_tooltip
-      }
-      custom_effect_tooltip = tooltip_white_line
-      add_doctrine_cost_reduction = {
-        name = SRI_maintain_officer_autonomy
-        cost_reduction = 0.5
-        uses = 1
-        category = land_doctrine
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-    }
-  }
-  focus = {
-    id = FRA_ragruppamenti_esploranti
-    icon = GFX_goal_NEE_Ho_All_To_Border
-    cost = 3
-	relative_position_id = FRA_establish_military_inspectorate
-    x = 0
-    y = 2
-	prerequisite = {
-		focus = FRA_establish_military_inspectorate
-	  }
-    ai_will_do = {
-      factor = 20
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_ragruppamenti_esploranti"
-      custom_effect_tooltip = SRI_modify_legione_proletaria
-      if = {
-        limit = {
-          has_dlc_lar = yes
-        }
-        add_to_variable = {
-          modifier_army_sub_unit_armored_car_max_org_factor = 0.1
-          tooltip = modifier_army_sub_unit_armored_car_max_org_factor_tooltip
-        }
-      }
-      custom_effect_tooltip = improved_recon_units_tech_effect_tooltip
-      custom_effect_tooltip = tooltip_white_line
-      custom_effect_tooltip = tech_long_range_patrol_support_effect
-      hidden_effect = {
-        set_technology = {
-          improved_recon_units_tech = 1
-          popup = no
-        }
-        set_technology = {
-          tech_long_range_patrol_support = 1
-          popup = no
-        }
-      }
-      custom_effect_tooltip = tooltip_white_line
-      add_tech_bonus = {
-        name = SRI_ragruppamenti_esploranti
-        bonus = 1
-        uses = 1
-        category = recon_tech
-      }
-      if = {
-        limit = {
-          has_dlc_lar = yes
-        }
-        add_tech_bonus = {
-          name = SRI_ragruppamenti_esploranti
-          bonus = 1
-          uses = 1
-          category = cat_armored_cars
-        }
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-      FOCUS_FILTER_RESEARCH
-    }
-  }
-  focus = {
-    id = FRA_corpo_darmata_di_manovra
-    icon = GFX_goal_generic_armored_cars
-    cost = 3
-    relative_position_id = FRA_ragruppamenti_esploranti
-    x = 0
-    y = 1
-    prerequisite = {
-      focus = FRA_ragruppamenti_esploranti
-    }
-    ai_will_do = {
-      factor = 20
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_corpo_darmata_di_manovra"
-      custom_effect_tooltip = SRI_modify_legione_proletaria
-      add_to_variable = {
-        SRI_ar_army_armor_attack_factor = 0.05
-        tooltip = army_armor_attack_factor_tooltip
-      }
-      custom_effect_tooltip = SRI_armour_production_bonus
-      if = {
-        limit = {
-          has_dlc_lar = yes
-        }
-        custom_effect_tooltip = SRI_armoured_car_production_bonus
-        hidden_effect = {
-          add_ideas = SRI_lp_hidden_armor_production_bonus
-        }
-      }
-      else = {
-        custom_effect_tooltip = SRI_armour_production_bonus
-        hidden_effect = {
-          add_ideas = SRI_lp_hidden_armor_production_bonus_no_lar
-        }
-      }
-      custom_effect_tooltip = tooltip_white_line
-      if = {
-        limit = {
-          has_dlc_nsb = yes
-        }
-        add_tech_bonus = {
-          name = SRI_corpo_darmata_di_manovra
-          bonus = 1
-          uses = 1
-          category = armor
-        }
-        if = {
-          limit = {
-            has_dlc_lar = yes
-          }
-          add_tech_bonus = {
-            name = SRI_ragruppamenti_esploranti
-            bonus = 0.75
-            uses = 1
-            category = cat_armored_cars
-          }
-        }
-        custom_effect_tooltip = tooltip_white_line
-        create_equipment_variant = {
-          name = "M13/40"
-          type = medium_tank_chassis_1
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_medium_cannon
-            turret_type_slot = tank_medium_two_man_tank_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_riveted_armor
-            engine_type_slot = tank_diesel_engine
-            special_type_slot_1 = additional_machine_guns
-            special_type_slot_2 = tank_radio_1
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 2
-            tank_nsb_armor_upgrade = 3
-          }
-        }
-        create_equipment_variant = {
-          name = "M15/42"
-          type = medium_tank_chassis_2
-          parent_version = 0
-          modules = {
-            main_armament_slot = tank_medium_cannon_2
-            turret_type_slot = tank_medium_two_man_tank_turret
-            suspension_type_slot = tank_bogie_suspension
-            armor_type_slot = tank_riveted_armor
-            engine_type_slot = tank_gasoline_engine
-            special_type_slot_1 = additional_machine_guns
-            special_type_slot_2 = tank_radio_1
-          }
-          upgrades = {
-            tank_nsb_engine_upgrade = 4
-            tank_nsb_armor_upgrade = 5
-          }
-        }
-      }
-      else = {
-        add_tech_bonus = {
-          name = SRI_corpo_darmata_di_manovra
-          bonus = 0.75
-          uses = 2
-          category = armor
-        }
-        if = {
-          limit = {
-            has_dlc_lar = yes
-          }
-          add_tech_bonus = {
-            name = SRI_ragruppamenti_esploranti
-            bonus = 0.75
-            uses = 1
-            category = cat_armored_cars
-          }
-        }
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-      FOCUS_FILTER_RESEARCH
-      FOCUS_FILTER_PRODUCTION
-    }
-  }
-  		focus = {
-    id = FRA_reform_modena_military_academy
-    icon = GFX_goal_KEN_officer_corps
-    cost = 3
-    x = 31
-    y = 6
-	prerequisite = {
-		focus = FRA_military_academy
-		focus= FRA_empower_rifleman
-		focus = FRA_fast_army
-		focus=FRA_mass_fire_support
-	}
-    ai_will_do = {
-      factor = 20
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_reform_modena_military_academy"
-      army_experience = 15
-      add_doctrine_cost_reduction = {
-        name = SRI_reform_modena_military_academy
-        cost_reduction = 0.75
-        uses = 1
-        category = land_doctrine
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-      FOCUS_FILTER_ARMY_XP
-    }
-  }
-  focus = {
-    id = FRA_gruppi_di_difesa_della_donna
-    icon = GFX_goal_generic_female_liberation_syndicalist
-    cost = 3
-    relative_position_id = FRA_reform_modena_military_academy
-    x = -1
-    y = 1
-    prerequisite = {
-      focus = FRA_reform_modena_military_academy
-    }
-    ai_will_do = {
-      factor = 20
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_gruppi_di_difesa_della_donna"
-      add_stability = 0.05
-      add_war_support = 0.05
-      SRI_get_modify_army_dynmod_custom_effect_tooltip = yes
-      add_to_variable = {
-        SRI_ar_conscription_factor = 0.1
-        tooltip = conscription_factor_tooltip
-      }
-      set_rule = {
-        can_generate_female_aces = yes
-      }
-      
-      
-    }
-    search_filters = {
-      FOCUS_FILTER_MANPOWER
-      FOCUS_FILTER_STABILITY
-      FOCUS_FILTER_MANPOWER
-    }
-  }
-  focus = {
-    id = FRA_arditi_del_popolo
-    icon = GFX_goal_ITA_Arditi
-    cost = 3
-    relative_position_id = FRA_reform_modena_military_academy
-    x = 1
-    y = 1
-    prerequisite = {
-      focus = FRA_reform_modena_military_academy
-    }
-    ai_will_do = {
-      factor = 20
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_arditi_del_popolo"
-      army_experience = 15
-      custom_effect_tooltip = tooltip_white_line
-      custom_effect_tooltip = tech_assault_battalion_effect
-      hidden_effect = {
-        set_technology = {
-          tech_assault_battalion = 1
-          popup = no
-        }
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_XP
-      FOCUS_FILTER_ARMY_BONUS
-    }
-  }
-  focus = {
-    id = FRA_corpo_speciale
-    icon = GFX_goal_SRD_reform_carabinieri
-    cost = 3
-    x = 35
-    y = 6
-	prerequisite = {
-		focus = FRA_military_academy
-		focus= FRA_empower_rifleman
-		focus = FRA_fast_army
-		focus=FRA_mass_fire_support
-	}
-    ai_will_do = {
-      factor = 15
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_corpo_speciale"
-      SRI_get_modify_army_dynmod_custom_effect_tooltip = yes
-      add_to_variable = {
-        SRI_ar_special_forces_cap = 0.03
-        tooltip = special_forces_cap_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_special_forces_attack_factor = 0.05
-        tooltip = special_forces_attack_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_special_forces_defence_factor = 0.05
-        tooltip = special_forces_defence_factor_tooltip
-      }
-      custom_effect_tooltip = tooltip_white_line
-      if = {
-        limit = {
-          has_dlc_aat = no
-        }
-        add_tech_bonus = {
-          name = SRI_corpo_speciale
-          bonus = 1
-          uses = 3
-          category = cat_special_forces_generic
-        }
-      }
-      else = {
-        add_potential_special_forces_tree = yes
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-    }
-  }
-  focus = {
-    id = FRA_brigate_marine
-    icon = GFX_goal_generic_Syndicalist_Marines
-    cost = 3
-    available = {
-      has_tech = marines
-      has_tech = tech_recon
-      has_tech = tech_engineers
-    }
-    relative_position_id = FRA_corpo_speciale
-    x = -1
-    y = 1
-    prerequisite = {
-      focus = FRA_corpo_speciale
-    }
-    ai_will_do = {
-      factor = 15
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_brigate_marine"
-      SRI_get_modify_army_dynmod_custom_effect_tooltip = yes
-      add_to_variable = {
-        SRI_ar_special_forces_cap = 0.04
-        tooltip = special_forces_cap_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_modifier_army_sub_unit_marines_defence_factor = 0.05
-        tooltip = modifier_army_sub_unit_marines_defence_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_modifier_army_sub_unit_marines_max_org_factor = 0.05
-        tooltip = modifier_army_sub_unit_marines_max_org_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_extra_marine_supply_grace = 48
-        tooltip = extra_marine_supply_grace_tooltip
-      }
-      custom_effect_tooltip = tooltip_white_line
-      if = {
-        limit = {
-          has_dlc_aat = yes
-        }
-        add_tech_bonus = {
-          name = SRI_brigate_marine
-          bonus = 1
-          uses = 1
-          category = marine_tech
-          category = tp_tech
-        }
-      }
-      else = {
-        add_tech_bonus = {
-          name = SRI_brigate_marine
-          bonus = 0.75
-          uses = 2
-          category = marine_tech
-          category = tp_tech
-        }
-      }
-      custom_effect_tooltip = tooltip_white_line
-      hidden_effect = {
-        if = {
-          limit = {
-            has_template = "Brigata Marina"
-          }
-          delete_unit_template_and_units = {
-            division_template = "Brigata Marina"
-            disband = yes
-          }
-        }
-      }
-      if = {
-        limit = {
-          has_tech = special_forces_marines
-        }
-        division_template = {
-          name = "Brigata Marina"
-          division_names_group = SRI_MAR_01
-          regiments = {
-            marine = {
-              x = 0
-              y = 0
-            }
-            marine = {
-              x = 0
-              y = 1
-            }
-            marine = {
-              x = 0
-              y = 2
-            }
-            marine = {
-              x = 1
-              y = 0
-            }
-            marine = {
-              x = 1
-              y = 1
-            }
-            marine = {
-              x = 1
-              y = 2
-            }
-          }
-          support = {
-            recon = {
-              x = 0
-              y = 0
-            }
-            pioneer_support = {
-              x = 0
-              y = 1
-            }
-            artillery = {
-              x = 0
-              y = 2
-            }
-          }
-        }
-      }
-      else = {
-        division_template = {
-          name = "Brigata Marina"
-          division_names_group = SRI_MAR_01
-          regiments = {
-            marine = {
-              x = 0
-              y = 0
-            }
-            marine = {
-              x = 0
-              y = 1
-            }
-            marine = {
-              x = 0
-              y = 2
-            }
-            marine = {
-              x = 1
-              y = 0
-            }
-            marine = {
-              x = 1
-              y = 1
-            }
-            marine = {
-              x = 1
-              y = 2
-            }
-          }
-          support = {
-            recon = {
-              x = 0
-              y = 0
-            }
-            engineer = {
-              x = 0
-              y = 1
-            }
-            artillery = {
-              x = 0
-              y = 2
-            }
-          }
-        }
-      }
-      random_owned_controlled_state = {
-        prioritize = {
-          2
-          117
-          158
-          159
-          162
-        }
-        limit = {
-          valid_state_for_spawning_friendly_unit = yes
-        }
-        create_unit = {
-          division = "division_template = \"Brigata Marina\" start_experience_factor = 0.4"
-          owner = ROOT
-          count = 3
-        }
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-      FOCUS_FILTER_RESEARCH
-    }
-  }
-  focus = {
-    id = FRA_alpini_rossi
-    icon = GFX_goal_ITA_Alpini
-    cost = 3
-    available = {
-      has_tech = tech_mountaineers
-      has_tech = tech_recon
-      has_tech = tech_engineers
-    }
-    relative_position_id = FRA_corpo_speciale
-    x = 0
-    y = 2
-    prerequisite = {
-      focus = FRA_corpo_speciale
-    }
-    ai_will_do = {
-      factor = 15
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_alpini_rossi"
-      SRI_get_modify_army_dynmod_custom_effect_tooltip = yes
-      add_to_variable = {
-        SRI_ar_special_forces_cap = 0.04
-        tooltip = special_forces_cap_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_modifier_army_sub_unit_mountaineers_defence_factor = 0.05
-        tooltip = modifier_army_sub_unit_mountaineers_defence_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_modifier_army_sub_unit_mountaineers_max_org_factor = 0.05
-        tooltip = modifier_army_sub_unit_mountaineers_max_org_factor_tooltip
-      }
-      custom_effect_tooltip = tooltip_white_line
-      if = {
-        limit = {
-          has_dlc_aat = yes
-        }
-        add_tech_bonus = {
-          name = SRI_alpini_rossi
-          bonus = 1
-          uses = 1
-          category = mountaineers_tech
-        }
-      }
-      else = {
-        add_tech_bonus = {
-          name = SRI_alpini_rossi
-          bonus = 0.75
-          uses = 2
-          category = mountaineers_tech
-        }
-      }
-      custom_effect_tooltip = tooltip_white_line
-      hidden_effect = {
-        if = {
-          limit = {
-            has_template = "Divisione di Alpini Rossi"
-          }
-          delete_unit_template_and_units = {
-            division_template = "Divisione di Alpini Rossi"
-            disband = yes
-          }
-        }
-      }
-      division_template = {
-        name = "Divisione di Alpini Rossi"
-        division_names_group = SRI_MTN_01
-        regiments = {
-          mountaineers = {
-            x = 0
-            y = 0
-          }
-          mountaineers = {
-            x = 0
-            y = 1
-          }
-          mountaineers = {
-            x = 0
-            y = 2
-          }
-          mountaineers = {
-            x = 1
-            y = 0
-          }
-          mountaineers = {
-            x = 1
-            y = 1
-          }
-          mountaineers = {
-            x = 1
-            y = 2
-          }
-        }
-        support = {
-          recon = {
-            x = 0
-            y = 0
-          }
-          engineer = {
-            x = 0
-            y = 1
-          }
-          artillery = {
-            x = 0
-            y = 2
-          }
-        }
-      }
-      random_owned_controlled_state = {
-        prioritize = {
-          2
-          117
-          158
-          159
-          162
-        }
-        limit = {
-          valid_state_for_spawning_friendly_unit = yes
-        }
-        create_unit = {
-          division = "division_template = \"Divisione di Alpini Rossi\" start_experience_factor = 0.4"
-          owner = ROOT
-          count = 3
-        }
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-      FOCUS_FILTER_RESEARCH
-    }
-  }
-  focus = {
-    id = FRA_carabinieri_del_cielo
-    icon = GFX_goal_CRE_paratrooper_state
-    cost = 3
-    available = {
-      has_tech = paratroopers
-      has_tech = tech_recon
-      has_tech = tech_engineers
-    }
-    relative_position_id = FRA_corpo_speciale
-    x = 1
-    y = 1
-    prerequisite = {
-      focus = FRA_corpo_speciale
-    }
-    ai_will_do = {
-      factor = 10
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_carabinieri_del_cielo"
-      SRI_get_modify_army_dynmod_custom_effect_tooltip = yes
-      add_to_variable = {
-        SRI_ar_special_forces_cap = 0.04
-        tooltip = special_forces_cap_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_modifier_army_sub_unit_paratrooper_defence_factor = 0.05
-        tooltip = modifier_army_sub_unit_paratrooper_defence_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_modifier_army_sub_unit_paratrooper_max_org_factor = 0.05
-        tooltip = modifier_army_sub_unit_paratrooper_max_org_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_extra_paratrooper_supply_grace = 48
-        tooltip = extra_paratrooper_supply_grace_tooltip
-      }
-      custom_effect_tooltip = tooltip_white_line
-      if = {
-        limit = {
-          has_dlc_aat = yes
-        }
-        add_tech_bonus = {
-          name = SRI_carabinieri_del_cielo
-          bonus = 1
-          uses = 1
-          category = para_tech
-        }
-      }
-      else = {
-        add_tech_bonus = {
-          name = SRI_carabinieri_del_cielo
-          bonus = 0.75
-          uses = 2
-          category = para_tech
-        }
-      }
-      custom_effect_tooltip = tooltip_white_line
-      hidden_effect = {
-        if = {
-          limit = {
-            has_template = "Divisione di Carabinieri Paracadutisti"
-          }
-          delete_unit_template_and_units = {
-            division_template = "Divisione Carabinieri Paracadutisti"
-            disband = yes
-          }
-        }
-      }
-      if = {
-        limit = {
-          has_tech = paras_airborne_light_armor
-        }
-        division_template = {
-          name = "Divisione di Carabinieri Paracadutisti"
-          division_names_group = SRI_PAR_01
-          regiments = {
-            paratrooper = {
-              x = 0
-              y = 0
-            }
-            paratrooper = {
-              x = 0
-              y = 1
-            }
-            paratrooper = {
-              x = 0
-              y = 2
-            }
-            paratrooper = {
-              x = 1
-              y = 0
-            }
-            paratrooper = {
-              x = 1
-              y = 1
-            }
-            paratrooper = {
-              x = 1
-              y = 2
-            }
-          }
-          support = {
-            recon = {
-              x = 0
-              y = 0
-            }
-            engineer = {
-              x = 0
-              y = 1
-            }
-            artillery = {
-              x = 0
-              y = 2
-            }
-          }
-        }
-      }
-      else = {
-        division_template = {
-          name = "Divisione di Carabinieri Paracadutisti"
-          division_names_group = SRI_PAR_01
-          regiments = {
-            paratrooper = {
-              x = 0
-              y = 0
-            }
-            paratrooper = {
-              x = 0
-              y = 1
-            }
-            paratrooper = {
-              x = 0
-              y = 2
-            }
-            paratrooper = {
-              x = 1
-              y = 0
-            }
-            paratrooper = {
-              x = 1
-              y = 1
-            }
-            paratrooper = {
-              x = 1
-              y = 2
-            }
-          }
-          support = {
-            recon = {
-              x = 0
-              y = 0
-            }
-            engineer = {
-              x = 0
-              y = 1
-            }
-            airborne_light_armor = {
-              x = 0
-              y = 2
-            }
-          }
-        }
-      }
-      random_owned_controlled_state = {
-        prioritize = {
-          2
-          117
-          158
-          159
-          162
-        }
-        limit = {
-          valid_state_for_spawning_friendly_unit = yes
-        }
-        create_unit = {
-          division = "division_template = \"Divisione di Carabinieri Paracadutisti\" start_experience_factor = 0.4"
-          owner = ROOT
-          count = 3
-        }
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-      FOCUS_FILTER_RESEARCH
-    }
-  }
-  focus = {
-    id = FRA_la_guardia_rossa
-    icon = GFX_goal_reform_socialist_army
-    cost = 1
-	relative_position_id = FRA_modernise_the_armata_rossa	
-    x = -2
-    y = 1
-	prerequisite = {
-		focus = FRA_modernise_the_armata_rossa
-	  }
-	  available = {
-		OR = {
-		has_country_flag = ARMY_TRAV
-		has_country_flag = ARMY_JACO
-		has_country_flag = ARMY_SORE
+		focus = {
+			id = FRA_the_riflemans_friend
+			icon = GFX_focus_generic_military_equipment
+			cost = 3
+	
+			relative_position_id = FRA_integrate_the_corps_francs
+			x = 2
+			y = 0
+			prerequisite = {
+				focus = FRA_communal_army
+			}
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_the_riflemans_friend"
+				add_one_random_military_factory = yes
+				custom_effect_tooltip = tooltip_white_line
+				add_tech_bonus = {
+					name = FRA_the_riflemans_friend
+					bonus = 0.75
+					uses = 2
+					category = infantry_weapons
+				}
+			}
 		}
+		focus = {
+			id = FRA_eyes_on_the_ligne_bleue
+			icon = GFX_focus_AUS_osterreichische_gebirgsjager
+			cost = 3
+	
+			relative_position_id = FRA_the_riflemans_friend
+			x = 2
+			y = 0
+			prerequisite = {
+				focus = FRA_communal_army
+			}
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_eyes_on_the_ligne_bleue"
+				army_experience = 20
+				if = {
+					limit = { has_dlc_aat = yes }
+					add_tech_bonus = {
+						name = FRA_eyes_on_the_ligne_bleue
+						bonus = 1
+						uses = 1
+						category = mountaineers_tech
+					}
+					add_doctrine_cost_reduction = {
+						name = FRA_eyes_on_the_ligne_bleue
+						cost_reduction = 0.5
+						uses = 1
+						category = cat_mountaineers_doctrine
+					}
+				}
+				else = {
+					add_tech_bonus = {
+						name = FRA_eyes_on_the_ligne_bleue
+						bonus = 0.75
+						uses = 2
+						category = mountaineers_tech
+					}
+				}
+				custom_effect_tooltip = tooltip_white_line
+				set_technology = { tech_ski_infantry = 1 popup = yes }
+			}
+		}
+		focus = {
+			id = FRA_reform_the_high_command
+			icon = GFX_goal_FRA_army
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_integrate_the_corps_francs
+			}
+			prerequisite = {
+				focus = FRA_the_riflemans_friend
+			}
+			prerequisite = {
+				focus = FRA_eyes_on_the_ligne_bleue
+			}
+	
+			
+			x = 0
+			y = 2
+			relative_position_id = FRA_communal_army
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_reform_the_high_command"
+				add_war_support = 0.05
+				custom_effect_tooltip = tooltip_white_line
+				add_dynamic_modifier = { modifier = FRA_armee_federale_modifier }
+				custom_effect_tooltip = tooltip_white_line
+				set_technology = { masterful_blitz = 1 popup = yes }
+			}
+		}
+		focus = {
+			id = FRA_all_for_the_revolution
+			icon = GFX_focus_SOV_builder_of_the_red_army
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_mass_conscription
+			}
+			relative_position_id = FRA_mass_conscription
+	
+			x = 2
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_all_for_the_revolution"
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				add_to_variable = {
+					FRA_af_army_org_factor = 0.1
+					tooltip = army_org_factor_tooltip
+				}
+				add_to_variable = {
+					FRA_af_army_morale_factor = 0.1
+					tooltip = army_morale_factor_tooltip
+				}
+				custom_effect_tooltip = tooltip_white_line
+				add_doctrine_cost_reduction = {
+					name = FRA_all_for_the_revolution
+					cost_reduction = 0.5
+					uses = 2
+					category = land_doctrine
+				}
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = tooltip_adds_extra_effects_to_foci
+				custom_effect_tooltip = {
+					localization_key = tooltip_yellow_text
+					TEXT = FRA_the_modern_comrade_soldier
+				}
+				custom_effect_tooltip = {
+					localization_key = tooltip_yellow_text
+					TEXT = FRA_corps_du_genie_militaire
+				}
+				custom_effect_tooltip = {
+					localization_key = tooltip_yellow_text
+					TEXT = FRA_rapid_response_detachments
+				}
+			}
+		}
+		focus = {
+			id = FRA_our_comrades_fight_too
+			icon = GFX_goal_generic_solidarity
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_all_for_the_revolution
+			}
+			mutually_exclusive = {
+				focus = FRA_levee_en_masse
+			}
+	
+			relative_position_id = FRA_all_for_the_revolution
+			x = -1
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_our_comrades_fight_too"
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				add_to_variable = {
+					FRA_af_weekly_manpower = 3000
+					tooltip = weekly_manpower_tooltip
+				}
+				add_to_variable = {
+					FRA_af_modifier_army_sub_unit_militia_attack_factor = 0.05
+					tooltip = army_infantry_attack_factor_tooltip
+				}
+				add_to_variable = {
+					FRA_af_modifier_army_sub_unit_militia_defence_factor = 0.05
+					tooltip = army_infantry_defence_factor_tooltip
+				}
+				add_to_variable = {
+					FRA_af_modifier_army_sub_unit_militia_max_org_factor = 0.05
+					tooltip = army_org_factor_tooltip
+				}
+				custom_effect_tooltip = tooltip_white_line
+			
+				custom_effect_tooltip = tooltip_white_line
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = FRA_create_international_brigade_template
+						NAME = "Volontaires Internationaux"
+					}
+					if = {
+						limit = { has_template = "Volontaires Internationaux" }
+						delete_unit_template_and_units = { division_template = "Volontaires Internationaux" disband = yes } #no cheating
+					}
+					division_template = {
+						name = "Volontaires Internationaux"
+						division_names_group = FRA_MIL_02
+						template_counter = 68
+						role = infantry
+						regiments = {
+							militia = { x = 0 y = 0 }
+							militia = { x = 0 y = 1 }
+							militia = { x = 0 y = 2 }
+							militia = { x = 1 y = 0 }
+							militia = { x = 1 y = 1 }
+							militia = { x = 1 y = 2 }
+							militia = { x = 2 y = 0 }
+							militia = { x = 2 y = 1 }
+							militia = { x = 2 y = 2 }
+						}
+						support = {
+							assault_battalion = { x = 0 y = 0 }
+							artillery = { x = 0 y = 1 }
+						}
+					}
+				}
+				custom_effect_tooltip = tooltip_white_line
+				random_controlled_state = {
+					prioritize = { 16 }
+					limit = { valid_state_for_spawning_friendly_unit = yes }
+					custom_override_tooltip = {
+						tooltip = {
+							localization_key = tooltip_spawn_units
+							COUNT = 8
+							TYPE = "Volontaires Internationaux"
+						}
+						create_unit = {
+							division = "division_template = \"Volontaires Internationaux\" start_experience_factor = 0.1 start_equipment_factor = 1.0"
+							owner = ROOT
+							count = 8
+						}
+					}
+				}
+			}
+		}
+		focus = {
+			id = FRA_levee_en_masse
+			icon = GFX_focus_generic_spur_communist_revolutions
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_all_for_the_revolution
+			}
+			mutually_exclusive = {
+				focus = FRA_our_comrades_fight_too
+			}
+	
+			relative_position_id = FRA_all_for_the_revolution
+			x = 1
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_levee_en_masse"
+				add_manpower = 50000
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				add_to_variable = {
+					FRA_af_conscription = 0.015
+					tooltip = conscription_tooltip
+				}
+				add_to_variable = {
+					FRA_af_mobilization_speed = 0.15
+					tooltip = mobilization_speed_tooltip
+				}
+			}
+		}
+		focus = {
+			id = FRA_the_methodical_war
+			icon = GFX_focus_BEL_legacy_of_the_great_war
+			cost = 3
+	
+			
+			prerequisite = {
+				focus = FRA_centralized_hc
+			}
+			
+			x = -2
+			y = 1
+			relative_position_id = FRA_centralized_hc
+			
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_the_methodical_war"
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				add_to_variable = {
+					FRA_af_max_planning = 0.25
+					tooltip = max_planning_tooltip
+				}
+				add_to_variable = {
+					FRA_af_planning_speed = 0.05
+					tooltip = planning_speed_tooltip
+				}
+				add_to_variable = {
+					FRA_af_max_command_power = 40
+					tooltip = max_command_power_tooltip
+				}
+				custom_effect_tooltip = tooltip_white_line
+				add_doctrine_cost_reduction = {
+					name = FRA_the_methodical_war
+					cost_reduction = 0.5
+					uses = 2
+					category = land_doctrine
+				}
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = tooltip_adds_extra_effects_to_foci
+				custom_effect_tooltip = {
+					localization_key = tooltip_yellow_text
+					TEXT = FRA_expand_the_fusiliers
+				}
+				custom_effect_tooltip = {
+					localization_key = tooltip_yellow_text
+					TEXT = FRA_corps_francs_hunters
+				}
+				custom_effect_tooltip = {
+					localization_key = tooltip_yellow_text
+					TEXT = FRA_deepen_the_fog_of_war
+				}
+			}
+		}
+		focus = {
+			id = FRA_an_armys_stomach
+			icon = GFX_focus_generic_reinforcing_the_supply_network
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_the_methodical_war
+			}
+	
+			relative_position_id = FRA_the_methodical_war
+			x = 0
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_an_armys_stomach"
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				add_to_variable = {
+					FRA_af_supply_factor = 0.15
+					tooltip = supply_factor_tooltip
+				}
+				add_to_variable = {
+					FRA_af_max_dig_in = 5
+					tooltip = max_dig_in_tooltip
+				}
+				add_to_variable = {
+					FRA_af_dig_in_speed_factor = 0.15
+					tooltip = dig_in_speed_factor_tooltip
+				}
+				custom_effect_tooltip = tooltip_white_line
+				add_tech_bonus = {
+					name = FRA_an_armys_stomach
+					ahead_reduction = 1.5
+					bonus = 0.5
+					uses = 1
+					category = train_tech
+				}
+			}
+		}
+		focus = {
+			id = FRA_principe_de_concentration
+			icon = GFX_focus_SWE_let_fly_all_guns
+			cost = 3
+	
+			
+			prerequisite = {
+				focus = FRA_officers_initiative
+			}
+			relative_position_id = FRA_officers_initiative
+			x = 1
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_principe_de_concentration"
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				add_to_variable = {
+					FRA_af_army_artillery_attack_factor = 0.1
+					tooltip = army_artillery_attack_factor_tooltip
+				}
+				add_to_variable = {
+					FRA_af_army_artillery_defence_factor = 0.1
+					tooltip = army_artillery_defence_factor_tooltip
+				}
+				custom_effect_tooltip = tooltip_white_line
+				add_doctrine_cost_reduction = {
+					name = FRA_principe_de_concentration
+					cost_reduction = 0.5
+					uses = 2
+					category = land_doctrine
+				}
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = tooltip_adds_extra_effects_to_foci
+				custom_effect_tooltip = {
+					localization_key = tooltip_yellow_text
+					TEXT = FRA_legacy_of_the_grande_batterie
+				}
+				custom_effect_tooltip = {
+					localization_key = tooltip_yellow_text
+					TEXT = FRA_precise_fire_control
+				}
+				custom_effect_tooltip = {
+					localization_key = tooltip_yellow_text
+					TEXT = FRA_dual_purpose_howitzers
+				}
+			}
+		}
+		focus = {
+			id = FRA_aero_terrestrial_integration
+			icon = GFX_focus_generic_armored_air_support
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_principe_de_concentration
+			}
+	
+			relative_position_id = FRA_principe_de_concentration
+			x = 1
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_aero_terrestrial_integration"
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				add_to_variable = {
+					FRA_af_initiative_factor = 0.05
+					tooltip = initiative_factor_tooltip
+				}
+				add_to_variable = {
+					FRA_af_coordination_bonus = 0.05
+					tooltip = coordination_bonus_tooltip
+				}
+				custom_effect_tooltip = tooltip_white_line
+				set_technology = { tech_strengthened_support_companies = 1 popup = yes }
+			}
+		}
+		focus = {
+			id = FRA_supremacy_of_movement
+			icon = GFX_focus_generic_tankette
+			cost = 3
+	
+			
+			prerequisite = {
+				focus = FRA_principe_concentration
+			}
 		
-	}
-    mutually_exclusive = {
-      focus = FRA_la_legione_proletaria
-    }
-    ai_will_do = {
-      factor = 15
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_la_guardia_rossa"
-      effect_tooltip = {
-        add_ideas = SRI_guardia_rossa_dummy
-      }
-      hidden_effect = {
-        add_to_variable = {
-          SRI_ar_org_loss_when_moving = -0.15
-        }
-        add_dynamic_modifier = {
-          modifier = SRI_guardia_rossa_modifier
-        }
-      }
-      custom_effect_tooltip = tooltip_white_line
-      add_doctrine_cost_reduction = {
-        name = SRI_la_guardia_rossa
-        cost_reduction = 0.25
-        uses = 1
-        category = land_doctrine
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-    }
-  }
-  focus = {
-    id = FRA_formazione_di_difesa
-    icon = GFX_goal_FRA_Defence_Revolution
-    cost = 3
-    x = 28
-    y = 9
-	prerequisite = {
-		focus = FRA_scuole_centrale_militare
-	  }
-    ai_will_do = {
-      factor = 20
-      modifier = {
-        factor = 0
-        NOT = {
-          has_completed_focus = FRA_arditi_del_popolo
-        }
-      }
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_formazione_di_difesa"
-      custom_effect_tooltip = SRI_modify_guardia_rossa
-      add_to_variable = {
-        SRI_ar_modifier_army_sub_unit_militia_attack_factor = 0.05
-        tooltip = modifier_army_sub_unit_militia_attack_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_modifier_army_sub_unit_militia_defence_factor = 0.05
-        tooltip = modifier_army_sub_unit_militia_defence_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_modifier_army_sub_unit_militia_max_org_factor = 0.05
-        tooltip = modifier_army_sub_unit_militia_max_org_factor_tooltip
-      }
-      custom_effect_tooltip = tooltip_white_line
-      hidden_effect = {
-        if = {
-          limit = {
-            has_template = "Formazione di Difesa Proletaria"
-          }
-          delete_unit_template_and_units = {
-            division_template = "Divisione Formazione di Difesa Proletaria"
-            disband = yes
-          }
-        }
-      }
-      custom_effect_tooltip = SRI_gain_militia_template
-      division_template = {
-        name = "Formazione di Difesa Proletaria"
-        division_names_group = SRI_GAR_01
-        template_counter = 68
-        regiments = {
-          militia = {
-            x = 0
-            y = 0
-          }
-          militia = {
-            x = 0
-            y = 1
-          }
-          militia = {
-            x = 0
-            y = 2
-          }
-          militia = {
-            x = 1
-            y = 0
-          }
-          militia = {
-            x = 1
-            y = 1
-          }
-          militia = {
-            x = 1
-            y = 2
-          }
-        }
-        support = {
-          artillery = {
-            x = 0
-            y = 0
-          }
-        }
-      }
-      custom_effect_tooltip = tooltip_white_line
-      every_controlled_state = {
-        display_individual_scopes = yes
-        limit = {
-          is_core_of = ROOT
-          state_population_k > 120
-          impassable = no
-        }
-        create_unit = {
-          division = "division_template = \"Formazione di Difesa Proletaria\" start_experience_factor = 0.1"
-          owner = ROOT
-        }
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-    }
-  }
-  focus = {
-    id = FRA_autotrasportabilita
-    icon = GFX_goal_generic_mechanized_infantry
-    cost = 3
-    x = 31
-    y = 8
-	prerequisite = {
-		focus = FRA_scuole_centrale_militare
-	  }
-    ai_will_do = {
-      factor = 20
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_autotrasportabilita"
-      custom_effect_tooltip = SRI_modify_guardia_rossa
-      add_to_variable = {
-        SRI_ar_initiative_factor = 0.02
-        tooltip = initiative_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_army_speed_factor = 0.05
-        tooltip = army_speed_factor_tooltip
-      }
-      custom_effect_tooltip = tooltip_white_line
-      add_tech_bonus = {
-        name = SRI_autotrasportabilita
-        ahead_reduction = 1
-        bonus = 1
-        uses = 1
-        category = cat_mechanized_equipment
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-      FOCUS_FILTER_RESEARCH
-    }
-  }
-  focus = {
-    id = FRA_scuole_centrale_militare
-    icon = GFX_goal_CSA_peoples_military_academy
-    cost = 3
-    x = 28
-    y = 7
-	prerequisite = {
-		focus = FRA_la_guardia_rossa
-}
-    ai_will_do = {
-      factor = 20
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_scuole_centrale_militare"
-      army_experience = 25
-      custom_effect_tooltip = SRI_modify_guardia_rossa
-      add_to_variable = {
-        SRI_ar_coordination_bonus = 0.05
-        tooltip = coordination_bonus_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_army_armor_attack_factor = 0.05
-        tooltip = army_armor_attack_factor_tooltip
-      }
-      custom_effect_tooltip = tech_strengthened_support_companies_effect_tooltip
-      hidden_effect = {
-        set_technology = {
-          tech_strengthened_support_companies = 1
-          popup = no
-        }
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-      FOCUS_FILTER_ARMY_XP
-    }
-  }
-  focus = {
-    id = FRA_guerra_brigantesca
-    icon = GFX_goal_VIN_from_brigands_nationa_revolutionaries
-    cost = 3
-    relative_position_id = FRA_scuole_centrale_militare
-    x = -1
-    y = 1
-    prerequisite = {
-      focus = FRA_scuole_centrale_militare
-    }
-    mutually_exclusive = {
-      focus = FRA_guardia_alla_frontiera
-    }
-    ai_will_do = {
-      factor = 20
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 2
-        is_in_faction = yes
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_guerra_brigantesca"
-      custom_effect_tooltip = SRI_modify_guardia_rossa
-      add_to_variable = {
-        SRI_ar_terrain_penalty_reduction = 0.05
-        tooltip = terrain_penalty_reduction_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_army_attack_speed_factor = 0.05
-        tooltip = army_attack_speed_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_cas_damage_reduction = 0.05
-        tooltip = cas_damage_reduction_tooltip
-      }
-      custom_effect_tooltip = tooltip_white_line
-      add_doctrine_cost_reduction = {
-        name = SRI_guerra_brigantesca
-        cost_reduction = 0.5
-        uses = 1
-        category = land_doctrine
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-    }
-  }
-  focus = {
-    id = FRA_guardia_alla_frontiera
-    icon = GFX_TRM_Secure_Borders
-    cost = 3
-    relative_position_id = FRA_scuole_centrale_militare
-    x = 1
-    y = 1
-    prerequisite = {
-      focus = FRA_scuole_centrale_militare
-    }
-    mutually_exclusive = {
-      focus = FRA_guerra_brigantesca
-    }
-    ai_will_do = {
-      factor = 20
-      modifier = {
-        factor = 4
-        has_war = yes
-      }
-      modifier = {
-        factor = 2
-        is_in_faction = no
-      }
-      modifier = {
-        factor = 1.5
-        date > 1937.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1938.1.1
-      }
-      modifier = {
-        factor = 1.5
-        date > 1939.1.1
-      }
-    }
-    completion_reward = {
-      log = "[GetDateText]: [Root.GetName]: Focus SRI_guardia_alla_frontiera"
-      custom_effect_tooltip = SRI_modify_guardia_rossa
-      add_to_variable = {
-        SRI_ar_max_dig_in_factor = 0.1
-        tooltip = max_dig_in_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_land_bunker_effectiveness_factor = 0.05
-        tooltip = land_bunker_effectiveness_factor_tooltip
-      }
-      add_to_variable = {
-        SRI_ar_coastal_bunker_effectiveness_factor = 0.05
-        tooltip = coastal_bunker_effectiveness_factor_tooltip
-      }
-      custom_effect_tooltip = tooltip_white_line
-      add_tech_bonus = {
-        name = SRI_guardia_alla_frontiera
-        bonus = 1
-        uses = 1
-        category = engineers_tech
-      }
-      add_doctrine_cost_reduction = {
-        name = SRI_guardia_alla_frontiera
-        cost_reduction = 0.5
-        uses = 1
-        category = land_doctrine
-      }
-    }
-    search_filters = {
-      FOCUS_FILTER_ARMY_BONUS
-      FOCUS_FILTER_RESEARCH
-    }
-  }
+	
+			x = -3
+			y = 1
+			relative_position_id = FRA_principe_concentration
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_supremacy_of_movement"
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				add_to_variable = {
+					FRA_af_army_speed_factor = 0.1
+					tooltip = army_speed_factor_tooltip
+				}
+				add_to_variable = {
+					FRA_af_org_loss_when_moving = -0.2
+					tooltip = org_loss_when_moving_tooltip
+				}
+				custom_effect_tooltip = tooltip_white_line
+				add_doctrine_cost_reduction = {
+					name = FRA_supremacy_of_movement
+					cost_reduction = 0.5
+					uses = 2
+					category = land_doctrine
+				}
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = tooltip_adds_extra_effects_to_foci
+				custom_effect_tooltip = {
+					localization_key = tooltip_yellow_text
+					TEXT = FRA_comrade_estiennes_heritage
+				}
+				custom_effect_tooltip = {
+					localization_key = tooltip_yellow_text
+					TEXT = FRA_the_battlefields_new_queen
+				}
+				custom_effect_tooltip = {
+					localization_key = tooltip_yellow_text
+					TEXT = FRA_mobile_fortresses
+				}
+				custom_effect_tooltip = {
+					localization_key = tooltip_yellow_text
+					TEXT = FRA_overwhelming_firepower
+				}
+			}
+		}
+		focus = {
+			id = FRA_la_petite_reine
+			icon = GFX_focus_SWE_bicycle
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_supremacy_of_movement
+			}
+			
+			relative_position_id = FRA_supremacy_of_movement
+			x = -2
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_la_petite_reine"
+				add_one_random_military_factory = yes
+				add_one_random_military_factory = yes
+				custom_effect_tooltip = tooltip_white_line
+				set_technology = { bicycle_infantry = 1 popup = no }
+			}
+		}
+		focus = {
+			id = FRA_overrun_capitals_front_lines
+			icon = GFX_goal_generic_mobile_trucks
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_supremacy_of_movement
+			}
+			
+			relative_position_id = FRA_supremacy_of_movement
+			x = 0
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_overrun_capitals_front_lines"
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				if = {
+					limit = { has_dlc_lar = yes }
+					custom_override_tooltip = {
+						tooltip = FRA_motor_production_bonus
+						add_ideas = FRA_af_hidden_motor_production_bonus
+					}
+				}
+				else = {
+					custom_override_tooltip = {
+						tooltip = FRA_motor_production_bonus_no_lar
+						add_ideas = FRA_af_hidden_motor_production_bonus_no_lar
+					}
+				}
+			}
+		}
+		focus = {
+			id = FRA_the_modern_comrade_soldier
+			icon = GFX_goal_FRA_lumpen_appeals
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_legacy_of_the_grande_batterie
+	
+			}
+	
+			x = -3
+			y = 3
+			relative_position_id = FRA_reform_the_high_command
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_the_modern_comrade_soldier"
+				army_experience = 50
+				add_command_power = 25
+				custom_effect_tooltip = tooltip_white_line
+				every_army_leader = {
+					display_individual_scopes = yes
+					random_select_amount = 4
+					limit = {
+						is_field_marshal = no
+						NOT = { has_trait = RUS_red_army_trait } #Tukhachevsky
+						NOT = { has_trait = INT_polish_exile_trait } #Rokossowski
+					}
+					add_max_trait = 1
+				}
+				if = {
+					limit = { has_completed_focus = FRA_all_for_the_revolution }
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_extra_effect_from_focus_completion
+						FOCUS = FRA_all_for_the_revolution
+					}
+					set_technology = { forest_warfare = 1 popup = yes }
+					set_technology = { jungle_warfare = 1 popup = yes }
+				}
+				else_if = {
+					limit = {
+						NOT = { has_completed_focus = FRA_the_methodical_war }
+						NOT = { has_completed_focus = FRA_principe_de_concentration }
+						NOT = { has_completed_focus = FRA_supremacy_of_movement }
+					}
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_if_focus_completed
+						FOCUS = FRA_all_for_the_revolution
+					}
+					set_technology = { forest_warfare = 1 popup = yes }
+					set_technology = { jungle_warfare = 1 popup = yes }
+				}
+			}
+		}
+		focus = {
+			id = FRA_expand_the_fusiliers
+			icon = GFX_focus_eng_special_air_service
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_the_modern_comrade_soldier
+			}
+	
+			relative_position_id = FRA_the_modern_comrade_soldier
+			x = -1
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_expand_the_fusiliers"
+				army_experience = 20
+				custom_effect_tooltip = tooltip_white_line
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				add_to_variable = {
+					FRA_af_modifier_army_sub_unit_marines_max_org_factor = 0.05
+					tooltip = army_attack_factor_tooltip
+				}
+				
+				custom_effect_tooltip = tooltip_white_line
+				if = {
+					limit = { has_dlc_aat = no }
+					add_tech_bonus = {
+						name = FRA_expand_the_fusiliers
+						bonus = 1
+						uses = 3
+						category = cat_special_forces_generic
+					}
+				}
+				else = {
+					add_potential_special_forces_tree = yes
+				}
+				if = {
+					limit = { has_completed_focus = FRA_the_methodical_war }
+					custom_effect_tooltip = tooltip_white_line
+				
+					add_to_variable = {
+						FRA_af_special_forces_defence_factor = 0.05
+						tooltip = army_defence_tooltip
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = { has_completed_focus = FRA_all_for_the_revolution }
+						NOT = { has_completed_focus = FRA_principe_de_concentration }
+						NOT = { has_completed_focus = FRA_supremacy_of_movement }
+					}
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_if_focus_completed
+						FOCUS = FRA_the_methodical_war
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					effect_tooltip = {
+						add_to_variable = {
+							FRA_af_special_forces_defence_factor = 0.05
+						tooltip = army_defence_tooltip
+						}
+					}
+				}
+			}
+		}
+		focus = {
+			id = FRA_corps_francs_hunters
+			icon = GFX_focus_prc_infiltration
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_expand_the_fusiliers
+			}
+	
+			relative_position_id = FRA_expand_the_fusiliers
+			x = -1
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_corps_francs_hunters"
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				add_to_variable = {
+					FRA_af_special_forces_out_of_supply_factor = -0.1
+					tooltip = out_of_supply_factor_tooltip
+				}
+				add_to_variable = {
+					FRA_af_no_supply_grace = 24
+					tooltip = no_supply_grace_tooltip
+				}
+				
+				if = {
+					limit = { has_completed_focus = FRA_the_methodical_war }
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_extra_effect_from_focus_completion
+						FOCUS = FRA_the_methodical_war
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					add_to_variable = {
+						FRA_af_special_forces_cap = 0.05
+						tooltip = special_forces_cap_tooltip
+					}
+					add_to_variable = {
+						FRA_af_no_supply_grace = 48
+						tooltip = no_supply_grace_tooltip
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = { has_completed_focus = FRA_all_for_the_revolution }
+						NOT = { has_completed_focus = FRA_principe_de_concentration }
+						NOT = { has_completed_focus = FRA_supremacy_of_movement }
+					}
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_if_focus_completed
+						FOCUS = FRA_the_methodical_war
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					effect_tooltip = {
+						add_to_variable = {
+							FRA_af_special_forces_cap = 0.05
+							tooltip = special_forces_cap_tooltip
+						}
+						add_to_variable = {
+							FRA_af_special_forces_out_of_supply_factor = -0.05
+							tooltip = special_forces_out_of_supply_factor_tooltip
+						}
+						add_to_variable = {
+							FRA_af_no_supply_grace = 24
+							tooltip = no_supply_grace_tooltip
+						}
+					}
+				}
+			}
+		}
+		focus = {
+			id = FRA_deepen_the_fog_of_war
+			icon = GFX_focus_generic_radio_communication
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_expand_the_fusiliers
+			}
+	
+			relative_position_id = FRA_expand_the_fusiliers
+			x = 1
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_deepen_the_fog_of_war"
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				add_to_variable = {
+					FRA_af_cas_damage_reduction = 0.1
+					tooltip = cas_damage_reduction_tooltip
+				}
+				add_to_variable = {
+					FRA_af_recon_factor = 0.25
+					tooltip = recon_factor_tooltip
+				}
+				if = {
+					limit = { has_completed_focus = FRA_the_methodical_war }
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_extra_effect_from_focus_completion
+						FOCUS = FRA_the_methodical_war
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					add_to_variable = {
+						FRA_af_coordination_bonus = 0.05
+						tooltip = coordination_bonus_tooltip
+					}
+					add_to_variable = {
+						FRA_af_special_forces_cap = 0.05
+						tooltip = special_forces_cap_tooltip
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = { has_completed_focus = FRA_all_for_the_revolution }
+						NOT = { has_completed_focus = FRA_principe_de_concentration }
+						NOT = { has_completed_focus = FRA_supremacy_of_movement }
+					}
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_if_focus_completed
+						FOCUS = FRA_the_methodical_war
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					effect_tooltip = {
+						add_to_variable = {
+							FRA_af_coordination_bonus = 0.05
+							tooltip = coordination_bonus_tooltip
+						}
+						add_to_variable = {
+							FRA_af_special_forces_cap = 0.05
+							tooltip = special_forces_cap_tooltip
+						}
+					}
+				}
+			}
+		}
+		focus = {
+			id = FRA_chasseurs_portes
+			icon = GFX_goal_FRA_Revolutionary_Guerilla_Tactics
+				
+				 
+			
+			
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_the_modern_comrade_soldier
+			}
+	
+			relative_position_id = FRA_the_modern_comrade_soldier
+			x = 1
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_chasseurs_portes"
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				add_to_variable = {
+					FRA_af_cavalry_attack_factor = 0.05
+					tooltip = army_infantry_attack_factor_tooltip
+				}
+				add_to_variable = {
+					FRA_af_cavalry_defence_factor = 0.05
+					tooltip = army_infantry_defence_factor_tooltip
+				}
+				custom_effect_tooltip = tooltip_white_line
+				set_technology = { tech_semi_motorised_cav = 1 popup = yes }
+				custom_effect_tooltip = tooltip_white_line
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = FRA_create_cavalry_template
+						NAME = "Division de Chasseurs Portés"
+					}
+					if = {
+						limit = { has_template = "Division de Chasseurs Portés" }
+						delete_unit_template_and_units = { division_template = "Division de Chasseurs Portés" disband = yes } #no cheating
+					}
+					division_template = {
+						name = "Division de Chasseurs Portés"
+						division_names_group = FRA_CAV_01
+						regiments = {
+							cavalry = { x = 0 y = 0 }
+							cavalry = { x = 0 y = 1 }
+							cavalry = { x = 0 y = 2 }
+							cavalry = { x = 1 y = 0 }
+							cavalry = { x = 1 y = 1 }
+							cavalry = { x = 1 y = 2 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+							artillery = { x = 0 y = 1 }
+							recon = { x = 0 y = 2 }
+						}
+					}
+				}
+				custom_effect_tooltip = tooltip_white_line
+				random_controlled_state = {
+					prioritize = { 16 }
+					limit = { valid_state_for_spawning_friendly_unit = yes }
+					custom_override_tooltip = {
+						tooltip = {
+							localization_key = tooltip_spawn_units
+							COUNT = 4
+							TYPE = "Division de Chasseurs Portés"
+						}
+						create_unit = {
+							division = "division_template = \"Division de Chasseurs Portés\" start_experience_factor = 0.8 start_equipment_factor = 1.0"
+							owner = ROOT
+							count = 4
+						}
+					}
+				}
+			}
+		}
+		focus = {
+			id = FRA_corps_du_genie_militaire
+			icon = GFX_goal_generic_construction2
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_the_modern_comrade_soldier
+				focus = FRA_precise_fire_control
+			}
+	
+			relative_position_id = FRA_the_modern_comrade_soldier
+			x = 3
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_corps_du_genie_militaire"
+				add_tech_bonus = {
+					name = FRA_corps_du_genie_militaire
+					bonus = 0.75
+					uses = 2
+					category = engineers_tech
+				}
+				custom_effect_tooltip = tooltip_white_line
+				set_technology = { expanded_engineer_corps_tech = 1 popup = yes }
+				if = {
+					limit = { has_completed_focus = FRA_all_for_the_revolution }
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_extra_effect_from_focus_completion
+						FOCUS = FRA_all_for_the_revolution
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					add_to_variable = {
+						FRA_af_army_attack_speed_factor = 0.1
+						tooltip = army_attack_speed_tooltip
+					}
+					add_to_variable = {
+						FRA_af_org_loss_at_low_org_factor = -0.1
+						tooltip = org_loss_at_low_org_factor_tooltip
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = { has_completed_focus = FRA_the_methodical_war }
+						NOT = { has_completed_focus = FRA_principe_de_concentration }
+						NOT = { has_completed_focus = FRA_supremacy_of_movement }
+					}
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_if_focus_completed
+						FOCUS = FRA_all_for_the_revolution
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					effect_tooltip = {
+						add_to_variable = {
+							FRA_af_army_attack_speed_factor = 0.1
+							tooltip = army_attack_speed_tooltip
+						}
+						add_to_variable = {
+							FRA_af_org_loss_at_low_org_factor = -0.1
+							tooltip = org_loss_at_low_org_factor_tooltip
+						}
+					}
+				}
+			}
+		}
+		focus = {
+			id = FRA_rapid_response_detachments
+			icon = GFX_focus_generic_field_hostpital
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_corps_du_genie_militaire
+			}
+	
+			relative_position_id = FRA_corps_du_genie_militaire
+			x = 0
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_rapid_response_detachments"
+				add_tech_bonus = {
+					name = FRA_rapid_response_detachments
+					bonus = 0.75
+					uses = 2
+					category = hospital_tech
+				}
+				custom_effect_tooltip = tooltip_white_line
+				set_technology = { improved_field_hospitals = 1 popup = yes }
+				if = {
+					limit = { has_completed_focus = FRA_all_for_the_revolution }
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_extra_effect_from_focus_completion
+						FOCUS = FRA_all_for_the_revolution
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					add_to_variable = {
+						FRA_af_initiative_factor = 0.04
+						tooltip = initiative_factor_tooltip
+					}
+					add_to_variable = {
+						FRA_af_land_reinforce_rate = 0.05
+						tooltip = land_reinforce_rate_tooltip
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = { has_completed_focus = FRA_the_methodical_war }
+						NOT = { has_completed_focus = FRA_principe_de_concentration }
+						NOT = { has_completed_focus = FRA_supremacy_of_movement }
+					}
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_if_focus_completed
+						FOCUS = FRA_all_for_the_revolution
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					effect_tooltip = {
+						add_to_variable = {
+							FRA_af_initiative_factor = 0.04
+							tooltip = initiative_factor_tooltip
+						}
+						add_to_variable = {
+							FRA_af_land_reinforce_rate = 0.05
+							tooltip = land_reinforce_rate_tooltip
+						}
+					}
+				}
+			}
+		}
+		focus = {
+			id = FRA_legacy_of_the_grande_batterie
+			icon = GFX_goal_generic_army_artillery
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_principe_concentration
+				focus = FRA_centralized_hc
+				focus = FRA_officers_initiative
+				focus = FRA_mass_conscription
+			}
+	
+	
+			x = 0
+			y = 2
+			relative_position_id = FRA_reform_the_high_command
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_legacy_of_the_grande_batterie"
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				custom_override_tooltip = {
+					tooltip = FRA_artillery_production_bonus
+					add_ideas = FRA_af_hidden_artillery_production_bonus
+				}
+				if = {
+					limit = { has_completed_focus = FRA_principe_de_concentration }
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_extra_effect_from_focus_completion
+						FOCUS = FRA_principe_de_concentration
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					add_to_variable = {
+						FRA_af_breakthrough_factor = 0.05
+						tooltip = breakthrough_factor_tooltip
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = { has_completed_focus = FRA_all_for_the_revolution }
+						NOT = { has_completed_focus = FRA_the_methodical_war }
+						NOT = { has_completed_focus = FRA_supremacy_of_movement }
+					}
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_if_focus_completed
+						FOCUS = FRA_principe_de_concentration
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					effect_tooltip = {
+						add_to_variable = {
+							FRA_af_breakthrough_factor = 0.05
+							tooltip = breakthrough_factor_tooltip
+						}
+					}
+				}
+			}
+		}
+		focus = {
+			id = FRA_precise_fire_control
+			icon = GFX_focus_generic_anti_tank_guns
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_legacy_of_the_grande_batterie
+			}
+	
+			relative_position_id = FRA_legacy_of_the_grande_batterie
+			x = -1
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_precise_fire_control"
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				add_to_variable = {
+					FRA_af_army_artillery_attack_factor = 0.15
+					tooltip = army_artillery_attack_factor_tooltip
+				}
+				custom_effect_tooltip = tooltip_white_line
+				add_tech_bonus = {
+					name = FRA_precise_fire_control
+					bonus = 0.75
+					uses = 2
+					category = artillery
+				}
+				if = {
+					limit = { has_dlc_aat = yes }
+					custom_effect_tooltip = tooltip_white_line
+					mio:FRA_atelier_de_puteaux_organisation = {
+						add_mio_funds = 500
+						add_mio_funds_gain_factor = 0.1
+						add_mio_research_bonus = 0.05
+					}
+				}
+				if = {
+					limit = { has_dlc_gtd = yes }
+					custom_effect_tooltip = tooltip_white_line
+					add_breakthrough_progress = {
+						specialization = specialization_land
+						value = 0.25
+					}
+				}
+				if = {
+					limit = { has_completed_focus = FRA_principe_de_concentration }
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_extra_effect_from_focus_completion
+						FOCUS = FRA_principe_de_concentration
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					add_to_variable = {
+						FRA_af_army_artillery_attack_factor = 0.05
+						tooltip = army_artillery_attack_factor_tooltip
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = { has_completed_focus = FRA_all_for_the_revolution }
+						NOT = { has_completed_focus = FRA_the_methodical_war }
+						NOT = { has_completed_focus = FRA_supremacy_of_movement }
+					}
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_if_focus_completed
+						FOCUS = FRA_principe_de_concentration
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					effect_tooltip = {
+						add_to_variable = {
+							FRA_af_breakthrough_factor = 0.05
+							tooltip = breakthrough_factor_tooltip
+						}
+					}
+				}
+			}
+		}
+		focus = {
+			id = FRA_dual_purpose_howitzers
+			icon = GFX_goal_generic_dual_purpose_guns
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_legacy_of_the_grande_batterie
+			}
+	
+			relative_position_id = FRA_legacy_of_the_grande_batterie
+			x = 1
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_dual_purpose_howitzers"
+				add_tech_bonus = {
+					name = FRA_dual_purpose_howitzers
+					ahead_reduction = 2
+					bonus = 0.75
+					uses = 2
+					category = artillery
+				}
+				if = {
+					limit = { has_dlc_aat = yes }
+					custom_effect_tooltip = tooltip_white_line
+					mio:FRA_atelier_de_puteaux_organisation = {
+						add_mio_funds = 500
+						add_mio_funds_gain_factor = 0.1
+						add_mio_research_bonus = 0.05
+					}
+				}
+				if = {
+					limit = { has_dlc_gtd = yes }
+					custom_effect_tooltip = tooltip_white_line
+					add_breakthrough_progress = {
+						specialization = specialization_land
+						value = 0.25
+					}
+				}
+				if = {
+					limit = { has_completed_focus = FRA_principe_de_concentration }
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_extra_effect_from_focus_completion
+						FOCUS = FRA_principe_de_concentration
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					add_to_variable = {
+						FRA_af_army_artillery_defence_factor = 0.05
+						tooltip = army_artillery_defence_factor_tooltip
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = { has_completed_focus = FRA_all_for_the_revolution }
+						NOT = { has_completed_focus = FRA_the_methodical_war }
+						NOT = { has_completed_focus = FRA_supremacy_of_movement }
+					}
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_if_focus_completed
+						FOCUS = FRA_principe_de_concentration
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					effect_tooltip = {
+						add_to_variable = {
+							FRA_af_breakthrough_factor = 0.05
+							tooltip = breakthrough_factor_tooltip
+						}
+					}
+				}
+			}
+		}
+		focus = {
+			id = FRA_comrade_estiennes_heritage
+			icon = GFX_goal_doctrine_tank_warfare
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_legacy_of_the_grande_batterie
+	
+			}
+	
+			relative_position_id = FRA_reform_the_high_command
+			x = 3
+			y = 3
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_comrade_estiennes_heritage"
+				add_tech_bonus = {
+					name = FRA_comrade_estiennes_heritage
+					bonus = 1
+					uses = 1
+					category = armor
+				}
+				custom_effect_tooltip = tooltip_white_line
+				add_one_random_military_factory = yes
+				if = {
+					limit = { has_dlc_nsb = yes }
+					custom_effect_tooltip = tooltip_white_line
+					create_equipment_variant = {
+						name = "FCM 36"
+						type = light_tank_chassis_2
+						design_team = mio:FRA_somua_organisation
+						parent_version = 0
+						modules = {
+							main_armament_slot = tank_auto_cannon
+							turret_type_slot = tank_light_one_man_tank_turret
+							suspension_type_slot = tank_bogie_suspension
+							armor_type_slot = tank_riveted_armor
+							engine_type_slot = tank_gasoline_engine
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 2
+							tank_nsb_armor_upgrade = 4
+						}
+					}
+					create_equipment_variant = {
+						name = "Chasseur de Char FCM 36"
+						type = light_tank_destroyer_chassis_2
+						design_team = mio:FRA_somua_organisation
+						parent_version = 0
+						modules = {
+							main_armament_slot = tank_medium_cannon
+							turret_type_slot = tank_light_fixed_superstructure_turret
+							suspension_type_slot = tank_bogie_suspension
+							armor_type_slot = tank_riveted_armor
+							engine_type_slot = tank_gasoline_engine
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 2
+							tank_nsb_armor_upgrade = 4
+						}
+					}
+				}
+				if = {
+					limit = { has_dlc_aat = yes }
+					custom_effect_tooltip = tooltip_white_line
+					mio:FRA_lorraine_dietrich_organisation = { add_mio_size = 1 }
+				}
+				if = {
+					limit = { has_completed_focus = FRA_supremacy_of_movement }
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_extra_effect_from_focus_completion
+						FOCUS = FRA_supremacy_of_movement
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					add_to_variable = {
+						FRA_af_army_armor_attack_factor = 0.1
+						tooltip = army_armor_attack_factor_tooltip
+					}
+					add_to_variable = {
+						FRA_af_motorized_attack_factor = 0.05
+						tooltip = motorized_attack_factor_tooltip
+					}
+					add_to_variable = {
+						FRA_af_mechanized_attack_factor = 0.05
+						tooltip = mechanized_attack_factor_tooltip
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = { has_completed_focus = FRA_all_for_the_revolution }
+						NOT = { has_completed_focus = FRA_the_methodical_war }
+						NOT = { has_completed_focus = FRA_principe_de_concentration }
+					}
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_if_focus_completed
+						FOCUS = FRA_supremacy_of_movement
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					effect_tooltip = {
+						add_to_variable = {
+							FRA_af_army_armor_attack_factor = 0.1
+							tooltip = army_armor_attack_factor_tooltip
+						}
+						add_to_variable = {
+							FRA_af_motorized_attack_factor = 0.05
+							tooltip = motorized_attack_factor_tooltip
+						}
+						add_to_variable = {
+							FRA_af_mechanized_attack_factor = 0.05
+							tooltip = mechanized_attack_factor_tooltip
+						}
+					}
+				}
+			}
+		}
+		focus = {
+			id = FRA_proletarian_knights
+			icon = GFX_goal_generic_armored_cars
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_comrade_estiennes_heritage
+			}
+	
+			relative_position_id = FRA_comrade_estiennes_heritage
+			x = 1
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_proletarian_knights"
+				if = {
+					limit = { has_dlc_lar = yes }
+					add_tech_bonus = {
+						name = FRA_proletarian_knights
+						ahead_reduction = 1
+						bonus = 1
+						uses = 1
+						category = armor
+					}
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = tooltip_white_line
+					if = {
+						limit = { has_dlc_aat = yes }
+						mio:FRA_panhard_organisation = {
+							add_mio_funds = 1000
+							add_mio_funds_gain_factor = 0.2
+							add_mio_research_bonus = 0.05
+						}
+					}
+				}
+				else = {
+					add_tech_bonus = {
+						name = FRA_proletarian_knights
+						bonus = 0.5
+						uses = 2
+						category = support_tech
+					}
+					add_doctrine_cost_reduction = {
+						name = FRA_proletarian_knights
+						cost_reduction = 0.5
+						uses = 1
+						category = land_doctrine
+					}
+				}
+			}
+		}
+		focus = {
+			id = FRA_chars_du_futur
+			icon = GFX_goal_MON_Tank
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_comrade_estiennes_heritage
+			}
+			prerequisite = {
+				focus = FRA_dual_purpose_howitzers
+			}
+	
+			relative_position_id = FRA_comrade_estiennes_heritage
+			x = -1
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_chars_du_futur"
+				add_tech_bonus = {
+					name = FRA_chars_du_futur
+					ahead_reduction = 1
+					bonus = 1
+					uses = 1
+					category = cat_heavy_armor
+				}
+				if = {
+					limit = { has_dlc_gtd = yes }
+					custom_effect_tooltip = tooltip_white_line
+					add_breakthrough_progress = {
+						specialization = specialization_land
+						value = 1
+					}
+				}
+				if = {
+					limit = { has_dlc_nsb = yes }
+					custom_effect_tooltip = tooltip_white_line
+					create_equipment_variant = {
+						name = "Lorraine B1"
+						type = heavy_tank_chassis_1
+						design_team = mio:FRA_famh_organisation
+						parent_version = 0
+						modules = {
+							main_armament_slot = tank_medium_cannon
+							turret_type_slot = tank_heavy_three_man_tank_turret
+							suspension_type_slot = tank_torsion_bar_suspension
+							armor_type_slot = tank_welded_armor
+							engine_type_slot = tank_gasoline_engine
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 10
+							tank_nsb_armor_upgrade = 9
+						}
+					}
+					create_equipment_variant = {
+						name = "ARL 44"
+						type = heavy_tank_chassis_2
+						design_team = mio:FRA_famh_organisation
+						parent_version = 0
+						modules = {
+							main_armament_slot = tank_heavy_cannon
+							turret_type_slot = tank_heavy_three_man_tank_turret
+							suspension_type_slot = tank_interleaved_suspension
+							armor_type_slot = tank_welded_armor
+							engine_type_slot = tank_gasoline_engine
+							special_type_slot_1 = tank_radio_1
+							special_type_slot_2 = smoke_launchers
+							special_type_slot_3 = additional_machine_guns
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 8
+							tank_nsb_armor_upgrade = 6
+						}
+					}
+					create_equipment_variant = {
+						name = "SOMUA M4"
+						type = heavy_tank_chassis_3
+						design_team = mio:FRA_famh_organisation
+						parent_version = 0
+						modules = {
+							main_armament_slot = tank_heavy_cannon_2
+							turret_type_slot = tank_heavy_three_man_tank_turret
+							suspension_type_slot = tank_torsion_bar_suspension
+							armor_type_slot = tank_welded_armor
+							engine_type_slot = tank_gasoline_engine
+							special_type_slot_1 = tank_radio_1
+							special_type_slot_2 = sloped_armor
+							special_type_slot_3 = smoke_launchers
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 8
+							tank_nsb_armor_upgrade = 6
+						}
+					}
+				}
+				if = {
+					limit = { has_dlc_aat = yes }
+					custom_effect_tooltip = tooltip_white_line
+					mio:FRA_famh_organisation = { add_mio_size = 1 }
+				}
+				custom_effect_tooltip = tooltip_white_line
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = FRA_create_heavy_armour_template
+						NAME = "Division Blindée"
+					}
+					if = {
+						limit = { has_template = "Division Blindée" }
+						delete_unit_template_and_units = { division_template = "Division Blindée" disband = yes } #no cheating
+					}
+					division_template = {
+						name = "Division Blindée"
+						division_names_group = FRA_ARM_01
+						regiments = {
+							heavy_armor = { x = 0 y = 0 }
+							heavy_armor = { x = 0 y = 1 }
+							heavy_armor = { x = 0 y = 2 }
+							heavy_armor = { x = 0 y = 3 }
+							motorized = { x = 2 y = 0 }
+							motorized = { x = 2 y = 1 }
+							motorized = { x = 2 y = 2 }
+						}
+						support = {
+							mot_recon = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
+							artillery = { x = 0 y = 2 }
+						}
+						priority = 2
+					}
+				}
+				custom_effect_tooltip = tooltip_white_line
+				random_controlled_state = {
+					prioritize = { 16 }
+					limit = { valid_state_for_spawning_friendly_unit = yes }
+					custom_override_tooltip = {
+						tooltip = {
+							localization_key = tooltip_spawn_unit
+							TYPE = "Division Blindée"
+						}
+						create_unit = {
+							division = "division_template = \"Division Blindée\" start_experience_factor = 0.3 start_equipment_factor = 1.0"
+							owner = ROOT
+						}
+					}
+				}
+			}
+		}
+		focus = {
+			id = FRA_the_battlefields_new_queen
+			icon = GFX_focus_SOV_the_glory_of_the_red_army_communism
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_comrade_estiennes_heritage
+			}
+	
+			relative_position_id = FRA_comrade_estiennes_heritage
+			x = 0
+			y = 2
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_the_battlefields_new_queen"
+				add_tech_bonus = {
+					name = FRA_the_battlefields_new_queen
+					bonus = 0.75
+					uses = 2
+					category = armor
+				}
+				custom_effect_tooltip = tooltip_white_line
+				add_one_random_military_factory = yes
+				if = {
+					limit = { has_dlc_gtd = yes }
+					custom_effect_tooltip = tooltip_white_line
+					add_breakthrough_progress = {
+						specialization = specialization_land
+						value = 0.5
+					}
+				}
+				if = {
+					limit = { has_dlc_nsb = yes }
+					custom_effect_tooltip = tooltip_white_line
+					create_equipment_variant = {
+						name = "AMC 35"
+						type = medium_tank_chassis_1
+						design_team = mio:FRA_somua_organisation
+						parent_version = 0
+						modules = {
+							main_armament_slot = tank_small_cannon_2
+							turret_type_slot = tank_medium_two_man_tank_turret
+							suspension_type_slot = tank_christie_suspension
+							armor_type_slot = tank_welded_armor
+							engine_type_slot = tank_gasoline_engine
+							special_type_slot_1 = sloped_armor
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 8
+							tank_nsb_armor_upgrade = 2
+						}
+					}
+					create_equipment_variant = {
+						name = "SOMUA S35"
+						type = medium_tank_chassis_2
+						design_team = mio:FRA_somua_organisation
+						parent_version = 0
+						modules = {
+							main_armament_slot = tank_medium_cannon
+							turret_type_slot = tank_medium_two_man_tank_turret
+							suspension_type_slot = tank_christie_suspension
+							armor_type_slot = tank_welded_armor
+							engine_type_slot = tank_gasoline_engine
+							special_type_slot_1 = sloped_armor
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 10
+							tank_nsb_armor_upgrade = 7
+						}
+					}
+				}
+				if = {
+					limit = { has_dlc_aat = yes }
+					custom_effect_tooltip = tooltip_white_line
+					mio:FRA_somua_organisation = { add_mio_size = 1 }
+					mio:FRA_de_dion_bouton_organisation = { add_mio_size = 1 }
+				}
+				if = {
+					limit = { has_completed_focus = FRA_supremacy_of_movement }
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_extra_effect_from_focus_completion
+						FOCUS = FRA_supremacy_of_movement
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					add_to_variable = {
+						FRA_af_army_armor_defence_factor = 0.1
+						tooltip = army_armor_defence_factor_tooltip
+					}
+					add_to_variable = {
+						FRA_af_motorized_defence_factor = 0.05
+						tooltip = motorized_defence_factor_tooltip
+					}
+					add_to_variable = {
+						FRA_af_mechanized_defence_factor = 0.05
+						tooltip = mechanized_defence_factor_tooltip
+					}
+					FRA_add_extra_basic_spg_variants = yes
+				}
+				else_if = {
+					limit = {
+						NOT = { has_completed_focus = FRA_all_for_the_revolution }
+						NOT = { has_completed_focus = FRA_the_methodical_war }
+						NOT = { has_completed_focus = FRA_principe_de_concentration }
+					}
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_if_focus_completed
+						FOCUS = FRA_supremacy_of_movement
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					effect_tooltip = {
+						add_to_variable = {
+							FRA_af_army_armor_defence_factor = 0.1
+							tooltip = army_armor_defence_factor_tooltip
+						}
+						add_to_variable = {
+							FRA_af_motorized_defence_factor = 0.05
+							tooltip = motorized_defence_factor_tooltip
+						}
+						add_to_variable = {
+							FRA_af_mechanized_defence_factor = 0.05
+							tooltip = mechanized_defence_factor_tooltip
+						}
+						FRA_add_extra_basic_spg_variants = yes
+					}
+				}
+			}
+		}
+		focus = {
+			id = FRA_mobile_fortresses
+			icon = GFX_focus_generic_mass_production
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_the_battlefields_new_queen
+			}
+			mutually_exclusive = {
+				focus = FRA_overwhelming_firepower
+			}
+	
+			relative_position_id = FRA_the_battlefields_new_queen
+			x = -1
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_mobile_fortresses"
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				custom_override_tooltip = {
+					tooltip = FRA_armour_defence_bonus
+					add_ideas = FRA_af_hidden_armour_defence_bonus
+				}
+				custom_effect_tooltip = tooltip_white_line
+				add_tech_bonus = {
+					name = FRA_mobile_fortresses
+					uses = 2
+					bonus = 0.5
+					category = motorized_equipment
+				}
+				custom_effect_tooltip = tooltip_white_line
+				add_one_random_military_factory = yes
+				FRA_add_final_tank_variants = yes
+				if = {
+					limit = { has_completed_focus = FRA_supremacy_of_movement }
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_extra_effect_from_focus_completion
+						FOCUS = FRA_supremacy_of_movement
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					custom_override_tooltip = {
+						tooltip = FRA_armour_production_bonus
+						add_ideas = FRA_af_hidden_armour_production_bonus
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = { has_completed_focus = FRA_all_for_the_revolution }
+						NOT = { has_completed_focus = FRA_the_methodical_war }
+						NOT = { has_completed_focus = FRA_principe_de_concentration }
+					}
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_if_focus_completed
+						FOCUS = FRA_supremacy_of_movement
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					custom_effect_tooltip = FRA_armour_production_bonus
+				}
+			}
+		}
+		focus = {
+			id = FRA_overwhelming_firepower
+			icon = GFX_focus_generic_tank_assault
+			cost = 3
+	
+			prerequisite = {
+				focus = FRA_the_battlefields_new_queen
+			}
+			mutually_exclusive = {
+				focus = FRA_mobile_fortresses
+			}
+	
+			relative_position_id = FRA_the_battlefields_new_queen
+			x = 1
+			y = 1
+	
+			ai_will_do = {
+				factor = 2
+				modifier = {
+					factor = 3
+					has_war = yes
+				}
+				modifier = {
+					factor = 1.5
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 1.5
+					date > 1939.1.1
+				}
+			}
+	
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus FRA_overwhelming_firepower"
+				custom_effect_tooltip = {
+					localization_key = tooltip_modify_dynmod
+					DYNMOD = FRA_armee_federale_modifier
+				}
+				custom_override_tooltip = {
+					tooltip = FRA_armour_breakthrough_bonus
+					add_ideas = FRA_af_hidden_armour_breakthrough_bonus
+				}
+				custom_effect_tooltip = tooltip_white_line
+				add_tech_bonus = {
+					name = FRA_overwhelming_firepower
+					uses = 2
+					bonus = 0.5
+					category = motorized_equipment
+				}
+				custom_effect_tooltip = tooltip_white_line
+				add_one_random_military_factory = yes
+				FRA_add_final_tank_variants = yes
+				if = {
+					limit = { has_completed_focus = FRA_supremacy_of_movement }
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_extra_effect_from_focus_completion
+						FOCUS = FRA_supremacy_of_movement
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					custom_override_tooltip = {
+						tooltip = FRA_armour_production_bonus
+						add_ideas = FRA_af_hidden_armour_production_bonus
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = { has_completed_focus = FRA_all_for_the_revolution }
+						NOT = { has_completed_focus = FRA_the_methodical_war }
+						NOT = { has_completed_focus = FRA_principe_de_concentration }
+					}
+					custom_effect_tooltip = tooltip_white_line
+					custom_effect_tooltip = {
+						localization_key = tooltip_if_focus_completed
+						FOCUS = FRA_supremacy_of_movement
+					}
+					custom_effect_tooltip = {
+						localization_key = tooltip_modify_dynmod
+						DYNMOD = FRA_armee_federale_modifier
+					}
+					custom_effect_tooltip = FRA_armour_production_bonus
+				}
+			}
+		}	
 	
 	focus = {
 		id = FRA_arab_committee
@@ -10890,7 +10946,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = FRA_home_fleet
 		}
-		x = -4
+		x = -2
 		y = 3
 		relative_position_id = FRA_navy_focus
 		ai_will_do = {
@@ -10932,8 +10988,8 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_waves_of_syndicalism
 		}
-		x = -3
-		y = 7
+		x = -2
+		y = 4
 		relative_position_id = FRA_navy_focus
 		ai_will_do = {
 			factor = 1
@@ -10976,7 +11032,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = FRA_waves_of_syndicalism
 		}
-		x = -2
+		x = 0
 		y = 3
 		relative_position_id = FRA_navy_focus
 		ai_will_do = {
@@ -11017,7 +11073,7 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_home_fleet
 		}
-		x = -2
+		x = 0
 		y = 4	
 		relative_position_id = FRA_navy_focus
 		available = {
@@ -11712,7 +11768,7 @@ focus_tree = {
 	focus = {
 		id = FRA_no_nationalism
 		icon = GFX_goal_FRA_strike_french_reaction
-		cost = 7
+		cost = 3
 		prerequisite = {
 			focus = FRA_true_marxism
 			focus = FRA_communism_reborn
@@ -11734,7 +11790,7 @@ focus_tree = {
 	focus = {
 		id = FRA_liberty
 		icon = GFX_goal_FRA_liberty
-		cost = 7
+		cost = 3
 		prerequisite = {
 			focus = FRA_no_nationalism
 			
@@ -11753,7 +11809,7 @@ focus_tree = {
 	focus = {
 		id = FRA_equality
 		icon = GFX_goal_FRA_equality
-		cost = 7
+		cost = 3
 		prerequisite = {
 			focus = FRA_fourth_faction
 			
@@ -11772,7 +11828,7 @@ focus_tree = {
 	focus = {
 		id = FRA_Fraternite
 		icon = GFX_goal_FRA_Fraternite
-		cost = 7
+		cost = 3
 		prerequisite = {
 			focus = FRA_war_with_capitalists
 			
@@ -11791,7 +11847,7 @@ focus_tree = {
 	focus = {
 		id = FRA_fourth_faction
 		icon = GFX_goal_AUS_paris_london_envoy
-		cost = 7
+		cost = 3
 		prerequisite = {
 			focus = FRA_true_marxism
 			focus = FRA_communism_reborn
@@ -11818,7 +11874,7 @@ focus_tree = {
 	focus = {
 		id = FRA_war_with_capitalists
 		icon = GFX_goal_CSA_true_revolutionary_alliance
-		cost = 7
+		cost = 3
 		prerequisite = {
 			focus = FRA_true_marxism
 			focus = FRA_communism_reborn
@@ -12116,7 +12172,7 @@ focus_tree = {
 	focus = {
 		id = FRA_export_revolution
 		icon = GFX_goal_CSA_lead_american_revolution
-		cost = 7
+		cost = 3
 		prerequisite = {
 			focus = FRA_new_national_culture 
 		}	
@@ -13209,7 +13265,7 @@ focus_tree = {
 		id = FRA_bucard_subdue_anarchists
 		text = FRA_bucard_subdue_anarchists
 		icon = GFX_goal_CSA_iberian_revolution
-		cost = 7.00
+		cost = 3.00
 		x = 1
 		y = 1
 		relative_position_id = FRA_bucard_pacify_iberia
@@ -13252,7 +13308,7 @@ focus_tree = {
 		id = FRA_bucard_plunge_iberia_in_flames
 		text = FRA_bucard_plunge_iberia_in_flames
 		icon = GFX_goal_FRA_bucard_plunge_iberia_in_flames
-		cost = 7.00
+		cost = 3.00
 		x = -1
 		y = 1
 		relative_position_id = FRA_bucard_pacify_iberia
@@ -13298,7 +13354,7 @@ focus_tree = {
 		id = FRA_bucard_conquer_portugal
 		text = FRA_bucard_conquer_portugal
 		icon = GFX_goal_FRA_liberate_Iberia
-		cost = 7.00
+		cost = 3.00
 		x = 0
 		y = 2
 		relative_position_id = FRA_bucard_pacify_iberia
@@ -13495,7 +13551,7 @@ focus_tree = {
 		id = FRA_bucard_suggestion_to_syndicalists
 		text = FRA_bucard_suggestion_to_syndicalists
 		icon = GFX_goal_FRA_bucard_subdue_syndies
-		cost = 7.00
+		cost = 3.00
 		x = 1
 		y = 1
 		relative_position_id = FRA_bucard_pacify_britain
@@ -13538,7 +13594,7 @@ focus_tree = {
 		id = FRA_bucard_destroy_albion
 		text = FRA_bucard_destroy_albion
 		icon = GFX_goal_FRA_bucard_destroy_albion
-		cost = 7.00
+		cost = 3.00
 		x = -1
 		y = 1
 		relative_position_id = FRA_bucard_pacify_britain
@@ -13584,7 +13640,7 @@ focus_tree = {
 		id = FRA_bucard_conquer_ireland
 		text = FRA_bucard_conquer_ireland
 		icon = GFX_goal_CSA_irish_revolution
-		cost = 7.00
+		cost = 3.00
 		x = 0
 		y = 2
 		relative_position_id = FRA_bucard_pacify_britain
@@ -13853,7 +13909,7 @@ focus_tree = {
 		id = FRA_bucard_conquer_austria
 		text = FRA_bucard_conquer_austria
 		icon = GFX_goal_attack_austria
-		cost = 7.00
+		cost = 3.00
 		x = 0
 		y = 2
 		relative_position_id = FRA_bucard_sort_out_germany
@@ -22666,7 +22722,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = FRA_bulaxilahe_01
-		cost = 7
+		cost = 3
 		ai_will_do = {
 			factor = 1000
 		}
