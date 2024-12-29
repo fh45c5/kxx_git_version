@@ -10,7 +10,6 @@ focus_tree = {
 	
 	default = no
 	continuous_focus_position = { x = 225 y = 2500 }
-	shared_focus = FRA_form_joint_alliance
 	focus = {
 		id = ENG_tuc
 		icon = GFX_goal_ENG_TUC
