@@ -2207,7 +2207,7 @@ shared_focus = {
 
 shared_focus = {
 	id = CAN_second_chance_of_social_credit
-	icon = GFX_goal_CAN_agrarian_heritage
+	icon = GFX_goal_CAN_soccreds
 	
 	x = 5
 	y = 1
@@ -2264,7 +2264,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = CAN_oppose_maning
-	icon = GFX_goal_CAN_agrarian_heritage
+	icon = GFX_goal_CAN_reconsider_social_credit
 	prerequisite = {
 		focus = CAN_second_chance_of_social_credit
 	}
@@ -2293,7 +2293,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = CAN_true_soccred
-	icon = GFX_goal_CAN_agrarian_heritage
+	icon = GFX_goal_NZL_left_social_credit_theory
 	prerequisite = {
 		focus = CAN_conservative_socialism
 	}
@@ -2318,7 +2318,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = CAN_socialist_action_union
-	icon = GFX_goal_CAN_agrarian_heritage
+	icon = GFX_goal_CSA_inevitable_world_socialism
 	
 	x = -3
 	y = 1
@@ -2349,7 +2349,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = CAN_canonist_enlightment
-	icon = GFX_goal_CAN_agrarian_heritage
+	icon = GFX_goal_CSA_OSS
 	prerequisite = {
 		focus = CAN_socialist_action_union
 	}
@@ -2375,7 +2375,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = CAN_legacy_of_trots
-	icon = GFX_goal_CAN_agrarian_heritage
+	icon = GFX_goal_SOV_internationalism
 	available = {
 		has_completed_focus = CAN_canonist_enlightment
 	}
@@ -2439,7 +2439,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = CAN_technocracy_in_canada
-	icon = GFX_goal_CAN_agrarian_heritage
+	icon = GFX_goal_TEX_tech_and_techno
 	
 	x = -11
 	y = 1
@@ -2471,7 +2471,7 @@ shared_focus = {
 
 shared_focus = {
 	id = CAN_combine_social_credit_with_scott_thought
-	icon = GFX_goal_CAN_agrarian_heritage
+	icon = GFX_goal_NEE_Replace_Aristocracy_Technocracy
 	prerequisite = {
 		focus = CAN_technocracy_in_canada
 	}
@@ -2526,7 +2526,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = CAN_far_north_technate
-	icon = GFX_goal_CAN_agrarian_heritage
+	icon = GFX_goal_CSA_Technocracy_Committee
 	prerequisite = {
 		focus = CAN_combine_social_credit_with_scott_thought
 	}

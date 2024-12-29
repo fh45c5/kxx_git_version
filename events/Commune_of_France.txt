@@ -7006,7 +7006,7 @@ country_event = {
 			desc = ""
 			picture = "gfx/leaders/FRA/Jacques_Arthuys.png"
 			expire = "1.1.1"
-			ideology = sorelianism_subtype
+			ideology = millitarist_sorelianism_subtype
 		}
 		set_party_name = {
 			ideology = totalist
@@ -7309,7 +7309,39 @@ country_event = {
 			}
 		
 	}
-	
+	option = { 
+		name = comfrance.926.f
+		ai_chance = {
+			factor = 50
+			
+		}
+		create_country_leader = {
+			name = "勒内·科皮坦"
+			picture = "gfx/leaders/FRA/Portrait_FRA_Rene_Capitant.png"
+			expire = "1.1.1"
+			ideology = revisionist_sorelianism_subtype
+		}
+		set_party_name = {
+			ideology = totalist
+			long_name = "共和工团主义联盟"
+			name = "共和工团主义联盟"
+		} 
+		hidden_effect = {	
+			remove_ideas_with_trait = head_of_government
+			add_ideas = FRA_Louis_Vallon_hog_tot
+			remove_ideas_with_trait = foreign_minister
+			add_ideas = FRA_Rene_Pleven_for_tot
+			remove_ideas_with_trait = economy_minister
+			add_ideas = FRA_Pierre_Clostermann_eco_tot
+			remove_ideas_with_trait = security_minister
+			add_ideas = FRA_Jean_Moulin_sec_tot
+			add_popularity = {
+			  ideology = totalist
+			   popularity = 0.20
+		 	}
+			set_cosmetic_tag = FRA_revisionist_sorelianists
+		}
+	}
 	option = { 
 		name = comfrance.926.e
 		ai_chance = {

@@ -527,3 +527,16 @@ NFA_luxianzhinan = {
 		tag = NFA
 	}
 }
+GRE_luxianzhinan = {
+	icon = GFX_decision_category_border_conflicts
+
+	picture = GFX_decision_cat_picture_chi_political_support
+
+	allowed = {
+		original_tag = GRE
+	}
+
+	visible = {
+		tag = GRE
+	}
+}

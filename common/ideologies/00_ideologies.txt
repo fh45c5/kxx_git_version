@@ -183,7 +183,8 @@ ideologies = {
 			revolution_falangism = {can_be_randomly_selected = no} #革命长枪主义（民族与革命）
 			tot_eternal_revolution = {can_be_randomly_selected = no} #永恒革命（nr西乌克兰重置）
 			tot_united_front = {can_be_randomly_selected = no} #统一阵线
-
+			revisionist_sorelianism_subtype = {can_be_randomly_selected = no} #修正索雷尔主义
+			millitarist_sorelianism_subtype = {can_be_randomly_selected = no} #军政索雷尔主义
 		}
 		dynamic_faction_names = {
 			"FACTION_NAME_TOTALIST_1"

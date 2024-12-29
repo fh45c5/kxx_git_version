@@ -7262,4 +7262,16 @@ text = {
 		}
 		localization_key = fredaism_subtype  
 	}	
+	text = {
+		trigger = {
+			has_country_leader_ideology = revisionist_sorelianism_subtype
+		}
+		localization_key = revisionist_sorelianism_subtype
+	}	
+	text = {
+		trigger = {
+			has_country_leader_ideology = millitarist_sorelianism_subtype
+		}
+		localization_key = millitarist_sorelianism_subtype
+	}
 }

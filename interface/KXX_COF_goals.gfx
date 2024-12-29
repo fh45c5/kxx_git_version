@@ -634,7 +634,14 @@ spriteTypes = {
 		name = "GFX_ideology_syn_volkisch_communitarianism_subtype"
 		texturefile = "gfx/interface/ideologies/subideologies/syn_volkisch_communitarianism_group.png"
 	}
-
+	SpriteType = {
+		name = "GFX_ideology_revisionist_sorelianism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/revisionist_sorelianism_subtype.png"
+	}
+	SpriteType = {
+		name = "GFX_ideology_millitarist_sorelianism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/millitarist_sorelianism_subtype.png"
+	}
 	###布拉西拉赫假国策
 	SpriteType = {
 		name = "GFX_goals_FRA_bulaxilahe_01"

@@ -7519,6 +7519,7 @@ focus_tree = {
 			remove_ideas = {
 				GRE_moves_against_republicans
 				GRE_condemned_nationalists
+				GRE_anathema
 			}
 		}
 	}

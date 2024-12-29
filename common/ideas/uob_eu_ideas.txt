@@ -1,5 +1,421 @@
 ideas = {
 	country = {
+
+		#kxx额外扩展
+		 UOB_Real_Syndicalist = {
+      allowed = {
+        always = yes
+      }
+      name = UOB_Real_Syndicalist
+      picture = SOV_soviet_syndicalism_idea
+      modifier = {
+	totalist_acceptance = -50
+        syndicalist_acceptance = +50       
+        radical_socialist_acceptance = +50
+	social_democrat_acceptance = -50
+        syndicalist_drift = +0.01
+	radical_socialist_drift = +0.01
+	drift_defence_factor = 0.2
+        industrial_capacity_factory = 0.05
+        local_resources_factor = +0.1
+        consumer_goods_factor = 0.05
+        stability_factor = 0.05
+        war_support_factor = 0.05
+        surrender_limit = 0.05
+        
+                  }
+       }
+
+     UOB_Back_to_globe = {
+      allowed = {
+        always = yes
+      }
+      name = UOB_Back_to_globe
+      picture = PB_FRA_Armandist_Revolution
+      modifier = {
+			send_volunteer_size = 2
+			mobilization_speed = 0.05
+			conscription_factor = 0.05
+                        planning_speed = 0.1
+                  }
+       }
+
+  UOB_Small_anarcho_Community = {
+  name = UOB_Small_anarcho_Community
+  picture = SOV_anarchism
+  modifier = {
+       political_power_gain = 0.1
+        radical_socialist_acceptance = 100
+        radical_socialist_drift = 0.05
+        weekly_manpower = 2500
+            }
+  }
+
+UOB_syndical_economy_with_plan = {
+  name = UOB_syndical_economy_with_plan
+  picture = SOV_soviet_syndicalist_split_balance
+  modifier = {
+       global_building_slots_factor = 0.05
+        production_speed_buildings_factor = 0.03
+        production_factory_max_efficiency_factor = 0.05
+        consumer_goods_factor = -0.05
+
+            }
+}
+
+
+UOB_artillery_idea = {
+  name = UOB_artillery_idea
+  picture = GRU_massestwo
+  modifier = {
+       army_artillery_attack_factor = 0.05
+			 army_artillery_defence_factor = 0.05
+
+       artillery = {
+					build_cost_ic = -0.05
+                  }
+            }
+}
+
+
+UOB_Tank_idea = {
+  name = UOB_Tank_idea
+  picture = GRU_panzerstwo
+  modifier = {
+      army_armor_attack_factor = 0.03
+			army_armor_defence_factor = 0.03
+			army_armor_speed_factor = 0.03
+			mechanized_attack_factor = 0.06
+			mechanized_defence_factor = 0.06
+       artillery = {
+					build_cost_ic = -0.05
+            }
+  }
+   }
+
+UOB_international_brigade = {
+  name = UOB_international_brigade
+  picture = generic_syndicalist_manpower
+  modifier = {
+        conscription = 0.01
+				military_leader_cost_factor = -0.50 
+				acclimatization_hot_climate_gain_factor = 0.1 
+				acclimatization_cold_climate_gain_factor = 0.1 
+				man_power_weekly = 1000
+				breakthrough_factor = 0.05
+				recon_factor = 0.05
+				land_reinforce_rate = 0.05
+
+            }
+  }
+
+  UOB_Cultural_Pluralism_IDEAS = {
+      modifier = {
+        political_power_factor = 0.08
+        man_power_weekly = 1000
+        encryption_factor = -0.02
+        decryption_factor = 0.05
+        defensive_war_stability_factor = 0.10
+      }
+      picture = Restore_Press_Freedoms
+    }
+  
+  	
+    UOB_viva_liberty = {
+			picture = WHR_theology_of_liberation
+			modifier = {
+				political_power_gain = -0.1
+				stability_weekly = 0.01
+				war_support_weekly = 0.01
+				command_power_gain = 0.15
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				local_resources_factor = 0.15
+			}
+		}
+
+UOB_INTER_workers = {
+			picture = SOV_workers
+			modifier = {
+				political_power_gain = 0.01
+				stability_factor = 0.1
+				research_speed_factor = 0.15
+				attrition = -0.1
+				line_change_production_efficiency_factor = 0.15
+        research_speed_factor = 0.1
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				conscription = 0.03
+				conscription_factor = 0.2
+				local_building_slots_factor = 0.1
+			}
+		}
+
+  UOB_FEMALE_SOLDIER = {
+			picture = GRU_FEMALE_SOLDIER
+			modifier = {
+				conscription_factor = 0.35
+				consumer_goods_factor = 0.05
+        special_forces_cap = 0.1
+        recon_factor = 0.15
+        max_command_power = 15
+			}
+		}
+
+    UOB_public_healthcare = {
+      modifier = {
+        monthly_population = 0.10
+        production_factory_efficiency_gain_factor = 0.04
+        land_reinforce_rate = 0.03
+        army_defence_factor = 0.1
+        winter_attrition_factor = -0.1
+				out_of_supply_factor = -0.05
+      }
+      picture = National_Healthcare_System
+    }
+
+    UOB_MOVIES = {
+      picture = SOV_soyuzmultfilm
+      modifier = {
+        political_power_gain = 0.03
+        stability_weekly = 0.005
+        war_support_weekly = 0.01
+        encryption = 1
+        decryption = 1
+        subversive_activites_upkeep = -0.2
+        resistance_damage_to_garrison = -0.05
+        required_garrison_factor = -0.1
+      }
+    }
+
+    	UOB_the_way_should_be = {
+			picture = CSA_way_it_will_be
+        modifier = {
+				conscription_factor = 0.04
+        research_speed_factor = 0.08
+				production_factory_efficiency_gain_factor = 0.1
+				local_resources = 0.1
+				party_popularity_stability_factor = 0.05
+				consumer_goods_factor = -0.1
+				production_factory_max_efficiency_factor = 0.15
+				offensive_war_stability_factor = 0.05
+				production_lack_of_resource_penalty_factor = -0.05
+				training_time_army_factor = -0.1
+				surrender_limit = 0.1
+			}
+		}
+
+    UOB_oppose_all_dictators_idea = {
+			picture = FRA_idea_revenge
+			modifier = {
+				army_attack_against_major_factor = 0.15
+				army_defence_against_major_factor = 0.15
+				justify_war_goal_time = -0.2
+			}
+		}
+
+    UOB_social_liberation = {
+			picture = ARZ_racial_unity_arizona
+			modifier = {
+				political_power_gain = 0.15
+				stability_factor = -0.1
+				radical_socialist_drift = 0.01
+				syndicalist_drift = 0.03
+				local_building_slots_factor = 0.15
+				production_speed_buildings_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_dockyard_factor = 0.1
+				production_speed_bunker_factor = 0.1
+				production_speed_infrastructure_factor = 0.15
+				conscription = 0.03
+				conscription_factor = 0.12
+			}
+
+			
+		}
+
+SYN_INARM_IDEA = {
+			picture = generic_syndicalist_militia
+			modifier = {
+				army_org_factor = 0.05
+				army_morale_factor = 0.05
+			}
+		}
+
+SYN_admirality = {
+			picture = liberty_ships_focus
+			equipment_bonus = {
+				convoy = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				submarine = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				destroyer = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+			modifier = {
+				naval_doctrine_cost_factor = -0.1
+				naval_hit_chance = 0.1
+				navy_max_range_factor = 0.25
+				naval_speed_factor = 0.15
+			}
+		}
+
+    UOB_collective_security_idea = { 
+			picture = generic_syndicalist_militia
+			modifier = {
+				army_morale_factor = 0.10
+				planning_speed = 0.05
+				special_forces_cap = 0.1
+				army_attack_speed_factor = 0.1
+				supply_consumption_factor = -0.05
+				army_core_defence_factor = 0.05
+				army_core_attack_factor = 0.05
+			}
+		}
+
+    UOB_Together_with_ENG_idea = { 
+			picture = ALB_rejuvenation_classes
+			modifier = {
+			  political_power_gain = 0.1
+				stability_factor = 0.1
+				syndicalist_drift = 0.02
+				research_speed_factor = 0.15
+				compliance_starting_value = 0.25
+				compliance_growth = 0.25
+				required_garrison_factor = -0.25
+				attrition = -0.25
+				conscription = 0.03
+				conscription_factor = 0.2
+				local_building_slots_factor = 0.2
+			}
+      equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					defense = 0.1
+					soft_attack = 0.1
+					hard_attack = 0.1
+					instant = yes
+				}
+				
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					reliability = 0.1
+					breakthrough = 0.1
+					soft_attack = 0.1
+					hard_attack = 0.1
+					instant = yes
+				}
+			}
+	}
+
+		SYN_Socialist_economic_integration_idea = {
+			picture = gru_red_trade
+			modifier = {
+				faction_trade_opinion_factor = 0.5
+				local_resources_factor = 0.1
+				opinion_gain_monthly_same_ideology_factor = 0.2
+				lend_lease_tension = -0.5
+			}
+		}
+
+		UOB_Special_forces_idea = {
+			picture = KSV_for_the_soldier_idea
+			modifier = {
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.1
+				special_forces_breakthrough_factor = 0.10
+				special_forces_cap = 0.15
+				special_forces_min = 10
+				special_forces_no_supply_grace = 4
+				org_loss_when_moving = -0.1
+			}
+		}
+
+		UOB_paratroops_idea = {
+			picture = KSV_for_the_soldier_idea
+			modifier = {
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.1
+				special_forces_breakthrough_factor = 0.10
+				special_forces_cap = 0.2
+				special_forces_min = 15
+				special_forces_no_supply_grace = 4
+				org_loss_when_moving = -0.15
+				modifier_army_sub_unit_paratrooper_attack_factor = 0.10
+				modifier_army_sub_unit_paratrooper_defence_factor = 0.10
+				modifier_army_sub_unit_paratrooper_max_org_factor = 0.10
+				extra_paratrooper_supply_grace = 0.05
+			}
+		}
+
+		UOB_liberation_from_sky_idea = {
+			picture = generic_air_bonus
+			modifier = {
+				SRI_cda_air_accidents_factor = -0.1
+				air_superiority_efficiency = 0.15
+				army_bonus_air_superiority_factor = 0.10
+				naval_torpedo_hit_chance_factor = 0.1
+				air_bombing_targetting = 0.1
+				air_range_factor = 0.1
+			}
+		}
+
+		UOB_navy_industry_idea = {
+			picture = generic_the_london_naval_treaty
+			modifier = {
+				
+			}
+		 modifier = {
+				production_speed_naval_base_factor = 0.1
+				production_speed_dockyard_factor = 0.1
+				industrial_capacity_dockyard = 0.15
+			}
+			equipment_bonus = {
+				submarine = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				destroyer = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				ship_hull_cruiser = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				capital_ship = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+
+	UOB_motorised_idea= {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea DEN_idea_motorised_military" }
+			picture = FRA_motorized_focus
+			modifier = {
+				motorized_attack_factor = 0.1
+				motorized_breakthrough_factor = 0.05
+				army_speed_factor = 0.05
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		#kxx扩展
 		ENG_crusade_for_europe = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ENG_crusade_for_europe"}
 			modifier = {

@@ -1,0 +1,24 @@
+leader_traits = {
+	
+	esoterism_supporter = {
+
+		random = no
+		political_power_gain = 0.1
+		stability_factor = -0.1
+		war_support_factor = 0.15
+		
+		ai_will_do = {
+				factor = 1
+		}
+	}
+
+	Irish_Joan_of_Arc = {
+
+		random = no
+		army_morale_factor = 0.1
+		army_defence_factor = 0.1
+		ai_will_do = {
+				factor = 1
+		}
+	}
+}

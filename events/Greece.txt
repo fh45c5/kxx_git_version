@@ -7860,8 +7860,8 @@ option = { #alright
 }
 country_event = {
 	id = gre.403 #greece ask for malta
-	title = gre.400.t
-	desc = gre.400.d
+	title = gre.403.t
+	desc = gre.403.d
 	picture = GFX_report_event_generic_diplomacy1
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -8146,10 +8146,7 @@ country_event = {
 
 	option = {
 		name = gre.415.a
-		set_party_name = {
-			name =  GRE_valkist_party
-			long_name =  GRE_valkist_party_long
-		}
+		
 		set_country_flag = GRE_golden_dawn_off
 		remove_ideas = GRE_golden_dawn
 		meta_effect = {
@@ -8200,7 +8197,11 @@ country_event = {
 			GRE_Georgios_Simitis_eco_val
 			GRE_Ioannis_Rallis_sec_npo
 		}
-		
+		set_party_name = {
+			ideology = national_populist
+			name =  "金色黎明"
+			long_name =  "希腊国家社会主义党——金色黎明"
+		}
 	}
 	option = { #EGDY BS
 		name = gre.423.b
@@ -8229,6 +8230,11 @@ country_event = {
 			GRE_Dimitrios_Delivanis_for_val
 			GRE_Hector_Tsironikos_eco_npo
 			GRE_Anastasios_Tavoularis_sec_npo 
+		}
+		set_party_name = {
+			ideology = national_populist
+			name =  "希腊国民联盟"
+			long_name =  "希腊国民联盟"
 		}
 		ai_chance = {
 			factor = 1

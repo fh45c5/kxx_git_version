@@ -568,6 +568,7 @@ country_event = { #
 			}
 			}
 		}
+		set_cosmetic_tag = CAN_RED_TROTSKY
 	}
 	option = {
 		name = kxx_canada_soc.4.c
@@ -582,6 +583,7 @@ country_event = { #
 			}
 			}
 		}
+		set_cosmetic_tag = CAN_RED_TROTSKY                                  
 	}
 }
 #Shared Loeb/Scott
@@ -609,7 +611,7 @@ country_event = { # TechnoWorld
 			factor = 0
 		}
 		
-		set_cosmetic_tag = CSA_technoworld
+		set_cosmetic_tag = CAN_RED_TECHNATE
 		add_named_threat = { threat = 100 name = "Global Technate" }
 		every_country = {
 				CAN = {
@@ -638,7 +640,7 @@ country_event = { # TechnoWorld
 		   }
 		 }
 	}
-	every_state = { add_core_of = CSA }
+	every_state = { add_core_of = CAN }
 	}
 }
 # Totalist Victory

@@ -124,48 +124,6 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = kxx_rf_fra.3
-	immediate = {log = "[GetDateText]: [Root.GetName]: event comfrance.969"}
-	title = comfrance.969.t
-	desc = comfrance.969.d
-	picture = GFX_report_event_soviet_soldiers_tank
-
-	trigger = {
-		NOT = { country_exists = GER }
-		NOT = { country_exists = MAF }
-		NOT = { country_exists = GEA }
-		owns_state = 64
-		OR = {
-			has_country_flag = FRA_red_jac_sup
-			has_country_flag = FRA_nat_jac_sup
-		}
-	}
-	
-	option = {
-		name = comfrance.969.a
-	}
-}
-country_event = {
-	id = kxx_rf_fra.4
-	immediate = {log = "[GetDateText]: [Root.GetName]: event comfrance.970"}
-	title = comfrance.970.t
-	desc = comfrance.970.d
-	picture = GFX_report_event_soviet_soldiers_tank
-
-	trigger = {
-		NOT = { country_exists = AUS }
-		owns_state = 1137
-		OR = {
-			has_country_flag = FRA_red_jac_sup
-			has_country_flag = FRA_nat_jac_sup
-		}
-	}
-	
-	option = {
-		name = comfrance.970.a
-	}
-}
 
 country_event = {
 	id = kxx_rf_fra.5

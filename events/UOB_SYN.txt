@@ -1,0 +1,103 @@
+
+add_namespace = UOBSYN
+
+country_event = { #不列颠邀请旧国际中工团国家参加
+	id = UOB.1101
+	title = UOB.1101.t
+	desc = UOB.1101.d
+	picture = GFX_report_event_RUS_profintern
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+	name = UOB.1101.a
+	every_other_country = {
+	 Limit = {
+	 is_in_faction_with = FRA
+	 is_subject = no
+	 NOT = { TAG = ENG }
+	 OR = {
+		has_government = radical_socialist
+		has_government = syndicalist
+	}
+			}
+		country_event = {
+        id = UOB.1102
+        days = 2
+      }
+
+	}
+	}
+}
+
+
+
+
+country_event = { # 旧第三国际的工团与激社国家是否加入第三国际
+	id = UOB.1102
+	title = UOB.1102.t
+	desc = UOB.1102.d
+	picture = GFX_report_event_RUS_profintern
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { # 离开并加入
+		name = UOB.1102.a
+		ai_chance = {
+			factor = 40
+					}
+
+		leave_faction = yes
+		ENG = { add_to_faction = THIS }
+		add_stability = -0.05
+
+			}
+	option = { # 离开不加入
+		name = UOB.1102.b
+		ai_chance = {
+			factor = 40
+					}
+
+		leave_faction = yes
+		add_stability = 0.02
+
+			}
+	option = { # 不离开
+		name = UOB.1102.c
+		ai_chance = {
+			factor = 20
+					}
+		add_stability = 0.05
+			}
+
+}
+
+country_event = { #反对物化女性
+	id = UOB.9001
+	title = UOB.9001.t
+	desc = UOB.9001.d
+	picture = GFX
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+	name = UOB.9001.a
+	add_intel = {
+	Target = {
+		every_other_country = {
+		Limit = {
+			OR = {		
+				has_government = social_liberal
+				has_government = market_liberal
+				# has_government = social_conservative
+				# has_government = authoritarian_democrat
+				 }
+				}
+							}
+	}
+	civilian_intel = 35
+	army_intel = 15
+    navy_intel = 5
+    airforce_intel = 25
+				}
+	}
+}
+

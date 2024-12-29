@@ -22,6 +22,9 @@ option = {
 	FRA = {
 		create_wargoal = { target = BEL }
 		create_wargoal = { target = WLL }
+		country_event = kxxfrance.32
+		
+		
 	}
 	
 }
@@ -2877,14 +2880,17 @@ option = {
 country_event = {
 	id = kxxfrance.33
 	immediate = {log = "[GetDateText]: [Root.GetName]: event Frajocbin.win"}
-	title = kxxfrance.33.t
-	desc = kxxfrance.33.d
+	title =  kxxfrance.1.t
+	desc =  kxxfrance.1.d
 	is_triggered_only = yes
 	fire_only_once = yes
 
 option = { 
-	name = kxxfrance.33.a
-	annex_country = { target = HOL  }
+	name =  kxxfrance.1.a
+	FRA = {
+		annex_country = { target = HOL  }
+	}
+	
 	GER = {
 	set_autonomy = {
 	target = DEI
@@ -2899,21 +2905,24 @@ option = {
 	}
 }	
 option = { 
-	name = kxxfrance.33.b
-	country_event = kxxfrance.34
+	name =  kxxfrance.1.b
+	FRA = {
+		country_event = kxxfrance.34
+	}
+	
 }	
 }
 country_event = {
-	id = kxxfrance.34
+	id = kxxfrance.32
 	immediate = {log = "[GetDateText]: [Root.GetName]: event Frajocbin.win"}
-	title = kxxfrance.34.t
-	desc = kxxfrance.34.d
+	title = kxxfrance.32.t
+	desc = kxxfrance.32.d
 	is_triggered_only = yes
 	fire_only_once = yes
 
 option = { 
 	#fuck
-	name = kxxfrance.34.a
+	name = kxxfrance.32.a
 	set_country_flag = FRA_COUPHOL_FAIL
 }	
 

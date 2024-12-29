@@ -10,6 +10,7 @@ focus_tree = {
 	
 	default = no
 	continuous_focus_position = { x = 225 y = 2500 }
+	shared_focus = FRA_form_joint_alliance
 	focus = {
 		id = ENG_tuc
 		icon = GFX_goal_ENG_TUC
@@ -37,7 +38,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ENG_tuc
 		}
-		x = -9
+		x = -19
 		y = 1
 		relative_position_id = ENG_tuc
 		ai_will_do = {
@@ -563,8 +564,8 @@ focus_tree = {
 		id = ENG_lawrence_of_britannia
 		icon = GFX_goal_ENG_lawrence_of_britannia
 		cost = 5.00
-		x = 19
-		y = 10
+		x = 18
+		y = 20
 		
 		available = {
 			always = no
@@ -604,8 +605,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ENG_status_quo"
-			add_political_power = 50
-			add_stability = 0.05
+			add_political_power = 150
+			add_stability = 0.10
 		}
 	}
 	focus = {
@@ -719,8 +720,9 @@ focus_tree = {
 			focus = ENG_mzsdyw
 			focus = ENG_devolution
 		}
-		x = -3
-		y =4
+		x = -10
+
+		y = 4
 		relative_position_id = ENG_tuc
 		ai_will_do = {
 			factor = 10
@@ -796,7 +798,7 @@ focus_tree = {
 			focus = ENG_xlsdyw
 		}
 		x = 2
-		y =5
+		y = 5
 		relative_position_id = ENG_tuc
 		ai_will_do = {
 			factor = 10
@@ -804,19 +806,19 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-			add_ideas = SRI_very_high_peasant_idea
+		add_ideas = SRI_very_high_peasant_idea
 		}
 	}
+
 	focus = {
 		id = ENG_grxf
 		icon = GFX_socialist_constitution
 		cost = 5.00
 		prerequisite = {
-			focus = ENG_mzsdyw
-			focus = ENG_devolution
+			focus = ENG_qzxhgt
 		}
-		x = -2
-		y =5
+		x = -10
+		y = 5
 		relative_position_id = ENG_tuc
 		ai_will_do = {
 			factor = 10
@@ -852,7 +854,8 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			add_ideas = SRI_defense_of_state
+			add_ideas = UOB_Back_to_globe
+			army_experience = 50
 			log = "[GetDateText]: [Root.GetName]: Focus ENG_improve_army"
 			country_event = uob.108
 		}
@@ -1075,6 +1078,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ENG_revolutionary_admiralty"
 			add_ideas = ENG_revolutionary_admiralty_idea
+			navy_experience = 50
 			add_doctrine_cost_reduction = {
 				name = naval_doc_bonus
 				cost_reduction = 0.5
@@ -1118,7 +1122,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ENG_dickens_plan"
-			navy_experience = 10
+			navy_experience = 50
 			add_doctrine_cost_reduction = {
 				name = naval_doc_bonus
 				cost_reduction = 0.5
@@ -1182,7 +1186,7 @@ focus_tree = {
 			}
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus ENG_battleships"
-				navy_experience = 20
+				navy_experience = 50
 				if = {
 					limit = { has_dlc = "Man the Guns" }
 					add_tech_bonus = {
@@ -1211,7 +1215,7 @@ focus_tree = {
 		available = {
 			has_socialist_government = yes
 		}
-		x = -15
+		x = -35
 		y = 1
 			ai_will_do = {
 					factor = 20
@@ -1245,16 +1249,16 @@ focus_tree = {
 			focus = ENG_international
 		}
 		available = {
+			OR ={
 			has_socialist_government = yes
+			has_social_democrat_government = yes
+			}
 		}
 		x = 8
 		y = 1
 		relative_position_id = ENG_international
 			available = {
-					OR = {
-							has_war_with = CAN
-							has_war_with = GER
-						}
+					any_country = {has_war_with = ENG}		
 				}
 			ai_will_do = {
 					factor = 20
@@ -1679,7 +1683,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ENG_tuc
 		}
-		x = -5
+		x = -13
 		y = 1
 		relative_position_id = ENG_tuc
 		available = { has_country_flag = glais_chairman }
@@ -1687,6 +1691,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ENG_home_rule"
 			add_ideas = ENG_home_rule_idea
+			add_political_power = 50
 		}
 	}
 	focus = {
@@ -1699,7 +1704,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = ENG_new_capital
 		}
-		x = -6
+		x = -14
 		y = 2
 		relative_position_id = ENG_tuc
 		ai_will_do = {
@@ -1721,7 +1726,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = ENG_dissolve_tuc
 		}
-		x = -4
+		x = -12
 		y = 2
 		relative_position_id = ENG_tuc
 		ai_will_do = {
@@ -1741,7 +1746,7 @@ focus_tree = {
 			focus = ENG_dissolve_tuc
 			focus = ENG_new_capital
 		}
-		x = -5
+		x = -13
 		y = 3
 		relative_position_id = ENG_tuc
 			available = {
@@ -1769,7 +1774,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ENG_devolution
 		}
-		x = -5
+		x = -14
 		y = 4
 		relative_position_id = ENG_tuc
 			ai_will_do = {
@@ -1805,7 +1810,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ENG_three_armies
 		}
-		x = -6
+		x = -14
 		y = 5
 		relative_position_id = ENG_tuc
 			ai_will_do = {
@@ -1823,7 +1828,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ENG_three_armies
 		}
-		x = -4
+		x = -12
 		y = 5
 		relative_position_id = ENG_tuc
 			ai_will_do = {
@@ -1842,7 +1847,7 @@ focus_tree = {
 			focus = ENG_CSGSYD
 			focus = ENG_GLDZYD
 		}
-		x = -5
+		x = -14
 		y = 6
 		relative_position_id = ENG_tuc
 			ai_will_do = {
@@ -1870,6 +1875,7 @@ focus_tree = {
 			completion_reward = {
 					log = "[GetDateText]: [Root.GetName]: Focus ENG_evolution"
 					add_stability = 0.1
+					add_ideas = CSA_road_to_utopia
 				}
 
 	}
@@ -1914,13 +1920,12 @@ focus_tree = {
 		icon = GFX_goal_KIV_congolese_tuc
 		cost = 5.00
 		prerequisite = {
-			focus = ENG_devolution
+
 			focus = ENG_evolution
-			focus = ENG_revolution
-			focus = ENG_DGMJTH
+
 		}
 		x = 0
-		y = 6
+		y = 12
 		relative_position_id = ENG_tuc
 			available = {
 					OR = {
@@ -2002,9 +2007,9 @@ focus_tree = {
 		prerequisite = {
 			focus = ENG_tuc2
 		}
-		x = -1
-		y = 7
-		relative_position_id = ENG_tuc
+		x = 7
+		y = 1
+		relative_position_id = ENG_tuc2
 			ai_will_do = {
 					factor = 50
 				}
@@ -2019,17 +2024,18 @@ focus_tree = {
 		icon = GFX_RUS_Cut_Red_Tape
 		cost = 5.00
 		prerequisite = {
-			focus = ENG_tuc2
+			focus = ENG_tuc2_economy
 		}
-		x = 1
-		y = 7
-		relative_position_id = ENG_tuc
+		x = 0
+		y = 1
+		relative_position_id = ENG_tuc2_economy
 			ai_will_do = {
 					factor = 50
 				}
 			completion_reward = {
 					log = "[GetDateText]: [Root.GetName]: Focus ENG_tuc2_internal"
-					add_political_power = 150
+					add_political_power = 50
+					add_ideas CSA_empowered_executive_idea
 				}
 
 	}
@@ -2038,18 +2044,18 @@ focus_tree = {
 		icon = GFX_goal_ALB_Purge_Purgers
 		cost = 5.00
 		prerequisite = {
-			focus = ENG_tuc2_economy
 			focus = ENG_tuc2_internal
 		}
 		x = 0
-		y = 8
-		relative_position_id = ENG_tuc
+		y = 1
+		relative_position_id = ENG_tuc2_internal
 			ai_will_do = {
 					factor = 50
 				}
 			completion_reward = {
 					log = "[GetDateText]: [Root.GetName]: Focus ENG_tuc2_demobilization"
 					remove_ideas = ENG_silence_idea
+					add_ideas = CSA_recruitemt_campaign_idea
 				}
 
 	}
@@ -2789,11 +2795,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ENG_local_talent"
+			add_stability = 0.1
 			add_tech_bonus = {
 				name = ENG_local_talent
 				bonus = 1
 				uses = 1
-				category = dispersed_industry_tech
+				category = dispersed_industry_category
 			}
 		}
 	}
@@ -2873,11 +2880,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ENG_central_industry_research"
+			add_war_support = 0.1
 			add_tech_bonus = {
 				name = ENG_central_industry_research
 				bonus = 1
 				uses = 1
-				category = concentrated_industry_tech
+				category = concentrated_industry_category
 			}
 		}
 	}
@@ -2943,7 +2951,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ENG_expand_industry_1"
 			122 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -2951,7 +2959,7 @@ focus_tree = {
 				}
 			}
 			128 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -2959,7 +2967,7 @@ focus_tree = {
 				}
 			}
 			129 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -2984,7 +2992,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ENG_expand_industry_2"
 			133 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 						type = industrial_complex
 						level = 1
@@ -2992,7 +3000,7 @@ focus_tree = {
 					}
 			}
 			121 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 						type = industrial_complex
 						level = 1
@@ -3000,7 +3008,7 @@ focus_tree = {
 					}
 			}
 			136 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 						type = industrial_complex
 						level = 1
@@ -3026,7 +3034,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ENG_military_industry"
 			127 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
 					level = 1
@@ -3034,7 +3042,7 @@ focus_tree = {
 				}
 			}
 			125 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
 					level = 1
@@ -3042,7 +3050,7 @@ focus_tree = {
 				}
 			}
 			338 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
 					level = 1
@@ -3067,7 +3075,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ENG_military_industry2"
 			132 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
 					level = 1
@@ -3075,7 +3083,7 @@ focus_tree = {
 				}
 			}
 			130 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
 					level = 1
@@ -3083,7 +3091,7 @@ focus_tree = {
 				}
 			}
 			131 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
 					level = 1
@@ -3092,6 +3100,7 @@ focus_tree = {
 			}
 		}
 	}
+	
 	focus = {
 		id = ENG_british_rail_reform
 		icon = GFX_BAY_RAILWAYS
@@ -3110,6 +3119,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1000
 		}
+		###考虑给个德国宽轨？
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus ENG_british_rail_reform"
 			set_country_flag = ENG_brr
@@ -3155,7 +3165,7 @@ focus_tree = {
 					days = 1000
 				}
 			}
-		}
+		} 
 
 	}
 	focus = {
@@ -3567,6 +3577,7 @@ focus_tree = {
 			}
 			completion_reward = {
 					log = "[GetDateText]: [Root.GetName]: Focus ENG_improve_army2"
+					add_ideas = FRA_mass_fire_support_idea
 					add_tech_bonus = {
 							name = ENG_improve_army2
 							bonus = 1
@@ -3576,6 +3587,105 @@ focus_tree = {
 				}
 
 	}
+
+	focus = {
+		id = ENG_Special_forces
+		icon = GFX_goal_ITA_Arditi
+		cost = 5.00
+		prerequisite = {
+			focus = ENG_red
+		}
+		prerequisite = {
+			focus = ENG_improve_army2
+		}
+		x = -3
+		y = 5
+		relative_position_id = ENG_improve_army
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 2
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 20
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 25
+					date > 1938.1.1
+				}
+			}
+		completion_reward = {
+
+					add_ideas = UOB_Special_forces_idea
+
+					add_potential_special_forces_tree = yes
+					add_tech_bonus = {
+						name = SRI_brigate_marine
+						bonus = 0.75
+						uses = 2
+						category = marine_tech
+						category = tp_tech
+						}
+
+				}
+
+	}
+
+	focus = {
+		id = UOB_paratroops
+		icon = GFX_goal_CRE_paratrooper_state
+		cost = 5.00
+		prerequisite = {
+			focus = ENG_red
+		}
+		prerequisite = {
+			focus = ENG_improve_army2
+		}
+		x = -3
+		y = 6
+		relative_position_id = ENG_improve_army
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 2
+					date > 1937.1.1
+				}
+				modifier = {
+					factor = 20
+					date > 1938.1.1
+				}
+				modifier = {
+					factor = 25
+					date > 1938.1.1
+				}
+			}
+		completion_reward = {
+
+					swap_ideas = {
+					remove_idea = UOB_Special_forces_idea
+					add_idea = UOB_paratroops_idea
+					}
+					add_tech_bonus = {
+          					name = SRI_carabinieri_del_cielo
+          					bonus = 1
+          					uses = 2
+          					category = para_tech
+       				 }
+					       hidden_effect = {
+        					set_technology = {
+          						tech_better_paratroopers = 1
+       						 }
+      						}
+					
+
+				}
+
+	}
+
+
+
 	focus = {
 		id = ENG_artillery_research
 		icon = GFX_goal_artillery
@@ -3606,6 +3716,7 @@ focus_tree = {
 			}
 			completion_reward = {
 					log = "[GetDateText]: [Root.GetName]: Focus ENG_artillery_research"
+					ADD_IDEAS = UOB_artillery_idea
 					add_tech_bonus = {
 							name = ENG_artillery_research
 							bonus = 1
@@ -3642,6 +3753,7 @@ focus_tree = {
 				}
 			}
 			completion_reward = {
+					army_experience = 50
 					add_ideas = FRA_Red_Army
 				}
 
@@ -3727,6 +3839,7 @@ focus_tree = {
 							uses = 1
 							category = motorized_equipment
 						}
+				add_ideas = UOB_motorised_idea
 				}
 
 	}
@@ -3760,6 +3873,7 @@ focus_tree = {
 			}
 			completion_reward = {
 					log = "[GetDateText]: [Root.GetName]: Focus ENG_tank_research"
+					add_ideas = UOB_Tank_idea
 					add_tech_bonus = {
 							name = ENG_tank_research
 							bonus = 1
@@ -3847,7 +3961,7 @@ focus_tree = {
 			}
 			completion_reward = {
 					log = "[GetDateText]: [Root.GetName]: Focus ENG_cayley_plan"
-					navy_experience = 10
+					navy_experience = 50
 					add_doctrine_cost_reduction = {
 						name = naval_doc_bonus
 						cost_reduction = 0.5
@@ -3884,7 +3998,7 @@ focus_tree = {
 			}
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus ENG_submarines"
-				navy_experience = 20
+				navy_experience = 50
 				if = {
 					limit = { has_dlc = "Man the Guns" }
 					add_tech_bonus = {
@@ -3938,7 +4052,7 @@ focus_tree = {
 			}
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus ENG_destroyers"
-				navy_experience = 20
+				navy_experience = 50
 				if = {
 					limit = { has_dlc = "Man the Guns" }
 					add_tech_bonus = {
@@ -3994,7 +4108,7 @@ focus_tree = {
 			}
 			completion_reward = {
 					log = "[GetDateText]: [Root.GetName]: Focus ENG_anstice_plan"
-					navy_experience = 10
+					navy_experience = 50
 					add_doctrine_cost_reduction = {
 				name = naval_doc_bonus
 				cost_reduction = 0.5
@@ -4030,7 +4144,7 @@ focus_tree = {
 			}
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus ENG_carrier_efforts"
-				navy_experience = 20
+				navy_experience = 50
 					add_tech_bonus = {
 						name = ENG_carrier_efforts
 						bonus = 1
@@ -4067,7 +4181,7 @@ focus_tree = {
 			}
 			completion_reward = {
 					log = "[GetDateText]: [Root.GetName]: Focus ENG_naval_aviation"
-					navy_experience = 20
+					navy_experience = 50
 					add_tech_bonus = {
 							name = ENG_naval_aviation
 							bonus = 1
@@ -4104,7 +4218,7 @@ focus_tree = {
 			}
 			completion_reward = {
 				log = "[GetDateText]: [Root.GetName]: Focus ENG_battlecruisers"
-				navy_experience = 20
+				navy_experience = 50
 				if = {
 					limit = { has_dlc = "Man the Guns" }
 					add_tech_bonus = {
@@ -4200,6 +4314,7 @@ focus_tree = {
 			}
 			completion_reward = {
 					log = "[GetDateText]: [Root.GetName]: Focus ENG_expand_dockyards"
+					Add_ideas = UOB_navy_industry_idea
 					121 = {
 							add_extra_state_shared_building_slots = 2
 							add_building_construction = {
@@ -4500,6 +4615,7 @@ focus_tree = {
 			}
 			completion_reward = {
 					log = "[GetDateText]: [Root.GetName]: Focus ENG_expand_air_unions"
+					add_ideas = UOB_liberation_from_sky_idea
 					132 = {
 							if = {
 									limit = {
@@ -4640,6 +4756,20 @@ focus_tree = {
 							uses = 2
 							category = cat_anti_air
 						}
+					every_owned_state = {
+				display_individual_scopes = yes
+				limit = {
+					is_claim_or_core_of_ROOT = yes
+					is_controlled_by = ROOT
+					anti_air_building < 3
+					air_base > 0
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
 				}
 
 	}
@@ -5360,33 +5490,7 @@ focus_tree = {
 				}
 
 	}
-	focus = {
-		id = ENG_SJGM
-		icon = GFX_goal_FRA_World_Revolution
-		cost = 5.00
-		prerequisite = {
-			focus = ENG_liberation_of_canada
-		}
-		available = {
-			has_socialist_government = yes
-		}
-		x = 0
-		y = 5
-		relative_position_id = ENG_international
-			available = {
-					
-				}
-			bypass = {
-					
-				}
-			ai_will_do = {
-					factor = 15
-				}
-			completion_reward = {
-					add_ideas = Revolutionary_spirit
-				}
 
-	}
 	focus = {
 		id = ENG_mission_to_australasia
 		icon = GFX_goal_AST_empower_actu
@@ -5501,16 +5605,11 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = ENG_home_front_victory
-		}
-		prerequisite = {
 			focus = ENG_total_mobilization
-		}
-		prerequisite = {
 			focus = ENG_statistical_warfare
-		}
-		prerequisite = {
 			focus = ENG_westminster_project
 		}
+
 		available = {
 			has_socialist_government = yes
 		}
@@ -5559,7 +5658,7 @@ focus_tree = {
 		id = BRG_death_to_revoltuion
 		icon = GFX_goal_BRG_Kill_Revolution
 		x = -7
-		y = 7
+		y = 20
 		cost = 1
 		available_if_capitulated = yes
 		available = {
@@ -7354,7 +7453,7 @@ focus_tree = {
 		icon = GFX_goal_ENG_Ally_Russell
 		cost = 5
 		x = 30
-		y = 8
+		y = 12
 		available = {
 			has_country_flag = mosley_chairman
 			has_country_flag = ERC_Accepted
@@ -8199,7 +8298,7 @@ focus_tree = {
 		icon = GFX_goal_The_Alternative
 		cost = 5
 		x = 35
-		y = 8
+		y = 12
 		available = { 
 			
 			has_country_flag = mosley_chairman
@@ -8563,4 +8662,3298 @@ focus_tree = {
 			}
 
 	}
+
+#FRance_Between_Marxism_Narodism,重写工团与马克思主义之间，正统工团与无政府主义之间
+		focus = {
+		id = UOB_Between_Syn_Ana
+		icon = GFX_goal_FRA_cgt_mandate
+		cost = 2
+		relative_position_id = ENG_tuc
+		x = -4
+		y = 4
+		
+		prerequisite = {
+			focus = ENG_mzsdyw
+			focus = ENG_devolution
+			FOCUS = ENG_xlsdyw
+		}
+
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+			
+			date >1938.5.1
+
+		OR = {
+			 has_government = radical_socialist
+			 has_government = syndicalist
+		}
+       
+      
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Between_Marxism_Narodism"
+			add_political_power = 100
+			add_ideas = FRA_communard_spirit_idea
+			
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+
+	focus = {
+		id = UOB_Revolutionary_National_Idea
+		icon = GFX_goal_BRG_Moderate_Unions
+		cost = 4
+		relative_position_id = UOB_Between_Syn_Ana
+		x =-1
+		y = 1
+		
+		prerequisite = {
+			focus = UOB_Between_Syn_Ana
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Revolutionary_National_Idea"
+			add_political_power = 75
+			increase_ruling_party_popularity_by_3 = yes
+			add_war_support  = 0.1
+		}
+	}
+
+	focus = {
+		id = UOB_Develop_Network_Party_Emmisars
+		icon = GFX_BBR_party_with_a_state
+		cost = 4
+		relative_position_id = UOB_Between_Syn_Ana
+		x = 1
+		y = 1
+		
+		prerequisite = {
+			focus = UOB_Between_Syn_Ana
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Develop_Network_Party_Emmisars"
+			increase_ruling_party_popularity_by_5 = yes
+			add_political_power = 100
+			if = {
+				limit = {
+					has_idea = UKR_unpolitical_population
+				}
+				remove_ideas = UKR_unpolitical_population
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+
+	focus = {
+		id = UOB_Anti_Corruption_Policies
+		icon = GFX_UKR_Anti_Corruption
+		cost = 4
+		relative_position_id = UOB_Between_Syn_Ana
+		x = 0
+		y = 2
+		
+		prerequisite = {
+			focus = UOB_Develop_Network_Party_Emmisars
+		}
+		prerequisite = {
+			focus = UOB_Revolutionary_National_Idea
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Anti_Corruption_Policies"
+			add_timed_idea = {
+				idea = UKR_anti_corruption_raids
+				days = 90
+			}
+			add_manpower = -150
+		}
+	}
+
+	focus = {
+		id = UOB_Negotiations_With_Red_Otomans
+		icon = GFX_goal_generic_Syndicalist_Marines
+		cost = 4
+		relative_position_id = UOB_Between_Syn_Ana
+		x = 2
+		y = 2
+		
+		prerequisite = {
+			focus = UOB_Develop_Network_Party_Emmisars
+		}
+		prerequisite = {
+			focus = UOB_Revolutionary_National_Idea
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Negotiations_With_Red_Otomans"
+			add_manpower = 100000
+			add_war_support = 0.1
+			add_ideas = CSA_republican_military_idea 
+		}
+	}
+
+	focus = {
+		id = UOB_Poale_Zion
+		icon = GFX_focus_SOV_the_path_of_marxism_leninism
+		cost = 3
+		relative_position_id = UOB_Between_Syn_Ana
+		x = -2
+		y = 2
+		
+		prerequisite = {
+			focus = UOB_Develop_Network_Party_Emmisars
+		}
+		prerequisite = {
+			focus = UOB_Revolutionary_National_Idea
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			add_ideas = SRI_commisars_idea
+			
+			every_unit_leader = {
+				limit = {
+					has_trait = SOV_bolshevik_officer 
+				}
+				set_nationality = ENG
+			}
+
+		}
+	}
+
+	focus = {
+		id = UOB_Organize_Red_Cossackry
+		icon = GFX_goal_FRA_Levee_Masse
+		cost = 4
+		relative_position_id = UOB_Between_Syn_Ana
+		x = 1
+		y = 3
+		
+		prerequisite = {
+			focus = UOB_Negotiations_With_Red_Otomans
+		}
+		prerequisite = {
+			focus = UOB_Anti_Corruption_Policies
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Organize_Red_Cossackry"
+			army_experience = 50
+			add_command_power = 20
+			add_ideas = FRA_mass_conscription_idea
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1000
+				
+			}
+		
+		}
+	}
+
+	focus = {
+		id = UOB_Borotba_Newspaper
+		icon = GFX_goal_CSA_heresy
+		cost = 3
+		relative_position_id = UOB_Between_Syn_Ana
+		x = -1
+		y = 3
+		
+		prerequisite = {
+			focus = UOB_Poale_Zion
+		}
+		prerequisite = {
+			focus = UOB_Anti_Corruption_Policies
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Borotba_Newspaper"
+			add_political_power = 50
+			increase_ruling_party_popularity_by_5 = yes
+			add_ideas = CSA_humanist_manifesto_idea
+
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+
+	focus = {
+		id = UOB_Ukrainisation_Borotbyst
+		icon = GFX_BBR_labor_board
+		cost = 4
+		relative_position_id = UOB_Between_Syn_Ana
+		x = -3
+		y = 3
+		
+		prerequisite = {
+			focus = UOB_Poale_Zion
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Ukrainisation_Borotbyst"
+			add_political_power = 50
+			add_stability = 0.1
+			add_idea = CSA_syndicalist_democracy_idea
+		}
+	}
+
+	focus = {
+		id = UOB_Detente_Ukapists
+		icon = GFX_goal_ENG_lawrence_of_britannia
+		cost = 4
+		relative_position_id = UOB_Between_Syn_Ana
+		x = 3
+		y = 3
+		
+		prerequisite = {
+			focus = UOB_Negotiations_With_Red_Otomans
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Detente_Ukapists"
+			add_stability = 0.1
+			add_manpower = 10000
+			add_war_support = 0.1
+			add_popularity = { ideology = totalist popularity = 0.1 }
+			add_popularity = { ideology = social_democrat popularity = 0.1 }
+		}
+	}
+
+
+	focus = {
+		id = UOB_Union_Of_Communites
+		icon = GFX_goal_FRA_commune_of_liberty
+		cost = 4
+		relative_position_id = UOB_Between_Syn_Ana
+		x = 0
+		y = 4
+
+		prerequisite = {
+			focus = UOB_Ukrainisation_Borotbyst
+		}
+		prerequisite = {
+			focus = UOB_Detente_Ukapists
+		}
+		prerequisite = {
+			focus = UOB_Borotba_Newspaper
+		}
+		prerequisite = {
+			focus = UOB_Organize_Red_Cossackry
+		}
+
+		ai_will_do = {
+			factor = 70
+			modifier = {
+				factor = 2000
+				has_game_rule = {
+					rule = UKR_future
+					option = UKR_FUTURE_SHUMSKYI
+				}
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Union_Of_Communites"
+			add_stability = 0.05
+			increase_ruling_party_popularity_by_5 = yes
+			add_ideas = rus_federation_of_syndicates_1
+		}
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+	}
+	
+	
+	focus = {
+		id = UOB_Borotbyst_Ukraine
+		icon = GFX_goal_CSA_true_revolutionary_alliance
+		cost = 4
+		relative_position_id = UOB_Between_Syn_Ana
+		x = 0
+		y = 5
+		
+		prerequisite = {
+			focus = UOB_Union_Of_Communites
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Extend_Provisional_Dictatorship"
+			increase_ruling_party_popularity_by_5 = yes
+			add_political_power = 100
+			add_stability = 0.05
+			add_war_support = 0.1
+		}
+	}
+	####结束FRance_Between_Marxism_Narodism,工团和马克思主义之间
+
+	####开始第二次工团选举
+	
+	##正统工团胜利
+	focus = {
+		id = UOB_orthodox_SYN_Win
+		icon = GFX_goal_ideology_syndicalist
+		x = 0
+		y = 1
+		relative_position_id = ENG_tuc2
+		cost = 1
+		available = {
+			has_country_leader = {
+			ruling_only = yes
+			name = "Arthur Horner"
+		}
+		}
+		prerequisite = {
+			focus = ENG_tuc2
+			
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.1
+			}
+		}
+	}
+
+
+	focus = {
+		id = UOB_Industrialisation_Of_Urbanization
+		icon = GFX_goal_CSA_Full_Production_Without_War
+		cost = 4
+		relative_position_id = UOB_orthodox_SYN_Win
+		x = -2
+		y = 1
+		available = {
+			has_government = syndicalist
+		}
+		prerequisite = {
+			focus = UOB_orthodox_SYN_Win
+		}
+		ai_will_do = {
+			factor = 70
+			modifier = {
+				factor = 1.2
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Industrialisation_Of_Cities"
+			add_to_variable = {
+				borotbyst_city = 1
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+
+			add_ideas = UKR_strokes_of_hammer_and_heart
+			
+		}
+	}
+
+	focus = {
+		id = UOB_UNITY_The_Peasants
+		icon = GFX_goal_CSA_socialist_confederation
+		cost = 4
+		relative_position_id = UOB_orthodox_SYN_Win
+		x = -2
+		y = 2
+		
+		prerequisite = {
+			FOCUS = UOB_Industrialisation_Of_Urbanization
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Tax_The_Peasants"
+			add_manpower = 50000
+		    add_political_power: 50
+			if = {
+				limit = {
+					has_idea = UKR_strokes_of_hammer_and_heart_2
+				}
+				swap_ideas = {
+					remove_idea = UKR_strokes_of_hammer_and_heart_2
+					add_idea = UKR_strokes_of_hammer_and_heart_3
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = UKR_strokes_of_hammer_and_heart
+					add_idea = UKR_strokes_of_hammer_and_heart_1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = UOB_Sci_Production_Goals
+		icon = GFX_goal_CSA_Techno_Work_Time
+		cost = 4
+		relative_position_id = UOB_orthodox_SYN_Win
+		x = -2
+		y = 3
+		
+		prerequisite = {
+			focus = UOB_UNITY_The_Peasants
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Production_Goals"
+			
+			if = {
+				limit = {
+					has_idea = UKR_strokes_of_hammer_and_heart_1
+				}
+				swap_ideas = {
+					remove_idea = UKR_strokes_of_hammer_and_heart_1
+					add_idea = UKR_strokes_of_hammer_and_heart_3
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = UKR_strokes_of_hammer_and_heart
+					add_idea = UKR_strokes_of_hammer_and_heart_2
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = UOB_GREAT_Leap_Into_Modernity
+		icon = GFX_goal_NYC_City_Communes
+		cost = 4
+		relative_position_id = UOB_orthodox_SYN_Win
+		x = -2
+		y = 4
+		
+		prerequisite = {
+			focus = UOB_Sci_Production_Goals
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Leap_Into_Modernity"
+			
+			swap_ideas = {
+				remove_idea = UKR_strokes_of_hammer_and_heart_3
+				add_idea = UKR_strokes_of_hammer_and_heart_4
+			}
+			
+		}
+	}
+
+	focus = {
+		id = UOB_Necessity_Of_State
+		icon = GFX_goal_FRA_general_states_of_workers
+		cost = 4
+		relative_position_id = UOB_orthodox_SYN_Win
+		x = 0
+		y = 1
+		
+		prerequisite = {
+			focus = UOB_orthodox_SYN_Win
+		}
+
+		 available = {
+        has_government = syndicalist
+    }
+		
+		ai_will_do = {
+			factor = 70
+			modifier = {
+				factor = 1.2
+				UKR_blakytnyi_in_power = yes
+			}
+			modifier = {
+				factor = 2000
+			}
+		}
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 50
+			add_ideas = CSA_Syndicalist_management
+		}
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+	}
+
+	focus = {
+		id = UOB_Moderate_STATE_Decentralization
+		icon = GFX_goal_CSA_revolution_at_homee
+		cost = 4
+		relative_position_id = UOB_orthodox_SYN_Win
+		x = 0
+		y = 2
+		
+		prerequisite = {
+			focus = UOB_Necessity_Of_State
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Moderate_Decentralization"
+			random_owned_controlled_state = {
+				limit = {
+					impassable = no
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						has_state_category = four
+						has_state_category = three
+						has_state_category = two
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						local_resources_factor = 0.15
+						local_supplies = 0.3
+					}
+				}
+				ROOT = {
+					activate_targeted_decision = {
+						target = PREV
+						decision = UKR_develop_civilian_industry_in_state
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					impassable = no
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						has_state_category = four
+						has_state_category = three
+						has_state_category = two
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						local_resources_factor = 0.15
+						local_supplies = 0.3
+					}
+				}
+				ROOT = {
+					activate_targeted_decision = {
+						target = PREV
+						decision = UKR_develop_civilian_industry_in_state
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					impassable = no
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						has_state_category = four
+						has_state_category = three
+						has_state_category = two
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						local_resources_factor = 0.15
+						local_supplies = 0.3
+					}
+				}
+				ROOT = {
+					activate_targeted_decision = {
+						target = PREV
+						decision = UKR_develop_military_industry_in_state
+					}
+				}
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+	}
+
+	focus = {
+		id = UOB_Workers_Commissions_ORT
+		icon = GFX_RUS_Syndical_Cooperative_Federation
+		cost = 4
+		relative_position_id = UOB_orthodox_SYN_Win
+		x = 0
+		y = 3
+		
+		prerequisite = {
+			focus = UOB_Moderate_STATE_Decentralization
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Workers_Commissions"
+			add_ideas = UKR_workers_commissions
+		}
+	}
+
+	focus = {
+		id = UOB_UNION_Framework
+		icon = GFX_BBR_de_leonist_elections
+		cost = 4
+		relative_position_id = UOB_orthodox_SYN_Win
+		x = 0
+		y = 4
+		
+		prerequisite = {
+			focus = UOB_Workers_Commissions_ORT
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			add_ideas = GRU_DSR_Welfare
+			add_war_support = 0.1
+		}
+	}
+
+focus = {
+		id = UOB_Invite_global_Advisors
+		icon = GFX_goal_NYC_Colorblind_Proletariat
+		cost = 4
+		relative_position_id = UOB_orthodox_SYN_Win
+		x = 2
+		y = 1
+		
+		prerequisite = {
+			focus = UOB_orthodox_SYN_Win
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Invite_French_Advisors"
+			add_ideas = UOB_INTER_workers
+			add_manpower = 50000
+		}
+	}
+
+
+	focus = {
+		id = UOB_international_brigade
+		icon = GFX_goal_FRA_Revolutionary_Leadership
+		x = 2
+		y = 2
+		relative_position_id = UOB_orthodox_SYN_Win
+		cost = 4
+		 
+		prerequisite = {
+			focus = UOB_Invite_global_Advisors
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			add_ideas = FRA_international_brigade
+		}
+	}
+
+	focus = {
+		id = UOB_anti_socdem
+		icon = GFX_goal_NZL_crush_capitalist_reformism
+		x = 2
+		y = 3
+
+		relative_position_id = UOB_orthodox_SYN_Win
+		cost = 4
+		 
+		prerequisite = {
+			focus = UOB_international_brigade
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = social_democrat
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.1
+			}
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = UOB_Syn_Light
+		icon = GFX_goal_FRA_phalanstere
+		x = 2
+		y = 4
+
+		relative_position_id = UOB_orthodox_SYN_Win
+		cost = 4
+		 
+		prerequisite = {
+			focus = UOB_anti_socdem
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+      every_other_country = {
+        limit = {
+          has_syndicalist_government = yes
+        }
+        add_opinion_modifier = {
+          target = ROOT
+          modifier = SOV_INT
+        }
+      }
+    }
+	}
+
+	focus = {
+			id = UOB_Syn_shines
+			icon = GFX_goal_CSA_World_Revolution_csa
+			cost = 5
+			available = {
+			OR = {
+			 has_government = syndicalist
+			} 
+			}
+			prerequisite = {
+			FOCUS = UOB_GREAT_Leap_Into_Modernity
+			}
+			prerequisite = {
+			FOCUS = UOB_UNION_Framework
+			}
+			prerequisite = {
+			FOCUS = UOB_Syn_Light
+			}
+    
+			available = {
+			is_subject = no
+			}
+			relative_position_id = UOB_orthodox_SYN_Win
+			x = 0
+			y = 5
+			ai_will_do = {
+			factor = 2
+			}
+			available_if_capitulated = no
+			cancel_if_invalid = yes
+			completion_reward = {
+			add_stability = 0.10
+			add_political_power = 100
+			add_ideas = csa_unionist_economics_idea
+			}
+			}
+
+
+	##自由工团胜利
+	focus = {
+		id = UOB_Freedom_SYN_Win
+		icon = GFX_goals_FRA_liberal_syndicalism
+		x = -7
+		y = 1
+		relative_position_id = ENG_tuc2
+		cost = 1
+		available = {
+			has_country_leader = {
+			ruling_only = yes
+			name = "Clem Attlee"
+		}
+		has_government = syndicalist
+		}
+		prerequisite = {
+			focus = ENG_tuc2
+			
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.1
+			}
+		}
+	}
+
+	focus = {
+		id = UOB_Modernisation_Of_Rural_Life_SYN
+		icon = GFX_CAL_rea
+		cost = 4
+		relative_position_id = UOB_Freedom_SYN_Win
+		x = -2
+		y = 1
+		available = {
+			has_government = syndicalist
+		}
+		prerequisite = {
+			focus = UOB_Freedom_SYN_Win
+		}
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0.8
+			}
+		}
+		completion_reward = {
+			add_ideas = UKR_modernisation_of_rural_life
+			random_owned_controlled_state = {
+				limit = {
+					impassable = no
+					OR = {
+						has_state_category = four
+						has_state_category = three
+						has_state_category = two
+					}
+				}
+				ROOT = {
+					activate_targeted_decision = {
+						target = PREV
+						decision = UKR_develop_rural_infrastructure
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					impassable = no
+					OR = {
+						has_state_category = four
+						has_state_category = three
+						has_state_category = two
+					}
+				}
+				ROOT = {
+					activate_targeted_decision = {
+						target = PREV
+						decision = UKR_develop_rural_infrastructure
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					impassable = no
+					OR = {
+						has_state_category = four
+						has_state_category = three
+						has_state_category = two
+					}
+				}
+				ROOT = {
+					activate_targeted_decision = {
+						target = PREV
+						decision = UKR_develop_rural_infrastructure
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = UOB_Rural_Self_Efficiency_SYN
+		icon = GFX_focus_SOV_breadbasket_of_the_union
+		cost = 4
+		relative_position_id = UOB_Freedom_SYN_Win
+		x = -2
+		y = 2
+		
+		prerequisite = {
+			focus = UOB_Modernisation_Of_Rural_Life_SYN
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = UKR_modernisation_of_rural_life_1
+				}
+				swap_ideas = {
+					remove_idea = UKR_modernisation_of_rural_life_1
+					add_idea = UKR_modernisation_of_rural_life_3
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = UKR_modernisation_of_rural_life
+					add_idea = UKR_modernisation_of_rural_life_2
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = UOB_Promote_Peasant_Worker_SYN
+		icon = GFX_goal_AUS_paris_marx_fusion
+		cost = 4
+		relative_position_id = UOB_Freedom_SYN_Win
+		x = -2
+		y = 3
+		
+		prerequisite = {
+			focus = UOB_Rural_Self_Efficiency_SYN
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = UKR_modernisation_of_rural_life_2
+				}
+				swap_ideas = {
+					remove_idea = UKR_modernisation_of_rural_life_2
+					add_idea = UKR_modernisation_of_rural_life_3
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = UKR_modernisation_of_rural_life
+					add_idea = UKR_modernisation_of_rural_life_1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = UOB_Break_The_Urban_Rural_Divide_SYN
+		icon = GFX_RUS_Promote_Cooperation
+		cost = 4
+		relative_position_id = UOB_Freedom_SYN_Win
+		x = -2
+		y = 4
+		
+		prerequisite = {
+			focus = UOB_Promote_Peasant_Worker_SYN
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+		}	
+	}
+
+	focus = {
+		id = UOB_ALL_To_SYN
+		icon = GFX_goal_autonomism
+		cost = 4
+		relative_position_id = UOB_Freedom_SYN_Win
+		x = 0
+		y = 1
+		available = {
+			has_government = syndicalist
+		}
+		
+		prerequisite = {
+			focus = UOB_Freedom_SYN_Win
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			add_political_power = -30
+			add_ideas = SOV_labour_republic_2
+		}
+	}
+
+	focus = {
+		id = UOB_Devolve_SYN
+		icon = GFX_FAUD_ANARCHO_SOCIETY
+		cost = 4
+		relative_position_id = UOB_Freedom_SYN_Win
+		x = 0
+		y = 2
+		available = {
+			has_government = syndicalist
+		}
+		prerequisite = {
+			focus = UOB_ALL_To_SYN
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UKR_Devolve_Administration"
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = UOB_SYN_Self_Management_B
+		icon = GFX_TRM_Appease_Workers
+		cost = 4
+		relative_position_id = UOB_Freedom_SYN_Win
+		x = 0
+		y = 3
+		
+		prerequisite = {
+			focus = UOB_Devolve_SYN
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			ADD_IDEAS = UKR_workers_management_1
+			add_stability = 0.075
+		}
+	}
+
+	focus = {
+    id = UOB_free_communes
+    icon = GFX_CAL_focus_collective_housing
+    cost = 5
+    available = {
+      has_government = syndicalist
+    }
+    prerequisite = {
+      focus = UOB_SYN_Self_Management_B
+    }
+    relative_position_id = UOB_Freedom_SYN_Win
+    x = 0
+    y = 4
+    ai_will_do = {
+      factor = 50
+    }
+    completion_reward = {
+        add_ideas = CSA_decentralized_planning_idea_2
+      add_war_support = 0.15
+      add_popularity = {
+        ideology = syndicalist
+        popularity = 0.05
+      }
+    }
+  }
+
+	focus = {
+		id = UOB_SYN_liberty
+		icon = GFX_goal_BRG_Liberty_Socialism
+		relative_position_id = UOB_Freedom_SYN_Win
+		x = 2
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = UOB_Freedom_SYN_Win
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_popularity = { ideology = social_democrat popularity = 0.1 }
+			add_socdem_to_coalition = yes
+		}
+	}
+
+	focus = {
+    id = UOB_Freedom_Of_SYN_Print
+    icon = GFX_goal_AST_freedom_of_the_press
+    relative_position_id = UOB_Freedom_SYN_Win
+    x = 2
+    y = 2
+    cost = 4
+    prerequisite = {
+      focus = UOB_SYN_liberty
+    }
+    available = {
+    has_government = syndicalist
+    }
+    ai_will_do = {
+      factor = 20
+    }
+    completion_reward = {
+      add_ideas = RUS_freedom_of_ideas
+    }
+  }
+
+	focus = {
+    id = UOB_Cultural_Pluralism
+    icon = GFX_goal_BBR_futurist_edu
+    relative_position_id = UOB_Freedom_SYN_Win
+    x = 2
+    y = 3
+    cost = 4
+    prerequisite = {
+      focus = UOB_Freedom_Of_SYN_Print
+    }
+    available = {
+    has_government = syndicalist
+    }
+    ai_will_do = {
+      factor = 20
+    }
+    completion_reward = {
+      add_ideas = UOB_Cultural_Pluralism_IDEAS
+    }
+  }
+
+	focus = {
+		id = UOB_never_chained
+		icon = GFX_goal_COR_Prison_Reforms_College_Boards
+		x = 2
+		y = 4
+		relative_position_id = UOB_Freedom_SYN_Win
+		cost = 4
+		 
+		prerequisite = {
+			focus = UOB_Cultural_Pluralism
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+				add_ideas = FRA_syndical_free2
+		}
+	}
+
+	focus = {
+		id = UOB_viva_liberty
+		icon = GFX_goal_FRA_commune_of_liberty
+		x = 0
+		y = 5
+		relative_position_id = UOB_Freedom_SYN_Win
+		cost = 4
+		 
+		prerequisite = {
+			focus = UOB_Break_The_Urban_Rural_Divide_SYN
+			
+		}
+		prerequisite = {
+			focus = UOB_free_communes
+			
+		}
+		prerequisite = {
+			focus = UOB_never_chained
+			
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = FRA_viva_liberty
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	##社会女权胜利
+	focus = {
+		id = UOB_Social_Feminism
+		icon = GFX_goals_FRA_social_feminism
+		x = -14
+		y = 1
+		relative_position_id = ENG_tuc2
+		cost = 1
+		available = {
+			has_country_leader = {
+			ruling_only = yes
+			name = "Barbara Castle"
+		}
+		has_government = syndicalist
+		}
+		prerequisite = {
+			focus = ENG_tuc2
+			
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = syndicalist
+				popularity = 0.1
+			}
+		}
+	}
+
+	focus = {
+		id = UOB_women_rights
+		icon = GFX_focus_generic_female_rights
+		x = -2
+		y = 1
+		relative_position_id = UOB_Social_Feminism
+		cost = 4
+		 
+		prerequisite = {
+			focus = UOB_Social_Feminism
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			add_research_slot = 1
+			add_stability = -0.05
+		}
+	}
+
+	focus = {
+		id = UOB_FAUD_NEW_FAMILY_MODEL
+		icon = FAUD_HER_SON
+		relative_position_id = UOB_Social_Feminism
+		x = -2
+		y = 2
+		cost = 4
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus GRU_FAUD_NEW_FAMILY_MODEL2"
+			add_ideas = FAUD_NEW_FAMILY
+		}
+		prerequisite = { focus = UOB_women_rights }
+	}
+
+	focus = {
+    id = UOB_total_gender_equality
+    icon = GFX_GRU_FEMINISM
+    relative_position_id = UOB_Social_Feminism
+    x = -2
+    y = 3
+    cost = 4
+    completion_reward = {
+      add_ideas = UOB_FEMALE_SOLDIER
+	  set_rule = {
+        can_generate_female_aces = yes
+      }
+	  add_manpower = 200000
+    }
+    prerequisite = {
+      focus = UOB_FAUD_NEW_FAMILY_MODEL
+    }
+  }
+
+  focus = {
+    id = UOB_woman_suffrage
+    icon = GFX_GRU_woman_suffrage-4044
+    relative_position_id = UOB_Social_Feminism
+    x = -2
+    y = 4
+    cost = 4
+    completion_reward = {
+      add_ideas = GRU_SPD_FAUD_WOMAN_RIGHTS
+	  add_stability = 0.15
+	  add_war_support = 0.15
+	  add_command_power = 150
+      
+    }
+    prerequisite = {
+      focus = UOB_total_gender_equality
+    }
+  }
+
+  focus = {
+    id = UOB_scientific_industry
+    icon = GFX_goal_CSA_Technocratic_Industry
+    cost = 4
+    prerequisite = {
+      focus = UOB_Social_Feminism
+    }
+    x = 0
+    y = 1
+    relative_position_id = UOB_Social_Feminism
+    ai_will_do = {
+      factor = 20
+    }
+    completion_reward = {
+      random_owned_state = {
+        limit = {
+          is_core_of = ENG
+          is_controlled_by = ENG
+          industrial_complex > 0
+        }
+        add_extra_state_shared_building_slots = 3
+        add_building_construction = {
+          type = industrial_complex
+          level = 2
+          instant_build = yes
+        }
+      }
+      random_owned_state = {
+        limit = {
+          is_core_of = ENG
+          is_controlled_by = ENG
+          industrial_complex > 0
+        }
+        add_extra_state_shared_building_slots = 3
+        add_building_construction = {
+          type = industrial_complex
+          level = 2
+          instant_build = yes
+        }
+      }
+      random_owned_state = {
+        limit = {
+          is_core_of = ENG
+          is_controlled_by = ENG
+          arms_factory > 0
+        }
+        add_extra_state_shared_building_slots = 3
+        add_building_construction = {
+          type = arms_factory
+          level = 2
+          instant_build = yes
+        }
+      }
+    }
+  }
+
+  focus = {
+    id = UOB_compassion_for_the_nursing
+    icon = GFX_goal_TEX_Christian_Compasion_Towards_Poor
+    cost = 4
+    prerequisite = {
+      focus = UOB_scientific_industry
+    }
+    relative_position_id = UOB_Social_Feminism
+    x = 0
+    y = 2
+    ai_will_do = {
+      factor = 20
+    }
+    completion_reward = {
+    add_ideas = UOB_public_healthcare
+	add_tech_bonus = {
+        name = SOV_Public_Healthcare
+        bonus = 0.5
+        uses = 2
+        category = hospital_tech
+      }
+	        custom_effect_tooltip = improved_field_hospitals_effect
+      hidden_effect = {
+        set_technology = {
+          improved_field_hospitals = 1
+          popup = no
+        }
+      }
+	  }
+	}
+
+	focus = {
+		id = UOB_cinecitta
+		icon = GFX_goal_NYC_City_Theater_Arts
+		cost = 4
+		relative_position_id = UOB_Social_Feminism
+		x = 0
+		y = 3
+
+		prerequisite = {
+			focus = UOB_compassion_for_the_nursing
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_ideas = UOB_MOVIES
+			add_tech_bonus = {
+				name = SRI_cinecitta
+				bonus = 1
+				uses = 1
+				category = electronics
+			}
+    }
+  }
+
+  focus = {
+    id = UOB_life_in_a_technocracy
+    icon = GFX_goal_CSA_What_It_Will_Be_Like
+    cost = 4
+    x = 0
+    y = 4
+    relative_position_id = UOB_Social_Feminism
+    prerequisite = {
+      focus = UOB_cinecitta
+    }
+    ai_will_do = {
+      factor = 20
+    }
+	add_political_power = 75
+    completion_reward = {
+      add_ideas = UOB_the_way_should_be
+    }
+  }
+
+  focus = {
+    id = UOB_A_New_Female_Image
+    icon = GFX_SOV_women
+    relative_position_id = UOB_Social_Feminism
+    x = 2
+    y = 1
+    cost = 5
+    prerequisite = {
+      focus = UOB_Social_Feminism
+    }
+    ai_will_do = {
+      factor = 20
+    }
+    completion_reward = {
+	add_political_power = 100
+	add_war_support = 0.1
+	add_stability = 0.1
+	set_rule = {
+    	can_lower_tension = yes
+				}
+    }
+  }
+
+	focus = {
+    id = UOB_Oppose_capi_women
+    icon = GFX_GRU_PDS_FIGHT_THE_RIGHT
+    relative_position_id = UOB_Social_Feminism
+    x = 2
+    y = 2
+    cost = 4
+	prerequisite = {
+      focus = UOB_A_New_Female_Image
+    }
+    completion_reward = {
+		add_popularity = {
+        ideology = social_liberal
+        popularity = -0.05
+      }
+      add_popularity = {
+        ideology = market_liberal
+        popularity = -0.05
+      }
+      add_popularity = {
+        ideology = social_conservative
+        popularity = -0.05
+      }
+	  set_rule = {
+    	can_generate_female_unit_leaders = yes
+				}
+	country_event = UOB.9001
+    }
+  }
+
+  focus = {
+    id = UOB_anti_totalism
+    icon = GFX_goal_HOL_crackdown_totalist
+    relative_position_id = UOB_Social_Feminism
+    x = 2
+    y = 3
+    cost = 4
+    prerequisite = {
+      focus = UOB_Oppose_capi_women
+    }
+    ai_will_do = {
+      factor = 20
+    }
+    completion_reward = {
+	add_popularity = {
+				ideology = totalist
+				popularity = -0.2
+			}
+			add_stability = 0.1
+			add_ideas = FRA_broad
+    }
+  }
+
+  focus = {
+	id = UOB_oppose_all_dictators
+	icon = GFX_RUS_Revolutionary_Terror
+	x = 2
+	y = 4
+	relative_position_id = UOB_Social_Feminism
+	cost = 4
+	prerequisite = {
+		focus = UOB_anti_totalism
+	}
+	ai_will_do = {
+		factor = 20
+	}
+	completion_reward = {
+		add_ideas = UOB_oppose_all_dictators_idea
+	}
+}
+
+focus = {
+	id = UOB_social_liberation
+	icon = GFX_goal_generic_female_liberation_syndicalist
+	x = 0
+	y = 5
+	relative_position_id = UOB_Social_Feminism
+	cost = 4
+	 
+	prerequisite = {
+		focus = UOB_woman_suffrage
+	}
+	prerequisite = {
+		focus = UOB_life_in_a_technocracy
+	}
+	prerequisite = {
+		focus = UOB_oppose_all_dictators
+	}
+	ai_will_do = {
+		factor = 20
+	}
+	completion_reward = {
+		add_ideas = UOB_social_liberation
+	}
+	}
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	##社会女权胜利结束
+
+
+	
+	####结束第二次工团选举
+	
+	####开始CSA世界革命
+	
+			focus = {
+			id = CSA_world_revolution_UOB
+			icon = GFX_goal_CSA_World_Revolution_csa
+			cost = 5
+			available = {
+	
+			date >1939.9.1
+			
+			OR = {
+			 has_government = radical_socialist
+			 has_government = syndicalist
+			} 
+			}
+			prerequisite = {
+			focus = UOB_win
+		}
+			available = {
+			is_subject = no
+			}
+	
+			x = -26
+			y = 7
+			ai_will_do = {
+			factor = 2
+			}
+			available_if_capitulated = no
+			cancel_if_invalid = yes
+			completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CSA_world_revolution"
+			add_stability = 0.10
+			add_political_power = 100
+			add_ideas = SOV_tuhk_revolt
+			}
+  
+			}  
+			
+			focus = {
+			id = CSA_on_the_beach_UOB
+			icon = GFX_BBR_unionize_yesterday
+			cost = 5
+			prerequisite = {
+			focus = CSA_world_revolution_UOB
+			}
+			available = {
+			is_major = yes
+			is_subject = no
+			}
+			relative_position_id = CSA_world_revolution_UOB
+			x = 0
+			y = 1
+			ai_will_do = {
+			factor = 2
+			modifier = {
+			factor = 3
+			has_war = yes
+			}
+			}
+			available_if_capitulated = no
+			cancel_if_invalid = yes
+			completion_reward = {
+			add_ideas = USA_on_the_beach_idea
+			}
+			}
+  
+  #####和第三国际搞好关系
+    focus = {
+    id = CSA_join_the_internationale_UOB
+    icon = GFX_BBR_internationale_collaboration
+    cost = 5
+    prerequisite = {
+      focus = CSA_on_the_beach_UOB
+    }
+    mutually_exclusive = {
+      focus = CSA_denounce_the_internationale_UOB
+    }
+    available = {
+      is_major = yes
+      is_subject = no
+      is_faction_leader = no
+      INT = {
+        exists = yes
+        is_faction_leader = yes
+		OR = {
+			 has_government = radical_socialist
+			 has_government = syndicalist
+		
+      }
+    }
+	}
+    relative_position_id = CSA_world_revolution_UOB
+    x = -2
+    y = 2
+    ai_will_do = {
+      factor = 20
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+      FRA = {
+        add_opinion_modifier = {
+          target = ENG
+          modifier = large_increase
+        }
+      }
+
+      }
+      }
+	
+	focus = {
+    id = CSA_new_lend_lease_UOB
+    icon = GFX_goal_syndicalist_industry
+    cost = 5
+    prerequisite = {
+      focus = CSA_join_the_internationale_UOB
+    }
+    available = {
+      is_major = yes
+      is_subject = no
+    }
+    relative_position_id = CSA_world_revolution_UOB
+    x = -2
+    y = 3
+    ai_will_do = {
+      factor = 40
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+      add_war_support = 0.10
+	  add_equipment_to_stockpile = {
+        type = light_tank_equipment_2
+        amount = 40
+        producer = CSA
+      }
+    }
+  }
+  
+    focus = {
+    id = CSA_invest_in_the_west_UOB
+    icon = GFX_BBR_build_industries
+    cost = 5
+    prerequisite = {
+      focus = CSA_new_lend_lease_UOB
+    }
+    available = {
+      is_major = yes
+      is_subject = no
+    }
+    relative_position_id = CSA_world_revolution_UOB
+    x = -2
+    y = 4
+    ai_will_do = {
+      factor = 5
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+      random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+		}
+		random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+    FRA = {
+        add_offsite_building = {
+          type = arms_factory
+          level = 1
+        }
+        random_owned_controlled_state = {
+          limit = {
+            is_core_of = FRA
+            is_controlled_by = FRA
+            industrial_complex > 0
+          }
+          add_extra_state_shared_building_slots = 1
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+          add_extra_state_shared_building_slots = 1
+          add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+          }
+        }
+      }
+    }
+  }
+    #######结束和第三国际搞好关系
+
+	#######和第三国际决裂
+	focus = {
+    id = CSA_denounce_the_internationale_UOB
+    icon = GFX_goals_FRA_beat_sorelians
+    cost = 2
+    prerequisite = {
+      focus = CSA_on_the_beach_UOB
+    }
+    mutually_exclusive = {
+      focus = CSA_join_the_internationale_UOB
+    }
+    available = {
+      is_major = yes
+      is_subject = no
+      NOT = {
+			INT = {
+			has_government = radical_socialist
+			has_government = syndicalist
+			 }
+	  }
+	  
+    }
+    relative_position_id = CSA_world_revolution_UOB
+    x = 2
+    y = 2
+    ai_will_do = {
+      factor = 0
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+      add_stability = 0.05
+      add_political_power = -50
+	  add_ideas = UOB_Real_Syndicalist
+      FRA = {
+        add_opinion_modifier = {
+          target = ENG
+          modifier = large_decrease
+        }
+        
+      }
+    }
+  }
+  
+  focus = {
+    id = CSA_all_to_the_revolution_UOB
+    icon = GFX_goal_CSA_all_for_revolution
+    cost = 3
+    prerequisite = {
+      focus = CSA_denounce_the_internationale_UOB
+    }
+    available = {
+      is_major = yes
+      is_subject = no
+    }
+    relative_position_id = CSA_denounce_the_internationale_UOB
+    x = 0
+    y = 1
+    ai_will_do = {
+      factor = 2
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+      add_manpower = 37500
+      add_war_support = 0.1
+      random_owned_controlled_state = {
+        limit = {
+          free_building_slots = {
+            building = arms_factory
+            size > 0
+            include_locked = yes
+          }
+        }
+        add_extra_state_shared_building_slots = 2
+        add_building_construction = {
+          type = arms_factory
+          level = 2
+          instant_build = yes
+        }
+      }
+      random_owned_controlled_state = {
+        limit = {
+          free_building_slots = {
+            building = arms_factory
+            size > 0
+            include_locked = yes
+          }
+        }
+        add_extra_state_shared_building_slots = 2
+        add_building_construction = {
+          type = arms_factory
+          level = 2
+          instant_build = yes
+        }
+      }
+    }
+  }
+
+  focus = {
+    id = CSA_new_red_faction_UOB
+    icon = GFX_goal_CSA_true_revolutionary_alliance
+    cost = 2.00
+    prerequisite = {
+      focus = CSA_all_to_the_revolution_UOB
+    }
+    available = {
+      is_major = yes
+      is_subject = no
+    }
+    relative_position_id = CSA_denounce_the_internationale_UOB
+    x = 0
+    y = 2
+    ai_will_do = {
+      factor = 2
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+      add_war_support = 0.03
+	  add_political_power = 100
+	  leave_faction = yes
+	  create_faction = "Syndicalism_Internationale"
+
+      }
+    }
+
+	focus = {
+		id = UOB_Inter_ARM
+		icon = GFX_goals_FRA_INFOR
+		cost = 5
+		available = {
+			has_political_power > 0
+		}
+		prerequisite = {
+			focus = CSA_new_red_faction_UOB
+		}
+		
+		x = 2
+		y = 1
+		relative_position_id = CSA_new_red_faction_UOB
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			add_political_power = -80
+			every_country = {
+				limit = {
+					is_in_faction_with = ENG
+				}
+				add_ideas = SYN_INARM_IDEA
+			}
+				
+			
+		}
+	}
+
+	focus = {
+		id = UOB_cocommand_system
+		icon = GFX_goal_CSA_centralist_reorganization
+		cost = 5
+		prerequisite = {
+			Focus = UOB_Inter_ARM
+		}
+		available = {
+			has_political_power > 0
+		}
+		x = -2
+		y = 1
+		relative_position_id = UOB_Inter_ARM
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			add_political_power = -80
+			every_country = {
+				limit = {
+					is_in_faction_with = ENG
+				}
+				add_ideas = INT_cocommand
+			}
+		}
+	}
+
+focus = {
+		id = UOB_Ensuring_Ocean
+		icon = GFX_goal_FIU_secure_fleet
+		cost = 5
+		prerequisite = {
+			Focus = UOB_Inter_ARM
+		}
+		available = {
+			has_political_power > 0
+		}
+		x = -0
+		y = 1
+		relative_position_id = UOB_Inter_ARM
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			add_political_power = -80
+			every_country = {
+				limit = {
+					is_in_faction_with = ENG
+				}
+				add_ideas = SYN_admirality
+			}
+		}
+	}
+
+	focus = {
+		id = UOB_military_practice
+		icon = GFX_goal_generic_army_mass_assault
+		cost = 5
+		prerequisite = {
+			focus = UOB_Inter_ARM
+		}
+		available = {
+			has_political_power > 0
+		}
+		add_political_power = -80
+		x = 2
+		y = 1
+		relative_position_id = UOB_Inter_ARM
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus FRA_arab_committee"
+			every_country = {
+				limit = {
+					is_in_faction_with = ENG
+				}
+				army_experience = 50
+				navy_experience = 50
+				air_experience = 30
+				add_ideas = INT_practice
+			}
+		}
+	}
+
+focus = {
+		id = UOB_global_intervention
+		icon = GFX_goal_TEX_stop_american_warmongers
+		cost = 5
+		prerequisite = {
+			focus = UOB_cocommand_system
+		}
+		prerequisite = {
+			focus = UOB_Ensuring_Ocean
+		}
+		available = {
+			has_political_power > 0
+		}
+		x = -1
+		y = 2
+		relative_position_id = UOB_Inter_ARM
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+				add_ideas = INT_intervention
+		}
+	}
+
+	focus = {
+		id = UOB_collective_security
+		icon = GFX_CSA_defensive_outlook
+		cost = 5
+		prerequisite = {
+			focus = UOB_military_practice
+		}
+		prerequisite = {
+			focus = UOB_Ensuring_Ocean
+		}
+		available = {
+			has_political_power > 0
+		}
+		x = 1
+		y = 2
+		relative_position_id = UOB_Inter_ARM
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			add_political_power = -80
+						every_country = {
+				limit = {
+					is_in_faction_with = ENG
+				}
+				add_ideas = UOB_collective_security_idea
+			}	
+		}
+	}
+
+	focus = {
+		id = UOB_Together_with_ENG
+		icon = GFX_IRE_scarlet_dawn
+		cost = 5
+		prerequisite = {
+			focus = UOB_global_intervention
+		}
+		prerequisite = {
+			focus = UOB_collective_security
+		}
+		available = {
+			has_political_power > 0
+		}
+		x = 0
+		y = 3
+		relative_position_id = UOB_Inter_ARM
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+		add_political_power = 100
+		every_country = {
+				limit = {
+					is_in_faction_with = ENG
+				}
+				add_opinion_modifier = {
+        		target = ENG
+        		modifier = KR_trade_agreement
+     			 }
+				add_ideas = UOB_Together_with_ENG_idea
+		}	
+		}
+	}
+
+	focus = {
+		id = UOB_brotherhood
+		icon = GFX_goal_NIC_Victory_Social_Democracy
+		cost = 5
+		prerequisite = {
+			focus = CSA_new_red_faction_UOB
+		}
+		x = 7
+		y = 1
+		relative_position_id = CSA_new_red_faction_UOB
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			has_political_power > 0
+		}
+		completion_reward = {
+			add_political_power = -80
+			every_country = {
+				limit = {
+					is_in_faction_with = ENG
+				}
+				add_political_power = 100
+				add_popularity = {
+				ideology = syndicalist
+				ideology = radical_socialist
+				popularity = 0.1
+			}
+			}
+		}
+	}
+
+	focus = {
+		id = UOB_Court
+		icon = GFX_GRU_union_congress-4049
+		cost = 5
+		prerequisite = {
+			focus = UOB_brotherhood
+		}
+		x = 6
+		y = 2
+		relative_position_id = CSA_new_red_faction_UOB
+		available = {
+			has_political_power > 0
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			add_political_power = -80
+			every_country = {
+				limit = {
+					is_in_faction_with = ENG
+				}
+			Add_ideas = RUS_bukharin_plan_1
+			}
+		}
+	}
+
+	focus = {
+		id = UOB_SCI_COOP
+		icon = GFX_SOV_social_engineering
+		cost = 5
+		prerequisite = {
+			focus = UOB_brotherhood
+		}
+		x = 1
+		y = 1
+		relative_position_id = UOB_brotherhood
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			has_political_power > 0
+		}
+		completion_reward = {
+			add_political_power = -80
+			every_country = {
+				limit = {
+					is_in_faction_with = ENG
+				}
+			Add_ideas = SOV_RES_FRUNZE
+			}
+		}
+	}
+
+	focus = {
+		id = UOB_Union_of_all_unions
+		icon = GFX_goal_CSA_socialist_confederation
+		cost = 5
+		prerequisite = {
+			focus = UOB_Court
+		}
+		prerequisite = {
+			focus = UOB_SCI_COOP
+		}
+		x = 0
+		y = 2
+		relative_position_id = UOB_brotherhood
+		available = {
+			has_political_power > 0
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			add_political_power = -80
+			every_country = {
+				limit = {
+					is_in_faction_with = ENG
+				}
+			Add_ideas = CSA_economies_of_scale_idea
+			}
+		}
+	}
+
+		focus = {
+		id = UOB_end_nationalism
+		icon = GFX_goal_AUS_destroy_nationalism
+		cost = 5
+		prerequisite = {
+			focus = UOB_Union_of_all_unions
+		}
+		x = -1
+		y = 3
+		relative_position_id = UOB_brotherhood
+		available = {
+			has_political_power > 0
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			remove_ideas = THINT_exact_vengeance
+			every_country = {
+				limit = {
+					is_in_faction_with = ENG
+				}
+			add_war_support = -0.15
+			add_stability = 0.15
+			add_political_power = 50
+			}
+		}
+	}
+
+	focus = {
+		id = UOB_Socialist_economic_integration
+		icon = GFX_goal_syndicalist_workers
+		cost = 5
+		prerequisite = {
+			focus = UOB_Union_of_all_unions
+		}
+
+		x = 1
+		y = 3
+		relative_position_id = UOB_brotherhood
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			has_political_power > 0
+		}
+		completion_reward = {
+			add_political_power = -80
+			every_country = {
+				limit = {
+					is_in_faction_with = ENG
+				}
+			add_ideas = SYN_Socialist_economic_integration_idea
+			}
+		}
+	}
+
+	focus = {
+		id = UOB_Unite_beneath_flags
+		icon = GFX_SOV_paradise
+		cost = 5
+		prerequisite = {
+			focus = UOB_end_nationalism
+		}
+		prerequisite = {
+			focus = UOB_Socialist_economic_integration
+		}
+		available = {
+			has_political_power > 0
+		}
+		x = 0
+		y = 4
+		relative_position_id = UOB_brotherhood
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			add_political_power = 150
+			every_country = {
+				limit = {
+					is_in_faction_with = ENG
+				}
+			add_ideas = XXX
+			add_syndicalist_to_coalition = yes
+			add_radical_socialist_to_coalition = yes
+			}
+		}
+	}
+
+	focus = {
+		id = UOB_Internationale_is_coming_ture
+		icon = GFX_SOV_Progress
+		cost = 5
+		prerequisite = {
+			focus = UOB_Unite_beneath_flags
+		}
+		
+		x = 0
+		y = 5
+		relative_position_id = UOB_brotherhood
+		ai_will_do = {
+			factor = 20
+		}available = {
+			has_political_power > 150
+		}
+		completion_reward = {
+			every_country = {
+				limit = {
+					is_in_faction_with = ENG
+				}
+		add_stability = 0.5
+		add_war_support = 0.5
+		capital_scope = {
+        set_state_category = twelve
+        add_extra_state_shared_building_slots = 6
+        add_building_construction = {
+          type = industrial_complex
+          level = 3
+          instant_build = yes
+        }
+        add_building_construction = {
+          type = arms_factory
+          level = 3
+          instant_build = yes
+        }
+        add_building_construction = {
+          type = air_base
+          level = 1
+          instant_build = yes
+        }
+      }
+
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+	####结束和第三国际决裂
+	
+	####和第三国际决定后续写
+  focus = {
+    id = CSA_save_the_cnt_UOB
+    icon = GFX_goal_CSA_iberian_revolution
+    cost = 5
+    prerequisite = {
+      focus = CSA_invest_in_the_west_UOB
+      focus = CSA_new_red_faction_UOB
+    }
+    available = {
+      is_major = yes
+      is_subject = no
+    }
+    relative_position_id = CSA_world_revolution_UOB
+    x = -2
+    y = 5
+    ai_will_do = {
+      factor = 2
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+
+      create_wargoal = {
+        type = annex_everything
+        target = SPR
+      }
+      create_wargoal = {
+        type = annex_everything
+        target = CAR
+      }
+    }
+  }
+
+  focus = {
+    id = CSA_brazilian_socialism_UOB
+    icon = GFX_goal_CSA_red_brazil
+    cost = 5
+    prerequisite = {
+      focus = CSA_save_the_cnt_UOB
+    }
+    available = {
+      is_major = yes
+      is_subject = no
+    }
+    relative_position_id = CSA_world_revolution_UOB
+    x = -2
+    y = 6
+    ai_will_do = {
+      factor = 20
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+      
+      create_wargoal = {
+        type = annex_everything
+        target = BRA
+      }
+    }
+  }
+
+focus = {
+    id = UOB_Persuade_SYN_RAD
+    icon = GFX_goals_FRA_oppose_radicalism
+    cost = 5
+    prerequisite = {
+      focus = CSA_new_red_faction_UOB
+    }
+    available = {
+      is_major = yes
+      is_subject = no
+    }
+    relative_position_id = CSA_denounce_the_internationale_UOB
+    x = -2
+    y = 3
+    ai_will_do = {
+      factor = 2
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+	country_event = UOB.1101
+    }
+  }
+
+
+  focus = {
+    id = CSA_strike_low_countries_UOB
+    icon = GFX_goal_HOL_dutch_pannationalism
+    cost = 5
+    prerequisite = {
+      focus = UOB_Persuade_SYN_RAD
+    }
+	bypass = {
+	HOL = {
+			is_subject_of = ROOT
+			is_in_faction_with = ROOT
+				}
+	BEL = {
+			is_subject_of = ROOT
+			is_in_faction_with = ROOT
+				}
+	LUX = {
+			is_subject_of = ROOT
+			is_in_faction_with = ROOT
+				}
+			}
+    available = {
+      is_major = yes
+      is_subject = no
+    }
+    relative_position_id = CSA_denounce_the_internationale_UOB
+    x = -2
+    y = 4
+    ai_will_do = {
+      factor = 2
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+      create_wargoal = {
+        type = annex_everything
+        target = HOL
+      }
+	  create_wargoal = {
+        type = annex_everything
+        target = BEL
+      }
+	  create_wargoal = {
+        type = annex_everything
+        target = LUX
+      }
+    }
+  }
+
+focus = {
+    id = CSA_strike_faux_socialists_UOB
+    icon = GFX_goal_FRA_strike_french_reaction_jacobin
+    cost = 5
+    prerequisite = {
+      focus = CSA_strike_low_countries_UOB
+    }
+    available = {
+      is_major = yes
+      is_subject = no
+    }
+    relative_position_id = CSA_denounce_the_internationale_UOB
+    x = -2
+    y = 5
+    ai_will_do = {
+      factor = 2
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+      
+      create_wargoal = {
+        type = annex_everything
+        target = FRA
+      }
+    }
+  }
+
+	focus = {
+    id = CSA_power_of_the_revolution_UOB
+    icon = GFX_goal_CSA_inevitable_world_socialism
+    cost = 5
+    prerequisite = {
+      focus = CSA_brazilian_socialism_UOB
+    }
+    available = {
+      is_major = yes
+      is_subject = no
+    }
+    relative_position_id = CSA_join_the_internationale_UOB
+    x = 0
+    y = 5
+    ai_will_do = {
+      factor = 2
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+      add_stability = 0.1
+      add_ideas = CSA_power_of_the_revolution_idea
+    }
+  }
+  
+    focus = {
+    id = CSA_break_japan_UOB
+    icon = GFX_goal_USA_dismantle_empire
+    cost = 5
+    prerequisite = {
+      focus = CSA_eastern_revolution_UOB
+    }
+    available = {
+      is_major = yes
+      is_subject = no
+    }
+    relative_position_id = CSA_power_of_the_revolution_UOB
+    x = -1
+    y = 3
+    ai_will_do = {
+      factor = 2
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+      add_war_support = 0.05
+      create_wargoal = {
+        type = annex_everything
+        target = JAP
+      }
+    }
+  }
+
+    focus = {
+    id = CSA_eastern_revolution_UOB
+    icon = GFX_goal_USA_vietnam_yesterday
+    cost = 5
+    prerequisite = {
+      focus = CSA_power_of_the_revolution_UOB
+    }
+    available = {
+      is_major = yes
+      is_subject = no
+    }
+    relative_position_id = CSA_power_of_the_revolution_UOB
+    x = -1
+    y = 1
+    ai_will_do = {
+      factor = 2
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+
+      create_wargoal = {
+        type = annex_everything
+        target = PHI
+      }
+      create_wargoal = {
+        type = annex_everything
+        target = VIN
+      }
+
+      create_wargoal = {
+        type = annex_everything
+        target = DEI
+
+      }
+    }
+	}
+
+	focus = {
+    id = CSA_prussian_socialism_UOB
+    icon = GFX_BBR_crush_old_imperialists
+    cost = 5
+    prerequisite = {
+      focus = CSA_power_of_the_revolution_UOB
+    }
+    available = {
+      is_major = yes
+      is_subject = no
+    }
+    relative_position_id = CSA_power_of_the_revolution_UOB
+    x = 1
+    y = 1
+    ai_will_do = {
+      factor = 2
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+      add_war_support = 0.05
+      create_wargoal = {
+        type = annex_everything
+        target = GER
+      }
+    }
+  }
+
+	focus = {
+    id = CSA_save_bolshevism_UOB
+    icon = GFX_goal_support_communism
+    cost = 5
+    prerequisite = {
+      focus = CSA_eastern_revolution_UOB
+      focus = CSA_prussian_socialism_UOB
+    }
+    available = {
+      is_major = yes
+      is_subject = no
+      RUS = {
+        has_Syndicalist_government = no
+		has_radical_socialist_government = no
+      }
+    }
+    relative_position_id = CSA_power_of_the_revolution_UOB
+    x = 0
+    y = 2
+    ai_will_do = {
+      factor = 2
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+      create_wargoal = {
+        type = annex_everything
+        target = RUS
+      }
+    }
+  }
+
+    focus = {
+    id = CSA_austria_hungary_UOB
+    icon = GFX_goal_CSA_red_patronage
+    cost = 5
+    prerequisite = {
+      focus = CSA_prussian_socialism_UOB
+    }
+    available = {
+      is_major = yes
+      is_subject = no
+    }
+    relative_position_id = CSA_power_of_the_revolution_UOB
+    x = 1
+    y = 3
+    ai_will_do = {
+      factor = 2
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+      create_wargoal = {
+        type = annex_everything
+        target = AUS
+      }
+    }
+  }
+
+	focus = {
+		id = CSA_african_revolution_UOB
+		icon = GFX_BBR_radical_anti_imperialism
+		cost = 5
+		prerequisite = {
+			focus = CSA_power_of_the_revolution_UOB
+		}
+		available = {
+			is_major = yes
+			is_subject = no
+		}
+		relative_position_id = CSA_power_of_the_revolution_UOB
+		x = -3
+		y = 1
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 3
+				has_war = yes
+			}
+		}
+
+		available_if_capitulated = no
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_war_support = 0.05
+			create_wargoal = {
+				type = annex_everything
+				target = LIB
+				}
+			create_wargoal = {
+				type = annex_everything
+				target = MAF
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = NFA
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = SAF
+			}
+
+		}
+	}
+
+focus = {
+		id = CSA_break_arab_monarchism_UOB
+		icon = GFX_goal_USA_anti_imperialist_league
+		cost = 5
+		prerequisite = {
+			focus = CSA_african_revolution_UOB
+		}
+		available = {
+			is_major = yes
+			is_subject = no
+		}
+		relative_position_id = CSA_power_of_the_revolution_UOB
+		x = -3
+		y = 3
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 3
+				has_war = yes
+			}
+		}
+
+		available_if_capitulated = no
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CSA_break_arab_monarchism"
+			create_wargoal = {
+				type = annex_everything
+				target = EGY
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = TUR
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = SAU
+			}
+		}
+	}
+
+
+  focus = {
+    id = CSA_world_without_chains_UOB
+    icon = GFX_goal_CSA_socialist_liberation
+    cost = 5
+    prerequisite = {
+      focus = CSA_austria_hungary_UOB
+    }
+    prerequisite = {
+      focus = CSA_break_japan_UOB
+    }
+
+prerequisite = {
+      focus = CSA_break_arab_monarchism_UOB
+    }
+
+    available = {
+      is_major = yes
+      is_subject = no
+    }
+    relative_position_id = CSA_power_of_the_revolution_UOB
+    x = 0
+    y = 4
+    ai_will_do = {
+      factor = 2
+      modifier = {
+        factor = 3
+        has_war = yes
+      }
+    }
+    available_if_capitulated = no
+    cancel_if_invalid = yes
+    completion_reward = {
+      
+      add_ideas = GRU_RED_WORLD
+    }
+  }
+	####结束和第三国际决定后续写
+
+	####结束CSA世界革命
+
+	####开始不列颠联盟世界大战的遗产
+
+		focus = {
+		id = UOB_win
+		icon = GFX_UKR_Hammer_And_Heart
+		cost = 5
+		prerequisite = {
+			focus = ENG_liberation_of_canada
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = ENG_liberation_of_canada
+		available = {
+			CAN = {
+				or={
+					exists = no
+				is_subject_of = ENG
+				is_in_faction_with = ENG
+			}
+		}
+			is_subject = no
+			
+		}
+		ai_will_do = {
+			factor = 10
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+			
+		}
+	}
+
+focus = {
+		id = UOB_legacy_of_weltkrieg
+		icon = GFX_goal_ENG_lessons_of_the_weltkrieg
+		cost = 4
+		prerequisite = {
+			focus = UOB_win
+		}
+		relative_position_id = UOB_win
+		x = 0
+		y = 1
+		
+
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			
+			add_doctrine_cost_reduction = {
+				name = ENG_military_science
+				cost_reduction = 1
+				uses = 2
+				category = land_doctrine
+				category = air_doctrine
+				category = naval_doctrine
+			}
+			add_tech_bonus = {
+				name = FRA_military_science
+				bonus = 2
+				uses = 2
+				category = artillery
+				category = infantry_weapons
+				category = cat_mechanized_equipment
+				category = naval_equipment
+				category = air_equipment
+			}
+		}
+	}
+
+
+
+####结束不列颠联盟世界大战的遗产
+
+
+####开始公地矿业扩张
+focus = {
+		id = UOB_mining_expansion_1
+		icon = GFX_goal_ALB_Pickaxe
+		cost = 4
+		
+		prerequisite = {
+			focus = ENG_british_rail_reform
+		}
+		x = -2
+		y = 1
+		relative_position_id = ENG_british_rail_reform
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 43
+				state = 126
+			}
+
+			add_resource = {
+				type = Aluminium
+				amount = 25
+				state = 122
+			}
+
+		}
+	}
+
+focus = {
+		id = UOB_mining_expansion_2
+		icon = GFX_goal_ALB_Pickaxe
+		cost = 4
+		
+		prerequisite = {
+			focus = UOB_mining_expansion_1
+		}
+		x = -2
+		y = 2
+		relative_position_id = ENG_british_rail_reform
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 20
+				state = 938
+			}
+			add_resource = {
+				type = Chromium
+				amount = 25
+				state = 938
+			}
+			add_resource = {
+				type = Tungsten
+				amount = 34
+				state = 123
+			}
+
+		}
+	}
+
+
+	focus = {
+		id = UOB_Oil_expansion_1
+		icon = GFX_goal_basic_oil
+		cost = 4
+		
+		prerequisite = {
+			focus = ENG_british_rail_reform
+		}
+		x = 2
+		y = 1
+		relative_position_id = ENG_british_rail_reform
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+
+			add_resource = {
+				type = oil
+				amount = 35
+				state = 121
+			}
+		}
+	}
+
+		focus = {
+		id = UOB_Oil_expansion_2
+		icon = GFX_goal_basic_oil
+		cost = 4
+		
+		prerequisite = {
+			focus = UOB_Oil_expansion_1
+		}
+		x = 2
+		y = 2
+		relative_position_id = ENG_british_rail_reform
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+
+			add_resource = {
+				type = Rubber
+				amount = 27
+				state = 130
+			}
+		}
+	}
+
+
+####结束公地矿业扩张
+
+
+
+
+
 }

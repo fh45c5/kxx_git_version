@@ -417,3 +417,14 @@ country_event = { #国法
 		name = guides.1000.b
 	}
 }
+country_event = { #希腊
+	id = zhinan.39
+	title = zhinan.39.t
+	desc = zhinan.39.d
+	picture = GFX_report_event_generic_diplomacy1
+
+	is_triggered_only = yes
+	option = { #Yes
+		name = guides.1000.b
+	}
+}

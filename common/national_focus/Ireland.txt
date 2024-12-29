@@ -17715,10 +17715,10 @@ focus_tree = {
 		}
 		
 		available = {
-			has_country_flag = IRE_SOCCRED
+			has_country_flag = IRE_SOCCRED_win
 		}
 		bypass = {
-			has_country_flag = IRE_SOCCRED
+			has_country_flag = IRE_SOCCRED_win
 		}
 		available_if_capitulated = yes
 		cancel_if_invalid = yes
@@ -17743,10 +17743,7 @@ focus_tree = {
 			factor = 100
 		}
 		
-		available = {
-			has_country_flag = IRE_O_Brien_Coup
-		}
-
+		
 		available_if_capitulated = yes
 		cancel_if_invalid = yes
 
@@ -17771,9 +17768,7 @@ focus_tree = {
 			factor = 100
 		}
 		
-		available = {
-			has_country_flag = IRE_O_Brien_Coup
-		}
+		
 
 		available_if_capitulated = yes
 		cancel_if_invalid = yes
@@ -17807,9 +17802,6 @@ focus_tree = {
 			factor = 100
 		}
 		
-		available = {
-			has_country_flag = IRE_O_Brien_Coup
-		}
 
 		available_if_capitulated = yes
 		cancel_if_invalid = yes
@@ -17848,10 +17840,7 @@ focus_tree = {
 			factor = 100
 		}
 		
-		available = {
-			has_country_flag = IRE_O_Brien_Coup
-		}
-
+	
 		available_if_capitulated = yes
 		cancel_if_invalid = yes
 
@@ -17881,10 +17870,7 @@ focus_tree = {
 			factor = 100
 		}
 		
-		available = {
-			has_country_flag = IRE_O_Brien_Coup
-		}
-
+		
 		available_if_capitulated = yes
 		cancel_if_invalid = yes
 
@@ -17910,10 +17896,7 @@ focus_tree = {
 			factor = 100
 		}
 		
-		available = {
-			has_country_flag = IRE_O_Brien_Coup
-		}
-
+		
 		available_if_capitulated = yes
 		cancel_if_invalid = yes
 
@@ -17942,9 +17925,7 @@ focus_tree = {
 			factor = 100
 		}
 		
-		available = {
-			has_country_flag = IRE_O_Brien_Coup
-		}
+		
 
 		available_if_capitulated = yes
 		cancel_if_invalid = yes
@@ -17981,9 +17962,7 @@ focus_tree = {
 			factor = 100
 		}
 		
-		available = {
-			has_country_flag = IRE_O_Brien_Coup
-		}
+		
 
 		available_if_capitulated = yes
 		cancel_if_invalid = yes
@@ -18013,9 +17992,6 @@ focus_tree = {
 			factor = 100
 		}
 		
-		available = {
-			has_country_flag = IRE_O_Brien_Coup
-		}
 
 		available_if_capitulated = yes
 		cancel_if_invalid = yes
@@ -18043,9 +18019,7 @@ focus_tree = {
 			factor = 100
 		}
 		
-		available = {
-			has_country_flag = IRE_O_Brien_Coup
-		}
+		
 
 		available_if_capitulated = yes
 		cancel_if_invalid = yes
@@ -18088,9 +18062,6 @@ focus_tree = {
 			factor = 100
 		}
 		
-		available = {
-			has_country_flag = IRE_O_Brien_Coup
-		}
 
 		available_if_capitulated = yes
 		cancel_if_invalid = yes
@@ -18116,9 +18087,6 @@ focus_tree = {
 			factor = 100
 		}
 		
-		available = {
-			has_country_flag = IRE_O_Brien_Coup
-		}
 
 		available_if_capitulated = yes
 		cancel_if_invalid = yes
@@ -18145,10 +18113,7 @@ focus_tree = {
 			factor = 100
 		}
 		
-		available = {
-			has_country_flag = IRE_O_Brien_Coup
-		}
-
+		
 		available_if_capitulated = yes
 		cancel_if_invalid = yes
 
@@ -18177,9 +18142,7 @@ focus_tree = {
 			factor = 100
 		}
 		
-		available = {
-			has_country_flag = IRE_O_Brien_Coup
-		}
+		
 
 		available_if_capitulated = yes
 		cancel_if_invalid = yes
@@ -18187,7 +18150,13 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus IRE_Thormond_Redeemed"
 			add_ideas = IRE_soccred_justice
-			
+			hidden_effect = {
+				country_event = {
+					id = newIreland.6
+					days = 30
+				}
+				
+			}
 		}
 	}
 	focus = {

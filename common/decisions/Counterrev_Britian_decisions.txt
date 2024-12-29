@@ -13951,6 +13951,1115 @@ BRG_pick_a_king = {
 			}
 		}
 	}
+	BRG_elect_aisin_gioro = {
+		cost = 10
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		available = { always = yes }
+		visible = {
+			NOT = { has_country_flag = BRG_elected_king }
+		}
+		complete_effect = {
+			set_country_flag = BRG_elected_king
+			set_cosmetic_tag = BRG_aisingioro
+			set_country_flag = BRG_QIE_faction
+			create_country_leader = {
+				name = "亨利九世"
+				picture = "gfx/leaders/BRG/Portrait_BRG_aisin_gioro_henry.png"
+				expire = "1965.1.1"
+				ideology = junta_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "亨利九世"
+				picture = "gfx/leaders/BRG/Portrait_BRG_aisin_gioro_henry.png"
+				expire = "1965.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "亨利九世"
+				picture = "gfx/leaders/BRG/Portrait_BRG_aisin_gioro_henry.png"
+				expire = "1965.1.1"
+				ideology = christian_democracy_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "亨利九世"
+				picture = "gfx/leaders/BRG/Portrait_BRG_aisin_gioro_henry.png"
+				expire = "1965.1.1"
+				ideology = liberal_conservative_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "亨利九世"
+				picture = "gfx/leaders/BRG/Portrait_BRG_aisin_gioro_henry.png"
+				expire = "1965.1.1"
+				ideology = national_liberalism_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "亨利九世"
+				picture = "gfx/leaders/BRG/Portrait_BRG_aisin_gioro_henry.png"
+				expire = "1965.1.1"
+				ideology = liberal_socialism_subtype
+				traits = { BRG_the_New_King }
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = BRG_king
+					option = BRG_KING_WEEB_HOBART
+				}
+			}
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_game_rule = {
+						rule = BRG_king
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = BRG_king
+						option = BRG_KING_WEEB_HOBART
+					}
+				}
+			}
+		}
+	}
+	BRG_elect_aisin_gioro2 = {
+		cost = 10
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		available = { always = yes }
+		visible = {
+			NOT = { has_country_flag = BRG_elected_king }
+		}
+		complete_effect = {
+			set_country_flag = BRG_elected_king
+			set_cosmetic_tag = BRG_aisingioro
+			set_country_flag = BRG_QIE_faction
+			create_country_leader = {
+				name = "威廉五世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+				expire = "1965.1.1"
+				ideology = junta_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "威廉五世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+				expire = "1965.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "威廉五世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+				expire = "1965.1.1"
+				ideology = christian_democracy_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "威廉五世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+				expire = "1965.1.1"
+				ideology = liberal_conservative_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "威廉五世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+				expire = "1965.1.1"
+				ideology = national_liberalism_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "威廉五世"
+				picture = "gfx/leaders/QIE/Portrait_QIE_Pujie.png"
+				expire = "1965.1.1"
+				ideology = liberal_socialism_subtype
+				traits = { BRG_the_New_King }
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = BRG_king
+					option = BRG_KING_WEEB_HOBART
+				}
+			}
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_game_rule = {
+						rule = BRG_king
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = BRG_king
+						option = BRG_KING_WEEB_HOBART
+					}
+				}
+			}
+		}
+	}
+	BRG_elect_aisin_gioro3 = {
+		cost = 10
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		available = { always = yes }
+		visible = {
+			NOT = { has_country_flag = BRG_elected_king }
+		}
+		complete_effect = {
+			set_country_flag = BRG_elected_king
+			set_cosmetic_tag = BRG_aisingioro
+			set_country_flag = BRG_QIE_faction
+			create_country_leader = {
+				name = "玛格丽特一世"
+				picture = "gfx/leaders/FNG/Portrait_FNG_Xianyu_Qing_Uniform.png"
+				expire = "1965.1.1"
+				ideology = junta_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "玛格丽特一世"
+				picture = "gfx/leaders/FNG/Portrait_FNG_Xianyu_Qing_Uniform.png"
+				expire = "1965.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "玛格丽特一世"
+				picture = "gfx/leaders/FNG/Portrait_FNG_Xianyu_Qing_Uniform.png"
+				expire = "1965.1.1"
+				ideology = christian_democracy_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "玛格丽特一世"
+				picture = "gfx/leaders/FNG/Portrait_FNG_Xianyu_Qing_Uniform.png"
+				expire = "1965.1.1"
+				ideology = liberal_conservative_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "玛格丽特一世"
+				picture = "gfx/leaders/FNG/Portrait_FNG_Xianyu_Qing_Uniform.png"
+				expire = "1965.1.1"
+				ideology = national_liberalism_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "玛格丽特一世"
+				picture = "gfx/leaders/FNG/Portrait_FNG_Xianyu_Qing_Uniform.png"
+				expire = "1965.1.1"
+				ideology = liberal_socialism_subtype
+				traits = { BRG_the_New_King }
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = BRG_king
+					option = BRG_KING_WEEB_HOBART
+				}
+			}
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_game_rule = {
+						rule = BRG_king
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = BRG_king
+						option = BRG_KING_WEEB_HOBART
+					}
+				}
+			}
+		}
+	}
+	BRG_elect_bogd_khan = {
+		cost = 10
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		available = { always = yes }
+		visible = {
+			NOT = { has_country_flag = BRG_elected_king }
+		}
+		complete_effect = {
+			set_country_flag = BRG_elected_king
+			set_cosmetic_tag = BRG_mongol
+			set_country_flag = BRG_MON_faction
+			create_country_leader = {
+				name = "博克多一世"
+				picture = "gfx/leaders/MON/Portrait_MON_Bogd_Khan_Tsar.png"
+				expire = "1965.1.1"
+				ideology = junta_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "博克多一世"
+				picture = "gfx/leaders/MON/Portrait_MON_Bogd_Khan_Tsar.png"
+				expire = "1965.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "博克多一世"
+				picture = "gfx/leaders/MON/Portrait_MON_Bogd_Khan_Tsar.png"
+				expire = "1965.1.1"
+				ideology = christian_democracy_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "博克多一世"
+				picture = "gfx/leaders/MON/Portrait_MON_Bogd_Khan_Tsar.png"
+				expire = "1965.1.1"
+				ideology = liberal_conservative_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "博克多一世"
+				picture = "gfx/leaders/MON/Portrait_MON_Bogd_Khan_Tsar.png"
+				expire = "1965.1.1"
+				ideology = national_liberalism_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "博克多一世"
+				picture = "gfx/leaders/MON/Portrait_MON_Bogd_Khan_Tsar.png"
+				expire = "1965.1.1"
+				ideology = liberal_socialism_subtype
+				traits = { BRG_the_New_King }
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = BRG_king
+					option = BRG_KING_WEEB_HOBART
+				}
+			}
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_game_rule = {
+						rule = BRG_king
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = BRG_king
+						option = BRG_KING_WEEB_HOBART
+					}
+				}
+			}
+		}
+	}
+	BRG_elect_demchugdongrub = {
+		cost = 10
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		available = { always = yes }
+		visible = {
+			NOT = { has_country_flag = BRG_elected_king }
+		}
+		complete_effect = {
+			set_country_flag = BRG_elected_king
+			set_cosmetic_tag = BRG_mongol
+			set_country_flag = BRG_MON_faction
+			create_country_leader = {
+				name = "成吉思二世"
+				picture = "gfx/leaders/MON/Portrait_MON_Demchugdongrub.png"
+				expire = "1965.1.1"
+				ideology = junta_subtype
+				traits = { BRG_the_New_King MON_the_popular_prince_trait }
+			}
+			create_country_leader = {
+				name = "成吉思二世"
+				picture = "gfx/leaders/MON/Portrait_MON_Demchugdongrub.png"
+				expire = "1965.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = { BRG_the_New_King MON_the_popular_prince_trait }
+			}
+			create_country_leader = {
+				name = "成吉思二世"
+				picture = "gfx/leaders/MON/Portrait_MON_Demchugdongrub.png"
+				expire = "1965.1.1"
+				ideology = christian_democracy_subtype
+				traits = { BRG_the_New_King MON_the_popular_prince_trait }
+			}
+			create_country_leader = {
+				name = "成吉思二世"
+				picture = "gfx/leaders/MON/Portrait_MON_Demchugdongrub.png"
+				expire = "1965.1.1"
+				ideology = liberal_conservative_subtype
+				traits = { BRG_the_New_King MON_the_popular_prince_trait }
+			}
+			create_country_leader = {
+				name = "成吉思二世"
+				picture = "gfx/leaders/MON/Portrait_MON_Demchugdongrub.png"
+				expire = "1965.1.1"
+				ideology = national_liberalism_subtype
+				traits = { BRG_the_New_King MON_the_popular_prince_trait }
+			}
+			create_country_leader = {
+				name = "成吉思二世"
+				picture = "gfx/leaders/MON/Portrait_MON_Demchugdongrub.png"
+				expire = "1965.1.1"
+				ideology = liberal_socialism_subtype
+				traits = { BRG_the_New_King MON_the_popular_prince_trait }
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = BRG_king
+					option = BRG_KING_WEEB_HOBART
+				}
+			}
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_game_rule = {
+						rule = BRG_king
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = BRG_king
+						option = BRG_KING_WEEB_HOBART
+					}
+				}
+			}
+		}
+	}
+	BRG_elect_fng_elder = {
+		cost = 10
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		available = { always = yes }
+		visible = {
+			NOT = { has_country_flag = BRG_elected_king }
+		}
+		complete_effect = {
+			set_country_flag = BRG_elected_king
+			set_cosmetic_tag = BRG_kingdom_yuan
+			set_country_flag = BRG_FNG_faction
+			create_country_leader = {
+				name = "作霖·张"
+				picture = "gfx/leaders/FNG/Portrait_FNG_Zhang_Zuolin_Emperor.png"
+				expire = "1965.1.1"
+				ideology = junta_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "作霖·张"
+				picture = "gfx/leaders/FNG/Portrait_FNG_Zhang_Zuolin_Emperor.png"
+				expire = "1965.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "作霖·张"
+				picture = "gfx/leaders/FNG/Portrait_FNG_Zhang_Zuolin_Emperor.png"
+				expire = "1965.1.1"
+				ideology = christian_democracy_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "作霖·张"
+				picture = "gfx/leaders/FNG/Portrait_FNG_Zhang_Zuolin_Emperor.png"
+				expire = "1965.1.1"
+				ideology = liberal_conservative_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "作霖·张"
+				picture = "gfx/leaders/FNG/Portrait_FNG_Zhang_Zuolin_Emperor.png"
+				expire = "1965.1.1"
+				ideology = national_liberalism_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "作霖·张"
+				picture = "gfx/leaders/FNG/Portrait_FNG_Zhang_Zuolin_Emperor.png"
+				expire = "1965.1.1"
+				ideology = liberal_socialism_subtype
+				traits = { BRG_the_New_King }
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = BRG_king
+					option = BRG_KING_WEEB_HOBART
+				}
+			}
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_game_rule = {
+						rule = BRG_king
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = BRG_king
+						option = BRG_KING_WEEB_HOBART
+					}
+				}
+			}
+		}
+	}
+	BRG_elect_fng_young = {
+		cost = 10
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		available = { always = yes }
+		visible = {
+			NOT = { has_country_flag = BRG_elected_king }
+		}
+		complete_effect = {
+			set_country_flag = BRG_elected_king
+			set_cosmetic_tag = BRG_kingdom_yuan
+			set_country_flag = BRG_FNG_faction
+			create_country_leader = {
+				name = "彼得普拉一世"
+				picture = "gfx/leaders/BRG/Portrait_BRG_Zhang_Xueliang.png"
+				expire = "1965.1.1"
+				ideology = junta_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "彼得普拉一世"
+				picture = "gfx/leaders/BRG/Portrait_BRG_Zhang_Xueliang.png"
+				expire = "1965.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "彼得普拉一世"
+				picture = "gfx/leaders/BRG/Portrait_BRG_Zhang_Xueliang.png"
+				expire = "1965.1.1"
+				ideology = christian_democracy_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "彼得普拉一世"
+				picture = "gfx/leaders/BRG/Portrait_BRG_Zhang_Xueliang.png"
+				expire = "1965.1.1"
+				ideology = liberal_conservative_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "彼得普拉一世"
+				picture = "gfx/leaders/BRG/Portrait_BRG_Zhang_Xueliang.png"
+				expire = "1965.1.1"
+				ideology = national_liberalism_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "彼得普拉一世"
+				picture = "gfx/leaders/BRG/Portrait_BRG_Zhang_Xueliang.png"
+				expire = "1965.1.1"
+				ideology = liberal_socialism_subtype
+				traits = { BRG_the_New_King }
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = BRG_king
+					option = BRG_KING_WEEB_HOBART
+				}
+			}
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_game_rule = {
+						rule = BRG_king
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = BRG_king
+						option = BRG_KING_WEEB_HOBART
+					}
+				}
+			}
+		}
+	}
+	BRG_elect_fng_doge = {
+		cost = 10
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		available = { always = yes }
+		visible = {
+			NOT = { has_country_flag = BRG_elected_king }
+		}
+		complete_effect = {
+			set_country_flag = BRG_elected_king
+			set_cosmetic_tag = BRG_kingdom_yuan
+			set_country_flag = BRG_FNG_faction
+			create_country_leader = {
+				name = "张宗昌"
+				picture = "gfx/leaders/SQI/Portrait_Shandong_Zhang_Zongchang_Emperor.png"
+				expire = "1965.1.1"
+				ideology = junta_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "张宗昌"
+				picture = "gfx/leaders/SQI/Portrait_Shandong_Zhang_Zongchang_Emperor.png"
+				expire = "1965.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "张宗昌"
+				picture = "gfx/leaders/SQI/Portrait_Shandong_Zhang_Zongchang_Emperor.png"
+				expire = "1965.1.1"
+				ideology = christian_democracy_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "张宗昌"
+				picture = "gfx/leaders/SQI/Portrait_Shandong_Zhang_Zongchang_Emperor.png"
+				expire = "1965.1.1"
+				ideology = liberal_conservative_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "张宗昌"
+				picture = "gfx/leaders/SQI/Portrait_Shandong_Zhang_Zongchang_Emperor.png"
+				expire = "1965.1.1"
+				ideology = national_liberalism_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "张宗昌"
+				picture = "gfx/leaders/SQI/Portrait_Shandong_Zhang_Zongchang_Emperor.png"
+				expire = "1965.1.1"
+				ideology = liberal_socialism_subtype
+				traits = { BRG_the_New_King }
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = BRG_king
+					option = BRG_KING_WEEB_HOBART
+				}
+			}
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_game_rule = {
+						rule = BRG_king
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = BRG_king
+						option = BRG_KING_WEEB_HOBART
+					}
+				}
+			}
+		}
+	}
+	BRG_elect_yuanshen = {
+		cost = 10
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		available = { always = yes }
+		visible = {
+			NOT = { has_country_flag = BRG_elected_king }
+		}
+		complete_effect = {
+			set_country_flag = BRG_elected_king
+			set_cosmetic_tag = BRG_kingdom_yuan
+			set_country_flag = BRG_YUAN_faction
+			create_country_leader = {
+				name = "袁克定"
+				picture = "gfx/leaders/MON/Portrait_MON_Yuan_Keding.png"
+				expire = "1965.1.1"
+				ideology = junta_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "袁克定"
+				picture = "gfx/leaders/MON/Portrait_MON_Yuan_Keding.png"
+				expire = "1965.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "袁克定"
+				picture = "gfx/leaders/MON/Portrait_MON_Yuan_Keding.png"
+				expire = "1965.1.1"
+				ideology = christian_democracy_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "袁克定"
+				picture = "gfx/leaders/MON/Portrait_MON_Yuan_Keding.png"
+				expire = "1965.1.1"
+				ideology = liberal_conservative_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "袁克定"
+				picture = "gfx/leaders/MON/Portrait_MON_Yuan_Keding.png"
+				expire = "1965.1.1"
+				ideology = national_liberalism_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "袁克定"
+				picture = "gfx/leaders/MON/Portrait_MON_Yuan_Keding.png"
+				expire = "1965.1.1"
+				ideology = liberal_socialism_subtype
+				traits = { BRG_the_New_King }
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = BRG_king
+					option = BRG_KING_WEEB_HOBART
+				}
+			}
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_game_rule = {
+						rule = BRG_king
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = BRG_king
+						option = BRG_KING_WEEB_HOBART
+					}
+				}
+			}
+		}
+	}
+	BRG_elect_yun_tang = {
+		cost = 10
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		available = { always = yes }
+		visible = {
+			NOT = { has_country_flag = BRG_elected_king }
+		}
+		complete_effect = {
+			set_country_flag = BRG_elected_king
+			set_cosmetic_tag = BRG_kingdom_yuan
+			set_country_flag = BRG_YUN_faction
+			create_country_leader = {
+				name = "唐高祖"
+				picture = "gfx/leaders/MON/Portrait_Yunnan_Tang_Emperor.png"
+				expire = "1965.1.1"
+				ideology = junta_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "唐高祖"
+				picture = "gfx/leaders/MON/Portrait_Yunnan_Tang_Emperor.png"
+				expire = "1965.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "唐高祖"
+				picture = "gfx/leaders/MON/Portrait_Yunnan_Tang_Emperor.png"
+				expire = "1965.1.1"
+				ideology = christian_democracy_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "唐高祖"
+				picture = "gfx/leaders/MON/Portrait_Yunnan_Tang_Emperor.png"
+				expire = "1965.1.1"
+				ideology = liberal_conservative_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "唐高祖"
+				picture = "gfx/leaders/MON/Portrait_Yunnan_Tang_Emperor.png"
+				expire = "1965.1.1"
+				ideology = national_liberalism_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "唐高祖"
+				picture = "gfx/leaders/MON/Portrait_Yunnan_Tang_Emperor.png"
+				expire = "1965.1.1"
+				ideology = liberal_socialism_subtype
+				traits = { BRG_the_New_King }
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = BRG_king
+					option = BRG_KING_WEEB_HOBART
+				}
+			}
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_game_rule = {
+						rule = BRG_king
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = BRG_king
+						option = BRG_KING_WEEB_HOBART
+					}
+				}
+			}
+		}
+	}	
+	BRG_elect_luuchuu_sho = {
+		cost = 10
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		available = { always = yes }
+		visible = {
+			NOT = { has_country_flag = BRG_elected_king }
+		}
+		complete_effect = {
+			country_event = brg.1879
+			set_country_flag = BRG_elected_king
+			set_cosmetic_tag = BRG_niluu
+			set_country_flag = BRG_jap_faction
+			create_country_leader = {
+				name = "尚裕"
+				picture = "gfx/leaders/LCU/LCU_Hiroshi_Sho.png"
+				expire = "1965.1.1"
+				ideology = junta_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "尚裕"
+				picture = "gfx/leaders/LCU/LCU_Hiroshi_Sho.png"
+				expire = "1965.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "尚裕"
+				picture = "gfx/leaders/LCU/LCU_Hiroshi_Sho.png"
+				expire = "1965.1.1"
+				ideology = christian_democracy_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "尚裕"
+				picture = "gfx/leaders/LCU/LCU_Hiroshi_Sho.png"
+				expire = "1965.1.1"
+				ideology = liberal_conservative_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "尚裕"
+				picture = "gfx/leaders/LCU/LCU_Hiroshi_Sho.png"
+				expire = "1965.1.1"
+				ideology = national_liberalism_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "尚裕"
+				picture = "gfx/leaders/LCU/LCU_Hiroshi_Sho.png"
+				expire = "1965.1.1"
+				ideology = liberal_socialism_subtype
+				traits = { BRG_the_New_King }
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = BRG_king
+					option = BRG_KING_WEEB_HOBART
+				}
+			}
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_game_rule = {
+						rule = BRG_king
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = BRG_king
+						option = BRG_KING_WEEB_HOBART
+					}
+				}
+			}
+		}
+	}	
+	BRG_elect_korea_yiun = {
+		cost = 10
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		available = { always = yes }
+		visible = {
+			NOT = { has_country_flag = BRG_elected_king }
+		}
+		complete_effect = {
+			country_event = brg.1910
+			set_country_flag = BRG_elected_king
+			set_cosmetic_tag = BRG_korea
+			set_country_flag = BRG_jap_faction
+			create_country_leader = {
+				name = "李垠"
+				picture = "gfx/leaders/KOR/Portrait_KOR_Yi_Un_Suit.png"
+				expire = "1965.1.1"
+				ideology = junta_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "李垠"
+				picture = "gfx/leaders/KOR/Portrait_KOR_Yi_Un_Suit.png"
+				expire = "1965.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "李垠"
+				picture = "gfx/leaders/KOR/Portrait_KOR_Yi_Un_Suit.png"
+				expire = "1965.1.1"
+				ideology = christian_democracy_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "李垠"
+				picture = "gfx/leaders/KOR/Portrait_KOR_Yi_Un_Suit.png"
+				expire = "1965.1.1"
+				ideology = liberal_conservative_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "李垠"
+				picture = "gfx/leaders/KOR/Portrait_KOR_Yi_Un_Suit.png"
+				expire = "1965.1.1"
+				ideology = national_liberalism_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "李垠"
+				picture = "gfx/leaders/KOR/Portrait_KOR_Yi_Un_Suit.png"
+				expire = "1965.1.1"
+				ideology = liberal_socialism_subtype
+				traits = { BRG_the_New_King }
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = BRG_king
+					option = BRG_KING_WEEB_HOBART
+				}
+			}
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_game_rule = {
+						rule = BRG_king
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = BRG_king
+						option = BRG_KING_WEEB_HOBART
+					}
+				}
+			}
+		}
+	}
+	BRG_elect_korea_yigang = {
+		cost = 10
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		available = { always = yes }
+		visible = {
+			NOT = { has_country_flag = BRG_elected_king }
+		}
+		complete_effect = {
+			country_event = brg.1910
+			set_country_flag = BRG_elected_king
+			set_cosmetic_tag = BRG_korea
+			set_country_flag = BRG_jap_faction
+			create_country_leader = {
+				name = "李堈"
+				picture = "gfx/leaders/KOR/Portrait_KOR_Yi_Kang.png"
+				expire = "1965.1.1"
+				ideology = junta_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "李堈"
+				picture = "gfx/leaders/KOR/Portrait_KOR_Yi_Kang.png"
+				expire = "1965.1.1"
+				ideology = authoritarian_democrat_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "李堈"
+				picture = "gfx/leaders/KOR/Portrait_KOR_Yi_Kang.png"
+				expire = "1965.1.1"
+				ideology = christian_democracy_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "李堈"
+				picture = "gfx/leaders/KOR/Portrait_KOR_Yi_Kang.png"
+				expire = "1965.1.1"
+				ideology = liberal_conservative_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "李堈"
+				picture = "gfx/leaders/KOR/Portrait_KOR_Yi_Kang.png"
+				expire = "1965.1.1"
+				ideology = national_liberalism_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "李堈"
+				picture = "gfx/leaders/KOR/Portrait_KOR_Yi_Kang.png"
+				expire = "1965.1.1"
+				ideology = liberal_socialism_subtype
+				traits = { BRG_the_New_King }
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = BRG_king
+					option = BRG_KING_WEEB_HOBART
+				}
+			}
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_game_rule = {
+						rule = BRG_king
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = BRG_king
+						option = BRG_KING_WEEB_HOBART
+					}
+				}
+			}
+		}
+	}
+	BRG_elect_taishanghuang = {
+		cost = 10
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		available = { always = yes }
+		visible = {
+			NOT = { has_country_flag = BRG_elected_king }
+			is_debug = yes
+		}
+		complete_effect = {
+			set_country_flag = BRG_elected_king
+			set_cosmetic_tag = KXX
+			create_country_leader = {
+				name = "本居小鈴"
+				picture = "gfx/leaders/KXX/Portrait_KXX_Motoori_Kosuzu.png"
+				expire = "1965.1.1"
+				ideology = junta_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "本居小鈴"
+				picture = "gfx/leaders/KOR/Portrait_KXX_Motoori_Kosuzu.png"
+				expire = "1965.1.1"
+				ideology = motoori_thought_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "本居小鈴"
+				picture = "gfx/leaders/KOR/Portrait_KXX_Motoori_Kosuzu.png"
+				expire = "1965.1.1"
+				ideology = christian_democracy_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "本居小鈴"
+				picture = "gfx/leaders/KOR/Portrait_KXX_Motoori_Kosuzu.png"
+				expire = "1965.1.1"
+				ideology = liberal_conservative_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "本居小鈴"
+				picture = "gfx/leaders/KOR/Portrait_KXX_Motoori_Kosuzu.png"
+				expire = "1965.1.1"
+				ideology = national_liberalism_subtype
+				traits = { BRG_the_New_King }
+			}
+			create_country_leader = {
+				name = "本居小鈴"
+				picture = "gfx/leaders/KOR/Portrait_KXX_Motoori_Kosuzu.png"
+				expire = "1965.1.1"
+				ideology = liberal_socialism_subtype
+				traits = { BRG_the_New_King }
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = BRG_king
+					option = BRG_KING_WEEB_HOBART
+				}
+			}
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_game_rule = {
+						rule = BRG_king
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = BRG_king
+						option = BRG_KING_WEEB_HOBART
+					}
+				}
+			}
+		}
+	}	
 }
 BRG_factionering = {
 	BRG_join_rp = {
@@ -14308,8 +15417,29 @@ BRG_factionering = {
 			}
 		}
 		complete_effect = {
-			SER ={
-				country_event = basedbrit.59
+			if = {
+				limit = {
+					SER = {
+						is_faction_leader = yes
+					}
+				}
+				every_country = {
+					limit = {
+						is_in_faction_with = SER
+						NOT = {
+							tag = SER
+						}
+					}
+					country_event = basedbrit.59
+				}
+				SER = {
+					country_event = basedbrit.59
+				}
+				else = {
+					SER = {
+						country_event = basedbrit.59
+					}
+				}
 			}
 		}
 		ai_will_do = {
@@ -14471,6 +15601,7 @@ BRG_factionering = {
 			ITA = {
 				is_subject = no
 				exists = yes
+				has_country_flag = ITA_forpol_unlocked
 				OR = {
 					is_in_faction = no
 					is_faction_leader = yes
@@ -14478,8 +15609,29 @@ BRG_factionering = {
 			}
 		}
 		complete_effect = {
-			ITA ={
-				country_event = basedbrit.59
+			if = {
+				limit = {
+					ITA = {
+						is_faction_leader = yes
+					}
+				}
+				every_country = {
+					limit = {
+						is_in_faction_with = ITA
+						NOT = {
+							tag = ITA
+						}
+					}
+					country_event = basedbrit.59
+				}
+				ITA = {
+					country_event = basedbrit.59
+				}
+				else = {
+					ITA = {
+						country_event = basedbrit.59
+					}
+				}
 			}
 		}
 		ai_will_do = {
@@ -14614,8 +15766,29 @@ BRG_factionering = {
 			}
 		}
 		complete_effect = {
-			NFA ={
-				country_event = basedbrit.59
+			if = {
+				limit = {
+					NFA = {
+						is_faction_leader = yes
+					}
+				}
+				every_country = {
+					limit = {
+						is_in_faction_with = NFA
+						NOT = {
+							tag = NFA
+						}
+					}
+					country_event = basedbrit.59
+				}
+				NFA = {
+					country_event = basedbrit.59
+				}
+				else = {
+					NFA = {
+						country_event = basedbrit.59
+					}
+				}
 			}
 		}
 		ai_will_do = {
@@ -14715,6 +15888,65 @@ BRG_factionering = {
 		}
 		ai_will_do = {
 			factor = 0
+		}
+	}
+	BRG_invite_sri = {
+		cost = 100
+		icon = GFX_decision_generic_nationalism
+		fire_only_once = yes
+		available = {
+			always = yes
+		}
+		visible = {
+			NOT = {
+				is_in_faction_with = SRI
+			}
+			SRI = {
+				has_socialist_government = no
+				has_country_flag = ITA_forpol_unlocked
+				is_subject = no
+				exists = yes	
+			}
+			OR = {
+				ITA = {
+					exists = no
+				}
+				ITA = {
+					is_subject = yes
+				}
+				ITA = {
+					has_socialist_government = yes
+				}
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					SRI = {
+						is_faction_leader = yes
+					}
+				}
+				every_country = {
+					limit = {
+						is_in_faction_with = SRI
+						NOT = {
+							tag = SRI
+						}
+					}
+					country_event = basedbrit.59
+				}
+				SRI = {
+					country_event = basedbrit.59
+				}
+				else = {
+					SRI = {
+						country_event = basedbrit.59
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
 		}
 	}
 }
@@ -14975,6 +16207,7 @@ BRG_rebuilding_empire = {
 		}
 		complete_effect = {
 			wargoals_on_mittelafrika = yes
+			custom_effect_tooltip = former_maf_wargoals_tt
 		}
 		ai_will_do = {
 			factor = 5
@@ -15902,6 +17135,7 @@ BRG_rebuilding_empire = {
 			owns_state = 468
 			owns_state = 740
 			owns_state = 473
+			owns_state = 1332
 			owns_state = 470
 			owns_state = 471
 			owns_state = 472

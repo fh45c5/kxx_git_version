@@ -688,3 +688,20 @@ NFA_luxianzhinan = {
 		}
 	}
 }
+GRE_luxianzhinan = {
+	GRE_tree = {
+		icon = GFX_decision_generic_agreement
+		visible = {
+			tag = GRE
+		}
+		available = {
+			original_tag = GRE
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = zhinan.39
+		}
+	}
+}

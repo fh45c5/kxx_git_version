@@ -451,7 +451,7 @@ ideas = {
 				defensive_war_stability_factor = 0.25
 				offensive_war_stability_factor = 0.25
 				stability_popularity_factor = 0.25
-				local_building_slots_factor = 0.15
+				global_building_slots_factor = 0.15
 				production_speed_buildings_factor = 0.1
 				monthly_population = 0.5
 				social_democrat_drift = 0.025
@@ -586,7 +586,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.05
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.05
 				production_speed_arms_factory_factor = 0.05
 				production_speed_industrial_complex_factor = 0.05
@@ -616,7 +616,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.05
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.05
 				production_speed_arms_factory_factor = 0.05
 				production_speed_industrial_complex_factor = 0.05
@@ -722,7 +722,7 @@ ideas = {
 				market_liberal_drift = 0.01
 				social_conservative_drift = 0.01
 				monthly_population = 0.75
-				local_building_slots_factor = 0.15
+				global_building_slots_factor = 0.15
 				production_speed_buildings_factor = 0.15
 				research_speed_factor = 0.15
 			}
@@ -757,7 +757,7 @@ ideas = {
 				market_liberal_drift = 0.02
 				social_conservative_drift = 0.01
 				authoritarian_democrat_drift = 0.01
-				local_building_slots_factor = 0.2
+				global_building_slots_factor = 0.2
 				production_speed_buildings_factor = 0.2
 			
 			}
@@ -777,7 +777,7 @@ ideas = {
 				market_liberal_drift = 0.02
 				social_conservative_drift = 0.01
 				authoritarian_democrat_drift = 0.01
-				local_building_slots_factor = 0.2
+				global_building_slots_factor = 0.2
 				production_speed_buildings_factor = 0.2
 				industrial_capacity_factory = 0.2
 				industrial_capacity_dockyard = 0.2
@@ -799,7 +799,7 @@ ideas = {
 				market_liberal_drift = 0.02
 				social_conservative_drift = 0.01
 				authoritarian_democrat_drift = 0.01
-				local_building_slots_factor = 0.2
+				global_building_slots_factor = 0.2
 				production_speed_buildings_factor = 0.2
 				industrial_capacity_factory = 0.2
 				industrial_capacity_dockyard = 0.2
@@ -823,7 +823,7 @@ ideas = {
 				market_liberal_drift = 0.02
 				social_conservative_drift = 0.01
 				authoritarian_democrat_drift = 0.01
-				local_building_slots_factor = 0.2
+				global_building_slots_factor = 0.2
 				production_speed_buildings_factor = 0.2
 				industrial_capacity_factory = 0.2
 				industrial_capacity_dockyard = 0.2
@@ -865,7 +865,7 @@ ideas = {
 				radical_socialist_drift = 0.01
 				social_democrat_drift = 0.01
 				consumer_goods_factor = 0.2
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.05
 				production_speed_arms_factory_factor = 0.05
 				production_speed_industrial_complex_factor = 0.05
@@ -893,7 +893,7 @@ ideas = {
 				radical_socialist_drift = 0.01
 				social_democrat_drift = 0.01
 				consumer_goods_factor = 0.2
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.05
 				production_speed_arms_factory_factor = 0.05
 				production_speed_industrial_complex_factor = 0.05
@@ -926,7 +926,7 @@ ideas = {
 				radical_socialist_drift = 0.01
 				social_democrat_drift = 0.01
 				consumer_goods_factor = 0.2
-				local_building_slots_factor = 0.2
+				global_building_slots_factor = 0.2
 				production_speed_buildings_factor = 0.1
 				production_speed_arms_factory_factor = 0.1
 				production_speed_industrial_complex_factor = 0.1
@@ -959,7 +959,7 @@ ideas = {
 				radical_socialist_drift = 0.02
 				social_democrat_drift = 0.2
 				consumer_goods_factor = 0.2
-				local_building_slots_factor = 0.2
+				global_building_slots_factor = 0.2
 				production_speed_buildings_factor = 0.1
 				production_speed_arms_factory_factor = 0.1
 				production_speed_industrial_complex_factor = 0.1
@@ -1023,7 +1023,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.05
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.05
 				production_speed_arms_factory_factor = 0.05
 				production_speed_industrial_complex_factor = 0.05
@@ -1083,7 +1083,7 @@ ideas = {
 			picture = NFA_douce
 			modifier = {
 				consumer_goods_factor = 0.2
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.1
 				production_speed_arms_factory_factor = 0.1
 				production_speed_industrial_complex_factor = 0.1
@@ -1132,7 +1132,7 @@ ideas = {
 				stability_factor = -0.1
 				radical_socialist_drift = 0.05
 				syndicalist_drift = 0.02
-				local_building_slots_factor = 0.15
+				global_building_slots_factor = 0.15
 				production_speed_buildings_factor = 0.15
 				production_speed_arms_factory_factor = 0.15
 				production_speed_industrial_complex_factor = 0.15
@@ -1207,7 +1207,7 @@ ideas = {
 				political_power_gain = 0.25
 				stability_factor = 0.1
 				radical_socialist_drift = 0.02
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.1
 				line_change_production_efficiency_factor = 0.05
 				industrial_capacity_factory = 0.05
@@ -1297,7 +1297,7 @@ ideas = {
 				war_support_factor = 0.1
 				radical_socialist_drift = 0.02
 				consumer_goods_factor = -0.25
-				local_building_slots_factor = 0.15
+				global_building_slots_factor = 0.15
 				production_speed_buildings_factor = 0.15
 				monthly_population = 0.5
 				mobilization_speed = 0.1
@@ -1355,7 +1355,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.1
 				production_factory_max_efficiency_factor = 0.1
 				production_factory_efficiency_gain_factor = 0.1
-				local_building_slots_factor = 0.2
+				global_building_slots_factor = 0.2
 				production_speed_buildings_factor = 0.2
 				consumer_goods_factor = -0.2
 				research_speed_factor = 0.2
@@ -1377,7 +1377,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.1
 				production_factory_max_efficiency_factor = 0.1
 				production_factory_efficiency_gain_factor = 0.1
-				local_building_slots_factor = 0.2
+				global_building_slots_factor = 0.2
 				production_speed_buildings_factor = 0.2
 				consumer_goods_factor = -0.2
 				research_speed_factor = 0.2
@@ -1404,7 +1404,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.1
 				production_factory_max_efficiency_factor = 0.1
 				production_factory_efficiency_gain_factor = 0.1
-				local_building_slots_factor = 0.2
+				global_building_slots_factor = 0.2
 				production_speed_buildings_factor = 0.2
 				consumer_goods_factor = -0.2
 				research_speed_factor = 0.2
@@ -1449,7 +1449,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.05
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.05
 				production_speed_arms_factory_factor = 0.05
 				production_speed_industrial_complex_factor = 0.05
@@ -1475,7 +1475,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.05
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.05
 				production_speed_arms_factory_factor = 0.05
 				production_speed_industrial_complex_factor = 0.05
@@ -1508,7 +1508,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.05
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.05
 				production_speed_arms_factory_factor = 0.05
 				production_speed_industrial_complex_factor = 0.05
@@ -1551,7 +1551,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.05
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.05
 				production_speed_arms_factory_factor = 0.05
 				production_speed_industrial_complex_factor = 0.05
@@ -1661,7 +1661,7 @@ ideas = {
 				army_attack_factor = 0.05
 				army_defence_factor = 0.05
 				experience_loss_factor = -0.1
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.1
 
 
@@ -1747,7 +1747,7 @@ ideas = {
 			allowed = { always = yes }
 			picture = generic_capitalism
 			modifier = {
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.1
 				production_speed_arms_factory_factor = 0.1
 				production_speed_industrial_complex_factor = 0.1
@@ -1791,7 +1791,7 @@ ideas = {
 			modifier = {
 				political_power_factor = 0.25
 				consumer_goods_factor = -0.15
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.1
 				monthly_population = 0.5
 				conscription = 0.02
@@ -1882,7 +1882,7 @@ ideas = {
 				syndicalist_drift = 0.02
 				research_speed_factor = 0.1
 				local_resources_factor = 0.1
-				local_building_slots_factor = 0.15
+				global_building_slots_factor = 0.15
 
 			}
 
@@ -1899,7 +1899,7 @@ ideas = {
 				syndicalist_drift = 0.05
 				research_speed_factor = 0.1
 				local_resources_factor = 0.1
-				local_building_slots_factor = 0.15
+				global_building_slots_factor = 0.15
 				compliance_starting_value = 0.15
 				compliance_growth = 0.1
 				required_garrison_factor = -0.1
@@ -1922,7 +1922,7 @@ ideas = {
 				syndicalist_drift = 0.05
 				research_speed_factor = 0.1
 				local_resources_factor = 0.1
-				local_building_slots_factor = 0.15
+				global_building_slots_factor = 0.15
 				compliance_starting_value = 0.15
 				compliance_growth = 0.1
 				required_garrison_factor = -0.1
@@ -2064,7 +2064,7 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.15
 				conscription = 0.03
 				conscription_factor = 0.2
-				local_building_slots_factor = 0.2
+				global_building_slots_factor = 0.2
 
 			}
 			
@@ -2089,7 +2089,7 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.15
 				conscription = 0.03
 				conscription_factor = 0.2
-				local_building_slots_factor = 0.2
+				global_building_slots_factor = 0.2
 				army_attack_factor = 0.05
 				army_defence_factor = 0.05
 			
@@ -2176,7 +2176,7 @@ ideas = {
 				production_speed_industrial_complex_factor = 0.1
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				research_speed_factor = 0.05
 				army_org_factor = 0.05
 				army_morale_factor = 0.05
@@ -2200,7 +2200,7 @@ ideas = {
 				production_speed_industrial_complex_factor = 0.1
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				research_speed_factor = 0.05
 				army_org_factor = 0.05
 				army_morale_factor = 0.05
@@ -2228,7 +2228,7 @@ ideas = {
 				production_speed_industrial_complex_factor = 0.15
 				production_factory_max_efficiency_factor = 0.1
 				production_factory_efficiency_gain_factor = 0.1
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				research_speed_factor = 0.1
 				army_org_factor = 0.1
 				army_morale_factor = 0.1
@@ -2283,7 +2283,7 @@ ideas = {
 				consumer_goods_factor = -0.2
 				min_export = -0.1
 				trade_opinion_factor = 0.15
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.1
 				production_speed_arms_factory_factor = 0.1
 				production_speed_industrial_complex_factor = 0.1
@@ -2440,7 +2440,7 @@ ideas = {
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
 				production_speed_buildings_factor = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				syndicalist_drift = 0.05
 				totalist_drift = 0.02
 				market_liberal_drift = 0.01
@@ -2496,7 +2496,7 @@ ideas = {
 				army_attack_factor = 0.05
 				army_defence_factor = 0.05
 				org_loss_when_moving = -0.1
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				army_speed_factor = 0.1
 				production_speed_arms_factory_factor = 0.05
 				production_speed_industrial_complex_factor = 0.05
@@ -2559,7 +2559,7 @@ ideas = {
 			allowed = { always = yes }
 			picture = NFA_regional_autonomy
 			modifier = {
-				local_building_slots_factor = 0.15
+				global_building_slots_factor = 0.15
 				production_speed_buildings_factor = 0.1
 				supply_consumption_factor = -0.15
 				production_speed_arms_factory_factor = 0.1
@@ -2634,7 +2634,7 @@ ideas = {
 				production_speed_industrial_complex_factor = 0.1
 				line_change_production_efficiency_factor = 0.05
 				industrial_capacity_factory = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.1
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
@@ -2778,7 +2778,7 @@ ideas = {
 				consumer_goods_factor = -0.15
 				line_change_production_efficiency_factor = 0.05
 				industrial_capacity_factory = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.1
 				local_resources_factor = 0.1
 				production_factory_max_efficiency_factor = 0.05
@@ -2878,7 +2878,7 @@ ideas = {
 			modifier = {
 				line_change_production_efficiency_factor = 0.05
 				industrial_capacity_factory = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.1
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
@@ -2925,7 +2925,7 @@ ideas = {
 				industrial_capacity_factory = 0.05
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.05
 				production_speed_arms_factory_factor = 0.1
 				production_speed_industrial_complex_factor = 0.1
@@ -2945,7 +2945,7 @@ ideas = {
 				industrial_capacity_factory = 0.05
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.05
 				production_speed_arms_factory_factor = 0.1
 				production_speed_industrial_complex_factor = 0.1
@@ -3020,7 +3020,7 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.05
 				totalist_drift = 0.05
 				syndicalist_drift = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				research_speed_factor = 0.1
 				local_resources_factor = 0.15
 				consumer_goods_factor = -0.15
@@ -3190,7 +3190,7 @@ ideas = {
 				political_power_gain = 0.1
 				stability_factor = 0.05
 				war_support_factor = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				radical_socialist_drift = 0.05
 			}
 		}
@@ -3203,7 +3203,7 @@ ideas = {
 				political_power_gain = 0.1
 				stability_factor = 0.1
 				war_support_factor = 0.1
-				local_building_slots_factor = 0.2
+				global_building_slots_factor = 0.2
 				radical_socialist_drift = 0.05
 				syndicalist_drift = 0.01
 				totalist_drift = 0.01
@@ -3391,7 +3391,7 @@ ideas = {
 			modifier = {
 				line_change_production_efficiency_factor = 0.15
 				industrial_capacity_factory = 0.15
-				local_building_slots_factor = 0.2
+				global_building_slots_factor = 0.2
 				production_speed_buildings_factor = 0.1
 				research_speed_factor = 0.15
 				production_speed_arms_factory_factor = 0.2
@@ -3507,7 +3507,7 @@ ideas = {
 				production_speed_buildings_factor = 0.1
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 			}
 		}
 		FRA_free_thought = {
@@ -3627,7 +3627,7 @@ ideas = {
 			allowed = { always = yes }
 			picture = generic_mutual_aid
 			modifier = {
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.1
 				line_change_production_efficiency_factor = 0.05
 				industrial_capacity_factory = 0.05
@@ -3948,7 +3948,7 @@ ideas = {
 				production_speed_infrastructure_factor = 0.1
 				production_speed_arms_factory_factor = 0.05
 				production_speed_industrial_complex_factor = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 			}
 		}
 		FRA_decentralarmy = {
@@ -4242,7 +4242,7 @@ ideas = {
 				local_resources_factor = 0.2
 				line_change_production_efficiency_factor = 0.05
 				industrial_capacity_factory = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.05
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
@@ -4261,7 +4261,7 @@ ideas = {
 				local_resources_factor = 0.2
 				line_change_production_efficiency_factor = 0.05
 				industrial_capacity_factory = 0.05
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				production_speed_buildings_factor = 0.05
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
@@ -5609,6 +5609,121 @@ ideas = {
 				defense_bonus_against = 0.05
 			}
 		}
+		FRA_revisionist_sorel = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea FRA_corporate_syndie_idea"}
+			picture = FRA_corporate_syndie_idea
+			modifier = {
+				political_power_cost = -0.2
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				totalist_drift = 0.05
+				syndicalist_drift = 0.02
+				social_democrat_drift = 0.01
+
+			}
+		}
+		FRA_revisionist_sorel2 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea FRA_corporate_syndie_idea"}
+			picture = FRA_corporate_syndie_idea
+			modifier = {
+				political_power_cost = -0.2
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				totalist_drift = 0.05
+				syndicalist_drift = 0.02
+				social_democrat_drift = 0.01
+				command_power_gain = 0.1
+				max_command_power = 100
+				command_power_gain_mult = 0.1
+				max_command_power_mult = 0.1
+				training_time_army_factor = -0.1
+
+			}
+		}
+		FRA_AGMVC = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea FRA_corporate_syndie_idea"}
+			picture = FRA_corporate_syndie_idea
+			modifier = {
+				decryption_factor = 0.10
+				encryption_factor = 0.10
+				required_garrison_factor = -0.1
+				resistance_target = -0.1
+				resistance_target_on_our_occupied_states = 0.15
+				resistance_decay = 0.1
+				resistance_decay_on_our_occupied_states = -0.1
+				resistance_growth = -0.1
+				resistance_growth_on_our_occupied_states = 0.1
+				compliance_starting_value = 0.1
+				compliance_growth = 0.1
+				compliance_growth_on_our_occupied_states = -0.1
+
+			}
+		}
+		FRA_Social_Catholicism = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea FRA_corporate_syndie_idea"}
+			picture = FRA_corporate_syndie_idea
+			modifier = {
+				political_power_factor = 0.15
+				conscription = 0.01
+				war_stability_factor = 0.2
+
+			}
+		}
+		FRA_economy_reforms = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea FRA_corporate_syndie_idea"}
+			picture = FRA_corporate_syndie_idea
+			modifier = {
+
+				industrial_capacity_factory = 0.05
+				production_speed_arms_factory_factor = 0.05
+				line_change_production_efficiency_factor = 0.05
+				consumer_goods_factor = -0.2
+				production_speed_buildings_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		FRA_economy_reforms2 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea FRA_corporate_syndie_idea"}
+			picture = FRA_corporate_syndie_idea
+			modifier = {
+				global_building_slots_factor = 0.1
+				industrial_capacity_factory = 0.05
+				production_speed_arms_factory_factor = 0.05
+				line_change_production_efficiency_factor = 0.05
+				consumer_goods_factor = -0.2
+				production_speed_buildings_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+				motorized_equipment = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+				mechanized_equipment = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+			}
+		
+		}
 		FRA_worker_0 = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea FRA_zhanzheng"}
 			allowed = { always = no }
@@ -5710,7 +5825,7 @@ ideas = {
 				paternal_autocrat_drift = -0.01
 				national_populist_drift = -0.01
 				compliance_growth = 0.1
-				local_building_slots_factor = 0.2
+				global_building_slots_factor = 0.2
 			}
 		}
 		FRA_Dirigisme_1 = {
@@ -5757,7 +5872,7 @@ ideas = {
 			modifier = {
 				conscription = 0.02
 				stability_factor = 0.05
-				local_building_slots_factor = 0.2
+				global_building_slots_factor = 0.2
 				production_speed_buildings_factor = 0.1
 			}
 		}
@@ -5932,7 +6047,7 @@ ideas = {
 				non_core_manpower = 0.1
 				resistance_target = -0.1
 				required_garrison_factor = -0.1
-				local_building_slots_factor = 0.1
+				global_building_slots_factor = 0.1
 				supply_consumption_factor = -0.1
 			}
 		}

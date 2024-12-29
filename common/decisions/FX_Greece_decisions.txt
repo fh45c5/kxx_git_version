@@ -1343,6 +1343,7 @@ GRE_national_ambitions_decision = {
 		cost = 0
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision GRE_recruitment"
+			set_cosmetic_tag = FORM_BAK
 			#Bulgaria
 			48 = { add_core_of = ROOT 
 			transfer_state_to = ROOT }
